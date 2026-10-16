@@ -1,0 +1,16 @@
+{
+  "name": "dice-abyss",
+  "version": "4.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A desktop-first, single-player dice dungeon RPG.",
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "simulate": "node scripts/simulate.mjs",
+    "check": "node --check src/content.js && node --check src/equipment-content.js && node --check src/equipment.js && node --check src/encounters.js && node --check src/engine.js && node --check src/storage.js && node --check src/views.js && node --check src/app.js && node --check src/effects.js && node --check src/dice-motion.js && node --check src/dice-renderer.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

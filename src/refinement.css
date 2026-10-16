@@ -1,0 +1,92 @@
+@font-face{font-family:'Abyss Pixel';src:url('./fonts/fusion-pixel-12px-proportional-zh_hans.otf.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Abyss Text';src:url('./fonts/SourceHanSansCN-VF.otf.woff2') format('woff2');font-weight:250 900;font-display:swap}
+:root{--font-display:'Abyss Pixel','Abyss Text',sans-serif;--font-body:'Abyss Text','Microsoft YaHei',sans-serif;font-family:var(--font-body);font-weight:400;--line:#62676c;--line-bright:#b6b9ba;--text:#e8e7e2;--bg:#020304}
+body{font-family:var(--font-body);font-weight:400;background:#020304}
+body:before{background:radial-gradient(ellipse at 50% 42%,#15243315,transparent 62%)}
+h1,h2,h3,.brand,.section-label,.primary-control button,.damage-number>strong,.treasure-title h2,.victory-mark,.cube-face>span,.damage-label{font-family:var(--font-display);font-weight:400;font-synthesis:none}
+button{font-family:inherit}
+.brand>span{font:400 2.05rem/1.2 var(--font-display);letter-spacing:.025em}
+.brand>small{letter-spacing:.25em;font:400 .63rem/1.5 var(--font-display)}
+.header-motto,.enemy-note,.rail-quote,.rail-foot{font-family:var(--font-body);font-weight:400}
+.route-panel>.rail-quote{font-size:.8rem!important;line-height:1.55;margin:.45rem 0!important}
+.route-panel>.route-list{margin:.95rem 0 .8rem}
+.route-panel>.fate-summary{font-size:.65rem;line-height:1.4;margin-top:.3rem;padding-top:.3rem}
+.section-label{font-size:1.05rem;letter-spacing:.06em;border-color:#a8afb1;box-shadow:0 2px 0 #1c242b}
+.section-label>span{font:400 .65rem var(--font-display);letter-spacing:.12em}
+.frame{border-color:#9ea6a7;background:linear-gradient(120deg,#ffffff04,transparent 24%,transparent 78%,#ffffff04);box-shadow:inset 0 0 0 2px #020304,inset 0 0 0 3px #616b7080}
+.frame:before{display:block;inset:5px;width:auto;height:auto;transform:none;border:0;background:linear-gradient(#d4dedf,#d4dedf) left top/14px 1px no-repeat,linear-gradient(#d4dedf,#d4dedf) left top/1px 14px no-repeat,linear-gradient(#d4dedf,#d4dedf) right bottom/14px 1px no-repeat,linear-gradient(#d4dedf,#d4dedf) right bottom/1px 14px no-repeat;opacity:.8;pointer-events:none}
+.frame:after{right:7px;top:7px;left:auto;bottom:auto;width:.24rem;height:.24rem;background:#06090b;border:1px solid #8f999c;transform:rotate(45deg)}
+.combat-screen h1{font:400 2.15rem/1.4 var(--font-display);letter-spacing:.08em;text-shadow:none}
+.enemy-heading,.enemy-round,.health-label,.shield-line,.exploration-stats dd,.log-index,.equipment-depth,.player-level,.player-gold strong,.character-stats dd{font-family:var(--font-display);font-weight:400;font-variant-numeric:tabular-nums}
+.combat-stage .roll-caption{font:400 1.15rem/1.4 var(--font-display);letter-spacing:.12em}
+.enemy-intent-detail{color:#aab4bc;font-size:.64rem}
+.enemy-trait .enemy-warning{background:#26090f;border-color:#b53845;box-shadow:inset 0 0 0 2px #080204}
+.health-track{box-shadow:inset 0 0 0 1px #e6969e45,0 0 0 2px #050506,0 0 0 3px #5c6267}
+.health-track>span{background:linear-gradient(#ff6a77 0 12%,#ee1d38 14% 75%,#a30d25 78%);box-shadow:none}
+.gpu-dice{position:relative;isolation:isolate}
+.gpu-dice .die-flight{visibility:hidden}
+.gpu-dice .cube-die{filter:none!important}
+.gpu-dice .die-shadow{height:1.5rem;bottom:1.7rem;background:radial-gradient(ellipse,#020203 15%,#82939e2b 33%,transparent 67%);opacity:.7}
+.cube-die .cube-energy{display:none}
+.cube-face{background:#060a0f;border-radius:9%;box-shadow:inset 0 0 0 2px #020304,inset 0 0 0 3px #f3f0df6b,inset .18rem .2rem .4rem #d9effd21}
+.cube-face>span{font-size:calc(var(--size)*.72);letter-spacing:0;text-shadow:0 .04em .08em #000}
+.combat-stage .cube-row{gap:1.6rem;padding:.8rem 1.6rem}
+.combat-stage .damage-number>strong{display:inline-block;font:400 clamp(3rem,6.5vw,8rem)/1 var(--font-display);letter-spacing:-.035em;font-style:normal;color:#ece9dc;text-shadow:0 .04em #222b34}
+.combat-stage .emphatic .damage-number>strong{color:#fff1bb;text-shadow:0 0 .08em #ffdc64,0 .035em #ba481a,0 .06em .18em #b43d12}
+.trigger-line{font-family:var(--font-display);font-weight:400;gap:.45rem}
+.trigger-line>span{position:relative;padding:.3rem .65rem;border-width:1px;box-shadow:inset 0 0 0 2px #030405,inset 0 0 0 3px #ffffff35}
+.crit-stamp{font:400 1.5rem var(--font-display);padding:.5rem .45rem}
+.hit-breakdown{font:400 .8rem var(--font-display);gap:1.5rem}
+.hit-breakdown b{font:inherit}
+.item-card h3,.equipped-item h3{font-family:var(--font-display);font-weight:400;letter-spacing:.015em}
+.equipped-item h3{font-size:1.1rem}
+.equipped-item{background-image:linear-gradient(125deg,#ffffff06,transparent 25%,#000 85%);border-color:color-mix(in srgb,currentColor,transparent 17%)}
+.equipped-item:before{inset:5px;border:0;background:linear-gradient(currentColor,currentColor) left top/12px 1px no-repeat,linear-gradient(currentColor,currentColor) left top/1px 12px no-repeat,linear-gradient(currentColor,currentColor) right bottom/12px 1px no-repeat,linear-gradient(currentColor,currentColor) right bottom/1px 12px no-repeat;opacity:.75}
+.equipped-item p{font-size:.72rem;line-height:1.55;color:#d2d4d3}
+.rarity,.item-meta{font-family:var(--font-display);font-weight:400}
+.primary-control>.primary{font:400 1.55rem/1 var(--font-display);letter-spacing:.08em;background:#05242d;border-color:#63e4ef;box-shadow:inset 0 0 0 2px #02080b,inset 0 0 0 3px #57e4e944}
+.primary-control>.primary:hover:not(:disabled){background:#08424e;box-shadow:inset 0 0 0 2px #02080b,inset 0 0 0 3px #57e4e977,0 .1rem .8rem #17d2f326}
+.manual-control button,.main-nav button{background:#05080a;border-color:#7c868b;box-shadow:inset 0 0 0 2px #030506}
+.loot-screen>h1,.chest-screen>h1{font:400 6.2rem/1.12 var(--font-display);letter-spacing:.18em;paint-order:normal;-webkit-text-stroke:0;color:#fff2b4;text-shadow:0 .04em #a75d17,0 0 .14em #ffac32}
+.reward-theatre{flex-shrink:0}
+.treasure-title h2{font:400 2.55rem/1.15 var(--font-display);letter-spacing:.16em;paint-order:normal;-webkit-text-stroke:0;color:#fff6cb}
+.chest-art svg,.chest-art.grand svg{filter:none;stroke-width:1.2}
+.chest-art.grand{color:#ffe3a4}
+.loot-reveal .item-card{background:linear-gradient(112deg,#50340b18,transparent 36%),#040506;border-width:1px;clip-path:polygon(0 10px,10px 0,calc(100% - 10px) 0,100% 10px,100% calc(100% - 10px),calc(100% - 10px) 100%,10px 100%,0 calc(100% - 10px))}
+.loot-reveal .refined-item>h3{font:400 1.8rem/1.35 var(--font-display);margin:.55rem 0 .35rem}
+.loot-reveal .refined-item>p{font-size:.84rem;line-height:1.65}
+.loot-screen.legendary .loot-reveal .item-card{border-color:#ffe9a5;box-shadow:inset 0 0 0 3px #070603,inset 0 0 0 4px #b9842a,inset 0 .2rem .7rem #e4ad3017}
+.loot-screen.legendary .loot-reveal .item-card:before{background:linear-gradient(#fff2c6,#ffbf4b) left top/18px 1px no-repeat,linear-gradient(#fff2c6,#ffbf4b) left top/1px 18px no-repeat,linear-gradient(#ffcf72,#fff2c6) right bottom/18px 1px no-repeat,linear-gradient(#ffcf72,#fff2c6) right bottom/1px 18px no-repeat;opacity:.95}
+.gold-reward strong{font-family:var(--font-display);font-weight:400;color:#ffe0a0}
+.gold-reward{border-color:#9b7b3d;background:linear-gradient(150deg,#8b5c0b13,transparent 40%)}
+.drop-banner{font-family:var(--font-display);border-color:currentColor;background:#050607}
+.loot-screen.legendary .drop-banner{color:#ffd36b}
+.loot-screen{position:relative;--loot-energy:#e2e8ed}
+.loot-screen.rare{--loot-energy:#6dcaff}
+.loot-screen.epic{--loot-energy:#d29aff}
+.loot-screen.legendary{--loot-energy:#ffdc83}
+.loot-screen .chest-art,.loot-screen .treasure-title h2,.loot-screen .treasure-title,.loot-screen .drop-banner{color:var(--loot-energy)}
+.loot-screen:not(.legendary)>h1{color:var(--loot-energy);text-shadow:0 .04em #17212c,0 0 .15em color-mix(in srgb,var(--loot-energy) 25%,transparent)}
+.loot-screen .treasure-title{text-shadow:0 0 .35rem color-mix(in srgb,var(--loot-energy) 40%,transparent)}
+.loot-screen .treasure-title h2{text-shadow:inherit}
+.loot-screen .chest-beams{stroke:var(--loot-energy);filter:none!important}
+.loot-screen .treasure-light{background:conic-gradient(from 160deg at 50% 100%,transparent 0 160deg,color-mix(in srgb,var(--loot-energy) 12%,transparent) 164deg,transparent 170deg,color-mix(in srgb,var(--loot-energy) 45%,transparent) 179deg,transparent 184deg,color-mix(in srgb,var(--loot-energy) 17%,transparent) 194deg,transparent 200deg),radial-gradient(ellipse at 50% 85%,color-mix(in srgb,var(--loot-energy) 25%,transparent),transparent 65%);filter:none}
+.loot-screen:not(.legendary) .chest-art svg{stroke-width:1}
+.loot-screen.common .reward-dust{opacity:.2}
+.loot-screen.rare .reward-dust{opacity:.45}
+.loot-screen.epic .reward-dust{opacity:.65}
+.legendary-reveal .loot-reveal .item-card{animation:relic-arrival .65s .45s both}
+.legendary-reveal .loot-reveal .item-card>h3{animation:relic-arrival .4s .7s both}
+.legendary-reveal .loot-reveal .item-card>p{animation:relic-arrival .45s .85s both}
+.legendary-reveal .loot-reveal .item-bottom{animation:relic-arrival .4s 1.02s both}
+.legendary-reveal .drop-banner{animation:reveal .4s .24s both}
+.reward-reveal .loot-reveal .item-card{animation:relic-arrival .42s .16s both}
+.game-shell[data-scene=loot] .center-panel{background:radial-gradient(ellipse at 50% 30%,#6c430b16,transparent 52%),#020304}
+
+.opening .chest-beams{animation:beam-charge .8s ease-in both}
+@keyframes relic-arrival{from{opacity:0}to{opacity:1}}
+@keyframes beam-charge{0%,30%{opacity:0}75%{opacity:.35}100%{opacity:1}}
+.destiny-screen .destiny-node-name{font-family:var(--font-body)}
+#current-room:is([data-impact=critical],[data-impact=finish],[data-impact=phase]) .damage-number>strong,#current-room:is([data-impact=critical],[data-impact=finish],[data-impact=phase]) .trigger-line{animation:impact-jolt .22s .08s both}
+@keyframes impact-jolt{0%,100%{transform:none}25%{transform:translate(-2px,1px)}55%{transform:translate(2px,-1px)}80%{transform:translate(-1px,0)}}
+@media(prefers-reduced-motion:reduce){.dice-surface{will-change:auto}.gpu-dice .die-flight{visibility:hidden}}

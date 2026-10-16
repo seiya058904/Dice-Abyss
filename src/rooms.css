@@ -1,0 +1,280 @@
+/* Room and collection surfaces share the live game's hairline framing. */
+.room-refined{--room-muted:#b4bec6;--room-line:#475460}
+.room-refined .room-heading{display:flex;align-items:center;justify-content:space-between;gap:1rem;width:100%;text-align:left;padding:.25rem 0 .85rem;border-bottom:1px solid var(--room-line);flex-shrink:0}
+.room-heading h1{font-size:1.9rem;line-height:1.4;letter-spacing:.1em}
+.room-heading p{font-size:.78rem;line-height:1.6;color:var(--room-muted);margin-top:.3rem}
+.room-balance{display:flex;align-items:center;gap:.55rem;color:var(--gold);flex-shrink:0}
+.room-balance>.icon{width:1.35rem;height:1.35rem}
+.room-balance>span{font-size:.68rem;color:#c5b998;line-height:1.5}
+.room-balance b{display:block;color:var(--gold);font:700 1.25rem/1.4 Consolas,monospace;font-variant-numeric:tabular-nums}
+.room-refined .slot-tabs{margin:.65rem 0 .5rem;flex-shrink:0}
+.room-refined .slot-tabs>button{padding:.65rem 1rem;font-size:.8rem}
+.room-refined .slot-tabs small{font:400 .65rem Consolas,monospace;color:var(--room-muted);margin-left:.35rem}
+.room-refined .room-hint{font-size:.72rem;color:var(--room-muted);line-height:1.75}
+.room-empty{display:flex;flex:1;min-height:10rem;flex-direction:column;align-items:center;justify-content:center;gap:.8rem;text-align:center;color:var(--room-muted);grid-column:1/-1}
+.room-empty>.icon{width:2.7rem;height:2.7rem;color:#8babbf}
+.room-empty h2{font-size:1.15rem;color:var(--text)}
+.room-empty p{font-size:.8rem;line-height:1.7}
+.room-empty .small{font-size:.8rem}
+
+/* The three offers keep rarity, effect, comparison, and price in one scan. */
+.merchant-screen.room-refined{padding:.2rem 0}
+.merchant-screen.room-refined .shop-grid{margin:1rem 0;gap:.7rem;max-height:none;flex:1;min-height:0}
+.merchant-screen.room-refined .shop-item{position:relative;padding:1rem .85rem;gap:.4rem;background:linear-gradient(145deg,color-mix(in srgb,currentColor 5%,transparent),transparent 48%),#070b0e;border-color:currentColor;min-height:0}
+.merchant-screen.room-refined .shop-item .item-meta{width:100%;font-size:.7rem;gap:.3rem;justify-content:space-between}
+.merchant-screen.room-refined .shop-item .rarity{font-size:.82rem}
+.merchant-screen.room-refined .shop-item>h3{font-size:1.23rem;margin:.65rem 0 .1rem;line-height:1.5;overflow-wrap:anywhere}
+.shop-depth{font-size:.7rem;color:#b4bec6}
+.merchant-screen.room-refined .shop-effects{display:flex;flex-direction:column;gap:.32rem;font-size:.8rem;line-height:1.6;color:#e0e5e9;margin:.65rem 0;min-height:0}
+.merchant-screen.room-refined .item-comparison{font-size:.78rem;margin:.3rem 0}
+.merchant-screen.room-refined .shop-item>button{font-size:.8rem;min-height:2.65rem;margin-top:auto}
+.merchant-screen.room-refined .offer-status{min-height:1.3rem;font-size:.67rem;color:#b8c3cd;line-height:1.5}
+.merchant-screen.room-refined .offer-sold{background:#090e11;border-color:#54636b}
+.merchant-screen.room-refined .offer-sold>h3,.merchant-screen.room-refined .offer-sold .shop-effects{color:#a4b1bb}
+.merchant-screen.room-refined .supply-row{padding:.85rem 1rem;margin:.1rem 0 .3rem;border-color:#4a5e6b;background:#0a1117;flex-shrink:0}
+.merchant-screen.room-refined .supply-row h3{display:flex;align-items:center;gap:.45rem;font-size:.92rem}
+.merchant-screen.room-refined .supply-row h3 .icon{width:1rem;height:1rem;color:var(--red)}
+.merchant-screen.room-refined .supply-row p{font-size:.75rem;color:#b7c2cb}
+.merchant-screen.room-refined .supply-row button{font-size:.76rem;min-height:2.4rem}
+.blackmarket-room .room-heading{border-color:#8c6a37}
+.blackmarket-room .room-heading h1{color:#ffe3a5}
+
+/* Single-item growth and explicit cost/availability. */
+.forge-screen.room-refined{padding:.2rem 0}
+.forge-screen.room-refined .forge-target{position:relative;width:100%;min-height:0;gap:.1rem;padding:.75rem .7rem;margin:.4rem 0;background:linear-gradient(145deg,color-mix(in srgb,currentColor 5%,transparent),transparent 45%),#070b0e}
+.forge-item-heading{text-align:center;flex-shrink:0}
+.forge-item-heading h2{font-size:1.4rem;margin:.35rem 0;line-height:1.5}
+.forge-item-heading>span{font-size:.75rem;color:#c7ced4}
+.forge-item-heading>span b{color:var(--text);font-family:Consolas,monospace}
+.forge-screen.room-refined .forge-target>p:not(.room-hint):not(.forge-availability){font-size:.78rem;text-align:center;color:#d0d7de;line-height:1.7}
+.forge-screen.room-refined .forge-dice{height:10rem;margin:.6rem 0 .25rem;flex-shrink:0}
+.forge-screen.room-refined .forge-rule{width:min(100%,24rem);max-width:none;justify-content:space-between;gap:1.4rem;margin:.6rem 0;font-size:.78rem}
+.forge-screen.room-refined .forge-rule b{font-size:1.45rem;color:var(--gold);margin-top:.3rem}
+.forge-screen.room-refined .forge-target>.primary{font-size:.9rem;min-height:2.8rem;margin:.55rem 0 .4rem}
+.forge-availability{font-size:.75rem;color:#bfcbd5;line-height:1.7;text-align:center}
+.forge-screen.room-refined .forge-target .room-hint{font-size:.68rem;margin:.35rem 0 0;padding:0}
+.forge-screen.room-refined .forge-result{display:flex;align-items:center;justify-content:center;gap:.5rem;font-size:.8rem;margin:.1rem 0 0;flex-shrink:0}
+.forge-screen.room-refined .forge-result .icon{width:1rem;height:1rem}
+.forge-screen.room-refined .forge-result b{margin:0;color:var(--gold);font-size:1rem}
+.fusion-screen.room-refined{padding:.2rem 0;gap:.4rem}
+.fusion-screen.room-refined .fusion-workbench{grid-template-columns:minmax(0,1fr) 6.1rem minmax(0,1fr);gap:.55rem}
+.fusion-screen.room-refined .fusion-targets,.fusion-screen.room-refined .fusion-materials{position:relative;background:linear-gradient(150deg,#c478f70a,transparent 45%),#080b10;box-shadow:inset 0 0 0 3px #030609,inset 0 0 0 4px #b2bddc18}
+.fusion-screen.room-refined .fusion-workbench h2{font-size:.95rem;padding:.65rem .6rem .45rem}
+.fusion-screen.room-refined .fusion-workbench h2 small{font-size:.67rem;line-height:1.6;color:#bbc8d4}
+.fusion-screen.room-refined .fusion-picker{gap:.4rem;padding:.4rem;scrollbar-gutter:stable}
+.fusion-screen.room-refined .fusion-picker button{font-size:.78rem;padding:.55rem;line-height:1.5}
+.fusion-screen.room-refined .fusion-picker button small{font-size:.68rem;color:#bbc7d4;line-height:1.6;margin:.2rem 0 0}
+.fusion-screen.room-refined .fusion-picker button.selected{border-color:#e0b2ff;box-shadow:inset 1px 0 #e0b2ff;background:#2a1d39}
+.fusion-screen.room-refined .fusion-picker p{font-size:.75rem;line-height:1.8;color:#b8c4d0;padding:.5rem}
+.fusion-screen.room-refined .fusion-materials>.small{margin:.5rem .5rem .25rem;font-size:.72rem}
+.safe-selection-note{font-size:.64rem;color:#b4c0ce;line-height:1.6;padding:.2rem .55rem .5rem}
+.fusion-screen.room-refined .fusion-flow{min-height:0;justify-content:center;gap:.3rem}
+.fusion-screen.room-refined .fusion-flow>span{font-size:2rem;line-height:1.2}
+.fusion-screen.room-refined .fusion-flow>.dice-row{padding:.25rem 0;margin:0}
+.fusion-screen.room-refined .fusion-flow small{font-size:.64rem;color:#d6b9ec;line-height:1.7;text-align:center;white-space:nowrap}
+.fusion-screen.room-refined .target-sockets b{font-size:.66rem;line-height:1.6}
+.fusion-screen.room-refined .target-sockets small{font-size:.6rem;color:#c6bdd3}
+.fusion-screen.room-refined .fusion-estimate{font-size:.76rem;line-height:1.7;padding:.6rem .25rem;min-height:3.5rem;color:#e2d4ef;flex-shrink:0}
+.fusion-screen.room-refined .fusion-estimate small,.fusion-screen.room-refined .fusion-estimate strong{font-size:.68rem;display:block;line-height:1.7}
+.fusion-outcomes{width:100%;text-align:left}
+.fusion-outcome-row{display:grid;grid-template-columns:minmax(0,1fr) repeat(3,5.1rem);align-items:center;gap:.5rem;border-bottom:1px solid #594a66;padding:.28rem .35rem;min-height:1.45rem}
+.fusion-outcome-row>span{display:flex;align-items:center;justify-content:space-between;gap:.7rem;min-width:0;font-size:.67rem;color:#d9cce4}
+.fusion-screen.room-refined .fusion-outcome-row>span>strong{font-size:.7rem;font-weight:500;line-height:1.4;white-space:nowrap}
+.fusion-screen.room-refined .fusion-outcome-row>span>small{font:400 .65rem/1.4 Consolas,monospace;color:#c2b2ce;white-space:nowrap}
+.fusion-outcome-row>b{text-align:center;font:700 .78rem/1.4 Consolas,monospace;color:#e9d7ff}
+.fusion-outcome-row.outcome-heading{min-height:1.2rem;background:#160f1d;padding:.2rem .35rem}
+.fusion-outcome-row.outcome-heading>b{font:400 .67rem/1.4 Consolas,'Microsoft YaHei',sans-serif;color:#c8b6d6}
+.fusion-outcome-row.outcome-total{border-bottom:0}
+.fusion-outcome-row.outcome-total>b{color:#f1ddff}
+.fusion-cost-breakdown{text-align:center;font-size:.67rem;color:#c9b5d7;line-height:1.65;padding:.35rem 0 .05rem}
+.fusion-cost-breakdown b{font:700 .8rem Consolas,'Microsoft YaHei',sans-serif;color:var(--gold);white-space:nowrap}
+.fusion-screen.room-refined .fusion-cost-breakdown small{font-size:.62rem;line-height:1.5;color:#b7a8c5}
+.fusion-screen.room-refined>.primary{font-size:.9rem;min-height:2.7rem;flex-shrink:0}
+
+/* Sanctuary benefits are actual state, with an unambiguous claim state. */
+.sanctuary-screen.room-refined{gap:1rem;justify-content:flex-start;padding:.2rem 0}
+.room-use-state{font-size:.7rem;line-height:1.5;color:#c6c4bf;flex-shrink:0;display:flex;align-items:center;gap:.35rem}
+.room-use-state.claimed{color:var(--green)}
+.room-use-state .icon{width:.95rem;height:.95rem}
+.sanctuary-emblem{position:relative;flex:1;min-height:7rem;width:100%;display:grid;place-items:center;color:#b6d9e8}
+.sanctuary-emblem:before,.sanctuary-emblem:after{content:'';position:absolute;width:10.5rem;height:10.5rem;border:1px solid #59697c;transform:rotate(45deg)}
+.sanctuary-emblem:after{width:8rem;height:8rem;border-color:#394958;transform:none}
+.sanctuary-emblem>.icon{width:6rem;height:6rem;stroke-width:.75;color:#bee0ef}
+.sanctuary-benefits{width:min(100%,29rem);display:flex;gap:2rem;justify-content:center;border-top:1px solid #465462;border-bottom:1px solid #465462;padding:.9rem 0;margin:0;flex-shrink:0}
+.sanctuary-benefits>div{flex:1}
+.sanctuary-benefits dt{font-size:.75rem;color:#bdc7d0;margin-bottom:.4rem}
+.sanctuary-benefits dd{font:700 1.2rem/1.5 Consolas,'Microsoft YaHei',sans-serif;color:#dceaf3;margin:0;white-space:nowrap}
+.sanctuary-benefits dd>span{font-size:.85rem;color:#8ea5b4;margin:0 .3rem}
+.sanctuary-benefits dd small{display:block;font:400 .68rem/1.6 'Microsoft YaHei',sans-serif;color:#afbec8}
+.sanctuary-screen.room-refined>.primary{font-size:.9rem;min-width:18rem;min-height:3rem;flex-shrink:0;margin:.3rem 0}
+.sanctuary-screen.room-refined>.room-hint{margin:0 0 .3rem;padding-top:0;max-width:none}
+.altar-room.room-refined .dice-row{flex:1;align-items:center;margin:.5rem 0 0;min-height:11rem}
+
+/* Lists scroll locally; comparison stays alongside the equip action. */
+.inventory-screen.room-refined{gap:0}
+.inventory-screen .collection-heading>span{font-size:.8rem;color:#d0d8df;text-align:right}
+.inventory-screen .collection-heading>span small{display:block;color:#acbac7;font-size:.68rem;margin-top:.3rem}
+.inventory-guidance{padding:.3rem 0 .7rem;flex-shrink:0}
+.inventory-guidance p{font-size:.77rem;color:#cbd3db;line-height:1.6}
+.inventory-guidance>span{display:block;font-size:.68rem;color:#afbdca;line-height:1.7;margin-top:.25rem}
+.inventory-reclaim{display:flex;align-items:center;justify-content:space-between;gap:.75rem;padding:.4rem 0 .7rem;flex-shrink:0;border-bottom:1px solid #35434f}
+.inventory-reclaim>span{font-size:.68rem;color:#bcc8d3;line-height:1.65;max-width:25rem}
+.inventory-reclaim button{font-size:.72rem;min-height:2.2rem;white-space:nowrap}
+.inventory-pagination{display:flex;align-items:center;justify-content:space-between;gap:.7rem;padding:.55rem 0 .1rem;flex-shrink:0}
+.inventory-pagination>span{font-size:.67rem;color:#bac7d2;font-variant-numeric:tabular-nums}
+.inventory-pagination>div{display:flex;align-items:center;gap:.6rem}
+.inventory-pagination>div>span{font-size:.67rem;color:#c5d0da;white-space:nowrap}
+.inventory-pagination .small{font-size:.66rem;padding:.35rem .55rem;min-height:1.8rem}
+.inventory-screen .inventory-list{padding:.2rem .45rem .6rem .1rem;gap:.65rem;scrollbar-gutter:stable}
+.inventory-screen .inventory-list .refined-item{position:relative;background:linear-gradient(145deg,color-mix(in srgb,currentColor 5%,transparent),transparent 48%),#070b0e;box-shadow:inset 0 0 0 3px #030609,inset 0 0 0 4px #cad9e71a}
+.merchant-screen .shop-item:before,.inventory-screen .refined-item:before,.forge-screen .forge-target:before{content:'';position:absolute;left:.28rem;top:.28rem;width:.65rem;height:.65rem;border-top:1px solid currentColor;border-left:1px solid currentColor;opacity:.7;pointer-events:none}
+.merchant-screen .shop-item:after,.inventory-screen .refined-item:after,.forge-screen .forge-target:after{content:'';position:absolute;right:.28rem;bottom:.28rem;width:.65rem;height:.65rem;border-bottom:1px solid currentColor;border-right:1px solid currentColor;opacity:.7;pointer-events:none}
+.refined-item .item-lock{margin-left:auto;color:#b7c2cb;display:flex}
+.refined-item .item-lock .icon{width:.85rem;height:.85rem}
+.refined-item.item-equipped{background:#101b22}
+.inventory-list .refined-item>p{font-size:.76rem;line-height:1.7;display:flex;flex-direction:column;gap:.12rem;color:#cbd6e0;margin:.6rem 0 0}
+.refined-item .item-bottom{gap:.6rem;align-items:flex-start;flex-direction:column;margin-top:.65rem;padding-top:.6rem}
+.refined-item .item-comparison{font-size:.75rem;line-height:1.5}
+.item-comparison.decline{color:#e4b0a9}
+.item-actions{display:flex;align-items:center;justify-content:flex-end;gap:.5rem;width:100%}
+.refined-item .item-actions:empty{display:none}
+.refined-item .item-actions .small{font-size:.7rem;padding:.4rem .65rem;min-height:2rem}
+.refined-item .item-actions .quiet{margin-right:auto;color:#b8c5d1}
+.inventory-list .refined-item h3 small{font-size:.69rem;color:#bdc8d4;font-weight:400;line-height:1.6;margin-top:.15rem}
+.inventory-lock-note{display:flex;align-items:center;gap:.35rem;flex-shrink:0;font-size:.65rem;line-height:1.65;color:#acbac6;padding-top:.45rem}
+.inventory-lock-note .icon{width:.75rem;height:.75rem;flex-shrink:0}
+.comparison-note,.compare-empty{font-size:.68rem;color:#bbc8d4;line-height:1.7;margin:.5rem 0}
+
+/* All twenty-four live nodes form four precise, directly usable constellations. */
+.talent-screen.room-refined.destiny-screen{gap:.45rem;padding:0;min-height:0;height:100%;overflow:hidden}
+.destiny-screen .collection-heading{align-items:center;flex-shrink:0;padding:.1rem .25rem .6rem;border-bottom:1px solid #59636d}
+.destiny-screen .collection-heading h1{font-size:1.65rem;letter-spacing:.1em}
+.destiny-screen .collection-heading p{font-size:.72rem;color:#bbc8d3;margin-top:.2rem}
+.destiny-screen .talent-points{display:flex;align-items:center;gap:.45rem;font-size:.72rem;color:#ddd5c4;border:1px solid #9a8250;padding:.4rem .65rem;white-space:nowrap;background:#171309}
+.destiny-screen .talent-points b{font:700 1.5rem/1.1 Consolas,monospace;color:var(--gold)}
+.destiny-map{position:relative;flex:1;min-height:0;width:100%;isolation:isolate;background:radial-gradient(ellipse at center,#1f34402b,transparent 52%)}
+.destiny-lines{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:0}
+.destiny-orbits{stroke:#8eabb6;stroke-opacity:.24;stroke-width:.65}
+.destiny-spoke{stroke:currentColor;stroke-width:1;stroke-opacity:.4;stroke-dasharray:3 8}
+.destiny-branch-orbit{stroke:currentColor;stroke-width:.75;stroke-opacity:.24}
+.destiny-link{stroke:currentColor;stroke-width:.9;stroke-opacity:.19}
+.destiny-ring-link{stroke:currentColor;stroke-width:.55;stroke-opacity:.13}
+.destiny-link.lit{stroke-opacity:.78;stroke-width:1.35}
+.destiny-ring-link.lit{stroke-opacity:.55;stroke-width:.9}
+.branch-selected .destiny-branch-orbit{stroke-opacity:.56;stroke-width:1}
+.destiny-core-traces{stroke:#d5e8f4;stroke-width:1;stroke-opacity:.85}
+.destiny-core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:5.7rem;height:5rem;display:flex;flex-direction:column;gap:.25rem;align-items:center;justify-content:center;color:#e6f0f8;text-align:center;background:radial-gradient(ellipse,#0b1724 45%,transparent 74%);z-index:2;pointer-events:none}
+.destiny-core>.icon{width:1.7rem;height:1.7rem;color:#d5efff;filter:drop-shadow(0 0 .4rem #83caff55)}
+.destiny-core b{font-family:var(--font-display,inherit);font-size:.85rem;letter-spacing:.12em}
+.destiny-core small{font-size:.52rem;color:#9aafc4;letter-spacing:.1em}
+.destiny-cluster{position:static}
+.destiny-screen .destiny-branch-title{position:absolute;left:calc(var(--x)*1%);top:calc(var(--y)*1%);transform:translate(-50%,-50%);width:9.2rem;height:3rem;display:flex;flex-direction:column;gap:.25rem;align-items:center;justify-content:center;border:0;padding:0;background:#060a0e;color:inherit;z-index:2;box-shadow:0 0 1.1rem .6rem #060a0e}
+.destiny-screen .destiny-branch-title strong{font-family:var(--font-display,inherit);font-size:1rem;font-weight:700;line-height:1.4;letter-spacing:.08em}
+.destiny-screen .destiny-branch-title small{font:400 .62rem/1.4 Consolas,'Microsoft YaHei',sans-serif;color:#c4cbd2;white-space:nowrap}
+.destiny-screen .destiny-branch-title[aria-pressed=true] strong{text-shadow:0 0 .75rem currentColor}
+.destiny-screen .destiny-branch-title[aria-pressed=true]:after{content:'';position:absolute;bottom:-.15rem;width:2rem;height:1px;background:currentColor}
+.destiny-screen .destiny-branch-title:hover:not(:disabled){background:#081019;color:inherit;border:0}
+.destiny-screen button.destiny-branch-title:active:not(:disabled),.destiny-screen button.destiny-node:active:not(:disabled){transform:translate(-50%,-50%)}
+.destiny-screen .destiny-node{position:absolute;left:calc(var(--x)*1%);top:calc(var(--y)*1%);transform:translate(-50%,-50%);width:1.9rem;height:1.9rem;display:grid;place-items:center;border:0;background:none;padding:0;color:inherit;z-index:3;letter-spacing:0;opacity:1}
+.destiny-node-ring{position:relative;display:grid;place-items:center;width:1.9rem;height:1.9rem;border:1px solid currentColor;border-radius:50%;background:#080e14;outline:1px solid #58616b;outline-offset:2px;box-shadow:inset 0 0 0 3px #080e14}
+.destiny-node-ring:before{content:'';position:absolute;inset:.19rem;border:1px solid currentColor;border-radius:50%;opacity:.3;pointer-events:none}
+.destiny-node-ring i{font-family:var(--font-display,inherit);font-weight:700;font-size:.9rem;line-height:1;font-style:normal;text-shadow:0 1px #000}
+.destiny-screen .destiny-node-name{position:absolute;left:50%;bottom:100%;transform:translateX(-50%);font-size:max(.74rem,12px);line-height:1.2;color:#dce4ed;white-space:nowrap;text-shadow:0 1px 3px #000,0 0 4px #000}
+.destiny-screen .destiny-node-rank{position:absolute;left:50%;top:calc(100% + .1rem);transform:translateX(-50%);font:400 max(.61rem,11px)/1.1 Consolas,'Microsoft YaHei',sans-serif;color:#acbccb;white-space:nowrap;text-shadow:0 1px 2px #000}
+.destiny-screen .destiny-node.node-south .destiny-node-name{top:100%;bottom:auto}
+.destiny-screen .destiny-node.node-south .destiny-node-rank{top:auto;bottom:calc(100% + .1rem)}
+.destiny-screen .destiny-node.node-east .destiny-node-name{left:calc(100% + .45rem);bottom:auto;top:calc(50% - .9rem);transform:none}
+.destiny-screen .destiny-node.node-east .destiny-node-rank{left:calc(100% + .45rem);top:calc(50% + .2rem);transform:none}
+.destiny-screen .destiny-node.node-west .destiny-node-name{left:auto;right:calc(100% + .45rem);bottom:auto;top:calc(50% - .9rem);transform:none}
+.destiny-screen .destiny-node.node-west .destiny-node-rank{left:auto;right:calc(100% + .45rem);top:calc(50% + .2rem);transform:none}
+.destiny-screen .destiny-node:not(.lit) .destiny-node-ring{color:#a5b5c4;border-color:#738598;outline-color:#344452}
+.destiny-screen .destiny-node.lit .destiny-node-ring{background:color-mix(in srgb,currentColor 10%,#080e14);outline-color:currentColor;box-shadow:inset 0 0 0 3px #080e14,0 0 .75rem color-mix(in srgb,currentColor 28%,transparent)}
+.destiny-screen .destiny-node.lit .destiny-node-ring i{color:inherit;text-shadow:0 0 .4rem currentColor}
+.destiny-screen .destiny-node.lit .destiny-node-rank{color:inherit}
+.destiny-screen .destiny-node:disabled{opacity:1;cursor:default}
+.destiny-screen .destiny-node:disabled:not(.lit) .destiny-node-name{color:#b4c1ce}
+.destiny-screen .destiny-node:hover:not(:disabled){background:none;border:0;color:inherit}
+.destiny-screen .destiny-node:hover:not(:disabled) .destiny-node-ring,.destiny-screen .destiny-node:focus-visible .destiny-node-ring{outline-color:currentColor;border-color:#f2f7ff;box-shadow:0 0 1rem color-mix(in srgb,currentColor 35%,transparent)}
+.destiny-screen .destiny-node:focus-visible{outline:1px dotted currentColor;outline-offset:4px}
+.destiny-node-complete{position:absolute;right:-.4rem;bottom:-.12rem;width:.8rem;height:.8rem;display:grid;place-items:center;border-radius:50%;background:#080e14;border:1px solid currentColor}
+.destiny-node-complete .icon{width:.55rem;height:.55rem;stroke-width:2.5}
+.destiny-brief{flex-shrink:0;width:100%;border-top:1px solid currentColor;padding:.5rem .4rem .15rem;background:linear-gradient(180deg,color-mix(in srgb,currentColor 4%,transparent),transparent)}
+.destiny-brief-heading{display:flex;align-items:center;gap:.75rem;line-height:1.5;padding:0 .1rem .35rem}
+.destiny-brief-heading h2{font-size:.9rem;letter-spacing:.08em;white-space:nowrap}
+.destiny-brief-heading>span{font-size:.64rem;color:#b8c5d1}
+.destiny-brief-heading>b{font:400 .68rem Consolas,'Microsoft YaHei',sans-serif;margin-left:auto;white-space:nowrap}
+.destiny-effect-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:.9rem;row-gap:.4rem;margin:0}
+.destiny-effect-list>div{min-width:0;padding:.25rem 0;border-top:1px solid #35404b}
+.destiny-effect-list dt{display:flex;align-items:center;justify-content:space-between;font-size:.71rem;line-height:1.5;color:#cdd8e3}
+.destiny-effect-list dt>small{font:400 .62rem Consolas,'Microsoft YaHei',sans-serif;color:#a4b5c6;margin-left:.3rem;white-space:nowrap}
+.destiny-effect-list dd{font-size:max(.64rem,11px);line-height:1.55;color:#adbccc;margin:.12rem 0 0;overflow-wrap:anywhere}
+.destiny-effect-list .lit dt,.destiny-effect-list .lit dt>small{color:inherit}
+.talent-screen.room-refined.destiny-screen>.room-hint{flex-shrink:0;font-size:.62rem;line-height:1.4;color:#b1bfcd;text-align:center;margin:0;padding:.1rem 0 0}
+
+.build-rail .build-profile,.build-rail .build-set,.build-rail .build-equipment{background:linear-gradient(140deg,#99bed906,transparent 55%),#05080b}
+.build-rail .build-profile>.exploration-stats{font-size:.9rem;margin:.8rem 0;gap:.55rem}
+.build-rail .build-profile>.exploration-stats dd{font-variant-numeric:tabular-nums}
+.build-rail .build-equipped{position:relative;background:linear-gradient(140deg,color-mix(in srgb,currentColor 5%,transparent),transparent 55%),#070b0f;box-shadow:inset 0 0 0 2px #020405,inset 0 0 0 3px #c8d7e31a;padding:.45rem .55rem;margin:.35rem 0}
+.build-rail .build-equipped b{font-size:.79rem;line-height:1.5}
+.build-rail .build-equipped small{font-size:.65rem;line-height:1.6;color:#c1ced9;margin-top:.15rem}
+.destiny-build-details{gap:.55rem;background:linear-gradient(160deg,#94c7e706,transparent 40%),#05080b}
+.destiny-build-details .growth-cards{margin:.55rem 0 .25rem}
+.destiny-unlock-note{font-size:.68rem;line-height:1.6;color:#bdcbd8;padding:0 .2rem;margin:0 0 .35rem}
+.destiny-build-details .combo-rules{margin:0 .2rem}
+.destiny-build-details .combo-rules>div{padding:.45rem .2rem;font-size:.84rem;align-items:center}
+.destiny-build-details .combo-rules dd{display:flex;align-items:center;justify-content:space-between;gap:1.2rem;font:700 .96rem Consolas,monospace}
+.destiny-build-details .combo-rules small{font:400 .63rem 'Microsoft YaHei',sans-serif;color:#b5c3d0;margin:0}
+.destiny-multipliers{margin:0 .2rem .4rem;padding:.4rem 0;border-bottom:1px solid #41505e;display:flex;flex-direction:column;gap:.35rem}
+.destiny-multipliers>div{display:flex;justify-content:space-between;align-items:center;gap:1rem;font-size:.71rem}
+.destiny-multipliers dt{color:#b8c8d7}
+.destiny-multipliers dd{font:700 .82rem Consolas,monospace;margin:0;color:#e4edf5}
+.destiny-build-summary{display:flex;flex:1;min-height:0;flex-direction:column;justify-content:space-evenly;gap:.35rem;padding:0 .25rem}
+.destiny-build-summary>div{padding:.5rem .15rem;border-bottom:1px solid #344451}
+.destiny-build-summary>div>div{display:flex;align-items:center;justify-content:space-between;gap:.7rem}
+.destiny-build-summary b{font-family:var(--font-display,inherit);font-size:.88rem;font-weight:700}
+.destiny-build-summary strong{font:700 .9rem Consolas,monospace}
+.destiny-build-summary strong small{font:400 .65rem 'Microsoft YaHei',sans-serif;color:#adbdcc}
+.destiny-build-summary .selected{border-bottom-color:currentColor}
+.destiny-summary-track{display:flex;gap:.3rem;margin-top:.5rem}
+.destiny-summary-track>i{display:block;flex:1;height:3px;background:#293744}
+.destiny-summary-track>i.lit{background:currentColor}
+.destiny-summary-track>i.complete{box-shadow:0 0 .4rem color-mix(in srgb,currentColor 40%,transparent)}
+.destiny-build-details .rail-foot{padding:.7rem .2rem .15rem;font-size:.66rem;line-height:1.7;color:#b2c2cf}
+/* Intent and split hits use only engine-derived values. */
+.enemy-trait.refined-intent{align-items:stretch;gap:.6rem;flex-shrink:0}
+.enemy-mechanic{display:flex;flex-direction:column;gap:.35rem;flex:1;min-width:0}
+.enemy-mechanic .trait-tag{font-size:.72rem;line-height:1.5;min-height:2.1rem;align-items:flex-start}
+.trial-countdown{font-size:.67rem;color:#e5c27b;line-height:1.5}
+.refined-intent .enemy-warning{min-width:10rem;max-width:15rem;padding:.45rem .65rem;align-items:flex-start;font-size:.72rem}
+.refined-intent .enemy-warning>span{display:block;line-height:1.5}
+.refined-intent .enemy-warning b{font:700 1.05rem/1.5 Consolas,'Microsoft YaHei',sans-serif;display:block}
+.refined-intent .enemy-warning b small{font-size:.65rem;font-weight:400;color:#f4a7b0}
+.refined-intent .enemy-warning>span>small{display:block;font-size:.61rem;color:#f1bec4;line-height:1.5}
+.refined-intent .enemy-warning.warning-urgent{border-color:#ff5d6c;background:#3a1119}
+.enemy-intent-detail{font-size:.64rem;line-height:1.6;text-align:left;color:#b6c2cf;margin:.45rem 0 0;flex-shrink:0}
+.hit-breakdown{display:flex;justify-content:center;gap:1.3rem;min-height:1.5rem;font-size:.75rem;line-height:1.6;color:#ccd8e2}
+.hit-breakdown b{font:700 .9rem Consolas,monospace}
+.hit-follow{color:#68d5ff}
+.settings-note{font-size:.75rem;line-height:1.7;color:#afc2d1;padding:.1rem 0 .6rem}
+
+/* Five owned items retain their complete effects and an inset metadata footer. */
+.game-shell .right-rail>.equipment-list{grid-template-rows:repeat(5,minmax(0,1fr));gap:.45rem}
+.game-shell .equipment-list>.equipped-item{display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;padding:.4rem .65rem;gap:0}
+.game-shell .equipment-list>.equipped-item .item-meta{font-size:.65rem;line-height:1.3;flex-shrink:0}
+.game-shell .equipment-list>.equipped-item h3{font-size:1.02rem;line-height:1.3;margin:.25rem 0 .3rem;flex-shrink:0}
+.game-shell .equipment-list>.equipped-item h3 small{font-size:.68rem;line-height:1.4}
+.game-shell .equipment-list>.equipped-item p{font-size:.72rem;line-height:1.45;flex-shrink:0;margin:0}
+.game-shell .equipment-list>.equipped-item .equipment-depth{font-size:.61rem;line-height:1.2;min-height:1rem;flex-shrink:0;white-space:nowrap;margin-top:auto;padding-top:.2rem;border-top:1px dotted #ffffff24}
+.game-shell .equipment-list>.empty-slot{justify-content:center;gap:.4rem}
+
+/* The committed explanation owns a complete grid row, including reveal travel. */
+.game-shell[data-scene=combat] .combat-stage{display:grid;grid-template-rows:auto minmax(0,1fr) auto;justify-content:normal;align-content:stretch;container-type:size;padding-top:.65rem}
+.game-shell[data-scene=combat] .combat-stage>.roll-caption{align-self:start;margin-bottom:.35rem}
+.game-shell[data-scene=combat] .combat-stage>.dice-row{align-self:center}
+.game-shell[data-scene=combat] .combat-stage>.damage-result{flex:none;min-height:0;justify-content:flex-start;gap:.15rem;margin:0;padding:.25rem .25rem .85rem}
+.game-shell[data-scene=combat] .damage-result .trigger-line{min-height:1.7rem;margin:0}
+.game-shell[data-scene=combat] .damage-result .hit-breakdown{min-height:1.3rem;line-height:1.4}
+.game-shell[data-scene=combat] .damage-result .damage-number{flex-shrink:0}
+.game-shell[data-scene=combat] .damage-result .damage-number>strong{font-size:clamp(3.1rem,min(6.5vw,21cqh),7.5rem)}
+.game-shell[data-scene=combat] .damage-result .damage-label{font-size:.65rem;line-height:1.2;margin:.1rem 0}
+.game-shell[data-scene=combat] .damage-result>p{max-width:100%;font-size:.72rem;line-height:1.55;margin:.15rem 0 0;text-wrap:balance;color:#bac3cb}

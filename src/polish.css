@@ -1,0 +1,88 @@
+/* A calm table, dimensional dice, and one brief peak for each committed result. */
+::selection{color:#031013;background:#85e4ec}
+*{scrollbar-width:thin;scrollbar-color:#58656f #080c10}
+.salvage-list{max-height:18rem;overflow:auto;padding-left:1.5rem;font-size:.75rem}
+.relic-new-effects{font-size:.78rem;line-height:1.8;color:#c2d1dc;margin:.6rem 0 1rem}
+.relic-replacement{display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:.35rem;width:100%;margin-top:.5rem;padding:.8rem}
+.relic-replacement b{font-size:.8rem}.relic-replacement small{font-size:.7rem;color:#b9c5d0;line-height:1.5}
+button,select{font-variant-numeric:tabular-nums}
+.equipped-item{text-align:left}
+.equipped-item p{max-width:none}
+.combat-screen .enemy-note{line-height:1.65}
+.combat-stage .cube-row{perspective:1400px;gap:1.7rem;padding:.8rem 1.6rem;margin:.45rem 0 .05rem}
+.combat-stage .roll-caption{margin-bottom:.6rem}
+.combat-stage .cube-row[data-count="6"] .cube-die{--size:6.25rem}
+.combat-stage .cube-row[data-count="5"] .cube-die{--size:6.9rem}
+.combat-stage .cube-row[data-count="4"] .cube-die{--size:7.4rem}
+.cube-row .cube-die{color:#d6e1ed;perspective:none}
+.cube-row .cube-die:not(.resonant):not(.critical-die):not(.charged){color:#d6e1ed}
+.cube-row .cube-die.resonant{color:#ffc354}
+.cube-row .cube-die.critical-die{color:#ff6872}
+.cube-row .cube-die.charged{color:#52caff}
+.die-flight,.die-cube{transform-style:preserve-3d}
+.cube-face{border-radius:9%;border-width:1.5px;background:linear-gradient(138deg,#263341,#080c12 54%,#17232d);box-shadow:inset 0 0 0 2px #05090c,inset 0 0 0 3px #c3e4f15c,inset .12rem .12rem .3rem #ffffff25,0 0 .15rem currentColor}
+.cube-face>span{font-family:Consolas,"Courier New",monospace;font-size:calc(var(--size) * .72);text-shadow:0 .035em 0 #000,0 0 .08em currentColor;letter-spacing:-.055em}
+.face-4{background:linear-gradient(130deg,#596773,#263845)}
+.face-1{background:linear-gradient(100deg,#1a2938,#080e17)}
+.face-corner{inset:7%;border-radius:9%;border-color:#c0dbec32}
+.pips{inset:20%;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);gap:8%}
+.pips b{width:86%;height:86%;border-radius:50%;background:currentColor;box-shadow:inset .06rem .07rem .08rem #ffffff45,0 .07rem .08rem #000;align-self:center;justify-self:center}
+.cube-face[data-face="1"] .pips b{grid-area:2/2;width:86%}
+.cube-face[data-face="2"] .pips b:nth-child(2),.cube-face[data-face="3"] .pips b:nth-child(3),.cube-face[data-face="4"] .pips b:nth-child(4),.cube-face[data-face="5"] .pips b:nth-child(5){grid-area:3/3}
+.cube-face[data-face="3"] .pips b:nth-child(2),.cube-face[data-face="5"] .pips b:nth-child(3){grid-area:2/2}
+.cube-face[data-face="4"] .pips b:nth-child(2),.cube-face[data-face="5"] .pips b:nth-child(2),.cube-face[data-face="6"] .pips b:nth-child(2){grid-area:1/3}
+.cube-face[data-face="4"] .pips b:nth-child(3),.cube-face[data-face="5"] .pips b:nth-child(4){grid-area:3/1}
+.cube-face[data-face="6"] .pips b:nth-child(3){grid-area:2/1}.cube-face[data-face="6"] .pips b:nth-child(4){grid-area:2/3}.cube-face[data-face="6"] .pips b:nth-child(5){grid-area:3/1}.cube-face[data-face="6"] .pips b:nth-child(6){grid-area:3/3}
+.rolling .die-flight,.rolling .die-cube,.rolling .die-shadow{animation:none!important;will-change:transform}
+.rolling .die-index{opacity:.55}
+.die-shadow{background:radial-gradient(ellipse,#000 6%,#b4d2f329 32%,transparent 70%);filter:none;height:1.6rem;bottom:1.55rem}
+.combat-stage .stage-line{top:48%;opacity:.5}
+.cube-die .cube-energy{inset:-30% -28% -5%;width:156%;height:130%}
+.impact-reveal .cube-energy{animation:energy-release 1.05s ease-out both!important}
+.impact-reveal .trigger-line>span{animation:tag-strike .27s ease-out both}
+.impact-reveal .trigger-line>span:nth-child(2){animation-delay:.12s}.impact-reveal .trigger-line>span:nth-child(3){animation-delay:.4s}.impact-reveal .trigger-line>span:nth-child(4){animation-delay:.58s}
+.impact-reveal .hit-primary{animation:float-hit .8s .12s both}.impact-reveal .hit-follow{animation:float-hit .8s .48s both;color:var(--blue)}
+.impact-reveal .damage-number{animation:damage-slam .32s .16s both}
+.impact-reveal .health-track>span{transition:width .55s .22s cubic-bezier(.2,.7,.3,1)}
+.phase-shift .enemy-health,.phase-shift .enemy-warning{position:relative}
+.phase-shift .enemy-health:after,.phase-shift .enemy-warning:after{content:"";position:absolute;inset:-.1rem;pointer-events:none;border:1px solid #ffbc9b;background:linear-gradient(#ffb98544,#e9453830);opacity:0;animation:phase-flash .7s ease-out both}
+.phase-shift .enemy-warning:after{animation-duration:.9s}
+.opening .chest-art>svg{animation:chest-anticipate .8s both}.opening .chest-lid{transform-origin:50% 42%;animation:lid-lift .8s ease-in both}.opening .treasure-light{opacity:1;animation:chest-light .8s ease-in both}
+.legendary-reveal .loot-screen h1{animation:legend-title .8s both}
+.legendary-reveal .drop-banner{animation:tag-strike .45s .25s both}
+
+
+.legendary-reveal .gold-reward{animation:relic-arrival .4s .75s both}
+.loot-screen .treasure-light{opacity:.45}.loot-screen.legendary .treasure-light{opacity:.85}
+.loot-screen.common .treasure-light{opacity:.12}.loot-screen.rare .treasure-light{opacity:.3}
+.loot-screen .loot-reveal .item-card{border-color:currentColor}
+.loot-reveal .refined-item>h3{font-size:1.6rem;margin:.5rem 0 .35rem}
+.loot-reveal .refined-item>p{font-size:.82rem;line-height:1.6;padding-top:.4rem}
+.loot-reveal .refined-item .item-bottom{margin-top:auto;flex-direction:row;align-items:center;gap:.5rem;padding-top:.45rem}
+.loot-reveal .item-actions{width:auto;flex:1}
+.compare-item .refined-item>p{display:flex;flex-direction:column;gap:.2rem;font-size:.74rem;line-height:1.5}
+.reward-rail .compare-item .refined-item{padding:.6rem .8rem}
+.reward-rail .compare-item .refined-item>p{font-size:.7rem;line-height:1.4;gap:.1rem}
+.reward-rail .refined-item .item-bottom{margin-top:.45rem;padding-top:.4rem}
+.reward-rail{gap:.45rem}
+.reward-rail>.rail-foot{display:none}
+.talent-screen.room-refined .constellation-branch>.icon{position:absolute;left:.5rem;top:.4rem;width:1rem;height:1rem}
+.talent-screen.room-refined .constellation-core .icon{width:1.2rem;height:1.2rem}
+.talent-screen.room-refined .constellation-core b{font-size:.55rem}
+.loot-screen.legendary .loot-reveal .item-card{box-shadow:inset 0 0 0 3px #07090c,inset 0 0 0 4px #ffd66c55,0 .3rem 1.5rem #c7731220}
+@keyframes tag-strike{from{opacity:0;transform:translateY(.3rem) scale(1.08)}to{opacity:1;transform:none}}
+@keyframes float-hit{0%{opacity:0;transform:translateY(.4rem)}25%,75%{opacity:1}100%{opacity:1;transform:none}}
+@keyframes phase-flash{0%,100%{opacity:0}35%{opacity:.75}}
+@keyframes chest-anticipate{0%{transform:scale(1)}40%{transform:scale(.98) translateY(.2rem)}85%{transform:translateY(-.2rem)}100%{transform:scale(1.025)}}
+@keyframes lid-lift{0%,35%{transform:translateY(0)}100%{transform:translateY(-35px) rotateX(38deg)}}
+@keyframes chest-light{from{opacity:0}to{opacity:1}}
+@keyframes chest-glow{0%{opacity:0}45%{opacity:1}100%{opacity:.85}}
+@keyframes legend-title{0%{opacity:0;transform:translateY(.35rem)}40%{opacity:1}100%{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.rolling .die-flight,.rolling .die-cube{will-change:auto}}
+@media(max-height:1000px){
+ .talent-screen.room-refined .talent-constellation{min-height:13.8rem}
+ .talent-screen.room-refined .constellation-branch{height:5rem}
+ .talent-screen.room-refined .constellation-branch>.icon{display:none}
+ .talent-screen.room-refined .constellation-branch:nth-child(2),.talent-screen.room-refined .constellation-branch:nth-child(3){top:calc(50% - 2.5rem)}
+ .talent-screen.room-refined .constellation-core{width:3.5rem;height:3.5rem}
+}
