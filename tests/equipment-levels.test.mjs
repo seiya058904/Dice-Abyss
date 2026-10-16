@@ -5,12 +5,12 @@ import {itemValue,itemStats,makeItem,validEquipment,migrateEquipment,legacyItemV
 const state=(seed=7919,level=70)=>({rng:seed,nextId:1,floor:100,roomIndex:0,route:[{quality:0}],phase:'fusion',loot:null,player:{level,gold:1e8,talents:{smith:0},items:[],equipped:{}}});
 const item=(s,slot='weapon',rarity=3)=>{const i=makeItem(s,slot,rarity);s.player.items.push(i);return i;};
 
-test('648 equipment entries retain every original catalog id and add actual role-specific combinations',()=>{
- assert.equal(CATALOG_BY_ID.size,648);
+test('1536 equipment entries retain every original catalog id and add actual role-specific combinations',()=>{
+ assert.equal(CATALOG_BY_ID.size,1536);
  for(const slot of ['weapon','armor','relic']){
-  assert.equal(CATALOG[slot].length,216);
+  assert.equal(CATALOG[slot].length,512);
   for(let t=0;t<10;t++)for(let p=0;p<3;p++)for(let r=0;r<4;r++)assert(CATALOG_BY_ID.has(`${slot}-${t}-${p}-${r}`));
-  const added=CATALOG[slot].filter(i=>i.id.startsWith('v4-'));assert.equal(added.length,96);assert(added.every(i=>Object.keys(i.effects).length>=2));
+  const added=CATALOG[slot].filter(i=>i.id.startsWith('v4-'));assert.equal(added.length,192);assert(added.every(i=>Object.keys(i.effects).length>=2));
   for(const entry of CATALOG[slot]){const stats=itemStats({...entry,id:'i1',catalogId:entry.id,level:70,levelXp:0,depth:1,enhance:0});if(stats.luck!==undefined)assert(Number.isInteger(stats.luck),'displayed item luck is an exact integer contribution');}
  }
  const s=state(),weapon=item(s),armor=item(s,'armor'),relic=item(s,'relic');

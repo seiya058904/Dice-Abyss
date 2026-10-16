@@ -1,0 +1,79 @@
+/* V5: preserve the monochrome frame language; color belongs to rare moments. */
+.mythic{--rarity:#ff8992;color:var(--rarity)}
+.ancient{--rarity:#76ddcc;color:var(--rarity)}
+.origin{--rarity:#eed59c;color:var(--rarity)}
+.eternal{--rarity:#ccedff;color:var(--rarity)}
+.item-card.mythic,.item-card.ancient,.item-card.origin,.item-card.eternal,
+.equipped-item.mythic,.equipped-item.ancient,.equipped-item.origin,.equipped-item.eternal,
+.shop-item.mythic,.shop-item.ancient,.shop-item.origin,.shop-item.eternal,
+.relic-replacement.mythic,.relic-replacement.ancient,.relic-replacement.origin,.relic-replacement.eternal{
+ border-color:color-mix(in srgb,var(--rarity) 65%,#202b32);background:color-mix(in srgb,var(--rarity) 4%,#04080b);position:relative;
+}
+.item-card.mythic h3,.item-card.ancient h3,.item-card.origin h3,.item-card.eternal h3,
+.equipped-item.mythic h3,.equipped-item.ancient h3,.equipped-item.origin h3,.equipped-item.eternal h3{color:var(--rarity)}
+.item-card.ancient,.item-card.origin,.item-card.eternal{outline:1px solid color-mix(in srgb,var(--rarity) 22%,transparent);outline-offset:-5px}
+.item-card.origin,.item-card.eternal{border-style:double;border-width:3px}
+.rarity.mythic,.rarity.ancient,.rarity.origin,.rarity.eternal{border:1px solid currentColor;padding:.18em .5em;letter-spacing:.08em;font-weight:700}
+.loot-screen:is(.mythic,.ancient,.origin,.eternal) .drop-banner,
+.loot-screen:is(.mythic,.ancient,.origin,.eternal) .treasure-title h2{color:var(--rarity)}
+.loot-screen:is(.mythic,.ancient,.origin,.eternal) .chest-art{color:var(--rarity)}
+.loot-screen:is(.mythic,.ancient,.origin,.eternal) .drop-banner{border-top:1px solid var(--rarity);border-bottom:1px solid var(--rarity);padding:.55rem 1rem;gap:.7rem}
+.deep-reveal .loot-reveal{animation:deep-arrival .8s cubic-bezier(.16,1,.3,1) both}
+.deep-reveal .drop-banner{animation:deep-rule 1s cubic-bezier(.16,1,.3,1) both}
+@keyframes deep-arrival{from{transform:translateY(1.1rem);opacity:.2}to{transform:none;opacity:1}}
+@keyframes deep-rule{from{clip-path:inset(0 48%);opacity:.3}to{clip-path:inset(0);opacity:1}}
+.era-line{display:flex;align-items:center;justify-content:space-between;gap:.5rem;border-bottom:1px solid #35434e;padding:.55rem 0;font-size:.7rem;color:#b3c4ce}
+.era-line strong{font-weight:600;letter-spacing:.08em;color:#e0e6e8}
+.route-list li>span:nth-child(2){max-width:100%;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.v5-inventory-filters{display:flex;gap:.9rem;align-items:center;flex-wrap:wrap;font-size:.75rem;padding:.4rem 0}
+.v5-inventory-filters label{display:flex;gap:.45rem;align-items:center;color:#becbd4}
+.v5-inventory-filters select,.codex-screen select{min-height:2rem;background:#080d10;color:#e8eef2;border:1px solid #61717d;padding:.35rem .55rem;font:inherit}
+.v5-inventory-filters>span{margin-left:auto;color:#d1b56d;font-size:.65rem}
+.v5-talent-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.6rem;padding:.6rem 0}
+.v5-talent{display:flex;flex-direction:column;justify-content:flex-start;align-items:flex-start;gap:.35rem;padding:.6rem .75rem;text-align:left;min-width:0;border:1px solid #41505b;background:#080d11;color:#dfe7ec}
+.v5-talent strong{font-size:.84rem;line-height:1.4}
+.v5-talent small{font-size:.68rem;line-height:1.6;overflow-wrap:anywhere;color:#b7c6d0}
+.v5-talent-depth{font-size:.63rem;color:#d5b982;font-variant-numeric:tabular-nums}
+.v5-talent.lit{border-color:#c0a06d;background:#131310}
+.v5-talent:disabled{opacity:.68;cursor:default}
+.destiny-screen{overflow-y:auto}
+.destiny-map{flex-shrink:0}
+.destiny-effect-list{flex-shrink:0}
+.codex-screen{overflow-y:auto;display:block;padding:1.6rem 1.4rem 2rem;color:#d6e0e6;min-height:0;height:100%}
+.codex-rarities{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));margin:1.25rem 0;border-top:1px solid #61717b;border-bottom:1px solid #61717b}
+.codex-rarities>div{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;padding:.9rem .25rem;min-width:0;border-right:1px solid #303f47}
+.codex-rarities b{font-size:1rem;white-space:nowrap}
+.codex-rarities small{font-size:.6rem;white-space:nowrap}
+.codex-rarities strong{font-size:.85rem;font-variant-numeric:tabular-nums}
+.codex-rarities .tier-locked{opacity:.5}
+.codex-odds{font-size:.76rem;line-height:1.8}
+.codex-odds label{display:flex;align-items:center;gap:1rem}
+.codex-odds>p{display:grid;grid-template-columns:repeat(4,1fr);gap:.2rem 1rem;margin:.65rem 0}
+.codex-odds p>span{display:flex;justify-content:space-between;gap:.5rem;border-bottom:1px solid #27353e;padding:.4rem 0;font-variant-numeric:tabular-nums}
+.codex-odds>small{display:block;color:#b8c5ce;line-height:1.75}
+.codex-policy{margin:1rem 0;border-top:1px solid #344651;padding:.7rem 0;font-size:.7rem;line-height:1.85;color:#bdcbd3}
+.codex-policy p+p{margin-top:.4rem}
+.codex-category{display:flex;gap:1rem;align-items:center;font-size:.8rem}
+.codex-room-list{display:flex;flex-direction:column;gap:0;margin:1rem 0}
+.codex-room-list article{padding:.9rem 0;border-bottom:1px solid #35434b}
+.codex-room-list article>div{display:flex;justify-content:space-between;align-items:baseline;gap:1rem}
+.codex-room-list strong{font-size:.87rem;font-weight:600;color:#edf0f2}
+.codex-room-list span{font-size:.64rem;color:#b3c2cd}
+.codex-room-list p{margin:.45rem 0;font-size:.76rem;line-height:1.7;color:#c7d4dc}
+.codex-room-list small{font-size:.67rem;line-height:1.7;color:#b1c2cd}
+.codex-caps{font-size:.74rem;line-height:1.9;border-top:1px solid #5c6c77;padding-top:1rem}
+.codex-caps summary{cursor:pointer;color:#efdbac;margin-bottom:.8rem}
+.codex-caps p+p{margin-top:.6rem}
+.auction-preview{margin:.5rem 0;padding:.85rem;border:1px solid currentColor;text-align:left;background:#070d11}
+.auction-preview strong{font-size:1rem;line-height:1.6}
+.auction-preview p{font-size:.74rem;color:#c8d4dc;line-height:1.8}
+.auction-preview>small{display:block;color:#aec6be;font-size:.64rem;margin-top:.35rem}
+.event-screen:has(.auction-preview) .event-atmosphere{height:4rem;min-height:0;flex:0 0 4rem}
+.event-screen:has(.auction-preview) .event-atmosphere svg{height:4rem}
+.event-screen:has(.auction-preview) .event-atmosphere>span{font-size:2rem}
+::selection{background:#aacee8;color:#030a10}
+:focus-visible{outline:2px solid #b3e9ff;outline-offset:3px}
+@media(min-width:1100px){html,body{overflow:hidden}.game-shell{height:100svh;overflow:hidden}}
+@media(max-height:900px){.v5-talent-strip{gap:.4rem}.v5-talent{padding:.45rem}.codex-screen{padding:1rem}.codex-rarities{margin:.7rem 0}}
+@media(prefers-reduced-motion:reduce){.deep-reveal .loot-reveal,.deep-reveal .drop-banner{animation:none}}
+html[data-effects=low] .deep-reveal .loot-reveal,html[data-effects=low] .deep-reveal .drop-banner{animation:none}

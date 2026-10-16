@@ -1,5 +1,6 @@
+import {RARITIES} from './content.js';
 import { newGame, transition, fusionPreview, salvagePreview, diceCount } from './engine.js';
-import { loadSave, saveGame, encodeSave, decodeSave, loadSettings, readLegacyBackup, LEGACY_BACKUP_KEY, SAVE_KEY, BACKUP_KEY, SETTINGS_KEY } from './storage.js';
+import { archiveImportedSave, loadSave, saveGame, encodeSave, decodeSave, loadSettings, readLegacyBackup, LEGACY_BACKUP_KEY, SAVE_KEY, BACKUP_KEY, SETTINGS_KEY } from './storage.js';
 import { titleView, gameView, settingsView, itemEffects, itemSummary, itemProgress, migrationSummary, comparison, fusionOutcomeTable, num, esc, icon } from './views.js';
 import { eventChoices } from './encounters.js';
 import { mountEffects } from './effects.js';
@@ -59,15 +60,15 @@ function sound(kind) {
   try {
     audioContext ||= new (window.AudioContext || window.webkitAudioContext)();
     audioContext.resume();
-    const tones = { legendary:[261.63,392,523.25,659.25,783.99,1046.5], reward:[392,523.25,659.25],
+    const tones = {mythic:[196,293.66,392,587.33,784],ancient:[220,329.63,440,659.25,880],origin:[174.61,261.63,349.23,523.25,698.46],eternal:[261.63,392,523.25,783.99,1046.5,1567.98], legendary:[261.63,392,523.25,659.25,783.99,1046.5], reward:[392,523.25,659.25],
       roll:[180,125,95],bounce:[110],impact:[88,58],critical:[65,130,260],resonance:[220,330,440],
       follow:[620,930],finish:[65,130,196,392],chest:[130,196],forge:[196,392,588] };
     const frequencies = tones[kind] || tones.reward;
     frequencies.forEach((frequency, index) => {
       const oscillator = audioContext.createOscillator(), gain = audioContext.createGain();
-      const start = audioContext.currentTime + index * (kind==='legendary'?.09:.045);
+      const start = audioContext.currentTime + index * (['legendary','mythic','ancient','origin','eternal'].includes(kind)?.09:.045);
       const percussive=['roll','bounce','impact','critical','chest'].includes(kind);
-      const length=kind==='legendary'?.42:kind==='bounce'?.07:percussive?.15:.23;
+      const length=['legendary','mythic','ancient','origin','eternal'].includes(kind)?.42:kind==='bounce'?.07:percussive?.15:.23;
       oscillator.type = percussive ? 'triangle' : 'sine'; oscillator.frequency.setValueAtTime(frequency, start);
       if(percussive)oscillator.frequency.exponentialRampToValueAtTime(frequency*.45,start+length);
       gain.gain.setValueAtTime(0, start); gain.gain.linearRampToValueAtTime(kind==='bounce'?.025:.045, start + .004); gain.gain.exponentialRampToValueAtTime(.001, start+length);
@@ -98,11 +99,11 @@ async function act(action) {
   try { after = transition(state, action); if (before === after) return; saveGame(after, before); }
   catch (error) { ui.saveError = error.message; notify(error.message); render(); return; }
   state = after; ui.saveError = '';
-  const gambitRoll=action.type==='event-choice'&&action.id==='roll'&&after.event?.key==='gambit'&&Number.isInteger(after.event.roll);
+  const gambitRoll=action.type==='event-choice'&&action.id==='roll'&&['gambit','wishingvault'].includes(after.event?.key)&&(Number.isInteger(after.event.roll)||after.event.rolls?.length===2);
   if(gambitRoll){
     // One committed event result drives the same visual dice as combat and forging.
     const generation=++animationGeneration,fast=settings.effects==='low'||reduced.matches;
-    ui.busy=true;ui.rolling=true;ui.rollValues=[after.event.roll];ui.event='event-roll';
+    ui.busy=true;ui.rolling=true;ui.rollValues=after.event.rolls||[after.event.roll];ui.event='event-roll';
     visualState={...before,event:after.event,phase:'event'};render();sound('roll');
     await delay(fast?90:THROW_DURATION);
     if(generation!==animationGeneration)return;
@@ -152,15 +153,15 @@ async function act(action) {
     render();
     if (action.type === 'open') { document.querySelector('#current-room')?.classList.add('opening'); sound('chest'); }
     if (ui.forging) sound('roll');
-    await delay(fast ? 70 : action.type === 'open' ? [620,720,850,1050][after.loot.item.rarity] : THROW_DURATION);
+    await delay(fast ? 70 : action.type === 'open' ? [620,720,850,1050,1120,1200,1280,1360][after.loot.item.rarity] : THROW_DURATION);
     if (generation !== animationGeneration) return;
     ui.forging = false;
     visualState = null; render();
-    const cls = action.type === 'open' ? (after.loot.item.rarity === 3 ? 'legendary-reveal' : 'reward-reveal') : action.type === 'fuse' ? 'fusion-reveal' : 'forge-reveal';
+    const cls = action.type === 'open' ? (after.loot.item.rarity>=4?'deep-reveal':after.loot.item.rarity >= 3 ? 'legendary-reveal' : 'reward-reveal') : action.type === 'fuse' ? 'fusion-reveal' : 'forge-reveal';
     document.querySelector('#current-room')?.classList.add(cls);
-    sound(action.type === 'open' ? after.loot.item.rarity === 3 ? 'legendary' : 'reward' : 'forge');
+    sound(action.type === 'open' ? after.loot.item.rarity>=4?RARITIES[after.loot.item.rarity].key:after.loot.item.rarity >= 3 ? 'legendary' : 'reward' : 'forge');
     announcer.textContent=action.type==='open'?`获得${itemSummary(after.loot.item)}及${num(after.loot.gold)}金币。`:action.type==='bless'?`祝福骰 ${after.lastForge.value} 点，本层祝福已保存。`:after.lastForge.fusion?after.lastForge.unit==='xp'?after.lastForge.upgrades.map(u=>`Lv.${u.before.level} → Lv.${u.after.level}，等级进度 ${u.after.levelXp}/${levelXpNeeded(u.after.level)}，强化不变。`).join('；'):'旧版融合记录已接续为装备等级。':`${after.lastForge.name}，强化增加 +${after.lastForge.gain}，Lv. 保持不变。`;
-    await delay(fast ? 120 : action.type === 'open' ? [650,950,1400,1850][after.loot.item.rarity] : action.type === 'fuse' ? 1550 : 750);
+    await delay(fast ? 120 : action.type === 'open' ? [650,950,1400,1850,1950,2050,2150,2250][after.loot.item.rarity] : action.type === 'fuse' ? 1550 : 750);
     if (generation !== animationGeneration) return;
   }
   visualState = null; ui.busy = false; ui.rolling = false; ui.forging = false; render();
@@ -207,18 +208,18 @@ document.addEventListener('click', async event => {
   if (action === 'new') { if (state || ui.saveError) confirmDialog('开始一段新的旅途？', '<p>当前进度将被替换。需要保留时，请先在设置中导出存档。</p>', '确认重新开始', begin); else begin(); return; }
   if (action === 'home') { dialog.close(); ui.screen = 'title'; render(); return; }
   if (action === 'continue') { ui.screen = 'game'; render(); return; }
-  if (['game', 'inventory', 'talents'].includes(action)) { ui.view = action; ui.screen = 'game'; if (control.dataset.slot) ui.inventorySlot = control.dataset.slot; render(); return; }
-  if (action === 'filter') { ui.inventorySlot = control.dataset.slot; render(); return; }
+  if (['game', 'inventory', 'talents','codex'].includes(action)) { ui.view = action; ui.screen = 'game'; if (control.dataset.slot) ui.inventorySlot = control.dataset.slot; ui.inventoryPage=0;render(); return; }
+  if (action === 'filter') { ui.inventorySlot = control.dataset.slot; ui.inventoryPage=0;render(); return; }
   if (action === 'inventory-page') { ui.inventoryPage = Number(control.dataset.page)||0; render(); return; }
   if(action==='salvage-item'){
-    const id=control.dataset.id,preview=salvagePreview(state,[id],true);if(!preview)return;
+    const id=control.dataset.id,preview=salvagePreview(state,[id],true,true);if(!preview)return;
     const item=preview.items[0];
-    confirmDialog(item.rarity===3?'确认永久回收这件传说装备？':'回收这件装备？',`<p class="${item.rarity===3?'danger':''}">${esc(itemSummary(item))}</p><p>等级进度 ${itemProgress(item)} · 于第 ${num(item.depth)} 层获得</p><p>此物品将永久移除，换得 ${num(preview.gold)} 金币。Lv.、等级进度与 +N 均不会返还；如果要用作融合材料，请取消并保留。</p>`,'确认永久回收',()=>act({type:'salvage',ids:[id],allowProtected:item.rarity===3}));return;
+    confirmDialog(item.rarity>=3?'确认永久回收这件珍贵装备？':'回收这件装备？',`<p class="${item.rarity>=3?'danger':''}">${esc(itemSummary(item))}</p><p>等级进度 ${itemProgress(item)} · 于第 ${num(item.depth)} 层获得</p><p>此物品将永久移除，换得 ${num(preview.gold)} 金币。${preview.overflow?`<strong class="danger">金币上限：${num(preview.overflow)} 金币将被放弃。</strong>`:''}Lv.、等级进度与 +N 均不会返还；如果要用作融合材料，请取消并保留。</p>`,'确认永久回收',()=>act({type:'salvage',ids:[id],allowProtected:item.rarity>=3,allowOverflow:!!preview.overflow}));return;
   }
   if(action==='salvage-preview'){
-    const preview=salvagePreview(state);if(!preview)return;
+    const preview=salvagePreview(state,undefined,false,true);if(!preview)return;
     const ids=preview.items.map(i=>i.id);
-    confirmDialog('回收这些旧装备？',`<p>以下 ${num(ids.length)} 件普通 / 稀有旧装将永久移除，换得 ${num(preview.gold)} 金币。装备中、锁定、史诗、传说和本次战利品已排除。</p><ul class="salvage-list">${preview.items.map(i=>`<li>${esc(itemSummary(i))}</li>`).join('')}</ul><p>金币 ${num(state.player.gold)} → ${num(state.player.gold+preview.gold)}。若要用作融合材料，请取消并保留。</p>`,'确认回收',()=>act({type:'salvage',ids}));return;
+    confirmDialog('回收这些旧装备？',`<p>以下 ${num(ids.length)} 件普通 / 稀有旧装将永久移除，换得 ${num(preview.gold)} 金币。装备中、锁定、史诗、传说及以上和本次战利品已排除。</p><ul class="salvage-list">${preview.items.map(i=>`<li>${esc(itemSummary(i))}</li>`).join('')}</ul><p>金币 ${num(state.player.gold)} → ${num(state.player.gold+preview.gold)}。${preview.overflow?`<strong class="danger">明确确认后放弃 ${num(preview.overflow)} 溢出金币。</strong>`:''}若要用作融合材料，请取消并保留。</p>`,'确认回收',()=>act({type:'salvage',ids,allowOverflow:!!preview.overflow}));return;
   }
   if (action === 'forge-slot') { ui.forgeSlot = control.dataset.slot; render(); return; }
   if(action==='talent-group'){ui.talentGroup=control.dataset.id;render();return;}
@@ -235,7 +236,7 @@ document.addEventListener('click', async event => {
   if(action==='fusion-preview'){
     const preview=fusionPreview(state,ui.fusionTargets||[],ui.fusionMaterials||[],true);if(!preview)return;
     const action={type:'fuse',targets:preview.targets.map(i=>i.id),materials:preview.materials.map(i=>i.id),allowProtected:preview.protectedItems.length>0};
-    confirmDialog(preview.protectedItems.length?'确认消耗受保护的珍贵装备？':'确认融合材料',`<p>以下 ${num(preview.materials.length)} 件材料将永久消耗：</p><ul class="salvage-list">${preview.materials.map(i=>`<li class="${preview.protectedItems.some(p=>p.id===i.id)?'danger':''}">${esc(itemSummary(i))} · 来源第 ${num(i.depth)} 层${i.locked?' · 已锁定':''}${i.rarity===3?' · 传说装备':''}${i.rarity>Math.min(...preview.targets.map(t=>t.rarity))?' · 高于目标品质':''}</li>`).join('')}</ul>${fusionOutcomeTable(preview,true)}<p>花费 <strong>${num(preview.cost)} 金币</strong>，保留 ${preview.targets.length} 件目标。只增加装备 Lv. 与等级进度，目标原有 +N 不变；材料的 +N 仅折算少量经验，不会继承。</p>`,preview.protectedItems.length?'明确同意消耗珍贵材料并投骰':'确认材料并投骰',()=>act(action));return;
+    confirmDialog(preview.protectedItems.length?'确认消耗受保护的珍贵装备？':'确认融合材料',`<p>以下 ${num(preview.materials.length)} 件材料将永久消耗：</p><ul class="salvage-list">${preview.materials.map(i=>`<li class="${preview.protectedItems.some(p=>p.id===i.id)?'danger':''}">${esc(itemSummary(i))} · 来源第 ${num(i.depth)} 层${i.locked?' · 已锁定':''}${i.rarity>=3?' · 传说及以上装备':''}${i.rarity>Math.min(...preview.targets.map(t=>t.rarity))?' · 高于目标品质':''}</li>`).join('')}</ul>${fusionOutcomeTable(preview,true)}<p>花费 <strong>${num(preview.cost)} 金币</strong>，保留 ${preview.targets.length} 件目标。只增加装备 Lv. 与等级进度，目标原有 +N 不变；材料的 +N 仅折算少量经验，不会继承。</p>`,preview.protectedItems.length?'明确同意消耗珍贵材料并投骰':'确认材料并投骰',()=>act(action));return;
   }
   if(action==='event-choice'){
     const choice=eventChoices(state).find(o=>o.id===control.dataset.id);
@@ -250,13 +251,15 @@ document.addEventListener('click', async event => {
   if(action==='equip'){
     const item=state.player.items.find(i=>i.id===control.dataset.id);
     if(item?.slot==='relic'&&['relic','relic2','relic3'].every(k=>state.player.equipped[k])){
-      openDialog(`<div class="dialog-heading"><h2 id="dialog-title">选择替换的遗物位</h2><button data-action="close-dialog">取消</button></div><p>新装备：${esc(itemSummary(item))}</p><p class="relic-new-effects">${esc(itemEffects(item))}</p><p>旧遗物会留在背包，Lv. 与 +N 都保留。</p>${['relic','relic2','relic3'].map((k,i)=>{const old=state.player.items.find(x=>x.id===state.player.equipped[k]);return `<button class="relic-replacement ${['common','rare','epic','legendary'][old.rarity]}" data-action="equip-relic" data-id="${item.id}" data-slot="${k}"><b>遗物 ${i+1} · ${esc(old.name)} · Lv.${num(old.level)} · +${old.enhance}</b><small>${esc(itemEffects(old))}</small>${comparison(state,item,k)}</button>`;}).join('')}`);return;
+      openDialog(`<div class="dialog-heading"><h2 id="dialog-title">选择替换的遗物位</h2><button data-action="close-dialog">取消</button></div><p>新装备：${esc(itemSummary(item))}</p><p class="relic-new-effects">${esc(itemEffects(item))}</p><p>旧遗物会留在背包，Lv. 与 +N 都保留。</p>${['relic','relic2','relic3'].map((k,i)=>{const old=state.player.items.find(x=>x.id===state.player.equipped[k]);return `<button class="relic-replacement ${RARITIES[old.rarity].key}" data-action="equip-relic" data-id="${item.id}" data-slot="${k}"><b>遗物 ${i+1} · ${esc(old.name)} · Lv.${num(old.level)} · +${old.enhance}</b><small>${esc(itemEffects(old))}</small>${comparison(state,item,k)}</button>`;}).join('')}`);return;
     }
   }
   if(action==='equip-relic'){dialog.close();await act({type:'equip',id:control.dataset.id,slot:control.dataset.slot});return;}
   await act({ type: action, id: control.dataset.id });
 });
 document.addEventListener('change', async event => {
+  const filters={'inventory-rarity':'inventoryRarity','inventory-sort':'inventorySort','codex-source':'codexSource','codex-category':'codexCategory'};
+  if(filters[event.target.id]){ui[filters[event.target.id]]=event.target.value;ui.inventoryPage=0;render();return;}
   if (event.target.id === 'effects') { settings.effects = event.target.value; saveSettings(); }
   if (event.target.id === 'ui-scale') { settings.scale = Number(event.target.value); saveSettings(); }
   if (event.target.id === 'save-file') {
@@ -265,9 +268,9 @@ document.addEventListener('change', async event => {
       if (file.size > 5e6) throw new Error('存档文件过大，无法导入。');
       const importedRaw=await file.text();
       const imported = decodeSave(importedRaw);
-      const importedLegacy=[1,2,3].includes(JSON.parse(importedRaw).version);
-      confirmDialog('导入这段旅途？', `<p>第 ${imported.floor} 层 · Lv.${imported.player.level} · ${imported.player.items.length} 件装备</p>${imported.migration?`<p class="migration-notice">${esc(migrationSummary(imported))}</p>`:''}<p>确认后将替换当前浏览器中的进度。</p>`, '确认导入', () => {
-        try { if(importedLegacy&&!readLegacyBackup()){try{localStorage.setItem(LEGACY_BACKUP_KEY,importedRaw);}catch{throw Error('无法保留导入前的原始旧档，当前进度未替换。请释放存储空间后重试。');}} saveGame(imported); state = imported; animationGeneration++; visualState = null; ui.busy = false; ui.rolling = false; ui.forging = false; ui.screen = 'game'; ui.view = 'game'; ui.saveError = ''; render(); notify(imported.migration?migrationSummary(imported):'存档已导入。'); } catch (error) { notify(error.message); }
+      const importedLegacy=[1,2,3,4].includes(JSON.parse(importedRaw).version);
+      confirmDialog('导入这段旅途？', `<p>第 ${imported.floor} 层 · Lv.${imported.player.level} · ${imported.player.items.length} 件装备</p>${imported.migration||imported.v5Migration?`<p class="migration-notice">${esc(migrationSummary(imported))}</p>`:''}<p>确认后将替换当前浏览器中的进度。</p>`, '确认导入', () => {
+        try { if(importedLegacy)archiveImportedSave(importedRaw); saveGame(imported); state = imported; animationGeneration++; visualState = null; ui.busy = false; ui.rolling = false; ui.forging = false; ui.screen = 'game'; ui.view = 'game'; ui.saveError = ''; render(); notify(imported.migration||imported.v5Migration?migrationSummary(imported):'存档已导入。'); } catch (error) { notify(error.message); }
       });
     } catch (error) { notify(error instanceof SyntaxError ? '存档不是有效的 JSON 文件，当前进度未改动。' : error.message || '无法读取存档文件。'); }
   }

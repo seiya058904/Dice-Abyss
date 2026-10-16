@@ -5,15 +5,16 @@ import {CATALOG,TALENTS,ROOM_NAMES,BOSSES} from '../src/content.js';
 import {encodeSave,decodeSave,validateSave,migrateSave} from '../src/storage.js';
 import {runAdventure} from '../scripts/simulate.mjs';
 import {COMBAT_ROOMS,EVENT_ROOMS,eventChoices} from '../src/encounters.js';
+import {DEEP_ROOMS,DEEP_TALENTS} from '../src/deep-content.js';
 import {legacyItemValue} from '../src/equipment.js';
-const room=(type,seed=123,floor=20)=>{let s=newGame(seed);s.floor=floor;s=transition(s,{type:'fate'});s.route[0].type=type;return transition(s,{type:'enter'});};
-test('648 catalog entries are unique, obtainable and have distinct role-specific signatures',()=>{
+const room=(type,seed=123,floor=20)=>{let s=newGame(seed);s.floor=Math.max(floor,DEEP_ROOMS[type]?.floor||1);s=transition(s,{type:'fate'});s.route[0].type=type;return transition(s,{type:'enter'});};
+test('1536 catalog entries are unique, obtainable and have distinct role-specific signatures',()=>{
  const s=newGame(821);for(const slot of ['weapon','armor','relic']){
-  assert.equal(CATALOG[slot].length,216);const found=new Set(),signatures=new Set();
+  assert.equal(CATALOG[slot].length,512);const found=new Set(),signatures=new Set();
   for(const c of CATALOG[slot])signatures.add(JSON.stringify(itemStats({...c,level:20,levelXp:0,depth:20,enhance:0,catalogId:c.id})));
-  assert.equal(signatures.size,216);
-  for(let n=0;n<20000&&found.size<216;n++)found.add(makeItem(s,slot,n%4).catalogId);
-  assert.equal(found.size,216);
+  assert.equal(signatures.size,512);
+  for(let n=0;n<20000&&found.size<512;n++)found.add(makeItem(s,slot,n%8).catalogId);
+  assert.equal(found.size,512);
  }
 });
 test('three relics stack once, replacement keeps ownership, duplicate equip cannot duplicate effects',()=>{
@@ -27,7 +28,7 @@ test('three relics stack once, replacement keeps ownership, duplicate equip cann
 test('legacy migration preserves identity, original investment, RNG and pending reward across depths',()=>{
  for(const floor of [1,10,50,100]){
   const s=room('chest',99,floor);s.version=1;s.player.level=200;s.player.talents={high:3,resonance:4,critical:2};delete s.player.equipped.relic2;delete s.player.equipped.relic3;
-  for(const i of [...s.player.items,s.chest.item]){delete i.level;delete i.levelXp;delete i.catalogId;delete i.theme;delete i.profile;i.enhance=17;i.growth=250;}
+  for(const i of [...s.player.items,s.chest.item]){i.rarity=Math.min(3,i.rarity);delete i.level;delete i.levelXp;delete i.catalogId;delete i.theme;delete i.profile;i.enhance=17;i.growth=250;}
   s.player.hp=25;const before=structuredClone(s),next=migrateSave(s);
   for(let n=0;n<s.player.items.length;n++){const old=before.player.items[n],item=next.player.items[n];assert.equal(item.id,old.id);assert.equal(item.enhance,17);assert.equal(itemValue(item),legacyItemValue(old));assert(!Object.hasOwn(item,'growth'));}
   assert.equal(next.chest.item.id,before.chest.item.id);assert.equal(next.chest.gold,before.chest.gold);assert.equal(itemValue(next.chest.item),legacyItemValue(before.chest.item));assert.equal(next.rng,before.rng);assert.equal(next.player.equipped.relic,before.player.equipped.relic);assert.equal(next.player.equipped.relic2,null);assert.equal(next.player.talents.high,3);assert(validateSave(next));assert.deepEqual(decodeSave(encodeSave(next)),next);
@@ -45,7 +46,7 @@ test('batch fusion atomically divides positive XP among three targets and protec
  }
  assert.equal(faces.size,6);
 });
-test('all 30 rooms enter, interact, save and exit without optional purchases blocking progress',()=>{
+test('all 50 rooms enter, interact, save and exit without optional purchases blocking progress',()=>{
  for(const type of Object.keys(ROOM_NAMES)){
   let s=room(type);s.player.gold=100000;
   if(s.phase==='combat'){delete s.route[0].waves;delete s.route[0].wave;s.enemy.hp=1;s.enemy.shield=0;s=transition(s,{type:'roll'});assert.equal(s.phase,'chest');}
@@ -57,9 +58,9 @@ test('all 30 rooms enter, interact, save and exit without optional purchases blo
   assert(validateSave(s),type);s=decodeSave(encodeSave(s));const old=s.roomIndex;s=transition(s,{type:s.phase==='gold'?'gold':'next'});assert.equal(s.roomIndex,old+1,type);
  }
 });
-test('all 30 talents have observable combat, luck, stat or economic effects',()=>{
- assert.equal(Object.keys(TALENTS).length,30);
- for(const key of Object.keys(TALENTS)){
+test('all 30 preserved V4 talents have observable combat, luck, stat or economic effects',()=>{
+ assert.equal(Object.keys(TALENTS).length,45);
+ for(const key of Object.keys(TALENTS).filter(k=>!DEEP_TALENTS[k])){
   let found=false;
   for(let seed=1;seed<=500&&!found;seed++){
    let s=room('combat',seed);s.player.level=20;s.player.hp=50;s.enemy.hp=s.enemy.maxHp=100000;s.enemy.attack=1;s.player.talentPoints=1;
@@ -75,14 +76,14 @@ test('all 30 talents have observable combat, luck, stat or economic effects',()=
   }assert(found,`${key} has no observed effect`);
  }
 });
-test('high-depth routes, enemies and saves remain finite; 1000 seeds reach all room types with richer high-fate rooms',()=>{
+test('high-depth routes, enemies and saves remain finite; 1000 seeds reach all room types with high fate favoring ordinary reward chests rather than enlarging rare pool mass',()=>{
  const seen=new Set();let rich=0,poor=0;
  for(let seed=1;seed<=1000;seed++)for(const floor of [11,20,50,100,10000,1000000]){
-  const s=newGame(seed);s.floor=floor;
-  for(const fate of [[1,1],[6,6]]){const route=generateRoute(s,fate);route.forEach(r=>seen.add(r.type));const quality=route.filter(r=>['vault','blackmarket'].includes(r.type)).length;if(fate[0]===6)rich+=quality;else poor+=quality;assert.equal(route.at(-1).type,floor%5===0?'boss':'elite');}
+  const s=newGame(seed);s.floor=floor;s.player.items.push(makeItem(s,'relic',1),makeItem(s,'weapon',1));s.player.talents.power=1;
+  for(const fate of [[1,1],[6,6]]){const route=generateRoute(s,fate);route.forEach(r=>seen.add(r.type));const quality=route.filter(r=>r.type==='chest').length;if(fate[0]===6)rich+=quality;else poor+=quality;assert.equal(route.at(-1).type,floor%5===0?'boss':'elite');}
   const e=createEnemy(s,'boss');assert(Number.isFinite(e.hp)&&Number.isFinite(e.attack));assert(validateSave(s));
  }
- assert.equal(seen.size,30);assert(rich>poor*1.2);
+ assert.equal(seen.size,50);assert(rich>poor*1.05);
 });
 test('continuous adventures reach 20, 50 and 100 with valid saves and no artificial ending',()=>{
  for(const floors of [20,50,100])for(const seed of [7919,15838,23757]){

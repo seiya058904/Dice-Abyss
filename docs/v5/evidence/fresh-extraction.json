@@ -1,0 +1,249 @@
+{
+  "method": "Extracted the actual candidate delivery ZIP into a new directory. Ran its syntax checks, entire test suite, and spawned HTTP asset smoke on port 4198. Compared every runtime, script, test and workflow byte with the final source tree before rebuilding the archive with verification documents. No browser/Windows/visual validation implied.",
+  "environment": {
+    "node": "v22.16.0",
+    "platform": "linux"
+  },
+  "candidateArchiveSha256": "174a7da2ee3fdb0781caede95df8790526afecee7f407ddae5dd18142f780c08",
+  "exitCodes": {
+    "check": 0,
+    "tests": 0,
+    "http": 0
+  },
+  "tests": {
+    "total": 164,
+    "passed": 164,
+    "failed": 0,
+    "skipped": 0
+  },
+  "http": {
+    "method": "Spawned the delivered Node HTTP server, fetched every shipping module/style/SVG, verified relative imports and CSS URLs, rejected metadata/test paths. No DOM, browser interaction or screenshot claims.",
+    "node": "v22.16.0",
+    "port": 4198,
+    "files": 26,
+    "rows": [
+      {
+        "file": "index.html",
+        "status": 200,
+        "bytes": 1232,
+        "type": "text/html; charset=utf-8"
+      },
+      {
+        "file": "favicon.svg",
+        "status": 200,
+        "bytes": 326,
+        "type": "image/svg+xml"
+      },
+      {
+        "file": "src/app.js",
+        "status": 200,
+        "bytes": 24581,
+        "type": "text/javascript; charset=utf-8"
+      },
+      {
+        "file": "src/content.js",
+        "status": 200,
+        "bytes": 12937,
+        "type": "text/javascript; charset=utf-8"
+      },
+      {
+        "file": "src/deep-content.js",
+        "status": 200,
+        "bytes": 10821,
+        "type": "text/javascript; charset=utf-8"
+      },
+      {
+        "file": "src/deep-rules.js",
+        "status": 200,
+        "bytes": 12122,
+        "type": "text/javascript; charset=utf-8"
+      },
+      {
+        "file": "src/deep.css",
+        "status": 200,
+        "bytes": 6772,
+        "type": "text/css; charset=utf-8"
+      },
+      {
+        "file": "src/dice-motion.js",
+        "status": 200,
+        "bytes": 5481,
+        "type": "text/javascript; charset=utf-8"
+      },
+      {
+        "file": "src/dice-renderer.js",
+        "status": 200,
+        "bytes": 11285,
+        "type": "text/javascript; charset=utf-8"
+      },
+      {
+        "file": "src/effects.js",
+        "status": 200,
+        "bytes": 25779,
+        "type": "text/javascript; charset=utf-8"
+      },
+      {
+        "file": "src/encounters.js",
+        "status": 200,
+        "bytes": 29984,
+        "type": "text/javascript; charset=utf-8"
+      },
+      {
+        "file": "src/engine.js",
+        "status": 200,
+        "bytes": 35492,
+        "type": "text/javascript; charset=utf-8"
+      },
+      {
+        "file": "src/equipment-content.js",
+        "status": 200,
+        "bytes": 6818,
+        "type": "text/javascript; charset=utf-8"
+      },
+      {
+        "file": "src/equipment.js",
+        "status": 200,
+        "bytes": 10467,
+        "type": "text/javascript; charset=utf-8"
+      },
+      {
+        "file": "src/expansion.css",
+        "status": 200,
+        "bytes": 14851,
+        "type": "text/css; charset=utf-8"
+      },
+      {
+        "file": "src/hud-frame.svg",
+        "status": 200,
+        "bytes": 659,
+        "type": "image/svg+xml"
+      },
+      {
+        "file": "src/polish.css",
+        "status": 200,
+        "bytes": 7738,
+        "type": "text/css; charset=utf-8"
+      },
+      {
+        "file": "src/progression.css",
+        "status": 200,
+        "bytes": 21159,
+        "type": "text/css; charset=utf-8"
+      },
+      {
+        "file": "src/rarity.js",
+        "status": 200,
+        "bytes": 2515,
+        "type": "text/javascript; charset=utf-8"
+      },
+      {
+        "file": "src/refinement.css",
+        "status": 200,
+        "bytes": 10045,
+        "type": "text/css; charset=utf-8"
+      },
+      {
+        "file": "src/rooms.css",
+        "status": 200,
+        "bytes": 28854,
+        "type": "text/css; charset=utf-8"
+      },
+      {
+        "file": "src/route-weights.js",
+        "status": 200,
+        "bytes": 4425,
+        "type": "text/javascript; charset=utf-8"
+      },
+      {
+        "file": "src/storage.js",
+        "status": 200,
+        "bytes": 20260,
+        "type": "text/javascript; charset=utf-8"
+      },
+      {
+        "file": "src/styles.css",
+        "status": 200,
+        "bytes": 34202,
+        "type": "text/css; charset=utf-8"
+      },
+      {
+        "file": "src/views.js",
+        "status": 200,
+        "bytes": 68901,
+        "type": "text/javascript; charset=utf-8"
+      },
+      {
+        "file": "src/visual.css",
+        "status": 200,
+        "bytes": 46934,
+        "type": "text/css; charset=utf-8"
+      }
+    ],
+    "allPassed": true
+  },
+  "verifiedCoreFiles": 61,
+  "coreSha256": {
+    "index.html": "25380bf2ade81882a4458b218cf9e0b6e9e172e57e1f3f57e58077382c3e0cf0",
+    "favicon.svg": "da7e4ae2c3096e5876d55a75079eb694b5f638a95bb77587a00f1a981861eb7a",
+    "package.json": "2524e607cef294e0395fa6a9bdc4197c5a588403d9a84e2e091c9246b93dbd54",
+    "启动游戏.cmd": "cdf0ee1c1d281bff37dd194ebc00cbb75b1edd4bc815061fc241f08ceedb7628",
+    "src/app.js": "08a556a1c0ccea98109c62e706417f290a68223782f3e73188a13de4f048ad27",
+    "src/content.js": "e608e9f9faeb6663cfa93d28938928e2ecff6c701a6518e61b9d612af47e4abe",
+    "src/deep-content.js": "500f215721ce4ab11e31eceb63a71d501a7f9cb0b06fb2efec478514f0a22b1e",
+    "src/deep-rules.js": "33017e99ce50649a0558a6ad73b5faa15d7c557125465dea256fc3aa88da2dff",
+    "src/deep.css": "311d174e7abe407f037cc950309e260ceec71c48b229bd4014d46534e1cd66fc",
+    "src/dice-motion.js": "db4bc16f1cd5bf5564083b371cfeded8bbc065271c62eb8004beeeca1ef9b4d5",
+    "src/dice-renderer.js": "c21beb14a9909c1854ab0892d7b8b0e85cdb6f3990828b5fe7a48bf2d42c7674",
+    "src/effects.js": "41036204bf2205233a0a5dc822167f0f8dfdd9f607e6ce2f651302c7c6c8e688",
+    "src/encounters.js": "e2ffda4f130fa92ac2b2e90108ad965ee2eb8002304b08d2b77650fda516d19f",
+    "src/engine.js": "f53e328b0a999f9e375e2c9c91ef43af8cf697746b9dd3053573039dbfabc5d9",
+    "src/equipment-content.js": "d95b5e7c11d14eb764ea3cefb7eee73f35b2f9d48a8b640513eda9aefd1cc030",
+    "src/equipment.js": "6283232ca6b5f80e2994861bcb57b8d8a6812c63c7be5a082366e984bb6aa568",
+    "src/expansion.css": "686b10a2ba30b99925839041493e5bcd26427d809e99168897bf98e0cf81d112",
+    "src/fonts/README.md": "1f7ffa044a0a05621d4e3c1ab18b90f628b2d923a05f007db9b3b607f6765827",
+    "src/fonts/fusion-pixel/LICENSES/ark-pixel/OFL.txt": "3ab41567e68e3988ba1ef16dd2644eca95ca5648ea12e7d46e6287fc0bbe5aee",
+    "src/fonts/fusion-pixel/LICENSES/cubic-11/OFL.txt": "2b6e5938e5cffa0b9e183bd05f8c363e174e7ebed1a0556e2855fd1707fa2188",
+    "src/fonts/fusion-pixel/LICENSES/galmuri/LICENSE.txt": "86a3ee9495f942f0243f18c103da9faca27adb88142613edb8bb852e56c892c1",
+    "src/fonts/fusion-pixel-OFL.txt": "bc518cf64b8032c07690f33cc270c35c179255a6ac8efa7c165ebae7e8f76a63",
+    "src/fonts/source-han-sans-OFL.txt": "fcac737e761ec63dbfbdce11030a1780161920d80315edba9c8beff1c2bac5a2",
+    "src/hud-frame.svg": "ddee691384e2170abf9e9625b86280b6f9d573944ce9badf821298a46445816b",
+    "src/polish.css": "22e1149fedd49082a61b6bbf3ff66149649acff85357c7902c064aeb73fab7e1",
+    "src/progression.css": "5b4fd9d9f6fdb732d2c65f1764725129e3ff0298782f578f70cd96469bc92d39",
+    "src/rarity.js": "871356df147d027e1845f98c5574a1d9a71c0d17bd8717f457c9007d7c73b735",
+    "src/refinement.css": "903a62f81a5ff6c6665cdbf687035f0e43cf253674fa4a3355726cdad0eb85bc",
+    "src/rooms.css": "b02503a2ce026e7c8b48812448be2456f967f05ddd3a8aafe0742d87801ef3a3",
+    "src/route-weights.js": "b21499b8c44a17ad09caab5e17f312073b269981b6ac7eb916b5f656912237dd",
+    "src/storage.js": "afffe2ebfeb04ee2b11812e25671e611d7db1d3dd4c3d166aa92dfe3bdb4a1aa",
+    "src/styles.css": "80e065ba933d0938e3bdebde6a7e76ec83e362b098b2e4a82a736f94834326be",
+    "src/views.js": "924aacee56d99efd7c53b363887fae0a8bf258b187914f8aaff8744624770d14",
+    "src/visual.css": "a40cf1d82bc560c67aaa6e68ad14f723fa2bc5ee94e8fb83ec785374dedddfa3",
+    "scripts/audit-boundaries.mjs": "1d694e4dc6b18563949bf6762a29cc1ca02873a94dc3329440b283bbbddc92f9",
+    "scripts/audit-comparisons.mjs": "d9220cde7beec399568c068cc2b09c6c153a45833b1e098959c4a92d7c50a34e",
+    "scripts/audit-v4.mjs": "f936f2e77426718c8952c07bfa528ba3848b97bd1f319fcacf71f0342018d83e",
+    "scripts/audit-v5.mjs": "09cbddc285917cbf184e3769b821dfe96883bdc2bd8a14ff48d05abc7a91bc2b",
+    "scripts/check.mjs": "d4bde335dfea6d553f05036ebcc653b21d985ec6ff168e87a9b4f45a366c555b",
+    "scripts/launch.mjs": "4b7cf8c20135719ca1f9a74a7313f435385722467fa473b537719d721b23c430",
+    "scripts/luck-audit.mjs": "2cca6a417de6cfea72e615455eebf38492216fbc18a0d9ae5846fd67095ede15",
+    "scripts/serve.mjs": "1f00243cc7b0d5d4d0329a4279b71c4936fa1293c7cc70a3a6443f843bd283df",
+    "scripts/simulate.mjs": "3b0e2d6c5f8151714dd0d60596e6a2681fb79604592f3670f4bb93218bdf614f",
+    "scripts/smoke-http.mjs": "cd081c733fced61b06fd6a66701e9a666134be2f3238562ce2c29402f76a02b5",
+    "tests/balance.test.mjs": "7748f7e9eb9cb3315577a0059a9b0a62b69ce5931dce70bfd4abf1705e3b29ce",
+    "tests/content-depth.test.mjs": "a77a2d62f18a468431ba6d393b09025148cc01fd7862234e7a83abf4e7a5a99c",
+    "tests/dice-motion.test.mjs": "ac0df4719c7d7994006713d6e7ca5b94fb98e8c9d6b0d6bd4e9dfdc838f740e9",
+    "tests/dice-renderer.test.mjs": "162b91212de6deebdf25b913c0b1576088b3c2ce2427bec1feeddb4dd95f85ef",
+    "tests/effects.test.mjs": "8d578c0f84a86d37f7750c21e598a4e9c43e95e11bf8196727803aec1705e8ad",
+    "tests/encounters.test.mjs": "27f554c77d3427bdfd6ab029427cad6cb67d5c2c6116375456cb5c57d6720f5f",
+    "tests/engine.test.mjs": "4487966204ecf9b1c1b4ec145d7a25007747b92d309518f359bf9f80050d7f75",
+    "tests/equipment-levels.test.mjs": "ce189bb09839e6b9263aeccadc911a2f2d484edc5d380460bf17c3734816f67e",
+    "tests/expansion.test.mjs": "615eec02e8aea0279326151d528951ce41e3b651520df0e3ed406c1225b11071",
+    "tests/fixtures/v4-baseline.json": "a33697c41189bf48ee6d1325edb90b449ba95943053e97e3ba7a8127b3e13c74",
+    "tests/intent-ranges.test.mjs": "9d5bd2920f75dc2d22fa4630ed6b32fc52c18f54a031d2403218577a062f6576",
+    "tests/migration-levels.test.mjs": "40d118cde4b5ddfe15d1bc16cd83cf90c26d05ccec8e0b8d822f732583057062",
+    "tests/save-polish.test.mjs": "36400ab4b203e662b387703882906f2554aad21832e97e887076791ece7cd55f",
+    "tests/v5-compatibility.test.mjs": "ed6ebbb384fb7817a1450f950ee1b1e8539bf1e6f09e63a22faf8e4f68b13277",
+    "tests/v5-systems.test.mjs": "536d057fdf3a35e063e69db86d341cf77cd1d3aa23d21ea489f7c5b3f11b1efa",
+    "tests/views.test.mjs": "fccccebafeb416a252560f38ddce616a75c48efec3d6642a9a011dd96340df44",
+    ".github/workflows/pages.yml": "19ac6bee072d5228f4c3d5e4b78956d5e8fea269d8a1b898b813928d0c4ec180"
+  },
+  "allPassed": true
+}

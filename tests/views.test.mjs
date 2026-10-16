@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {newGame,transition,makeItem,ENHANCE_CAP,fusionPreview} from '../src/engine.js';
+import {DEEP_TALENTS} from '../src/deep-content.js';
 import {TALENTS,ROOM_NAMES} from '../src/content.js';
 import {center,gameView,dice,primaryAction,itemEffects,itemSummary,settingsView,migrationSummary,comparisonValue} from '../src/views.js';
 
@@ -51,16 +52,16 @@ test('manual recycling is available for a spare legendary but not equipped, lock
  for(const id of [...Object.values(s.player.equipped),locked.id,loot.id].filter(Boolean))assert(!html.includes(`data-action="salvage-item" data-id="${id}"`));
 });
 
-test('the destiny map exposes every real talent directly, independent of the selected detail branch',()=>{
+test('the destiny map preserves all 30 legacy nodes and exposes selected deep nodes with real floor gates',()=>{
  let s=newGame(114);s.player.talentPoints=1;
  const snapshot=JSON.stringify(s),html=center(s,{...ui,view:'talents',talentGroup:'high'});
  const controls=html.match(/<button[^>]+data-action="talent"[^>]+>/g)||[];
  const ids=controls.map(button=>button.match(/data-id="([^"]+)"/)[1]);
- assert.equal(controls.length,30);assert.deepEqual(new Set(ids),new Set(Object.keys(TALENTS)));
- assert(controls.every(button=>!button.includes('disabled')));assert.equal(JSON.stringify(s),snapshot,'rendering cannot invest points or consume RNG');
+ assert.equal(controls.length,33);assert.deepEqual(new Set(ids),new Set(Object.keys(TALENTS).filter(k=>!DEEP_TALENTS[k]||TALENTS[k].group==='high')));
+ assert(controls.filter(button=>DEEP_TALENTS[button.match(/data-id="([^"]+)"/)[1]]).every(button=>button.includes('disabled')));assert.equal(controls.filter(button=>!button.includes('disabled')).length,30);assert.equal(JSON.stringify(s),snapshot,'rendering cannot invest points or consume RNG');
  s=transition(s,{type:'talent',id:'pursuit'});
  const after=center(s,{...ui,view:'talents',talentGroup:'high'}),pursuit=(after.match(/<button[^>]+data-action="talent"[^>]+>/g)||[]).find(button=>button.includes('data-id="pursuit"'));
- assert(pursuit.includes('destiny-node lit'));assert(pursuit.includes('disabled'));assert(after.includes('1 / 30 节点已点亮'));
+ assert(pursuit.includes('destiny-node lit'));assert(pursuit.includes('disabled'));assert(after.includes('1 / 45 节点已点亮'));
  const full=gameView(s,{...ui,view:'talents',talentGroup:'critical'});assert(!full.includes('undefined'));assert(full.includes('追击追加主击'));assert(full.includes('+43%'));
 });
 

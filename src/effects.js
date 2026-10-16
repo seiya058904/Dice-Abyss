@@ -4,6 +4,7 @@ import { mountDiceSurface } from './dice-renderer.js';
 // Revision-seeded visuals only. Saved combat state and game RNG are never changed.
 const PIXEL_BUDGET=840000,TAU=Math.PI*2,FLAME_STEP=1000/30;
 const colors={fire:['#ff721a','#ffd247','#fff9d0'],red:['#e92739','#ff8050','#fff0cd'],blue:['#1471ff','#45cfff','#e6fbff'],purple:['#7934eb','#d28aff','#f8e4ff'],white:['#a6b5c7','#e5eef9','#ffffff'],gold:['#df841a','#ffd45b','#fff6bd']};
+Object.assign(colors,{mythic:['#af3945','#ff8992','#ffe9df'],ancient:['#247f72','#76ddcc','#e0fff5'],origin:['#b1842c','#eed59c','#ffffea'],eternal:['#73899e','#ccedff','#ffffff']});
 const textures=new Map();
 let cancel=()=>{};
 const clamp=(v,lo=0,hi=1)=>Math.max(lo,Math.min(hi,v));
@@ -103,8 +104,8 @@ export function mountEffects(state,ui,settings,onSound){
  let seed=(Math.imul(state.revision,7919)+137)>>>0;const rand=()=>{seed=(Math.imul(seed,1664525)+1013904223)>>>0;return seed/4294967296;};
  const finish=combat&&last.killed&&state.enemy?.type==='boss',charged=combat&&(last.best>=2||last.critical);
  const grade=reveal?state.loot?.item.rarity??0:0; // Never read unrevealed chest rarity.
- const rewardKey=anticipation?'white':['white','blue','purple','gold'][grade];
- const duration=anticipation?800:reveal?(grade===3?1850:grade===0?720:1100):finish?1450:1150;
+ const rewardKey=anticipation?'white':['white','blue','purple','gold','mythic','ancient','origin','eternal'][grade];
+ const duration=anticipation?800:reveal?(grade>=3?1850:grade===0?720:1100):finish?1450:1150;
  canvas.dataset.fxKind=combat?'combat':anticipation?'chest-charge':`loot-${grade}`;canvas.dataset.fxLightningHz='24';
  const dice=combat?[...stage.querySelectorAll('.cube-die')].map(el=>{
   const r=el.getBoundingClientRect(),key=el.classList.contains('resonant')?'fire':el.classList.contains('charged')?'blue':last.critical?'red':'white';
@@ -118,7 +119,7 @@ export function mountEffects(state,ui,settings,onSound){
  const edges=outline.flatMap((p,i)=>{const next=outline[(i+1)%outline.length];return Array.from({length:3},(_,j)=>({x:p[0]+(next[0]-p[0])*j/3,y:p[1]+(next[1]-p[1])*j/3,phase:rand()*TAU}));});
  const activeDice=dice.filter(d=>d.active);
  const flames=activeDice.flatMap(d=>Array.from({length:finish?18:last.best>=3?15:11},()=>({d,anchor:rand(),lift:.14+rand()*.38,width:.028+rand()*.055,phase:rand()*TAU,speed:.012+rand()*.015})));
- const count=anticipation?22:reveal?[30,58,86,132][grade]:finish?142:charged?Math.min(118,52+dice.length*8):18;
+ const count=anticipation?22:reveal?[30,58,86,132,132,132,132,132][grade]:finish?142:charged?Math.min(118,52+dice.length*8):18;
  const particles=Array.from({length:count},(_,i)=>{
   const d=dice[i%Math.max(1,dice.length)],a=rand()*TAU,follow=combat&&last.follow&&i%4===0;
   return{x:d?d.x+Math.cos(a)*d.size*.52:center.x+(rand()-.5)*unit*.9,y:d?d.y+Math.sin(a)*d.size*.45:center.y+(rand()-.5)*unit*.18,vx:(rand()-.5)*(combat?unit*1.6:unit*2.2),vy:-unit*(.3+rand()*1.4),life:450+rand()*800,delay:follow?450+rand()*90:rand()*(anticipation?500:220),size:.7+rand()*1.8,key:follow?'blue':combat?d?.key??'fire':rewardKey,square:reveal&&i%3===0,phase:rand()*TAU};
@@ -141,17 +142,17 @@ export function mountEffects(state,ui,settings,onSound){
   if(last.absorbed>0&&state.enemy?.shield===0)sweep(center.x,center.y,unit*1.5,.58);
   if(last.follow){const x=clamp(center.x-unit*.6,unit*.4,w-unit*.4),y=Math.min(h-12,center.y+unit*.65),d=dice.at(-1);if(d)include(area,Math.min(x,d.x)-unit*.5,Math.min(y,d.y)-unit*.7,Math.abs(x-d.x)+unit,Math.abs(y-d.y)+unit*1.4);}
  }
- const columns=anticipation?3:grade===3?9:grade===2?7:grade===1?5:3,rewardRims=[];
+ const columns=anticipation?3:grade>=3?9:grade===2?7:grade===1?5:3,rewardRims=[];
  let rewardMaterial=null;
  if(anticipation||reveal){
-  const c=colors[rewardKey],spread=unit*(anticipation?.6:1.4),radius=unit*(anticipation?.85:grade===3?1.2:.7),beamHeight=Math.min(center.y+20,h*.86);
+  const c=colors[rewardKey],spread=unit*(anticipation?.6:1.4),radius=unit*(anticipation?.85:grade>=3?1.2:.7),beamHeight=Math.min(center.y+20,h*.86);
   const halfWidth=Math.max(radius,spread*.5+unit*.24);
   const bounds={x:center.x-halfWidth-5,y:center.y-Math.max(beamHeight,radius*.5)-5,width:halfWidth*2+10,height:Math.max(beamHeight,radius*.5)+radius*.5+10};
   rewardMaterial=materialTile(bounds,prepared.ratio,1024);
   if(rewardMaterial){materials.push(rewardMaterial);const target=rewardMaterial.ctx;target.globalCompositeOperation='lighter';
    for(let i=0;i<columns;i++){
-    const q=(i-(columns-1)/2)/Math.max(1,columns-1),width=unit*(anticipation?.035:grade===3?.13:.07)*(i%2?.55:1),height=beamHeight*(1-Math.abs(q)*.45),x=center.x+q*spread;
-    target.globalAlpha=anticipation?.24:grade===3?.57:.36;target.drawImage(texture(rewardKey,true),x-width*.5,center.y-height,width,height);
+    const q=(i-(columns-1)/2)/Math.max(1,columns-1),width=unit*(anticipation?.035:grade>=3?.13:.07)*(i%2?.55:1),height=beamHeight*(1-Math.abs(q)*.45),x=center.x+q*spread;
+    target.globalAlpha=anticipation?.24:grade>=3?.57:.36;target.drawImage(texture(rewardKey,true),x-width*.5,center.y-height,width,height);
     target.beginPath();target.moveTo(x,center.y);target.lineTo(x+q*unit*.4,center.y-height*.82);target.lineWidth=.8;target.strokeStyle=c[1];target.globalAlpha=.5;target.stroke();
     if(reveal&&grade>=2){target.beginPath();target.moveTo(x-width*.12,center.y);target.lineTo(x+width*.08,center.y-height*.6);target.lineTo(x+width*.15,center.y-height*.28);target.lineTo(x+width*.22,center.y);target.closePath();target.fillStyle=c[2];target.globalAlpha=i%2?.23:.45;target.fill();}
    }
@@ -167,7 +168,7 @@ export function mountEffects(state,ui,settings,onSound){
   if(anticipation)sweep(center.x,center.y,radius,.5);
   if(reveal){sweep(center.x,center.y+unit*.24,unit*1.8,.32);include(area,center.x-unit*.74-3,center.y-unit*.42-3,unit*1.48+6,unit*.7+6);}
   // Only a transient edge material. The permanent card and its text belong to CSS.
-  const card=reveal&&grade===3?document.querySelector('.loot-reveal .item-card')?.getBoundingClientRect():null;
+  const card=reveal&&grade>=3?document.querySelector('.loot-reveal .item-card')?.getBoundingClientRect():null;
   if(card){const x=card.left-box.left,y=card.top-box.top,cw=card.width,ch=card.height;
    const sides=[{x:x-8,y:y-8,width:cw+16,height:18,a:[x+8,y-2],b:[x+cw-8,y-2]},{x:x-8,y:y+ch-10,width:cw+16,height:18,a:[x+8,y+ch+2],b:[x+cw-8,y+ch+2]},{x:x-8,y:y+8,width:18,height:Math.max(1,ch-16),a:[x-2,y+12],b:[x-2,y+ch-12]},{x:x+cw-10,y:y+8,width:18,height:Math.max(1,ch-16),a:[x+cw+2,y+12],b:[x+cw+2,y+ch-12]}];
    for(const [index,side]of sides.entries()){const tile=materialTile(side,prepared.ratio,1024);if(!tile)continue;const target=tile.ctx;target.globalCompositeOperation='lighter';target.beginPath();target.moveTo(...side.a);target.lineTo(...side.b);

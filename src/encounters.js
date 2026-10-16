@@ -1,3 +1,6 @@
+import {DEEP_ROOMS,DEEP_BOSSES} from './deep-content.js';
+import {weightedRoute} from './route-weights.js';
+import {deepCombatModifiers,deepEnemyAttack,deepPostRetaliation,createDeepEvent,deepEventChoices,applyDeepEvent} from './deep-rules.js';
 import {MAX_ITEM_LEVEL,ENHANCE_CAP} from './equipment.js';
 // Pure encounter rules and transaction helpers. This module never imports the engine.
 export const ROOM_ADDITIONS = {
@@ -26,9 +29,13 @@ export const ROOM_ADDITION_DETAILS = {
  mystery:{purpose:'按深度、生命和背包状态出现的八种原创事件。',reward:'代价先展示；可以安全离开，稀有永久祝福有严格上限。'},
 };
 
-export const ENCOUNTER_MECHANICS = Object.freeze([...COMBAT_ROOMS].filter(k=>!['combat','elite','boss','trial'].includes(k)).concat(['boss_sixseal','boss_choir','boss_tide','boss_cinder','boss_hourglass','boss_collector']));
-export function canonicalCombatType(type){return ['boss','guardian','hiddenboss'].includes(type)?'boss':['elite','duel'].includes(type)?'elite':type==='trial'?'trial':'combat';}
+Object.assign(ROOM_ADDITIONS,Object.fromEntries(Object.values(DEEP_ROOMS).map(r=>[r.key,r.name])));
+Object.assign(ROOM_ADDITION_DETAILS,Object.fromEntries(Object.values(DEEP_ROOMS).map(r=>[r.key,{purpose:r.purpose,reward:r.reward}])));
+for(const r of Object.values(DEEP_ROOMS))(r.kind==='combat'?COMBAT_ROOMS:EVENT_ROOMS).add(r.key);
+export const ENCOUNTER_MECHANICS = Object.freeze([...COMBAT_ROOMS].filter(k=>!['combat','elite','boss','trial'].includes(k)).concat(['boss_sixseal','boss_choir','boss_tide','boss_cinder','boss_hourglass','boss_collector',...DEEP_BOSSES.map(b=>b.mechanic)]));
+export function canonicalCombatType(type){return ['boss','guardian','hiddenboss','abyssking','archiveguard'].includes(type)?'boss':['elite','duel','bounty'].includes(type)?'elite':type==='trial'?'trial':'combat';}
 export function encounterProfile(type){
+ if(DEEP_ROOMS[type]?.kind==='combat'){const r=DEEP_ROOMS[type];return {hpMultiplier:r.hp,attackMultiplier:r.attack,shieldFraction:r.shield,waves:r.waves};}
  const values={armored:[1.08,.9,.32],berserker:[.95,1.05,0],leech:[1,1,0],disruptor:[.95,1,0],mirror:[1.05,1,0],bandit:[.95,1,0],gauntlet:[.48,.9,0,3],duel:[.65,.95,0,2],storm:[1,1,0],cursed:[.95,.95,0],guardian:[.55,.9,.18],hiddenboss:[1.05,1,0]};
  const [hpMultiplier=1,attackMultiplier=1,shieldFraction=0,waves=1]=values[type]||[];
  return {hpMultiplier,attackMultiplier,shieldFraction,waves};
@@ -80,18 +87,7 @@ export const EXTRA_BOSSES = [
 const unlock={combat:1,elite:3,trial:3,armored:2,berserker:3,leech:4,disruptor:5,mirror:7,bandit:2,gauntlet:6,duel:8,storm:6,cursed:9,guardian:12,hiddenboss:15};
 const noncombat=['gold','chest','merchant','forge','fusion','vault','blackmarket','altar','rest','spring','prayer','gambit','exchange','mystery'];
 const choose=(s,list,random)=>list[Math.min(list.length-1,Math.floor(random(s)*list.length))];
-export function generateExpandedRoute(s,fate,random){
- const floor=s.floor,rich=fate[0]+fate[1]>=9,history=Array.isArray(s.encounterHistory)?s.encounterHistory:[],seen=new Set();
- const pool=['combat','combat','combat','combat','combat','combat',...Object.keys(unlock).filter(k=>k!=='combat'&&floor>=unlock[k])];
- const combat=()=>{let choices=pool.filter(k=>!seen.has(k)&&!history.slice(-3).includes(k));if(!choices.length)choices=pool.filter(k=>!seen.has(k));if(!choices.length)choices=pool;const type=choose(s,choices,random);seen.add(type);return type;};
- const service=['merchant','forge','fusion','rest'][(floor-1)%4];
- let events=noncombat.filter(k=>k!==service&&(floor>=3||!['vault','blackmarket','mystery','exchange','gambit'].includes(k)));
- if(rich&&floor>=3)events=events.concat(['vault','blackmarket','mystery']);
- const withoutRecent=events.filter(k=>!history.slice(-2).includes(k));if(withoutRecent.length)events=withoutRecent;
- const types=[combat(),combat(),service,combat(),choose(s,events,random),floor%5===0?'boss':'elite'];
- s.encounterHistory=[...history,...types].slice(-8);
- return types.map((type,i)=>({id:`f${floor}r${i}`,type,done:false,quality:rich?1:0,...(['gauntlet','duel'].includes(type)?{wave:1,waves:encounterProfile(type).waves}:{} )}));
-}
+export function generateExpandedRoute(s,fate,random){return weightedRoute(s,fate,random);}
 
 // Input enemy.turns is the number of completed rolls, before this roll.
 export function combatModifiers(e,values,best,st){
@@ -112,9 +108,10 @@ export function combatModifiers(e,values,best,st){
   case 'boss_hourglass':if((e.turns+1)%2===0){result.damageMultiplier=1.25;note('倒沙破绽 · 本击伤害 +25%');}break;
   case 'boss_collector':if(sum<14)result.attackMultiplier=1.2;if(best>=3){result.wardGain=Math.floor(st.maxHp*.08);note('三同夺光 · 我方获得 8% 护盾');}break;
  }
- return result;
+ return deepCombatModifiers(e,values,best,st,result);
 }
 export function extraEnemyAttack(e,baseAttack){
+ baseAttack=deepEnemyAttack(e,baseAttack);
  let multiplier=1;
  if(e.mechanic==='berserker'&&e.hp<=e.maxHp*(e.variant===1?.5:.35))multiplier=e.variant===1?1.25:1.4;
  if(e.mechanic==='gauntlet')multiplier=1+((e.wave||1)-1)*(e.variant===1?.15:.1);
@@ -138,11 +135,11 @@ export function postRetaliation(e,roll,st){
  if(e.mechanic==='guardian'&&!roll.values.includes(e.variant===1?5:6)){result.enemyWard=Math.min(Math.max(0,e.maxShield-e.shield),Math.ceil(e.maxHp*(e.variant===1?.03:.02)));result.notes.push('守门者重筑护盾');}
  if(e.mechanic==='cursed'&&roll.values.includes(e.variant===1?2:1)&&!roll.values.includes(e.variant===1?5:6)){result.playerDrain=Math.max(1,Math.floor(st.maxHp*.01));result.notes.push('低点诅咒 · 流失 1% 最大生命');}
  if(e.mechanic==='boss_tide'&&e.turns%2===0&&sum<18){result.enemyHeal=Math.min(e.maxHp-e.hp,Math.ceil(e.maxHp*.03));result.notes.push('归潮 · 敌方恢复 3% 最大生命');}
- return result;
+ return deepPostRetaliation(e,roll,result);
 }
-export function encounterReward(e){return {goldMultiplier:e.mechanic==='bandit'&&e.turns<=(e.variant===1?2:3)?e.variant===1?3:2:1,minRarity:e.type==='boss'?3:e.type==='elite'?1:0};}
+export function encounterReward(e){if(e.mechanic==='bounty')return {goldMultiplier:e.turns<=3?3:1,minRarity:2};return {goldMultiplier:e.mechanic==='bandit'&&e.turns<=(e.variant===1?2:3)?e.variant===1?3:2:1,minRarity:e.type==='boss'?3:e.type==='elite'?1:0};}
 
-export const EVENT_KEYS = Object.freeze(['spring','prayer','gambit','exchange','hollow_scale','relic_exchange','traveler_lantern','silent_anvil','pursuer_contract','star_seal','memory_archive','thread_of_dawn']);
+export const EVENT_KEYS = Object.freeze(['spring','prayer','gambit','exchange','hollow_scale','relic_exchange','traveler_lantern','silent_anvil','pursuer_contract','star_seal','memory_archive','thread_of_dawn',...Object.values(DEEP_ROOMS).filter(r=>r.kind==='event').map(r=>r.key)]);
 const mysteryTemplates = [
  {key:'hollow_scale',minFloor:3,title:'空衡之约',text:'一座缺口天平，愿用少量生命容量交换武器的等级。损失永久保留，最多五次。'},
  {key:'relic_exchange',minFloor:3,title:'失物回廊',text:'廊中的刻印愿收下一件旧遗物，归还一只史诗遗物宝箱。'},
@@ -154,17 +151,18 @@ const mysteryTemplates = [
  {key:'thread_of_dawn',minFloor:10,title:'黎明细线',text:'极细的亮线能留下一点永久幸运。每位旅者最多接受五次馈赠。'},
 ];
 const eventPick=(s,list,api)=>api.pick?api.pick(s,list):choose(s,list,api.random);
-const safeItems=s=>s.player.items.filter(i=>!Object.values(s.player.equipped).includes(i.id)&&!i.locked&&i.rarity<3);
+const safeItems=s=>s.player.items.filter(i=>!Object.values(s.player.equipped).includes(i.id)&&!i.locked&&i.rarity<3&&i.id!==s.loot?.item?.id);
 const itemName=(s,id)=>s.player.items.find(i=>i.id===id)?.name||'已不存在的装备';
 const itemById=(s,id)=>s.player.items.find(i=>i.id===id);
 const eventXpReward=s=>Math.min(1000000,40+s.player.level*5);
 const spendGold=(s,amount)=>{s.player.gold-=amount;};
 export function eventStatBonuses(s){return {luck:Math.min(20,s.eventLuck||0)+Math.min(5,s.player.fateBlessings||0),damageMultiplier:1+Math.min(30,s.eventPower||0)/100,maxHpMultiplier:1-Math.min(5,s.player.pactScars||0)*.02};}
 export function createEvent(s,roomType,api){
+ if(DEEP_ROOMS[roomType]?.kind==='event')return createDeepEvent(s,roomType,api);
  const spare=safeItems(s),relic=spare.find(i=>i.slot==='relic'),forged=spare.find(i=>i.enhance>=5),target=s.player.equipped.weapon;
  let template={key:roomType,title:ROOM_ADDITIONS[roomType],text:ROOM_ADDITION_DETAILS[roomType]?.purpose||''};
  if(roomType==='mystery'){
-  const pool=mysteryTemplates.filter(t=>s.floor>=t.minFloor&&(t.key!=='hollow_scale'||(s.player.pactScars||0)<5)&&(t.key!=='thread_of_dawn'||(s.player.fateBlessings||0)<5)&&(t.key!=='relic_exchange'||relic)&&(t.key!=='silent_anvil'||forged));
+  const pool=mysteryTemplates.filter(t=>s.floor>=t.minFloor&&(t.key!=='star_seal'||!s.routeMemory?.hiddenFloor||s.floor-s.routeMemory.hiddenFloor>=8)&&(t.key!=='hollow_scale'||(s.player.pactScars||0)<5)&&(t.key!=='thread_of_dawn'||(s.player.fateBlessings||0)<5)&&(t.key!=='relic_exchange'||relic)&&(t.key!=='silent_anvil'||forged));
   template=eventPick(s,pool.length?pool:[mysteryTemplates[6]],api);
  }
  s.event={key:template.key,roomType,title:template.title,text:template.text,status:'pending',choice:null,outcome:'',costGold:Math.min(50000,Math.round(35+s.player.level*8)),costHp:Math.max(1,Math.floor(api.stats(s).maxHp*.15)),offerId:(template.key==='relic_exchange'?relic:template.key==='silent_anvil'?forged:spare[0])?.id||null,targetId:target||null,rewardRarity:2};
@@ -173,7 +171,7 @@ export function createEvent(s,roomType,api){
   function option(id,label,detail,cost,reward,disabled=false,reason='',confirm=null){return {id,label,detail,cost,reward,disabled,reason,confirm,destructive:!!confirm};}
   const temporaryGain=(s,key,amount,cap)=>Math.max(0,Math.min(amount,cap-(s[key]||0)));
 export function eventChoices(s){
- const e=s.event;if(!e||e.status!=='pending')return [];
+ const e=s.event;if(!e||e.status!=='pending')return [];if(DEEP_ROOMS[e.key]?.kind==='event')return deepEventChoices(s);
  const offered=itemById(s,e.offerId),target=itemById(s,e.targetId),safe=offered&&safeItems(s).some(i=>i.id===offered.id),gold=s.player.gold>=e.costGold,hp=s.player.hp>e.costHp;
    const pay=()=>!gold?'金币不足':'',confirm=text=>`${text}；此项提交后不可撤销。`;
    const luckGain=temporaryGain(s,'eventLuck',8,20),powerGain=temporaryGain(s,'eventPower',15,30);
@@ -198,11 +196,12 @@ export function eventPresentation(s){return s.event?{title:s.event.title,body:s.
 function rewardChest(s,api,rarity,slot){
  const chest=api.createChest(s,rarity>=2?'vault':'chest',s.event.title);
  // Event items use the shared event level band, regardless of the base chest roll.
- chest.item=api.makeItem(s,slot,rarity,s.floor,'event');
+ chest.item=api.makeItem(s,slot,s.floor>=30?Math.max(rarity,chest.item.rarity):rarity,s.floor,'event');
  s.chest=chest;s.loot=null;s.enemy=null;s.phase='chest';
 }
 export function applyEvent(s,choice,api){
  if(s.phase!=='event')return false;
+ if(DEEP_ROOMS[s.event?.key]?.kind==='event')return applyDeepEvent(s,choice,api);
  const id=typeof choice==='string'?choice:choice?.id,selected=eventChoices(s).find(o=>o.id===id);
  if(!selected||selected.disabled||(selected.confirm&&choice?.confirmed!==true))return false;
  const e=s.event,target=itemById(s,e.targetId),st=api.stats(s),remove=()=>{s.player.items=s.player.items.filter(i=>i.id!==e.offerId);};
@@ -220,7 +219,7 @@ export function applyEvent(s,choice,api){
   case 'traveler_lantern':spendGold(s,e.costGold);luck();break;
   case 'silent_anvil':{const before=target.enhance;remove();target.enhance=Math.min(ENHANCE_CAP,before+2);e.outcome=`旧锻品已消耗，目标获得新的强化 +${target.enhance-before}。`;break;}
   case 'pursuer_contract':{const room=s.route[s.roomIndex];room.wave=1;room.waves=2;room.waveType='elite';s.enemy=api.createEnemy(s,'elite');s.enemy.encounterKey='mystery';s.enemy.wave=1;s.phase='combat';e.outcome='双哨已近 · 每击败一名精英先领取宝箱。';break;}
-  case 'star_seal':s.player.hp-=e.costHp;s.enemy=api.createEnemy(s,'hiddenboss');s.phase='combat';e.outcome='封匣打开，隐秘首领现身。';break;
+  case 'star_seal':s.routeMemory??={services:[],last:{},hiddenFloor:0};s.routeMemory.hiddenFloor=s.floor;s.player.hp-=e.costHp;s.enemy=api.createEnemy(s,'hiddenboss');s.phase='combat';e.outcome='封匣打开，隐秘首领现身。';break;
   case 'memory_archive':spendGold(s,e.costGold);xp();e.outcome='学录已研读，经验已计入。';break;
   case 'thread_of_dawn':spendGold(s,e.costGold*3);s.player.fateBlessings=(s.player.fateBlessings||0)+1;e.outcome=`永久幸运 +1，已接受 ${s.player.fateBlessings} / 5 次馈赠。`;break;
  }

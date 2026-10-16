@@ -1,13 +1,13 @@
-import { TALENTS } from '../src/content.js';
+import { TALENTS, RARITIES } from '../src/content.js';
 import { pathToFileURL } from 'node:url';
 import { newGame, transition, itemValue, stats, forgeCost, canAct, compareEquipment, equippedIds, fusionPreview, enemyIntent } from '../src/engine.js';
 import { validateSave, encodeSave, decodeSave } from '../src/storage.js';
 import {eventChoices} from '../src/encounters.js';
 
 // Automatic decisions are an offline test policy only; the product still requires every roll.
-export function runAdventure(seed, { shop = true, talents = true, validate = false, observe, floors=10, build='balanced', fusion=false, purchases='expected',events='safe' } = {}) {
+export function runAdventure(seed, { shop = true, talents = true, validate = false, observe, floors=10, build='balanced', fusion=false, purchases='expected',events='safe', forecast=true } = {}) {
   let s = newGame(seed), steps = 0;
-  const rounds = { combat: [], elite: [], boss: [], trial:[] }, rarities = [0, 0, 0, 0], routeTypes = new Set();
+  const rounds = { combat: [], elite: [], boss: [], trial:[] }, rarities = Array(RARITIES.length).fill(0), routeTypes = new Set();
   let lastRoom = '', forges = 0, buys = 0, fusions=0, spent=0, fight=null,gearSignature='';
   const spending={shop:0,forge:0,fusion:0};
   const encounters=[],attempts=[],floorEnds=[];
@@ -17,7 +17,7 @@ export function runAdventure(seed, { shop = true, talents = true, validate = fal
     if (validate && !validateSave(s)) throw new Error(`Invalid state: ${seed} / ${s.phase}`);
     if (talents && s.player.talentPoints) {
       const priority=build==='luck'?['luck','attune','resonance','critical','vitality','high','pair','guard','recovery','omen','mercy','jackpot','spark',...Object.keys(TALENTS).filter(k=>!['power','vitality'].includes(k)),'power']:build==='balanced'?['resonance','critical','vitality','high','guard','pair','recovery','six','slayer','sum','leech','smith','luck','attune',...Object.keys(TALENTS).filter(k=>!['power','vitality'].includes(k)),'power']:['resonance','critical','high',...Object.keys(TALENTS)];
-      const target = priority.find(k => (s.player.talents[k]||0) < (k==='vitality'&&build!=='legacy'?5:TALENTS[k].cap));
+      const target = priority.find(k => (!TALENTS[k].floor||TALENTS[k].floor<=s.floor) && (s.player.talents[k]||0) < (k==='vitality'&&build!=='legacy'?5:TALENTS[k].cap));
       if (target) s = transition(s, { type: 'talent', id: target });
     }
     const signature=s.player.items.map(i=>`${i.id}:${i.level}:${i.levelXp}:${i.enhance}`).join('|')+'/'+s.player.level+'/'+Object.values(s.player.talents).join(',');
@@ -34,7 +34,7 @@ export function runAdventure(seed, { shop = true, talents = true, validate = fal
       case 'route': s = transition(s, { type: 'enter' }); break;
       case 'combat': {
         fight ||= {floor:s.floor,roomType:room.type,type:s.enemy.type,name:s.enemy.name,trait:s.enemy.trait,mechanic:s.enemy.mechanic||null,turns:0,damageTaken:0,phaseChanges:0,heavyAttacks:0,traitActivations:0,startHp:s.player.hp,maxHp:stats(s).maxHp};
-        const intent=enemyIntent(s);
+        const intent=forecast?enemyIntent(s):{warning:false};
         const type = s.enemy.type;
         s = transition(s, { type: 'roll' });
         fight.turns++;fight.damageTaken+=s.lastRoll.retaliation;fight.phaseChanges+=Number(s.lastRoll.phaseChanged||false);fight.heavyAttacks+=Number(intent.warning&&!s.lastRoll.killed);
@@ -90,6 +90,8 @@ export function runAdventure(seed, { shop = true, talents = true, validate = fal
     // Exercise actual serialized persistence repeatedly throughout the adventure.
     if (validate && steps % 7 === 0) s = decodeSave(encodeSave(s));
   }
+  // The final cleared state is a checkpoint too; the loop stops before observing it.
+  observe?.(s);
   floorEnds.push({floor:s.floor,gold:s.player.gold,level:s.player.level,hp:s.player.hp,maxHp:stats(s).maxHp,attack:stats(s).attack});
   return finish();
 }
@@ -111,7 +113,7 @@ export function simulate(count = 500) {
     heavyAttacks:results.flatMap(r=>r.attempts).reduce((n,e)=>n+e.heavyAttacks,0),
     economy:{gold:summarize(results.map(r=>r.s.player.gold)),spent:summarize(results.map(r=>r.spent)),buys:summarize(results.map(r=>r.buys)),forges:summarize(results.map(r=>r.forges))},
     totalRolls: summarize(results.map(r => r.s.counters.rolls)),
-    rarities: results.reduce((acc, r) => acc.map((v, i) => v + r.rarities[i]), [0, 0, 0, 0]),
+    rarities: results.reduce((acc, r) => acc.map((v, i) => v + r.rarities[i]), Array(RARITIES.length).fill(0)),
     finalLevel: summarize(results.map(r => r.s.player.level)),
     noShopping: Array.from({ length: 50 }, (_, i) => runAdventure((i + 11) * 104729, { shop: false })).map(r => ({ seed: r.seed, complete: r.completed, deaths: r.s.counters.deaths })),
   };
