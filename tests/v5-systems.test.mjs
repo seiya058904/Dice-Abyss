@@ -21,6 +21,7 @@ function scene(type='combat',seed=7919,floor=200){
 }
 function inert(s){Object.assign(s.enemy,{trait:'steady',hp:1e9,maxHp:1e9,attack:180,shield:0,maxShield:1e8,turns:0,stage:2});delete s.enemy.mechanic;s.ward=0;s.player.hp=Math.floor(E.stats(s).maxHp*.25);return s;}
 const reload=s=>{assert(validateSave(s),'save '+s.phase);assert.deepEqual(decodeSave(encodeSave(s)),s);return s;};
+function nonCriticalRoll(s){for(let seed=1;seed<=1000;seed++){const before=structuredClone(s);before.rng=seed;const after=E.transition(before,{type:'roll'});if(!after.lastRoll.critical)return {before,after};}throw Error('no non-critical roll seed');}
 function triggerCase(key,kind='equipment'){
  let s=inert(scene(key==='phaseWard'?'boss':key==='eliteLuck'?'elite':'combat'));
  if(kind==='equipment'){
@@ -120,7 +121,22 @@ test('a weapon losing penetration explicitly warns about thick shields instead o
  const s=scene('combat'),entry=entries.find(e=>e.id==='weapon-4-0-3'),old=assign(s,entry);s.player.items.push(old);s.player.equipped.weapon=old.id;
  const next=assign(s,entries.find(e=>e.ability==='openingStrike'&&e.rarity===4));const report=E.compareEquipment(s,next);assert(report.delta>8);assert(report.shieldTradeoff);assert.equal(report.grade,'穿盾需权衡');assert(report.note.includes('厚盾'));assert(report.note.includes('另看词条'));
 });
-test('first-crit luck persists until the next combat roll, can help intervening transactions, and clears on floor departure',()=>{
+test('first-crit luck survives chest claim, save reload and room entry, then affects the first roll once',()=>{
+ let s=scene('combat',1,80);s.player.level=1;s.player.talents.dawnCrit=3;s.enemy.hp=1;s.enemy.shield=0;s.rng=2;
+ s=E.transition(s,{type:'roll'});assert.equal(s.phase,'chest');assert(s.lastRoll.critical&&s.lastRoll.killed);assert.equal(s.nextLuck,15);
+ const reward=structuredClone(s.chest);s=E.transition(s,{type:'open'});assert.equal(s.phase,'loot');assert.equal(s.nextLuck,15);assert.deepEqual(s.loot,reward);
+ assert.strictEqual(E.transition(s,{type:'open'}),s);assert.equal(s.counters.chests,1);
+ s=reload(E.transition(s,{type:'next'}));assert.equal(s.phase,'combat');assert.equal(s.floor,80);assert.equal(s.nextLuck,15);
+ const {before,after}=nonCriticalRoll(s),expected=E.diceOdds(before).luck;assert(expected>0);assert.equal(after.lastRoll.luck,expected);assert.equal(after.nextLuck,0);reload(after);
+});
+test('first-crit luck survives a multi-wave transition and is consumed by the next wave roll',()=>{
+ let s=scene('combat',1,80);s.player.level=1;s.route[0].waves=2;s.route[0].wave=1;s.route[0].waveType='combat';s.player.talents.dawnCrit=3;s.enemy.hp=1;s.enemy.shield=0;s.rng=2;
+ s=E.transition(s,{type:'roll'});assert(s.lastRoll.critical&&s.lastRoll.killed);assert.equal(s.nextLuck,15);
+ s=E.transition(E.transition(s,{type:'open'}),{type:'next'});assert.equal(s.phase,'combat');assert.equal(s.route[0].wave,2);assert.equal(s.nextLuck,15);
+ const {before,after}=nonCriticalRoll(s),expected=E.diceOdds(before).luck;assert.equal(after.lastRoll.luck,expected);assert.equal(after.nextLuck,0);reload(after);
+});
+test('first-crit luck persists through intervening transactions and clears on floor departure or retry',()=>{
  const {after,st}=triggerCase('firstCritLuck');assert(after.nextLuck>0);const between=structuredClone(after);between.phase='forge';const withBonus=E.stats(between).luck;between.nextLuck=0;assert(withBonus>E.stats(between).luck);
  const cleared=structuredClone(after);cleared.phase='cleared';cleared.roomIndex=5;cleared.route.forEach(r=>r.done=true);const departed=E.transition(cleared,{type:'descend'});assert.equal(departed.nextLuck,0);
+ const dead=structuredClone(after);dead.phase='dead';dead.player.hp=0;const retried=E.transition(dead,{type:'retry'});assert.equal(retried.nextLuck,0);
 });

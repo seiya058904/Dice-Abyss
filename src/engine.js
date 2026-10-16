@@ -206,7 +206,7 @@ export function createChest(s, type, source) {
 function encounterWard(s){
  const st=stats(s);s.ward=health((s.ward||0)+st.maxHp*(st.barrier+(s.v5Boons?.ward?.5:0)));
  if(s.enemy&&s.v5Boons?.echo)s.enemy.openingEcho=.25;
- s.v5Boons={echo:0,ward:0};s.nextLuck=0;
+ s.v5Boons={echo:0,ward:0};
 }
 function eventApi(){return {stats,random,die,pick,makeItem,createChest,createEnemy,gainGold,gainXp,log,enhanceCap:ENHANCE_CAP,itemLevelCap:MAX_ITEM_LEVEL};}
 function enterRoom(s) {
@@ -245,7 +245,7 @@ export function resolveRoll(s) {
   const follow=random(s)<Math.min(.85,st.follow+st.followBonus+(best>=2?talent(s,'echo')*.03:0)+(critical&&best>=2?st.criticalFollow+talent(s,'spark')*.05:0));
   const abilities=abilityRoll(s,st,values,best,critical);mechanics.push(...abilities.notes);
   enemy.openingEcho=0;
-  if(critical&&!enemy.firstCritUsed&&st.firstCritLuck){enemy.firstCritUsed=true;s.nextLuck=Math.round(st.firstCritLuck);mechanics.push('启明星 · 幸运 +'+s.nextLuck+'（至下次战斗掷骰结束，离层或重试清除）');}
+  if(critical&&!enemy.firstCritUsed&&st.firstCritLuck){enemy.firstCritUsed=true;s.nextLuck=Math.round(st.firstCritLuck);mechanics.push('启明星 · 幸运 +'+s.nextLuck+'（至同层下一次战斗掷骰结算，离层或重试清除）');}
   const bonus=1+talent(s,'power')*.03+(best>=2?talent(s,'pair')*.1+st.pairBonus:0)+(best>=3?talent(s,'triple')*.15:0)+(best>=4?talent(s,'quartet')*.2:0)+(best>=5?talent(s,'choir')*.3:0)+(values.reduce((a,b)=>a+b,0)>=18?talent(s,'sum')*.1+st.sumBonus:0)+(enemy.turns===0?talent(s,'opener')*.15+st.firstBonus:0)+(enemy.type!=='combat'?talent(s,'slayer')*.1+st.bossBonus:0)+(s.blessing||0)*.05;
   const main=Math.max(1,safe((weighted*st.attack/5*resonance*bonus*(critical?1.8+talent(s,'crush')*.1+st.critDamage:1)*(mod.damageMultiplier||1)*abilities.damage+(mod.bonusDamage||0))*eventStatBonuses(s).damageMultiplier));
   const extra=follow?Math.min(Number.MAX_SAFE_INTEGER-main,safe(main*(.35+talent(s,'pursuit')*.08+st.followDamage))):0,echoDamage=Math.min(Number.MAX_SAFE_INTEGER-main-extra,safe(main*abilities.echo)),total=main+extra+echoDamage;

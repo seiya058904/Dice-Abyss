@@ -1,114 +1,250 @@
-# 骰狱：无尽深渊 · V5
+<h1 align="center">🎲 DICE ABYSS</h1>
 
-**Dice Abyss — Deep Rarities & Encounters**
+<p align="center">
+  <strong>One more roll. One more room. One more floor into the dark.</strong>
+</p>
 
-每层六间房。亲手掷骰，击杀后亲自开箱；带着武器、防具与三枚遗物继续深入。
+<p align="center">
+  A desktop-first, single-player dice dungeon RPG set in an endless dark-fantasy abyss.<br>
+  Cast your fate, roll to fight, open every hard-won chest, and forge the build that takes you deeper.
+</p>
 
-这是以上传的 V4 完整项目为基础制作的 **V5 本地独立交付版**，不是线上发布，也不是重建的文字游戏。保留桌面三栏界面、立体骰子、Canvas 特效、单一金币、锻造、融合与本地存档。
+<p align="center">
+  <a href="https://seiya058904.github.io/Dice-Abyss/"><strong>▶ PLAY IN BROWSER</strong></a>
+  &nbsp;·&nbsp;
+  <a href="#the-descent">🎮 The Descent</a>
+  &nbsp;·&nbsp;
+  <a href="#gameplay">📷 Gameplay</a>
+  &nbsp;·&nbsp;
+  <a href="#how-to-play">⌨️ Controls</a>
+  &nbsp;·&nbsp;
+  <a href="#for-developers">⚙️ Development</a>
+</p>
 
-## 开始游玩
+<p align="center">
+  <sub>VERSION 5.0 &nbsp;·&nbsp; DESKTOP WEB &nbsp;·&nbsp; MANUAL DICE COMBAT &nbsp;·&nbsp; LOCAL SAVES</sub>
+</p>
 
-电脑需要 **Node.js 20 或更高版本**。项目不依赖第三方 npm 包，不需要执行 `npm install`。
+<p align="center">
+  <a href="https://seiya058904.github.io/Dice-Abyss/">
+    <img width="960" src="docs/readme-banner.svg" alt="Dice Abyss — original dark-fantasy banner with a gilded six-sided die and the words Roll Your Fate" />
+  </a>
+</p>
 
-在 Windows 中解压整个目录，双击 **`启动游戏.cmd`**。启动器会运行本地服务并打开浏览器。默认地址为 `http://127.0.0.1:4188`。不要直接双击 `index.html`：ES 模块需要通过本地 HTTP 服务加载。
+---
 
-也可以在项目目录执行：
+> **You cannot choose what the dice will show. You can choose what you build around them.**
+>
+> In **Dice Abyss**, a roll is an attack, a chest is a promise, and every new floor is another test of the equipment and talents you have assembled. The dungeon keeps going. So does your progression.
 
-```sh
+<a id="the-descent"></a>
+## 🎮 The Descent
+
+<p align="center">
+  <code>CAST FATE → CROSS SIX ROOMS → ROLL TO FIGHT → CLAIM LOOT → BUILD → DESCEND</code>
+</p>
+
+At the start of each floor, **two fate dice** reveal a six-room route. Follow it through battles, services, discoveries, and dangerous encounters. When combat begins, **you decide when to roll**; the actual dice faces determine the strike, and surviving enemies retaliate.
+
+A defeat sends you back into the **same fight**, not back to the beginning. Your earned equipment, gold, talents, and completed rooms remain yours.
+
+<p align="center">
+  <strong>UP TO 6 BATTLE DICE</strong> &nbsp;·&nbsp; <strong>50 ROOM TYPES</strong> &nbsp;·&nbsp; <strong>1,536 EQUIPMENT VARIANTS</strong><br>
+  <strong>18 BOSSES</strong> &nbsp;·&nbsp; <strong>5 TALENT PATHS / 45 NODES</strong> &nbsp;·&nbsp; <strong>8 RARITIES</strong> &nbsp;·&nbsp; <strong>NO FINAL FLOOR</strong>
+</p>
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>🎲 The Roll Is the Attack</h3>
+      <p><sub>MANUAL ROLLS · MATCHING FACES · CRITICALS</sub></p>
+      <p>Start with one battle die and unlock up to six as you level. Matching faces trigger resonance; high rolls, critical hits, and follow-up strikes become more powerful when your build supports them.</p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>🗺️ A Different Fate Each Floor</h3>
+      <p><sub>TWO FATE DICE · SIX-ROOM ROUTES · 50 ROOM TYPES</sub></p>
+      <p>Every floor reveals a fresh, ordered route. Meet merchants, forges, relic chambers, trials, strange events, and enemies with distinct combat rules. Richer fate rolls can change the opportunities ahead.</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>💎 Every Victory Has a Chest</h3>
+      <p><sub>1,536 ITEMS · EIGHT RARITIES · FIVE GEAR SLOTS</sub></p>
+      <p>Open a chest after every kill. Discover weapons, armor, and relics from Common through Eternal, then combine one weapon, one armor piece, and up to three relics into your own setup.</p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>⚒️ Make the Loot Matter</h3>
+      <p><sub>EQUIPMENT LEVELS · FORGING · FUSION</sub></p>
+      <p>Strengthen individual items at a forge, or consume spare gear to advance equipment levels through fusion. Invest talent points across five paths focused on high faces, resonance, critical chains, survival, and luck.</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>👑 Enemies With Rules to Learn</h3>
+      <p><sub>18 BOSSES · SECOND PHASES · VISIBLE INTENT</sub></p>
+      <p>Prepare for shields, escalating counterattacks, dice-dependent weaknesses, multi-wave fights, and boss phase changes. Enemy warnings expose what is dangerous instead of hiding the rules behind a health bar.</p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>♾️ Progress Without a Reset</h3>
+      <p><sub>RETRY THE FIGHT · KEEP YOUR BUILD · DESCEND AGAIN</sub></p>
+      <p>Defeat does not erase your journey. The tenth floor marks an early milestone, not the end: deeper floors continue with changing encounters, rewards, and the builds needed to survive them.</p>
+    </td>
+  </tr>
+</table>
+
+## V5: Eight Rarities, Deeper Builds
+
+V5 expands the existing desktop game with **1,536 equipment variants**, **50 room types**, **18 bosses**, and **45 talent nodes across five paths**. The eight equipment rarities are **Common, Rare, Epic, Legendary, Mythic, Ancient, Origin, and Eternal**. Mythic unlocks at floor 30, Ancient at 50, Origin at 80, and Eternal at 140; the four original tiers remain available throughout the descent.
+
+Late-game equipment, room weights, enemy mechanics, talent gates, saves, and the original interface stay part of one playable game. The feature counts describe catalogued content, not that every item, room, or build has received a separate human playtest.
+
+<a id="gameplay"></a>
+## 📷 Gameplay
+
+<p align="center">
+  <a href="docs/screenshots/gameplay-desktop.png"><img width="900" src="docs/screenshots/gameplay-desktop.png" alt="Dice Abyss desktop gameplay screenshot from the V4 baseline" /></a>
+</p>
+<p align="center"><sub>V4 BASELINE · DESKTOP BROWSER · 1920 × 1080</sub></p>
+
+<p align="center">
+  <a href="output/playwright/v5-first-combat-1920.png"><img width="900" src="output/playwright/v5-first-combat-1920.png" alt="V5 first-floor combat in a 1920 by 1080 desktop browser" /></a>
+</p>
+<p align="center"><sub>V5 LOCAL ACCEPTANCE · DESKTOP BROWSER · 1920 × 1080</sub></p>
+
+**Every number on the dice matters.** Combat uses the rolled values, not a predetermined animation. The interface shows enemy intent and the result of each attack so you can understand how your equipment, talents, and luck affect the outcome.
+
+<a id="how-to-play"></a>
+## ⌨️ How to Play
+
+| Input | Action |
+| :--- | :--- |
+| **Mouse / left click** | Navigate rooms, manage equipment and talents, open chests, and use the main action button. |
+| **Roll button** | Roll your available dice to attack during combat. |
+| **Space** | Roll during active combat (when no dialog or text control is focused). |
+| **Fullscreen button** | Toggle the game display between windowed and fullscreen modes. |
+| **Settings** | Adjust sound, effects, and interface scale; export or import your save. |
+
+The current game interface is in **Simplified Chinese**. It is designed for a **landscape desktop browser** with mouse and keyboard; mobile touch gameplay is not a supported target for this release.
+
+<a id="play-now"></a>
+## 🚀 Enter the Abyss
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>🌐 Play Online</h3>
+      <p><sub>GITHUB PAGES · NO INSTALLATION</sub></p>
+      <p>Open the published game in a desktop browser. There is no account, online character, or server-hosted progression to set up.</p>
+      <p><strong><a href="https://seiya058904.github.io/Dice-Abyss/">▶ Play Dice Abyss →</a></strong></p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>🖥️ Run from Source</h3>
+      <p><sub>WINDOWS / NODE.JS 20+ · LOCAL WEB SERVER</sub></p>
+      <p>Clone the repository, launch the small local server, and play on your own machine. A Windows <code>启动游戏.cmd</code> launcher is also included.</p>
+      <p><strong><a href="#run-locally">⚙️ Local setup →</a></strong></p>
+    </td>
+  </tr>
+</table>
+
+<a id="your-progress"></a>
+### 💾 Your Progress Stays Yours
+
+Progress is saved automatically in **your browser's local storage**. You can export or import a JSON save from Settings; supported **V1–V4** saves migrate to V5 while preserving a pre-migration archive.
+
+> [!IMPORTANT]
+> **Local saves are not cloud saves.** GitHub Pages and `http://127.0.0.1:4188` use separate browser origins, so their saves do not sync. Export your save before clearing site data, switching browsers or profiles, or starting over. Importing a save replaces the active local progress after confirmation.
+
+The game has **no account system, analytics, or remote runtime dependency**. All gameplay and save data stay in the browser environment in which you play.
+
+<a id="run-locally"></a>
+## 🛠️ Run Locally
+
+Requires **Node.js 20 or newer**. There are no npm runtime packages to install and no build step.
+
+```bash
+git clone https://github.com/seiya058904/Dice-Abyss.git
+cd Dice-Abyss
 npm start
 ```
 
-保持服务窗口运行，在浏览器打开上面的地址。启动器会检测 V5 标识；4188 上若仍运行 V4 或其他程序，它会明确提示，而不会把旧游戏当成 V5 打开。改变端口会改变浏览器存档位置，需要从设置中导出、导入存档。
+Open **http://127.0.0.1:4188** in a desktop browser. On Windows, you can alternatively double-click [`启动游戏.cmd`](启动游戏.cmd) after installing Node.js.
 
-## 新的下潜目标
+<details>
+<summary><strong>Change the port / understand local hosting</strong></summary>
 
-| 品质 | 解锁楼层 | 基础价值倍率 |
-|---|---:|---:|
-| 普通 | 1 | ×1 |
-| 稀有 | 1 | ×1.7 |
-| 史诗 | 1 | ×2.9 |
-| 传说 | 1 | ×5 |
-| 神话 | 30 | ×8.5 |
-| 太古 | 50 | ×14.5 |
-| 起源 | 80 | ×24.5 |
-| 永恒 | 140 | ×42 |
+In PowerShell:
 
-旧传说没有降级。旧 648 件装备的 ID、名字、属性与强化含义保持不变；新等级只扩展后期奖池。新品质可以来自正常战斗、精英、Boss、秘藏、商店、黑市与事件，不需要导入测试存档。
+```powershell
+$env:PORT = '4190'
+npm start
+```
 
-**前 29 层的原有来源奖池保留，五层一次的 Boss 继续至少掉落传说。** 深层 Boss 也只是传说保底，不会每次送出最新的最高品质。高阶出现概率随深度缓慢上升；没有无限免费重投或隐藏强制保底。
+The server listens on `127.0.0.1`, not on the public network. Serve the project over HTTP instead of opening `index.html` as a `file://` URL; the game uses JavaScript modules, and browser storage is tied to the page origin.
 
-装备仍然有两个独立成长维度：融合提高 **Lv. / 装备经验**，锻造提高该装备自身的 **+N**。融合不会转移旧材料的强化等级。
+</details>
 
-## 内容规模与实际机制
+<a id="for-developers"></a>
+## ⚙️ For Developers
 
-本版包含 **1,536 件装备、50 类房间、100 个敌人身份、18 位 Boss、45 个天赋节点**。三种装备类型各 512 件。
+Dice Abyss is built with **vanilla JavaScript modules, HTML, and CSS**, with locally bundled fonts. It does not require a framework, bundler, or package installation to run.
 
-这不是 1,536 套独立技能或 100 套完全不同的 AI。目录由既有主题与变体扩展到八品质，再加入 240 件高阶刻印装备；新增 15 个刻印能力键，其中武器与遗物回响共享一次性追加伤害管线、各有上限。敌人按机制家族组织。
+<details>
+<summary><strong>📂 Expand source layout, checks &amp; deployment notes</strong></summary>
 
-新的机制包括六点穿盾、三同回响、低血强敌终结、首掷爆发、异点增伤、暴击护盾、低点护盾、换相庇护、六点恢复、临界减伤、首暴幸运、精英追星与六点额外金币。都是自动结算的效果，不增加战斗中的技能按钮。
+### Repository map
 
-五路天赋保留原 30 节点，每路再增加 30 / 50 / 80 层解锁的三个节点。高点、共鸣、暴击、生存与幸运各有新的投资方向。各能力的触发、叠加上限、成本和事件规则见 [内容与规则索引](docs/v5/CONTENT_INDEX.md)。
+| Path | Purpose |
+| :--- | :--- |
+| [`src/engine.js`](src/engine.js), [`src/content.js`](src/content.js) | Dice combat, progression, talents, and core content. |
+| [`src/equipment.js`](src/equipment.js), [`src/equipment-content.js`](src/equipment-content.js) | Gear generation, levels, item properties, and equipment catalog. |
+| [`src/encounters.js`](src/encounters.js) | Special enemy mechanics, event choices, and room generation. |
+| [`src/storage.js`](src/storage.js) | Validated local saves, backup behavior, and legacy migration. |
+| [`src/app.js`](src/app.js), [`src/views.js`](src/views.js) | Player interaction, menus, screens, and rendering. |
+| [`src/dice-renderer.js`](src/dice-renderer.js), [`src/dice-motion.js`](src/dice-motion.js), [`src/effects.js`](src/effects.js) | Dice visuals, motion, and feedback. |
+| [`src/`](src/) CSS files | Layout, presentation, responsiveness, and visual refinements. |
+| [`scripts/`](scripts/), [`tests/`](tests/) | Local server, simulation, audits, and automated test coverage. |
+| [`src/fonts/`](src/fonts/) | Bundled font files and their independent license notices. |
 
-## 更多房间，不冲淡主线节奏
+### Verify the source
 
-每层仍为 **三间日常战斗 + 一间成长服务 + 一间事件或奖励 + 一间精英 / Boss**。连战和自愿挑战可能增加实际战斗场次，但不会增加分支地图。
-
-战斗先抽核心 / 特色 / 罕见池，再按池内权重与深度选择具体房间。第一战斗位固定核心；后两位按 55% / 39% / 6% 抽池，合计目标约 70% / 26% / 4%。事件池为 73% / 23% / 4%。添加更多稀有房间，不会扩大稀有池总概率。
-
-商人、锻造、融合、休整组成四层洗牌组，组内各一次，同类最长相隔七层。新开局从第 1 层开始分组；旧档从第一次生成 V5 路线处开始新组。隐藏首领同组间隔至少八层，常规每五层 Boss 不被替换。
-
-右上角 **图鉴**展示八品质解锁、当前基础掉率、房间分类、权重和主要数值上限。
-
-## 存档与珍贵装备保护
-
-支持 V1–V4 导入到 V5。V4 已生成的宝箱、商店商品、背包、三遗物配置、强化、融合经验和 RNG 不会重新抽取。第一次写入新版本前会保留升级前原文；归档失败时停止覆盖主档。
-
-升级前仍建议在旧版设置中主动导出存档。V5 导出的新档不能直接交给旧 V4 程序读取；需要回退时使用设置中保留的**升级前原始备份**。本地地址、线上 Pages 地址以及不同浏览器的存档彼此隔离。
-
-批量回收与快速融合默认保护 **传说及以上**、已装备、锁定和当前待领奖励。金币封顶时，回收可以明确确认放弃溢出金币，先腾出背包，再领取已经生成的宝箱；不会暗中重抽或丢失奖品。
-
-装备比较是当前构筑下的估算。对穿盾下降的替换会显示 **“穿盾需权衡”**；估算输出增长不代表对厚盾的生命伤害必然增长。
-
-## 验证与边界
-
-V5 内容与原交付统计见 [V5 验收报告](docs/v5/验收报告.md)；本地集成分支的实际 Chrome 交互、存档和 V4 字体对照见 [集成与实机验收](docs/v5/集成与实机验收.md)。原始统计放在 `docs/v5/evidence/`。
-
-```sh
+```bash
 npm run check
 npm test
 npm run simulate -- 1000
-npm run audit:v5
-node scripts/luck-audit.mjs docs/v5/evidence/luck-audit-v5.json
-node scripts/audit-comparisons.mjs docs/v5/evidence/comparison-audit.json
-node scripts/smoke-http.mjs
 ```
 
-`audit:v5` 默认包含 1,000 个顺序路线种子至 400 层、奖池统计，以及 16 局至 200 层和 4 局至 400 层的完整规则模拟。只需快速复核时，可以传入较小样本数，但不能把小样本当成包内原始大样本证据：
+These commands perform JavaScript syntax checks, Node.js tests, and a 1,000-run simulation. The workflow runs them for pull requests; it assembles and deploys the Pages site only after a push to `main`.
 
-```sh
-npm run audit:v5 -- --seeds 100 --adventures 2 --long 1 --output docs/v5/evidence/audit-local.json
-```
+### V5 acceptance and verification limits
 
-上传包的云端审计曾受 Chromium 管理策略阻止，未能进行浏览器验收；本分支随后使用本机 Chrome 完成了第一层、四档深层奖励、全部十种新增深层事件、天赋、交易、存档、刷新和三种视口的浏览器检查。详见 [集成与实机验收](docs/v5/集成与实机验收.md)。全程自然推进至深层、所有敌人与房间组合、真人长线体验、声音听感、原生 `.cmd` 双击和真实 4K 硬件性能仍未验收。
+The recorded local Chrome acceptance covers the first-floor flow, four deep rarity rewards, five talent paths, forging and relic fusion, ten new deep events, a synthetic V4 save import, and full-inventory save recovery. Deep-floor checks used isolated debug saves. See the [V5 integration and browser acceptance report](docs/v5/集成与实机验收.md) and its linked screenshots for the environment and evidence.
 
-V5 集成分支保留了 V4 随包发布的 Fusion Pixel 与 Source Han Sans 字体二进制，并继续从本地加载；不会联网下载字体。上游许可证说明位于 `src/fonts/`。
+The PR #2 review rerun also used isolated browser saves to verify first-crit luck across a chest, room transition, and refresh; import and claim of a synthetic V4 pending chest; and an Eternal reward opening that remained claimed after refresh. See the [cross-room luck screenshot](output/playwright/v5-p2-01-cross-room-luck.png) and [Eternal reward screenshot](output/playwright/v5-p2-high-rarity-open.png).
 
-界面仅提供有限数值范围内的长期成长，不是数学上的无限精度：角色等级最高 1,000,000，装备等级最高 10,000,000,000,000，强化最高 +20，金币持有上限 10,000,000,000，背包最多 10,000 件。
+Automated checks and isolated browser scenarios do not establish natural long-run progression, every Boss and room combination, migration of a player's private save, or full balance. The Windows launcher, audio listening, and performance on a physical 4K display also remain unverified. Simulated 4K viewport screenshots are layout checks, not hardware performance results.
 
-## 项目结构
+The deployment assembles a static site from `index.html`, `favicon.svg`, and `src/`. The README, tests, and development scripts are not included in the published game artifact. A successful automated run does **not** imply that long-form manual playtesting or every device configuration has been verified.
 
-```text
-index.html                 网页入口
-启动游戏.cmd                Windows 启动入口
-src/                       完整游戏源码、样式、SVG 与字体许可
-  deep-content.js          V5 阶段、刻印、房间与首领数据
-  deep-rules.js            自动能力与新事件结算
-  rarity.js                解锁楼层及分来源概率
-  route-weights.js         分池路线与服务、隐藏首领约束
-scripts/                   启动、语法检查、模拟与验收脚本
-tests/                     原有回归测试与 V5 新测试
-  fixtures/v4-baseline.json 原始 V4 引擎生成的合成对照数据
-docs/v5/                   本轮内容索引、报告与真实测试证据
-```
+</details>
 
-`docs/README-V4-original.md` 与 `docs/screenshots/gameplay-desktop.png` 是上传包中保留的 V4 历史材料，不是 V5 新截图。原 GitHub Pages 部署工作流保留；V5 集成分支与 `main` 隔离，本次不包含合并与部署。
+## 📌 Scope & Known Limits
+
+- **Desktop first:** landscape desktop browsers are the intended experience; mobile touch is not a release target.
+- **Performance:** stable native 4K at 60 FPS is not claimed. Simulated 4K long-frame performance remains an open limitation.
+- **Playtesting:** natural progression into deep floors, every Boss/room combination, varied player builds, and extended human balance testing remain open.
+- **Compatibility:** private player saves and the native Windows `.cmd` launcher have not been validated as part of the recorded V5 acceptance.
+- **Audio and display performance:** audio has not received a listening review; simulated 4K viewport checks do not verify physical 4K frame rate or long-session performance.
+- **Endless descent:** there is no designed final floor, but browser storage, memory, and numeric limits still apply.
+
+## 📜 Licensing
+
+**This repository does not grant a project-wide open-source license.** Public source availability should not be treated as permission to redistribute or reuse the game code and assets.
+
+The included fonts retain their separate **SIL Open Font License 1.1** terms and notices. See [`src/fonts/README.md`](src/fonts/README.md) for their sources and license files. Those font permissions do not extend to the rest of the project.
+
+---
+
+<p align="center">
+  <sub>ROLL. REBUILD. DESCEND.</sub><br>
+  <sub>Dice Abyss · The next floor is waiting for your next roll.</sub>
+</p>
