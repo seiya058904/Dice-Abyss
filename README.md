@@ -1,6 +1,6 @@
 # Dice Abyss
 
-**骰狱：无尽深渊** is a desktop-first, single-player dice dungeon RPG. Roll manually, let combat resolve from the real dice result, and open a chest after every kill.
+Dice Abyss is a desktop-first, single-player dice dungeon RPG. Roll manually, let combat resolve from the real dice result, and open a chest after every kill.
 
 [Play Dice Abyss](https://seiya058904.github.io/Dice-Abyss/) · [Source on GitHub](https://github.com/seiya058904/Dice-Abyss)
 
@@ -28,7 +28,7 @@ Requires Node.js 20 or newer. The game has no install step or runtime package de
 npm start
 ```
 
-Open <http://127.0.0.1:4188>. On Windows, you can also double-click `启动游戏.cmd`.
+Open <http://127.0.0.1:4188>. On Windows, you can also double-click the included game launcher.
 
 The server binds to `127.0.0.1`. To choose another port in PowerShell:
 
