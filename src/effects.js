@@ -126,12 +126,12 @@ export function mountEffects(state,ui,settings,onSound){
  });
  canvas.dataset.fxParticles=String(count);
  // Tiny cached glow sprites replace per-particle shadows, filters and gradients.
- for(const key of new Set(particles.map(p=>p.key)))texture(key);if(anticipation||reveal)texture(rewardKey,true);
+ for(const p of particles){p.sprite=texture(p.key);p.ink=colors[p.key][2];p.stroke=colors[p.key][1];}if(anticipation||reveal)texture(rewardKey,true);
  // Raster material caches are local to each die. The ninety tongues in a six-die
  // resonance still curl independently, but display frames submit six images.
  for(const d of activeDice){d.flames=[];d.sprite=texture(d.key);d.tile=materialTile({x:d.x-d.size*1.12,y:d.y-d.size*1.12,width:d.size*2.24,height:d.size*1.82},prepared.ratio);if(d.tile)materials.push(d.tile);}
  for(const f of flames){const edge=f.anchor*(outline.length-1),i=Math.floor(edge),mix=edge-i,a=outline[i],b=outline[(i+1)%outline.length],d=f.d;
-  f.x=d.x+(a[0]+(b[0]-a[0])*mix)*d.size;f.y=d.y+(a[1]+(b[1]-a[1])*mix)*d.size;f.width=d.size*f.width;d.flames.push(f);}
+  f.x=d.x+(a[0]+(b[0]-a[0])*mix)*d.size;f.y=d.y+(a[1]+(b[1]-a[1])*mix)*d.size;f.width=d.size*f.width;f.shape={lift:0,tx:0,ty:0};d.flames.push(f);}
  const area=extent();for(const p of particles)particleExtent(area,p,unit,duration,combat);
  for(const d of activeDice)include(area,d.x-d.size*1.2,d.y-d.size*1.3,d.size*2.4,d.size*2);
  const sweep=(x,y,r,squash)=>{const rx=r*Math.hypot(Math.cos(.08),squash*Math.sin(.08)),ry=r*Math.hypot(Math.sin(.08),squash*Math.cos(.08));include(area,x-rx-5,y-ry-5,rx*2+10,ry*2+10);};
@@ -166,7 +166,7 @@ export function mountEffects(state,ui,settings,onSound){
    include(area,bounds.x,bounds.y,bounds.width,bounds.height);
   }
   if(anticipation)sweep(center.x,center.y,radius,.5);
-  if(reveal){sweep(center.x,center.y+unit*.24,unit*1.8,.32);include(area,center.x-unit*.74-3,center.y-unit*.42-3,unit*1.48+6,unit*.7+6);}
+  if(reveal){sweep(center.x,center.y+unit*.24,unit*1.8,.32);include(area,center.x-unit*.74-3,center.y-unit*.42-3,unit*1.48+6,unit*.7+6);if(grade>=4)include(area,center.x-unit*1.32,center.y-unit*1.58,unit*2.64,unit*2.3);}
   // Only a transient edge material. The permanent card and its text belong to CSS.
   const card=reveal&&grade>=3?document.querySelector('.loot-reveal .item-card')?.getBoundingClientRect():null;
   if(card){const x=card.left-box.left,y=card.top-box.top,cw=card.width,ch=card.height;
@@ -180,6 +180,7 @@ export function mountEffects(state,ui,settings,onSound){
  }
  const roi=cropCanvas(prepared,area);
  canvas.dataset.fxRewardColumns=String(combat?0:columns);canvas.dataset.fxRewardSquares=String(particles.filter(p=>p.square).length);canvas.dataset.fxRewardRims=String(rewardRims.length);
+ canvas.dataset.fxRewardMotif=reveal?['motes','sparks','facets','rays','seal','spiral','origin-star','eternal-orbits'][grade]:'none';
  canvas.dataset.fxMaterialPixels=String(materials.reduce((n,t)=>n+t.canvas.width*t.canvas.height,0));
  let lightning=[],followBolts=[],tick=-1,flameTick=-1,start=performance.now();
  canvas.dataset.fxFlameHz='30';canvas.dataset.fxFlames=String(flames.length);canvas.dataset.fxFlameTiles=String(activeDice.filter(d=>d.tile).length);
@@ -207,7 +208,7 @@ export function mountEffects(state,ui,settings,onSound){
     d.coreGradient=target.createLinearGradient(0,d.y-size*1.05,0,d.y+size*.55);d.coreGradient.addColorStop(0,c[1]+'28');d.coreGradient.addColorStop(.22,c[2]);d.coreGradient.addColorStop(.7,c[1]+'a8');d.coreGradient.addColorStop(1,c[0]+'18');
    }
    target.beginPath();for(const f of d.flames){const x=f.x,y=f.y,width=f.width;
-    const lift=size*f.lift*(.7+.3*Math.sin(ms*f.speed+f.phase)),tx=x+Math.sin(ms*.009+f.phase)*lift*.65,ty=y-lift;f.shape={lift,tx,ty};
+    const lift=size*f.lift*(.7+.3*Math.sin(ms*f.speed+f.phase)),tx=x+Math.sin(ms*.009+f.phase)*lift*.65,ty=y-lift;f.shape.lift=lift;f.shape.tx=tx;f.shape.ty=ty;
     target.moveTo(x-width,y+width*.4);target.bezierCurveTo(x-width*.4,y-lift*.4,tx+width*1.6,ty+lift*.2,tx,ty);target.bezierCurveTo(tx+width*.25,ty+lift*.5,x+width*1.8,y-lift*.2,x+width,y);target.closePath();
    }target.fillStyle=d.tongueGradient;target.globalAlpha=.7;target.fill();
    target.beginPath();for(const f of d.flames){const {lift,tx,ty}=f.shape,x=f.x,y=f.y,width=f.width,breakup=.1+.15*(.5+.5*Math.sin(f.phase+ms*.011));
@@ -230,11 +231,29 @@ export function mountEffects(state,ui,settings,onSound){
   for(const p of particles){const age=ms-p.delay;if(age<0||age>p.life)continue;
    const life=age/p.life,seconds=age/1000,x=p.x+p.vx*seconds+Math.sin(p.phase+seconds*4)*unit*.025,y=p.y+p.vy*seconds+unit*.23*seconds*seconds;
    const alpha=Math.sin(Math.min(1,life*3)*Math.PI*.5)*(1-life)*fade;if(alpha<=0)continue;
-   const size=p.size*(combat?clamp(unit/130,.8,2):1.2),glow=size*8;ctx.globalAlpha=alpha*.74;ctx.drawImage(texture(p.key),x-glow*.5,y-glow*.5,glow,glow);
-   ctx.fillStyle=colors[p.key][2];ctx.strokeStyle=colors[p.key][1];ctx.lineWidth=.7;ctx.globalAlpha=alpha;
+   const size=p.size*(combat?clamp(unit/130,.8,2):1.2),glow=size*8;ctx.globalAlpha=alpha*.74;ctx.drawImage(p.sprite,x-glow*.5,y-glow*.5,glow,glow);
+   ctx.fillStyle=p.ink;ctx.strokeStyle=p.stroke;ctx.lineWidth=.7;ctx.globalAlpha=alpha;
    if(p.square){ctx.save();ctx.translate(x,y);ctx.rotate(p.phase+seconds*.7);ctx.strokeRect(-size,-size,size*2,size*2);ctx.restore();}
    else{ctx.fillRect(x,y,size*.7,size*.7);ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x-p.vx*.022,y-p.vy*.022);ctx.stroke();}
   }
+ }
+ function drawRelicMotif(ms,strength){
+  if(!reveal||grade<4)return;
+  const x=center.x,y=center.y-unit*.42,r=unit*(.79+.08*Math.sin(ms*.0015)),c=colors[rewardKey];
+  ctx.strokeStyle=c[1];ctx.lineWidth=1.05;ctx.globalAlpha=strength*.7;ctx.beginPath();
+  if(grade===4){
+   // Mythic: a forged six-sided seal, with opposed points of light.
+   for(let i=0;i<=6;i++){const a=-Math.PI/2+i*TAU/6,px=x+Math.cos(a)*r*.8,py=y+Math.sin(a)*r*.8;if(i===0)ctx.moveTo(px,py);else ctx.lineTo(px,py);}
+   ctx.moveTo(x-r*.43,y);ctx.lineTo(x+r*.43,y);ctx.moveTo(x,y-r*.5);ctx.lineTo(x,y+r*.5);ctx.stroke();
+  }else if(grade===5||grade===7){
+   // Ancient spirals and Eternal crossing orbits have distinct silhouettes.
+   const orbitCount=grade===7?3:2;
+   for(let i=0;i<orbitCount;i++){ctx.beginPath();ctx.ellipse(x,y,r*(1+i*.09),r*(i===2?.72:.3),-.3+i*.92+Math.sin(ms*.0008)*.08,.14+i*.6,TAU-.15+i*.6);ctx.stroke();}
+  }else{
+   // Origin: eight angular rays converge into an engraved diamond.
+   for(let i=0;i<=16;i++){const a=i*Math.PI/8-Math.PI/2,rr=r*(i%2?.4:1),px=x+Math.cos(a)*rr,py=y+Math.sin(a)*rr;if(i===0)ctx.moveTo(px,py);else ctx.lineTo(px,py);}ctx.stroke();
+  }
+  if(grade===7){ctx.strokeStyle=c[2];ctx.globalAlpha=strength*.63;ctx.beginPath();for(let i=0;i<5;i++){const px=x+(i-2)*unit*.31,progress=(ms*.00055+i*.21)%1,py=center.y-unit*.15-progress*unit*1.28;ctx.moveTo(px,py);ctx.lineTo(px,py-unit*.08);}ctx.stroke();}
  }
  function drawReward(ms,t){
   const c=colors[rewardKey],strength=anticipation?Math.pow(t,1.7):Math.pow(1-t,1.25);
@@ -245,6 +264,7 @@ export function mountEffects(state,ui,settings,onSound){
    for(let i=0;i<3;i++){const x=center.x+(i-1)*unit*.29,height=Math.min(center.y+20,h*.86)*(.65+.13*Math.sin(ms*.009+i*2));ctx.globalAlpha=strength*(.23+.12*Math.sin(ms*.015+i));ctx.drawImage(texture(rewardKey,true),x-unit*.009,center.y-height,unit*.018,height);}
    for(const [index,tile]of rewardRims.entries()){ctx.globalAlpha=clamp((ms-200)/180)*Math.pow(1-t,.8)*(.8+.2*Math.sin(ms*.012+index*1.7));ctx.drawImage(tile.canvas,tile.x,tile.y,tile.width,tile.height);}
   }
+  drawRelicMotif(ms,strength);
   if(reveal){ring(ctx,center.x,center.y+unit*.24,unit*(.5+t*1.3),rewardKey,strength*.7);ctx.strokeStyle=c[1];ctx.lineWidth=1;ctx.globalAlpha=strength*.62;
    const rx=unit*(.62+t*.12),ry=unit*.42;for(const side of [-1,1]){ctx.beginPath();ctx.moveTo(center.x+side*(rx-unit*.18),center.y-ry);ctx.lineTo(center.x+side*rx,center.y-ry);ctx.lineTo(center.x+side*rx,center.y+ry*.65);ctx.stroke();}}
  }

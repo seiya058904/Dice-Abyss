@@ -1,9 +1,9 @@
 import {ABILITY_DEFS,DEEP_TALENTS,eraFor} from './deep-content.js';
-import {abilityRoll} from './deep-rules.js';
+import {abilityRoll,abilityDefense} from './deep-rules.js';
 import {rollRarity,rarityProbabilities} from './rarity.js';
 import { RARITIES, SLOTS, ENEMIES, DICE_LEVELS, TALENTS, BOSSES, EQUIP_SLOTS } from './content.js';
 import {itemValue,itemStats,makeItem,forgeCost,fusionPreview,applyFusion,MAX_ITEM_LEVEL} from './equipment.js';
-import {COMBAT_ROOMS,EVENT_ROOMS,canonicalCombatType,encounterProfile,initEncounterEnemy,generateExpandedRoute,combatModifiers,extraEnemyAttack,extraEnemyIntent,postRetaliation,encounterReward,eventStatBonuses,createEvent,eventChoices,applyEvent} from './encounters.js';
+import {COMBAT_ROOMS,EVENT_ROOMS,canonicalCombatType,encounterProfile,encounterShieldCapacity,initEncounterEnemy,generateExpandedRoute,combatModifiers,extraEnemyAttack,extraEnemyIntent,postRetaliation,encounterReward,eventStatBonuses,createEvent,eventChoices,applyEvent} from './encounters.js';
 export {itemValue,itemStats,makeItem,forgeCost,fusionPreview} from './equipment.js';
 
 export const VERSION = 5;
@@ -167,22 +167,32 @@ export function enemyIntent(stateOrEnemy) {
  const s=stateOrEnemy?.player?stateOrEnemy:null,e=s?s.enemy:stateOrEnemy;if(!e)return null;
  const st=s?stats(s):{maxHp:0,defense:0,reduction:0,dodge:0,pairWard:0},phase=e.type==='boss'&&(e.stage===2||(e.combatRules!==4&&e.hp<=e.maxHp/2))?2:1;
  const heavy=e.trait==='pulse'||([2,4].includes(e.combatRules)&&e.type==='elite'),turnsUntilHeavy=heavy?3-e.turns%3:null,extra=extraEnemyIntent(e),warning=turnsUntilHeavy===1||!!extra?.warning;
- const count=s?diceCount(s):6,conditional=!!e.mechanic||st.dodge>0||st.pairWard>0||(s&&talent(s,'mercy')>0),possibilities=conditional?possibleDice(count):[Array(count).fill(6)],healthStates=[e];
+ const count=s?diceCount(s):6,conditional=!!e.mechanic||st.dodge>0||st.pairWard>0||st.lowWard>0||(s&&talent(s,'mercy')>0),possibilities=conditional?possibleDice(count):[Array(count).fill(6)],healthStates=[e],criticalStates=st.criticalWard>0?[false,true]:[false];
  // A surviving hit may cross a rage threshold or boss phase. Forecast both, without looking at or consuming the next RNG draw.
- if(e.hp>1)healthStates.push({...e,hp:1,stage:[2,4].includes(e.combatRules)&&e.type==='boss'?2:e.stage});
+ if(e.hp>1){
+  const phased=[2,4].includes(e.combatRules)&&e.type==='boss',half=Math.ceil(e.maxHp/2);
+  // An odd maximum HP can enter phase two at ceil(half) before rage activates.
+  // This intermediate state matters when the transition also grants player ward.
+  if(phased&&e.stage!==2&&e.hp>half&&(e.trait==='rage'||e.mechanic==='berserker'))healthStates.push({...e,hp:half,stage:2});
+  healthStates.push({...e,hp:1,stage:phased?2:e.stage});
+ }
  let minDamage=Infinity,maxDamage=0;
  for(const values of possibilities){
   const best=Math.max(...values.map(v=>values.filter(n=>n===v).length));
   for(const candidate of healthStates){
    const mod=e.combatRules===4?combatModifiers(candidate,values,best,st):{attackMultiplier:1,wardGain:0};
-   const counter=s?Math.max(1,safe((enemyAttack(candidate)*(mod.attackMultiplier||1)-st.defense)*(1-st.reduction))):enemyAttack(candidate)*(mod.attackMultiplier||1);
-   const gained=s?health((values.includes(1)?st.maxHp*talent(s,'mercy')*.01:0)+(best>=2?st.maxHp*st.pairWard:0)+(mod.wardGain||0)):0,ward=health((s?.ward||0)+gained),direct=Math.max(0,counter-ward);
    const post=e.combatRules===4?postRetaliation({...candidate,turns:e.turns+1},{values,best},st):{playerDrain:0},drain=safe(post.playerDrain||0);
-   maxDamage=Math.max(maxDamage,safe(direct+drain));minDamage=Math.min(minDamage,safe((st.dodge>0?0:direct)+(s&&direct>=s.player.hp?0:drain)));
+   const phaseChanged=[2,4].includes(e.combatRules)&&e.type==='boss'&&e.stage!==2&&e.hp>Math.ceil(e.maxHp/2)&&candidate.hp<=Math.ceil(e.maxHp/2);
+   for(const critical of criticalStates){
+    const defense=s?abilityDefense(s,st,values,critical):{ward:0,counter:1};
+    const counter=s?Math.max(1,safe((enemyAttack(candidate)*(mod.attackMultiplier||1)*defense.counter-st.defense)*(1-st.reduction))):enemyAttack(candidate)*(mod.attackMultiplier||1);
+    const gained=s?health((values.includes(1)?st.maxHp*talent(s,'mercy')*.01:0)+(best>=2?st.maxHp*st.pairWard:0)+(mod.wardGain||0)+defense.ward+(phaseChanged?st.maxHp*st.phaseWard:0)):0,ward=health((s?.ward||0)+gained),direct=Math.max(0,counter-ward),minimum=st.dodge>0?0:direct;
+    const maxLoss=safe(direct+(s?Math.min(Math.max(0,s.player.hp-direct),drain):drain)),minLoss=safe(minimum+(s?Math.min(Math.max(0,s.player.hp-minimum),drain):drain));
+    maxDamage=Math.max(maxDamage,maxLoss);minDamage=Math.min(minDamage,minLoss);
+   }
   }
  }
  if(!Number.isFinite(minDamage))minDamage=0;
- if(s&&['criticalWard','lowWard','phaseWard','resolveGuard'].some(k=>st[k]>0))minDamage=0;
  const attack=enemyAttack(e),conditionalDamage=maxDamage>minDamage?maxDamage:null;
  const label=extra?.label||(warning?'重击将至':[2,4].includes(e.combatRules)&&e.type==='boss'&&phase===2?'二阶段反击':e.trait==='rage'&&e.hp<=e.maxHp/2?'激怒反击':e.trait==='drain'?'汲取反击':e.trait==='ward'?'护盾反击':'下一次反击');
  const detail=[...new Set([e.label,extra?.detail,heavy?'每三回合重击 · 还有 '+turnsUntilHeavy+' 回合':null,[2,4].includes(e.combatRules)&&e.type==='boss'?(phase===1?'存活进入半血时展开 12% 阶段护盾'+(e.combatRules===2?'；旧版当次伤害止于半血':'；本击伤害完整生效'):'二阶段 · 反击 +15%'):null,maxDamage>minDamage?'点数与阈值可能改变反击 · 本击生命伤害 '+minDamage+'～'+maxDamage:null].filter(Boolean))].join(' · ');
@@ -238,6 +248,9 @@ function gainXp(s, amount) {
 export function resolveRoll(s) {
   const {values,echoes,odds}=drawDice(s,diceCount(s)),best=Math.max(...values.map(v=>values.filter(x=>x===v).length)),highCount=values.filter(v=>v>=5).length,st=stats(s),enemy=s.enemy;
   s.nextLuck=0;
+  // Repair zero rebuild capacity in existing V5 regional encounters without
+  // rerolling their identity, filling a shield or rewriting a pending reward.
+  if(enemy.combatRules===4)enemy.maxShield=encounterShieldCapacity(enemy);
   const rules=enemy.combatRules===4,mod=rules?combatModifiers(enemy,values,best,st):{damageMultiplier:1,bonusDamage:0,shieldPierce:0,healPlayer:0,wardGain:0,attackMultiplier:1,notes:[]},mechanics=[...(mod.notes||[])];
   const weighted=values.reduce((sum,v)=>sum+v*(1+(v>=5?talent(s,'high')*.12:0)+(v===4?talent(s,'four')*.15+st.fourBonus:v===5?talent(s,'five')*.15+st.fiveBonus:v===6?talent(s,'six')*.18+st.sixBonus:0)),0);
   const resonance=best>=2?1+(best-1)*.45+talent(s,'resonance')*.12:1;
@@ -373,7 +386,7 @@ export function transition(original, action) {
     }
     case 'event-choice':if(!applyEvent(s,{id:action.id,confirmed:action.confirmed},eventApi()))return original;else if(s.phase==='combat')encounterWard(s);break;
     case 'bless': {const value=die(s);s.blessing=(s.blessing||0)+value;s.roomUsed=true;s.lastForge={value,gain:value,name:'本层祝福',fusion:false};log(s,`祭坛 ${value} 点 · 本层伤害 +${value*5}%`,'gold');break;}
-    case 'rest': s.player.hp=stats(s).maxHp;s.ward=Math.round(stats(s).maxHp*.25);s.roomUsed=true;log(s,'休整完成 · 生命全满，获得 25% 护盾','rare');break;
+    case 'rest': s.player.hp=stats(s).maxHp;s.ward=Math.max(s.ward||0,Math.round(stats(s).maxHp*.25));s.roomUsed=true;log(s,'休整完成 · 生命全满，护盾补足至至少 25%','rare');break;
     case 'lock': {const item=s.player.items.find(i=>i.id===action.id);item.locked=!item.locked;break;}
     case 'salvage': {
       const preview=salvagePreview(s,action.ids,action.allowProtected,action.allowOverflow),ids=new Set(preview.items.map(item=>item.id));

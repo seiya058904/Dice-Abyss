@@ -6,10 +6,10 @@
 .room-balance{display:flex;align-items:center;gap:.55rem;color:var(--gold);flex-shrink:0}
 .room-balance>.icon{width:1.35rem;height:1.35rem}
 .room-balance>span{font-size:.68rem;color:#c5b998;line-height:1.5}
-.room-balance b{display:block;color:var(--gold);font:700 1.25rem/1.4 Consolas,monospace;font-variant-numeric:tabular-nums}
+.room-balance b{display:block;color:var(--gold);font:700 1.25rem/1.4 Consolas,'Abyss Text',monospace;font-variant-numeric:tabular-nums}
 .room-refined .slot-tabs{margin:.65rem 0 .5rem;flex-shrink:0}
 .room-refined .slot-tabs>button{padding:.65rem 1rem;font-size:.8rem}
-.room-refined .slot-tabs small{font:400 .65rem Consolas,monospace;color:var(--room-muted);margin-left:.35rem}
+.room-refined .slot-tabs small{font:400 .65rem Consolas,'Abyss Text',monospace;color:var(--room-muted);margin-left:.35rem}
 .room-refined .room-hint{font-size:.72rem;color:var(--room-muted);line-height:1.75}
 .room-empty{display:flex;flex:1;min-height:10rem;flex-direction:column;align-items:center;justify-content:center;gap:.8rem;text-align:center;color:var(--room-muted);grid-column:1/-1}
 .room-empty>.icon{width:2.7rem;height:2.7rem;color:#8babbf}
@@ -45,7 +45,7 @@
 .forge-item-heading{text-align:center;flex-shrink:0}
 .forge-item-heading h2{font-size:1.4rem;margin:.35rem 0;line-height:1.5}
 .forge-item-heading>span{font-size:.75rem;color:#c7ced4}
-.forge-item-heading>span b{color:var(--text);font-family:Consolas,monospace}
+.forge-item-heading>span b{color:var(--text);font-family:Consolas,'Abyss Text',monospace}
 .forge-screen.room-refined .forge-target>p:not(.room-hint):not(.forge-availability){font-size:.78rem;text-align:center;color:#d0d7de;line-height:1.7}
 .forge-screen.room-refined .forge-dice{height:10rem;margin:.6rem 0 .25rem;flex-shrink:0}
 .forge-screen.room-refined .forge-rule{width:min(100%,24rem);max-width:none;justify-content:space-between;gap:1.4rem;margin:.6rem 0;font-size:.78rem}
@@ -80,14 +80,14 @@
 .fusion-outcome-row{display:grid;grid-template-columns:minmax(0,1fr) repeat(3,5.1rem);align-items:center;gap:.5rem;border-bottom:1px solid #594a66;padding:.28rem .35rem;min-height:1.45rem}
 .fusion-outcome-row>span{display:flex;align-items:center;justify-content:space-between;gap:.7rem;min-width:0;font-size:.67rem;color:#d9cce4}
 .fusion-screen.room-refined .fusion-outcome-row>span>strong{font-size:.7rem;font-weight:500;line-height:1.4;white-space:nowrap}
-.fusion-screen.room-refined .fusion-outcome-row>span>small{font:400 .65rem/1.4 Consolas,monospace;color:#c2b2ce;white-space:nowrap}
-.fusion-outcome-row>b{text-align:center;font:700 .78rem/1.4 Consolas,monospace;color:#e9d7ff}
+.fusion-screen.room-refined .fusion-outcome-row>span>small{font:400 .65rem/1.4 Consolas,'Abyss Text',monospace;color:#c2b2ce;white-space:nowrap}
+.fusion-outcome-row>b{text-align:center;font:700 .78rem/1.4 Consolas,'Abyss Text',monospace;color:#e9d7ff}
 .fusion-outcome-row.outcome-heading{min-height:1.2rem;background:#160f1d;padding:.2rem .35rem}
-.fusion-outcome-row.outcome-heading>b{font:400 .67rem/1.4 Consolas,'Microsoft YaHei',sans-serif;color:#c8b6d6}
+.fusion-outcome-row.outcome-heading>b{font:400 .67rem/1.4 Consolas,'Abyss Text','Microsoft YaHei',sans-serif;color:#c8b6d6}
 .fusion-outcome-row.outcome-total{border-bottom:0}
 .fusion-outcome-row.outcome-total>b{color:#f1ddff}
 .fusion-cost-breakdown{text-align:center;font-size:.67rem;color:#c9b5d7;line-height:1.65;padding:.35rem 0 .05rem}
-.fusion-cost-breakdown b{font:700 .8rem Consolas,'Microsoft YaHei',sans-serif;color:var(--gold);white-space:nowrap}
+.fusion-cost-breakdown b{font:700 .8rem Consolas,'Abyss Text','Microsoft YaHei',sans-serif;color:var(--gold);white-space:nowrap}
 .fusion-screen.room-refined .fusion-cost-breakdown small{font-size:.62rem;line-height:1.5;color:#b7a8c5}
 .fusion-screen.room-refined>.primary{font-size:.9rem;min-height:2.7rem;flex-shrink:0}
 
@@ -103,9 +103,9 @@
 .sanctuary-benefits{width:min(100%,29rem);display:flex;gap:2rem;justify-content:center;border-top:1px solid #465462;border-bottom:1px solid #465462;padding:.9rem 0;margin:0;flex-shrink:0}
 .sanctuary-benefits>div{flex:1}
 .sanctuary-benefits dt{font-size:.75rem;color:#bdc7d0;margin-bottom:.4rem}
-.sanctuary-benefits dd{font:700 1.2rem/1.5 Consolas,'Microsoft YaHei',sans-serif;color:#dceaf3;margin:0;white-space:nowrap}
+.sanctuary-benefits dd{font:700 1.2rem/1.5 Consolas,'Abyss Text','Microsoft YaHei',sans-serif;color:#dceaf3;margin:0;white-space:nowrap}
 .sanctuary-benefits dd>span{font-size:.85rem;color:#8ea5b4;margin:0 .3rem}
-.sanctuary-benefits dd small{display:block;font:400 .68rem/1.6 'Microsoft YaHei',sans-serif;color:#afbec8}
+.sanctuary-benefits dd small{display:block;font:400 .68rem/1.6 'Microsoft YaHei','Abyss Text',sans-serif;color:#afbec8}
 .sanctuary-screen.room-refined>.primary{font-size:.9rem;min-width:18rem;min-height:3rem;flex-shrink:0;margin:.3rem 0}
 .sanctuary-screen.room-refined>.room-hint{margin:0 0 .3rem;padding-top:0;max-width:none}
 .altar-room.room-refined .dice-row{flex:1;align-items:center;margin:.5rem 0 0;min-height:11rem}
@@ -151,7 +151,7 @@
 .destiny-screen .collection-heading h1{font-size:1.65rem;letter-spacing:.1em}
 .destiny-screen .collection-heading p{font-size:.72rem;color:#bbc8d3;margin-top:.2rem}
 .destiny-screen .talent-points{display:flex;align-items:center;gap:.45rem;font-size:.72rem;color:#ddd5c4;border:1px solid #9a8250;padding:.4rem .65rem;white-space:nowrap;background:#171309}
-.destiny-screen .talent-points b{font:700 1.5rem/1.1 Consolas,monospace;color:var(--gold)}
+.destiny-screen .talent-points b{font:700 1.5rem/1.1 Consolas,'Abyss Text',monospace;color:var(--gold)}
 .destiny-map{position:relative;flex:1;min-height:0;width:100%;isolation:isolate;background:radial-gradient(ellipse at center,#1f34402b,transparent 52%)}
 .destiny-lines{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:0}
 .destiny-orbits{stroke:#8eabb6;stroke-opacity:.24;stroke-width:.65}
@@ -170,7 +170,7 @@
 .destiny-cluster{position:static}
 .destiny-screen .destiny-branch-title{position:absolute;left:calc(var(--x)*1%);top:calc(var(--y)*1%);transform:translate(-50%,-50%);width:9.2rem;height:3rem;display:flex;flex-direction:column;gap:.25rem;align-items:center;justify-content:center;border:0;padding:0;background:#060a0e;color:inherit;z-index:2;box-shadow:0 0 1.1rem .6rem #060a0e}
 .destiny-screen .destiny-branch-title strong{font-family:var(--font-display,inherit);font-size:1rem;font-weight:700;line-height:1.4;letter-spacing:.08em}
-.destiny-screen .destiny-branch-title small{font:400 .62rem/1.4 Consolas,'Microsoft YaHei',sans-serif;color:#c4cbd2;white-space:nowrap}
+.destiny-screen .destiny-branch-title small{font:400 .62rem/1.4 Consolas,'Abyss Text','Microsoft YaHei',sans-serif;color:#c4cbd2;white-space:nowrap}
 .destiny-screen .destiny-branch-title[aria-pressed=true] strong{text-shadow:0 0 .75rem currentColor}
 .destiny-screen .destiny-branch-title[aria-pressed=true]:after{content:'';position:absolute;bottom:-.15rem;width:2rem;height:1px;background:currentColor}
 .destiny-screen .destiny-branch-title:hover:not(:disabled){background:#081019;color:inherit;border:0}
@@ -180,7 +180,7 @@
 .destiny-node-ring:before{content:'';position:absolute;inset:.19rem;border:1px solid currentColor;border-radius:50%;opacity:.3;pointer-events:none}
 .destiny-node-ring i{font-family:var(--font-display,inherit);font-weight:700;font-size:.9rem;line-height:1;font-style:normal;text-shadow:0 1px #000}
 .destiny-screen .destiny-node-name{position:absolute;left:50%;bottom:100%;transform:translateX(-50%);font-size:max(.74rem,12px);line-height:1.2;color:#dce4ed;white-space:nowrap;text-shadow:0 1px 3px #000,0 0 4px #000}
-.destiny-screen .destiny-node-rank{position:absolute;left:50%;top:calc(100% + .1rem);transform:translateX(-50%);font:400 max(.61rem,11px)/1.1 Consolas,'Microsoft YaHei',sans-serif;color:#acbccb;white-space:nowrap;text-shadow:0 1px 2px #000}
+.destiny-screen .destiny-node-rank{position:absolute;left:50%;top:calc(100% + .1rem);transform:translateX(-50%);font:400 max(.61rem,11px)/1.1 Consolas,'Abyss Text','Microsoft YaHei',sans-serif;color:#acbccb;white-space:nowrap;text-shadow:0 1px 2px #000}
 .destiny-screen .destiny-node.node-south .destiny-node-name{top:100%;bottom:auto}
 .destiny-screen .destiny-node.node-south .destiny-node-rank{top:auto;bottom:calc(100% + .1rem)}
 .destiny-screen .destiny-node.node-east .destiny-node-name{left:calc(100% + .45rem);bottom:auto;top:calc(50% - .9rem);transform:none}
@@ -202,11 +202,11 @@
 .destiny-brief-heading{display:flex;align-items:center;gap:.75rem;line-height:1.5;padding:0 .1rem .35rem}
 .destiny-brief-heading h2{font-size:.9rem;letter-spacing:.08em;white-space:nowrap}
 .destiny-brief-heading>span{font-size:.64rem;color:#b8c5d1}
-.destiny-brief-heading>b{font:400 .68rem Consolas,'Microsoft YaHei',sans-serif;margin-left:auto;white-space:nowrap}
+.destiny-brief-heading>b{font:400 .68rem Consolas,'Abyss Text','Microsoft YaHei',sans-serif;margin-left:auto;white-space:nowrap}
 .destiny-effect-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:.9rem;row-gap:.4rem;margin:0}
 .destiny-effect-list>div{min-width:0;padding:.25rem 0;border-top:1px solid #35404b}
 .destiny-effect-list dt{display:flex;align-items:center;justify-content:space-between;font-size:.71rem;line-height:1.5;color:#cdd8e3}
-.destiny-effect-list dt>small{font:400 .62rem Consolas,'Microsoft YaHei',sans-serif;color:#a4b5c6;margin-left:.3rem;white-space:nowrap}
+.destiny-effect-list dt>small{font:400 .62rem Consolas,'Abyss Text','Microsoft YaHei',sans-serif;color:#a4b5c6;margin-left:.3rem;white-space:nowrap}
 .destiny-effect-list dd{font-size:max(.64rem,11px);line-height:1.55;color:#adbccc;margin:.12rem 0 0;overflow-wrap:anywhere}
 .destiny-effect-list .lit dt,.destiny-effect-list .lit dt>small{color:inherit}
 .talent-screen.room-refined.destiny-screen>.room-hint{flex-shrink:0;font-size:.62rem;line-height:1.4;color:#b1bfcd;text-align:center;margin:0;padding:.1rem 0 0}
@@ -222,18 +222,18 @@
 .destiny-unlock-note{font-size:.68rem;line-height:1.6;color:#bdcbd8;padding:0 .2rem;margin:0 0 .35rem}
 .destiny-build-details .combo-rules{margin:0 .2rem}
 .destiny-build-details .combo-rules>div{padding:.45rem .2rem;font-size:.84rem;align-items:center}
-.destiny-build-details .combo-rules dd{display:flex;align-items:center;justify-content:space-between;gap:1.2rem;font:700 .96rem Consolas,monospace}
-.destiny-build-details .combo-rules small{font:400 .63rem 'Microsoft YaHei',sans-serif;color:#b5c3d0;margin:0}
+.destiny-build-details .combo-rules dd{display:flex;align-items:center;justify-content:space-between;gap:1.2rem;font:700 .96rem Consolas,'Abyss Text',monospace}
+.destiny-build-details .combo-rules small{font:400 .63rem 'Microsoft YaHei','Abyss Text',sans-serif;color:#b5c3d0;margin:0}
 .destiny-multipliers{margin:0 .2rem .4rem;padding:.4rem 0;border-bottom:1px solid #41505e;display:flex;flex-direction:column;gap:.35rem}
 .destiny-multipliers>div{display:flex;justify-content:space-between;align-items:center;gap:1rem;font-size:.71rem}
 .destiny-multipliers dt{color:#b8c8d7}
-.destiny-multipliers dd{font:700 .82rem Consolas,monospace;margin:0;color:#e4edf5}
+.destiny-multipliers dd{font:700 .82rem Consolas,'Abyss Text',monospace;margin:0;color:#e4edf5}
 .destiny-build-summary{display:flex;flex:1;min-height:0;flex-direction:column;justify-content:space-evenly;gap:.35rem;padding:0 .25rem}
 .destiny-build-summary>div{padding:.5rem .15rem;border-bottom:1px solid #344451}
 .destiny-build-summary>div>div{display:flex;align-items:center;justify-content:space-between;gap:.7rem}
 .destiny-build-summary b{font-family:var(--font-display,inherit);font-size:.88rem;font-weight:700}
-.destiny-build-summary strong{font:700 .9rem Consolas,monospace}
-.destiny-build-summary strong small{font:400 .65rem 'Microsoft YaHei',sans-serif;color:#adbdcc}
+.destiny-build-summary strong{font:700 .9rem Consolas,'Abyss Text',monospace}
+.destiny-build-summary strong small{font:400 .65rem 'Microsoft YaHei','Abyss Text',sans-serif;color:#adbdcc}
 .destiny-build-summary .selected{border-bottom-color:currentColor}
 .destiny-summary-track{display:flex;gap:.3rem;margin-top:.5rem}
 .destiny-summary-track>i{display:block;flex:1;height:3px;background:#293744}
@@ -247,13 +247,13 @@
 .trial-countdown{font-size:.67rem;color:#e5c27b;line-height:1.5}
 .refined-intent .enemy-warning{min-width:10rem;max-width:15rem;padding:.45rem .65rem;align-items:flex-start;font-size:.72rem}
 .refined-intent .enemy-warning>span{display:block;line-height:1.5}
-.refined-intent .enemy-warning b{font:700 1.05rem/1.5 Consolas,'Microsoft YaHei',sans-serif;display:block}
+.refined-intent .enemy-warning b{font:700 1.05rem/1.5 Consolas,'Abyss Text','Microsoft YaHei',sans-serif;display:block}
 .refined-intent .enemy-warning b small{font-size:.65rem;font-weight:400;color:#f4a7b0}
 .refined-intent .enemy-warning>span>small{display:block;font-size:.61rem;color:#f1bec4;line-height:1.5}
 .refined-intent .enemy-warning.warning-urgent{border-color:#ff5d6c;background:#3a1119}
 .enemy-intent-detail{font-size:.64rem;line-height:1.6;text-align:left;color:#b6c2cf;margin:.45rem 0 0;flex-shrink:0}
 .hit-breakdown{display:flex;justify-content:center;gap:1.3rem;min-height:1.5rem;font-size:.75rem;line-height:1.6;color:#ccd8e2}
-.hit-breakdown b{font:700 .9rem Consolas,monospace}
+.hit-breakdown b{font:700 .9rem Consolas,'Abyss Text',monospace}
 .hit-follow{color:#68d5ff}
 .settings-note{font-size:.75rem;line-height:1.7;color:#afc2d1;padding:.1rem 0 .6rem}
 

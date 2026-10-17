@@ -1,0 +1,49 @@
+/* V5.1: local steel relief, readable reward hierarchy, no ambient animation. */
+.combat-stage{isolation:isolate}
+.battle-altar{position:absolute;left:50%;top:62%;width:94%;height:auto;max-height:none;transform:translate(-50%,-3%);color:#65717d;opacity:.65;pointer-events:none;z-index:0;stroke:currentColor;stroke-width:1;overflow:visible}
+.battle-altar .altar-stone{fill:#0b1015;stroke:#3c4853}
+.battle-altar .altar-bevel{stroke:#7b8c99;stroke-width:1.4}
+.battle-altar .altar-inner{stroke:#374c5c}
+.battle-altar .altar-glyph{stroke:#69899e;opacity:.6}
+.battle-altar .altar-notches{stroke:#788a97;opacity:.7}
+.battle-altar.boss-altar{color:#79505a}
+.boss-altar .altar-stone{fill:#100d11;stroke:#483239}
+.boss-altar .altar-bevel{stroke:#95606c}
+.boss-altar .altar-inner,.boss-altar .altar-glyph{stroke:#975562}
+.combat-stage .stage-line{opacity:.18}
+.combat-stage .roll-caption,.combat-stage .damage-result{position:relative;z-index:3}
+.combat-stage .cube-row{z-index:1}
+.combat-stage .die-shadow{background:radial-gradient(ellipse,rgba(0,0,0,.96) 0 30%,rgba(0,0,0,.55) 45%,transparent 72%);height:28%;width:134%;left:-17%;bottom:-17%;filter:none}
+.combat-screen.boss-screen .enemy-health .health-track{background:#251016;box-shadow:inset 0 0 0 2px #11080c}
+.combat-screen.boss-screen .enemy-health .health-track>span{background:linear-gradient(180deg,#f34761,#b71533 52%,#901329);box-shadow:inset 0 2px #ff7791,inset 0 -2px #650c20}
+.combat-screen.boss-screen .enemy-heading{border-bottom:1px solid #40212a;padding-bottom:.4rem}
+.combat-screen.boss-screen .enemy-type{letter-spacing:.15em}
+.impact-reveal .combat-stage .battle-altar{animation:altar-impact .7s ease-out both}
+@keyframes altar-impact{0%{opacity:1}100%{opacity:.65}}
+.loot-screen{--reliquary:#dcc084}
+.loot-screen.mythic{--reliquary:#ed8990}
+.loot-screen.ancient{--reliquary:#81d6c0}
+.loot-screen.origin{--reliquary:#e7d49f}
+.loot-screen.eternal{--reliquary:#c6e9ff}
+.loot-screen .reward-theatre{isolation:isolate;min-height:10.2rem}
+.loot-screen .chest-art{color:var(--reliquary)}
+.loot-screen .chest-art svg .chest-body path:first-child{fill:#0e1318;fill-opacity:.95;stroke-width:1.8}
+.loot-screen .chest-art svg .chest-lid path:first-child{fill:#10161d;fill-opacity:.9;stroke-width:1.5}
+.loot-screen .chest-art svg .chest-lid path:nth-child(2){stroke-width:1.8}
+.loot-screen .treasure-title{align-self:flex-end;margin-top:0;margin-bottom:.12rem;padding:.3rem 1rem;background:linear-gradient(90deg,transparent,rgba(5,8,11,.9) 20% 80%,transparent);z-index:3}
+.loot-screen .treasure-title h2{font-size:2.15rem;color:var(--reliquary);text-shadow:0 2px #020405}
+.loot-screen .treasure-title>span{font-size:.52rem;letter-spacing:.18em;color:#b2bfc8}
+.loot-screen .drop-banner{top:.55rem;right:.15rem;border-color:var(--reliquary);background:#090d12}
+.relic-geometry{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:100%;width:auto;max-width:90%;color:var(--reliquary);stroke:currentColor;stroke-width:1.1;opacity:.83;pointer-events:none;z-index:2}
+.relic-geometry.mythic{stroke-width:1.4}
+.relic-geometry.origin{stroke-width:1.25}
+.loot-screen.eternal .gold-reward,.loot-screen.origin .gold-reward{background:radial-gradient(ellipse at 50% 0,rgba(168,201,227,.08),transparent 70%),#050709}
+.loot-screen .loot-reveal>.item-card{border-top-color:var(--reliquary)}
+.loot-screen .loot-reveal .rarity{letter-spacing:.08em}
+.loot-screen .gold-reward>strong{font-variant-numeric:tabular-nums}
+.destructive-preview{max-height:min(42vh,26rem);overflow:auto;overscroll-behavior:contain}
+.review-pagination{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-top:.8rem;padding-top:.65rem;border-top:1px solid #43515a}
+.review-pagination>span{color:#b6c6d1;font-size:.8rem}
+@media (max-width:1200px){.loot-screen .drop-banner{top:.1rem}.loot-screen .treasure-title h2{font-size:1.7rem}.battle-altar{width:98%}}
+@media (prefers-reduced-motion:reduce){.impact-reveal .combat-stage .battle-altar{animation:none}}
+[data-effects="low"] .impact-reveal .combat-stage .battle-altar{animation:none}

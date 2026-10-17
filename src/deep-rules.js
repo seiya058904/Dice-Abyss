@@ -34,10 +34,17 @@ export function deepPostRetaliation(e,roll,result){
  if(e.mechanic==='boss_thread'&&roll.best<2){result.enemyWard+=Math.ceil(e.maxHp*.02);result.notes.push('命线重织 · 重筑 2% 护盾');}
  return result;
 }
+// Shared by the real roll and its forecast. Booleans describe which effects
+// activated; forecasting can inspect them without allocating combat log strings.
+export function abilityDefense(s,st,values,critical){
+ let low=0;if(st.lowWard>0)for(const value of values)if(value<=2)low++;
+ const criticalWard=critical&&st.criticalWard>0,lowWard=low>=2,resolveGuard=st.resolveGuard>0&&s.player.hp<st.maxHp*.35;
+ return {criticalWard,lowWard,resolveGuard,ward:Math.floor((criticalWard?st.maxHp*st.criticalWard:0)+(lowWard?st.maxHp*st.lowWard:0)),counter:resolveGuard?1-st.resolveGuard:1};
+}
 // Triggered equipment is resolved once per manual roll. Echo cannot crit, follow or echo again.
 export function abilityRoll(s,st,values,best,critical){
- const e=s.enemy,notes=[],six=values.includes(6),low=values.filter(v=>v<=2).length,distinct=new Set(values).size;
- let damage=1,echo=0,pierce=0,ward=0,heal=0,counter=1;
+ const e=s.enemy,notes=[],six=values.includes(6),distinct=new Set(values).size,defense=abilityDefense(s,st,values,critical);
+ let damage=1,echo=0,pierce=0,heal=0;
  const trigger=(key,active,apply)=>{if(active&&st[key]>0){apply(st[key]);notes.push(ABILITY_DEFS[key].name+' · 已触发');}};
  trigger('sixShatter',six,n=>pierce+=n);
  trigger('tripleStrike',best>=3,n=>echo+=n);
@@ -45,13 +52,12 @@ export function abilityRoll(s,st,values,best,critical){
  trigger('execution',e.type!=='combat'&&e.hp<=e.maxHp*.35,n=>damage+=n);
  trigger('openingStrike',e.turns===0,n=>damage+=n);
  trigger('distinctStrike',distinct>=4,n=>damage+=n);
- trigger('criticalWard',critical,n=>ward+=st.maxHp*n);
- trigger('lowWard',low>=2,n=>ward+=st.maxHp*n);
+ for(const key of ['criticalWard','lowWard'])if(defense[key])notes.push(ABILITY_DEFS[key].name+' · 已触发');
  trigger('sixthMend',six,n=>heal+=st.maxHp*n);
  trigger('resonanceMend',best>=4,n=>heal+=st.maxHp*n);
- trigger('resolveGuard',s.player.hp<st.maxHp*.35,n=>counter*=1-n);
+ if(defense.resolveGuard)notes.push(ABILITY_DEFS.resolveGuard.name+' · 已触发');
  if(e.turns===0&&e.openingEcho){echo+=e.openingEcho;notes.push('蓄室回响 · 首掷追加主击 25%');}
- return {damage,echo:Math.min(1.4,echo),pierce,ward:Math.floor(ward),heal:Math.floor(heal),counter,notes};
+ return {damage,echo:Math.min(1.4,echo),pierce,ward:defense.ward,heal:Math.floor(heal),counter:defense.counter,notes};
 }
 const safeSpare=s=>s.player.items.filter(i=>!i.locked&&i.rarity<3&&!Object.values(s.player.equipped).includes(i.id)&&i.id!==s.loot?.item?.id);
 const option=(id,label,detail,cost,reward,disabled=false,reason='',confirm=null)=>({id,label,detail,cost,reward,disabled,reason,confirm,destructive:!!confirm});

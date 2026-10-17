@@ -40,10 +40,15 @@ export function encounterProfile(type){
  const [hpMultiplier=1,attackMultiplier=1,shieldFraction=0,waves=1]=values[type]||[];
  return {hpMultiplier,attackMultiplier,shieldFraction,waves};
 }
+export function encounterShieldCapacity(enemy){
+ // Regional enemies inherit their mechanic even inside ordinary / elite rooms.
+ // Rebuilding needs a capacity of its own; this does not grant an opening shield.
+ const mechanicCap=enemy.mechanic==='sequence'?Math.round(enemy.maxHp*DEEP_ROOMS.sequence.shield):enemy.mechanic==='leech'&&enemy.variant===1?Math.ceil(enemy.maxHp*.12):0;
+ return Math.max(enemy.maxShield||0,enemy.shield||0,mechanicCap);
+}
 export function initEncounterEnemy(enemy,room){
  const profile=encounterProfile(room.type),shield=Math.round(enemy.maxHp*profile.shieldFraction);
- const leechWard=enemy.mechanic==='leech'&&enemy.variant===1?Math.ceil(enemy.maxHp*.12):0;
- return {...enemy,encounterKey:room.type,wave:room.wave||1,shield:Math.max(enemy.shield||0,shield),maxShield:Math.max(enemy.maxShield||0,shield,leechWard)};
+ return {...enemy,encounterKey:room.type,wave:room.wave||1,shield:Math.max(enemy.shield||0,shield),maxShield:Math.max(encounterShieldCapacity(enemy),shield)};
 }
 
 const authored = [

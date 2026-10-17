@@ -15,6 +15,8 @@ void main(){vec3 n=normalize(vNormal);vec3 light=normalize(vec3(-.5,-.75,1.));fl
 float frame=1.-smoothstep(.003,.012,abs(edge-.041));float inner=1.-smoothstep(.001,.004,abs(edge-.078));
 float bevel=pow(max(0.,dot(n,normalize(vec3(-.4,-.5,1.)))),28.);float sheen=pow(max(0.,dot(n,normalize(vec3(.5,.6,1.)))),42.);
 vec3 metal=vec3(.02,.027,.036)+vec3(.06,.075,.09)*diffuse+vec3(.34,.39,.44)*bevel+uColor*sheen*.22;metal+=uColor*frame*(.35+diffuse*.35)+vec3(.16,.19,.21)*inner;
+// Broad steel reflection stays in the material, with no new per-frame texture.
+metal+=vec3(.046,.056,.067)*(1.-vUV.y)*(.4+.6*diffuse);
 int face=int(floor(vFace+.5));float value=1.;for(int i=0;i<6;i++){if(i==face)value=uValues[i];}
 vec2 uv=vec2((value-1.+vUV.x)/6.,(face==0?0.:1.)*.5+vUV.y*.5);float ink=texture2D(uAtlas,uv).a;
 vec3 color=mix(metal,uColor*(.84+diffuse*.22),ink);gl_FragColor=vec4(color,1.);}`;
@@ -85,12 +87,13 @@ function createSurface(){
   return s;
 }
 function uploadAtlas(s){
-  const font=document.fonts.check('96px "Abyss Pixel"')?'"Abyss Pixel"':'Consolas';if(s.font===font)return;s.font=font;
+  const font=document.fonts.check('96px "Abyss Pixel"')?'"Abyss Pixel"':'Consolas';if(s.font===font)return false;s.font=font;
   const atlas=document.createElement('canvas');atlas.width=1536;atlas.height=512;const ctx=atlas.getContext('2d');
   ctx.fillStyle='#fff';ctx.textAlign='center';ctx.textBaseline='middle';ctx.font=`400 190px ${font}`;
   const pips=[[[1,1]],[[0,0],[2,2]],[[0,0],[1,1],[2,2]],[[0,0],[2,0],[0,2],[2,2]],[[0,0],[2,0],[1,1],[0,2],[2,2]],[[0,0],[2,0],[0,1],[2,1],[0,2],[2,2]]];
   for(let v=1;v<=6;v++){const x=(v-1)*256;ctx.fillText(String(v),x+128,128);for(const [px,py]of pips[v-1]){ctx.beginPath();ctx.arc(x+69+px*59,256+69+py*59,14,0,Math.PI*2);ctx.fill();}}
   s.gl.bindTexture(s.gl.TEXTURE_2D,s.texture);s.gl.texImage2D(s.gl.TEXTURE_2D,0,s.gl.RGBA,s.gl.RGBA,s.gl.UNSIGNED_BYTE,atlas);
+  return true;
 }
 export function mountDiceSurface(){
   const row=document.querySelector('.cube-row');if(!row)return null;
@@ -115,10 +118,11 @@ export function mountDiceSurface(){
     if(!alive||s.lost)return;
     const next=diceSurfaceBounds(records,poses,w,h,motionClip);if(poses)motionClip=next;else motionClip=null;
     if(!clip||clip.left!==next.left||clip.top!==next.top||clip.width!==next.width||clip.height!==next.height){clip=next;s.canvas.style.cssText=`position:absolute;pointer-events:none;left:${clip.left+w/2}px;top:${clip.top+h/2}px;width:${clip.width}px;height:${clip.height}px;z-index:2`;}
-    sizeBuffer(!!poses);const {gl,uniforms:u}=s;gl.viewport(0,0,s.canvas.width,s.canvas.height);gl.clearColor(0,0,0,0);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);gl.enable(gl.DEPTH_TEST);gl.disable(gl.CULL_FACE);gl.useProgram(s.program);gl.uniform2f(u.uViewport,w,h);gl.uniform4f(u.uSurface,clip.left+clip.width/2,clip.top+clip.height/2,clip.width,clip.height);gl.uniform1i(u.uAtlas,0);
+    // Projection flips Y; outward mesh faces therefore arrive clockwise.
+    sizeBuffer(!!poses);const {gl,uniforms:u}=s;gl.viewport(0,0,s.canvas.width,s.canvas.height);gl.clearColor(0,0,0,0);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);gl.enable(gl.DEPTH_TEST);gl.enable(gl.CULL_FACE);gl.frontFace(gl.CW);gl.cullFace(gl.BACK);gl.useProgram(s.program);gl.uniform2f(u.uViewport,w,h);gl.uniform4f(u.uSurface,clip.left+clip.width/2,clip.top+clip.height/2,clip.width,clip.height);gl.uniform1i(u.uAtlas,0);
     records.forEach((d,i)=>{const p=poses?.[i]||restPose(i);gl.uniform3f(u.uAngles,p.rx*Math.PI/180,p.ry*Math.PI/180,p.rz*Math.PI/180);gl.uniform3f(u.uOrigin,d.x+p.x*d.size,d.y+p.y*d.size,p.z*d.size);gl.uniform1f(u.uSize,d.size);gl.uniform3fv(u.uColor,d.color);gl.uniform1fv(u.uValues,d.values);gl.drawArrays(gl.TRIANGLES,0,s.count);});
   };
-  draw();const observer=new ResizeObserver(()=>{if(alive&&row.isConnected){measure();draw(lastPoses);}});observer.observe(row);
-  document.fonts.ready.then(()=>{if(alive&&row.isConnected&&!row.classList.contains('rolling')){uploadAtlas(s);draw(lastPoses);}});
+  draw();const observer=new ResizeObserver(()=>{if(alive&&row.isConnected){const bounds=row.getBoundingClientRect();if(Math.abs(bounds.width-w)>.01||Math.abs(bounds.height-h)>.01){measure();draw(lastPoses);}}});observer.observe(row);
+  document.fonts.ready.then(()=>{if(alive&&row.isConnected&&!row.classList.contains('rolling')&&uploadAtlas(s))draw(lastPoses);});
   return {draw,stop:()=>{alive=false;observer.disconnect();}};
 }

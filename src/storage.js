@@ -33,6 +33,8 @@ export function validateSave(s) {
     if ((p.pactScars!==undefined&&!integer(p.pactScars,0,5))||(p.fateBlessings!==undefined&&!integer(p.fateBlessings,0,5)))return false;
     if (!Array.isArray(p.items) || p.items.length < 3 || p.items.length > 10000 || !p.items.every(validItem)) return false;
     if (new Set(p.items.map(i => i.id)).size !== p.items.length || p.items.some(i => Number(i.id.slice(1)) >= s.nextId)) return false;
+    const inventoryIds=new Set(p.items.map(item=>item.id));
+    const issuedId=id=>/^i\d+$/.test(id)&&integer(Number(id.slice(1)),0,s.nextId-1);
     if (!p.equipped || !['weapon', 'armor', 'relic'].every(slot => p.items.some(i => i.id === p.equipped[slot] && i.slot === slot))) return false;
     if(!Object.keys(p.equipped).every(key=>Object.hasOwn(EQUIP_SLOTS,key)))return false;
     if (new Set(Object.values(p.equipped).filter(Boolean)).size!==Object.values(p.equipped).filter(Boolean).length || !['relic2','relic3'].every(k=>p.equipped[k]==null||p.items.some(i=>i.id===p.equipped[k]&&i.slot==='relic'))) return false;
@@ -67,7 +69,12 @@ export function validateSave(s) {
     }
     if (s.phase === 'chest' && (!validReward(s.chest) || p.items.some(i => i.id === s.chest.item.id))) return false;
     if (s.phase === 'loot' && (!validReward(s.loot) || !p.items.some(i => i.id === s.loot.item.id))) return false;
+    // Rewards are allocated when the room/kill commits, before claiming them.
+    // A future ID can decode successfully but can never pass the next save;
+    // an owned unsold offer would duplicate the same item on purchase.
+    for(const reward of [s.chest,s.loot,s.event?.reward])if(reward!=null&&(!validReward(reward)||!issuedId(reward.item.id)))return false;
     if (!Array.isArray(s.shop) || s.shop.length > 4 || !s.shop.every(o => o && text(o.id, 30) && integer(o.price, 1, 1e8) && typeof o.sold === 'boolean' && (o.id === 'heal' || validItem(o.item)))) return false;
+    if(s.shop.some(offer=>offer.item&&(!issuedId(offer.item.id)||(!offer.sold&&inventoryIds.has(offer.item.id)))))return false;
     if (['merchant','blackmarket'].includes(s.phase) && (s.shop.length !== 4 || s.shop[3].id !== 'heal' || !s.shop.slice(0, 3).every(o => o.item && o.id === o.item.id) || new Set(s.shop.map(o => o.id)).size !== 4)) return false;
     if (!Array.isArray(s.log) || s.log.length > 6 || !s.log.every(l => l && text(l.text) && text(l.tone, 30))) return false;
     if (!s.counters || !['rolls', 'kills', 'chests', 'deaths', 'highestDamage', 'bosses'].every(k => integer(s.counters[k], 0, Number.MAX_SAFE_INTEGER))) return false;
@@ -78,6 +85,9 @@ export function validateSave(s) {
     if (s.lastForge && (!text(s.lastForge.name, 64) || !integer(s.lastForge.gain, 1, MAX_ITEM_XP) || typeof s.lastForge.fusion !== 'boolean' || !integer(s.lastForge.value, 1, 6))) return false;
     if(s.lastForge){const f=s.lastForge;if(f.unit!==undefined&&!['xp','legacy'].includes(f.unit))return false;if(f.gains!==undefined&&(!Array.isArray(f.gains)||f.gains.length>3||!f.gains.every(g=>integer(g,1,MAX_ITEM_XP))))return false;if(f.levels!==undefined&&(!Array.isArray(f.levels)||f.levels.length>3||!f.levels.every(n=>integer(n,0,MAX_ITEM_LEVEL))))return false;if(f.upgrades!==undefined&&(!Array.isArray(f.upgrades)||f.upgrades.length>3||!f.upgrades.every(u=>u&&/^i\d+$/.test(u.id)&&integer(u.xp,1,MAX_ITEM_XP)&&validProgress(u.before)&&validProgress(u.after)&&u.after.level>=u.before.level&&integer(u.levels,0,MAX_ITEM_LEVEL))))return false;}
     if(s.lastForge){const f=s.lastForge;for(const [key,max]of [['targets',3],['consumed',10000]])if(f[key]!==undefined&&(!Array.isArray(f[key])||f[key].length<1||f[key].length>max||new Set(f[key]).size!==f[key].length||!f[key].every(id=>/^i\d+$/.test(id))))return false;if(f.unit==='xp'&&(!f.fusion||!Array.isArray(f.gains)||!Array.isArray(f.upgrades)||!Array.isArray(f.targets)||!Array.isArray(f.levels)||f.gains.length!==f.upgrades.length||f.targets.length!==f.upgrades.length||f.levels.length!==f.upgrades.length||f.gains.reduce((n,x)=>n+x,0)!==f.gain||!f.upgrades.every((u,i)=>u.id===f.targets[i]&&u.xp===f.gains[i]&&u.levels===f.levels[i]&&u.levels===u.after.level-u.before.level)))return false;}
+    // XP-era consumption is authoritative. Pre-levels history is retained as
+    // display-only legacy metadata; do not invalidate its original asset IDs.
+    if(s.lastForge){const f=s.lastForge;if(f.targets?.some(id=>!issuedId(id))||f.consumed?.some(id=>!issuedId(id)||(f.unit==='xp'&&(inventoryIds.has(id)||f.targets?.includes(id)))))return false;}
     if(s.migration!==undefined){const m=s.migration;if(!m||!integer(m.fromVersion,1,3)||m.toVersion!==4||!integer(m.equipment,3,10010)||!integer(m.inventory,3,10000)||!integer(m.maxValueDelta,0,Number.MAX_SAFE_INTEGER)||!finite(m.maxRelativeDelta,0,1))return false;}
     if (typeof s.completed !== 'boolean') return false;
     return true;
@@ -138,7 +148,16 @@ export function decodeSave(raw) {
 export function loadSave(storage = localStorage) {
   let existed = false,reason='';
   for (const key of [SAVE_KEY, BACKUP_KEY]) {
-    try { const raw = storage.getItem(key); if (raw) { existed = true; return { state: decodeSave(raw), recovered: key === BACKUP_KEY }; } } catch(error) { existed = true;if(/^(旧装备|装备等级|旧角色)/.test(error.message))reason=error.message; }
+    try {
+      const raw=storage.getItem(key);
+      if(raw){
+        existed=true;const state=decodeSave(raw),recovered=key===BACKUP_KEY;
+        let warning='';
+        if(recovered)warning='主存档无法读取，已从镜像恢复。若此前镜像保存失败，最后一次进度可能不在此备份中；请先导出核对。';
+        else try{if(storage.getItem(BACKUP_KEY)!==raw)warning='主存档可用，但镜像尚未同步。请导出当前进度备份，后续成功保存会重建镜像。';}catch{warning='主存档可用，但无法检查镜像。请导出当前进度备份。';}
+        return {state,recovered,warning};
+      }
+    } catch(error) { existed = true;if(/^(旧装备|装备等级|旧角色)/.test(error.message))reason=error.message; }
   }
   return { state: null, error: existed ? `无法读取存档。${reason}请保留原始备份；开始新游戏会覆盖现有记录。` : null };
 }
@@ -166,11 +185,38 @@ export function readLegacyBackup(storage=localStorage){
  for(const key of [SAVE_KEY,BACKUP_KEY])try{const raw=storage.getItem(key);if(validLegacyRaw(raw))return raw;}catch{ /* Try the other original copy. */ }
  return null;
 }
-export function saveGame(state, expected = null, storage = localStorage) {
-  if (expected) {
+function assertSaveSnapshot(state,expected,storage) {
+  if (expected === null) {
+    // A tab which observed no run must not overwrite one created while it was
+    // waiting for the write lock. Keep identical migration/rewrite calls valid.
     const current = loadSave(storage).state;
-    if (!current || current.runId !== expected.runId || current.revision !== expected.revision) throw new Error('另一窗口已更新进度。请刷新后继续，避免覆盖存档。');
+    if (current && JSON.stringify(current)!==JSON.stringify(state)) throw new Error('另一窗口已创建或更新进度。请重新读取后继续，避免覆盖存档。');
+  } else if (expected) {
+    const current = loadSave(storage).state;
+    // Importing a branched export can preserve both run ID and revision while
+    // changing the actual assets. Compare the snapshot before overwriting it.
+    if (!current || current.runId !== expected.runId || current.revision !== expected.revision || JSON.stringify(current)!==JSON.stringify(expected)) throw new Error('另一窗口已更新进度。请刷新后继续，避免覆盖存档。');
   }
+}
+export function saveImportedGame(imported, importedRaw, expected = undefined, storage = localStorage) {
+  // Check both the import and the disk snapshot before claiming the immutable
+  // archive slots. A rejected import must not archive a file that never ran.
+  if(!validateSave(imported))throw new Error('存档内容不完整或版本不兼容。');
+  const decoded=decodeSave(importedRaw);
+  if(JSON.stringify(decoded)!==JSON.stringify(imported))throw new Error('导入内容与已核对的原始存档不一致，当前进度未改动。');
+  assertSaveSnapshot(imported,expected,storage);
+  // Match loadSave's primary-then-mirror choice. An unreadable primary must not
+  // shadow the valid active legacy mirror, nor a stale mirror a valid primary.
+  for(const key of [SAVE_KEY,BACKUP_KEY]){
+    let raw;try{raw=storage.getItem(key);if(!raw)continue;decodeSave(raw);}catch{continue;}
+    if(validPreV5Raw(raw))archiveImportedSave(raw,storage);
+    break;
+  }
+  archiveImportedSave(importedRaw,storage);
+  return saveGame(imported,expected,storage);
+}
+export function saveGame(state, expected = undefined, storage = localStorage) {
+  assertSaveSnapshot(state,expected,storage);
   const raw = encodeSave(state);
   for(const key of [SAVE_KEY,BACKUP_KEY]){let old;try{old=storage.getItem(key);}catch{continue;}if(validPreV5Raw(old)){archiveImportedSave(old,storage);break;}}
   // Keep the first original pre-levels payload for an honest rollback/export path.
@@ -182,8 +228,11 @@ export function saveGame(state, expected = null, storage = localStorage) {
     break;
   }
   try { storage.setItem(SAVE_KEY, raw); } catch { throw new Error('浏览器无法保存进度，本次操作未生效。请导出备份并检查存储权限。'); }
-  // Mirror the SAME committed transaction; recovering never intentionally rolls back a reward.
-  try { storage.setItem(BACKUP_KEY, raw); } catch { /* The primary commit is already durable. */ }
+  // localStorage commits each key separately. The primary is already durable;
+  // a mirror failure must be visible rather than reported as a rolled-back turn.
+  try { storage.setItem(BACKUP_KEY, raw); }
+  catch { return {mirrored:false,warning:'进度已保存到主存档，但镜像更新失败。请立即导出当前备份并检查浏览器存储空间；旧镜像可能不含本次操作。'}; }
+  return {mirrored:true,warning:''};
 }
 export function loadSettings(storage = localStorage) {
   try {
