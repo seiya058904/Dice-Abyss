@@ -22,7 +22,7 @@
 </p>
 
 <p align="center">
-  <sub>VERSION 5.0 &nbsp;·&nbsp; DESKTOP WEB &nbsp;·&nbsp; MANUAL DICE COMBAT &nbsp;·&nbsp; LOCAL SAVES</sub>
+  <sub>VERSION 5.1.0 &nbsp;·&nbsp; DESKTOP WEB &nbsp;·&nbsp; MANUAL DICE COMBAT &nbsp;·&nbsp; LOCAL SAVES</sub>
 </p>
 
 <p align="center">
