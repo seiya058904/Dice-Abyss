@@ -39,6 +39,13 @@ test('flame geometry is cached and material-batched while RAF opacity and cleanu
    if(grade===3){assert.equal(canvas.dataset.fxRewardRims,'4');assert(roi.x<=592&&roi.x+roi.width>=1308&&roi.y+roi.height>=578,'all four transient card edges are inside ROI');assert.equal(roi.y,0,'upward columns keep original top boundary');}
    const baked=filled;run(performance.now()+100);assert.equal(filled,baked,'reward material is baked once, not rerasterized per RAF');
   }
+  for(const [grade,motif]of [[4,'seal'],[5,'spiral'],[6,'origin-star'],[7,'eternal-orbits']]){
+   mountEffects({revision:4,phase:'loot',loot:{item:{rarity:grade}}},{...ui,event:'open'},settings,()=>{});
+   assert.equal(canvas.dataset.fxRewardMotif,motif);assert.equal(canvas.dataset.fxRewardColumns,'9');assert.equal(canvas.dataset.fxRewardRims,'4');assert.equal(canvas.dataset.fxParticles,'132');
+   assert(Number(canvas.dataset.fxPixels)<=660000,'high-tier silhouettes retain the same4K canvas budget');
+   const roi=JSON.parse(canvas.dataset.fxRoi);assert(roi.x>=0&&roi.y>=0&&roi.x+roi.width<=2100&&roi.y+roi.height<=600);
+   const baked=filled;run(performance.now()+100);assert.equal(filled,baked,'high-tier outlines add no per-RAF material fills');
+  }
   const hidden=new Proxy({},{get(){throw Error('unrevealed quality must not be read');}});
   mountEffects({revision:4,phase:'chest',chest:hidden},{...ui,event:'open'},settings,()=>{});assert.equal(canvas.dataset.fxKind,'chest-charge');assert.equal(canvas.dataset.fxParticles,'22');assert.equal(canvas.dataset.fxRewardColumns,'3');
   mountEffects(state,ui,{effects:'low'},()=>{});assert.equal(queue.size,0);

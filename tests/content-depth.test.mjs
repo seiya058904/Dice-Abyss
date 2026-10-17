@@ -16,31 +16,31 @@ function enterAt(s,type,index=0){
  return transition(s,{type:'enter'});
 }
 
-test('648 equipment entries expose real slot-specific effects and distinct signatures at a shared level',()=>{
+test('1536 equipment entries expose real slot-specific effects and distinct signatures at a shared level',()=>{
  const ids=new Set();
  for(const [slot,entries]of Object.entries(CATALOG)){
-  assert.equal(entries.length,216);const signatures=new Set();
+  assert.equal(entries.length,512);const signatures=new Set();
   for(const entry of entries){
    assert(!ids.has(entry.id));ids.add(entry.id);assert(entry.description);assert.equal(entry.slot,slot);
    const item={...neutralItem(slot,'i4',entry.profile),...entry,catalogId:entry.id};
    const actual=itemStats(item),baseline=itemStats({...neutralItem(slot,'i4',entry.profile),rarity:entry.rarity});
    // Luck is an integer attribute; catalog tuning is rounded at the equipment boundary.
    for(const [key,value]of Object.entries(entry.effects)){
-    const expected=key==='luck'?Math.round((baseline[key]||0)+value)-(baseline[key]||0):value;
+    const expected=['luck','firstCritLuck','eliteLuck'].includes(key)?Math.round((baseline[key]||0)+value)-(baseline[key]||0):value;
     assert(Math.abs(((actual[key]||0)-(baseline[key]||0))-expected)<1e-10,`${entry.id}: ${key}`);
    }
    signatures.add(JSON.stringify(actual));
   }
-  assert.equal(signatures.size,216,`${slot} has duplicated effective signatures`);
+  assert.equal(signatures.size,512,`${slot} has duplicated effective signatures`);
  }
- assert.equal(ids.size,648);
+ assert.equal(ids.size,1536);
  const weapon=itemStats({...neutralItem('weapon','i1'),catalogId:CATALOG.weapon[0].id}),armor=itemStats({...neutralItem('armor','i2'),catalogId:CATALOG.armor[0].id}),relic=itemStats({...neutralItem('relic','i3'),catalogId:CATALOG.relic[0].id});
  assert(weapon.attack>relic.attack*4);assert(armor.hp>0&&armor.defense>0);assert(!weapon.hp&&!relic.hp);
  assert(SLOT_AFFINITIES.weapon.some(a=>a.key==='pierce'));assert(SLOT_AFFINITIES.armor.some(a=>a.key==='reduction'));assert(SLOT_AFFINITIES.relic.some(a=>a.key==='luck'));
 });
 
-test('every current equipment effect changes a real engine roll, entry shield or chest reward',()=>{
- const entries=Object.values(CATALOG).flat(),keys=new Set(entries.flatMap(e=>Object.keys(e.effects)));
+test('every preserved V4 equipment effect changes a real engine roll, entry shield or chest reward',()=>{
+ const entries=Object.values(CATALOG).flat().filter(i=>i.rarity<4),keys=new Set(entries.flatMap(e=>Object.keys(e.effects)));
  assert.equal(keys.size,23);
  for(const key of keys){
   const entry=entries.find(e=>Object.keys(e.effects).length===1&&e.effects[key]&&e.rarity===3)||entries.find(e=>e.effects[key]&&e.rarity===3);
@@ -62,31 +62,33 @@ test('every current equipment effect changes a real engine roll, entry shield or
  }
 });
 
-test('all 60 enemy identities are obtainable through their real room pools and all twelve bosses cycle',()=>{
- assert.equal(ENEMIES.length,60);assert.equal(new Set(ENEMIES.map(e=>e.name)).size,60);assert.equal(new Set(ENEMIES.map(e=>e.note)).size,60);
- const s=newGame(719);s.floor=70;const seen=new Set(),normal=ENEMIES.filter(e=>!e.roomType);
- for(let i=0;i<10000&&seen.size<normal.length;i++)seen.add(createEnemy(s,'combat').name);
- for(const roomType of new Set(EXTRA_ENEMIES.map(e=>e.roomType))){
-  const candidates=EXTRA_ENEMIES.filter(e=>e.roomType===roomType),local=new Set();
+test('all 100 enemy identities and 18 bosses are obtainable from depth-eligible natural pools',()=>{
+ assert.equal(ENEMIES.length,100);assert.equal(new Set(ENEMIES.map(e=>e.name)).size,100);assert(ENEMIES.every(e=>e.note&&e.label));
+ const s=newGame(719);s.floor=400;const seen=new Set(),normal=ENEMIES.filter(e=>!e.roomType);
+ for(let i=0;i<15000&&seen.size<normal.length;i++)seen.add(createEnemy(s,'combat').name);
+ for(const roomType of new Set(ENEMIES.filter(e=>e.roomType).map(e=>e.roomType))){
+  const candidates=ENEMIES.filter(e=>e.roomType===roomType),local=new Set();
   for(let i=0;i<1000&&local.size<candidates.length;i++){const enemy=createEnemy(s,roomType);assert.equal(enemy.type,canonicalCombatType(roomType));assert.equal(enemy.encounterKey,roomType);assert.equal(enemy.mechanic,roomType);assert([0,1].includes(enemy.variant));local.add(enemy.name);seen.add(enemy.name);}
   assert.equal(local.size,candidates.length,roomType);
  }
- assert.equal(seen.size,60);assert.equal(BOSSES.length,12);
- for(let index=0;index<24;index++){
-  s.floor=(index+1)*5;const boss=createEnemy(s,'boss'),authored=BOSSES[index%12];assert.equal(boss.name,authored.name);assert.equal(boss.trait,authored.trait);
+ assert.equal(seen.size,100);assert.equal(BOSSES.length,18);const seenBosses=new Set();
+ for(let seed=1;seed<=100&&seenBosses.size<18;seed++)for(let floor=5;floor<=400;floor+=5){
+  s.rng=seed*7919+floor;s.floor=floor;const boss=createEnemy(s,'boss');seenBosses.add(boss.name);assert(floor>=(boss.minFloor||1));
+  if(floor<30)assert.equal(boss.name,BOSSES[floor/5-1].name);
   for(const key of ['identity','warning','counterplay','phaseLabel','phaseNote'])assert(boss[key],`${boss.name} missing ${key}`);
  }
- assert.equal(new Set(BOSSES.map(e=>`${e.trait}:${e.mechanic||'base'}`)).size,12);
+ assert.deepEqual(seenBosses,new Set(BOSSES.map(e=>e.name)));
+ assert.equal(new Set(BOSSES.map(e=>`${e.trait}:${e.mechanic||'base'}`)).size,18);
 });
 
-test('all thirty natural room types enter, persist and resolve; every wave requires a real kill and opening',()=>{
- assert.deepEqual(new Set(Object.keys(ROOM_DETAILS)),new Set(Object.keys(ROOM_NAMES)));assert.equal(Object.keys(ROOM_NAMES).length,30);
+test('all fifty generated room types enter, persist and resolve; every wave requires a real kill and opening',()=>{
+ assert.deepEqual(new Set(Object.keys(ROOM_DETAILS)),new Set(Object.keys(ROOM_NAMES)));assert.equal(Object.keys(ROOM_NAMES).length,50);
  const encountered=new Map();
- for(let seed=1;seed<=100&&encountered.size<30;seed++)for(let floor=1;floor<=60;floor++){
-  const s=newGame(seed);s.floor=floor;
+ for(let seed=1;seed<=100&&encountered.size<50;seed++)for(let floor=1;floor<=400;floor++){
+  const s=newGame(seed);s.floor=floor;s.player.items.push(makeItem(s,'relic',1),makeItem(s,'weapon',1));s.player.talents.power=1;
   for(const fate of [[1,1],[6,6]]){s.fate=fate;s.route=generateRoute(s,fate);s.route.forEach((room,index)=>{if(encountered.has(room.type))return;const run=structuredClone(s);run.phase='route';run.roomIndex=index;run.route.forEach((r,i)=>r.done=i<index);encountered.set(room.type,transition(run,{type:'enter'}));});}
  }
- assert.equal(encountered.size,30);
+ assert.equal(encountered.size,50);
  for(const [type,entered]of encountered){
   assert(ROOM_DETAILS[type].purpose&&ROOM_DETAILS[type].reward);let s=entered;assert(validateSave(s),`${type}: entered`);s=decodeSave(encodeSave(s));
   const index=s.roomIndex,startingChests=s.counters.chests,startingKills=s.counters.kills;
@@ -132,11 +134,11 @@ test('both variants of each new encounter produce different real engine outcomes
  }
 });
 
-test('all six added boss mechanics affect actual combat after their normal floor-cycle appearance',()=>{
+test('all six V4 added boss mechanics still affect actual combat after their normal floor-cycle appearance',()=>{
  for(const [index,boss]of BOSSES.entries()){
-  if(!boss.mechanic)continue;let observed=false;
+  if(!boss.mechanic||boss.minFloor)continue;let observed=false;
   for(let seed=1;seed<=400&&!observed;seed++){
-   const initial=neutralGame(seed*7919);initial.floor=(index+1)*5;const active=enterAt(initial,'boss');assert.equal(active.enemy.name,boss.name);
+   const initial=neutralGame(seed*7919);initial.floor=(index+1)*5;const active=enterAt(initial,'boss');if(active.enemy.name!==boss.name)continue;
    Object.assign(active.enemy,{hp:300000,maxHp:1000000,shield:0,maxShield:200000,attack:200,turns:['boss_tide','boss_cinder'].includes(boss.mechanic)?1:0,stage:2});
    const baseline=structuredClone(active);delete baseline.enemy.mechanic;
    resolveRoll(active);resolveRoll(baseline);assert.deepEqual(active.lastRoll.values,baseline.lastRoll.values);

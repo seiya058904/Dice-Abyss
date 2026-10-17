@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {ROOM_ADDITIONS,ROOM_ADDITION_DETAILS,COMBAT_ROOMS,EXTRA_ENEMIES,EXTRA_BOSSES,ENCOUNTER_MECHANICS,EVENT_KEYS,generateExpandedRoute,canonicalCombatType,encounterProfile,initEncounterEnemy,combatModifiers,extraEnemyAttack,extraEnemyIntent,postRetaliation,encounterReward,createEvent,eventChoices,eventPresentation,applyEvent,eventStatBonuses} from '../src/encounters.js';
+import {DEEP_ROOMS} from '../src/deep-content.js';
 import {MAX_ITEM_LEVEL} from '../src/equipment.js';
 
 const random=s=>{s.rng=(Math.imul(s.rng,1664525)+1013904223)>>>0;return s.rng/4294967296;};
@@ -17,20 +18,20 @@ function apiFor(template){return {
  gainGold:(s,n)=>s.player.gold=Math.min(1e10,s.player.gold+n),gainXp:(s,n)=>s.player.xp+=n,log:(s,text)=>s.log.push(text),
  };}
 
-test('thirty real room types are reachable with four combat nodes and a service every four floors',()=>{
- assert.equal(Object.keys(ROOM_ADDITIONS).length+13,30);assert.equal(COMBAT_ROOMS.size,16);
+test('fifty room types are reachable; service deck completes each four-floor block and gaps never exceed seven',()=>{
+ assert.equal(Object.keys(ROOM_ADDITIONS).length+13,50);assert.equal(COMBAT_ROOMS.size,26);
  const seen=new Set();let combats=0,nodes=0;
  for(let seed=1;seed<=250;seed++){
   const s={rng:seed,floor:1};const services=[];
-  for(let floor=1;floor<=60;floor++){
+  for(let floor=1;floor<=400;floor++){
    s.floor=floor;const route=generateExpandedRoute(s,seed%2?[6,6]:[1,1],random);assert.equal(route.length,6);
    assert.equal(route.filter(r=>COMBAT_ROOMS.has(r.type)).length,4);assert.equal(route[5].type,floor%5===0?'boss':'elite');
    services.push(route[2].type);assert(s.encounterHistory.length<=8);
    route.forEach((room,index)=>{seen.add(room.type);assert.equal(room.id,`f${floor}r${index}`);assert.equal(room.done,false);if(COMBAT_ROOMS.has(room.type))combats++;nodes++;if(room.type==='gauntlet')assert.equal(room.waves,3);if(room.type==='duel')assert.equal(room.waves,2);});
   }
-  for(let i=0;i<=services.length-4;i++)assert.deepEqual(new Set(services.slice(i,i+4)),new Set(['merchant','forge','fusion','rest']));
+  for(let i=0;i<=services.length-4;i+=4)assert.deepEqual(new Set(services.slice(i,i+4)),new Set(['merchant','forge','fusion','rest']));
  }
- assert.equal(seen.size,30);assert.equal(combats/nodes,2/3);
+ assert.equal(seen.size,50);assert.equal(combats/nodes,2/3);
 });
 
 test('twenty-four new enemies and six bosses carry actual mechanics, profiles and visible intent',()=>{
@@ -41,7 +42,7 @@ test('twenty-four new enemies and six bosses carry actual mechanics, profiles an
  }
  const base={hp:1000,maxHp:1000,shield:0,maxShield:120};const armed=initEncounterEnemy(base,{type:'armored'});assert.equal(armed.shield,320);assert.equal(base.shield,0);
  assert.equal(encounterProfile('gauntlet').waves,3);assert.equal(canonicalCombatType('guardian'),'boss');assert.equal(canonicalCombatType('duel'),'elite');
- assert.equal(Object.keys(ROOM_ADDITION_DETAILS).length,17);
+ assert.equal(Object.keys(ROOM_ADDITION_DETAILS).length,37);
 });
 
 test('six new boss rules change damage, retaliation, recovery or player shield under their named conditions',()=>{
@@ -92,7 +93,7 @@ test('each authored enemy pair has a mechanically different second variant, not 
 });
 
 test('all eight mystery templates are conditional, serializable, executable and safely rejectable',()=>{
- const keys=EVENT_KEYS.filter(k=>!['spring','prayer','gambit','exchange'].includes(k));assert.equal(keys.length,8);
+ const keys=EVENT_KEYS.filter(k=>!['spring','prayer','gambit','exchange'].includes(k)&&!DEEP_ROOMS[k]);assert.equal(keys.length,8);
  for(const key of keys){
   const s=fixture(),api=apiFor(key);createEvent(s,'mystery',api);assert.equal(s.event.key,key);assert.deepEqual(JSON.parse(JSON.stringify(s.event)),s.event);
   const presentation=eventPresentation(s);assert(presentation.title);assert(presentation.body);assert.equal(presentation.options.at(-1).id,'leave');

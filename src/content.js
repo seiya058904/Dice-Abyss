@@ -1,3 +1,4 @@
+import {DEEP_ENEMIES,DEEP_BOSSES,DEEP_TALENTS} from './deep-content.js';
 import {RARITIES,THEMES,PROFILES,AFFINITIES,CATALOG} from './equipment-content.js';
 export {RARITIES,THEMES,PROFILES,AFFINITIES,CATALOG,SLOT_AFFINITIES,SLOT_DESCRIPTIONS} from './equipment-content.js';
 import {ROOM_ADDITIONS,ROOM_ADDITION_DETAILS,EXTRA_ENEMIES,EXTRA_BOSSES} from './encounters.js';
@@ -112,3 +113,9 @@ export const TALENTS = {
  jackpot:node('高点馈赠','至少三颗 5 / 6 且击杀：本箱金币 +10%','luck'),
  spark:node('暴击回声','同点且暴击：本次追击率 +5%','luck'),
 };
+
+ENEMIES.push(...DEEP_ENEMIES);
+BOSSES.push(...DEEP_BOSSES);
+Object.assign(TALENTS,DEEP_TALENTS);
+ROOM_DETAILS.boss.reward='传说保底；30层后可出现高阶品质，但不保证当前最高档。五层武器、十层遗物交替。';
+ROOM_DETAILS.hiddenboss.reward='传说保底；深层高阶机会高于日常战斗。';

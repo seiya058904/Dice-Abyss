@@ -97,7 +97,7 @@ test('duel and elite use the same canonical rarity roll, gold and item level ban
  }
  assert(rarities.has(1)&&rarities.has(2)&&rarities.has(3));assert.equal(canonicalCombatType('duel'),'elite');
  for(const room of ['guardian','hiddenboss'])for(let seed=1;seed<=50;seed++){
-  const special=killedReward(seed*7919,room),boss=killedReward(seed*7919,'boss');assert.equal(special.item.rarity,3);assert.equal(special.gold,boss.gold);
+  const special=killedReward(seed*7919,room),boss=killedReward(seed*7919,'boss');assert(special.item.rarity>=3&&special.item.rarity<=4,'legendary floor remains; mythic is naturally eligible at this fixture depth');assert.equal(special.gold,boss.gold);
   assert(special.item.level>=special.playerLevel+1&&special.item.level<=special.playerLevel+5,'boss-level reward band is post-victory player level +1…+5');
  }
 });

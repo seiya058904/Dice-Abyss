@@ -1,5 +1,5 @@
 // Equipment data has no engine/content imports, so content may safely re-export it.
-export const RARITIES=[{name:'普通',key:'common',multiplier:1},{name:'稀有',key:'rare',multiplier:1.7},{name:'史诗',key:'epic',multiplier:2.9},{name:'传说',key:'legendary',multiplier:5}];
+export const RARITIES=[{name:'普通',key:'common',multiplier:1},{name:'稀有',key:'rare',multiplier:1.7},{name:'史诗',key:'epic',multiplier:2.9},{name:'传说',key:'legendary',multiplier:5},{name:'神话',key:'mythic',multiplier:8.5},{name:'太古',key:'ancient',multiplier:14.5},{name:'起源',key:'origin',multiplier:24.5},{name:'永恒',key:'eternal',multiplier:42}];
 export const THEMES=['余烬','霜痕','雷鸣','星陨','幽潮','白骨','暮光','荆棘','沙漏','破晓'];
 export const PROFILES={
  weapon:[{name:'重刃',attack:1.12,crit:0,follow:0},{name:'刺剑',attack:.98,crit:.04,follow:0},{name:'双锋',attack:.94,crit:0,follow:.06}],
@@ -26,13 +26,22 @@ const families={
 };
 export const CATALOG=Object.fromEntries(['weapon','armor','relic'].map(slot=>{
  const original=THEMES.flatMap((theme,t)=>PROFILES[slot].flatMap((profile,p)=>RARITIES.map((r,rarity)=>({
-  id:`${slot}-${t}-${p}-${rarity}`,slot,rarity,profile:p,theme:t,name:`${['残响','铭刻','誓约','永恒'][rarity]}·${theme}${profile.name}`,
+  id:`${slot}-${t}-${p}-${rarity}`,slot,rarity,profile:p,theme:t,name:`${['残响','铭刻','誓约','永恒','赤曜','太初','溯源','无终'][rarity]}·${theme}${profile.name}`,
   affinityKey:SLOT_AFFINITIES[slot][t].key,effects:{[SLOT_AFFINITIES[slot][t].key]:SLOT_AFFINITIES[slot][t].amount*(rarity+1)},description:`${SLOT_DESCRIPTIONS[slot]} · ${SLOT_AFFINITIES[slot][t].label}`,
  }))));
  const additions=families[slot].flatMap(([family,effects],f)=>Array.from({length:4},(_,v)=>RARITIES.map((r,rarity)=>({
-  id:`v4-${slot}-${f}-${v}-${rarity}`,slot,rarity,profile:v%3,theme:(f+v)%10,name:`${['残响','铭刻','誓约','永恒'][rarity]}·${family}${['守誓','流光','回响','天启'][v]}${PROFILES[slot][v%3].name}`,
+  id:`v4-${slot}-${f}-${v}-${rarity}`,slot,rarity,profile:v%3,theme:(f+v)%10,name:`${['残响','铭刻','誓约','永恒','赤曜','太初','溯源','无终'][rarity]}·${family}${['守誓','流光','回响','天启'][v]}${PROFILES[slot][v%3].name}`,
   effects:Object.fromEntries(Object.entries(effects).map(([k,n])=>[k,Math.round(n*(rarity+1)*(1+v*.12)*10000)/10000])),description:`${SLOT_DESCRIPTIONS[slot]} · ${family}双重词条`,
  }))).flat());
- return [slot,[...original,...additions]];
+ const deepFamilies={
+ weapon:[['裂天', 'sixShatter',.12,{pierce:.035}],['合奏','tripleStrike',.15,{pairBonus:.04}],['断王','execution',.18,{bossBonus:.06}],['初火','openingStrike',.2,{critDamage:.1}],['星谱','distinctStrike',.16,{sixBonus:.04}]],
+ armor:[['映锋','criticalWard',.035,{reduction:.012}],['余灯','lowWard',.035,{barrier:.03}],['碎冠','phaseWard',.08,{defense:8}],['长生','sixthMend',.015,{hp:50}],['不退','resolveGuard',.1,{dodge:.015}]],
+ relic:[['星海','echoRelic',.12,{luck:5}],['启明','firstCritLuck',7,{echoChance:.025}],['追星','eliteLuck',1,{luck:4}],['拾光','gildedSix',.15,{goldBonus:.05}],['归息','resonanceMend',.025,{pairWard:.025}]],
+ };
+ const deep=deepFamilies[slot].flatMap(([family,ability,base,extra],f)=>Array.from({length:4},(_,v)=>RARITIES.slice(4).map((r,j)=>{
+  const rarity=j+4,scale=1+j*.2+v*.05;
+  return {id:`v5-${slot}-${f}-${v}-${rarity}`,slot,rarity,profile:v%3,theme:(f+v)%10,name:`${['赤曜','太初','溯源','无终'][j]}·${family}${['守誓','流光','回响','天启'][v]}${PROFILES[slot][v%3].name}`,effects:{...Object.fromEntries(Object.entries(extra).map(([k,n])=>[k,k==='luck'?Math.round(n*(1+j*.2))+v:n*scale])),[ability]:Math.round(base*scale*10000)/10000},description:`${SLOT_DESCRIPTIONS[slot]} · 深层刻印`,ability};
+ })).flat());
+ return [slot,[...original,...additions,...deep]];
 }));
 export const CATALOG_BY_ID=new Map(Object.values(CATALOG).flat().map(item=>[item.id,item]));

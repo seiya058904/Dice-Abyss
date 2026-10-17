@@ -22,7 +22,7 @@
 </p>
 
 <p align="center">
-  <sub>VERSION 4.0 &nbsp;·&nbsp; DESKTOP WEB &nbsp;·&nbsp; MANUAL DICE COMBAT &nbsp;·&nbsp; LOCAL SAVES</sub>
+  <sub>VERSION 5.1.0 &nbsp;·&nbsp; DESKTOP WEB &nbsp;·&nbsp; MANUAL DICE COMBAT &nbsp;·&nbsp; LOCAL SAVES</sub>
 </p>
 
 <p align="center">
@@ -49,8 +49,8 @@ At the start of each floor, **two fate dice** reveal a six-room route. Follow it
 A defeat sends you back into the **same fight**, not back to the beginning. Your earned equipment, gold, talents, and completed rooms remain yours.
 
 <p align="center">
-  <strong>UP TO 6 BATTLE DICE</strong> &nbsp;·&nbsp; <strong>30 ROOM TYPES</strong> &nbsp;·&nbsp; <strong>648 EQUIPMENT VARIANTS</strong><br>
-  <strong>12 BOSSES</strong> &nbsp;·&nbsp; <strong>5 TALENT PATHS / 30 NODES</strong> &nbsp;·&nbsp; <strong>NO FINAL FLOOR</strong>
+  <strong>UP TO 6 BATTLE DICE</strong> &nbsp;·&nbsp; <strong>50 ROOM TYPES</strong> &nbsp;·&nbsp; <strong>1,536 EQUIPMENT VARIANTS</strong><br>
+  <strong>18 BOSSES</strong> &nbsp;·&nbsp; <strong>5 TALENT PATHS / 45 NODES</strong> &nbsp;·&nbsp; <strong>8 RARITIES</strong> &nbsp;·&nbsp; <strong>NO FINAL FLOOR</strong>
 </p>
 
 <table>
@@ -62,15 +62,15 @@ A defeat sends you back into the **same fight**, not back to the beginning. Your
     </td>
     <td width="50%" valign="top">
       <h3>🗺️ A Different Fate Each Floor</h3>
-      <p><sub>TWO FATE DICE · SIX-ROOM ROUTES · 30 ROOM TYPES</sub></p>
+      <p><sub>TWO FATE DICE · SIX-ROOM ROUTES · 50 ROOM TYPES</sub></p>
       <p>Every floor reveals a fresh, ordered route. Meet merchants, forges, relic chambers, trials, strange events, and enemies with distinct combat rules. Richer fate rolls can change the opportunities ahead.</p>
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
       <h3>💎 Every Victory Has a Chest</h3>
-      <p><sub>648 ITEMS · FOUR RARITIES · FIVE GEAR SLOTS</sub></p>
-      <p>Open a chest after every kill. Discover weapons, armor, and relics from Common through Legendary, then combine one weapon, one armor piece, and up to three relics into your own setup.</p>
+      <p><sub>1,536 ITEMS · EIGHT RARITIES · FIVE GEAR SLOTS</sub></p>
+      <p>Open a chest after every kill. Discover weapons, armor, and relics from Common through Eternal, then combine one weapon, one armor piece, and up to three relics into your own setup.</p>
     </td>
     <td width="50%" valign="top">
       <h3>⚒️ Make the Loot Matter</h3>
@@ -81,7 +81,7 @@ A defeat sends you back into the **same fight**, not back to the beginning. Your
   <tr>
     <td width="50%" valign="top">
       <h3>👑 Enemies With Rules to Learn</h3>
-      <p><sub>12 BOSSES · SECOND PHASES · VISIBLE INTENT</sub></p>
+      <p><sub>18 BOSSES · SECOND PHASES · VISIBLE INTENT</sub></p>
       <p>Prepare for shields, escalating counterattacks, dice-dependent weaknesses, multi-wave fights, and boss phase changes. Enemy warnings expose what is dangerous instead of hiding the rules behind a health bar.</p>
     </td>
     <td width="50%" valign="top">
@@ -92,16 +92,24 @@ A defeat sends you back into the **same fight**, not back to the beginning. Your
   </tr>
 </table>
 
+## V5: Eight Rarities, Deeper Builds
+
+V5 expands the existing desktop game with **1,536 equipment variants**, **50 room types**, **18 bosses**, and **45 talent nodes across five paths**. The eight equipment rarities are **Common, Rare, Epic, Legendary, Mythic, Ancient, Origin, and Eternal**. Mythic unlocks at floor 30, Ancient at 50, Origin at 80, and Eternal at 140; the four original tiers remain available throughout the descent.
+
+Late-game equipment, room weights, enemy mechanics, talent gates, saves, and the original interface stay part of one playable game. The feature counts describe catalogued content, not that every item, room, or build has received a separate human playtest.
+
 <a id="gameplay"></a>
 ## 📷 Gameplay
 
 <p align="center">
-  <a href="docs/screenshots/gameplay-desktop.png">
-    <img width="900" src="docs/screenshots/gameplay-desktop.png" alt="Actual Dice Abyss gameplay in a 1920 by 1080 desktop browser, showing the dungeon interface, dice combat, equipment, and player status" />
-  </a>
+  <a href="docs/screenshots/gameplay-desktop.png"><img width="900" src="docs/screenshots/gameplay-desktop.png" alt="Dice Abyss desktop gameplay screenshot from the V4 baseline" /></a>
 </p>
+<p align="center"><sub>V4 BASELINE · DESKTOP BROWSER · 1920 × 1080</sub></p>
 
-<p align="center"><sub>ACTUAL GAMEPLAY · DESKTOP BROWSER · 1920 × 1080 · FRESH SESSION (NO IMPORTED SAVE)</sub></p>
+<p align="center">
+  <a href="output/playwright/v5-first-combat-1920.png"><img width="900" src="output/playwright/v5-first-combat-1920.png" alt="V5 first-floor combat in a 1920 by 1080 desktop browser" /></a>
+</p>
+<p align="center"><sub>V5 LOCAL ACCEPTANCE · DESKTOP BROWSER · 1920 × 1080</sub></p>
 
 **Every number on the dice matters.** Combat uses the rolled values, not a predetermined animation. The interface shows enemy intent and the result of each attack so you can understand how your equipment, talents, and luck affect the outcome.
 
@@ -141,7 +149,7 @@ The current game interface is in **Simplified Chinese**. It is designed for a **
 <a id="your-progress"></a>
 ### 💾 Your Progress Stays Yours
 
-Progress is saved automatically in **your browser's local storage**. You can export or import a JSON save from Settings; supported **V1–V3** saves migrate to V4 while preserving a pre-migration archive.
+Progress is saved automatically in **your browser's local storage**. You can export or import a JSON save from Settings; supported **V1–V4** saves migrate to V5 while preserving a pre-migration archive.
 
 > [!IMPORTANT]
 > **Local saves are not cloud saves.** GitHub Pages and `http://127.0.0.1:4188` use separate browser origins, so their saves do not sync. Export your save before clearing site data, switching browsers or profiles, or starting over. Importing a save replaces the active local progress after confirmation.
@@ -205,7 +213,15 @@ npm test
 npm run simulate -- 1000
 ```
 
-These commands perform JavaScript syntax checks, Node.js tests, and a 1,000-run simulation. They are also run by the [GitHub Pages deployment workflow](.github/workflows/pages.yml).
+These commands perform JavaScript syntax checks, Node.js tests, and a 1,000-run simulation. The workflow runs them for pull requests; it assembles and deploys the Pages site only after a push to `main`.
+
+### V5 acceptance and verification limits
+
+The recorded local Chrome acceptance covers the first-floor flow, four deep rarity rewards, five talent paths, forging and relic fusion, ten new deep events, a synthetic V4 save import, and full-inventory save recovery. Deep-floor checks used isolated debug saves. See the [V5 integration and browser acceptance report](docs/v5/集成与实机验收.md) and its linked screenshots for the environment and evidence.
+
+The PR #2 review rerun also used isolated browser saves to verify first-crit luck across a chest, room transition, and refresh; import and claim of a synthetic V4 pending chest; and an Eternal reward opening that remained claimed after refresh. See the [cross-room luck screenshot](output/playwright/v5-p2-01-cross-room-luck.png) and [Eternal reward screenshot](output/playwright/v5-p2-high-rarity-open.png).
+
+Automated checks and isolated browser scenarios do not establish natural long-run progression, every Boss and room combination, migration of a player's private save, or full balance. The Windows launcher, audio listening, and performance on a physical 4K display also remain unverified. Simulated 4K viewport screenshots are layout checks, not hardware performance results.
 
 The deployment assembles a static site from `index.html`, `favicon.svg`, and `src/`. The README, tests, and development scripts are not included in the published game artifact. A successful automated run does **not** imply that long-form manual playtesting or every device configuration has been verified.
 
@@ -215,7 +231,9 @@ The deployment assembles a static site from `index.html`, `favicon.svg`, and `sr
 
 - **Desktop first:** landscape desktop browsers are the intended experience; mobile touch is not a release target.
 - **Performance:** stable native 4K at 60 FPS is not claimed. Simulated 4K long-frame performance remains an open limitation.
-- **Playtesting:** automated tests and browser checks do not amount to a completed extended human playtest.
+- **Playtesting:** natural progression into deep floors, every Boss/room combination, varied player builds, and extended human balance testing remain open.
+- **Compatibility:** private player saves and the native Windows `.cmd` launcher have not been validated as part of the recorded V5 acceptance.
+- **Audio and display performance:** audio has not received a listening review; simulated 4K viewport checks do not verify physical 4K frame rate or long-session performance.
 - **Endless descent:** there is no designed final floor, but browser storage, memory, and numeric limits still apply.
 
 ## 📜 Licensing

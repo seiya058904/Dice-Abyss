@@ -11,7 +11,7 @@ http.createServer(async (req, res) => {
     const name = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
     const relative = name === '/' ? 'index.html' : name.slice(1);
     // Serve only shipping files, never documents, tests or local project metadata.
-    if (!['index.html', 'favicon.svg'].includes(relative) && !/^src\/[a-z-]+\.(js|css)$/.test(relative) && !/^src\/fonts\/[a-zA-Z0-9_.-]+\.woff2$/.test(relative)) {
+    if (!['index.html', 'favicon.svg'].includes(relative) && !/^src\/[a-z0-9-]+\.(js|css|svg)$/.test(relative) && !/^src\/fonts\/[a-zA-Z0-9_.-]+\.woff2$/.test(relative)) {
       res.writeHead(404).end('Not found'); return;
     }
     const file = path.resolve(root, relative);

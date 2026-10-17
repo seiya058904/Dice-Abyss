@@ -4,6 +4,7 @@ import { mountDiceSurface } from './dice-renderer.js';
 // Revision-seeded visuals only. Saved combat state and game RNG are never changed.
 const PIXEL_BUDGET=840000,TAU=Math.PI*2,FLAME_STEP=1000/30;
 const colors={fire:['#ff721a','#ffd247','#fff9d0'],red:['#e92739','#ff8050','#fff0cd'],blue:['#1471ff','#45cfff','#e6fbff'],purple:['#7934eb','#d28aff','#f8e4ff'],white:['#a6b5c7','#e5eef9','#ffffff'],gold:['#df841a','#ffd45b','#fff6bd']};
+Object.assign(colors,{mythic:['#af3945','#ff8992','#ffe9df'],ancient:['#247f72','#76ddcc','#e0fff5'],origin:['#b1842c','#eed59c','#ffffea'],eternal:['#73899e','#ccedff','#ffffff']});
 const textures=new Map();
 let cancel=()=>{};
 const clamp=(v,lo=0,hi=1)=>Math.max(lo,Math.min(hi,v));
@@ -103,8 +104,8 @@ export function mountEffects(state,ui,settings,onSound){
  let seed=(Math.imul(state.revision,7919)+137)>>>0;const rand=()=>{seed=(Math.imul(seed,1664525)+1013904223)>>>0;return seed/4294967296;};
  const finish=combat&&last.killed&&state.enemy?.type==='boss',charged=combat&&(last.best>=2||last.critical);
  const grade=reveal?state.loot?.item.rarity??0:0; // Never read unrevealed chest rarity.
- const rewardKey=anticipation?'white':['white','blue','purple','gold'][grade];
- const duration=anticipation?800:reveal?(grade===3?1850:grade===0?720:1100):finish?1450:1150;
+ const rewardKey=anticipation?'white':['white','blue','purple','gold','mythic','ancient','origin','eternal'][grade];
+ const duration=anticipation?800:reveal?(grade>=3?1850:grade===0?720:1100):finish?1450:1150;
  canvas.dataset.fxKind=combat?'combat':anticipation?'chest-charge':`loot-${grade}`;canvas.dataset.fxLightningHz='24';
  const dice=combat?[...stage.querySelectorAll('.cube-die')].map(el=>{
   const r=el.getBoundingClientRect(),key=el.classList.contains('resonant')?'fire':el.classList.contains('charged')?'blue':last.critical?'red':'white';
@@ -118,19 +119,19 @@ export function mountEffects(state,ui,settings,onSound){
  const edges=outline.flatMap((p,i)=>{const next=outline[(i+1)%outline.length];return Array.from({length:3},(_,j)=>({x:p[0]+(next[0]-p[0])*j/3,y:p[1]+(next[1]-p[1])*j/3,phase:rand()*TAU}));});
  const activeDice=dice.filter(d=>d.active);
  const flames=activeDice.flatMap(d=>Array.from({length:finish?18:last.best>=3?15:11},()=>({d,anchor:rand(),lift:.14+rand()*.38,width:.028+rand()*.055,phase:rand()*TAU,speed:.012+rand()*.015})));
- const count=anticipation?22:reveal?[30,58,86,132][grade]:finish?142:charged?Math.min(118,52+dice.length*8):18;
+ const count=anticipation?22:reveal?[30,58,86,132,132,132,132,132][grade]:finish?142:charged?Math.min(118,52+dice.length*8):18;
  const particles=Array.from({length:count},(_,i)=>{
   const d=dice[i%Math.max(1,dice.length)],a=rand()*TAU,follow=combat&&last.follow&&i%4===0;
   return{x:d?d.x+Math.cos(a)*d.size*.52:center.x+(rand()-.5)*unit*.9,y:d?d.y+Math.sin(a)*d.size*.45:center.y+(rand()-.5)*unit*.18,vx:(rand()-.5)*(combat?unit*1.6:unit*2.2),vy:-unit*(.3+rand()*1.4),life:450+rand()*800,delay:follow?450+rand()*90:rand()*(anticipation?500:220),size:.7+rand()*1.8,key:follow?'blue':combat?d?.key??'fire':rewardKey,square:reveal&&i%3===0,phase:rand()*TAU};
  });
  canvas.dataset.fxParticles=String(count);
  // Tiny cached glow sprites replace per-particle shadows, filters and gradients.
- for(const key of new Set(particles.map(p=>p.key)))texture(key);if(anticipation||reveal)texture(rewardKey,true);
+ for(const p of particles){p.sprite=texture(p.key);p.ink=colors[p.key][2];p.stroke=colors[p.key][1];}if(anticipation||reveal)texture(rewardKey,true);
  // Raster material caches are local to each die. The ninety tongues in a six-die
  // resonance still curl independently, but display frames submit six images.
  for(const d of activeDice){d.flames=[];d.sprite=texture(d.key);d.tile=materialTile({x:d.x-d.size*1.12,y:d.y-d.size*1.12,width:d.size*2.24,height:d.size*1.82},prepared.ratio);if(d.tile)materials.push(d.tile);}
  for(const f of flames){const edge=f.anchor*(outline.length-1),i=Math.floor(edge),mix=edge-i,a=outline[i],b=outline[(i+1)%outline.length],d=f.d;
-  f.x=d.x+(a[0]+(b[0]-a[0])*mix)*d.size;f.y=d.y+(a[1]+(b[1]-a[1])*mix)*d.size;f.width=d.size*f.width;d.flames.push(f);}
+  f.x=d.x+(a[0]+(b[0]-a[0])*mix)*d.size;f.y=d.y+(a[1]+(b[1]-a[1])*mix)*d.size;f.width=d.size*f.width;f.shape={lift:0,tx:0,ty:0};d.flames.push(f);}
  const area=extent();for(const p of particles)particleExtent(area,p,unit,duration,combat);
  for(const d of activeDice)include(area,d.x-d.size*1.2,d.y-d.size*1.3,d.size*2.4,d.size*2);
  const sweep=(x,y,r,squash)=>{const rx=r*Math.hypot(Math.cos(.08),squash*Math.sin(.08)),ry=r*Math.hypot(Math.sin(.08),squash*Math.cos(.08));include(area,x-rx-5,y-ry-5,rx*2+10,ry*2+10);};
@@ -141,17 +142,17 @@ export function mountEffects(state,ui,settings,onSound){
   if(last.absorbed>0&&state.enemy?.shield===0)sweep(center.x,center.y,unit*1.5,.58);
   if(last.follow){const x=clamp(center.x-unit*.6,unit*.4,w-unit*.4),y=Math.min(h-12,center.y+unit*.65),d=dice.at(-1);if(d)include(area,Math.min(x,d.x)-unit*.5,Math.min(y,d.y)-unit*.7,Math.abs(x-d.x)+unit,Math.abs(y-d.y)+unit*1.4);}
  }
- const columns=anticipation?3:grade===3?9:grade===2?7:grade===1?5:3,rewardRims=[];
+ const columns=anticipation?3:grade>=3?9:grade===2?7:grade===1?5:3,rewardRims=[];
  let rewardMaterial=null;
  if(anticipation||reveal){
-  const c=colors[rewardKey],spread=unit*(anticipation?.6:1.4),radius=unit*(anticipation?.85:grade===3?1.2:.7),beamHeight=Math.min(center.y+20,h*.86);
+  const c=colors[rewardKey],spread=unit*(anticipation?.6:1.4),radius=unit*(anticipation?.85:grade>=3?1.2:.7),beamHeight=Math.min(center.y+20,h*.86);
   const halfWidth=Math.max(radius,spread*.5+unit*.24);
   const bounds={x:center.x-halfWidth-5,y:center.y-Math.max(beamHeight,radius*.5)-5,width:halfWidth*2+10,height:Math.max(beamHeight,radius*.5)+radius*.5+10};
   rewardMaterial=materialTile(bounds,prepared.ratio,1024);
   if(rewardMaterial){materials.push(rewardMaterial);const target=rewardMaterial.ctx;target.globalCompositeOperation='lighter';
    for(let i=0;i<columns;i++){
-    const q=(i-(columns-1)/2)/Math.max(1,columns-1),width=unit*(anticipation?.035:grade===3?.13:.07)*(i%2?.55:1),height=beamHeight*(1-Math.abs(q)*.45),x=center.x+q*spread;
-    target.globalAlpha=anticipation?.24:grade===3?.57:.36;target.drawImage(texture(rewardKey,true),x-width*.5,center.y-height,width,height);
+    const q=(i-(columns-1)/2)/Math.max(1,columns-1),width=unit*(anticipation?.035:grade>=3?.13:.07)*(i%2?.55:1),height=beamHeight*(1-Math.abs(q)*.45),x=center.x+q*spread;
+    target.globalAlpha=anticipation?.24:grade>=3?.57:.36;target.drawImage(texture(rewardKey,true),x-width*.5,center.y-height,width,height);
     target.beginPath();target.moveTo(x,center.y);target.lineTo(x+q*unit*.4,center.y-height*.82);target.lineWidth=.8;target.strokeStyle=c[1];target.globalAlpha=.5;target.stroke();
     if(reveal&&grade>=2){target.beginPath();target.moveTo(x-width*.12,center.y);target.lineTo(x+width*.08,center.y-height*.6);target.lineTo(x+width*.15,center.y-height*.28);target.lineTo(x+width*.22,center.y);target.closePath();target.fillStyle=c[2];target.globalAlpha=i%2?.23:.45;target.fill();}
    }
@@ -165,9 +166,9 @@ export function mountEffects(state,ui,settings,onSound){
    include(area,bounds.x,bounds.y,bounds.width,bounds.height);
   }
   if(anticipation)sweep(center.x,center.y,radius,.5);
-  if(reveal){sweep(center.x,center.y+unit*.24,unit*1.8,.32);include(area,center.x-unit*.74-3,center.y-unit*.42-3,unit*1.48+6,unit*.7+6);}
+  if(reveal){sweep(center.x,center.y+unit*.24,unit*1.8,.32);include(area,center.x-unit*.74-3,center.y-unit*.42-3,unit*1.48+6,unit*.7+6);if(grade>=4)include(area,center.x-unit*1.32,center.y-unit*1.58,unit*2.64,unit*2.3);}
   // Only a transient edge material. The permanent card and its text belong to CSS.
-  const card=reveal&&grade===3?document.querySelector('.loot-reveal .item-card')?.getBoundingClientRect():null;
+  const card=reveal&&grade>=3?document.querySelector('.loot-reveal .item-card')?.getBoundingClientRect():null;
   if(card){const x=card.left-box.left,y=card.top-box.top,cw=card.width,ch=card.height;
    const sides=[{x:x-8,y:y-8,width:cw+16,height:18,a:[x+8,y-2],b:[x+cw-8,y-2]},{x:x-8,y:y+ch-10,width:cw+16,height:18,a:[x+8,y+ch+2],b:[x+cw-8,y+ch+2]},{x:x-8,y:y+8,width:18,height:Math.max(1,ch-16),a:[x-2,y+12],b:[x-2,y+ch-12]},{x:x+cw-10,y:y+8,width:18,height:Math.max(1,ch-16),a:[x+cw+2,y+12],b:[x+cw+2,y+ch-12]}];
    for(const [index,side]of sides.entries()){const tile=materialTile(side,prepared.ratio,1024);if(!tile)continue;const target=tile.ctx;target.globalCompositeOperation='lighter';target.beginPath();target.moveTo(...side.a);target.lineTo(...side.b);
@@ -179,6 +180,7 @@ export function mountEffects(state,ui,settings,onSound){
  }
  const roi=cropCanvas(prepared,area);
  canvas.dataset.fxRewardColumns=String(combat?0:columns);canvas.dataset.fxRewardSquares=String(particles.filter(p=>p.square).length);canvas.dataset.fxRewardRims=String(rewardRims.length);
+ canvas.dataset.fxRewardMotif=reveal?['motes','sparks','facets','rays','seal','spiral','origin-star','eternal-orbits'][grade]:'none';
  canvas.dataset.fxMaterialPixels=String(materials.reduce((n,t)=>n+t.canvas.width*t.canvas.height,0));
  let lightning=[],followBolts=[],tick=-1,flameTick=-1,start=performance.now();
  canvas.dataset.fxFlameHz='30';canvas.dataset.fxFlames=String(flames.length);canvas.dataset.fxFlameTiles=String(activeDice.filter(d=>d.tile).length);
@@ -206,7 +208,7 @@ export function mountEffects(state,ui,settings,onSound){
     d.coreGradient=target.createLinearGradient(0,d.y-size*1.05,0,d.y+size*.55);d.coreGradient.addColorStop(0,c[1]+'28');d.coreGradient.addColorStop(.22,c[2]);d.coreGradient.addColorStop(.7,c[1]+'a8');d.coreGradient.addColorStop(1,c[0]+'18');
    }
    target.beginPath();for(const f of d.flames){const x=f.x,y=f.y,width=f.width;
-    const lift=size*f.lift*(.7+.3*Math.sin(ms*f.speed+f.phase)),tx=x+Math.sin(ms*.009+f.phase)*lift*.65,ty=y-lift;f.shape={lift,tx,ty};
+    const lift=size*f.lift*(.7+.3*Math.sin(ms*f.speed+f.phase)),tx=x+Math.sin(ms*.009+f.phase)*lift*.65,ty=y-lift;f.shape.lift=lift;f.shape.tx=tx;f.shape.ty=ty;
     target.moveTo(x-width,y+width*.4);target.bezierCurveTo(x-width*.4,y-lift*.4,tx+width*1.6,ty+lift*.2,tx,ty);target.bezierCurveTo(tx+width*.25,ty+lift*.5,x+width*1.8,y-lift*.2,x+width,y);target.closePath();
    }target.fillStyle=d.tongueGradient;target.globalAlpha=.7;target.fill();
    target.beginPath();for(const f of d.flames){const {lift,tx,ty}=f.shape,x=f.x,y=f.y,width=f.width,breakup=.1+.15*(.5+.5*Math.sin(f.phase+ms*.011));
@@ -229,11 +231,29 @@ export function mountEffects(state,ui,settings,onSound){
   for(const p of particles){const age=ms-p.delay;if(age<0||age>p.life)continue;
    const life=age/p.life,seconds=age/1000,x=p.x+p.vx*seconds+Math.sin(p.phase+seconds*4)*unit*.025,y=p.y+p.vy*seconds+unit*.23*seconds*seconds;
    const alpha=Math.sin(Math.min(1,life*3)*Math.PI*.5)*(1-life)*fade;if(alpha<=0)continue;
-   const size=p.size*(combat?clamp(unit/130,.8,2):1.2),glow=size*8;ctx.globalAlpha=alpha*.74;ctx.drawImage(texture(p.key),x-glow*.5,y-glow*.5,glow,glow);
-   ctx.fillStyle=colors[p.key][2];ctx.strokeStyle=colors[p.key][1];ctx.lineWidth=.7;ctx.globalAlpha=alpha;
+   const size=p.size*(combat?clamp(unit/130,.8,2):1.2),glow=size*8;ctx.globalAlpha=alpha*.74;ctx.drawImage(p.sprite,x-glow*.5,y-glow*.5,glow,glow);
+   ctx.fillStyle=p.ink;ctx.strokeStyle=p.stroke;ctx.lineWidth=.7;ctx.globalAlpha=alpha;
    if(p.square){ctx.save();ctx.translate(x,y);ctx.rotate(p.phase+seconds*.7);ctx.strokeRect(-size,-size,size*2,size*2);ctx.restore();}
    else{ctx.fillRect(x,y,size*.7,size*.7);ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x-p.vx*.022,y-p.vy*.022);ctx.stroke();}
   }
+ }
+ function drawRelicMotif(ms,strength){
+  if(!reveal||grade<4)return;
+  const x=center.x,y=center.y-unit*.42,r=unit*(.79+.08*Math.sin(ms*.0015)),c=colors[rewardKey];
+  ctx.strokeStyle=c[1];ctx.lineWidth=1.05;ctx.globalAlpha=strength*.7;ctx.beginPath();
+  if(grade===4){
+   // Mythic: a forged six-sided seal, with opposed points of light.
+   for(let i=0;i<=6;i++){const a=-Math.PI/2+i*TAU/6,px=x+Math.cos(a)*r*.8,py=y+Math.sin(a)*r*.8;if(i===0)ctx.moveTo(px,py);else ctx.lineTo(px,py);}
+   ctx.moveTo(x-r*.43,y);ctx.lineTo(x+r*.43,y);ctx.moveTo(x,y-r*.5);ctx.lineTo(x,y+r*.5);ctx.stroke();
+  }else if(grade===5||grade===7){
+   // Ancient spirals and Eternal crossing orbits have distinct silhouettes.
+   const orbitCount=grade===7?3:2;
+   for(let i=0;i<orbitCount;i++){ctx.beginPath();ctx.ellipse(x,y,r*(1+i*.09),r*(i===2?.72:.3),-.3+i*.92+Math.sin(ms*.0008)*.08,.14+i*.6,TAU-.15+i*.6);ctx.stroke();}
+  }else{
+   // Origin: eight angular rays converge into an engraved diamond.
+   for(let i=0;i<=16;i++){const a=i*Math.PI/8-Math.PI/2,rr=r*(i%2?.4:1),px=x+Math.cos(a)*rr,py=y+Math.sin(a)*rr;if(i===0)ctx.moveTo(px,py);else ctx.lineTo(px,py);}ctx.stroke();
+  }
+  if(grade===7){ctx.strokeStyle=c[2];ctx.globalAlpha=strength*.63;ctx.beginPath();for(let i=0;i<5;i++){const px=x+(i-2)*unit*.31,progress=(ms*.00055+i*.21)%1,py=center.y-unit*.15-progress*unit*1.28;ctx.moveTo(px,py);ctx.lineTo(px,py-unit*.08);}ctx.stroke();}
  }
  function drawReward(ms,t){
   const c=colors[rewardKey],strength=anticipation?Math.pow(t,1.7):Math.pow(1-t,1.25);
@@ -244,6 +264,7 @@ export function mountEffects(state,ui,settings,onSound){
    for(let i=0;i<3;i++){const x=center.x+(i-1)*unit*.29,height=Math.min(center.y+20,h*.86)*(.65+.13*Math.sin(ms*.009+i*2));ctx.globalAlpha=strength*(.23+.12*Math.sin(ms*.015+i));ctx.drawImage(texture(rewardKey,true),x-unit*.009,center.y-height,unit*.018,height);}
    for(const [index,tile]of rewardRims.entries()){ctx.globalAlpha=clamp((ms-200)/180)*Math.pow(1-t,.8)*(.8+.2*Math.sin(ms*.012+index*1.7));ctx.drawImage(tile.canvas,tile.x,tile.y,tile.width,tile.height);}
   }
+  drawRelicMotif(ms,strength);
   if(reveal){ring(ctx,center.x,center.y+unit*.24,unit*(.5+t*1.3),rewardKey,strength*.7);ctx.strokeStyle=c[1];ctx.lineWidth=1;ctx.globalAlpha=strength*.62;
    const rx=unit*(.62+t*.12),ry=unit*.42;for(const side of [-1,1]){ctx.beginPath();ctx.moveTo(center.x+side*(rx-unit*.18),center.y-ry);ctx.lineTo(center.x+side*rx,center.y-ry);ctx.lineTo(center.x+side*rx,center.y+ry*.65);ctx.stroke();}}
  }

@@ -27,7 +27,7 @@ const oldStats=item=>{const value=legacyItemValue(item),p=PROFILES[item.slot][it
 test('V1, V2 and V3 migrate every owned and pending item without changing identity, investment, enemy or transaction state',()=>{
  for(const version of [1,2,3])for(const phase of ['combat','chest','loot']){
   const source=legacyFixture(version,phase),before=structuredClone(source),next=migrateSave(source);
-  assert.deepEqual(source,before);assert.equal(next.version,4);assert(validateSave(next));
+  assert.deepEqual(source,before);assert.equal(next.version,5);assert(validateSave(next));
   for(const key of ['rng','revision','runId','floor','phase','nextId','route','fate','enemy','counters'])assert.deepEqual(next[key],before[key]);
   for(const key of ['gold','hp','xp','level','talentPoints'])assert.equal(next.player[key],before.player[key]);
   assert.equal(next.player.items.length,before.player.items.length);assert.deepEqual(next.player.equipped,{...before.player.equipped,relic2:null,relic3:null});

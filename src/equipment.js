@@ -26,7 +26,8 @@ export function itemStats(item){
  const effects=CATALOG_BY_ID.get(item.catalogId)?.effects||{};
  const result=item.slot==='weapon'?{attack:Math.round(value*p.attack),crit:item.rarity*.015+p.crit,follow:p.follow}:item.slot==='armor'?{hp:Math.round(value*3*p.hp),defense:Math.round(value*.24*p.defense),crit:p.crit||0}:{attack:Math.round(value*.12*p.attack),crit:.01+item.rarity*.015+p.crit,follow:.04+item.rarity*.02+p.follow};
  for(const [key,amount]of Object.entries(effects))result[key]=(result[key]||0)+amount;
- if(result.luck!==undefined)result.luck=Math.round(result.luck);
+ for(const key of ['luck','firstCritLuck','eliteLuck'])if(result[key]!==undefined)result[key]=Math.round(result[key]);
+ for(const key of ['attack','hp','defense'])if(result[key]!==undefined)result[key]=Math.min(Number.MAX_SAFE_INTEGER,result[key]);
  return result;
 }
 export function makeItem(s,slot,rarity=0,depth=s.floor,rewardType='combat'){
@@ -37,7 +38,7 @@ export function makeItem(s,slot,rarity=0,depth=s.floor,rewardType='combat'){
  return {id:`i${s.nextId++}`,slot,rarity,depth,level,levelXp:0,enhance:0,locked:false,catalogId:entry.id,profile:entry.profile,theme:entry.theme,name:entry.name};
 }
 export function validEquipment(item){
- if(!item||Object.hasOwn(item,'growth')||!/^i\d+$/.test(item.id)||!['weapon','armor','relic'].includes(item.slot)||!integer(item.rarity,0,3)||!integer(item.depth,1,Number.MAX_SAFE_INTEGER)||!integer(item.level,1,MAX_ITEM_LEVEL)||!integer(item.levelXp,0,levelXpNeeded(item.level)-1)||!integer(item.enhance,0,ENHANCE_CAP)||typeof item.name!=='string'||item.name.length>64)return false;
+ if(!item||Object.hasOwn(item,'growth')||!/^i\d+$/.test(item.id)||!['weapon','armor','relic'].includes(item.slot)||!integer(item.rarity,0,7)||!integer(item.depth,1,Number.MAX_SAFE_INTEGER)||!integer(item.level,1,MAX_ITEM_LEVEL)||!integer(item.levelXp,0,levelXpNeeded(item.level)-1)||!integer(item.enhance,0,ENHANCE_CAP)||typeof item.name!=='string'||item.name.length>64)return false;
  if(item.level===MAX_ITEM_LEVEL&&item.levelXp!==0)return false;
  if(item.locked!==undefined&&typeof item.locked!=='boolean')return false;
  if(item.legacy!==undefined&&typeof item.legacy!=='boolean')return false;
@@ -82,15 +83,34 @@ export function advanceEquipment(input,xp){
  if(!validEquipment(item))throw Error('装备经验结算未通过安全校验。');return item;
 }
 export const forgeCost=(s,item)=>Math.min(GOLD_CAP+1,Math.round((35+item.level*8+item.enhance*item.enhance*6)*(1+item.rarity*.25)*(1-(s.player.talents.smith||0)*.05)*(s.route[s.roomIndex]?.quality ? .8 : 1)));
+const fusionMaterialXp=item=>(80+18*Math.sqrt(effectiveLevel(item)))*[1,1.6,2.6,4.2,6.8,11,17.8,28.8][item.rarity]*(1+item.enhance*.0125);
+// Selecting a full inventory must not construct a 10,000-entry lookup and six
+// detailed outcome tables for every individual material. Keep the same per-item
+// safety rules, including the highest-roll level cap, in one bounded pass.
+export function safeFusionMaterialIds(s,targetIds){
+ const ids=Array.isArray(targetIds)?targetIds:[targetIds];
+ if(!ids.length||ids.length>3||new Set(ids).size!==ids.length)return [];
+ const inventory=new Map(s.player.items.map(item=>[item.id,item])),targets=ids.map(id=>inventory.get(id));
+ if(targets.some(item=>!validEquipment(item)||item.level===MAX_ITEM_LEVEL)||targets.some(item=>item.slot!==targets[0].slot)||(targets.length>1&&targets[0].slot!=='relic'))return [];
+ const excluded=new Set([...ids,...equippedIds(s),s.loot?.item?.id]),rarity=Math.min(2,...targets.map(item=>item.rarity));
+ return s.player.items.filter(item=>{
+  if(excluded.has(item.id)||item.locked||item.rarity>rarity||item.slot!==targets[0].slot||!validEquipment(item))return false;
+  const base=Math.max(targets.length,Math.floor(fusionMaterialXp(item)));
+  if(base>MAX_ITEM_XP/2.5)return false;
+  const total=Math.floor(base*2.5);
+  try{for(let index=0;index<targets.length;index++)advanceEquipment(targets[index],Math.floor(total/targets.length)+(index<total%targets.length?1:0));}catch{return false;}
+  return true;
+ }).map(item=>item.id);
+}
 export function fusionPreview(s,targetIds,materialIds,allowProtected=false){
  const list=ids=>Array.isArray(ids)?ids:[ids],ts=list(targetIds),ms=list(materialIds);
  if(!ts.length||ts.length>3||!ms.length||new Set([...ts,...ms]).size!==ts.length+ms.length)return null;
  const inventory=new Map(s.player.items.map(i=>[i.id,i]));
  const targets=ts.map(id=>inventory.get(id)),materials=ms.map(id=>inventory.get(id));
  if([...targets,...materials].some(i=>!validEquipment(i))||targets.some(i=>i.slot!==targets[0].slot||i.level===MAX_ITEM_LEVEL)||(targets.length>1&&targets[0].slot!=='relic')||materials.some(i=>i.slot!==targets[0].slot||equippedIds(s).includes(i.id)||i.id===s.loot?.item?.id))return null;
- const protectedItems=materials.filter(i=>i.locked||i.rarity===3||i.rarity>Math.min(...targets.map(t=>t.rarity)));
- if(protectedItems.length&&!allowProtected)return null;
- const base=Math.max(targets.length,Math.floor(materials.reduce((n,i)=>n+(80+18*Math.sqrt(effectiveLevel(i)))*[1,1.6,2.6,4.2][i.rarity]*(1+i.enhance*.0125),0)));
+ const protectedItems=materials.filter(i=>i.locked||i.rarity>=3||i.rarity>Math.min(...targets.map(t=>t.rarity)));
+ if(protectedItems.length&&allowProtected!==true)return null;
+ const base=Math.max(targets.length,Math.floor(materials.reduce((n,item)=>n+fusionMaterialXp(item),0)));
  if(base>MAX_ITEM_XP/2.5)return null;
  let outcomes;try{outcomes=Array.from({length:6},(_,i)=>{
   const value=i+1,boost=value===6?2.5:value===5?1.75:1,total=Math.floor(base*boost),gains=targets.map((_,j)=>Math.floor(total/targets.length)+(j<total%targets.length?1:0));
