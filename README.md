@@ -69,6 +69,37 @@ for 100/1k/10k inventories (`--sizes=100,1000,10000`); and
 `benchmark-storage-round27.mjs` retains the original storage differential
 scenarios and reports Node timings only. Raw QA logs are not shipped.
 
+Local acceptance on **2026-10-20** used Windows, Ryzen 7 9700X,
+Chromium **156.0.8078.4**, ANGLE **SwiftShader**, DPR 1 and disposable saves.
+The font comparison repeated each of 1366×768, 1920×1080, 3840×2160 and
+390×844 twice: text rectangles, line breaks, cards and scroll geometry were
+exactly equal, with zero repeat-layout noise. Normal flows requested no Full
+font; the imported-name probe used Fusion Pixel Full, a Text probe used Source
+Han Full, and an unsupported emoji used the system font. Each Full was fetched
+once. At 1920×1080, cold CDP font bytes fell **8,657,387 → 364,721 (95.79%)**;
+FCP was **212/204 → 140/136 ms** in the two local samples. These are loopback
+identity-encoding measurements, not published-CDN or universal startup claims.
+Keeping Full fonts means the total deployment grows despite lower first-load
+traffic.
+
+The final interaction comparison retained **12 pairs per action/size/probe
+mode**, one warmup each, and all tails. For 10k equipment, click-to-second-RAF
+lock p50/p95 was **95.3/113.3 → 100.9/108.4 ms**, equip **89.5/92.2 →
+89.8/92.1 ms**, and opening **62.9/67.4 → 63.9/68.4 ms**. Recycling confirmation
+through durable mirror write and two RAFs improved **148.9/152.2 →
+143.6/145.7 ms**. The 1k lock/equip medians rose **53.9/38.1 → 57.4/41.4 ms**.
+These mixed results do **not** establish a general interaction speedup.
+The capacity change removes one UTF-8 allocation from the 10k reference save;
+both parses, all four serializations, and primary/mirror writes remain.
+
+942 Node tests, 1,000 ten-floor simulations and 43 storage differential
+scenarios passed. Native context restoration and all 16 surface functional
+cases passed; the 19 supplied-motion cases matched. Strict RGBA still failed
+5 of 7 cross-version image comparisons and 3 of 7 same-version comparisons
+(the eighth pair is a non-RGBA effects case). Those failures remain open,
+along with the historical deep 4×400 completion limit, physical-GPU 4K/60 FPS,
+long-term memory and balance. No remote workflow or Pages deployment was run.
+
 The public Pages release remains the previously published V5.26.0 below.
 
 ## V5.26.0 · Reviewed, Integrated & Published (historical)

@@ -18,6 +18,7 @@ const site=path.join(output,'_site');await fs.mkdir(site);
 const sha=x=>createHash('sha256').update(x).digest('hex');
 const git=(...args)=>execFileSync('git',args,{cwd:root,maxBuffer:20e6});
 const report={status:'RUNNING',head:git('rev-parse','HEAD').toString().trim(),release:JSON.parse(await fs.readFile(path.join(root,'package.json'),'utf8')).version,os:os.release(),cpu:os.cpus()[0].model,backend:'ANGLE SwiftShader',checks:[],manifest:[],console:[],network:[],errors:[]};
+report.scriptSha256=sha(await fs.readFile(new URL(import.meta.url)));
 const persist=()=>fs.writeFile(path.join(output,'report.json'),JSON.stringify(report,null,2));
 let server,browser,page;
 async function check(name,fn){report.activeCheck=name;await persist();await fn();report.checks.push({name,status:'PASS'});}
@@ -43,15 +44,32 @@ try{
  const url=`http://127.0.0.1:${server.address().port}/`;report.url=url;
  const {chromium}=createRequire(import.meta.url)(process.env.PLAYWRIGHT_MODULE||'playwright');
  browser=await chromium.launch({headless:true,executablePath:process.env.CHROMIUM_PATH,args:['--use-angle=swiftshader','--enable-unsafe-swiftshader']});report.browser=browser.version();
- const context=await browser.newContext({viewport:{width:1920,height:1080},deviceScaleFactor:1,reducedMotion:'reduce'});page=await context.newPage();
+ const context=await browser.newContext({viewport:{width:1920,height:1080},deviceScaleFactor:1,reducedMotion:'reduce'});
+ await context.addInitScript(()=>{
+  window.__atlasDigits=[];
+  const fill=CanvasRenderingContext2D.prototype.fillText;
+  CanvasRenderingContext2D.prototype.fillText=function(text,...args){
+   if(this.canvas.width===1536&&this.canvas.height===512&&/^[1-6]$/.test(text))window.__atlasDigits.push({text,font:this.font});
+   return fill.call(this,text,...args);
+  };
+ });
+ page=await context.newPage();
  page.on('console',m=>{report.console.push({type:m.type(),text:m.text()});});page.on('pageerror',e=>report.errors.push(String(e)));page.on('response',r=>report.network.push({url:r.url(),status:r.status()}));
  await check('all-shipping-HTTP-bytes',async()=>{for(const asset of report.manifest){const r=await context.request.get(url+asset.file);assert.equal(r.status(),200,asset.file);assert.equal(sha(await r.body()),asset.sha256,asset.file);}});
  await check('release-title-new-manual-roll',async()=>{
   await page.goto(url);assert.equal(await page.locator('meta[name="dice-abyss-release"]').getAttribute('content'),report.release);assert.equal(await page.locator('meta[name="dice-abyss-build"]').getAttribute('content'),'5');
   await page.locator('[data-action="new"]').click();await page.locator('#primary-action:not(:disabled)').waitFor();
   const before=S.decodeSave(await page.evaluate(k=>localStorage.getItem(k),S.SAVE_KEY));assert.equal(before.phase,'fate');
-  await page.locator('#primary-action').click();await page.locator('#primary-action:not(:disabled)').waitFor();
+  await page.locator('#primary-action').click();
+  await page.waitForFunction(rev=>JSON.parse(JSON.parse(localStorage.getItem('dice-abyss:save:v1')).payload).revision===rev,before.revision+1);
+  await page.locator('#primary-action:not(:disabled)').waitFor();
   assert.deepEqual(S.decodeSave(await page.evaluate(k=>localStorage.getItem(k),S.SAVE_KEY)),E.transition(before,{type:'fate'}));
+ });
+ await check('dice-atlas-core-numerals',async()=>{
+  await page.evaluate(()=>document.fonts.ready);
+  report.atlasDigits=await page.evaluate(()=>window.__atlasDigits);
+  assert.deepEqual(report.atlasDigits.slice(-6).map(x=>x.text),['1','2','3','4','5','6']);
+  assert(report.atlasDigits.slice(-6).every(x=>x.font.includes('Abyss Pixel')),'Actual production atlas uses Core rather than Consolas');
  });
  await check('10000-inventory-lock-mirror-reload',async()=>{
   const state=E.newGame(27017);state.runId='release-qa-10000';while(state.player.items.length<10000)state.player.items.push(E.makeItem(state,'weapon',state.nextId%8));
