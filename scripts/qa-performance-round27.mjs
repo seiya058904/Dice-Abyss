@@ -40,14 +40,14 @@ async function click(page,selector,cdp,transaction=false){
     const start=performance.now();
     // Storage write completion is observed without polling/parsing the 2 MB save.
     // A temporary wrapper is identical in both arms; initial click metric remains separate.
-    let commitCompleteMs=null;let committed=Promise.resolve(null);
+    let primaryCompleteMs=null,commitCompleteMs=null;let committed=Promise.resolve(null);
     if(transaction){
      committed=new Promise(done=>{
       const set=Storage.prototype.setItem;
-      Storage.prototype.setItem=function(k,v){const value=set.call(this,k,v);if(k==='dice-abyss:mirror:v1'){Storage.prototype.setItem=set;commitCompleteMs=performance.now()-start;requestAnimationFrame(()=>requestAnimationFrame(()=>done(performance.now()-start)));}return value;};
+      Storage.prototype.setItem=function(k,v){const value=set.call(this,k,v);if(k==='dice-abyss:save:v1')primaryCompleteMs=performance.now()-start;if(k==='dice-abyss:mirror:v1'){Storage.prototype.setItem=set;commitCompleteMs=performance.now()-start;requestAnimationFrame(()=>requestAnimationFrame(()=>done(performance.now()-start)));}return value;};
      });
     }
-    requestAnimationFrame(()=>requestAnimationFrame(async()=>{const end=performance.now(),committedMs=await committed;setTimeout(()=>resolve({trusted:e.isTrusted,start,end,ms:end-start,commitCompleteMs,committedMs,operations:window.__samples,stages:performance.getEntriesByType('measure').map(x=>({name:x.name,start:x.startTime,ms:x.duration})),longTasks:window.__tasks.filter(x=>x.start<start+(committedMs||end-start)&&x.start+x.ms>start)}),0);}));};
+    requestAnimationFrame(firstRAF=>requestAnimationFrame(async secondRAF=>{const end=performance.now(),committedMs=await committed;setTimeout(()=>resolve({trusted:e.isTrusted,start,end,firstRAF,secondRAF,ms:end-start,primaryCompleteMs,commitCompleteMs,committedMs,operations:window.__samples,stages:performance.getEntriesByType('measure').map(x=>({name:x.name,start:x.startTime,ms:x.duration})),longTasks:window.__tasks.filter(x=>x.start<start+(committedMs||end-start)&&x.start+x.ms>start)}),0);}));};
    performance.clearMeasures();document.addEventListener('click',listener,true);
   });
  },{selector,transaction});
@@ -65,7 +65,7 @@ try{
   assert(S.validateSave(state));const raw=S.encodeSave(state);
   report.fixtures.push({size,sha256:sha(raw),bytes:Buffer.byteLength(raw)});await fs.writeFile(path.join(output,`fixture-${size}.json`),raw);
   const pairs=Number(args.pairs||12);
-  for(let pair=0;pair<=pairs;pair++)for(const label of labels.map((_,i)=>labels[(i+pair)%labels.length]))for(const instrumented of modes){
+  for(let pair=0;pair<=pairs;pair++)for(const label of labels.map((_,i)=>labels[(i+pair)%labels.length]))for(const instrumented of pair%2?[...modes].reverse():modes){
    const run={size,pair,warmup:pair===0,label,instrumented,url:args[label],actions:{},errors:[]};report.runs.push(run);
    const context=await browser.newContext({viewport:report.viewport,deviceScaleFactor:1,reducedMotion:'reduce'});
    await context.addInitScript(({raw,instrumented})=>{
@@ -110,7 +110,7 @@ try{
  for(const size of report.fixtures.map(x=>x.size))for(const instrumented of modes)for(const action of ['open','filter','page','lock','equip','salvage']){
   const runs=report.runs.filter(x=>x.size===size&&x.instrumented===instrumented&&!x.warmup);
   const values=label=>runs.filter(x=>x.label===label).map(x=>x.actions[action]);
-  report.summary[`${size}/${instrumented}/${action}`]=Object.fromEntries(labels.map(label=>[label,{...stats(values(label).map(x=>x.ms)),scriptMs:stats(values(label).map(x=>x.cdp.ScriptDuration*1000)),layoutMs:stats(values(label).map(x=>x.cdp.LayoutDuration*1000)),commitComplete:['lock','equip','salvage'].includes(action)?stats(values(label).map(x=>x.commitCompleteMs)):null,committed:['lock','equip','salvage'].includes(action)?stats(values(label).map(x=>x.committedMs)):null}]));
+  report.summary[`${size}/${instrumented}/${action}`]=Object.fromEntries(labels.map(label=>[label,{...stats(values(label).map(x=>x.ms)),scriptMs:stats(values(label).map(x=>x.cdp.ScriptDuration*1000)),styleMs:stats(values(label).map(x=>x.cdp.RecalcStyleDuration*1000)),layoutMs:stats(values(label).map(x=>x.cdp.LayoutDuration*1000)),primaryComplete:['lock','equip','salvage'].includes(action)?stats(values(label).map(x=>x.primaryCompleteMs)):null,commitComplete:['lock','equip','salvage'].includes(action)?stats(values(label).map(x=>x.commitCompleteMs)):null,committed:['lock','equip','salvage'].includes(action)?stats(values(label).map(x=>x.committedMs)):null}]));
   report.summary[`${size}/${instrumented}/${action}`].pairedByArm=Object.fromEntries(labels.filter(x=>x!=='baseline').map(label=>[label,stats(values(label).map((x,i)=>x.ms-values('baseline')[i].ms))]));
   report.summary[`${size}/${instrumented}/${action}`].paired=stats(values('current').map((x,i)=>x.ms-values('baseline')[i].ms));
  }

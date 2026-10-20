@@ -39,31 +39,57 @@
 
 ## V5.27.0 · Local performance work, not published
 
-Final acceptance remains **BLOCKED / not release-ready**. The final regression
-pass based on `2e982df` was prevented from starting its local browser servers by
-an execution-policy rejection. Existing browser measurements are historical
-evidence, not a new four-arm reproduction. No runtime optimization was added
-without that reproduction.
+The bounded follow-up on **2026-10-20**, based on `042a64f`, successfully
+used the existing Playwright runner through ordinary execution permissions.
+The previous policy block remains historical evidence; it is not the status
+of this follow-up. No additional game/runtime change was justified.
 
-`scripts/qa-performance-round27.mjs` now accepts both `--fonts=URL` and
-`--storage=URL` alongside `--baseline=URL` and `--current=URL`. It rotates the
-four arms, retains warmups and all samples, and reports click-to-second-RAF,
-mirror `setItem` completion, and CDP script/layout durations separately.
-CDP durations cover the surrounding automation measurement window, not an
-exact click-only CPU trace; `setItem` return does not prove disk fsync.
-Use `--sizes=100,1000,10000 --pairs=12` and an external `--output` directory.
-Optional `--settle=true` is a separately labelled 500 ms idle diagnostic;
-it must not replace the original immediate-open samples.
+Four isolated arms (V5.26, fonts only, storage only, full V5.27) retained two
+independent batches of 12 pairs for 100 items, plus 12 pairs for 1k/10k, each
+with and without additional clone/Storage instrumentation. For 100-item open,
+full-minus-original paired p50 was **+2.2 ms / -1.3 ms** in the two batches;
+combined open p50 was **61.8 → 63.0 ms**. The earlier +25.1 ms median regression
+was not stably reproduced. Small samples and bimodal RAF scheduling limit
+absence claims; this does not establish universal speedups.
 
-`scripts/diagnose-rgba.py --report REPORT --output NEW_FILE` verifies stored
-RGBA hashes and records every changed coordinate/channel without relaxing
-zero tolerance. Offline analysis confirmed the existing cross-version 5/7
-and same-version 3/7 failures. The motion-240 and app-roll differences have
-identical signed pixel changes in both records; this demonstrates repeat
-variability for those observations, not a blanket clearance of visual
-regressions. Round26's 2/7 used the same seven RGBA checks but a different
-execution environment. Fresh browser performance, atlas and strict pixel
-acceptance remain required before release.
+For 10k, lock click-to-second-RAF p50 was **103.7 → 95.7 ms**, while mirror
+write-return p50 was **68.2 → 61.6 ms**. Opening was **64.1 → 66.6 ms**.
+Recycling's second RAF sometimes precedes commit: its p50 **35.5 → 133.7 ms**
+must be retained, but mirror return was **106.3 → 101.6 ms** and commit-plus-two-
+RAF **154.2 → 150.1 ms**. The latter maximum worsened **180.8 → 190.8 ms**.
+All adverse samples remain in external evidence. Quantiles use
+`floor((n-1)*p)`; at n=12 p95 and p99 are both the second-largest sample.
+
+Strict pixels remain **FAIL**, not a waived or relaxed PASS. Two cross-version
+runs had 4/7 and 2/6 valid RGBA failures; the second run's original motion-240
+source request failed with ECONNRESET and supplied no valid pixel pair.
+Original self-comparisons failed 4/7 twice; V5.27 self-comparisons failed 2/7
+and 5/7. Final RGBA deviations were at most one channel step with unchanged
+alpha. Atlas readback also varied by one alpha step within the same version;
+all ready uploads used Abyss Pixel digits 1–6. The terminal case passed both
+cross comparisons but failed both V5.27 self comparisons; its original self
+pairs were exact, so this case is not labelled proven original-version noise.
+Other differing cases have original-version variability in this matrix.
+No stable, substantial V5.27-only visual shift was demonstrated. Round26's
+2/7 and earlier V5.27 5/7 are historical runs, not directly subtractable rates.
+
+The corrected font-browser run passed exact geometry and zero repeat noise at
+all four viewports, normal Full requests remained zero, and missing-character
+Full/system fallback passed. Its first attempt is retained as a setup failure
+(missing `--derivation` argument), not a font regression. At 1920×1080 the new
+cold FCP samples were **244/232 → 168/160 ms** on loopback SwiftShader.
+
+`scripts/qa-performance-round27.mjs` accepts `--fonts=URL` and `--storage=URL`
+with `--baseline=URL`, `--current=URL`, `--sizes=100,1000,10000 --pairs=12`
+and an external `--output`. It rotates all arms and instrumentation order,
+retains warmups, and separates primary/mirror return from both RAF clocks.
+CDP CPU/style/layout metrics cover the surrounding automation window, and
+`setItem` return does not prove physical disk fsync. Optional `--settle=true`
+is a separate diagnostic, never a replacement for immediate-open samples.
+`qa-surface-regression-round26.mjs --atlas-diagnostic` additionally preserves
+atlas buffers, font-ready state and upload/draw/read call order symmetrically.
+`diagnose-rgba.py --report REPORT --output NEW_FILE` verifies buffer hashes and
+records every changed pixel without changing the zero-tolerance verdict.
 
 The local version adds **364,264 bytes of core fonts** (35,560 Pixel + 328,704
 Text), while retaining the original 8,656,928 bytes of complete fonts for
@@ -95,7 +121,8 @@ for 100/1k/10k inventories (`--sizes=100,1000,10000`); and
 `benchmark-storage-round27.mjs` retains the original storage differential
 scenarios and reports Node timings only. Raw QA logs are not shipped.
 
-Local acceptance on **2026-10-20** used Windows, Ryzen 7 9700X,
+Earlier implementation acceptance (historical, before the bounded follow-up)
+on **2026-10-20** used Windows, Ryzen 7 9700X,
 Chromium **156.0.8078.4**, ANGLE **SwiftShader**, DPR 1 and disposable saves.
 The font comparison repeated each of 1366×768, 1920×1080, 3840×2160 and
 390×844 twice: text rectangles, line breaks, cards and scroll geometry were
@@ -108,7 +135,7 @@ identity-encoding measurements, not published-CDN or universal startup claims.
 Keeping Full fonts means the total deployment grows despite lower first-load
 traffic.
 
-The final interaction comparison retained **12 pairs per action/size/probe
+That earlier two-arm interaction comparison retained **12 pairs per action/size/probe
 mode**, one warmup each, and all tails. For 10k equipment, click-to-second-RAF
 lock p50/p95 was **95.3/113.3 → 100.9/108.4 ms**, equip **89.5/92.2 →
 89.8/92.1 ms**, and opening **62.9/67.4 → 63.9/68.4 ms**. Recycling confirmation
