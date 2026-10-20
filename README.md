@@ -37,9 +37,11 @@
 >
 > In **Dice Abyss**, a roll is an attack, a chest is a promise, and every new floor is another test of the equipment and talents you have assembled. The dungeon keeps going. So does your progression.
 
-## V5.26.0 · Less Work for the Same Descent
+## V5.26.0 · Reviewed, Integrated & Published
 
-This complete archive is **cloud iteration 26 (Round26)**, based only on the supplied **V5.25.0** archive. Extract it and follow [Run Locally](#run-locally) to play this version. The linked public website is a separate historical deployment; this archive has not been deployed there.
+The reviewed **V5.26.0 cloud handoff** has been integrated into this repository and published to [GitHub Pages](https://seiya058904.github.io/Dice-Abyss/). Publication and live browser checks passed on **2026-10-20**. Follow [Run Locally](#run-locally) to run the same game on your computer; browser saves remain separate between the local and published origins.
+
+**Two integration fixes protect existing progress and clarify rewards.** A readable fusion save without its optional historical material list can now resume without a rendering error; the interface explicitly says the old consumption count was not recorded. Double-fate rewards show their nominal amount and explain the gold cap, instead of claiming the full amount was received when part or all of it was clipped. These fixes preserve the game rules, RNG and save schema.
 
 **Sort a large inventory with fewer repeated calculations.** Each matching item is valued at most once per sort; rarity and level sorts only calculate strength when their primary values tie. Strength, rarity and level ordering retain their original tie rules, filters and complete sixty-card pages. Search and filter actions calculate fresh results; consecutive paging still uses the existing selection reuse.
 
@@ -47,16 +49,17 @@ This complete archive is **cloud iteration 26 (Round26)**, based only on the sup
 
 **Keep the previous presentation safeguards.** Offscreen rendering, repeated motion sampling, on-demand recycling, and resize settlement remain protected. A resized presentation reveals its saved result once and restores the available controls. Primary and mirror saves still use the complete transaction checks.
 
-**Continue from one complete archive.** Game assets, offline fonts and licenses, regression tests, reconstruction inputs and important earlier failure evidence remain included. The current report provides the actual size, validation scope, comparable measurements and remaining risks.
+**Retain an auditable handoff.** Game assets, offline fonts and licenses, regression tests, reconstruction inputs and important earlier failure evidence remain included. Historical cloud reports retain their original measurements and limitations; current repository acceptance is described under [Verify the source](#verify-the-source).
 
 The inventory retains its existing stable layout. Earlier `content-visibility` experiments caused scroll-position jumps and remain excluded. Large inventory layout costs and software-renderer frame tails are still tracked as open risks.
 
 Complete snapshot conflict checks, primary and mirror saves, Web Locks, V1–V4 migration, equipment IDs, unknown save fields, manual combat, six-room routes and eight rarity gates remain supported. The save format is still version 5.
 
-See [the current iteration report](docs/iteration/LATEST_REPORT.md) for comparable measurements, complete regression results and remaining limits. Supplied high-frequency callback counts and software-rendered browser timings do not establish physical GPU FPS or universal performance gains.
+See [the inherited cloud iteration report](docs/iteration/LATEST_REPORT.md) for comparable performance measurements and remaining limits. Supplied high-frequency callback counts and software-rendered browser timings do not establish physical GPU FPS or universal performance gains.
 
-[STATE.json](docs/iteration/STATE.json) and [FILE_MANIFEST.json](docs/iteration/FILE_MANIFEST.json) identify the handoff. Upload this complete ZIP with the same iteration taskbook to continue; no patch chain or local development agent is required.
+[STATE.json](docs/iteration/STATE.json) and [FILE_MANIFEST.json](docs/iteration/FILE_MANIFEST.json) describe the **received cloud archive**, before the local integration fixes. Git commits identify the maintained repository. Regenerate a manifest when creating a new archive; do not treat the old manifest as a hash list for later repository changes.
 
+<a id="the-descent"></a>
 ## 🎮 The Descent
 
 <p align="center">
@@ -222,12 +225,16 @@ Dice Abyss is built with **vanilla JavaScript modules, HTML, and CSS**, with loc
 | [`src/encounters.js`](src/encounters.js) | Special enemy mechanics, event choices, and room generation. |
 | [`src/storage.js`](src/storage.js) | Validated local saves, backup behavior, and legacy migration. |
 | [`src/app.js`](src/app.js), [`src/views.js`](src/views.js) | Player interaction, menus, screens, and rendering. |
+| [`src/fusion-controller.js`](src/fusion-controller.js), [`src/fusion-workbench.js`](src/fusion-workbench.js), [`src/fusion-view.js`](src/fusion-view.js) | Transient fusion selection, batch planning, previews, and results. |
+| [`src/inventory-query.js`](src/inventory-query.js), [`src/inventory-page.js`](src/inventory-page.js), [`src/inventory-render.js`](src/inventory-render.js) | Inventory filtering, sorting, page selection reuse, and DOM updates. |
 | [`src/event-risk.js`](src/event-risk.js) | Read-only paid-event probabilities and immediate gold budgets. |
-| [`src/dice-renderer.js`](src/dice-renderer.js), [`src/dice-motion.js`](src/dice-motion.js), [`src/effects.js`](src/effects.js) | Dice visuals, motion, and feedback. |
+| [`src/dice-renderer.js`](src/dice-renderer.js), [`src/dice-motion.js`](src/dice-motion.js), [`src/effects.js`](src/effects.js), [`src/visual-timeline.js`](src/visual-timeline.js) | Dice visuals, motion, feedback, and presentation cleanup. |
 | [`src/`](src/) CSS files | Layout, presentation, responsiveness, and visual refinements. |
 | [`scripts/`](scripts/), [`tests/`](tests/) | Local server, simulation, audits, and automated test coverage. |
 | [`src/fonts/`](src/fonts/) | Bundled font files and their independent license notices. |
+| [`AGENTS.md`](AGENTS.md) | Project-specific development, save-safety, validation, and release guidance. |
 
+<a id="verify-the-source"></a>
 ### Verify the source
 
 ```bash
@@ -238,13 +245,21 @@ npm run simulate -- 1000
 
 These commands perform JavaScript syntax checks, Node.js tests, and a 1,000-run simulation. The workflow runs them for pull requests; it assembles and deploys the Pages site only after a push to `main`.
 
+**2026-10-20 acceptance:** [GitHub verification and Pages deployment](https://github.com/seiya058904/Dice-Abyss/actions/runs/39415336338) passed for [`f21c3dd`](https://github.com/seiya058904/Dice-Abyss/commit/f21c3dd98700d93383466d4bb5cac12dd9bb27ee): **926 tests**, no failures or skips, and **1,000/1,000 seeded ten-floor adventures completed**. Local Node 22 and Node 24 checks also passed. Before integration, **700 complete synthetic V5.1 save snapshots** were read without state loss; no private player saves were used.
+
+The published **V5.26.0** was checked independently: all **66 shipping resources** matched the local source bytes, including JavaScript, styles, WebP artwork and both fonts. Fresh Chromium contexts passed **43 main-flow checks** covering manual rolls, combat, chest opening, equipment, refresh, inventory, settings, failed writes and cross-tab synchronization. Additional live cases verified importing/resuming fusion history with a missing optional consumption list and a manual double-fate roll at the gold cap. These live cases captured no page or console errors. Isolated local checks also covered fusion, inventory navigation, talents, forge previews, save recovery and window-resize settlement.
+
+Canvas regression checks execute the hash-verified, bundled original and current paint programs under the **same Node runtime**, comparing their complete effective arguments and primitive paint state exactly. This avoids treating the last-bit numeric differences between Node 22 and 24 as a rendering regression; no rounding or numeric tolerance is applied. Historical reference hashes remain unchanged.
+
+For browser work, use an external Playwright installation and fresh browser contexts, and keep generated screenshots and logs outside the repository. [`scripts/qa-core-browser.mjs`](scripts/qa-core-browser.mjs) accepts `--url=<game-url>` and `--output=<external-directory>`. See [AGENTS.md](AGENTS.md) for the validation and publishing boundaries.
+
 ### Historical V5 acceptance and verification limits
 
-The following paragraphs describe evidence inherited from earlier V5 work. For this archive's actual reruns and results, use [the current iteration report](docs/iteration/LATEST_REPORT.md).
+The following paragraphs describe evidence inherited from earlier V5 work. The [cloud iteration report](docs/iteration/LATEST_REPORT.md) records its original reruns and risks; the dated repository and live-site acceptance above records the later integration checks.
 
 The recorded local Chrome acceptance covers the first-floor flow, four deep rarity rewards, five talent paths, forging and relic fusion, ten new deep events, a synthetic V4 save import, and full-inventory save recovery. Deep-floor checks used isolated debug saves. See the [V5 integration and browser acceptance report](docs/v5/集成与实机验收.md) and its linked screenshots for the environment and evidence.
 
-The PR #2 review rerun also used isolated browser saves to verify first-crit luck across a chest, room transition, and refresh; import and claim of a synthetic V4 pending chest; and an Eternal reward opening that remained claimed after refresh. See the [cross-room luck screenshot](output/playwright/v5-p2-01-cross-room-luck.webp) and [Eternal reward screenshot](output/playwright/v5-p2-high-rarity-open.webp).
+The PR #2 review rerun also used isolated browser saves to verify first-crit luck across a chest, room transition, and refresh; import and claim of a synthetic V4 pending chest; and an Eternal reward opening that remained claimed after refresh. See the [cross-room luck screenshot](output/playwright/v5-p2-01-cross-room-luck.png) and [Eternal reward screenshot](output/playwright/v5-p2-high-rarity-open.png).
 
 Automated checks and isolated browser scenarios do not establish natural long-run progression, every Boss and room combination, migration of a player's private save, or full balance. The Windows launcher, audio listening, and performance on a physical 4K display also remain unverified. Simulated 4K viewport screenshots are layout checks, not hardware performance results.
 
