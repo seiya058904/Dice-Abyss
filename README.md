@@ -140,7 +140,7 @@ The current game interface is in **Simplified Chinese**. It is designed for a **
     <td width="50%" valign="top">
       <h3>🖥️ Run from Source</h3>
       <p><sub>WINDOWS / NODE.JS 20+ · LOCAL WEB SERVER</sub></p>
-      <p>Clone the repository, launch the small local server, and play on your own machine. A Windows <code>启动游戏.cmd</code> launcher is also included.</p>
+      <p>Clone the repository, launch the small local server, and play on your own machine. An optional <a href="%E5%90%AF%E5%8A%A8%E6%B8%B8%E6%88%8F.cmd">Windows launcher</a> is also included.</p>
       <p><strong><a href="#run-locally">⚙️ Local setup →</a></strong></p>
     </td>
   </tr>
@@ -167,7 +167,7 @@ cd Dice-Abyss
 npm start
 ```
 
-Open **http://127.0.0.1:4188** in a desktop browser. On Windows, you can alternatively double-click [`启动游戏.cmd`](启动游戏.cmd) after installing Node.js.
+Open **http://127.0.0.1:4188** in a desktop browser. On Windows, you can alternatively double-click the [Windows launcher](%E5%90%AF%E5%8A%A8%E6%B8%B8%E6%88%8F.cmd) after installing Node.js.
 
 <details>
 <summary><strong>Change the port / understand local hosting</strong></summary>
@@ -217,7 +217,7 @@ These commands perform JavaScript syntax checks, Node.js tests, and a 1,000-run 
 
 ### V5 acceptance and verification limits
 
-The recorded local Chrome acceptance covers the first-floor flow, four deep rarity rewards, five talent paths, forging and relic fusion, ten new deep events, a synthetic V4 save import, and full-inventory save recovery. Deep-floor checks used isolated debug saves. See the [V5 integration and browser acceptance report](docs/v5/集成与实机验收.md) and its linked screenshots for the environment and evidence.
+The recorded local Chrome acceptance covers the first-floor flow, four deep rarity rewards, five talent paths, forging and relic fusion, ten new deep events, a synthetic V4 save import, and full-inventory save recovery. Deep-floor checks used isolated debug saves. See the [V5 integration and browser acceptance report](docs/v5/%E9%9B%86%E6%88%90%E4%B8%8E%E5%AE%9E%E6%9C%BA%E9%AA%8C%E6%94%B6.md) and its linked screenshots for the environment and evidence.
 
 The PR #2 review rerun also used isolated browser saves to verify first-crit luck across a chest, room transition, and refresh; import and claim of a synthetic V4 pending chest; and an Eternal reward opening that remained claimed after refresh. See the [cross-room luck screenshot](output/playwright/v5-p2-01-cross-room-luck.png) and [Eternal reward screenshot](output/playwright/v5-p2-high-rarity-open.png).
 
