@@ -1,0 +1,76 @@
+TAP version 13
+# Subtest: a normal commit archives the readable V4 mirror instead of a checksummed but invalid primary
+ok 1 - a normal commit archives the readable V4 mirror instead of a checksummed but invalid primary
+  ---
+  duration_ms: 7.207277
+  type: 'test'
+  ...
+# Subtest: recovery from V1–V3 mirrors preserves both immutable original archives across later saves
+ok 2 - recovery from V1–V3 mirrors preserves both immutable original archives across later saves
+  ---
+  duration_ms: 12.374677
+  type: 'test'
+  ...
+# Subtest: archive-write failure after mirror recovery leaves both active disk copies intact
+ok 3 - archive-write failure after mirror recovery leaves both active disk copies intact
+  ---
+  duration_ms: 5.677134
+  type: 'test'
+  ...
+# Subtest: a pending auction without its committed reward is rejected before importing or claiming archive slots
+ok 4 - a pending auction without its committed reward is rejected before importing or claiming archive slots
+  ---
+  duration_ms: 3.750445
+  type: 'test'
+  ...
+# Subtest: event-triggered combat or death without an enemy cannot replace valid progress
+ok 5 - event-triggered combat or death without an enemy cannot replace valid progress
+  ---
+  duration_ms: 6.409027
+  type: 'test'
+  ...
+# Subtest: pending auction reward collisions with owned equipment are rejected before any import writes
+ok 6 - pending auction reward collisions with owned equipment are rejected before any import writes
+  ---
+  duration_ms: 4.231847
+  type: 'test'
+  ...
+# Subtest: resolved auction history can retain its owned reward through a later import
+ok 7 - resolved auction history can retain its owned reward through a later import
+  ---
+  duration_ms: 3.66563
+  type: 'test'
+  ...
+# Subtest: a valid auction remains deterministic through import, purchase, chest, loot and a rejected second claim
+ok 8 - a valid auction remains deterministic through import, purchase, chest, loot and a rejected second claim
+  ---
+  duration_ms: 19.313216
+  type: 'test'
+  ...
+# Subtest: ordinary events and direct chests keep their legal null enemy; resolved history does not require an optional auction preview
+ok 9 - ordinary events and direct chests keep their legal null enemy; resolved history does not require an optional auction preview
+  ---
+  duration_ms: 5.047003
+  type: 'test'
+  ...
+# Subtest: event combat retains valid multi-wave, death and retry transitions without regenerating committed rewards on load
+ok 10 - event combat retains valid multi-wave, death and retry transitions without regenerating committed rewards on load
+  ---
+  duration_ms: 7.456004
+  type: 'test'
+  ...
+# Subtest: 10,000 generated items still round-trip and primary-write failure leaves the current transaction intact
+ok 11 - 10,000 generated items still round-trip and primary-write failure leaves the current transaction intact
+  ---
+  duration_ms: 261.116472
+  type: 'test'
+  ...
+1..11
+# tests 11
+# suites 0
+# pass 11
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 351.035424

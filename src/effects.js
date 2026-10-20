@@ -1,5 +1,6 @@
 import { animateDice, THROW_DURATION } from './dice-motion.js';
 import { mountDiceSurface } from './dice-renderer.js';
+import { createVisualTimeline, observeVisualSurface } from './visual-timeline.js';
 
 // Revision-seeded visuals only. Saved combat state and game RNG are never changed.
 const PIXEL_BUDGET=840000,TAU=Math.PI*2,FLAME_STEP=1000/30;
@@ -21,12 +22,17 @@ function texture(key,beam=false){
 
 function prepareCanvas(canvas,stage,panel,reward){
  // The combat layer belongs to the stage; its bottom stops before damage text.
- let top=0,height=panel.getBoundingClientRect().height,width=panel.getBoundingClientRect().width;
+ let top=0,height,width;
  if(!reward){
   const bounds=stage.getBoundingClientRect(),row=stage.querySelector('.cube-row')?.getBoundingClientRect(),damage=stage.querySelector('.damage-result')?.getBoundingClientRect();
   const start=Math.max(bounds.top,row?row.top-row.height*.32:bounds.top),end=Math.min(bounds.bottom,damage?damage.top+4:bounds.bottom);
   top=start-bounds.top;height=Math.max(1,end-start);width=bounds.width;stage.style.position='relative';stage.append(canvas);
- }else panel.prepend(canvas);
+ }else{
+  // Read the owning frame once. Combat never uses this panel measurement, and
+  // a reward canvas is already first in the production markup after render.
+  const bounds=panel.getBoundingClientRect();height=bounds.height;width=bounds.width;
+  if(panel.firstChild!==canvas)panel.prepend(canvas);
+ }
  canvas.style.cssText=`position:absolute;inset:auto;left:0;top:${top}px;width:${width}px;height:${height}px;pointer-events:none;z-index:${reward?0:2}`;
  const box=canvas.getBoundingClientRect();if(box.width<=0||box.height<=0)return null;
  // Keep the original 1080p detail; larger viewports spend less on transparent overdraw.
@@ -85,21 +91,21 @@ export function mountEffects(state,ui,settings,onSound){
  cancel();
  // Static, low and reduced-motion views still mount and draw the GPU dice once.
  const surface=mountDiceSurface();
- let stopDice=()=>{},frame=0,timer=0,ctx=null,w=0,h=0,alive=true;const materials=[];
- const stop=()=>{alive=false;clearTimeout(timer);stopDice();surface?.stop();if(frame)cancelAnimationFrame(frame);if(ctx)ctx.clearRect(0,0,w,h);for(const tile of materials){tile.canvas.width=1;tile.canvas.height=1;}materials.length=0;};cancel=stop;
+ let stopDice=()=>{},ctx=null,w=0,h=0,alive=true,visibility;const materials=[];
  const canvas=document.querySelector('.scene-fx');
- if(!canvas||!ui.busy||settings.effects==='low'||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+ if(canvas){canvas.dataset.fxFrames='0';canvas.dataset.fxLifecycle='idle';}
+ const presentation=createVisualTimeline(result=>{alive=false;visibility?.stop();stopDice();surface?.stop();if(ctx)ctx.clearRect(0,0,w,h);for(const tile of materials){tile.canvas.width=1;tile.canvas.height=1;}materials.length=0;if(canvas){canvas.dataset.fxLifecycle=result.reason;canvas.dataset.fxElapsed=String(result.elapsed);canvas.dataset.fxTimelineFrames=String(result.frames);}});cancel=()=>presentation.stop();
+ if(!canvas||!ui.busy||settings.effects==='low'||matchMedia('(prefers-reduced-motion: reduce)').matches)return presentation;
  if(ui.rolling||ui.forging){
   // No second fullscreen animation while the dice themselves are moving.
-  stopDice=animateDice(state.revision+113,onSound,surface?.draw);
-  timer=setTimeout(()=>{if(alive){stopDice();surface?.draw();surface?.stop();}},THROW_DURATION+30);
-  canvas.dataset.fxKind='dice-only';return;
+  stopDice=animateDice(state.revision+113,onSound,(poses,landed)=>{if(alive)surface?.draw(landed?undefined:poses);},presentation);
+  canvas.dataset.fxKind='dice-only';return presentation;
  }
  const last=state.lastRoll,combat=ui.view==='game'&&state.phase==='combat'&&ui.event==='roll'&&last;
  const anticipation=ui.view==='game'&&ui.event==='open'&&state.phase==='chest',reveal=ui.view==='game'&&ui.event==='open'&&state.phase==='loot';
  const stage=combat?document.querySelector('.combat-stage'):null,panel=canvas.parentElement;
- if((!combat&&!anticipation&&!reveal)||(combat&&!stage)||!panel)return;
- const prepared=prepareCanvas(canvas,stage,panel,anticipation||reveal);if(!prepared)return;
+ if((!combat&&!anticipation&&!reveal)||(combat&&!stage)||!panel)return presentation;
+ const prepared=prepareCanvas(canvas,stage,panel,anticipation||reveal);if(!prepared)return presentation;
  ({ctx,w,h}=prepared);const {box}=prepared;
  let seed=(Math.imul(state.revision,7919)+137)>>>0;const rand=()=>{seed=(Math.imul(seed,1664525)+1013904223)>>>0;return seed/4294967296;};
  const finish=combat&&last.killed&&state.enemy?.type==='boss',charged=combat&&(last.best>=2||last.critical);
@@ -182,7 +188,7 @@ export function mountEffects(state,ui,settings,onSound){
  canvas.dataset.fxRewardColumns=String(combat?0:columns);canvas.dataset.fxRewardSquares=String(particles.filter(p=>p.square).length);canvas.dataset.fxRewardRims=String(rewardRims.length);
  canvas.dataset.fxRewardMotif=reveal?['motes','sparks','facets','rays','seal','spiral','origin-star','eternal-orbits'][grade]:'none';
  canvas.dataset.fxMaterialPixels=String(materials.reduce((n,t)=>n+t.canvas.width*t.canvas.height,0));
- let lightning=[],followBolts=[],tick=-1,flameTick=-1,start=performance.now();
+ let lightning=[],followBolts=[],tick=-1,flameTick=-1;
  canvas.dataset.fxFlameHz='30';canvas.dataset.fxFlames=String(flames.length);canvas.dataset.fxFlameTiles=String(activeDice.filter(d=>d.tile).length);
  function traceFilaments(target,d,ms,layers){
   target.beginPath();for(const layer of layers){const offset=Math.floor(ms*.008+d.phase*4+layer*7)%edges.length;
@@ -228,11 +234,14 @@ export function mountEffects(state,ui,settings,onSound){
   }
  }
  function drawParticles(ms,fade){
+  // Consecutive particles share palette state; keep their original draw order
+  // and alpha, but do not submit the same three Canvas setters for each mote.
+  let particleKey;
   for(const p of particles){const age=ms-p.delay;if(age<0||age>p.life)continue;
    const life=age/p.life,seconds=age/1000,x=p.x+p.vx*seconds+Math.sin(p.phase+seconds*4)*unit*.025,y=p.y+p.vy*seconds+unit*.23*seconds*seconds;
    const alpha=Math.sin(Math.min(1,life*3)*Math.PI*.5)*(1-life)*fade;if(alpha<=0)continue;
    const size=p.size*(combat?clamp(unit/130,.8,2):1.2),glow=size*8;ctx.globalAlpha=alpha*.74;ctx.drawImage(p.sprite,x-glow*.5,y-glow*.5,glow,glow);
-   ctx.fillStyle=p.ink;ctx.strokeStyle=p.stroke;ctx.lineWidth=.7;ctx.globalAlpha=alpha;
+   if(p.key!==particleKey){particleKey=p.key;ctx.fillStyle=p.ink;ctx.strokeStyle=p.stroke;ctx.lineWidth=.7;}ctx.globalAlpha=alpha;
    if(p.square){ctx.save();ctx.translate(x,y);ctx.rotate(p.phase+seconds*.7);ctx.strokeRect(-size,-size,size*2,size*2);ctx.restore();}
    else{ctx.fillRect(x,y,size*.7,size*.7);ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x-p.vx*.022,y-p.vy*.022);ctx.stroke();}
   }
@@ -268,10 +277,9 @@ export function mountEffects(state,ui,settings,onSound){
   if(reveal){ring(ctx,center.x,center.y+unit*.24,unit*(.5+t*1.3),rewardKey,strength*.7);ctx.strokeStyle=c[1];ctx.lineWidth=1;ctx.globalAlpha=strength*.62;
    const rx=unit*(.62+t*.12),ry=unit*.42;for(const side of [-1,1]){ctx.beginPath();ctx.moveTo(center.x+side*(rx-unit*.18),center.y-ry);ctx.lineTo(center.x+side*rx,center.y-ry);ctx.lineTo(center.x+side*rx,center.y+ry*.65);ctx.stroke();}}
  }
- function draw(now){
-  if(!alive)return;const ms=Math.max(0,now-start),t=clamp(ms/duration);ctx.clearRect(roi.x,roi.y,roi.width,roi.height);ctx.globalCompositeOperation='lighter';
+ let latestElapsed=null,dirty=false;
+ function advanceLightning(ms){
   if(combat){
-   const envelope=clamp(ms/65)*Math.pow(1-t,finish?1.25:1.7);drawFlames(ms,envelope);
    const currentTick=Math.floor(ms/(1000/24));if(currentTick!==tick){
     tick=currentTick;lightning=[];followBolts=[];
     if(charged&&ms<900)for(let i=0;i<dice.length;i++){const d=dice[i];if(!d.active)continue;
@@ -279,6 +287,16 @@ export function mountEffects(state,ui,settings,onSound){
      lightning.push(makeBolt(from,to,rand,d.size*.17));}
     if(last.follow&&ms>=450&&ms<1050&&dice.length){const d=dice.at(-1);followBolts.push(makeBolt({x:d.x+d.size*.35,y:d.y+d.size*.15},{x:clamp(center.x-unit*.6,unit*.4,w-unit*.4),y:Math.min(h-12,center.y+unit*.65)},rand,unit*.23));}
    }
+  }
+ }
+ function draw(ms){
+  if(!alive)return;latestElapsed=ms;canvas.dataset.fxElapsed=String(ms);
+  // Retain the small revision-seeded lightning sequence while out of view;
+  // flames, particles and all canvas submissions wait for a visible surface.
+  advanceLightning(ms);dirty=true;if(visibility&&!visibility.visible)return;
+  dirty=false;const t=clamp(ms/duration);canvas.dataset.fxFrames=String(Number(canvas.dataset.fxFrames||0)+1);ctx.clearRect(roi.x,roi.y,roi.width,roi.height);ctx.globalCompositeOperation='lighter';
+  if(combat){
+   const envelope=clamp(ms/65)*Math.pow(1-t,finish?1.25:1.7);drawFlames(ms,envelope);
    strokeBolts(ctx,lightning,'blue',envelope*.74);strokeBolts(ctx,followBolts,'blue',ms>=450?Math.sin(clamp((ms-450)/600)*Math.PI)*.95:0);
    if(ms<420)ring(ctx,center.x,center.y+unit*.5,unit*(.4+ms/270),last.critical?'red':charged?'fire':'white',Math.pow(1-ms/420,2)*.65);
    if(last.phaseChanged&&ms<540){ring(ctx,center.x,center.y,unit*(.55+ms/240),'purple',Math.pow(1-ms/540,1.5)*.85,.65);ring(ctx,center.x+unit*.08,center.y,unit*(.5+ms/260),'red',Math.pow(1-ms/540,2)*.5,.62);}
@@ -289,7 +307,9 @@ export function mountEffects(state,ui,settings,onSound){
    if(finish&&ms<600)ring(ctx,center.x,center.y+unit*.35,unit*(.55+ms/160),'gold',Math.pow(1-ms/600,2),.28);
    drawParticles(ms,Math.pow(1-t,.6));
   }else{drawReward(ms,t);drawParticles(ms,anticipation?clamp(t*1.5):Math.pow(1-t,.5));}
-  ctx.globalAlpha=1;ctx.globalCompositeOperation='source-over';if(t<1)frame=requestAnimationFrame(draw);else stop();
+  ctx.globalAlpha=1;ctx.globalCompositeOperation='source-over';
  }
- frame=requestAnimationFrame(draw);
+ visibility=observeVisualSurface(canvas,()=>{if(alive&&dirty&&latestElapsed!==null)draw(latestElapsed);});
+ presentation.play(duration,draw);
+ return presentation;
 }

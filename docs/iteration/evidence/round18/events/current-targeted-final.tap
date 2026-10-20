@@ -1,0 +1,616 @@
+TAP version 13
+# Subtest: offering keeps the reserved name after locking and never substitutes another safe item
+ok 1 - offering keeps the reserved name after locking and never substitutes another safe item
+  ---
+  duration_ms: 3.017983
+  type: 'test'
+  ...
+# Subtest: relicloom keeps the reserved name after locking and never substitutes another safe item
+ok 2 - relicloom keeps the reserved name after locking and never substitutes another safe item
+  ---
+  duration_ms: 0.686785
+  type: 'test'
+  ...
+# Subtest: reserved material reasons distinguish missing, absent, equipped, loot and rarity protection
+ok 3 - reserved material reasons distinguish missing, absent, equipped, loot and rarity protection
+  ---
+  duration_ms: 21.909088
+  type: 'test'
+  ...
+# Subtest: an existing unnamed reserved item keeps an explicit ID instead of being called missing
+ok 4 - an existing unnamed reserved item keeps an explicit ID instead of being called missing
+  ---
+  duration_ms: 19.572652
+  type: 'test'
+  ...
+# Subtest: offering separates the shared gift count from the unallocated-point safety cap
+ok 5 - offering separates the shared gift count from the unallocated-point safety cap
+  ---
+  duration_ms: 0.535192
+  type: 'test'
+  ...
+# Subtest: bloodwell displays its entry snapshot charge through larger and smaller armor swaps
+ok 6 - bloodwell displays its entry snapshot charge through larger and smaller armor swaps
+  ---
+  duration_ms: 2.054418
+  type: 'test'
+  ...
+# Subtest: bloodwell keeps exact saved charges, refuses lethal payment and can safely leave at the boundary
+ok 7 - bloodwell keeps exact saved charges, refuses lethal payment and can safely leave at the boundary
+  ---
+  duration_ms: 3.643388
+  type: 'test'
+  ...
+# Subtest: resolved offering and bloodwell text, outcomes and save bytes remain historical records
+ok 8 - resolved offering and bloodwell text, outcomes and save bytes remain historical records
+  ---
+  duration_ms: 7.934263
+  type: 'test'
+  ...
+# Subtest: memorywell explains HP clipping at reset and restoring vitality never heals the lost HP
+ok 9 - memorywell explains HP clipping at reset and restoring vitality never heals the lost HP
+  ---
+  duration_ms: 2.973146
+  type: 'test'
+  ...
+# Subtest: all 22 existing event keys retain legal choices, explicit payment, once-only claims and save closure
+ok 10 - all 22 existing event keys retain legal choices, explicit payment, once-only claims and save closure
+  ---
+  duration_ms: 220.580268
+  type: 'test'
+  ...
+# Subtest: same-ID imported anvil references are rejected before any original save or archive is replaced
+ok 11 - same-ID imported anvil references are rejected before any original save or archive is replaced
+  ---
+  duration_ms: 6.12034
+  type: 'test'
+  ...
+# Subtest: same-ID anvil rejection retains the actual target, every asset, RNG and revision
+ok 12 - same-ID anvil rejection retains the actual target, every asset, RNG and revision
+  ---
+  duration_ms: 1.127608
+  type: 'test'
+  ...
+# Subtest: hollow_scale rejects an imported armor target instead of performing a weapon upgrade on it
+ok 13 - hollow_scale rejects an imported armor target instead of performing a weapon upgrade on it
+  ---
+  duration_ms: 1.979216
+  type: 'test'
+  ...
+# Subtest: hollow_scale rejects an imported relic target instead of performing a weapon upgrade on it
+ok 14 - hollow_scale rejects an imported relic target instead of performing a weapon upgrade on it
+  ---
+  duration_ms: 1.171803
+  type: 'test'
+  ...
+# Subtest: silent_anvil rejects an imported armor target instead of performing a weapon upgrade on it
+ok 15 - silent_anvil rejects an imported armor target instead of performing a weapon upgrade on it
+  ---
+  duration_ms: 0.934562
+  type: 'test'
+  ...
+# Subtest: silent_anvil rejects an imported relic target instead of performing a weapon upgrade on it
+ok 16 - silent_anvil rejects an imported relic target instead of performing a weapon upgrade on it
+  ---
+  duration_ms: 1.336376
+  type: 'test'
+  ...
+# Subtest: exchange/salvage rejects unissued material IDs without guessing another safe item
+ok 17 - exchange/salvage rejects unissued material IDs without guessing another safe item
+  ---
+  duration_ms: 3.39421
+  type: 'test'
+  ...
+# Subtest: exchange/relic rejects unissued material IDs without guessing another safe item
+ok 18 - exchange/relic rejects unissued material IDs without guessing another safe item
+  ---
+  duration_ms: 2.642087
+  type: 'test'
+  ...
+# Subtest: relic_exchange/accept rejects unissued material IDs without guessing another safe item
+ok 19 - relic_exchange/accept rejects unissued material IDs without guessing another safe item
+  ---
+  duration_ms: 14.008404
+  type: 'test'
+  ...
+# Subtest: silent_anvil/accept rejects unissued material IDs without guessing another safe item
+ok 20 - silent_anvil/accept rejects unissued material IDs without guessing another safe item
+  ---
+  duration_ms: 1.497395
+  type: 'test'
+  ...
+# Subtest: offering/accept rejects unissued material IDs without guessing another safe item
+ok 21 - offering/accept rejects unissued material IDs without guessing another safe item
+  ---
+  duration_ms: 2.080357
+  type: 'test'
+  ...
+# Subtest: relicloom/accept rejects unissued material IDs without guessing another safe item
+ok 22 - relicloom/accept rejects unissued material IDs without guessing another safe item
+  ---
+  duration_ms: 2.827681
+  type: 'test'
+  ...
+# Subtest: hollow_scale rejects unissued target IDs without using the currently equipped weapon
+ok 23 - hollow_scale rejects unissued target IDs without using the currently equipped weapon
+  ---
+  duration_ms: 0.766794
+  type: 'test'
+  ...
+# Subtest: silent_anvil rejects unissued target IDs without using the currently equipped weapon
+ok 24 - silent_anvil rejects unissued target IDs without using the currently equipped weapon
+  ---
+  duration_ms: 1.44037
+  type: 'test'
+  ...
+# Subtest: exchange/salvage rejects duplicate material IDs at both import and direct payment boundaries
+ok 25 - exchange/salvage rejects duplicate material IDs at both import and direct payment boundaries
+  ---
+  duration_ms: 0.792401
+  type: 'test'
+  ...
+# Subtest: exchange/relic rejects duplicate material IDs at both import and direct payment boundaries
+ok 26 - exchange/relic rejects duplicate material IDs at both import and direct payment boundaries
+  ---
+  duration_ms: 0.538667
+  type: 'test'
+  ...
+# Subtest: relic_exchange/accept rejects duplicate material IDs at both import and direct payment boundaries
+ok 27 - relic_exchange/accept rejects duplicate material IDs at both import and direct payment boundaries
+  ---
+  duration_ms: 0.495754
+  type: 'test'
+  ...
+# Subtest: silent_anvil/accept rejects duplicate material IDs at both import and direct payment boundaries
+ok 28 - silent_anvil/accept rejects duplicate material IDs at both import and direct payment boundaries
+  ---
+  duration_ms: 1.234165
+  type: 'test'
+  ...
+# Subtest: offering/accept rejects duplicate material IDs at both import and direct payment boundaries
+ok 29 - offering/accept rejects duplicate material IDs at both import and direct payment boundaries
+  ---
+  duration_ms: 1.199003
+  type: 'test'
+  ...
+# Subtest: relicloom/accept rejects duplicate material IDs at both import and direct payment boundaries
+ok 30 - relicloom/accept rejects duplicate material IDs at both import and direct payment boundaries
+  ---
+  duration_ms: 0.655739
+  type: 'test'
+  ...
+# Subtest: hollow_scale rejects duplicate target IDs without selecting the first matching object
+ok 31 - hollow_scale rejects duplicate target IDs without selecting the first matching object
+  ---
+  duration_ms: 1.52145
+  type: 'test'
+  ...
+# Subtest: silent_anvil rejects duplicate target IDs without selecting the first matching object
+ok 32 - silent_anvil rejects duplicate target IDs without selecting the first matching object
+  ---
+  duration_ms: 0.802356
+  type: 'test'
+  ...
+# Subtest: exchange/salvage keeps legally removed or unregistered materials readable but never replaces them
+ok 33 - exchange/salvage keeps legally removed or unregistered materials readable but never replaces them
+  ---
+  duration_ms: 3.278298
+  type: 'test'
+  ...
+# Subtest: exchange/relic keeps legally removed or unregistered materials readable but never replaces them
+ok 34 - exchange/relic keeps legally removed or unregistered materials readable but never replaces them
+  ---
+  duration_ms: 2.615829
+  type: 'test'
+  ...
+# Subtest: relic_exchange/accept keeps legally removed or unregistered materials readable but never replaces them
+ok 35 - relic_exchange/accept keeps legally removed or unregistered materials readable but never replaces them
+  ---
+  duration_ms: 2.514348
+  type: 'test'
+  ...
+# Subtest: silent_anvil/accept keeps legally removed or unregistered materials readable but never replaces them
+ok 36 - silent_anvil/accept keeps legally removed or unregistered materials readable but never replaces them
+  ---
+  duration_ms: 2.584221
+  type: 'test'
+  ...
+# Subtest: offering/accept keeps legally removed or unregistered materials readable but never replaces them
+ok 37 - offering/accept keeps legally removed or unregistered materials readable but never replaces them
+  ---
+  duration_ms: 2.266181
+  type: 'test'
+  ...
+# Subtest: relicloom/accept keeps legally removed or unregistered materials readable but never replaces them
+ok 38 - relicloom/accept keeps legally removed or unregistered materials readable but never replaces them
+  ---
+  duration_ms: 2.912997
+  type: 'test'
+  ...
+# Subtest: hollow_scale keeps a legally salvaged or absent registered weapon readable and never chooses a replacement
+ok 39 - hollow_scale keeps a legally salvaged or absent registered weapon readable and never chooses a replacement
+  ---
+  duration_ms: 1.813641
+  type: 'test'
+  ...
+# Subtest: silent_anvil keeps a legally salvaged or absent registered weapon readable and never chooses a replacement
+ok 40 - silent_anvil keeps a legally salvaged or absent registered weapon readable and never chooses a replacement
+  ---
+  duration_ms: 1.201256
+  type: 'test'
+  ...
+# Subtest: exchange/salvage rechecks material protection changes and can resume with the original unlocked object
+ok 41 - exchange/salvage rechecks material protection changes and can resume with the original unlocked object
+  ---
+  duration_ms: 2.343015
+  type: 'test'
+  ...
+# Subtest: exchange/relic rechecks material protection changes and can resume with the original unlocked object
+ok 42 - exchange/relic rechecks material protection changes and can resume with the original unlocked object
+  ---
+  duration_ms: 2.530122
+  type: 'test'
+  ...
+# Subtest: relic_exchange/accept rechecks material protection changes and can resume with the original unlocked object
+ok 43 - relic_exchange/accept rechecks material protection changes and can resume with the original unlocked object
+  ---
+  duration_ms: 2.240423
+  type: 'test'
+  ...
+# Subtest: silent_anvil/accept rechecks material protection changes and can resume with the original unlocked object
+ok 44 - silent_anvil/accept rechecks material protection changes and can resume with the original unlocked object
+  ---
+  duration_ms: 5.231285
+  type: 'test'
+  ...
+# Subtest: offering/accept rechecks material protection changes and can resume with the original unlocked object
+ok 45 - offering/accept rechecks material protection changes and can resume with the original unlocked object
+  ---
+  duration_ms: 2.362293
+  type: 'test'
+  ...
+# Subtest: relicloom/accept rechecks material protection changes and can resume with the original unlocked object
+ok 46 - relicloom/accept rechecks material protection changes and can resume with the original unlocked object
+  ---
+  duration_ms: 2.231229
+  type: 'test'
+  ...
+# Subtest: hollow_scale upgrades the original registered weapon after a real swap and lock without touching the replacement
+ok 47 - hollow_scale upgrades the original registered weapon after a real swap and lock without touching the replacement
+  ---
+  duration_ms: 2.399268
+  type: 'test'
+  ...
+# Subtest: silent_anvil upgrades the original registered weapon after a real swap and lock without touching the replacement
+ok 48 - silent_anvil upgrades the original registered weapon after a real swap and lock without touching the replacement
+  ---
+  duration_ms: 1.492787
+  type: 'test'
+  ...
+# Subtest: exchange/salvage displays empty and whitespace names as the actual registered ID and still consumes only that object
+ok 49 - exchange/salvage displays empty and whitespace names as the actual registered ID and still consumes only that object
+  ---
+  duration_ms: 3.173784
+  type: 'test'
+  ...
+# Subtest: exchange/relic displays empty and whitespace names as the actual registered ID and still consumes only that object
+ok 50 - exchange/relic displays empty and whitespace names as the actual registered ID and still consumes only that object
+  ---
+  duration_ms: 3.484563
+  type: 'test'
+  ...
+# Subtest: relic_exchange/accept displays empty and whitespace names as the actual registered ID and still consumes only that object
+ok 51 - relic_exchange/accept displays empty and whitespace names as the actual registered ID and still consumes only that object
+  ---
+  duration_ms: 3.148936
+  type: 'test'
+  ...
+# Subtest: silent_anvil/accept displays empty and whitespace names as the actual registered ID and still consumes only that object
+ok 52 - silent_anvil/accept displays empty and whitespace names as the actual registered ID and still consumes only that object
+  ---
+  duration_ms: 3.492915
+  type: 'test'
+  ...
+# Subtest: offering/accept displays empty and whitespace names as the actual registered ID and still consumes only that object
+ok 53 - offering/accept displays empty and whitespace names as the actual registered ID and still consumes only that object
+  ---
+  duration_ms: 3.261112
+  type: 'test'
+  ...
+# Subtest: relicloom/accept displays empty and whitespace names as the actual registered ID and still consumes only that object
+ok 54 - relicloom/accept displays empty and whitespace names as the actual registered ID and still consumes only that object
+  ---
+  duration_ms: 2.699782
+  type: 'test'
+  ...
+# Subtest: resolved historical anvil records remain readable without inventing an asset that an older version consumed
+ok 55 - resolved historical anvil records remain readable without inventing an asset that an older version consumed
+  ---
+  duration_ms: 0.949585
+  type: 'test'
+  ...
+# Subtest: exact legacy item IDs, including leading zeroes, and unknown nested fields survive read-only reference checks
+ok 56 - exact legacy item IDs, including leading zeroes, and unknown nested fields survive read-only reference checks
+  ---
+  duration_ms: 2.469883
+  type: 'test'
+  ...
+# Subtest: normal V1–V4 migrations retain original strings, identities and unknown metadata through import
+ok 57 - normal V1–V4 migrations retain original strings, identities and unknown metadata through import
+  ---
+  duration_ms: 17.993266
+  type: 'test'
+  ...
+# Subtest: full expected snapshots still reject same-revision unknown-field conflicts before a valid event import writes anything
+ok 58 - full expected snapshots still reject same-revision unknown-field conflicts before a valid event import writes anything
+  ---
+  duration_ms: 1.77117
+  type: 'test'
+  ...
+# Subtest: spring previews exact current HP and ward, including zero healing and preserved larger shields
+ok 59 - spring previews exact current HP and ward, including zero healing and preserved larger shields
+  ---
+  duration_ms: 24.552096
+  type: 'test'
+  ...
+# Subtest: spring uses engine floor rounding at fractional 10/35 percent boundaries and maximum health
+ok 60 - spring uses engine floor rounding at fractional 10/35 percent boundaries and maximum health
+  ---
+  duration_ms: 68.372835
+  type: 'test'
+  ...
+# Subtest: prayer quotes stored HP and gold prices after armor swaps without repricing or guessing damage
+ok 61 - prayer quotes stored HP and gold prices after armor swaps without repricing or guessing damage
+  ---
+  duration_ms: 5.787679
+  type: 'test'
+  ...
+# Subtest: prayer caps temporary bonuses and distinguishes their contribution from effective luck
+ok 62 - prayer caps temporary bonuses and distinguishes their contribution from effective luck
+  ---
+  duration_ms: 49.063841
+  type: 'test'
+  ...
+# Subtest: hollow scale previews permanent max HP and actual HP clipping for full and wounded players
+ok 63 - hollow scale previews permanent max HP and actual HP clipping for full and wounded players
+  ---
+  duration_ms: 16.01385
+  type: 'test'
+  ...
+# Subtest: hollow scale follows the original registered weapon after a swap and preserves its exact XP
+ok 64 - hollow scale follows the original registered weapon after a swap and preserves its exact XP
+  ---
+  duration_ms: 1.760964
+  type: 'test'
+  ...
+# Subtest: hollow scale respects item level cap, XP clearing at cap and rounded capped-health results
+ok 65 - hollow scale respects item level cap, XP clearing at cap and rounded capped-health results
+  ---
+  duration_ms: 4.237966
+  type: 'test'
+  ...
+# Subtest: silent anvil shows exactly one consumed old item and capped target enhancement without touching Lv/XP
+ok 66 - silent anvil shows exactly one consumed old item and capped target enhancement without touching Lv/XP
+  ---
+  duration_ms: 7.862928
+  type: 'test'
+  ...
+# Subtest: a contradictory imported anvil reference never promises an upgrade for the item being consumed
+ok 67 - a contradictory imported anvil reference never promises an upgrade for the item being consumed
+  ---
+  duration_ms: 1.249377
+  type: 'test'
+  ...
+# Subtest: echo and ward purchases quote real stored prices and defer the reward until the next battle
+ok 68 - echo and ward purchases quote real stored prices and defer the reward until the next battle
+  ---
+  duration_ms: 7.712184
+  type: 'test'
+  ...
+# Subtest: unavailable purchases, lethal costs, missing targets and protection changes have no after-state and spend nothing
+ok 69 - unavailable purchases, lethal costs, missing targets and protection changes have no after-state and spend nothing
+  ---
+  duration_ms: 6.991698
+  type: 'test'
+  ...
+# Subtest: previews remain detached and byte-exact with frozen saves, unknown metadata and repeated reads
+ok 70 - previews remain detached and byte-exact with frozen saves, unknown metadata and repeated reads
+  ---
+  duration_ms: 14.931901
+  type: 'test'
+  ...
+# Subtest: legacy migration snapshots remain unchanged and never receive an unrelated event preview
+ok 71 - legacy migration snapshots remain unchanged and never receive an unrelated event preview
+  ---
+  duration_ms: 19.528277
+  type: 'test'
+  ...
+# Subtest: seeded loadouts and HP/ward/bonus boundaries agree with actual transactions across all supported choices
+ok 72 - seeded loadouts and HP/ward/bonus boundaries agree with actual transactions across all supported choices
+  ---
+  duration_ms: 296.426093
+  type: 'test'
+  ...
+# Subtest: a normal commit archives the readable V4 mirror instead of a checksummed but invalid primary
+ok 73 - a normal commit archives the readable V4 mirror instead of a checksummed but invalid primary
+  ---
+  duration_ms: 2.588308
+  type: 'test'
+  ...
+# Subtest: recovery from V1–V3 mirrors preserves both immutable original archives across later saves
+ok 74 - recovery from V1–V3 mirrors preserves both immutable original archives across later saves
+  ---
+  duration_ms: 10.946106
+  type: 'test'
+  ...
+# Subtest: archive-write failure after mirror recovery leaves both active disk copies intact
+ok 75 - archive-write failure after mirror recovery leaves both active disk copies intact
+  ---
+  duration_ms: 5.878833
+  type: 'test'
+  ...
+# Subtest: a pending auction without its committed reward is rejected before importing or claiming archive slots
+ok 76 - a pending auction without its committed reward is rejected before importing or claiming archive slots
+  ---
+  duration_ms: 2.176538
+  type: 'test'
+  ...
+# Subtest: event-triggered combat or death without an enemy cannot replace valid progress
+ok 77 - event-triggered combat or death without an enemy cannot replace valid progress
+  ---
+  duration_ms: 4.724567
+  type: 'test'
+  ...
+# Subtest: pending auction reward collisions with owned equipment are rejected before any import writes
+ok 78 - pending auction reward collisions with owned equipment are rejected before any import writes
+  ---
+  duration_ms: 3.41562
+  type: 'test'
+  ...
+# Subtest: resolved auction history can retain its owned reward through a later import
+ok 79 - resolved auction history can retain its owned reward through a later import
+  ---
+  duration_ms: 3.608205
+  type: 'test'
+  ...
+# Subtest: a valid auction remains deterministic through import, purchase, chest, loot and a rejected second claim
+ok 80 - a valid auction remains deterministic through import, purchase, chest, loot and a rejected second claim
+  ---
+  duration_ms: 4.685568
+  type: 'test'
+  ...
+# Subtest: ordinary events and direct chests keep their legal null enemy; resolved history does not require an optional auction preview
+ok 81 - ordinary events and direct chests keep their legal null enemy; resolved history does not require an optional auction preview
+  ---
+  duration_ms: 4.100443
+  type: 'test'
+  ...
+# Subtest: event combat retains valid multi-wave, death and retry transitions without regenerating committed rewards on load
+ok 82 - event combat retains valid multi-wave, death and retry transitions without regenerating committed rewards on load
+  ---
+  duration_ms: 5.661172
+  type: 'test'
+  ...
+# Subtest: 10,000 generated items still round-trip and primary-write failure leaves the current transaction intact
+ok 83 - 10,000 generated items still round-trip and primary-write failure leaves the current transaction intact
+  ---
+  duration_ms: 325.772318
+  type: 'test'
+  ...
+# Subtest: V1, V2 and V3 migrate every owned and pending item without changing identity, investment, enemy or transaction state
+ok 84 - V1, V2 and V3 migrate every owned and pending item without changing identity, investment, enemy or transaction state
+  ---
+  duration_ms: 15.665655
+  type: 'test'
+  ...
+# Subtest: legacy three-relic positions and all old talent ranks survive repeated load and migration
+ok 85 - legacy three-relic positions and all old talent ranks survive repeated load and migration
+  ---
+  duration_ms: 3.917253
+  type: 'test'
+  ...
+# Subtest: primary/mirror recovery and the first V4 commit retain the original raw archive for rollback
+ok 86 - primary/mirror recovery and the first V4 commit retain the original raw archive for rollback
+  ---
+  duration_ms: 2.863975
+  type: 'test'
+  ...
+# Subtest: migration/archive failures leave original browser assets untouched and state corruption is rejected
+ok 87 - migration/archive failures leave original browser assets untouched and state corruption is rejected
+  ---
+  duration_ms: 3.90163
+  type: 'test'
+  ...
+# Subtest: V4 narrow new-schema fields reject bad waves, encounter mechanics, events and roll metadata
+ok 88 - V4 narrow new-schema fields reject bad waves, encounter mechanics, events and roll metadata
+  ---
+  duration_ms: 2.214575
+  type: 'test'
+  ...
+# Subtest: legacy aggregate HP crossing the V4 cap rejects migration without clipping assets or replacing raw
+ok 89 - legacy aggregate HP crossing the V4 cap rejects migration without clipping assets or replacing raw
+  ---
+  duration_ms: 5.2213
+  type: 'test'
+  ...
+# Subtest: healing offers cannot import malformed or complete equipment through the heal ID exemption
+ok 90 - healing offers cannot import malformed or complete equipment through the heal ID exemption
+  ---
+  duration_ms: 5.833756
+  type: 'test'
+  ...
+# Subtest: legitimate absent or null healing payloads still import, heal once and preserve item purchases
+ok 91 - legitimate absent or null healing payloads still import, heal once and preserve item purchases
+  ---
+  duration_ms: 17.852368
+  type: 'test'
+  ...
+# Subtest: a 10,000-item current-schema save parses its active envelope only once
+ok 92 - a 10,000-item current-schema save parses its active envelope only once
+  ---
+  duration_ms: 230.934835
+  type: 'test'
+  ...
+# Subtest: current-schema source detection accepts whitespace and reordered envelope keys
+ok 93 - current-schema source detection accepts whitespace and reordered envelope keys
+  ---
+  duration_ms: 1.787944
+  type: 'test'
+  ...
+# Subtest: a verified V5 mirror avoids redundant parsing while an invalid primary remains unarchived
+ok 94 - a verified V5 mirror avoids redundant parsing while an invalid primary remains unarchived
+  ---
+  duration_ms: 2.288263
+  type: 'test'
+  ...
+# Subtest: public decode and load APIs keep their shapes and return fresh detached states
+ok 95 - public decode and load APIs keep their shapes and return fresh detached states
+  ---
+  duration_ms: 1.421021
+  type: 'test'
+  ...
+# Subtest: the source schema stays distinct from the migrated V5 state for all V1–V4 originals
+ok 96 - the source schema stays distinct from the migrated V5 state for all V1–V4 originals
+  ---
+  duration_ms: 13.199188
+  type: 'test'
+  ...
+# Subtest: full expected comparison still rejects same-revision unknown-field branches and mutated callers
+ok 97 - full expected comparison still rejects same-revision unknown-field branches and mutated callers
+  ---
+  duration_ms: 2.475731
+  type: 'test'
+  ...
+# Subtest: corrupt legacy archives still block a verified V5 commit before either active write
+ok 98 - corrupt legacy archives still block a verified V5 commit before either active write
+  ---
+  duration_ms: 1.151943
+  type: 'test'
+  ...
+# Subtest: later source reads that changed to an older raw string still take the complete archive path
+ok 99 - later source reads that changed to an older raw string still take the complete archive path
+  ---
+  duration_ms: 3.14492
+  type: 'test'
+  ...
+# Subtest: unreadable legacy envelopes remain available for explicit new-run rescue archives
+ok 100 - unreadable legacy envelopes remain available for explicit new-run rescue archives
+  ---
+  duration_ms: 1.242918
+  type: 'test'
+  ...
+# Subtest: archive failures keep active copies intact and current-schema primary or mirror failures keep their original outcomes
+ok 101 - archive failures keep active copies intact and current-schema primary or mirror failures keep their original outcomes
+  ---
+  duration_ms: 5.857942
+  type: 'test'
+  ...
+1..101
+# tests 101
+# suites 0
+# pass 101
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1818.262729

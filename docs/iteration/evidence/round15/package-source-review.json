@@ -1,0 +1,83 @@
+{
+  "sourceScope": "index.html, package.json and all src files",
+  "changedRuntimeFiles": [
+    {
+      "path": "index.html",
+      "baselineBytes": 2075,
+      "currentBytes": 2137,
+      "baselineSha256": "078012a5dba96182d938e065b8a6fae9ef6813b6c508a198a06bfb942faaeaed",
+      "currentSha256": "e206980c6cf3ad3fd85d6584418d92524a3f99dab8935b8f8b8ea49d9dfac958"
+    },
+    {
+      "path": "package.json",
+      "baselineBytes": 428,
+      "currentBytes": 428,
+      "baselineSha256": "a5f7ad3321ab3f6027f5adbd4df005a43fa6bb831973ad327978e460bf3b2e9b",
+      "currentSha256": "9a9ebb41eaa9210c1554037a7bd92db7f3542c42a6261225eb1f1f4515e6a910"
+    },
+    {
+      "path": "src/app.js",
+      "baselineBytes": 46947,
+      "currentBytes": 48136,
+      "baselineSha256": "102600ff9ef182782f715c07334264a2a417723d250becb5bd3520d460ae9df7",
+      "currentSha256": "1708721304f1874507b3e592fa2f7ffa3e15eb4eee516df6a34a68c7316e2753"
+    },
+    {
+      "path": "src/deep-rules.js",
+      "baselineBytes": 13570,
+      "currentBytes": 14103,
+      "baselineSha256": "c9bf6e3419308bdc1bb62836586cfb18f4b62aadea16aa5e0fc33fa6f4794485",
+      "currentSha256": "6f6c096e37c9f18a6ca97625330a6ab8ce55b25852e677455d3a200c8200dbe1"
+    },
+    {
+      "path": "src/engine.js",
+      "baselineBytes": 40477,
+      "currentBytes": 41128,
+      "baselineSha256": "32a60a0a5799eb5d515deaa65a3a7f07f4653c68d3c31ff3a61ce402b18f56cf",
+      "currentSha256": "75c6d9fcc48c0cf49ee02e53ffb7b143a09a2c79738d3bb2eb5d0ae80b30872b"
+    },
+    {
+      "path": "src/release.js",
+      "baselineBytes": 340,
+      "currentBytes": 340,
+      "baselineSha256": "c9ded47c6c31089294fdb4ea6c442e730fa07062a721bb3d9438c2ce5171123b",
+      "currentSha256": "337a97663cb8961b40a0f4fbfa6274aa21aec308d2bf15c84ed892167f28b6b6"
+    },
+    {
+      "path": "src/views.js",
+      "baselineBytes": 92227,
+      "currentBytes": 92910,
+      "baselineSha256": "926527525de6286a39cd868447857f93c16f7d4adfa7f7e150952b6301894e7e",
+      "currentSha256": "cc7b8a34b8e252c77ec4579b7b7bc781123c1f50a5d1c5a3d9a7ea728c8c2072"
+    }
+  ],
+  "newRuntimeFiles": [
+    {
+      "path": "src/inventory-query.js",
+      "bytes": 874,
+      "sha256": "7cf093f155934779d21c4dceb0a6aeef2e467fdb8c763413c155b6c0fd52a4c5"
+    },
+    {
+      "path": "src/inventory-search.css",
+      "bytes": 1573,
+      "sha256": "cfb91edec23d0e706414f3c9a90b6ab46c0efec43d54ff5e01da85c9923e3de1"
+    }
+  ],
+  "runtimeDirectoryGrowthBytes": 5503,
+  "runtimeScopeGrowthBytes": 5565,
+  "originalDeletedFiles": [],
+  "sourceAssetsByteIdentical": true,
+  "newTestFiles": [
+    "tests/healing-settlement-record.test.mjs",
+    "tests/inventory-search.test.mjs",
+    "tests/salvage-batch.test.mjs"
+  ],
+  "newScripts": [
+    "scripts/audit-healing-record-round15.mjs",
+    "scripts/benchmark-salvage-round15.mjs",
+    "scripts/compare-natural-round15.mjs",
+    "scripts/qa-defeat-preparation-round15.mjs",
+    "scripts/qa-inventory-search-round15.mjs",
+    "scripts/qa-salvage-performance-round15.mjs"
+  ]
+}

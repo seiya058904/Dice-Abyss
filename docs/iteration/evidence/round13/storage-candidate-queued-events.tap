@@ -1,0 +1,485 @@
+TAP version 13
+# Subtest: a localStorage.clear event immediately protects and offers the surviving full memory snapshot
+ok 1 - a localStorage.clear event immediately protects and offers the surviving full memory snapshot
+  ---
+  duration_ms: 64.168983
+  type: 'test'
+  ...
+# Subtest: removing primary and mirror separately reports loss after the last copy disappears
+ok 2 - removing primary and mirror separately reports loss after the last copy disappears
+  ---
+  duration_ms: 7.138627
+  type: 'test'
+  ...
+# Subtest: loss cancels an outstanding confirmation and reveals the committed memory instead of stale animation
+ok 3 - loss cancels an outstanding confirmation and reveals the committed memory instead of stale animation
+  ---
+  duration_ms: 4.564284
+  type: 'test'
+  ...
+# Subtest: a new run arriving after loss stays a separate candidate until the user chooses it
+ok 4 - a new run arriving after loss stays a separate candidate until the user chooses it
+  ---
+  duration_ms: 5.634075
+  type: 'test'
+  ...
+# Subtest: unreadable copies protect memory and pending callbacks without changing either raw record
+ok 5 - unreadable copies protect memory and pending callbacks without changing either raw record
+  ---
+  duration_ms: 4.089312
+  type: 'test'
+  ...
+# Subtest: sessionStorage events with matching keys cannot synchronize or discard localStorage progress
+ok 6 - sessionStorage events with matching keys cannot synchronize or discard localStorage progress
+  ---
+  duration_ms: 4.726834
+  type: 'test'
+  ...
+# Subtest: an unchanged mirror notification preserves active presentation and existing confirmation
+ok 7 - an unchanged mirror notification preserves active presentation and existing confirmation
+  ---
+  duration_ms: 5.101829
+  type: 'test'
+  ...
+# Subtest: a delayed clear notification with both copies already restored does not falsely report missing data
+ok 8 - a delayed clear notification with both copies already restored does not falsely report missing data
+  ---
+  duration_ms: 3.821456
+  type: 'test'
+  ...
+# Subtest: unrelated localStorage changes do not inspect or redraw the game
+ok 9 - unrelated localStorage changes do not inspect or redraw the game
+  ---
+  duration_ms: 3.284373
+  type: 'test'
+  ...
+# Subtest: queued clear followed by an already recreated different run preserves the old full memory
+not ok 10 - queued clear followed by an already recreated different run preserves the old full memory
+  ---
+  duration_ms: 5.786199
+  type: 'test'
+  location: '/workspace/scratch/5a5998079a95/work/Dice-Abyss/tests/storage-recovery-events.test.mjs:80:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The complete committed state and all unknown fields survive
+    + actual - expected
+    
+    + '{"format":"dice-abyss","version":5,"checksum":"a4da75e6","payload":"{\\"version\\":5,\\"revision\\":0,\\"runId\\":\\"13027-1792336596840\\",\\"rng\\":1639049389,\\"nextId\\":4,\\"floor\\":1,\\"phase\\":\\"fate\\",\\"route\\":[],\\"roomIndex\\":0,\\"fate\\":null,\\"enemy\\":null,\\"chest\\":null,\\"loot\\":null,\\"shop\\":[],\\"lastRoll\\":null,\\"lastForge\\":null,\\"log\\":[{\\"text\\":\\"你踏入了遗忘入口。\\",\\"tone\\":\\"\\"}],\\"completed\\":false,\\"event\\":null,\\"eventLuck\\":0,\\"eventPower\\":0,\\"encounterHistory\\":[],\\"routeMemory\\":{\\"services\\":[],\\"last\\":{},\\"hiddenFloor\\":0},\\"v5Boons\\":{\\"echo\\":0,\\"ward\\":0},\\"nextLuck\\":0,\\"counters\\":{\\"rolls\\":0,\\"kills\\":0,\\"chests\\":0,\\"deaths\\":0,\\"highestDamage\\":0,\\"bosses\\":0},\\"player\\":{\\"level\\":1,\\"xp\\":0,\\"gold\\":80,\\"hp\\":161,\\"talentPoints\\":0,\\"deepOfferings\\":0,\\"pactScars\\":0,\\"fateBlessings\\":0,\\"talents\\":{\\"high\\":0,\\"four\\":0,\\"five\\":0,\\"six\\":0,\\"sum\\":0,\\"power\\":0,\\"resonance\\":0,\\"pair\\":0,\\"triple\\":0,\\"quartet\\":0,\\"choir\\":0,\\"echo\\":0,\\"critical\\":0,\\"keen\\":0,\\"crush\\":0,\\"pursuit\\":0,\\"opener\\":0,\\"slayer\\":0,\\"vitality\\":0,\\"guard\\":0,\\"leech\\":0,\\"recovery\\":0,\\"fortune\\":0,\\"smith\\":0,\\"luck\\":0,\\"attune\\":0,\\"omen\\":0,\\"mercy\\":0,\\"jackpot\\":0,\\"spark\\":0,\\"shatter\\":0,\\"diversity\\":0,\\"finality\\":0,\\"deepEcho\\":0,\\"chorusMend\\":0,\\"tripleBlade\\":0,\\"firstFire\\":0,\\"critAegis\\":0,\\"dawnCrit\\":0,\\"emberGuard\\":0,\\"phaseShelter\\":0,\\"lastResolve\\":0,\\"hunterStar\\":0,\\"gildedFaces\\":0,\\"sixRebirth\\":0},\\"items\\":[{\\"id\\":\\"i1\\",\\"slot\\":\\"weapon\\",\\"rarity\\":0,\\"depth\\":1,\\"level\\":1,\\"levelXp\\":0,\\"enhance\\":0,\\"locked\\":false,\\"catalogId\\":\\"v4-weapon-3-1-0\\",\\"profile\\":1,\\"theme\\":4,\\"name\\":\\"残响·双焰流光刺剑\\"},{\\"id\\":\\"i2\\",\\"slot\\":\\"armor\\",\\"rarity\\":0,\\"depth\\":1,\\"level\\":1,\\"levelXp\\":0,\\"enhance\\":0,\\"locked\\":false,\\"catalogId\\":\\"armor-1-1-0\\",\\"profile\\":1,\\"theme\\":1,\\"name\\":\\"残响·霜痕战甲\\"},{\\"id\\":\\"i3\\",\\"slot\\":\\"relic\\",\\"rarity\\":0,\\"depth\\":1,\\"level\\":1,\\"levelXp\\":0,\\"enhance\\":0,\\"locked\\":false,\\"catalogId\\":\\"relic-9-1-0\\",\\"profile\\":1,\\"theme\\":9,\\"name\\":\\"残响·破晓棱镜\\"}],\\"equipped\\":{\\"weapon\\":\\"i1\\",\\"armor\\":\\"i2\\",\\"relic\\":\\"i3\\",\\"relic2\\":null,\\"relic3\\":null}},\\"qaNewRun\\":{\\"keep\\":\\"new browser data\\"}}"}'
+    - '{"format":"dice-abyss","version":5,"checksum":"d50aa784","payload":"{\\"version\\":5,\\"revision\\":0,\\"runId\\":\\"13013-1792336596837\\",\\"rng\\":1718544500,\\"nextId\\":4,\\"floor\\":1,\\"phase\\":\\"fate\\",\\"route\\":[],\\"roomIndex\\":0,\\"fate\\":null,\\"enemy\\":null,\\"chest\\":null,\\"loot\\":null,\\"shop\\":[],\\"lastRoll\\":null,\\"lastForge\\":null,\\"log\\":[{\\"text\\":\\"你踏入了遗忘入口。\\",\\"tone\\":\\"\\"}],\\"completed\\":false,\\"event\\":null,\\"eventLuck\\":0,\\"eventPower\\":0,\\"encounterHistory\\":[],\\"routeMemory\\":{\\"services\\":[],\\"last\\":{},\\"hiddenFloor\\":0},\\"v5Boons\\":{\\"echo\\":0,\\"ward\\":0},\\"nextLuck\\":0,\\"counters\\":{\\"rolls\\":0,\\"kills\\":0,\\"chests\\":0,\\"deaths\\":0,\\"highestDamage\\":0,\\"bosses\\":0},\\"player\\":{\\"level\\":1,\\"xp\\":0,\\"gold\\":80,\\"hp\\":168,\\"talentPoints\\":0,\\"deepOfferings\\":0,\\"pactScars\\":0,\\"fateBlessings\\":0,\\"talents\\":{\\"high\\":0,\\"four\\":0,\\"five\\":0,\\"six\\":0,\\"sum\\":0,\\"power\\":0,\\"resonance\\":0,\\"pair\\":0,\\"triple\\":0,\\"quartet\\":0,\\"choir\\":0,\\"echo\\":0,\\"critical\\":0,\\"keen\\":0,\\"crush\\":0,\\"pursuit\\":0,\\"opener\\":0,\\"slayer\\":0,\\"vitality\\":0,\\"guard\\":0,\\"leech\\":0,\\"recovery\\":0,\\"fortune\\":0,\\"smith\\":0,\\"luck\\":0,\\"attune\\":0,\\"omen\\":0,\\"mercy\\":0,\\"jackpot\\":0,\\"spark\\":0,\\"shatter\\":0,\\"diversity\\":0,\\"finality\\":0,\\"deepEcho\\":0,\\"chorusMend\\":0,\\"tripleBlade\\":0,\\"firstFire\\":0,\\"critAegis\\":0,\\"dawnCrit\\":0,\\"emberGuard\\":0,\\"phaseShelter\\":0,\\"lastResolve\\":0,\\"hunterStar\\":0,\\"gildedFaces\\":0,\\"sixRebirth\\":0},\\"items\\":[{\\"id\\":\\"i1\\",\\"slot\\":\\"weapon\\",\\"rarity\\":0,\\"depth\\":1,\\"level\\":2,\\"levelXp\\":0,\\"enhance\\":0,\\"locked\\":false,\\"catalogId\\":\\"v4-weapon-3-1-0\\",\\"profile\\":1,\\"theme\\":4,\\"name\\":\\"残响·双焰流光刺剑\\"},{\\"id\\":\\"i2\\",\\"slot\\":\\"armor\\",\\"rarity\\":0,\\"depth\\":1,\\"level\\":2,\\"levelXp\\":0,\\"enhance\\":0,\\"locked\\":false,\\"catalogId\\":\\"armor-3-2-0\\",\\"profile\\":2,\\"theme\\":3,\\"name\\":\\"残响·星陨灵衣\\"},{\\"id\\":\\"i3\\",\\"slot\\":\\"relic\\",\\"rarity\\":0,\\"depth\\":1,\\"level\\":1,\\"levelXp\\":0,\\"enhance\\":0,\\"locked\\":false,\\"catalogId\\":\\"relic-0-2-0\\",\\"profile\\":2,\\"theme\\":0,\\"name\\":\\"残响·余烬回环\\"}],\\"equipped\\":{\\"weapon\\":\\"i1\\",\\"armor\\":\\"i2\\",\\"relic\\":\\"i3\\",\\"relic2\\":null,\\"relic3\\":null}},\\"qaRecovery\\":{\\"unicode\\":\\"完整旅途 雪\\",\\"nested\\":{\\"unknown\\":[null,7,{\\"keep\\":true}]}}}"}'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: '{"format":"dice-abyss","version":5,"checksum":"d50aa784","payload":"{\\"version\\":5,\\"revision\\":0,\\"runId\\":\\"13013-1792336596837\\",\\"rng\\":1718544500,\\"nextId\\":4,\\"floor\\":1,\\"phase\\":\\"fate\\",\\"route\\":[],\\"roomIndex\\":0,\\"fate\\":null,\\"enemy\\":null,\\"chest\\":null,\\"loot\\":null,\\"shop\\":[],\\"lastRoll\\":null,\\"lastForge\\":null,\\"log\\":[{\\"text\\":\\"你踏入了遗忘入口。\\",\\"tone\\":\\"\\"}],\\"completed\\":false,\\"event\\":null,\\"eventLuck\\":0,\\"eventPower\\":0,\\"encounterHistory\\":[],\\"routeMemory\\":{\\"services\\":[],\\"last\\":{},\\"hiddenFloor\\":0},\\"v5Boons\\":{\\"echo\\":0,\\"ward\\":0},\\"nextLuck\\":0,\\"counters\\":{\\"rolls\\":0,\\"kills\\":0,\\"chests\\":0,\\"deaths\\":0,\\"highestDamage\\":0,\\"bosses\\":0},\\"player\\":{\\"level\\":1,\\"xp\\":0,\\"gold\\":80,\\"hp\\":168,\\"talentPoints\\":0,\\"deepOfferings\\":0,\\"pactScars\\":0,\\"fateBlessings\\":0,\\"talents\\":{\\"high\\":0,\\"four\\":0,\\"five\\":0,\\"six\\":0,\\"sum\\":0,\\"power\\":0,\\"resonance\\":0,\\"pair\\":0,\\"triple\\":0,\\"quartet\\":0,\\"choir\\":0,\\"echo\\":0,\\"critical\\":0,\\"keen\\":0,\\"crush\\":0,\\"pursuit\\":0,\\"opener\\":0,\\"slayer\\":0,\\"vitality\\":0,\\"guard\\":0,\\"leech\\":0,\\"recovery\\":0,\\"fortune\\":0,\\"smith\\":0,\\"luck\\":0,\\"attune\\":0,\\"omen\\":0,\\"mercy\\":0,\\"jackpot\\":0,\\"spark\\":0,\\"shatter\\":0,\\"diversity\\":0,\\"finality\\":0,\\"deepEcho\\":0,\\"chorusMend\\":0,\\"tripleBlade\\":0,\\"firstFire\\":0,\\"critAegis\\":0,\\"dawnCrit\\":0,\\"emberGuard\\":0,\\"phaseShelter\\":0,\\"lastResolve\\":0,\\"hunterStar\\":0,\\"gildedFaces\\":0,\\"sixRebirth\\":0},\\"items\\":[{\\"id\\":\\"i1\\",\\"slot\\":\\"weapon\\",\\"rarity\\":0,\\"depth\\":1,\\"level\\":2,\\"levelXp\\":0,\\"enhance\\":0,\\"locked\\":false,\\"catalogId\\":\\"v4-weapon-3-1-0\\",\\"profile\\":1,\\"theme\\":4,\\"name\\":\\"残响·双焰流光刺剑\\"},{\\"id\\":\\"i2\\",\\"slot\\":\\"armor\\",\\"rarity\\":0,\\"depth\\":1,\\"level\\":2,\\"levelXp\\":0,\\"enhance\\":0,\\"locked\\":false,\\"catalogId\\":\\"armor-3-2-0\\",\\"profile\\":2,\\"theme\\":3,\\"name\\":\\"残响·星陨灵衣\\"},{\\"id\\":\\"i3\\",\\"slot\\":\\"relic\\",\\"rarity\\":0,\\"depth\\":1,\\"level\\":1,\\"levelXp\\":0,\\"enhance\\":0,\\"locked\\":false,\\"catalogId\\":\\"relic-0-2-0\\",\\"profile\\":2,\\"theme\\":0,\\"name\\":\\"残响·余烬回环\\"}],\\"equipped\\":{\\"weapon\\":\\"i1\\",\\"armor\\":\\"i2\\",\\"relic\\":\\"i3\\",\\"relic2\\":null,\\"relic3\\":null}},\\"qaRecovery\\":{\\"unicode\\":\\"完整旅途 雪\\",\\"nested\\":{\\"unknown\\":[null,7,{\\"keep\\":true}]}}}"}'
+  actual: '{"format":"dice-abyss","version":5,"checksum":"a4da75e6","payload":"{\\"version\\":5,\\"revision\\":0,\\"runId\\":\\"13027-1792336596840\\",\\"rng\\":1639049389,\\"nextId\\":4,\\"floor\\":1,\\"phase\\":\\"fate\\",\\"route\\":[],\\"roomIndex\\":0,\\"fate\\":null,\\"enemy\\":null,\\"chest\\":null,\\"loot\\":null,\\"shop\\":[],\\"lastRoll\\":null,\\"lastForge\\":null,\\"log\\":[{\\"text\\":\\"你踏入了遗忘入口。\\",\\"tone\\":\\"\\"}],\\"completed\\":false,\\"event\\":null,\\"eventLuck\\":0,\\"eventPower\\":0,\\"encounterHistory\\":[],\\"routeMemory\\":{\\"services\\":[],\\"last\\":{},\\"hiddenFloor\\":0},\\"v5Boons\\":{\\"echo\\":0,\\"ward\\":0},\\"nextLuck\\":0,\\"counters\\":{\\"rolls\\":0,\\"kills\\":0,\\"chests\\":0,\\"deaths\\":0,\\"highestDamage\\":0,\\"bosses\\":0},\\"player\\":{\\"level\\":1,\\"xp\\":0,\\"gold\\":80,\\"hp\\":161,\\"talentPoints\\":0,\\"deepOfferings\\":0,\\"pactScars\\":0,\\"fateBlessings\\":0,\\"talents\\":{\\"high\\":0,\\"four\\":0,\\"five\\":0,\\"six\\":0,\\"sum\\":0,\\"power\\":0,\\"resonance\\":0,\\"pair\\":0,\\"triple\\":0,\\"quartet\\":0,\\"choir\\":0,\\"echo\\":0,\\"critical\\":0,\\"keen\\":0,\\"crush\\":0,\\"pursuit\\":0,\\"opener\\":0,\\"slayer\\":0,\\"vitality\\":0,\\"guard\\":0,\\"leech\\":0,\\"recovery\\":0,\\"fortune\\":0,\\"smith\\":0,\\"luck\\":0,\\"attune\\":0,\\"omen\\":0,\\"mercy\\":0,\\"jackpot\\":0,\\"spark\\":0,\\"shatter\\":0,\\"diversity\\":0,\\"finality\\":0,\\"deepEcho\\":0,\\"chorusMend\\":0,\\"tripleBlade\\":0,\\"firstFire\\":0,\\"critAegis\\":0,\\"dawnCrit\\":0,\\"emberGuard\\":0,\\"phaseShelter\\":0,\\"lastResolve\\":0,\\"hunterStar\\":0,\\"gildedFaces\\":0,\\"sixRebirth\\":0},\\"items\\":[{\\"id\\":\\"i1\\",\\"slot\\":\\"weapon\\",\\"rarity\\":0,\\"depth\\":1,\\"level\\":1,\\"levelXp\\":0,\\"enhance\\":0,\\"locked\\":false,\\"catalogId\\":\\"v4-weapon-3-1-0\\",\\"profile\\":1,\\"theme\\":4,\\"name\\":\\"残响·双焰流光刺剑\\"},{\\"id\\":\\"i2\\",\\"slot\\":\\"armor\\",\\"rarity\\":0,\\"depth\\":1,\\"level\\":1,\\"levelXp\\":0,\\"enhance\\":0,\\"locked\\":false,\\"catalogId\\":\\"armor-1-1-0\\",\\"profile\\":1,\\"theme\\":1,\\"name\\":\\"残响·霜痕战甲\\"},{\\"id\\":\\"i3\\",\\"slot\\":\\"relic\\",\\"rarity\\":0,\\"depth\\":1,\\"level\\":1,\\"levelXp\\":0,\\"enhance\\":0,\\"locked\\":false,\\"catalogId\\":\\"relic-9-1-0\\",\\"profile\\":1,\\"theme\\":9,\\"name\\":\\"残响·破晓棱镜\\"}],\\"equipped\\":{\\"weapon\\":\\"i1\\",\\"armor\\":\\"i2\\",\\"relic\\":\\"i3\\",\\"relic2\\":null,\\"relic3\\":null}},\\"qaNewRun\\":{\\"keep\\":\\"new browser data\\"}}"}'
+  operator: 'strictEqual'
+  stack: |-
+    memoryEqual (file:///workspace/scratch/5a5998079a95/work/Dice-Abyss/tests/storage-recovery-events.test.mjs:10:29)
+    TestContext.<anonymous> (file:///workspace/scratch/5a5998079a95/work/Dice-Abyss/tests/storage-recovery-events.test.mjs:85:3)
+    async Test.run (node:internal/test_runner/test:1389:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+  ...
+# Subtest: queued remove events followed by a same-ID same-revision changed branch preserve memory before synchronization
+not ok 11 - queued remove events followed by a same-ID same-revision changed branch preserve memory before synchronization
+  ---
+  duration_ms: 4.624353
+  type: 'test'
+  location: '/workspace/scratch/5a5998079a95/work/Dice-Abyss/tests/storage-recovery-events.test.mjs:89:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The complete committed state and all unknown fields survive
+    + actual - expected
+    
+    + '{"format":"dice-abyss","version":5,"checksum":"1dbc36a7","payload":"{\\"version\\":5,\\"revision\\":0,\\"runId\\":\\"13013-1792336596843\\",\\"rng\\":1718544500,\\"nextId\\":4,\\"floor\\":1,\\"phase\\":\\"fate\\",\\"route\\":[],\\"roomIndex\\":0,\\"fate\\":null,\\"enemy\\":null,\\"chest\\":null,\\"loot\\":null,\\"shop\\":[],\\"lastRoll\\":null,\\"lastForge\\":null,\\"log\\":[{\\"text\\":\\"你踏入了遗忘入口。\\",\\"tone\\":\\"\\"}],\\"completed\\":false,\\"event\\":null,\\"eventLuck\\":0,\\"eventPower\\":0,\\"encounterHistory\\":[],\\"routeMemory\\":{\\"services\\":[],\\"last\\":{},\\"hiddenFloor\\":0},\\"v5Boons\\":{\\"echo\\":0,\\"ward\\":0},\\"nextLuck\\":0,\\"counters\\":{\\"rolls\\":0,\\"kills\\":0,\\"chests\\":0,\\"deaths\\":0,\\"highestDamage\\":0,\\"bosses\\":0},\\"player\\":{\\"level\\":1,\\"xp\\":0,\\"gold\\":80,\\"hp\\":168,\\"talentPoints\\":0,\\"deepOfferings\\":0,\\"pactScars\\":0,\\"fateBlessings\\":0,\\"talents\\":{\\"high\\":0,\\"four\\":0,\\"five\\":0,\\"six\\":0,\\"sum\\":0,\\"power\\":0,\\"resonance\\":0,\\"pair\\":0,\\"triple\\":0,\\"quartet\\":0,\\"choir\\":0,\\"echo\\":0,\\"critical\\":0,\\"keen\\":0,\\"crush\\":0,\\"pursuit\\":0,\\"opener\\":0,\\"slayer\\":0,\\"vitality\\":0,\\"guard\\":0,\\"leech\\":0,\\"recovery\\":0,\\"fortune\\":0,\\"smith\\":0,\\"luck\\":0,\\"attune\\":0,\\"omen\\":0,\\"mercy\\":0,\\"jackpot\\":0,\\"spark\\":0,\\"shatter\\":0,\\"diversity\\":0,\\"finality\\":0,\\"deepEcho\\":0,\\"chorusMend\\":0,\\"tripleBlade\\":0,\\"firstFire\\":0,\\"critAegis\\":0,\\"dawnCrit\\":0,\\"emberGuard\\":0,\\"phaseShelter\\":0,\\"lastResolve\\":0,\\"hunterStar\\":0,\\"gildedFaces\\":0,\\"sixRebirth\\":0},\\"items\\":[{\\"id\\":\\"i1\\",\\"slot\\":\\"weapon\\",\\"rarity\\":0,\\"depth\\":1,\\"level\\":2,\\"levelXp\\":0,\\"enhance\\":0,\\"locked\\":false,\\"catalogId\\":\\"v4-weapon-3-1-0\\",\\"profile\\":1,\\"theme\\":4,\\"name\\":\\"残响·双焰流光刺剑\\"},{\\"id\\":\\"i2\\",\\"slot\\":\\"armor\\",\\"rarity\\":0,\\"depth\\":1,\\"level\\":2,\\"levelXp\\":0,\\"enhance\\":0,\\"locked\\":false,\\"catalogId\\":\\"armor-3-2-0\\",\\"profile\\":2,\\"theme\\":3,\\"name\\":\\"残响·星陨灵衣\\"},{\\"id\\":\\"i3\\",\\"slot\\":\\"relic\\",\\"rarity\\":0,\\"depth\\":1,\\"level\\":1,\\"levelXp\\":0,\\"enhance\\":0,\\"locked\\":false,\\"catalogId\\":\\"relic-0-2-0\\",\\"profile\\":2,\\"theme\\":0,\\"name\\":\\"残响·余烬回环\\"}],\\"equipped\\":{\\"weapon\\":\\"i1\\",\\"armor\\":\\"i2\\",\\"relic\\":\\"i3\\",\\"relic2\\":null,\\"relic3\\":null}},\\"qaRecovery\\":{\\"unicode\\":\\"完整旅途 雪\\",\\"nested\\":{\\"unknown\\":[null,7,{\\"keep\\":true},\\"distinct branch\\"]}}}"}'
+    - '{"format":"dice-abyss","version":5,"checksum":"31e792f3","payload":"{\\"version\\":5,\\"revision\\":0,\\"runId\\":\\"13013-1792336596843\\",\\"rng\\":1718544500,\\"nextId\\":4,\\"floor\\":1,\\"phase\\":\\"fate\\",\\"route\\":[],\\"roomIndex\\":0,\\"fate\\":null,\\"enemy\\":null,\\"chest\\":null,\\"loot\\":null,\\"shop\\":[],\\"lastRoll\\":null,\\"lastForge\\":null,\\"log\\":[{\\"text\\":\\"你踏入了遗忘入口。\\",\\"tone\\":\\"\\"}],\\"completed\\":false,\\"event\\":null,\\"eventLuck\\":0,\\"eventPower\\":0,\\"encounterHistory\\":[],\\"routeMemory\\":{\\"services\\":[],\\"last\\":{},\\"hiddenFloor\\":0},\\"v5Boons\\":{\\"echo\\":0,\\"ward\\":0},\\"nextLuck\\":0,\\"counters\\":{\\"rolls\\":0,\\"kills\\":0,\\"chests\\":0,\\"deaths\\":0,\\"highestDamage\\":0,\\"bosses\\":0},\\"player\\":{\\"level\\":1,\\"xp\\":0,\\"gold\\":80,\\"hp\\":168,\\"talentPoints\\":0,\\"deepOfferings\\":0,\\"pactScars\\":0,\\"fateBlessings\\":0,\\"talents\\":{\\"high\\":0,\\"four\\":0,\\"five\\":0,\\"six\\":0,\\"sum\\":0,\\"power\\":0,\\"resonance\\":0,\\"pair\\":0,\\"triple\\":0,\\"quartet\\":0,\\"choir\\":0,\\"echo\\":0,\\"critical\\":0,\\"keen\\":0,\\"crush\\":0,\\"pursuit\\":0,\\"opener\\":0,\\"slayer\\":0,\\"vitality\\":0,\\"guard\\":0,\\"leech\\":0,\\"recovery\\":0,\\"fortune\\":0,\\"smith\\":0,\\"luck\\":0,\\"attune\\":0,\\"omen\\":0,\\"mercy\\":0,\\"jackpot\\":0,\\"spark\\":0,\\"shatter\\":0,\\"diversity\\":0,\\"finality\\":0,\\"deepEcho\\":0,\\"chorusMend\\":0,\\"tripleBlade\\":0,\\"firstFire\\":0,\\"critAegis\\":0,\\"dawnCrit\\":0,\\"emberGuard\\":0,\\"phaseShelter\\":0,\\"lastResolve\\":0,\\"hunterStar\\":0,\\"gildedFaces\\":0,\\"sixRebirth\\":0},\\"items\\":[{\\"id\\":\\"i1\\",\\"slot\\":\\"weapon\\",\\"rarity\\":0,\\"depth\\":1,\\"level\\":2,\\"levelXp\\":0,\\"enhance\\":0,\\"locked\\":false,\\"catalogId\\":\\"v4-weapon-3-1-0\\",\\"profile\\":1,\\"theme\\":4,\\"name\\":\\"残响·双焰流光刺剑\\"},{\\"id\\":\\"i2\\",\\"slot\\":\\"armor\\",\\"rarity\\":0,\\"depth\\":1,\\"level\\":2,\\"levelXp\\":0,\\"enhance\\":0,\\"locked\\":false,\\"catalogId\\":\\"armor-3-2-0\\",\\"profile\\":2,\\"theme\\":3,\\"name\\":\\"残响·星陨灵衣\\"},{\\"id\\":\\"i3\\",\\"slot\\":\\"relic\\",\\"rarity\\":0,\\"depth\\":1,\\"level\\":1,\\"levelXp\\":0,\\"enhance\\":0,\\"locked\\":false,\\"catalogId\\":\\"relic-0-2-0\\",\\"profile\\":2,\\"theme\\":0,\\"name\\":\\"残响·余烬回环\\"}],\\"equipped\\":{\\"weapon\\":\\"i1\\",\\"armor\\":\\"i2\\",\\"relic\\":\\"i3\\",\\"relic2\\":null,\\"relic3\\":null}},\\"qaRecovery\\":{\\"unicode\\":\\"完整旅途 雪\\",\\"nested\\":{\\"unknown\\":[null,7,{\\"keep\\":true}]}}}"}'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: '{"format":"dice-abyss","version":5,"checksum":"31e792f3","payload":"{\\"version\\":5,\\"revision\\":0,\\"runId\\":\\"13013-1792336596843\\",\\"rng\\":1718544500,\\"nextId\\":4,\\"floor\\":1,\\"phase\\":\\"fate\\",\\"route\\":[],\\"roomIndex\\":0,\\"fate\\":null,\\"enemy\\":null,\\"chest\\":null,\\"loot\\":null,\\"shop\\":[],\\"lastRoll\\":null,\\"lastForge\\":null,\\"log\\":[{\\"text\\":\\"你踏入了遗忘入口。\\",\\"tone\\":\\"\\"}],\\"completed\\":false,\\"event\\":null,\\"eventLuck\\":0,\\"eventPower\\":0,\\"encounterHistory\\":[],\\"routeMemory\\":{\\"services\\":[],\\"last\\":{},\\"hiddenFloor\\":0},\\"v5Boons\\":{\\"echo\\":0,\\"ward\\":0},\\"nextLuck\\":0,\\"counters\\":{\\"rolls\\":0,\\"kills\\":0,\\"chests\\":0,\\"deaths\\":0,\\"highestDamage\\":0,\\"bosses\\":0},\\"player\\":{\\"level\\":1,\\"xp\\":0,\\"gold\\":80,\\"hp\\":168,\\"talentPoints\\":0,\\"deepOfferings\\":0,\\"pactScars\\":0,\\"fateBlessings\\":0,\\"talents\\":{\\"high\\":0,\\"four\\":0,\\"five\\":0,\\"six\\":0,\\"sum\\":0,\\"power\\":0,\\"resonance\\":0,\\"pair\\":0,\\"triple\\":0,\\"quartet\\":0,\\"choir\\":0,\\"echo\\":0,\\"critical\\":0,\\"keen\\":0,\\"crush\\":0,\\"pursuit\\":0,\\"opener\\":0,\\"slayer\\":0,\\"vitality\\":0,\\"guard\\":0,\\"leech\\":0,\\"recovery\\":0,\\"fortune\\":0,\\"smith\\":0,\\"luck\\":0,\\"attune\\":0,\\"omen\\":0,\\"mercy\\":0,\\"jackpot\\":0,\\"spark\\":0,\\"shatter\\":0,\\"diversity\\":0,\\"finality\\":0,\\"deepEcho\\":0,\\"chorusMend\\":0,\\"tripleBlade\\":0,\\"firstFire\\":0,\\"critAegis\\":0,\\"dawnCrit\\":0,\\"emberGuard\\":0,\\"phaseShelter\\":0,\\"lastResolve\\":0,\\"hunterStar\\":0,\\"gildedFaces\\":0,\\"sixRebirth\\":0},\\"items\\":[{\\"id\\":\\"i1\\",\\"slot\\":\\"weapon\\",\\"rarity\\":0,\\"depth\\":1,\\"level\\":2,\\"levelXp\\":0,\\"enhance\\":0,\\"locked\\":false,\\"catalogId\\":\\"v4-weapon-3-1-0\\",\\"profile\\":1,\\"theme\\":4,\\"name\\":\\"残响·双焰流光刺剑\\"},{\\"id\\":\\"i2\\",\\"slot\\":\\"armor\\",\\"rarity\\":0,\\"depth\\":1,\\"level\\":2,\\"levelXp\\":0,\\"enhance\\":0,\\"locked\\":false,\\"catalogId\\":\\"armor-3-2-0\\",\\"profile\\":2,\\"theme\\":3,\\"name\\":\\"残响·星陨灵衣\\"},{\\"id\\":\\"i3\\",\\"slot\\":\\"relic\\",\\"rarity\\":0,\\"depth\\":1,\\"level\\":1,\\"levelXp\\":0,\\"enhance\\":0,\\"locked\\":false,\\"catalogId\\":\\"relic-0-2-0\\",\\"profile\\":2,\\"theme\\":0,\\"name\\":\\"残响·余烬回环\\"}],\\"equipped\\":{\\"weapon\\":\\"i1\\",\\"armor\\":\\"i2\\",\\"relic\\":\\"i3\\",\\"relic2\\":null,\\"relic3\\":null}},\\"qaRecovery\\":{\\"unicode\\":\\"完整旅途 雪\\",\\"nested\\":{\\"unknown\\":[null,7,{\\"keep\\":true}]}}}"}'
+  actual: '{"format":"dice-abyss","version":5,"checksum":"1dbc36a7","payload":"{\\"version\\":5,\\"revision\\":0,\\"runId\\":\\"13013-1792336596843\\",\\"rng\\":1718544500,\\"nextId\\":4,\\"floor\\":1,\\"phase\\":\\"fate\\",\\"route\\":[],\\"roomIndex\\":0,\\"fate\\":null,\\"enemy\\":null,\\"chest\\":null,\\"loot\\":null,\\"shop\\":[],\\"lastRoll\\":null,\\"lastForge\\":null,\\"log\\":[{\\"text\\":\\"你踏入了遗忘入口。\\",\\"tone\\":\\"\\"}],\\"completed\\":false,\\"event\\":null,\\"eventLuck\\":0,\\"eventPower\\":0,\\"encounterHistory\\":[],\\"routeMemory\\":{\\"services\\":[],\\"last\\":{},\\"hiddenFloor\\":0},\\"v5Boons\\":{\\"echo\\":0,\\"ward\\":0},\\"nextLuck\\":0,\\"counters\\":{\\"rolls\\":0,\\"kills\\":0,\\"chests\\":0,\\"deaths\\":0,\\"highestDamage\\":0,\\"bosses\\":0},\\"player\\":{\\"level\\":1,\\"xp\\":0,\\"gold\\":80,\\"hp\\":168,\\"talentPoints\\":0,\\"deepOfferings\\":0,\\"pactScars\\":0,\\"fateBlessings\\":0,\\"talents\\":{\\"high\\":0,\\"four\\":0,\\"five\\":0,\\"six\\":0,\\"sum\\":0,\\"power\\":0,\\"resonance\\":0,\\"pair\\":0,\\"triple\\":0,\\"quartet\\":0,\\"choir\\":0,\\"echo\\":0,\\"critical\\":0,\\"keen\\":0,\\"crush\\":0,\\"pursuit\\":0,\\"opener\\":0,\\"slayer\\":0,\\"vitality\\":0,\\"guard\\":0,\\"leech\\":0,\\"recovery\\":0,\\"fortune\\":0,\\"smith\\":0,\\"luck\\":0,\\"attune\\":0,\\"omen\\":0,\\"mercy\\":0,\\"jackpot\\":0,\\"spark\\":0,\\"shatter\\":0,\\"diversity\\":0,\\"finality\\":0,\\"deepEcho\\":0,\\"chorusMend\\":0,\\"tripleBlade\\":0,\\"firstFire\\":0,\\"critAegis\\":0,\\"dawnCrit\\":0,\\"emberGuard\\":0,\\"phaseShelter\\":0,\\"lastResolve\\":0,\\"hunterStar\\":0,\\"gildedFaces\\":0,\\"sixRebirth\\":0},\\"items\\":[{\\"id\\":\\"i1\\",\\"slot\\":\\"weapon\\",\\"rarity\\":0,\\"depth\\":1,\\"level\\":2,\\"levelXp\\":0,\\"enhance\\":0,\\"locked\\":false,\\"catalogId\\":\\"v4-weapon-3-1-0\\",\\"profile\\":1,\\"theme\\":4,\\"name\\":\\"残响·双焰流光刺剑\\"},{\\"id\\":\\"i2\\",\\"slot\\":\\"armor\\",\\"rarity\\":0,\\"depth\\":1,\\"level\\":2,\\"levelXp\\":0,\\"enhance\\":0,\\"locked\\":false,\\"catalogId\\":\\"armor-3-2-0\\",\\"profile\\":2,\\"theme\\":3,\\"name\\":\\"残响·星陨灵衣\\"},{\\"id\\":\\"i3\\",\\"slot\\":\\"relic\\",\\"rarity\\":0,\\"depth\\":1,\\"level\\":1,\\"levelXp\\":0,\\"enhance\\":0,\\"locked\\":false,\\"catalogId\\":\\"relic-0-2-0\\",\\"profile\\":2,\\"theme\\":0,\\"name\\":\\"残响·余烬回环\\"}],\\"equipped\\":{\\"weapon\\":\\"i1\\",\\"armor\\":\\"i2\\",\\"relic\\":\\"i3\\",\\"relic2\\":null,\\"relic3\\":null}},\\"qaRecovery\\":{\\"unicode\\":\\"完整旅途 雪\\",\\"nested\\":{\\"unknown\\":[null,7,{\\"keep\\":true},\\"distinct branch\\"]}}}"}'
+  operator: 'strictEqual'
+  stack: |-
+    memoryEqual (file:///workspace/scratch/5a5998079a95/work/Dice-Abyss/tests/storage-recovery-events.test.mjs:10:29)
+    TestContext.<anonymous> (file:///workspace/scratch/5a5998079a95/work/Dice-Abyss/tests/storage-recovery-events.test.mjs:95:3)
+    async Test.run (node:internal/test_runner/test:1389:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+  ...
+# Subtest: the complete queued delete-and-recreate event sequence leaves an identical restored game presentation intact
+not ok 12 - the complete queued delete-and-recreate event sequence leaves an identical restored game presentation intact
+  ---
+  duration_ms: 3.305204
+  type: 'test'
+  location: '/workspace/scratch/5a5998079a95/work/Dice-Abyss/tests/storage-recovery-events.test.mjs:99:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Values have same structure but are not reference-equal:
+    
+    ... Skipped lines
+    {
+      chest: null,
+      completed: false,
+      counters: {
+        bosses: 0,
+        chests: 0,
+        deaths: 0,
+        highestDamage: 0,
+        kills: 0,
+        rolls: 0
+      },
+      encounterHistory: [],
+      enemy: null,
+      event: null,
+      eventLuck: 0,
+      eventPower: 0,
+      fate: null,
+      floor: 1,
+      lastForge: null,
+      lastRoll: null,
+      log: [
+        {
+          text: '你踏入了遗忘入口。',
+          tone: ''
+        }
+      ],
+      loot: null,
+      nextId: 4,
+      nextLuck: 0,
+      phase: 'fate',
+      player: {
+        deepOfferings: 0,
+        equipped: {
+          armor: 'i2',
+          relic2: null,
+          relic3: null,
+          relic: 'i3',
+          weapon: 'i1'
+        },
+        fateBlessings: 0,
+        gold: 80,
+        hp: 168,
+        items: [
+          {
+            catalogId: 'v4-weapon-3-1-0',
+            depth: 1,
+            enhance: 0,
+            id: 'i1',
+            level: 2,
+            levelXp: 0,
+    ...}
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    version: 5
+    revision: 0
+    runId: '13013-1792336596847'
+    rng: 1718544500
+    nextId: 4
+    floor: 1
+    phase: 'fate'
+    route:
+    roomIndex: 0
+    fate: ~
+    enemy: ~
+    chest: ~
+    loot: ~
+    shop:
+    lastRoll: ~
+    lastForge: ~
+    log:
+      0:
+        text: '你踏入了遗忘入口。'
+        tone: ''
+    completed: false
+    event: ~
+    eventLuck: 0
+    eventPower: 0
+    encounterHistory:
+    routeMemory:
+      services:
+      last:
+      hiddenFloor: 0
+    v5Boons:
+      echo: 0
+      ward: 0
+    nextLuck: 0
+    counters:
+      rolls: 0
+      kills: 0
+      chests: 0
+      deaths: 0
+      highestDamage: 0
+      bosses: 0
+    player:
+      level: 1
+      xp: 0
+      gold: 80
+      hp: 168
+      talentPoints: 0
+      deepOfferings: 0
+      pactScars: 0
+      fateBlessings: 0
+      talents:
+        high: 0
+        four: 0
+        five: 0
+        six: 0
+        sum: 0
+        power: 0
+        resonance: 0
+        pair: 0
+        triple: 0
+        quartet: 0
+        choir: 0
+        echo: 0
+        critical: 0
+        keen: 0
+        crush: 0
+        pursuit: 0
+        opener: 0
+        slayer: 0
+        vitality: 0
+        guard: 0
+        leech: 0
+        recovery: 0
+        fortune: 0
+        smith: 0
+        luck: 0
+        attune: 0
+        omen: 0
+        mercy: 0
+        jackpot: 0
+        spark: 0
+        shatter: 0
+        diversity: 0
+        finality: 0
+        deepEcho: 0
+        chorusMend: 0
+        tripleBlade: 0
+        firstFire: 0
+        critAegis: 0
+        dawnCrit: 0
+        emberGuard: 0
+        phaseShelter: 0
+        lastResolve: 0
+        hunterStar: 0
+        gildedFaces: 0
+        sixRebirth: 0
+      items:
+        0:
+          id: 'i1'
+          slot: 'weapon'
+          rarity: 0
+          depth: 1
+          level: 2
+          levelXp: 0
+          enhance: 0
+          locked: false
+          catalogId: 'v4-weapon-3-1-0'
+          profile: 1
+          theme: 4
+          name: '残响·双焰流光刺剑'
+        1:
+          id: 'i2'
+          slot: 'armor'
+          rarity: 0
+          depth: 1
+          level: 2
+          levelXp: 0
+          enhance: 0
+          locked: false
+          catalogId: 'armor-3-2-0'
+          profile: 2
+          theme: 3
+          name: '残响·星陨灵衣'
+        2:
+          id: 'i3'
+          slot: 'relic'
+          rarity: 0
+          depth: 1
+          level: 1
+          levelXp: 0
+          enhance: 0
+          locked: false
+          catalogId: 'relic-0-2-0'
+          profile: 2
+          theme: 0
+          name: '残响·余烬回环'
+      equipped:
+        weapon: 'i1'
+        armor: 'i2'
+        relic: 'i3'
+        relic2: ~
+        relic3: ~
+    qaRecovery:
+      unicode: '完整旅途 雪'
+      nested:
+        unknown:
+          0: ~
+          1: 7
+          2:
+            keep: true
+  actual:
+    version: 5
+    revision: 0
+    runId: '13013-1792336596847'
+    rng: 1718544500
+    nextId: 4
+    floor: 1
+    phase: 'fate'
+    route:
+    roomIndex: 0
+    fate: ~
+    enemy: ~
+    chest: ~
+    loot: ~
+    shop:
+    lastRoll: ~
+    lastForge: ~
+    log:
+      0:
+        text: '你踏入了遗忘入口。'
+        tone: ''
+    completed: false
+    event: ~
+    eventLuck: 0
+    eventPower: 0
+    encounterHistory:
+    routeMemory:
+      services:
+      last:
+      hiddenFloor: 0
+    v5Boons:
+      echo: 0
+      ward: 0
+    nextLuck: 0
+    counters:
+      rolls: 0
+      kills: 0
+      chests: 0
+      deaths: 0
+      highestDamage: 0
+      bosses: 0
+    player:
+      level: 1
+      xp: 0
+      gold: 80
+      hp: 168
+      talentPoints: 0
+      deepOfferings: 0
+      pactScars: 0
+      fateBlessings: 0
+      talents:
+        high: 0
+        four: 0
+        five: 0
+        six: 0
+        sum: 0
+        power: 0
+        resonance: 0
+        pair: 0
+        triple: 0
+        quartet: 0
+        choir: 0
+        echo: 0
+        critical: 0
+        keen: 0
+        crush: 0
+        pursuit: 0
+        opener: 0
+        slayer: 0
+        vitality: 0
+        guard: 0
+        leech: 0
+        recovery: 0
+        fortune: 0
+        smith: 0
+        luck: 0
+        attune: 0
+        omen: 0
+        mercy: 0
+        jackpot: 0
+        spark: 0
+        shatter: 0
+        diversity: 0
+        finality: 0
+        deepEcho: 0
+        chorusMend: 0
+        tripleBlade: 0
+        firstFire: 0
+        critAegis: 0
+        dawnCrit: 0
+        emberGuard: 0
+        phaseShelter: 0
+        lastResolve: 0
+        hunterStar: 0
+        gildedFaces: 0
+        sixRebirth: 0
+      items:
+        0:
+          id: 'i1'
+          slot: 'weapon'
+          rarity: 0
+          depth: 1
+          level: 2
+          levelXp: 0
+          enhance: 0
+          locked: false
+          catalogId: 'v4-weapon-3-1-0'
+          profile: 1
+          theme: 4
+          name: '残响·双焰流光刺剑'
+        1:
+          id: 'i2'
+          slot: 'armor'
+          rarity: 0
+          depth: 1
+          level: 2
+          levelXp: 0
+          enhance: 0
+          locked: false
+          catalogId: 'armor-3-2-0'
+          profile: 2
+          theme: 3
+          name: '残响·星陨灵衣'
+        2:
+          id: 'i3'
+          slot: 'relic'
+          rarity: 0
+          depth: 1
+          level: 1
+          levelXp: 0
+          enhance: 0
+          locked: false
+          catalogId: 'relic-0-2-0'
+          profile: 2
+          theme: 0
+          name: '残响·余烬回环'
+      equipped:
+        weapon: 'i1'
+        armor: 'i2'
+        relic: 'i3'
+        relic2: ~
+        relic3: ~
+    qaRecovery:
+      unicode: '完整旅途 雪'
+      nested:
+        unknown:
+          0: ~
+          1: 7
+          2:
+            keep: true
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///workspace/scratch/5a5998079a95/work/Dice-Abyss/tests/storage-recovery-events.test.mjs:104:12)
+    async Test.run (node:internal/test_runner/test:1389:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+  ...
+1..12
+# tests 12
+# suites 0
+# pass 9
+# fail 3
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 139.429483

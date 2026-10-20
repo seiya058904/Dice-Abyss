@@ -1,0 +1,64 @@
+{
+  "kind": "Independent source/control-flow review of the exact formal inventory sample; no browser or timing rerun",
+  "reviewedUTC": "2026-10-18T17:11:28.728420+00:00",
+  "formalReportSha256": "3d8313195f81642bc3fdf95030da291d920c30f31cfac883bc38450aa191f7e6",
+  "frozenFiles": {
+    "scripts/qa-performance-round12.mjs": "da299afda45fab616d29194bce12e14122a5bab9867159706a3331cd8f81d81a",
+    "src/app.js": "102600ff9ef182782f715c07334264a2a417723d250becb5bd3520d460ae9df7",
+    "src/effects.js": "5f95f77e882a690f95215babda3cdedc0d398bbcfaabfecd3d486141200dc6f9",
+    "src/views.js": "926527525de6286a39cd868447857f93c16f7d4adfa7f7e150952b6301894e7e",
+    "src/defeat-review.js": "13c14a8184266dc4b443570e5e38b25b668bfa4b818401453d7248f5f6749938",
+    "src/defeat-review.css": "c2343b936d4456b36c557f3c821cdb812a3d6cdcc2c061ea11a2197a56158598",
+    "src/release.js": "c9ded47c6c31089294fdb4ea6c442e730fa07062a721bb3d9438c2ce5171123b",
+    "src/dice-renderer.js": "b40e1e1c808b00d319b70ce7546403c588cdcc8397bba684fe19b2f4c0bca6d8"
+  },
+  "sampleContract": {
+    "fixture": "inventoryFixture() calls room(rest), fills 10000 items and equips final five. Settings loaded explicitly as low.",
+    "setup": "Each sample brings its page to front, returns from inventory to the game view if necessary, waits two RAF callbacks, arms native click capture, then clicks .main-nav [data-action=inventory].",
+    "start": "performance.now() inside capture listener for the trusted ordinary navigation click.",
+    "end": "performance.now() inside the second nested RAF, before window.__qaInventorySnapshot() constructs/verifies the DOM snapshot.",
+    "excluded": "Transport and post-timestamp exact DOM/state verification are outside the elapsed value. Navigation/render/RAF scheduling and any contemporaneous raster work are included."
+  },
+  "newCodeReachability": {
+    "freshInventory": false,
+    "fromDefeat": false,
+    "additionalExplicitFocusAndGetClientRects": false,
+    "defeatReview": false,
+    "prepareCanvas": false,
+    "reason": [
+      "Ordinary footer inventory control has no resetRarity attribute; fixture phase rest is not dead. Both predicates are false.",
+      "center() returns inventoryView() before switching on phase or calling defeatReviewView().",
+      "mountEffects() still executes its unchanged mountDiceSurface() and visual timeline creation, then returns because ui.busy is false and effects is low; it never reaches changed prepareCanvas().",
+      "The added CSS selectors are all scoped to defeat-review. That class is absent from both formal inventory gameView artifacts. Stylesheet parsing and module import occur at initial page load, before the trusted sampled navigation."
+    ]
+  },
+  "completeGameHtmlComparison": {
+    "baselineBytes": 108818,
+    "currentBytes": 108818,
+    "baselineSha256": "74fd1510292a50bad69a0bda933c291a9edc3c71ab46c30e0e0ab42504d52034",
+    "currentSha256": "2ade6547ead1372f63fa3ae99ac31623c00268765328a5431d7d08c0643d6ca1",
+    "commonPrefixBytes": 108683,
+    "commonSuffixBytes": 134,
+    "removed": "2",
+    "added": "4",
+    "onlyReleaseDigitDifference": true,
+    "contextBefore": "n><div class=\"bottomline\"><span>VER 05.12.0　 INFINITE ABYSS</span><span>进度已自动保存</spa",
+    "contextAfter": "n><div class=\"bottomline\"><span>VER 05.14.0　 INFINITE ABYSS</span><span>进度已自动保存</spa",
+    "defeatClassOccurrences": [
+      0,
+      0
+    ],
+    "resetRarityAttributeOccurrences": [
+      0,
+      0
+    ]
+  },
+  "supportedConclusion": "Changed Canvas preparation and defeat-review computation are not invoked by this formal inventory workload. The ordinary navigation still performs the same render and persistent-state read guards. Observed latency regression is real in this sample but its cause is unresolved.",
+  "remainingCausalCandidates": [
+    "Small extra ordinary-navigation condition checks; need bounded measurement to estimate rather than assume zero cost.",
+    "Unmatched added stylesheet rules or visible release digit can alter browser style/raster/cache behavior without changing card HTML; existing evidence cannot assign magnitude.",
+    "Browser/raster/compositor scheduling, allocator/GC and page/context history are included in click-to-second-RAF timing and may contribute even with identical sources. No source-only proof establishes them as the cause."
+  ],
+  "recommendedBoundedDiagnostic": "Keep formal report unchanged. Compare same-source A/A under the same order and distinguish synchronous application work from first/second RAF waiting. If using an isolated ablation, preserve its own source identity and report it separately; do not rewrite the production freeze or replace the formal matrix.",
+  "analysisExecutionCaveat": "A discarded Python difflib attempt on complete repetitive HTML unexpectedly exceeded 10 seconds and was interrupted; performance agent notified about possible overlap with later attribution only. This final comparison is linear exact-byte prefix/suffix. Formal matrix finished before that attempt."
+}

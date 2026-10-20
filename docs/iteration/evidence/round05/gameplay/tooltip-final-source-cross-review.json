@@ -1,0 +1,129 @@
+{
+  "reviewer": "gameplay_audit",
+  "reviewedAtUtc": "2026-10-17T17:07:44.042431+00:00",
+  "decision": "PASS_WITH_SCOPE_LIMITATIONS",
+  "scope": "Independent read-only source review and one final run of the two targeted Node test files. Native browser evidence was executed by tooltip_ux and independently inspected here; it is not a second browser run. No production edits by this cross-review.",
+  "files": {
+    "src/fusion-controller.js": "ee36822e7db5a31eb45a57904e9cc758c990a682707d8e3ad312ca5772f1821f",
+    "src/fusion-view.js": "ce69eccdc65f183e5bc856a88ac77934f5c1dd2b61f23b034532539b1eee9fa7",
+    "src/fusion.css": "9b6fe3edaa023ae1c7702e60e3110d9450a6ca03a737f74dd984baf0fb083bc5",
+    "tests/fusion-tooltip.test.mjs": "f529c059a44f175858885028c02cffc394142e1bd692401f338992150fe6024e",
+    "tests/fusion-controller.test.mjs": "84a3e228b716718212b32d458916434bc99585d789c677e0c48a0b2aea6f074b"
+  },
+  "independentTests": {
+    "command": "node --test --test-isolation=none tests/fusion-tooltip.test.mjs tests/fusion-controller.test.mjs",
+    "passed": 14,
+    "failed": 0,
+    "skipped": 0,
+    "cancelled": 0,
+    "composition": {
+      "existingControllerTests": 3,
+      "tooltipTests": 11
+    },
+    "log": "tooltip-final-independent-tests.log",
+    "logSha256": "c4351e8a1b1baf7dc93704af4ffd97237c98aa314c07469fb3467575fcc9a616",
+    "method": "Deterministic JavaScript tests, using small DOM/event doubles where applicable. No browser/layout/physical-touch claim."
+  },
+  "nativeEvidenceInspected": {
+    "executedBy": "tooltip_ux",
+    "independentlyExecutedByReviewer": false,
+    "originalReport": "/workspace/scratch/98883f3944af/round05/qa/tooltip-final-v2/report.json",
+    "reportSha256": "bf04965007ae8a51d4a6e8a61a8da348100962238fb2b664043148fc59d43ae3",
+    "allThreeServedSourceHashesMatchReviewedLocalSource": true,
+    "passedGroups": 5,
+    "failedGroups": 0,
+    "assertions": 109,
+    "errors": [],
+    "groups": [
+      {
+        "name": "desktop-safe-placement-and-native-adjacent-selection",
+        "status": "PASS",
+        "checks": 60
+      },
+      {
+        "name": "escape-pending-dismissal-and-real-reentry",
+        "status": "PASS",
+        "checks": 8
+      },
+      {
+        "name": "hover-journey-scroll-and-native-text-selection",
+        "status": "PASS",
+        "checks": 11
+      },
+      {
+        "name": "long-dialog-keyboard-undo-expiry-and-focus-return",
+        "status": "PASS",
+        "checks": 20
+      },
+      {
+        "name": "narrow-emulated-touch-details-and-selection",
+        "status": "PASS",
+        "checks": 10
+      }
+    ],
+    "desktopWidths": [
+      1366,
+      1440,
+      1920,
+      2560,
+      3840
+    ],
+    "allMeasuredProtectedRegionsClear": true,
+    "allMeasuredVisibleControlsClear": true,
+    "nativeAdjacentAndBulkClicks": "Passed without Escape, force, or dispatch in all five desktop widths; ephemeral selection and complete persisted state checked separately.",
+    "passiveSelectionFocus": {
+      "before": {
+        "tag": "BUTTON",
+        "item": "i99"
+      },
+      "after": {
+        "tag": "BODY"
+      }
+    },
+    "passiveSelectionQualification": "Native text selection moved focus from BUTTON i99 to BODY. Space/Enter/Ctrl+A preserved materials/save in that observed state. The separate case where a card remains focused is protected in source and covered by deterministic tests, not claimed as the native focus state.",
+    "touchScope": "390x844 emulated touch, including compatibility mouseover after closing the dialog. No physical touch device claim.",
+    "finished": "2026-10-17T17:02:33.051Z"
+  },
+  "reviewed": [
+    "Placement excludes the full item pool, settlement, dock, own anchor, details trigger, and all currently measured visible-sized interactive controls. Rectangle splitting deduplicates and removes contained regions at each step; no fit returns the explicit-dialog path.",
+    "The passive panel remains pointer-interactive and internally scrollable. Its safe area can be short; the visible details button and F2 expose the complete dialog.",
+    "Four-direction anchor-to-panel corridors retain the item while a real pointer journey crosses intermediate cards; exiting the corridor resumes ordinary hover. The journey latch starts only on departure from the active anchor, so a focus-only preview does not capture unrelated later hover.",
+    "Escape cancels pending timers, suppresses redisplay during same-anchor internal movement and removes stale aria-describedby. True exit/re-entry and fresh keyboard focus can restore access.",
+    "Passive text reading blocks material shortcuts; Enter and Space prevent default activation when the event target remains an item anchor. Ctrl+A retains native selection behavior.",
+    "The modal focuses its scrollable content, retains native text selection and scrolling, cycles its close/content focus with Tab, and restores eligible item focus on close.",
+    "Notice-only and undo-expiry refreshes retain an open dialog; a different game-state object, target set, or committed action closes stale detail content. Body-level dialog content is excluded from app-scoped focus restoration.",
+    "Touch pointer events suppress compatibility hover briefly after dismissal; keyboard input restores intentional hover/focus behavior.",
+    "Inspection changes ephemeral UI state only; inventory mutations continue through the existing act/save transaction path. No engine, RNG, save schema or equipment-catalog changes are introduced by the tooltip patch.",
+    "Fusion comparison labels agree with the shared affix descriptions: shield bypass, resonance-critical follow chance, survival recovery, main-hit fraction for follow damage, and chest-only gold."
+  ],
+  "findings": [
+    {
+      "status": "RESOLVED_IN_FINAL_CANDIDATE",
+      "issue": "Earlier native candidates could switch inspected equipment while crossing intermediate cards and cover visible action controls. Final corridor/control exclusion source, targeted tests and owner native assertions address both. Earlier failures are retained by the owner; this report does not relabel their candidates as passed."
+    },
+    {
+      "status": "QUALIFIED_EVIDENCE",
+      "issue": "A native assertion label mentions a focused card during text reading, but recorded focus after selection is BODY. This report limits its native conclusion to the actual recorded focus; focused-anchor default prevention is supported by source and deterministic tests."
+    },
+    {
+      "status": "NO_NEW_BLOCKING_DEFECT_IDENTIFIED",
+      "issue": "No additional defect found in the scoped final source and tests. This does not certify unmeasured layouts or input devices."
+    }
+  ],
+  "historicalReview": {
+    "file": "tooltip-source-cross-review.json",
+    "log": "tooltip-independent-tests.log",
+    "controllerSha256": "2b7933747b44be954eefad41b94ace3dee0f42a51e03c738a72dc5d99693bd00",
+    "passedTests": 9,
+    "status": "DEVELOPMENT_CANDIDATE_ONLY",
+    "counting": "Preserved unchanged; not final-source proof and not added to the final 14-test count.",
+    "rejectedBaselineHypothesis": "The owner observed baseline Escape at 7.8 ms before the 160 ms pending-show timer and no reopening after 350 ms. A baseline timer-escape defect is not asserted."
+  },
+  "limitations": [
+    "The independent Node tests use deterministic DOM/event doubles and cannot establish pixel geometry, accessibility certification, real keyboard dispatch or physical touch behavior.",
+    "Real Chromium layout/input evidence is the separately attributed owner report, with synthetic saves. Native screenshot aesthetics were not independently re-rendered in this review.",
+    "The final browser assertions cover five desktop widths and one narrow emulated-touch viewport, not every viewport, display scale or assistive technology.",
+    "No screen-reader, physical mobile device, Windows double-click startup, hardware GPU or long-term human play validation is claimed here.",
+    "The separate 30-window performance diagnosis did not enter fusion and is not evidence of fusion throughput or frame-rate improvement."
+  ]
+}

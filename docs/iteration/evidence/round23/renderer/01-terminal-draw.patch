@@ -1,0 +1,35 @@
+--- a/src/dice-motion.js
++++ b/src/dice-motion.js
+@@ -69,8 +69,10 @@
+   let previous = -1, lastSound = -100;
+   const draw = elapsed => {
+     const index = Math.min(frames.length - 1, Math.floor(elapsed / THROW_DURATION * (frames.length - 1)));
+-    const sample = frames[index];
+-    onFrame(sample.dice);
++    const sample = frames[index], landed = elapsed >= THROW_DURATION;
++    // The renderer can submit the final pose directly at resting quality,
++    // without first drawing an immediately overwritten motion-sized buffer.
++    onFrame(sample.dice, landed);
+     sample.dice.forEach((d,i) => {
+       if(!gpu()){
+         nodes[i].flight.style.transform = `translate3d(${d.x * width}px,${d.y * width}px,${d.z * width}px)`;
+@@ -81,7 +83,7 @@
+     });
+     for (let i = previous + 1; i <= index; i++) if (frames[i].impacts.length && elapsed - lastSound > 75) { onImpact('bounce'); lastSound = elapsed; }
+     previous = index;
+-    if(elapsed>=THROW_DURATION)onRest();
++    if(landed)onRest();
+   };
+   const stopTrack=timeline.play(THROW_DURATION,draw);
+   return () => { stopTrack();if(!presentation)timeline.stop();clear(); };
+--- a/src/effects.js
++++ b/src/effects.js
+@@ -98,7 +98,7 @@
+  if(!canvas||!ui.busy||settings.effects==='low'||matchMedia('(prefers-reduced-motion: reduce)').matches)return presentation;
+  if(ui.rolling||ui.forging){
+   // No second fullscreen animation while the dice themselves are moving.
+-  stopDice=animateDice(state.revision+113,onSound,surface?.draw,presentation,()=>{if(alive)surface?.draw();});
++  stopDice=animateDice(state.revision+113,onSound,(poses,landed)=>{if(alive)surface?.draw(landed?undefined:poses);},presentation);
+   canvas.dataset.fxKind='dice-only';return presentation;
+  }
+  const last=state.lastRoll,combat=ui.view==='game'&&state.phase==='combat'&&ui.event==='roll'&&last;

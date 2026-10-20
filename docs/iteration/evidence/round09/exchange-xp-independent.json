@@ -1,0 +1,272 @@
+{
+  "date": "2026-10-18",
+  "scope": "Independent XP receipt reconstruction from XP balance plus level spending; exact baseline state comparison allows only exchange outcome and its first log text.",
+  "scenarios": 12,
+  "failed": 0,
+  "records": [
+    {
+      "name": "ordinary",
+      "syntheticValidatedBoundary": true,
+      "before": {
+        "level": 100,
+        "xp": 0,
+        "gold": 0
+      },
+      "after": {
+        "level": 100,
+        "xp": 540,
+        "gold": 835
+      },
+      "nominalXp": 540,
+      "acceptedXp": 540,
+      "xpBalanceDelta": 540,
+      "spentOnLevels": 0,
+      "actualGold": 835,
+      "confirmation": "永久消耗「铭刻·破晓双锋」；此项提交后不可撤销。",
+      "reward": "835 金币与 540 经验",
+      "outcome": "旧装已置换为金币与经验。"
+    },
+    {
+      "name": "gold-partial",
+      "syntheticValidatedBoundary": true,
+      "before": {
+        "level": 100,
+        "xp": 0,
+        "gold": 9999999990
+      },
+      "after": {
+        "level": 100,
+        "xp": 540,
+        "gold": 10000000000
+      },
+      "nominalXp": 540,
+      "acceptedXp": 540,
+      "xpBalanceDelta": 540,
+      "spentOnLevels": 0,
+      "actualGold": 10,
+      "confirmation": "永久消耗「铭刻·破晓双锋」；金币可收 10（原额 835，上限截去 825），仍获得 540 经验；此项提交后不可撤销。",
+      "reward": "金币可收 10（原额 835，上限截去 825）；540 经验",
+      "outcome": "旧装已置换 · 金币实收 10（原额 835，上限截去 825）；获得 540 经验。"
+    },
+    {
+      "name": "gold-zero",
+      "syntheticValidatedBoundary": true,
+      "before": {
+        "level": 100,
+        "xp": 0,
+        "gold": 10000000000
+      },
+      "after": {
+        "level": 100,
+        "xp": 540,
+        "gold": 10000000000
+      },
+      "nominalXp": 540,
+      "acceptedXp": 540,
+      "xpBalanceDelta": 540,
+      "spentOnLevels": 0,
+      "actualGold": 0,
+      "confirmation": "永久消耗「铭刻·破晓双锋」；金币可收 0（原额 835，上限截去 835），仍获得 540 经验；此项提交后不可撤销。",
+      "reward": "金币可收 0（原额 835，上限截去 835）；540 经验",
+      "outcome": "旧装已置换 · 金币实收 0（原额 835，上限截去 835）；获得 540 经验。"
+    },
+    {
+      "name": "one-level-conversion",
+      "syntheticValidatedBoundary": true,
+      "before": {
+        "level": 100,
+        "xp": 1017,
+        "gold": 10000000000
+      },
+      "after": {
+        "level": 101,
+        "xp": 539,
+        "gold": 10000000000
+      },
+      "nominalXp": 540,
+      "acceptedXp": 540,
+      "xpBalanceDelta": -478,
+      "spentOnLevels": 1018,
+      "actualGold": 0,
+      "confirmation": "永久消耗「铭刻·破晓双锋」；金币可收 0（原额 835，上限截去 835），仍获得 540 经验；此项提交后不可撤销。",
+      "reward": "金币可收 0（原额 835，上限截去 835）；540 经验",
+      "outcome": "旧装已置换 · 金币实收 0（原额 835，上限截去 835）；获得 540 经验。"
+    },
+    {
+      "name": "stored-xp-partial-before-conversion",
+      "syntheticValidatedBoundary": true,
+      "before": {
+        "level": 100,
+        "xp": 99999990,
+        "gold": 10000000000
+      },
+      "after": {
+        "level": 4471,
+        "xp": 43972,
+        "gold": 10000000000
+      },
+      "nominalXp": 540,
+      "acceptedXp": 10,
+      "xpBalanceDelta": -99956018,
+      "spentOnLevels": 99956028,
+      "actualGold": 0,
+      "confirmation": "永久消耗「铭刻·破晓双锋」；金币可收 0（原额 835，上限截去 835），经验可计入 10（原额 540，上限未计入 530）；此项提交后不可撤销。",
+      "reward": "金币可收 0（原额 835，上限截去 835）；经验可计入 10（原额 540，上限未计入 530）",
+      "outcome": "旧装已置换 · 金币实收 0（原额 835，上限截去 835）；经验计入 10（原额 540，上限未计入 530）。"
+    },
+    {
+      "name": "stored-xp-zero-before-conversion",
+      "syntheticValidatedBoundary": true,
+      "before": {
+        "level": 100,
+        "xp": 100000000,
+        "gold": 10000000000
+      },
+      "after": {
+        "level": 4471,
+        "xp": 43972,
+        "gold": 10000000000
+      },
+      "nominalXp": 540,
+      "acceptedXp": 0,
+      "xpBalanceDelta": -99956028,
+      "spentOnLevels": 99956028,
+      "actualGold": 0,
+      "confirmation": "永久消耗「铭刻·破晓双锋」；金币可收 0（原额 835，上限截去 835），经验可计入 0（原额 540，上限未计入 540）；两项入账均为 0，装备仍会永久消耗；此项提交后不可撤销。",
+      "reward": "金币可收 0（原额 835，上限截去 835）；经验可计入 0（原额 540，上限未计入 540）",
+      "outcome": "旧装已置换 · 金币实收 0（原额 835，上限截去 835）；经验计入 0（原额 540，上限未计入 540）。两项入账均为 0，旧装已永久消耗。"
+    },
+    {
+      "name": "max-level-xp-partial",
+      "syntheticValidatedBoundary": true,
+      "before": {
+        "level": 1000000,
+        "xp": 99999990,
+        "gold": 10000000000
+      },
+      "after": {
+        "level": 1000000,
+        "xp": 100000000,
+        "gold": 10000000000
+      },
+      "nominalXp": 1000000,
+      "acceptedXp": 10,
+      "xpBalanceDelta": 10,
+      "spentOnLevels": 0,
+      "actualGold": 0,
+      "confirmation": "永久消耗「铭刻·破晓双锋」；金币可收 0（原额 50000，上限截去 50000），经验可计入 10（原额 1000000，上限未计入 999990）；此项提交后不可撤销。",
+      "reward": "金币可收 0（原额 50000，上限截去 50000）；经验可计入 10（原额 1000000，上限未计入 999990）",
+      "outcome": "旧装已置换 · 金币实收 0（原额 50000，上限截去 50000）；经验计入 10（原额 1000000，上限未计入 999990）。"
+    },
+    {
+      "name": "max-level-both-zero",
+      "syntheticValidatedBoundary": true,
+      "before": {
+        "level": 1000000,
+        "xp": 100000000,
+        "gold": 10000000000
+      },
+      "after": {
+        "level": 1000000,
+        "xp": 100000000,
+        "gold": 10000000000
+      },
+      "nominalXp": 1000000,
+      "acceptedXp": 0,
+      "xpBalanceDelta": 0,
+      "spentOnLevels": 0,
+      "actualGold": 0,
+      "confirmation": "永久消耗「铭刻·破晓双锋」；金币可收 0（原额 50000，上限截去 50000），经验可计入 0（原额 1000000，上限未计入 1000000）；两项入账均为 0，装备仍会永久消耗；此项提交后不可撤销。",
+      "reward": "金币可收 0（原额 50000，上限截去 50000）；经验可计入 0（原额 1000000，上限未计入 1000000）",
+      "outcome": "旧装已置换 · 金币实收 0（原额 50000，上限截去 50000）；经验计入 0（原额 1000000，上限未计入 1000000）。两项入账均为 0，旧装已永久消耗。"
+    },
+    {
+      "name": "max-level-xp-zero-gold-fits",
+      "syntheticValidatedBoundary": true,
+      "before": {
+        "level": 1000000,
+        "xp": 100000000,
+        "gold": 0
+      },
+      "after": {
+        "level": 1000000,
+        "xp": 100000000,
+        "gold": 50000
+      },
+      "nominalXp": 1000000,
+      "acceptedXp": 0,
+      "xpBalanceDelta": 0,
+      "spentOnLevels": 0,
+      "actualGold": 50000,
+      "confirmation": "永久消耗「铭刻·破晓双锋」；金币可收 50000，经验可计入 0（原额 1000000，上限未计入 1000000）；此项提交后不可撤销。",
+      "reward": "金币可收 50000；经验可计入 0（原额 1000000，上限未计入 1000000）",
+      "outcome": "旧装已置换 · 金币实收 50000；经验计入 0（原额 1000000，上限未计入 1000000）。"
+    },
+    {
+      "name": "max-level-xp-exact-fit",
+      "syntheticValidatedBoundary": true,
+      "before": {
+        "level": 1000000,
+        "xp": 99000000,
+        "gold": 10000000000
+      },
+      "after": {
+        "level": 1000000,
+        "xp": 100000000,
+        "gold": 10000000000
+      },
+      "nominalXp": 1000000,
+      "acceptedXp": 1000000,
+      "xpBalanceDelta": 1000000,
+      "spentOnLevels": 0,
+      "actualGold": 0,
+      "confirmation": "永久消耗「铭刻·破晓双锋」；金币可收 0（原额 50000，上限截去 50000），仍获得 1000000 经验；此项提交后不可撤销。",
+      "reward": "金币可收 0（原额 50000，上限截去 50000）；1000000 经验",
+      "outcome": "旧装已置换 · 金币实收 0（原额 50000，上限截去 50000）；获得 1000000 经验。"
+    },
+    {
+      "name": "last-level-conversion",
+      "syntheticValidatedBoundary": true,
+      "before": {
+        "level": 999999,
+        "xp": 10000007,
+        "gold": 10000000000
+      },
+      "after": {
+        "level": 1000000,
+        "xp": 999999,
+        "gold": 10000000000
+      },
+      "nominalXp": 1000000,
+      "acceptedXp": 1000000,
+      "xpBalanceDelta": -9000008,
+      "spentOnLevels": 10000008,
+      "actualGold": 0,
+      "confirmation": "永久消耗「铭刻·破晓双锋」；金币可收 0（原额 50000，上限截去 50000），仍获得 1000000 经验；此项提交后不可撤销。",
+      "reward": "金币可收 0（原额 50000，上限截去 50000）；1000000 经验",
+      "outcome": "旧装已置换 · 金币实收 0（原额 50000，上限截去 50000）；获得 1000000 经验。"
+    },
+    {
+      "name": "last-level-conversion-with-zero-new-xp",
+      "syntheticValidatedBoundary": true,
+      "before": {
+        "level": 999999,
+        "xp": 100000000,
+        "gold": 10000000000
+      },
+      "after": {
+        "level": 1000000,
+        "xp": 89999992,
+        "gold": 10000000000
+      },
+      "nominalXp": 1000000,
+      "acceptedXp": 0,
+      "xpBalanceDelta": -10000008,
+      "spentOnLevels": 10000008,
+      "actualGold": 0,
+      "confirmation": "永久消耗「铭刻·破晓双锋」；金币可收 0（原额 50000，上限截去 50000），经验可计入 0（原额 1000000，上限未计入 1000000）；两项入账均为 0，装备仍会永久消耗；此项提交后不可撤销。",
+      "reward": "金币可收 0（原额 50000，上限截去 50000）；经验可计入 0（原额 1000000，上限未计入 1000000）",
+      "outcome": "旧装已置换 · 金币实收 0（原额 50000，上限截去 50000）；经验计入 0（原额 1000000，上限未计入 1000000）。两项入账均为 0，旧装已永久消耗。"
+    }
+  ]
+}

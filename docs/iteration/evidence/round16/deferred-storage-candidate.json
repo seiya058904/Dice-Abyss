@@ -1,0 +1,1262 @@
+{
+  "kind": "Round16 proposed full-payload snapshot reuse, isolated candidate only",
+  "at": "2026-10-19T02:34:36.222Z",
+  "node": "v24.19.0",
+  "cpu": "AMD EPYC 9V74 80-Core Processor",
+  "baselineSha256": "6bfcc60036c9f729c21b948ca98c7ac715e14049856fb9dded0baa2aeef2c561",
+  "candidateSha256": "2723dc9b985eb746f3f1f9d35955c1190cfb2b4dd79b1f3b51467063f56fd80e",
+  "scriptSha256": "0f392b19ce1bc4da96c3ffed3d2f316db34809d91496da72787d69ac46d3b897",
+  "status": "PASS",
+  "differential": [
+    {
+      "name": "canonical full V5 snapshot",
+      "equal": true,
+      "sha256": "38ecb4906141cfa7d50589832f6b40df5eb652626ad481540d35689fb1e29802",
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      }
+    },
+    {
+      "name": "whitespace payload",
+      "equal": true,
+      "sha256": "05c70e707a4d61ddaac7dd42c7ab8facd8fefad38a56f9af232a92586eff7240",
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      }
+    },
+    {
+      "name": "reordered payload keys",
+      "equal": true,
+      "sha256": "582117b1ae3e3fa07e2e045590ab3677bba42acf8ee1aabb842d09da1a2b1a50",
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      }
+    },
+    {
+      "name": "root-key ordering difference keeps old rejection",
+      "equal": true,
+      "sha256": "bd9503311adc6b616e15242f322ac8d366e66213e6b5011f339db316d59348e3",
+      "outcome": {
+        "error": {
+          "name": "Error",
+          "message": "另一窗口已更新进度。请刷新后继续，避免覆盖存档。"
+        }
+      }
+    },
+    {
+      "name": "outer envelope order and unknown field",
+      "equal": true,
+      "sha256": "4f80801ed1f096fef8e29d296429e4f6af6cc641172a4df6b478b15bb60bb4ae",
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      }
+    },
+    {
+      "name": "numeric spellings and unicode escape",
+      "equal": true,
+      "sha256": "1c608065c1084ec2374ef463513bf62ea71e502206b4f933a98b0b8cb55857ef",
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      }
+    },
+    {
+      "name": "duplicate JSON key canonical fallback",
+      "equal": true,
+      "sha256": "a19b32ee12bfb9496417075b27e1595fbbb66511866a58518e9c4d21c15f2f8b",
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      }
+    },
+    {
+      "name": "recovered V5 mirror",
+      "equal": true,
+      "sha256": "91182261c43b5b4f57527d88f64d23f98a65cad0273280fcbd7c2bc82f10949b",
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      }
+    },
+    {
+      "name": "invalid checksummed primary recovers mirror",
+      "equal": true,
+      "sha256": "e2dcd4122e45ccbf1f159d83a7fa55a2119f7b8bfaf8d5f84a09149e3b0c5879",
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      }
+    },
+    {
+      "name": "expected unknown-field conflict",
+      "equal": true,
+      "sha256": "bf53bdbcfe64271828943f7851a62748298c422cfa6333674afb7fce7ba2ef5d",
+      "outcome": {
+        "error": {
+          "name": "Error",
+          "message": "另一窗口已更新进度。请刷新后继续，避免覆盖存档。"
+        }
+      }
+    },
+    {
+      "name": "disk unknown-field conflict",
+      "equal": true,
+      "sha256": "4ae53c90c0ed9ab6c1c6715a5e747b374b31d0ed6a19d7885fba60f060978bc9",
+      "outcome": {
+        "error": {
+          "name": "Error",
+          "message": "另一窗口已更新进度。请刷新后继续，避免覆盖存档。"
+        }
+      }
+    },
+    {
+      "name": "no current snapshot",
+      "equal": true,
+      "sha256": "3901ebc1283346cfb5f9433b455c9dd9576854af0fd6e74bc4db56642aeff9c0",
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      }
+    },
+    {
+      "name": "null expected identical",
+      "equal": true,
+      "sha256": "4175c0aea49a5b4e3019817c8cc86360d86ef8ee7e49f29364f8d4200936953c",
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      }
+    },
+    {
+      "name": "null expected conflicting",
+      "equal": true,
+      "sha256": "6999e5e1c7d3a14ceb71f888e06556fa563fc0fc9415e42115cd54d0966e21d0",
+      "outcome": {
+        "error": {
+          "name": "Error",
+          "message": "另一窗口已创建或更新进度。请重新读取后继续，避免覆盖存档。"
+        }
+      }
+    },
+    {
+      "name": "undefined explicit replace",
+      "equal": true,
+      "sha256": "00c4979047c311f93f34a43de0897900cbc413b03a2e8536821b2e848e17dc31",
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      }
+    },
+    {
+      "name": "invalid candidate",
+      "equal": true,
+      "sha256": "8c70a5009ef007879ac2a3e81f1fa0a75267c6d22890351c6cae370d9d831816",
+      "outcome": {
+        "error": {
+          "name": "Error",
+          "message": "存档状态不完整，操作未保存。"
+        }
+      }
+    },
+    {
+      "name": "corrupt legacy archive",
+      "equal": true,
+      "sha256": "668c6c70909cb5f1fc4919ae774b61bc2b7ec4f2edbafbfed0a3ca07fd990d51",
+      "outcome": {
+        "error": {
+          "name": "Error",
+          "message": "升级前归档校验未通过，现有主档未覆盖。请先导出原始存档并检查归档。"
+        }
+      }
+    },
+    {
+      "name": "old archive retained",
+      "equal": true,
+      "sha256": "d63b1111b8c696547db64649d7746980966fe4b18b6ef21959ea06f4ee6f9c4c",
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      }
+    },
+    {
+      "name": "failed write dice-abyss:save:v1",
+      "equal": true,
+      "sha256": "ab3bf1a4ac6b9b393dce2f3bbfff3a886b78ae022810ac138e87e589e20ac9a5",
+      "outcome": {
+        "error": {
+          "name": "Error",
+          "message": "浏览器无法保存进度，本次操作未生效。请先导出完整备份，再检查浏览器存储空间与权限；存档文件未满也可能受浏览器配额限制。"
+        }
+      }
+    },
+    {
+      "name": "failed write dice-abyss:mirror:v1",
+      "equal": true,
+      "sha256": "046ca8ea92e395396ab6d5d219bbb5942817f5809e2c2c5e9566928be8394a92",
+      "outcome": {
+        "result": {
+          "mirrored": false,
+          "warning": "进度已保存到主存档，但镜像更新失败。请立即导出当前备份并检查浏览器存储空间；旧镜像可能不含本次操作。"
+        }
+      }
+    },
+    {
+      "name": "failed read dice-abyss:save:v1",
+      "equal": true,
+      "sha256": "2e3a2b947953db92083b2ac2e6471cc61a9bb28ef3e1d6c1fdd9c6182b30aed3",
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      }
+    },
+    {
+      "name": "failed read dice-abyss:mirror:v1",
+      "equal": true,
+      "sha256": "c21ef1870ec48cb8c16387bd8671b37871b1c19fbe771349b9a64c6a00f22580",
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      }
+    },
+    {
+      "name": "failed read dice-abyss:pre-levels:v1",
+      "equal": true,
+      "sha256": "b9f0de5cef4048e7559dbb93e6ddb384579e1de6ee418186e7a1b95e178c07d2",
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      }
+    },
+    {
+      "name": "source changed after original read 2",
+      "equal": true,
+      "sha256": "15a998cd561802a63bd26b6969eaa919e9357702829bd7bec9bba5785f82fa98",
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      }
+    },
+    {
+      "name": "source changed after original read 3",
+      "equal": true,
+      "sha256": "2a694cdeef840f753503c0c4e0d56a0f0331ec28aa3c3ca02ab3f30250a96e28",
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      }
+    },
+    {
+      "name": "V1 migrated primary",
+      "equal": true,
+      "sha256": "56ea08f9e738107a8365bc52a50ed589a8e33ac17911dd7a09836e57b640d7d6",
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      }
+    },
+    {
+      "name": "V1 migrated mirror",
+      "equal": true,
+      "sha256": "669e984788a5bb0f5320da0c5a5a1c616183cca558d5c92146f062c98faf9529",
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      }
+    },
+    {
+      "name": "V1 import",
+      "equal": true,
+      "sha256": "42074b751ae86bedaa01e34992822f6328251dbc1e2b4f93060504afaae320b3",
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      }
+    },
+    {
+      "name": "V2 migrated primary",
+      "equal": true,
+      "sha256": "8061a7b8f378b235ab7e94f933e4825604c223e3855b133a0056906abd675816",
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      }
+    },
+    {
+      "name": "V2 migrated mirror",
+      "equal": true,
+      "sha256": "5f0a240fae3e2eef6c4a9ab8f6f220b7b9f2e8053ab337cea97bbed161a4d7e3",
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      }
+    },
+    {
+      "name": "V2 import",
+      "equal": true,
+      "sha256": "fce4c623a8affe24391467787220864d52e1f40de7b284f70cd9a9acf307d30e",
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      }
+    },
+    {
+      "name": "V3 migrated primary",
+      "equal": true,
+      "sha256": "dd3a1fc7ab94729beae9f0f458e12066e0543a884e2a15be4413fd05e31c5a22",
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      }
+    },
+    {
+      "name": "V3 migrated mirror",
+      "equal": true,
+      "sha256": "6d319c9488504c1659a6a02361ef034683be7ba9041de3678a4f550bc15f2891",
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      }
+    },
+    {
+      "name": "V3 import",
+      "equal": true,
+      "sha256": "245a8016cf33df8305ef3e43bf921546d63b605e10151860f00360ac72b572ed",
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      }
+    },
+    {
+      "name": "V4 migrated primary",
+      "equal": true,
+      "sha256": "ef389bfd1ea4c627d36b7644ca3a797fcfaba07cdd733185f71f2d72262bfd12",
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      }
+    },
+    {
+      "name": "V4 migrated mirror",
+      "equal": true,
+      "sha256": "a3ad4590b44acd0797da449c5b03a507d145994a15a7fa34e9f559ad5962e2ff",
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      }
+    },
+    {
+      "name": "V4 import",
+      "equal": true,
+      "sha256": "891712c51ea254d5d4844e3a06d6f3bcdc4c0f13e5dfe1f69535725d69285583",
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      }
+    },
+    {
+      "name": "legacy failed write dice-abyss:pre-levels:v1",
+      "equal": true,
+      "sha256": "dfefd3b4b37137ba47b999157995ba7045957b4e066b6d0b539b5c8092c0c762",
+      "outcome": {
+        "error": {
+          "name": "Error",
+          "message": "无法保留升级前原始存档，主档未覆盖。"
+        }
+      }
+    },
+    {
+      "name": "legacy failed write dice-abyss:pre-v5:v1",
+      "equal": true,
+      "sha256": "3d276624ae7e43cba49161a3e641c4f9d38f3ce9849cfa6dbc63ac6f2da52122",
+      "outcome": {
+        "error": {
+          "name": "Error",
+          "message": "无法保留V5升级前原始存档，主档未覆盖。"
+        }
+      }
+    },
+    {
+      "name": "legacy failed write dice-abyss:save:v1",
+      "equal": true,
+      "sha256": "a4ece5e9e28edee89f2dcf34c1da126b3e147ef11a367b25f699fbcf2451b28c",
+      "outcome": {
+        "error": {
+          "name": "Error",
+          "message": "浏览器无法保存进度，本次操作未生效。请先导出完整备份，再检查浏览器存储空间与权限；存档文件未满也可能受浏览器配额限制。"
+        }
+      }
+    },
+    {
+      "name": "legacy failed write dice-abyss:mirror:v1",
+      "equal": true,
+      "sha256": "c3d87aa0b8f867a2ef68562e920f2df6b54a0948e935ed63f739388625300071",
+      "outcome": {
+        "result": {
+          "mirrored": false,
+          "warning": "进度已保存到主存档，但镜像更新失败。请立即导出当前备份并检查浏览器存储空间；旧镜像可能不含本次操作。"
+        }
+      }
+    },
+    {
+      "name": "V5 import",
+      "equal": true,
+      "sha256": "b8e7aca62e8d4d1fc87b8c170b768b3b9aa06e182a3a12d4ce569ccac712731b",
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      }
+    },
+    {
+      "name": "mismatched V5 import",
+      "equal": true,
+      "sha256": "a62ffb1b8e9a2b64e70b8b34074169cc7f1a651e952537b654fd916c7e342a3f",
+      "outcome": {
+        "error": {
+          "name": "Error",
+          "message": "导入内容与已核对的原始存档不一致，当前进度未改动。"
+        }
+      }
+    },
+    {
+      "name": "stale V5 import expected",
+      "equal": true,
+      "sha256": "bf53bdbcfe64271828943f7851a62748298c422cfa6333674afb7fce7ba2ef5d",
+      "outcome": {
+        "error": {
+          "name": "Error",
+          "message": "另一窗口已更新进度。请刷新后继续，避免覆盖存档。"
+        }
+      }
+    },
+    {
+      "name": "near limit growth rejected",
+      "equal": true,
+      "sha256": "7e8606dfd0c61b47b6e053a8858bb15ff56440afa0c4ad6b1f0fab60cf205d01",
+      "outcome": {
+        "error": {
+          "name": "Error",
+          "message": "存档将超过 5 MB 文件上限，本次操作未保存，现有主档与镜像未改动。请先在设置中导出完整备份并检查存档容量。回收物品后仍需通过保存校验；如仍超限，请保留备份，再检查导入文件的额外数据。"
+        }
+      }
+    },
+    {
+      "name": "oversize candidate rejected",
+      "equal": true,
+      "sha256": "352e33748651d7ccd5b98bdce93d4c0194b460bdeb568814739aae27bc3d0cf3",
+      "outcome": {
+        "error": {
+          "name": "Error",
+          "message": "存档将超过 5 MB 文件上限，本次操作未保存，现有主档与镜像未改动。请先在设置中导出完整备份并检查存档容量。回收物品后仍需通过保存校验；如仍超限，请保留备份，再检查导入文件的额外数据。"
+        }
+      }
+    }
+  ],
+  "profiles": [
+    {
+      "name": "32 items",
+      "items": 32,
+      "rawCharacters": 8183,
+      "rawBytes": 8709,
+      "sha256": "d02d0fa8a045d381c490a49f986a24bf4821a0243ba96e04084f0e5f4b9065b8",
+      "baseline": {
+        "parses": 2,
+        "serializations": 4,
+        "encodes": 0,
+        "writes": [
+          "dice-abyss:save:v1",
+          "dice-abyss:mirror:v1"
+        ]
+      },
+      "candidate": {
+        "parses": 2,
+        "serializations": 3,
+        "encodes": 0,
+        "writes": [
+          "dice-abyss:save:v1",
+          "dice-abyss:mirror:v1"
+        ]
+      }
+    },
+    {
+      "name": "1000 items",
+      "items": 1000,
+      "rawCharacters": 204402,
+      "rawBytes": 219456,
+      "sha256": "e3b5bf778c68fb9e0ea4a0d5f01864572ba0c7bc6595bd53f4f62ecf7009c7ed",
+      "baseline": {
+        "parses": 2,
+        "serializations": 4,
+        "encodes": 0,
+        "writes": [
+          "dice-abyss:save:v1",
+          "dice-abyss:mirror:v1"
+        ]
+      },
+      "candidate": {
+        "parses": 2,
+        "serializations": 3,
+        "encodes": 0,
+        "writes": [
+          "dice-abyss:save:v1",
+          "dice-abyss:mirror:v1"
+        ]
+      }
+    },
+    {
+      "name": "10000 items",
+      "items": 10000,
+      "rawCharacters": 2039376,
+      "rawBytes": 2190290,
+      "sha256": "3f8f57fcae413d65253b4abb26ee13fd49fc0bbb55db01d93ff3c87dad71099a",
+      "baseline": {
+        "parses": 2,
+        "serializations": 4,
+        "encodes": 1,
+        "writes": [
+          "dice-abyss:save:v1",
+          "dice-abyss:mirror:v1"
+        ]
+      },
+      "candidate": {
+        "parses": 2,
+        "serializations": 3,
+        "encodes": 1,
+        "writes": [
+          "dice-abyss:save:v1",
+          "dice-abyss:mirror:v1"
+        ]
+      }
+    },
+    {
+      "name": "4.95MB ASCII unknown metadata",
+      "items": 32,
+      "pad": 4950000,
+      "ch": "a",
+      "rawCharacters": 4949474,
+      "rawBytes": 4950000,
+      "sha256": "95c4f3262072c00c1399d1c9cef02c576611516cabe587b8b7a309109df14994",
+      "baseline": {
+        "parses": 2,
+        "serializations": 4,
+        "encodes": 1,
+        "writes": [
+          "dice-abyss:save:v1",
+          "dice-abyss:mirror:v1"
+        ]
+      },
+      "candidate": {
+        "parses": 2,
+        "serializations": 3,
+        "encodes": 1,
+        "writes": [
+          "dice-abyss:save:v1",
+          "dice-abyss:mirror:v1"
+        ]
+      }
+    },
+    {
+      "name": "4.95MB Unicode unknown metadata",
+      "items": 32,
+      "pad": 4950000,
+      "ch": "界",
+      "rawCharacters": 1655296,
+      "rawBytes": 4950000,
+      "sha256": "4833c04a68443a538026109181df04932c1b50ffb533e4077fb41f81a9c496ad",
+      "baseline": {
+        "parses": 2,
+        "serializations": 4,
+        "encodes": 0,
+        "writes": [
+          "dice-abyss:save:v1",
+          "dice-abyss:mirror:v1"
+        ]
+      },
+      "candidate": {
+        "parses": 2,
+        "serializations": 3,
+        "encodes": 0,
+        "writes": [
+          "dice-abyss:save:v1",
+          "dice-abyss:mirror:v1"
+        ]
+      }
+    }
+  ],
+  "timing": {
+    "pairs": 12,
+    "warmup": 2,
+    "method": "Alternating B/C pairs. Same validated fixtures, Map storage, saveGame only, no instrumentation in timings, all samples retained. Not native browser, disk, click latency or UI rebuild. Shared host resource state uncontrolled.",
+    "cells": [
+      {
+        "name": "32 items",
+        "order": [
+          [
+            "baseline",
+            "candidate"
+          ],
+          [
+            "candidate",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "candidate"
+          ],
+          [
+            "candidate",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "candidate"
+          ],
+          [
+            "candidate",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "candidate"
+          ],
+          [
+            "candidate",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "candidate"
+          ],
+          [
+            "candidate",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "candidate"
+          ],
+          [
+            "candidate",
+            "baseline"
+          ]
+        ],
+        "samplesMs": {
+          "baseline": [
+            0.39928999999995085,
+            0.3104289999999992,
+            0.3278450000000248,
+            0.3675230000000056,
+            0.36290600000006634,
+            0.5405090000000428,
+            0.35589600000002974,
+            0.3388909999999896,
+            0.3946730000000116,
+            0.5140900000000101,
+            0.36389900000006037,
+            0.34552099999996244
+          ],
+          "candidate": [
+            0.3725809999999683,
+            0.37353299999995215,
+            0.2644709999999577,
+            0.4075319999999465,
+            0.397448000000054,
+            0.3220460000000003,
+            0.31629799999996067,
+            0.32591200000001663,
+            0.3429869999999937,
+            0.3376090000000431,
+            0.3992000000000644,
+            0.3972880000000032
+          ]
+        },
+        "baselineMs": {
+          "n": 12,
+          "min": 0.3104289999999992,
+          "median": 0.36340250000006336,
+          "p95": 0.5405090000000428,
+          "max": 0.5405090000000428,
+          "mean": 0.38512266666667944
+        },
+        "candidateMs": {
+          "n": 12,
+          "min": 0.2644709999999577,
+          "median": 0.357783999999981,
+          "p95": 0.4075319999999465,
+          "max": 0.4075319999999465,
+          "mean": 0.35474208333333007
+        },
+        "pairedCandidateMinusBaselineMs": [
+          -0.026708999999982552,
+          0.06310399999995298,
+          -0.0633740000000671,
+          0.0400089999999409,
+          0.03454199999998764,
+          -0.21846300000004248,
+          -0.03959800000006908,
+          -0.012978999999972984,
+          -0.051686000000017884,
+          -0.17648099999996703,
+          0.035301000000004024,
+          0.05176700000004075
+        ],
+        "pairedDifferenceSummaryMs": {
+          "n": 12,
+          "min": -0.21846300000004248,
+          "median": -0.01984399999997777,
+          "p95": 0.06310399999995298,
+          "max": 0.06310399999995298,
+          "mean": -0.030380583333349403
+        }
+      },
+      {
+        "name": "1000 items",
+        "order": [
+          [
+            "baseline",
+            "candidate"
+          ],
+          [
+            "candidate",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "candidate"
+          ],
+          [
+            "candidate",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "candidate"
+          ],
+          [
+            "candidate",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "candidate"
+          ],
+          [
+            "candidate",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "candidate"
+          ],
+          [
+            "candidate",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "candidate"
+          ],
+          [
+            "candidate",
+            "baseline"
+          ]
+        ],
+        "samplesMs": {
+          "baseline": [
+            5.197685000000092,
+            5.597937000000002,
+            5.188000999999986,
+            5.361458000000084,
+            5.397600999999895,
+            5.4306799999999384,
+            5.610335000000077,
+            5.740958999999975,
+            5.771645000000035,
+            5.455826999999999,
+            5.594941999999946,
+            5.679468000000043
+          ],
+          "candidate": [
+            4.523348000000169,
+            4.642765000000054,
+            4.891853000000083,
+            4.485681999999997,
+            4.826425999999856,
+            4.875490000000127,
+            4.941156000000092,
+            5.24426399999993,
+            4.57383300000015,
+            4.826847000000043,
+            4.56373799999983,
+            4.681683000000021
+          ]
+        },
+        "baselineMs": {
+          "n": 12,
+          "min": 5.188000999999986,
+          "median": 5.525384499999973,
+          "p95": 5.771645000000035,
+          "max": 5.771645000000035,
+          "mean": 5.502211500000006
+        },
+        "candidateMs": {
+          "n": 12,
+          "min": 4.485681999999997,
+          "median": 4.754054499999938,
+          "p95": 5.24426399999993,
+          "max": 5.24426399999993,
+          "mean": 4.756423750000029
+        },
+        "pairedCandidateMinusBaselineMs": [
+          -0.6743369999999231,
+          -0.9551719999999477,
+          -0.2961479999999028,
+          -0.8757760000000872,
+          -0.5711750000000393,
+          -0.5551899999998113,
+          -0.6691789999999855,
+          -0.4966950000000452,
+          -1.1978119999998853,
+          -0.6289799999999559,
+          -1.0312040000001161,
+          -0.9977850000000217
+        ],
+        "pairedDifferenceSummaryMs": {
+          "n": 12,
+          "min": -1.1978119999998853,
+          "median": -0.6717579999999543,
+          "p95": -0.2961479999999028,
+          "max": -0.2961479999999028,
+          "mean": -0.7457877499999768
+        }
+      },
+      {
+        "name": "10000 items",
+        "order": [
+          [
+            "baseline",
+            "candidate"
+          ],
+          [
+            "candidate",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "candidate"
+          ],
+          [
+            "candidate",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "candidate"
+          ],
+          [
+            "candidate",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "candidate"
+          ],
+          [
+            "candidate",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "candidate"
+          ],
+          [
+            "candidate",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "candidate"
+          ],
+          [
+            "candidate",
+            "baseline"
+          ]
+        ],
+        "samplesMs": {
+          "baseline": [
+            53.7955350000002,
+            54.26455699999997,
+            56.29533100000003,
+            52.30454399999985,
+            54.115867999999864,
+            55.529839000000266,
+            54.65160999999989,
+            54.00425099999984,
+            54.99380599999995,
+            52.77439299999969,
+            55.02741600000036,
+            50.79710000000023
+          ],
+          "candidate": [
+            46.39235699999995,
+            50.588481,
+            52.3952740000002,
+            50.40476899999999,
+            51.3442500000001,
+            47.30525699999998,
+            48.759187999999995,
+            45.331998999999996,
+            48.586001000000124,
+            45.500638999999865,
+            45.961469999999736,
+            53.587266
+          ]
+        },
+        "baselineMs": {
+          "n": 12,
+          "min": 50.79710000000023,
+          "median": 54.190212499999916,
+          "p95": 56.29533100000003,
+          "max": 56.29533100000003,
+          "mean": 54.04618750000001
+        },
+        "candidateMs": {
+          "n": 12,
+          "min": 45.331998999999996,
+          "median": 48.67259450000006,
+          "p95": 53.587266,
+          "max": 53.587266,
+          "mean": 48.846412583333326
+        },
+        "pairedCandidateMinusBaselineMs": [
+          -7.403178000000253,
+          -3.6760759999999664,
+          -3.9000569999998334,
+          -1.8997749999998632,
+          -2.771617999999762,
+          -8.224582000000282,
+          -5.892421999999897,
+          -8.672251999999844,
+          -6.407804999999826,
+          -7.273753999999826,
+          -9.065946000000622,
+          2.790165999999772
+        ],
+        "pairedDifferenceSummaryMs": {
+          "n": 12,
+          "min": -9.065946000000622,
+          "median": -6.150113499999861,
+          "p95": 2.790165999999772,
+          "max": 2.790165999999772,
+          "mean": -5.199774916666684
+        }
+      },
+      {
+        "name": "4.95MB ASCII unknown metadata",
+        "order": [
+          [
+            "baseline",
+            "candidate"
+          ],
+          [
+            "candidate",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "candidate"
+          ],
+          [
+            "candidate",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "candidate"
+          ],
+          [
+            "candidate",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "candidate"
+          ],
+          [
+            "candidate",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "candidate"
+          ],
+          [
+            "candidate",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "candidate"
+          ],
+          [
+            "candidate",
+            "baseline"
+          ]
+        ],
+        "samplesMs": {
+          "baseline": [
+            70.06692299999986,
+            70.02550100000008,
+            63.448427999999694,
+            62.834710000000086,
+            64.97481300000027,
+            62.88919899999928,
+            63.829390000000785,
+            63.74462500000027,
+            62.52234700000008,
+            64.87432499999977,
+            62.608384999999544,
+            61.78247300000021
+          ],
+          "candidate": [
+            55.079673000000184,
+            60.16579300000012,
+            59.733262999999624,
+            57.22132999999985,
+            55.52558300000055,
+            56.02304800000002,
+            56.333356000000094,
+            55.36585600000035,
+            56.030799000000115,
+            54.18533099999968,
+            55.97474599999987,
+            55.13857999999982
+          ]
+        },
+        "baselineMs": {
+          "n": 12,
+          "min": 61.78247300000021,
+          "median": 63.59652649999998,
+          "p95": 70.06692299999986,
+          "max": 70.06692299999986,
+          "mean": 64.46675991666666
+        },
+        "candidateMs": {
+          "n": 12,
+          "min": 54.18533099999968,
+          "median": 55.99889699999994,
+          "p95": 60.16579300000012,
+          "max": 60.16579300000012,
+          "mean": 56.39811316666669
+        },
+        "pairedCandidateMinusBaselineMs": [
+          -14.987249999999676,
+          -9.859707999999955,
+          -3.71516500000007,
+          -5.613380000000234,
+          -9.449229999999716,
+          -6.866150999999263,
+          -7.496034000000691,
+          -8.37876899999992,
+          -6.491547999999966,
+          -10.688994000000093,
+          -6.633638999999675,
+          -6.643893000000389
+        ],
+        "pairedDifferenceSummaryMs": {
+          "n": 12,
+          "min": -14.987249999999676,
+          "median": -7.181092499999977,
+          "p95": -3.71516500000007,
+          "max": -3.71516500000007,
+          "mean": -8.06864674999997
+        }
+      },
+      {
+        "name": "4.95MB Unicode unknown metadata",
+        "order": [
+          [
+            "baseline",
+            "candidate"
+          ],
+          [
+            "candidate",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "candidate"
+          ],
+          [
+            "candidate",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "candidate"
+          ],
+          [
+            "candidate",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "candidate"
+          ],
+          [
+            "candidate",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "candidate"
+          ],
+          [
+            "candidate",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "candidate"
+          ],
+          [
+            "candidate",
+            "baseline"
+          ]
+        ],
+        "samplesMs": {
+          "baseline": [
+            17.317870000000767,
+            17.44118199999957,
+            17.02769200000057,
+            17.348175000000083,
+            18.675216999999975,
+            17.080700999999863,
+            18.88651000000027,
+            17.13411999999971,
+            19.122487999999976,
+            18.601929000000382,
+            17.28817700000036,
+            18.13882299999932
+          ],
+          "candidate": [
+            17.097034999999778,
+            15.198287000000164,
+            16.068003000000317,
+            15.01626800000031,
+            15.688802000000578,
+            14.953875999999582,
+            15.916087999999945,
+            15.085659999999734,
+            14.611528999999791,
+            14.914076999999452,
+            14.639169999999467,
+            14.777976999999737
+          ]
+        },
+        "baselineMs": {
+          "n": 12,
+          "min": 17.02769200000057,
+          "median": 17.394678499999827,
+          "p95": 19.122487999999976,
+          "max": 19.122487999999976,
+          "mean": 17.838573666666736
+        },
+        "candidateMs": {
+          "n": 12,
+          "min": 14.611528999999791,
+          "median": 15.050964000000022,
+          "p95": 17.097034999999778,
+          "max": 17.097034999999778,
+          "mean": 15.330564333333237
+        },
+        "pairedCandidateMinusBaselineMs": [
+          -0.22083500000098866,
+          -2.2428949999994074,
+          -0.9596890000002531,
+          -2.3319069999997737,
+          -2.986414999999397,
+          -2.126825000000281,
+          -2.970422000000326,
+          -2.0484599999999773,
+          -4.5109590000001845,
+          -3.6878520000009303,
+          -2.6490070000008927,
+          -3.360845999999583
+        ],
+        "pairedDifferenceSummaryMs": {
+          "n": 12,
+          "min": -4.5109590000001845,
+          "median": -2.490457000000333,
+          "p95": -0.22083500000098866,
+          "max": -0.22083500000098866,
+          "mean": -2.5080093333334994
+        }
+      }
+    ]
+  },
+  "completedAt": "2026-10-19T02:34:41.438Z"
+}

@@ -1,0 +1,1430 @@
+{
+  "label": "Round15 isolated inventory search and whole-bag recycling",
+  "synthetic": true,
+  "url": "http://127.0.0.1:4189/",
+  "started": "2026-10-19T01:03:09.134Z",
+  "sourceBefore": {
+    "index.html": "e206980c6cf3ad3fd85d6584418d92524a3f99dab8935b8f8b8ea49d9dfac958",
+    "package.json": "9a9ebb41eaa9210c1554037a7bd92db7f3542c42a6261225eb1f1f4515e6a910",
+    "src/action-focus.js": "d5e383b4f8aeb138b6cdffc7f3dffe12cf0db7fcbac053df713dec60b3b95a98",
+    "src/app.js": "1708721304f1874507b3e592fa2f7ffa3e15eb4eee516df6a34a68c7316e2753",
+    "src/content.js": "4c0c2e4656c5a3482a5448a069ae2fa28367ba05d61c7d0c2c9866315f5c5526",
+    "src/decisions.css": "0d1cb07494d08a26d39cca89d19f7ac875b78b67d5bf3fbad44b99a9a7a03b23",
+    "src/deep-content.js": "040a5668b687cf9d7b7c8b31a67cee35660ebb0539af74c7d572614f138fef33",
+    "src/deep-rules.js": "6f6c096e37c9f18a6ca97625330a6ab8ce55b25852e677455d3a200c8200dbe1",
+    "src/deep.css": "24f0ed8bf2969232c660a595cd5e19b206066bc4a19a983e4bd3a277b82700cc",
+    "src/defeat-review.css": "c2343b936d4456b36c557f3c821cdb812a3d6cdcc2c061ea11a2197a56158598",
+    "src/defeat-review.js": "13c14a8184266dc4b443570e5e38b25b668bfa4b818401453d7248f5f6749938",
+    "src/dice-motion.js": "3b088b9efa03552912bd92b18dc66d6122f45e2f12dc420305bb877deae5139a",
+    "src/dice-renderer.js": "b40e1e1c808b00d319b70ce7546403c588cdcc8397bba684fe19b2f4c0bca6d8",
+    "src/effects.js": "5f95f77e882a690f95215babda3cdedc0d398bbcfaabfecd3d486141200dc6f9",
+    "src/encounter-tactics.js": "02e0da7aa57de321319812503556d9e5925463644222305755e86de6c3fa355b",
+    "src/encounters.js": "c3c6e2d24049305d73982cf5db3b1cf02eee68f4e8e1659fd7e3021f74de0791",
+    "src/engine.js": "75c6d9fcc48c0cf49ee02e53ffb7b143a09a2c79738d3bb2eb5d0ae80b30872b",
+    "src/equipment-comparison.js": "2a2a819b22d0d1746893bb2222bfbeb7e6fcf20f10046fc7b64897c260be952d",
+    "src/equipment-content.js": "d95b5e7c11d14eb764ea3cefb7eee73f35b2f9d48a8b640513eda9aefd1cc030",
+    "src/equipment.js": "8c20de433f21931318e315b862b457d37a03b9596ea5df8f7cc4025691aaccd6",
+    "src/expansion.css": "d5c01857bf02a4566270f23ef389aad76e033e50bd5440ecb13665ce81818424",
+    "src/experience.css": "4a8175dfcf26c06e2e75126956d6e2d7749ef8c2f11c7026091faa7252c3c883",
+    "src/experience.js": "2bdd3727c59b537f45a22d2e9aae9a93908a76e29850c8e8e8e024cbeaf93c45",
+    "src/forge.css": "9a7ee960f3494e39ac102abf7b9476cacffdd89eea1803e52469b441e124823f",
+    "src/fusion-controller.js": "5a4a0c6a11c7a347ffcdaa0340d3c905d65aa5ba6b50e36e7135a9276537dd1a",
+    "src/fusion-dom.js": "fb78398073fdccaea6680146c34ac18de75d926439c7044ed45da39f625e4023",
+    "src/fusion-view.js": "e77542f7de4c6f39ac57098ffb7a277caab988cd4bcc9ea5f50080b0f08e96c1",
+    "src/fusion-workbench.js": "06f206dc578534c641f0fe327c48a4ec70ccffeed79fe8076ccd83cfb56263bf",
+    "src/fusion.css": "9b6fe3edaa023ae1c7702e60e3110d9450a6ca03a737f74dd984baf0fb083bc5",
+    "src/gold.css": "bb1313da6f3a734567be73e23c606c56c1215bc976e166c9dc2b1fedb06c6393",
+    "src/gold.js": "252aab60750432e1b5f1dc158c4a8f69e3dca5d72fa016b69c03c29ac651a244",
+    "src/inventory-dom.js": "7f3b18a6b3dbcc3a0a100c94bab35d9e81a14d7a6c74e8eabfdff3d151d35bf0",
+    "src/inventory-query.js": "7cf093f155934779d21c4dceb0a6aeef2e467fdb8c763413c155b6c0fd52a4c5",
+    "src/inventory-search.css": "23c86fb48164019c556c923709078ebaf2eb91df301d5f3da6cc1e828d8c81ce",
+    "src/polish.css": "84af5e0bfc563c830287d96103faff4b1673c7d363a9cfbc26995a5074265df8",
+    "src/progression.css": "31125ec19b19b527f9d0499d9b045874b0d37e2d6eb8fdcc729e58bf783368ec",
+    "src/quality.css": "3785daf1b16c66942383c8285376a66fee42c2a21c0b1450c251870333919bb8",
+    "src/rarity.js": "871356df147d027e1845f98c5574a1d9a71c0d17bd8717f457c9007d7c73b735",
+    "src/refinement.css": "79a8599ca5415c933de1161575edb25601f4efdbf57be4c45dc82033abb1fffd",
+    "src/release.js": "337a97663cb8961b40a0f4fbfa6274aa21aec308d2bf15c84ed892167f28b6b6",
+    "src/responsive.css": "90bb585d66a88daa61a553112c66610b62b666aa07c28ad887b521534283cee8",
+    "src/rooms.css": "a426209cd05ccb3125a88713ea8693b04b47b65e179c605538b5053fe616c606",
+    "src/route-weights.js": "b21499b8c44a17ad09caab5e17f312073b269981b6ac7eb916b5f656912237dd",
+    "src/save-capacity-view.js": "cd729b8ce91cf5aad772f0fcc468cfac5b389a48ff1a03e905907ade23ea7867",
+    "src/save-recovery-view.js": "47e9041a86415c6bc04e5ae66803d6d8dfa6fbb2cabb8f800ce67f29a199153d",
+    "src/save-recovery.css": "7085ab430d2f1193955b84848d8f2af88faeab0d065c427ee5e7b88b5e254c2e",
+    "src/settings-focus.js": "7c4b93a9c8830598319e2a3d8d2750cb33f5c0a1cc5b89dbd6154b985db3366f",
+    "src/storage.js": "6bfcc60036c9f729c21b948ca98c7ac715e14049856fb9dded0baa2aeef2c561",
+    "src/styles.css": "dc835715e16e8698214d25202a39df6162c865287e6ac605c111486066764044",
+    "src/talent.css": "350f583103186b0b44fc50317d92c20417fed82fe4e8667bf1776390b2425334",
+    "src/views.js": "cc7b8a34b8e252c77ec4579b7b7bc781123c1f50a5d1c5a3d9a7ea728c8c2072",
+    "src/visual-timeline.js": "f518084da44c2ea852bf902ba6ffc7f8f5a94ee815dac31bcc4726cc8cd44369",
+    "src/visual.css": "35ec8f94b238d355f6fad93855d4b20794157e3d9c592dcf777cf25dcb2e05bd"
+  },
+  "notes": [
+    "All saves are explicit constructed fixtures, not natural player journeys.",
+    "Native Chromium controls are used; composition events are synthetic and do not certify an OS IME.",
+    "Low effects and logical viewports; physical GPU, audio and physical devices are not tested."
+  ],
+  "cases": [
+    {
+      "name": "layout-1366",
+      "checks": [
+        {
+          "label": "intended local game identity",
+          "pass": true
+        },
+        {
+          "label": "meaningful game UI, not a blank page",
+          "pass": true
+        },
+        {
+          "label": "loading and opening inventory preserve complete state",
+          "pass": true
+        },
+        {
+          "label": "visible result order equals full-array filtered order",
+          "pass": true
+        },
+        {
+          "label": "pagination derives from actual filtered result",
+          "pass": true
+        },
+        {
+          "label": "no document horizontal overflow",
+          "pass": true
+        },
+        {
+          "label": "search stays inside viewport",
+          "pass": true
+        },
+        {
+          "label": "search copy and buttons do not overflow",
+          "pass": true
+        },
+        {
+          "label": "native input has an explicit visible label",
+          "pass": true
+        },
+        {
+          "label": "search control has a usable horizontal rectangle",
+          "pass": true
+        },
+        {
+          "label": "search control text remains at least 12px",
+          "pass": true
+        },
+        {
+          "label": "search control has a usable horizontal rectangle",
+          "pass": true
+        },
+        {
+          "label": "search control text remains at least 12px",
+          "pass": false
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "layout-1366-FAIL.png"
+      ],
+      "status": "FAIL",
+      "identity": {
+        "url": "http://127.0.0.1:4189/",
+        "title": "骰狱：无尽深渊 · Dice Abyss",
+        "viewport": {
+          "width": 1366,
+          "height": 768
+        },
+        "scale": 1
+      },
+      "layout": {
+        "width": 1366,
+        "height": 768,
+        "documentWidth": 1366,
+        "search": {
+          "x": 359.34375,
+          "y": 194,
+          "width": 654.15625,
+          "height": 54.09375,
+          "top": 194,
+          "right": 1013.5,
+          "bottom": 248.09375,
+          "left": 359.34375
+        },
+        "list": {
+          "x": 359.34375,
+          "y": 357.78125,
+          "width": 654.15625,
+          "height": 187.203125,
+          "top": 357.78125,
+          "right": 1013.5,
+          "bottom": 544.984375,
+          "left": 359.34375
+        },
+        "primary": {
+          "x": 566.390625,
+          "y": 690.90625,
+          "width": 240.046875,
+          "height": 47.328125,
+          "top": 690.90625,
+          "right": 806.4375,
+          "bottom": 738.234375,
+          "left": 566.390625
+        },
+        "controls": [
+          {
+            "rect": {
+              "x": 413.625,
+              "y": 194,
+              "width": 480.75,
+              "height": 31.5625,
+              "top": 194,
+              "right": 894.375,
+              "bottom": 225.5625,
+              "left": 413.625
+            },
+            "font": "12px"
+          },
+          {
+            "rect": {
+              "x": 900.65625,
+              "y": 194.703125,
+              "width": 44.140625,
+              "height": 30.15625,
+              "top": 194.703125,
+              "right": 944.796875,
+              "bottom": 224.859375,
+              "left": 900.65625
+            },
+            "font": "9.80242px"
+          },
+          {
+            "rect": {
+              "x": 951.078125,
+              "y": 194.390625,
+              "width": 62.421875,
+              "height": 30.765625,
+              "top": 194.390625,
+              "right": 1013.5,
+              "bottom": 225.15625,
+              "left": 951.078125
+            },
+            "font": "9.80242px"
+          }
+        ],
+        "overflow": [],
+        "inputLabel": "装备名称"
+      },
+      "error": "AssertionError [ERR_ASSERTION]: search control text remains at least 12px",
+      "stack": "AssertionError [ERR_ASSERTION]: search control text remains at least 12px\n    at check (file:///workspace/scratch/2e03d78caae4/work/Dice-Abyss/scripts/qa-inventory-search-round15.mjs:25:75)\n    at layout (file:///workspace/scratch/2e03d78caae4/work/Dice-Abyss/scripts/qa-inventory-search-round15.mjs:63:145)\n    at async file:///workspace/scratch/2e03d78caae4/work/Dice-Abyss/scripts/qa-inventory-search-round15.mjs:73:50\n    at async run (file:///workspace/scratch/2e03d78caae4/work/Dice-Abyss/scripts/qa-inventory-search-round15.mjs:67:190)\n    at async file:///workspace/scratch/2e03d78caae4/work/Dice-Abyss/scripts/qa-inventory-search-round15.mjs:70:99"
+    },
+    {
+      "name": "layout-1920",
+      "checks": [
+        {
+          "label": "intended local game identity",
+          "pass": true
+        },
+        {
+          "label": "meaningful game UI, not a blank page",
+          "pass": true
+        },
+        {
+          "label": "loading and opening inventory preserve complete state",
+          "pass": true
+        },
+        {
+          "label": "visible result order equals full-array filtered order",
+          "pass": true
+        },
+        {
+          "label": "pagination derives from actual filtered result",
+          "pass": true
+        },
+        {
+          "label": "no document horizontal overflow",
+          "pass": true
+        },
+        {
+          "label": "search stays inside viewport",
+          "pass": true
+        },
+        {
+          "label": "search copy and buttons do not overflow",
+          "pass": true
+        },
+        {
+          "label": "native input has an explicit visible label",
+          "pass": true
+        },
+        {
+          "label": "search control has a usable horizontal rectangle",
+          "pass": true
+        },
+        {
+          "label": "search control text remains at least 12px",
+          "pass": true
+        },
+        {
+          "label": "search control has a usable horizontal rectangle",
+          "pass": true
+        },
+        {
+          "label": "search control text remains at least 12px",
+          "pass": true
+        },
+        {
+          "label": "search control has a usable horizontal rectangle",
+          "pass": true
+        },
+        {
+          "label": "search control text remains at least 12px",
+          "pass": true
+        },
+        {
+          "label": "desktop inventory retains visible item space",
+          "pass": true
+        },
+        {
+          "label": "desktop primary action remains visible",
+          "pass": true
+        },
+        {
+          "label": "search keeps primary and mirror byte-identical",
+          "pass": true
+        },
+        {
+          "label": "no relevant app/console errors",
+          "pass": true
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "search-1920.png"
+      ],
+      "status": "PASS",
+      "identity": {
+        "url": "http://127.0.0.1:4189/",
+        "title": "骰狱：无尽深渊 · Dice Abyss",
+        "viewport": {
+          "width": 1920,
+          "height": 1080
+        },
+        "scale": 1
+      },
+      "layout": {
+        "width": 1920,
+        "height": 1080,
+        "documentWidth": 1920,
+        "search": {
+          "x": 504.671875,
+          "y": 268.453125,
+          "width": 920.296875,
+          "height": 69.625,
+          "top": 268.453125,
+          "right": 1424.96875,
+          "bottom": 338.078125,
+          "left": 504.671875
+        },
+        "list": {
+          "x": 504.671875,
+          "y": 491.875,
+          "width": 920.296875,
+          "height": 275.046875,
+          "top": 491.875,
+          "right": 1424.96875,
+          "bottom": 766.921875,
+          "left": 504.671875
+        },
+        "primary": {
+          "x": 796.109375,
+          "y": 972.484375,
+          "width": 337.40625,
+          "height": 64.921875,
+          "top": 972.484375,
+          "right": 1133.515625,
+          "bottom": 1037.40625,
+          "left": 796.109375
+        },
+        "controls": [
+          {
+            "rect": {
+              "x": 569.5,
+              "y": 268.484375,
+              "width": 690.015625,
+              "height": 42.390625,
+              "top": 268.484375,
+              "right": 1259.515625,
+              "bottom": 310.875,
+              "left": 569.5
+            },
+            "font": "14.1312px"
+          },
+          {
+            "rect": {
+              "x": 1268.34375,
+              "y": 268.484375,
+              "width": 61.109375,
+              "height": 42.390625,
+              "top": 268.484375,
+              "right": 1329.453125,
+              "bottom": 310.875,
+              "left": 1268.34375
+            },
+            "font": "13.7779px"
+          },
+          {
+            "rect": {
+              "x": 1338.28125,
+              "y": 268.453125,
+              "width": 86.6875,
+              "height": 42.46875,
+              "top": 268.453125,
+              "right": 1424.96875,
+              "bottom": 310.921875,
+              "left": 1338.28125
+            },
+            "font": "13.7779px"
+          }
+        ],
+        "overflow": [],
+        "inputLabel": "装备名称"
+      }
+    },
+    {
+      "name": "layout-2560",
+      "checks": [
+        {
+          "label": "intended local game identity",
+          "pass": true
+        },
+        {
+          "label": "meaningful game UI, not a blank page",
+          "pass": true
+        },
+        {
+          "label": "loading and opening inventory preserve complete state",
+          "pass": true
+        },
+        {
+          "label": "visible result order equals full-array filtered order",
+          "pass": true
+        },
+        {
+          "label": "pagination derives from actual filtered result",
+          "pass": true
+        },
+        {
+          "label": "no document horizontal overflow",
+          "pass": true
+        },
+        {
+          "label": "search stays inside viewport",
+          "pass": true
+        },
+        {
+          "label": "search copy and buttons do not overflow",
+          "pass": true
+        },
+        {
+          "label": "native input has an explicit visible label",
+          "pass": true
+        },
+        {
+          "label": "search control has a usable horizontal rectangle",
+          "pass": true
+        },
+        {
+          "label": "search control text remains at least 12px",
+          "pass": true
+        },
+        {
+          "label": "search control has a usable horizontal rectangle",
+          "pass": true
+        },
+        {
+          "label": "search control text remains at least 12px",
+          "pass": true
+        },
+        {
+          "label": "search control has a usable horizontal rectangle",
+          "pass": true
+        },
+        {
+          "label": "search control text remains at least 12px",
+          "pass": true
+        },
+        {
+          "label": "desktop inventory retains visible item space",
+          "pass": true
+        },
+        {
+          "label": "desktop primary action remains visible",
+          "pass": true
+        },
+        {
+          "label": "search keeps primary and mirror byte-identical",
+          "pass": true
+        },
+        {
+          "label": "no relevant app/console errors",
+          "pass": true
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "search-2560.png"
+      ],
+      "status": "PASS",
+      "identity": {
+        "url": "http://127.0.0.1:4189/",
+        "title": "骰狱：无尽深渊 · Dice Abyss",
+        "viewport": {
+          "width": 2560,
+          "height": 1440
+        },
+        "scale": 1
+      },
+      "layout": {
+        "width": 2560,
+        "height": 1440,
+        "documentWidth": 2560,
+        "search": {
+          "x": 672.578125,
+          "y": 356.234375,
+          "width": 1227.703125,
+          "height": 92.71875,
+          "top": 356.234375,
+          "right": 1900.28125,
+          "bottom": 448.953125,
+          "left": 672.578125
+        },
+        "list": {
+          "x": 672.578125,
+          "y": 653.71875,
+          "width": 1227.703125,
+          "height": 369.109375,
+          "top": 653.71875,
+          "right": 1900.28125,
+          "bottom": 1022.828125,
+          "left": 672.578125
+        },
+        "primary": {
+          "x": 1061.484375,
+          "y": 1297.296875,
+          "width": 449.875,
+          "height": 85.21875,
+          "top": 1297.296875,
+          "right": 1511.359375,
+          "bottom": 1382.515625,
+          "left": 1061.484375
+        },
+        "controls": [
+          {
+            "rect": {
+              "x": 756.34375,
+              "y": 356.234375,
+              "width": 928.625,
+              "height": 56.515625,
+              "top": 356.234375,
+              "right": 1684.96875,
+              "bottom": 412.75,
+              "left": 756.34375
+            },
+            "font": "18.8416px"
+          },
+          {
+            "rect": {
+              "x": 1696.734375,
+              "y": 356.234375,
+              "width": 79.515625,
+              "height": 56.515625,
+              "top": 356.234375,
+              "right": 1776.25,
+              "bottom": 412.75,
+              "left": 1696.734375
+            },
+            "font": "18.3706px"
+          },
+          {
+            "rect": {
+              "x": 1788.015625,
+              "y": 356.234375,
+              "width": 112.265625,
+              "height": 56.515625,
+              "top": 356.234375,
+              "right": 1900.28125,
+              "bottom": 412.75,
+              "left": 1788.015625
+            },
+            "font": "18.3706px"
+          }
+        ],
+        "overflow": [],
+        "inputLabel": "装备名称"
+      }
+    },
+    {
+      "name": "layout-3840",
+      "checks": [
+        {
+          "label": "intended local game identity",
+          "pass": true
+        },
+        {
+          "label": "meaningful game UI, not a blank page",
+          "pass": true
+        },
+        {
+          "label": "loading and opening inventory preserve complete state",
+          "pass": true
+        },
+        {
+          "label": "visible result order equals full-array filtered order",
+          "pass": true
+        },
+        {
+          "label": "pagination derives from actual filtered result",
+          "pass": true
+        },
+        {
+          "label": "no document horizontal overflow",
+          "pass": true
+        },
+        {
+          "label": "search stays inside viewport",
+          "pass": true
+        },
+        {
+          "label": "search copy and buttons do not overflow",
+          "pass": true
+        },
+        {
+          "label": "native input has an explicit visible label",
+          "pass": true
+        },
+        {
+          "label": "search control has a usable horizontal rectangle",
+          "pass": true
+        },
+        {
+          "label": "search control text remains at least 12px",
+          "pass": true
+        },
+        {
+          "label": "search control has a usable horizontal rectangle",
+          "pass": true
+        },
+        {
+          "label": "search control text remains at least 12px",
+          "pass": true
+        },
+        {
+          "label": "search control has a usable horizontal rectangle",
+          "pass": true
+        },
+        {
+          "label": "search control text remains at least 12px",
+          "pass": true
+        },
+        {
+          "label": "desktop inventory retains visible item space",
+          "pass": true
+        },
+        {
+          "label": "desktop primary action remains visible",
+          "pass": true
+        },
+        {
+          "label": "search keeps primary and mirror byte-identical",
+          "pass": true
+        },
+        {
+          "label": "no relevant app/console errors",
+          "pass": true
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "search-3840.png"
+      ],
+      "status": "PASS",
+      "identity": {
+        "url": "http://127.0.0.1:4189/",
+        "title": "骰狱：无尽深渊 · Dice Abyss",
+        "viewport": {
+          "width": 3840,
+          "height": 2160
+        },
+        "scale": 1
+      },
+      "layout": {
+        "width": 3840,
+        "height": 2160,
+        "documentWidth": 3840,
+        "search": {
+          "x": 1008.390625,
+          "y": 531.953125,
+          "width": 1842.5,
+          "height": 139.109375,
+          "top": 531.953125,
+          "right": 2850.890625,
+          "bottom": 671.0625,
+          "left": 1008.390625
+        },
+        "list": {
+          "x": 1008.390625,
+          "y": 977.671875,
+          "width": 1842.5,
+          "height": 557.078125,
+          "top": 977.671875,
+          "right": 2850.890625,
+          "bottom": 1534.75,
+          "left": 1008.390625
+        },
+        "primary": {
+          "x": 1592.234375,
+          "y": 1946.9375,
+          "width": 674.796875,
+          "height": 125.84375,
+          "top": 1946.9375,
+          "right": 2267.03125,
+          "bottom": 2072.78125,
+          "left": 1592.234375
+        },
+        "controls": [
+          {
+            "rect": {
+              "x": 1138.046875,
+              "y": 531.953125,
+              "width": 1385.890625,
+              "height": 84.78125,
+              "top": 531.953125,
+              "right": 2523.9375,
+              "bottom": 616.734375,
+              "left": 1138.046875
+            },
+            "font": "28.2624px"
+          },
+          {
+            "rect": {
+              "x": 2541.59375,
+              "y": 531.953125,
+              "width": 120.25,
+              "height": 84.78125,
+              "top": 531.953125,
+              "right": 2661.84375,
+              "bottom": 616.734375,
+              "left": 2541.59375
+            },
+            "font": "27.5558px"
+          },
+          {
+            "rect": {
+              "x": 2679.5,
+              "y": 531.953125,
+              "width": 171.390625,
+              "height": 84.78125,
+              "top": 531.953125,
+              "right": 2850.890625,
+              "bottom": 616.734375,
+              "left": 2679.5
+            },
+            "font": "27.5558px"
+          }
+        ],
+        "overflow": [],
+        "inputLabel": "装备名称"
+      }
+    },
+    {
+      "name": "layout-390",
+      "checks": [
+        {
+          "label": "intended local game identity",
+          "pass": true
+        },
+        {
+          "label": "meaningful game UI, not a blank page",
+          "pass": true
+        },
+        {
+          "label": "loading and opening inventory preserve complete state",
+          "pass": true
+        },
+        {
+          "label": "visible result order equals full-array filtered order",
+          "pass": true
+        },
+        {
+          "label": "pagination derives from actual filtered result",
+          "pass": true
+        },
+        {
+          "label": "no document horizontal overflow",
+          "pass": true
+        },
+        {
+          "label": "search stays inside viewport",
+          "pass": true
+        },
+        {
+          "label": "search copy and buttons do not overflow",
+          "pass": true
+        },
+        {
+          "label": "native input has an explicit visible label",
+          "pass": true
+        },
+        {
+          "label": "search control has a usable horizontal rectangle",
+          "pass": true
+        },
+        {
+          "label": "search control text remains at least 12px",
+          "pass": true
+        },
+        {
+          "label": "search control has a usable horizontal rectangle",
+          "pass": true
+        },
+        {
+          "label": "search control text remains at least 12px",
+          "pass": true
+        },
+        {
+          "label": "search control has a usable horizontal rectangle",
+          "pass": true
+        },
+        {
+          "label": "search control text remains at least 12px",
+          "pass": true
+        },
+        {
+          "label": "narrow search controls have 44px minimum height",
+          "pass": true
+        },
+        {
+          "label": "narrow search controls have 44px minimum height",
+          "pass": true
+        },
+        {
+          "label": "narrow search controls have 44px minimum height",
+          "pass": true
+        },
+        {
+          "label": "search keeps primary and mirror byte-identical",
+          "pass": true
+        },
+        {
+          "label": "no relevant app/console errors",
+          "pass": true
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "search-390.png"
+      ],
+      "status": "PASS",
+      "identity": {
+        "url": "http://127.0.0.1:4189/",
+        "title": "骰狱：无尽深渊 · Dice Abyss",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "scale": 1
+      },
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "documentWidth": 390,
+        "search": {
+          "x": 25,
+          "y": 373.140625,
+          "width": 340,
+          "height": 95.6875,
+          "top": 373.140625,
+          "right": 365,
+          "bottom": 468.828125,
+          "left": 25
+        },
+        "list": {
+          "x": 25,
+          "y": 673.578125,
+          "width": 340,
+          "height": 540.15625,
+          "top": 673.578125,
+          "right": 365,
+          "bottom": 1213.734375,
+          "left": 25
+        },
+        "primary": {
+          "x": 112,
+          "y": 753,
+          "width": 178,
+          "height": 56.609375,
+          "top": 753,
+          "right": 290,
+          "bottom": 809.609375,
+          "left": 112
+        },
+        "controls": [
+          {
+            "rect": {
+              "x": 25,
+              "y": 400.140625,
+              "width": 194.078125,
+              "height": 44,
+              "top": 400.140625,
+              "right": 219.078125,
+              "bottom": 444.140625,
+              "left": 25
+            },
+            "font": "14px"
+          },
+          {
+            "rect": {
+              "x": 227.078125,
+              "y": 400.140625,
+              "width": 52.828125,
+              "height": 44,
+              "top": 400.140625,
+              "right": 279.90625,
+              "bottom": 444.140625,
+              "left": 227.078125
+            },
+            "font": "13px"
+          },
+          {
+            "rect": {
+              "x": 287.90625,
+              "y": 400.140625,
+              "width": 77.09375,
+              "height": 44,
+              "top": 400.140625,
+              "right": 365,
+              "bottom": 444.140625,
+              "left": 287.90625
+            },
+            "font": "13px"
+          }
+        ],
+        "overflow": [],
+        "inputLabel": "装备名称"
+      }
+    },
+    {
+      "name": "layout-320",
+      "checks": [
+        {
+          "label": "intended local game identity",
+          "pass": true
+        },
+        {
+          "label": "meaningful game UI, not a blank page",
+          "pass": true
+        },
+        {
+          "label": "loading and opening inventory preserve complete state",
+          "pass": true
+        },
+        {
+          "label": "visible result order equals full-array filtered order",
+          "pass": true
+        },
+        {
+          "label": "pagination derives from actual filtered result",
+          "pass": true
+        },
+        {
+          "label": "no document horizontal overflow",
+          "pass": true
+        },
+        {
+          "label": "search stays inside viewport",
+          "pass": true
+        },
+        {
+          "label": "search copy and buttons do not overflow",
+          "pass": true
+        },
+        {
+          "label": "native input has an explicit visible label",
+          "pass": true
+        },
+        {
+          "label": "search control has a usable horizontal rectangle",
+          "pass": true
+        },
+        {
+          "label": "search control text remains at least 12px",
+          "pass": true
+        },
+        {
+          "label": "search control has a usable horizontal rectangle",
+          "pass": true
+        },
+        {
+          "label": "search control text remains at least 12px",
+          "pass": true
+        },
+        {
+          "label": "search control has a usable horizontal rectangle",
+          "pass": true
+        },
+        {
+          "label": "search control text remains at least 12px",
+          "pass": true
+        },
+        {
+          "label": "narrow search controls have 44px minimum height",
+          "pass": true
+        },
+        {
+          "label": "narrow search controls have 44px minimum height",
+          "pass": true
+        },
+        {
+          "label": "narrow search controls have 44px minimum height",
+          "pass": true
+        },
+        {
+          "label": "search keeps primary and mirror byte-identical",
+          "pass": true
+        },
+        {
+          "label": "no relevant app/console errors",
+          "pass": true
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "search-320.png"
+      ],
+      "status": "PASS",
+      "identity": {
+        "url": "http://127.0.0.1:4189/",
+        "title": "骰狱：无尽深渊 · Dice Abyss",
+        "viewport": {
+          "width": 320,
+          "height": 740
+        },
+        "scale": 1
+      },
+      "layout": {
+        "width": 320,
+        "height": 740,
+        "documentWidth": 320,
+        "search": {
+          "x": 21,
+          "y": 373.140625,
+          "width": 278,
+          "height": 95.6875,
+          "top": 373.140625,
+          "right": 299,
+          "bottom": 468.828125,
+          "left": 21
+        },
+        "list": {
+          "x": 21,
+          "y": 714.765625,
+          "width": 278,
+          "height": 473.59375,
+          "top": 714.765625,
+          "right": 299,
+          "bottom": 1188.359375,
+          "left": 21
+        },
+        "primary": {
+          "x": 106,
+          "y": 649,
+          "width": 132,
+          "height": 56.609375,
+          "top": 649,
+          "right": 238,
+          "bottom": 705.609375,
+          "left": 106
+        },
+        "controls": [
+          {
+            "rect": {
+              "x": 21,
+              "y": 400.140625,
+              "width": 132.078125,
+              "height": 44,
+              "top": 400.140625,
+              "right": 153.078125,
+              "bottom": 444.140625,
+              "left": 21
+            },
+            "font": "14px"
+          },
+          {
+            "rect": {
+              "x": 161.078125,
+              "y": 400.140625,
+              "width": 52.828125,
+              "height": 44,
+              "top": 400.140625,
+              "right": 213.90625,
+              "bottom": 444.140625,
+              "left": 161.078125
+            },
+            "font": "13px"
+          },
+          {
+            "rect": {
+              "x": 221.90625,
+              "y": 400.140625,
+              "width": 77.09375,
+              "height": 44,
+              "top": 400.140625,
+              "right": 299,
+              "bottom": 444.140625,
+              "left": 221.90625
+            },
+            "font": "13px"
+          }
+        ],
+        "overflow": [],
+        "inputLabel": "装备名称"
+      }
+    },
+    {
+      "name": "search-keyboard-and-state",
+      "checks": [
+        {
+          "label": "intended local game identity",
+          "pass": true
+        },
+        {
+          "label": "meaningful game UI, not a blank page",
+          "pass": true
+        },
+        {
+          "label": "loading and opening inventory preserve complete state",
+          "pass": true
+        },
+        {
+          "label": "typing does not rerender or replace the input",
+          "pass": true
+        },
+        {
+          "label": "draft typing has not applied a filter",
+          "pass": true
+        },
+        {
+          "label": "unsubmitted draft survives sorting",
+          "pass": true
+        },
+        {
+          "label": "visible result order equals full-array filtered order",
+          "pass": true
+        },
+        {
+          "label": "pagination derives from actual filtered result",
+          "pass": true
+        },
+        {
+          "label": "Enter search restores native input focus",
+          "pass": true
+        },
+        {
+          "label": "visible result order equals full-array filtered order",
+          "pass": true
+        },
+        {
+          "label": "pagination derives from actual filtered result",
+          "pass": true
+        },
+        {
+          "label": "visible result order equals full-array filtered order",
+          "pass": true
+        },
+        {
+          "label": "pagination derives from actual filtered result",
+          "pass": true
+        },
+        {
+          "label": "ordinary navigation retains name filter",
+          "pass": true
+        },
+        {
+          "label": "clear name retains rarity",
+          "pass": true
+        },
+        {
+          "label": "visible result order equals full-array filtered order",
+          "pass": true
+        },
+        {
+          "label": "pagination derives from actual filtered result",
+          "pass": true
+        },
+        {
+          "label": "empty search exposes clear-all recovery",
+          "pass": true
+        },
+        {
+          "label": "visible result order equals full-array filtered order",
+          "pass": true
+        },
+        {
+          "label": "pagination derives from actual filtered result",
+          "pass": true
+        },
+        {
+          "label": "all search/filter/navigation operations never write game state",
+          "pass": true
+        },
+        {
+          "label": "real item lock commits exactly once after searching",
+          "pass": true
+        },
+        {
+          "label": "refresh restores the exact committed item state",
+          "pass": true
+        },
+        {
+          "label": "no relevant app/console errors",
+          "pass": true
+        }
+      ],
+      "errors": [],
+      "screenshots": [],
+      "status": "PASS",
+      "identity": {
+        "url": "http://127.0.0.1:4189/",
+        "title": "骰狱：无尽深渊 · Dice Abyss",
+        "viewport": {
+          "width": 1920,
+          "height": 1080
+        },
+        "scale": 1
+      }
+    },
+    {
+      "name": "full-bag-search-and-whole-bag-recycle",
+      "checks": [
+        {
+          "label": "fixture has a real large safe batch",
+          "pass": true
+        },
+        {
+          "label": "intended local game identity",
+          "pass": true
+        },
+        {
+          "label": "meaningful game UI, not a blank page",
+          "pass": true
+        },
+        {
+          "label": "loading and opening inventory preserve complete state",
+          "pass": true
+        },
+        {
+          "label": "visible result order equals full-array filtered order",
+          "pass": true
+        },
+        {
+          "label": "pagination derives from actual filtered result",
+          "pass": true
+        },
+        {
+          "label": "name search finds the last item without visiting 167 pages",
+          "pass": true
+        },
+        {
+          "label": "recycling explicitly declares whole-bag scope",
+          "pass": true
+        },
+        {
+          "label": "confirmation shows full safe batch, not the one search result",
+          "pass": true
+        },
+        {
+          "label": "cancel retains both exact durable copies",
+          "pass": true
+        },
+        {
+          "label": "large confirmed recycling exactly matches engine state",
+          "pass": true
+        },
+        {
+          "label": "locked equipment survives large recycling",
+          "pass": true
+        },
+        {
+          "label": "both durable copies agree after large recycling",
+          "pass": true
+        },
+        {
+          "label": "removed search result exposes clear-filter recovery",
+          "pass": true
+        },
+        {
+          "label": "large recycling survives a real reload",
+          "pass": true
+        },
+        {
+          "label": "no relevant app/console errors",
+          "pass": true
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "recycle-complete.png"
+      ],
+      "status": "PASS",
+      "identity": {
+        "url": "http://127.0.0.1:4189/",
+        "title": "骰狱：无尽深渊 · Dice Abyss",
+        "viewport": {
+          "width": 1920,
+          "height": 1080
+        },
+        "scale": 1
+      }
+    },
+    {
+      "name": "primary-failure-preserves-batch",
+      "checks": [
+        {
+          "label": "intended local game identity",
+          "pass": true
+        },
+        {
+          "label": "meaningful game UI, not a blank page",
+          "pass": true
+        },
+        {
+          "label": "loading and opening inventory preserve complete state",
+          "pass": true
+        },
+        {
+          "label": "failed primary write cannot remove any owned item or credit gold",
+          "pass": true
+        },
+        {
+          "label": "failure preserves complete initial state",
+          "pass": true
+        },
+        {
+          "label": "failed batch remains reviewable",
+          "pass": true
+        },
+        {
+          "label": "no relevant app/console errors",
+          "pass": true
+        }
+      ],
+      "errors": [],
+      "screenshots": [],
+      "status": "PASS",
+      "identity": {
+        "url": "http://127.0.0.1:4189/",
+        "title": "骰狱：无尽深渊 · Dice Abyss",
+        "viewport": {
+          "width": 1920,
+          "height": 1080
+        },
+        "scale": 1
+      }
+    },
+    {
+      "name": "cross-tab-draft-and-stale-batch",
+      "checks": [
+        {
+          "label": "intended local game identity",
+          "pass": true
+        },
+        {
+          "label": "meaningful game UI, not a blank page",
+          "pass": true
+        },
+        {
+          "label": "loading and opening inventory preserve complete state",
+          "pass": true
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "cross-tab-draft-and-stale-batch-FAIL.png"
+      ],
+      "status": "FAIL",
+      "identity": {
+        "url": "http://127.0.0.1:4189/",
+        "title": "骰狱：无尽深渊 · Dice Abyss",
+        "viewport": {
+          "width": 1920,
+          "height": 1080
+        },
+        "scale": 1
+      },
+      "error": "TimeoutError: page.waitForFunction: Timeout 20000ms exceeded.",
+      "stack": "page.waitForFunction: Timeout 20000ms exceeded.\n    at /workspace/scratch/2e03d78caae4/work/Dice-Abyss/scripts/qa-inventory-search-round15.mjs:121:16\n    at async run (/workspace/scratch/2e03d78caae4/work/Dice-Abyss/scripts/qa-inventory-search-round15.mjs:67:190)\n    at async file:///workspace/scratch/2e03d78caae4/work/Dice-Abyss/scripts/qa-inventory-search-round15.mjs:117:3"
+    }
+  ],
+  "browser": "155.0.8059.84",
+  "sourceAfter": {
+    "index.html": "e206980c6cf3ad3fd85d6584418d92524a3f99dab8935b8f8b8ea49d9dfac958",
+    "package.json": "9a9ebb41eaa9210c1554037a7bd92db7f3542c42a6261225eb1f1f4515e6a910",
+    "src/action-focus.js": "d5e383b4f8aeb138b6cdffc7f3dffe12cf0db7fcbac053df713dec60b3b95a98",
+    "src/app.js": "1708721304f1874507b3e592fa2f7ffa3e15eb4eee516df6a34a68c7316e2753",
+    "src/content.js": "4c0c2e4656c5a3482a5448a069ae2fa28367ba05d61c7d0c2c9866315f5c5526",
+    "src/decisions.css": "0d1cb07494d08a26d39cca89d19f7ac875b78b67d5bf3fbad44b99a9a7a03b23",
+    "src/deep-content.js": "040a5668b687cf9d7b7c8b31a67cee35660ebb0539af74c7d572614f138fef33",
+    "src/deep-rules.js": "6f6c096e37c9f18a6ca97625330a6ab8ce55b25852e677455d3a200c8200dbe1",
+    "src/deep.css": "24f0ed8bf2969232c660a595cd5e19b206066bc4a19a983e4bd3a277b82700cc",
+    "src/defeat-review.css": "c2343b936d4456b36c557f3c821cdb812a3d6cdcc2c061ea11a2197a56158598",
+    "src/defeat-review.js": "13c14a8184266dc4b443570e5e38b25b668bfa4b818401453d7248f5f6749938",
+    "src/dice-motion.js": "3b088b9efa03552912bd92b18dc66d6122f45e2f12dc420305bb877deae5139a",
+    "src/dice-renderer.js": "b40e1e1c808b00d319b70ce7546403c588cdcc8397bba684fe19b2f4c0bca6d8",
+    "src/effects.js": "5f95f77e882a690f95215babda3cdedc0d398bbcfaabfecd3d486141200dc6f9",
+    "src/encounter-tactics.js": "02e0da7aa57de321319812503556d9e5925463644222305755e86de6c3fa355b",
+    "src/encounters.js": "c3c6e2d24049305d73982cf5db3b1cf02eee68f4e8e1659fd7e3021f74de0791",
+    "src/engine.js": "75c6d9fcc48c0cf49ee02e53ffb7b143a09a2c79738d3bb2eb5d0ae80b30872b",
+    "src/equipment-comparison.js": "2a2a819b22d0d1746893bb2222bfbeb7e6fcf20f10046fc7b64897c260be952d",
+    "src/equipment-content.js": "d95b5e7c11d14eb764ea3cefb7eee73f35b2f9d48a8b640513eda9aefd1cc030",
+    "src/equipment.js": "8c20de433f21931318e315b862b457d37a03b9596ea5df8f7cc4025691aaccd6",
+    "src/expansion.css": "d5c01857bf02a4566270f23ef389aad76e033e50bd5440ecb13665ce81818424",
+    "src/experience.css": "4a8175dfcf26c06e2e75126956d6e2d7749ef8c2f11c7026091faa7252c3c883",
+    "src/experience.js": "2bdd3727c59b537f45a22d2e9aae9a93908a76e29850c8e8e8e024cbeaf93c45",
+    "src/forge.css": "9a7ee960f3494e39ac102abf7b9476cacffdd89eea1803e52469b441e124823f",
+    "src/fusion-controller.js": "5a4a0c6a11c7a347ffcdaa0340d3c905d65aa5ba6b50e36e7135a9276537dd1a",
+    "src/fusion-dom.js": "fb78398073fdccaea6680146c34ac18de75d926439c7044ed45da39f625e4023",
+    "src/fusion-view.js": "e77542f7de4c6f39ac57098ffb7a277caab988cd4bcc9ea5f50080b0f08e96c1",
+    "src/fusion-workbench.js": "06f206dc578534c641f0fe327c48a4ec70ccffeed79fe8076ccd83cfb56263bf",
+    "src/fusion.css": "9b6fe3edaa023ae1c7702e60e3110d9450a6ca03a737f74dd984baf0fb083bc5",
+    "src/gold.css": "bb1313da6f3a734567be73e23c606c56c1215bc976e166c9dc2b1fedb06c6393",
+    "src/gold.js": "252aab60750432e1b5f1dc158c4a8f69e3dca5d72fa016b69c03c29ac651a244",
+    "src/inventory-dom.js": "7f3b18a6b3dbcc3a0a100c94bab35d9e81a14d7a6c74e8eabfdff3d151d35bf0",
+    "src/inventory-query.js": "7cf093f155934779d21c4dceb0a6aeef2e467fdb8c763413c155b6c0fd52a4c5",
+    "src/inventory-search.css": "23c86fb48164019c556c923709078ebaf2eb91df301d5f3da6cc1e828d8c81ce",
+    "src/polish.css": "84af5e0bfc563c830287d96103faff4b1673c7d363a9cfbc26995a5074265df8",
+    "src/progression.css": "31125ec19b19b527f9d0499d9b045874b0d37e2d6eb8fdcc729e58bf783368ec",
+    "src/quality.css": "3785daf1b16c66942383c8285376a66fee42c2a21c0b1450c251870333919bb8",
+    "src/rarity.js": "871356df147d027e1845f98c5574a1d9a71c0d17bd8717f457c9007d7c73b735",
+    "src/refinement.css": "79a8599ca5415c933de1161575edb25601f4efdbf57be4c45dc82033abb1fffd",
+    "src/release.js": "337a97663cb8961b40a0f4fbfa6274aa21aec308d2bf15c84ed892167f28b6b6",
+    "src/responsive.css": "90bb585d66a88daa61a553112c66610b62b666aa07c28ad887b521534283cee8",
+    "src/rooms.css": "a426209cd05ccb3125a88713ea8693b04b47b65e179c605538b5053fe616c606",
+    "src/route-weights.js": "b21499b8c44a17ad09caab5e17f312073b269981b6ac7eb916b5f656912237dd",
+    "src/save-capacity-view.js": "cd729b8ce91cf5aad772f0fcc468cfac5b389a48ff1a03e905907ade23ea7867",
+    "src/save-recovery-view.js": "47e9041a86415c6bc04e5ae66803d6d8dfa6fbb2cabb8f800ce67f29a199153d",
+    "src/save-recovery.css": "7085ab430d2f1193955b84848d8f2af88faeab0d065c427ee5e7b88b5e254c2e",
+    "src/settings-focus.js": "7c4b93a9c8830598319e2a3d8d2750cb33f5c0a1cc5b89dbd6154b985db3366f",
+    "src/storage.js": "6bfcc60036c9f729c21b948ca98c7ac715e14049856fb9dded0baa2aeef2c561",
+    "src/styles.css": "dc835715e16e8698214d25202a39df6162c865287e6ac605c111486066764044",
+    "src/talent.css": "350f583103186b0b44fc50317d92c20417fed82fe4e8667bf1776390b2425334",
+    "src/views.js": "cc7b8a34b8e252c77ec4579b7b7bc781123c1f50a5d1c5a3d9a7ea728c8c2072",
+    "src/visual-timeline.js": "f518084da44c2ea852bf902ba6ffc7f8f5a94ee815dac31bcc4726cc8cd44369",
+    "src/visual.css": "35ec8f94b238d355f6fad93855d4b20794157e3d9c592dcf777cf25dcb2e05bd"
+  },
+  "sourceStable": true,
+  "finished": "2026-10-19T01:04:02.337Z",
+  "checks": 160,
+  "passes": 8,
+  "failures": [
+    "layout-1366",
+    "cross-tab-draft-and-stale-batch"
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "synthetic": true,
+  "mode": "fixed",
+  "url": "http://127.0.0.1:4193",
+  "browser": "155.0.8059.84",
+  "started": "2026-10-17T16:44:12.461Z",
+  "cases": [
+    {
+      "name": "narrow-emulated-touch-details-and-selection",
+      "status": "FAIL",
+      "checks": 8,
+      "ms": 3506.0081430000005,
+      "trace": [
+        {
+          "label": "Expected game title",
+          "passed": true
+        },
+        {
+          "label": "Workbench content is visible",
+          "passed": true
+        },
+        {
+          "label": "Two native touch taps choose a target and one material",
+          "passed": true
+        },
+        {
+          "label": "Emulated touch does not leave a passive hover overlay",
+          "passed": true
+        },
+        {
+          "label": "Visible touch details button inspects the last touched equipment",
+          "passed": true
+        },
+        {
+          "label": "Narrow dialog fits the viewport without horizontal clipping",
+          "passed": true
+        },
+        {
+          "label": "Touch close control is visible without scrolling",
+          "passed": true
+        },
+        {
+          "label": "Touch close leaves no synthetic hover resurrection",
+          "passed": false
+        }
+      ],
+      "error": "AssertionError [ERR_ASSERTION]: Touch close leaves no synthetic hover resurrection",
+      "stack": "AssertionError [ERR_ASSERTION]: Touch close leaves no synthetic hover resurrection\n    at check (file:///workspace/scratch/98883f3944af/round05/work/Dice-Abyss/scripts/qa-fusion-tooltip.mjs:23:88)\n    at run.viewport.width (file:///workspace/scratch/98883f3944af/round05/work/Dice-Abyss/scripts/qa-fusion-tooltip.mjs:209:7)\n    at async run (file:///workspace/scratch/98883f3944af/round05/work/Dice-Abyss/scripts/qa-fusion-tooltip.mjs:65:9)\n    at async file:///workspace/scratch/98883f3944af/round05/work/Dice-Abyss/scripts/qa-fusion-tooltip.mjs:188:5"
+    }
+  ],
+  "errors": [],
+  "checks": 8,
+  "scope": "Functional synthetic-save desktop, narrow viewport, keyboard and emulated touch tests. No physical device, screen reader, GPU or performance claim.",
+  "touchDialogGeometry": {
+    "left": 16,
+    "top": 125.265625,
+    "right": 374,
+    "bottom": 718.734375,
+    "width": 390,
+    "height": 844,
+    "horizontalOverflow": false
+  },
+  "touchCloseEvents": [
+    {
+      "type": "pointerover",
+      "pointerType": "touch",
+      "tag": "BUTTON",
+      "class": "fusion-details-close"
+    },
+    {
+      "type": "pointerdown",
+      "pointerType": "touch",
+      "tag": "BUTTON",
+      "class": "fusion-details-close"
+    },
+    {
+      "type": "pointerup",
+      "pointerType": "touch",
+      "tag": "BUTTON",
+      "class": "fusion-details-close"
+    },
+    {
+      "type": "focusout",
+      "touchSource": true,
+      "tag": "DIV",
+      "class": "fusion-details-content"
+    },
+    {
+      "type": "focusin",
+      "touchSource": true,
+      "tag": "BUTTON",
+      "class": "fusion-details-close"
+    },
+    {
+      "type": "focusout",
+      "tag": "BUTTON",
+      "class": "fusion-details-close"
+    },
+    {
+      "type": "focusin",
+      "tag": "BUTTON",
+      "class": "fusion-details-trigger"
+    },
+    {
+      "type": "focusout",
+      "tag": "BUTTON",
+      "class": "fusion-details-trigger"
+    },
+    {
+      "type": "focusin",
+      "tag": "BUTTON",
+      "class": "fusion-card common  is-selected   ",
+      "item": "i98"
+    },
+    {
+      "type": "pointerover",
+      "pointerType": "mouse",
+      "tag": "STRONG",
+      "class": "fusion-card-name",
+      "item": "i99"
+    }
+  ],
+  "finished": "2026-10-17T16:44:16.356Z",
+  "scriptSha256": "617cc0f8769515584b4479389b269c4f9271756d362603a2b8200e265eb78b74"
+}

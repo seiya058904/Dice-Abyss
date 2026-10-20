@@ -1,0 +1,62 @@
+{
+  "audit": "round19-standard-simulation-fresh-input-current-comparison",
+  "referenceScope": "Both sides actually executed this round using node scripts/simulate.mjs 1000; each includes the existing 50 no-shopping seeds.",
+  "baseline": {
+    "file": "/workspace/scratch/793424e1640c/qa-baseline/simulation.stdout",
+    "bytes": 9409,
+    "sha256": "266fa5b56516410712395796f197a2e33ad1b1e16ede45de14b872f208007d77",
+    "run": {
+      "name": "simulation",
+      "command": [
+        "node",
+        "scripts/simulate.mjs",
+        "1000"
+      ],
+      "cwd": "/workspace/scratch/793424e1640c/baseline/Dice-Abyss",
+      "started": "2026-10-19T08:34:36.755050+00:00",
+      "finished": "2026-10-19T08:38:42.082603+00:00",
+      "elapsedSeconds": 245.3276,
+      "exitCode": 0,
+      "stdout": "/workspace/scratch/793424e1640c/qa-baseline/simulation.stdout",
+      "stderr": "/workspace/scratch/793424e1640c/qa-baseline/simulation.stderr"
+    }
+  },
+  "current": {
+    "file": "/workspace/scratch/793424e1640c/qa-current/simulation.stdout",
+    "bytes": 9409,
+    "sha256": "266fa5b56516410712395796f197a2e33ad1b1e16ede45de14b872f208007d77",
+    "run": {
+      "name": "simulation",
+      "command": [
+        "node",
+        "scripts/simulate.mjs",
+        "1000"
+      ],
+      "cwd": "/workspace/scratch/793424e1640c/work/Dice-Abyss",
+      "started": "2026-10-19T08:41:42.316225+00:00",
+      "finished": "2026-10-19T08:45:36.118019+00:00",
+      "elapsedSeconds": 233.8018,
+      "exitCode": 0,
+      "stdout": "/workspace/scratch/793424e1640c/qa-current/simulation.stdout",
+      "stderr": "/workspace/scratch/793424e1640c/qa-current/simulation.stderr"
+    }
+  },
+  "byteIdentical": true,
+  "fullParsedEqual": true,
+  "defaultFloors": 10,
+  "seeds": 1000,
+  "completed": 1000,
+  "failures": [],
+  "noShoppingSeeds": 50,
+  "noShoppingCompleted": 50,
+  "deaths": {
+    "min": 0,
+    "median": 0,
+    "p95": 0,
+    "max": 0,
+    "mean": 0
+  },
+  "noShoppingDeaths": 0,
+  "timingScope": "Elapsed command times only; jobs shared the CPU with other correctness checks. No performance improvement claim.",
+  "passed": true
+}

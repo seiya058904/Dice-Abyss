@@ -1,0 +1,1175 @@
+--- a/index.html
++++ b/index.html
+@@ -3,7 +3,7 @@
+   <head>
+     <meta charset="UTF-8">
+     <meta name="dice-abyss-build" content="5">
+-    <meta name="dice-abyss-release" content="5.19.0">
++    <meta name="dice-abyss-release" content="5.20.0">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta name="theme-color" content="#08090b">
+     <meta name="description" content="A desktop-first, single-player dice dungeon RPG. Roll manually, explore the dungeon, and earn loot after every kill.">
+@@ -33,6 +33,7 @@
+     <link rel="stylesheet" href="./src/inventory-search.css">
+     <link rel="stylesheet" href="./src/boons.css">
+     <link rel="stylesheet" href="./src/event-equipment.css">
++    <link rel="stylesheet" href="./src/event-risk.css">
+ </head>
+   <body>
+     <div id="app"></div>
+--- a/package.json
++++ b/package.json
+@@ -1,6 +1,6 @@
+ {
+   "name": "dice-abyss",
+-  "version": "5.19.0",
++  "version": "5.20.0",
+   "private": true,
+   "type": "module",
+   "description": "A desktop-first, single-player dice dungeon RPG.",
+--- /dev/null
++++ b/scripts/audit-event-risk-round20.mjs
+@@ -0,0 +1,206 @@
++import assert from 'node:assert/strict';
++import {createHash} from 'node:crypto';
++import {readFile,writeFile,mkdir} from 'node:fs/promises';
++import {existsSync} from 'node:fs';
++import {resolve,dirname} from 'node:path';
++import {tmpdir} from 'node:os';
++import {pathToFileURL,fileURLToPath} from 'node:url';
++import {gzipSync} from 'node:zlib';
++
++// Optional, standard-library-only QA. No game state is changed by this script;
++// it creates labelled synthetic states, then invokes the real engine on copies.
++// --source defaults to this complete project's root; --output is a file prefix.
++const args=process.argv.slice(2),options={},positional=[];
++for(let i=0;i<args.length;i++){
++ const arg=args[i];if(!arg.startsWith('--')){positional.push(arg);continue;}
++ const match=arg.match(/^--(source|output)(?:=(.*))?$/);
++ if(match){const value=match[2]??args[++i];if(!value||value.startsWith('--'))throw Error(`Missing --${match[1]} value`);options[match[1]]=value;}
++ else if(arg==='--require-preview')options.requirePreview=true;
++ else if(arg==='--help')options.help=true;
++ else throw Error(`Unknown argument: ${arg}`);
++}
++if(options.help){console.log('Usage: node scripts/audit-event-risk-round20.mjs [--source=/path/to/project] [--output=/tmp/dice-risk] [--require-preview]\nOutputs: <prefix>.json.gz (complete results) and <prefix>-summary.json. Baseline without the new model is supported unless --require-preview is set.');process.exit(0);}
++const root=resolve(options.source||positional[0]||resolve(dirname(fileURLToPath(import.meta.url)),'..'));
++const output=resolve(options.output||positional[1]||resolve(tmpdir(),'dice-event-risk-round20'));
++const imp=p=>import(pathToFileURL(resolve(root,p)));
++const [E,S,C,R,H,V]=await Promise.all(['src/engine.js','src/storage.js','src/encounters.js','src/rarity.js','scripts/audit-event-context.mjs','src/views.js'].map(imp));
++const preview=existsSync(resolve(root,'src/event-risk.js'))?(await imp('src/event-risk.js')).eventRiskPreview:null;
++if(options.requirePreview)assert.equal(typeof preview,'function','--require-preview requires the new model');
++const sha=v=>createHash('sha256').update(typeof v==='string'?v:JSON.stringify(v)).digest('hex');
++const dependencies=['src/engine.js','src/storage.js','src/encounters.js','src/deep-rules.js','src/rarity.js','src/gold.js','src/equipment.js','src/views.js','scripts/audit-event-context.mjs',...(preview?['src/event-risk.js']:[])];
++const sourceBefore=Object.fromEntries(await Promise.all(dependencies.map(async p=>[p,sha(await readFile(resolve(root,p),'utf8'))])));
++const rows=[],boundaries=[],snapshots=[],viewRows=[];
++const counts={representatives:0,allFaceGroups:0,settlementCases:0,codecPairs:0,quoteChecks:0,guardChecks:0,transactionChecks:0,viewCases:0};
++const close=(a,b)=>assert(Math.abs(a-b)<1e-11,`${a} != ${b}`);
++// An independently written closed-form table cross-checks the model's helper
++// composition. It covers the two actual sources, their floor gates and the
++// event minimum transform; it does not call dropOdds/rarityProbabilities.
++function conditionalRarities(s,minimum){
++ const expected=Array(8).fill(0);
++ if(s.event.key==='gambit'&&s.floor<30){expected[minimum]=1;return expected;}
++ const vault=s.event.key==='wishingvault'||minimum>=2,factor=vault?4:1;
++ const specs=[[30,.008,.042,65],[50,.003,.027,85],[80,.0015,.0165,140],[140,.0007,.0093,260]];
++ for(let i=0;i<4;i++){const [unlock,start,gain,ramp]=specs[i];if(s.floor>=unlock)expected[i+4]=(start+gain*Math.min(1,(s.floor-unlock)/ramp))*factor;}
++ const total=expected.reduce((a,b)=>a+b,0);if(total>.55)for(let r=4;r<8;r++)expected[r]*=.55/total;
++ const remaining=1-expected.reduce((a,b)=>a+b,0),base=Array(4).fill(0);
++ if(vault){base[2]=.7;base[3]=.3;}
++ else{
++  const luck=E.diceOdds(s).luck,fate=(s.fate[0]+s.fate[1]-2)/10;
++  const legend=.012+Math.min(.12,s.floor*.002)+fate*.008+luck*.00015,epic=.12+fate*.08,rare=.48+fate*.15;
++  base[3]=legend;base[2]=Math.max(0,epic-legend);base[1]=Math.max(0,rare-Math.max(legend,epic));base[0]=1-Math.max(legend,epic,rare);
++ }
++ for(let rarity=0;rarity<4;rarity++)expected[Math.max(minimum,rarity)]+=base[rarity]*remaining;
++ return expected;
++}
++function fixture(key,floor=140,boost=false){
++ const s=H.eventFixture({E,S},key,{seed:19020,floor,rich:true,spares:false});
++ s.runId=`independent-risk-${key}-${floor}-${boost}`;
++ s.auditRisk={preserved:{label:'full unknown state',values:[1,null,{text:'不改变'}]}};
++ s.event.auditRisk={old:'preserved event metadata'};
++ s.player.items[0].auditRisk={values:['old equipment',1]};
++ if(boost){s.nextLuck=24;s.eventLuck=20;s.player.fateBlessings=5;s.player.talents.luck=5;s.player.talents.attune=5;}
++ assert(S.validateSave(s));return s;
++}
++const faceKey=s=>s.event.key==='gambit'?String(s.event.roll):s.event.rolls.join(',');
++function verifyQuote(s,choice='roll'){
++ if(!preview)return null;
++ const before=S.encodeSave(s),q=preview(s,choice);assert(q);assert.equal(S.encodeSave(s),before);
++ const choiceDef=C.eventChoices(s).find(o=>o.id===choice);assert.equal(q.available,!choiceDef.disabled);
++ const L=E.diceOdds(s).luck,t=1.5*L/(L+40),a=1+t,b=1+1.4*t,Z=4+a+b;
++ const expected=choice==='safe'?[1]:s.event.key==='gambit'?[2/Z,2/Z,(a+b)/Z]:[10/(Z*Z),1-(10+2*b+(a+b)**2)/(Z*Z),(2*b+(a+b)**2)/(Z*Z)];
++ q.outcomes.forEach((r,i)=>close(r.probability,expected[i]));close(q.outcomes.reduce((n,r)=>n+r.probability,0),1);
++ assert.equal(q.usesEcho,false);assert.equal(q.chestGoldIncluded,false);assert.equal(q.settlement,'choice-only');
++ assert.equal(q.costGold,s.event.costGold*(choice==='safe'?2:1));
++ for(const row of q.outcomes){
++  if(row.rarityFloor===null){assert(row.rarityProbabilities.every(n=>n===0));continue;}
++  close(row.rarityProbabilities.reduce((a,b)=>a+b,0),1);
++  row.rarityProbabilities.forEach((probability,rarity)=>close(probability,conditionalRarities(s,row.rarityFloor)[rarity]));
++  for(let rarity=0;rarity<8;rarity++)if(rarity<row.rarityFloor||rarity>R.highestRarity(s.floor))assert.equal(row.rarityProbabilities[rarity],0);
++ }
++ if(!q.available){assert.equal(q.goldAfterPayment,null);assert.equal(q.balanceRange,null);assert.equal(q.netCostRange,null);assert(q.outcomes.every(r=>r.goldAfterChoice===null&&r.netCostGold===null&&r.refund.credited===null));}
++ counts.quoteChecks++;return q;
++}
++function settle(s,choice='roll'){
++ const before=S.encodeSave(s),q=verifyQuote(s,choice),cost=s.event.costGold*(choice==='safe'?2:1);
++ const action={type:'event-choice',id:choice,confirmed:true};
++ assert.strictEqual(E.transition(s,{...action,confirmed:false}),s);counts.guardChecks++;
++ const after=E.transition(s,action);assert.notStrictEqual(after,s);assert.equal(S.encodeSave(s),before);
++ assert(S.validateSave(after));assert.deepEqual(S.decodeSave(S.encodeSave(after)),after);assert.deepEqual(S.decodeSave(before),s);counts.codecPairs++;
++ assert.equal(after.event.status,'resolved');assert.equal(after.nextLuck,s.nextLuck);
++ assert.deepEqual(after.auditRisk,s.auditRisk);assert.deepEqual(after.event.auditRisk,s.event.auditRisk);assert.deepEqual(after.player.items,s.player.items);
++ assert.strictEqual(E.transition(after,action),after);counts.guardChecks++;
++ if(preview){assert.equal(preview(after,choice),null);counts.quoteChecks++;}
++ const rolled=s.event.key==='gambit'?after.event.roll:after.event.rolls.reduce((a,b)=>a+b,0);
++ const refund=choice==='safe'?false:s.event.key==='gambit'?rolled<=2:rolled<=5;
++ const minimum=choice==='safe'?1:s.event.key==='gambit'?(rolled>=5?2:1):(rolled>=10?3:2);
++ const rawRefund=refund?Math.floor(cost/2):0;
++ assert.equal(after.player.gold,s.player.gold-cost+rawRefund);
++ assert.equal(after.phase,refund?'event':'chest');
++ if(!refund){assert(after.chest.item.rarity>=minimum);assert(after.chest.item.rarity<=R.highestRarity(s.floor));if(s.event.key==='gambit'&&s.floor<30)assert.equal(after.chest.item.rarity,minimum);}
++ if(q){
++  const branch=q.outcomes.find(r=>refund?r.key==='refund':r.rarityFloor===minimum);assert(branch);
++  assert.equal(branch.goldAfterChoice,after.player.gold);assert.equal(branch.netCostGold,s.player.gold-after.player.gold);assert.equal(branch.refund.credited,rawRefund);assert.equal(branch.refund.overflow,0);
++  if(!refund){assert(branch.rarityProbabilities[after.chest.item.rarity]>0);if(branch.itemLevelRange)assert(after.chest.item.level>=branch.itemLevelRange.min&&after.chest.item.level<=branch.itemLevelRange.max);}
++  counts.quoteChecks++;
++ }
++ counts.settlementCases++;
++ return {after,row:{key:s.event.key,floor:s.floor,boost:s.nextLuck>0,choice,cost,beforeGold:s.player.gold,afterGold:after.player.gold,refund:rawRefund,face:choice==='safe'?null:faceKey(after),rngStart:s.rng,rngEnd:after.rng,rarity:refund?null:after.chest.item.rarity,itemLevel:refund?null:after.chest.item.level,nextLuckBefore:s.nextLuck,nextLuckAfter:after.nextLuck,beforeSha256:sha(before),afterSha256:sha(S.encodeSave(after))}};
++}
++function representatives(s){
++ const target=s.event.key==='gambit'?6:36,seen=new Map();
++ for(let i=1;i<=10000&&seen.size<target;i++){
++  const candidate=structuredClone(s);candidate.rng=((i*2654435761)>>>0)||1;
++  const after=E.transition(candidate,{type:'event-choice',id:'roll',confirmed:true}),key=faceKey(after);
++  if(!seen.has(key))seen.set(key,candidate);
++ }
++ assert.equal(seen.size,target);counts.allFaceGroups++;
++ return [...seen].sort((a,b)=>a[0].localeCompare(b[0])).map(([,s])=>s);
++}
++function auditView(s,choice='roll'){
++ if(!preview||typeof V.eventRiskView!=='function')return;
++ const before=S.encodeSave(s),q=verifyQuote(s,choice),html=V.eventRiskView(s,choice),summary=V.eventRiskChoiceSummary(s,choice);
++ assert(html.includes(`data-event-risk="${s.event.key}"`));assert(html.includes(`data-risk-choice="${choice}"`));
++ assert(!/\b(?:NaN|undefined|null)\b/.test(html+summary));
++ assert(html.includes('宝箱金币在开箱时另行结算'));
++ const percent=n=>n===0?'0%':n<.0001?'&lt;0.01%':`${(n*100).toFixed(2)}%`;
++ const detail=html.match(/<details class="event-risk-distribution">([\s\S]*?)<\/details>/)?.[1];assert(detail);
++ assert(detail.includes('达到对应点数后'));assert(detail.includes('条件概率'));
++ const pools=q.outcomes.filter(row=>row.rarityFloor!==null);
++ if(choice==='roll'&&s.event.key==='gambit')pools.push(preview(s,'safe').outcomes[0]);
++ const rarityRows=[...detail.matchAll(/<tr><th scope="row"[^>]*>[\s\S]*?<\/th>([\s\S]*?)<\/tr>/g)];assert.equal(rarityRows.length,8);
++ rarityRows.forEach((match,rarity)=>{
++  const cells=[...match[1].matchAll(/<td>(.*?)<\/td>/g)].map(match=>match[1]);assert.equal(cells.length,pools.length);
++  cells.forEach((cell,index)=>assert.equal(cell,percent(pools[index].rarityProbabilities[rarity])));
++ });
++ for(const outcome of q.outcomes){
++  const body=html.match(new RegExp(`<tr data-risk-outcome="${outcome.key}">([\\s\\S]*?)<\\/tr>`))?.[1];assert(body);
++  assert(body.includes(percent(outcome.probability)));
++  if(q.available)assert(body.includes(`余额 ${V.goldNum(outcome.goldAfterChoice)}`));
++  else assert(!body.includes('余额 '));
++  if(outcome.key==='refund')assert(body.includes(`返还 ${V.goldNum(outcome.refund.rawGold)} 金币`));
++ }
++ if(!q.available)assert(summary.includes(`还差 ${V.goldNum(q.costGold-q.goldBefore)} 金币`));
++ else{assert(summary.includes('净支出'));assert(summary.includes('选择后余额'));}
++ assert.equal(S.encodeSave(s),before);
++ viewRows.push({key:s.event.key,choice,price:s.event.costGold,held:s.player.gold,luck:q.luck,htmlSha256:sha(html),summarySha256:sha(summary)});counts.viewCases++;
++}
++
++for(const key of ['gambit','wishingvault'])for(const boost of [false,true]){
++ const s=fixture(key,140,boost),states=representatives(s);
++ for(const state of states){rows.push(settle(state).row);counts.representatives++;}
++ // All six / 36 results are retained, including refund and lower guarantee.
++ for(const floor of [1,29,30,49,50,79,80,139,400])for(const candidate of states.filter((s,i)=>i%7===0)){
++  const atFloor=fixture(key,floor,boost);atFloor.rng=candidate.rng;rows.push(settle(atFloor).row);
++ }
++ if(key==='gambit')for(const floor of [1,29,30,49,50,79,80,139,140,400])rows.push(settle(fixture(key,floor,boost),'safe').row);
++ for(const price of [0,1,835,100000000])for(const held of [0,price,2*price,E.GOLD_CAP]){
++  const edge=structuredClone(states[0]);edge.event.costGold=price;edge.player.gold=held;assert(S.validateSave(edge));
++  for(const choice of key==='gambit'?['roll','safe']:['roll']){
++   const q=verifyQuote(edge,choice),cost=price*(choice==='safe'?2:1),before=S.encodeSave(edge);
++   if(held<cost){assert.equal(q?.available??false,false);assert.strictEqual(E.transition(edge,{type:'event-choice',id:choice,confirmed:true}),edge);assert.equal(S.encodeSave(edge),before);counts.guardChecks++;boundaries.push({key,boost,price,held,choice,available:false});}
++   else{const {after,row}=settle(edge,choice);boundaries.push({...row,available:true});}
++  }
++ }
++ // Price is stored on entry; a later legal imported level must not reprice it.
++ const changed=structuredClone(states[0]);changed.player.level=101;changed.player.hp=Math.min(changed.player.hp,E.stats(changed).maxHp);assert(S.validateSave(changed));
++ const {row}=settle(changed);assert.equal(row.cost,s.event.costGold);boundaries.push({...row,case:'stored-price-after-level-change'});
++ const quoteInput=structuredClone(states[0]);
++ if(preview){
++  const guarded=Object.create(Object.getPrototypeOf(quoteInput),Object.getOwnPropertyDescriptors(quoteInput));Object.defineProperty(guarded,'rng',{get(){throw Error('preview must not inspect RNG');}});assert(preview(guarded));counts.quoteChecks++;
++  for(const phase of ['route','chest','loot','dead','cleared']){assert.equal(preview({...quoteInput,phase}),null);counts.quoteChecks++;}
++  const freeze=x=>{if(x&&typeof x==='object'&&!Object.isFrozen(x)){Object.values(x).forEach(freeze);Object.freeze(x);}return x;};assert(preview(freeze(structuredClone(quoteInput))));counts.quoteChecks++;
++ }
++ // Exercise the unchanged full storage transaction with unknown fields.
++ const next=settle(states[0]).after,original=S.encodeSave(states[0]);
++ for(const failure of ['primary','mirror','stale-unknown']){
++  const map=new Map([[S.SAVE_KEY,original],[S.BACKUP_KEY,original]]),writes=[];
++  const store={getItem:k=>map.get(k)??null,setItem(k,v){writes.push(k);if((failure==='primary'&&k===S.SAVE_KEY)||(failure==='mirror'&&k===S.BACKUP_KEY))throw Error('synthetic quota');map.set(k,v);}};
++  if(failure==='stale-unknown'){
++   const disk=structuredClone(states[0]);disk.auditRisk.preserved.values.push('other tab');const raw=S.encodeSave(disk);map.set(S.SAVE_KEY,raw);map.set(S.BACKUP_KEY,raw);assert.throws(()=>S.saveGame(next,states[0],store),/另一窗口/);assert.deepEqual(writes,[]);assert.equal(map.get(S.SAVE_KEY),raw);
++  }else if(failure==='primary'){assert.throws(()=>S.saveGame(next,states[0],store),/无法保存/);assert.equal(map.get(S.SAVE_KEY),original);assert.equal(map.get(S.BACKUP_KEY),original);}
++  else{const result=S.saveGame(next,states[0],store);assert.equal(result.mirrored,false);assert.equal(map.get(S.SAVE_KEY),S.encodeSave(next));assert.equal(map.get(S.BACKUP_KEY),original);assert.deepEqual(S.loadSave(store).state,next);}
++  counts.transactionChecks++;
++ }
++ snapshots.push({key,boost,before:states[0],after:next});
++ if(preview&&typeof V.eventRiskView==='function'){
++  for(const [price,held]of [[835,E.GOLD_CAP],[835,0],[1,1],[100000000,E.GOLD_CAP]]){
++   const viewed=structuredClone(s);viewed.event.costGold=price;viewed.player.gold=held;
++   for(const choice of key==='gambit'?['roll','safe']:['roll'])auditView(viewed,choice);
++  }
++  // A real legal equip while this event remains pending changes the current
++  // odds; returning to the room uses those values while its saved price stays.
++  const equippedInput=structuredClone(s);let spare;
++  for(let i=0;i<100;i++){spare=E.makeItem(equippedInput,'relic',7);if(E.itemStats(spare).luck>0)break;}
++  assert(E.itemStats(spare).luck>0);equippedInput.player.items.push(spare);assert(S.validateSave(equippedInput));
++  const initialQuote=preview(equippedInput),equipped=E.transition(equippedInput,{type:'equip',id:spare.id,slot:'relic'});
++  assert.notStrictEqual(equipped,equippedInput);assert(S.validateSave(equipped));
++  const changedQuote=preview(equipped);assert.notEqual(initialQuote.luck,changedQuote.luck);assert.equal(initialQuote.costGold,changedQuote.costGold);
++  auditView(equipped);assert.equal(V.eventRiskView(next),'');counts.viewCases++;
++ }
++}
++const sourceHashes=Object.fromEntries(await Promise.all(dependencies.map(async p=>[p,sha(await readFile(resolve(root,p),'utf8'))])));
++assert.deepEqual(sourceHashes,sourceBefore,'source dependencies must remain identical during this independent sweep');
++const results={rows,boundaries,snapshots};
++const report={at:new Date().toISOString(),root,previewIncluded:!!preview,counts,sourceHashes,sourceStable:true,scriptSha256:sha(await readFile(new URL(import.meta.url),'utf8')),resultsSha256:sha(results),viewRows,passed:true,scope:'Validator-accepted constructed fixtures and complete six-face / 36 ordered-pair coverage. Fixed deterministic initial RNG scanning selects all branches, not a natural policy, probability Monte Carlo or future-RNG product feature. All comparisons retain full unknown metadata. View checks inspect real returned HTML strings; they are not native-browser layout or focus checks.',results};
++await mkdir(dirname(output),{recursive:true});await writeFile(output+'.json.gz',gzipSync(JSON.stringify(report,null,2)+'\n',{mtime:0}));
++const summary={...report};delete summary.results;delete summary.viewRows;await writeFile(output+'-summary.json',JSON.stringify(summary,null,2)+'\n');console.log(JSON.stringify(summary,null,2));
+--- /dev/null
++++ b/scripts/benchmark-event-risk-round20.mjs
+@@ -0,0 +1,83 @@
++// Read-only, synthetic Node diagnostic. Browser input/layout/storage are excluded.
++import assert from 'node:assert/strict';
++import {readFile,writeFile,readdir} from 'node:fs/promises';
++import {resolve} from 'node:path';
++import {pathToFileURL} from 'node:url';
++import {createHash} from 'node:crypto';
++import {cpus,loadavg} from 'node:os';
++
++const [baseArg,currentArg,outputArg]=process.argv.slice(2);
++assert(baseArg&&currentArg&&outputArg,'Supply BASELINE CURRENT OUTPUT paths.');
++const baseline=resolve(baseArg),current=resolve(currentArg),output=resolve(outputArg);
++const sha=value=>createHash('sha256').update(typeof value==='string'||Buffer.isBuffer(value)?value:JSON.stringify(value)).digest('hex');
++const baseFiles=['src/engine.js','src/equipment.js','src/equipment-content.js','src/deep-content.js','src/deep-rules.js','src/encounters.js','src/rarity.js','src/gold.js','src/event-references.js','src/event-preview.js','src/views.js'];
++async function hashes(){return Object.fromEntries(await Promise.all([['baseline',baseline],['current',current]].map(async([label,root])=>{
++ const files=(await readdir(resolve(root,'src'),{recursive:true})).filter(file=>file.endsWith('.js')).map(file=>'src/'+file).sort();
++ return [label,Object.fromEntries(await Promise.all(files.map(async file=>[file,sha(await readFile(resolve(root,file)))])))];
++})));}
++const sourceHashes=await hashes(),scriptSha256=sha(await readFile(new URL(import.meta.url)));
++const E=await import(pathToFileURL(resolve(baseline,'src/engine.js')));
++const S=await import(pathToFileURL(resolve(baseline,'src/storage.js')));
++const BV=await import(pathToFileURL(resolve(baseline,'src/views.js')));
++const CV=await import(pathToFileURL(resolve(current,'src/views.js')));
++const R=await import(pathToFileURL(resolve(current,'src/event-risk.js')));
++for(const file of baseFiles.filter(file=>!['src/views.js'].includes(file)))assert.equal(sourceHashes.baseline[file],sourceHashes.current[file],`The cost-only comparison needs unchanged rules: ${file}`);
++const quantiles=values=>{const s=values.toSorted((a,b)=>a-b);return {n:s.length,p50:s[Math.floor((s.length-1)*.5)],p95:s[Math.floor((s.length-1)*.95)],max:s.at(-1),min:s[0],mean:values.reduce((a,b)=>a+b,0)/values.length};};
++const orders=[['baseline','current','preview'],['preview','current','baseline'],['current','baseline','preview'],['preview','baseline','current'],['baseline','preview','current'],['current','preview','baseline']];
++const scenarios=[{key:'gambit',floor:10},{key:'gambit',floor:30},{key:'wishingvault',floor:140}];
++const ui={view:'game',busy:false,rolling:false,forging:false};
++function fixture(items,{key,floor}){
++ let state=E.newGame(20261020+floor);state.runId=`round20-risk-cost-${key}-${floor}-${items}`;state.floor=floor;state.player.level=80;state.player.gold=100000;
++ while(state.player.items.length<items){const i=state.player.items.length;state.player.items.push(E.makeItem(state,['weapon','armor','relic'][i%3],i%8));}
++ const tail=state.player.items.toReversed();
++ for(const slot of ['weapon','armor'])state.player.equipped[slot]=tail.find(item=>item.slot===slot).id;
++ const relics=tail.filter(item=>item.slot==='relic');
++ for(const [i,slot]of ['relic','relic2','relic3'].entries())state.player.equipped[slot]=relics[i]?.id??null;
++ state.player.hp=E.stats(state).maxHp;
++ state=E.transition(state,{type:'fate'});
++ // This deliberate fixture mutation chooses a valid room; it is not natural reachability.
++ state.route[0].type=key;state.route[0].quality=0;
++ state=E.transition(state,{type:'enter'});
++ assert.equal(state.phase,'event');assert.equal(state.event.key,key);assert(S.validateSave(state));return state;
++}
++const report={kind:'Round20 paid-event preview cost diagnostic',status:'RUNNING',startedAt:new Date().toISOString(),sourceHashes,scriptSha256,baseline,current,node:process.version,cpu:cpus()[0]?.model,loadBefore:loadavg(),
++ protocol:{scope:'Node synchronous wall time for full gameView HTML construction and for eventRiskPreview only. No DOM, CSS, layout, input-to-paint, storage, GPU or naturally played save claim.',fixtures:'Seed 20261020 + scenario floor. Synthetic valid 3/100/1000/10000-item inventories; five newest items equipped when present. The first route slot is deliberately set to the tested event before the real enter transition.',orders,warmupsPerCell:6,formalSamplesPerCell:24,quantiles:'sorted floor((n-1)*p); every formal value retained',comparison:'Baseline gameView lacks the new preview; current gameView includes it after UI integration. Outputs intentionally differ, while every input field and runtime rules must be preserved. This measures added capability cost, not a same-output optimisation.',preview:'Calls roll for both event types and safe additionally for gambit, matching both available paid choice quotes. No preview baseline exists.',instrumentation:'Detached item-id getters are installed only after every native timing cell finishes. They count ID reads, not total allocations or CPU instructions, and never touch timed object shapes.',limits:['Shared host GC/scheduling can affect tails.','HTML construction is only one part of browser responsiveness.','A new decision panel may add HTML even if its model is cheap; page timing must be measured separately.']},rows:[]};
++const fixtures=[];
++try {
++for(const items of [3,100,1000,10000])for(const scenario of scenarios){
++ const state=fixture(items,scenario),original=JSON.stringify(state);fixtures.push(state);
++ const previews=()=>scenario.key==='gambit'?[R.eventRiskPreview(state,'roll'),R.eventRiskPreview(state,'safe')]:[R.eventRiskPreview(state,'roll')];
++ const expected={baseline:BV.gameView(state,{...ui}),current:CV.gameView(state,{...ui}),preview:previews()};
++ assert(expected.preview.every(Boolean),'Supported pending choice must produce a quote.');
++ const expectedHashes=Object.fromEntries(Object.entries(expected).map(([phase,result])=>[phase,sha(result)]));
++ const row={key:scenario.key,floor:scenario.floor,items,fixtureSha256:sha(original),quoteCount:expected.preview.length,costGold:expected.preview.map(p=>p.costGold),htmlBytes:{baseline:Buffer.byteLength(expected.baseline),current:Buffer.byteLength(expected.current)},outputSha256:expectedHashes,rawMs:{baseline:[],current:[],preview:[]},warmupMs:{baseline:[],current:[],preview:[]}};
++ report.rows.push(row);
++ for(let round=-6;round<24;round++)for(const phase of orders[(round+6)%orders.length]){
++  const started=performance.now(),value=phase==='baseline'?BV.gameView(state,{...ui}):phase==='current'?CV.gameView(state,{...ui}):previews(),elapsed=performance.now()-started;
++  (round<0?row.warmupMs:row.rawMs)[phase].push(elapsed);assert.equal(sha(value),expectedHashes[phase]);
++ }
++ assert.equal(JSON.stringify(state),original);
++ row.callerUnchanged=true;row.summaryMs=Object.fromEntries(Object.entries(row.rawMs).map(([phase,raw])=>[phase,quantiles(raw)]));
++ row.pairedCurrentMinusBaselineMs=row.rawMs.current.map((ms,index)=>ms-row.rawMs.baseline[index]);
++}
++report.nativeTimingsFinishedAt=new Date().toISOString();
++for(const [index,row]of report.rows.entries()){
++ const state=structuredClone(fixtures[index]);let reads=0;
++ for(const item of state.player.items){const id=item.id;Object.defineProperty(item,'id',{get(){reads++;return id;},enumerable:true,configurable:true});}
++ const measured={};
++ for(const phase of ['baseline','current','preview']){
++  reads=0;const result=phase==='baseline'?BV.gameView(state,{...ui}):phase==='current'?CV.gameView(state,{...ui}):row.key==='gambit'?[R.eventRiskPreview(state,'roll'),R.eventRiskPreview(state,'safe')]:[R.eventRiskPreview(state,'roll')];
++  assert.equal(sha(result),row.outputSha256[phase]);measured[phase]=reads;
++ }
++ row.instrumentedInventoryIdReads=measured;
++}
++report.sourceHashesAfter=await hashes();
++assert.deepEqual(report.sourceHashesAfter,sourceHashes,'Source changed during cost collection.');assert.equal(sha(await readFile(new URL(import.meta.url))),scriptSha256);
++report.sourceAndScriptStable=true;report.status='MEASURED_WITH_LIMITATIONS';
++} catch (error) {
++ report.status='FAIL';report.error={name:error.name,message:error.message,stack:error.stack};
++ process.exitCode=1;
++}
++report.finishedAt=new Date().toISOString();report.loadAfter=loadavg();
++await writeFile(output,JSON.stringify(report,null,2)+'\n');
++console.log(JSON.stringify({status:report.status,output,rows:report.rows.map(({key,floor,items,quoteCount,htmlBytes,summaryMs,instrumentedInventoryIdReads})=>({key,floor,items,quoteCount,htmlBytes,summaryMs,instrumentedInventoryIdReads}))},null,2));
+--- /dev/null
++++ b/scripts/qa-event-risk-performance-round20.mjs
+@@ -0,0 +1,110 @@
++// Optional paired browser measurement; no game runtime dependency.
++// Measures trusted choice-click to two rAF callbacks with a real open dialog.
++// This laboratory duration is not field INP, full input latency or GPU FPS.
++import assert from 'node:assert/strict';
++import {createRequire} from 'node:module';
++import {createHash} from 'node:crypto';
++import {pathToFileURL,fileURLToPath} from 'node:url';
++import path from 'node:path';
++import fs from 'node:fs/promises';
++const args=Object.fromEntries(process.argv.slice(2).map(arg=>{const i=arg.indexOf('=');assert(i>0,'Use --name=value');return [arg.slice(0,i),arg.slice(i+1)];}));
++const root=path.resolve(args['--source']||fileURLToPath(new URL('../',import.meta.url)));
++const baseline=path.resolve(args['--baseline-source']||root);
++const output=path.resolve(args['--output']||'/tmp/dice-abyss-event-risk-performance');
++const samples=Number(args['--samples']||12);assert(Number.isInteger(samples)&&samples>=12&&samples<=30);
++const mode=args['--mode']||'dialog';assert(['dialog','return'].includes(mode),'Use --mode=dialog or --mode=return');
++const selector=mode==='dialog'?'[data-action="event-choice"][data-id="roll"]':'.manual-control [data-action="game"]';
++const sha=x=>createHash('sha256').update(typeof x==='string'||Buffer.isBuffer(x)?x:JSON.stringify(x)).digest('hex');
++const E=await import(pathToFileURL(path.join(root,'src/engine.js'))),S=await import(pathToFileURL(path.join(root,'src/storage.js')));
++const {eventFixture}=await import(pathToFileURL(path.join(root,'scripts/audit-event-context.mjs')));
++const sourceFiles=async dir=>['index.html','package.json',...(await fs.readdir(path.join(dir,'src'))).filter(f=>/\.(js|css)$/.test(f)).map(f=>'src/'+f)].sort();
++const files=[...new Set([...await sourceFiles(root),...await sourceFiles(baseline)])].sort();
++async function identity(dir){return Object.fromEntries(await Promise.all(files.map(async f=>[f,await fs.readFile(path.join(dir,f)).then(sha).catch(e=>{if(e.code==='ENOENT')return null;throw e;})])));}
++const variants=[{label:'baseline',dir:baseline,url:args['--baseline-url']||'http://127.0.0.1:4188'},{label:'current',dir:root,url:args['--url']||'http://127.0.0.1:4189'}];
++const report={protocol:'round20-paid-event-dialog-two-raf',started:new Date().toISOString(),samplesPerCellPerVersion:samples,synthetic:true,viewport:[1920,1080],effects:'low',sourceBefore:{baseline:await identity(baseline),current:await identity(root)},fixtures:[],runs:[],warmups:[],pairOrders:[],errors:[],status:'RUNNING',notes:['Each version uses the same complete legal synthetic fixture, with equipped items at the tail for the 10000-item case.','One warmup per fixture and version is retained separately and excluded from statistics. Every measured pair alternates order.','The timer starts in native click capture and ends at the second rAF callback; both callbacks and any overlapping long tasks are retained. It excludes input before capture and is not field INP.','Opening and cancelling the dialog must preserve both complete durable save strings. No purchase is made during these timing samples.','No retries replace failed samples. Browser timings are software-rendered lab observations, not a general speed-up or hardware certification.']};
++report.mode=mode;report.protocol=`round20-paid-event-${mode}-two-raf`;
++report.measuredAction=mode==='dialog'?'Native paid-choice click opens its confirmation dialog.':'Native return-to-game click from the talent view reconstructs the complete event page. Talent navigation is outside the measured window and never invests a point.';
++report.estimator='sorted floor((n-1)*p); with n=12, p95 is the 11th ordered value; maximum is reported separately. The tail sample is small.';
++report.driverSha256=sha(await fs.readFile(new URL(import.meta.url)));
++report.fixtureHelperSha256=sha(await fs.readFile(path.join(root,'scripts/audit-event-context.mjs')));
++assert.equal(sha(await fs.readFile(path.join(baseline,'scripts/audit-event-context.mjs'))),report.fixtureHelperSha256);
++await fs.mkdir(output,{recursive:true});
++const save=()=>fs.writeFile(path.join(output,'report.json'),JSON.stringify(report,null,2)+'\n');
++const require=createRequire(import.meta.url),{chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
++const browser=await chromium.launch({headless:true,executablePath:args['--browser']||process.env.CHROMIUM_PATH,args:['--no-sandbox','--disable-dev-shm-usage','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader']});
++report.browser=browser.version();const entries=[];
++const quantiles=values=>{const v=values.toSorted((a,b)=>a-b),at=p=>v[Math.floor((v.length-1)*p)];return {n:v.length,p50:at(.5),p95:at(.95),max:v.at(-1),min:v[0]};};
++function fixture(key,count){
++ const s=eventFixture({E,S},key,{floor:key==='gambit'?30:140,rich:true,spares:false});
++ s.runId=`round20-dialog-${key}-${count}`;s.event.costGold=835;s.player.gold=2505;
++ const equipped=s.player.items.filter(i=>Object.values(s.player.equipped).includes(i.id));
++ assert.equal(equipped.length,3);const base=E.makeItem(s,'weapon',0);
++ s.player.items=[...Array.from({length:count-3},()=>({...base,id:`i${s.nextId++}`})),...equipped];
++ s.player.hp=E.stats(s).maxHp;assert(S.validateSave(s));assert.deepEqual(S.decodeSave(S.encodeSave(s)),s);return s;
++}
++async function load(entry,state){
++ const {page,variant}=entry,raw=S.encodeSave(state);await page.goto(variant.url);
++ const release=JSON.parse(await fs.readFile(path.join(variant.dir,'package.json'),'utf8')).version;
++ assert.equal(await page.locator('meta[name="dice-abyss-release"]').getAttribute('content'),release);
++ await page.evaluate(({raw,main,mirror,settings})=>{localStorage.clear();localStorage.setItem(main,raw);localStorage.setItem(mirror,raw);localStorage.setItem(settings,JSON.stringify({sound:false,effects:'low',scale:1}));},{raw,main:S.SAVE_KEY,mirror:S.BACKUP_KEY,settings:S.SETTINGS_KEY});
++ await page.reload();await page.locator('[data-action="continue"]').click();await page.evaluate(()=>document.fonts.ready);
++ if(mode==='return')await page.locator('.main-nav [data-action="talents"]').click();
++ await page.locator(selector).scrollIntoViewIfNeeded();return raw;
++}
++async function measure(entry,state,raw){
++ const {page,variant}=entry;
++ await page.evaluate(({selector,mode})=>{window.__riskTiming=new Promise(resolve=>{
++  const handler=event=>{if(!event.target.closest(selector))return;document.removeEventListener('click',handler,true);
++   const start=performance.now(),trusted=event.isTrusted,tasks=[];
++   const observer=PerformanceObserver.supportedEntryTypes.includes('longtask')?new PerformanceObserver(list=>tasks.push(...list.getEntries().map(t=>({start:t.startTime,duration:t.duration})))):null;
++   observer?.observe({type:'longtask',buffered:false});
++   requestAnimationFrame(()=>{const first=performance.now();requestAnimationFrame(()=>{const end=performance.now();
++    const target=document.querySelector(mode==='dialog'?'dialog[open]':'.event-screen'),visible=!!target&&target.getBoundingClientRect().height>0;
++    setTimeout(()=>{if(observer){tasks.push(...observer.takeRecords().map(t=>({start:t.startTime,duration:t.duration})));observer.disconnect();}
++     resolve({trusted,startTimeMs:start,endTimeMs:end,clickToFirstRafMs:first-start,clickToSecondRafMs:end-start,secondIntervalMs:end-first,targetVisible:visible,visibility:document.visibilityState,longTasksSupported:!!observer,longTasks:tasks.filter(t=>t.start<end&&t.start+t.duration>start),observedLongTasks:tasks});
++    },0);
++   });});
++  };document.addEventListener('click',handler,true);
++ });},{selector,mode});
++ await page.locator(selector).click();
++ const result=await page.evaluate(()=>Promise.race([window.__riskTiming,new Promise((_,reject)=>setTimeout(()=>reject(Error('30s measurement deadline')),30000))]));
++ assert(result.trusted&&result.targetVisible&&result.visibility==='visible');
++ assert(Math.abs(result.clickToFirstRafMs+result.secondIntervalMs-result.clickToSecondRafMs)<1e-6);
++ const target=page.locator(mode==='dialog'?'dialog[open]':'.event-screen');assert((await target.innerText()).includes('835'));
++ if(variant.label==='current')assert.equal(await target.locator('.event-risk-table tbody tr').count(),3);
++ const durable=()=>page.evaluate(({main,mirror})=>[localStorage.getItem(main),localStorage.getItem(mirror)],{main:S.SAVE_KEY,mirror:S.BACKUP_KEY});
++ assert.deepEqual(await durable(),[raw,raw]);
++ if(mode==='dialog'){
++  await target.locator('.dialog-buttons [data-action="close-dialog"]').click();assert.equal(await page.locator('dialog[open]').count(),0);
++  assert.equal(await page.evaluate(()=>document.activeElement?.dataset.id),'roll');
++ }else await page.locator('.main-nav [data-action="talents"]').click();
++ assert.deepEqual(await durable(),[raw,raw]);
++ return {...result,completeStateUnchanged:true,mirrorUnchanged:true,...(mode==='dialog'?{cancelRestoresFocus:true}:{returnedWithoutInvestment:true})};
++}
++try{
++ for(const variant of variants){
++  const context=await browser.newContext({viewport:{width:1920,height:1080},deviceScaleFactor:1,reducedMotion:'reduce'}),page=await context.newPage();page.setDefaultTimeout(30000);
++  page.on('pageerror',e=>report.errors.push({label:variant.label,kind:'pageerror',message:String(e)}));page.on('console',m=>{if(m.type()==='error')report.errors.push({label:variant.label,kind:'console',message:m.text()});});
++  await page.goto(variant.url);
++  for(const file of files.filter(f=>f!=='package.json')){const response=await page.request.get(variant.url+'/'+file),expected=report.sourceBefore[variant.label][file];if(expected===null)assert([404,410].includes(response.status()));else{assert.equal(response.status(),200);assert.equal(sha(await response.body()),expected);}}
++  entries.push({variant,context,page});
++ }
++ for(const key of ['gambit','wishingvault'])for(const count of [3,10000]){
++  const state=fixture(key,count),raw=S.encodeSave(state),cell=`${key}/${count}`;
++  await fs.writeFile(path.join(output,`fixture-${key}-${count}.json.gz`),(await import('node:zlib')).gzipSync(JSON.stringify(state),{level:9}));
++  report.fixtures.push({cell,stateSha256:sha(state),rawSha256:sha(raw),encodedUtf8Bytes:Buffer.byteLength(raw),equippedTail:true,file:`fixture-${key}-${count}.json.gz`});
++  for(const entry of entries){assert.equal(await load(entry,state),raw);report.activeCase={cell,label:entry.variant.label,warmup:true};report.warmups.push({cell,label:entry.variant.label,...await measure(entry,state,raw)});await save();}
++  for(let sample=1;sample<=samples;sample++){
++   const pair=report.pairOrders.length+1,ordered=pair%2?entries:entries.toReversed(),order=ordered.map(e=>e.variant.label);report.pairOrders.push({pair,cell,sample,order});
++   for(const entry of ordered){report.activeCase={cell,label:entry.variant.label,sample,pair};report.runs.push({cell,label:entry.variant.label,sample,pair,order,...await measure(entry,state,raw)});await save();}
++  }
++  console.log(`${cell}: ${samples} paired samples complete`);
++ }
++ report.aggregate=[];for(const cell of report.fixtures.map(f=>f.cell))for(const label of ['baseline','current']){const rows=report.runs.filter(r=>r.cell===cell&&r.label===label);report.aggregate.push({cell,label,clickToSecondRafMs:quantiles(rows.map(r=>r.clickToSecondRafMs)),clickToFirstRafMs:quantiles(rows.map(r=>r.clickToFirstRafMs)),longTasks:rows.reduce((n,r)=>n+r.longTasks.length,0)});}
++ report.sourceAfter={baseline:await identity(baseline),current:await identity(root)};assert.deepEqual(report.sourceAfter,report.sourceBefore);
++ assert.equal(sha(await fs.readFile(new URL(import.meta.url))),report.driverSha256);
++ assert.equal(sha(await fs.readFile(path.join(root,'scripts/audit-event-context.mjs'))),report.fixtureHelperSha256);
++ report.sourceStable=true;report.driverAndHelperStable=true;assert.equal(report.errors.length,0);report.status='MEASURED_WITH_LIMITATIONS';delete report.activeCase;
++}catch(error){report.status='FAILED';report.failure={message:String(error),stack:error.stack};process.exitCode=1;}
++finally{report.completed=new Date().toISOString();await save();for(const e of entries)await e.context.close();await browser.close();}
++console.log(JSON.stringify({status:report.status,measured:report.runs.length,warmups:report.warmups.length,errors:report.errors,failure:report.failure}));
+--- /dev/null
++++ b/scripts/qa-event-risk-round20.mjs
+@@ -0,0 +1,182 @@
++// Optional real-browser QA. Requires externally installed Playwright/Chromium;
++// the game itself remains dependency-free. Every save is an isolated fixture.
++import {createRequire} from 'node:module';
++import {pathToFileURL,fileURLToPath} from 'node:url';
++import {createHash} from 'node:crypto';
++import path from 'node:path';
++import fs from 'node:fs/promises';
++import assert from 'node:assert/strict';
++const args=Object.fromEntries(process.argv.slice(2).map(arg=>{const i=arg.indexOf('=');return [arg.slice(0,i),arg.slice(i+1)];}));
++const root=path.resolve(args['--source']||fileURLToPath(new URL('../',import.meta.url)));
++const output=path.resolve(args['--output']||'/tmp/dice-abyss-event-risk-round20');
++const url=args['--url']||'http://127.0.0.1:4188',only=args['--case'];
++const knownCases=['preview-keyboard-and-affordability','all-outcomes-confirm-refresh-open-once','quota-failure-and-cross-tab-review','responsive-layout-and-cap-balances'];
++assert(!only||knownCases.includes(only),'Unknown --case; refusing an empty acceptance run');
++const loadModule=name=>import(pathToFileURL(path.join(root,name)));
++const E=await loadModule('src/engine.js'),S=await loadModule('src/storage.js'),R=await loadModule('src/event-risk.js');
++const {eventFixture}=await loadModule('scripts/audit-event-context.mjs');
++const require=createRequire(import.meta.url),{chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
++const sha=value=>createHash('sha256').update(typeof value==='string'||Buffer.isBuffer(value)?value:JSON.stringify(value)).digest('hex');
++const tracked=['index.html','package.json','src/release.js','src/app.js','src/views.js','src/event-risk.js','src/event-risk.css','src/engine.js','src/storage.js','src/encounters.js','src/deep-rules.js'];
++const sourceHashes=async()=>Object.fromEntries(await Promise.all(tracked.map(async name=>[name,sha(await fs.readFile(path.join(root,name)))])));
++const report={started:new Date().toISOString(),source:root,url,synthetic:true,sourceBefore:await sourceHashes(),cases:[],errors:[],notes:['Fresh browser contexts; no private saves.','Native clicks/keys/selects drive UI. Fixture setup and quota failures are explicit injections.','Viewport dimensions are logical CSS pixels at DPR1, not physical GPU/display certification.','Full decoded states and both durable strings are compared with authoritative engine transitions.']};
++report.warnings=[];
++await fs.mkdir(output,{recursive:true});
++const browser=await chromium.launch({headless:true,executablePath:args['--browser']||process.env.CHROMIUM_PATH,args:['--no-sandbox','--disable-dev-shm-usage','--use-angle=swiftshader','--enable-unsafe-swiftshader']});
++report.browser=browser.version();let total=0,trace=[];
++const check=(ok,label,data)=>{total++;trace.push({label,passed:!!ok,...(data?{data}:{})});assert(ok,label);};
++const equal=(actual,expected,label)=>{total++;const a=sha(actual),b=sha(expected);trace.push({label,actualSha256:a,expectedSha256:b,passed:a===b});assert.deepEqual(actual,expected,label);};
++const button=(p,action,id)=>p.locator(`[data-action="${action}"]${id?`[data-id="${id}"]`:''}`);
++const raw=p=>p.evaluate(({key,backup})=>({main:localStorage.getItem(key),mirror:localStorage.getItem(backup)}),{key:S.SAVE_KEY,backup:S.BACKUP_KEY});
++const saved=async p=>S.decodeSave((await raw(p)).main);
++const idle=p=>p.locator('#primary-action:not(:disabled)').waitFor({state:'visible'});
++const revision=(p,n)=>p.waitForFunction(({key,n})=>JSON.parse(JSON.parse(localStorage.getItem(key)).payload).revision===n,{key:S.SAVE_KEY,n});
++const risk=(p,inDialog=false)=>p.locator(`${inDialog?'dialog':'.event-screen'} [data-event-risk]`);
++const percent=n=>n===0?'0%':n<.0001?'<0.01%':`${(n*100).toFixed(2)}%`;
++function fixture(key='gambit',floor=key==='gambit'?1:140){
++ const s=eventFixture({E,S},key,{floor,rich:true});s.event.costGold=835;s.player.gold=2505;assert(S.validateSave(s));return s;
++}
++function outcomeFixture(key,group){
++ const s=fixture(key);
++ for(let i=1;i<=500;i++){
++  const before={...s,rng:(Math.imul(i,2654435761)>>>0)||1};
++  const after=E.transition(before,{type:'event-choice',id:'roll',confirmed:true});
++  const n=key==='gambit'?after.event.roll:after.event.rolls.reduce((a,b)=>a+b,0);
++  const actual=key==='gambit'?(n<=2?'refund':n<=4?'middle':'high'):(n<=5?'refund':n<=9?'middle':'high');
++  if(actual===group)return before;
++ }
++ throw Error(`No registered outcome found: ${key}/${group}`);
++}
++async function setup(page,state,effects='low'){
++ assert(S.validateSave(state));await page.goto(url);
++ await page.evaluate(({value,key,mirror,settings,effects})=>{localStorage.setItem(key,value);localStorage.setItem(mirror,value);localStorage.setItem(settings,JSON.stringify({sound:false,effects,scale:1}));},{value:S.encodeSave(state),key:S.SAVE_KEY,mirror:S.BACKUP_KEY,settings:S.SETTINGS_KEY,effects});
++ await page.reload();await button(page,'continue').click();await page.evaluate(()=>document.fonts.ready);await idle(page);
++}
++async function assertQuote(page,state,choiceId='roll',inDialog=false){
++ const quote=R.eventRiskPreview(state,choiceId),scope=risk(page,inDialog);
++ check(await scope.isVisible(),'risk preview is visibly rendered');
++ equal(await scope.getAttribute('data-risk-choice'),choiceId,'preview corresponds to the actual reviewed choice');
++ equal(await scope.locator('.event-risk-table tbody tr').count(),quote.outcomes.length,'every dice-result group is shown');
++ for(const row of quote.outcomes){
++  const target=scope.locator(`[data-risk-outcome="${row.key}"]`);
++  equal((await target.locator('.event-risk-percent').innerText()).trim(),percent(row.probability),'rendered branch probability matches public rule model');
++  if(quote.available){
++   const gold=n=>Number(n).toLocaleString('en-US');
++   const expected=row.rarityFloor===null?`返还 ${gold(row.refund.rawGold)} 金币 · 净支出 ${gold(row.netCostGold)} · 余额 ${gold(row.goldAfterChoice)}`:`余额 ${gold(row.goldAfterChoice)} 金币 · 宝箱待开启`;
++   equal((await target.locator('td > small').innerText()).replace(/\s+/g,' ').trim(),expected,'each result row states the exact refund, net payment, and immediate balance');
++  }
++ }
++ check((await scope.innerText()).includes('宝箱金币在开箱时另行结算'),'later chest gold is explicitly separate');
++ equal(await saved(page),state,'all preview reads leave the entire run unchanged');
++}
++function wire(page){
++ page.setDefaultTimeout(20000);
++ page.on('pageerror',error=>report.errors.push({kind:'pageerror',message:String(error)}));
++ page.on('console',message=>{if(message.type()==='error')report.errors.push({kind:'console',message:message.text()});else if(message.type()==='warning')report.warnings.push(message.text());});
++ page.on('requestfailed',request=>report.errors.push({kind:'requestfailed',url:request.url(),failure:request.failure()}));
++}
++async function fresh(){
++ const context=await browser.newContext({viewport:{width:1920,height:1080},deviceScaleFactor:1,reducedMotion:'reduce'});
++ const page=await context.newPage();wire(page);
++ return {context,page};
++}
++async function run(name,fn){
++ if(only&&only!==name)return;trace=[];const env=await fresh(),start=performance.now(),before=total;
++ try{await fn(env);report.cases.push({name,status:'PASS',checks:total-before,ms:performance.now()-start,trace});}
++ catch(error){report.cases.push({name,status:'FAIL',checks:total-before,ms:performance.now()-start,error:String(error),stack:error.stack,trace});await env.page.screenshot({path:path.join(output,`FAIL-${name}.jpg`),type:'jpeg',quality:80}).catch(()=>{});}
++ finally{await env.context.close();await fs.writeFile(path.join(output,'report.json'),JSON.stringify(report,null,2));}
++ console.log(`${name}: ${report.cases.at(-1).status}`);
++}
++try{
++ await run('preview-keyboard-and-affordability',async({page})=>{
++  const s=fixture();await setup(page,s);check((await page.title()).includes('Dice Abyss'),'correct meaningful game page');
++  equal(await page.locator('meta[name="dice-abyss-release"]').getAttribute('content'),JSON.parse(await fs.readFile(path.join(root,'package.json'))).version,'served release matches source');
++  await assertQuote(page,s);const before=await raw(page),summary=risk(page).locator('summary');
++  await summary.focus();await page.keyboard.press('Space');check(await risk(page).locator('details').evaluate(el=>el.open),'Space opens native disclosure');
++  equal(await raw(page),before,'opening disclosure neither saves nor rolls');
++  equal(await risk(page).locator('.event-risk-distribution tbody tr').count(),8,'all eight qualities are listed');
++  check((await risk(page).innerText()).includes('140 层解锁'),'future eternal gate is explicit');
++  await page.keyboard.press('Space');check(!(await risk(page).locator('details').evaluate(el=>el.open)),'Space closes disclosure');
++  equal(await saved(page),s,'native Space on summary did not trigger a gameplay action');
++  await button(page,'event-choice','safe').click();await assertQuote(page,s,'safe',true);
++  check((await button(page,'confirm').innerText()).includes('保底'),'confirmation names the guaranteed action');
++  await page.locator('dialog .dialog-buttons [data-action="close-dialog"]').click();equal(await raw(page),before,'cancel preserves both complete durable strings');
++  equal(await page.evaluate(()=>document.activeElement?.dataset.id),'safe','cancel returns focus to original choice');
++  const poor=fixture();poor.player.gold=400;await setup(page,poor);await assertQuote(page,poor);
++  check(await button(page,'event-choice','roll').isDisabled(),'unaffordable roll remains disabled');
++  check(await button(page,'event-choice','safe').isDisabled(),'unaffordable guarantee remains disabled');
++  check((await risk(page).innerText()).includes('还差 435'),'exact shortfall remains readable');
++  check(await page.locator('#primary-action').isEnabled(),'safe leaving remains available');
++  await page.locator('#primary-action').click();await revision(page,poor.revision+1);equal(await saved(page),E.transition(poor,{type:'event-choice',id:'leave'}),'declining spends nothing and follows the exact existing transition');
++ });
++ await run('all-outcomes-confirm-refresh-open-once',async({page})=>{
++  for(const key of ['gambit','wishingvault'])for(const group of ['refund','middle','high']){
++   const s=outcomeFixture(key,group);await setup(page,s);await assertQuote(page,s);const before=await raw(page);
++   await button(page,'event-choice','roll').click();await assertQuote(page,s,'roll',true);equal(await raw(page),before,'opening confirmation does not spend or pre-roll');
++   const expected=E.transition(s,{type:'event-choice',id:'roll',confirmed:true});
++   await button(page,'confirm').dblclick({delay:15});await revision(page,expected.revision);await idle(page);
++   equal(await saved(page),expected,`${key}/${group}: double click commits exactly one complete engine result`);
++   const committed=await raw(page);equal(committed.main,committed.mirror,'primary and mirror both contain that exact result');
++   await page.reload();await button(page,'continue').click();await idle(page);equal(await saved(page),expected,'refresh never rerolls or spends again');
++   if(expected.phase==='chest'){
++    await page.locator('#primary-action').click();await revision(page,expected.revision+1);await idle(page);
++    const opened=E.transition(expected,{type:'open'});equal(await saved(page),opened,'later open credits the original saved prize exactly once');
++    equal(opened.player.items.filter(item=>item.id===expected.chest.item.id).length,1,'single chest item ownership');
++   }
++  }
++  const s=fixture();await setup(page,s);await button(page,'event-choice','safe').click();await button(page,'confirm').click();
++  await revision(page,s.revision+1);await idle(page);equal(await saved(page),E.transition(s,{type:'event-choice',id:'safe',confirmed:true}),'guaranteed alternative retains its original two-price transaction');
++ });
++ await run('quota-failure-and-cross-tab-review',async({context,page})=>{
++  const s=outcomeFixture('gambit','refund');await setup(page,s);const before=await raw(page);
++  await page.evaluate(key=>{window.__riskSet=Storage.prototype.setItem;Storage.prototype.setItem=function(k,v){if(k===key)throw new DOMException('Synthetic quota failure','QuotaExceededError');return window.__riskSet.call(this,k,v);};},S.SAVE_KEY);
++  await button(page,'event-choice','roll').click();await button(page,'confirm').click();
++  await page.locator('.toast').filter({hasText:'本次操作未生效'}).waitFor();equal(await raw(page),before,'failed primary write preserves full pre-payment main and mirror');await assertQuote(page,s);
++  await page.evaluate(()=>{Storage.prototype.setItem=window.__riskSet;});
++  await button(page,'event-choice','roll').click();await button(page,'confirm').click();await revision(page,s.revision+1);await idle(page);
++  equal(await saved(page),E.transition(s,{type:'event-choice',id:'roll',confirmed:true}),'recovering from quota failure consumes original RNG once');
++  const again=fixture('wishingvault');again.player.talentPoints=3;again.player.talents.luck=0;await setup(page,again);
++  const second=await context.newPage();wire(second);
++  await second.goto(url);await button(second,'continue').click();await idle(second);
++  await button(page,'event-choice','roll').click();await assertQuote(page,again,'roll',true);
++  await second.locator('.main-nav [data-action="talents"]').click();await button(second,'talent','luck').click();await revision(second,again.revision+1);
++  const updated=E.transition(again,{type:'talent',id:'luck',count:1});equal(await saved(second),updated,'other tab performs one real visible luck investment');
++  await page.waitForFunction(()=>!document.querySelector('dialog').open);equal(await saved(page),updated,'stale confirmation closes and latest full branch remains');
++  await assertQuote(page,updated);check(R.eventRiskPreview(updated).luck>R.eventRiskPreview(again).luck,'probabilities are recomputed after actual luck change');
++  await button(page,'event-choice','roll').click();await assertQuote(page,updated,'roll',true);await page.keyboard.press('Escape');equal(await saved(page),updated,'Escape cancels updated review without spending');
++ });
++ await run('responsive-layout-and-cap-balances',async({page})=>{
++  const sizes=[[1366,768],[1920,1080],[2560,1440],[3840,2160],[390,844],[320,740]],layouts=[];
++  for(const [width,height]of sizes)for(const key of ['gambit','wishingvault']){
++   await page.setViewportSize({width,height});const s=fixture(key);if(key==='wishingvault')s.player.gold=E.GOLD_CAP;
++   await setup(page,s);await assertQuote(page,s);const scope=risk(page);
++   const inspect=async label=>{
++    const data=await page.evaluate(()=>{
++     const host=document.querySelector('dialog[open]')||document.querySelector('.event-screen');
++     const tables=[...host.querySelectorAll('.event-risk table')].filter(el=>el.getBoundingClientRect().height>0);
++     return {width:innerWidth,height:innerHeight,documentOverflow:document.documentElement.scrollWidth>innerWidth+1,hostOverflow:host.scrollWidth>host.clientWidth+2,
++      tableOverflow:tables.some(table=>{const t=table.getBoundingClientRect(),h=host.getBoundingClientRect();return t.width>h.width+2;}),
++      textClipped:[...host.querySelectorAll('.event-risk th,.event-risk td,.event-risk-payment,.event-risk-heading')].filter(el=>el.getBoundingClientRect().height>0).some(el=>el.scrollWidth>el.clientWidth+2),
++      fonts:[document.fonts.check('16px "Abyss Text"'),document.fonts.check('16px "Abyss Pixel"')]};
++    });
++    layouts.push({key,label,...data});check(!data.documentOverflow&&!data.hostOverflow&&!data.tableOverflow&&!data.textClipped,`${width}/${key}/${label}: checked containers and text have no horizontal overflow`,data);check(data.fonts.every(Boolean),'both offline font faces loaded');
++   };
++   await inspect('collapsed');await scope.locator('summary').click();await inspect('expanded');equal(await saved(page),s,'disclosure at each viewport is read-only');
++   await scope.locator('summary').click();await button(page,'event-choice','roll').scrollIntoViewIfNeeded();check(await button(page,'event-choice','roll').isVisible(),'payment choice reachable at every viewport');
++   await button(page,'event-choice','roll').click();await assertQuote(page,s,'roll',true);await inspect('confirmation');
++   await risk(page,true).locator('summary').click();await inspect('confirmation-expanded');
++   await button(page,'confirm').scrollIntoViewIfNeeded();await button(page,'confirm').click({trial:true});check(await button(page,'confirm').isVisible(),'expanded-details confirmation passes native pointer actionability without purchasing');
++   await page.locator('dialog .dialog-buttons [data-action="close-dialog"]').click();equal(await saved(page),s,'layout review never purchases');
++   if((width===1920&&key==='gambit')||(width===390&&key==='wishingvault')){
++    await page.evaluate(()=>{for(const selector of ['.event-screen','#current-room']){const el=document.querySelector(selector);if(el)el.scrollTop=0;}window.scrollTo(0,0);});
++    await page.screenshot({path:path.join(output,`${key}-${width}.jpg`),type:'jpeg',quality:84});
++   }
++  }
++  report.layouts=layouts;
++ });
++}finally{
++ report.sourceAfter=await sourceHashes();report.sourceStable=JSON.stringify(report.sourceBefore)===JSON.stringify(report.sourceAfter);
++ report.checks=total;report.finished=new Date().toISOString();await fs.writeFile(path.join(output,'report.json'),JSON.stringify(report,null,2));await browser.close();
++}
++console.log(JSON.stringify({checks:total,groups:report.cases.length,passed:report.cases.filter(row=>row.status==='PASS').length,errors:report.errors,sourceStable:report.sourceStable}));
++if(report.cases.some(row=>row.status!=='PASS')||report.errors.length||!report.sourceStable)process.exitCode=1;
+--- a/src/app.js
++++ b/src/app.js
+@@ -1,7 +1,7 @@
+ import {RARITIES,TALENTS} from './content.js';
+ import { newGame, transition, fusionPreview, salvagePreview, diceCount, talentPreview } from './engine.js';
+ import { saveImportedGame, loadSave, saveGame, encodeSave, decodeSave, measureSaveCapacity, inspectSaveRecovery, sameSaveRecords, restoreMissingSave, loadSettings, readLegacyBackup, LEGACY_BACKUP_KEY, SAVE_KEY, BACKUP_KEY, SETTINGS_KEY } from './storage.js';
+-import { titleView, gameView, settingsView, itemEffects, itemSummary, itemProgress, migrationSummary, comparison, equipmentComparisonView, fusionView, fusionItemTooltip, talentInspectorView, talentInvestmentCount, memorywellPreviewView, experiencePreviewView, eventChoicePreviewView, eventItemsView, eventChoiceCost, num, goldNum, esc, icon } from './views.js';
++import { titleView, gameView, settingsView, itemEffects, itemSummary, itemProgress, migrationSummary, comparison, equipmentComparisonView, fusionView, fusionItemTooltip, talentInspectorView, talentInvestmentCount, memorywellPreviewView, experiencePreviewView, eventChoicePreviewView, eventRiskView, eventItemsView, eventChoiceCost, num, goldNum, esc, icon } from './views.js';
+ import { eventChoices } from './encounters.js';
+ import { mountEffects } from './effects.js';
+ import { THROW_DURATION } from './dice-motion.js';
+@@ -575,10 +575,10 @@
+   if(action==='event-choice'){
+     const choice=eventChoices(state).find(o=>o.id===control.dataset.id);
+     if(!choice||choice.disabled){if(choice?.reason)notify(choice.reason);return;}
+-    const equipmentReview=eventItemsView(state,choice.id,{review:true});
++    const equipmentReview=eventItemsView(state,choice.id,{review:true}),riskReview=eventRiskView(state,choice.id,{review:true});
+     const resetPreview=choice.id==='reset'?memorywellPreviewView(state):'',experiencePreview=experiencePreviewView(state,choice),paidStudy=!!experiencePreview&&['memory_archive','starlibrary'].includes(state.event?.key);
+-    const description=resetPreview?`<p>${esc(choice.detail)}</p>${resetPreview}`:`<p>${esc(choice.detail)}</p><dl class="event-confirm-terms"><div><dt>代价</dt><dd>${esc(eventChoiceCost(state,choice))}</dd></div>${paidStudy?'':`<div><dt>获得</dt><dd>${esc(choice.reward)}</dd></div>`}</dl>${experiencePreview}${eventChoicePreviewView(state,choice.id)}${equipmentReview}`;
+-    if(choice.confirm||choice.destructive)confirmDialog(paidStudy?`确认${choice.label}？`:'确认这次命运抉择？',`${description}<p class="danger">${esc(choice.confirm||'这项选择提交后不可撤销。')}</p>`,paidStudy?(choice.experience.creditedXp?'支付并研读':'仍支付并研读'):'确认接受',()=>act({type:'event-choice',id:choice.id,confirmed:true}));
++    const description=resetPreview?`<p>${esc(choice.detail)}</p>${resetPreview}`:`<p>${esc(choice.detail)}</p><dl class="event-confirm-terms"><div><dt>代价</dt><dd>${esc(eventChoiceCost(state,choice))}</dd></div>${paidStudy?'':`<div><dt>获得</dt><dd>${esc(choice.reward)}</dd></div>`}</dl>${experiencePreview}${eventChoicePreviewView(state,choice.id)}${riskReview}${equipmentReview}`;
++    if(choice.confirm||choice.destructive)confirmDialog(paidStudy||riskReview?`确认${choice.label}？`:'确认这次命运抉择？',`${description}<p class="danger">${esc(choice.confirm||'这项选择提交后不可撤销。')}</p>`,paidStudy?(choice.experience.creditedXp?'支付并研读':'仍支付并研读'):riskReview?(choice.id==='safe'?'支付并选保底':'支付并投骰'):'确认接受',()=>act({type:'event-choice',id:choice.id,confirmed:true}));
+     else await act({type:'event-choice',id:choice.id});
+     return;
+   }
+--- /dev/null
++++ b/src/event-risk.css
+@@ -0,0 +1,47 @@
++/* The existing dark-metal room gains a readable decision table. No new art,
++   animation, font or persistent UI setting is needed. */
++.event-screen.event-risk-screen { overflow-y: auto; overscroll-behavior: contain; scrollbar-gutter: stable; gap: .8rem; }
++.event-screen.event-risk-screen > * { flex-shrink: 0; }
++.event-risk { width: 100%; min-width: 0; text-align: left; font-family: 'Abyss Text', sans-serif; font-size: max(13px, .86rem); line-height: 1.65; color: #e1ddd3; margin: .3rem 0 .6rem; }
++.event-risk-heading { display: flex; justify-content: space-between; align-items: baseline; gap: .5rem 1rem; flex-wrap: wrap; margin-bottom: .35rem; }
++.event-risk-heading h2 { color: #eee3c6; font-size: max(16px, 1.08rem); line-height: 1.5; font-weight: 600; }
++.event-risk-heading > span { color: #c4cbd0; font-size: inherit; }
++.event-risk-payment { color: #c1c8ce; font-size: inherit; margin-bottom: .55rem; }
++.event-risk-payment strong { color: #f0d3a0; font-variant-numeric: tabular-nums; font-weight: 600; }
++.event-risk-shortfall { display: block; color: #f1b5ad; margin-top: .2rem; }
++.event-risk table { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: inherit; }
++.event-risk th, .event-risk td { padding: .35rem .4rem; border-bottom: 1px solid #393f46; vertical-align: top; overflow-wrap: anywhere; }
++.event-risk thead th { color: #bdc7d0; font-weight: 400; padding-top: .3rem; font-size: max(12px, .8rem); }
++.event-risk tbody th { font-weight: 500; }
++.event-risk-table thead th:first-child { width: 21%; }
++.event-risk-table thead th:nth-child(2) { width: 20%; }
++.event-risk .event-risk-percent { color: #eee3c6; font-variant-numeric: tabular-nums; white-space: nowrap; font-weight: 600; }
++.event-risk td > strong { display: block; font-weight: 600; }
++.event-risk td > small { display: block; font-size: max(12px, .8rem); line-height: 1.65; color: #c4cbd0; margin-top: .1rem; }
++.event-risk .event-risk-balance { color: #d8c8a9; font-variant-numeric: tabular-nums; }
++.event-risk-refund { color: #dfc1af; }
++.event-risk-note { color: #bdc7d0; font-size: max(12px, .8rem); margin-top: .6rem; line-height: 1.8; }
++.event-risk-distribution { margin-top: .5rem; }
++.event-risk-distribution summary { cursor: pointer; color: #d5c49f; padding: .4rem 0; text-underline-offset: .22em; }
++.event-risk-distribution summary:hover { color: #f5e4bd; text-decoration: underline; }
++.event-risk-distribution summary:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
++.event-risk-distribution > p { margin: .25rem 0 .55rem; color: #bdc7d0; font-size: max(12px, .8rem); line-height: 1.75; }
++.event-risk-distribution table { text-align: right; font-variant-numeric: tabular-nums; }
++.event-risk-distribution th:first-child { text-align: left; }
++.event-risk-distribution th, .event-risk-distribution td { padding: .3rem .35rem; }
++.event-risk-distribution th small { display: block; font-size: max(11px, .73rem); color: #b8c0c7; line-height: 1.6; }
++.event-risk-choice { display: flex; flex-direction: column; gap: .1rem; width: 100%; text-align: left; color: #c5ced4; border-top: 1px solid #45444b; padding-top: .5rem; font-family: 'Abyss Text', sans-serif; font-size: max(12px, .8rem); line-height: 1.7; }
++.event-risk-choice b { color: #e4d2ad; font-variant-numeric: tabular-nums; font-weight: 600; }
++.event-risk-choice.is-unavailable { color: #edb8b1; }
++.game-dialog .event-risk { margin: 1rem 0; }
++.game-dialog .event-risk-heading h2 { font-size: max(16px, 1.08rem); letter-spacing: 0; }
++@media (max-width: 699px) {
++ .event-risk { font-size: max(14px, calc(14px * var(--user-scale))); }
++ .event-risk th, .event-risk td { padding-inline: .25rem; }
++ .event-risk-table thead th:first-child { width: 24%; }
++ .event-risk-table thead th:nth-child(2) { width: 23%; }
++ .event-risk td > small, .event-risk-note, .event-risk-distribution > p, .event-risk-choice { font-size: max(12px, calc(12px * var(--user-scale))); }
++ .event-risk-heading { align-items: flex-start; }
++ .event-risk-distribution table { font-size: max(12px, calc(12px * var(--user-scale))); }
++ .game-dialog .event-risk-distribution th, .game-dialog .event-risk-distribution td { padding-inline: .15rem; }
++}
+--- /dev/null
++++ b/src/event-risk.js
+@@ -0,0 +1,75 @@
++// Read-only prices and outcome probabilities for the two existing paid dice
++// events. Dice/rarity helpers consume no RNG; committed choices stay in engine.
++import {diceOdds,dropOdds} from './engine.js';
++import {eventChoices} from './encounters.js';
++import {GOLD_CAP,goldPreview} from './gold.js';
++import {MAX_ITEM_LEVEL} from './equipment.js';
++import {highestRarity} from './rarity.js';
++
++const integer=(n,min,max)=>Number.isSafeInteger(n)&&n>=min&&n<=max;
++const record=value=>value&&typeof value==='object'&&!Array.isArray(value);
++const levelRange=(level,low,high)=>({min:Math.min(MAX_ITEM_LEVEL,level+low),max:Math.min(MAX_ITEM_LEVEL,level+high)});
++
++// Returns null outside a pending supported choice or for malformed quote data.
++// The app already owns a validated save; this is not another save validator.
++// Unaffordable choices still explain odds, but have no invented after-balance.
++export function eventRiskPreview(s,choiceId='roll') {
++ try {
++  const e=s?.event,p=s?.player;
++  if(s?.phase!=='event'||!record(e)||e.status!=='pending'||!record(p)||
++   !integer(s.floor,1,Number.MAX_SAFE_INTEGER)||!integer(p.level,1,1e6)||
++   !integer(p.gold,0,GOLD_CAP)||!integer(e.costGold,0,1e8)||
++   !record(p.talents)||!record(p.equipped)||!Array.isArray(p.items)||
++   !Array.isArray(s.fate)||s.fate.length!==2||!s.fate.every(n=>integer(n,1,6)))return null;
++  if(e.key==='gambit'?!['roll','safe'].includes(choiceId):e.key!=='wishingvault'||choiceId!=='roll')return null;
++  const choice=eventChoices(s).find(option=>option.id===choiceId);
++  if(!choice)return null;
++  const odds=diceOdds(s),faces=[...odds.faces];
++  if(!integer(odds.luck,0,200)||faces.length!==6||!faces.every(n=>Number.isFinite(n)&&n>=0&&n<=1)||Math.abs(faces.reduce((a,b)=>a+b,0)-1)>1e-10)return null;
++  const costGold=e.costGold*(choiceId==='safe'?2:1),available=!choice.disabled&&p.gold>=costGold;
++  const goldAfterPayment=available?p.gold-costGold:null,groups=[];
++  const group=(key,rollLabel,probability,minimum)=>groups.push({key,rollLabel,probability,minimum});
++  if(choiceId==='safe')group('rare','无需投骰',1,1);
++  else if(e.key==='gambit'){
++   group('refund','1–2 点',faces[0]+faces[1],null);
++   group('rare','3–4 点',faces[2]+faces[3],1);
++   group('epic','5–6 点',faces[4]+faces[5],2);
++  }else{
++   const probabilities=[0,0,0];
++   // The real wish invokes die() twice, each drawDice(state, 1). There is no
++   // second-face echo draw here; multiplying these single-die marginals is exact.
++   for(let a=1;a<=6;a++)for(let b=1;b<=6;b++)probabilities[a+b<=5?0:a+b<=9?1:2]+=faces[a-1]*faces[b-1];
++   group('refund','总点 2–5',probabilities[0],null);
++   group('epic','总点 6–9',probabilities[1],2);
++   group('legendary','总点 10–12',probabilities[2],3);
++  }
++  const pools=new Map();
++  const rewardProbabilities=minimum=>{
++   const result=Array(8).fill(0);
++   // The older gambler's helper replaces the prize with exactly the stated
++   // tier below floor 30. Wishes instead keep their vault draw and enforce a floor.
++   if(e.key==='gambit'&&s.floor<30){result[minimum]=1;return result;}
++   const source=e.key==='wishingvault'||minimum>=2?'vault':'chest';
++   if(!pools.has(source))pools.set(source,dropOdds(s,source,source));
++   for(const [rarity,probability] of pools.get(source).entries())result[Math.max(minimum,rarity)]+=probability;
++   return result;
++  };
++  const outcomes=groups.map(({key,rollLabel,probability,minimum})=>{
++   const rawGold=minimum===null?Math.floor(costGold/2):0;
++   // Refunds arrive AFTER payment, so a valid half-refund cannot be cut off by
++   // the starting gold cap. Keep the shared receipt semantics for zero prices too.
++   const receipt=available?goldPreview(goldAfterPayment,rawGold):null;
++   const rarityProbabilities=minimum===null?Array(8).fill(0):rewardProbabilities(minimum);
++   const rarityCeiling=minimum===null?null:rarityProbabilities.findLastIndex(n=>n>0);
++   const itemLevelRange=minimum===null?null:e.key==='gambit'?levelRange(p.level,3,7):levelRange(p.level,1,minimum===3?7:5);
++   return {key,rollLabel,probability,rarityFloor:minimum,rarityCeiling,rarityProbabilities,itemLevelRange,
++    refund:{rawGold,credited:receipt?.credited??null,overflow:receipt?.overflow??null},
++    goldAfterChoice:receipt?.after??null,netCostGold:receipt?p.gold-receipt.after:null};
++  });
++  const range=key=>available?{min:Math.min(...outcomes.map(row=>row[key])),max:Math.max(...outcomes.map(row=>row[key]))}:null;
++  return {key:e.key,choiceId,available,reason:available?'':choice.reason||'金币不足',diceCount:choiceId==='safe'?0:e.key==='gambit'?1:2,
++   usesEcho:false,luck:odds.luck,faces,costGold,goldBefore:p.gold,goldAfterPayment,unlockedRarity:highestRarity(s.floor),
++   outcomes,balanceRange:range('goldAfterChoice'),netCostRange:range('netCostGold'),
++   settlement:'choice-only',chestGoldIncluded:false};
++ }catch{return null;}
++}
+--- a/src/release.js
++++ b/src/release.js
+@@ -1,4 +1,4 @@
+ // Browser-visible product version. The save schema and storage keys are separate.
+ // tests/release-identity.test.mjs checks this against package.json and index.html.
+-export const RELEASE_VERSION = '5.19.0';
++export const RELEASE_VERSION = '5.20.0';
+ export const RELEASE_STAMP = RELEASE_VERSION.split('.').map((part, index) => index === 0 ? part.padStart(2, '0') : part).join('.');
+--- a/src/views.js
++++ b/src/views.js
+@@ -14,6 +14,7 @@
+ import { inventoryQuery, inventoryDefense, INVENTORY_DEFENSE_FILTERS, selectInventoryItems } from './inventory-query.js';
+ import { boonReadout } from './boon-readout.js';
+ import { eventChoicePreview } from './event-preview.js';
++import { eventRiskPreview } from './event-risk.js';
+ import { eventReferenceRoles } from './event-references.js';
+ import { stats, diceCount, itemValue, itemStats, compareEquipment, xpNeeded, XP_CAP, LEVEL_CAP, forgePreview, fusionPreview, canAct, ENHANCE_CAP, equippedIds, equipSlot, talent, talentPreview, memorywellPreview, depthPower, enemyIntent, salvagePreview, diceOdds, dropOdds } from './engine.js';
+ 
+@@ -406,10 +407,46 @@
+  const detail=levelCapped?`已达等级上限 ${num(LEVEL_CAP)}。经验余额 ${num(xp)}，剩余容量 ${num(XP_CAP-xp)}。${xp===XP_CAP?'经验余额已满，新增经验无法计入。':'新增经验不再触发升级。'}`:pending?`当前经验 ${num(xp)}，已达到升级所需的 ${num(threshold)}。现有经验将在下次经验结算时用于升级。${xp===XP_CAP?'经验余额已满，新收入先按余额上限计入，再结算升级。':''}`:`当前经验 ${num(xp)} / ${num(threshold)}，距离 Lv.${num(level+1)} 还需 ${num(threshold-xp)} 经验。`;
+  return `<div class="player-level"${levelCapped?' data-level-capped="true"':''}${xp===XP_CAP?' data-xp-capped="true"':''}${pending?' data-level-pending="true"':''} title="${esc(detail)}"><b><small>Lv.</small>${num(level)}</b><span>${label}</span><div class="xp-track" role="progressbar" aria-label="${levelCapped?'经验余额容量':'角色升级进度'}" aria-valuemin="0" aria-valuemax="${maximum}" aria-valuenow="${value}" aria-valuetext="${esc(detail)}"><span style="width:${percent}%" aria-hidden="true"></span></div><small>${levelCapped?'余额 ':''}${num(xp)} / ${num(maximum)} EXP</small></div>`;
+ }
++const riskPercent = probability => probability===0?'0%':probability<.0001?'&lt;0.01%':`${(probability*100).toFixed(2)}%`;
++const riskRange = range => range.min===range.max?goldNum(range.min):`${goldNum(range.min)}–${goldNum(range.max)}`;
++const riskPrize = outcome => outcome.rarityFloor===null?'半价返还':`${outcome.rarityFloor===outcome.rarityCeiling?'':'至少'}${RARITIES[outcome.rarityFloor].name}宝箱`;
++
++// Probability is a preview of public rules, not a prediction of the saved RNG.
++// All balances stop at the event choice; a later chest-open has its own receipt.
++function eventRiskChoiceFromQuote(quote) {
++ if(!quote)return '';
++ if(!quote.available)return `<span class="event-risk-choice is-unavailable">金币不足 · 还差 ${goldNum(Math.max(0,quote.costGold-quote.goldBefore))} 金币</span>`;
++ return `<span class="event-risk-choice"><span>净支出 <b>${riskRange(quote.netCostRange)}</b> 金币</span><span>选择后余额 <b>${riskRange(quote.balanceRange)}</b> 金币</span></span>`;
++}
++
++export function eventRiskChoiceSummary(s,choiceId) {
++ return eventRiskChoiceFromQuote(eventRiskPreview(s,choiceId));
++}
++
++function eventRiskFromQuote(s,quote,{review=false,guaranteed=null}={}) {
++ if(!quote)return '';const {choiceId}=quote;
++ const mode=quote.diceCount===2?'两颗独立愿骰':quote.diceCount===1?'一颗命运骰':'保底交易';
++ const shortfall=Math.max(0,quote.costGold-quote.goldBefore);
++ const pools=quote.outcomes.filter(outcome=>outcome.rarityFloor!==null).map(outcome=>({label:outcome.rollLabel,outcome}));
++ if(!review&&quote.key==='gambit'&&choiceId==='roll'){
++  if(guaranteed)pools.push({label:'保底交易',outcome:guaranteed.outcomes[0]});
++ }
++ return `<section class="event-risk${review?' event-risk-review':''}" data-event-risk="${quote.key}" data-risk-choice="${choiceId}" aria-label="${review?'本次选择的概率与金币':'命运抉择的概率与金币'}"><div class="event-risk-heading"><h2>当前幸运下的概率</h2><span>${mode}</span></div><p class="event-risk-payment">持有 <strong>${goldNum(quote.goldBefore)}</strong> 金币 · 先付 <strong>${goldNum(quote.costGold)}</strong>${quote.available?` · 支付后 <strong>${goldNum(quote.goldAfterPayment)}</strong>`:`<span class="event-risk-shortfall">金币不足 · 还差 ${goldNum(shortfall)} 金币</span>`}</p><table class="event-risk-table"><caption class="sr-only">${mode}的点数、发生概率、结果与即时余额</caption><thead><tr><th scope="col">点数</th><th scope="col">概率</th><th scope="col">选择后结果</th></tr></thead><tbody>${quote.outcomes.map(outcome=>`<tr data-risk-outcome="${outcome.key}"><th scope="row">${esc(outcome.rollLabel)}</th><td class="event-risk-percent">${riskPercent(outcome.probability)}</td><td><strong class="${outcome.rarityFloor===null?'event-risk-refund':RARITIES[outcome.rarityFloor].key}">${riskPrize(outcome)}</strong><small>${outcome.rarityFloor===null?`返还 ${goldNum(outcome.refund.rawGold)} 金币${quote.available?` · 净支出 ${goldNum(outcome.netCostGold)} · 余额 ${goldNum(outcome.goldAfterChoice)}`:'（足额支付后）'}`:quote.available?`余额 ${goldNum(outcome.goldAfterChoice)} 金币 · 宝箱待开启`:'生成宝箱，等待亲手开启'}</small></td></tr>`).join('')}</tbody></table><p class="event-risk-note">${quote.diceCount===2?'两颗骰子各自掷出，同点引导不参与本次许愿。':quote.diceCount===1?'幸运影响各点数的概率；保底交易不投骰。':'保底保证获得宝箱，不保证金币回本。'}宝箱金币在开箱时另行结算。</p><details class="event-risk-distribution"><summary>查看宝箱品质概率</summary><p>达到对应点数后，宝箱品质按下表抽取；各列分别合计 100%。百分比为四舍五入值。</p><table><caption class="sr-only">达到对应点数后的宝箱品质条件概率</caption><thead><tr><th scope="col">品质</th>${pools.map(pool=>`<th scope="col">${esc(pool.label)}</th>`).join('')}</tr></thead><tbody>${RARITIES.map((rarity,index)=>`<tr><th scope="row" class="${rarity.key}">${rarity.name}${s.floor<RARITY_FLOORS[index]?`<small>${RARITY_FLOORS[index]} 层解锁</small>`:''}</th>${pools.map(pool=>`<td>${riskPercent(pool.outcome.rarityProbabilities[index])}</td>`).join('')}</tr>`).join('')}</tbody></table></details></section>`;
++}
++
++export function eventRiskView(s,choiceId='roll',{review=false}={}) {
++ const quote=eventRiskPreview(s,choiceId);
++ const guaranteed=!review&&quote?.key==='gambit'&&choiceId==='roll'?eventRiskPreview(s,'safe'):null;
++ return eventRiskFromQuote(s,quote,{review,guaranteed});
++}
++
+ function eventView(s,ui) {
+  const event=eventPresentation(s);if(!event)return '<section class="room-screen"><h1>遭遇尚未揭晓</h1><p>请重新读取已保存的旅途。</p></section>';
+- const options=event.options.filter(o=>o.id!=='leave'),odds=diceOdds(s),memoryPreview=memorywellPreviewView(s),experienceChoice=['memory_archive','starlibrary'].includes(s.event.key)?options.find(o=>o.experience):null,experiencePreview=experiencePreviewView(s,experienceChoice);
+- return `<section class="room-screen room-refined event-screen ${event.status==='resolved'?'event-resolved':''} ${ui.rolling?'event-rolling':''}${memoryPreview?' memorywell-screen':''}${experiencePreview?' experience-screen':''}"><div class="room-heading"><div><h1>${ui.rolling?'命运正在落定':esc(event.title)}</h1><p>${esc(event.body)}</p></div><div class="event-luck"><span>当前幸运</span><b>${num(odds.luck)}</b><small>5 / 6 点 ${(odds.highChance*100).toFixed(1)}%</small></div></div>${event.status==='resolved'?`<div class="event-outcome" role="status">${!ui.rolling?`<span class="event-sigil" aria-hidden="true">${icon('check')}</span>`:''}<h2>${ui.rolling?'投下这一颗命运骰':'抉择已落定'}</h2><p>${ui.rolling?'骰子停下后，揭晓本次已保存的结果。':esc(event.outcome)}</p>${s.event.roll||s.event.rolls?`<div class="event-result-die">${dice(s.event.rolls||[s.event.roll],{rolling:ui.rolling})}</div>`:''}</div>`:`${memoryPreview||experiencePreview||eventItemsView(s)||`<div class="event-atmosphere" aria-hidden="true"><svg viewBox="0 0 500 180" fill="none"><ellipse cx="250" cy="90" rx="135" ry="75"/><ellipse cx="250" cy="90" rx="108" ry="58"/><path d="M82 90h55M363 90h55M250 6v30M250 144v30M148 36l25 18M327 126l25 18M352 36l-25 18M173 126l-25 18"/><path d="m250 30 48 60-48 60-48-60Z"/></svg><span>?</span></div>`}${s.event.reward?.item?`<div class="auction-preview ${RARITIES[s.event.reward.item.rarity].key}"><strong>${esc(itemSummary(s.event.reward.item))}</strong><p>${esc(itemEffects(s.event.reward.item))}</p><small>真实奖品 · 已保存 · 刷新不重抽</small></div>`:''}<div class="event-options" data-options="${options.length}">${options.map(option=>button(`<span class="event-option-title"><strong>${esc(option.label)}</strong><small>${option.confirm?'提交前再次确认':option.cost==='无'?'无需代价':'代价见下方'}</small></span><span class="event-option-detail">${esc(option.detail)}</span><span class="event-terms event-cost"><small>代价</small><b>${esc(eventChoiceCost(s,option))}</b></span><span class="event-terms event-reward"><small>获得</small><b>${esc(option.reward)}</b></span>${eventChoicePreviewView(s,option.id)}${option.disabled?`<span class="event-option-reason">${esc(option.reason)}</span>`:'<span class="event-option-choose">选择此项 →</span>'}`,'event-choice',`event-option ${option.destructive?'requires-confirmation':''}`,`data-id="${option.id}" ${option.disabled||ui.busy?'disabled':''}`)).join('')}</div><p class="room-hint">代价先明示，选择由你决定。也可以使用下方「拒绝并离开」，保留已有资产。</p>`}</section>`;
++ // Share each read-only quote only within this render. Confirmation and later
++ // renders call the public helper again from their complete current state.
++ const rollRisk=eventRiskPreview(s),safeRisk=rollRisk?.key==='gambit'?eventRiskPreview(s,'safe'):null;
++ const options=event.options.filter(o=>o.id!=='leave'),odds=diceOdds(s),memoryPreview=memorywellPreviewView(s),experienceChoice=['memory_archive','starlibrary'].includes(s.event.key)?options.find(o=>o.experience):null,experiencePreview=experiencePreviewView(s,experienceChoice),riskPreview=eventRiskFromQuote(s,rollRisk,{guaranteed:safeRisk});
++ return `<section class="room-screen room-refined event-screen ${event.status==='resolved'?'event-resolved':''} ${ui.rolling?'event-rolling':''}${memoryPreview?' memorywell-screen':''}${experiencePreview?' experience-screen':''}${riskPreview?' event-risk-screen':''}"><div class="room-heading"><div><h1>${ui.rolling?'命运正在落定':esc(event.title)}</h1><p>${esc(event.body)}</p></div><div class="event-luck"><span>当前幸运</span><b>${num(odds.luck)}</b><small>单骰 5 / 6 点 ${(odds.highChance*100).toFixed(1)}%</small></div></div>${event.status==='resolved'?`<div class="event-outcome" role="status">${!ui.rolling?`<span class="event-sigil" aria-hidden="true">${icon('check')}</span>`:''}<h2>${ui.rolling?(s.event.rolls?.length===2?'投下这两颗命运骰':'投下这一颗命运骰'):'抉择已落定'}</h2><p>${ui.rolling?'骰子停下后，揭晓本次已保存的结果。':esc(event.outcome)}</p>${s.event.roll||s.event.rolls?`<div class="event-result-die">${dice(s.event.rolls||[s.event.roll],{rolling:ui.rolling})}</div>`:''}</div>`:`${riskPreview||memoryPreview||experiencePreview||eventItemsView(s)||`<div class="event-atmosphere" aria-hidden="true"><svg viewBox="0 0 500 180" fill="none"><ellipse cx="250" cy="90" rx="135" ry="75"/><ellipse cx="250" cy="90" rx="108" ry="58"/><path d="M82 90h55M363 90h55M250 6v30M250 144v30M148 36l25 18M327 126l25 18M352 36l-25 18M173 126l-25 18"/><path d="m250 30 48 60-48 60-48-60Z"/></svg><span>?</span></div>`}${s.event.reward?.item?`<div class="auction-preview ${RARITIES[s.event.reward.item.rarity].key}"><strong>${esc(itemSummary(s.event.reward.item))}</strong><p>${esc(itemEffects(s.event.reward.item))}</p><small>真实奖品 · 已保存 · 刷新不重抽</small></div>`:''}<div class="event-options" data-options="${options.length}">${options.map(option=>button(`<span class="event-option-title"><strong>${esc(option.label)}</strong><small>${option.confirm?'提交前再次确认':option.cost==='无'?'无需代价':'代价见下方'}</small></span><span class="event-option-detail">${esc(option.detail)}</span><span class="event-terms event-cost"><small>代价</small><b>${esc(eventChoiceCost(s,option))}</b></span><span class="event-terms event-reward"><small>获得</small><b>${esc(option.reward)}</b></span>${eventChoicePreviewView(s,option.id)}${eventRiskChoiceFromQuote(option.id==='roll'?rollRisk:option.id==='safe'?safeRisk:null)}${option.disabled?`<span class="event-option-reason">${esc(option.reason)}</span>`:'<span class="event-option-choose">选择此项 →</span>'}`,'event-choice',`event-option ${option.destructive?'requires-confirmation':''}`,`data-id="${option.id}" ${option.disabled||ui.busy?'disabled':''}`)).join('')}</div><p class="room-hint">代价先明示，选择由你决定。也可以使用下方「拒绝并离开」，保留已有资产。</p>`}</section>`;
+ }
+ function codexView(s,ui){
+  const source=ui.codexSource||'combat',legacy=['boss','hiddenboss'].includes(source)?'boss':source==='blackmarket'?'combat':source;
+--- /dev/null
++++ b/tests/event-risk-round20.test.mjs
+@@ -0,0 +1,231 @@
++import test from 'node:test';
++import assert from 'node:assert/strict';
++import {pathToFileURL} from 'node:url';
++
++const root=process.env.QA_ITERATION_ROOT?pathToFileURL(process.env.QA_ITERATION_ROOT.replace(/\/$/,'')+'/'):new URL('../',import.meta.url);
++const E=await import(new URL('src/engine.js',root));
++const {CATALOG}=await import(new URL('src/equipment-content.js',root));
++const {encodeSave,decodeSave,validateSave}=await import(new URL('src/storage.js',root));
++const {highestRarity}=await import(new URL('src/rarity.js',root));
++const moduleUrl=new URL('src/event-risk.js',root);
++let riskModule;
++try{riskModule=await import(moduleUrl);}catch(error){if(!process.env.QA_ITERATION_ROOT||error.code!=='ERR_MODULE_NOT_FOUND'||error.url!==moduleUrl.href)throw error;}
++// A missing input capability is represented honestly when replaying this new
++// module against the untouched ZIP; do not substitute an implementation.
++const preview=(...args)=>riskModule?.eventRiskPreview(...args)??null;
++const close=(a,b,label='')=>assert(Math.abs(a-b)<1e-12,`${label}: ${a} != ${b}`);
++
++function fixture(key='gambit',{floor=140,level=11,cost=835,gold=10000,seed=7919}={}){
++ let s=E.newGame(seed);s.floor=floor;s.player.level=level;s.player.gold=gold;
++ for(const item of s.player.items){
++  const entry=CATALOG[item.slot].find(entry=>entry.rarity===0&&!entry.effects.luck&&!entry.effects.echoChance);
++  Object.assign(item,{catalogId:entry.id,rarity:entry.rarity,profile:entry.profile,theme:entry.theme,name:entry.name});
++ }
++ s.player.hp=E.stats(s).maxHp;s=E.transition(s,{type:'fate'});s.player.gold=gold;
++ s.route[0].type=key;s=E.transition(s,{type:'enter'});s.event.costGold=cost;
++ assert(validateSave(s),'constructed state must cross the real save boundary');return s;
++}
++function deepFreeze(value){if(value&&typeof value==='object'&&!Object.isFrozen(value)){Object.values(value).forEach(deepFreeze);Object.freeze(value);}return value;}
++function closedOdds(luck){
++ const t=1.5*luck/(luck+40),a=1+t,b=1+1.4*t,z=4+a+b;
++ return {gambit:[2/z,2/z,(a+b)/z],wish:[10/(z*z),1-(10+2*b+(a+b)**2)/(z*z),(2*b+(a+b)**2)/(z*z)]};
++}
++const row=(risk,key)=>risk.outcomes.find(outcome=>outcome.key===key);
++
++test('pending paid-dice previews exist for both rolls and the fixed gambler trade',()=>{
++ assert.equal(typeof riskModule?.eventRiskPreview,'function');
++ for(const [key,choice,count]of [['gambit','roll',1],['gambit','safe',0],['wishingvault','roll',2]]){
++  const result=preview(fixture(key),choice);assert(result);assert.equal(result.key,key);assert.equal(result.choiceId,choice);assert.equal(result.diceCount,count);assert(result.available);assert.equal(result.settlement,'choice-only');assert.equal(result.chestGoldIncluded,false);
++ }
++});
++
++test('zero-luck gambler groups are thirds and its fixed alternative has probability one',()=>{
++ const s=fixture('gambit'),risk=preview(s);assert.equal(risk.luck,0);
++ assert.deepEqual(risk.outcomes.map(outcome=>outcome.key),['refund','rare','epic']);
++ risk.outcomes.forEach(outcome=>close(outcome.probability,1/3));
++ const safe=preview(s,'safe');assert.equal(safe.outcomes.length,1);assert.equal(safe.outcomes[0].probability,1);assert.equal(safe.costGold,s.event.costGold*2);
++});
++
++test('zero-luck wishing uses all thirty-six independent pairs: ten, twenty and six',()=>{
++ const risk=preview(fixture('wishingvault'));assert.equal(risk.luck,0);
++ assert.deepEqual(risk.outcomes.map(outcome=>outcome.key),['refund','epic','legendary']);
++ for(const [key,p]of [['refund',10/36],['epic',20/36],['legendary',6/36]])close(row(risk,key).probability,p,key);
++ assert.equal(risk.usesEcho,false);
++});
++
++for(const kind of ['talent','floor','next','soft-cap'])test(`visible ${kind} luck drives both events through an independent closed-form oracle`,()=>{
++ for(const key of ['gambit','wishingvault']){
++  const s=fixture(key);
++  if(kind==='talent')s.player.talents.luck=5;
++  if(kind==='floor'){s.eventLuck=20;s.player.fateBlessings=5;}
++  if(kind==='next'){s.nextLuck=24;s.player.talents.luck=5;s.eventLuck=20;}
++  if(kind==='soft-cap'){
++   const entry=CATALOG.relic.filter(item=>item.effects.luck).sort((a,b)=>b.effects.luck-a.effects.luck)[0];
++   for(const slot of ['relic','relic2','relic3']){
++    const item=E.makeItem(s,'relic',entry.rarity);Object.assign(item,{catalogId:entry.id,profile:entry.profile,theme:entry.theme,name:entry.name});
++    s.player.items.push(item);s.player.equipped[slot]=item.id;
++   }
++   s.player.talents.luck=5;s.player.talents.omen=5;s.eventLuck=20;s.player.fateBlessings=5;s.nextLuck=24;s.fate=[6,6];
++   assert(E.stats(s).rawLuck>100);assert(E.stats(s).luck<E.stats(s).rawLuck);
++  }
++  assert(validateSave(s));const risk=preview(s),luck=E.diceOdds(s).luck,expected=closedOdds(luck)[key==='gambit'?'gambit':'wish'];
++  assert.equal(risk.luck,luck);risk.outcomes.forEach((outcome,index)=>close(outcome.probability,expected[index],`${key}/${kind}/${index}`));
++  close(risk.outcomes.reduce((sum,outcome)=>sum+outcome.probability,0),1);
++ }
++});
++
++test('same-roll echo investment does not alter either paid event distribution',()=>{
++ for(const key of ['gambit','wishingvault']){
++  const s=fixture(key),before=preview(s);s.player.talents.attune=5;
++  assert(E.diceOdds(s).echoChance>0);const after=preview(s);
++  assert.equal(after.usesEcho,false);assert.deepEqual(after.faces,before.faces);assert.deepEqual(after.outcomes,before.outcomes);
++ }
++});
++
++test('paid-event dice counts do not follow the number of unlocked combat dice',()=>{
++ for(const key of ['gambit','wishingvault']){
++  const a=fixture(key,{level:1}),b=fixture(key,{level:11});
++  assert.equal(E.diceCount(a),1);assert.equal(E.diceCount(b),6);
++  const x=preview(a),y=preview(b);assert.equal(x.diceCount,y.diceCount);assert.deepEqual(x.faces,y.faces);
++  assert.deepEqual(x.outcomes.map(r=>r.probability),y.outcomes.map(r=>r.probability));
++ }
++});
++
++test('pending metadata and saved future RNG never reveal or select an outcome',()=>{
++ for(const key of ['gambit','wishingvault']){
++  const s=fixture(key),original=preview(s);assert(original);s.event.roll=6;s.event.rolls=[6,6];
++  Object.defineProperty(s,'rng',{enumerable:true,get(){throw Error('preview tried to read future RNG');}});
++  assert.deepEqual(preview(s),original);
++ }
++});
++
++test('all preview inputs stay immutable, including full unknown event and item data',()=>{
++ for(const key of ['gambit','wishingvault']){
++  const s=fixture(key);s.ownerNote={nested:['keep',{value:3}]};s.event.importedNote={list:[1,2]};s.player.items[0].custom={text:'原档未知字段',nested:{left:true}};
++  const before=encodeSave(s),copy=structuredClone(s);deepFreeze(s);
++  assert(preview(s));if(key==='gambit')assert(preview(s,'safe'));
++  assert.deepEqual(s,copy);assert.equal(encodeSave(s),before);
++ }
++});
++
++test('detached display arrays and outcome rows cannot write back to a saved game',()=>{
++ const s=fixture('wishingvault'),before=structuredClone(s),first=preview(s),expected=structuredClone(first);
++ first.faces[0]=99;first.outcomes[1].rarityProbabilities[7]=99;first.outcomes[2].refund.rawGold=999;first.outcomes[1].itemLevelRange.min=0;
++ assert.deepEqual(s,before);assert.deepEqual(preview(s),expected);
++});
++
++for(const cost of [0,1,48,835,1e8])test(`exact cost ${cost}: refunds round down after payment and safe prices are doubled`,()=>{
++ for(const key of ['gambit','wishingvault'])for(const gold of [cost,E.GOLD_CAP]){
++  const s=fixture(key,{cost,gold}),risk=preview(s),refund=row(risk,'refund');
++  assert(risk.available);assert.equal(risk.costGold,cost);assert.equal(risk.goldAfterPayment,gold-cost);
++  assert.deepEqual(refund.refund,{rawGold:Math.floor(cost/2),credited:Math.floor(cost/2),overflow:0});
++  assert.equal(refund.goldAfterChoice,gold-cost+Math.floor(cost/2));assert.equal(refund.netCostGold,Math.ceil(cost/2));
++  assert.deepEqual(risk.netCostRange,{min:Math.ceil(cost/2),max:cost});assert.deepEqual(risk.balanceRange,{min:gold-cost,max:gold-Math.ceil(cost/2)});
++  for(const outcome of risk.outcomes.filter(outcome=>outcome.key!=='refund')){assert.equal(outcome.netCostGold,cost);assert.equal(outcome.goldAfterChoice,gold-cost);assert.equal(outcome.refund.rawGold,0);}
++  if(key==='gambit'){
++   const safe=preview(s,'safe');assert.equal(safe.costGold,cost*2);assert.equal(safe.available,gold>=cost*2);
++   if(safe.available)assert.equal(safe.outcomes[0].netCostGold,cost*2);
++  }
++ }
++});
++
++test('unaffordable choices still show real probabilities but no negative or imaginary balances',()=>{
++ for(const key of ['gambit','wishingvault']){
++  const s=fixture(key,{cost:835,gold:834}),before=encodeSave(s);
++  for(const choice of key==='gambit'?['roll','safe']:['roll']){
++   const risk=preview(s,choice);assert(risk);assert.equal(risk.available,false);assert.match(risk.reason,/金币不足/);
++   assert.equal(risk.goldAfterPayment,null);assert.equal(risk.balanceRange,null);assert.equal(risk.netCostRange,null);
++   close(risk.outcomes.reduce((sum,row)=>sum+row.probability,0),1);
++   for(const outcome of risk.outcomes){assert.equal(outcome.goldAfterChoice,null);assert.equal(outcome.netCostGold,null);assert.equal(outcome.refund.credited,null);assert.equal(outcome.refund.overflow,null);}
++   assert.strictEqual(E.transition(s,{type:'event-choice',id:choice,confirmed:true}),s);
++  }
++  assert.equal(encodeSave(s),before);
++ }
++});
++
++test('all rarity unlock boundaries preserve zero entries and each actual conditional prize pool',()=>{
++ for(const floor of [1,29,30,49,50,79,80,139,140,400])for(const key of ['gambit','wishingvault']){
++  const s=fixture(key,{floor});for(const choice of key==='gambit'?['roll','safe']:['roll']){
++   const risk=preview(s,choice);assert.equal(risk.unlockedRarity,highestRarity(floor));
++   for(const outcome of risk.outcomes){
++    assert.equal(outcome.rarityProbabilities.length,8);
++    if(outcome.key==='refund'){assert.deepEqual(outcome.rarityProbabilities,Array(8).fill(0));assert.equal(outcome.rarityFloor,null);assert.equal(outcome.rarityCeiling,null);assert.equal(outcome.itemLevelRange,null);continue;}
++    close(outcome.rarityProbabilities.reduce((a,b)=>a+b,0),1);
++    for(let rarity=0;rarity<8;rarity++){
++     if(rarity<outcome.rarityFloor||rarity>highestRarity(floor))assert.equal(outcome.rarityProbabilities[rarity],0,`${floor}/${key}/${choice}/${outcome.key}/${rarity}`);
++    }
++    assert(outcome.rarityProbabilities[outcome.rarityCeiling]>0);assert(outcome.rarityCeiling<=highestRarity(floor));
++    if(key==='gambit'&&floor<30){assert.equal(outcome.rarityProbabilities[outcome.rarityFloor],1);assert.equal(outcome.rarityCeiling,outcome.rarityFloor);}
++   }
++  }
++ }
++});
++
++test('deep gambler rare and epic rolls retain distinct chest and vault high-tier source factors',()=>{
++ for(const floor of [30,50,80,140]){
++  const s=fixture('gambit',{floor}),risk=preview(s),tier=highestRarity(floor);
++  const unlockStart={4:.008,5:.003,6:.0015,7:.0007}[tier];
++  close(row(risk,'rare').rarityProbabilities[tier],unlockStart);
++  close(row(risk,'epic').rarityProbabilities[tier],unlockStart*4);
++  close(preview(s,'safe').outcomes[0].rarityProbabilities[tier],unlockStart);
++ }
++});
++
++test('wishing legendary floors retain higher tiers and exact base vault probabilities',()=>{
++ const s=fixture('wishingvault',{floor:140}),risk=preview(s),epic=row(risk,'epic'),legendary=row(risk,'legendary');
++ assert(epic.rarityProbabilities[2]>0);assert.equal(legendary.rarityProbabilities[2],0);
++ close(legendary.rarityProbabilities[3],epic.rarityProbabilities[2]+epic.rarityProbabilities[3]);
++ for(let rarity=4;rarity<8;rarity++)close(epic.rarityProbabilities[rarity],legendary.rarityProbabilities[rarity]);
++ assert(legendary.rarityProbabilities[7]>0);assert.equal(legendary.rarityCeiling,7);
++});
++
++test('already-pending below-unlock wishing events keep their existing behavior',()=>{
++ const s=fixture('wishingvault',{floor:1}),risk=preview(s);assert(risk);assert(risk.available);
++ close(row(risk,'epic').rarityProbabilities[2],.7);close(row(risk,'epic').rarityProbabilities[3],.3);
++ assert.equal(row(risk,'legendary').rarityProbabilities[3],1);
++});
++
++test('actual seeded engine choices match every displayed gold outcome and supported prize range',()=>{
++ for(const [key,choice]of [['gambit','roll'],['gambit','safe'],['wishingvault','roll']]){
++  const original=fixture(key,{floor:140,cost:835,gold:E.GOLD_CAP}),risk=preview(original,choice),seen=new Set();
++  for(let seed=1;seed<=240;seed++){
++   const s=structuredClone(original);s.rng=seed*7919;const before=encodeSave(s);
++   const after=E.transition(s,{type:'event-choice',id:choice,confirmed:true});
++   const value=key==='gambit'?after.event.roll:after.event.rolls?.reduce((a,b)=>a+b,0);
++   const outcomeKey=choice==='safe'?'rare':key==='gambit'?value<=2?'refund':value<=4?'rare':'epic':value<=5?'refund':value<=9?'epic':'legendary';
++   const outcome=row(risk,outcomeKey);assert(outcome);seen.add(outcomeKey);
++   assert.equal(after.player.gold,outcome.goldAfterChoice);assert.equal(original.player.gold-after.player.gold,outcome.netCostGold);
++   if(outcomeKey==='refund'){assert.equal(after.phase,'event');assert.equal(after.event.status,'resolved');assert.equal(after.chest,null);}
++   else{
++    assert.equal(after.phase,'chest');assert(outcome.rarityProbabilities[after.chest.item.rarity]>0);
++    assert(after.chest.item.level>=outcome.itemLevelRange.min&&after.chest.item.level<=outcome.itemLevelRange.max);
++    assert(after.chest.gold>0);assert.equal(outcome.goldAfterChoice,original.player.gold-risk.costGold,'unopened chest coins are not a refund');
++   }
++   assert.equal(encodeSave(s),before);
++   if(seed<=12){assert(validateSave(after));assert.deepEqual(decodeSave(encodeSave(after)),after);}
++   assert.equal(preview(after,choice),null);
++  }
++  assert.deepEqual(seen,new Set(risk.outcomes.map(outcome=>outcome.key)));
++ }
++});
++
++test('next-combat luck survives both actual paid events and remains in a reopened quote',()=>{
++ for(const key of ['gambit','wishingvault']){
++  const s=fixture(key);s.nextLuck=24;const raw=encodeSave(s),risk=preview(s);assert(risk);
++  assert.deepEqual(preview(decodeSave(raw)),risk);
++  const after=E.transition(s,{type:'event-choice',id:'roll',confirmed:true});assert.equal(after.nextLuck,24);assert.equal(s.nextLuck,24);
++  assert.deepEqual(decodeSave(encodeSave(after)),after);
++ }
++});
++
++test('rejected, unsupported, malformed and resolved inputs cannot expose a pending risk quote',()=>{
++ for(const value of [undefined,null,{},[],{phase:'event'},E.newGame(1)])assert.equal(preview(value),null);
++ for(const choice of ['leave','accept','reset','unknown',null,{},0])assert.equal(preview(fixture('gambit'),choice),null);
++ assert.equal(preview(fixture('wishingvault'),'safe'),null);
++ for(const mutate of [
++  s=>s.phase='chest',s=>s.event.status='resolved',s=>s.event.status='bad',s=>s.event.key='spring',
++  s=>s.event.costGold=-1,s=>s.event.costGold=1.5,s=>s.event.costGold=1e8+1,
++  s=>s.player.gold=NaN,s=>s.player.gold=-1,s=>s.player.gold=E.GOLD_CAP+1,
++  s=>s.player.talents=[],s=>s.player.items=null,s=>s.fate=[0,7],s=>s.floor=0,s=>s.player.level=0,
++ ]){const s=fixture();mutate(s);assert.equal(preview(s),null);}
++});
+--- /dev/null
++++ b/tests/event-risk-view-round20.test.mjs
+@@ -0,0 +1,96 @@
++import test from 'node:test';
++import assert from 'node:assert/strict';
++import {pathToFileURL} from 'node:url';
++import path from 'node:path';
++
++// An explicit alternate source supports an honest pre-feature comparison.
++const root=process.env.DICE_RISK_SOURCE;
++const source=file=>root?pathToFileURL(path.join(root,file)):new URL('../'+file,import.meta.url);
++const E=await import(source('src/engine.js')),S=await import(source('src/storage.js'));
++const V=await import(source('src/views.js'));
++const {eventFixture}=await import(source('scripts/audit-event-context.mjs'));
++function fixture(key='gambit',floor=1){
++ const s=eventFixture({E,S},key,{floor,rich:true});
++ s.player.gold=303;s.event.costGold=101;s.eventLuck=0;s.nextLuck=0;
++ assert(S.validateSave(s));assert.equal(E.diceOdds(s).luck,0);return s;
++}
++
++test('both paid dice events expose outcome probabilities on the pending room',()=>{
++ for(const [key,floor]of [['gambit',1],['wishingvault',140]]){
++  const s=fixture(key,floor),before=S.encodeSave(s),html=V.center(s,{view:'game'});
++  assert.match(html,new RegExp(`data-event-risk="${key}"`));
++  assert.match(html,/<table/);assert.match(html,/<th scope="col">/);
++  assert.match(html,/当前幸运下的概率/);assert.doesNotMatch(html,/class="event-atmosphere"/);
++  assert.equal(S.encodeSave(s),before,'reading the entire room changes no saved field');
++ }
++});
++
++test('odd payment shows the actual integer refund and net cost before confirmation',()=>{
++ assert.equal(typeof V.eventRiskView,'function');
++ const html=V.eventRiskView(fixture(),'roll',{review:true});
++ assert.match(html,/33\.33%/);assert.match(html,/返还 50/);assert.match(html,/净支出 51/);
++ assert.match(html,/252/);assert.match(html,/202/);
++ assert.match(html,/宝箱金币在开箱时另行结算/);
++});
++
++test('a guaranteed gambit purchase has its own cost, balance, and exact early rarity',()=>{
++ assert.equal(typeof V.eventRiskView,'function');
++ const html=V.eventRiskView(fixture(),'safe',{review:true});
++ assert.match(html,/100(?:\.00)?%/);assert.match(html,/202/);assert.match(html,/101/);
++ assert.match(html,/稀有宝箱/);assert.doesNotMatch(html,/返还 50/);
++});
++
++test('two independent wishing dice show all three sum groups and no combat echo assumption',()=>{
++ assert.equal(typeof V.eventRiskView,'function');
++ const html=V.eventRiskView(fixture('wishingvault',140),'roll');
++ for(const value of ['27.78%','55.56%','16.67%'])assert(html.includes(value),value);
++ assert.match(html,/同点引导不参与/);assert.match(html,/两颗/);
++});
++
++test('unaffordable choices explain the shortfall without fabricated negative balances',()=>{
++ assert.equal(typeof V.eventRiskView,'function');
++ const s=fixture();s.player.gold=50;const html=V.eventRiskView(s,'roll');
++ assert.match(html,/金币不足 · 还差 51 金币/);
++ const payment=html.match(/<p class="event-risk-payment">([\s\S]*?)<\/p>/);
++ const outcomes=html.match(/<table class="event-risk-table">[\s\S]*?<tbody>([\s\S]*?)<\/tbody>/);
++ assert(payment);assert(outcomes);
++ assert.doesNotMatch(payment[1].replace(/<[^>]*>/g,''),/支付后/,'an unavailable payment has no projected post-payment balance');
++ assert.doesNotMatch(outcomes[1].replace(/<[^>]*>/g,''),/余额|净支出/,'unaffordable outcomes do not claim a completed payment or balance across HTML tags');
++ assert.match(html,/33\.33%/,'odds remain readable even when payment is unavailable');
++});
++
++test('complete reward distribution labels conditional rates and unreached rarity gates',()=>{
++ assert.equal(typeof V.eventRiskView,'function');
++ const html=V.eventRiskView(fixture(),'roll');
++ assert.match(html,/<details/);assert.match(html,/<summary[^>]*>/);
++ assert.match(html,/达到对应点数后/);assert.match(html,/30 层解锁/);assert.match(html,/140 层解锁/);
++ assert.match(html,/0%/);assert.match(html,/永恒/);
++});
++
++test('resolved or unrelated rooms never show a fresh purchasable risk preview',()=>{
++ assert.equal(typeof V.eventRiskView,'function');
++ const s=fixture(),after=E.transition(s,{type:'event-choice',id:'leave'});
++ assert.equal(V.eventRiskView(after),'');
++ assert.doesNotMatch(V.center(after,{view:'game'}),/data-event-risk=/);
++ assert.equal(V.eventRiskView(E.newGame(1)),'');
++});
++
++test('per-choice budget summaries remain read-only and distinguish risk from guarantee',()=>{
++ assert.equal(typeof V.eventRiskChoiceSummary,'function');
++ const s=fixture(),before=S.encodeSave(s);
++ assert.match(V.eventRiskChoiceSummary(s,'roll'),/51.*101/);
++ assert.match(V.eventRiskChoiceSummary(s,'safe'),/101/);
++ assert.equal(V.eventRiskChoiceSummary(s,'leave'),'');
++ assert.equal(S.encodeSave(s),before);
++});
++
++test('the saved two-dice wish animation is described as two dice, not one',()=>{
++ const s=fixture('wishingvault',140);let after;
++ for(let rng=1;rng<1000;rng++){
++  const candidate=E.transition({...s,rng},{type:'event-choice',id:'roll',confirmed:true});
++  if(candidate.phase==='event'&&candidate.event.rolls?.length===2){after=candidate;break;}
++ }
++ assert(after);assert(S.validateSave(after));
++ const html=V.center(after,{view:'game',rolling:true});
++ assert.match(html,/投下这两颗命运骰/);assert.doesNotMatch(html,/投下这一颗命运骰/);
++});

@@ -1,0 +1,530 @@
+{
+  "status": "PASSED",
+  "createdAt": "2026-10-19T13:11:03.005248+00:00",
+  "scope": "Independent fresh frozen-current v5.21.0 correctness checks and exact comparison with the separately executed immutable v5.20.0 baseline. Browser/performance/final ZIP gates are parent-owned.",
+  "environment": {
+    "recordedAt": "2026-10-19T12:54:56.395694+00:00",
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+    "python": "3.12.14",
+    "node": "v24.19.0",
+    "npm": "11.9.0",
+    "logicalCpus": 9,
+    "root": "/workspace/scratch/85c02edcd5e2/work/Dice-Abyss",
+    "version": "5.21.0",
+    "sourceRootOverrides": {},
+    "nodeOptions": "",
+    "note": "Shared cloud host. Check/default/native commands are sequential; standard and deep simulations run concurrently afterward. Parent browser correctness may overlap. None of these task durations is a game performance A/B benchmark."
+  },
+  "sourceIntegrity": {
+    "runtimeTestReplayFiles": 170,
+    "scopeSha256": "92c37eba88ea68dabcb845e9c82c7ea8c1f84e5116e0262a1400898e2cc501fe",
+    "unchangedThroughout": true,
+    "freeze": "source-freeze.json",
+    "finalReceipt": "source-after-final.json",
+    "inheritedTestModules": 82,
+    "allInheritedTestModuleBytesAndNativeCountsPreserved": true,
+    "scriptInventoryFiles": 129,
+    "inheritedScripts": 123,
+    "allInheritedScriptsByteIdenticalToInputAndUnchangedThroughout": true,
+    "allOtherScriptsUnchangedThroughout": true,
+    "optionalBrowserHarness": {
+      "path": "scripts/qa-battle-windows-round21.mjs",
+      "observedVersions": 3,
+      "evidence": "optional-browser-harness-versions.json",
+      "finalDifference": [
+        {
+          "path": "scripts/qa-battle-windows-round21.mjs",
+          "before": {
+            "path": "scripts/qa-battle-windows-round21.mjs",
+            "bytes": 36336,
+            "sha256": "c8db48a8a3608e6bb5995ed4c78003cd876edbe3e34187630ae72b0a7668802c"
+          },
+          "after": {
+            "path": "scripts/qa-battle-windows-round21.mjs",
+            "bytes": 36825,
+            "sha256": "bec7e202e40eef062ec5a907918b3d178aab2b9d0e9589d74c527bad6a161e74"
+          }
+        }
+      ],
+      "reason": "Parent authorized a correction to the new optional browser driver while offline correctness runs; old and observed new bytes are retained. No source/test/runtime exception. Parent must redo affected browser QA, then final fresh ZIP syntax/full-tests gates all final scripts."
+    },
+    "finalDocsNote": "README and STATE were frozen for this run. Later reporting metadata changes require the parent final fresh ZIP syntax/full-test gate."
+  },
+  "syntax": {
+    "passed": true,
+    "modules": 159,
+    "durationSeconds": 4.6081,
+    "rawLog": "syntax.stdout"
+  },
+  "defaultTests": {
+    "passed": true,
+    "unit": "file wrappers",
+    "counts": {
+      "tests": 86,
+      "suites": 0,
+      "pass": 86,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0
+    },
+    "durationSeconds": 111.7179,
+    "rawLog": "default-tests.stdout"
+  },
+  "nativeTests": {
+    "passed": true,
+    "modules": 86,
+    "counts": {
+      "tests": 811,
+      "suites": 0,
+      "pass": 811,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0
+    },
+    "durationSeconds": 106.5522,
+    "wrapperDurationSeconds": 106.6165,
+    "addedModules": [
+      {
+        "file": "tests/bandit-tactics-round21.test.mjs",
+        "counts": {
+          "tests": 8,
+          "suites": 0,
+          "pass": 8,
+          "fail": 0,
+          "cancelled": 0,
+          "skipped": 0,
+          "todo": 0
+        },
+        "sourceSha256": "7dce762637478dc2c89eda3708c318a03277ca7ead69f7beab52a00102047026"
+      },
+      {
+        "file": "tests/first-eligible-critical.test.mjs",
+        "counts": {
+          "tests": 11,
+          "suites": 0,
+          "pass": 11,
+          "fail": 0,
+          "cancelled": 0,
+          "skipped": 0,
+          "todo": 0
+        },
+        "sourceSha256": "e38404fe783f350e580047142e0d71ae1b65e7c5e8f74d0c8c47d9cdf24f0f45"
+      },
+      {
+        "file": "tests/storage-parsed-validation.test.mjs",
+        "counts": {
+          "tests": 8,
+          "suites": 0,
+          "pass": 8,
+          "fail": 0,
+          "cancelled": 0,
+          "skipped": 0,
+          "todo": 0
+        },
+        "sourceSha256": "6cc5685187287a63d17b80c520ca629f99bf59b9124d67aad139811ec7144b1b"
+      },
+      {
+        "file": "tests/view-reuse-round21.test.mjs",
+        "counts": {
+          "tests": 5,
+          "suites": 0,
+          "pass": 5,
+          "fail": 0,
+          "cancelled": 0,
+          "skipped": 0,
+          "todo": 0
+        },
+        "sourceSha256": "30265c8e0993f9bf97001b1d516d20ec806a7729d88231919983721059bbfc5f"
+      }
+    ],
+    "inheritedCaseDifferences": [],
+    "summary": "native/summary.json",
+    "rawLog": "native/native-tap.log.gz"
+  },
+  "standardSimulation": {
+    "durationSeconds": 245.0645,
+    "executionMode": "Concurrent standard1000+50 and deep4x400 correctness jobs; parent browser correctness may also overlap",
+    "summary": {
+      "seeds": 1000,
+      "completed": 1000,
+      "failures": [],
+      "deaths": {
+        "min": 0,
+        "median": 0,
+        "p95": 0,
+        "max": 0,
+        "mean": 0
+      },
+      "totalRolls": {
+        "min": 64,
+        "median": 86,
+        "p95": 101,
+        "max": 115,
+        "mean": 86.5
+      },
+      "rarities": [
+        12834,
+        17325,
+        10318,
+        3624,
+        0,
+        0,
+        0,
+        0
+      ],
+      "finalLevel": {
+        "min": 17,
+        "median": 18,
+        "p95": 18,
+        "max": 19,
+        "mean": 17.67
+      }
+    },
+    "noShopping": {
+      "seeds": 50,
+      "completed": 50,
+      "deaths": 0
+    },
+    "floorsPerRun": 10,
+    "baselineComparison": {
+      "bytesEqual": true,
+      "baselineSha256": "266fa5b56516410712395796f197a2e33ad1b1e16ede45de14b872f208007d77",
+      "currentSha256": "266fa5b56516410712395796f197a2e33ad1b1e16ede45de14b872f208007d77",
+      "normalization": "none; complete stdout compared"
+    },
+    "rawLog": "standard-1000.stdout",
+    "receipt": "standard-1000.run.json"
+  },
+  "deepSimulation": {
+    "durationSeconds": 512.3187,
+    "harnessDurationSeconds": 512.217886028,
+    "executionMode": "Concurrent standard1000+50 and deep4x400 correctness jobs; parent browser correctness may also overlap",
+    "policy": "death-recovery-armor-v2",
+    "parameters": {
+      "seeds": [
+        7919,
+        15838,
+        23757,
+        31676
+      ],
+      "floors": 400,
+      "maxDecisions": 160000,
+      "retryStopAboveDeaths": 20,
+      "spendingBudget": 0,
+      "horizon": 12,
+      "minimumFractionGain": 0.05
+    },
+    "summary": {
+      "naturalJourneys": 4,
+      "completedJourneys": 4,
+      "incompleteJourneys": [],
+      "completedNaturalFloors": 1600,
+      "naturalRolls": 21596,
+      "naturalDeaths": 2,
+      "defenseDecisions": 2,
+      "defenseSwaps": 2
+    },
+    "validation": {
+      "codecRoundTrips": 11,
+      "extraEquipActions": 2,
+      "allocationActions": 1086,
+      "projectionChecks": 64,
+      "publicRetaliationReads": 21596,
+      "adapter": {
+        "sourceSha256": "3b0e2d6c5f8151714dd0d60596e6a2681fb79604592f3670f4bb93218bdf614f",
+        "comparisonSites": 3,
+        "calls": 7440975,
+        "verified": 256,
+        "viewBuilds": 8696
+      }
+    },
+    "journeys": [
+      {
+        "seed": 7919,
+        "completed": true,
+        "lastFloor": 400,
+        "completedFloors": 400,
+        "rolls": 5422,
+        "deaths": 0,
+        "defenseDecisions": 0,
+        "defenseSwaps": 0,
+        "finalStateSha256": "98ca86295782c4ae0b3ce35b43f27092f360c43b0934a22664e6b2cb102f4b52"
+      },
+      {
+        "seed": 15838,
+        "completed": true,
+        "lastFloor": 400,
+        "completedFloors": 400,
+        "rolls": 5034,
+        "deaths": 0,
+        "defenseDecisions": 0,
+        "defenseSwaps": 0,
+        "finalStateSha256": "efb0522b9fa23f847714caba3df2dff0e4a007346aab1cd1a90f00e46e966788"
+      },
+      {
+        "seed": 23757,
+        "completed": true,
+        "lastFloor": 400,
+        "completedFloors": 400,
+        "rolls": 5612,
+        "deaths": 2,
+        "defenseDecisions": 2,
+        "defenseSwaps": 2,
+        "finalStateSha256": "c73fc24184ad4478c1e39ed36f4c7c6be4c0d7379d6c3ac4b26ffd306b289b65"
+      },
+      {
+        "seed": 31676,
+        "completed": true,
+        "lastFloor": 400,
+        "completedFloors": 400,
+        "rolls": 5528,
+        "deaths": 0,
+        "defenseDecisions": 0,
+        "defenseSwaps": 0,
+        "finalStateSha256": "b571d3c999697d02da715acbae52e5c827eaa805a94d8c72a18605bbe7b266d9"
+      }
+    ],
+    "report": "deep/report.json",
+    "receipt": "deep.run.json",
+    "freshComparison": {
+      "file": "deep-comparison.json",
+      "rawDifferences": "deep-comparison.json.raw-differences.json",
+      "qualifiedNoteHashMappings": 4,
+      "fullRetainedSnapshotPairs": 7,
+      "allOtherReportFieldsExactlyEqual": true,
+      "witnessMethod": "Two fresh32-floor prefixes of the exact original strategy with read-only capture. Each full state reproduces the corresponding unmodified400-floor report hash. Only enemy.note on mechanic=bandit,variant=1,name=截路金匪 changes the exact authored string; every other complete field is compared.",
+      "ruleSourceChanges": [
+        {
+          "path": "src/deep-content.js",
+          "baselineSha256": "040a5668b687cf9d7b7c8b31a67cee35660ebb0539af74c7d572614f138fef33",
+          "currentSha256": "8c8b67239dd7d09e625dfbcaebcb8b60d87277bec25cbd4ba90790f566040b08",
+          "byteIdentical": false
+        },
+        {
+          "path": "src/encounters.js",
+          "baselineSha256": "18e1a672849552d779b9763d3f990e953290b32911f123b9884e930166c42cec",
+          "currentSha256": "e485b531d6ed59954cdc8c7b50ab5dd84c1a64449852b7b56fce667489369d76",
+          "byteIdentical": false
+        },
+        {
+          "path": "src/equipment-comparison.js",
+          "baselineSha256": "e47add10ce9cf308ac79fd1bbb4bc74e54b93e0f6b48e5dc97ac2eb314c6c9c4",
+          "currentSha256": "e541c104874cfb9b6a7807b38aedacc2423dbe129ae5c435b7b0cd18473a0a4d",
+          "byteIdentical": false
+        },
+        {
+          "path": "src/storage.js",
+          "baselineSha256": "f5a990793a90ff59a57f38e4be8fcb9deaf54997dff9d9acec2cded73d2c8145",
+          "currentSha256": "daa6eeffc7a38692213228d748c7819739392a5eeaedc91ec62350c53319591c",
+          "byteIdentical": false
+        }
+      ],
+      "comparedFullReportFields": [
+        "audit",
+        "policy",
+        "status",
+        "sourceStable",
+        "scriptSha256",
+        "plan",
+        "environment",
+        "parameters",
+        "method",
+        "validation",
+        "summary",
+        "journeys",
+        "limitations"
+      ],
+      "separatelyValidatedRunMetadataFields": [
+        "source",
+        "sourceVersion",
+        "sourceHashes",
+        "startedAt",
+        "finishedAt",
+        "durationSeconds"
+      ],
+      "witnessFiles": [
+        "bandit-hash-witnesses/baseline/report.json.bandit-witnesses.json",
+        "bandit-hash-witnesses/current/report.json.bandit-witnesses.json"
+      ],
+      "witnessRunReceipts": [
+        "bandit-hash-witnesses/baseline/run.json",
+        "bandit-hash-witnesses/current/run.json"
+      ],
+      "witnessExecutedScripts": [
+        "bandit-hash-witnesses/baseline/prefix-policy.mjs",
+        "bandit-hash-witnesses/current/prefix-policy.mjs"
+      ],
+      "witnessProcessReceipts": [
+        {
+          "label": "baseline",
+          "receipt": "bandit-hash-witnesses/baseline/run.json",
+          "exitCode": 0,
+          "durationSeconds": 4.727710954,
+          "processApiDiagnostic": "spawnSync /opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node EPERM",
+          "capturedStdoutBytes": 0,
+          "capturedStderrBytes": 0,
+          "reportIntervalWithinChildReceipt": true,
+          "executedScriptHashMatchesReport": true,
+          "reportSummary": {
+            "naturalJourneys": 4,
+            "completedJourneys": 4,
+            "incompleteJourneys": [],
+            "completedNaturalFloors": 128,
+            "naturalRolls": 2178,
+            "naturalDeaths": 1,
+            "defenseDecisions": 1,
+            "defenseSwaps": 1
+          },
+          "interpretation": "Complete fresh report and saved-state witnesses were produced, and all formal-hash/full-field assertions passed. The nonempty child-process API error is retained; blank captured streams are not represented as a complete transcript."
+        },
+        {
+          "label": "current",
+          "receipt": "bandit-hash-witnesses/current/run.json",
+          "exitCode": 0,
+          "durationSeconds": 4.674232405999999,
+          "processApiDiagnostic": "spawnSync /opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node EPERM",
+          "capturedStdoutBytes": 0,
+          "capturedStderrBytes": 0,
+          "reportIntervalWithinChildReceipt": true,
+          "executedScriptHashMatchesReport": true,
+          "reportSummary": {
+            "naturalJourneys": 4,
+            "completedJourneys": 4,
+            "incompleteJourneys": [],
+            "completedNaturalFloors": 128,
+            "naturalRolls": 2178,
+            "naturalDeaths": 1,
+            "defenseDecisions": 1,
+            "defenseSwaps": 1
+          },
+          "interpretation": "Complete fresh report and saved-state witnesses were produced, and all formal-hash/full-field assertions passed. The nonempty child-process API error is retained; blank captured streams are not represented as a complete transcript."
+        }
+      ],
+      "noteMappings": [
+        {
+          "journeyIndex": 0,
+          "openingIndex": 9,
+          "seed": 7919,
+          "floor": 32,
+          "roomIndex": 1,
+          "path": "journeys.0.attemptOpenings.9.stateSha256",
+          "baselineStateSha256": "5898c67eaaba60b9fb8ea1627818cc0c76bce22d95275b6c269fbbb4118f8134",
+          "currentStateSha256": "82295abd62a09ac67fa216e0310271a91de85b63cee213a1a04fb49fbdd7161d",
+          "baselineNote": "趁旅者停顿清点财物，前三击是夺回它的机会。",
+          "currentNote": "趁旅者停顿清点财物，前两击是夺回它的机会。",
+          "onlyAuthoredNoteDiffers": true,
+          "fullFieldEqualityAfterExplicitAllowedDifference": true,
+          "baselineEncodedSha256": "8411a2bf7f2e960d897a773f223a4806c202e926c96c8e94253a07112a9a6b7f",
+          "currentEncodedSha256": "8b9f0b664222e916d140497260a6d32b10d1f1abfb05d74451e16055e648a60b",
+          "evidence": {
+            "baseline": "bandit-hash-witnesses/baseline/report.json.bandit-witnesses.json",
+            "current": "bandit-hash-witnesses/current/report.json.bandit-witnesses.json"
+          }
+        },
+        {
+          "journeyIndex": 1,
+          "openingIndex": 6,
+          "seed": 15838,
+          "floor": 31,
+          "roomIndex": 3,
+          "path": "journeys.1.attemptOpenings.6.stateSha256",
+          "baselineStateSha256": "9921d17ed9391917c370cf403dfb5ddc4bef27e8c5ab7e73c4364c2942eecb2a",
+          "currentStateSha256": "e9142dc525d35716c9161adc5b84745218b2c29db6e4dc1858a1688df30d7556",
+          "baselineNote": "趁旅者停顿清点财物，前三击是夺回它的机会。",
+          "currentNote": "趁旅者停顿清点财物，前两击是夺回它的机会。",
+          "onlyAuthoredNoteDiffers": true,
+          "fullFieldEqualityAfterExplicitAllowedDifference": true,
+          "baselineEncodedSha256": "f516950564c99e3452bb9c5b4d5722d204bce8fd5017cd1b47ad8de8a93634aa",
+          "currentEncodedSha256": "b70387bb23c3d1ccd4510a79c528dfd6425ff85c0c7aac11486a697b9d70f0a5",
+          "evidence": {
+            "baseline": "bandit-hash-witnesses/baseline/report.json.bandit-witnesses.json",
+            "current": "bandit-hash-witnesses/current/report.json.bandit-witnesses.json"
+          }
+        },
+        {
+          "journeyIndex": 2,
+          "openingIndex": 11,
+          "seed": 23757,
+          "floor": 32,
+          "roomIndex": 3,
+          "path": "journeys.2.attemptOpenings.11.stateSha256",
+          "baselineStateSha256": "304fc7e7c873a28f225bc2c6e9d9188a4c6ebdd08e38b3426e9bfe3171f9a855",
+          "currentStateSha256": "c82d5625b3028b889f0f4d747adbfe910fa7c9a6249586609a03eda1336ac001",
+          "baselineNote": "趁旅者停顿清点财物，前三击是夺回它的机会。",
+          "currentNote": "趁旅者停顿清点财物，前两击是夺回它的机会。",
+          "onlyAuthoredNoteDiffers": true,
+          "fullFieldEqualityAfterExplicitAllowedDifference": true,
+          "baselineEncodedSha256": "a74fcf98fe1984191ccc920e3055612352d4b47cc14f50b6e167c425bdef85a3",
+          "currentEncodedSha256": "2f1fc13e04c9ce003f2e7d94e1b660412be128cddc00d4eed9d465b9bc29ba19",
+          "evidence": {
+            "baseline": "bandit-hash-witnesses/baseline/report.json.bandit-witnesses.json",
+            "current": "bandit-hash-witnesses/current/report.json.bandit-witnesses.json"
+          }
+        },
+        {
+          "journeyIndex": 3,
+          "openingIndex": 8,
+          "seed": 31676,
+          "floor": 32,
+          "roomIndex": 0,
+          "path": "journeys.3.attemptOpenings.8.stateSha256",
+          "baselineStateSha256": "18e380006c73364fcc16f63c893753beb564ea56e129b1aed6503ffba95263b9",
+          "currentStateSha256": "b0e10b6cdd466b85f3ae1d02c9e1bd075efc441b427ed424a5389427f880d5b1",
+          "baselineNote": "趁旅者停顿清点财物，前三击是夺回它的机会。",
+          "currentNote": "趁旅者停顿清点财物，前两击是夺回它的机会。",
+          "onlyAuthoredNoteDiffers": true,
+          "fullFieldEqualityAfterExplicitAllowedDifference": true,
+          "baselineEncodedSha256": "4ae1013248e57c5d00756a4b2418e8a954499570dc1673ab7818479627d59eb2",
+          "currentEncodedSha256": "c45347d8abef63588618303c59c6482b089e1a2b7ac8c3e4bef04fbe5014fff9",
+          "evidence": {
+            "baseline": "bandit-hash-witnesses/baseline/report.json.bandit-witnesses.json",
+            "current": "bandit-hash-witnesses/current/report.json.bandit-witnesses.json"
+          }
+        }
+      ],
+      "schemaRule": "Both formal reports have the exact same key set. Every field except the six named input-identity/independent-timing metadata fields is compared. Each changed gameplay fingerprint is accepted only after full saved-state witness proof."
+    }
+  },
+  "warnings": [
+    {
+      "file": "runner.stderr",
+      "bytes": 99,
+      "sha256": "7125f194612fcff2f454c05d848e7cb71facc1967b4d5017e25b34fdee3ba74f",
+      "text": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm.\n"
+    },
+    {
+      "file": "syntax.stderr",
+      "bytes": 99,
+      "sha256": "7125f194612fcff2f454c05d848e7cb71facc1967b4d5017e25b34fdee3ba74f",
+      "text": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm.\n"
+    },
+    {
+      "file": "default-tests.stderr",
+      "bytes": 99,
+      "sha256": "7125f194612fcff2f454c05d848e7cb71facc1967b4d5017e25b34fdee3ba74f",
+      "text": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm.\n"
+    },
+    {
+      "file": "bandit-hash-witnesses/baseline/run.json",
+      "diagnostic": "spawnSync /opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node EPERM",
+      "exitCode": 0,
+      "note": "Complete fresh report and saved-state witnesses were produced, and all formal-hash/full-field assertions passed. The nonempty child-process API error is retained; blank captured streams are not represented as a complete transcript."
+    },
+    {
+      "file": "bandit-hash-witnesses/current/run.json",
+      "diagnostic": "spawnSync /opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node EPERM",
+      "exitCode": 0,
+      "note": "Complete fresh report and saved-state witnesses were produced, and all formal-hash/full-field assertions passed. The nonempty child-process API error is retained; blank captured streams are not represented as a complete transcript."
+    }
+  ],
+  "limitations": [
+    "Current standard/deep correctness walltimes overlap each other and may overlap browser correctness. They are not performance A/B results.",
+    "Four fixed offline policy seeds do not measure human win rate or optimal balance.",
+    "Historical failed policies remain inherited evidence and were not rerun.",
+    "The two 32-floor witness prefixes prove the exact changed authored note against formal hashes; they are separate from formal 400-floor counts.",
+    "The optional browser harness is the only named script correction exception; browser receipts and the final fresh ZIP gate must cover its final version.",
+    "This report makes no browser, final archive, physical GPU, mobile device or Windows execution claim."
+  ]
+}

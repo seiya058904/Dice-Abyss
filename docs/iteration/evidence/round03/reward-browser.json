@@ -1,0 +1,1369 @@
+{
+  "synthetic": true,
+  "url": "http://127.0.0.1:4192",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "started": "2026-10-17T13:42:49.275Z",
+  "sourceHashesBefore": {
+    "src/engine.js": "afd66fe121e68536c88b7f583f68c9de3b349272a61011c277295dd460afd8d2",
+    "src/equipment.js": "294945cd13d7183007cb3138a07523a5fbbfc53dabfe0635dbcfa1a77fc2c465",
+    "src/equipment-content.js": "d95b5e7c11d14eb764ea3cefb7eee73f35b2f9d48a8b640513eda9aefd1cc030",
+    "src/content.js": "4c0c2e4656c5a3482a5448a069ae2fa28367ba05d61c7d0c2c9866315f5c5526",
+    "src/encounters.js": "1cf841306e5a4bbcde1775754795d8fa26cdb65ae49216ccf2e45bea4b3b36f8",
+    "src/deep-content.js": "040a5668b687cf9d7b7c8b31a67cee35660ebb0539af74c7d572614f138fef33",
+    "src/deep-rules.js": "6919b66ec8fbadea293ab4c4e3aa0b8c7a943e2ec44224b119287709d484581f",
+    "src/rarity.js": "871356df147d027e1845f98c5574a1d9a71c0d17bd8717f457c9007d7c73b735",
+    "src/storage.js": "f4cf7cb3fceed274fd2a929bc0d53c34b7c62046639a732f6229de72ef1e69f3",
+    "src/app.js": "60978f73ee347457518c62433b3d0447d9cd59a2c9609f8602b6a3c8fb1dd98d",
+    "src/views.js": "de967b2b0ffcc60706729ae38b3b8686355be4060ec0d8275f9f474c8bce17e1"
+  },
+  "cases": [
+    {
+      "name": "gambit-safe",
+      "status": "PASS",
+      "details": {
+        "seed": 285084,
+        "floor": 140,
+        "minimum": "稀有",
+        "actual": "神话",
+        "cost": 1670,
+        "stateSha256": "ae2d2af196574adc791bda21e93408c9efe87e888414fce6a9c66fd1cb4c81a5"
+      },
+      "checks": 29,
+      "trace": [
+        {
+          "label": "page URL identifies the requested local app",
+          "passed": true,
+          "actual": "http://127.0.0.1:4192/",
+          "expected": "http://127.0.0.1:4192/"
+        },
+        {
+          "label": "page title identifies Dice Abyss",
+          "passed": true
+        },
+        {
+          "label": "meaningful app content is rendered",
+          "passed": true
+        },
+        {
+          "label": "no framework error overlay",
+          "passed": true
+        },
+        {
+          "label": "fixture resumes without an action or reroll: exact primary bytes",
+          "passed": true,
+          "actual": {
+            "bytes": 2973,
+            "sha256": "1a6191e4372d7077c59457b7c0b6366c84b30216108e7f16ff100f253e5e1b4e"
+          },
+          "expected": {
+            "bytes": 2973,
+            "sha256": "1a6191e4372d7077c59457b7c0b6366c84b30216108e7f16ff100f253e5e1b4e"
+          }
+        },
+        {
+          "label": "fixture resumes without an action or reroll: exact mirror bytes",
+          "passed": true,
+          "actual": {
+            "bytes": 2973,
+            "sha256": "1a6191e4372d7077c59457b7c0b6366c84b30216108e7f16ff100f253e5e1b4e"
+          },
+          "expected": {
+            "bytes": 2973,
+            "sha256": "1a6191e4372d7077c59457b7c0b6366c84b30216108e7f16ff100f253e5e1b4e"
+          }
+        },
+        {
+          "label": "fixture resumes without an action or reroll: complete decoded save",
+          "passed": true,
+          "actual": {
+            "runId": "qa-reward-140-gambit-285084",
+            "revision": 1,
+            "phase": "event",
+            "rng": 676080354,
+            "gold": 10000000,
+            "items": 3,
+            "sha256": "c47d0942c456905440b0fa3e460f69c90eb22bb75df0572ca657bc405b510a24"
+          },
+          "expected": {
+            "runId": "qa-reward-140-gambit-285084",
+            "revision": 1,
+            "phase": "event",
+            "rng": 676080354,
+            "gold": 10000000,
+            "items": 3,
+            "sha256": "c47d0942c456905440b0fa3e460f69c90eb22bb75df0572ca657bc405b510a24"
+          }
+        },
+        {
+          "label": "fixture witnesses a real mythic result above the minimum",
+          "passed": true
+        },
+        {
+          "label": "pending UI states the minimum before payment",
+          "passed": true,
+          "actual": "至少稀有宝箱",
+          "expected": "至少稀有宝箱"
+        },
+        {
+          "label": "pending UI states the actual cost",
+          "passed": true
+        },
+        {
+          "label": "confirmation repeats the same minimum",
+          "passed": true,
+          "actual": "至少稀有宝箱",
+          "expected": "至少稀有宝箱"
+        },
+        {
+          "label": "confirmation repeats the actual cost",
+          "passed": true,
+          "actual": "1670 金币",
+          "expected": "1670 金币"
+        },
+        {
+          "label": "opening the confirmation pays nothing and consumes no RNG",
+          "passed": true,
+          "actual": {
+            "dice-abyss:mirror:v1": {
+              "bytes": 2973,
+              "sha256": "1a6191e4372d7077c59457b7c0b6366c84b30216108e7f16ff100f253e5e1b4e"
+            },
+            "dice-abyss:save:v1": {
+              "bytes": 2973,
+              "sha256": "1a6191e4372d7077c59457b7c0b6366c84b30216108e7f16ff100f253e5e1b4e"
+            },
+            "dice-abyss:settings:v1": "{\"effects\":\"low\",\"sound\":false,\"scale\":1}"
+          },
+          "expected": {
+            "dice-abyss:mirror:v1": {
+              "bytes": 2973,
+              "sha256": "1a6191e4372d7077c59457b7c0b6366c84b30216108e7f16ff100f253e5e1b4e"
+            },
+            "dice-abyss:save:v1": {
+              "bytes": 2973,
+              "sha256": "1a6191e4372d7077c59457b7c0b6366c84b30216108e7f16ff100f253e5e1b4e"
+            },
+            "dice-abyss:settings:v1": "{\"effects\":\"low\",\"sound\":false,\"scale\":1}"
+          }
+        },
+        {
+          "label": "cancelling leaves every stored byte unchanged",
+          "passed": true,
+          "actual": {
+            "dice-abyss:mirror:v1": {
+              "bytes": 2973,
+              "sha256": "1a6191e4372d7077c59457b7c0b6366c84b30216108e7f16ff100f253e5e1b4e"
+            },
+            "dice-abyss:save:v1": {
+              "bytes": 2973,
+              "sha256": "1a6191e4372d7077c59457b7c0b6366c84b30216108e7f16ff100f253e5e1b4e"
+            },
+            "dice-abyss:settings:v1": "{\"effects\":\"low\",\"sound\":false,\"scale\":1}"
+          },
+          "expected": {
+            "dice-abyss:mirror:v1": {
+              "bytes": 2973,
+              "sha256": "1a6191e4372d7077c59457b7c0b6366c84b30216108e7f16ff100f253e5e1b4e"
+            },
+            "dice-abyss:save:v1": {
+              "bytes": 2973,
+              "sha256": "1a6191e4372d7077c59457b7c0b6366c84b30216108e7f16ff100f253e5e1b4e"
+            },
+            "dice-abyss:settings:v1": "{\"effects\":\"low\",\"sound\":false,\"scale\":1}"
+          }
+        },
+        {
+          "label": "rendered settlement names the actual committed reward",
+          "passed": true,
+          "actual": "保底交易完成 · 神话宝箱等待开启。",
+          "expected": "保底交易完成 · 神话宝箱等待开启。"
+        },
+        {
+          "label": "settlement rarity equals the generated chest rarity",
+          "passed": true
+        },
+        {
+          "label": "one confirmed reward transaction: exact primary bytes",
+          "passed": true,
+          "actual": {
+            "bytes": 3386,
+            "sha256": "8d1e9c3e8e8c0f384f7150ed5f0fd801e72b8f3ff5b1a0bd517142b0dcb6f46d"
+          },
+          "expected": {
+            "bytes": 3386,
+            "sha256": "8d1e9c3e8e8c0f384f7150ed5f0fd801e72b8f3ff5b1a0bd517142b0dcb6f46d"
+          }
+        },
+        {
+          "label": "one confirmed reward transaction: exact mirror bytes",
+          "passed": true,
+          "actual": {
+            "bytes": 3386,
+            "sha256": "8d1e9c3e8e8c0f384f7150ed5f0fd801e72b8f3ff5b1a0bd517142b0dcb6f46d"
+          },
+          "expected": {
+            "bytes": 3386,
+            "sha256": "8d1e9c3e8e8c0f384f7150ed5f0fd801e72b8f3ff5b1a0bd517142b0dcb6f46d"
+          }
+        },
+        {
+          "label": "one confirmed reward transaction: complete decoded save",
+          "passed": true,
+          "actual": {
+            "runId": "qa-reward-140-gambit-285084",
+            "revision": 2,
+            "phase": "chest",
+            "rng": 298353492,
+            "gold": 9998330,
+            "items": 3,
+            "sha256": "3a1103267d9d5f17902d56beda406bc57a8c31ea58e7c6a008ca9704ec728d47"
+          },
+          "expected": {
+            "runId": "qa-reward-140-gambit-285084",
+            "revision": 2,
+            "phase": "chest",
+            "rng": 298353492,
+            "gold": 9998330,
+            "items": 3,
+            "sha256": "3a1103267d9d5f17902d56beda406bc57a8c31ea58e7c6a008ca9704ec728d47"
+          }
+        },
+        {
+          "label": "safe gamble pays exactly the quoted twofold cost",
+          "passed": true,
+          "actual": 9998330,
+          "expected": 9998330
+        },
+        {
+          "label": "real Open button claims the original reward once: exact primary bytes",
+          "passed": true,
+          "actual": {
+            "bytes": 3668,
+            "sha256": "403d2b305874d866752175a2edd7069839070fbfabe9094ef9dbfaab0eaea02e"
+          },
+          "expected": {
+            "bytes": 3668,
+            "sha256": "403d2b305874d866752175a2edd7069839070fbfabe9094ef9dbfaab0eaea02e"
+          }
+        },
+        {
+          "label": "real Open button claims the original reward once: exact mirror bytes",
+          "passed": true,
+          "actual": {
+            "bytes": 3668,
+            "sha256": "403d2b305874d866752175a2edd7069839070fbfabe9094ef9dbfaab0eaea02e"
+          },
+          "expected": {
+            "bytes": 3668,
+            "sha256": "403d2b305874d866752175a2edd7069839070fbfabe9094ef9dbfaab0eaea02e"
+          }
+        },
+        {
+          "label": "real Open button claims the original reward once: complete decoded save",
+          "passed": true,
+          "actual": {
+            "runId": "qa-reward-140-gambit-285084",
+            "revision": 3,
+            "phase": "loot",
+            "rng": 298353492,
+            "gold": 9998822,
+            "items": 4,
+            "sha256": "ae2d2af196574adc791bda21e93408c9efe87e888414fce6a9c66fd1cb4c81a5"
+          },
+          "expected": {
+            "runId": "qa-reward-140-gambit-285084",
+            "revision": 3,
+            "phase": "loot",
+            "rng": 298353492,
+            "gold": 9998822,
+            "items": 4,
+            "sha256": "ae2d2af196574adc791bda21e93408c9efe87e888414fce6a9c66fd1cb4c81a5"
+          }
+        },
+        {
+          "label": "visible loot banner shows the actual reward quality",
+          "passed": true
+        },
+        {
+          "label": "opened item retains its committed ID",
+          "passed": true,
+          "actual": "i5",
+          "expected": "i5"
+        },
+        {
+          "label": "opening the saved chest does not reroll RNG",
+          "passed": true,
+          "actual": 298353492,
+          "expected": 298353492
+        },
+        {
+          "label": "reload preserves claimed gamble item and RNG: exact primary bytes",
+          "passed": true,
+          "actual": {
+            "bytes": 3668,
+            "sha256": "403d2b305874d866752175a2edd7069839070fbfabe9094ef9dbfaab0eaea02e"
+          },
+          "expected": {
+            "bytes": 3668,
+            "sha256": "403d2b305874d866752175a2edd7069839070fbfabe9094ef9dbfaab0eaea02e"
+          }
+        },
+        {
+          "label": "reload preserves claimed gamble item and RNG: exact mirror bytes",
+          "passed": true,
+          "actual": {
+            "bytes": 3668,
+            "sha256": "403d2b305874d866752175a2edd7069839070fbfabe9094ef9dbfaab0eaea02e"
+          },
+          "expected": {
+            "bytes": 3668,
+            "sha256": "403d2b305874d866752175a2edd7069839070fbfabe9094ef9dbfaab0eaea02e"
+          }
+        },
+        {
+          "label": "reload preserves claimed gamble item and RNG: complete decoded save",
+          "passed": true,
+          "actual": {
+            "runId": "qa-reward-140-gambit-285084",
+            "revision": 3,
+            "phase": "loot",
+            "rng": 298353492,
+            "gold": 9998822,
+            "items": 4,
+            "sha256": "ae2d2af196574adc791bda21e93408c9efe87e888414fce6a9c66fd1cb4c81a5"
+          },
+          "expected": {
+            "runId": "qa-reward-140-gambit-285084",
+            "revision": 3,
+            "phase": "loot",
+            "rng": 298353492,
+            "gold": 9998822,
+            "items": 4,
+            "sha256": "ae2d2af196574adc791bda21e93408c9efe87e888414fce6a9c66fd1cb4c81a5"
+          }
+        }
+      ],
+      "screenshots": [
+        "gambit-pending.png",
+        "gambit-settled.png",
+        "gambit-loot.png"
+      ],
+      "ms": 12954.53283
+    },
+    {
+      "name": "exchange-relic",
+      "status": "PASS",
+      "details": {
+        "seed": 15838,
+        "floor": 140,
+        "minimum": "史诗",
+        "actual": "神话",
+        "consumed": "i4",
+        "stateSha256": "10a3cb832b4b08d72c2407753a065a53b33b42e89f9d102b14eeea96afdc22f9"
+      },
+      "checks": 27,
+      "trace": [
+        {
+          "label": "page URL identifies the requested local app",
+          "passed": true,
+          "actual": "http://127.0.0.1:4192/",
+          "expected": "http://127.0.0.1:4192/"
+        },
+        {
+          "label": "page title identifies Dice Abyss",
+          "passed": true
+        },
+        {
+          "label": "meaningful app content is rendered",
+          "passed": true
+        },
+        {
+          "label": "no framework error overlay",
+          "passed": true
+        },
+        {
+          "label": "fixture resumes without an action or reroll: exact primary bytes",
+          "passed": true,
+          "actual": {
+            "bytes": 3194,
+            "sha256": "a7dbac298492a3a0c1b1b6dae19f2ebc2de6a886e93ab87b69e4cb7bf59eabc3"
+          },
+          "expected": {
+            "bytes": 3194,
+            "sha256": "a7dbac298492a3a0c1b1b6dae19f2ebc2de6a886e93ab87b69e4cb7bf59eabc3"
+          }
+        },
+        {
+          "label": "fixture resumes without an action or reroll: exact mirror bytes",
+          "passed": true,
+          "actual": {
+            "bytes": 3194,
+            "sha256": "a7dbac298492a3a0c1b1b6dae19f2ebc2de6a886e93ab87b69e4cb7bf59eabc3"
+          },
+          "expected": {
+            "bytes": 3194,
+            "sha256": "a7dbac298492a3a0c1b1b6dae19f2ebc2de6a886e93ab87b69e4cb7bf59eabc3"
+          }
+        },
+        {
+          "label": "fixture resumes without an action or reroll: complete decoded save",
+          "passed": true,
+          "actual": {
+            "runId": "qa-reward-140-exchange-15838",
+            "revision": 1,
+            "phase": "event",
+            "rng": 3853736744,
+            "gold": 10000000,
+            "items": 4,
+            "sha256": "05d75c57e2154487fa5ca5d0997155dce7d0cdcf81a32e44319912acb05240b4"
+          },
+          "expected": {
+            "runId": "qa-reward-140-exchange-15838",
+            "revision": 1,
+            "phase": "event",
+            "rng": 3853736744,
+            "gold": 10000000,
+            "items": 4,
+            "sha256": "05d75c57e2154487fa5ca5d0997155dce7d0cdcf81a32e44319912acb05240b4"
+          }
+        },
+        {
+          "label": "fixture witnesses a real mythic result above the minimum",
+          "passed": true
+        },
+        {
+          "label": "pending UI states the minimum before payment",
+          "passed": true,
+          "actual": "至少史诗遗物宝箱",
+          "expected": "至少史诗遗物宝箱"
+        },
+        {
+          "label": "pending UI states the actual cost",
+          "passed": true
+        },
+        {
+          "label": "confirmation repeats the same minimum",
+          "passed": true,
+          "actual": "至少史诗遗物宝箱",
+          "expected": "至少史诗遗物宝箱"
+        },
+        {
+          "label": "confirmation repeats the actual cost",
+          "passed": true,
+          "actual": "铭刻·星陨棱镜",
+          "expected": "铭刻·星陨棱镜"
+        },
+        {
+          "label": "opening the confirmation pays nothing and consumes no RNG",
+          "passed": true,
+          "actual": {
+            "dice-abyss:mirror:v1": {
+              "bytes": 3194,
+              "sha256": "a7dbac298492a3a0c1b1b6dae19f2ebc2de6a886e93ab87b69e4cb7bf59eabc3"
+            },
+            "dice-abyss:save:v1": {
+              "bytes": 3194,
+              "sha256": "a7dbac298492a3a0c1b1b6dae19f2ebc2de6a886e93ab87b69e4cb7bf59eabc3"
+            },
+            "dice-abyss:settings:v1": "{\"effects\":\"low\",\"sound\":false,\"scale\":1}"
+          },
+          "expected": {
+            "dice-abyss:mirror:v1": {
+              "bytes": 3194,
+              "sha256": "a7dbac298492a3a0c1b1b6dae19f2ebc2de6a886e93ab87b69e4cb7bf59eabc3"
+            },
+            "dice-abyss:save:v1": {
+              "bytes": 3194,
+              "sha256": "a7dbac298492a3a0c1b1b6dae19f2ebc2de6a886e93ab87b69e4cb7bf59eabc3"
+            },
+            "dice-abyss:settings:v1": "{\"effects\":\"low\",\"sound\":false,\"scale\":1}"
+          }
+        },
+        {
+          "label": "cancelling leaves every stored byte unchanged",
+          "passed": true,
+          "actual": {
+            "dice-abyss:mirror:v1": {
+              "bytes": 3194,
+              "sha256": "a7dbac298492a3a0c1b1b6dae19f2ebc2de6a886e93ab87b69e4cb7bf59eabc3"
+            },
+            "dice-abyss:save:v1": {
+              "bytes": 3194,
+              "sha256": "a7dbac298492a3a0c1b1b6dae19f2ebc2de6a886e93ab87b69e4cb7bf59eabc3"
+            },
+            "dice-abyss:settings:v1": "{\"effects\":\"low\",\"sound\":false,\"scale\":1}"
+          },
+          "expected": {
+            "dice-abyss:mirror:v1": {
+              "bytes": 3194,
+              "sha256": "a7dbac298492a3a0c1b1b6dae19f2ebc2de6a886e93ab87b69e4cb7bf59eabc3"
+            },
+            "dice-abyss:save:v1": {
+              "bytes": 3194,
+              "sha256": "a7dbac298492a3a0c1b1b6dae19f2ebc2de6a886e93ab87b69e4cb7bf59eabc3"
+            },
+            "dice-abyss:settings:v1": "{\"effects\":\"low\",\"sound\":false,\"scale\":1}"
+          }
+        },
+        {
+          "label": "rendered settlement names the actual committed reward",
+          "passed": true,
+          "actual": "旧遗物已置换，神话遗物箱等待开启。",
+          "expected": "旧遗物已置换，神话遗物箱等待开启。"
+        },
+        {
+          "label": "settlement rarity equals the generated chest rarity",
+          "passed": true
+        },
+        {
+          "label": "one confirmed reward transaction: exact primary bytes",
+          "passed": true,
+          "actual": {
+            "bytes": 3411,
+            "sha256": "b47c8a924933640efa111310225972ba52b1fb6703571d35c7fd774375c13370"
+          },
+          "expected": {
+            "bytes": 3411,
+            "sha256": "b47c8a924933640efa111310225972ba52b1fb6703571d35c7fd774375c13370"
+          }
+        },
+        {
+          "label": "one confirmed reward transaction: exact mirror bytes",
+          "passed": true,
+          "actual": {
+            "bytes": 3411,
+            "sha256": "b47c8a924933640efa111310225972ba52b1fb6703571d35c7fd774375c13370"
+          },
+          "expected": {
+            "bytes": 3411,
+            "sha256": "b47c8a924933640efa111310225972ba52b1fb6703571d35c7fd774375c13370"
+          }
+        },
+        {
+          "label": "one confirmed reward transaction: complete decoded save",
+          "passed": true,
+          "actual": {
+            "runId": "qa-reward-140-exchange-15838",
+            "revision": 2,
+            "phase": "chest",
+            "rng": 1575189379,
+            "gold": 10000000,
+            "items": 3,
+            "sha256": "c4e5addc14685dbcf961e2f07c76f4bd2836f85847a2f6ca80d8aabc60f0eaa5"
+          },
+          "expected": {
+            "runId": "qa-reward-140-exchange-15838",
+            "revision": 2,
+            "phase": "chest",
+            "rng": 1575189379,
+            "gold": 10000000,
+            "items": 3,
+            "sha256": "c4e5addc14685dbcf961e2f07c76f4bd2836f85847a2f6ca80d8aabc60f0eaa5"
+          }
+        },
+        {
+          "label": "exchange retains every equipped ID",
+          "passed": true,
+          "actual": {
+            "weapon": "i1",
+            "armor": "i2",
+            "relic": "i3",
+            "relic2": null,
+            "relic3": null
+          },
+          "expected": {
+            "weapon": "i1",
+            "armor": "i2",
+            "relic": "i3",
+            "relic2": null,
+            "relic3": null
+          }
+        },
+        {
+          "label": "exchange consumes only the selected spare",
+          "passed": true,
+          "actual": [
+            "i1",
+            "i2",
+            "i3"
+          ],
+          "expected": [
+            "i1",
+            "i2",
+            "i3"
+          ]
+        },
+        {
+          "label": "real Open button claims the original reward once: exact primary bytes",
+          "passed": true,
+          "actual": {
+            "bytes": 3708,
+            "sha256": "43f0e6ce76865e864e211e7364c7cb98995df1b23e5b46650e62759541554fb7"
+          },
+          "expected": {
+            "bytes": 3708,
+            "sha256": "43f0e6ce76865e864e211e7364c7cb98995df1b23e5b46650e62759541554fb7"
+          }
+        },
+        {
+          "label": "real Open button claims the original reward once: exact mirror bytes",
+          "passed": true,
+          "actual": {
+            "bytes": 3708,
+            "sha256": "43f0e6ce76865e864e211e7364c7cb98995df1b23e5b46650e62759541554fb7"
+          },
+          "expected": {
+            "bytes": 3708,
+            "sha256": "43f0e6ce76865e864e211e7364c7cb98995df1b23e5b46650e62759541554fb7"
+          }
+        },
+        {
+          "label": "real Open button claims the original reward once: complete decoded save",
+          "passed": true,
+          "actual": {
+            "runId": "qa-reward-140-exchange-15838",
+            "revision": 3,
+            "phase": "loot",
+            "rng": 1575189379,
+            "gold": 10000492,
+            "items": 4,
+            "sha256": "10a3cb832b4b08d72c2407753a065a53b33b42e89f9d102b14eeea96afdc22f9"
+          },
+          "expected": {
+            "runId": "qa-reward-140-exchange-15838",
+            "revision": 3,
+            "phase": "loot",
+            "rng": 1575189379,
+            "gold": 10000492,
+            "items": 4,
+            "sha256": "10a3cb832b4b08d72c2407753a065a53b33b42e89f9d102b14eeea96afdc22f9"
+          }
+        },
+        {
+          "label": "visible loot banner shows the actual reward quality",
+          "passed": true
+        },
+        {
+          "label": "opened item retains its committed ID",
+          "passed": true,
+          "actual": "i6",
+          "expected": "i6"
+        },
+        {
+          "label": "opening the saved chest does not reroll RNG",
+          "passed": true,
+          "actual": 1575189379,
+          "expected": 1575189379
+        }
+      ],
+      "screenshots": [
+        "exchange-pending.png",
+        "exchange-settled.png",
+        "exchange-loot.png"
+      ],
+      "ms": 7412.889996000002
+    },
+    {
+      "name": "legacy-pending-import",
+      "status": "PASS",
+      "details": {
+        "seed": 110866,
+        "floor": 140,
+        "storedText": "廊中的刻印愿收下一件旧遗物，归还一只史诗遗物宝箱。",
+        "renderedText": "廊中的刻印愿收下一件旧遗物，归还一只至少史诗的遗物宝箱。",
+        "rng": 981335930,
+        "stateSha256": "f1e8a8af95cb2e1a3e3d957a922147689559aa156559368349eee5166b310897"
+      },
+      "checks": 22,
+      "trace": [
+        {
+          "label": "fixture naturally selects the legacy relic exchange",
+          "passed": true,
+          "actual": "relic_exchange",
+          "expected": "relic_exchange"
+        },
+        {
+          "label": "fixture contains the original saved narrative",
+          "passed": true,
+          "actual": "廊中的刻印愿收下一件旧遗物，归还一只史诗遗物宝箱。",
+          "expected": "廊中的刻印愿收下一件旧遗物，归还一只史诗遗物宝箱。"
+        },
+        {
+          "label": "page URL identifies the requested local app",
+          "passed": true,
+          "actual": "http://127.0.0.1:4192/",
+          "expected": "http://127.0.0.1:4192/"
+        },
+        {
+          "label": "page title identifies Dice Abyss",
+          "passed": true
+        },
+        {
+          "label": "meaningful app content is rendered",
+          "passed": true
+        },
+        {
+          "label": "no framework error overlay",
+          "passed": true
+        },
+        {
+          "label": "fixture resumes without an action or reroll: exact primary bytes",
+          "passed": true,
+          "actual": {
+            "bytes": 2215,
+            "sha256": "72f630e5722a4fb50134eb2ba3b5f5c80d20214fc3fc8bbac65914fbc25cfe79"
+          },
+          "expected": {
+            "bytes": 2215,
+            "sha256": "72f630e5722a4fb50134eb2ba3b5f5c80d20214fc3fc8bbac65914fbc25cfe79"
+          }
+        },
+        {
+          "label": "fixture resumes without an action or reroll: exact mirror bytes",
+          "passed": true,
+          "actual": {
+            "bytes": 2215,
+            "sha256": "72f630e5722a4fb50134eb2ba3b5f5c80d20214fc3fc8bbac65914fbc25cfe79"
+          },
+          "expected": {
+            "bytes": 2215,
+            "sha256": "72f630e5722a4fb50134eb2ba3b5f5c80d20214fc3fc8bbac65914fbc25cfe79"
+          }
+        },
+        {
+          "label": "fixture resumes without an action or reroll: complete decoded save",
+          "passed": true,
+          "actual": {
+            "runId": "qa-reward-active-before-legacy",
+            "revision": 0,
+            "phase": "fate",
+            "rng": 97418496,
+            "gold": 80,
+            "items": 3,
+            "sha256": "bc3d2136efd17391c978fe0aeac89b77ab955a9c9b98a63c11f0261ccbdba2b4"
+          },
+          "expected": {
+            "runId": "qa-reward-active-before-legacy",
+            "revision": 0,
+            "phase": "fate",
+            "rng": 97418496,
+            "gold": 80,
+            "items": 3,
+            "sha256": "bc3d2136efd17391c978fe0aeac89b77ab955a9c9b98a63c11f0261ccbdba2b4"
+          }
+        },
+        {
+          "label": "file selection and import preview do not replace the current run",
+          "passed": true,
+          "actual": {
+            "dice-abyss:mirror:v1": {
+              "bytes": 2215,
+              "sha256": "72f630e5722a4fb50134eb2ba3b5f5c80d20214fc3fc8bbac65914fbc25cfe79"
+            },
+            "dice-abyss:save:v1": {
+              "bytes": 2215,
+              "sha256": "72f630e5722a4fb50134eb2ba3b5f5c80d20214fc3fc8bbac65914fbc25cfe79"
+            },
+            "dice-abyss:settings:v1": "{\"effects\":\"low\",\"sound\":false,\"scale\":1}"
+          },
+          "expected": {
+            "dice-abyss:mirror:v1": {
+              "bytes": 2215,
+              "sha256": "72f630e5722a4fb50134eb2ba3b5f5c80d20214fc3fc8bbac65914fbc25cfe79"
+            },
+            "dice-abyss:save:v1": {
+              "bytes": 2215,
+              "sha256": "72f630e5722a4fb50134eb2ba3b5f5c80d20214fc3fc8bbac65914fbc25cfe79"
+            },
+            "dice-abyss:settings:v1": "{\"effects\":\"low\",\"sound\":false,\"scale\":1}"
+          }
+        },
+        {
+          "label": "cancelling an import preserves all storage",
+          "passed": true,
+          "actual": {
+            "dice-abyss:mirror:v1": {
+              "bytes": 2215,
+              "sha256": "72f630e5722a4fb50134eb2ba3b5f5c80d20214fc3fc8bbac65914fbc25cfe79"
+            },
+            "dice-abyss:save:v1": {
+              "bytes": 2215,
+              "sha256": "72f630e5722a4fb50134eb2ba3b5f5c80d20214fc3fc8bbac65914fbc25cfe79"
+            },
+            "dice-abyss:settings:v1": "{\"effects\":\"low\",\"sound\":false,\"scale\":1}"
+          },
+          "expected": {
+            "dice-abyss:mirror:v1": {
+              "bytes": 2215,
+              "sha256": "72f630e5722a4fb50134eb2ba3b5f5c80d20214fc3fc8bbac65914fbc25cfe79"
+            },
+            "dice-abyss:save:v1": {
+              "bytes": 2215,
+              "sha256": "72f630e5722a4fb50134eb2ba3b5f5c80d20214fc3fc8bbac65914fbc25cfe79"
+            },
+            "dice-abyss:settings:v1": "{\"effects\":\"low\",\"sound\":false,\"scale\":1}"
+          }
+        },
+        {
+          "label": "confirmed legacy-description import preserves the exact state: exact primary bytes",
+          "passed": true,
+          "actual": {
+            "bytes": 3217,
+            "sha256": "ac06987bc7cbcf4c5e594791ee648c23557123c7cb185250348f8eb93c554d94"
+          },
+          "expected": {
+            "bytes": 3217,
+            "sha256": "ac06987bc7cbcf4c5e594791ee648c23557123c7cb185250348f8eb93c554d94"
+          }
+        },
+        {
+          "label": "confirmed legacy-description import preserves the exact state: exact mirror bytes",
+          "passed": true,
+          "actual": {
+            "bytes": 3217,
+            "sha256": "ac06987bc7cbcf4c5e594791ee648c23557123c7cb185250348f8eb93c554d94"
+          },
+          "expected": {
+            "bytes": 3217,
+            "sha256": "ac06987bc7cbcf4c5e594791ee648c23557123c7cb185250348f8eb93c554d94"
+          }
+        },
+        {
+          "label": "confirmed legacy-description import preserves the exact state: complete decoded save",
+          "passed": true,
+          "actual": {
+            "runId": "qa-reward-140-mystery-110866",
+            "revision": 1,
+            "phase": "event",
+            "rng": 981335930,
+            "gold": 10000000,
+            "items": 4,
+            "sha256": "f1e8a8af95cb2e1a3e3d957a922147689559aa156559368349eee5166b310897"
+          },
+          "expected": {
+            "runId": "qa-reward-140-mystery-110866",
+            "revision": 1,
+            "phase": "event",
+            "rng": 981335930,
+            "gold": 10000000,
+            "items": 4,
+            "sha256": "f1e8a8af95cb2e1a3e3d957a922147689559aa156559368349eee5166b310897"
+          }
+        },
+        {
+          "label": "visible old pending description clarifies the minimum",
+          "passed": true,
+          "actual": "廊中的刻印愿收下一件旧遗物，归还一只至少史诗的遗物宝箱。",
+          "expected": "廊中的刻印愿收下一件旧遗物，归还一只至少史诗的遗物宝箱。"
+        },
+        {
+          "label": "old pending decision uses the corrected guarantee",
+          "passed": true,
+          "actual": "至少史诗遗物宝箱",
+          "expected": "至少史诗遗物宝箱"
+        },
+        {
+          "label": "inspecting and cancelling the old event preserves all bytes and RNG",
+          "passed": true,
+          "actual": {
+            "dice-abyss:mirror:v1": {
+              "bytes": 3217,
+              "sha256": "ac06987bc7cbcf4c5e594791ee648c23557123c7cb185250348f8eb93c554d94"
+            },
+            "dice-abyss:save:v1": {
+              "bytes": 3217,
+              "sha256": "ac06987bc7cbcf4c5e594791ee648c23557123c7cb185250348f8eb93c554d94"
+            },
+            "dice-abyss:settings:v1": "{\"effects\":\"low\",\"sound\":false,\"scale\":1}"
+          },
+          "expected": {
+            "dice-abyss:mirror:v1": {
+              "bytes": 3217,
+              "sha256": "ac06987bc7cbcf4c5e594791ee648c23557123c7cb185250348f8eb93c554d94"
+            },
+            "dice-abyss:save:v1": {
+              "bytes": 3217,
+              "sha256": "ac06987bc7cbcf4c5e594791ee648c23557123c7cb185250348f8eb93c554d94"
+            },
+            "dice-abyss:settings:v1": "{\"effects\":\"low\",\"sound\":false,\"scale\":1}"
+          }
+        },
+        {
+          "label": "reload keeps the old text stored without redrawing the event: exact primary bytes",
+          "passed": true,
+          "actual": {
+            "bytes": 3217,
+            "sha256": "ac06987bc7cbcf4c5e594791ee648c23557123c7cb185250348f8eb93c554d94"
+          },
+          "expected": {
+            "bytes": 3217,
+            "sha256": "ac06987bc7cbcf4c5e594791ee648c23557123c7cb185250348f8eb93c554d94"
+          }
+        },
+        {
+          "label": "reload keeps the old text stored without redrawing the event: exact mirror bytes",
+          "passed": true,
+          "actual": {
+            "bytes": 3217,
+            "sha256": "ac06987bc7cbcf4c5e594791ee648c23557123c7cb185250348f8eb93c554d94"
+          },
+          "expected": {
+            "bytes": 3217,
+            "sha256": "ac06987bc7cbcf4c5e594791ee648c23557123c7cb185250348f8eb93c554d94"
+          }
+        },
+        {
+          "label": "reload keeps the old text stored without redrawing the event: complete decoded save",
+          "passed": true,
+          "actual": {
+            "runId": "qa-reward-140-mystery-110866",
+            "revision": 1,
+            "phase": "event",
+            "rng": 981335930,
+            "gold": 10000000,
+            "items": 4,
+            "sha256": "f1e8a8af95cb2e1a3e3d957a922147689559aa156559368349eee5166b310897"
+          },
+          "expected": {
+            "runId": "qa-reward-140-mystery-110866",
+            "revision": 1,
+            "phase": "event",
+            "rng": 981335930,
+            "gold": 10000000,
+            "items": 4,
+            "sha256": "f1e8a8af95cb2e1a3e3d957a922147689559aa156559368349eee5166b310897"
+          }
+        },
+        {
+          "label": "read-only correction survives a normal reload",
+          "passed": true,
+          "actual": "廊中的刻印愿收下一件旧遗物，归还一只至少史诗的遗物宝箱。",
+          "expected": "廊中的刻印愿收下一件旧遗物，归还一只至少史诗的遗物宝箱。"
+        },
+        {
+          "label": "original saved text is retained rather than silently rewritten",
+          "passed": true,
+          "actual": "廊中的刻印愿收下一件旧遗物，归还一只史诗遗物宝箱。",
+          "expected": "廊中的刻印愿收下一件旧遗物，归还一只史诗遗物宝箱。"
+        }
+      ],
+      "screenshots": [
+        "legacy-pending.png"
+      ],
+      "ms": 7913.111256
+    },
+    {
+      "name": "auction-collision-import",
+      "status": "PASS",
+      "details": {
+        "seed": 741,
+        "floor": 140,
+        "invalidPayloadChange": "event.reward.item.id equals an owned equipment ID",
+        "rejectedRawSha256": "4d82e9d8b7b050fe0237d396c41794b1f7def4d14f08ef2a3eeca2fbc57981d0",
+        "activePreservedSha256": "7e7107f5762170b56853fedd7217e8683654429b94467ae44023d42708ed6cab",
+        "validRewardId": "i4",
+        "validStateSha256": "82f0dbc0650fbe89fb92fadc5adaec8f86e66022fff4d1245c1512d4128a35e1"
+      },
+      "checks": 30,
+      "trace": [
+        {
+          "label": "page URL identifies the requested local app",
+          "passed": true,
+          "actual": "http://127.0.0.1:4192/",
+          "expected": "http://127.0.0.1:4192/"
+        },
+        {
+          "label": "page title identifies Dice Abyss",
+          "passed": true
+        },
+        {
+          "label": "meaningful app content is rendered",
+          "passed": true
+        },
+        {
+          "label": "no framework error overlay",
+          "passed": true
+        },
+        {
+          "label": "fixture resumes without an action or reroll: exact primary bytes",
+          "passed": true,
+          "actual": {
+            "bytes": 2217,
+            "sha256": "c29b625b735f810658cad0ace62ee2b3cb61610583fcc67f7deeb62a26294e59"
+          },
+          "expected": {
+            "bytes": 2217,
+            "sha256": "c29b625b735f810658cad0ace62ee2b3cb61610583fcc67f7deeb62a26294e59"
+          }
+        },
+        {
+          "label": "fixture resumes without an action or reroll: exact mirror bytes",
+          "passed": true,
+          "actual": {
+            "bytes": 2217,
+            "sha256": "c29b625b735f810658cad0ace62ee2b3cb61610583fcc67f7deeb62a26294e59"
+          },
+          "expected": {
+            "bytes": 2217,
+            "sha256": "c29b625b735f810658cad0ace62ee2b3cb61610583fcc67f7deeb62a26294e59"
+          }
+        },
+        {
+          "label": "fixture resumes without an action or reroll: complete decoded save",
+          "passed": true,
+          "actual": {
+            "runId": "qa-reward-active-before-auction",
+            "revision": 0,
+            "phase": "fate",
+            "rng": 426857971,
+            "gold": 80,
+            "items": 3,
+            "sha256": "7e7107f5762170b56853fedd7217e8683654429b94467ae44023d42708ed6cab"
+          },
+          "expected": {
+            "runId": "qa-reward-active-before-auction",
+            "revision": 0,
+            "phase": "fate",
+            "rng": 426857971,
+            "gold": 80,
+            "items": 3,
+            "sha256": "7e7107f5762170b56853fedd7217e8683654429b94467ae44023d42708ed6cab"
+          }
+        },
+        {
+          "label": "rejected collision import leaves primary, mirror, settings and archive slots exactly unchanged",
+          "passed": true,
+          "actual": {
+            "dice-abyss:mirror:v1": {
+              "bytes": 2217,
+              "sha256": "c29b625b735f810658cad0ace62ee2b3cb61610583fcc67f7deeb62a26294e59"
+            },
+            "dice-abyss:save:v1": {
+              "bytes": 2217,
+              "sha256": "c29b625b735f810658cad0ace62ee2b3cb61610583fcc67f7deeb62a26294e59"
+            },
+            "dice-abyss:settings:v1": "{\"effects\":\"low\",\"sound\":false,\"scale\":1}"
+          },
+          "expected": {
+            "dice-abyss:mirror:v1": {
+              "bytes": 2217,
+              "sha256": "c29b625b735f810658cad0ace62ee2b3cb61610583fcc67f7deeb62a26294e59"
+            },
+            "dice-abyss:save:v1": {
+              "bytes": 2217,
+              "sha256": "c29b625b735f810658cad0ace62ee2b3cb61610583fcc67f7deeb62a26294e59"
+            },
+            "dice-abyss:settings:v1": "{\"effects\":\"low\",\"sound\":false,\"scale\":1}"
+          }
+        },
+        {
+          "label": "the prior playable run remains selected after the rejection",
+          "passed": true,
+          "actual": {
+            "runId": "qa-reward-active-before-auction",
+            "revision": 0,
+            "phase": "fate",
+            "rng": 426857971,
+            "gold": 80,
+            "items": 3,
+            "sha256": "7e7107f5762170b56853fedd7217e8683654429b94467ae44023d42708ed6cab"
+          },
+          "expected": {
+            "runId": "qa-reward-active-before-auction",
+            "revision": 0,
+            "phase": "fate",
+            "rng": 426857971,
+            "gold": 80,
+            "items": 3,
+            "sha256": "7e7107f5762170b56853fedd7217e8683654429b94467ae44023d42708ed6cab"
+          }
+        },
+        {
+          "label": "invalid file is rejected before a replacement confirmation",
+          "passed": true,
+          "actual": "旅途设置",
+          "expected": "旅途设置"
+        },
+        {
+          "label": "there is no way to confirm the invalid import",
+          "passed": true
+        },
+        {
+          "label": "valid import still waits for an explicit replacement confirmation",
+          "passed": true,
+          "actual": {
+            "dice-abyss:mirror:v1": {
+              "bytes": 2217,
+              "sha256": "c29b625b735f810658cad0ace62ee2b3cb61610583fcc67f7deeb62a26294e59"
+            },
+            "dice-abyss:save:v1": {
+              "bytes": 2217,
+              "sha256": "c29b625b735f810658cad0ace62ee2b3cb61610583fcc67f7deeb62a26294e59"
+            },
+            "dice-abyss:settings:v1": "{\"effects\":\"low\",\"sound\":false,\"scale\":1}"
+          },
+          "expected": {
+            "dice-abyss:mirror:v1": {
+              "bytes": 2217,
+              "sha256": "c29b625b735f810658cad0ace62ee2b3cb61610583fcc67f7deeb62a26294e59"
+            },
+            "dice-abyss:save:v1": {
+              "bytes": 2217,
+              "sha256": "c29b625b735f810658cad0ace62ee2b3cb61610583fcc67f7deeb62a26294e59"
+            },
+            "dice-abyss:settings:v1": "{\"effects\":\"low\",\"sound\":false,\"scale\":1}"
+          }
+        },
+        {
+          "label": "the valid auction counterpart imports exactly: exact primary bytes",
+          "passed": true,
+          "actual": {
+            "bytes": 3334,
+            "sha256": "a1bd56350ff2ed3a276a1d830c82caedf96e75878477f62d5738f6af3f44b099"
+          },
+          "expected": {
+            "bytes": 3334,
+            "sha256": "a1bd56350ff2ed3a276a1d830c82caedf96e75878477f62d5738f6af3f44b099"
+          }
+        },
+        {
+          "label": "the valid auction counterpart imports exactly: exact mirror bytes",
+          "passed": true,
+          "actual": {
+            "bytes": 3334,
+            "sha256": "a1bd56350ff2ed3a276a1d830c82caedf96e75878477f62d5738f6af3f44b099"
+          },
+          "expected": {
+            "bytes": 3334,
+            "sha256": "a1bd56350ff2ed3a276a1d830c82caedf96e75878477f62d5738f6af3f44b099"
+          }
+        },
+        {
+          "label": "the valid auction counterpart imports exactly: complete decoded save",
+          "passed": true,
+          "actual": {
+            "runId": "qa-reward-140-abyssauction-741",
+            "revision": 1,
+            "phase": "event",
+            "rng": 546002035,
+            "gold": 10000000,
+            "items": 3,
+            "sha256": "26901168a58f9d0c433d7226948730a9ca26cf653cf8872ba1e20bc2638990da"
+          },
+          "expected": {
+            "runId": "qa-reward-140-abyssauction-741",
+            "revision": 1,
+            "phase": "event",
+            "rng": 546002035,
+            "gold": 10000000,
+            "items": 3,
+            "sha256": "26901168a58f9d0c433d7226948730a9ca26cf653cf8872ba1e20bc2638990da"
+          }
+        },
+        {
+          "label": "visible auction preview shows the saved actual item",
+          "passed": true
+        },
+        {
+          "label": "auction confirmation shows that same committed item",
+          "passed": true
+        },
+        {
+          "label": "auction confirmation itself changes no state: exact primary bytes",
+          "passed": true,
+          "actual": {
+            "bytes": 3334,
+            "sha256": "a1bd56350ff2ed3a276a1d830c82caedf96e75878477f62d5738f6af3f44b099"
+          },
+          "expected": {
+            "bytes": 3334,
+            "sha256": "a1bd56350ff2ed3a276a1d830c82caedf96e75878477f62d5738f6af3f44b099"
+          }
+        },
+        {
+          "label": "auction confirmation itself changes no state: exact mirror bytes",
+          "passed": true,
+          "actual": {
+            "bytes": 3334,
+            "sha256": "a1bd56350ff2ed3a276a1d830c82caedf96e75878477f62d5738f6af3f44b099"
+          },
+          "expected": {
+            "bytes": 3334,
+            "sha256": "a1bd56350ff2ed3a276a1d830c82caedf96e75878477f62d5738f6af3f44b099"
+          }
+        },
+        {
+          "label": "auction confirmation itself changes no state: complete decoded save",
+          "passed": true,
+          "actual": {
+            "runId": "qa-reward-140-abyssauction-741",
+            "revision": 1,
+            "phase": "event",
+            "rng": 546002035,
+            "gold": 10000000,
+            "items": 3,
+            "sha256": "26901168a58f9d0c433d7226948730a9ca26cf653cf8872ba1e20bc2638990da"
+          },
+          "expected": {
+            "runId": "qa-reward-140-abyssauction-741",
+            "revision": 1,
+            "phase": "event",
+            "rng": 546002035,
+            "gold": 10000000,
+            "items": 3,
+            "sha256": "26901168a58f9d0c433d7226948730a9ca26cf653cf8872ba1e20bc2638990da"
+          }
+        },
+        {
+          "label": "real auction acceptance retains its exact generated reward: exact primary bytes",
+          "passed": true,
+          "actual": {
+            "bytes": 3787,
+            "sha256": "40c407191767353ddaa07e0294c80cd910a79b61d2ab89e93b5849863adaa1ff"
+          },
+          "expected": {
+            "bytes": 3787,
+            "sha256": "40c407191767353ddaa07e0294c80cd910a79b61d2ab89e93b5849863adaa1ff"
+          }
+        },
+        {
+          "label": "real auction acceptance retains its exact generated reward: exact mirror bytes",
+          "passed": true,
+          "actual": {
+            "bytes": 3787,
+            "sha256": "40c407191767353ddaa07e0294c80cd910a79b61d2ab89e93b5849863adaa1ff"
+          },
+          "expected": {
+            "bytes": 3787,
+            "sha256": "40c407191767353ddaa07e0294c80cd910a79b61d2ab89e93b5849863adaa1ff"
+          }
+        },
+        {
+          "label": "real auction acceptance retains its exact generated reward: complete decoded save",
+          "passed": true,
+          "actual": {
+            "runId": "qa-reward-140-abyssauction-741",
+            "revision": 2,
+            "phase": "chest",
+            "rng": 546002035,
+            "gold": 9995975,
+            "items": 3,
+            "sha256": "199dc37cfd52a470531b5c8e8392f691720cf5b735a90582200c32806fe90403"
+          },
+          "expected": {
+            "runId": "qa-reward-140-abyssauction-741",
+            "revision": 2,
+            "phase": "chest",
+            "rng": 546002035,
+            "gold": 9995975,
+            "items": 3,
+            "sha256": "199dc37cfd52a470531b5c8e8392f691720cf5b735a90582200c32806fe90403"
+          }
+        },
+        {
+          "label": "accepting the imported auction uses no new RNG",
+          "passed": true,
+          "actual": 546002035,
+          "expected": 546002035
+        },
+        {
+          "label": "real Open button claims the original reward once: exact primary bytes",
+          "passed": true,
+          "actual": {
+            "bytes": 4082,
+            "sha256": "cccaf7101d54e6e2a7d3e1a0b3bb4f085f8f1d90fd4e49e484474bfede28fb1b"
+          },
+          "expected": {
+            "bytes": 4082,
+            "sha256": "cccaf7101d54e6e2a7d3e1a0b3bb4f085f8f1d90fd4e49e484474bfede28fb1b"
+          }
+        },
+        {
+          "label": "real Open button claims the original reward once: exact mirror bytes",
+          "passed": true,
+          "actual": {
+            "bytes": 4082,
+            "sha256": "cccaf7101d54e6e2a7d3e1a0b3bb4f085f8f1d90fd4e49e484474bfede28fb1b"
+          },
+          "expected": {
+            "bytes": 4082,
+            "sha256": "cccaf7101d54e6e2a7d3e1a0b3bb4f085f8f1d90fd4e49e484474bfede28fb1b"
+          }
+        },
+        {
+          "label": "real Open button claims the original reward once: complete decoded save",
+          "passed": true,
+          "actual": {
+            "runId": "qa-reward-140-abyssauction-741",
+            "revision": 3,
+            "phase": "loot",
+            "rng": 546002035,
+            "gold": 9996467,
+            "items": 4,
+            "sha256": "82f0dbc0650fbe89fb92fadc5adaec8f86e66022fff4d1245c1512d4128a35e1"
+          },
+          "expected": {
+            "runId": "qa-reward-140-abyssauction-741",
+            "revision": 3,
+            "phase": "loot",
+            "rng": 546002035,
+            "gold": 9996467,
+            "items": 4,
+            "sha256": "82f0dbc0650fbe89fb92fadc5adaec8f86e66022fff4d1245c1512d4128a35e1"
+          }
+        },
+        {
+          "label": "visible loot banner shows the actual reward quality",
+          "passed": true
+        },
+        {
+          "label": "opened item retains its committed ID",
+          "passed": true,
+          "actual": "i4",
+          "expected": "i4"
+        },
+        {
+          "label": "opening the saved chest does not reroll RNG",
+          "passed": true,
+          "actual": 546002035,
+          "expected": 546002035
+        }
+      ],
+      "screenshots": [
+        "auction-import-rejected.png",
+        "auction-loot.png"
+      ],
+      "ms": 10437.581039999997
+    }
+  ],
+  "errors": [],
+  "console": [],
+  "notes": [
+    "Four independent contexts use legal synthetic floor-140 fixtures. This is a targeted functional regression, not a natural-progression or visual-performance claim.",
+    "Only fixture setup injects localStorage. Every choice, cancellation, confirmation and import uses real rendered controls or the file chooser; no app closure or internal UI state is read.",
+    "Assertions compare complete decoded saves and exact primary/mirror bytes. Rejected imports and read-only operations compare every localStorage entry, including absent archive slots.",
+    "The invalid auction is one reward-ID collision inside an otherwise valid current-format envelope with a recomputed checksum. It is uploaded through the UI and is never injected as active storage.",
+    "Console warnings are recorded verbatim for review. Page exceptions and console errors fail the run."
+  ],
+  "browser": "155.0.8059.84",
+  "checks": 108,
+  "finished": "2026-10-17T13:43:28.245Z",
+  "sourceHashesAfter": {
+    "src/engine.js": "afd66fe121e68536c88b7f583f68c9de3b349272a61011c277295dd460afd8d2",
+    "src/equipment.js": "294945cd13d7183007cb3138a07523a5fbbfc53dabfe0635dbcfa1a77fc2c465",
+    "src/equipment-content.js": "d95b5e7c11d14eb764ea3cefb7eee73f35b2f9d48a8b640513eda9aefd1cc030",
+    "src/content.js": "4c0c2e4656c5a3482a5448a069ae2fa28367ba05d61c7d0c2c9866315f5c5526",
+    "src/encounters.js": "1cf841306e5a4bbcde1775754795d8fa26cdb65ae49216ccf2e45bea4b3b36f8",
+    "src/deep-content.js": "040a5668b687cf9d7b7c8b31a67cee35660ebb0539af74c7d572614f138fef33",
+    "src/deep-rules.js": "6919b66ec8fbadea293ab4c4e3aa0b8c7a943e2ec44224b119287709d484581f",
+    "src/rarity.js": "871356df147d027e1845f98c5574a1d9a71c0d17bd8717f457c9007d7c73b735",
+    "src/storage.js": "f4cf7cb3fceed274fd2a929bc0d53c34b7c62046639a732f6229de72ef1e69f3",
+    "src/app.js": "60978f73ee347457518c62433b3d0447d9cd59a2c9609f8602b6a3c8fb1dd98d",
+    "src/views.js": "de967b2b0ffcc60706729ae38b3b8686355be4060ec0d8275f9f474c8bce17e1"
+  },
+  "sourceStable": true,
+  "passed": true
+}

@@ -1,0 +1,517 @@
+{
+  "round": 10,
+  "status": "REVIEWED_WITH_LIMITATIONS",
+  "method": "只读原始报告和驱动；未启动浏览器、游戏或性能测量。按 HTTP release 映射版本，保留全部正式样本，不合并两轮，不替换首轮。",
+  "protocolQuantile": "sorted[floor((n-1)*p)]; n=12 时 p50 取第 6 个、p95/p99 取第 11 个。",
+  "inputs": {
+    "first": {
+      "path": "qa/performance-round10/performance-round.json",
+      "sha256": "8c732db909af9d2189e1ac9e76b0a7c34451a947f615403a3384df51910c7bb4",
+      "scriptSha256": "bb3205985884a20a88a27e289f9ec04f46bd751f3cd4568df60affce0e506981",
+      "reportedStatus": "MEASURED_WITH_LIMITATIONS",
+      "httpVersionMapping": {
+        "baseline": "5.9.0",
+        "after": "5.10.0"
+      },
+      "orderByVersion": [
+        "5.9.0",
+        "5.10.0"
+      ],
+      "sourceSnapshotStable": true,
+      "trackedFilesPerLabel": {
+        "baseline": 10,
+        "after": 10
+      },
+      "startedAt": "2026-10-18T09:33:48.737Z",
+      "completedAt": "2026-10-18T09:37:17.337Z"
+    },
+    "reversed": {
+      "path": "qa/performance-inventory-reversed/performance-round.json",
+      "sha256": "6a1a87664446a6d9981b6ee8613fbdb7119e035baeaa9806ed8c8e517d40fc96",
+      "scriptSha256": "bb3205985884a20a88a27e289f9ec04f46bd751f3cd4568df60affce0e506981",
+      "reportedStatus": "MEASURED",
+      "httpVersionMapping": {
+        "baseline": "5.10.0",
+        "after": "5.9.0"
+      },
+      "orderByVersion": [
+        "5.10.0",
+        "5.9.0"
+      ],
+      "sourceSnapshotStable": true,
+      "trackedFilesPerLabel": {
+        "baseline": 10,
+        "after": 10
+      },
+      "startedAt": "2026-10-18T09:39:51.491Z",
+      "completedAt": "2026-10-18T09:40:21.970Z"
+    }
+  },
+  "inventory": {
+    "first": {
+      "versions": {
+        "5.9.0": {
+          "reportLabel": "baseline",
+          "rawMs": [
+            61.69999999925494,
+            68.5,
+            61.899999998509884,
+            73.30000000074506,
+            428.6000000014901,
+            296.80000000074506,
+            247.20000000298023,
+            582.8000000007451,
+            476.3999999985099,
+            67.19999999925494,
+            69.69999999925494,
+            309
+          ],
+          "sortedMs": [
+            61.69999999925494,
+            61.899999998509884,
+            67.19999999925494,
+            68.5,
+            69.69999999925494,
+            73.30000000074506,
+            247.20000000298023,
+            296.80000000074506,
+            309,
+            428.6000000014901,
+            476.3999999985099,
+            582.8000000007451
+          ],
+          "protocol": {
+            "samples": 12,
+            "p50": 73.30000000074506,
+            "p95": 476.3999999985099,
+            "p99": 476.3999999985099,
+            "max": 582.8000000007451,
+            "min": 61.69999999925494
+          },
+          "sensitivityOnly": {
+            "arithmeticMedian": 160.25000000186265,
+            "mean": 228.59166666679084,
+            "middlePair": [
+              73.30000000074506,
+              247.20000000298023
+            ]
+          },
+          "over100Ms": 6,
+          "over500Ms": 1
+        },
+        "5.10.0": {
+          "reportLabel": "after",
+          "rawMs": [
+            72.80000000074506,
+            55.69999999925494,
+            64.69999999925494,
+            138.10000000149012,
+            232.30000000074506,
+            76,
+            594.4000000022352,
+            580,
+            425.69999999925494,
+            216,
+            220.10000000149012,
+            428.3999999985099
+          ],
+          "sortedMs": [
+            55.69999999925494,
+            64.69999999925494,
+            72.80000000074506,
+            76,
+            138.10000000149012,
+            216,
+            220.10000000149012,
+            232.30000000074506,
+            425.69999999925494,
+            428.3999999985099,
+            580,
+            594.4000000022352
+          ],
+          "protocol": {
+            "samples": 12,
+            "p50": 216,
+            "p95": 580,
+            "p99": 580,
+            "max": 594.4000000022352,
+            "min": 55.69999999925494
+          },
+          "sensitivityOnly": {
+            "arithmeticMedian": 218.05000000074506,
+            "mean": 258.6833333335817,
+            "middlePair": [
+              216,
+              220.10000000149012
+            ]
+          },
+          "over100Ms": 8,
+          "over500Ms": 2
+        }
+      },
+      "currentMinusInput": {
+        "p50": {
+          "ms": 142.69999999925494,
+          "percent": 194.67939972415343
+        },
+        "p95": {
+          "ms": 103.60000000149012,
+          "percent": 21.746431570489968
+        },
+        "max": {
+          "ms": 11.600000001490116,
+          "percent": 1.9903912150781133
+        }
+      },
+      "sensitivityCurrentMinusInputMs": {
+        "arithmeticMedian": 57.79999999888241,
+        "mean": 30.091666666790843
+      },
+      "pairDeltasCurrentMinusInputMs": [
+        11.100000001490116,
+        -12.800000000745058,
+        2.800000000745058,
+        64.80000000074506,
+        -196.30000000074506,
+        -220.80000000074506,
+        347.19999999925494,
+        -2.800000000745058,
+        -50.69999999925494,
+        148.80000000074506,
+        150.40000000223517,
+        119.39999999850988
+      ],
+      "currentSlowerPairs": 7,
+      "aggregateRecomputationMatches": true,
+      "storedLabelComparisonMatches": true,
+      "timedSamples": 24,
+      "warmupsExcludedPerVersion": 1,
+      "allNativeTrusted60CardsAndBothSavesUnchanged": true,
+      "storageAcceptedBothCopies": true
+    },
+    "reversed": {
+      "versions": {
+        "5.10.0": {
+          "reportLabel": "baseline",
+          "rawMs": [
+            73.79999999701977,
+            66.39999999850988,
+            58.79999999701977,
+            64.60000000149012,
+            230.19999999925494,
+            121.30000000074506,
+            133.5,
+            420.1000000014901,
+            213.60000000149012,
+            337.29999999701977,
+            385.69999999925494,
+            216.69999999925494
+          ],
+          "sortedMs": [
+            58.79999999701977,
+            64.60000000149012,
+            66.39999999850988,
+            73.79999999701977,
+            121.30000000074506,
+            133.5,
+            213.60000000149012,
+            216.69999999925494,
+            230.19999999925494,
+            337.29999999701977,
+            385.69999999925494,
+            420.1000000014901
+          ],
+          "protocol": {
+            "samples": 12,
+            "p50": 133.5,
+            "p95": 385.69999999925494,
+            "p99": 385.69999999925494,
+            "max": 420.1000000014901,
+            "min": 58.79999999701977
+          },
+          "sensitivityOnly": {
+            "arithmeticMedian": 173.55000000074506,
+            "mean": 193.49999999937913,
+            "middlePair": [
+              133.5,
+              213.60000000149012
+            ]
+          },
+          "over100Ms": 8,
+          "over500Ms": 0
+        },
+        "5.9.0": {
+          "reportLabel": "after",
+          "rawMs": [
+            96,
+            70,
+            65.10000000149012,
+            63.19999999925494,
+            227.19999999925494,
+            478.70000000298023,
+            328.79999999701977,
+            483.19999999925494,
+            228.20000000298023,
+            67.19999999925494,
+            128.19999999925494,
+            225.29999999701977
+          ],
+          "sortedMs": [
+            63.19999999925494,
+            65.10000000149012,
+            67.19999999925494,
+            70,
+            96,
+            128.19999999925494,
+            225.29999999701977,
+            227.19999999925494,
+            228.20000000298023,
+            328.79999999701977,
+            478.70000000298023,
+            483.19999999925494
+          ],
+          "protocol": {
+            "samples": 12,
+            "p50": 128.19999999925494,
+            "p95": 478.70000000298023,
+            "p99": 478.70000000298023,
+            "max": 483.19999999925494,
+            "min": 63.19999999925494
+          },
+          "sensitivityOnly": {
+            "arithmeticMedian": 176.74999999813735,
+            "mean": 205.0916666664804,
+            "middlePair": [
+              128.19999999925494,
+              225.29999999701977
+            ]
+          },
+          "over100Ms": 7,
+          "over500Ms": 0
+        }
+      },
+      "currentMinusInput": {
+        "p50": {
+          "ms": 5.300000000745058,
+          "percent": 4.134165367219866
+        },
+        "p95": {
+          "ms": -93.00000000372529,
+          "percent": -19.42761646190647
+        },
+        "max": {
+          "ms": -63.099999997764826,
+          "percent": -13.058774833994647
+        }
+      },
+      "sensitivityCurrentMinusInputMs": {
+        "arithmeticMedian": -3.199999997392297,
+        "mean": -11.591666667101265
+      },
+      "pairDeltasCurrentMinusInputMs": [
+        -22.200000002980232,
+        -3.600000001490116,
+        -6.300000004470348,
+        1.4000000022351742,
+        3.0,
+        -357.4000000022352,
+        -195.29999999701977,
+        -63.099999997764826,
+        -14.600000001490116,
+        270.0999999977648,
+        257.5,
+        -8.599999997764826
+      ],
+      "currentSlowerPairs": 4,
+      "aggregateRecomputationMatches": true,
+      "storedLabelComparisonMatches": true,
+      "timedSamples": 24,
+      "warmupsExcludedPerVersion": 1,
+      "allNativeTrusted60CardsAndBothSavesUnchanged": true,
+      "storageAcceptedBothCopies": true
+    }
+  },
+  "frames": {
+    "first": {
+      "frames": {
+        "windowCount": 16,
+        "observedExpectedEffects": 13,
+        "aggregateRecomputationMatches": true,
+        "intraWindowQuantileRecomputable": false,
+        "versionSummaries": {
+          "5.9.0": {
+            "windows": 8,
+            "observedExpectedEffects": 7,
+            "recordedFrames": 638,
+            "worstRecordedIntervalMs": 11199.800000000745,
+            "maxWindowOverrunMs": 7395.099999997765,
+            "over100Intervals": 11,
+            "longTaskCount": 2
+          },
+          "5.10.0": {
+            "windows": 8,
+            "observedExpectedEffects": 6,
+            "recordedFrames": 698,
+            "worstRecordedIntervalMs": 9401.39999999851,
+            "maxWindowOverrunMs": 5709.800000000745,
+            "over100Intervals": 9,
+            "longTaskCount": 1
+          }
+        },
+        "notObservedWindows": [
+          {
+            "scene": "boss-burst",
+            "width": 3840,
+            "height": 2160,
+            "effects": "full",
+            "repeat": 1,
+            "frames": 10,
+            "p50": 16.699999999254942,
+            "p95": 32.80000000074506,
+            "max": 8244.300000000745,
+            "actualWindowMs": 8410,
+            "windowOverrunMs": 4210,
+            "effectKinds": [
+              "idle",
+              "dice-only"
+            ],
+            "longTasks": {
+              "supported": true,
+              "count": 0,
+              "totalOverlapMs": 0,
+              "maxMs": 0,
+              "largest": []
+            },
+            "version": "5.9.0"
+          },
+          {
+            "scene": "boss-burst",
+            "width": 3840,
+            "height": 2160,
+            "effects": "full",
+            "repeat": 1,
+            "frames": 15,
+            "p50": 16.699999999254942,
+            "p95": 41.29999999701977,
+            "max": 5200.800000000745,
+            "actualWindowMs": 5453.5,
+            "windowOverrunMs": 1253.5,
+            "effectKinds": [
+              "idle",
+              "dice-only"
+            ],
+            "longTasks": {
+              "supported": true,
+              "count": 0,
+              "totalOverlapMs": 0,
+              "maxMs": 0,
+              "largest": []
+            },
+            "version": "5.10.0"
+          },
+          {
+            "scene": "eternal-open",
+            "width": 3840,
+            "height": 2160,
+            "effects": "full",
+            "repeat": 1,
+            "frames": 32,
+            "p50": 16.699999999254942,
+            "p95": 22.200000002980232,
+            "max": 9401.39999999851,
+            "actualWindowMs": 9909.800000000745,
+            "windowOverrunMs": 5709.800000000745,
+            "effectKinds": [
+              "idle",
+              "chest-charge"
+            ],
+            "longTasks": {
+              "supported": true,
+              "count": 0,
+              "totalOverlapMs": 0,
+              "maxMs": 0,
+              "largest": []
+            },
+            "version": "5.10.0"
+          }
+        ]
+      },
+      "coverage": {
+        "windowCount": 14,
+        "observedExpectedEffects": 14,
+        "aggregateRecomputationMatches": true,
+        "intraWindowQuantileRecomputable": false,
+        "versionSummaries": {
+          "5.9.0": {
+            "windows": 7,
+            "observedExpectedEffects": 7,
+            "recordedFrames": 1193,
+            "worstRecordedIntervalMs": 3040.5,
+            "maxWindowOverrunMs": 11.699999999254942,
+            "over100Intervals": 7,
+            "longTaskCount": 0
+          },
+          "5.10.0": {
+            "windows": 7,
+            "observedExpectedEffects": 7,
+            "recordedFrames": 1275,
+            "worstRecordedIntervalMs": 1870.3999999985099,
+            "maxWindowOverrunMs": 11.800000000745058,
+            "over100Intervals": 7,
+            "longTaskCount": 0
+          }
+        },
+        "notObservedWindows": []
+      }
+    },
+    "reversed": {
+      "frames": {
+        "windowCount": 0,
+        "observedExpectedEffects": 0,
+        "aggregateRecomputationMatches": true,
+        "intraWindowQuantileRecomputable": false,
+        "versionSummaries": {},
+        "notObservedWindows": []
+      },
+      "coverage": {
+        "windowCount": 0,
+        "observedExpectedEffects": 0,
+        "aggregateRecomputationMatches": true,
+        "intraWindowQuantileRecomputable": false,
+        "versionSummaries": {},
+        "notObservedWindows": []
+      }
+    }
+  },
+  "judgment": {
+    "firstObservation": "首轮当前版协议 p50 增加 142.7 ms（194.68%），p95 增加 103.6 ms（21.75%）；观察到的退步必须保留。",
+    "reversedFollowup": "反转版本顺序后，p50 差为 5.3 ms（4.13%），p95 差为 -93.0 ms（-19.43%）；首轮同量级差异未复现，尾部方向反转。",
+    "attribution": "不足以认定新增 XP 界面存在重大且稳定的性能回归，也不足以证明性能等价、排除所有规模的回归或确定原因是执行顺序。局部源码未改不能代替测量。",
+    "openRisk": "保留 P2 万件导航尾部、保存全量校验和同步写入风险。导航计时中双存档不变，不能将此时间直接归因于同步写入。帧有秒级停顿，不能宣称优化收益或物理 4K60。",
+    "effectCapture": "主矩阵仅 13/16 窗捕获预期特效；3 个 3840/full 窗缺少预期终段特效。额外稀有度覆盖 14/14，不能用来替代这 3 窗。",
+    "diagnosticDecision": "反转顺序已完成必要的有界诊断，可停止本轮重测。下一轮若要定位尾部或排除预设幅度的回归，应跨独立会话做平衡或随机版本顺序，保留 DOM/样式/布局/存档分段、主线程和渲染器 trace，以及完整帧间隔。"
+  },
+  "limits": [
+    "每轮每版 12 次来自同一浏览器会话下的版本上下文，不是 12 个独立设备或随机会话。先 AB 后 BA 仍与时间块、预热和宿主调度混杂。",
+    "仅排除每轮每版预先声明的一个预热，没有丢弃、修剪或替换正式慢样本。",
+    "首轮输入第 6/7 个样本为 73.3/247.2 ms，协议 p50 对秩选择敏感。常规两中值平均只作敏感性补充，不替换正式协议结果。p95 也只是 12 点中的第 11 点。",
+    "ANGLE SwiftShader 与 Headless Chromium 的回调计时包含调度和渲染等待，不能推断实体 GPU FPS 或具体卡顿原因。",
+    "帧原始 intervals 未保留，无法独立重算单窗 p50/p95/p99；这里只能复算窗口汇总并核对一致性。主矩阵每格一窗，不能混入覆盖窗制造样本量。",
+    "Long Tasks 为 0 不代表没有帧停顿，也不足以证明停顿都在主线程之外。",
+    "sourceStable 只覆盖报告列举的 10 个文件；HTTP 校验覆盖元数据和 3 个列举资源，不是整个依赖图的身份保证。"
+  ],
+  "crossRunIdentity": {
+    "all48InventoryCardHtmlHashesEqual": true,
+    "cardHtmlSha256": "0bff297d9c1e32bc76302dc84ce0e383702ac4456e330f010feb2e79c3319727",
+    "all48InventoryCardIdHashesEqual": true,
+    "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+    "fixtureManifestsEqual": true,
+    "driverHashesEqual": true
+  },
+  "sourceDriverMatchesRecordedHash": true,
+  "inputEvidenceUnmodified": true,
+  "reviewerAttemptCorrection": {
+    "evidence": "performance-recompute-attempt-01.json",
+    "description": "首次复算附加了所有帧窗 effectObserved=true 的过强断言而退出 1。原报告明确为 MEASURED_WITH_LIMITATIONS；改为分别报告事务正确性与特效捕获结果，保留 3 个 false，未改产品、原始测量或旧驱动。"
+  }
+}

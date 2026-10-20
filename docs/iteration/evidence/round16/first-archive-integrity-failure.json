@@ -1,0 +1,22 @@
+{
+  "bytes": 14827295,
+  "sha256": "32ff409de16b6855421e70aea9b9d8923ef08c638150e27c02e9568c39f3c1ea",
+  "originalBuildBytes": 27087039,
+  "originalBuildSha256": "1cf1a991521ed9ddad53a5da47abf5865a2f56330393352b1d53993f6c6ca40c",
+  "hasEndRecordInTail": -1,
+  "isZipFile": false,
+  "tailHex": "e00743544a1b54d54970ec2007a6b02508828e1851cba0ff49cbe3e7aba7ab9f",
+  "status": "REJECTED_BEFORE_DELIVERY",
+  "reason": "Independent next invocation observed an incomplete archive with no ZIP end record and a size/hash different from the build process receipt. Cause not established. The incomplete artifact was never delivered.",
+  "remediation": "Regenerate using an atomic temporary-file rename, allow the command to finish before yielding, and independently verify exact ZIP bytes/CRC/manifest/extraction before full tests.",
+  "secondCandidate": {
+    "status": "REJECTED_BEFORE_DELIVERY",
+    "archiveWasComplete": true,
+    "reason": "Manifest paths were sorted as pathlib components rather than relative POSIX strings. Strict verifier rejected their order.",
+    "firstInversion": {
+      "left": "docs/iteration/evidence/round05/performance-final/performance-round.json",
+      "right": "docs/iteration/evidence/round05/performance-final.log"
+    },
+    "correction": "Sort complete relative path strings and assert exact equality with sorted(paths) before ZIP creation."
+  }
+}

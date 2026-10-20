@@ -1,0 +1,95 @@
+{
+  "status": "SIX_NEW_SCOPE_GROUPS_ACCEPTED_WITH_RETAINED_HARNESS_FAILURES",
+  "newScope": {
+    "groups": 6,
+    "checks": 351,
+    "acceptedCases": [
+      {
+        "name": "natural-benefits-and-first-roll",
+        "status": "PASS",
+        "checks": 22
+      },
+      {
+        "name": "event-preview-commit-cancel-refresh",
+        "status": "PASS",
+        "checks": 148
+      },
+      {
+        "name": "six-boss-guides-and-turn-update",
+        "status": "PASS",
+        "checks": 72
+      },
+      {
+        "name": "first-critical-presentation-lifetime",
+        "status": "PASS",
+        "checks": 8
+      },
+      {
+        "name": "responsive-layout",
+        "status": "PASS",
+        "checks": 90
+      },
+      {
+        "name": "disclosure-keyboard-scroll-and-new-run",
+        "status": "PASS",
+        "checks": 11
+      }
+    ],
+    "sources": [
+      "browser-boons-main.json: five PASS cases, 340 checks",
+      "browser-boons-disclosure.json: final targeted PASS, 11 checks"
+    ],
+    "excluded": "9 passed checks in main failed disclosure case and all duplicated earlier development assertions are not counted."
+  },
+  "core": {
+    "groups": 6,
+    "checks": 43,
+    "scope": "Run at 04:50 before the last impact/cap wording corrections; later changed presentation has dedicated final tests. Not mislabeled as a whole-suite final rerun."
+  },
+  "genericExisting": {
+    "groups": 4,
+    "recordedCheckpoints": 30,
+    "scope": "Original selected driver four passing groups; stale fusion-target selector failure retained."
+  },
+  "dedicatedFusion": {
+    "groups": 4,
+    "checks": 26,
+    "scope": "Current workbench, drag/locked protection, three relics, full-FX skip once."
+  },
+  "failureRecords": [
+    {
+      "run": "audit/boons-browser-final/report.json",
+      "case": "event-preview-commit-cancel-refresh",
+      "status": "FAIL",
+      "checksBeforeFailure": 41,
+      "error": "AssertionError [ERR_ASSERTION]: resolved event does not keep a prospective offer\n\n1 !== 0\n"
+    },
+    {
+      "run": "audit/boons-browser-final/report.json",
+      "case": "disclosure-keyboard-scroll-and-new-run",
+      "status": "FAIL",
+      "checksBeforeFailure": 9,
+      "error": "Error: locator.click: Error: strict mode violation: locator('[data-action=\"home\"]') resolved to 2 elements:\n    1) <a href=\"#\" class=\"brand\" aria-label=\"返回标题\" data-action=\"home\">…</a> aka getByRole('link', { name: '返回标题' })\n    2) <button class=\"\" data-action=\"home\">返回标题</button> aka getByText('返回标题')\n\nCall log:\n\u001b[2m  - waiting for locator('[data-action=\"home\"]')\u001b[22m\n"
+    },
+    {
+      "run": "audit/boons-browser-accepted/report.json",
+      "case": "disclosure-keyboard-scroll-and-new-run",
+      "status": "FAIL",
+      "checksBeforeFailure": 9,
+      "error": "Error: locator.click: Error: strict mode violation: locator('[data-action=\"new\"]') resolved to 2 elements:\n    1) <button class=\"quiet\" data-action=\"new\">开始新游戏</button> aka getByRole('button', { name: '开始新游戏' })\n    2) <button data-action=\"new\" class=\"danger quiet\">重新开始</button> aka getByText('重新开始', { exact: true })\n\nCall log:\n\u001b[2m  - waiting for locator('[data-action=\"new\"]')\u001b[22m\n"
+    },
+    {
+      "run": "audit/interactions17/round17-interactions.json",
+      "case": "fusion-protected-three-relics",
+      "status": "failed",
+      "checksBeforeFailure": 0,
+      "error": "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-action=\"fusion-target\"][data-id=\"i4\"]')\u001b[22m\n\n    at selectFusion (/workspace/scratch/d0f98f221ae6/work/Dice-Abyss/scripts/qa-interactions.mjs:185:90)\n    at async file:///workspace/scratch/d0f98f221ae6/work/Dice-Abyss/scripts/qa-interactions.mjs:336:5\n    at async run (/workspace/scratch/d0f98f221ae6/work/Dice-Abyss/scripts/qa-interactions.mjs:209:5)\n    at async file:///workspace/scratch/d0f98f221ae6/work/Dice-Abyss/scripts/qa-interactions.mjs:332:3"
+    }
+  ],
+  "errorsInBrowserPageListeners": 0,
+  "limitations": [
+    "Native Playwright fallback after both preferred browser surfaces could not reach workspace loopback.",
+    "Constructed isolated fixtures and natural recorded-save replays are not human manual 200/400-floor playthroughs.",
+    "Functional suites use reduced-motion/low FX except explicit fusion full/skip; performance is separately measured."
+  ]
+}

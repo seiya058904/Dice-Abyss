@@ -1,0 +1,206 @@
+[
+  {
+    "step": "syntax",
+    "command": [
+      "npm",
+      "run",
+      "check"
+    ],
+    "cwd": "/workspace/scratch/85c02edcd5e2/work/Dice-Abyss",
+    "started": "2026-10-19T12:54:56.520166+00:00",
+    "finished": "2026-10-19T12:55:01.128226+00:00",
+    "durationSeconds": 4.6081,
+    "exitCode": 0,
+    "stdoutBytes": 98,
+    "stdoutSha256": "3f377ff7eda12dcf086571e2e63960f13b39e2be3345c1b6593c1141bb008a71",
+    "stderrBytes": 99,
+    "frozenScopeSha256": "92c37eba88ea68dabcb845e9c82c7ea8c1f84e5116e0262a1400898e2cc501fe",
+    "executionMode": "sequential correctness commands; parent browser correctness may overlap",
+    "timingInterpretation": "Correctness wall time on a shared host; never a game performance A/B result."
+  },
+  {
+    "step": "default-tests",
+    "command": [
+      "npm",
+      "test"
+    ],
+    "cwd": "/workspace/scratch/85c02edcd5e2/work/Dice-Abyss",
+    "started": "2026-10-19T12:55:01.176387+00:00",
+    "finished": "2026-10-19T12:56:52.894260+00:00",
+    "durationSeconds": 111.7179,
+    "exitCode": 0,
+    "stdoutBytes": 4517,
+    "stdoutSha256": "f855cc3ee6d121ef440c35e0d0dbe6c74631932e2a08f028939500cdb7508bdf",
+    "stderrBytes": 99,
+    "frozenScopeSha256": "92c37eba88ea68dabcb845e9c82c7ea8c1f84e5116e0262a1400898e2cc501fe",
+    "executionMode": "sequential correctness commands; parent browser correctness may overlap",
+    "timingInterpretation": "Correctness wall time on a shared host; never a game performance A/B result.",
+    "counters": {
+      "tests": 86,
+      "suites": 0,
+      "pass": 86,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0
+    },
+    "counterUnit": "Node default file wrappers; native cases separately counted."
+  },
+  {
+    "step": "native-tests",
+    "command": [
+      "python3",
+      "scripts/verify-test-cases.py",
+      "--root",
+      "/workspace/scratch/85c02edcd5e2/work/Dice-Abyss",
+      "--output",
+      "/workspace/scratch/85c02edcd5e2/qa/current/native",
+      "--workers",
+      "4"
+    ],
+    "cwd": "/workspace/scratch/85c02edcd5e2/work/Dice-Abyss",
+    "started": "2026-10-19T12:56:52.961099+00:00",
+    "finished": "2026-10-19T12:58:39.577607+00:00",
+    "durationSeconds": 106.6165,
+    "exitCode": 0,
+    "stdoutBytes": 843,
+    "stdoutSha256": "94f403bda1655daca2d4ff45e2d0182553d96090ec5223340308fa5c16aa235e",
+    "stderrBytes": 0,
+    "frozenScopeSha256": "92c37eba88ea68dabcb845e9c82c7ea8c1f84e5116e0262a1400898e2cc501fe",
+    "executionMode": "sequential correctness commands; parent browser correctness may overlap",
+    "timingInterpretation": "Correctness wall time on a shared host; never a game performance A/B result.",
+    "counts": {
+      "tests": 811,
+      "suites": 0,
+      "pass": 811,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0
+    },
+    "modules": 86,
+    "nativeDurationSeconds": 106.5522
+  },
+  {
+    "step": "standard-1000",
+    "command": [
+      "node",
+      "scripts/simulate.mjs",
+      "1000"
+    ],
+    "cwd": "/workspace/scratch/85c02edcd5e2/work/Dice-Abyss",
+    "started": "2026-10-19T12:58:39.630472+00:00",
+    "finished": "2026-10-19T13:02:44.694986+00:00",
+    "durationSeconds": 245.0645,
+    "exitCode": 0,
+    "stdoutBytes": 9409,
+    "stdoutSha256": "266fa5b56516410712395796f197a2e33ad1b1e16ede45de14b872f208007d77",
+    "stderrBytes": 0,
+    "frozenScopeSha256": "92c37eba88ea68dabcb845e9c82c7ea8c1f84e5116e0262a1400898e2cc501fe",
+    "executionMode": "Concurrent standard1000+50 and deep4x400 correctness jobs; parent browser correctness may also overlap",
+    "timingInterpretation": "Correctness wall time on a shared host; never a game performance A/B result.",
+    "summary": {
+      "seeds": 1000,
+      "completed": 1000,
+      "failures": [],
+      "deaths": {
+        "min": 0,
+        "median": 0,
+        "p95": 0,
+        "max": 0,
+        "mean": 0
+      },
+      "totalRolls": {
+        "min": 64,
+        "median": 86,
+        "p95": 101,
+        "max": 115,
+        "mean": 86.5
+      },
+      "rarities": [
+        12834,
+        17325,
+        10318,
+        3624,
+        0,
+        0,
+        0,
+        0
+      ],
+      "finalLevel": {
+        "min": 17,
+        "median": 18,
+        "p95": 18,
+        "max": 19,
+        "mean": 17.67
+      }
+    },
+    "noShopping": {
+      "seeds": 50,
+      "completed": 50,
+      "deaths": 0
+    },
+    "baselineExactOutputComparison": {
+      "bytesEqual": true,
+      "baselineSha256": "266fa5b56516410712395796f197a2e33ad1b1e16ede45de14b872f208007d77",
+      "currentSha256": "266fa5b56516410712395796f197a2e33ad1b1e16ede45de14b872f208007d77",
+      "normalization": "none; complete stdout compared"
+    }
+  },
+  {
+    "step": "deep",
+    "command": [
+      "node",
+      "scripts/strategy-round18.mjs",
+      "--source",
+      "/workspace/scratch/85c02edcd5e2/work/Dice-Abyss",
+      "--output",
+      "/workspace/scratch/85c02edcd5e2/qa/current/deep/report.json"
+    ],
+    "cwd": "/workspace/scratch/85c02edcd5e2/work/Dice-Abyss",
+    "started": "2026-10-19T12:58:39.664181+00:00",
+    "finished": "2026-10-19T13:07:11.982845+00:00",
+    "durationSeconds": 512.3187,
+    "exitCode": 0,
+    "stdoutBytes": 1511,
+    "stdoutSha256": "81426836597370b9a3695103867b71d4c28a2fb6fea8887d2f4ccedf7d02e05f",
+    "stderrBytes": 0,
+    "frozenScopeSha256": "92c37eba88ea68dabcb845e9c82c7ea8c1f84e5116e0262a1400898e2cc501fe",
+    "executionMode": "Concurrent standard1000+50 and deep4x400 correctness jobs; parent browser correctness may also overlap",
+    "timingInterpretation": "Correctness wall time on a shared host; never a game performance A/B result.",
+    "summary": {
+      "naturalJourneys": 4,
+      "completedJourneys": 4,
+      "incompleteJourneys": [],
+      "completedNaturalFloors": 1600,
+      "naturalRolls": 21596,
+      "naturalDeaths": 2,
+      "defenseDecisions": 2,
+      "defenseSwaps": 2
+    }
+  },
+  {
+    "step": "deep-comparison",
+    "command": [
+      "node",
+      "/workspace/scratch/85c02edcd5e2/qa/current/compare-current-round21.mjs",
+      "/workspace/scratch/85c02edcd5e2/baseline/Dice-Abyss",
+      "/workspace/scratch/85c02edcd5e2/work/Dice-Abyss",
+      "/workspace/scratch/85c02edcd5e2/qa/baseline/deep/report.json",
+      "/workspace/scratch/85c02edcd5e2/qa/current/deep/report.json",
+      "/workspace/scratch/85c02edcd5e2/qa/current/deep-comparison.json",
+      "/workspace/scratch/85c02edcd5e2/qa/current/source-freeze.json"
+    ],
+    "cwd": "/workspace/scratch/85c02edcd5e2/work/Dice-Abyss",
+    "started": "2026-10-19T13:07:12.037313+00:00",
+    "finished": "2026-10-19T13:07:21.651803+00:00",
+    "durationSeconds": 9.6145,
+    "exitCode": 0,
+    "stdoutBytes": 360,
+    "stdoutSha256": "ceeca57c08201b36b01f072c74ae9f1bce743b1d4b4c934b3433e0137a3c2ee5",
+    "stderrBytes": 0,
+    "frozenScopeSha256": "92c37eba88ea68dabcb845e9c82c7ea8c1f84e5116e0262a1400898e2cc501fe",
+    "executionMode": "sequential correctness commands; parent browser correctness may overlap",
+    "timingInterpretation": "Correctness wall time on a shared host; never a game performance A/B result."
+  }
+]

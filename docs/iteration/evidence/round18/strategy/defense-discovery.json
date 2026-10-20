@@ -1,0 +1,31 @@
+{
+  "classification": "REACHABLE_DISCOVERY_GAP_NOT_A_SEARCH_CONTRACT_BUG",
+  "sourceVersion": "5.17.0",
+  "seed": 23757,
+  "floor": 30,
+  "phase": "dead",
+  "rolls": 471,
+  "deaths": 1,
+  "naturalStateSha256": "dbbb86b9321dc0abbab3eccec193d55b656051fedc67d5db23fc02f45211a5e3",
+  "ownedItems": 139,
+  "ownedArmors": 48,
+  "armorsWithPersistentRegeneration": 14,
+  "queries": [
+    {
+      "query": "恢复",
+      "count": 0
+    },
+    {
+      "query": "防御",
+      "count": 0
+    },
+    {
+      "query": "护盾",
+      "count": 0
+    }
+  ],
+  "method": "Run the shipped name-only inventory query against the exact first natural failed state. Count positive itemStats.regen independently. No synthetic gear or played outcome is created.",
+  "finding": "Search intentionally matches names only. Defense-effect words can return zero even when relevant owned armor exists; this is an opportunity for explicit effect filters, not a claim that the existing name-search implementation violates its contract.",
+  "proposal": "An optional armor-effect filter for persistent recovery, opening ward, or reduction can expose actual candidates without an automatic best-item recommendation. Keep current owned-state comparison and post-survival recovery semantics.",
+  "runtimeWrites": 0
+}

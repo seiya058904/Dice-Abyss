@@ -1,0 +1,39 @@
+[
+  {
+    "name": "syntax",
+    "command": [
+      "npm",
+      "run",
+      "check"
+    ],
+    "exit": 0,
+    "seconds": 2.636135398002807
+  },
+  {
+    "name": "unit",
+    "command": "node --test --test-isolation=none --test-reporter=tap tests/*.test.mjs",
+    "exit": 0,
+    "seconds": 113.5391356600012
+  },
+  {
+    "name": "simulate",
+    "command": [
+      "node",
+      "scripts/simulate.mjs",
+      "1000"
+    ],
+    "exit": 0,
+    "seconds": 192.12778732199877
+  },
+  {
+    "name": "http",
+    "command": [
+      "node",
+      "scripts/smoke-http.mjs",
+      "--output",
+      "/workspace/scratch/cbf6f0daa163/qa/baseline/http.json"
+    ],
+    "exit": 1,
+    "seconds": 0.13967633199717966
+  }
+]

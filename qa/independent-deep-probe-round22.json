@@ -1,0 +1,71 @@
+{
+  "scope": "Independent short correctness cross-check; no timing or simulated balance claim",
+  "sourceHashes": {
+    "src/deep-content.js": "d5d5479b263158841d9b4822a815520cc2f3dc2dde7de050a8bc9e31a94c0fde",
+    "src/deep-rules.js": "5e3a9b50d5b339a6290df58a5712aa1b1d1017b6a615c409dec86c5683b6dd74",
+    "src/engine.js": "49ff3b5686c005c59cd51a4de71fc6397c3f84c91e12073bae888a295e043573",
+    "src/encounters.js": "e485b531d6ed59954cdc8c7b50ab5dd84c1a64449852b7b56fce667489369d76",
+    "src/encounter-tactics.js": "1502cc9371cb7506acb2542c2eb9f25690f9fe4e39513bc9151b747816e07cb9",
+    "src/storage.js": "a66840968096723e10c27e2e0ca53402911caf771318b9f5a56bcdebbb753a47"
+  },
+  "generatedPairs": 16,
+  "newTagged": 8,
+  "ruleCases": 80,
+  "untaggedExactCases": 80,
+  "codecCases": 32,
+  "retryCases": 32,
+  "invalidCases": 16,
+  "coverage": [
+    "parity/0",
+    "parity/1",
+    "sequence/0",
+    "sequence/1"
+  ],
+  "examples": [
+    {
+      "mechanic": "parity",
+      "values": [
+        1,
+        2,
+        3
+      ],
+      "modernMultiplier": 1,
+      "oldMultiplier": 1.35,
+      "modernRebuild": 0
+    },
+    {
+      "mechanic": "parity",
+      "values": [
+        2,
+        2,
+        4
+      ],
+      "modernMultiplier": 1.35,
+      "oldMultiplier": 1,
+      "modernRebuild": 0
+    },
+    {
+      "mechanic": "sequence",
+      "values": [
+        1,
+        2,
+        3
+      ],
+      "modernMultiplier": 1,
+      "oldMultiplier": 1.4,
+      "modernRebuild": 3001
+    },
+    {
+      "mechanic": "sequence",
+      "values": [
+        2,
+        2,
+        4
+      ],
+      "modernMultiplier": 1.4,
+      "oldMultiplier": 1,
+      "modernRebuild": 0
+    }
+  ],
+  "status": "PASS"
+}

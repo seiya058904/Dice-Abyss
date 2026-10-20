@@ -1,0 +1,70 @@
+/* Current benefits use the existing metal frame, local fonts and explicit text.
+   Native disclosure keeps long lifetime rules available without crowding dice. */
+.boon-readout {
+  margin: .65rem 0 .8rem;
+  padding: .65rem 0 .5rem;
+  border-block: 1px solid #536066;
+  text-align: left;
+  font-family: var(--font-body, 'Abyss Text', sans-serif);
+}
+.boon-readout > h2 {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 10px;
+  margin: 0 0 .55rem; color: #eee3c6;
+  font-size: max(13px, .96rem); font-weight: 600; line-height: 1.5;
+}
+.boon-readout > h2 > span { color: #b7c5cd; font-size: max(12px, .75rem); font-weight: 400; }
+.boon-group + .boon-group { margin-top: .65rem; }
+.boon-group h3 { margin: 0 0 .2rem; color: #b9c7ce; font-size: max(12px, .76rem); font-weight: 400; }
+.boon-group dl { margin: 0; }
+.boon-entry {
+  display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.5fr); gap: 4px 10px;
+  padding: .25rem 0; font-size: max(12px, .81rem); line-height: 1.55;
+}
+.boon-entry dt { color: #e2e5e7; overflow-wrap: anywhere; }
+.boon-entry dd { margin: 0; min-width: 0; text-align: right; overflow-wrap: anywhere; }
+.boon-entry strong { color: #e6c77d; font-weight: 500; font-variant-numeric: tabular-nums; }
+.boon-entry small { display: block; margin-top: 1px; color: #b7c5cd; font-size: max(12px, .73rem); }
+.boon-group[data-boon-group="opening"] .boon-entry strong { color: #9edff0; }
+/* An available trigger has not yet awarded its benefit. */
+.boon-group[data-boon-group="combatTrigger"] .boon-entry strong { color: #d1d9de; }
+.boon-group[data-boon-group="reserve"] .boon-entry strong { color: #b9a9ec; }
+.boon-details { margin-top: .5rem; font-size: max(12px, .78rem); line-height: 1.7; }
+.boon-details summary { width: fit-content; max-width: 100%; cursor: pointer; color: #d1d9de; padding: .25rem .1rem; }
+.boon-details summary:hover { color: #f1d590; }
+.boon-details summary:focus-visible { outline: 2px solid #e6c77d; outline-offset: 3px; }
+.boon-details p { margin: .55rem 0 0; color: #bdc9d0; overflow-wrap: anywhere; }
+.boon-details p b { display: block; color: #eee3c6; font-weight: 500; }
+.combat-boon-ready { margin: .45rem 0 0; width: 100%; }
+.combat-boon-ready p {
+  display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 3px 8px;
+  margin: 0; padding: .35rem .55rem; color: #cae6eb; background: #102125;
+  border-block: 1px solid #335962; font-size: max(12px, .84rem); line-height: 1.5;
+}
+.combat-boon-ready p + p { border-top: 0; }
+.combat-boon-ready .icon { width: 15px; height: 15px; flex-shrink: 0; }
+.combat-boon-ready strong { color: #a8efff; font-weight: 600; }
+.combat-boon-ready small { font-size: inherit; color: #bbd2d9; }
+.event-choice-preview {
+  display: block; width: 100%; min-width: 0; text-align: left;
+  margin: .55rem 0 .15rem; padding-top: .6rem; border-top: 1px solid #536066;
+  font-family: 'Abyss Text', sans-serif; font-size: max(12px, .84rem); line-height: 1.6;
+}
+.event-preview-title { display: block; color: #e9dfc6; font-size: inherit; font-weight: 600; margin-bottom: .45rem; }
+.event-preview-row { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 2px 10px; margin: .2rem 0; }
+.event-preview-label { min-width: 0; color: #c8d2d8; overflow-wrap: anywhere; }
+.event-preview-label small { display: block; color: #b8c6ce; font-size: inherit; line-height: 1.45; }
+.event-preview-values { display: inline-flex; align-items: baseline; flex-wrap: wrap; justify-content: flex-end; gap: 4px 7px; margin-left: auto; min-width: 0; color: #bdc9d0; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.event-preview-values strong { color: #f0d595; font-weight: 600; }
+.event-preview-arrow { color: #a6bac6; }
+.event-preview-note { display: block; margin-top: .45rem; color: #c1cdd4; font-size: inherit; line-height: 1.6; overflow-wrap: anywhere; }
+.event-option:has(.event-choice-preview) { justify-content: flex-start; }
+.event-option .event-choice-preview + .event-option-choose { margin-top: auto; padding-top: .55rem; }
+.game-dialog .event-choice-preview { margin: .8rem 0; font-size: max(13px, .9rem); }
+@media (min-width: 1100px) {
+  .left-rail:not(.build-rail) > .route-panel { overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: #657a83 #101619; }
+}
+@media (max-width: 699px) {
+  .boon-entry { grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); }
+  .event-choice-preview { font-size: max(13px, calc(13px * var(--user-scale))); }
+  .combat-boon-ready p { justify-content: flex-start; }
+}

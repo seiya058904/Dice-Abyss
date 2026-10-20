@@ -1,0 +1,74 @@
+{
+  "seeds": 1000,
+  "completed": 1000,
+  "failures": [],
+  "deaths": {
+    "min": 0,
+    "median": 0,
+    "p95": 0,
+    "max": 0,
+    "mean": 0
+  },
+  "extraNoShoppingSeeds": 50,
+  "extraNoShoppingCompleted": 50,
+  "extraNoShoppingDeaths": 0,
+  "combatRounds": {
+    "combat": {
+      "min": 1,
+      "median": 2,
+      "p95": 4,
+      "max": 9,
+      "mean": 1.8
+    },
+    "elite": {
+      "min": 1,
+      "median": 2,
+      "p95": 4,
+      "max": 9,
+      "mean": 2.48
+    },
+    "boss": {
+      "min": 1,
+      "median": 4,
+      "p95": 7,
+      "max": 10,
+      "mean": 4.27
+    },
+    "trial": {
+      "min": 1,
+      "median": 2,
+      "p95": 4,
+      "max": 7,
+      "mean": 2.04
+    }
+  },
+  "totalRolls": {
+    "min": 64,
+    "median": 86,
+    "p95": 101,
+    "max": 115,
+    "mean": 86.5
+  },
+  "finalLevel": {
+    "min": 17,
+    "median": 18,
+    "p95": 18,
+    "max": 19,
+    "mean": 17.67
+  },
+  "floorsPerAdventure": 10,
+  "rawOutputBytes": 9409,
+  "rawOutputSha256": "266fa5b56516410712395796f197a2e33ad1b1e16ede45de14b872f208007d77",
+  "scalarLeaves": 377,
+  "execution": {
+    "command": [
+      "node",
+      "scripts/simulate.mjs",
+      "1000"
+    ],
+    "cwd": "/workspace/scratch/8db1c7454cb5/baseline/Dice-Abyss",
+    "startedUTC": "2026-10-18T16:40:29Z",
+    "durationSeconds": 202.782,
+    "exitCode": 0
+  }
+}

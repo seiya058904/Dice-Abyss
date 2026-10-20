@@ -1,0 +1,107 @@
+{
+  "status": "PASS",
+  "label": "candidate",
+  "archive": {
+    "zip": "Dice-Abyss-v5.10.0-cloud-round-10-candidate.zip",
+    "bytes": 18929590,
+    "decimalMB": 18.92959,
+    "sha256": "a6776da62c244529bc8a031fc2160e3ee930c077c0190c0c1e01f633de0bbffc",
+    "files": 948,
+    "manifestEntries": 947,
+    "version": "5.10.0",
+    "round": 10,
+    "crcVerified": true,
+    "allManifestHashesVerified": true,
+    "extractedFilesVerified": true,
+    "expandedBytes": 35909826,
+    "entries": 948,
+    "pathSafetyVerified": true,
+    "expandedBudgetVerified": true
+  },
+  "commands": [
+    {
+      "name": "integrity",
+      "command": [
+        "python",
+        "scripts/verify-package.py",
+        "/workspace/scratch/cbf6f0daa163/qa/Dice-Abyss-v5.10.0-cloud-round-10-candidate.zip",
+        "--extract",
+        "/workspace/scratch/cbf6f0daa163/qa/candidate-extracted",
+        "--output",
+        "/workspace/scratch/cbf6f0daa163/qa/candidate-gates/integrity.json"
+      ],
+      "cwd": "/workspace/scratch/cbf6f0daa163/work/Dice-Abyss",
+      "exit": 0,
+      "seconds": 0.6686780849995557,
+      "logSha256": "c6ba96102d7549b1ac8d81693f6dee33472dd2f867e328719edee00784f1db96"
+    },
+    {
+      "name": "syntax",
+      "command": [
+        "npm",
+        "run",
+        "check"
+      ],
+      "cwd": "/workspace/scratch/cbf6f0daa163/qa/candidate-extracted/Dice-Abyss",
+      "exit": 0,
+      "seconds": 2.818472251001367,
+      "logSha256": "445def7e8f6306c2d29661b3790cca1eb9d89eb2ce2a47160ee0b1950f22b847"
+    },
+    {
+      "name": "core",
+      "command": [
+        "node",
+        "--test",
+        "--test-isolation=none",
+        "--test-reporter=tap",
+        "tests/round10-xp-core.test.mjs",
+        "tests/round10-xp-ui.test.mjs",
+        "tests/round10-independent.test.mjs",
+        "tests/engine.test.mjs",
+        "tests/encounters.test.mjs",
+        "tests/v5-compatibility.test.mjs",
+        "tests/migration-levels.test.mjs",
+        "tests/storage-import-shape.test.mjs",
+        "tests/storage-size-boundary.test.mjs",
+        "tests/storage-read-reuse.test.mjs",
+        "tests/storage-talents-shape.test.mjs",
+        "tests/gold-exchange-xp.test.mjs",
+        "tests/fusion-gold-cap.test.mjs",
+        "tests/gold-storage.test.mjs",
+        "tests/launcher-release.test.mjs",
+        "tests/dice-renderer.test.mjs",
+        "tests/visual-timeline.test.mjs"
+      ],
+      "cwd": "/workspace/scratch/cbf6f0daa163/qa/candidate-extracted/Dice-Abyss",
+      "exit": 0,
+      "seconds": 28.00332420400082,
+      "logSha256": "1ce97de3fe55040db070345de8fee60399ab85b0ee3a5ac3d7758e3685f9602b",
+      "tests": 162,
+      "pass": 162,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "duration_ms": 27949.403518
+    },
+    {
+      "name": "http",
+      "command": [
+        "node",
+        "scripts/smoke-http.mjs",
+        "--output",
+        "/workspace/scratch/cbf6f0daa163/qa/candidate-gates/http.json"
+      ],
+      "cwd": "/workspace/scratch/cbf6f0daa163/qa/candidate-extracted/Dice-Abyss",
+      "exit": 0,
+      "seconds": 0.6531685250010923,
+      "logSha256": "213af7dccdbed209fb5d5f8442ea441311e83f648b2cd1b0581ad06d65545b36"
+    }
+  ],
+  "httpResources": 45,
+  "allExtractedFileBytesStillExactAfterTests": true,
+  "extractedFileCount": 948,
+  "runtimeMatchesPreviouslyValidatedIdentity": true,
+  "runtimeIdentityFiles": 54,
+  "sameArchiveSha256AfterTests": true,
+  "note": "This is an external gate receipt. An internal candidate receipt identifies only that separate preflight ZIP, never the final distributed ZIP."
+}

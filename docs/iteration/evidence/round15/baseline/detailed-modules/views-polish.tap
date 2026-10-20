@@ -1,0 +1,76 @@
+TAP version 13
+# Subtest: 10,000-item fusion renders one page of 24 cards and preserves all selections beyond the page
+ok 1 - 10,000-item fusion renders one page of 24 cards and preserves all selections beyond the page
+  ---
+  duration_ms: 117.9243
+  type: 'test'
+  ...
+# Subtest: fusion shows each protection explicitly while manual selection stays available for review
+ok 2 - fusion shows each protection explicitly while manual selection stays available for review
+  ---
+  duration_ms: 5.416677
+  type: 'test'
+  ...
+# Subtest: three retained relics show all six exact outcomes, kept enhancement and one truthful total cost
+ok 3 - three retained relics show all six exact outcomes, kept enhancement and one truthful total cost
+  ---
+  duration_ms: 3.821359
+  type: 'test'
+  ...
+# Subtest: fusion empty and unavailable states explain the next step, with every write control disabled in flight
+ok 4 - fusion empty and unavailable states explain the next step, with every write control disabled in flight
+  ---
+  duration_ms: 2.737577
+  type: 'test'
+  ...
+# Subtest: rolling dice contain no committed face information and settled dice retain every exact result
+ok 5 - rolling dice contain no committed face information and settled dice retain every exact result
+  ---
+  duration_ms: 2.372798
+  type: 'test'
+  ...
+# Subtest: the decorative battle altar does not alter dice count, indexed geometry or unrevealed results
+ok 6 - the decorative battle altar does not alter dice count, indexed geometry or unrevealed results
+  ---
+  duration_ms: 3.469689
+  type: 'test'
+  ...
+# Subtest: waiting fate always has two dice and other idle room dice ignore stale combat rollValues
+ok 7 - waiting fate always has two dice and other idle room dice ignore stale combat rollValues
+  ---
+  duration_ms: 5.8375
+  type: 'test'
+  ...
+# Subtest: forge and fusion result banners stay withheld during the next committed roll
+ok 8 - forge and fusion result banners stay withheld during the next committed roll
+  ---
+  duration_ms: 6.951415
+  type: 'test'
+  ...
+# Subtest: deep-floor double-fate reward text matches actual gold credited below the cap
+ok 9 - deep-floor double-fate reward text matches actual gold credited below the cap
+  ---
+  duration_ms: 20.730137
+  type: 'test'
+  ...
+# Subtest: rest preview agrees with actual recovery and labels preservation of an existing stronger shield
+ok 10 - rest preview agrees with actual recovery and labels preservation of an existing stronger shield
+  ---
+  duration_ms: 3.492533
+  type: 'test'
+  ...
+# Subtest: event labels call an option free only when its actual stated cost is none
+ok 11 - event labels call an option free only when its actual stated cost is none
+  ---
+  duration_ms: 25.996681
+  type: 'test'
+  ...
+1..11
+# tests 11
+# suites 0
+# pass 11
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 210.421528

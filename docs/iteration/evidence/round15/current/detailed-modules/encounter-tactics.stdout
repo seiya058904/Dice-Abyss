@@ -1,0 +1,58 @@
+TAP version 13
+# Subtest: turn guide covers the 16 current deep mechanics, while leaving dead and legacy encounters alone
+ok 1 - turn guide covers the 16 current deep mechanics, while leaving dead and legacy encounters alone
+  ---
+  duration_ms: 1.663391
+  type: 'test'
+  ...
+# Subtest: parity uses a strict majority of the actual dice count and exposes the next turn without predicting faces
+ok 2 - parity uses a strict majority of the actual dice count and exposes the next turn without predicting faces
+  ---
+  duration_ms: 0.57214
+  type: 'test'
+  ...
+# Subtest: laststand and onslaught report the actual current escalation rather than a generic future percentage
+ok 3 - laststand and onslaught report the actual current escalation rather than a generic future percentage
+  ---
+  duration_ms: 0.408219
+  type: 'test'
+  ...
+# Subtest: the bounty countdown includes the imminent roll and preserves the epic floor after the window closes
+ok 4 - the bounty countdown includes the imminent roll and preserves the epic floor after the window closes
+  ---
+  duration_ms: 0.310897
+  type: 'test'
+  ...
+# Subtest: stage-specific weak points use the pre-roll stage, including an imported low-HP first-stage state
+ok 5 - stage-specific weak points use the pre-roll stage, including an imported low-HP first-stage state
+  ---
+  duration_ms: 0.236096
+  type: 'test'
+  ...
+# Subtest: every published trigger and numeric effect agrees with the real rule for all 923 one-to-six-dice multisets
+ok 6 - every published trigger and numeric effect agrees with the real rule for all 923 one-to-six-dice multisets
+  ---
+  duration_ms: 557.709337
+  type: 'test'
+  ...
+# Subtest: rendering keeps the current guide compact, publishes next-turn text in the summary and marks impossible conditions
+ok 7 - rendering keeps the current guide compact, publishes next-turn text in the summary and marks impossible conditions
+  ---
+  duration_ms: 22.953592
+  type: 'test'
+  ...
+# Subtest: the guide never reads RNG, mutates an encounter, or uses a random API
+ok 8 - the guide never reads RNG, mutates an encounter, or uses a random API
+  ---
+  duration_ms: 0.34708
+  type: 'test'
+  ...
+1..8
+# tests 8
+# suites 0
+# pass 8
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 607.013138

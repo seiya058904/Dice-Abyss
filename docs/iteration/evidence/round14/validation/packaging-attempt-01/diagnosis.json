@@ -1,0 +1,114 @@
+{
+  "status": "FAILED_MANIFEST_ORDER",
+  "zipSha256": "59fb180565b45ddcd6347735380d34d9ffd9e8deee08a97a87d31b7b9cfdfc70",
+  "zipBytes": 23851434,
+  "manifestSha256": "de93598abf2797fedf940d6647dc162068bf34b7fae7fedf8c8fb78dd87d95b0",
+  "manifestEntries": 1445,
+  "duplicatePaths": 0,
+  "outOfOrderAdjacentPairs": [
+    {
+      "left": "docs/iteration/evidence/round05/performance-final/performance-round.json",
+      "right": "docs/iteration/evidence/round05/performance-final.log"
+    },
+    {
+      "left": "docs/iteration/evidence/round12/browser/webgl-input.json",
+      "right": "docs/iteration/evidence/round12/browser-summary.json"
+    },
+    {
+      "left": "docs/iteration/evidence/round12/images/reward-before-lock.webp",
+      "right": "docs/iteration/evidence/round12/images.json"
+    },
+    {
+      "left": "docs/iteration/evidence/round12/performance/reverse/performance-round.json",
+      "right": "docs/iteration/evidence/round12/performance-protocol/PORTABLE_REPLAY.patch"
+    },
+    {
+      "left": "docs/iteration/evidence/round13/current/browser/core/report.json",
+      "right": "docs/iteration/evidence/round13/current/browser/core.log"
+    },
+    {
+      "left": "docs/iteration/evidence/round13/current/browser/decisions/report.json",
+      "right": "docs/iteration/evidence/round13/current/browser/decisions.log"
+    },
+    {
+      "left": "docs/iteration/evidence/round13/current/browser/fusion/browser-report.json",
+      "right": "docs/iteration/evidence/round13/current/browser/fusion.log"
+    },
+    {
+      "left": "docs/iteration/evidence/round13/current/browser/round11/report.json",
+      "right": "docs/iteration/evidence/round13/current/browser/round11.log"
+    },
+    {
+      "left": "docs/iteration/evidence/round13/current/browser/talents/talents-browser.json",
+      "right": "docs/iteration/evidence/round13/current/browser/talents.log"
+    },
+    {
+      "left": "docs/iteration/evidence/round13/current/browser/talents.log",
+      "right": "docs/iteration/evidence/round13/current/browser-final-execution.json"
+    },
+    {
+      "left": "docs/iteration/evidence/round13/current/browser-recovery/report.json",
+      "right": "docs/iteration/evidence/round13/current/browser-recovery-complete/report.json"
+    },
+    {
+      "left": "docs/iteration/evidence/round13/current/browser-recovery-complete/report.json",
+      "right": "docs/iteration/evidence/round13/current/browser-recovery-complete.log"
+    },
+    {
+      "left": "docs/iteration/evidence/round13/current/indexed-final/indexed-browser.json",
+      "right": "docs/iteration/evidence/round13/current/indexed-final.log"
+    },
+    {
+      "left": "docs/iteration/evidence/round13/current/lifecycle/renderer-lifecycle-browser.json",
+      "right": "docs/iteration/evidence/round13/current/lifecycle.log"
+    },
+    {
+      "left": "docs/iteration/evidence/round13/current/recovery-read-probe/report.json",
+      "right": "docs/iteration/evidence/round13/current/recovery-read-probe.log"
+    },
+    {
+      "left": "docs/iteration/evidence/round13/images/title-current.webp",
+      "right": "docs/iteration/evidence/round13/images.json"
+    },
+    {
+      "left": "src/fonts/fusion-pixel/LICENSES/galmuri/LICENSE.txt",
+      "right": "src/fonts/fusion-pixel-12px-proportional-zh_hans.otf.woff2"
+    }
+  ],
+  "firstExpectedDifferences": [
+    {
+      "index": 336,
+      "actual": "docs/iteration/evidence/round05/performance-final/fixture-manifest.json",
+      "expected": "docs/iteration/evidence/round05/performance-final.log"
+    },
+    {
+      "index": 337,
+      "actual": "docs/iteration/evidence/round05/performance-final/performance-review-summary.json",
+      "expected": "docs/iteration/evidence/round05/performance-final/fixture-manifest.json"
+    },
+    {
+      "index": 338,
+      "actual": "docs/iteration/evidence/round05/performance-final/performance-round.json",
+      "expected": "docs/iteration/evidence/round05/performance-final/performance-review-summary.json"
+    },
+    {
+      "index": 339,
+      "actual": "docs/iteration/evidence/round05/performance-final.log",
+      "expected": "docs/iteration/evidence/round05/performance-final/performance-round.json"
+    },
+    {
+      "index": 777,
+      "actual": "docs/iteration/evidence/round12/browser/baseline-core.json",
+      "expected": "docs/iteration/evidence/round12/browser-summary.json"
+    },
+    {
+      "index": 778,
+      "actual": "docs/iteration/evidence/round12/browser/core-current.json",
+      "expected": "docs/iteration/evidence/round12/browser/baseline-core.json"
+    }
+  ],
+  "rootCause": "Path sorting uses path components; the original release verifier requires complete POSIX relative path string ordering.",
+  "correction": "Sort manifest rows explicitly by row.path, regenerate archive, then repeat the unchanged verifier and all final fresh-extraction gates.",
+  "sourceChanged": false,
+  "finalGateStatus": "Pending rebuilt archive external receipt."
+}

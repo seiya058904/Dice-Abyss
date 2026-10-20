@@ -1,0 +1,112 @@
+TAP version 13
+# Subtest: explicit recovery restores one exact envelope including unknown nested data without a game transition
+ok 1 - explicit recovery restores one exact envelope including unknown nested data without a game transition
+  ---
+  duration_ms: 7.152975
+  type: 'test'
+  ...
+# Subtest: every existing primary or mirror record blocks recovery, including empty and corrupt strings
+ok 2 - every existing primary or mirror record blocks recovery, including empty and corrupt strings
+  ---
+  duration_ms: 1.119665
+  type: 'test'
+  ...
+# Subtest: a new run and a same-run same-revision branch both survive a stale restore attempt with zero writes
+ok 3 - a new run and a same-run same-revision branch both survive a stale restore attempt with zero writes
+  ---
+  duration_ms: 1.278139
+  type: 'test'
+  ...
+# Subtest: recovery rejects unavailable or nonempty review snapshots and unreadable storage before writes
+ok 4 - recovery rejects unavailable or nonempty review snapshots and unreadable storage before writes
+  ---
+  duration_ms: 0.728768
+  type: 'test'
+  ...
+# Subtest: recovery keeps ordinary full validation, file capacity and immutable archive rejection
+ok 5 - recovery keeps ordinary full validation, file capacity and immutable archive rejection
+  ---
+  duration_ms: 20.782463
+  type: 'test'
+  ...
+# Subtest: primary quota keeps recovery missing; mirror quota retains the durable primary and reports its limit
+ok 6 - primary quota keeps recovery missing; mirror quota retains the durable primary and reports its limit
+  ---
+  duration_ms: 1.326972
+  type: 'test'
+  ...
+# Subtest: inspection is read-only, preserves exact raw strings and retains primary-before-mirror selection
+ok 7 - inspection is read-only, preserves exact raw strings and retains primary-before-mirror selection
+  ---
+  duration_ms: 4.902217
+  type: 'test'
+  ...
+# Subtest: the app restores only after confirmation under its existing Web Lock and resumes with the exact memory state
+ok 8 - the app restores only after confirmation under its existing Web Lock and resumes with the exact memory state
+  ---
+  duration_ms: 35.277351
+  type: 'test'
+  ...
+# Subtest: a missing Web Locks API keeps explicit snapshot protection and does not invent automatic writes
+ok 9 - a missing Web Locks API keeps explicit snapshot protection and does not invent automatic writes
+  ---
+  duration_ms: 4.590496
+  type: 'test'
+  ...
+# Subtest: a new save appearing while restore waits for its lock is preserved and old memory stays exportable
+ok 10 - a new save appearing while restore waits for its lock is preserved and old memory stays exportable
+  ---
+  duration_ms: 4.591879
+  type: 'test'
+  ...
+# Subtest: restore checks exact raw keys even when a conflicting event was not delivered
+ok 11 - restore checks exact raw keys even when a conflicting event was not delivered
+  ---
+  duration_ms: 4.0045
+  type: 'test'
+  ...
+# Subtest: explicit read switches to the reviewed full save without writes and can export memory from its confirmation
+ok 12 - explicit read switches to the reviewed full save without writes and can export memory from its confirmation
+  ---
+  duration_ms: 4.375459
+  type: 'test'
+  ...
+# Subtest: read confirmation rejects raw changes even when the decoded game is still identical
+ok 13 - read confirmation rejects raw changes even when the decoded game is still identical
+  ---
+  duration_ms: 3.562456
+  type: 'test'
+  ...
+# Subtest: protection refuses stale game clicks, direct actions, new runs, file imports and the Space shortcut
+ok 14 - protection refuses stale game clicks, direct actions, new runs, file imports and the Space shortcut
+  ---
+  duration_ms: 3.627442
+  type: 'test'
+  ...
+# Subtest: an import whose file read began before loss cannot reopen a stale replacement confirmation
+ok 15 - an import whose file read began before loss cannot reopen a stale replacement confirmation
+  ---
+  duration_ms: 3.82221
+  type: 'test'
+  ...
+# Subtest: an ordinary action already waiting for the save lock cannot commit after loss enters protection
+ok 16 - an ordinary action already waiting for the save lock cannot commit after loss enters protection
+  ---
+  duration_ms: 2.735694
+  type: 'test'
+  ...
+# Subtest: raw-record export preserves both original strings while ordinary export still preserves the game memory
+ok 17 - raw-record export preserves both original strings while ordinary export still preserves the game memory
+  ---
+  duration_ms: 2.855261
+  type: 'test'
+  ...
+1..17
+# tests 17
+# suites 0
+# pass 17
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 113.316627

@@ -1,0 +1,40 @@
+TAP version 13
+# Subtest: a naturally reached roll records the exact factors that produced its committed damage
+ok 1 - a naturally reached roll records the exact factors that produced its committed damage
+  ---
+  duration_ms: 54.676844
+  type: 'test'
+  ...
+# Subtest: legal post-roll allocation cannot change the past critical or follow-up badges
+ok 2 - legal post-roll allocation cannot change the past critical or follow-up badges
+  ---
+  duration_ms: 32.408054
+  type: 'test'
+  ...
+# Subtest: legal post-roll equipment changes cannot recompute the previous factors
+ok 3 - legal post-roll equipment changes cannot recompute the previous factors
+  ---
+  duration_ms: 19.422152
+  type: 'test'
+  ...
+# Subtest: new rolls use current factors while legacy results omit unknown ratios and preserve their real numbers
+ok 4 - new rolls use current factors while legacy results omit unknown ratios and preserve their real numbers
+  ---
+  duration_ms: 21.562793
+  type: 'test'
+  ...
+# Subtest: badge precision retains authored fractional factors without exposing invalid or moving values
+ok 5 - badge precision retains authored fractional factors without exposing invalid or moving values
+  ---
+  duration_ms: 21.908915
+  type: 'test'
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 5
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 163.763614

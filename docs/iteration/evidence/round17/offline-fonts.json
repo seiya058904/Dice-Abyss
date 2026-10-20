@@ -1,0 +1,49 @@
+{
+  "sourceFiles": 55,
+  "uniqueHan": 1053,
+  "uniqueCjkPunctuation": 21,
+  "sourceScope": "index.html and src/*.js, src/*.css; includes comments, excludes tests/docs and arbitrary imported names",
+  "decoder": "Node built-in node:zlib Brotli decoder (Python Brotli extension unavailable)",
+  "fonts": [
+    {
+      "path": "src/fonts/SourceHanSansCN-VF.otf.woff2",
+      "bytes": 7995716,
+      "unicodeMappings": 30926,
+      "missingHan": [],
+      "missingHanCodepoints": [],
+      "missingCjkPunctuation": []
+    },
+    {
+      "path": "src/fonts/fusion-pixel-12px-proportional-zh_hans.otf.woff2",
+      "bytes": 661212,
+      "unicodeMappings": 36558,
+      "missingHan": [],
+      "missingHanCodepoints": [],
+      "missingCjkPunctuation": []
+    }
+  ],
+  "missingRequiredFonts": [],
+  "historicalRepairTrace": {
+    "status": "NOT_AVAILABLE",
+    "missingInputs": [
+      "docs/qa/evidence/font-fallback-repairs.json",
+      "docs/qa/evidence/font-fallback-corrections.json"
+    ],
+    "reason": "Historical repair records were not included in the supplied ZIP."
+  },
+  "fontStackAudit": {
+    "recordedInsertions": 0,
+    "consolasFirstPreserved": 0,
+    "declarationsChecked": 194,
+    "initialInvalidInsertions": [],
+    "recordedCorrections": [],
+    "unresolvedInvalidInsertions": [],
+    "malformedLiveFamilies": [],
+    "localFontBypasses": []
+  },
+  "pass": true,
+  "currentAudit": {
+    "status": "PASS",
+    "scope": "Both required local fonts, complete current-source Han/CJK punctuation coverage, and live CSS font stacks. This does not validate missing historical repair records."
+  }
+}

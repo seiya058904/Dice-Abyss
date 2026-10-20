@@ -1,0 +1,40 @@
+{
+  "classification": "packaging QA driver wrong working directory, not package/runtime failure",
+  "status": "CORRECTED_BEFORE_DELIVERY",
+  "zipIntegrityExit": 0,
+  "syntaxCommandExit": 254,
+  "cause": "verify-package.py preserves the Dice-Abyss top-level folder; first orchestration incorrectly ran npm in its parent extraction directory. No game command was executed there.",
+  "verifiedProjectPath": "candidate-extracted/Dice-Abyss/package.json",
+  "correction": "Use the actual extracted Dice-Abyss root for syntax/tests/HTTP and post-test comparisons; keep the failed attempt and retry using a new empty extraction directory.",
+  "productSourceChanged": false,
+  "commands": [
+    {
+      "name": "integrity",
+      "command": [
+        "python",
+        "scripts/verify-package.py",
+        "/workspace/scratch/cbf6f0daa163/qa/Dice-Abyss-v5.10.0-cloud-round-10-candidate.zip",
+        "--extract",
+        "/workspace/scratch/cbf6f0daa163/qa/candidate-extracted",
+        "--output",
+        "/workspace/scratch/cbf6f0daa163/qa/candidate-gates/integrity.json"
+      ],
+      "cwd": "/workspace/scratch/cbf6f0daa163/work/Dice-Abyss",
+      "exit": 0,
+      "seconds": 0.6830717099983303,
+      "logSha256": "c6ba96102d7549b1ac8d81693f6dee33472dd2f867e328719edee00784f1db96"
+    },
+    {
+      "name": "syntax",
+      "command": [
+        "npm",
+        "run",
+        "check"
+      ],
+      "cwd": "/workspace/scratch/cbf6f0daa163/qa/candidate-extracted",
+      "exit": 254,
+      "seconds": 0.09187549999842304,
+      "logSha256": "2eebd110e97973b638b99d080e86519f9fbd17b51a20b70fb890b4eb47a20e1f"
+    }
+  ]
+}

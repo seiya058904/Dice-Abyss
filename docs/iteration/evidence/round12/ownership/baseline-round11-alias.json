@@ -1,0 +1,368 @@
+{
+  "scope": "Three constructed legitimate room routes at floor 1 and one naturally generated seed-2 route; all actions use existing runtime transitions. Exact saved state comparison; does not claim economic asset loss or incidence.",
+  "source": "/workspace/scratch/16b883e72bb3/baseline/Dice-Abyss",
+  "sourceHashes": {
+    "src/engine.js": "a84e8823a4e6632ec12ad6f497c71e2a0b427a41fe8773eb7c9cfc041f78cd1b",
+    "src/storage.js": "2c5f648efe7df6a1c14710ea90fe2de83323141d5f5e285eec7fac8aa687a500"
+  },
+  "cases": [
+    {
+      "name": "Lock purchased weapon",
+      "action": {
+        "type": "lock",
+        "id": "i4"
+      },
+      "beforeRawSha256": "9629a8b047c6de616bd9ed6590cf7cbce74f048469304767dc9153177f8982dc",
+      "uninterruptedStateSha256": "619f249c96e54a27fecf2853c9d2eb46308f156d92a5c408c57066c372f5c383",
+      "reloadedStateSha256": "fda8f67f9555bd4444c6c9dda14b0e0bcd6437f95dcdfbf1f1ed6ac13e8ec167",
+      "playerAssetsIdentical": true,
+      "rngIdentical": true,
+      "revisionIdentical": true,
+      "differences": [
+        {
+          "path": "$.shop.0.item.locked",
+          "uninterrupted": true,
+          "reloaded": false
+        }
+      ]
+    },
+    {
+      "name": "Forge purchased weapon after leaving shop",
+      "action": {
+        "type": "forge",
+        "id": "i4"
+      },
+      "beforeRawSha256": "43246469ff39fb2e0d8fef23e64dcfa1709cf79125876d6d4f629e41f80ea350",
+      "uninterruptedStateSha256": "c060c234eb4923999d1ce1414308d3e3321beda672f5fdd7548cfd74bccceaba",
+      "reloadedStateSha256": "57f824ceaf377720da65606332939ddfa6bb8dc0c859fe01c8874e2b70df9802",
+      "playerAssetsIdentical": true,
+      "rngIdentical": true,
+      "revisionIdentical": true,
+      "differences": [
+        {
+          "path": "$.shop.0.item.enhance",
+          "uninterrupted": 2,
+          "reloaded": 0
+        }
+      ]
+    },
+    {
+      "name": "Lock newly claimed loot",
+      "action": {
+        "type": "lock",
+        "id": "i4"
+      },
+      "beforeRawSha256": "5484d24704e2eadd936cac922034f11a4e2764a4f0345b377a8678480e9061f2",
+      "uninterruptedStateSha256": "85811705941b2948d692f208518a4c08dc62ec53a2a23c897a214800fbad9305",
+      "reloadedStateSha256": "9e2caefe56c1bd3b161d206e81dd05197356e10b093978a304505f7c893920a2",
+      "playerAssetsIdentical": true,
+      "rngIdentical": true,
+      "revisionIdentical": true,
+      "differences": [
+        {
+          "path": "$.loot.item.locked",
+          "uninterrupted": true,
+          "reloaded": false
+        }
+      ]
+    },
+    {
+      "name": "Natural generated route: lock purchased weapon",
+      "action": {
+        "type": "lock",
+        "id": "i14"
+      },
+      "beforeRawSha256": "01f1f361ddbf67fade09b571c660f79378df777e588c1a9ab6ea2f044f9c65d2",
+      "uninterruptedStateSha256": "33c9f5031d184357c8d8edb798f807f6595775b48a4cf762b1489ab602665a04",
+      "reloadedStateSha256": "e3d238988a011ce2e0ae9c08d5fed33952ffecca600658f89fd00cf737ca0aa7",
+      "playerAssetsIdentical": true,
+      "rngIdentical": true,
+      "revisionIdentical": true,
+      "differences": [
+        {
+          "path": "$.shop.0.item.locked",
+          "uninterrupted": true,
+          "reloaded": false
+        }
+      ]
+    }
+  ],
+  "naturalReplay": {
+    "seed": 2,
+    "floor": 3,
+    "roomIndex": 2,
+    "actions": [
+      {
+        "type": "fate"
+      },
+      {
+        "type": "enter"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "open"
+      },
+      {
+        "type": "next"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "open"
+      },
+      {
+        "type": "next"
+      },
+      {
+        "type": "next"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "open"
+      },
+      {
+        "type": "next"
+      },
+      {
+        "type": "gold"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "open"
+      },
+      {
+        "type": "next"
+      },
+      {
+        "type": "descend"
+      },
+      {
+        "type": "fate"
+      },
+      {
+        "type": "enter"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "open"
+      },
+      {
+        "type": "next"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "open"
+      },
+      {
+        "type": "next"
+      },
+      {
+        "type": "next"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "open"
+      },
+      {
+        "type": "next"
+      },
+      {
+        "type": "gold"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "open"
+      },
+      {
+        "type": "next"
+      },
+      {
+        "type": "descend"
+      },
+      {
+        "type": "fate"
+      },
+      {
+        "type": "enter"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "open"
+      },
+      {
+        "type": "next"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "roll"
+      },
+      {
+        "type": "open"
+      },
+      {
+        "type": "next"
+      },
+      {
+        "type": "buy",
+        "id": "i14"
+      }
+    ],
+    "price": 232,
+    "goldAfter": 779,
+    "itemId": "i14",
+    "runIdNormalization": "Only runId is fixed for reproducible transcripts; no gameplay, inventory, route, budget or RNG field is patched."
+  },
+  "confirmed": true,
+  "status": "OPEN_P3_REPRODUCED"
+}

@@ -1,0 +1,141 @@
+{
+  "scope": "Independent Node execution, in-memory storage and exact act function in an isolated VM. Not a browser or real Web Locks test.",
+  "utf16Bound": {
+    "singleCodeUnits": 65536,
+    "surrogatePairs": 4,
+    "maxBytesPerUnit": 3
+  },
+  "unicodeCases": [
+    {
+      "name": "three-byte-BMP-before-shortcut",
+      "rawCharacters": 1662183,
+      "utf8Bytes": 4982240,
+      "encoderCalls": 0,
+      "writable": true,
+      "writes": 2,
+      "rescueRoundtrip": true
+    },
+    {
+      "name": "three-byte-BMP-over-byte-limit",
+      "rawCharacters": 1669183,
+      "utf8Bytes": 5003240,
+      "encoderCalls": 1,
+      "writable": false,
+      "writes": 0,
+      "rescueRoundtrip": true
+    },
+    {
+      "name": "surrogate-pairs-inside-shortcut",
+      "rawCharacters": 1642183,
+      "utf8Bytes": 3282240,
+      "encoderCalls": 0,
+      "writable": true,
+      "writes": 2,
+      "rescueRoundtrip": true
+    },
+    {
+      "name": "surrogate-pairs-under-byte-limit",
+      "rawCharacters": 2500183,
+      "utf8Bytes": 4998240,
+      "encoderCalls": 1,
+      "writable": true,
+      "writes": 2,
+      "rescueRoundtrip": true
+    },
+    {
+      "name": "surrogate-pairs-over-byte-limit",
+      "rawCharacters": 2504183,
+      "utf8Bytes": 5006240,
+      "encoderCalls": 1,
+      "writable": false,
+      "writes": 0,
+      "rescueRoundtrip": true
+    },
+    {
+      "name": "lone-high-surrogates",
+      "rawCharacters": 4902183,
+      "utf8Bytes": 4902240,
+      "encoderCalls": 1,
+      "writable": true,
+      "writes": 2,
+      "rescueRoundtrip": true
+    },
+    {
+      "name": "lone-low-surrogates",
+      "rawCharacters": 4902183,
+      "utf8Bytes": 4902240,
+      "encoderCalls": 1,
+      "writable": true,
+      "writes": 2,
+      "rescueRoundtrip": true
+    },
+    {
+      "name": "mixed-reversed-surrogates",
+      "rawCharacters": 702195,
+      "utf8Bytes": 1402250,
+      "encoderCalls": 0,
+      "writable": true,
+      "writes": 2,
+      "rescueRoundtrip": true
+    }
+  ],
+  "expected": [
+    {
+      "field": "gold",
+      "sameRunIdAndRevision": true,
+      "rejected": true,
+      "zeroWrites": true
+    },
+    {
+      "field": "unknownNested",
+      "sameRunIdAndRevision": true,
+      "rejected": true,
+      "zeroWrites": true
+    }
+  ],
+  "appCatch": {
+    "appSha256": "f15894a3005dc94ff3a63d3ab4db983a239f6ea83f01d5b6c8b22ee8cb6a83ec",
+    "executedActSha256": "81f0f88e69d92ab1cf99ada66b253ef8db8ba29e0882c1a0f4d7877dc02ac117",
+    "action": {
+      "type": "event-choice",
+      "id": "safe",
+      "confirmed": true
+    },
+    "initialBytes": 4999900,
+    "candidateBytes": 5000311,
+    "beforeGold": 100000,
+    "wouldBeAfterGold": 99610,
+    "visibleGold": 100000,
+    "beforeRng": 1360362124,
+    "wouldBeAfterRng": 3560010299,
+    "visibleRng": 1360362124,
+    "renderCalls": 1,
+    "renderedOriginalStateOnly": true,
+    "allStorageUnchanged": true,
+    "writeCalls": 0,
+    "error": "存档将超过 5 MB 文件上限，本次操作未保存，现有主档与镜像未改动。请先导出备份，再减少背包物品或检查导入文件的额外数据。",
+    "notifications": [
+      "存档将超过 5 MB 文件上限，本次操作未保存，现有主档与镜像未改动。请先导出备份，再减少背包物品或检查导入文件的额外数据。"
+    ]
+  },
+  "sourceStable": true,
+  "sourceSha256": {
+    "src/storage.js": {
+      "bytes": 26366,
+      "sha256": "c22bd7a161505c37e7a1926309ef6751ad7e9662b97dc22d786ead832d93ba42"
+    },
+    "src/app.js": {
+      "bytes": 32230,
+      "sha256": "f15894a3005dc94ff3a63d3ab4db983a239f6ea83f01d5b6c8b22ee8cb6a83ec"
+    },
+    "tests/storage-size-boundary.test.mjs": {
+      "bytes": 8253,
+      "sha256": "7734e600a233d1642365dd0b8f87cadb712f2d2c35392126d641b90ab1519c26"
+    },
+    "scripts/audit-save-size.mjs": {
+      "bytes": 6724,
+      "sha256": "64012d05351a208ca2856c999eae9fd14234ed530b759ce56b24b82005096714"
+    }
+  },
+  "status": "PASS"
+}

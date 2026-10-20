@@ -1,0 +1,85 @@
+{
+  "source": "/workspace/scratch/16b883e72bb3/work/Dice-Abyss",
+  "scope": "Node-native rule/storage/view-markup reproduction; synthetic size and full-bag states; no browser or natural journey claim",
+  "cases": [
+    {
+      "name": "near-limit accepted import then fate growth",
+      "beforeBytes": 4999900,
+      "afterBytes": 5000724,
+      "growthBytes": 824,
+      "failure": "存档将超过 5 MB 文件上限，本次操作未保存，现有主档与镜像未改动。请先在设置中导出完整备份并检查存档容量。回收物品后仍需通过保存校验；如仍超限，请保留备份，再检查导入文件的额外数据。",
+      "writes": [],
+      "bothCopiesAndUnknownFieldsPreserved": true,
+      "rngPreserved": true,
+      "revisionPreserved": true,
+      "beforeSha256": "0f509380436359d05ed7da979832561a5f0be0b851a323aec2bf6d232d527fd4",
+      "capacity": {
+        "bytes": 4999900,
+        "characters": 4999835,
+        "limitBytes": 5000000,
+        "limitCharacters": 5000000,
+        "remainingBytes": 100,
+        "remainingCharacters": 165,
+        "excessBytes": 0,
+        "excessCharacters": 0,
+        "status": "near-limit",
+        "withinWriteLimit": true
+      }
+    },
+    {
+      "name": "permitted explicit salvage can reduce an exact-limit save",
+      "beforeBytes": 5000000,
+      "afterBytes": 4999853,
+      "reducedBytes": 147,
+      "beforeItems": 4,
+      "afterItems": 3,
+      "unknownPaddingPreserved": true,
+      "fullRoundTripPreserved": true
+    },
+    {
+      "name": "historical readable oversized save may reject even a shrinking salvage",
+      "beforeBytes": 5012445,
+      "beforeCharacters": 1672371,
+      "afterBytes": 5012307,
+      "reducedBytes": 138,
+      "failure": "存档将超过 5 MB 文件上限，本次操作未保存，现有主档与镜像未改动。请先在设置中导出完整备份并检查存档容量。回收物品后仍需通过保存校验；如仍超限，请保留备份，再检查导入文件的额外数据。",
+      "writes": [],
+      "completeExportPreserved": true,
+      "capacity": {
+        "bytes": 5012445,
+        "characters": 1672371,
+        "limitBytes": 5000000,
+        "limitCharacters": 5000000,
+        "remainingBytes": 0,
+        "remainingCharacters": 3327629,
+        "excessBytes": 12445,
+        "excessCharacters": 0,
+        "status": "over-limit",
+        "withinWriteLimit": false
+      }
+    },
+    {
+      "name": "full bag with affordable merchant equipment",
+      "items": 10000,
+      "offers": 3,
+      "allBuysDisabled": true,
+      "visibleOfferStatuses": [
+        "背包容量已满，请先整理闲置装备",
+        "背包容量已满，请先整理闲置装备",
+        "背包容量已满，请先整理闲置装备"
+      ],
+      "hasFullBagExplanation": true
+    },
+    {
+      "name": "empty inventory slot and rarity intersection",
+      "items": 3,
+      "filter": {
+        "slot": "weapon",
+        "rarity": 7
+      },
+      "empty": true,
+      "hasClearFiltersAction": true,
+      "offeredExploration": true
+    }
+  ]
+}

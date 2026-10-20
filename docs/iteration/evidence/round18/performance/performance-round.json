@@ -1,0 +1,2742 @@
+{
+  "mode": "all",
+  "source": "/workspace/scratch/f0146b2cbcc6/work/Dice-Abyss",
+  "baselineSource": "/workspace/scratch/f0146b2cbcc6/baseline/Dice-Abyss",
+  "sourceBefore": {
+    "baseline": [
+      {
+        "file": "index.html",
+        "sha256": "eabefea931b66d9a55918feed7d4019624983e411d10e0acf3b31690972aa21f"
+      },
+      {
+        "file": "package.json",
+        "sha256": "ddeaf64e6c5f3e2b8280ad6610410f10a149f0661b6f2009e760f7aa46da4a6a"
+      },
+      {
+        "file": "src/app.js",
+        "sha256": "c9439b8719640c9ae5ebe7c9d939901fdc4a3c3bfaea0ef24c28492ff91951b1"
+      },
+      {
+        "file": "src/engine.js",
+        "sha256": "75c6d9fcc48c0cf49ee02e53ffb7b143a09a2c79738d3bb2eb5d0ae80b30872b"
+      },
+      {
+        "file": "src/views.js",
+        "sha256": "2b8edcbe13fb3d8fb9a69eb51a1b2bc98e3819633d18f7d60675a73ebdf1b2e6"
+      },
+      {
+        "file": "src/storage.js",
+        "sha256": "6bfcc60036c9f729c21b948ca98c7ac715e14049856fb9dded0baa2aeef2c561"
+      },
+      {
+        "file": "src/dice-renderer.js",
+        "sha256": "b40e1e1c808b00d319b70ce7546403c588cdcc8397bba684fe19b2f4c0bca6d8"
+      },
+      {
+        "file": "src/effects.js",
+        "sha256": "5f95f77e882a690f95215babda3cdedc0d398bbcfaabfecd3d486141200dc6f9"
+      },
+      {
+        "file": "src/dice-motion.js",
+        "sha256": "3b088b9efa03552912bd92b18dc66d6122f45e2f12dc420305bb877deae5139a"
+      },
+      {
+        "file": "src/visual-timeline.js",
+        "sha256": "f518084da44c2ea852bf902ba6ffc7f8f5a94ee815dac31bcc4726cc8cd44369"
+      }
+    ],
+    "after": [
+      {
+        "file": "index.html",
+        "sha256": "7598a3e86e5caf4e6a9f698c8f27db0f41f623c85892813d3dfa7dc4dc43e43c"
+      },
+      {
+        "file": "package.json",
+        "sha256": "349cfed8336eaef0f04398c5e9706c365b7843085071ced0f2a7c9342c87234e"
+      },
+      {
+        "file": "src/app.js",
+        "sha256": "1ba0a720bb39630094515ce838048c53f18706ddd762b019d11238c091e267fc"
+      },
+      {
+        "file": "src/engine.js",
+        "sha256": "75c6d9fcc48c0cf49ee02e53ffb7b143a09a2c79738d3bb2eb5d0ae80b30872b"
+      },
+      {
+        "file": "src/views.js",
+        "sha256": "94f6b5e52e41c496260fee8e7a1a0960bccab40333a0b96e4a138e145ec85296"
+      },
+      {
+        "file": "src/storage.js",
+        "sha256": "f5a990793a90ff59a57f38e4be8fcb9deaf54997dff9d9acec2cded73d2c8145"
+      },
+      {
+        "file": "src/dice-renderer.js",
+        "sha256": "b40e1e1c808b00d319b70ce7546403c588cdcc8397bba684fe19b2f4c0bca6d8"
+      },
+      {
+        "file": "src/effects.js",
+        "sha256": "5f95f77e882a690f95215babda3cdedc0d398bbcfaabfecd3d486141200dc6f9"
+      },
+      {
+        "file": "src/dice-motion.js",
+        "sha256": "3b088b9efa03552912bd92b18dc66d6122f45e2f12dc420305bb877deae5139a"
+      },
+      {
+        "file": "src/visual-timeline.js",
+        "sha256": "f518084da44c2ea852bf902ba6ffc7f8f5a94ee815dac31bcc4726cc8cd44369"
+      }
+    ]
+  },
+  "synthetic": true,
+  "seed": 20261017,
+  "startedAt": "2026-10-19T07:52:58.609Z",
+  "scriptSha256": "bb3205985884a20a88a27e289f9ec04f46bd751f3cd4568df60affce0e506981",
+  "variants": [
+    {
+      "label": "baseline",
+      "url": "http://127.0.0.1:4188/"
+    },
+    {
+      "label": "after",
+      "url": "http://127.0.0.1:4189/"
+    }
+  ],
+  "fixtureManifest": [
+    {
+      "name": "inventory-10000",
+      "action": "inventory",
+      "rarity": null,
+      "seed": 20261017,
+      "rng": 3588911926,
+      "runId": "qa-round-inventory-10000-equipped-tail-20261017",
+      "items": 10000,
+      "equippedIds": [
+        "i4",
+        "i5",
+        "i6",
+        "i7",
+        "i8"
+      ],
+      "logCount": 1,
+      "logCharacters": [
+        9
+      ],
+      "rawCharacters": 2060957,
+      "rawUtf8Bytes": 2230963,
+      "rawSha256": "f60066f0e55853c6053e66134a84a5d831ca552595ad463ce51273d79f4aee2f",
+      "stateSha256": "81651ee106fc3033a2b0362328da887670562f378eb44436dd4cc915a6e53b7b"
+    },
+    {
+      "name": "boss-burst",
+      "action": "roll",
+      "rarity": null,
+      "seed": 20261017,
+      "rng": 1,
+      "runId": "qa-round-performance-boss-20261017",
+      "items": 8,
+      "equippedIds": [
+        "i4",
+        "i5",
+        "i6",
+        "i7",
+        "i8"
+      ],
+      "logCount": 6,
+      "logCharacters": [
+        180,
+        180,
+        180,
+        180,
+        180,
+        180
+      ],
+      "rawCharacters": 5411,
+      "rawUtf8Bytes": 7857,
+      "rawSha256": "0ff316363447653b8d44453b8c879129a4119e2aa2a881f6b07d7c86475819bd",
+      "stateSha256": "6ea3205945548483efc8b58227312e59ef6caa20b910ef1d6c5b839fff841b1a"
+    },
+    {
+      "name": "eternal-open",
+      "action": "open",
+      "rarity": 7,
+      "seed": 20261017,
+      "rng": 3031976842,
+      "runId": "qa-round-chest-7-20261017",
+      "items": 8,
+      "equippedIds": [
+        "i4",
+        "i5",
+        "i6",
+        "i7",
+        "i8"
+      ],
+      "logCount": 6,
+      "logCharacters": [
+        17,
+        45,
+        180,
+        180,
+        180,
+        180
+      ],
+      "rawCharacters": 5859,
+      "rawUtf8Bytes": 7743,
+      "rawSha256": "fc135b96e6de236c0305cf7544b58ecfe11a26a6243c0e24b2a047fc807f737e",
+      "stateSha256": "e497125e4510f94384b0ccabdf7c5772cd5007a4d2691ad00d34562ba5c3090a"
+    },
+    {
+      "name": "rarity-0-open",
+      "action": "open",
+      "rarity": 0,
+      "seed": 20261017,
+      "rng": 3031976842,
+      "runId": "qa-round-chest-0-20261017",
+      "items": 8,
+      "equippedIds": [
+        "i4",
+        "i5",
+        "i6",
+        "i7",
+        "i8"
+      ],
+      "logCount": 6,
+      "logCharacters": [
+        17,
+        45,
+        180,
+        180,
+        180,
+        180
+      ],
+      "rawCharacters": 5859,
+      "rawUtf8Bytes": 7743,
+      "rawSha256": "ec609857674737e16a2acc4f0bf722fcb565aa37a98edab03ddcd89d2b1b0e96",
+      "stateSha256": "44ec2a994e97482f5a57af6d401cda435c569235c3386a2e6d4d5008ab366431"
+    },
+    {
+      "name": "rarity-1-open",
+      "action": "open",
+      "rarity": 1,
+      "seed": 20261017,
+      "rng": 3031976842,
+      "runId": "qa-round-chest-1-20261017",
+      "items": 8,
+      "equippedIds": [
+        "i4",
+        "i5",
+        "i6",
+        "i7",
+        "i8"
+      ],
+      "logCount": 6,
+      "logCharacters": [
+        17,
+        45,
+        180,
+        180,
+        180,
+        180
+      ],
+      "rawCharacters": 5859,
+      "rawUtf8Bytes": 7743,
+      "rawSha256": "76708885d391b15ad41fba3b339894b0e3eecde903738c044e9d1a5f91d13ae5",
+      "stateSha256": "e4442f8c65fcbf9a9b9e8715f0dffca582613eb47a1d938ddcdd7a06b486a09d"
+    },
+    {
+      "name": "rarity-2-open",
+      "action": "open",
+      "rarity": 2,
+      "seed": 20261017,
+      "rng": 3031976842,
+      "runId": "qa-round-chest-2-20261017",
+      "items": 8,
+      "equippedIds": [
+        "i4",
+        "i5",
+        "i6",
+        "i7",
+        "i8"
+      ],
+      "logCount": 6,
+      "logCharacters": [
+        17,
+        45,
+        180,
+        180,
+        180,
+        180
+      ],
+      "rawCharacters": 5859,
+      "rawUtf8Bytes": 7743,
+      "rawSha256": "1744698a40089dfb5d72b8a15f3aa9c65191be723deef43e869678f336cdd21f",
+      "stateSha256": "a4821dfe54bdcd925e3ca0709c40ead7dd5d205ca0d432fd008f32603e4c3f87"
+    },
+    {
+      "name": "rarity-3-open",
+      "action": "open",
+      "rarity": 3,
+      "seed": 20261017,
+      "rng": 3031976842,
+      "runId": "qa-round-chest-3-20261017",
+      "items": 8,
+      "equippedIds": [
+        "i4",
+        "i5",
+        "i6",
+        "i7",
+        "i8"
+      ],
+      "logCount": 6,
+      "logCharacters": [
+        17,
+        45,
+        180,
+        180,
+        180,
+        180
+      ],
+      "rawCharacters": 5859,
+      "rawUtf8Bytes": 7743,
+      "rawSha256": "0e38dbeb5df54bf8692cec3d545f240cd2ab07f42554e28c9433577d14610cdb",
+      "stateSha256": "53a83b027c3035dda05c2359ad8da73b6318a4f5c8a70af05a69a7e8967fb099"
+    },
+    {
+      "name": "rarity-4-open",
+      "action": "open",
+      "rarity": 4,
+      "seed": 20261017,
+      "rng": 3031976842,
+      "runId": "qa-round-chest-4-20261017",
+      "items": 8,
+      "equippedIds": [
+        "i4",
+        "i5",
+        "i6",
+        "i7",
+        "i8"
+      ],
+      "logCount": 6,
+      "logCharacters": [
+        17,
+        45,
+        180,
+        180,
+        180,
+        180
+      ],
+      "rawCharacters": 5859,
+      "rawUtf8Bytes": 7743,
+      "rawSha256": "9bf64323116b469dabf9c5ecaee3d65de06c74f78c1ac06009b534cca3a42a3f",
+      "stateSha256": "e7a6c4849dd5138d554ca8574a2ade23f0aab86595ee494ad92bb14ae3935744"
+    },
+    {
+      "name": "rarity-5-open",
+      "action": "open",
+      "rarity": 5,
+      "seed": 20261017,
+      "rng": 3031976842,
+      "runId": "qa-round-chest-5-20261017",
+      "items": 8,
+      "equippedIds": [
+        "i4",
+        "i5",
+        "i6",
+        "i7",
+        "i8"
+      ],
+      "logCount": 6,
+      "logCharacters": [
+        17,
+        45,
+        180,
+        180,
+        180,
+        180
+      ],
+      "rawCharacters": 5859,
+      "rawUtf8Bytes": 7743,
+      "rawSha256": "f4845eac6af033a0176b79033ed2b4c3e8e366ad66fa35c7dd22d3b1d7ca1854",
+      "stateSha256": "a5cb6c075821d8d2bf40670689dc1bad44384fe204b31fe3ee9c7c9127d23d22"
+    },
+    {
+      "name": "rarity-6-open",
+      "action": "open",
+      "rarity": 6,
+      "seed": 20261017,
+      "rng": 3031976842,
+      "runId": "qa-round-chest-6-20261017",
+      "items": 8,
+      "equippedIds": [
+        "i4",
+        "i5",
+        "i6",
+        "i7",
+        "i8"
+      ],
+      "logCount": 6,
+      "logCharacters": [
+        17,
+        45,
+        180,
+        180,
+        180,
+        180
+      ],
+      "rawCharacters": 5858,
+      "rawUtf8Bytes": 7742,
+      "rawSha256": "5acb1faef2d3222fd5d07576af032c47885d753ce0c943fc2871fe22aba9e8aa",
+      "stateSha256": "049e65170c517fd41b49e1ddefc1c79af7565d702a4e279ee7ddee9783a8da39"
+    }
+  ],
+  "inventory": {
+    "status": "MEASURED",
+    "requestedSamplesPerVariant": 12,
+    "warmupsPerVariant": 1,
+    "runs": [
+      {
+        "label": "baseline",
+        "repeat": 1,
+        "elapsedMs": 82.19999999925494,
+        "trusted": true,
+        "cards": 60,
+        "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+        "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+        "cardHtmlUtf8Bytes": 92909,
+        "stateUnchanged": true
+      },
+      {
+        "label": "after",
+        "repeat": 1,
+        "elapsedMs": 85.20000000298023,
+        "trusted": true,
+        "cards": 60,
+        "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+        "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+        "cardHtmlUtf8Bytes": 92909,
+        "stateUnchanged": true
+      },
+      {
+        "label": "baseline",
+        "repeat": 2,
+        "elapsedMs": 70.89999999850988,
+        "trusted": true,
+        "cards": 60,
+        "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+        "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+        "cardHtmlUtf8Bytes": 92909,
+        "stateUnchanged": true
+      },
+      {
+        "label": "after",
+        "repeat": 2,
+        "elapsedMs": 66.10000000149012,
+        "trusted": true,
+        "cards": 60,
+        "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+        "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+        "cardHtmlUtf8Bytes": 92909,
+        "stateUnchanged": true
+      },
+      {
+        "label": "baseline",
+        "repeat": 3,
+        "elapsedMs": 71.69999999925494,
+        "trusted": true,
+        "cards": 60,
+        "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+        "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+        "cardHtmlUtf8Bytes": 92909,
+        "stateUnchanged": true
+      },
+      {
+        "label": "after",
+        "repeat": 3,
+        "elapsedMs": 75.19999999925494,
+        "trusted": true,
+        "cards": 60,
+        "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+        "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+        "cardHtmlUtf8Bytes": 92909,
+        "stateUnchanged": true
+      },
+      {
+        "label": "baseline",
+        "repeat": 4,
+        "elapsedMs": 60.30000000074506,
+        "trusted": true,
+        "cards": 60,
+        "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+        "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+        "cardHtmlUtf8Bytes": 92909,
+        "stateUnchanged": true
+      },
+      {
+        "label": "after",
+        "repeat": 4,
+        "elapsedMs": 255.69999999925494,
+        "trusted": true,
+        "cards": 60,
+        "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+        "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+        "cardHtmlUtf8Bytes": 92909,
+        "stateUnchanged": true
+      },
+      {
+        "label": "baseline",
+        "repeat": 5,
+        "elapsedMs": 253.60000000149012,
+        "trusted": true,
+        "cards": 60,
+        "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+        "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+        "cardHtmlUtf8Bytes": 92909,
+        "stateUnchanged": true
+      },
+      {
+        "label": "after",
+        "repeat": 5,
+        "elapsedMs": 187.59999999776483,
+        "trusted": true,
+        "cards": 60,
+        "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+        "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+        "cardHtmlUtf8Bytes": 92909,
+        "stateUnchanged": true
+      },
+      {
+        "label": "baseline",
+        "repeat": 6,
+        "elapsedMs": 62.19999999925494,
+        "trusted": true,
+        "cards": 60,
+        "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+        "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+        "cardHtmlUtf8Bytes": 92909,
+        "stateUnchanged": true
+      },
+      {
+        "label": "after",
+        "repeat": 6,
+        "elapsedMs": 138.5,
+        "trusted": true,
+        "cards": 60,
+        "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+        "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+        "cardHtmlUtf8Bytes": 92909,
+        "stateUnchanged": true
+      },
+      {
+        "label": "baseline",
+        "repeat": 7,
+        "elapsedMs": 231.89999999850988,
+        "trusted": true,
+        "cards": 60,
+        "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+        "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+        "cardHtmlUtf8Bytes": 92909,
+        "stateUnchanged": true
+      },
+      {
+        "label": "after",
+        "repeat": 7,
+        "elapsedMs": 66.69999999925494,
+        "trusted": true,
+        "cards": 60,
+        "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+        "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+        "cardHtmlUtf8Bytes": 92909,
+        "stateUnchanged": true
+      },
+      {
+        "label": "baseline",
+        "repeat": 8,
+        "elapsedMs": 452.5,
+        "trusted": true,
+        "cards": 60,
+        "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+        "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+        "cardHtmlUtf8Bytes": 92909,
+        "stateUnchanged": true
+      },
+      {
+        "label": "after",
+        "repeat": 8,
+        "elapsedMs": 63.900000002235174,
+        "trusted": true,
+        "cards": 60,
+        "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+        "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+        "cardHtmlUtf8Bytes": 92909,
+        "stateUnchanged": true
+      },
+      {
+        "label": "baseline",
+        "repeat": 9,
+        "elapsedMs": 407.3999999985099,
+        "trusted": true,
+        "cards": 60,
+        "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+        "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+        "cardHtmlUtf8Bytes": 92909,
+        "stateUnchanged": true
+      },
+      {
+        "label": "after",
+        "repeat": 9,
+        "elapsedMs": 67.09999999776483,
+        "trusted": true,
+        "cards": 60,
+        "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+        "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+        "cardHtmlUtf8Bytes": 92909,
+        "stateUnchanged": true
+      },
+      {
+        "label": "baseline",
+        "repeat": 10,
+        "elapsedMs": 794.1000000014901,
+        "trusted": true,
+        "cards": 60,
+        "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+        "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+        "cardHtmlUtf8Bytes": 92909,
+        "stateUnchanged": true
+      },
+      {
+        "label": "after",
+        "repeat": 10,
+        "elapsedMs": 686.0999999977648,
+        "trusted": true,
+        "cards": 60,
+        "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+        "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+        "cardHtmlUtf8Bytes": 92909,
+        "stateUnchanged": true
+      },
+      {
+        "label": "baseline",
+        "repeat": 11,
+        "elapsedMs": 111.59999999776483,
+        "trusted": true,
+        "cards": 60,
+        "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+        "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+        "cardHtmlUtf8Bytes": 92909,
+        "stateUnchanged": true
+      },
+      {
+        "label": "after",
+        "repeat": 11,
+        "elapsedMs": 113.60000000149012,
+        "trusted": true,
+        "cards": 60,
+        "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+        "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+        "cardHtmlUtf8Bytes": 92909,
+        "stateUnchanged": true
+      },
+      {
+        "label": "baseline",
+        "repeat": 12,
+        "elapsedMs": 64.89999999850988,
+        "trusted": true,
+        "cards": 60,
+        "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+        "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+        "cardHtmlUtf8Bytes": 92909,
+        "stateUnchanged": true
+      },
+      {
+        "label": "after",
+        "repeat": 12,
+        "elapsedMs": 126.90000000223517,
+        "trusted": true,
+        "cards": 60,
+        "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+        "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+        "cardHtmlUtf8Bytes": 92909,
+        "stateUnchanged": true
+      }
+    ],
+    "storage": [
+      {
+        "label": "baseline",
+        "ok": true,
+        "writes": {
+          "main": {
+            "ok": true
+          },
+          "mirror": {
+            "ok": true
+          },
+          "settings": {
+            "ok": true
+          }
+        },
+        "mainCharacters": 2060957,
+        "mirrorCharacters": 2060957,
+        "keyCount": 3,
+        "warmupMs": 77
+      },
+      {
+        "label": "after",
+        "ok": true,
+        "writes": {
+          "main": {
+            "ok": true
+          },
+          "mirror": {
+            "ok": true
+          },
+          "settings": {
+            "ok": true
+          }
+        },
+        "mainCharacters": 2060957,
+        "mirrorCharacters": 2060957,
+        "keyCount": 3,
+        "warmupMs": 95.30000000074506
+      }
+    ],
+    "aggregate": {
+      "baseline": {
+        "samples": 12,
+        "p50": 82.19999999925494,
+        "p95": 452.5,
+        "p99": 452.5,
+        "max": 794.1000000014901,
+        "min": 60.30000000074506
+      },
+      "after": {
+        "samples": 12,
+        "p50": 85.20000000298023,
+        "p95": 255.69999999925494,
+        "p99": 255.69999999925494,
+        "max": 686.0999999977648,
+        "min": 63.900000002235174
+      }
+    },
+    "referenceCardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+    "cardSetsIdentical": true,
+    "cardHtmlIdentical": true,
+    "comparison": {
+      "medianDeltaMs": 3.0000000037252903,
+      "medianPercentChange": 3.6496350410614165,
+      "p95DeltaMs": -196.80000000074506,
+      "maxDeltaMs": -108.00000000372529
+    }
+  },
+  "frames": {
+    "status": "MEASURED",
+    "requestedRepeatsPerCell": 1,
+    "requestedWindowMs": 4200,
+    "runs": [
+      {
+        "label": "baseline",
+        "scene": "boss-burst",
+        "rarity": null,
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeat": 1,
+        "fixtureSha256": "6ea3205945548483efc8b58227312e59ef6caa20b910ef1d6c5b839fff841b1a",
+        "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749",
+        "exactTransition": true,
+        "mirrorSaved": true,
+        "logBefore": 6,
+        "logAfter": 6,
+        "logMaxCharacters": 180,
+        "effectObserved": true,
+        "trusted": true,
+        "actualWindowMs": 4214.39999999851,
+        "windowOverrunMs": 14.399999998509884,
+        "frames": 180,
+        "firstFrameDelayMs": 12.699999999254942,
+        "p50": 16.699999999254942,
+        "p95": 21.800000000745058,
+        "p99": 361.5999999977648,
+        "max": 390.9000000022352,
+        "over50": 6,
+        "over100": 3,
+        "peakPixels": {
+          "dice": 649296,
+          "effects": 224818,
+          "materials": 299088
+        },
+        "effectKinds": [
+          "idle",
+          "dice-only",
+          "combat"
+        ],
+        "longTasks": {
+          "supported": true,
+          "count": 2,
+          "totalOverlapMs": 460,
+          "maxMs": 373,
+          "largest": [
+            {
+              "startOffsetMs": 803.6000000014901,
+              "durationMs": 373
+            },
+            {
+              "startOffsetMs": 1557.6000000014901,
+              "durationMs": 87
+            }
+          ]
+        },
+        "visibility": "visible"
+      },
+      {
+        "label": "after",
+        "scene": "boss-burst",
+        "rarity": null,
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeat": 1,
+        "fixtureSha256": "6ea3205945548483efc8b58227312e59ef6caa20b910ef1d6c5b839fff841b1a",
+        "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749",
+        "exactTransition": true,
+        "mirrorSaved": true,
+        "logBefore": 6,
+        "logAfter": 6,
+        "logMaxCharacters": 180,
+        "effectObserved": true,
+        "trusted": true,
+        "actualWindowMs": 4205.39999999851,
+        "windowOverrunMs": 5.399999998509884,
+        "frames": 70,
+        "firstFrameDelayMs": 5.300000000745058,
+        "p50": 16.699999999254942,
+        "p95": 25.299999997019768,
+        "p99": 731.6000000014901,
+        "max": 2111.699999999255,
+        "over50": 3,
+        "over100": 3,
+        "peakPixels": {
+          "dice": 626584,
+          "effects": 224818,
+          "materials": 299088
+        },
+        "effectKinds": [
+          "idle",
+          "dice-only",
+          "combat"
+        ],
+        "longTasks": {
+          "supported": true,
+          "count": 1,
+          "totalOverlapMs": 731,
+          "maxMs": 731,
+          "largest": [
+            {
+              "startOffsetMs": 462.5999999977648,
+              "durationMs": 731
+            }
+          ]
+        },
+        "visibility": "visible"
+      },
+      {
+        "label": "baseline",
+        "scene": "boss-burst",
+        "rarity": null,
+        "width": 1920,
+        "height": 1080,
+        "effects": "low",
+        "repeat": 1,
+        "fixtureSha256": "6ea3205945548483efc8b58227312e59ef6caa20b910ef1d6c5b839fff841b1a",
+        "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749",
+        "exactTransition": true,
+        "mirrorSaved": true,
+        "logBefore": 6,
+        "logAfter": 6,
+        "logMaxCharacters": 180,
+        "effectObserved": true,
+        "trusted": true,
+        "actualWindowMs": 5089,
+        "windowOverrunMs": 889,
+        "frames": 33,
+        "firstFrameDelayMs": 9.099999997764826,
+        "p50": 16.5,
+        "p95": 35.20000000298023,
+        "p99": 40.70000000298023,
+        "max": 4564.400000002235,
+        "over50": 1,
+        "over100": 1,
+        "peakPixels": {
+          "dice": 140146,
+          "effects": 45000,
+          "materials": 0
+        },
+        "effectKinds": [
+          "idle"
+        ],
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        },
+        "visibility": "visible"
+      },
+      {
+        "label": "after",
+        "scene": "boss-burst",
+        "rarity": null,
+        "width": 1920,
+        "height": 1080,
+        "effects": "low",
+        "repeat": 1,
+        "fixtureSha256": "6ea3205945548483efc8b58227312e59ef6caa20b910ef1d6c5b839fff841b1a",
+        "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749",
+        "exactTransition": true,
+        "mirrorSaved": true,
+        "logBefore": 6,
+        "logAfter": 6,
+        "logMaxCharacters": 180,
+        "effectObserved": true,
+        "trusted": true,
+        "actualWindowMs": 4207.300000000745,
+        "windowOverrunMs": 7.300000000745058,
+        "frames": 151,
+        "firstFrameDelayMs": 10.400000002235174,
+        "p50": 16.699999999254942,
+        "p95": 17.300000000745058,
+        "p99": 31.399999998509884,
+        "max": 1715.6000000014901,
+        "over50": 1,
+        "over100": 1,
+        "peakPixels": {
+          "dice": 140146,
+          "effects": 45000,
+          "materials": 0
+        },
+        "effectKinds": [
+          "idle"
+        ],
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        },
+        "visibility": "visible"
+      },
+      {
+        "label": "baseline",
+        "scene": "eternal-open",
+        "rarity": 7,
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeat": 1,
+        "fixtureSha256": "e497125e4510f94384b0ccabdf7c5772cd5007a4d2691ad00d34562ba5c3090a",
+        "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81",
+        "exactTransition": true,
+        "mirrorSaved": true,
+        "logBefore": 6,
+        "logAfter": 6,
+        "logMaxCharacters": 180,
+        "effectObserved": true,
+        "trusted": true,
+        "actualWindowMs": 4215,
+        "windowOverrunMs": 15,
+        "frames": 209,
+        "firstFrameDelayMs": 11.800000000745058,
+        "p50": 16.699999999254942,
+        "p95": 20,
+        "p99": 25,
+        "max": 605.3999999985099,
+        "over50": 3,
+        "over100": 2,
+        "peakPixels": {
+          "dice": 0,
+          "effects": 663496,
+          "materials": 263163
+        },
+        "effectKinds": [
+          "idle",
+          "chest-charge",
+          "loot-7"
+        ],
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        },
+        "visibility": "visible"
+      },
+      {
+        "label": "after",
+        "scene": "eternal-open",
+        "rarity": 7,
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeat": 1,
+        "fixtureSha256": "e497125e4510f94384b0ccabdf7c5772cd5007a4d2691ad00d34562ba5c3090a",
+        "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81",
+        "exactTransition": true,
+        "mirrorSaved": true,
+        "logBefore": 6,
+        "logAfter": 6,
+        "logMaxCharacters": 180,
+        "effectObserved": true,
+        "trusted": true,
+        "actualWindowMs": 4202.800000000745,
+        "windowOverrunMs": 2.800000000745058,
+        "frames": 171,
+        "firstFrameDelayMs": 2.800000000745058,
+        "p50": 16.699999999254942,
+        "p95": 20.099999997764826,
+        "p99": 21.100000001490116,
+        "max": 1395,
+        "over50": 1,
+        "over100": 1,
+        "peakPixels": {
+          "dice": 0,
+          "effects": 663496,
+          "materials": 263163
+        },
+        "effectKinds": [
+          "idle",
+          "chest-charge",
+          "loot-7"
+        ],
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        },
+        "visibility": "visible"
+      },
+      {
+        "label": "baseline",
+        "scene": "eternal-open",
+        "rarity": 7,
+        "width": 1920,
+        "height": 1080,
+        "effects": "low",
+        "repeat": 1,
+        "fixtureSha256": "e497125e4510f94384b0ccabdf7c5772cd5007a4d2691ad00d34562ba5c3090a",
+        "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81",
+        "exactTransition": true,
+        "mirrorSaved": true,
+        "logBefore": 6,
+        "logAfter": 6,
+        "logMaxCharacters": 180,
+        "effectObserved": true,
+        "trusted": true,
+        "actualWindowMs": 4210.89999999851,
+        "windowOverrunMs": 10.899999998509884,
+        "frames": 108,
+        "firstFrameDelayMs": 0.5,
+        "p50": 16.699999999254942,
+        "p95": 17,
+        "p99": 23,
+        "max": 2451.400000002235,
+        "over50": 1,
+        "over100": 1,
+        "peakPixels": {
+          "dice": 0,
+          "effects": 45000,
+          "materials": 0
+        },
+        "effectKinds": [
+          "idle"
+        ],
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        },
+        "visibility": "visible"
+      },
+      {
+        "label": "after",
+        "scene": "eternal-open",
+        "rarity": 7,
+        "width": 1920,
+        "height": 1080,
+        "effects": "low",
+        "repeat": 1,
+        "fixtureSha256": "e497125e4510f94384b0ccabdf7c5772cd5007a4d2691ad00d34562ba5c3090a",
+        "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81",
+        "exactTransition": true,
+        "mirrorSaved": true,
+        "logBefore": 6,
+        "logAfter": 6,
+        "logMaxCharacters": 180,
+        "effectObserved": true,
+        "trusted": true,
+        "actualWindowMs": 4209.5,
+        "windowOverrunMs": 9.5,
+        "frames": 176,
+        "firstFrameDelayMs": 9.600000001490116,
+        "p50": 16.699999999254942,
+        "p95": 17.199999999254942,
+        "p99": 34.19999999925494,
+        "max": 1310.300000000745,
+        "over50": 1,
+        "over100": 1,
+        "peakPixels": {
+          "dice": 0,
+          "effects": 45000,
+          "materials": 0
+        },
+        "effectKinds": [
+          "idle"
+        ],
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        },
+        "visibility": "visible"
+      },
+      {
+        "label": "baseline",
+        "scene": "boss-burst",
+        "rarity": null,
+        "width": 3840,
+        "height": 2160,
+        "effects": "full",
+        "repeat": 1,
+        "fixtureSha256": "6ea3205945548483efc8b58227312e59ef6caa20b910ef1d6c5b839fff841b1a",
+        "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749",
+        "exactTransition": true,
+        "mirrorSaved": true,
+        "logBefore": 6,
+        "logAfter": 6,
+        "logMaxCharacters": 180,
+        "effectObserved": false,
+        "trusted": true,
+        "actualWindowMs": 8927.79999999702,
+        "windowOverrunMs": 4727.79999999702,
+        "frames": 10,
+        "firstFrameDelayMs": 11.5,
+        "p50": 16.599999997764826,
+        "p95": 31.299999997019768,
+        "p99": 31.299999997019768,
+        "max": 8783.29999999702,
+        "over50": 1,
+        "over100": 1,
+        "peakPixels": {
+          "dice": 898872,
+          "effects": 45000,
+          "materials": 0
+        },
+        "effectKinds": [
+          "idle",
+          "dice-only"
+        ],
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        },
+        "visibility": "visible"
+      },
+      {
+        "label": "after",
+        "scene": "boss-burst",
+        "rarity": null,
+        "width": 3840,
+        "height": 2160,
+        "effects": "full",
+        "repeat": 1,
+        "fixtureSha256": "6ea3205945548483efc8b58227312e59ef6caa20b910ef1d6c5b839fff841b1a",
+        "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749",
+        "exactTransition": true,
+        "mirrorSaved": true,
+        "logBefore": 6,
+        "logAfter": 6,
+        "logMaxCharacters": 180,
+        "effectObserved": false,
+        "trusted": true,
+        "actualWindowMs": 5864.10000000149,
+        "windowOverrunMs": 1664.1000000014901,
+        "frames": 13,
+        "firstFrameDelayMs": 0.6000000014901161,
+        "p50": 16.599999997764826,
+        "p95": 45,
+        "p99": 45,
+        "max": 5665.800000000745,
+        "over50": 1,
+        "over100": 1,
+        "peakPixels": {
+          "dice": 898872,
+          "effects": 45000,
+          "materials": 0
+        },
+        "effectKinds": [
+          "idle",
+          "dice-only"
+        ],
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        },
+        "visibility": "visible"
+      },
+      {
+        "label": "baseline",
+        "scene": "boss-burst",
+        "rarity": null,
+        "width": 3840,
+        "height": 2160,
+        "effects": "low",
+        "repeat": 1,
+        "fixtureSha256": "6ea3205945548483efc8b58227312e59ef6caa20b910ef1d6c5b839fff841b1a",
+        "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749",
+        "exactTransition": true,
+        "mirrorSaved": true,
+        "logBefore": 6,
+        "logAfter": 6,
+        "logMaxCharacters": 180,
+        "effectObserved": true,
+        "trusted": true,
+        "actualWindowMs": 11338.5,
+        "windowOverrunMs": 7138.5,
+        "frames": 27,
+        "firstFrameDelayMs": 0.6999999992549419,
+        "p50": 16.399999998509884,
+        "p95": 35,
+        "p99": 41.79999999701977,
+        "max": 10905.39999999851,
+        "over50": 1,
+        "over100": 1,
+        "peakPixels": {
+          "dice": 543620,
+          "effects": 45000,
+          "materials": 0
+        },
+        "effectKinds": [
+          "idle"
+        ],
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        },
+        "visibility": "visible"
+      },
+      {
+        "label": "after",
+        "scene": "boss-burst",
+        "rarity": null,
+        "width": 3840,
+        "height": 2160,
+        "effects": "low",
+        "repeat": 1,
+        "fixtureSha256": "6ea3205945548483efc8b58227312e59ef6caa20b910ef1d6c5b839fff841b1a",
+        "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749",
+        "exactTransition": true,
+        "mirrorSaved": true,
+        "logBefore": 6,
+        "logAfter": 6,
+        "logMaxCharacters": 180,
+        "effectObserved": true,
+        "trusted": true,
+        "actualWindowMs": 4860.60000000149,
+        "windowOverrunMs": 660.6000000014901,
+        "frames": 26,
+        "firstFrameDelayMs": 11.699999999254942,
+        "p50": 16.599999997764826,
+        "p95": 41.30000000074506,
+        "p99": 47.19999999925494,
+        "max": 4399,
+        "over50": 1,
+        "over100": 1,
+        "peakPixels": {
+          "dice": 543620,
+          "effects": 45000,
+          "materials": 0
+        },
+        "effectKinds": [
+          "idle"
+        ],
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        },
+        "visibility": "visible"
+      },
+      {
+        "label": "baseline",
+        "scene": "eternal-open",
+        "rarity": 7,
+        "width": 3840,
+        "height": 2160,
+        "effects": "full",
+        "repeat": 1,
+        "fixtureSha256": "e497125e4510f94384b0ccabdf7c5772cd5007a4d2691ad00d34562ba5c3090a",
+        "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81",
+        "exactTransition": true,
+        "mirrorSaved": true,
+        "logBefore": 6,
+        "logAfter": 6,
+        "logMaxCharacters": 180,
+        "effectObserved": true,
+        "trusted": true,
+        "actualWindowMs": 4201.79999999702,
+        "windowOverrunMs": 1.7999999970197678,
+        "frames": 68,
+        "firstFrameDelayMs": 1.5999999977648258,
+        "p50": 16.600000001490116,
+        "p95": 20.899999998509884,
+        "p99": 28.399999998509884,
+        "max": 3119.199999999255,
+        "over50": 1,
+        "over100": 1,
+        "peakPixels": {
+          "dice": 0,
+          "effects": 538272,
+          "materials": 196173
+        },
+        "effectKinds": [
+          "idle",
+          "chest-charge",
+          "loot-7"
+        ],
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        },
+        "visibility": "visible"
+      },
+      {
+        "label": "after",
+        "scene": "eternal-open",
+        "rarity": 7,
+        "width": 3840,
+        "height": 2160,
+        "effects": "full",
+        "repeat": 1,
+        "fixtureSha256": "e497125e4510f94384b0ccabdf7c5772cd5007a4d2691ad00d34562ba5c3090a",
+        "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81",
+        "exactTransition": true,
+        "mirrorSaved": true,
+        "logBefore": 6,
+        "logAfter": 6,
+        "logMaxCharacters": 180,
+        "effectObserved": false,
+        "trusted": true,
+        "actualWindowMs": 10735.60000000149,
+        "windowOverrunMs": 6535.60000000149,
+        "frames": 31,
+        "firstFrameDelayMs": 10.5,
+        "p50": 16.699999999254942,
+        "p95": 21.799999997019768,
+        "p99": 21.900000002235174,
+        "max": 10236.10000000149,
+        "over50": 1,
+        "over100": 1,
+        "peakPixels": {
+          "dice": 0,
+          "effects": 162750,
+          "materials": 165300
+        },
+        "effectKinds": [
+          "idle",
+          "chest-charge"
+        ],
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        },
+        "visibility": "visible"
+      },
+      {
+        "label": "baseline",
+        "scene": "eternal-open",
+        "rarity": 7,
+        "width": 3840,
+        "height": 2160,
+        "effects": "low",
+        "repeat": 1,
+        "fixtureSha256": "e497125e4510f94384b0ccabdf7c5772cd5007a4d2691ad00d34562ba5c3090a",
+        "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81",
+        "exactTransition": true,
+        "mirrorSaved": true,
+        "logBefore": 6,
+        "logAfter": 6,
+        "logMaxCharacters": 180,
+        "effectObserved": true,
+        "trusted": true,
+        "actualWindowMs": 8516.5,
+        "windowOverrunMs": 4316.5,
+        "frames": 36,
+        "firstFrameDelayMs": 11.5,
+        "p50": 16.600000001490116,
+        "p95": 23.100000001490116,
+        "p99": 42,
+        "max": 7942.10000000149,
+        "over50": 1,
+        "over100": 1,
+        "peakPixels": {
+          "dice": 0,
+          "effects": 45000,
+          "materials": 0
+        },
+        "effectKinds": [
+          "idle"
+        ],
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        },
+        "visibility": "visible"
+      },
+      {
+        "label": "after",
+        "scene": "eternal-open",
+        "rarity": 7,
+        "width": 3840,
+        "height": 2160,
+        "effects": "low",
+        "repeat": 1,
+        "fixtureSha256": "e497125e4510f94384b0ccabdf7c5772cd5007a4d2691ad00d34562ba5c3090a",
+        "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81",
+        "exactTransition": true,
+        "mirrorSaved": true,
+        "logBefore": 6,
+        "logAfter": 6,
+        "logMaxCharacters": 180,
+        "effectObserved": true,
+        "trusted": true,
+        "actualWindowMs": 6020.699999999255,
+        "windowOverrunMs": 1820.699999999255,
+        "frames": 34,
+        "firstFrameDelayMs": 13,
+        "p50": 16.600000001490116,
+        "p95": 22.200000002980232,
+        "p99": 23.900000002235174,
+        "max": 5474.39999999851,
+        "over50": 1,
+        "over100": 1,
+        "peakPixels": {
+          "dice": 0,
+          "effects": 45000,
+          "materials": 0
+        },
+        "effectKinds": [
+          "idle"
+        ],
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        },
+        "visibility": "visible"
+      }
+    ],
+    "aggregate": [
+      {
+        "label": "baseline",
+        "scene": "boss-burst",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeats": 1,
+        "medianRunP50": 16.699999999254942,
+        "medianRunP95": 21.800000000745058,
+        "worstFrameMs": 390.9000000022352,
+        "longTasks": 2,
+        "longTaskOverlapMs": 460,
+        "observedAllExpectedEffects": true
+      },
+      {
+        "label": "after",
+        "scene": "boss-burst",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeats": 1,
+        "medianRunP50": 16.699999999254942,
+        "medianRunP95": 25.299999997019768,
+        "worstFrameMs": 2111.699999999255,
+        "longTasks": 1,
+        "longTaskOverlapMs": 731,
+        "observedAllExpectedEffects": true
+      },
+      {
+        "label": "baseline",
+        "scene": "boss-burst",
+        "width": 1920,
+        "height": 1080,
+        "effects": "low",
+        "repeats": 1,
+        "medianRunP50": 16.5,
+        "medianRunP95": 35.20000000298023,
+        "worstFrameMs": 4564.400000002235,
+        "longTasks": 0,
+        "longTaskOverlapMs": 0,
+        "observedAllExpectedEffects": true
+      },
+      {
+        "label": "after",
+        "scene": "boss-burst",
+        "width": 1920,
+        "height": 1080,
+        "effects": "low",
+        "repeats": 1,
+        "medianRunP50": 16.699999999254942,
+        "medianRunP95": 17.300000000745058,
+        "worstFrameMs": 1715.6000000014901,
+        "longTasks": 0,
+        "longTaskOverlapMs": 0,
+        "observedAllExpectedEffects": true
+      },
+      {
+        "label": "baseline",
+        "scene": "eternal-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeats": 1,
+        "medianRunP50": 16.699999999254942,
+        "medianRunP95": 20,
+        "worstFrameMs": 605.3999999985099,
+        "longTasks": 0,
+        "longTaskOverlapMs": 0,
+        "observedAllExpectedEffects": true
+      },
+      {
+        "label": "after",
+        "scene": "eternal-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeats": 1,
+        "medianRunP50": 16.699999999254942,
+        "medianRunP95": 20.099999997764826,
+        "worstFrameMs": 1395,
+        "longTasks": 0,
+        "longTaskOverlapMs": 0,
+        "observedAllExpectedEffects": true
+      },
+      {
+        "label": "baseline",
+        "scene": "eternal-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "low",
+        "repeats": 1,
+        "medianRunP50": 16.699999999254942,
+        "medianRunP95": 17,
+        "worstFrameMs": 2451.400000002235,
+        "longTasks": 0,
+        "longTaskOverlapMs": 0,
+        "observedAllExpectedEffects": true
+      },
+      {
+        "label": "after",
+        "scene": "eternal-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "low",
+        "repeats": 1,
+        "medianRunP50": 16.699999999254942,
+        "medianRunP95": 17.199999999254942,
+        "worstFrameMs": 1310.300000000745,
+        "longTasks": 0,
+        "longTaskOverlapMs": 0,
+        "observedAllExpectedEffects": true
+      },
+      {
+        "label": "baseline",
+        "scene": "boss-burst",
+        "width": 3840,
+        "height": 2160,
+        "effects": "full",
+        "repeats": 1,
+        "medianRunP50": 16.599999997764826,
+        "medianRunP95": 31.299999997019768,
+        "worstFrameMs": 8783.29999999702,
+        "longTasks": 0,
+        "longTaskOverlapMs": 0,
+        "observedAllExpectedEffects": false
+      },
+      {
+        "label": "after",
+        "scene": "boss-burst",
+        "width": 3840,
+        "height": 2160,
+        "effects": "full",
+        "repeats": 1,
+        "medianRunP50": 16.599999997764826,
+        "medianRunP95": 45,
+        "worstFrameMs": 5665.800000000745,
+        "longTasks": 0,
+        "longTaskOverlapMs": 0,
+        "observedAllExpectedEffects": false
+      },
+      {
+        "label": "baseline",
+        "scene": "boss-burst",
+        "width": 3840,
+        "height": 2160,
+        "effects": "low",
+        "repeats": 1,
+        "medianRunP50": 16.399999998509884,
+        "medianRunP95": 35,
+        "worstFrameMs": 10905.39999999851,
+        "longTasks": 0,
+        "longTaskOverlapMs": 0,
+        "observedAllExpectedEffects": true
+      },
+      {
+        "label": "after",
+        "scene": "boss-burst",
+        "width": 3840,
+        "height": 2160,
+        "effects": "low",
+        "repeats": 1,
+        "medianRunP50": 16.599999997764826,
+        "medianRunP95": 41.30000000074506,
+        "worstFrameMs": 4399,
+        "longTasks": 0,
+        "longTaskOverlapMs": 0,
+        "observedAllExpectedEffects": true
+      },
+      {
+        "label": "baseline",
+        "scene": "eternal-open",
+        "width": 3840,
+        "height": 2160,
+        "effects": "full",
+        "repeats": 1,
+        "medianRunP50": 16.600000001490116,
+        "medianRunP95": 20.899999998509884,
+        "worstFrameMs": 3119.199999999255,
+        "longTasks": 0,
+        "longTaskOverlapMs": 0,
+        "observedAllExpectedEffects": true
+      },
+      {
+        "label": "after",
+        "scene": "eternal-open",
+        "width": 3840,
+        "height": 2160,
+        "effects": "full",
+        "repeats": 1,
+        "medianRunP50": 16.699999999254942,
+        "medianRunP95": 21.799999997019768,
+        "worstFrameMs": 10236.10000000149,
+        "longTasks": 0,
+        "longTaskOverlapMs": 0,
+        "observedAllExpectedEffects": false
+      },
+      {
+        "label": "baseline",
+        "scene": "eternal-open",
+        "width": 3840,
+        "height": 2160,
+        "effects": "low",
+        "repeats": 1,
+        "medianRunP50": 16.600000001490116,
+        "medianRunP95": 23.100000001490116,
+        "worstFrameMs": 7942.10000000149,
+        "longTasks": 0,
+        "longTaskOverlapMs": 0,
+        "observedAllExpectedEffects": true
+      },
+      {
+        "label": "after",
+        "scene": "eternal-open",
+        "width": 3840,
+        "height": 2160,
+        "effects": "low",
+        "repeats": 1,
+        "medianRunP50": 16.600000001490116,
+        "medianRunP95": 22.200000002980232,
+        "worstFrameMs": 5474.39999999851,
+        "longTasks": 0,
+        "longTaskOverlapMs": 0,
+        "observedAllExpectedEffects": true
+      }
+    ]
+  },
+  "coverage": {
+    "status": "MEASURED",
+    "requestedRepeatsPerCell": 1,
+    "requestedWindowMs": 4200,
+    "runs": [
+      {
+        "label": "baseline",
+        "scene": "rarity-0-open",
+        "rarity": 0,
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeat": 1,
+        "fixtureSha256": "44ec2a994e97482f5a57af6d401cda435c569235c3386a2e6d4d5008ab366431",
+        "persistedSha256": "62f4bfe70b47c2d87f6c49c774c38e5c3fa0d3fc0beaecb9c84f40aa9c487c04",
+        "exactTransition": true,
+        "mirrorSaved": true,
+        "logBefore": 6,
+        "logAfter": 6,
+        "logMaxCharacters": 180,
+        "effectObserved": true,
+        "trusted": true,
+        "actualWindowMs": 4200.5,
+        "windowOverrunMs": 0.5,
+        "frames": 73,
+        "firstFrameDelayMs": 8.699999999254942,
+        "p50": 16.699999999254942,
+        "p95": 22.100000001490116,
+        "p99": 35.69999999925494,
+        "max": 2978.60000000149,
+        "over50": 1,
+        "over100": 1,
+        "peakPixels": {
+          "dice": 0,
+          "effects": 365850,
+          "materials": 208356
+        },
+        "effectKinds": [
+          "idle",
+          "chest-charge",
+          "loot-0"
+        ],
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        },
+        "visibility": "visible"
+      },
+      {
+        "label": "after",
+        "scene": "rarity-0-open",
+        "rarity": 0,
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeat": 1,
+        "fixtureSha256": "44ec2a994e97482f5a57af6d401cda435c569235c3386a2e6d4d5008ab366431",
+        "persistedSha256": "62f4bfe70b47c2d87f6c49c774c38e5c3fa0d3fc0beaecb9c84f40aa9c487c04",
+        "exactTransition": true,
+        "mirrorSaved": true,
+        "logBefore": 6,
+        "logAfter": 6,
+        "logMaxCharacters": 180,
+        "effectObserved": true,
+        "trusted": true,
+        "actualWindowMs": 4203.5,
+        "windowOverrunMs": 3.5,
+        "frames": 160,
+        "firstFrameDelayMs": 3.800000000745058,
+        "p50": 16.699999999254942,
+        "p95": 19.099999997764826,
+        "p99": 23.599999997764826,
+        "max": 1583.699999999255,
+        "over50": 1,
+        "over100": 1,
+        "peakPixels": {
+          "dice": 0,
+          "effects": 365850,
+          "materials": 208356
+        },
+        "effectKinds": [
+          "idle",
+          "chest-charge",
+          "loot-0"
+        ],
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        },
+        "visibility": "visible"
+      },
+      {
+        "label": "baseline",
+        "scene": "rarity-1-open",
+        "rarity": 1,
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeat": 1,
+        "fixtureSha256": "e4442f8c65fcbf9a9b9e8715f0dffca582613eb47a1d938ddcdd7a06b486a09d",
+        "persistedSha256": "422376f30bbe4675c7c03287040b447a4ed7a5e61e38a77037de1d7323cc7074",
+        "exactTransition": true,
+        "mirrorSaved": true,
+        "logBefore": 6,
+        "logAfter": 6,
+        "logMaxCharacters": 180,
+        "effectObserved": true,
+        "trusted": true,
+        "actualWindowMs": 4212.89999999851,
+        "windowOverrunMs": 12.899999998509884,
+        "frames": 208,
+        "firstFrameDelayMs": 2.699999999254942,
+        "p50": 16.699999999254942,
+        "p95": 18.700000002980232,
+        "p99": 23.800000000745058,
+        "max": 711,
+        "over50": 2,
+        "over100": 1,
+        "peakPixels": {
+          "dice": 0,
+          "effects": 365850,
+          "materials": 208356
+        },
+        "effectKinds": [
+          "idle",
+          "chest-charge",
+          "loot-1"
+        ],
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        },
+        "visibility": "visible"
+      },
+      {
+        "label": "after",
+        "scene": "rarity-1-open",
+        "rarity": 1,
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeat": 1,
+        "fixtureSha256": "e4442f8c65fcbf9a9b9e8715f0dffca582613eb47a1d938ddcdd7a06b486a09d",
+        "persistedSha256": "422376f30bbe4675c7c03287040b447a4ed7a5e61e38a77037de1d7323cc7074",
+        "exactTransition": true,
+        "mirrorSaved": true,
+        "logBefore": 6,
+        "logAfter": 6,
+        "logMaxCharacters": 180,
+        "effectObserved": true,
+        "trusted": true,
+        "actualWindowMs": 4206.39999999851,
+        "windowOverrunMs": 6.399999998509884,
+        "frames": 216,
+        "firstFrameDelayMs": 7.099999997764826,
+        "p50": 16.699999999254942,
+        "p95": 19.199999999254942,
+        "p99": 24,
+        "max": 644,
+        "over50": 1,
+        "over100": 1,
+        "peakPixels": {
+          "dice": 0,
+          "effects": 365850,
+          "materials": 208356
+        },
+        "effectKinds": [
+          "idle",
+          "chest-charge",
+          "loot-1"
+        ],
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        },
+        "visibility": "visible"
+      },
+      {
+        "label": "baseline",
+        "scene": "rarity-2-open",
+        "rarity": 2,
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeat": 1,
+        "fixtureSha256": "a4821dfe54bdcd925e3ca0709c40ead7dd5d205ca0d432fd008f32603e4c3f87",
+        "persistedSha256": "57d27e609340c9c8a79c0ecec9c907bbb95c95c03fa2f508cb68a2f5d9efdf31",
+        "exactTransition": true,
+        "mirrorSaved": true,
+        "logBefore": 6,
+        "logAfter": 6,
+        "logMaxCharacters": 180,
+        "effectObserved": true,
+        "trusted": true,
+        "actualWindowMs": 4212.800000000745,
+        "windowOverrunMs": 12.800000000745058,
+        "frames": 228,
+        "firstFrameDelayMs": 12.800000000745058,
+        "p50": 16.699999999254942,
+        "p95": 19.900000002235174,
+        "p99": 24.899999998509884,
+        "max": 430.1000000014901,
+        "over50": 1,
+        "over100": 1,
+        "peakPixels": {
+          "dice": 0,
+          "effects": 365850,
+          "materials": 208356
+        },
+        "effectKinds": [
+          "idle",
+          "chest-charge",
+          "loot-2"
+        ],
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        },
+        "visibility": "visible"
+      },
+      {
+        "label": "after",
+        "scene": "rarity-2-open",
+        "rarity": 2,
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeat": 1,
+        "fixtureSha256": "a4821dfe54bdcd925e3ca0709c40ead7dd5d205ca0d432fd008f32603e4c3f87",
+        "persistedSha256": "57d27e609340c9c8a79c0ecec9c907bbb95c95c03fa2f508cb68a2f5d9efdf31",
+        "exactTransition": true,
+        "mirrorSaved": true,
+        "logBefore": 6,
+        "logAfter": 6,
+        "logMaxCharacters": 180,
+        "effectObserved": true,
+        "trusted": true,
+        "actualWindowMs": 4205.800000000745,
+        "windowOverrunMs": 5.800000000745058,
+        "frames": 218,
+        "firstFrameDelayMs": 6,
+        "p50": 16.699999999254942,
+        "p95": 18.800000000745058,
+        "p99": 24.100000001490116,
+        "max": 606.5999999977648,
+        "over50": 1,
+        "over100": 1,
+        "peakPixels": {
+          "dice": 0,
+          "effects": 365850,
+          "materials": 208356
+        },
+        "effectKinds": [
+          "idle",
+          "chest-charge",
+          "loot-2"
+        ],
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        },
+        "visibility": "visible"
+      },
+      {
+        "label": "baseline",
+        "scene": "rarity-3-open",
+        "rarity": 3,
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeat": 1,
+        "fixtureSha256": "53a83b027c3035dda05c2359ad8da73b6318a4f5c8a70af05a69a7e8967fb099",
+        "persistedSha256": "92b749acd97feae954a379333546e959034ecfcd30a4b6a4fe9511da85386d77",
+        "exactTransition": true,
+        "mirrorSaved": true,
+        "logBefore": 6,
+        "logAfter": 6,
+        "logMaxCharacters": 180,
+        "effectObserved": true,
+        "trusted": true,
+        "actualWindowMs": 4210.800000000745,
+        "windowOverrunMs": 10.800000000745058,
+        "frames": 218,
+        "firstFrameDelayMs": 11.800000000745058,
+        "p50": 16.699999999254942,
+        "p95": 24.300000000745058,
+        "p99": 28.399999998509884,
+        "max": 596.9000000022352,
+        "over50": 1,
+        "over100": 1,
+        "peakPixels": {
+          "dice": 0,
+          "effects": 663496,
+          "materials": 263163
+        },
+        "effectKinds": [
+          "idle",
+          "chest-charge",
+          "loot-3"
+        ],
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        },
+        "visibility": "visible"
+      },
+      {
+        "label": "after",
+        "scene": "rarity-3-open",
+        "rarity": 3,
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeat": 1,
+        "fixtureSha256": "53a83b027c3035dda05c2359ad8da73b6318a4f5c8a70af05a69a7e8967fb099",
+        "persistedSha256": "92b749acd97feae954a379333546e959034ecfcd30a4b6a4fe9511da85386d77",
+        "exactTransition": true,
+        "mirrorSaved": true,
+        "logBefore": 6,
+        "logAfter": 6,
+        "logMaxCharacters": 180,
+        "effectObserved": true,
+        "trusted": true,
+        "actualWindowMs": 4206.300000000745,
+        "windowOverrunMs": 6.300000000745058,
+        "frames": 180,
+        "firstFrameDelayMs": 4.900000002235174,
+        "p50": 16.699999999254942,
+        "p95": 24.699999999254942,
+        "p99": 28.199999999254942,
+        "max": 1247.1000000014901,
+        "over50": 1,
+        "over100": 1,
+        "peakPixels": {
+          "dice": 0,
+          "effects": 663496,
+          "materials": 263163
+        },
+        "effectKinds": [
+          "idle",
+          "chest-charge",
+          "loot-3"
+        ],
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        },
+        "visibility": "visible"
+      },
+      {
+        "label": "baseline",
+        "scene": "rarity-4-open",
+        "rarity": 4,
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeat": 1,
+        "fixtureSha256": "e7a6c4849dd5138d554ca8574a2ade23f0aab86595ee494ad92bb14ae3935744",
+        "persistedSha256": "0a864bd161d5e0036cadac3f057c9093ef57235979e4e1d5e4047965c5cf9a12",
+        "exactTransition": true,
+        "mirrorSaved": true,
+        "logBefore": 6,
+        "logAfter": 6,
+        "logMaxCharacters": 180,
+        "effectObserved": true,
+        "trusted": true,
+        "actualWindowMs": 4203.39999999851,
+        "windowOverrunMs": 3.399999998509884,
+        "frames": 160,
+        "firstFrameDelayMs": 4.300000000745058,
+        "p50": 16.699999999254942,
+        "p95": 20,
+        "p99": 27,
+        "max": 1576.5,
+        "over50": 1,
+        "over100": 1,
+        "peakPixels": {
+          "dice": 0,
+          "effects": 663496,
+          "materials": 263163
+        },
+        "effectKinds": [
+          "idle",
+          "chest-charge",
+          "loot-4"
+        ],
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        },
+        "visibility": "visible"
+      },
+      {
+        "label": "after",
+        "scene": "rarity-4-open",
+        "rarity": 4,
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeat": 1,
+        "fixtureSha256": "e7a6c4849dd5138d554ca8574a2ade23f0aab86595ee494ad92bb14ae3935744",
+        "persistedSha256": "0a864bd161d5e0036cadac3f057c9093ef57235979e4e1d5e4047965c5cf9a12",
+        "exactTransition": true,
+        "mirrorSaved": true,
+        "logBefore": 6,
+        "logAfter": 6,
+        "logMaxCharacters": 180,
+        "effectObserved": true,
+        "trusted": true,
+        "actualWindowMs": 4205.29999999702,
+        "windowOverrunMs": 5.299999997019768,
+        "frames": 165,
+        "firstFrameDelayMs": 5.299999997019768,
+        "p50": 16.699999999254942,
+        "p95": 24.899999998509884,
+        "p99": 25.199999999254942,
+        "max": 1487.800000000745,
+        "over50": 1,
+        "over100": 1,
+        "peakPixels": {
+          "dice": 0,
+          "effects": 663496,
+          "materials": 263163
+        },
+        "effectKinds": [
+          "idle",
+          "chest-charge",
+          "loot-4"
+        ],
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        },
+        "visibility": "visible"
+      },
+      {
+        "label": "baseline",
+        "scene": "rarity-5-open",
+        "rarity": 5,
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeat": 1,
+        "fixtureSha256": "a5cb6c075821d8d2bf40670689dc1bad44384fe204b31fe3ee9c7c9127d23d22",
+        "persistedSha256": "02319729faaad67a51d426749c992ca8387b7ebab033969ec683f0d1489f73ab",
+        "exactTransition": true,
+        "mirrorSaved": true,
+        "logBefore": 6,
+        "logAfter": 6,
+        "logMaxCharacters": 180,
+        "effectObserved": true,
+        "trusted": true,
+        "actualWindowMs": 4210.10000000149,
+        "windowOverrunMs": 10.100000001490116,
+        "frames": 171,
+        "firstFrameDelayMs": 10.199999999254942,
+        "p50": 16.699999999254942,
+        "p95": 19.900000002235174,
+        "p99": 25.399999998509884,
+        "max": 1397.300000000745,
+        "over50": 1,
+        "over100": 1,
+        "peakPixels": {
+          "dice": 0,
+          "effects": 663496,
+          "materials": 263163
+        },
+        "effectKinds": [
+          "idle",
+          "chest-charge",
+          "loot-5"
+        ],
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        },
+        "visibility": "visible"
+      },
+      {
+        "label": "after",
+        "scene": "rarity-5-open",
+        "rarity": 5,
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeat": 1,
+        "fixtureSha256": "a5cb6c075821d8d2bf40670689dc1bad44384fe204b31fe3ee9c7c9127d23d22",
+        "persistedSha256": "02319729faaad67a51d426749c992ca8387b7ebab033969ec683f0d1489f73ab",
+        "exactTransition": true,
+        "mirrorSaved": true,
+        "logBefore": 6,
+        "logAfter": 6,
+        "logMaxCharacters": 180,
+        "effectObserved": true,
+        "trusted": true,
+        "actualWindowMs": 4207.70000000298,
+        "windowOverrunMs": 7.700000002980232,
+        "frames": 165,
+        "firstFrameDelayMs": 6.700000002980232,
+        "p50": 16.699999999254942,
+        "p95": 24.200000002980232,
+        "p99": 26.199999999254942,
+        "max": 1485.800000000745,
+        "over50": 1,
+        "over100": 1,
+        "peakPixels": {
+          "dice": 0,
+          "effects": 663496,
+          "materials": 263163
+        },
+        "effectKinds": [
+          "idle",
+          "chest-charge",
+          "loot-5"
+        ],
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        },
+        "visibility": "visible"
+      },
+      {
+        "label": "baseline",
+        "scene": "rarity-6-open",
+        "rarity": 6,
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeat": 1,
+        "fixtureSha256": "049e65170c517fd41b49e1ddefc1c79af7565d702a4e279ee7ddee9783a8da39",
+        "persistedSha256": "9a938c76d2d3ee8f7fd6d1f0738a0aff356f296b321a54d2329a989368502f89",
+        "exactTransition": true,
+        "mirrorSaved": true,
+        "logBefore": 6,
+        "logAfter": 6,
+        "logMaxCharacters": 180,
+        "effectObserved": true,
+        "trusted": true,
+        "actualWindowMs": 4209.699999999255,
+        "windowOverrunMs": 9.699999999254942,
+        "frames": 162,
+        "firstFrameDelayMs": 10.600000001490116,
+        "p50": 16.699999999254942,
+        "p95": 19.600000001490116,
+        "p99": 25.900000002235174,
+        "max": 1536.199999999255,
+        "over50": 1,
+        "over100": 1,
+        "peakPixels": {
+          "dice": 0,
+          "effects": 663496,
+          "materials": 263163
+        },
+        "effectKinds": [
+          "idle",
+          "chest-charge",
+          "loot-6"
+        ],
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        },
+        "visibility": "visible"
+      },
+      {
+        "label": "after",
+        "scene": "rarity-6-open",
+        "rarity": 6,
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeat": 1,
+        "fixtureSha256": "049e65170c517fd41b49e1ddefc1c79af7565d702a4e279ee7ddee9783a8da39",
+        "persistedSha256": "9a938c76d2d3ee8f7fd6d1f0738a0aff356f296b321a54d2329a989368502f89",
+        "exactTransition": true,
+        "mirrorSaved": true,
+        "logBefore": 6,
+        "logAfter": 6,
+        "logMaxCharacters": 180,
+        "effectObserved": true,
+        "trusted": true,
+        "actualWindowMs": 4201.300000000745,
+        "windowOverrunMs": 1.300000000745058,
+        "frames": 158,
+        "firstFrameDelayMs": 1.5,
+        "p50": 16.699999999254942,
+        "p95": 21.399999998509884,
+        "p99": 25.699999999254942,
+        "max": 1615.5999999977648,
+        "over50": 1,
+        "over100": 1,
+        "peakPixels": {
+          "dice": 0,
+          "effects": 663496,
+          "materials": 263163
+        },
+        "effectKinds": [
+          "idle",
+          "chest-charge",
+          "loot-6"
+        ],
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        },
+        "visibility": "visible"
+      }
+    ],
+    "aggregate": [
+      {
+        "label": "baseline",
+        "scene": "rarity-0-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeats": 1,
+        "medianRunP50": 16.699999999254942,
+        "medianRunP95": 22.100000001490116,
+        "worstFrameMs": 2978.60000000149,
+        "longTasks": 0,
+        "longTaskOverlapMs": 0,
+        "observedAllExpectedEffects": true
+      },
+      {
+        "label": "after",
+        "scene": "rarity-0-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeats": 1,
+        "medianRunP50": 16.699999999254942,
+        "medianRunP95": 19.099999997764826,
+        "worstFrameMs": 1583.699999999255,
+        "longTasks": 0,
+        "longTaskOverlapMs": 0,
+        "observedAllExpectedEffects": true
+      },
+      {
+        "label": "baseline",
+        "scene": "rarity-1-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeats": 1,
+        "medianRunP50": 16.699999999254942,
+        "medianRunP95": 18.700000002980232,
+        "worstFrameMs": 711,
+        "longTasks": 0,
+        "longTaskOverlapMs": 0,
+        "observedAllExpectedEffects": true
+      },
+      {
+        "label": "after",
+        "scene": "rarity-1-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeats": 1,
+        "medianRunP50": 16.699999999254942,
+        "medianRunP95": 19.199999999254942,
+        "worstFrameMs": 644,
+        "longTasks": 0,
+        "longTaskOverlapMs": 0,
+        "observedAllExpectedEffects": true
+      },
+      {
+        "label": "baseline",
+        "scene": "rarity-2-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeats": 1,
+        "medianRunP50": 16.699999999254942,
+        "medianRunP95": 19.900000002235174,
+        "worstFrameMs": 430.1000000014901,
+        "longTasks": 0,
+        "longTaskOverlapMs": 0,
+        "observedAllExpectedEffects": true
+      },
+      {
+        "label": "after",
+        "scene": "rarity-2-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeats": 1,
+        "medianRunP50": 16.699999999254942,
+        "medianRunP95": 18.800000000745058,
+        "worstFrameMs": 606.5999999977648,
+        "longTasks": 0,
+        "longTaskOverlapMs": 0,
+        "observedAllExpectedEffects": true
+      },
+      {
+        "label": "baseline",
+        "scene": "rarity-3-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeats": 1,
+        "medianRunP50": 16.699999999254942,
+        "medianRunP95": 24.300000000745058,
+        "worstFrameMs": 596.9000000022352,
+        "longTasks": 0,
+        "longTaskOverlapMs": 0,
+        "observedAllExpectedEffects": true
+      },
+      {
+        "label": "after",
+        "scene": "rarity-3-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeats": 1,
+        "medianRunP50": 16.699999999254942,
+        "medianRunP95": 24.699999999254942,
+        "worstFrameMs": 1247.1000000014901,
+        "longTasks": 0,
+        "longTaskOverlapMs": 0,
+        "observedAllExpectedEffects": true
+      },
+      {
+        "label": "baseline",
+        "scene": "rarity-4-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeats": 1,
+        "medianRunP50": 16.699999999254942,
+        "medianRunP95": 20,
+        "worstFrameMs": 1576.5,
+        "longTasks": 0,
+        "longTaskOverlapMs": 0,
+        "observedAllExpectedEffects": true
+      },
+      {
+        "label": "after",
+        "scene": "rarity-4-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeats": 1,
+        "medianRunP50": 16.699999999254942,
+        "medianRunP95": 24.899999998509884,
+        "worstFrameMs": 1487.800000000745,
+        "longTasks": 0,
+        "longTaskOverlapMs": 0,
+        "observedAllExpectedEffects": true
+      },
+      {
+        "label": "baseline",
+        "scene": "rarity-5-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeats": 1,
+        "medianRunP50": 16.699999999254942,
+        "medianRunP95": 19.900000002235174,
+        "worstFrameMs": 1397.300000000745,
+        "longTasks": 0,
+        "longTaskOverlapMs": 0,
+        "observedAllExpectedEffects": true
+      },
+      {
+        "label": "after",
+        "scene": "rarity-5-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeats": 1,
+        "medianRunP50": 16.699999999254942,
+        "medianRunP95": 24.200000002980232,
+        "worstFrameMs": 1485.800000000745,
+        "longTasks": 0,
+        "longTaskOverlapMs": 0,
+        "observedAllExpectedEffects": true
+      },
+      {
+        "label": "baseline",
+        "scene": "rarity-6-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeats": 1,
+        "medianRunP50": 16.699999999254942,
+        "medianRunP95": 19.600000001490116,
+        "worstFrameMs": 1536.199999999255,
+        "longTasks": 0,
+        "longTaskOverlapMs": 0,
+        "observedAllExpectedEffects": true
+      },
+      {
+        "label": "after",
+        "scene": "rarity-6-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeats": 1,
+        "medianRunP50": 16.699999999254942,
+        "medianRunP95": 21.399999998509884,
+        "worstFrameMs": 1615.5999999977648,
+        "longTasks": 0,
+        "longTaskOverlapMs": 0,
+        "observedAllExpectedEffects": true
+      }
+    ],
+    "purpose": "One 1920/full window per variant for rarities 0–6 only checks coverage; it is not evidence of a performance improvement and is not pooled with the main matrix."
+  },
+  "errors": [],
+  "status": "MEASURED_WITH_LIMITATIONS",
+  "notes": [
+    "Fresh isolated Chromium contexts and loopback URLs; no external pages or private saves.",
+    "The taskbook permits this standalone Playwright route; consult the current release environment record for the observed preferred-browser limitations.",
+    "Inventory time starts inside the trusted native click capture listener and ends at the second requestAnimationFrame callback; protocol transport is excluded.",
+    "Inventory variants alternate baseline then after for every sample; one warmup each is excluded.",
+    "Exclusion policy fixed before measuring: only the single declared inventory warmup is excluded. No timed sample or slow frame is discarded, trimmed, winsorized, or selected for a favorable result.",
+    "No automatic retry replaces a failed sample. A failure stops the run, retains every completed sample, and records the active case. Smoke mode is a separate report and is never merged into formal aggregates.",
+    "A measured browser promise has a fixed 30-second wall-time deadline. Exceeding it fails the run; it never triggers a replacement sample.",
+    "Each frame window starts in the native action click capture listener. Callback intervals include initial input-to-frame latency; the actual window can exceed 4200ms under a long stall.",
+    "Long tasks are filtered to overlap the measured window. Quantiles use sorted rank floor((n-1)*p); frame raw traces are not retained.",
+    "ANGLE SwiftShader is explicitly requested. These are software-rendered browser callback timings, not physical GPU FPS or physical 4K60 validation.",
+    "Fixture loading, native navigation back to the game, correctness checks, and optional screenshots occur outside timing windows.",
+    "Boss fixtures contain six maximum-length legal logs. The source validator rejects a seventh log or a 181-character log; the real roll and rendered log remain capped at six.",
+    "Every inventory sample checks the complete outerHTML hash of all 60 cards after its end timestamp. HTTP release metadata and source byte hashes identify what both origins actually served.",
+    "Optional --baseline-source identifies the baseline engine for complete post-action equality. Defaults to --source for backward compatibility; no state fields are ignored."
+  ],
+  "browserVersion": "155.0.8059.84",
+  "environments": [
+    {
+      "label": "baseline",
+      "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.8059.84 Safari/537.36",
+      "platform": "Linux x86_64",
+      "dpr": 1,
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "vendor": "Google Inc. (Google)",
+      "fonts": [
+        true,
+        true
+      ],
+      "longTaskObserver": true,
+      "webLocks": true,
+      "http": {
+        "release": "5.17.0",
+        "build": "5",
+        "documentUrl": "http://127.0.0.1:4188/",
+        "assets": [
+          {
+            "file": "src/views.js",
+            "url": "http://127.0.0.1:4188/src/views.js",
+            "status": 200,
+            "bytes": 97677,
+            "sha256": "2b8edcbe13fb3d8fb9a69eb51a1b2bc98e3819633d18f7d60675a73ebdf1b2e6"
+          },
+          {
+            "file": "src/dice-renderer.js",
+            "url": "http://127.0.0.1:4188/src/dice-renderer.js",
+            "status": 200,
+            "bytes": 14522,
+            "sha256": "b40e1e1c808b00d319b70ce7546403c588cdcc8397bba684fe19b2f4c0bca6d8"
+          },
+          {
+            "file": "src/storage.js",
+            "url": "http://127.0.0.1:4188/src/storage.js",
+            "status": 200,
+            "bytes": 31698,
+            "sha256": "6bfcc60036c9f729c21b948ca98c7ac715e14049856fb9dded0baa2aeef2c561"
+          }
+        ],
+        "documentStatus": 200
+      }
+    },
+    {
+      "label": "after",
+      "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.8059.84 Safari/537.36",
+      "platform": "Linux x86_64",
+      "dpr": 1,
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "vendor": "Google Inc. (Google)",
+      "fonts": [
+        true,
+        true
+      ],
+      "longTaskObserver": true,
+      "webLocks": true,
+      "http": {
+        "release": "5.18.0",
+        "build": "5",
+        "documentUrl": "http://127.0.0.1:4189/",
+        "assets": [
+          {
+            "file": "src/views.js",
+            "url": "http://127.0.0.1:4189/src/views.js",
+            "status": 200,
+            "bytes": 100848,
+            "sha256": "94f6b5e52e41c496260fee8e7a1a0960bccab40333a0b96e4a138e145ec85296"
+          },
+          {
+            "file": "src/dice-renderer.js",
+            "url": "http://127.0.0.1:4189/src/dice-renderer.js",
+            "status": 200,
+            "bytes": 14522,
+            "sha256": "b40e1e1c808b00d319b70ce7546403c588cdcc8397bba684fe19b2f4c0bca6d8"
+          },
+          {
+            "file": "src/storage.js",
+            "url": "http://127.0.0.1:4189/src/storage.js",
+            "status": 200,
+            "bytes": 32031,
+            "sha256": "f5a990793a90ff59a57f38e4be8fcb9deaf54997dff9d9acec2cded73d2c8145"
+          }
+        ],
+        "documentStatus": 200
+      }
+    }
+  ],
+  "activeCase": null,
+  "activeMeasurement": null,
+  "sourceAfter": {
+    "baseline": [
+      {
+        "file": "index.html",
+        "sha256": "eabefea931b66d9a55918feed7d4019624983e411d10e0acf3b31690972aa21f"
+      },
+      {
+        "file": "package.json",
+        "sha256": "ddeaf64e6c5f3e2b8280ad6610410f10a149f0661b6f2009e760f7aa46da4a6a"
+      },
+      {
+        "file": "src/app.js",
+        "sha256": "c9439b8719640c9ae5ebe7c9d939901fdc4a3c3bfaea0ef24c28492ff91951b1"
+      },
+      {
+        "file": "src/engine.js",
+        "sha256": "75c6d9fcc48c0cf49ee02e53ffb7b143a09a2c79738d3bb2eb5d0ae80b30872b"
+      },
+      {
+        "file": "src/views.js",
+        "sha256": "2b8edcbe13fb3d8fb9a69eb51a1b2bc98e3819633d18f7d60675a73ebdf1b2e6"
+      },
+      {
+        "file": "src/storage.js",
+        "sha256": "6bfcc60036c9f729c21b948ca98c7ac715e14049856fb9dded0baa2aeef2c561"
+      },
+      {
+        "file": "src/dice-renderer.js",
+        "sha256": "b40e1e1c808b00d319b70ce7546403c588cdcc8397bba684fe19b2f4c0bca6d8"
+      },
+      {
+        "file": "src/effects.js",
+        "sha256": "5f95f77e882a690f95215babda3cdedc0d398bbcfaabfecd3d486141200dc6f9"
+      },
+      {
+        "file": "src/dice-motion.js",
+        "sha256": "3b088b9efa03552912bd92b18dc66d6122f45e2f12dc420305bb877deae5139a"
+      },
+      {
+        "file": "src/visual-timeline.js",
+        "sha256": "f518084da44c2ea852bf902ba6ffc7f8f5a94ee815dac31bcc4726cc8cd44369"
+      }
+    ],
+    "after": [
+      {
+        "file": "index.html",
+        "sha256": "7598a3e86e5caf4e6a9f698c8f27db0f41f623c85892813d3dfa7dc4dc43e43c"
+      },
+      {
+        "file": "package.json",
+        "sha256": "349cfed8336eaef0f04398c5e9706c365b7843085071ced0f2a7c9342c87234e"
+      },
+      {
+        "file": "src/app.js",
+        "sha256": "1ba0a720bb39630094515ce838048c53f18706ddd762b019d11238c091e267fc"
+      },
+      {
+        "file": "src/engine.js",
+        "sha256": "75c6d9fcc48c0cf49ee02e53ffb7b143a09a2c79738d3bb2eb5d0ae80b30872b"
+      },
+      {
+        "file": "src/views.js",
+        "sha256": "94f6b5e52e41c496260fee8e7a1a0960bccab40333a0b96e4a138e145ec85296"
+      },
+      {
+        "file": "src/storage.js",
+        "sha256": "f5a990793a90ff59a57f38e4be8fcb9deaf54997dff9d9acec2cded73d2c8145"
+      },
+      {
+        "file": "src/dice-renderer.js",
+        "sha256": "b40e1e1c808b00d319b70ce7546403c588cdcc8397bba684fe19b2f4c0bca6d8"
+      },
+      {
+        "file": "src/effects.js",
+        "sha256": "5f95f77e882a690f95215babda3cdedc0d398bbcfaabfecd3d486141200dc6f9"
+      },
+      {
+        "file": "src/dice-motion.js",
+        "sha256": "3b088b9efa03552912bd92b18dc66d6122f45e2f12dc420305bb877deae5139a"
+      },
+      {
+        "file": "src/visual-timeline.js",
+        "sha256": "f518084da44c2ea852bf902ba6ffc7f8f5a94ee815dac31bcc4726cc8cd44369"
+      }
+    ]
+  },
+  "sourceStable": true,
+  "completedAt": "2026-10-19T07:56:32.388Z",
+  "elapsedWallMs": 213779
+}

@@ -1,0 +1,52 @@
+{
+  "method": "Count distinct covered functional groups/checks. Do not add a rerun to the unique coverage count. Initial screenshot failure remains in its original report.",
+  "baselineInteractions": {
+    "groups": 9,
+    "checks": 64,
+    "runtimeErrors": 0
+  },
+  "after": {
+    "groups": 24,
+    "checks": 178,
+    "runtimeErrors": 0,
+    "families": [
+      {
+        "file": "browser-after-first-run.json",
+        "groups": 9,
+        "checks": 59
+      },
+      {
+        "file": "browser-pages.json",
+        "groups": 6,
+        "checks": 86
+      },
+      {
+        "file": "browser-iteration-after.json",
+        "groups": 6,
+        "checks": 15
+      },
+      {
+        "file": "browser-environment.json",
+        "groups": 3,
+        "checks": 18
+      }
+    ]
+  },
+  "reruns": [
+    {
+      "file": "browser-after-v4-rerun.json",
+      "reason": "First V4 group passed all 14 state/DOM assertions then screenshot exceeded 30 s. Isolated rerun kept all assertions and same timeout; passed with screenshot.",
+      "countsTowardUniqueTotal": false
+    },
+    {
+      "file": "browser-context-final.json",
+      "reason": "After screenshot review found the visible failed canvas, strengthen computed-visibility checks and fix the loss-only CSS; three cycles plus exact post-recovery roll passed.",
+      "countsTowardUniqueTotal": false
+    }
+  ],
+  "limits": [
+    "Synthetic fixtures prepare deep scenes; new-game click journey is real but uses a naturally random start.",
+    "Geometry candidates are preserved; visual interpretation is recorded separately.",
+    "No hardware GPU, real OS crash or physical 4K claim."
+  ]
+}

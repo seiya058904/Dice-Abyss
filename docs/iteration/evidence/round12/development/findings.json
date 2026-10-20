@@ -1,0 +1,43 @@
+{
+  "scope": "Development/QA issues; not all were input-version product defects. Final functional suites counted once.",
+  "records": [
+    {
+      "id": "route-fixture",
+      "status": "FIXTURE_CORRECTED",
+      "observed": "Initial new decision UI suite 7 pass, 1 fail; validateSave correctly rejected route id r0 instead of f1r0. Engine validation unchanged.",
+      "rawFile": "decision-ui-first-fixture-failure.tap",
+      "rawBytes": 2966,
+      "rawSha256": "f9ca5d7aca8b77069d83a335231adc5d89e8f513f76236ef634e0de473ae69f3",
+      "final": "8/8 new UI cases in full 539/539 suite"
+    },
+    {
+      "id": "conditional-fixture-and-cap",
+      "status": "CORRECTED",
+      "observed": "Explicit relic replacement slot and unique item IDs required by original rules; goldBonus effective equipment cap is 0.6; sixPierce excludes encounter modifiers.",
+      "evidence": "../independent-comparison/REVIEW.md",
+      "note": "Early saved candidate was already corrected; no fabricated old-failure baseline."
+    },
+    {
+      "id": "font-directory-audit",
+      "status": "AUDIT_CORRECTED",
+      "observed": "Initial audit searched an unrelated assets/fonts path and counted zero. Replaced with actual src/fonts; assert exactly 8 original assets/licenses and matching bytes.",
+      "evidence": "../preserved-input-contracts.json"
+    },
+    {
+      "id": "comparison-small-text",
+      "status": "UI_CORRECTED_AND_RECAPTURED",
+      "observed": "First visual review found inherited small card typography in modal. Added scoped user-scale-aware sizes, reran final decisions 7/91 including six viewports, retained final screenshots."
+    },
+    {
+      "id": "performance-oracle",
+      "status": "PROTOCOL_UPDATED_AND_INDEPENDENTLY_VERIFIED",
+      "observed": "Original driver assumed unchanged cross-version card HTML. New driver validates full DOM against each version own source and preserves lossless cross-version diff. Original driver remains byte-identical. package.json remains HTTP404 by design; actual release meta plus local source hash verifies version.",
+      "evidence": "../performance-protocol/ROOT_REVIEW.json"
+    },
+    {
+      "id": "retaliation-summary-scope",
+      "status": "DOCUMENTATION_CORRECTED",
+      "observed": "A draft summary misread 600 at floor >=80 as damage >=80. Raw report and script actually count battles with positive retaliation at floor80 or later; all damage totals stay 8002. Corrected before assembly. No raw data or runtime change."
+    }
+  ]
+}

@@ -1,0 +1,3187 @@
+{
+  "status": "VERIFIED_WITH_LIMITATIONS",
+  "generatedAt": "2026-10-19T08:08:17.654869+00:00",
+  "reviewMethod": "Read-only independent sample arithmetic, fixed fixture and complete engine-oracle replay, source bytes, HTTP identity records, native TAP final-block parsing and document review; no browser/performance/native-test rerun.",
+  "input": {
+    "path": "/workspace/scratch/f0146b2cbcc6/analysis/performance/performance-round.json",
+    "bytes": 81443,
+    "sha256": "4430c33ce4763dae2dd165d5d7b4546a4df7a19c92f610edbd458ae30ef3e533",
+    "status": "MEASURED_WITH_LIMITATIONS"
+  },
+  "samplerSha256": "bb3205985884a20a88a27e289f9ec04f46bd751f3cd4568df60affce0e506981",
+  "reviewChecks": 1952,
+  "mismatches": [],
+  "productBlockers": [],
+  "limits": [
+    "Frame interval arrays are not retained. Inventory p50/p95/p99/max are independently recomputed from all 24 raw rows; frame aggregates are recomputed from 30 preserved per-window summaries. Per-window frame quantiles cannot be independently recalculated from individual intervals.",
+    "Quantiles use sorted[floor((n-1)*p)]. For n=12, p50 is the sixth order statistic and p95/p99 are the eleventh; this is not the average of the two central values.",
+    "One 4200 ms nominal window per main cell and a shared SwiftShader host do not establish a causal performance improvement. Terminal stalls extend the actual window and remain in max.",
+    "Three full-stage observations are absent. Low-mode effectObserved=true is a policy acceptance, not observation of a full effect.",
+    "Browser main/mirror raw strings are not embedded in this performance report. The fixed sampler asserts complete decoded equality and exact mirror strings during execution; independent full-oracle replay verifies all recorded complete-state hashes.",
+    "The 30-second Promise.race deadline protects measuredResult after the native click call; it is not a universal end-to-end application latency guarantee.",
+    "Fourteen rarity 0-6 coverage windows remain separate from the sixteen-window performance matrix. Final CJK 36 is a separate regression of the earlier responsive group, not thirty-six additional unique scenarios."
+  ],
+  "sourceFreeze": {
+    "status": "PASS",
+    "checkedFiles": 265,
+    "frozenAt": "2026-10-19T07:41:01.256181+00:00",
+    "declaredManifestSha256": "49d144af8c5a62fcfd1abd625864dad1c07117067b812b36650abdcb765c9357",
+    "recomputedCurrentManifestSha256": "49d144af8c5a62fcfd1abd625864dad1c07117067b812b36650abdcb765c9357",
+    "digestRecipe": "SHA-256 of UTF-8 JSON(files, sort_keys=True, separators=(comma, colon)), no final newline",
+    "problems": [],
+    "categories": {
+      "index.html": 1,
+      "package.json": 1,
+      "scripts": 118,
+      "src": 66,
+      "tests": 79
+    }
+  },
+  "samplerSourceBeforeAfterEqual": true,
+  "inventory": {
+    "runs": 24,
+    "samplesPerVersion": 12,
+    "warmupsMs": {
+      "baseline": 77,
+      "after": 95.30000000074506
+    },
+    "quantileRule": "sorted[floor((n-1)*p)]",
+    "recomputed": {
+      "baseline": {
+        "samples": 12,
+        "p50": 82.19999999925494,
+        "p95": 452.5,
+        "p99": 452.5,
+        "min": 60.30000000074506,
+        "max": 794.1000000014901
+      },
+      "after": {
+        "samples": 12,
+        "p50": 85.20000000298023,
+        "p95": 255.69999999925494,
+        "p99": 255.69999999925494,
+        "min": 63.900000002235174,
+        "max": 686.0999999977648
+      }
+    },
+    "comparison": {
+      "medianDeltaMs": 3.0000000037252903,
+      "medianPercentChange": 3.6496350410614165,
+      "p95DeltaMs": -196.80000000074506,
+      "maxDeltaMs": -108.00000000372529
+    },
+    "samplePairs": [
+      {
+        "repeat": 1,
+        "baselineMs": 82.19999999925494,
+        "currentMs": 85.20000000298023
+      },
+      {
+        "repeat": 2,
+        "baselineMs": 70.89999999850988,
+        "currentMs": 66.10000000149012
+      },
+      {
+        "repeat": 3,
+        "baselineMs": 71.69999999925494,
+        "currentMs": 75.19999999925494
+      },
+      {
+        "repeat": 4,
+        "baselineMs": 60.30000000074506,
+        "currentMs": 255.69999999925494
+      },
+      {
+        "repeat": 5,
+        "baselineMs": 253.60000000149012,
+        "currentMs": 187.59999999776483
+      },
+      {
+        "repeat": 6,
+        "baselineMs": 62.19999999925494,
+        "currentMs": 138.5
+      },
+      {
+        "repeat": 7,
+        "baselineMs": 231.89999999850988,
+        "currentMs": 66.69999999925494
+      },
+      {
+        "repeat": 8,
+        "baselineMs": 452.5,
+        "currentMs": 63.900000002235174
+      },
+      {
+        "repeat": 9,
+        "baselineMs": 407.3999999985099,
+        "currentMs": 67.09999999776483
+      },
+      {
+        "repeat": 10,
+        "baselineMs": 794.1000000014901,
+        "currentMs": 686.0999999977648
+      },
+      {
+        "repeat": 11,
+        "baselineMs": 111.59999999776483,
+        "currentMs": 113.60000000149012
+      },
+      {
+        "repeat": 12,
+        "baselineMs": 64.89999999850988,
+        "currentMs": 126.90000000223517
+      }
+    ],
+    "full60CardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+    "full60CardHtmlUtf8Bytes": 92909,
+    "bothCopiesLoadedAndUnchanged": true,
+    "mainAndMirrorCharactersEach": 2060957
+  },
+  "frames": {
+    "mainWindows": 16,
+    "coverageWindows": 14,
+    "repeatsPerMainCell": 1,
+    "nominalWindowMs": 4200,
+    "maxActualWindowMs": 11338.5,
+    "maxIntervalMs": 10905.39999999851,
+    "fullMainWindows": 8,
+    "fullMainStagesObserved": 5,
+    "missingFull": [
+      {
+        "label": "baseline",
+        "scene": "boss-burst",
+        "width": 3840,
+        "height": 2160,
+        "frames": 10,
+        "actualWindowMs": 8927.79999999702,
+        "p95": 31.299999997019768,
+        "max": 8783.29999999702,
+        "effectKinds": [
+          "idle",
+          "dice-only"
+        ]
+      },
+      {
+        "label": "after",
+        "scene": "boss-burst",
+        "width": 3840,
+        "height": 2160,
+        "frames": 13,
+        "actualWindowMs": 5864.10000000149,
+        "p95": 45,
+        "max": 5665.800000000745,
+        "effectKinds": [
+          "idle",
+          "dice-only"
+        ]
+      },
+      {
+        "label": "after",
+        "scene": "eternal-open",
+        "width": 3840,
+        "height": 2160,
+        "frames": 31,
+        "actualWindowMs": 10735.60000000149,
+        "p95": 21.799999997019768,
+        "max": 10236.10000000149,
+        "effectKinds": [
+          "idle",
+          "chest-charge"
+        ]
+      }
+    ],
+    "all30ExactTransitionHashesMatchIndependentOracle": true,
+    "all30RuntimeMirrorAssertions": true,
+    "longTaskCount": 3,
+    "longTaskOverlapMs": 1191,
+    "rows": [
+      {
+        "section": "frames",
+        "label": "baseline",
+        "scene": "boss-burst",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeat": 1,
+        "frames": 180,
+        "actualWindowMs": 4214.39999999851,
+        "firstFrameDelayMs": 12.699999999254942,
+        "p50": 16.699999999254942,
+        "p95": 21.800000000745058,
+        "p99": 361.5999999977648,
+        "max": 390.9000000022352,
+        "over50": 6,
+        "over100": 3,
+        "effectObserved": true,
+        "effectKinds": [
+          "idle",
+          "dice-only",
+          "combat"
+        ],
+        "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749",
+        "longTasks": {
+          "supported": true,
+          "count": 2,
+          "totalOverlapMs": 460,
+          "maxMs": 373,
+          "largest": [
+            {
+              "startOffsetMs": 803.6000000014901,
+              "durationMs": 373
+            },
+            {
+              "startOffsetMs": 1557.6000000014901,
+              "durationMs": 87
+            }
+          ]
+        }
+      },
+      {
+        "section": "frames",
+        "label": "after",
+        "scene": "boss-burst",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeat": 1,
+        "frames": 70,
+        "actualWindowMs": 4205.39999999851,
+        "firstFrameDelayMs": 5.300000000745058,
+        "p50": 16.699999999254942,
+        "p95": 25.299999997019768,
+        "p99": 731.6000000014901,
+        "max": 2111.699999999255,
+        "over50": 3,
+        "over100": 3,
+        "effectObserved": true,
+        "effectKinds": [
+          "idle",
+          "dice-only",
+          "combat"
+        ],
+        "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749",
+        "longTasks": {
+          "supported": true,
+          "count": 1,
+          "totalOverlapMs": 731,
+          "maxMs": 731,
+          "largest": [
+            {
+              "startOffsetMs": 462.5999999977648,
+              "durationMs": 731
+            }
+          ]
+        }
+      },
+      {
+        "section": "frames",
+        "label": "baseline",
+        "scene": "boss-burst",
+        "width": 1920,
+        "height": 1080,
+        "effects": "low",
+        "repeat": 1,
+        "frames": 33,
+        "actualWindowMs": 5089,
+        "firstFrameDelayMs": 9.099999997764826,
+        "p50": 16.5,
+        "p95": 35.20000000298023,
+        "p99": 40.70000000298023,
+        "max": 4564.400000002235,
+        "over50": 1,
+        "over100": 1,
+        "effectObserved": true,
+        "effectKinds": [
+          "idle"
+        ],
+        "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749",
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        }
+      },
+      {
+        "section": "frames",
+        "label": "after",
+        "scene": "boss-burst",
+        "width": 1920,
+        "height": 1080,
+        "effects": "low",
+        "repeat": 1,
+        "frames": 151,
+        "actualWindowMs": 4207.300000000745,
+        "firstFrameDelayMs": 10.400000002235174,
+        "p50": 16.699999999254942,
+        "p95": 17.300000000745058,
+        "p99": 31.399999998509884,
+        "max": 1715.6000000014901,
+        "over50": 1,
+        "over100": 1,
+        "effectObserved": true,
+        "effectKinds": [
+          "idle"
+        ],
+        "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749",
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        }
+      },
+      {
+        "section": "frames",
+        "label": "baseline",
+        "scene": "eternal-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeat": 1,
+        "frames": 209,
+        "actualWindowMs": 4215,
+        "firstFrameDelayMs": 11.800000000745058,
+        "p50": 16.699999999254942,
+        "p95": 20,
+        "p99": 25,
+        "max": 605.3999999985099,
+        "over50": 3,
+        "over100": 2,
+        "effectObserved": true,
+        "effectKinds": [
+          "idle",
+          "chest-charge",
+          "loot-7"
+        ],
+        "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81",
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        }
+      },
+      {
+        "section": "frames",
+        "label": "after",
+        "scene": "eternal-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeat": 1,
+        "frames": 171,
+        "actualWindowMs": 4202.800000000745,
+        "firstFrameDelayMs": 2.800000000745058,
+        "p50": 16.699999999254942,
+        "p95": 20.099999997764826,
+        "p99": 21.100000001490116,
+        "max": 1395,
+        "over50": 1,
+        "over100": 1,
+        "effectObserved": true,
+        "effectKinds": [
+          "idle",
+          "chest-charge",
+          "loot-7"
+        ],
+        "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81",
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        }
+      },
+      {
+        "section": "frames",
+        "label": "baseline",
+        "scene": "eternal-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "low",
+        "repeat": 1,
+        "frames": 108,
+        "actualWindowMs": 4210.89999999851,
+        "firstFrameDelayMs": 0.5,
+        "p50": 16.699999999254942,
+        "p95": 17,
+        "p99": 23,
+        "max": 2451.400000002235,
+        "over50": 1,
+        "over100": 1,
+        "effectObserved": true,
+        "effectKinds": [
+          "idle"
+        ],
+        "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81",
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        }
+      },
+      {
+        "section": "frames",
+        "label": "after",
+        "scene": "eternal-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "low",
+        "repeat": 1,
+        "frames": 176,
+        "actualWindowMs": 4209.5,
+        "firstFrameDelayMs": 9.600000001490116,
+        "p50": 16.699999999254942,
+        "p95": 17.199999999254942,
+        "p99": 34.19999999925494,
+        "max": 1310.300000000745,
+        "over50": 1,
+        "over100": 1,
+        "effectObserved": true,
+        "effectKinds": [
+          "idle"
+        ],
+        "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81",
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        }
+      },
+      {
+        "section": "frames",
+        "label": "baseline",
+        "scene": "boss-burst",
+        "width": 3840,
+        "height": 2160,
+        "effects": "full",
+        "repeat": 1,
+        "frames": 10,
+        "actualWindowMs": 8927.79999999702,
+        "firstFrameDelayMs": 11.5,
+        "p50": 16.599999997764826,
+        "p95": 31.299999997019768,
+        "p99": 31.299999997019768,
+        "max": 8783.29999999702,
+        "over50": 1,
+        "over100": 1,
+        "effectObserved": false,
+        "effectKinds": [
+          "idle",
+          "dice-only"
+        ],
+        "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749",
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        }
+      },
+      {
+        "section": "frames",
+        "label": "after",
+        "scene": "boss-burst",
+        "width": 3840,
+        "height": 2160,
+        "effects": "full",
+        "repeat": 1,
+        "frames": 13,
+        "actualWindowMs": 5864.10000000149,
+        "firstFrameDelayMs": 0.6000000014901161,
+        "p50": 16.599999997764826,
+        "p95": 45,
+        "p99": 45,
+        "max": 5665.800000000745,
+        "over50": 1,
+        "over100": 1,
+        "effectObserved": false,
+        "effectKinds": [
+          "idle",
+          "dice-only"
+        ],
+        "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749",
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        }
+      },
+      {
+        "section": "frames",
+        "label": "baseline",
+        "scene": "boss-burst",
+        "width": 3840,
+        "height": 2160,
+        "effects": "low",
+        "repeat": 1,
+        "frames": 27,
+        "actualWindowMs": 11338.5,
+        "firstFrameDelayMs": 0.6999999992549419,
+        "p50": 16.399999998509884,
+        "p95": 35,
+        "p99": 41.79999999701977,
+        "max": 10905.39999999851,
+        "over50": 1,
+        "over100": 1,
+        "effectObserved": true,
+        "effectKinds": [
+          "idle"
+        ],
+        "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749",
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        }
+      },
+      {
+        "section": "frames",
+        "label": "after",
+        "scene": "boss-burst",
+        "width": 3840,
+        "height": 2160,
+        "effects": "low",
+        "repeat": 1,
+        "frames": 26,
+        "actualWindowMs": 4860.60000000149,
+        "firstFrameDelayMs": 11.699999999254942,
+        "p50": 16.599999997764826,
+        "p95": 41.30000000074506,
+        "p99": 47.19999999925494,
+        "max": 4399,
+        "over50": 1,
+        "over100": 1,
+        "effectObserved": true,
+        "effectKinds": [
+          "idle"
+        ],
+        "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749",
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        }
+      },
+      {
+        "section": "frames",
+        "label": "baseline",
+        "scene": "eternal-open",
+        "width": 3840,
+        "height": 2160,
+        "effects": "full",
+        "repeat": 1,
+        "frames": 68,
+        "actualWindowMs": 4201.79999999702,
+        "firstFrameDelayMs": 1.5999999977648258,
+        "p50": 16.600000001490116,
+        "p95": 20.899999998509884,
+        "p99": 28.399999998509884,
+        "max": 3119.199999999255,
+        "over50": 1,
+        "over100": 1,
+        "effectObserved": true,
+        "effectKinds": [
+          "idle",
+          "chest-charge",
+          "loot-7"
+        ],
+        "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81",
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        }
+      },
+      {
+        "section": "frames",
+        "label": "after",
+        "scene": "eternal-open",
+        "width": 3840,
+        "height": 2160,
+        "effects": "full",
+        "repeat": 1,
+        "frames": 31,
+        "actualWindowMs": 10735.60000000149,
+        "firstFrameDelayMs": 10.5,
+        "p50": 16.699999999254942,
+        "p95": 21.799999997019768,
+        "p99": 21.900000002235174,
+        "max": 10236.10000000149,
+        "over50": 1,
+        "over100": 1,
+        "effectObserved": false,
+        "effectKinds": [
+          "idle",
+          "chest-charge"
+        ],
+        "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81",
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        }
+      },
+      {
+        "section": "frames",
+        "label": "baseline",
+        "scene": "eternal-open",
+        "width": 3840,
+        "height": 2160,
+        "effects": "low",
+        "repeat": 1,
+        "frames": 36,
+        "actualWindowMs": 8516.5,
+        "firstFrameDelayMs": 11.5,
+        "p50": 16.600000001490116,
+        "p95": 23.100000001490116,
+        "p99": 42,
+        "max": 7942.10000000149,
+        "over50": 1,
+        "over100": 1,
+        "effectObserved": true,
+        "effectKinds": [
+          "idle"
+        ],
+        "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81",
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        }
+      },
+      {
+        "section": "frames",
+        "label": "after",
+        "scene": "eternal-open",
+        "width": 3840,
+        "height": 2160,
+        "effects": "low",
+        "repeat": 1,
+        "frames": 34,
+        "actualWindowMs": 6020.699999999255,
+        "firstFrameDelayMs": 13,
+        "p50": 16.600000001490116,
+        "p95": 22.200000002980232,
+        "p99": 23.900000002235174,
+        "max": 5474.39999999851,
+        "over50": 1,
+        "over100": 1,
+        "effectObserved": true,
+        "effectKinds": [
+          "idle"
+        ],
+        "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81",
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        }
+      },
+      {
+        "section": "coverage",
+        "label": "baseline",
+        "scene": "rarity-0-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeat": 1,
+        "frames": 73,
+        "actualWindowMs": 4200.5,
+        "firstFrameDelayMs": 8.699999999254942,
+        "p50": 16.699999999254942,
+        "p95": 22.100000001490116,
+        "p99": 35.69999999925494,
+        "max": 2978.60000000149,
+        "over50": 1,
+        "over100": 1,
+        "effectObserved": true,
+        "effectKinds": [
+          "idle",
+          "chest-charge",
+          "loot-0"
+        ],
+        "persistedSha256": "62f4bfe70b47c2d87f6c49c774c38e5c3fa0d3fc0beaecb9c84f40aa9c487c04",
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        }
+      },
+      {
+        "section": "coverage",
+        "label": "after",
+        "scene": "rarity-0-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeat": 1,
+        "frames": 160,
+        "actualWindowMs": 4203.5,
+        "firstFrameDelayMs": 3.800000000745058,
+        "p50": 16.699999999254942,
+        "p95": 19.099999997764826,
+        "p99": 23.599999997764826,
+        "max": 1583.699999999255,
+        "over50": 1,
+        "over100": 1,
+        "effectObserved": true,
+        "effectKinds": [
+          "idle",
+          "chest-charge",
+          "loot-0"
+        ],
+        "persistedSha256": "62f4bfe70b47c2d87f6c49c774c38e5c3fa0d3fc0beaecb9c84f40aa9c487c04",
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        }
+      },
+      {
+        "section": "coverage",
+        "label": "baseline",
+        "scene": "rarity-1-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeat": 1,
+        "frames": 208,
+        "actualWindowMs": 4212.89999999851,
+        "firstFrameDelayMs": 2.699999999254942,
+        "p50": 16.699999999254942,
+        "p95": 18.700000002980232,
+        "p99": 23.800000000745058,
+        "max": 711,
+        "over50": 2,
+        "over100": 1,
+        "effectObserved": true,
+        "effectKinds": [
+          "idle",
+          "chest-charge",
+          "loot-1"
+        ],
+        "persistedSha256": "422376f30bbe4675c7c03287040b447a4ed7a5e61e38a77037de1d7323cc7074",
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        }
+      },
+      {
+        "section": "coverage",
+        "label": "after",
+        "scene": "rarity-1-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeat": 1,
+        "frames": 216,
+        "actualWindowMs": 4206.39999999851,
+        "firstFrameDelayMs": 7.099999997764826,
+        "p50": 16.699999999254942,
+        "p95": 19.199999999254942,
+        "p99": 24,
+        "max": 644,
+        "over50": 1,
+        "over100": 1,
+        "effectObserved": true,
+        "effectKinds": [
+          "idle",
+          "chest-charge",
+          "loot-1"
+        ],
+        "persistedSha256": "422376f30bbe4675c7c03287040b447a4ed7a5e61e38a77037de1d7323cc7074",
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        }
+      },
+      {
+        "section": "coverage",
+        "label": "baseline",
+        "scene": "rarity-2-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeat": 1,
+        "frames": 228,
+        "actualWindowMs": 4212.800000000745,
+        "firstFrameDelayMs": 12.800000000745058,
+        "p50": 16.699999999254942,
+        "p95": 19.900000002235174,
+        "p99": 24.899999998509884,
+        "max": 430.1000000014901,
+        "over50": 1,
+        "over100": 1,
+        "effectObserved": true,
+        "effectKinds": [
+          "idle",
+          "chest-charge",
+          "loot-2"
+        ],
+        "persistedSha256": "57d27e609340c9c8a79c0ecec9c907bbb95c95c03fa2f508cb68a2f5d9efdf31",
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        }
+      },
+      {
+        "section": "coverage",
+        "label": "after",
+        "scene": "rarity-2-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeat": 1,
+        "frames": 218,
+        "actualWindowMs": 4205.800000000745,
+        "firstFrameDelayMs": 6,
+        "p50": 16.699999999254942,
+        "p95": 18.800000000745058,
+        "p99": 24.100000001490116,
+        "max": 606.5999999977648,
+        "over50": 1,
+        "over100": 1,
+        "effectObserved": true,
+        "effectKinds": [
+          "idle",
+          "chest-charge",
+          "loot-2"
+        ],
+        "persistedSha256": "57d27e609340c9c8a79c0ecec9c907bbb95c95c03fa2f508cb68a2f5d9efdf31",
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        }
+      },
+      {
+        "section": "coverage",
+        "label": "baseline",
+        "scene": "rarity-3-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeat": 1,
+        "frames": 218,
+        "actualWindowMs": 4210.800000000745,
+        "firstFrameDelayMs": 11.800000000745058,
+        "p50": 16.699999999254942,
+        "p95": 24.300000000745058,
+        "p99": 28.399999998509884,
+        "max": 596.9000000022352,
+        "over50": 1,
+        "over100": 1,
+        "effectObserved": true,
+        "effectKinds": [
+          "idle",
+          "chest-charge",
+          "loot-3"
+        ],
+        "persistedSha256": "92b749acd97feae954a379333546e959034ecfcd30a4b6a4fe9511da85386d77",
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        }
+      },
+      {
+        "section": "coverage",
+        "label": "after",
+        "scene": "rarity-3-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeat": 1,
+        "frames": 180,
+        "actualWindowMs": 4206.300000000745,
+        "firstFrameDelayMs": 4.900000002235174,
+        "p50": 16.699999999254942,
+        "p95": 24.699999999254942,
+        "p99": 28.199999999254942,
+        "max": 1247.1000000014901,
+        "over50": 1,
+        "over100": 1,
+        "effectObserved": true,
+        "effectKinds": [
+          "idle",
+          "chest-charge",
+          "loot-3"
+        ],
+        "persistedSha256": "92b749acd97feae954a379333546e959034ecfcd30a4b6a4fe9511da85386d77",
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        }
+      },
+      {
+        "section": "coverage",
+        "label": "baseline",
+        "scene": "rarity-4-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeat": 1,
+        "frames": 160,
+        "actualWindowMs": 4203.39999999851,
+        "firstFrameDelayMs": 4.300000000745058,
+        "p50": 16.699999999254942,
+        "p95": 20,
+        "p99": 27,
+        "max": 1576.5,
+        "over50": 1,
+        "over100": 1,
+        "effectObserved": true,
+        "effectKinds": [
+          "idle",
+          "chest-charge",
+          "loot-4"
+        ],
+        "persistedSha256": "0a864bd161d5e0036cadac3f057c9093ef57235979e4e1d5e4047965c5cf9a12",
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        }
+      },
+      {
+        "section": "coverage",
+        "label": "after",
+        "scene": "rarity-4-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeat": 1,
+        "frames": 165,
+        "actualWindowMs": 4205.29999999702,
+        "firstFrameDelayMs": 5.299999997019768,
+        "p50": 16.699999999254942,
+        "p95": 24.899999998509884,
+        "p99": 25.199999999254942,
+        "max": 1487.800000000745,
+        "over50": 1,
+        "over100": 1,
+        "effectObserved": true,
+        "effectKinds": [
+          "idle",
+          "chest-charge",
+          "loot-4"
+        ],
+        "persistedSha256": "0a864bd161d5e0036cadac3f057c9093ef57235979e4e1d5e4047965c5cf9a12",
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        }
+      },
+      {
+        "section": "coverage",
+        "label": "baseline",
+        "scene": "rarity-5-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeat": 1,
+        "frames": 171,
+        "actualWindowMs": 4210.10000000149,
+        "firstFrameDelayMs": 10.199999999254942,
+        "p50": 16.699999999254942,
+        "p95": 19.900000002235174,
+        "p99": 25.399999998509884,
+        "max": 1397.300000000745,
+        "over50": 1,
+        "over100": 1,
+        "effectObserved": true,
+        "effectKinds": [
+          "idle",
+          "chest-charge",
+          "loot-5"
+        ],
+        "persistedSha256": "02319729faaad67a51d426749c992ca8387b7ebab033969ec683f0d1489f73ab",
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        }
+      },
+      {
+        "section": "coverage",
+        "label": "after",
+        "scene": "rarity-5-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeat": 1,
+        "frames": 165,
+        "actualWindowMs": 4207.70000000298,
+        "firstFrameDelayMs": 6.700000002980232,
+        "p50": 16.699999999254942,
+        "p95": 24.200000002980232,
+        "p99": 26.199999999254942,
+        "max": 1485.800000000745,
+        "over50": 1,
+        "over100": 1,
+        "effectObserved": true,
+        "effectKinds": [
+          "idle",
+          "chest-charge",
+          "loot-5"
+        ],
+        "persistedSha256": "02319729faaad67a51d426749c992ca8387b7ebab033969ec683f0d1489f73ab",
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        }
+      },
+      {
+        "section": "coverage",
+        "label": "baseline",
+        "scene": "rarity-6-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeat": 1,
+        "frames": 162,
+        "actualWindowMs": 4209.699999999255,
+        "firstFrameDelayMs": 10.600000001490116,
+        "p50": 16.699999999254942,
+        "p95": 19.600000001490116,
+        "p99": 25.900000002235174,
+        "max": 1536.199999999255,
+        "over50": 1,
+        "over100": 1,
+        "effectObserved": true,
+        "effectKinds": [
+          "idle",
+          "chest-charge",
+          "loot-6"
+        ],
+        "persistedSha256": "9a938c76d2d3ee8f7fd6d1f0738a0aff356f296b321a54d2329a989368502f89",
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        }
+      },
+      {
+        "section": "coverage",
+        "label": "after",
+        "scene": "rarity-6-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeat": 1,
+        "frames": 158,
+        "actualWindowMs": 4201.300000000745,
+        "firstFrameDelayMs": 1.5,
+        "p50": 16.699999999254942,
+        "p95": 21.399999998509884,
+        "p99": 25.699999999254942,
+        "max": 1615.5999999977648,
+        "over50": 1,
+        "over100": 1,
+        "effectObserved": true,
+        "effectKinds": [
+          "idle",
+          "chest-charge",
+          "loot-6"
+        ],
+        "persistedSha256": "9a938c76d2d3ee8f7fd6d1f0738a0aff356f296b321a54d2329a989368502f89",
+        "longTasks": {
+          "supported": true,
+          "count": 0,
+          "totalOverlapMs": 0,
+          "maxMs": 0,
+          "largest": []
+        }
+      }
+    ],
+    "rawFrameIntervalsAvailable": false
+  },
+  "fixtureOracle": {
+    "inputs": 10,
+    "completeVersionSpecificStates": 18,
+    "manifestMatches": true,
+    "path": "/workspace/scratch/f0146b2cbcc6/analysis/independent/performance-oracle/oracle-transitions.json",
+    "sha256": "a71a864b9a5fc5513d7f8b48b1c63fa9ea18d0bb685da24605572e0b927e14a4"
+  },
+  "nativeTap": {
+    "baseline": {
+      "modules": 75,
+      "totals": {
+        "tests": 658,
+        "suites": 0,
+        "pass": 658,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "compressedBytes": 32770,
+      "compressedSha256": "f2f46acc852a3f5003f74f20627ee3afa30518a83bac61d44930ee22b990b3df",
+      "uncompressedBytes": 173816,
+      "uncompressedSha256": "ed600996d4f70e538ce2329497492c8a8b534052fc0d41aec37e484fbd055969",
+      "perModuleStdoutHashesVerified": 75,
+      "rows": [
+        {
+          "file": "tests/action-focus.test.mjs",
+          "counts": {
+            "tests": 9,
+            "suites": 0,
+            "pass": 9,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "c7e567d324fd849be75e597c0c5cecb537d5a57a9cb090118da888236712986d"
+        },
+        {
+          "file": "tests/balance.test.mjs",
+          "counts": {
+            "tests": 17,
+            "suites": 0,
+            "pass": 17,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "94a9fe0bac1340923170dd5773297523fb7274a991937bc3345da8d582e789ea"
+        },
+        {
+          "file": "tests/base-boss-tactics.test.mjs",
+          "counts": {
+            "tests": 8,
+            "suites": 0,
+            "pass": 8,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "46b5455228df2396bb7b7477ca5b9352cbb7e8a2715af28a47d0c4c088d73644"
+        },
+        {
+          "file": "tests/boon-readout.test.mjs",
+          "counts": {
+            "tests": 14,
+            "suites": 0,
+            "pass": 14,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "d27c7b418fc4f0c314b33840f9dee8ddb1664583d098c338404fc0d3ad314f52"
+        },
+        {
+          "file": "tests/boon-view.test.mjs",
+          "counts": {
+            "tests": 3,
+            "suites": 0,
+            "pass": 3,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "193e862b64b9c0dd3a592937a6301e2537cb15cb29e9cb63553c5e2ee8cd9606"
+        },
+        {
+          "file": "tests/combat-polish.test.mjs",
+          "counts": {
+            "tests": 8,
+            "suites": 0,
+            "pass": 8,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "3c39ba33e16ea6af38c4e9d309c39bbdb7a3df4d48cd1687cc5027483d339d0b"
+        },
+        {
+          "file": "tests/comparison-context.test.mjs",
+          "counts": {
+            "tests": 11,
+            "suites": 0,
+            "pass": 11,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "3f2213586cae920dc95be00e1200f395b10fce42f8eea16b5a94bb7892bf60dc"
+        },
+        {
+          "file": "tests/content-depth.test.mjs",
+          "counts": {
+            "tests": 8,
+            "suites": 0,
+            "pass": 8,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "15e812843998222baf66b49d98da2511a69aed42e23520a5fae7cf6102160039"
+        },
+        {
+          "file": "tests/decision-ui.test.mjs",
+          "counts": {
+            "tests": 8,
+            "suites": 0,
+            "pass": 8,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "5f8adcd1832fe77405fbb0fddbc1fa5a90c877c18747a9b8e4cc8c5f03c82dfc"
+        },
+        {
+          "file": "tests/defeat-navigation.test.mjs",
+          "counts": {
+            "tests": 4,
+            "suites": 0,
+            "pass": 4,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "8571d3e8d116b35ad62cb76a40a95f9455902493c553fced054dcf7b697ef356"
+        },
+        {
+          "file": "tests/defeat-review.test.mjs",
+          "counts": {
+            "tests": 7,
+            "suites": 0,
+            "pass": 7,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "1d7aa576683baca17c6a8a45a9d073d5b328b20cf295c07c12132695606d9770"
+        },
+        {
+          "file": "tests/dice-indexed-mesh.test.mjs",
+          "counts": {
+            "tests": 3,
+            "suites": 0,
+            "pass": 3,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "7e7ce8ecda494f691ca6af0cd0ee16b19cb77f0ef40c7daabe515c2fbbe67782"
+        },
+        {
+          "file": "tests/dice-motion.test.mjs",
+          "counts": {
+            "tests": 3,
+            "suites": 0,
+            "pass": 3,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "c7bdd6810af127779e5682ebcaa81a15c05305c24ebcc2fe4edff3c53b685e27"
+        },
+        {
+          "file": "tests/dice-renderer.test.mjs",
+          "counts": {
+            "tests": 6,
+            "suites": 0,
+            "pass": 6,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "d39be219bee046efb819c7df3cf471b6d041d6bbca6b89feff83c94f44a77535"
+        },
+        {
+          "file": "tests/effects-layout.test.mjs",
+          "counts": {
+            "tests": 3,
+            "suites": 0,
+            "pass": 3,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "5dd9e729faf1a166f7f756584c58dee8399948eb0494d4fc2f322e3bbf362c33"
+        },
+        {
+          "file": "tests/effects.test.mjs",
+          "counts": {
+            "tests": 1,
+            "suites": 0,
+            "pass": 1,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "79805420cc3959cd153b76ea7299d3b4c31dfaac5c13b09e89c9ba6a0a7c98cd"
+        },
+        {
+          "file": "tests/encounter-tactics.test.mjs",
+          "counts": {
+            "tests": 8,
+            "suites": 0,
+            "pass": 8,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "0922aded58bb500463ba1bd61a38a3d191ed8e8ebf6d81c76c2d162430394aee"
+        },
+        {
+          "file": "tests/encounters.test.mjs",
+          "counts": {
+            "tests": 9,
+            "suites": 0,
+            "pass": 9,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "bf3aa23be2d87faa4e3648c4b865775d6752fd43e6c08c35c66684b9c06fe42c"
+        },
+        {
+          "file": "tests/engine.test.mjs",
+          "counts": {
+            "tests": 11,
+            "suites": 0,
+            "pass": 11,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "1485d64c78a2f5f8c6c4d779b36114a114eace65c6c366d2ca8c548960cdef81"
+        },
+        {
+          "file": "tests/equipment-comparison.test.mjs",
+          "counts": {
+            "tests": 9,
+            "suites": 0,
+            "pass": 9,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "c565018545fc0a6f1924b8919a6e8e5a626579b558601937cd0e3f98a3333715"
+        },
+        {
+          "file": "tests/equipment-levels.test.mjs",
+          "counts": {
+            "tests": 9,
+            "suites": 0,
+            "pass": 9,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "7db315aa9bb8dc4ef4194e1cad30957e2579733f044a16d8211d45b92f77458d"
+        },
+        {
+          "file": "tests/equipment-polish.test.mjs",
+          "counts": {
+            "tests": 4,
+            "suites": 0,
+            "pass": 4,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "e25fa0bcf84275f1c559ce29220076079415f10bd4016c8977c03981bfe5be9a"
+        },
+        {
+          "file": "tests/event-context.test.mjs",
+          "counts": {
+            "tests": 10,
+            "suites": 0,
+            "pass": 10,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "3c43ba2fd058a93fc2f42f198a491f3b7fc99e1cd9596d8f10d26261ad4c29da"
+        },
+        {
+          "file": "tests/event-preview.test.mjs",
+          "counts": {
+            "tests": 14,
+            "suites": 0,
+            "pass": 14,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "6da5e9730464473ab5bcd727809da0bfdb49ab899261128fbe69097cd6065632"
+        },
+        {
+          "file": "tests/expansion.test.mjs",
+          "counts": {
+            "tests": 8,
+            "suites": 0,
+            "pass": 8,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "51c9e5d96f164910f5e6b3d34c9c891e0e6fc504c1cbfd0136c274ae7ce84a77"
+        },
+        {
+          "file": "tests/fixed-affix-truth.test.mjs",
+          "counts": {
+            "tests": 6,
+            "suites": 0,
+            "pass": 6,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "91efde6e3572fed6ed0e9b54b9bc5156d1291e45e01d362573dd85360e9c4bbd"
+        },
+        {
+          "file": "tests/forge-preview.test.mjs",
+          "counts": {
+            "tests": 5,
+            "suites": 0,
+            "pass": 5,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "2cd0e3e331924f97ec352655b0251fb557a1cd31dc76e57a2991aca8fc8b5c7e"
+        },
+        {
+          "file": "tests/fusion-controller.test.mjs",
+          "counts": {
+            "tests": 3,
+            "suites": 0,
+            "pass": 3,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "f40cc317c240eb2f9b1793c1362f27f1ccdab8f83b0ad45bb0e417a8b5b35448"
+        },
+        {
+          "file": "tests/fusion-gold-cap.test.mjs",
+          "counts": {
+            "tests": 6,
+            "suites": 0,
+            "pass": 6,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "67b46dc169780e2d5ee664082058e44fae254858b9e61d7cc598736d6728902b"
+        },
+        {
+          "file": "tests/fusion-selection.test.mjs",
+          "counts": {
+            "tests": 12,
+            "suites": 0,
+            "pass": 12,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "5ff40a9154b86d90b3317e8d8d54e5bab0dc778200f2bdcb251ff882ebbc7d41"
+        },
+        {
+          "file": "tests/fusion-tooltip.test.mjs",
+          "counts": {
+            "tests": 11,
+            "suites": 0,
+            "pass": 11,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "b52741bbca41916e08b69b02fe6de9463acde7ffcd6390964a9d53e63f3039ba"
+        },
+        {
+          "file": "tests/fusion-workbench.test.mjs",
+          "counts": {
+            "tests": 8,
+            "suites": 0,
+            "pass": 8,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "825c85d27a86653c54b6765066707c51d6446452f59b35cad3297274e2e0ff8e"
+        },
+        {
+          "file": "tests/gold-exchange-xp.test.mjs",
+          "counts": {
+            "tests": 5,
+            "suites": 0,
+            "pass": 5,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "18122165debcfca19046a639d473a396ef54ebc191e4ecbd4bda6896b592f16d"
+        },
+        {
+          "file": "tests/gold-preview.test.mjs",
+          "counts": {
+            "tests": 5,
+            "suites": 0,
+            "pass": 5,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "94c38b71b4929d8a05edb78da12f8fbffa4186e195a60af96bc34def83a675d8"
+        },
+        {
+          "file": "tests/gold-settlement.test.mjs",
+          "counts": {
+            "tests": 11,
+            "suites": 0,
+            "pass": 11,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "a66bb1f205ca262beaa94afd49369bd15ac20a8dfbda147caaa4071a7d4fa9cf"
+        },
+        {
+          "file": "tests/gold-storage.test.mjs",
+          "counts": {
+            "tests": 5,
+            "suites": 0,
+            "pass": 5,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "c85c0103099a9048fce5cbb31642efb3627a9cfe002ba21564ab25ff1e5d5dd7"
+        },
+        {
+          "file": "tests/gold-view.test.mjs",
+          "counts": {
+            "tests": 8,
+            "suites": 0,
+            "pass": 8,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "4e3baa4aa1508ec03dc70468932f613f744e4322da052854bb73809eef7d6acf"
+        },
+        {
+          "file": "tests/healing-settlement-record.test.mjs",
+          "counts": {
+            "tests": 7,
+            "suites": 0,
+            "pass": 7,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "0e6a5fdf9c2ccea910aaa23d7608fb5e566d9b51c1f1ddda056178ea25e8e04c"
+        },
+        {
+          "file": "tests/intent-ranges.test.mjs",
+          "counts": {
+            "tests": 5,
+            "suites": 0,
+            "pass": 5,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "14d73df461b5ecb671d41270a2cba1e254f9a24ddc134011c0afb9563f2974f6"
+        },
+        {
+          "file": "tests/inventory-position.test.mjs",
+          "counts": {
+            "tests": 12,
+            "suites": 0,
+            "pass": 12,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "2a560e72708a92ac707a91e4b1f3909f45dd3919da5536747d9f842b9ae9de41"
+        },
+        {
+          "file": "tests/inventory-search.test.mjs",
+          "counts": {
+            "tests": 7,
+            "suites": 0,
+            "pass": 7,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "6a6a710e1b80f31c2957f5ca5bc6879c6b6337636c9712e66ba45bd1ecc1d3aa"
+        },
+        {
+          "file": "tests/item-ownership.test.mjs",
+          "counts": {
+            "tests": 14,
+            "suites": 0,
+            "pass": 14,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "953163c47be9de937f2aede2e17220d226cfe473c039e31bb7be8b6e43f1cdc6"
+        },
+        {
+          "file": "tests/iteration-gameplay.test.mjs",
+          "counts": {
+            "tests": 6,
+            "suites": 0,
+            "pass": 6,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "61f0968100acc742b8774e80e19bdce16c6270d309da7ba54a0582fb6b2a168f"
+        },
+        {
+          "file": "tests/iteration-render.test.mjs",
+          "counts": {
+            "tests": 7,
+            "suites": 0,
+            "pass": 7,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "7630279d51568dba0d7bf045bfc2c7534c7d4da509f4fab40ac1fd623c7d3713"
+        },
+        {
+          "file": "tests/iteration-storage.test.mjs",
+          "counts": {
+            "tests": 11,
+            "suites": 0,
+            "pass": 11,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "52dc4820a146d74778ec0818a64fb9a4f4200caaa68b416428f66682a5d302d2"
+        },
+        {
+          "file": "tests/launcher-release.test.mjs",
+          "counts": {
+            "tests": 5,
+            "suites": 0,
+            "pass": 5,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "2917e7aad4fb3dc30608e3ae637683851ffaa3fc896b3d9f0d671197cc892de2"
+        },
+        {
+          "file": "tests/memorywell-preview.test.mjs",
+          "counts": {
+            "tests": 12,
+            "suites": 0,
+            "pass": 12,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "ac8fdcf2b646d830f011f7831675b9f874382c6c30be25919779e46eb47a3006"
+        },
+        {
+          "file": "tests/migration-levels.test.mjs",
+          "counts": {
+            "tests": 6,
+            "suites": 0,
+            "pass": 6,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "e475e86bb6b4103d6ae4dada360186875ed88fc3d0523c990489d1cd3548ff2d"
+        },
+        {
+          "file": "tests/release-identity.test.mjs",
+          "counts": {
+            "tests": 3,
+            "suites": 0,
+            "pass": 3,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "9a50d5020210bc52c2f03aad68281d3768398172f189e19d2ae3f3887b55ca4e"
+        },
+        {
+          "file": "tests/renderer-delay.test.mjs",
+          "counts": {
+            "tests": 2,
+            "suites": 0,
+            "pass": 2,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "a027227c02fd0cfa5dc842c29a2a465a5860fde19558e82b89ad9d3615f313bb"
+        },
+        {
+          "file": "tests/reward-copy.test.mjs",
+          "counts": {
+            "tests": 5,
+            "suites": 0,
+            "pass": 5,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "3f3fc4ada74cf1b0161ab1e7f35dacfae12589ad323cb1d0a2e06351f815cad4"
+        },
+        {
+          "file": "tests/roll-history.test.mjs",
+          "counts": {
+            "tests": 5,
+            "suites": 0,
+            "pass": 5,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "7d5baf51651fd72a1ee91de9e0dd4b4e4d094f2d8a5f64ae77d1483e65aac7bc"
+        },
+        {
+          "file": "tests/round10-independent.test.mjs",
+          "counts": {
+            "tests": 12,
+            "suites": 0,
+            "pass": 12,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "fef6c830b8afbc5bfce44e80a5af9526aadaabcecd33f25569055da83f028ce2"
+        },
+        {
+          "file": "tests/round10-xp-core.test.mjs",
+          "counts": {
+            "tests": 35,
+            "suites": 0,
+            "pass": 35,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "abc7795a72b8cc423fdab598b68704d6faacd02539bbd8dd673987ecb4e8bea1"
+        },
+        {
+          "file": "tests/round10-xp-ui.test.mjs",
+          "counts": {
+            "tests": 11,
+            "suites": 0,
+            "pass": 11,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "5f1af0a0de55cb85ca148ddc1e57e49d8c719dd1fd462c7725cbdfff4d8c52aa"
+        },
+        {
+          "file": "tests/salvage-batch.test.mjs",
+          "counts": {
+            "tests": 6,
+            "suites": 0,
+            "pass": 6,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "5118ed25843241d36900b17e2d63044db3ff1646356b2587c44d347b10733c47"
+        },
+        {
+          "file": "tests/save-polish.test.mjs",
+          "counts": {
+            "tests": 4,
+            "suites": 0,
+            "pass": 4,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "fa0d8b05c730fb9f5f284b2fec3f636c092539f4f689cd8debd74d2fb709bee7"
+        },
+        {
+          "file": "tests/settings-focus.test.mjs",
+          "counts": {
+            "tests": 8,
+            "suites": 0,
+            "pass": 8,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "92bda595319a7498e48b87d73ca979d505a29ca36872ff71a5376acc91fe3b0d"
+        },
+        {
+          "file": "tests/spring-truth.test.mjs",
+          "counts": {
+            "tests": 3,
+            "suites": 0,
+            "pass": 3,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "f6487ec81941bf5cb1c3812d5fd653357b5f9f11ae82bf50d50ec1001bdaa98f"
+        },
+        {
+          "file": "tests/storage-capacity.test.mjs",
+          "counts": {
+            "tests": 9,
+            "suites": 0,
+            "pass": 9,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "4078571f775c9a9324fd9ecbb0020aa7aa7c0701db70f7c265db57e363929930"
+        },
+        {
+          "file": "tests/storage-import-shape.test.mjs",
+          "counts": {
+            "tests": 2,
+            "suites": 0,
+            "pass": 2,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "97399814c5496c7fa216d9fb6841001267d6a242ba47dfb525ad66f369e2a10c"
+        },
+        {
+          "file": "tests/storage-polish.test.mjs",
+          "counts": {
+            "tests": 12,
+            "suites": 0,
+            "pass": 12,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "b58b1770b5501207ef110218a0ccbc222ca246675a1f4008cad740ad6adcd4ab"
+        },
+        {
+          "file": "tests/storage-read-reuse.test.mjs",
+          "counts": {
+            "tests": 10,
+            "suites": 0,
+            "pass": 10,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "6ade8e14fa3c39f8c9c6c0a555d2d7e4c6dbe8d9941db3b71d580ea4a72b2225"
+        },
+        {
+          "file": "tests/storage-recovery-events.test.mjs",
+          "counts": {
+            "tests": 12,
+            "suites": 0,
+            "pass": 12,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "e8c55a090f59b757148288a941b51eecafe64906cd62df36239c4a7b7eac1ba8"
+        },
+        {
+          "file": "tests/storage-recovery-restore.test.mjs",
+          "counts": {
+            "tests": 17,
+            "suites": 0,
+            "pass": 17,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "bd40fb56fac52cf14bca73f8c58ccabec1221f34a24c05a86fa7eec11a06603c"
+        },
+        {
+          "file": "tests/storage-roll-multipliers.test.mjs",
+          "counts": {
+            "tests": 5,
+            "suites": 0,
+            "pass": 5,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "9c4b0b33bf4eb062f2e2828af5f6ede37b31d2fe1f90727ef1a0e90caea6896b"
+        },
+        {
+          "file": "tests/storage-size-boundary.test.mjs",
+          "counts": {
+            "tests": 10,
+            "suites": 0,
+            "pass": 10,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "6d2fc061d5796e5380ed99aca17e87a099c9af612bcb34c1e8312ea15183e4b6"
+        },
+        {
+          "file": "tests/storage-talents-shape.test.mjs",
+          "counts": {
+            "tests": 6,
+            "suites": 0,
+            "pass": 6,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "1caa27d7d9716baebc9c460a7aefde08626cdb8a658d92117553fd38c06f6a75"
+        },
+        {
+          "file": "tests/talent-allocation.test.mjs",
+          "counts": {
+            "tests": 5,
+            "suites": 0,
+            "pass": 5,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "bf45bcbf25636a0a002831381617f255cd25be0eff5eb77ed60a3f30e437ef8a"
+        },
+        {
+          "file": "tests/talent-view.test.mjs",
+          "counts": {
+            "tests": 5,
+            "suites": 0,
+            "pass": 5,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "0b377c776b0e376649277d9c774d76452a69d3074b57a966cb4e59da89e321ff"
+        },
+        {
+          "file": "tests/v5-compatibility.test.mjs",
+          "counts": {
+            "tests": 14,
+            "suites": 0,
+            "pass": 14,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "87a381e56977d2b198cd5920ce76f3736c5f5ee4d44c356ffef06bad61d7f876"
+        },
+        {
+          "file": "tests/v5-systems.test.mjs",
+          "counts": {
+            "tests": 49,
+            "suites": 0,
+            "pass": 49,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "4037bbfb92dae27ce2e75d465832e332379f276ef497b35506e39098081b6e45"
+        },
+        {
+          "file": "tests/views-polish.test.mjs",
+          "counts": {
+            "tests": 11,
+            "suites": 0,
+            "pass": 11,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "26d4a331162ad257d3edf474b077a31f9c83b3009c78bed175d8813d1fa75b9e"
+        },
+        {
+          "file": "tests/views.test.mjs",
+          "counts": {
+            "tests": 16,
+            "suites": 0,
+            "pass": 16,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "a4c0f2a75cfa5e90b87cc328a439fd3f4c130d7d086fd72d52e46b42f48c29ea"
+        },
+        {
+          "file": "tests/visual-timeline.test.mjs",
+          "counts": {
+            "tests": 9,
+            "suites": 0,
+            "pass": 9,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "3ac36cc52e0f61918ceb8746ccb5e084ea71f904a0f3e248182ec8b6b77d0488"
+        }
+      ]
+    },
+    "current": {
+      "modules": 77,
+      "totals": {
+        "tests": 713,
+        "suites": 0,
+        "pass": 713,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "compressedBytes": 34760,
+      "compressedSha256": "65d81380458a3dcb7b91e41c6a8707bacd0ee7227264de70546ab3c548853049",
+      "uncompressedBytes": 188867,
+      "uncompressedSha256": "c2e65bee26dce2a5890ead632b48a57ce977e91881e4bb7aca04fb0efb725ec3",
+      "perModuleStdoutHashesVerified": 77,
+      "rows": [
+        {
+          "file": "tests/action-focus.test.mjs",
+          "counts": {
+            "tests": 9,
+            "suites": 0,
+            "pass": 9,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "ec3c66ff2c5b5fffc02f787c35beafdf60e6efb02e73b10ee2708b719ea37b46"
+        },
+        {
+          "file": "tests/balance.test.mjs",
+          "counts": {
+            "tests": 17,
+            "suites": 0,
+            "pass": 17,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "45aa15bc6690e0e0323eb6eda5ccab8cbfd5236903da861be4e2f46078b796a5"
+        },
+        {
+          "file": "tests/base-boss-tactics.test.mjs",
+          "counts": {
+            "tests": 8,
+            "suites": 0,
+            "pass": 8,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "bdef20bc8e0805fd2494e9191e4707dfc0007ca00844dea744b4e0885cfb1e88"
+        },
+        {
+          "file": "tests/boon-readout.test.mjs",
+          "counts": {
+            "tests": 14,
+            "suites": 0,
+            "pass": 14,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "0b2d93e731542a7183bb79a0b7a56e7400bf32409c4d427e896f56614db07203"
+        },
+        {
+          "file": "tests/boon-view.test.mjs",
+          "counts": {
+            "tests": 3,
+            "suites": 0,
+            "pass": 3,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "a3024f67d43205caad7a55c9fd12fa247f09bb6cc0cff5b07ef4405991a7a098"
+        },
+        {
+          "file": "tests/combat-polish.test.mjs",
+          "counts": {
+            "tests": 8,
+            "suites": 0,
+            "pass": 8,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "ea5cc15afbb5432b41ef4cd14a2a215bc9409c655a0fe9c4c0a4aa6dbc41e3bc"
+        },
+        {
+          "file": "tests/comparison-context.test.mjs",
+          "counts": {
+            "tests": 11,
+            "suites": 0,
+            "pass": 11,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "0759d123f03424f006a9adbeb8c6a562ac5e83d4593965eca3585ba052be8707"
+        },
+        {
+          "file": "tests/content-depth.test.mjs",
+          "counts": {
+            "tests": 8,
+            "suites": 0,
+            "pass": 8,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "8313edd17ecb24ae82017c5e00b3149d6707bfd887a98657d5962a2120e6b75c"
+        },
+        {
+          "file": "tests/decision-ui.test.mjs",
+          "counts": {
+            "tests": 8,
+            "suites": 0,
+            "pass": 8,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "4e0804033a8bf33829e1d4ef57422e989f863d52443c7af9077cad3ce9286fe3"
+        },
+        {
+          "file": "tests/defeat-navigation.test.mjs",
+          "counts": {
+            "tests": 4,
+            "suites": 0,
+            "pass": 4,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "6eebdddc0604ae6d6ab710096416c1bd2a071bc4e2a2c7b0a9241faf1dc1e5b1"
+        },
+        {
+          "file": "tests/defeat-review.test.mjs",
+          "counts": {
+            "tests": 7,
+            "suites": 0,
+            "pass": 7,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "c08db38afc03787583f2049c236fc6371a9677f76d73d92b2ebc1fca3443ca2e"
+        },
+        {
+          "file": "tests/dice-indexed-mesh.test.mjs",
+          "counts": {
+            "tests": 3,
+            "suites": 0,
+            "pass": 3,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "9712f8e6958123f7d9742b20c50ebce9089432fd57f2d1e86fe9f3727a5af0cb"
+        },
+        {
+          "file": "tests/dice-motion.test.mjs",
+          "counts": {
+            "tests": 3,
+            "suites": 0,
+            "pass": 3,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "c0fc88c27ebeac1e677def750d4627afc375c210d7339be25eafde97a14cfd7c"
+        },
+        {
+          "file": "tests/dice-renderer.test.mjs",
+          "counts": {
+            "tests": 6,
+            "suites": 0,
+            "pass": 6,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "34f6998894e1cc9fa7f4584033d1b1c49c1e08343e9f4713b797b5b5305b2a1e"
+        },
+        {
+          "file": "tests/effects-layout.test.mjs",
+          "counts": {
+            "tests": 3,
+            "suites": 0,
+            "pass": 3,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "f612c05504720fc5c73203b580c779cfa57f4eb3a386a2a1cb4629ab3bfc8236"
+        },
+        {
+          "file": "tests/effects.test.mjs",
+          "counts": {
+            "tests": 1,
+            "suites": 0,
+            "pass": 1,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "ef3312362876050d48ad995c9cf23c70df35a7a45c8e87f61af47d9af33d0600"
+        },
+        {
+          "file": "tests/encounter-tactics.test.mjs",
+          "counts": {
+            "tests": 8,
+            "suites": 0,
+            "pass": 8,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "f88a63e78f906ffe8d5fb6aad481c84f358f2641a78b0f8fdf3e2cdc0254145c"
+        },
+        {
+          "file": "tests/encounters.test.mjs",
+          "counts": {
+            "tests": 9,
+            "suites": 0,
+            "pass": 9,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "74bbf0d00aeec41b1795fa0fc8f1c7bf042f597579eef47919a95ce3f1f9cbb9"
+        },
+        {
+          "file": "tests/engine.test.mjs",
+          "counts": {
+            "tests": 11,
+            "suites": 0,
+            "pass": 11,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "e9f769a6b9d1947a7194e08cafdaf1493af3e7fd57d7178e8181599005d45cab"
+        },
+        {
+          "file": "tests/equipment-comparison.test.mjs",
+          "counts": {
+            "tests": 9,
+            "suites": 0,
+            "pass": 9,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "5a9a5ecd089587d4a103236a64c56612f81b58f6a913d9fc6c283d581a90e3c0"
+        },
+        {
+          "file": "tests/equipment-levels.test.mjs",
+          "counts": {
+            "tests": 9,
+            "suites": 0,
+            "pass": 9,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "2ce6b47733c11e6d879b6778d31d46ba17000d486d69b1cc836f0e2b55df8c52"
+        },
+        {
+          "file": "tests/equipment-polish.test.mjs",
+          "counts": {
+            "tests": 4,
+            "suites": 0,
+            "pass": 4,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "b4e213d8548063eb951864734e956947ac4807d6eddd86c1ef39e38f410216df"
+        },
+        {
+          "file": "tests/event-context.test.mjs",
+          "counts": {
+            "tests": 10,
+            "suites": 0,
+            "pass": 10,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "1e0706c10ad31809af08b1d71eda53e07564ea36427d22bbee6e66697a8a71b9"
+        },
+        {
+          "file": "tests/event-equipment-view.test.mjs",
+          "counts": {
+            "tests": 7,
+            "suites": 0,
+            "pass": 7,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "8704e29ecd28839aee0275c3e3881f9788e5c0616ebc0e9003b5ad70b8b0bfba"
+        },
+        {
+          "file": "tests/event-integrity.test.mjs",
+          "counts": {
+            "tests": 48,
+            "suites": 0,
+            "pass": 48,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "29b6759c5114beefef8cb7cf533b59a60438bf02d6dc460592895960ef0f7161"
+        },
+        {
+          "file": "tests/event-preview.test.mjs",
+          "counts": {
+            "tests": 14,
+            "suites": 0,
+            "pass": 14,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "ece45c39495cf72d3e982cd0e4a4ece3140f5e78e577156fa6a062ffe4f3bdf7"
+        },
+        {
+          "file": "tests/expansion.test.mjs",
+          "counts": {
+            "tests": 8,
+            "suites": 0,
+            "pass": 8,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "b908d26bc0a70ca12057050ba28759262e305b42b1b7452834c4d63a506667a0"
+        },
+        {
+          "file": "tests/fixed-affix-truth.test.mjs",
+          "counts": {
+            "tests": 6,
+            "suites": 0,
+            "pass": 6,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "c13316589a750553621a18fd240002fb16c4b69c586b123c2c880b2799d4a863"
+        },
+        {
+          "file": "tests/forge-preview.test.mjs",
+          "counts": {
+            "tests": 5,
+            "suites": 0,
+            "pass": 5,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "2338cf50b86a9df90d00fad8b56ff3405b4977ac6a3f7a6d0bf73866718056f9"
+        },
+        {
+          "file": "tests/fusion-controller.test.mjs",
+          "counts": {
+            "tests": 3,
+            "suites": 0,
+            "pass": 3,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "c94e177eb17046843a0661f2b689c318f7b27fab07299ca3e764e65a16e0c082"
+        },
+        {
+          "file": "tests/fusion-gold-cap.test.mjs",
+          "counts": {
+            "tests": 6,
+            "suites": 0,
+            "pass": 6,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "d49dda5ad01aa18772bdb85fefc93762f66adef32059449485d5c8b645f3a803"
+        },
+        {
+          "file": "tests/fusion-selection.test.mjs",
+          "counts": {
+            "tests": 12,
+            "suites": 0,
+            "pass": 12,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "b5fc7974fc2fd6e09103d71516af0d3fc5940acc7625069402b9831b98afd230"
+        },
+        {
+          "file": "tests/fusion-tooltip.test.mjs",
+          "counts": {
+            "tests": 11,
+            "suites": 0,
+            "pass": 11,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "92b4d51cf9aea8ec4d6ade440634377cb286787a427547a1003ec4f3c102e2b8"
+        },
+        {
+          "file": "tests/fusion-workbench.test.mjs",
+          "counts": {
+            "tests": 8,
+            "suites": 0,
+            "pass": 8,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "e84ee85fece2def07335f0525540be367058a3e1020fd3e5df7d8083603969bd"
+        },
+        {
+          "file": "tests/gold-exchange-xp.test.mjs",
+          "counts": {
+            "tests": 5,
+            "suites": 0,
+            "pass": 5,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "268fa642d7423592d582efa170faff4876161492bd0a20393a00625e79a2101f"
+        },
+        {
+          "file": "tests/gold-preview.test.mjs",
+          "counts": {
+            "tests": 5,
+            "suites": 0,
+            "pass": 5,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "b0495554789fe396ac4eedb43971be3b950c418ef5ef27da7af344866e0bf743"
+        },
+        {
+          "file": "tests/gold-settlement.test.mjs",
+          "counts": {
+            "tests": 11,
+            "suites": 0,
+            "pass": 11,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "72a056b1816a80d44a52c7862fcb196c75c915f25fc3f609cc41884feaeaf5c3"
+        },
+        {
+          "file": "tests/gold-storage.test.mjs",
+          "counts": {
+            "tests": 5,
+            "suites": 0,
+            "pass": 5,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "1256c7849dfaaa32b7e3ea1014f5ef7d9d9fd92eebf37c6e15b17b11f4309769"
+        },
+        {
+          "file": "tests/gold-view.test.mjs",
+          "counts": {
+            "tests": 8,
+            "suites": 0,
+            "pass": 8,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "ec1781e13391cfb7f9c2b276c06c69dfacb3a873deb0cd600836ff9855b24a63"
+        },
+        {
+          "file": "tests/healing-settlement-record.test.mjs",
+          "counts": {
+            "tests": 7,
+            "suites": 0,
+            "pass": 7,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "32c74cf9b7d57a921efbaf4f3c4392c786cb91f54ae005b60d622a5ddebc4718"
+        },
+        {
+          "file": "tests/intent-ranges.test.mjs",
+          "counts": {
+            "tests": 5,
+            "suites": 0,
+            "pass": 5,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "864c18c85a500da3d04b977f418d495d551576216d48f802e704be97eeadf7b7"
+        },
+        {
+          "file": "tests/inventory-position.test.mjs",
+          "counts": {
+            "tests": 12,
+            "suites": 0,
+            "pass": 12,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "cf7e3d18c90e8ca2a77e668bcf78996913b23179cce8faa964ff0cbc75a23250"
+        },
+        {
+          "file": "tests/inventory-search.test.mjs",
+          "counts": {
+            "tests": 7,
+            "suites": 0,
+            "pass": 7,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "ddb39beef4b736608a2a1b35226e0ab72c690956249f9241f005d5cc54faa820"
+        },
+        {
+          "file": "tests/item-ownership.test.mjs",
+          "counts": {
+            "tests": 14,
+            "suites": 0,
+            "pass": 14,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "d79369e857b27ea5a463bf4c958f0f1fd79c8f35f9dbc273c92f69c1fb374795"
+        },
+        {
+          "file": "tests/iteration-gameplay.test.mjs",
+          "counts": {
+            "tests": 6,
+            "suites": 0,
+            "pass": 6,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "95eaf757b3aaa553ca0867c180ca13c3994917f063705902ec263f29929720c7"
+        },
+        {
+          "file": "tests/iteration-render.test.mjs",
+          "counts": {
+            "tests": 7,
+            "suites": 0,
+            "pass": 7,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "61cd8a73bbd265a87af41d493a69b65fdfacd83e7608072937f35c75bc80c5cd"
+        },
+        {
+          "file": "tests/iteration-storage.test.mjs",
+          "counts": {
+            "tests": 11,
+            "suites": 0,
+            "pass": 11,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "2c9cef93b0c48ffae8cbf6869b49fb011c101a3629cab9fc6f5f58eec1f8d965"
+        },
+        {
+          "file": "tests/launcher-release.test.mjs",
+          "counts": {
+            "tests": 5,
+            "suites": 0,
+            "pass": 5,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "15f0cdd5d6be57082850509bc46280abfd1c3fb1fbfc9ea33b8afbd8bd7573d7"
+        },
+        {
+          "file": "tests/memorywell-preview.test.mjs",
+          "counts": {
+            "tests": 12,
+            "suites": 0,
+            "pass": 12,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "a94f844d5c58c9462a35cc259e73d319bd34da608da56e939a96b4597e823ce5"
+        },
+        {
+          "file": "tests/migration-levels.test.mjs",
+          "counts": {
+            "tests": 6,
+            "suites": 0,
+            "pass": 6,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "ac769767e61d24066034e4b924d8efd84669a3583a567ba59cebca609fe00893"
+        },
+        {
+          "file": "tests/release-identity.test.mjs",
+          "counts": {
+            "tests": 3,
+            "suites": 0,
+            "pass": 3,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "1d2561f38acb3565d17f64273bdec4c0bee3fbf1401e501a183bad712e4e4d97"
+        },
+        {
+          "file": "tests/renderer-delay.test.mjs",
+          "counts": {
+            "tests": 2,
+            "suites": 0,
+            "pass": 2,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "4b8946b12f3d2d41fcb7f034c626947556ea04564de00a86ddafbe1dc5b434aa"
+        },
+        {
+          "file": "tests/reward-copy.test.mjs",
+          "counts": {
+            "tests": 5,
+            "suites": 0,
+            "pass": 5,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "a4e22bf1cb05203b936b5e48889852e1802e044da81b4b928ea91f2479304ade"
+        },
+        {
+          "file": "tests/roll-history.test.mjs",
+          "counts": {
+            "tests": 5,
+            "suites": 0,
+            "pass": 5,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "5f3960429dd0f733bdfde2e3f2c1282a1816ca04a8fac093fb09ce2ac083518a"
+        },
+        {
+          "file": "tests/round10-independent.test.mjs",
+          "counts": {
+            "tests": 12,
+            "suites": 0,
+            "pass": 12,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "ce8aaa4924b79bbc498377cb722213279ad3f0dd133c5cdba68dd3d6dc3047cc"
+        },
+        {
+          "file": "tests/round10-xp-core.test.mjs",
+          "counts": {
+            "tests": 35,
+            "suites": 0,
+            "pass": 35,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "9528211e20d4f9e70865a27b24970eb8766f43f754c0227228dc67b5cb0072c1"
+        },
+        {
+          "file": "tests/round10-xp-ui.test.mjs",
+          "counts": {
+            "tests": 11,
+            "suites": 0,
+            "pass": 11,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "948452d13b916c3e15438829dd87fe5129aa5c7e4bff25db9574341bb2f35c7c"
+        },
+        {
+          "file": "tests/salvage-batch.test.mjs",
+          "counts": {
+            "tests": 6,
+            "suites": 0,
+            "pass": 6,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "a33546ea0dc9807634f06c82c65c7cec9c0eedae833bdeb9ed9f978f3e1dead9"
+        },
+        {
+          "file": "tests/save-polish.test.mjs",
+          "counts": {
+            "tests": 4,
+            "suites": 0,
+            "pass": 4,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "06eb2e74c71871851a1646aa5e3019fd50afa01946a76b10901626727a117a06"
+        },
+        {
+          "file": "tests/settings-focus.test.mjs",
+          "counts": {
+            "tests": 8,
+            "suites": 0,
+            "pass": 8,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "729042470d6108678f09e76b0bd2d2107394070e4ebd54a42ce494a136280c97"
+        },
+        {
+          "file": "tests/spring-truth.test.mjs",
+          "counts": {
+            "tests": 3,
+            "suites": 0,
+            "pass": 3,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "b90bd4f10c237d407f04badcbd07e1146fe88abc34cdebc97771c6f117c97bf5"
+        },
+        {
+          "file": "tests/storage-capacity.test.mjs",
+          "counts": {
+            "tests": 9,
+            "suites": 0,
+            "pass": 9,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "b05b9939b79c0c855a17edbb2b25af77d99d8bb9016a129cc07205d4ba62a7fc"
+        },
+        {
+          "file": "tests/storage-import-shape.test.mjs",
+          "counts": {
+            "tests": 2,
+            "suites": 0,
+            "pass": 2,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "a6f833b3f94dc4c01c7073fc8fafd223d929ad8d3aac7e10329ea52280e37fbc"
+        },
+        {
+          "file": "tests/storage-polish.test.mjs",
+          "counts": {
+            "tests": 12,
+            "suites": 0,
+            "pass": 12,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "c71455764b9125a22476950cd83f80e921bcf3a335b07a57ad4acc8ef81c8626"
+        },
+        {
+          "file": "tests/storage-read-reuse.test.mjs",
+          "counts": {
+            "tests": 10,
+            "suites": 0,
+            "pass": 10,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "ed9073c71a3c7efe65cd4e52a3233ae9f718f917338e4a5a2fe20337fddf9de5"
+        },
+        {
+          "file": "tests/storage-recovery-events.test.mjs",
+          "counts": {
+            "tests": 12,
+            "suites": 0,
+            "pass": 12,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "5033f0e6acfc011c6219c814de437e64a9eee81a23d905088443236331ec79d6"
+        },
+        {
+          "file": "tests/storage-recovery-restore.test.mjs",
+          "counts": {
+            "tests": 17,
+            "suites": 0,
+            "pass": 17,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "d105f7a5ccfb27b9bae80d8f4db26187848758af88862798c6c93d88301ef54d"
+        },
+        {
+          "file": "tests/storage-roll-multipliers.test.mjs",
+          "counts": {
+            "tests": 5,
+            "suites": 0,
+            "pass": 5,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "cfbe4d3895c6d497d1b352e8cf8de0b895851b8e6a09101abf6302b61503c11d"
+        },
+        {
+          "file": "tests/storage-size-boundary.test.mjs",
+          "counts": {
+            "tests": 10,
+            "suites": 0,
+            "pass": 10,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "1b06e591723496aa1a0b38e511a635be966f7c8e26647bfd526ed7ce0c0c3d42"
+        },
+        {
+          "file": "tests/storage-talents-shape.test.mjs",
+          "counts": {
+            "tests": 6,
+            "suites": 0,
+            "pass": 6,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "59cd56d8ca7afa2185ecafb24d8702e54650bf3b048cf6243bc73e4781fec064"
+        },
+        {
+          "file": "tests/talent-allocation.test.mjs",
+          "counts": {
+            "tests": 5,
+            "suites": 0,
+            "pass": 5,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "ade987b6ef841806638cb91627bf9d808d6fd09b4bad8d2e5bd045499be01698"
+        },
+        {
+          "file": "tests/talent-view.test.mjs",
+          "counts": {
+            "tests": 5,
+            "suites": 0,
+            "pass": 5,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "316b169736ed3de9aeae3df88f2411706d8f25772194eebc4fb4774c84347086"
+        },
+        {
+          "file": "tests/v5-compatibility.test.mjs",
+          "counts": {
+            "tests": 14,
+            "suites": 0,
+            "pass": 14,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "1c0a9468d6d08f6cdeee6c7a985b56bdc5334d74f63a9312e0a3311a324dc46e"
+        },
+        {
+          "file": "tests/v5-systems.test.mjs",
+          "counts": {
+            "tests": 49,
+            "suites": 0,
+            "pass": 49,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "324c63498ef17724420fb252d44cd833e7873b85bbd4bc0d73bc80bbc2cb48cf"
+        },
+        {
+          "file": "tests/views-polish.test.mjs",
+          "counts": {
+            "tests": 11,
+            "suites": 0,
+            "pass": 11,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "c13f2d25f4320c78b54f8c6ef4871aa19b1ab48a2f16ffe1fa291a51a705558c"
+        },
+        {
+          "file": "tests/views.test.mjs",
+          "counts": {
+            "tests": 16,
+            "suites": 0,
+            "pass": 16,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "cfa6dafa8c6f71dd036ee578edf28d26b1ca97f75bba6782a3039f1005404046"
+        },
+        {
+          "file": "tests/visual-timeline.test.mjs",
+          "counts": {
+            "tests": 9,
+            "suites": 0,
+            "pass": 9,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "stdoutSha256": "151b4155f89715aa28efa47c4e4791b68be69f857c4d1b3dc3ba51f86e4752fe"
+        }
+      ]
+    }
+  },
+  "finalCjk": {
+    "path": "/workspace/scratch/f0146b2cbcc6/analysis/browser-cjk-final-css/report.json",
+    "sha256": "0687bae78b38bc7c167a48f66644d8691de37d0813036781c6e467921c5d6616",
+    "checks": 36,
+    "allSixSourceHashesMatch": true,
+    "pooledWithEarlierBrowserRuns": false
+  },
+  "documentReview": "performance-docs-check.md; no numerical mismatch/product blocker, three wording precision suggestions sent to root."
+}

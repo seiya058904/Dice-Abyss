@@ -1,0 +1,52 @@
+{
+  "status": "COMPLETE",
+  "rule": "Three pre-measurement environment/setup failures are retained separately; no timing sample or slow result was discarded. The unchanged precommitted 12 paired formal schedule was completed once after setup adaptations.",
+  "previousAttempts": [
+    {
+      "folder": "launch-attempt-01",
+      "status": "FAIL",
+      "startedAtUtc": "2026-10-18T02:58:27.565Z",
+      "finishedAtUtc": "2026-10-18T02:58:27.612Z",
+      "scriptSha256": "8f50d09647e2c7846e2b793a9c581d055441a7af9451961b622bc060f396af82",
+      "attemptedSetupRows": 0,
+      "armedTimingSamples": 0,
+      "measuredRows": 0,
+      "reason": "Error: browserType.launch: Target page, context or browser has been closed"
+    },
+    {
+      "folder": "setup-attempt-02",
+      "status": "FAIL",
+      "startedAtUtc": "2026-10-18T02:59:14.973Z",
+      "finishedAtUtc": "2026-10-18T02:59:16.913Z",
+      "scriptSha256": "8f50d09647e2c7846e2b793a9c581d055441a7af9451961b622bc060f396af82",
+      "attemptedSetupRows": 1,
+      "armedTimingSamples": 0,
+      "measuredRows": 0,
+      "reason": "Error: page.evaluate: Error: Unable to verify served source package.json"
+    },
+    {
+      "folder": "setup-attempt-03",
+      "status": "FAIL",
+      "startedAtUtc": "2026-10-18T03:00:52.068Z",
+      "finishedAtUtc": "2026-10-18T03:00:56.057Z",
+      "scriptSha256": "4af5a1459d57411a41765379baa72cbe37aa733a95875e0d7d7b13e79c56762c",
+      "attemptedSetupRows": 1,
+      "armedTimingSamples": 0,
+      "measuredRows": 0,
+      "reason": "AssertionError [ERR_ASSERTION]: Use an actually visible, enabled native lock button"
+    }
+  ],
+  "formal": {
+    "report": "report.json",
+    "status": "PASS",
+    "startedAtUtc": "2026-10-18T03:02:30.511Z",
+    "finishedAtUtc": "2026-10-18T03:03:42.262Z",
+    "scriptSha256": "65ffa533a1a141b8a31818d1c257d878063cf0741684324148168b7a0986b247",
+    "rows": 26,
+    "warmupsExcluded": 2,
+    "measuredRows": 24,
+    "allMeasuredRowsRetained": true,
+    "replacements": 0,
+    "browserClosed": true
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "initialError": "The Python comparison parsed encodeSave envelopes as if they were gameplay states, then normalized an absent outer runId. The encoded payload remained different because its real state.runId differed by execution time, and checksum derives from that payload.",
+  "originalCommandsAllPassed": true,
+  "originalAllJourneyFieldsEqual": true,
+  "retainedInitialSummary": "baseline-summary-before-envelope-fix.json",
+  "retainedInitialHelper": "finish-baseline-before-envelope-fix.py",
+  "correctedMethod": "Load the unchanged input storage.js; decode and validate both real envelopes with decodeSave; retain raw hashes; compare complete decoded states after normalizing only their actual top-level runId. Verify envelope format/version and all remaining decoded fields."
+}

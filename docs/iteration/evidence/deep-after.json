@@ -1,0 +1,1431 @@
+{
+  "method": "Fresh floor1 full actual game transitions; unchanged simulate.mjs adventurous/fusion/balanced/expected-upgrade policy. Only equipment comparison uses an audited compact read view; the full inventory is retained for all gameplay. No injected level, gear, HP or dice. Offline simulation, not human/browser play.",
+  "policy": {
+    "build": "balanced",
+    "purchases": "expected",
+    "fusion": true,
+    "events": "adventurous",
+    "forecast": false
+  },
+  "environment": {
+    "node": "v24.19.0",
+    "platform": "linux",
+    "arch": "x64"
+  },
+  "content": {
+    "rooms": 50,
+    "enemies": 100,
+    "bosses": 18,
+    "items": 1536,
+    "talents": 45
+  },
+  "seeds": 2,
+  "floors": 400,
+  "adapter": {
+    "sourceSha256": "3b0e2d6c5f8151714dd0d60596e6a2681fb79604592f3670f4bb93218bdf614f",
+    "comparisonSites": 3,
+    "calls": 2330033,
+    "verified": 512,
+    "viewBuilds": 8460
+  },
+  "policyProofFile": "adapter-policy-proof.json",
+  "scratchAuditWrapper": "deep-audit-wrapper.json",
+  "durationSeconds": 222.643,
+  "aggregate": {
+    "encounters": 3424,
+    "bosses": {
+      "n": 238,
+      "min": 1,
+      "median": 2,
+      "p95": 8,
+      "max": 50,
+      "mean": 2.953781512605042
+    },
+    "lateBosses": {
+      "n": 30,
+      "min": 1,
+      "median": 1,
+      "p95": 2,
+      "max": 4,
+      "mean": 1.4
+    },
+    "totalRolls": 5075,
+    "totalDeaths": 0,
+    "rarities": [
+      912,
+      1262,
+      400,
+      606,
+      254,
+      166,
+      70,
+      23
+    ],
+    "drops": 3693,
+    "rarityFractions": [
+      0.2469536961819659,
+      0.34172759274302733,
+      0.1083130246412131,
+      0.16409423233143786,
+      0.06877877064717032,
+      0.04494990522610344,
+      0.018954779312212292,
+      0.006227998916869754
+    ],
+    "stageBosses": {
+      "1-29": {
+        "n": 12,
+        "min": 2,
+        "median": 3,
+        "p95": 3,
+        "max": 5,
+        "mean": 2.9166666666666665
+      },
+      "30-49": {
+        "n": 12,
+        "min": 2,
+        "median": 3,
+        "p95": 4,
+        "max": 6,
+        "mean": 3.5
+      },
+      "50-79": {
+        "n": 18,
+        "min": 1,
+        "median": 2,
+        "p95": 5,
+        "max": 8,
+        "mean": 3
+      },
+      "80-139": {
+        "n": 32,
+        "min": 1,
+        "median": 2,
+        "p95": 4,
+        "max": 12,
+        "mean": 2.21875
+      },
+      "140-199": {
+        "n": 35,
+        "min": 1,
+        "median": 2,
+        "p95": 7,
+        "max": 11,
+        "mean": 2.857142857142857
+      },
+      "200-299": {
+        "n": 64,
+        "min": 1,
+        "median": 2,
+        "p95": 9,
+        "max": 41,
+        "mean": 3.65625
+      },
+      "300-400": {
+        "n": 65,
+        "min": 1,
+        "median": 1,
+        "p95": 4,
+        "max": 50,
+        "mean": 2.5692307692307694
+      }
+    }
+  },
+  "rows": [
+    {
+      "seed": 7919,
+      "completed": true,
+      "deaths": 0,
+      "rolls": 2701,
+      "level": 279,
+      "spending": {
+        "shop": 19364,
+        "forge": 32345,
+        "fusion": 1177989
+      },
+      "spent": 1389332,
+      "buys": 10,
+      "forges": 21,
+      "fusions": 288,
+      "rarities": [
+        434,
+        668,
+        190,
+        297,
+        114,
+        82,
+        34,
+        12
+      ],
+      "final": {
+        "floor": 400,
+        "phase": "cleared",
+        "gold": 1712209,
+        "inventoryItems": 553,
+        "rng": 3912488956,
+        "attack": 66406,
+        "maxHp": 172466,
+        "defense": 12551,
+        "luck": 43,
+        "equipped": {
+          "weapon": {
+            "id": "i1491",
+            "name": "无终·白骨刺剑",
+            "rarity": 7,
+            "level": 267,
+            "levelXp": 613,
+            "enhance": 9
+          },
+          "armor": {
+            "id": "i2180",
+            "name": "无终·余烬壁垒",
+            "rarity": 7,
+            "level": 280,
+            "levelXp": 0,
+            "enhance": 0
+          },
+          "relic": {
+            "id": "i2032",
+            "name": "无终·星海流光棱镜",
+            "rarity": 7,
+            "level": 268,
+            "levelXp": 1745,
+            "enhance": 0
+          },
+          "relic2": {
+            "id": "i1411",
+            "name": "溯源·星海天启心核",
+            "rarity": 6,
+            "level": 226,
+            "levelXp": 508,
+            "enhance": 0
+          },
+          "relic3": {
+            "id": "i1741",
+            "name": "无终·余音流光棱镜",
+            "rarity": 7,
+            "level": 246,
+            "levelXp": 2666,
+            "enhance": 0
+          }
+        }
+      },
+      "rounds": {
+        "combat": {
+          "n": 1169,
+          "min": 1,
+          "median": 1,
+          "p95": 3,
+          "max": 8,
+          "mean": 1.2822925577416595
+        },
+        "elite": {
+          "n": 402,
+          "min": 1,
+          "median": 1,
+          "p95": 5,
+          "max": 24,
+          "mean": 1.9378109452736318
+        },
+        "boss": {
+          "n": 117,
+          "min": 1,
+          "median": 2,
+          "p95": 9,
+          "max": 41,
+          "mean": 3.376068376068376
+        },
+        "trial": {
+          "n": 18,
+          "min": 1,
+          "median": 1,
+          "p95": 2,
+          "max": 6,
+          "mean": 1.5555555555555556
+        }
+      },
+      "lateBosses": {
+        "n": 14,
+        "min": 1,
+        "median": 1,
+        "p95": 4,
+        "max": 4,
+        "mean": 1.7142857142857142
+      },
+      "milestones": {
+        "10": {
+          "floorRange": [
+            1,
+            10
+          ],
+          "rounds": {
+            "combat": {
+              "n": 28,
+              "min": 1,
+              "median": 2,
+              "p95": 3,
+              "max": 5,
+              "mean": 1.893
+            },
+            "elite": {
+              "n": 10,
+              "min": 1,
+              "median": 2,
+              "p95": 5,
+              "max": 5,
+              "mean": 2.4
+            },
+            "boss": {
+              "n": 2,
+              "min": 3,
+              "median": 3,
+              "p95": 3,
+              "max": 3,
+              "mean": 3
+            },
+            "trial": {
+              "n": 2,
+              "min": 1,
+              "median": 1,
+              "p95": 1,
+              "max": 2,
+              "mean": 1.5
+            }
+          },
+          "economy": {
+            "floor": 10,
+            "gold": 2535,
+            "level": 18,
+            "hp": 1263,
+            "maxHp": 1263,
+            "attack": 538
+          }
+        },
+        "30": {
+          "floorRange": [
+            21,
+            30
+          ],
+          "rounds": {
+            "combat": {
+              "n": 29,
+              "min": 1,
+              "median": 1,
+              "p95": 2,
+              "max": 3,
+              "mean": 1.517
+            },
+            "elite": {
+              "n": 9,
+              "min": 1,
+              "median": 2,
+              "p95": 3,
+              "max": 4,
+              "mean": 2.222
+            },
+            "boss": {
+              "n": 3,
+              "min": 2,
+              "median": 3,
+              "p95": 3,
+              "max": 4,
+              "mean": 3
+            },
+            "trial": {
+              "n": 1,
+              "min": 1,
+              "median": 1,
+              "p95": 1,
+              "max": 1,
+              "mean": 1
+            }
+          },
+          "economy": {
+            "floor": 30,
+            "gold": 22620,
+            "level": 44,
+            "hp": 3948,
+            "maxHp": 3948,
+            "attack": 1643
+          }
+        },
+        "50": {
+          "floorRange": [
+            41,
+            50
+          ],
+          "rounds": {
+            "combat": {
+              "n": 32,
+              "min": 1,
+              "median": 1,
+              "p95": 2,
+              "max": 3,
+              "mean": 1.406
+            },
+            "elite": {
+              "n": 8,
+              "min": 1,
+              "median": 2,
+              "p95": 2,
+              "max": 4,
+              "mean": 1.875
+            },
+            "boss": {
+              "n": 2,
+              "min": 3,
+              "median": 3,
+              "p95": 3,
+              "max": 5,
+              "mean": 4
+            },
+            "trial": null
+          },
+          "economy": {
+            "floor": 50,
+            "gold": 57920,
+            "level": 66,
+            "hp": 5978,
+            "maxHp": 5978,
+            "attack": 2423
+          }
+        },
+        "80": {
+          "floorRange": [
+            71,
+            80
+          ],
+          "rounds": {
+            "combat": {
+              "n": 28,
+              "min": 1,
+              "median": 1,
+              "p95": 2,
+              "max": 2,
+              "mean": 1.107
+            },
+            "elite": {
+              "n": 8,
+              "min": 1,
+              "median": 1,
+              "p95": 2,
+              "max": 3,
+              "mean": 1.5
+            },
+            "boss": {
+              "n": 3,
+              "min": 1,
+              "median": 1,
+              "p95": 1,
+              "max": 4,
+              "mean": 2
+            },
+            "trial": {
+              "n": 1,
+              "min": 2,
+              "median": 2,
+              "p95": 2,
+              "max": 2,
+              "mean": 2
+            }
+          },
+          "economy": {
+            "floor": 80,
+            "gold": 168411,
+            "level": 92,
+            "hp": 13816,
+            "maxHp": 13816,
+            "attack": 7139
+          }
+        },
+        "140": {
+          "floorRange": [
+            131,
+            140
+          ],
+          "rounds": {
+            "combat": {
+              "n": 30,
+              "min": 1,
+              "median": 1,
+              "p95": 1,
+              "max": 2,
+              "mean": 1.033
+            },
+            "elite": {
+              "n": 10,
+              "min": 1,
+              "median": 1,
+              "p95": 1,
+              "max": 2,
+              "mean": 1.1
+            },
+            "boss": {
+              "n": 2,
+              "min": 2,
+              "median": 2,
+              "p95": 2,
+              "max": 2,
+              "mean": 2
+            },
+            "trial": null
+          },
+          "economy": {
+            "floor": 140,
+            "gold": 516431,
+            "level": 137,
+            "hp": 29814,
+            "maxHp": 29814,
+            "attack": 16676
+          }
+        },
+        "200": {
+          "floorRange": [
+            191,
+            200
+          ],
+          "rounds": {
+            "combat": {
+              "n": 27,
+              "min": 1,
+              "median": 1,
+              "p95": 4,
+              "max": 5,
+              "mean": 1.815
+            },
+            "elite": {
+              "n": 14,
+              "min": 1,
+              "median": 2,
+              "p95": 7,
+              "max": 19,
+              "mean": 4.214
+            },
+            "boss": {
+              "n": 3,
+              "min": 2,
+              "median": 4,
+              "p95": 4,
+              "max": 9,
+              "mean": 5
+            },
+            "trial": null
+          },
+          "economy": {
+            "floor": 200,
+            "gold": 778084,
+            "level": 175,
+            "hp": 65947,
+            "maxHp": 65947,
+            "attack": 20806
+          }
+        },
+        "400": {
+          "floorRange": [
+            391,
+            400
+          ],
+          "rounds": {
+            "combat": {
+              "n": 31,
+              "min": 1,
+              "median": 1,
+              "p95": 1,
+              "max": 1,
+              "mean": 1
+            },
+            "elite": {
+              "n": 13,
+              "min": 1,
+              "median": 1,
+              "p95": 1,
+              "max": 2,
+              "mean": 1.077
+            },
+            "boss": {
+              "n": 4,
+              "min": 1,
+              "median": 1,
+              "p95": 2,
+              "max": 2,
+              "mean": 1.5
+            },
+            "trial": null
+          },
+          "economy": {
+            "floor": 400,
+            "gold": 1712209,
+            "level": 279,
+            "hp": 172466,
+            "maxHp": 172466,
+            "attack": 66406
+          }
+        }
+      },
+      "context": {
+        "respecs": [
+          {
+            "floor": 53,
+            "roomIndex": 4,
+            "refunded": "天赋重置，返还 134 点。生命未被免费填满。",
+            "unspentPoints": 134
+          },
+          {
+            "floor": 158,
+            "roomIndex": 4,
+            "refunded": "天赋重置，返还 296 点。生命未被免费填满。",
+            "unspentPoints": 296
+          },
+          {
+            "floor": 166,
+            "roomIndex": 4,
+            "refunded": "天赋重置，返还 215 点。生命未被免费填满。",
+            "unspentPoints": 307
+          },
+          {
+            "floor": 187,
+            "roomIndex": 4,
+            "refunded": "天赋重置，返还 336 点。生命未被免费填满。",
+            "unspentPoints": 336
+          },
+          {
+            "floor": 196,
+            "roomIndex": 4,
+            "refunded": "天赋重置，返还 231 点。生命未被免费填满。",
+            "unspentPoints": 346
+          },
+          {
+            "floor": 215,
+            "roomIndex": 4,
+            "refunded": "天赋重置，返还 370 点。生命未被免费填满。",
+            "unspentPoints": 370
+          },
+          {
+            "floor": 268,
+            "roomIndex": 4,
+            "refunded": "天赋重置，返还 429 点。生命未被免费填满。",
+            "unspentPoints": 429
+          },
+          {
+            "floor": 278,
+            "roomIndex": 4,
+            "refunded": "天赋重置，返还 276 点。生命未被免费填满。",
+            "unspentPoints": 441
+          },
+          {
+            "floor": 291,
+            "roomIndex": 4,
+            "refunded": "天赋重置，返还 325 点。生命未被免费填满。",
+            "unspentPoints": 455
+          },
+          {
+            "floor": 334,
+            "roomIndex": 4,
+            "refunded": "天赋重置，返还 497 点。生命未被免费填满。",
+            "unspentPoints": 497
+          }
+        ],
+        "longest": [
+          {
+            "floor": 215,
+            "roomType": "boss",
+            "type": "boss",
+            "name": "六封掌印者",
+            "trait": "steady",
+            "mechanic": "boss_sixseal",
+            "turns": 41,
+            "damageTaken": 0,
+            "phaseChanges": 1,
+            "heavyAttacks": 0,
+            "traitActivations": 28,
+            "startHp": 46886,
+            "maxHp": 46886,
+            "killed": true,
+            "endHp": 58626,
+            "startContext": {
+              "floor": 215,
+              "roomType": "boss",
+              "name": "六封掌印者",
+              "rankSum": 1,
+              "unspentPoints": 369,
+              "powerRank": 0,
+              "damageEstimate": 395866,
+              "mostRecentRespec": 215
+            }
+          },
+          {
+            "floor": 291,
+            "roomType": "elite",
+            "type": "elite",
+            "name": "破晓巡游者",
+            "trait": "ward",
+            "mechanic": null,
+            "turns": 24,
+            "damageTaken": 0,
+            "phaseChanges": 0,
+            "heavyAttacks": 0,
+            "traitActivations": 14,
+            "startHp": 55277,
+            "maxHp": 55277,
+            "killed": true,
+            "endHp": 69096,
+            "startContext": {
+              "floor": 291,
+              "roomType": "elite",
+              "name": "破晓巡游者",
+              "rankSum": 1,
+              "unspentPoints": 454,
+              "powerRank": 0,
+              "damageEstimate": 1156802,
+              "mostRecentRespec": 291
+            }
+          },
+          {
+            "floor": 269,
+            "roomType": "guardian",
+            "type": "boss",
+            "name": "旧城扉主",
+            "trait": "steady",
+            "mechanic": "guardian",
+            "turns": 22,
+            "damageTaken": 0,
+            "phaseChanges": 1,
+            "heavyAttacks": 0,
+            "traitActivations": 9,
+            "startHp": 66598,
+            "maxHp": 66598,
+            "killed": true,
+            "endHp": 66598,
+            "startContext": {
+              "floor": 269,
+              "roomType": "guardian",
+              "name": "旧城扉主",
+              "rankSum": 35,
+              "unspentPoints": 396,
+              "powerRank": 0,
+              "damageEstimate": 1621077,
+              "mostRecentRespec": 268
+            }
+          },
+          {
+            "floor": 268,
+            "roomType": "elite",
+            "type": "elite",
+            "name": "起源拓印者",
+            "trait": "steady",
+            "mechanic": "parity",
+            "turns": 21,
+            "damageTaken": 0,
+            "phaseChanges": 0,
+            "heavyAttacks": 0,
+            "traitActivations": 21,
+            "startHp": 53264,
+            "maxHp": 53264,
+            "killed": true,
+            "endHp": 66580,
+            "startContext": {
+              "floor": 268,
+              "roomType": "elite",
+              "name": "起源拓印者",
+              "rankSum": 1,
+              "unspentPoints": 428,
+              "powerRank": 0,
+              "damageEstimate": 580361,
+              "mostRecentRespec": 268
+            }
+          },
+          {
+            "floor": 196,
+            "roomType": "elite",
+            "type": "elite",
+            "name": "永恒负碑人",
+            "trait": "steady",
+            "mechanic": "parity",
+            "turns": 19,
+            "damageTaken": 0,
+            "phaseChanges": 0,
+            "heavyAttacks": 0,
+            "traitActivations": 7,
+            "startHp": 43168,
+            "maxHp": 43168,
+            "killed": true,
+            "endHp": 53978,
+            "startContext": {
+              "floor": 196,
+              "roomType": "elite",
+              "name": "永恒负碑人",
+              "rankSum": 1,
+              "unspentPoints": 345,
+              "powerRank": 0,
+              "damageEstimate": 358119,
+              "mostRecentRespec": 196
+            }
+          },
+          {
+            "floor": 166,
+            "roomType": "elite",
+            "type": "elite",
+            "name": "界线执伞人",
+            "trait": "steady",
+            "mechanic": "hush",
+            "turns": 18,
+            "damageTaken": 0,
+            "phaseChanges": 0,
+            "heavyAttacks": 0,
+            "traitActivations": 18,
+            "startHp": 44614,
+            "maxHp": 44614,
+            "killed": true,
+            "endHp": 55767,
+            "startContext": {
+              "floor": 166,
+              "roomType": "elite",
+              "name": "界线执伞人",
+              "rankSum": 1,
+              "unspentPoints": 306,
+              "powerRank": 0,
+              "damageEstimate": 332670,
+              "mostRecentRespec": 166
+            }
+          }
+        ]
+      },
+      "encounterCount": 1706,
+      "encounterTraceSha256": "bd9941cfa33c250d20377c1e5d4f88a13c2ecac62b10a4998364ca6cb039801b",
+      "floorEndsSha256": "c7944b95e0f7583e4e094d65d312dd13f3510ce1a2164cc9b9652068b8c7de80",
+      "finalSaveRoundTrip": true
+    },
+    {
+      "seed": 15838,
+      "completed": true,
+      "deaths": 0,
+      "rolls": 2374,
+      "level": 279,
+      "spending": {
+        "shop": 13902,
+        "forge": 36274,
+        "fusion": 1155934
+      },
+      "spent": 1438930,
+      "buys": 5,
+      "forges": 19,
+      "fusions": 289,
+      "rarities": [
+        478,
+        594,
+        210,
+        309,
+        140,
+        84,
+        36,
+        11
+      ],
+      "final": {
+        "floor": 400,
+        "phase": "cleared",
+        "gold": 2235204,
+        "inventoryItems": 595,
+        "rng": 340591318,
+        "attack": 70753,
+        "maxHp": 163168,
+        "defense": 12115,
+        "luck": 41,
+        "equipped": {
+          "weapon": {
+            "id": "i1741",
+            "name": "无终·裂甲守誓重刃",
+            "rarity": 7,
+            "level": 269,
+            "levelXp": 282,
+            "enhance": 9
+          },
+          "armor": {
+            "id": "i1856",
+            "name": "无终·归息天启壁垒",
+            "rarity": 7,
+            "level": 270,
+            "levelXp": 565,
+            "enhance": 0
+          },
+          "relic": {
+            "id": "i1439",
+            "name": "溯源·余音流光棱镜",
+            "rarity": 6,
+            "level": 221,
+            "levelXp": 2145,
+            "enhance": 0
+          },
+          "relic2": {
+            "id": "i1363",
+            "name": "无终·荆棘棱镜",
+            "rarity": 7,
+            "level": 218,
+            "levelXp": 772,
+            "enhance": 0
+          },
+          "relic3": {
+            "id": "i1491",
+            "name": "太初·余音天启心核",
+            "rarity": 5,
+            "level": 225,
+            "levelXp": 2606,
+            "enhance": 0
+          }
+        }
+      },
+      "rounds": {
+        "combat": {
+          "n": 1156,
+          "min": 1,
+          "median": 1,
+          "p95": 2,
+          "max": 8,
+          "mean": 1.2006920415224913
+        },
+        "elite": {
+          "n": 413,
+          "min": 1,
+          "median": 1,
+          "p95": 3,
+          "max": 24,
+          "mean": 1.5447941888619854
+        },
+        "boss": {
+          "n": 121,
+          "min": 1,
+          "median": 2,
+          "p95": 5,
+          "max": 50,
+          "mean": 2.5454545454545454
+        },
+        "trial": {
+          "n": 28,
+          "min": 1,
+          "median": 1,
+          "p95": 3,
+          "max": 5,
+          "mean": 1.4285714285714286
+        }
+      },
+      "lateBosses": {
+        "n": 16,
+        "min": 1,
+        "median": 1,
+        "p95": 2,
+        "max": 2,
+        "mean": 1.125
+      },
+      "milestones": {
+        "10": {
+          "floorRange": [
+            1,
+            10
+          ],
+          "rounds": {
+            "combat": {
+              "n": 30,
+              "min": 1,
+              "median": 1,
+              "p95": 3,
+              "max": 5,
+              "mean": 1.733
+            },
+            "elite": {
+              "n": 9,
+              "min": 1,
+              "median": 2,
+              "p95": 4,
+              "max": 4,
+              "mean": 2.556
+            },
+            "boss": {
+              "n": 2,
+              "min": 2,
+              "median": 2,
+              "p95": 2,
+              "max": 3,
+              "mean": 2.5
+            },
+            "trial": {
+              "n": 1,
+              "min": 2,
+              "median": 2,
+              "p95": 2,
+              "max": 2,
+              "mean": 2
+            }
+          },
+          "economy": {
+            "floor": 10,
+            "gold": 4433,
+            "level": 18,
+            "hp": 1863,
+            "maxHp": 1863,
+            "attack": 601
+          }
+        },
+        "30": {
+          "floorRange": [
+            21,
+            30
+          ],
+          "rounds": {
+            "combat": {
+              "n": 30,
+              "min": 1,
+              "median": 2,
+              "p95": 2,
+              "max": 3,
+              "mean": 1.567
+            },
+            "elite": {
+              "n": 10,
+              "min": 1,
+              "median": 2,
+              "p95": 3,
+              "max": 3,
+              "mean": 2.2
+            },
+            "boss": {
+              "n": 3,
+              "min": 3,
+              "median": 3,
+              "p95": 3,
+              "max": 4,
+              "mean": 3.333
+            },
+            "trial": null
+          },
+          "economy": {
+            "floor": 30,
+            "gold": 37080,
+            "level": 45,
+            "hp": 4218,
+            "maxHp": 4218,
+            "attack": 1441
+          }
+        },
+        "50": {
+          "floorRange": [
+            41,
+            50
+          ],
+          "rounds": {
+            "combat": {
+              "n": 30,
+              "min": 1,
+              "median": 2,
+              "p95": 3,
+              "max": 3,
+              "mean": 1.7
+            },
+            "elite": {
+              "n": 8,
+              "min": 1,
+              "median": 1,
+              "p95": 2,
+              "max": 3,
+              "mean": 1.625
+            },
+            "boss": {
+              "n": 2,
+              "min": 2,
+              "median": 2,
+              "p95": 2,
+              "max": 2,
+              "mean": 2
+            },
+            "trial": null
+          },
+          "economy": {
+            "floor": 50,
+            "gold": 66951,
+            "level": 67,
+            "hp": 5361,
+            "maxHp": 5361,
+            "attack": 2105
+          }
+        },
+        "80": {
+          "floorRange": [
+            71,
+            80
+          ],
+          "rounds": {
+            "combat": {
+              "n": 28,
+              "min": 1,
+              "median": 1,
+              "p95": 4,
+              "max": 7,
+              "mean": 1.857
+            },
+            "elite": {
+              "n": 10,
+              "min": 1,
+              "median": 2,
+              "p95": 9,
+              "max": 24,
+              "mean": 5.3
+            },
+            "boss": {
+              "n": 3,
+              "min": 3,
+              "median": 5,
+              "p95": 5,
+              "max": 12,
+              "mean": 6.667
+            },
+            "trial": null
+          },
+          "economy": {
+            "floor": 80,
+            "gold": 192551,
+            "level": 93,
+            "hp": 14246,
+            "maxHp": 14246,
+            "attack": 3213
+          }
+        },
+        "140": {
+          "floorRange": [
+            131,
+            140
+          ],
+          "rounds": {
+            "combat": {
+              "n": 30,
+              "min": 1,
+              "median": 1,
+              "p95": 1,
+              "max": 1,
+              "mean": 1
+            },
+            "elite": {
+              "n": 10,
+              "min": 1,
+              "median": 1,
+              "p95": 1,
+              "max": 1,
+              "mean": 1
+            },
+            "boss": {
+              "n": 4,
+              "min": 1,
+              "median": 1,
+              "p95": 1,
+              "max": 1,
+              "mean": 1
+            },
+            "trial": null
+          },
+          "economy": {
+            "floor": 140,
+            "gold": 635660,
+            "level": 139,
+            "hp": 28157,
+            "maxHp": 28157,
+            "attack": 20580
+          }
+        },
+        "200": {
+          "floorRange": [
+            191,
+            200
+          ],
+          "rounds": {
+            "combat": {
+              "n": 25,
+              "min": 1,
+              "median": 1,
+              "p95": 1,
+              "max": 1,
+              "mean": 1
+            },
+            "elite": {
+              "n": 10,
+              "min": 1,
+              "median": 1,
+              "p95": 1,
+              "max": 1,
+              "mean": 1
+            },
+            "boss": {
+              "n": 3,
+              "min": 1,
+              "median": 1,
+              "p95": 1,
+              "max": 2,
+              "mean": 1.333
+            },
+            "trial": {
+              "n": 2,
+              "min": 1,
+              "median": 1,
+              "p95": 1,
+              "max": 1,
+              "mean": 1
+            }
+          },
+          "economy": {
+            "floor": 200,
+            "gold": 1062276,
+            "level": 175,
+            "hp": 57325,
+            "maxHp": 57325,
+            "attack": 26043
+          }
+        },
+        "400": {
+          "floorRange": [
+            391,
+            400
+          ],
+          "rounds": {
+            "combat": {
+              "n": 29,
+              "min": 1,
+              "median": 1,
+              "p95": 1,
+              "max": 1,
+              "mean": 1
+            },
+            "elite": {
+              "n": 9,
+              "min": 1,
+              "median": 1,
+              "p95": 1,
+              "max": 2,
+              "mean": 1.111
+            },
+            "boss": {
+              "n": 4,
+              "min": 1,
+              "median": 1,
+              "p95": 1,
+              "max": 1,
+              "mean": 1
+            },
+            "trial": null
+          },
+          "economy": {
+            "floor": 400,
+            "gold": 2235204,
+            "level": 279,
+            "hp": 163168,
+            "maxHp": 163168,
+            "attack": 70753
+          }
+        }
+      },
+      "context": {
+        "respecs": [
+          {
+            "floor": 78,
+            "roomIndex": 4,
+            "refunded": "天赋重置，返还 180 点。生命未被免费填满。",
+            "unspentPoints": 180
+          },
+          {
+            "floor": 167,
+            "roomIndex": 4,
+            "refunded": "天赋重置，返还 309 点。生命未被免费填满。",
+            "unspentPoints": 309
+          },
+          {
+            "floor": 171,
+            "roomIndex": 4,
+            "refunded": "天赋重置，返还 113 点。生命未被免费填满。",
+            "unspentPoints": 313
+          },
+          {
+            "floor": 305,
+            "roomIndex": 4,
+            "refunded": "天赋重置，返还 471 点。生命未被免费填满。",
+            "unspentPoints": 471
+          },
+          {
+            "floor": 312,
+            "roomIndex": 4,
+            "refunded": "天赋重置，返还 213 点。生命未被免费填满。",
+            "unspentPoints": 477
+          }
+        ],
+        "longest": [
+          {
+            "floor": 305,
+            "roomType": "boss",
+            "type": "boss",
+            "name": "骸骨君王",
+            "trait": "shield",
+            "mechanic": null,
+            "turns": 50,
+            "damageTaken": 0,
+            "phaseChanges": 1,
+            "heavyAttacks": 0,
+            "traitActivations": 44,
+            "startHp": 89504,
+            "maxHp": 89504,
+            "killed": true,
+            "endHp": 111880,
+            "startContext": {
+              "floor": 305,
+              "roomType": "boss",
+              "name": "骸骨君王",
+              "rankSum": 1,
+              "unspentPoints": 470,
+              "powerRank": 0,
+              "damageEstimate": 934336,
+              "mostRecentRespec": 305
+            }
+          },
+          {
+            "floor": 78,
+            "roomType": "elite",
+            "type": "elite",
+            "name": "荆棘执灯人",
+            "trait": "ramp",
+            "mechanic": null,
+            "turns": 24,
+            "damageTaken": 0,
+            "phaseChanges": 0,
+            "heavyAttacks": 0,
+            "traitActivations": 24,
+            "startHp": 10900,
+            "maxHp": 10900,
+            "killed": true,
+            "endHp": 13625,
+            "startContext": {
+              "floor": 78,
+              "roomType": "elite",
+              "name": "荆棘执灯人",
+              "rankSum": 1,
+              "unspentPoints": 179,
+              "powerRank": 0,
+              "damageEstimate": 50336,
+              "mostRecentRespec": 78
+            }
+          },
+          {
+            "floor": 312,
+            "roomType": "elite",
+            "type": "elite",
+            "name": "余响归人",
+            "trait": "steady",
+            "mechanic": "hourward",
+            "turns": 16,
+            "damageTaken": 0,
+            "phaseChanges": 0,
+            "heavyAttacks": 0,
+            "traitActivations": 16,
+            "startHp": 91157,
+            "maxHp": 91157,
+            "killed": true,
+            "endHp": 113946,
+            "startContext": {
+              "floor": 312,
+              "roomType": "elite",
+              "name": "余响归人",
+              "rankSum": 1,
+              "unspentPoints": 476,
+              "powerRank": 0,
+              "damageEstimate": 940737,
+              "mostRecentRespec": 312
+            }
+          },
+          {
+            "floor": 171,
+            "roomType": "elite",
+            "type": "elite",
+            "name": "雷鸣执灯人",
+            "trait": "ward",
+            "mechanic": null,
+            "turns": 14,
+            "damageTaken": 0,
+            "phaseChanges": 0,
+            "heavyAttacks": 0,
+            "traitActivations": 14,
+            "startHp": 46335,
+            "maxHp": 46335,
+            "killed": true,
+            "endHp": 57938,
+            "startContext": {
+              "floor": 171,
+              "roomType": "elite",
+              "name": "雷鸣执灯人",
+              "rankSum": 1,
+              "unspentPoints": 312,
+              "powerRank": 0,
+              "damageEstimate": 528115,
+              "mostRecentRespec": 171
+            }
+          },
+          {
+            "floor": 80,
+            "roomType": "boss",
+            "type": "boss",
+            "name": "蚀日无冕者",
+            "trait": "steady",
+            "mechanic": "boss_eclipse",
+            "turns": 12,
+            "damageTaken": 0,
+            "phaseChanges": 1,
+            "heavyAttacks": 0,
+            "traitActivations": 10,
+            "startHp": 14246,
+            "maxHp": 14246,
+            "killed": true,
+            "endHp": 14246,
+            "startContext": {
+              "floor": 80,
+              "roomType": "boss",
+              "name": "蚀日无冕者",
+              "rankSum": 94,
+              "unspentPoints": 91,
+              "powerRank": 0,
+              "damageEstimate": 239501,
+              "mostRecentRespec": 78
+            }
+          },
+          {
+            "floor": 167,
+            "roomType": "elite",
+            "type": "elite",
+            "name": "雷鸣执灯人",
+            "trait": "ward",
+            "mechanic": null,
+            "turns": 11,
+            "damageTaken": 0,
+            "phaseChanges": 0,
+            "heavyAttacks": 0,
+            "traitActivations": 11,
+            "startHp": 45173,
+            "maxHp": 45173,
+            "killed": true,
+            "endHp": 49690,
+            "startContext": {
+              "floor": 167,
+              "roomType": "elite",
+              "name": "雷鸣执灯人",
+              "rankSum": 1,
+              "unspentPoints": 308,
+              "powerRank": 0,
+              "damageEstimate": 520287,
+              "mostRecentRespec": 167
+            }
+          }
+        ]
+      },
+      "encounterCount": 1718,
+      "encounterTraceSha256": "6a886276b49a06a814f2baf520352902f5e857800cce8874305eb7229e194b13",
+      "floorEndsSha256": "ff8045452f64aa7e3d0159d6f18ca326a5c99842ae7bea2c4fa4339fcc67a2d7",
+      "finalSaveRoundTrip": true
+    }
+  ],
+  "limitations": [
+    "Two fixed seeds per policy do not establish win rates or statistical drop-rate changes.",
+    "Full real engine transitions are offline test-policy decisions, not browser or human gameplay.",
+    "The bounty equipment-level fix can change later choices and game RNG consumption, so only same-version adapter equality is required; cross-version trajectories may diverge.",
+    "The original audit serializes no rarity fields; the scratch copy only adds existing result fields to trace serialization and leaves all decision/transition functions unchanged."
+  ]
+}

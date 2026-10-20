@@ -1,0 +1,49 @@
+{
+  "synthetic": true,
+  "source": "Independent non-fusion real-browser regression against current app integration",
+  "browser": "155.0.8059.84",
+  "started": "2026-10-17T12:05:55.256Z",
+  "cases": [
+    {
+      "name": "title-new-manual-fate-continue",
+      "status": "PASS",
+      "checks": 8,
+      "ms": 3010.0980609999997
+    },
+    {
+      "name": "manual-combat-chest-equip-refresh",
+      "status": "PASS",
+      "checks": 9,
+      "ms": 7159.205222
+    },
+    {
+      "name": "inventory-scroll-lock-and-settings",
+      "status": "PASS",
+      "checks": 11,
+      "ms": 6048.069065
+    },
+    {
+      "name": "primary-save-failure-recovery",
+      "status": "PASS",
+      "checks": 4,
+      "ms": 2769.1809509999985
+    },
+    {
+      "name": "mirror-write-warning-keeps-durable-result",
+      "status": "PASS",
+      "checks": 4,
+      "ms": 3389.8433479999985
+    },
+    {
+      "name": "cross-tab-sync-cancels-stale-confirmation",
+      "status": "FAIL",
+      "checks": 4,
+      "ms": 2851.9506900000015,
+      "error": "AssertionError [ERR_ASSERTION]: synchronization is explained",
+      "stack": "AssertionError [ERR_ASSERTION]: synchronization is explained\n    at check (file:///workspace/scratch/514e9d8a02b3/qa-round02/core-browser-regression.mjs:11:55)\n    at file:///workspace/scratch/514e9d8a02b3/qa-round02/core-browser-regression.mjs:58:411\n    at async run (file:///workspace/scratch/514e9d8a02b3/qa-round02/core-browser-regression.mjs:18:96)\n    at async file:///workspace/scratch/514e9d8a02b3/qa-round02/core-browser-regression.mjs:55:2"
+    }
+  ],
+  "errors": [],
+  "checks": 40,
+  "finished": "2026-10-17T12:06:31.352Z"
+}

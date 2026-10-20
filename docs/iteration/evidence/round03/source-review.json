@@ -1,0 +1,174 @@
+{
+  "kind": "Round03 independent source review snapshot; no full test or performance rerun in this review stage",
+  "capturedUtc": "2026-10-17T13:30:44.064484+00:00",
+  "input": {
+    "zipBytes": 12427981,
+    "zipSha256": "6e6ffd2a2bd8f8dbaa4370712025e91f3b5b152722fe3f90086bf7ce7136dace",
+    "version": "5.3.0",
+    "round": 2,
+    "files": 263,
+    "unchangedSinceInitialAudit": true
+  },
+  "candidateProductVersionAtSnapshot": "5.3.0",
+  "reviewedSourceHashes": {
+    "src/engine.js": "afd66fe121e68536c88b7f583f68c9de3b349272a61011c277295dd460afd8d2",
+    "src/storage.js": "f4cf7cb3fceed274fd2a929bc0d53c34b7c62046639a732f6229de72ef1e69f3",
+    "src/equipment.js": "294945cd13d7183007cb3138a07523a5fbbfc53dabfe0635dbcfa1a77fc2c465",
+    "src/fusion-workbench.js": "06f206dc578534c641f0fe327c48a4ec70ccffeed79fe8076ccd83cfb56263bf",
+    "src/fusion-controller.js": "ea6e1badae178aca56a21568a6126b4ece17526fd03d9059ccc0e29f44ade909",
+    "src/fusion-view.js": "6f5d3f5413eb6f396b78901c7d0361e860b41ab3d1f6d2dc549b782eee0ad06a",
+    "src/content.js": "4c0c2e4656c5a3482a5448a069ae2fa28367ba05d61c7d0c2c9866315f5c5526",
+    "src/encounters.js": "1cf841306e5a4bbcde1775754795d8fa26cdb65ae49216ccf2e45bea4b3b36f8",
+    "src/deep-content.js": "040a5668b687cf9d7b7c8b31a67cee35660ebb0539af74c7d572614f138fef33",
+    "src/rarity.js": "871356df147d027e1845f98c5574a1d9a71c0d17bd8717f457c9007d7c73b735"
+  },
+  "supportingTestAndScriptHashes": {
+    "tests/talent-allocation.test.mjs": "05a65d1a8602cf671ae30818e370c2257056f70f1853b4f6a616c54728cc1b10",
+    "tests/iteration-storage.test.mjs": "b3202f05cbed1b4e1734e7247f48636bc3dc5b980f9278dd164a85b69d11be6e",
+    "tests/fusion-controller.test.mjs": "84a3e228b716718212b32d458916434bc99585d789c677e0c48a0b2aea6f074b",
+    "tests/fusion-selection.test.mjs": "c38d6680352703de59673ad2183c8d2fcec2b0ee9a4df4d209f28968f322564d",
+    "tests/reward-copy.test.mjs": "1eb59408db5826aa7e71c099c780f11f4a4a4e2cb1a9b69f1317e34e04ecd7ef",
+    "scripts/audit-talent-allocation.mjs": "517d2c0ce7286f40081d3ec418f0b5134f71deca21d57cc2ae570eb6f9dc8806",
+    "scripts/qa-fusion-workbench.mjs": "a32716627a834e4a65061c1c9afd103e20febb9abad1e6082959602f1c83346f",
+    "scripts/audit-reward-truth.mjs": "a965cc0576dc0200b6423170e0bbe0e31e52af1fbca6ace1273efaf1ac8b9d49"
+  },
+  "baselineTestFiles": 25,
+  "candidateTestFilesAtSnapshot": 28,
+  "missingOriginalTestFiles": [],
+  "fontFilesUnchanged": [
+    {
+      "path": "src/fonts/README.md",
+      "sameBytesAndHash": true
+    },
+    {
+      "path": "src/fonts/SourceHanSansCN-VF.otf.woff2",
+      "sameBytesAndHash": true
+    },
+    {
+      "path": "src/fonts/fusion-pixel-12px-proportional-zh_hans.otf.woff2",
+      "sameBytesAndHash": true
+    },
+    {
+      "path": "src/fonts/fusion-pixel-OFL.txt",
+      "sameBytesAndHash": true
+    },
+    {
+      "path": "src/fonts/fusion-pixel/LICENSES/ark-pixel/OFL.txt",
+      "sameBytesAndHash": true
+    },
+    {
+      "path": "src/fonts/fusion-pixel/LICENSES/cubic-11/OFL.txt",
+      "sameBytesAndHash": true
+    },
+    {
+      "path": "src/fonts/fusion-pixel/LICENSES/galmuri/LICENSE.txt",
+      "sameBytesAndHash": true
+    },
+    {
+      "path": "src/fonts/source-han-sans-OFL.txt",
+      "sameBytesAndHash": true
+    }
+  ],
+  "evidenceFingerprints": {
+    "audit/baseline/BASELINE_SAFETY_REVIEW.json": "7f5d4510a28802ec3d7a2a21114012c42b9d03e852ff1507cb17a5e1ce7eaa51",
+    "audit/baseline/gates.json": "07046bd50c530944f5cf0078299ba67dade547e5d2a502016bbe84ebb9374950",
+    "audit/baseline/unit-cases-gate.json": "14dd71f78c694acd307a6fab6f6acdd1f23a756208cff861f2fa15f3f2cd951e",
+    "audit/baseline/simulation-gate.json": "6ead3341e436c9356f15a3a9d34dd67d32de48aca66a7f6357f733f4a884d2de",
+    "audit/baseline/storage-compatibility-current.json": "80709a30eace9d34c543e6211707d34d10836b80e193fd26f50e23a7f8311d77",
+    "audit/baseline/storage-regression-current.json": "8848dce9e2e2077bf9bd64c1650927a6b0ca16226fa0e333bf8b61bb6b62daa9",
+    "audit/baseline/talent-independent-review.json": "4d5084dc8fc795eb25535eeaccda9cb9f91abb26d899befdf1bab96f4007c4bb",
+    "audit/fusion/current-rules.json": "1aa2c4680da97e9cefeeb67a1a26dd1710df509d6e07845b6d0ca1b72a3c71c1",
+    "audit/fusion/baseline-controller-scans.json": "7ab099390d1b8a7f3a77917db3dd278c2d09c187022314be00da455cd7f8ac50",
+    "audit/fusion/current-controller-scans.json": "af9dab93207e6a37cd23fc04c1fdee718c04483a7ebdaeed3cf6a76bee92a1d1",
+    "audit/gameplay/reward-truth.json": "216b5adec904966e3f220d4f14cdc37872ed6dd52ddf24e5d9300d028d87c3da"
+  },
+  "priorIndependentTalentExecution": {
+    "legacyCases": 1800,
+    "batchCases": 540,
+    "transactionCases": 12,
+    "boundaryCases": 2,
+    "engineHashStillMatches": true,
+    "storageHashStillMatches": true,
+    "testHashStillMatches": true,
+    "pass": true
+  },
+  "fusionAuthorExecutionReviewed": {
+    "fixtureStates": 160,
+    "previewCases": 3680,
+    "transactionCases": 2688,
+    "planTransactions": 128,
+    "planComparisons": 1056,
+    "placementComparisons": 1056,
+    "rejectionCases": 2304,
+    "committedFaces": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "allPassed": true,
+    "allRecordedCandidateRuleHashesStillMatch": true,
+    "performedBy": "fusion_performance agent; source and evidence independently read by baseline_safety"
+  },
+  "rewardAuthorExecutionReviewed": {
+    "cases": 6160,
+    "changedCopy": 536,
+    "highTierWitnesses": 503,
+    "gameplayFieldsIdentical": true,
+    "performedBy": "gameplay_audit agent; source and evidence independently read by baseline_safety",
+    "limitation": "Historical report has no source-hash set; this review fingerprints the report and current source separately, without claiming a fresh replay."
+  },
+  "findings": [
+    {
+      "id": "S01",
+      "severity": "P2",
+      "status": "FIXED_VERIFIED",
+      "scope": "Malformed pending auction import can collide with owned ID. Rejected before replacement now; no claim of natural encounter bug or previous gold loss.",
+      "author": "baseline_safety; fix accepted by root, not an independent review of own authorship"
+    },
+    {
+      "id": "review-fusion",
+      "status": "NO_NEW_SOURCE_DEFECT_FOUND",
+      "checks": [
+        "same current selection identities, no persistent cache",
+        "same sort and positive-XP addition order",
+        "highest-face safe-prefix proof and original per-piece overflow fallback",
+        "same authoritative preview at submission and exact state snapshot check",
+        "same costs, RNG, equipment IDs, protected-material confirmations and save path"
+      ]
+    },
+    {
+      "id": "review-talent",
+      "status": "NO_NEW_SOURCE_DEFECT_FOUND",
+      "checks": [
+        "default single action exactly compatible on independently executed fixtures",
+        "batch count bounded by existing points and cap, same node only",
+        "one revision and transaction; HP and RNG unchanged",
+        "dead-state remains dead; save and load equality on executed fixtures"
+      ]
+    },
+    {
+      "id": "review-reward-copy",
+      "status": "NO_NEW_SOURCE_DEFECT_FOUND",
+      "checks": [
+        "result names read actual generated chest rarity",
+        "no reward-generation call, RNG, cost or XP change",
+        "old event preview wording transformed without rewriting saved event",
+        "only log, event outcome and enemy display text intentionally differ"
+      ]
+    },
+    {
+      "id": "review-hiddenboss-fallback",
+      "status": "NOT_A_RUNTIME_BUG",
+      "explanation": "Input content.js already overrides ROOM_DETAILS.hiddenboss.reward with legendary-minimum semantics. The old underlying fallback text is a copy consistency cleanup, not a newly found codex defect."
+    }
+  ],
+  "limits": [
+    "UI talent work and final product metadata were still integrating; these source hashes are a snapshot, not final package approval.",
+    "No browser session, full suite, long simulation or performance measurement was run again during this final source review stage.",
+    "In-memory storage fault tests do not establish real browser quota/concurrency or OS power-loss behavior.",
+    "Final candidate/extraction checks, current new-text font coverage, serialized performance and UI acceptance belong to the integrator."
+  ]
+}

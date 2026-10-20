@@ -1,0 +1,84 @@
+{
+  "classification": "Eight new-capability UI cases plus one confirmed existing two-dice animation wording defect. Baseline failure is not nine old product bugs.",
+  "changes": [
+    "Unaffordable payment paragraph omits projected payment balance; outcome text has no balance or net cost, including across HTML tags.",
+    "Browser assertion compares the entire td > small result note with the exact refund, net cost and immediate balance."
+  ],
+  "testCases": 9,
+  "runs": [
+    {
+      "version": "baseline",
+      "source": "/workspace/scratch/da3202002fbd/baseline/Dice-Abyss",
+      "command": [
+        "node",
+        "/workspace/scratch/da3202002fbd/work/Dice-Abyss/tests/event-risk-view-round20.test.mjs"
+      ],
+      "environment": {
+        "DICE_RISK_SOURCE": "/workspace/scratch/da3202002fbd/baseline/Dice-Abyss"
+      },
+      "started": "2026-10-19T10:05:43.267734+00:00",
+      "finished": "2026-10-19T10:05:43.394671+00:00",
+      "exitCode": 1,
+      "counters": {
+        "tests": 9,
+        "suites": 0,
+        "pass": 0,
+        "fail": 9,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "stdout": "analysis/gameplay/event-risk-view-baseline-tightened.stdout",
+      "stdoutBytes": 17560,
+      "stdoutSha256": "db9486a792c089b2431f11c8d3ddb696c13f029e013953914b95bf2a4c0dd808",
+      "stderrBytes": 0,
+      "sourceHashes": {
+        "src/engine.js": "75c6d9fcc48c0cf49ee02e53ffb7b143a09a2c79738d3bb2eb5d0ae80b30872b",
+        "src/storage.js": "f5a990793a90ff59a57f38e4be8fcb9deaf54997dff9d9acec2cded73d2c8145",
+        "src/views.js": "12d548a610141c2e8c0c2b03d0e8db492034a72c7beb34d58bca86b3242c0f44"
+      },
+      "sourceStable": true,
+      "stdoutFormat": "Node native spec reporter"
+    },
+    {
+      "version": "current",
+      "source": "/workspace/scratch/da3202002fbd/work/Dice-Abyss",
+      "command": [
+        "node",
+        "/workspace/scratch/da3202002fbd/work/Dice-Abyss/tests/event-risk-view-round20.test.mjs"
+      ],
+      "environment": {
+        "DICE_RISK_SOURCE": "/workspace/scratch/da3202002fbd/work/Dice-Abyss"
+      },
+      "started": "2026-10-19T10:05:43.268284+00:00",
+      "finished": "2026-10-19T10:05:43.460402+00:00",
+      "exitCode": 0,
+      "counters": {
+        "tests": 9,
+        "suites": 0,
+        "pass": 9,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "stdout": "analysis/gameplay/event-risk-view-current-tightened.stdout",
+      "stdoutBytes": 962,
+      "stdoutSha256": "8dee26d6fefadf53c8a95d3c61f8da04d6f3e174596dc1fe4db25c603fe4c0f8",
+      "stderrBytes": 0,
+      "sourceHashes": {
+        "src/engine.js": "75c6d9fcc48c0cf49ee02e53ffb7b143a09a2c79738d3bb2eb5d0ae80b30872b",
+        "src/storage.js": "f5a990793a90ff59a57f38e4be8fcb9deaf54997dff9d9acec2cded73d2c8145",
+        "src/views.js": "2fe02b409e0605f01b2aa2b90e69983c89a66a04906151bbfbc2af61631e0269"
+      },
+      "sourceStable": true,
+      "stdoutFormat": "Node native spec reporter"
+    }
+  ],
+  "sourceSha256": {
+    "tests/event-risk-view-round20.test.mjs": "5c4c6c6b80587eef16f784b454d55b1f4f790d54653496c2a0dc8d1dade2c374",
+    "scripts/qa-event-risk-round20.mjs": "aa8b4e146289d008f13a9a0106deca19f1d0a66eefbdc8bea32841f48bb34a0a"
+  },
+  "testSourceStable": true,
+  "browserReplay": "Pending parent replay of tightened browser script; this receipt reports native view tests only."
+}

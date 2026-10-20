@@ -1,0 +1,40 @@
+{
+  "review": "round09-final-handoff-content",
+  "status": "NO_BLOCKER_WITH_DECLARED_LIMITATIONS",
+  "reviewedAtUTC": "2026-10-18T08:56:42.625052+00:00",
+  "reviewerRole": "Gold engine author reviewing the final handoff text maintained by the integrator; not a new independent runtime execution.",
+  "documents": [
+    "docs/iteration/STATE.json",
+    "docs/iteration/LATEST_REPORT.md",
+    "docs/iteration/VERIFY.md",
+    "docs/iteration/PERFORMANCE.md",
+    "docs/iteration/BUG_LEDGER.md",
+    "docs/iteration/NEXT_ROUND.md",
+    "README.md"
+  ],
+  "evidenceBase": "docs/iteration/evidence/round09/",
+  "evidenceSha256": {
+    "gold-author-audit.json": "db6e79021bdc6d157b20e2f57655add980c37e04fd41a0a13742c2f0d2005b3b",
+    "functional-summary.json": "89076c6db71a0327e86babfee93386bbe4db2fdf915d3dccbb4e96b0a34a6807",
+    "browser-summary.json": "6f97d7a3e8266469e94ffb1ffc2ac7513909427320689bee205fc6d7393e6224",
+    "performance-round.json": "810825af586b32b0b8535dacd0dd76cea3f2ccd3057b0b4f245034f296dd6d89",
+    "performance-independent-review.json": "bd0da51631e4f31a11963d60a951287fce22cff93f5529378d9929a8d2561bc8",
+    "performance-fixtures.json": "f3fd7b62702ace79f971bac34af5c4cf1a65a65fd746e7224340eeca438b71e5"
+  },
+  "method": "Read-only documentation, evidence and CLI-parser inspection; browser totals and inventory quantiles recomputed only from retained JSON. No product execution, new tests, browser launches or existing-file changes.",
+  "checks": [
+    "Counts agree: baseline 393 and current 433 individual passing cases; 46 to 52 original-entry modules; 40 added cases. Author gold 26 cases, with baseline 21 runnable cases yielding 5 passes and 16 expected defect failures; 5 new-helper cases are excluded from that baseline count.",
+    "Author audit agrees at 1063 legal actions, 1161 full-state comparisons, 2322 save round trips, 361 receipts and 102 overflows. Synthetic cap inputs, a prior 65-action replay and an existing floor-159 snapshot continuation are identified separately; none is claimed to establish natural cap frequency.",
+    "Browser reports sum to 8 suites, 56 groups and 1848 checks; all 8 referenced script hashes match the current files. The earlier 1864 arithmetic error is disclosed. WebGL recovery is separate at 3 cycles per version, with its primary-save-only preservation assertion accurately bounded.",
+    "Top-level optional state.lootCreditedGold preserves full pending reward equality. Receipt lifetime follows loot existence, including retained cleared loot; reward.creditedGold remains opaque external metadata and is never a receipt source. Old missing receipts remain unknown rather than being reverse-derived. The exact top-level reserved-name collision boundary is disclosed.",
+    "Exchange XP admission is the pre-level-conversion min(raw reward, 100000000-before.xp), not final XP balance minus prior balance. The remaining memory_archive/starlibrary XP-cap copy issue is open. Documentation and English player wording do not claim changed rewards, payment eligibility or XP rules.",
+    "Formal performance evidence agrees: 12 inventory samples per version plus one excluded warmup each, 16 main and 14 separate rarity windows. Retained JSON recomputes baseline/current inventory P50 203.6/94.4 ms, P95 438.5/414.2 ms and max 619.7/419.8 ms. The inherited performance script SHA matches; SwiftShader tails, fixed ordering, one repeat and incomplete sampled full-effect phases are disclosed without a hardware or causal optimization claim.",
+    "All 75 local Markdown references inspected across the six Markdown documents exist. Documented Node audit, browser and Python verifier flags match the actual argument parsers, including equals-only fusion-cap flags, required external outputs and explicit true baseline roots for A/B. No replay command was executed for this review."
+  ],
+  "blockers": [],
+  "scopeExclusions": [
+    "Final candidate ZIP, its byte count, digest, manifest/CRC, actual extraction and post-extraction gates are not reviewed here. Packaging-pending fields are an intentional in-progress state; the integrator will replace them using real final artifact evidence.",
+    "No claim of physical GPU 4K60, whole-game mobile support, screen-reader or Windows double-click validation, real power loss, human progression study, or the combined maximum-name/dual-zero dialog screenshot.",
+    "No reconstruction of absent raw within-window frame arrays or complete performance oracle states. Raw deep-run state hashes differ and are not presented as complete baseline equality."
+  ]
+}

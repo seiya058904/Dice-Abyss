@@ -1,0 +1,142 @@
+{
+  "synthetic": true,
+  "source": "Independent non-fusion real-browser regression against current app integration",
+  "url": "http://127.0.0.1:4189/",
+  "notes": [
+    "Only isolated synthetic local saves are used.",
+    "Reduced motion keeps functional checks short; full/low tests verify preference and save behavior, not animation performance.",
+    "State hashes summarize exact deep-equality assertions against the real engine transition."
+  ],
+  "browser": "155.0.8059.84",
+  "started": "2026-10-19T01:27:22.620Z",
+  "cases": [
+    {
+      "name": "inventory-scroll-lock-and-settings",
+      "status": "PASS",
+      "checks": 12,
+      "trace": [
+        {
+          "label": "inventory fixture remains valid",
+          "passed": true
+        },
+        {
+          "label": "inventory keeps its existing sixty-item page",
+          "passed": true
+        },
+        {
+          "label": "native scroll exposes an unobstructed real lock control",
+          "passed": true
+        },
+        {
+          "label": "a lock button is fully visible after scrolling",
+          "passed": true
+        },
+        {
+          "label": "inventory lock is one original transaction",
+          "actual": {
+            "runId": "913-1792373242658",
+            "revision": 3,
+            "phase": "combat",
+            "rng": 2961010151,
+            "gold": 80,
+            "itemCount": 93,
+            "stateSha256": "ef3022e542787031f5aac1a0f9d0dd4e47374aa6b394374e25e45512bef59bf0"
+          },
+          "expected": {
+            "runId": "913-1792373242658",
+            "revision": 3,
+            "phase": "combat",
+            "rng": 2961010151,
+            "gold": 80,
+            "itemCount": 93,
+            "stateSha256": "ef3022e542787031f5aac1a0f9d0dd4e47374aa6b394374e25e45512bef59bf0"
+          },
+          "passed": true
+        },
+        {
+          "label": "full app render retains inventory scrolling",
+          "actual": 2021,
+          "expected": 2021,
+          "passed": true
+        },
+        {
+          "label": "full effects setting updates current UI",
+          "actual": "full",
+          "expected": "full",
+          "passed": true
+        },
+        {
+          "label": "low effects setting updates current UI",
+          "actual": "low",
+          "expected": "low",
+          "passed": true
+        },
+        {
+          "label": "setting is persisted",
+          "actual": "low",
+          "expected": "low",
+          "passed": true
+        },
+        {
+          "label": "settings never modify game state",
+          "actual": {
+            "runId": "913-1792373242658",
+            "revision": 3,
+            "phase": "combat",
+            "rng": 2961010151,
+            "gold": 80,
+            "itemCount": 93,
+            "stateSha256": "ef3022e542787031f5aac1a0f9d0dd4e47374aa6b394374e25e45512bef59bf0"
+          },
+          "expected": {
+            "runId": "913-1792373242658",
+            "revision": 3,
+            "phase": "combat",
+            "rng": 2961010151,
+            "gold": 80,
+            "itemCount": 93,
+            "stateSha256": "ef3022e542787031f5aac1a0f9d0dd4e47374aa6b394374e25e45512bef59bf0"
+          },
+          "passed": true
+        },
+        {
+          "label": "settings refresh preserves the run",
+          "actual": {
+            "runId": "913-1792373242658",
+            "revision": 3,
+            "phase": "combat",
+            "rng": 2961010151,
+            "gold": 80,
+            "itemCount": 93,
+            "stateSha256": "ef3022e542787031f5aac1a0f9d0dd4e47374aa6b394374e25e45512bef59bf0"
+          },
+          "expected": {
+            "runId": "913-1792373242658",
+            "revision": 3,
+            "phase": "combat",
+            "rng": 2961010151,
+            "gold": 80,
+            "itemCount": 93,
+            "stateSha256": "ef3022e542787031f5aac1a0f9d0dd4e47374aa6b394374e25e45512bef59bf0"
+          },
+          "passed": true
+        },
+        {
+          "label": "effects preference survives refresh",
+          "actual": "low",
+          "expected": "low",
+          "passed": true
+        }
+      ],
+      "ms": 7716.852618
+    }
+  ],
+  "errors": [],
+  "fixedOffsetProbe": {
+    "scrollTop": 300,
+    "height": 287.578125,
+    "fullyVisibleLocks": 0
+  },
+  "checks": 12,
+  "finished": "2026-10-19T01:27:30.396Z"
+}

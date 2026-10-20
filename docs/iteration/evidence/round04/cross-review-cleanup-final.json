@@ -1,0 +1,27 @@
+{
+  "injection": "onStop callback throws",
+  "fixture": "createVisualTimeline(throwingOnStop); timeline.wait(1200); timeline.stop()",
+  "stopError": null,
+  "pendingWaitSettled": true,
+  "settled": {
+    "reason": "cancelled",
+    "elapsed": 0,
+    "frames": 0,
+    "cleanupError": "Error: synthetic cleanup failure"
+  },
+  "status": {
+    "reason": "cancelled",
+    "elapsed": 0,
+    "frames": 0,
+    "cleanupError": "Error: synthetic cleanup failure",
+    "started": true,
+    "active": false
+  },
+  "scheduledFrames": 0,
+  "scheduledTimers": 0,
+  "visibilityListeners": 0,
+  "sourceSha256": "f518084da44c2ea852bf902ba6ffc7f8f5a94ee815dac31bcc4726cc8cd44369",
+  "completedAtUtc": "2026-10-17T15:46:33.463Z",
+  "method": "Same bounded synchronous fault injection as prior cross-review, after the final renderer performance window ended; no browser or broad tests.",
+  "pass": true
+}

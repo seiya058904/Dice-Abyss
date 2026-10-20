@@ -18,7 +18,8 @@ test('flame geometry is cached and material-batched while RAF opacity and cleanu
  try{
   const source=(await fs.readFile(new URL('../src/effects.js',import.meta.url),'utf8'))
    .replace("import { animateDice, THROW_DURATION } from './dice-motion.js';","const {animateDice}=globalThis.__effectsTest;const THROW_DURATION=1280;")
-   .replace("import { mountDiceSurface } from './dice-renderer.js';","const {mountDiceSurface}=globalThis.__effectsTest;");
+   .replace("import { mountDiceSurface } from './dice-renderer.js';","const {mountDiceSurface}=globalThis.__effectsTest;")
+   .replace("'./visual-timeline.js'",JSON.stringify(new URL('../src/visual-timeline.js',import.meta.url).href));
   const {mountEffects}=await import(`data:text/javascript;base64,${Buffer.from(source).toString('base64')}`);
   const state={revision:4,phase:'combat',enemy:{shield:0,type:'combat'},lastRoll:{best:3,critical:true,follow:false,absorbed:0}},ui={busy:true,view:'game',event:'roll'},settings={effects:'full'};
   mountEffects(state,ui,settings,()=>{});assert.equal(queue.size,1);assert.equal(canvas.dataset.fxParticles,'100');assert.equal(canvas.dataset.fxFlames,'90');assert.equal(canvas.dataset.fxFlameTiles,'6');assert.equal(canvas.dataset.fxFlameHz,'30');assert(Number(canvas.dataset.fxPixels)<=660000);

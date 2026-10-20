@@ -1,0 +1,215 @@
+--- a/index.html
++++ b/index.html
+@@ -3,7 +3,7 @@
+   <head>
+     <meta charset="UTF-8">
+     <meta name="dice-abyss-build" content="5">
+-    <meta name="dice-abyss-release" content="5.18.0">
++    <meta name="dice-abyss-release" content="5.19.0">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta name="theme-color" content="#08090b">
+     <meta name="description" content="A desktop-first, single-player dice dungeon RPG. Roll manually, explore the dungeon, and earn loot after every kill.">
+--- a/package.json
++++ b/package.json
+@@ -1,6 +1,6 @@
+ {
+   "name": "dice-abyss",
+-  "version": "5.18.0",
++  "version": "5.19.0",
+   "private": true,
+   "type": "module",
+   "description": "A desktop-first, single-player dice dungeon RPG.",
+--- a/src/app.js
++++ b/src/app.js
+@@ -14,7 +14,7 @@
+ import { createSettingsFocus } from './settings-focus.js';
+ import { saveCapacityView } from './save-capacity-view.js';
+ import { saveRecoveryView, recoveryMessage } from './save-recovery-view.js';
+-import { inventoryQuery } from './inventory-query.js';
++import { inventoryQuery, inventoryDefense } from './inventory-query.js';
+ 
+ const app = document.querySelector('#app');
+ const actionFocus = createActionFocus(app);
+@@ -211,6 +211,7 @@
+   fusion.reset();
+   // Item IDs restart in a new run; a selection must never follow a reused ID.
+   ui.fusionTargets=[];ui.fusionMaterials=[];ui.fusionTargetPage=0;ui.fusionMaterialPage=0;ui.inventoryPage=0;ui.rollValues=null;
++  ui.inventorySlot='';ui.inventoryRarity='';ui.inventoryDefense='';
+   ui.inventoryQuery='';ui.inventoryQueryDraft='';
+   ui.talentCount=1;ui.talentInspect=null;
+   pending=null;reviewList=null;
+@@ -532,6 +533,7 @@
+     if (freshInventory) {
+       ui.inventorySlot = ['weapon','armor','relic'].includes(control.dataset.slot) ? control.dataset.slot : '';
+       ui.inventoryRarity = '';
++      ui.inventoryDefense = '';
+       ui.inventoryQuery='';ui.inventoryQueryDraft='';
+     } else if (control.dataset.slot) ui.inventorySlot = control.dataset.slot;
+     ui.inventoryPage = 0;
+@@ -546,9 +548,9 @@
+     }
+     return;
+   }
+-  if (action === 'filter') { ui.inventorySlot = control.dataset.slot; ui.inventoryPage=0;render({inventoryReset:true}); return; }
+-  if (action === 'inventory-reset') { ui.inventorySlot='';ui.inventoryRarity='';ui.inventoryQuery='';ui.inventoryQueryDraft='';ui.inventoryPage=0;render({inventoryReset:true});app.querySelector('[data-action="filter"][data-slot=""]')?.focus({preventScroll:true});return; }
+-  if (action === 'inventory-query-clear') { ui.inventoryQuery='';ui.inventoryQueryDraft='';ui.inventoryPage=0;render({inventoryReset:true});app.querySelector('#inventory-query')?.focus({preventScroll:true});return; }
++  if (action === 'filter') { ui.inventorySlot = control.dataset.slot; ui.inventoryPage=0;render({inventoryReset:true});announceInventoryResults(); return; }
++  if (action === 'inventory-reset') { ui.inventorySlot='';ui.inventoryRarity='';ui.inventoryDefense='';ui.inventoryQuery='';ui.inventoryQueryDraft='';ui.inventoryPage=0;render({inventoryReset:true});app.querySelector('[data-action="filter"][data-slot=""]')?.focus({preventScroll:true});announceInventoryResults();return; }
++  if (action === 'inventory-query-clear') { ui.inventoryQuery='';ui.inventoryQueryDraft='';ui.inventoryPage=0;render({inventoryReset:true});app.querySelector('#inventory-query')?.focus({preventScroll:true});announceInventoryResults();return; }
+   if (action === 'inventory-page') { ui.inventoryPage = Number(control.dataset.page)||0; render({inventoryReset:true}); return; }
+   if(action==='salvage-item'){
+     const id=control.dataset.id,preview=salvagePreview(state,[id],true,true);if(!preview)return;
+@@ -608,6 +610,11 @@
+   if (event.target.id === 'inventory-query') { ui.inventoryQueryDraft=event.target.value; return; }
+   fusion.handleInput(event);
+ });
++function announceInventoryResults() {
++  // Announce the committed result once, after an explicit filter action. Draft
++  // typing and unrelated renders must not repeat or replace other notices.
++  announcer.textContent=app.querySelector('.inventory-search-result')?.textContent || '';
++}
+ document.addEventListener('submit', event => {
+   if (event.target.id !== 'inventory-search') return;
+   event.preventDefault();
+@@ -617,7 +624,7 @@
+   ui.inventoryQuery=inventoryQuery(event.target.querySelector('#inventory-query')?.value);
+   ui.inventoryQueryDraft=ui.inventoryQuery;ui.inventoryPage=0;
+   render({inventoryReset:true});
+-  announcer.textContent=app.querySelector('.inventory-search-result')?.textContent || '';
++  announceInventoryResults();
+ });
+ document.addEventListener('change', async event => {
+   if (fusion.handleInput(event)) return;
+@@ -627,8 +634,14 @@
+     dialog.querySelector('#comparison-slot')?.focus({preventScroll:true});
+     return;
+   }
+-  const filters={'inventory-rarity':'inventoryRarity','inventory-sort':'inventorySort','codex-source':'codexSource','codex-category':'codexCategory'};
+-  if(filters[event.target.id]){ui[filters[event.target.id]]=event.target.value;ui.inventoryPage=0;render({inventoryReset:event.target.id.startsWith('inventory-')});return;}
++  const filters={'inventory-rarity':'inventoryRarity','inventory-sort':'inventorySort','inventory-defense':'inventoryDefense','codex-source':'codexSource','codex-category':'codexCategory'};
++  if(filters[event.target.id]){
++    const isInventory=event.target.id.startsWith('inventory-');
++    ui[filters[event.target.id]]=event.target.id==='inventory-defense'?inventoryDefense(event.target.value):event.target.value;
++    ui.inventoryPage=0;render({inventoryReset:isInventory});
++    if(isInventory)announceInventoryResults();
++    return;
++  }
+   if (event.target.id === 'effects') { settings.effects = event.target.value; saveSettings(); }
+   if (event.target.id === 'ui-scale') { settings.scale = Number(event.target.value); saveSettings(); }
+   if (event.target.id === 'save-file') {
+--- a/src/inventory-query.js
++++ b/src/inventory-query.js
+@@ -1,14 +1,23 @@
+-import {itemValue} from './equipment.js';
++import {itemStats,itemValue} from './equipment.js';
+ 
+ // Search is a transient view choice. It never changes the owned item array,
+ // its order, a transaction's targets, or a saved field.
+ export const inventoryQuery = value => typeof value === 'string' ? value.trim() : '';
++export const INVENTORY_DEFENSE_FILTERS = Object.freeze([
++  Object.freeze({key:'regen',label:'存活恢复'}),
++  Object.freeze({key:'barrier',label:'开战护盾'}),
++  Object.freeze({key:'reduction',label:'基础减伤'}),
++]);
++export const inventoryDefense = value => INVENTORY_DEFENSE_FILTERS.some(filter => filter.key === value) ? value : '';
+ 
+ export function selectInventoryItems(items, ui = {}) {
+-  const query = inventoryQuery(ui.inventoryQuery).toLowerCase();
++  const query = inventoryQuery(ui.inventoryQuery).toLowerCase(), defense = inventoryDefense(ui.inventoryDefense);
+   return items.filter(item => (!ui.inventorySlot || item.slot === ui.inventorySlot)
+     && (ui.inventoryRarity == null || ui.inventoryRarity === '' || item.rarity === Number(ui.inventoryRarity))
+-    && (!query || item.name.toLowerCase().includes(query)))
++    && (!query || item.name.toLowerCase().includes(query))
++    // itemStats preserves legacy effects and is only read for remaining matches.
++    // A trait's presence does not promise an uncapped gain in the current build.
++    && (!defense || itemStats(item)[defense] > 0))
+     .toSorted((a, b) => ui.inventorySort === 'rarity' ? b.rarity - a.rarity || itemValue(b) - itemValue(a)
+       : ui.inventorySort === 'level' ? b.level - a.level || itemValue(b) - itemValue(a)
+       : itemValue(b) - itemValue(a));
+--- a/src/inventory-search.css
++++ b/src/inventory-search.css
+@@ -20,3 +20,18 @@
+   .inventory-search-row > button { min-height: 44px; font-size: calc(13px * var(--user-scale)); }
+   .inventory-search-result { font-size: calc(12px * var(--user-scale)); }
+ }
++
++/* The effect selector shares the existing filter row and native keyboard UI. */
++.inventory-screen .v5-inventory-filters { font-size: max(12px, .75rem); column-gap: .75rem; }
++.inventory-screen .v5-inventory-filters > label { min-width: 0; }
++.inventory-screen .v5-inventory-filters select { max-width: 100%; }
++.inventory-screen .v5-inventory-filters select:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
++.inventory-screen .inventory-guidance > .inventory-defense-help { color: #becbd4; font-size: max(12px, .72rem); line-height: 1.65; overflow-wrap: anywhere; }
++@media (max-width: 1099px) {
++  .game-shell:not(.fusion-mode) .v5-inventory-filters { grid-template-columns: repeat(3, minmax(0, 1fr)); }
++  .game-shell:not(.fusion-mode) .inventory-guidance > .inventory-defense-help { font-size: calc(12px * var(--user-scale)); }
++}
++@media (max-width: 479px) {
++  .game-shell:not(.fusion-mode) .v5-inventory-filters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
++  .game-shell:not(.fusion-mode) .v5-inventory-filters > .inventory-defense-filter { grid-column: 1 / -1; grid-row: 2; }
++}
+--- a/src/release.js
++++ b/src/release.js
+@@ -1,4 +1,4 @@
+ // Browser-visible product version. The save schema and storage keys are separate.
+ // tests/release-identity.test.mjs checks this against package.json and index.html.
+-export const RELEASE_VERSION = '5.18.0';
++export const RELEASE_VERSION = '5.19.0';
+ export const RELEASE_STAMP = RELEASE_VERSION.split('.').map((part, index) => index === 0 ? part.padStart(2, '0') : part).join('.');
+--- a/src/responsive.css
++++ b/src/responsive.css
+@@ -357,3 +357,13 @@
+   .game-shell:not(.fusion-mode) .primary-control > .primary { font-size: calc(14px * var(--user-scale)); gap: 3px; }
+   .game-shell:not(.fusion-mode) .primary-control .icon { width: 16px; height: 16px; }
+ }
++/* Legal imported names can outgrow an equal-height desktop equipment row.
++   Keep each card's full contents together and scroll the existing rail. */
++@media (min-width: 1100px) {
++  .game-shell:not(.fusion-mode) .right-rail > .equipment-list {
++    grid-template-rows: repeat(5, minmax(min-content, 1fr));
++    overflow-y: auto;
++  }
++  .game-shell:not(.fusion-mode) .equipment-list > .equipped-item { min-width: 0; }
++  .game-shell:not(.fusion-mode) .equipment-list > .equipped-item h3 { overflow-wrap: anywhere; }
++}
+--- a/src/views.js
++++ b/src/views.js
+@@ -11,7 +11,7 @@
+ import { equipmentComparisonDetails, equipmentComparisonHint } from './equipment-comparison.js';
+ import { defeatReview } from './defeat-review.js';
+ import { RELEASE_VERSION, RELEASE_STAMP } from './release.js';
+-import { inventoryQuery, selectInventoryItems } from './inventory-query.js';
++import { inventoryQuery, inventoryDefense, INVENTORY_DEFENSE_FILTERS, selectInventoryItems } from './inventory-query.js';
+ import { boonReadout } from './boon-readout.js';
+ import { eventChoicePreview } from './event-preview.js';
+ import { eventReferenceRoles } from './event-references.js';
+@@ -320,7 +320,11 @@
+  return `<section class="room-screen sanctuary-screen room-refined ${rest?'rest-room':'altar-room'}"><div class="room-heading"><div><h1>${rest?'余火营地':'命运祭坛'}</h1><p>${rest?'在余火旁，整理下一次出发。':'让这一层的每一次落骰，都更有分量。'}</p></div><span class="room-use-state ${s.roomUsed?'claimed':''}">${s.roomUsed?`${icon('check')} 已领取`:'本房间 · 一次馈赠'}</span></div>${rest?`<div class="sanctuary-emblem" aria-hidden="true">${icon('rest')}</div><dl class="sanctuary-benefits"><div><dt>生命</dt><dd>${num(s.player.hp)} <span>→</span> ${num(st.maxHp)}</dd></div><div><dt>${s.roomUsed?'当前护盾':'休整护盾'}</dt><dd>${num(s.roomUsed?s.ward:ward)} <small>${s.roomUsed?'':(s.ward||0)>Math.round(st.maxHp*.25)?'保留更强护盾':'至少生命上限的 25%'}</small></dd></div></dl>`:`${dice([ui.forging?ui.rollValues?.[0]||6:value||6],{large:true,rolling:ui.forging})}<dl class="sanctuary-benefits"><div><dt>祝福收益</dt><dd>伤害 +5%～30%</dd></div><div><dt>当前本层加成</dt><dd>+${(s.blessing||0)*5}%</dd></div></dl>`}${button(s.roomUsed?'馈赠已领取':rest?'休整 · 恢复生命与护盾':'投骰 · 领取本层祝福',rest?'rest':'bless','primary',s.roomUsed||ui.busy?'disabled':'')}<p class="room-hint">${rest?'护盾优先吸收反击伤害 · 休整保留更强的现有护盾':'每点骰面增加 5% 伤害 · 本层有效，进入下一层结束'}<br>${s.roomUsed?'可以继续前往下一房间。':'可以领取后前行，也可以直接离开。'}</p></section>`;
+ }
+ function inventoryView(s, ui) {
+-  const query=inventoryQuery(ui.inventoryQuery),hasFilter=!!query||!!ui.inventorySlot||(ui.inventoryRarity!=null&&ui.inventoryRarity!=='');
++  const query=inventoryQuery(ui.inventoryQuery),defense=inventoryDefense(ui.inventoryDefense);
++  const defenseLabel=INVENTORY_DEFENSE_FILTERS.find(filter=>filter.key===defense)?.label;
++  const hasFilter=!!query||!!defense||!!ui.inventorySlot||(ui.inventoryRarity!=null&&ui.inventoryRarity!=='');
++  const criteria=[SLOTS[ui.inventorySlot],ui.inventoryRarity!=null&&ui.inventoryRarity!==''?RARITIES[Number(ui.inventoryRarity)]?.name:'',defenseLabel,query?`名称含「${query}」`:''].filter(Boolean);
++  const defenseNote={regen:'存活恢复：每次战斗掷骰结算后仍存活时恢复生命；不含特定骰面或击杀触发的恢复。',barrier:'开战护盾：进入战斗或重燃时获得；不含共鸣等条件护盾，现在换装不会立即补盾。',reduction:'基础减伤：常态降低反击伤害；不包含低血量触发的临界减伤。'}[defense];
+   // Only equipped items contribute to a build comparison. Keep all other state
+   // and the complete inventory for actions, but do one read-only selection per
+   // render instead of rescanning a large bag for every stat on every card.
+@@ -329,7 +333,7 @@
+   const items = selectInventoryItems(s.player.items,ui);
+   const pageCount=Math.max(1,Math.ceil(items.length/60)), page=Math.min(pageCount-1,Math.max(0,Math.floor(Number(ui.inventoryPage)||0)));
+   const visibleItems=items.slice(page*60,(page+1)*60), salvage=salvagePreview(s,undefined,false,true);
+-  return `<section class="collection-screen inventory-screen room-refined"><div class="collection-heading"><div><h1>随身行囊</h1><p>新的力量，旧的回响。</p></div><span>${s.player.items.length} 件装备 <small>已装备 ${equippedIds(s).length} / 5</small></span></div><div class="slot-tabs" aria-label="装备分类">${button(`全部 <small>${s.player.items.length}</small>`, 'filter', !ui.inventorySlot ? 'active' : '', 'data-slot=""')}${Object.keys(SLOTS).map(slot => button(`${SLOTS[slot]} <small>${s.player.items.filter(i=>i.slot===slot).length}</small>`, 'filter', ui.inventorySlot === slot ? 'active' : '', `data-slot="${slot}"`)).join('')}</div><div class="v5-inventory-filters"><label>品质<select id="inventory-rarity"><option value="">全部八档</option>${RARITIES.map((r,i)=>`<option value="${i}" ${String(ui.inventoryRarity)===String(i)?'selected':''}>${r.name}</option>`).join('')}</select></label><label>排序<select id="inventory-sort">${[['power','装备强度'],['rarity','品质优先'],['level','等级优先']].map(([k,v])=>`<option value="${k}" ${ui.inventorySort===k?'selected':''}>${v}</option>`).join('')}</select></label><span>传说及以上默认受保护</span></div><form id="inventory-search" class="inventory-search" role="search" aria-label="背包装备名称搜索"><div class="inventory-search-row"><label for="inventory-query">装备名称</label><input id="inventory-query" type="search" maxlength="64" autocomplete="off" spellcheck="false" placeholder="输入名称后按回车" value="${esc(ui.inventoryQueryDraft??query)}" aria-describedby="inventory-search-result"><button id="inventory-search-submit" type="submit" class="small">搜索</button>${button('清除名称','inventory-query-clear','small quiet','type="button"')}</div><p id="inventory-search-result" class="inventory-search-result">${query?`名称含「${esc(query)}」 · 找到 <b>${num(items.length)}</b> 件`:`可与装备位、品质组合筛选 · 当前 <b>${num(items.length)}</b> 件`}</p></form><div class="inventory-reclaim"><span>全背包检查（不受搜索与筛选影响）<br>仅回收弱于当前装备的普通 / 稀有旧装<br>已装备、锁定和本次战利品会保留</span>${button(salvage?`回收安全旧装 · ${num(salvage.items.length)} 件 / +${num(salvage.gold)} 金币${salvage.overflow?' / 有溢出':''}`:'当前无可回收批次','salvage-preview','small',salvage?'':'disabled')}</div><div class="inventory-guidance"><p>当前排序：${sortLabel} · 品质、Lv. 与 +N 各自保留</p><span>${ui.inventorySlot==='relic'?'遗物优先填空位；满槽按最弱遗物比较，换装时选择替换位。':'武器重进攻 · 防具重生存 · 遗物重幸运、共鸣与连锁'}</span></div><div class="inventory-list" aria-label="装备列表">${visibleItems.map(item => itemCard(s, item, true, comparisonState)).join('')||`<div class="room-empty">${icon('inventory')}<h2>${s.player.items.length?'暂无符合筛选的装备':'背包暂时为空'}</h2><p>${s.player.items.length?'试试清除名称、装备位与品质条件，查看背包中的其他装备。':'战斗后的宝箱与行商处都能获得装备。'}</p><div class="empty-filter-actions">${hasFilter?button('清除筛选','inventory-reset','small'):''}${button('继续探索','game','small')}</div></div>`}</div><div class="inventory-pagination"><span>${items.length?`${page*60+1}–${Math.min(items.length,(page+1)*60)} / ${items.length} 件`:'0 件装备'}</span><div>${button('上一页','inventory-page','small',`data-page="${page-1}" ${page===0?'disabled':''}`)}<span>第 ${page+1} / ${pageCount} 页</span>${button('下一页','inventory-page','small',`data-page="${page+1}" ${page+1>=pageCount?'disabled':''}`)}</div></div><p class="inventory-lock-note">${icon('lock')} 锁定装备会被安全批量融合跳过 · Lv. 与强化 +N 都跟随单件装备</p></section>`;
++  return `<section class="collection-screen inventory-screen room-refined"><div class="collection-heading"><div><h1>随身行囊</h1><p>新的力量，旧的回响。</p></div><span>${s.player.items.length} 件装备 <small>已装备 ${equippedIds(s).length} / 5</small></span></div><div class="slot-tabs" aria-label="装备分类">${button(`全部 <small>${s.player.items.length}</small>`, 'filter', !ui.inventorySlot ? 'active' : '', 'data-slot=""')}${Object.keys(SLOTS).map(slot => button(`${SLOTS[slot]} <small>${s.player.items.filter(i=>i.slot===slot).length}</small>`, 'filter', ui.inventorySlot === slot ? 'active' : '', `data-slot="${slot}"`)).join('')}</div><div class="v5-inventory-filters"><label>品质<select id="inventory-rarity"><option value="">全部八档</option>${RARITIES.map((r,i)=>`<option value="${i}" ${String(ui.inventoryRarity)===String(i)?'selected':''}>${r.name}</option>`).join('')}</select></label><label class="inventory-defense-filter" for="inventory-defense">生存词条<select id="inventory-defense" aria-describedby="inventory-defense-help inventory-search-result"><option value="">不限词条</option>${INVENTORY_DEFENSE_FILTERS.map(filter=>`<option value="${filter.key}" ${defense===filter.key?'selected':''}>${filter.label}</option>`).join('')}</select></label><label>排序<select id="inventory-sort">${[['power','装备强度'],['rarity','品质优先'],['level','等级优先']].map(([k,v])=>`<option value="${k}" ${ui.inventorySort===k?'selected':''}>${v}</option>`).join('')}</select></label><span>传说及以上默认受保护</span></div><form id="inventory-search" class="inventory-search" role="search" aria-label="背包装备名称搜索"><div class="inventory-search-row"><label for="inventory-query">装备名称</label><input id="inventory-query" type="search" maxlength="64" autocomplete="off" spellcheck="false" placeholder="输入名称后按回车" value="${esc(ui.inventoryQueryDraft??query)}" aria-describedby="inventory-search-result"><button id="inventory-search-submit" type="submit" class="small">搜索</button>${button('清除名称','inventory-query-clear','small quiet','type="button"')}</div><p id="inventory-search-result" class="inventory-search-result">${criteria.length?`${esc(criteria.join(' · '))} · 找到 <b>${num(items.length)}</b> 件`:`可与装备位、品质、生存词条组合筛选 · 当前 <b>${num(items.length)}</b> 件`}</p></form><div class="inventory-reclaim"><span>全背包检查（不受搜索与筛选影响）<br>仅回收弱于当前装备的普通 / 稀有旧装<br>已装备、锁定和本次战利品会保留</span>${button(salvage?`回收安全旧装 · ${num(salvage.items.length)} 件 / +${num(salvage.gold)} 金币${salvage.overflow?' / 有溢出':''}`:'当前无可回收批次','salvage-preview','small',salvage?'':'disabled')}</div><div class="inventory-guidance"><p>当前排序：${sortLabel} · 品质、Lv. 与 +N 各自保留</p><span id="inventory-defense-help" class="inventory-defense-help">${defenseNote?`${defenseNote} 筛选装备自身词条；换装后的生效数值与上限见「比较条件」。`:ui.inventorySlot==='relic'?'遗物优先填空位；满槽按最弱遗物比较，换装时选择替换位。可按生存词条筛选装备自身效果。':'生存词条按装备自身效果筛选；可以组合名称、装备位和品质，再比较条件与上限。'}</span></div><div class="inventory-list" aria-label="装备列表">${visibleItems.map(item => itemCard(s, item, true, comparisonState)).join('')||`<div class="room-empty">${icon('inventory')}<h2>${s.player.items.length?'暂无符合筛选的装备':'背包暂时为空'}</h2><p>${s.player.items.length?'试试清除名称、装备位、品质与生存词条条件，查看背包中的其他装备。':'战斗后的宝箱与行商处都能获得装备。'}</p><div class="empty-filter-actions">${hasFilter?button('清除筛选','inventory-reset','small'):''}${button('继续探索','game','small')}</div></div>`}</div><div class="inventory-pagination"><span>${items.length?`${page*60+1}–${Math.min(items.length,(page+1)*60)} / ${items.length} 件`:'0 件装备'}</span><div>${button('上一页','inventory-page','small',`data-page="${page-1}" ${page===0?'disabled':''}`)}<span>第 ${page+1} / ${pageCount} 页</span>${button('下一页','inventory-page','small',`data-page="${page+1}" ${page+1>=pageCount?'disabled':''}`)}</div></div><p class="inventory-lock-note">${icon('lock')} 锁定装备会被安全批量融合跳过 · Lv. 与强化 +N 都跟随单件装备</p></section>`;
+ }
+ function talentView(s,ui) {
+  const group=Object.hasOwn(TALENT_GROUPS,ui.talentGroup)?ui.talentGroup:'high',count=talentInvestmentCount(ui.talentCount);
+@@ -417,7 +421,7 @@
+  const review=defeatReview(s);if(!review)return '';
+  const talentNote=review.talentPoints?review.canInvest?`还有 <strong>${num(review.talentPoints)} 点</strong>天赋可以投入。`:`保留 <strong>${num(review.talentPoints)} 点</strong>未用天赋；当前可用节点已达上限或尚未解锁。`:'当前没有未用天赋点。';
+  const inventoryNote=review.availableItems?`背包中有 <strong>${num(review.availableItems)} 件</strong>未装备物品，其中防具 <strong>${num(review.available.armor)} 件</strong>。`:'背包中暂时没有未装备的物品。';
+- return `<section class="room-screen death-screen defeat-review" aria-label="战败复盘与备战"><div class="defeat-heading"><span class="room-symbol">${icon('heart')}</span><h1>余火，尚未熄灭。</h1></div><p class="defeat-intro">${esc(review.enemyName)}暂时挡住了去路。成长与战利品仍在。</p><dl class="defeat-snapshot"><div><dt>本次战斗</dt><dd>${num(review.turns)} 掷</dd></div><div><dt>敌人剩余生命</dt><dd>${num(review.enemyHp)} <span>/ ${num(review.enemyMaxHp)}</span></dd></div>${review.lastRoll?`<div class="defeat-last-roll"><dt>最后一掷</dt><dd>对敌生命伤害 ${num(review.lastRoll.hpDamage)} <span>·</span> 所受反击 ${num(review.lastRoll.retaliation)}</dd></div>`:''}</dl><section class="defeat-prepare" aria-labelledby="defeat-prepare-title"><h2 id="defeat-prepare-title">重燃前，整理构筑</h2><p>${inventoryNote} ${talentNote}</p><div class="defeat-actions">${review.available.armor?button('调整防具','inventory','defeat-armor','data-slot="armor" data-reset-rarity="true"'):''}${button('打开背包','inventory','','data-slot="" data-reset-rarity="true"')}${button(review.canInvest?'投入天赋':'查看天赋','talents')}</div>${review.availableItems?'<p class="defeat-comparison-note">在装备的「比较条件」中查看恢复与触发护盾。基础估值不能保证这一战的存活结果。</p>':''}</section>${review.warning||review.counterplay||review.phaseNote?`<section class="defeat-tactics" aria-labelledby="defeat-tactics-title"><h2 id="defeat-tactics-title">敌方机制回顾</h2>${review.warning?`<p><b>特性</b>${esc(review.warning)}</p>`:''}${review.phaseNote?`<p><b>换相</b>${esc(review.phaseNote)}</p>`:''}${review.counterplay?`<p class="defeat-counterplay"><b>应对</b>${esc(review.counterplay)}</p>`:''}</section>`:''}<div class="recovery-summary"><h2>在当前房间重燃余火</h2><p>重燃不消耗金币，按重燃时的构筑恢复全部生命；敌人从头开始。装备、金币、天赋和已完成的房间全部保留。</p><p>现有护盾与下一掷临时幸运不继承；开战护盾按当前构筑重新计算。</p><p class="defeat-services">购物、锻造、融合与洗点需要对应房间。当前可以换装、投入可用天赋，或重燃后继续挑战。</p></div></section>`;
++ return `<section class="room-screen death-screen defeat-review" aria-label="战败复盘与备战"><div class="defeat-heading"><span class="room-symbol">${icon('heart')}</span><h1>余火，尚未熄灭。</h1></div><p class="defeat-intro">${esc(review.enemyName)}暂时挡住了去路。成长与战利品仍在。</p><dl class="defeat-snapshot"><div><dt>本次战斗</dt><dd>${num(review.turns)} 掷</dd></div><div><dt>敌人剩余生命</dt><dd>${num(review.enemyHp)} <span>/ ${num(review.enemyMaxHp)}</span></dd></div>${review.lastRoll?`<div class="defeat-last-roll"><dt>最后一掷</dt><dd>对敌生命伤害 ${num(review.lastRoll.hpDamage)} <span>·</span> 所受反击 ${num(review.lastRoll.retaliation)}</dd></div>`:''}</dl><section class="defeat-prepare" aria-labelledby="defeat-prepare-title"><h2 id="defeat-prepare-title">重燃前，整理构筑</h2><p>${inventoryNote} ${talentNote}</p><div class="defeat-actions">${review.available.armor?button('调整防具','inventory','defeat-armor','data-slot="armor" data-reset-rarity="true"'):''}${button('打开背包','inventory','','data-slot="" data-reset-rarity="true"')}${button(review.canInvest?'投入天赋':'查看天赋','talents')}</div>${review.availableItems?'<p class="defeat-comparison-note">在背包用「生存词条」找到存活恢复、开战护盾或基础减伤，再查看「比较条件」。基础估值不能保证这一战的存活结果。</p>':''}</section>${review.warning||review.counterplay||review.phaseNote?`<section class="defeat-tactics" aria-labelledby="defeat-tactics-title"><h2 id="defeat-tactics-title">敌方机制回顾</h2>${review.warning?`<p><b>特性</b>${esc(review.warning)}</p>`:''}${review.phaseNote?`<p><b>换相</b>${esc(review.phaseNote)}</p>`:''}${review.counterplay?`<p class="defeat-counterplay"><b>应对</b>${esc(review.counterplay)}</p>`:''}</section>`:''}<div class="recovery-summary"><h2>在当前房间重燃余火</h2><p>重燃不消耗金币，按重燃时的构筑恢复全部生命；敌人从头开始。装备、金币、天赋和已完成的房间全部保留。</p><p>现有护盾与下一掷临时幸运不继承；开战护盾按当前构筑重新计算。</p><p class="defeat-services">购物、锻造、融合与洗点需要对应房间。当前可以换装、投入可用天赋，或重燃后继续挑战。</p></div></section>`;
+ }
+ export function center(s, ui) {
+   if (ui.view === 'codex') return codexView(s,ui);

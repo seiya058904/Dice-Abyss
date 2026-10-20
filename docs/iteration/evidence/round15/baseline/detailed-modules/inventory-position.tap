@@ -1,0 +1,82 @@
+TAP version 13
+# Subtest: existing same-page item controls retain scroll position and keyboard focus
+ok 1 - existing same-page item controls retain scroll position and keyboard focus
+  ---
+  duration_ms: 13.327491
+  type: 'test'
+  ...
+# Subtest: same-page rebuild preserves the visible item when earlier rows change
+ok 2 - same-page rebuild preserves the visible item when earlier rows change
+  ---
+  duration_ms: 1.360391
+  type: 'test'
+  ...
+# Subtest: equipping falls back from the now-disabled button to the same item lock
+ok 3 - equipping falls back from the now-disabled button to the same item lock
+  ---
+  duration_ms: 0.713715
+  type: 'test'
+  ...
+# Subtest: a removed or off-page item uses a surviving old neighbor at its former position
+ok 4 - a removed or off-page item uses a surviving old neighbor at its former position
+  ---
+  duration_ms: 0.984466
+  type: 'test'
+  ...
+# Subtest: explicit sort, rarity and slot changes start at the top and retain their control
+ok 5 - explicit sort, rarity and slot changes start at the top and retain their control
+  ---
+  duration_ms: 1.002942
+  type: 'test'
+  ...
+# Subtest: paging tracks the direction control after its target page changes
+ok 6 - paging tracks the direction control after its target page changes
+  ---
+  duration_ms: 1.689427
+  type: 'test'
+  ...
+# Subtest: an empty result has a usable filter fallback instead of a vanished card
+ok 7 - an empty result has a usable filter fallback instead of a vanished card
+  ---
+  duration_ms: 0.506109
+  type: 'test'
+  ...
+# Subtest: a new run cannot inherit position or focus through reused equipment IDs
+ok 8 - a new run cannot inherit position or focus through reused equipment IDs
+  ---
+  duration_ms: 0.340753
+  type: 'test'
+  ...
+# Subtest: open dialogs keep focus while a background inventory redraw preserves position
+ok 9 - open dialogs keep focus while a background inventory redraw preserves position
+  ---
+  duration_ms: 0.464657
+  type: 'test'
+  ...
+# Subtest: an unchanged failed transaction restores its original actionable item
+ok 10 - an unchanged failed transaction restores its original actionable item
+  ---
+  duration_ms: 0.802456
+  type: 'test'
+  ...
+# Subtest: other views have no inventory restoration or focus policy
+ok 11 - other views have no inventory restoration or focus policy
+  ---
+  duration_ms: 0.199235
+  type: 'test'
+  ...
+# Subtest: explicit result changes do not enumerate item cards or read discarded anchor geometry
+ok 12 - explicit result changes do not enumerate item cards or read discarded anchor geometry
+  ---
+  duration_ms: 42.925534
+  type: 'test'
+  ...
+1..12
+# tests 12
+# suites 0
+# pass 12
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 78.568702

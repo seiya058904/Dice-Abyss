@@ -1,0 +1,28 @@
+[
+  {
+    "name": "syntax",
+    "command": [
+      "npm",
+      "run",
+      "check"
+    ],
+    "exit": 0,
+    "seconds": 2.6041485560017463
+  },
+  {
+    "name": "unit",
+    "command": "node --test --test-isolation=none --test-reporter=tap tests/*.test.mjs",
+    "exit": 0,
+    "seconds": 127.77794219799762
+  },
+  {
+    "name": "simulate",
+    "command": [
+      "node",
+      "scripts/simulate.mjs",
+      "1000"
+    ],
+    "exit": 0,
+    "seconds": 216.0044466649997
+  }
+]

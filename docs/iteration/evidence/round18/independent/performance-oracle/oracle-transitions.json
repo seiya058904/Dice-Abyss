@@ -1,0 +1,6909 @@
+{
+  "status": "PASS",
+  "derivedFromSamplerSha256": "bb3205985884a20a88a27e289f9ec04f46bd751f3cd4568df60affce0e506981",
+  "source": "/workspace/scratch/f0146b2cbcc6/work/Dice-Abyss",
+  "baselineSource": "/workspace/scratch/f0146b2cbcc6/baseline/Dice-Abyss",
+  "fixtureCount": 10,
+  "rows": [
+    {
+      "label": "baseline",
+      "scene": "boss-burst",
+      "fixtureSha256": "6ea3205945548483efc8b58227312e59ef6caa20b910ef1d6c5b839fff841b1a",
+      "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749",
+      "fullExpectedState": {
+        "version": 5,
+        "revision": 2,
+        "runId": "qa-round-performance-boss-20261017",
+        "rng": 435756210,
+        "nextId": 9,
+        "floor": 140,
+        "phase": "combat",
+        "route": [
+          {
+            "id": "f140r0",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r1",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r2",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r3",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r4",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r5",
+            "type": "boss",
+            "quality": 0,
+            "done": false
+          }
+        ],
+        "roomIndex": 5,
+        "fate": [
+          6,
+          6
+        ],
+        "enemy": {
+          "name": "蚀日无冕者",
+          "mechanic": "boss_eclipse",
+          "minFloor": 50,
+          "trait": "steady",
+          "identity": "太古星海的守门者",
+          "label": "奇数回合无 6 则反击 +25%；偶数回合三同伤害 +50%。",
+          "warning": "奇数回合无 6 则反击 +25%；偶数回合三同伤害 +50%。",
+          "counterplay": "构筑真正足够强时可以速杀；没有强制锁血。",
+          "note": "「带着你的刻点，越过这条界线。」",
+          "phaseLabel": "界线重铸",
+          "phaseNote": "半血且存活：凝聚 12% 阶段护盾，二阶段反击 +15%。",
+          "type": "boss",
+          "hp": 18514776,
+          "maxHp": 18591345,
+          "attack": 1381,
+          "shield": 0,
+          "maxShield": 2230962,
+          "turns": 1,
+          "combatRules": 4,
+          "stage": 1,
+          "encounterKey": "boss",
+          "wave": 1,
+          "openingEcho": 0
+        },
+        "chest": null,
+        "loot": null,
+        "shop": [],
+        "lastRoll": {
+          "values": [
+            1,
+            1,
+            4,
+            1,
+            4,
+            2
+          ],
+          "best": 3,
+          "critical": true,
+          "follow": true,
+          "criticalMultiplier": 1.8,
+          "followMultiplier": 0.35,
+          "main": 51046,
+          "extra": 17866,
+          "echoDamage": 7657,
+          "total": 76569,
+          "absorbed": 0,
+          "hpDamage": 76569,
+          "retaliation": 0,
+          "killed": false,
+          "phaseChanged": false,
+          "guarded": 0,
+          "luck": 0,
+          "luckActive": false,
+          "echoes": 0,
+          "highCount": 0,
+          "wardGain": 1867,
+          "dodged": false,
+          "mechanics": [
+            "蚀日缺刻 · 反击 +25%",
+            "三声断章 · 已触发",
+            "深层回响 · 追加 7657（不递归）",
+            "共鸣与余光护盾 +1867"
+          ]
+        },
+        "lastForge": null,
+        "log": [
+          {
+            "text": "1 · 1 · 4 · 1 · 4 · 2 → 76569 伤害 · 暴击 · 3 同共鸣",
+            "tone": "gold"
+          },
+          {
+            "text": "记录 1 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": ""
+          },
+          {
+            "text": "记录 2 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": "gold"
+          },
+          {
+            "text": "记录 3 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": "rare"
+          },
+          {
+            "text": "记录 4 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": "epic"
+          },
+          {
+            "text": "记录 5 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": "legendary"
+          }
+        ],
+        "completed": false,
+        "event": null,
+        "eventLuck": 0,
+        "eventPower": 0,
+        "encounterHistory": [],
+        "routeMemory": {
+          "services": [],
+          "last": {},
+          "hiddenFloor": 0
+        },
+        "v5Boons": {
+          "echo": 0,
+          "ward": 0
+        },
+        "nextLuck": 0,
+        "counters": {
+          "rolls": 1,
+          "kills": 0,
+          "chests": 0,
+          "deaths": 0,
+          "highestDamage": 76569,
+          "bosses": 0
+        },
+        "player": {
+          "level": 80,
+          "xp": 0,
+          "gold": 500000,
+          "hp": 9337,
+          "talentPoints": 35,
+          "deepOfferings": 0,
+          "pactScars": 0,
+          "fateBlessings": 0,
+          "talents": {
+            "high": 0,
+            "four": 0,
+            "five": 0,
+            "six": 0,
+            "sum": 0,
+            "power": 0,
+            "resonance": 5,
+            "pair": 0,
+            "triple": 0,
+            "quartet": 0,
+            "choir": 0,
+            "echo": 5,
+            "critical": 5,
+            "keen": 5,
+            "crush": 0,
+            "pursuit": 0,
+            "opener": 0,
+            "slayer": 0,
+            "vitality": 0,
+            "guard": 0,
+            "leech": 0,
+            "recovery": 0,
+            "fortune": 0,
+            "smith": 0,
+            "luck": 0,
+            "attune": 0,
+            "omen": 0,
+            "mercy": 0,
+            "jackpot": 0,
+            "spark": 0,
+            "shatter": 0,
+            "diversity": 0,
+            "finality": 0,
+            "deepEcho": 0,
+            "chorusMend": 0,
+            "tripleBlade": 0,
+            "firstFire": 0,
+            "critAegis": 0,
+            "dawnCrit": 0,
+            "emberGuard": 0,
+            "phaseShelter": 0,
+            "lastResolve": 0,
+            "hunterStar": 0,
+            "gildedFaces": 0,
+            "sixRebirth": 0
+          },
+          "items": [
+            {
+              "id": "i1",
+              "slot": "weapon",
+              "rarity": 0,
+              "depth": 1,
+              "level": 2,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "weapon-2-0-0",
+              "profile": 0,
+              "theme": 2,
+              "name": "残响·雷鸣重刃"
+            },
+            {
+              "id": "i2",
+              "slot": "armor",
+              "rarity": 0,
+              "depth": 1,
+              "level": 1,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-armor-3-2-0",
+              "profile": 2,
+              "theme": 5,
+              "name": "残响·长明回响灵衣"
+            },
+            {
+              "id": "i3",
+              "slot": "relic",
+              "rarity": 0,
+              "depth": 1,
+              "level": 3,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-8-2-0",
+              "profile": 2,
+              "theme": 8,
+              "name": "残响·沙漏回环"
+            },
+            {
+              "id": "i4",
+              "slot": "weapon",
+              "rarity": 4,
+              "depth": 140,
+              "level": 79,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v5-weapon-1-0-4",
+              "profile": 0,
+              "theme": 1,
+              "name": "赤曜·合奏守誓重刃"
+            },
+            {
+              "id": "i5",
+              "slot": "armor",
+              "rarity": 4,
+              "depth": 140,
+              "level": 78,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-armor-2-0-4",
+              "profile": 0,
+              "theme": 2,
+              "name": "赤曜·共守守誓壁垒"
+            },
+            {
+              "id": "i6",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 81,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-6-2-4",
+              "profile": 2,
+              "theme": 6,
+              "name": "赤曜·暮光回环"
+            },
+            {
+              "id": "i7",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 82,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v5-relic-3-2-4",
+              "profile": 2,
+              "theme": 5,
+              "name": "赤曜·拾光回响回环"
+            },
+            {
+              "id": "i8",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 82,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-relic-4-0-4",
+              "profile": 0,
+              "theme": 4,
+              "name": "赤曜·满月守誓心核"
+            }
+          ],
+          "equipped": {
+            "weapon": "i4",
+            "armor": "i5",
+            "relic": "i6",
+            "relic2": "i7",
+            "relic3": "i8"
+          }
+        },
+        "ward": 659,
+        "roomUsed": false,
+        "blessing": 0
+      }
+    },
+    {
+      "label": "after",
+      "scene": "boss-burst",
+      "fixtureSha256": "6ea3205945548483efc8b58227312e59ef6caa20b910ef1d6c5b839fff841b1a",
+      "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749",
+      "fullExpectedState": {
+        "version": 5,
+        "revision": 2,
+        "runId": "qa-round-performance-boss-20261017",
+        "rng": 435756210,
+        "nextId": 9,
+        "floor": 140,
+        "phase": "combat",
+        "route": [
+          {
+            "id": "f140r0",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r1",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r2",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r3",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r4",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r5",
+            "type": "boss",
+            "quality": 0,
+            "done": false
+          }
+        ],
+        "roomIndex": 5,
+        "fate": [
+          6,
+          6
+        ],
+        "enemy": {
+          "name": "蚀日无冕者",
+          "mechanic": "boss_eclipse",
+          "minFloor": 50,
+          "trait": "steady",
+          "identity": "太古星海的守门者",
+          "label": "奇数回合无 6 则反击 +25%；偶数回合三同伤害 +50%。",
+          "warning": "奇数回合无 6 则反击 +25%；偶数回合三同伤害 +50%。",
+          "counterplay": "构筑真正足够强时可以速杀；没有强制锁血。",
+          "note": "「带着你的刻点，越过这条界线。」",
+          "phaseLabel": "界线重铸",
+          "phaseNote": "半血且存活：凝聚 12% 阶段护盾，二阶段反击 +15%。",
+          "type": "boss",
+          "hp": 18514776,
+          "maxHp": 18591345,
+          "attack": 1381,
+          "shield": 0,
+          "maxShield": 2230962,
+          "turns": 1,
+          "combatRules": 4,
+          "stage": 1,
+          "encounterKey": "boss",
+          "wave": 1,
+          "openingEcho": 0
+        },
+        "chest": null,
+        "loot": null,
+        "shop": [],
+        "lastRoll": {
+          "values": [
+            1,
+            1,
+            4,
+            1,
+            4,
+            2
+          ],
+          "best": 3,
+          "critical": true,
+          "follow": true,
+          "criticalMultiplier": 1.8,
+          "followMultiplier": 0.35,
+          "main": 51046,
+          "extra": 17866,
+          "echoDamage": 7657,
+          "total": 76569,
+          "absorbed": 0,
+          "hpDamage": 76569,
+          "retaliation": 0,
+          "killed": false,
+          "phaseChanged": false,
+          "guarded": 0,
+          "luck": 0,
+          "luckActive": false,
+          "echoes": 0,
+          "highCount": 0,
+          "wardGain": 1867,
+          "dodged": false,
+          "mechanics": [
+            "蚀日缺刻 · 反击 +25%",
+            "三声断章 · 已触发",
+            "深层回响 · 追加 7657（不递归）",
+            "共鸣与余光护盾 +1867"
+          ]
+        },
+        "lastForge": null,
+        "log": [
+          {
+            "text": "1 · 1 · 4 · 1 · 4 · 2 → 76569 伤害 · 暴击 · 3 同共鸣",
+            "tone": "gold"
+          },
+          {
+            "text": "记录 1 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": ""
+          },
+          {
+            "text": "记录 2 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": "gold"
+          },
+          {
+            "text": "记录 3 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": "rare"
+          },
+          {
+            "text": "记录 4 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": "epic"
+          },
+          {
+            "text": "记录 5 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": "legendary"
+          }
+        ],
+        "completed": false,
+        "event": null,
+        "eventLuck": 0,
+        "eventPower": 0,
+        "encounterHistory": [],
+        "routeMemory": {
+          "services": [],
+          "last": {},
+          "hiddenFloor": 0
+        },
+        "v5Boons": {
+          "echo": 0,
+          "ward": 0
+        },
+        "nextLuck": 0,
+        "counters": {
+          "rolls": 1,
+          "kills": 0,
+          "chests": 0,
+          "deaths": 0,
+          "highestDamage": 76569,
+          "bosses": 0
+        },
+        "player": {
+          "level": 80,
+          "xp": 0,
+          "gold": 500000,
+          "hp": 9337,
+          "talentPoints": 35,
+          "deepOfferings": 0,
+          "pactScars": 0,
+          "fateBlessings": 0,
+          "talents": {
+            "high": 0,
+            "four": 0,
+            "five": 0,
+            "six": 0,
+            "sum": 0,
+            "power": 0,
+            "resonance": 5,
+            "pair": 0,
+            "triple": 0,
+            "quartet": 0,
+            "choir": 0,
+            "echo": 5,
+            "critical": 5,
+            "keen": 5,
+            "crush": 0,
+            "pursuit": 0,
+            "opener": 0,
+            "slayer": 0,
+            "vitality": 0,
+            "guard": 0,
+            "leech": 0,
+            "recovery": 0,
+            "fortune": 0,
+            "smith": 0,
+            "luck": 0,
+            "attune": 0,
+            "omen": 0,
+            "mercy": 0,
+            "jackpot": 0,
+            "spark": 0,
+            "shatter": 0,
+            "diversity": 0,
+            "finality": 0,
+            "deepEcho": 0,
+            "chorusMend": 0,
+            "tripleBlade": 0,
+            "firstFire": 0,
+            "critAegis": 0,
+            "dawnCrit": 0,
+            "emberGuard": 0,
+            "phaseShelter": 0,
+            "lastResolve": 0,
+            "hunterStar": 0,
+            "gildedFaces": 0,
+            "sixRebirth": 0
+          },
+          "items": [
+            {
+              "id": "i1",
+              "slot": "weapon",
+              "rarity": 0,
+              "depth": 1,
+              "level": 2,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "weapon-2-0-0",
+              "profile": 0,
+              "theme": 2,
+              "name": "残响·雷鸣重刃"
+            },
+            {
+              "id": "i2",
+              "slot": "armor",
+              "rarity": 0,
+              "depth": 1,
+              "level": 1,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-armor-3-2-0",
+              "profile": 2,
+              "theme": 5,
+              "name": "残响·长明回响灵衣"
+            },
+            {
+              "id": "i3",
+              "slot": "relic",
+              "rarity": 0,
+              "depth": 1,
+              "level": 3,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-8-2-0",
+              "profile": 2,
+              "theme": 8,
+              "name": "残响·沙漏回环"
+            },
+            {
+              "id": "i4",
+              "slot": "weapon",
+              "rarity": 4,
+              "depth": 140,
+              "level": 79,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v5-weapon-1-0-4",
+              "profile": 0,
+              "theme": 1,
+              "name": "赤曜·合奏守誓重刃"
+            },
+            {
+              "id": "i5",
+              "slot": "armor",
+              "rarity": 4,
+              "depth": 140,
+              "level": 78,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-armor-2-0-4",
+              "profile": 0,
+              "theme": 2,
+              "name": "赤曜·共守守誓壁垒"
+            },
+            {
+              "id": "i6",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 81,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-6-2-4",
+              "profile": 2,
+              "theme": 6,
+              "name": "赤曜·暮光回环"
+            },
+            {
+              "id": "i7",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 82,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v5-relic-3-2-4",
+              "profile": 2,
+              "theme": 5,
+              "name": "赤曜·拾光回响回环"
+            },
+            {
+              "id": "i8",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 82,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-relic-4-0-4",
+              "profile": 0,
+              "theme": 4,
+              "name": "赤曜·满月守誓心核"
+            }
+          ],
+          "equipped": {
+            "weapon": "i4",
+            "armor": "i5",
+            "relic": "i6",
+            "relic2": "i7",
+            "relic3": "i8"
+          }
+        },
+        "ward": 659,
+        "roomUsed": false,
+        "blessing": 0
+      }
+    },
+    {
+      "label": "baseline",
+      "scene": "eternal-open",
+      "fixtureSha256": "e497125e4510f94384b0ccabdf7c5772cd5007a4d2691ad00d34562ba5c3090a",
+      "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81",
+      "fullExpectedState": {
+        "version": 5,
+        "revision": 3,
+        "runId": "qa-round-chest-7-20261017",
+        "rng": 3031976842,
+        "nextId": 11,
+        "floor": 140,
+        "phase": "loot",
+        "route": [
+          {
+            "id": "f140r0",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r1",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r2",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r3",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r4",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r5",
+            "type": "boss",
+            "quality": 0,
+            "done": false
+          }
+        ],
+        "roomIndex": 5,
+        "fate": [
+          6,
+          6
+        ],
+        "enemy": {
+          "name": "蚀日无冕者",
+          "mechanic": "boss_eclipse",
+          "minFloor": 50,
+          "trait": "steady",
+          "identity": "太古星海的守门者",
+          "label": "奇数回合无 6 则反击 +25%；偶数回合三同伤害 +50%。",
+          "warning": "奇数回合无 6 则反击 +25%；偶数回合三同伤害 +50%。",
+          "counterplay": "构筑真正足够强时可以速杀；没有强制锁血。",
+          "note": "「带着你的刻点，越过这条界线。」",
+          "phaseLabel": "界线重铸",
+          "phaseNote": "半血且存活：凝聚 12% 阶段护盾，二阶段反击 +15%。",
+          "type": "boss",
+          "hp": 0,
+          "maxHp": 18591345,
+          "attack": 1381,
+          "shield": 0,
+          "maxShield": 2230962,
+          "turns": 1,
+          "combatRules": 4,
+          "stage": 2,
+          "encounterKey": "boss",
+          "wave": 1,
+          "openingEcho": 0
+        },
+        "chest": null,
+        "loot": {
+          "item": {
+            "id": "i10",
+            "slot": "relic",
+            "rarity": 7,
+            "depth": 140,
+            "level": 84,
+            "levelXp": 0,
+            "enhance": 0,
+            "locked": false,
+            "catalogId": "relic-8-1-7",
+            "profile": 1,
+            "theme": 8,
+            "name": "无终·沙漏棱镜"
+          },
+          "gold": 2296,
+          "type": "boss",
+          "source": "蚀日无冕者"
+        },
+        "shop": [],
+        "lastRoll": {
+          "values": [
+            1,
+            1,
+            4,
+            1,
+            4,
+            2
+          ],
+          "best": 3,
+          "critical": true,
+          "follow": true,
+          "criticalMultiplier": 1.8,
+          "followMultiplier": 0.35,
+          "main": 51046,
+          "extra": 17866,
+          "echoDamage": 7657,
+          "total": 76569,
+          "absorbed": 0,
+          "hpDamage": 1,
+          "retaliation": 0,
+          "killed": true,
+          "phaseChanged": false,
+          "guarded": 0,
+          "luck": 0,
+          "luckActive": false,
+          "echoes": 0,
+          "highCount": 0,
+          "wardGain": 1867,
+          "dodged": false,
+          "mechanics": [
+            "蚀日缺刻 · 反击 +25%",
+            "三声断章 · 已触发",
+            "深层回响 · 追加 7657（不递归）",
+            "共鸣与余光护盾 +1867"
+          ]
+        },
+        "lastForge": null,
+        "log": [
+          {
+            "text": "获得无终·沙漏棱镜 · 永恒",
+            "tone": "eternal"
+          },
+          {
+            "text": "蚀日无冕者倒下了 · 宝箱已出现。",
+            "tone": "gold"
+          },
+          {
+            "text": "1 · 1 · 4 · 1 · 4 · 2 → 76569 伤害 · 暴击 · 3 同共鸣",
+            "tone": "gold"
+          },
+          {
+            "text": "记录 1 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": ""
+          },
+          {
+            "text": "记录 2 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": "gold"
+          },
+          {
+            "text": "记录 3 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": "rare"
+          }
+        ],
+        "completed": false,
+        "event": null,
+        "eventLuck": 0,
+        "eventPower": 0,
+        "encounterHistory": [],
+        "routeMemory": {
+          "services": [],
+          "last": {},
+          "hiddenFloor": 0
+        },
+        "v5Boons": {
+          "echo": 0,
+          "ward": 0
+        },
+        "nextLuck": 0,
+        "counters": {
+          "rolls": 1,
+          "kills": 1,
+          "chests": 1,
+          "deaths": 0,
+          "highestDamage": 76569,
+          "bosses": 1
+        },
+        "player": {
+          "level": 80,
+          "xp": 434,
+          "gold": 502296,
+          "hp": 9337,
+          "talentPoints": 35,
+          "deepOfferings": 0,
+          "pactScars": 0,
+          "fateBlessings": 0,
+          "talents": {
+            "high": 0,
+            "four": 0,
+            "five": 0,
+            "six": 0,
+            "sum": 0,
+            "power": 0,
+            "resonance": 5,
+            "pair": 0,
+            "triple": 0,
+            "quartet": 0,
+            "choir": 0,
+            "echo": 5,
+            "critical": 5,
+            "keen": 5,
+            "crush": 0,
+            "pursuit": 0,
+            "opener": 0,
+            "slayer": 0,
+            "vitality": 0,
+            "guard": 0,
+            "leech": 0,
+            "recovery": 0,
+            "fortune": 0,
+            "smith": 0,
+            "luck": 0,
+            "attune": 0,
+            "omen": 0,
+            "mercy": 0,
+            "jackpot": 0,
+            "spark": 0,
+            "shatter": 0,
+            "diversity": 0,
+            "finality": 0,
+            "deepEcho": 0,
+            "chorusMend": 0,
+            "tripleBlade": 0,
+            "firstFire": 0,
+            "critAegis": 0,
+            "dawnCrit": 0,
+            "emberGuard": 0,
+            "phaseShelter": 0,
+            "lastResolve": 0,
+            "hunterStar": 0,
+            "gildedFaces": 0,
+            "sixRebirth": 0
+          },
+          "items": [
+            {
+              "id": "i1",
+              "slot": "weapon",
+              "rarity": 0,
+              "depth": 1,
+              "level": 2,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "weapon-2-0-0",
+              "profile": 0,
+              "theme": 2,
+              "name": "残响·雷鸣重刃"
+            },
+            {
+              "id": "i2",
+              "slot": "armor",
+              "rarity": 0,
+              "depth": 1,
+              "level": 1,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-armor-3-2-0",
+              "profile": 2,
+              "theme": 5,
+              "name": "残响·长明回响灵衣"
+            },
+            {
+              "id": "i3",
+              "slot": "relic",
+              "rarity": 0,
+              "depth": 1,
+              "level": 3,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-8-2-0",
+              "profile": 2,
+              "theme": 8,
+              "name": "残响·沙漏回环"
+            },
+            {
+              "id": "i4",
+              "slot": "weapon",
+              "rarity": 4,
+              "depth": 140,
+              "level": 79,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v5-weapon-1-0-4",
+              "profile": 0,
+              "theme": 1,
+              "name": "赤曜·合奏守誓重刃"
+            },
+            {
+              "id": "i5",
+              "slot": "armor",
+              "rarity": 4,
+              "depth": 140,
+              "level": 78,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-armor-2-0-4",
+              "profile": 0,
+              "theme": 2,
+              "name": "赤曜·共守守誓壁垒"
+            },
+            {
+              "id": "i6",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 81,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-6-2-4",
+              "profile": 2,
+              "theme": 6,
+              "name": "赤曜·暮光回环"
+            },
+            {
+              "id": "i7",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 82,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v5-relic-3-2-4",
+              "profile": 2,
+              "theme": 5,
+              "name": "赤曜·拾光回响回环"
+            },
+            {
+              "id": "i8",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 82,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-relic-4-0-4",
+              "profile": 0,
+              "theme": 4,
+              "name": "赤曜·满月守誓心核"
+            },
+            {
+              "id": "i10",
+              "slot": "relic",
+              "rarity": 7,
+              "depth": 140,
+              "level": 84,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-8-1-7",
+              "profile": 1,
+              "theme": 8,
+              "name": "无终·沙漏棱镜"
+            }
+          ],
+          "equipped": {
+            "weapon": "i4",
+            "armor": "i5",
+            "relic": "i6",
+            "relic2": "i7",
+            "relic3": "i8"
+          }
+        },
+        "ward": 1867,
+        "roomUsed": false,
+        "blessing": 0,
+        "lootCreditedGold": 2296
+      }
+    },
+    {
+      "label": "after",
+      "scene": "eternal-open",
+      "fixtureSha256": "e497125e4510f94384b0ccabdf7c5772cd5007a4d2691ad00d34562ba5c3090a",
+      "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81",
+      "fullExpectedState": {
+        "version": 5,
+        "revision": 3,
+        "runId": "qa-round-chest-7-20261017",
+        "rng": 3031976842,
+        "nextId": 11,
+        "floor": 140,
+        "phase": "loot",
+        "route": [
+          {
+            "id": "f140r0",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r1",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r2",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r3",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r4",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r5",
+            "type": "boss",
+            "quality": 0,
+            "done": false
+          }
+        ],
+        "roomIndex": 5,
+        "fate": [
+          6,
+          6
+        ],
+        "enemy": {
+          "name": "蚀日无冕者",
+          "mechanic": "boss_eclipse",
+          "minFloor": 50,
+          "trait": "steady",
+          "identity": "太古星海的守门者",
+          "label": "奇数回合无 6 则反击 +25%；偶数回合三同伤害 +50%。",
+          "warning": "奇数回合无 6 则反击 +25%；偶数回合三同伤害 +50%。",
+          "counterplay": "构筑真正足够强时可以速杀；没有强制锁血。",
+          "note": "「带着你的刻点，越过这条界线。」",
+          "phaseLabel": "界线重铸",
+          "phaseNote": "半血且存活：凝聚 12% 阶段护盾，二阶段反击 +15%。",
+          "type": "boss",
+          "hp": 0,
+          "maxHp": 18591345,
+          "attack": 1381,
+          "shield": 0,
+          "maxShield": 2230962,
+          "turns": 1,
+          "combatRules": 4,
+          "stage": 2,
+          "encounterKey": "boss",
+          "wave": 1,
+          "openingEcho": 0
+        },
+        "chest": null,
+        "loot": {
+          "item": {
+            "id": "i10",
+            "slot": "relic",
+            "rarity": 7,
+            "depth": 140,
+            "level": 84,
+            "levelXp": 0,
+            "enhance": 0,
+            "locked": false,
+            "catalogId": "relic-8-1-7",
+            "profile": 1,
+            "theme": 8,
+            "name": "无终·沙漏棱镜"
+          },
+          "gold": 2296,
+          "type": "boss",
+          "source": "蚀日无冕者"
+        },
+        "shop": [],
+        "lastRoll": {
+          "values": [
+            1,
+            1,
+            4,
+            1,
+            4,
+            2
+          ],
+          "best": 3,
+          "critical": true,
+          "follow": true,
+          "criticalMultiplier": 1.8,
+          "followMultiplier": 0.35,
+          "main": 51046,
+          "extra": 17866,
+          "echoDamage": 7657,
+          "total": 76569,
+          "absorbed": 0,
+          "hpDamage": 1,
+          "retaliation": 0,
+          "killed": true,
+          "phaseChanged": false,
+          "guarded": 0,
+          "luck": 0,
+          "luckActive": false,
+          "echoes": 0,
+          "highCount": 0,
+          "wardGain": 1867,
+          "dodged": false,
+          "mechanics": [
+            "蚀日缺刻 · 反击 +25%",
+            "三声断章 · 已触发",
+            "深层回响 · 追加 7657（不递归）",
+            "共鸣与余光护盾 +1867"
+          ]
+        },
+        "lastForge": null,
+        "log": [
+          {
+            "text": "获得无终·沙漏棱镜 · 永恒",
+            "tone": "eternal"
+          },
+          {
+            "text": "蚀日无冕者倒下了 · 宝箱已出现。",
+            "tone": "gold"
+          },
+          {
+            "text": "1 · 1 · 4 · 1 · 4 · 2 → 76569 伤害 · 暴击 · 3 同共鸣",
+            "tone": "gold"
+          },
+          {
+            "text": "记录 1 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": ""
+          },
+          {
+            "text": "记录 2 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": "gold"
+          },
+          {
+            "text": "记录 3 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": "rare"
+          }
+        ],
+        "completed": false,
+        "event": null,
+        "eventLuck": 0,
+        "eventPower": 0,
+        "encounterHistory": [],
+        "routeMemory": {
+          "services": [],
+          "last": {},
+          "hiddenFloor": 0
+        },
+        "v5Boons": {
+          "echo": 0,
+          "ward": 0
+        },
+        "nextLuck": 0,
+        "counters": {
+          "rolls": 1,
+          "kills": 1,
+          "chests": 1,
+          "deaths": 0,
+          "highestDamage": 76569,
+          "bosses": 1
+        },
+        "player": {
+          "level": 80,
+          "xp": 434,
+          "gold": 502296,
+          "hp": 9337,
+          "talentPoints": 35,
+          "deepOfferings": 0,
+          "pactScars": 0,
+          "fateBlessings": 0,
+          "talents": {
+            "high": 0,
+            "four": 0,
+            "five": 0,
+            "six": 0,
+            "sum": 0,
+            "power": 0,
+            "resonance": 5,
+            "pair": 0,
+            "triple": 0,
+            "quartet": 0,
+            "choir": 0,
+            "echo": 5,
+            "critical": 5,
+            "keen": 5,
+            "crush": 0,
+            "pursuit": 0,
+            "opener": 0,
+            "slayer": 0,
+            "vitality": 0,
+            "guard": 0,
+            "leech": 0,
+            "recovery": 0,
+            "fortune": 0,
+            "smith": 0,
+            "luck": 0,
+            "attune": 0,
+            "omen": 0,
+            "mercy": 0,
+            "jackpot": 0,
+            "spark": 0,
+            "shatter": 0,
+            "diversity": 0,
+            "finality": 0,
+            "deepEcho": 0,
+            "chorusMend": 0,
+            "tripleBlade": 0,
+            "firstFire": 0,
+            "critAegis": 0,
+            "dawnCrit": 0,
+            "emberGuard": 0,
+            "phaseShelter": 0,
+            "lastResolve": 0,
+            "hunterStar": 0,
+            "gildedFaces": 0,
+            "sixRebirth": 0
+          },
+          "items": [
+            {
+              "id": "i1",
+              "slot": "weapon",
+              "rarity": 0,
+              "depth": 1,
+              "level": 2,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "weapon-2-0-0",
+              "profile": 0,
+              "theme": 2,
+              "name": "残响·雷鸣重刃"
+            },
+            {
+              "id": "i2",
+              "slot": "armor",
+              "rarity": 0,
+              "depth": 1,
+              "level": 1,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-armor-3-2-0",
+              "profile": 2,
+              "theme": 5,
+              "name": "残响·长明回响灵衣"
+            },
+            {
+              "id": "i3",
+              "slot": "relic",
+              "rarity": 0,
+              "depth": 1,
+              "level": 3,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-8-2-0",
+              "profile": 2,
+              "theme": 8,
+              "name": "残响·沙漏回环"
+            },
+            {
+              "id": "i4",
+              "slot": "weapon",
+              "rarity": 4,
+              "depth": 140,
+              "level": 79,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v5-weapon-1-0-4",
+              "profile": 0,
+              "theme": 1,
+              "name": "赤曜·合奏守誓重刃"
+            },
+            {
+              "id": "i5",
+              "slot": "armor",
+              "rarity": 4,
+              "depth": 140,
+              "level": 78,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-armor-2-0-4",
+              "profile": 0,
+              "theme": 2,
+              "name": "赤曜·共守守誓壁垒"
+            },
+            {
+              "id": "i6",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 81,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-6-2-4",
+              "profile": 2,
+              "theme": 6,
+              "name": "赤曜·暮光回环"
+            },
+            {
+              "id": "i7",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 82,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v5-relic-3-2-4",
+              "profile": 2,
+              "theme": 5,
+              "name": "赤曜·拾光回响回环"
+            },
+            {
+              "id": "i8",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 82,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-relic-4-0-4",
+              "profile": 0,
+              "theme": 4,
+              "name": "赤曜·满月守誓心核"
+            },
+            {
+              "id": "i10",
+              "slot": "relic",
+              "rarity": 7,
+              "depth": 140,
+              "level": 84,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-8-1-7",
+              "profile": 1,
+              "theme": 8,
+              "name": "无终·沙漏棱镜"
+            }
+          ],
+          "equipped": {
+            "weapon": "i4",
+            "armor": "i5",
+            "relic": "i6",
+            "relic2": "i7",
+            "relic3": "i8"
+          }
+        },
+        "ward": 1867,
+        "roomUsed": false,
+        "blessing": 0,
+        "lootCreditedGold": 2296
+      }
+    },
+    {
+      "label": "baseline",
+      "scene": "rarity-0-open",
+      "fixtureSha256": "44ec2a994e97482f5a57af6d401cda435c569235c3386a2e6d4d5008ab366431",
+      "persistedSha256": "62f4bfe70b47c2d87f6c49c774c38e5c3fa0d3fc0beaecb9c84f40aa9c487c04",
+      "fullExpectedState": {
+        "version": 5,
+        "revision": 3,
+        "runId": "qa-round-chest-0-20261017",
+        "rng": 3031976842,
+        "nextId": 11,
+        "floor": 140,
+        "phase": "loot",
+        "route": [
+          {
+            "id": "f140r0",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r1",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r2",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r3",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r4",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r5",
+            "type": "boss",
+            "quality": 0,
+            "done": false
+          }
+        ],
+        "roomIndex": 5,
+        "fate": [
+          6,
+          6
+        ],
+        "enemy": {
+          "name": "蚀日无冕者",
+          "mechanic": "boss_eclipse",
+          "minFloor": 50,
+          "trait": "steady",
+          "identity": "太古星海的守门者",
+          "label": "奇数回合无 6 则反击 +25%；偶数回合三同伤害 +50%。",
+          "warning": "奇数回合无 6 则反击 +25%；偶数回合三同伤害 +50%。",
+          "counterplay": "构筑真正足够强时可以速杀；没有强制锁血。",
+          "note": "「带着你的刻点，越过这条界线。」",
+          "phaseLabel": "界线重铸",
+          "phaseNote": "半血且存活：凝聚 12% 阶段护盾，二阶段反击 +15%。",
+          "type": "boss",
+          "hp": 0,
+          "maxHp": 18591345,
+          "attack": 1381,
+          "shield": 0,
+          "maxShield": 2230962,
+          "turns": 1,
+          "combatRules": 4,
+          "stage": 2,
+          "encounterKey": "boss",
+          "wave": 1,
+          "openingEcho": 0
+        },
+        "chest": null,
+        "loot": {
+          "item": {
+            "id": "i10",
+            "slot": "relic",
+            "rarity": 0,
+            "depth": 140,
+            "level": 84,
+            "levelXp": 0,
+            "enhance": 0,
+            "locked": false,
+            "catalogId": "relic-6-0-0",
+            "profile": 0,
+            "theme": 6,
+            "name": "残响·暮光心核"
+          },
+          "gold": 2296,
+          "type": "boss",
+          "source": "蚀日无冕者"
+        },
+        "shop": [],
+        "lastRoll": {
+          "values": [
+            1,
+            1,
+            4,
+            1,
+            4,
+            2
+          ],
+          "best": 3,
+          "critical": true,
+          "follow": true,
+          "criticalMultiplier": 1.8,
+          "followMultiplier": 0.35,
+          "main": 51046,
+          "extra": 17866,
+          "echoDamage": 7657,
+          "total": 76569,
+          "absorbed": 0,
+          "hpDamage": 1,
+          "retaliation": 0,
+          "killed": true,
+          "phaseChanged": false,
+          "guarded": 0,
+          "luck": 0,
+          "luckActive": false,
+          "echoes": 0,
+          "highCount": 0,
+          "wardGain": 1867,
+          "dodged": false,
+          "mechanics": [
+            "蚀日缺刻 · 反击 +25%",
+            "三声断章 · 已触发",
+            "深层回响 · 追加 7657（不递归）",
+            "共鸣与余光护盾 +1867"
+          ]
+        },
+        "lastForge": null,
+        "log": [
+          {
+            "text": "获得残响·暮光心核 · 普通",
+            "tone": "common"
+          },
+          {
+            "text": "蚀日无冕者倒下了 · 宝箱已出现。",
+            "tone": "gold"
+          },
+          {
+            "text": "1 · 1 · 4 · 1 · 4 · 2 → 76569 伤害 · 暴击 · 3 同共鸣",
+            "tone": "gold"
+          },
+          {
+            "text": "记录 1 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": ""
+          },
+          {
+            "text": "记录 2 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": "gold"
+          },
+          {
+            "text": "记录 3 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": "rare"
+          }
+        ],
+        "completed": false,
+        "event": null,
+        "eventLuck": 0,
+        "eventPower": 0,
+        "encounterHistory": [],
+        "routeMemory": {
+          "services": [],
+          "last": {},
+          "hiddenFloor": 0
+        },
+        "v5Boons": {
+          "echo": 0,
+          "ward": 0
+        },
+        "nextLuck": 0,
+        "counters": {
+          "rolls": 1,
+          "kills": 1,
+          "chests": 1,
+          "deaths": 0,
+          "highestDamage": 76569,
+          "bosses": 1
+        },
+        "player": {
+          "level": 80,
+          "xp": 434,
+          "gold": 502296,
+          "hp": 9337,
+          "talentPoints": 35,
+          "deepOfferings": 0,
+          "pactScars": 0,
+          "fateBlessings": 0,
+          "talents": {
+            "high": 0,
+            "four": 0,
+            "five": 0,
+            "six": 0,
+            "sum": 0,
+            "power": 0,
+            "resonance": 5,
+            "pair": 0,
+            "triple": 0,
+            "quartet": 0,
+            "choir": 0,
+            "echo": 5,
+            "critical": 5,
+            "keen": 5,
+            "crush": 0,
+            "pursuit": 0,
+            "opener": 0,
+            "slayer": 0,
+            "vitality": 0,
+            "guard": 0,
+            "leech": 0,
+            "recovery": 0,
+            "fortune": 0,
+            "smith": 0,
+            "luck": 0,
+            "attune": 0,
+            "omen": 0,
+            "mercy": 0,
+            "jackpot": 0,
+            "spark": 0,
+            "shatter": 0,
+            "diversity": 0,
+            "finality": 0,
+            "deepEcho": 0,
+            "chorusMend": 0,
+            "tripleBlade": 0,
+            "firstFire": 0,
+            "critAegis": 0,
+            "dawnCrit": 0,
+            "emberGuard": 0,
+            "phaseShelter": 0,
+            "lastResolve": 0,
+            "hunterStar": 0,
+            "gildedFaces": 0,
+            "sixRebirth": 0
+          },
+          "items": [
+            {
+              "id": "i1",
+              "slot": "weapon",
+              "rarity": 0,
+              "depth": 1,
+              "level": 2,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "weapon-2-0-0",
+              "profile": 0,
+              "theme": 2,
+              "name": "残响·雷鸣重刃"
+            },
+            {
+              "id": "i2",
+              "slot": "armor",
+              "rarity": 0,
+              "depth": 1,
+              "level": 1,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-armor-3-2-0",
+              "profile": 2,
+              "theme": 5,
+              "name": "残响·长明回响灵衣"
+            },
+            {
+              "id": "i3",
+              "slot": "relic",
+              "rarity": 0,
+              "depth": 1,
+              "level": 3,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-8-2-0",
+              "profile": 2,
+              "theme": 8,
+              "name": "残响·沙漏回环"
+            },
+            {
+              "id": "i4",
+              "slot": "weapon",
+              "rarity": 4,
+              "depth": 140,
+              "level": 79,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v5-weapon-1-0-4",
+              "profile": 0,
+              "theme": 1,
+              "name": "赤曜·合奏守誓重刃"
+            },
+            {
+              "id": "i5",
+              "slot": "armor",
+              "rarity": 4,
+              "depth": 140,
+              "level": 78,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-armor-2-0-4",
+              "profile": 0,
+              "theme": 2,
+              "name": "赤曜·共守守誓壁垒"
+            },
+            {
+              "id": "i6",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 81,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-6-2-4",
+              "profile": 2,
+              "theme": 6,
+              "name": "赤曜·暮光回环"
+            },
+            {
+              "id": "i7",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 82,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v5-relic-3-2-4",
+              "profile": 2,
+              "theme": 5,
+              "name": "赤曜·拾光回响回环"
+            },
+            {
+              "id": "i8",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 82,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-relic-4-0-4",
+              "profile": 0,
+              "theme": 4,
+              "name": "赤曜·满月守誓心核"
+            },
+            {
+              "id": "i10",
+              "slot": "relic",
+              "rarity": 0,
+              "depth": 140,
+              "level": 84,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-6-0-0",
+              "profile": 0,
+              "theme": 6,
+              "name": "残响·暮光心核"
+            }
+          ],
+          "equipped": {
+            "weapon": "i4",
+            "armor": "i5",
+            "relic": "i6",
+            "relic2": "i7",
+            "relic3": "i8"
+          }
+        },
+        "ward": 1867,
+        "roomUsed": false,
+        "blessing": 0,
+        "lootCreditedGold": 2296
+      }
+    },
+    {
+      "label": "after",
+      "scene": "rarity-0-open",
+      "fixtureSha256": "44ec2a994e97482f5a57af6d401cda435c569235c3386a2e6d4d5008ab366431",
+      "persistedSha256": "62f4bfe70b47c2d87f6c49c774c38e5c3fa0d3fc0beaecb9c84f40aa9c487c04",
+      "fullExpectedState": {
+        "version": 5,
+        "revision": 3,
+        "runId": "qa-round-chest-0-20261017",
+        "rng": 3031976842,
+        "nextId": 11,
+        "floor": 140,
+        "phase": "loot",
+        "route": [
+          {
+            "id": "f140r0",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r1",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r2",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r3",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r4",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r5",
+            "type": "boss",
+            "quality": 0,
+            "done": false
+          }
+        ],
+        "roomIndex": 5,
+        "fate": [
+          6,
+          6
+        ],
+        "enemy": {
+          "name": "蚀日无冕者",
+          "mechanic": "boss_eclipse",
+          "minFloor": 50,
+          "trait": "steady",
+          "identity": "太古星海的守门者",
+          "label": "奇数回合无 6 则反击 +25%；偶数回合三同伤害 +50%。",
+          "warning": "奇数回合无 6 则反击 +25%；偶数回合三同伤害 +50%。",
+          "counterplay": "构筑真正足够强时可以速杀；没有强制锁血。",
+          "note": "「带着你的刻点，越过这条界线。」",
+          "phaseLabel": "界线重铸",
+          "phaseNote": "半血且存活：凝聚 12% 阶段护盾，二阶段反击 +15%。",
+          "type": "boss",
+          "hp": 0,
+          "maxHp": 18591345,
+          "attack": 1381,
+          "shield": 0,
+          "maxShield": 2230962,
+          "turns": 1,
+          "combatRules": 4,
+          "stage": 2,
+          "encounterKey": "boss",
+          "wave": 1,
+          "openingEcho": 0
+        },
+        "chest": null,
+        "loot": {
+          "item": {
+            "id": "i10",
+            "slot": "relic",
+            "rarity": 0,
+            "depth": 140,
+            "level": 84,
+            "levelXp": 0,
+            "enhance": 0,
+            "locked": false,
+            "catalogId": "relic-6-0-0",
+            "profile": 0,
+            "theme": 6,
+            "name": "残响·暮光心核"
+          },
+          "gold": 2296,
+          "type": "boss",
+          "source": "蚀日无冕者"
+        },
+        "shop": [],
+        "lastRoll": {
+          "values": [
+            1,
+            1,
+            4,
+            1,
+            4,
+            2
+          ],
+          "best": 3,
+          "critical": true,
+          "follow": true,
+          "criticalMultiplier": 1.8,
+          "followMultiplier": 0.35,
+          "main": 51046,
+          "extra": 17866,
+          "echoDamage": 7657,
+          "total": 76569,
+          "absorbed": 0,
+          "hpDamage": 1,
+          "retaliation": 0,
+          "killed": true,
+          "phaseChanged": false,
+          "guarded": 0,
+          "luck": 0,
+          "luckActive": false,
+          "echoes": 0,
+          "highCount": 0,
+          "wardGain": 1867,
+          "dodged": false,
+          "mechanics": [
+            "蚀日缺刻 · 反击 +25%",
+            "三声断章 · 已触发",
+            "深层回响 · 追加 7657（不递归）",
+            "共鸣与余光护盾 +1867"
+          ]
+        },
+        "lastForge": null,
+        "log": [
+          {
+            "text": "获得残响·暮光心核 · 普通",
+            "tone": "common"
+          },
+          {
+            "text": "蚀日无冕者倒下了 · 宝箱已出现。",
+            "tone": "gold"
+          },
+          {
+            "text": "1 · 1 · 4 · 1 · 4 · 2 → 76569 伤害 · 暴击 · 3 同共鸣",
+            "tone": "gold"
+          },
+          {
+            "text": "记录 1 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": ""
+          },
+          {
+            "text": "记录 2 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": "gold"
+          },
+          {
+            "text": "记录 3 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": "rare"
+          }
+        ],
+        "completed": false,
+        "event": null,
+        "eventLuck": 0,
+        "eventPower": 0,
+        "encounterHistory": [],
+        "routeMemory": {
+          "services": [],
+          "last": {},
+          "hiddenFloor": 0
+        },
+        "v5Boons": {
+          "echo": 0,
+          "ward": 0
+        },
+        "nextLuck": 0,
+        "counters": {
+          "rolls": 1,
+          "kills": 1,
+          "chests": 1,
+          "deaths": 0,
+          "highestDamage": 76569,
+          "bosses": 1
+        },
+        "player": {
+          "level": 80,
+          "xp": 434,
+          "gold": 502296,
+          "hp": 9337,
+          "talentPoints": 35,
+          "deepOfferings": 0,
+          "pactScars": 0,
+          "fateBlessings": 0,
+          "talents": {
+            "high": 0,
+            "four": 0,
+            "five": 0,
+            "six": 0,
+            "sum": 0,
+            "power": 0,
+            "resonance": 5,
+            "pair": 0,
+            "triple": 0,
+            "quartet": 0,
+            "choir": 0,
+            "echo": 5,
+            "critical": 5,
+            "keen": 5,
+            "crush": 0,
+            "pursuit": 0,
+            "opener": 0,
+            "slayer": 0,
+            "vitality": 0,
+            "guard": 0,
+            "leech": 0,
+            "recovery": 0,
+            "fortune": 0,
+            "smith": 0,
+            "luck": 0,
+            "attune": 0,
+            "omen": 0,
+            "mercy": 0,
+            "jackpot": 0,
+            "spark": 0,
+            "shatter": 0,
+            "diversity": 0,
+            "finality": 0,
+            "deepEcho": 0,
+            "chorusMend": 0,
+            "tripleBlade": 0,
+            "firstFire": 0,
+            "critAegis": 0,
+            "dawnCrit": 0,
+            "emberGuard": 0,
+            "phaseShelter": 0,
+            "lastResolve": 0,
+            "hunterStar": 0,
+            "gildedFaces": 0,
+            "sixRebirth": 0
+          },
+          "items": [
+            {
+              "id": "i1",
+              "slot": "weapon",
+              "rarity": 0,
+              "depth": 1,
+              "level": 2,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "weapon-2-0-0",
+              "profile": 0,
+              "theme": 2,
+              "name": "残响·雷鸣重刃"
+            },
+            {
+              "id": "i2",
+              "slot": "armor",
+              "rarity": 0,
+              "depth": 1,
+              "level": 1,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-armor-3-2-0",
+              "profile": 2,
+              "theme": 5,
+              "name": "残响·长明回响灵衣"
+            },
+            {
+              "id": "i3",
+              "slot": "relic",
+              "rarity": 0,
+              "depth": 1,
+              "level": 3,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-8-2-0",
+              "profile": 2,
+              "theme": 8,
+              "name": "残响·沙漏回环"
+            },
+            {
+              "id": "i4",
+              "slot": "weapon",
+              "rarity": 4,
+              "depth": 140,
+              "level": 79,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v5-weapon-1-0-4",
+              "profile": 0,
+              "theme": 1,
+              "name": "赤曜·合奏守誓重刃"
+            },
+            {
+              "id": "i5",
+              "slot": "armor",
+              "rarity": 4,
+              "depth": 140,
+              "level": 78,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-armor-2-0-4",
+              "profile": 0,
+              "theme": 2,
+              "name": "赤曜·共守守誓壁垒"
+            },
+            {
+              "id": "i6",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 81,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-6-2-4",
+              "profile": 2,
+              "theme": 6,
+              "name": "赤曜·暮光回环"
+            },
+            {
+              "id": "i7",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 82,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v5-relic-3-2-4",
+              "profile": 2,
+              "theme": 5,
+              "name": "赤曜·拾光回响回环"
+            },
+            {
+              "id": "i8",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 82,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-relic-4-0-4",
+              "profile": 0,
+              "theme": 4,
+              "name": "赤曜·满月守誓心核"
+            },
+            {
+              "id": "i10",
+              "slot": "relic",
+              "rarity": 0,
+              "depth": 140,
+              "level": 84,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-6-0-0",
+              "profile": 0,
+              "theme": 6,
+              "name": "残响·暮光心核"
+            }
+          ],
+          "equipped": {
+            "weapon": "i4",
+            "armor": "i5",
+            "relic": "i6",
+            "relic2": "i7",
+            "relic3": "i8"
+          }
+        },
+        "ward": 1867,
+        "roomUsed": false,
+        "blessing": 0,
+        "lootCreditedGold": 2296
+      }
+    },
+    {
+      "label": "baseline",
+      "scene": "rarity-1-open",
+      "fixtureSha256": "e4442f8c65fcbf9a9b9e8715f0dffca582613eb47a1d938ddcdd7a06b486a09d",
+      "persistedSha256": "422376f30bbe4675c7c03287040b447a4ed7a5e61e38a77037de1d7323cc7074",
+      "fullExpectedState": {
+        "version": 5,
+        "revision": 3,
+        "runId": "qa-round-chest-1-20261017",
+        "rng": 3031976842,
+        "nextId": 11,
+        "floor": 140,
+        "phase": "loot",
+        "route": [
+          {
+            "id": "f140r0",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r1",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r2",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r3",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r4",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r5",
+            "type": "boss",
+            "quality": 0,
+            "done": false
+          }
+        ],
+        "roomIndex": 5,
+        "fate": [
+          6,
+          6
+        ],
+        "enemy": {
+          "name": "蚀日无冕者",
+          "mechanic": "boss_eclipse",
+          "minFloor": 50,
+          "trait": "steady",
+          "identity": "太古星海的守门者",
+          "label": "奇数回合无 6 则反击 +25%；偶数回合三同伤害 +50%。",
+          "warning": "奇数回合无 6 则反击 +25%；偶数回合三同伤害 +50%。",
+          "counterplay": "构筑真正足够强时可以速杀；没有强制锁血。",
+          "note": "「带着你的刻点，越过这条界线。」",
+          "phaseLabel": "界线重铸",
+          "phaseNote": "半血且存活：凝聚 12% 阶段护盾，二阶段反击 +15%。",
+          "type": "boss",
+          "hp": 0,
+          "maxHp": 18591345,
+          "attack": 1381,
+          "shield": 0,
+          "maxShield": 2230962,
+          "turns": 1,
+          "combatRules": 4,
+          "stage": 2,
+          "encounterKey": "boss",
+          "wave": 1,
+          "openingEcho": 0
+        },
+        "chest": null,
+        "loot": {
+          "item": {
+            "id": "i10",
+            "slot": "relic",
+            "rarity": 1,
+            "depth": 140,
+            "level": 84,
+            "levelXp": 0,
+            "enhance": 0,
+            "locked": false,
+            "catalogId": "relic-6-0-1",
+            "profile": 0,
+            "theme": 6,
+            "name": "铭刻·暮光心核"
+          },
+          "gold": 2296,
+          "type": "boss",
+          "source": "蚀日无冕者"
+        },
+        "shop": [],
+        "lastRoll": {
+          "values": [
+            1,
+            1,
+            4,
+            1,
+            4,
+            2
+          ],
+          "best": 3,
+          "critical": true,
+          "follow": true,
+          "criticalMultiplier": 1.8,
+          "followMultiplier": 0.35,
+          "main": 51046,
+          "extra": 17866,
+          "echoDamage": 7657,
+          "total": 76569,
+          "absorbed": 0,
+          "hpDamage": 1,
+          "retaliation": 0,
+          "killed": true,
+          "phaseChanged": false,
+          "guarded": 0,
+          "luck": 0,
+          "luckActive": false,
+          "echoes": 0,
+          "highCount": 0,
+          "wardGain": 1867,
+          "dodged": false,
+          "mechanics": [
+            "蚀日缺刻 · 反击 +25%",
+            "三声断章 · 已触发",
+            "深层回响 · 追加 7657（不递归）",
+            "共鸣与余光护盾 +1867"
+          ]
+        },
+        "lastForge": null,
+        "log": [
+          {
+            "text": "获得铭刻·暮光心核 · 稀有",
+            "tone": "rare"
+          },
+          {
+            "text": "蚀日无冕者倒下了 · 宝箱已出现。",
+            "tone": "gold"
+          },
+          {
+            "text": "1 · 1 · 4 · 1 · 4 · 2 → 76569 伤害 · 暴击 · 3 同共鸣",
+            "tone": "gold"
+          },
+          {
+            "text": "记录 1 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": ""
+          },
+          {
+            "text": "记录 2 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": "gold"
+          },
+          {
+            "text": "记录 3 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": "rare"
+          }
+        ],
+        "completed": false,
+        "event": null,
+        "eventLuck": 0,
+        "eventPower": 0,
+        "encounterHistory": [],
+        "routeMemory": {
+          "services": [],
+          "last": {},
+          "hiddenFloor": 0
+        },
+        "v5Boons": {
+          "echo": 0,
+          "ward": 0
+        },
+        "nextLuck": 0,
+        "counters": {
+          "rolls": 1,
+          "kills": 1,
+          "chests": 1,
+          "deaths": 0,
+          "highestDamage": 76569,
+          "bosses": 1
+        },
+        "player": {
+          "level": 80,
+          "xp": 434,
+          "gold": 502296,
+          "hp": 9337,
+          "talentPoints": 35,
+          "deepOfferings": 0,
+          "pactScars": 0,
+          "fateBlessings": 0,
+          "talents": {
+            "high": 0,
+            "four": 0,
+            "five": 0,
+            "six": 0,
+            "sum": 0,
+            "power": 0,
+            "resonance": 5,
+            "pair": 0,
+            "triple": 0,
+            "quartet": 0,
+            "choir": 0,
+            "echo": 5,
+            "critical": 5,
+            "keen": 5,
+            "crush": 0,
+            "pursuit": 0,
+            "opener": 0,
+            "slayer": 0,
+            "vitality": 0,
+            "guard": 0,
+            "leech": 0,
+            "recovery": 0,
+            "fortune": 0,
+            "smith": 0,
+            "luck": 0,
+            "attune": 0,
+            "omen": 0,
+            "mercy": 0,
+            "jackpot": 0,
+            "spark": 0,
+            "shatter": 0,
+            "diversity": 0,
+            "finality": 0,
+            "deepEcho": 0,
+            "chorusMend": 0,
+            "tripleBlade": 0,
+            "firstFire": 0,
+            "critAegis": 0,
+            "dawnCrit": 0,
+            "emberGuard": 0,
+            "phaseShelter": 0,
+            "lastResolve": 0,
+            "hunterStar": 0,
+            "gildedFaces": 0,
+            "sixRebirth": 0
+          },
+          "items": [
+            {
+              "id": "i1",
+              "slot": "weapon",
+              "rarity": 0,
+              "depth": 1,
+              "level": 2,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "weapon-2-0-0",
+              "profile": 0,
+              "theme": 2,
+              "name": "残响·雷鸣重刃"
+            },
+            {
+              "id": "i2",
+              "slot": "armor",
+              "rarity": 0,
+              "depth": 1,
+              "level": 1,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-armor-3-2-0",
+              "profile": 2,
+              "theme": 5,
+              "name": "残响·长明回响灵衣"
+            },
+            {
+              "id": "i3",
+              "slot": "relic",
+              "rarity": 0,
+              "depth": 1,
+              "level": 3,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-8-2-0",
+              "profile": 2,
+              "theme": 8,
+              "name": "残响·沙漏回环"
+            },
+            {
+              "id": "i4",
+              "slot": "weapon",
+              "rarity": 4,
+              "depth": 140,
+              "level": 79,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v5-weapon-1-0-4",
+              "profile": 0,
+              "theme": 1,
+              "name": "赤曜·合奏守誓重刃"
+            },
+            {
+              "id": "i5",
+              "slot": "armor",
+              "rarity": 4,
+              "depth": 140,
+              "level": 78,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-armor-2-0-4",
+              "profile": 0,
+              "theme": 2,
+              "name": "赤曜·共守守誓壁垒"
+            },
+            {
+              "id": "i6",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 81,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-6-2-4",
+              "profile": 2,
+              "theme": 6,
+              "name": "赤曜·暮光回环"
+            },
+            {
+              "id": "i7",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 82,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v5-relic-3-2-4",
+              "profile": 2,
+              "theme": 5,
+              "name": "赤曜·拾光回响回环"
+            },
+            {
+              "id": "i8",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 82,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-relic-4-0-4",
+              "profile": 0,
+              "theme": 4,
+              "name": "赤曜·满月守誓心核"
+            },
+            {
+              "id": "i10",
+              "slot": "relic",
+              "rarity": 1,
+              "depth": 140,
+              "level": 84,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-6-0-1",
+              "profile": 0,
+              "theme": 6,
+              "name": "铭刻·暮光心核"
+            }
+          ],
+          "equipped": {
+            "weapon": "i4",
+            "armor": "i5",
+            "relic": "i6",
+            "relic2": "i7",
+            "relic3": "i8"
+          }
+        },
+        "ward": 1867,
+        "roomUsed": false,
+        "blessing": 0,
+        "lootCreditedGold": 2296
+      }
+    },
+    {
+      "label": "after",
+      "scene": "rarity-1-open",
+      "fixtureSha256": "e4442f8c65fcbf9a9b9e8715f0dffca582613eb47a1d938ddcdd7a06b486a09d",
+      "persistedSha256": "422376f30bbe4675c7c03287040b447a4ed7a5e61e38a77037de1d7323cc7074",
+      "fullExpectedState": {
+        "version": 5,
+        "revision": 3,
+        "runId": "qa-round-chest-1-20261017",
+        "rng": 3031976842,
+        "nextId": 11,
+        "floor": 140,
+        "phase": "loot",
+        "route": [
+          {
+            "id": "f140r0",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r1",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r2",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r3",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r4",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r5",
+            "type": "boss",
+            "quality": 0,
+            "done": false
+          }
+        ],
+        "roomIndex": 5,
+        "fate": [
+          6,
+          6
+        ],
+        "enemy": {
+          "name": "蚀日无冕者",
+          "mechanic": "boss_eclipse",
+          "minFloor": 50,
+          "trait": "steady",
+          "identity": "太古星海的守门者",
+          "label": "奇数回合无 6 则反击 +25%；偶数回合三同伤害 +50%。",
+          "warning": "奇数回合无 6 则反击 +25%；偶数回合三同伤害 +50%。",
+          "counterplay": "构筑真正足够强时可以速杀；没有强制锁血。",
+          "note": "「带着你的刻点，越过这条界线。」",
+          "phaseLabel": "界线重铸",
+          "phaseNote": "半血且存活：凝聚 12% 阶段护盾，二阶段反击 +15%。",
+          "type": "boss",
+          "hp": 0,
+          "maxHp": 18591345,
+          "attack": 1381,
+          "shield": 0,
+          "maxShield": 2230962,
+          "turns": 1,
+          "combatRules": 4,
+          "stage": 2,
+          "encounterKey": "boss",
+          "wave": 1,
+          "openingEcho": 0
+        },
+        "chest": null,
+        "loot": {
+          "item": {
+            "id": "i10",
+            "slot": "relic",
+            "rarity": 1,
+            "depth": 140,
+            "level": 84,
+            "levelXp": 0,
+            "enhance": 0,
+            "locked": false,
+            "catalogId": "relic-6-0-1",
+            "profile": 0,
+            "theme": 6,
+            "name": "铭刻·暮光心核"
+          },
+          "gold": 2296,
+          "type": "boss",
+          "source": "蚀日无冕者"
+        },
+        "shop": [],
+        "lastRoll": {
+          "values": [
+            1,
+            1,
+            4,
+            1,
+            4,
+            2
+          ],
+          "best": 3,
+          "critical": true,
+          "follow": true,
+          "criticalMultiplier": 1.8,
+          "followMultiplier": 0.35,
+          "main": 51046,
+          "extra": 17866,
+          "echoDamage": 7657,
+          "total": 76569,
+          "absorbed": 0,
+          "hpDamage": 1,
+          "retaliation": 0,
+          "killed": true,
+          "phaseChanged": false,
+          "guarded": 0,
+          "luck": 0,
+          "luckActive": false,
+          "echoes": 0,
+          "highCount": 0,
+          "wardGain": 1867,
+          "dodged": false,
+          "mechanics": [
+            "蚀日缺刻 · 反击 +25%",
+            "三声断章 · 已触发",
+            "深层回响 · 追加 7657（不递归）",
+            "共鸣与余光护盾 +1867"
+          ]
+        },
+        "lastForge": null,
+        "log": [
+          {
+            "text": "获得铭刻·暮光心核 · 稀有",
+            "tone": "rare"
+          },
+          {
+            "text": "蚀日无冕者倒下了 · 宝箱已出现。",
+            "tone": "gold"
+          },
+          {
+            "text": "1 · 1 · 4 · 1 · 4 · 2 → 76569 伤害 · 暴击 · 3 同共鸣",
+            "tone": "gold"
+          },
+          {
+            "text": "记录 1 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": ""
+          },
+          {
+            "text": "记录 2 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": "gold"
+          },
+          {
+            "text": "记录 3 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": "rare"
+          }
+        ],
+        "completed": false,
+        "event": null,
+        "eventLuck": 0,
+        "eventPower": 0,
+        "encounterHistory": [],
+        "routeMemory": {
+          "services": [],
+          "last": {},
+          "hiddenFloor": 0
+        },
+        "v5Boons": {
+          "echo": 0,
+          "ward": 0
+        },
+        "nextLuck": 0,
+        "counters": {
+          "rolls": 1,
+          "kills": 1,
+          "chests": 1,
+          "deaths": 0,
+          "highestDamage": 76569,
+          "bosses": 1
+        },
+        "player": {
+          "level": 80,
+          "xp": 434,
+          "gold": 502296,
+          "hp": 9337,
+          "talentPoints": 35,
+          "deepOfferings": 0,
+          "pactScars": 0,
+          "fateBlessings": 0,
+          "talents": {
+            "high": 0,
+            "four": 0,
+            "five": 0,
+            "six": 0,
+            "sum": 0,
+            "power": 0,
+            "resonance": 5,
+            "pair": 0,
+            "triple": 0,
+            "quartet": 0,
+            "choir": 0,
+            "echo": 5,
+            "critical": 5,
+            "keen": 5,
+            "crush": 0,
+            "pursuit": 0,
+            "opener": 0,
+            "slayer": 0,
+            "vitality": 0,
+            "guard": 0,
+            "leech": 0,
+            "recovery": 0,
+            "fortune": 0,
+            "smith": 0,
+            "luck": 0,
+            "attune": 0,
+            "omen": 0,
+            "mercy": 0,
+            "jackpot": 0,
+            "spark": 0,
+            "shatter": 0,
+            "diversity": 0,
+            "finality": 0,
+            "deepEcho": 0,
+            "chorusMend": 0,
+            "tripleBlade": 0,
+            "firstFire": 0,
+            "critAegis": 0,
+            "dawnCrit": 0,
+            "emberGuard": 0,
+            "phaseShelter": 0,
+            "lastResolve": 0,
+            "hunterStar": 0,
+            "gildedFaces": 0,
+            "sixRebirth": 0
+          },
+          "items": [
+            {
+              "id": "i1",
+              "slot": "weapon",
+              "rarity": 0,
+              "depth": 1,
+              "level": 2,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "weapon-2-0-0",
+              "profile": 0,
+              "theme": 2,
+              "name": "残响·雷鸣重刃"
+            },
+            {
+              "id": "i2",
+              "slot": "armor",
+              "rarity": 0,
+              "depth": 1,
+              "level": 1,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-armor-3-2-0",
+              "profile": 2,
+              "theme": 5,
+              "name": "残响·长明回响灵衣"
+            },
+            {
+              "id": "i3",
+              "slot": "relic",
+              "rarity": 0,
+              "depth": 1,
+              "level": 3,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-8-2-0",
+              "profile": 2,
+              "theme": 8,
+              "name": "残响·沙漏回环"
+            },
+            {
+              "id": "i4",
+              "slot": "weapon",
+              "rarity": 4,
+              "depth": 140,
+              "level": 79,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v5-weapon-1-0-4",
+              "profile": 0,
+              "theme": 1,
+              "name": "赤曜·合奏守誓重刃"
+            },
+            {
+              "id": "i5",
+              "slot": "armor",
+              "rarity": 4,
+              "depth": 140,
+              "level": 78,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-armor-2-0-4",
+              "profile": 0,
+              "theme": 2,
+              "name": "赤曜·共守守誓壁垒"
+            },
+            {
+              "id": "i6",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 81,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-6-2-4",
+              "profile": 2,
+              "theme": 6,
+              "name": "赤曜·暮光回环"
+            },
+            {
+              "id": "i7",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 82,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v5-relic-3-2-4",
+              "profile": 2,
+              "theme": 5,
+              "name": "赤曜·拾光回响回环"
+            },
+            {
+              "id": "i8",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 82,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-relic-4-0-4",
+              "profile": 0,
+              "theme": 4,
+              "name": "赤曜·满月守誓心核"
+            },
+            {
+              "id": "i10",
+              "slot": "relic",
+              "rarity": 1,
+              "depth": 140,
+              "level": 84,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-6-0-1",
+              "profile": 0,
+              "theme": 6,
+              "name": "铭刻·暮光心核"
+            }
+          ],
+          "equipped": {
+            "weapon": "i4",
+            "armor": "i5",
+            "relic": "i6",
+            "relic2": "i7",
+            "relic3": "i8"
+          }
+        },
+        "ward": 1867,
+        "roomUsed": false,
+        "blessing": 0,
+        "lootCreditedGold": 2296
+      }
+    },
+    {
+      "label": "baseline",
+      "scene": "rarity-2-open",
+      "fixtureSha256": "a4821dfe54bdcd925e3ca0709c40ead7dd5d205ca0d432fd008f32603e4c3f87",
+      "persistedSha256": "57d27e609340c9c8a79c0ecec9c907bbb95c95c03fa2f508cb68a2f5d9efdf31",
+      "fullExpectedState": {
+        "version": 5,
+        "revision": 3,
+        "runId": "qa-round-chest-2-20261017",
+        "rng": 3031976842,
+        "nextId": 11,
+        "floor": 140,
+        "phase": "loot",
+        "route": [
+          {
+            "id": "f140r0",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r1",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r2",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r3",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r4",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r5",
+            "type": "boss",
+            "quality": 0,
+            "done": false
+          }
+        ],
+        "roomIndex": 5,
+        "fate": [
+          6,
+          6
+        ],
+        "enemy": {
+          "name": "蚀日无冕者",
+          "mechanic": "boss_eclipse",
+          "minFloor": 50,
+          "trait": "steady",
+          "identity": "太古星海的守门者",
+          "label": "奇数回合无 6 则反击 +25%；偶数回合三同伤害 +50%。",
+          "warning": "奇数回合无 6 则反击 +25%；偶数回合三同伤害 +50%。",
+          "counterplay": "构筑真正足够强时可以速杀；没有强制锁血。",
+          "note": "「带着你的刻点，越过这条界线。」",
+          "phaseLabel": "界线重铸",
+          "phaseNote": "半血且存活：凝聚 12% 阶段护盾，二阶段反击 +15%。",
+          "type": "boss",
+          "hp": 0,
+          "maxHp": 18591345,
+          "attack": 1381,
+          "shield": 0,
+          "maxShield": 2230962,
+          "turns": 1,
+          "combatRules": 4,
+          "stage": 2,
+          "encounterKey": "boss",
+          "wave": 1,
+          "openingEcho": 0
+        },
+        "chest": null,
+        "loot": {
+          "item": {
+            "id": "i10",
+            "slot": "relic",
+            "rarity": 2,
+            "depth": 140,
+            "level": 84,
+            "levelXp": 0,
+            "enhance": 0,
+            "locked": false,
+            "catalogId": "relic-6-0-2",
+            "profile": 0,
+            "theme": 6,
+            "name": "誓约·暮光心核"
+          },
+          "gold": 2296,
+          "type": "boss",
+          "source": "蚀日无冕者"
+        },
+        "shop": [],
+        "lastRoll": {
+          "values": [
+            1,
+            1,
+            4,
+            1,
+            4,
+            2
+          ],
+          "best": 3,
+          "critical": true,
+          "follow": true,
+          "criticalMultiplier": 1.8,
+          "followMultiplier": 0.35,
+          "main": 51046,
+          "extra": 17866,
+          "echoDamage": 7657,
+          "total": 76569,
+          "absorbed": 0,
+          "hpDamage": 1,
+          "retaliation": 0,
+          "killed": true,
+          "phaseChanged": false,
+          "guarded": 0,
+          "luck": 0,
+          "luckActive": false,
+          "echoes": 0,
+          "highCount": 0,
+          "wardGain": 1867,
+          "dodged": false,
+          "mechanics": [
+            "蚀日缺刻 · 反击 +25%",
+            "三声断章 · 已触发",
+            "深层回响 · 追加 7657（不递归）",
+            "共鸣与余光护盾 +1867"
+          ]
+        },
+        "lastForge": null,
+        "log": [
+          {
+            "text": "获得誓约·暮光心核 · 史诗",
+            "tone": "epic"
+          },
+          {
+            "text": "蚀日无冕者倒下了 · 宝箱已出现。",
+            "tone": "gold"
+          },
+          {
+            "text": "1 · 1 · 4 · 1 · 4 · 2 → 76569 伤害 · 暴击 · 3 同共鸣",
+            "tone": "gold"
+          },
+          {
+            "text": "记录 1 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": ""
+          },
+          {
+            "text": "记录 2 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": "gold"
+          },
+          {
+            "text": "记录 3 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": "rare"
+          }
+        ],
+        "completed": false,
+        "event": null,
+        "eventLuck": 0,
+        "eventPower": 0,
+        "encounterHistory": [],
+        "routeMemory": {
+          "services": [],
+          "last": {},
+          "hiddenFloor": 0
+        },
+        "v5Boons": {
+          "echo": 0,
+          "ward": 0
+        },
+        "nextLuck": 0,
+        "counters": {
+          "rolls": 1,
+          "kills": 1,
+          "chests": 1,
+          "deaths": 0,
+          "highestDamage": 76569,
+          "bosses": 1
+        },
+        "player": {
+          "level": 80,
+          "xp": 434,
+          "gold": 502296,
+          "hp": 9337,
+          "talentPoints": 35,
+          "deepOfferings": 0,
+          "pactScars": 0,
+          "fateBlessings": 0,
+          "talents": {
+            "high": 0,
+            "four": 0,
+            "five": 0,
+            "six": 0,
+            "sum": 0,
+            "power": 0,
+            "resonance": 5,
+            "pair": 0,
+            "triple": 0,
+            "quartet": 0,
+            "choir": 0,
+            "echo": 5,
+            "critical": 5,
+            "keen": 5,
+            "crush": 0,
+            "pursuit": 0,
+            "opener": 0,
+            "slayer": 0,
+            "vitality": 0,
+            "guard": 0,
+            "leech": 0,
+            "recovery": 0,
+            "fortune": 0,
+            "smith": 0,
+            "luck": 0,
+            "attune": 0,
+            "omen": 0,
+            "mercy": 0,
+            "jackpot": 0,
+            "spark": 0,
+            "shatter": 0,
+            "diversity": 0,
+            "finality": 0,
+            "deepEcho": 0,
+            "chorusMend": 0,
+            "tripleBlade": 0,
+            "firstFire": 0,
+            "critAegis": 0,
+            "dawnCrit": 0,
+            "emberGuard": 0,
+            "phaseShelter": 0,
+            "lastResolve": 0,
+            "hunterStar": 0,
+            "gildedFaces": 0,
+            "sixRebirth": 0
+          },
+          "items": [
+            {
+              "id": "i1",
+              "slot": "weapon",
+              "rarity": 0,
+              "depth": 1,
+              "level": 2,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "weapon-2-0-0",
+              "profile": 0,
+              "theme": 2,
+              "name": "残响·雷鸣重刃"
+            },
+            {
+              "id": "i2",
+              "slot": "armor",
+              "rarity": 0,
+              "depth": 1,
+              "level": 1,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-armor-3-2-0",
+              "profile": 2,
+              "theme": 5,
+              "name": "残响·长明回响灵衣"
+            },
+            {
+              "id": "i3",
+              "slot": "relic",
+              "rarity": 0,
+              "depth": 1,
+              "level": 3,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-8-2-0",
+              "profile": 2,
+              "theme": 8,
+              "name": "残响·沙漏回环"
+            },
+            {
+              "id": "i4",
+              "slot": "weapon",
+              "rarity": 4,
+              "depth": 140,
+              "level": 79,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v5-weapon-1-0-4",
+              "profile": 0,
+              "theme": 1,
+              "name": "赤曜·合奏守誓重刃"
+            },
+            {
+              "id": "i5",
+              "slot": "armor",
+              "rarity": 4,
+              "depth": 140,
+              "level": 78,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-armor-2-0-4",
+              "profile": 0,
+              "theme": 2,
+              "name": "赤曜·共守守誓壁垒"
+            },
+            {
+              "id": "i6",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 81,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-6-2-4",
+              "profile": 2,
+              "theme": 6,
+              "name": "赤曜·暮光回环"
+            },
+            {
+              "id": "i7",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 82,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v5-relic-3-2-4",
+              "profile": 2,
+              "theme": 5,
+              "name": "赤曜·拾光回响回环"
+            },
+            {
+              "id": "i8",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 82,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-relic-4-0-4",
+              "profile": 0,
+              "theme": 4,
+              "name": "赤曜·满月守誓心核"
+            },
+            {
+              "id": "i10",
+              "slot": "relic",
+              "rarity": 2,
+              "depth": 140,
+              "level": 84,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-6-0-2",
+              "profile": 0,
+              "theme": 6,
+              "name": "誓约·暮光心核"
+            }
+          ],
+          "equipped": {
+            "weapon": "i4",
+            "armor": "i5",
+            "relic": "i6",
+            "relic2": "i7",
+            "relic3": "i8"
+          }
+        },
+        "ward": 1867,
+        "roomUsed": false,
+        "blessing": 0,
+        "lootCreditedGold": 2296
+      }
+    },
+    {
+      "label": "after",
+      "scene": "rarity-2-open",
+      "fixtureSha256": "a4821dfe54bdcd925e3ca0709c40ead7dd5d205ca0d432fd008f32603e4c3f87",
+      "persistedSha256": "57d27e609340c9c8a79c0ecec9c907bbb95c95c03fa2f508cb68a2f5d9efdf31",
+      "fullExpectedState": {
+        "version": 5,
+        "revision": 3,
+        "runId": "qa-round-chest-2-20261017",
+        "rng": 3031976842,
+        "nextId": 11,
+        "floor": 140,
+        "phase": "loot",
+        "route": [
+          {
+            "id": "f140r0",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r1",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r2",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r3",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r4",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r5",
+            "type": "boss",
+            "quality": 0,
+            "done": false
+          }
+        ],
+        "roomIndex": 5,
+        "fate": [
+          6,
+          6
+        ],
+        "enemy": {
+          "name": "蚀日无冕者",
+          "mechanic": "boss_eclipse",
+          "minFloor": 50,
+          "trait": "steady",
+          "identity": "太古星海的守门者",
+          "label": "奇数回合无 6 则反击 +25%；偶数回合三同伤害 +50%。",
+          "warning": "奇数回合无 6 则反击 +25%；偶数回合三同伤害 +50%。",
+          "counterplay": "构筑真正足够强时可以速杀；没有强制锁血。",
+          "note": "「带着你的刻点，越过这条界线。」",
+          "phaseLabel": "界线重铸",
+          "phaseNote": "半血且存活：凝聚 12% 阶段护盾，二阶段反击 +15%。",
+          "type": "boss",
+          "hp": 0,
+          "maxHp": 18591345,
+          "attack": 1381,
+          "shield": 0,
+          "maxShield": 2230962,
+          "turns": 1,
+          "combatRules": 4,
+          "stage": 2,
+          "encounterKey": "boss",
+          "wave": 1,
+          "openingEcho": 0
+        },
+        "chest": null,
+        "loot": {
+          "item": {
+            "id": "i10",
+            "slot": "relic",
+            "rarity": 2,
+            "depth": 140,
+            "level": 84,
+            "levelXp": 0,
+            "enhance": 0,
+            "locked": false,
+            "catalogId": "relic-6-0-2",
+            "profile": 0,
+            "theme": 6,
+            "name": "誓约·暮光心核"
+          },
+          "gold": 2296,
+          "type": "boss",
+          "source": "蚀日无冕者"
+        },
+        "shop": [],
+        "lastRoll": {
+          "values": [
+            1,
+            1,
+            4,
+            1,
+            4,
+            2
+          ],
+          "best": 3,
+          "critical": true,
+          "follow": true,
+          "criticalMultiplier": 1.8,
+          "followMultiplier": 0.35,
+          "main": 51046,
+          "extra": 17866,
+          "echoDamage": 7657,
+          "total": 76569,
+          "absorbed": 0,
+          "hpDamage": 1,
+          "retaliation": 0,
+          "killed": true,
+          "phaseChanged": false,
+          "guarded": 0,
+          "luck": 0,
+          "luckActive": false,
+          "echoes": 0,
+          "highCount": 0,
+          "wardGain": 1867,
+          "dodged": false,
+          "mechanics": [
+            "蚀日缺刻 · 反击 +25%",
+            "三声断章 · 已触发",
+            "深层回响 · 追加 7657（不递归）",
+            "共鸣与余光护盾 +1867"
+          ]
+        },
+        "lastForge": null,
+        "log": [
+          {
+            "text": "获得誓约·暮光心核 · 史诗",
+            "tone": "epic"
+          },
+          {
+            "text": "蚀日无冕者倒下了 · 宝箱已出现。",
+            "tone": "gold"
+          },
+          {
+            "text": "1 · 1 · 4 · 1 · 4 · 2 → 76569 伤害 · 暴击 · 3 同共鸣",
+            "tone": "gold"
+          },
+          {
+            "text": "记录 1 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": ""
+          },
+          {
+            "text": "记录 2 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": "gold"
+          },
+          {
+            "text": "记录 3 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": "rare"
+          }
+        ],
+        "completed": false,
+        "event": null,
+        "eventLuck": 0,
+        "eventPower": 0,
+        "encounterHistory": [],
+        "routeMemory": {
+          "services": [],
+          "last": {},
+          "hiddenFloor": 0
+        },
+        "v5Boons": {
+          "echo": 0,
+          "ward": 0
+        },
+        "nextLuck": 0,
+        "counters": {
+          "rolls": 1,
+          "kills": 1,
+          "chests": 1,
+          "deaths": 0,
+          "highestDamage": 76569,
+          "bosses": 1
+        },
+        "player": {
+          "level": 80,
+          "xp": 434,
+          "gold": 502296,
+          "hp": 9337,
+          "talentPoints": 35,
+          "deepOfferings": 0,
+          "pactScars": 0,
+          "fateBlessings": 0,
+          "talents": {
+            "high": 0,
+            "four": 0,
+            "five": 0,
+            "six": 0,
+            "sum": 0,
+            "power": 0,
+            "resonance": 5,
+            "pair": 0,
+            "triple": 0,
+            "quartet": 0,
+            "choir": 0,
+            "echo": 5,
+            "critical": 5,
+            "keen": 5,
+            "crush": 0,
+            "pursuit": 0,
+            "opener": 0,
+            "slayer": 0,
+            "vitality": 0,
+            "guard": 0,
+            "leech": 0,
+            "recovery": 0,
+            "fortune": 0,
+            "smith": 0,
+            "luck": 0,
+            "attune": 0,
+            "omen": 0,
+            "mercy": 0,
+            "jackpot": 0,
+            "spark": 0,
+            "shatter": 0,
+            "diversity": 0,
+            "finality": 0,
+            "deepEcho": 0,
+            "chorusMend": 0,
+            "tripleBlade": 0,
+            "firstFire": 0,
+            "critAegis": 0,
+            "dawnCrit": 0,
+            "emberGuard": 0,
+            "phaseShelter": 0,
+            "lastResolve": 0,
+            "hunterStar": 0,
+            "gildedFaces": 0,
+            "sixRebirth": 0
+          },
+          "items": [
+            {
+              "id": "i1",
+              "slot": "weapon",
+              "rarity": 0,
+              "depth": 1,
+              "level": 2,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "weapon-2-0-0",
+              "profile": 0,
+              "theme": 2,
+              "name": "残响·雷鸣重刃"
+            },
+            {
+              "id": "i2",
+              "slot": "armor",
+              "rarity": 0,
+              "depth": 1,
+              "level": 1,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-armor-3-2-0",
+              "profile": 2,
+              "theme": 5,
+              "name": "残响·长明回响灵衣"
+            },
+            {
+              "id": "i3",
+              "slot": "relic",
+              "rarity": 0,
+              "depth": 1,
+              "level": 3,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-8-2-0",
+              "profile": 2,
+              "theme": 8,
+              "name": "残响·沙漏回环"
+            },
+            {
+              "id": "i4",
+              "slot": "weapon",
+              "rarity": 4,
+              "depth": 140,
+              "level": 79,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v5-weapon-1-0-4",
+              "profile": 0,
+              "theme": 1,
+              "name": "赤曜·合奏守誓重刃"
+            },
+            {
+              "id": "i5",
+              "slot": "armor",
+              "rarity": 4,
+              "depth": 140,
+              "level": 78,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-armor-2-0-4",
+              "profile": 0,
+              "theme": 2,
+              "name": "赤曜·共守守誓壁垒"
+            },
+            {
+              "id": "i6",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 81,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-6-2-4",
+              "profile": 2,
+              "theme": 6,
+              "name": "赤曜·暮光回环"
+            },
+            {
+              "id": "i7",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 82,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v5-relic-3-2-4",
+              "profile": 2,
+              "theme": 5,
+              "name": "赤曜·拾光回响回环"
+            },
+            {
+              "id": "i8",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 82,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-relic-4-0-4",
+              "profile": 0,
+              "theme": 4,
+              "name": "赤曜·满月守誓心核"
+            },
+            {
+              "id": "i10",
+              "slot": "relic",
+              "rarity": 2,
+              "depth": 140,
+              "level": 84,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-6-0-2",
+              "profile": 0,
+              "theme": 6,
+              "name": "誓约·暮光心核"
+            }
+          ],
+          "equipped": {
+            "weapon": "i4",
+            "armor": "i5",
+            "relic": "i6",
+            "relic2": "i7",
+            "relic3": "i8"
+          }
+        },
+        "ward": 1867,
+        "roomUsed": false,
+        "blessing": 0,
+        "lootCreditedGold": 2296
+      }
+    },
+    {
+      "label": "baseline",
+      "scene": "rarity-3-open",
+      "fixtureSha256": "53a83b027c3035dda05c2359ad8da73b6318a4f5c8a70af05a69a7e8967fb099",
+      "persistedSha256": "92b749acd97feae954a379333546e959034ecfcd30a4b6a4fe9511da85386d77",
+      "fullExpectedState": {
+        "version": 5,
+        "revision": 3,
+        "runId": "qa-round-chest-3-20261017",
+        "rng": 3031976842,
+        "nextId": 11,
+        "floor": 140,
+        "phase": "loot",
+        "route": [
+          {
+            "id": "f140r0",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r1",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r2",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r3",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r4",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r5",
+            "type": "boss",
+            "quality": 0,
+            "done": false
+          }
+        ],
+        "roomIndex": 5,
+        "fate": [
+          6,
+          6
+        ],
+        "enemy": {
+          "name": "蚀日无冕者",
+          "mechanic": "boss_eclipse",
+          "minFloor": 50,
+          "trait": "steady",
+          "identity": "太古星海的守门者",
+          "label": "奇数回合无 6 则反击 +25%；偶数回合三同伤害 +50%。",
+          "warning": "奇数回合无 6 则反击 +25%；偶数回合三同伤害 +50%。",
+          "counterplay": "构筑真正足够强时可以速杀；没有强制锁血。",
+          "note": "「带着你的刻点，越过这条界线。」",
+          "phaseLabel": "界线重铸",
+          "phaseNote": "半血且存活：凝聚 12% 阶段护盾，二阶段反击 +15%。",
+          "type": "boss",
+          "hp": 0,
+          "maxHp": 18591345,
+          "attack": 1381,
+          "shield": 0,
+          "maxShield": 2230962,
+          "turns": 1,
+          "combatRules": 4,
+          "stage": 2,
+          "encounterKey": "boss",
+          "wave": 1,
+          "openingEcho": 0
+        },
+        "chest": null,
+        "loot": {
+          "item": {
+            "id": "i10",
+            "slot": "relic",
+            "rarity": 3,
+            "depth": 140,
+            "level": 84,
+            "levelXp": 0,
+            "enhance": 0,
+            "locked": false,
+            "catalogId": "relic-6-0-3",
+            "profile": 0,
+            "theme": 6,
+            "name": "永恒·暮光心核"
+          },
+          "gold": 2296,
+          "type": "boss",
+          "source": "蚀日无冕者"
+        },
+        "shop": [],
+        "lastRoll": {
+          "values": [
+            1,
+            1,
+            4,
+            1,
+            4,
+            2
+          ],
+          "best": 3,
+          "critical": true,
+          "follow": true,
+          "criticalMultiplier": 1.8,
+          "followMultiplier": 0.35,
+          "main": 51046,
+          "extra": 17866,
+          "echoDamage": 7657,
+          "total": 76569,
+          "absorbed": 0,
+          "hpDamage": 1,
+          "retaliation": 0,
+          "killed": true,
+          "phaseChanged": false,
+          "guarded": 0,
+          "luck": 0,
+          "luckActive": false,
+          "echoes": 0,
+          "highCount": 0,
+          "wardGain": 1867,
+          "dodged": false,
+          "mechanics": [
+            "蚀日缺刻 · 反击 +25%",
+            "三声断章 · 已触发",
+            "深层回响 · 追加 7657（不递归）",
+            "共鸣与余光护盾 +1867"
+          ]
+        },
+        "lastForge": null,
+        "log": [
+          {
+            "text": "获得永恒·暮光心核 · 传说",
+            "tone": "legendary"
+          },
+          {
+            "text": "蚀日无冕者倒下了 · 宝箱已出现。",
+            "tone": "gold"
+          },
+          {
+            "text": "1 · 1 · 4 · 1 · 4 · 2 → 76569 伤害 · 暴击 · 3 同共鸣",
+            "tone": "gold"
+          },
+          {
+            "text": "记录 1 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": ""
+          },
+          {
+            "text": "记录 2 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": "gold"
+          },
+          {
+            "text": "记录 3 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": "rare"
+          }
+        ],
+        "completed": false,
+        "event": null,
+        "eventLuck": 0,
+        "eventPower": 0,
+        "encounterHistory": [],
+        "routeMemory": {
+          "services": [],
+          "last": {},
+          "hiddenFloor": 0
+        },
+        "v5Boons": {
+          "echo": 0,
+          "ward": 0
+        },
+        "nextLuck": 0,
+        "counters": {
+          "rolls": 1,
+          "kills": 1,
+          "chests": 1,
+          "deaths": 0,
+          "highestDamage": 76569,
+          "bosses": 1
+        },
+        "player": {
+          "level": 80,
+          "xp": 434,
+          "gold": 502296,
+          "hp": 9337,
+          "talentPoints": 35,
+          "deepOfferings": 0,
+          "pactScars": 0,
+          "fateBlessings": 0,
+          "talents": {
+            "high": 0,
+            "four": 0,
+            "five": 0,
+            "six": 0,
+            "sum": 0,
+            "power": 0,
+            "resonance": 5,
+            "pair": 0,
+            "triple": 0,
+            "quartet": 0,
+            "choir": 0,
+            "echo": 5,
+            "critical": 5,
+            "keen": 5,
+            "crush": 0,
+            "pursuit": 0,
+            "opener": 0,
+            "slayer": 0,
+            "vitality": 0,
+            "guard": 0,
+            "leech": 0,
+            "recovery": 0,
+            "fortune": 0,
+            "smith": 0,
+            "luck": 0,
+            "attune": 0,
+            "omen": 0,
+            "mercy": 0,
+            "jackpot": 0,
+            "spark": 0,
+            "shatter": 0,
+            "diversity": 0,
+            "finality": 0,
+            "deepEcho": 0,
+            "chorusMend": 0,
+            "tripleBlade": 0,
+            "firstFire": 0,
+            "critAegis": 0,
+            "dawnCrit": 0,
+            "emberGuard": 0,
+            "phaseShelter": 0,
+            "lastResolve": 0,
+            "hunterStar": 0,
+            "gildedFaces": 0,
+            "sixRebirth": 0
+          },
+          "items": [
+            {
+              "id": "i1",
+              "slot": "weapon",
+              "rarity": 0,
+              "depth": 1,
+              "level": 2,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "weapon-2-0-0",
+              "profile": 0,
+              "theme": 2,
+              "name": "残响·雷鸣重刃"
+            },
+            {
+              "id": "i2",
+              "slot": "armor",
+              "rarity": 0,
+              "depth": 1,
+              "level": 1,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-armor-3-2-0",
+              "profile": 2,
+              "theme": 5,
+              "name": "残响·长明回响灵衣"
+            },
+            {
+              "id": "i3",
+              "slot": "relic",
+              "rarity": 0,
+              "depth": 1,
+              "level": 3,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-8-2-0",
+              "profile": 2,
+              "theme": 8,
+              "name": "残响·沙漏回环"
+            },
+            {
+              "id": "i4",
+              "slot": "weapon",
+              "rarity": 4,
+              "depth": 140,
+              "level": 79,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v5-weapon-1-0-4",
+              "profile": 0,
+              "theme": 1,
+              "name": "赤曜·合奏守誓重刃"
+            },
+            {
+              "id": "i5",
+              "slot": "armor",
+              "rarity": 4,
+              "depth": 140,
+              "level": 78,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-armor-2-0-4",
+              "profile": 0,
+              "theme": 2,
+              "name": "赤曜·共守守誓壁垒"
+            },
+            {
+              "id": "i6",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 81,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-6-2-4",
+              "profile": 2,
+              "theme": 6,
+              "name": "赤曜·暮光回环"
+            },
+            {
+              "id": "i7",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 82,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v5-relic-3-2-4",
+              "profile": 2,
+              "theme": 5,
+              "name": "赤曜·拾光回响回环"
+            },
+            {
+              "id": "i8",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 82,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-relic-4-0-4",
+              "profile": 0,
+              "theme": 4,
+              "name": "赤曜·满月守誓心核"
+            },
+            {
+              "id": "i10",
+              "slot": "relic",
+              "rarity": 3,
+              "depth": 140,
+              "level": 84,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-6-0-3",
+              "profile": 0,
+              "theme": 6,
+              "name": "永恒·暮光心核"
+            }
+          ],
+          "equipped": {
+            "weapon": "i4",
+            "armor": "i5",
+            "relic": "i6",
+            "relic2": "i7",
+            "relic3": "i8"
+          }
+        },
+        "ward": 1867,
+        "roomUsed": false,
+        "blessing": 0,
+        "lootCreditedGold": 2296
+      }
+    },
+    {
+      "label": "after",
+      "scene": "rarity-3-open",
+      "fixtureSha256": "53a83b027c3035dda05c2359ad8da73b6318a4f5c8a70af05a69a7e8967fb099",
+      "persistedSha256": "92b749acd97feae954a379333546e959034ecfcd30a4b6a4fe9511da85386d77",
+      "fullExpectedState": {
+        "version": 5,
+        "revision": 3,
+        "runId": "qa-round-chest-3-20261017",
+        "rng": 3031976842,
+        "nextId": 11,
+        "floor": 140,
+        "phase": "loot",
+        "route": [
+          {
+            "id": "f140r0",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r1",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r2",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r3",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r4",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r5",
+            "type": "boss",
+            "quality": 0,
+            "done": false
+          }
+        ],
+        "roomIndex": 5,
+        "fate": [
+          6,
+          6
+        ],
+        "enemy": {
+          "name": "蚀日无冕者",
+          "mechanic": "boss_eclipse",
+          "minFloor": 50,
+          "trait": "steady",
+          "identity": "太古星海的守门者",
+          "label": "奇数回合无 6 则反击 +25%；偶数回合三同伤害 +50%。",
+          "warning": "奇数回合无 6 则反击 +25%；偶数回合三同伤害 +50%。",
+          "counterplay": "构筑真正足够强时可以速杀；没有强制锁血。",
+          "note": "「带着你的刻点，越过这条界线。」",
+          "phaseLabel": "界线重铸",
+          "phaseNote": "半血且存活：凝聚 12% 阶段护盾，二阶段反击 +15%。",
+          "type": "boss",
+          "hp": 0,
+          "maxHp": 18591345,
+          "attack": 1381,
+          "shield": 0,
+          "maxShield": 2230962,
+          "turns": 1,
+          "combatRules": 4,
+          "stage": 2,
+          "encounterKey": "boss",
+          "wave": 1,
+          "openingEcho": 0
+        },
+        "chest": null,
+        "loot": {
+          "item": {
+            "id": "i10",
+            "slot": "relic",
+            "rarity": 3,
+            "depth": 140,
+            "level": 84,
+            "levelXp": 0,
+            "enhance": 0,
+            "locked": false,
+            "catalogId": "relic-6-0-3",
+            "profile": 0,
+            "theme": 6,
+            "name": "永恒·暮光心核"
+          },
+          "gold": 2296,
+          "type": "boss",
+          "source": "蚀日无冕者"
+        },
+        "shop": [],
+        "lastRoll": {
+          "values": [
+            1,
+            1,
+            4,
+            1,
+            4,
+            2
+          ],
+          "best": 3,
+          "critical": true,
+          "follow": true,
+          "criticalMultiplier": 1.8,
+          "followMultiplier": 0.35,
+          "main": 51046,
+          "extra": 17866,
+          "echoDamage": 7657,
+          "total": 76569,
+          "absorbed": 0,
+          "hpDamage": 1,
+          "retaliation": 0,
+          "killed": true,
+          "phaseChanged": false,
+          "guarded": 0,
+          "luck": 0,
+          "luckActive": false,
+          "echoes": 0,
+          "highCount": 0,
+          "wardGain": 1867,
+          "dodged": false,
+          "mechanics": [
+            "蚀日缺刻 · 反击 +25%",
+            "三声断章 · 已触发",
+            "深层回响 · 追加 7657（不递归）",
+            "共鸣与余光护盾 +1867"
+          ]
+        },
+        "lastForge": null,
+        "log": [
+          {
+            "text": "获得永恒·暮光心核 · 传说",
+            "tone": "legendary"
+          },
+          {
+            "text": "蚀日无冕者倒下了 · 宝箱已出现。",
+            "tone": "gold"
+          },
+          {
+            "text": "1 · 1 · 4 · 1 · 4 · 2 → 76569 伤害 · 暴击 · 3 同共鸣",
+            "tone": "gold"
+          },
+          {
+            "text": "记录 1 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": ""
+          },
+          {
+            "text": "记录 2 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": "gold"
+          },
+          {
+            "text": "记录 3 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": "rare"
+          }
+        ],
+        "completed": false,
+        "event": null,
+        "eventLuck": 0,
+        "eventPower": 0,
+        "encounterHistory": [],
+        "routeMemory": {
+          "services": [],
+          "last": {},
+          "hiddenFloor": 0
+        },
+        "v5Boons": {
+          "echo": 0,
+          "ward": 0
+        },
+        "nextLuck": 0,
+        "counters": {
+          "rolls": 1,
+          "kills": 1,
+          "chests": 1,
+          "deaths": 0,
+          "highestDamage": 76569,
+          "bosses": 1
+        },
+        "player": {
+          "level": 80,
+          "xp": 434,
+          "gold": 502296,
+          "hp": 9337,
+          "talentPoints": 35,
+          "deepOfferings": 0,
+          "pactScars": 0,
+          "fateBlessings": 0,
+          "talents": {
+            "high": 0,
+            "four": 0,
+            "five": 0,
+            "six": 0,
+            "sum": 0,
+            "power": 0,
+            "resonance": 5,
+            "pair": 0,
+            "triple": 0,
+            "quartet": 0,
+            "choir": 0,
+            "echo": 5,
+            "critical": 5,
+            "keen": 5,
+            "crush": 0,
+            "pursuit": 0,
+            "opener": 0,
+            "slayer": 0,
+            "vitality": 0,
+            "guard": 0,
+            "leech": 0,
+            "recovery": 0,
+            "fortune": 0,
+            "smith": 0,
+            "luck": 0,
+            "attune": 0,
+            "omen": 0,
+            "mercy": 0,
+            "jackpot": 0,
+            "spark": 0,
+            "shatter": 0,
+            "diversity": 0,
+            "finality": 0,
+            "deepEcho": 0,
+            "chorusMend": 0,
+            "tripleBlade": 0,
+            "firstFire": 0,
+            "critAegis": 0,
+            "dawnCrit": 0,
+            "emberGuard": 0,
+            "phaseShelter": 0,
+            "lastResolve": 0,
+            "hunterStar": 0,
+            "gildedFaces": 0,
+            "sixRebirth": 0
+          },
+          "items": [
+            {
+              "id": "i1",
+              "slot": "weapon",
+              "rarity": 0,
+              "depth": 1,
+              "level": 2,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "weapon-2-0-0",
+              "profile": 0,
+              "theme": 2,
+              "name": "残响·雷鸣重刃"
+            },
+            {
+              "id": "i2",
+              "slot": "armor",
+              "rarity": 0,
+              "depth": 1,
+              "level": 1,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-armor-3-2-0",
+              "profile": 2,
+              "theme": 5,
+              "name": "残响·长明回响灵衣"
+            },
+            {
+              "id": "i3",
+              "slot": "relic",
+              "rarity": 0,
+              "depth": 1,
+              "level": 3,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-8-2-0",
+              "profile": 2,
+              "theme": 8,
+              "name": "残响·沙漏回环"
+            },
+            {
+              "id": "i4",
+              "slot": "weapon",
+              "rarity": 4,
+              "depth": 140,
+              "level": 79,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v5-weapon-1-0-4",
+              "profile": 0,
+              "theme": 1,
+              "name": "赤曜·合奏守誓重刃"
+            },
+            {
+              "id": "i5",
+              "slot": "armor",
+              "rarity": 4,
+              "depth": 140,
+              "level": 78,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-armor-2-0-4",
+              "profile": 0,
+              "theme": 2,
+              "name": "赤曜·共守守誓壁垒"
+            },
+            {
+              "id": "i6",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 81,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-6-2-4",
+              "profile": 2,
+              "theme": 6,
+              "name": "赤曜·暮光回环"
+            },
+            {
+              "id": "i7",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 82,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v5-relic-3-2-4",
+              "profile": 2,
+              "theme": 5,
+              "name": "赤曜·拾光回响回环"
+            },
+            {
+              "id": "i8",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 82,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-relic-4-0-4",
+              "profile": 0,
+              "theme": 4,
+              "name": "赤曜·满月守誓心核"
+            },
+            {
+              "id": "i10",
+              "slot": "relic",
+              "rarity": 3,
+              "depth": 140,
+              "level": 84,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-6-0-3",
+              "profile": 0,
+              "theme": 6,
+              "name": "永恒·暮光心核"
+            }
+          ],
+          "equipped": {
+            "weapon": "i4",
+            "armor": "i5",
+            "relic": "i6",
+            "relic2": "i7",
+            "relic3": "i8"
+          }
+        },
+        "ward": 1867,
+        "roomUsed": false,
+        "blessing": 0,
+        "lootCreditedGold": 2296
+      }
+    },
+    {
+      "label": "baseline",
+      "scene": "rarity-4-open",
+      "fixtureSha256": "e7a6c4849dd5138d554ca8574a2ade23f0aab86595ee494ad92bb14ae3935744",
+      "persistedSha256": "0a864bd161d5e0036cadac3f057c9093ef57235979e4e1d5e4047965c5cf9a12",
+      "fullExpectedState": {
+        "version": 5,
+        "revision": 3,
+        "runId": "qa-round-chest-4-20261017",
+        "rng": 3031976842,
+        "nextId": 11,
+        "floor": 140,
+        "phase": "loot",
+        "route": [
+          {
+            "id": "f140r0",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r1",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r2",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r3",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r4",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r5",
+            "type": "boss",
+            "quality": 0,
+            "done": false
+          }
+        ],
+        "roomIndex": 5,
+        "fate": [
+          6,
+          6
+        ],
+        "enemy": {
+          "name": "蚀日无冕者",
+          "mechanic": "boss_eclipse",
+          "minFloor": 50,
+          "trait": "steady",
+          "identity": "太古星海的守门者",
+          "label": "奇数回合无 6 则反击 +25%；偶数回合三同伤害 +50%。",
+          "warning": "奇数回合无 6 则反击 +25%；偶数回合三同伤害 +50%。",
+          "counterplay": "构筑真正足够强时可以速杀；没有强制锁血。",
+          "note": "「带着你的刻点，越过这条界线。」",
+          "phaseLabel": "界线重铸",
+          "phaseNote": "半血且存活：凝聚 12% 阶段护盾，二阶段反击 +15%。",
+          "type": "boss",
+          "hp": 0,
+          "maxHp": 18591345,
+          "attack": 1381,
+          "shield": 0,
+          "maxShield": 2230962,
+          "turns": 1,
+          "combatRules": 4,
+          "stage": 2,
+          "encounterKey": "boss",
+          "wave": 1,
+          "openingEcho": 0
+        },
+        "chest": null,
+        "loot": {
+          "item": {
+            "id": "i10",
+            "slot": "relic",
+            "rarity": 4,
+            "depth": 140,
+            "level": 84,
+            "levelXp": 0,
+            "enhance": 0,
+            "locked": false,
+            "catalogId": "relic-8-1-4",
+            "profile": 1,
+            "theme": 8,
+            "name": "赤曜·沙漏棱镜"
+          },
+          "gold": 2296,
+          "type": "boss",
+          "source": "蚀日无冕者"
+        },
+        "shop": [],
+        "lastRoll": {
+          "values": [
+            1,
+            1,
+            4,
+            1,
+            4,
+            2
+          ],
+          "best": 3,
+          "critical": true,
+          "follow": true,
+          "criticalMultiplier": 1.8,
+          "followMultiplier": 0.35,
+          "main": 51046,
+          "extra": 17866,
+          "echoDamage": 7657,
+          "total": 76569,
+          "absorbed": 0,
+          "hpDamage": 1,
+          "retaliation": 0,
+          "killed": true,
+          "phaseChanged": false,
+          "guarded": 0,
+          "luck": 0,
+          "luckActive": false,
+          "echoes": 0,
+          "highCount": 0,
+          "wardGain": 1867,
+          "dodged": false,
+          "mechanics": [
+            "蚀日缺刻 · 反击 +25%",
+            "三声断章 · 已触发",
+            "深层回响 · 追加 7657（不递归）",
+            "共鸣与余光护盾 +1867"
+          ]
+        },
+        "lastForge": null,
+        "log": [
+          {
+            "text": "获得赤曜·沙漏棱镜 · 神话",
+            "tone": "mythic"
+          },
+          {
+            "text": "蚀日无冕者倒下了 · 宝箱已出现。",
+            "tone": "gold"
+          },
+          {
+            "text": "1 · 1 · 4 · 1 · 4 · 2 → 76569 伤害 · 暴击 · 3 同共鸣",
+            "tone": "gold"
+          },
+          {
+            "text": "记录 1 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": ""
+          },
+          {
+            "text": "记录 2 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": "gold"
+          },
+          {
+            "text": "记录 3 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": "rare"
+          }
+        ],
+        "completed": false,
+        "event": null,
+        "eventLuck": 0,
+        "eventPower": 0,
+        "encounterHistory": [],
+        "routeMemory": {
+          "services": [],
+          "last": {},
+          "hiddenFloor": 0
+        },
+        "v5Boons": {
+          "echo": 0,
+          "ward": 0
+        },
+        "nextLuck": 0,
+        "counters": {
+          "rolls": 1,
+          "kills": 1,
+          "chests": 1,
+          "deaths": 0,
+          "highestDamage": 76569,
+          "bosses": 1
+        },
+        "player": {
+          "level": 80,
+          "xp": 434,
+          "gold": 502296,
+          "hp": 9337,
+          "talentPoints": 35,
+          "deepOfferings": 0,
+          "pactScars": 0,
+          "fateBlessings": 0,
+          "talents": {
+            "high": 0,
+            "four": 0,
+            "five": 0,
+            "six": 0,
+            "sum": 0,
+            "power": 0,
+            "resonance": 5,
+            "pair": 0,
+            "triple": 0,
+            "quartet": 0,
+            "choir": 0,
+            "echo": 5,
+            "critical": 5,
+            "keen": 5,
+            "crush": 0,
+            "pursuit": 0,
+            "opener": 0,
+            "slayer": 0,
+            "vitality": 0,
+            "guard": 0,
+            "leech": 0,
+            "recovery": 0,
+            "fortune": 0,
+            "smith": 0,
+            "luck": 0,
+            "attune": 0,
+            "omen": 0,
+            "mercy": 0,
+            "jackpot": 0,
+            "spark": 0,
+            "shatter": 0,
+            "diversity": 0,
+            "finality": 0,
+            "deepEcho": 0,
+            "chorusMend": 0,
+            "tripleBlade": 0,
+            "firstFire": 0,
+            "critAegis": 0,
+            "dawnCrit": 0,
+            "emberGuard": 0,
+            "phaseShelter": 0,
+            "lastResolve": 0,
+            "hunterStar": 0,
+            "gildedFaces": 0,
+            "sixRebirth": 0
+          },
+          "items": [
+            {
+              "id": "i1",
+              "slot": "weapon",
+              "rarity": 0,
+              "depth": 1,
+              "level": 2,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "weapon-2-0-0",
+              "profile": 0,
+              "theme": 2,
+              "name": "残响·雷鸣重刃"
+            },
+            {
+              "id": "i2",
+              "slot": "armor",
+              "rarity": 0,
+              "depth": 1,
+              "level": 1,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-armor-3-2-0",
+              "profile": 2,
+              "theme": 5,
+              "name": "残响·长明回响灵衣"
+            },
+            {
+              "id": "i3",
+              "slot": "relic",
+              "rarity": 0,
+              "depth": 1,
+              "level": 3,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-8-2-0",
+              "profile": 2,
+              "theme": 8,
+              "name": "残响·沙漏回环"
+            },
+            {
+              "id": "i4",
+              "slot": "weapon",
+              "rarity": 4,
+              "depth": 140,
+              "level": 79,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v5-weapon-1-0-4",
+              "profile": 0,
+              "theme": 1,
+              "name": "赤曜·合奏守誓重刃"
+            },
+            {
+              "id": "i5",
+              "slot": "armor",
+              "rarity": 4,
+              "depth": 140,
+              "level": 78,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-armor-2-0-4",
+              "profile": 0,
+              "theme": 2,
+              "name": "赤曜·共守守誓壁垒"
+            },
+            {
+              "id": "i6",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 81,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-6-2-4",
+              "profile": 2,
+              "theme": 6,
+              "name": "赤曜·暮光回环"
+            },
+            {
+              "id": "i7",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 82,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v5-relic-3-2-4",
+              "profile": 2,
+              "theme": 5,
+              "name": "赤曜·拾光回响回环"
+            },
+            {
+              "id": "i8",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 82,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-relic-4-0-4",
+              "profile": 0,
+              "theme": 4,
+              "name": "赤曜·满月守誓心核"
+            },
+            {
+              "id": "i10",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 84,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-8-1-4",
+              "profile": 1,
+              "theme": 8,
+              "name": "赤曜·沙漏棱镜"
+            }
+          ],
+          "equipped": {
+            "weapon": "i4",
+            "armor": "i5",
+            "relic": "i6",
+            "relic2": "i7",
+            "relic3": "i8"
+          }
+        },
+        "ward": 1867,
+        "roomUsed": false,
+        "blessing": 0,
+        "lootCreditedGold": 2296
+      }
+    },
+    {
+      "label": "after",
+      "scene": "rarity-4-open",
+      "fixtureSha256": "e7a6c4849dd5138d554ca8574a2ade23f0aab86595ee494ad92bb14ae3935744",
+      "persistedSha256": "0a864bd161d5e0036cadac3f057c9093ef57235979e4e1d5e4047965c5cf9a12",
+      "fullExpectedState": {
+        "version": 5,
+        "revision": 3,
+        "runId": "qa-round-chest-4-20261017",
+        "rng": 3031976842,
+        "nextId": 11,
+        "floor": 140,
+        "phase": "loot",
+        "route": [
+          {
+            "id": "f140r0",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r1",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r2",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r3",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r4",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r5",
+            "type": "boss",
+            "quality": 0,
+            "done": false
+          }
+        ],
+        "roomIndex": 5,
+        "fate": [
+          6,
+          6
+        ],
+        "enemy": {
+          "name": "蚀日无冕者",
+          "mechanic": "boss_eclipse",
+          "minFloor": 50,
+          "trait": "steady",
+          "identity": "太古星海的守门者",
+          "label": "奇数回合无 6 则反击 +25%；偶数回合三同伤害 +50%。",
+          "warning": "奇数回合无 6 则反击 +25%；偶数回合三同伤害 +50%。",
+          "counterplay": "构筑真正足够强时可以速杀；没有强制锁血。",
+          "note": "「带着你的刻点，越过这条界线。」",
+          "phaseLabel": "界线重铸",
+          "phaseNote": "半血且存活：凝聚 12% 阶段护盾，二阶段反击 +15%。",
+          "type": "boss",
+          "hp": 0,
+          "maxHp": 18591345,
+          "attack": 1381,
+          "shield": 0,
+          "maxShield": 2230962,
+          "turns": 1,
+          "combatRules": 4,
+          "stage": 2,
+          "encounterKey": "boss",
+          "wave": 1,
+          "openingEcho": 0
+        },
+        "chest": null,
+        "loot": {
+          "item": {
+            "id": "i10",
+            "slot": "relic",
+            "rarity": 4,
+            "depth": 140,
+            "level": 84,
+            "levelXp": 0,
+            "enhance": 0,
+            "locked": false,
+            "catalogId": "relic-8-1-4",
+            "profile": 1,
+            "theme": 8,
+            "name": "赤曜·沙漏棱镜"
+          },
+          "gold": 2296,
+          "type": "boss",
+          "source": "蚀日无冕者"
+        },
+        "shop": [],
+        "lastRoll": {
+          "values": [
+            1,
+            1,
+            4,
+            1,
+            4,
+            2
+          ],
+          "best": 3,
+          "critical": true,
+          "follow": true,
+          "criticalMultiplier": 1.8,
+          "followMultiplier": 0.35,
+          "main": 51046,
+          "extra": 17866,
+          "echoDamage": 7657,
+          "total": 76569,
+          "absorbed": 0,
+          "hpDamage": 1,
+          "retaliation": 0,
+          "killed": true,
+          "phaseChanged": false,
+          "guarded": 0,
+          "luck": 0,
+          "luckActive": false,
+          "echoes": 0,
+          "highCount": 0,
+          "wardGain": 1867,
+          "dodged": false,
+          "mechanics": [
+            "蚀日缺刻 · 反击 +25%",
+            "三声断章 · 已触发",
+            "深层回响 · 追加 7657（不递归）",
+            "共鸣与余光护盾 +1867"
+          ]
+        },
+        "lastForge": null,
+        "log": [
+          {
+            "text": "获得赤曜·沙漏棱镜 · 神话",
+            "tone": "mythic"
+          },
+          {
+            "text": "蚀日无冕者倒下了 · 宝箱已出现。",
+            "tone": "gold"
+          },
+          {
+            "text": "1 · 1 · 4 · 1 · 4 · 2 → 76569 伤害 · 暴击 · 3 同共鸣",
+            "tone": "gold"
+          },
+          {
+            "text": "记录 1 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": ""
+          },
+          {
+            "text": "记录 2 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": "gold"
+          },
+          {
+            "text": "记录 3 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": "rare"
+          }
+        ],
+        "completed": false,
+        "event": null,
+        "eventLuck": 0,
+        "eventPower": 0,
+        "encounterHistory": [],
+        "routeMemory": {
+          "services": [],
+          "last": {},
+          "hiddenFloor": 0
+        },
+        "v5Boons": {
+          "echo": 0,
+          "ward": 0
+        },
+        "nextLuck": 0,
+        "counters": {
+          "rolls": 1,
+          "kills": 1,
+          "chests": 1,
+          "deaths": 0,
+          "highestDamage": 76569,
+          "bosses": 1
+        },
+        "player": {
+          "level": 80,
+          "xp": 434,
+          "gold": 502296,
+          "hp": 9337,
+          "talentPoints": 35,
+          "deepOfferings": 0,
+          "pactScars": 0,
+          "fateBlessings": 0,
+          "talents": {
+            "high": 0,
+            "four": 0,
+            "five": 0,
+            "six": 0,
+            "sum": 0,
+            "power": 0,
+            "resonance": 5,
+            "pair": 0,
+            "triple": 0,
+            "quartet": 0,
+            "choir": 0,
+            "echo": 5,
+            "critical": 5,
+            "keen": 5,
+            "crush": 0,
+            "pursuit": 0,
+            "opener": 0,
+            "slayer": 0,
+            "vitality": 0,
+            "guard": 0,
+            "leech": 0,
+            "recovery": 0,
+            "fortune": 0,
+            "smith": 0,
+            "luck": 0,
+            "attune": 0,
+            "omen": 0,
+            "mercy": 0,
+            "jackpot": 0,
+            "spark": 0,
+            "shatter": 0,
+            "diversity": 0,
+            "finality": 0,
+            "deepEcho": 0,
+            "chorusMend": 0,
+            "tripleBlade": 0,
+            "firstFire": 0,
+            "critAegis": 0,
+            "dawnCrit": 0,
+            "emberGuard": 0,
+            "phaseShelter": 0,
+            "lastResolve": 0,
+            "hunterStar": 0,
+            "gildedFaces": 0,
+            "sixRebirth": 0
+          },
+          "items": [
+            {
+              "id": "i1",
+              "slot": "weapon",
+              "rarity": 0,
+              "depth": 1,
+              "level": 2,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "weapon-2-0-0",
+              "profile": 0,
+              "theme": 2,
+              "name": "残响·雷鸣重刃"
+            },
+            {
+              "id": "i2",
+              "slot": "armor",
+              "rarity": 0,
+              "depth": 1,
+              "level": 1,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-armor-3-2-0",
+              "profile": 2,
+              "theme": 5,
+              "name": "残响·长明回响灵衣"
+            },
+            {
+              "id": "i3",
+              "slot": "relic",
+              "rarity": 0,
+              "depth": 1,
+              "level": 3,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-8-2-0",
+              "profile": 2,
+              "theme": 8,
+              "name": "残响·沙漏回环"
+            },
+            {
+              "id": "i4",
+              "slot": "weapon",
+              "rarity": 4,
+              "depth": 140,
+              "level": 79,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v5-weapon-1-0-4",
+              "profile": 0,
+              "theme": 1,
+              "name": "赤曜·合奏守誓重刃"
+            },
+            {
+              "id": "i5",
+              "slot": "armor",
+              "rarity": 4,
+              "depth": 140,
+              "level": 78,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-armor-2-0-4",
+              "profile": 0,
+              "theme": 2,
+              "name": "赤曜·共守守誓壁垒"
+            },
+            {
+              "id": "i6",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 81,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-6-2-4",
+              "profile": 2,
+              "theme": 6,
+              "name": "赤曜·暮光回环"
+            },
+            {
+              "id": "i7",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 82,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v5-relic-3-2-4",
+              "profile": 2,
+              "theme": 5,
+              "name": "赤曜·拾光回响回环"
+            },
+            {
+              "id": "i8",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 82,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-relic-4-0-4",
+              "profile": 0,
+              "theme": 4,
+              "name": "赤曜·满月守誓心核"
+            },
+            {
+              "id": "i10",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 84,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-8-1-4",
+              "profile": 1,
+              "theme": 8,
+              "name": "赤曜·沙漏棱镜"
+            }
+          ],
+          "equipped": {
+            "weapon": "i4",
+            "armor": "i5",
+            "relic": "i6",
+            "relic2": "i7",
+            "relic3": "i8"
+          }
+        },
+        "ward": 1867,
+        "roomUsed": false,
+        "blessing": 0,
+        "lootCreditedGold": 2296
+      }
+    },
+    {
+      "label": "baseline",
+      "scene": "rarity-5-open",
+      "fixtureSha256": "a5cb6c075821d8d2bf40670689dc1bad44384fe204b31fe3ee9c7c9127d23d22",
+      "persistedSha256": "02319729faaad67a51d426749c992ca8387b7ebab033969ec683f0d1489f73ab",
+      "fullExpectedState": {
+        "version": 5,
+        "revision": 3,
+        "runId": "qa-round-chest-5-20261017",
+        "rng": 3031976842,
+        "nextId": 11,
+        "floor": 140,
+        "phase": "loot",
+        "route": [
+          {
+            "id": "f140r0",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r1",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r2",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r3",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r4",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r5",
+            "type": "boss",
+            "quality": 0,
+            "done": false
+          }
+        ],
+        "roomIndex": 5,
+        "fate": [
+          6,
+          6
+        ],
+        "enemy": {
+          "name": "蚀日无冕者",
+          "mechanic": "boss_eclipse",
+          "minFloor": 50,
+          "trait": "steady",
+          "identity": "太古星海的守门者",
+          "label": "奇数回合无 6 则反击 +25%；偶数回合三同伤害 +50%。",
+          "warning": "奇数回合无 6 则反击 +25%；偶数回合三同伤害 +50%。",
+          "counterplay": "构筑真正足够强时可以速杀；没有强制锁血。",
+          "note": "「带着你的刻点，越过这条界线。」",
+          "phaseLabel": "界线重铸",
+          "phaseNote": "半血且存活：凝聚 12% 阶段护盾，二阶段反击 +15%。",
+          "type": "boss",
+          "hp": 0,
+          "maxHp": 18591345,
+          "attack": 1381,
+          "shield": 0,
+          "maxShield": 2230962,
+          "turns": 1,
+          "combatRules": 4,
+          "stage": 2,
+          "encounterKey": "boss",
+          "wave": 1,
+          "openingEcho": 0
+        },
+        "chest": null,
+        "loot": {
+          "item": {
+            "id": "i10",
+            "slot": "relic",
+            "rarity": 5,
+            "depth": 140,
+            "level": 84,
+            "levelXp": 0,
+            "enhance": 0,
+            "locked": false,
+            "catalogId": "relic-8-1-5",
+            "profile": 1,
+            "theme": 8,
+            "name": "太初·沙漏棱镜"
+          },
+          "gold": 2296,
+          "type": "boss",
+          "source": "蚀日无冕者"
+        },
+        "shop": [],
+        "lastRoll": {
+          "values": [
+            1,
+            1,
+            4,
+            1,
+            4,
+            2
+          ],
+          "best": 3,
+          "critical": true,
+          "follow": true,
+          "criticalMultiplier": 1.8,
+          "followMultiplier": 0.35,
+          "main": 51046,
+          "extra": 17866,
+          "echoDamage": 7657,
+          "total": 76569,
+          "absorbed": 0,
+          "hpDamage": 1,
+          "retaliation": 0,
+          "killed": true,
+          "phaseChanged": false,
+          "guarded": 0,
+          "luck": 0,
+          "luckActive": false,
+          "echoes": 0,
+          "highCount": 0,
+          "wardGain": 1867,
+          "dodged": false,
+          "mechanics": [
+            "蚀日缺刻 · 反击 +25%",
+            "三声断章 · 已触发",
+            "深层回响 · 追加 7657（不递归）",
+            "共鸣与余光护盾 +1867"
+          ]
+        },
+        "lastForge": null,
+        "log": [
+          {
+            "text": "获得太初·沙漏棱镜 · 太古",
+            "tone": "ancient"
+          },
+          {
+            "text": "蚀日无冕者倒下了 · 宝箱已出现。",
+            "tone": "gold"
+          },
+          {
+            "text": "1 · 1 · 4 · 1 · 4 · 2 → 76569 伤害 · 暴击 · 3 同共鸣",
+            "tone": "gold"
+          },
+          {
+            "text": "记录 1 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": ""
+          },
+          {
+            "text": "记录 2 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": "gold"
+          },
+          {
+            "text": "记录 3 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": "rare"
+          }
+        ],
+        "completed": false,
+        "event": null,
+        "eventLuck": 0,
+        "eventPower": 0,
+        "encounterHistory": [],
+        "routeMemory": {
+          "services": [],
+          "last": {},
+          "hiddenFloor": 0
+        },
+        "v5Boons": {
+          "echo": 0,
+          "ward": 0
+        },
+        "nextLuck": 0,
+        "counters": {
+          "rolls": 1,
+          "kills": 1,
+          "chests": 1,
+          "deaths": 0,
+          "highestDamage": 76569,
+          "bosses": 1
+        },
+        "player": {
+          "level": 80,
+          "xp": 434,
+          "gold": 502296,
+          "hp": 9337,
+          "talentPoints": 35,
+          "deepOfferings": 0,
+          "pactScars": 0,
+          "fateBlessings": 0,
+          "talents": {
+            "high": 0,
+            "four": 0,
+            "five": 0,
+            "six": 0,
+            "sum": 0,
+            "power": 0,
+            "resonance": 5,
+            "pair": 0,
+            "triple": 0,
+            "quartet": 0,
+            "choir": 0,
+            "echo": 5,
+            "critical": 5,
+            "keen": 5,
+            "crush": 0,
+            "pursuit": 0,
+            "opener": 0,
+            "slayer": 0,
+            "vitality": 0,
+            "guard": 0,
+            "leech": 0,
+            "recovery": 0,
+            "fortune": 0,
+            "smith": 0,
+            "luck": 0,
+            "attune": 0,
+            "omen": 0,
+            "mercy": 0,
+            "jackpot": 0,
+            "spark": 0,
+            "shatter": 0,
+            "diversity": 0,
+            "finality": 0,
+            "deepEcho": 0,
+            "chorusMend": 0,
+            "tripleBlade": 0,
+            "firstFire": 0,
+            "critAegis": 0,
+            "dawnCrit": 0,
+            "emberGuard": 0,
+            "phaseShelter": 0,
+            "lastResolve": 0,
+            "hunterStar": 0,
+            "gildedFaces": 0,
+            "sixRebirth": 0
+          },
+          "items": [
+            {
+              "id": "i1",
+              "slot": "weapon",
+              "rarity": 0,
+              "depth": 1,
+              "level": 2,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "weapon-2-0-0",
+              "profile": 0,
+              "theme": 2,
+              "name": "残响·雷鸣重刃"
+            },
+            {
+              "id": "i2",
+              "slot": "armor",
+              "rarity": 0,
+              "depth": 1,
+              "level": 1,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-armor-3-2-0",
+              "profile": 2,
+              "theme": 5,
+              "name": "残响·长明回响灵衣"
+            },
+            {
+              "id": "i3",
+              "slot": "relic",
+              "rarity": 0,
+              "depth": 1,
+              "level": 3,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-8-2-0",
+              "profile": 2,
+              "theme": 8,
+              "name": "残响·沙漏回环"
+            },
+            {
+              "id": "i4",
+              "slot": "weapon",
+              "rarity": 4,
+              "depth": 140,
+              "level": 79,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v5-weapon-1-0-4",
+              "profile": 0,
+              "theme": 1,
+              "name": "赤曜·合奏守誓重刃"
+            },
+            {
+              "id": "i5",
+              "slot": "armor",
+              "rarity": 4,
+              "depth": 140,
+              "level": 78,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-armor-2-0-4",
+              "profile": 0,
+              "theme": 2,
+              "name": "赤曜·共守守誓壁垒"
+            },
+            {
+              "id": "i6",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 81,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-6-2-4",
+              "profile": 2,
+              "theme": 6,
+              "name": "赤曜·暮光回环"
+            },
+            {
+              "id": "i7",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 82,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v5-relic-3-2-4",
+              "profile": 2,
+              "theme": 5,
+              "name": "赤曜·拾光回响回环"
+            },
+            {
+              "id": "i8",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 82,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-relic-4-0-4",
+              "profile": 0,
+              "theme": 4,
+              "name": "赤曜·满月守誓心核"
+            },
+            {
+              "id": "i10",
+              "slot": "relic",
+              "rarity": 5,
+              "depth": 140,
+              "level": 84,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-8-1-5",
+              "profile": 1,
+              "theme": 8,
+              "name": "太初·沙漏棱镜"
+            }
+          ],
+          "equipped": {
+            "weapon": "i4",
+            "armor": "i5",
+            "relic": "i6",
+            "relic2": "i7",
+            "relic3": "i8"
+          }
+        },
+        "ward": 1867,
+        "roomUsed": false,
+        "blessing": 0,
+        "lootCreditedGold": 2296
+      }
+    },
+    {
+      "label": "after",
+      "scene": "rarity-5-open",
+      "fixtureSha256": "a5cb6c075821d8d2bf40670689dc1bad44384fe204b31fe3ee9c7c9127d23d22",
+      "persistedSha256": "02319729faaad67a51d426749c992ca8387b7ebab033969ec683f0d1489f73ab",
+      "fullExpectedState": {
+        "version": 5,
+        "revision": 3,
+        "runId": "qa-round-chest-5-20261017",
+        "rng": 3031976842,
+        "nextId": 11,
+        "floor": 140,
+        "phase": "loot",
+        "route": [
+          {
+            "id": "f140r0",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r1",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r2",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r3",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r4",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r5",
+            "type": "boss",
+            "quality": 0,
+            "done": false
+          }
+        ],
+        "roomIndex": 5,
+        "fate": [
+          6,
+          6
+        ],
+        "enemy": {
+          "name": "蚀日无冕者",
+          "mechanic": "boss_eclipse",
+          "minFloor": 50,
+          "trait": "steady",
+          "identity": "太古星海的守门者",
+          "label": "奇数回合无 6 则反击 +25%；偶数回合三同伤害 +50%。",
+          "warning": "奇数回合无 6 则反击 +25%；偶数回合三同伤害 +50%。",
+          "counterplay": "构筑真正足够强时可以速杀；没有强制锁血。",
+          "note": "「带着你的刻点，越过这条界线。」",
+          "phaseLabel": "界线重铸",
+          "phaseNote": "半血且存活：凝聚 12% 阶段护盾，二阶段反击 +15%。",
+          "type": "boss",
+          "hp": 0,
+          "maxHp": 18591345,
+          "attack": 1381,
+          "shield": 0,
+          "maxShield": 2230962,
+          "turns": 1,
+          "combatRules": 4,
+          "stage": 2,
+          "encounterKey": "boss",
+          "wave": 1,
+          "openingEcho": 0
+        },
+        "chest": null,
+        "loot": {
+          "item": {
+            "id": "i10",
+            "slot": "relic",
+            "rarity": 5,
+            "depth": 140,
+            "level": 84,
+            "levelXp": 0,
+            "enhance": 0,
+            "locked": false,
+            "catalogId": "relic-8-1-5",
+            "profile": 1,
+            "theme": 8,
+            "name": "太初·沙漏棱镜"
+          },
+          "gold": 2296,
+          "type": "boss",
+          "source": "蚀日无冕者"
+        },
+        "shop": [],
+        "lastRoll": {
+          "values": [
+            1,
+            1,
+            4,
+            1,
+            4,
+            2
+          ],
+          "best": 3,
+          "critical": true,
+          "follow": true,
+          "criticalMultiplier": 1.8,
+          "followMultiplier": 0.35,
+          "main": 51046,
+          "extra": 17866,
+          "echoDamage": 7657,
+          "total": 76569,
+          "absorbed": 0,
+          "hpDamage": 1,
+          "retaliation": 0,
+          "killed": true,
+          "phaseChanged": false,
+          "guarded": 0,
+          "luck": 0,
+          "luckActive": false,
+          "echoes": 0,
+          "highCount": 0,
+          "wardGain": 1867,
+          "dodged": false,
+          "mechanics": [
+            "蚀日缺刻 · 反击 +25%",
+            "三声断章 · 已触发",
+            "深层回响 · 追加 7657（不递归）",
+            "共鸣与余光护盾 +1867"
+          ]
+        },
+        "lastForge": null,
+        "log": [
+          {
+            "text": "获得太初·沙漏棱镜 · 太古",
+            "tone": "ancient"
+          },
+          {
+            "text": "蚀日无冕者倒下了 · 宝箱已出现。",
+            "tone": "gold"
+          },
+          {
+            "text": "1 · 1 · 4 · 1 · 4 · 2 → 76569 伤害 · 暴击 · 3 同共鸣",
+            "tone": "gold"
+          },
+          {
+            "text": "记录 1 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": ""
+          },
+          {
+            "text": "记录 2 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": "gold"
+          },
+          {
+            "text": "记录 3 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": "rare"
+          }
+        ],
+        "completed": false,
+        "event": null,
+        "eventLuck": 0,
+        "eventPower": 0,
+        "encounterHistory": [],
+        "routeMemory": {
+          "services": [],
+          "last": {},
+          "hiddenFloor": 0
+        },
+        "v5Boons": {
+          "echo": 0,
+          "ward": 0
+        },
+        "nextLuck": 0,
+        "counters": {
+          "rolls": 1,
+          "kills": 1,
+          "chests": 1,
+          "deaths": 0,
+          "highestDamage": 76569,
+          "bosses": 1
+        },
+        "player": {
+          "level": 80,
+          "xp": 434,
+          "gold": 502296,
+          "hp": 9337,
+          "talentPoints": 35,
+          "deepOfferings": 0,
+          "pactScars": 0,
+          "fateBlessings": 0,
+          "talents": {
+            "high": 0,
+            "four": 0,
+            "five": 0,
+            "six": 0,
+            "sum": 0,
+            "power": 0,
+            "resonance": 5,
+            "pair": 0,
+            "triple": 0,
+            "quartet": 0,
+            "choir": 0,
+            "echo": 5,
+            "critical": 5,
+            "keen": 5,
+            "crush": 0,
+            "pursuit": 0,
+            "opener": 0,
+            "slayer": 0,
+            "vitality": 0,
+            "guard": 0,
+            "leech": 0,
+            "recovery": 0,
+            "fortune": 0,
+            "smith": 0,
+            "luck": 0,
+            "attune": 0,
+            "omen": 0,
+            "mercy": 0,
+            "jackpot": 0,
+            "spark": 0,
+            "shatter": 0,
+            "diversity": 0,
+            "finality": 0,
+            "deepEcho": 0,
+            "chorusMend": 0,
+            "tripleBlade": 0,
+            "firstFire": 0,
+            "critAegis": 0,
+            "dawnCrit": 0,
+            "emberGuard": 0,
+            "phaseShelter": 0,
+            "lastResolve": 0,
+            "hunterStar": 0,
+            "gildedFaces": 0,
+            "sixRebirth": 0
+          },
+          "items": [
+            {
+              "id": "i1",
+              "slot": "weapon",
+              "rarity": 0,
+              "depth": 1,
+              "level": 2,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "weapon-2-0-0",
+              "profile": 0,
+              "theme": 2,
+              "name": "残响·雷鸣重刃"
+            },
+            {
+              "id": "i2",
+              "slot": "armor",
+              "rarity": 0,
+              "depth": 1,
+              "level": 1,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-armor-3-2-0",
+              "profile": 2,
+              "theme": 5,
+              "name": "残响·长明回响灵衣"
+            },
+            {
+              "id": "i3",
+              "slot": "relic",
+              "rarity": 0,
+              "depth": 1,
+              "level": 3,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-8-2-0",
+              "profile": 2,
+              "theme": 8,
+              "name": "残响·沙漏回环"
+            },
+            {
+              "id": "i4",
+              "slot": "weapon",
+              "rarity": 4,
+              "depth": 140,
+              "level": 79,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v5-weapon-1-0-4",
+              "profile": 0,
+              "theme": 1,
+              "name": "赤曜·合奏守誓重刃"
+            },
+            {
+              "id": "i5",
+              "slot": "armor",
+              "rarity": 4,
+              "depth": 140,
+              "level": 78,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-armor-2-0-4",
+              "profile": 0,
+              "theme": 2,
+              "name": "赤曜·共守守誓壁垒"
+            },
+            {
+              "id": "i6",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 81,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-6-2-4",
+              "profile": 2,
+              "theme": 6,
+              "name": "赤曜·暮光回环"
+            },
+            {
+              "id": "i7",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 82,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v5-relic-3-2-4",
+              "profile": 2,
+              "theme": 5,
+              "name": "赤曜·拾光回响回环"
+            },
+            {
+              "id": "i8",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 82,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-relic-4-0-4",
+              "profile": 0,
+              "theme": 4,
+              "name": "赤曜·满月守誓心核"
+            },
+            {
+              "id": "i10",
+              "slot": "relic",
+              "rarity": 5,
+              "depth": 140,
+              "level": 84,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-8-1-5",
+              "profile": 1,
+              "theme": 8,
+              "name": "太初·沙漏棱镜"
+            }
+          ],
+          "equipped": {
+            "weapon": "i4",
+            "armor": "i5",
+            "relic": "i6",
+            "relic2": "i7",
+            "relic3": "i8"
+          }
+        },
+        "ward": 1867,
+        "roomUsed": false,
+        "blessing": 0,
+        "lootCreditedGold": 2296
+      }
+    },
+    {
+      "label": "baseline",
+      "scene": "rarity-6-open",
+      "fixtureSha256": "049e65170c517fd41b49e1ddefc1c79af7565d702a4e279ee7ddee9783a8da39",
+      "persistedSha256": "9a938c76d2d3ee8f7fd6d1f0738a0aff356f296b321a54d2329a989368502f89",
+      "fullExpectedState": {
+        "version": 5,
+        "revision": 3,
+        "runId": "qa-round-chest-6-20261017",
+        "rng": 3031976842,
+        "nextId": 11,
+        "floor": 140,
+        "phase": "loot",
+        "route": [
+          {
+            "id": "f140r0",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r1",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r2",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r3",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r4",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r5",
+            "type": "boss",
+            "quality": 0,
+            "done": false
+          }
+        ],
+        "roomIndex": 5,
+        "fate": [
+          6,
+          6
+        ],
+        "enemy": {
+          "name": "蚀日无冕者",
+          "mechanic": "boss_eclipse",
+          "minFloor": 50,
+          "trait": "steady",
+          "identity": "太古星海的守门者",
+          "label": "奇数回合无 6 则反击 +25%；偶数回合三同伤害 +50%。",
+          "warning": "奇数回合无 6 则反击 +25%；偶数回合三同伤害 +50%。",
+          "counterplay": "构筑真正足够强时可以速杀；没有强制锁血。",
+          "note": "「带着你的刻点，越过这条界线。」",
+          "phaseLabel": "界线重铸",
+          "phaseNote": "半血且存活：凝聚 12% 阶段护盾，二阶段反击 +15%。",
+          "type": "boss",
+          "hp": 0,
+          "maxHp": 18591345,
+          "attack": 1381,
+          "shield": 0,
+          "maxShield": 2230962,
+          "turns": 1,
+          "combatRules": 4,
+          "stage": 2,
+          "encounterKey": "boss",
+          "wave": 1,
+          "openingEcho": 0
+        },
+        "chest": null,
+        "loot": {
+          "item": {
+            "id": "i10",
+            "slot": "relic",
+            "rarity": 6,
+            "depth": 140,
+            "level": 84,
+            "levelXp": 0,
+            "enhance": 0,
+            "locked": false,
+            "catalogId": "relic-8-1-6",
+            "profile": 1,
+            "theme": 8,
+            "name": "溯源·沙漏棱镜"
+          },
+          "gold": 2296,
+          "type": "boss",
+          "source": "蚀日无冕者"
+        },
+        "shop": [],
+        "lastRoll": {
+          "values": [
+            1,
+            1,
+            4,
+            1,
+            4,
+            2
+          ],
+          "best": 3,
+          "critical": true,
+          "follow": true,
+          "criticalMultiplier": 1.8,
+          "followMultiplier": 0.35,
+          "main": 51046,
+          "extra": 17866,
+          "echoDamage": 7657,
+          "total": 76569,
+          "absorbed": 0,
+          "hpDamage": 1,
+          "retaliation": 0,
+          "killed": true,
+          "phaseChanged": false,
+          "guarded": 0,
+          "luck": 0,
+          "luckActive": false,
+          "echoes": 0,
+          "highCount": 0,
+          "wardGain": 1867,
+          "dodged": false,
+          "mechanics": [
+            "蚀日缺刻 · 反击 +25%",
+            "三声断章 · 已触发",
+            "深层回响 · 追加 7657（不递归）",
+            "共鸣与余光护盾 +1867"
+          ]
+        },
+        "lastForge": null,
+        "log": [
+          {
+            "text": "获得溯源·沙漏棱镜 · 起源",
+            "tone": "origin"
+          },
+          {
+            "text": "蚀日无冕者倒下了 · 宝箱已出现。",
+            "tone": "gold"
+          },
+          {
+            "text": "1 · 1 · 4 · 1 · 4 · 2 → 76569 伤害 · 暴击 · 3 同共鸣",
+            "tone": "gold"
+          },
+          {
+            "text": "记录 1 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": ""
+          },
+          {
+            "text": "记录 2 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": "gold"
+          },
+          {
+            "text": "记录 3 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": "rare"
+          }
+        ],
+        "completed": false,
+        "event": null,
+        "eventLuck": 0,
+        "eventPower": 0,
+        "encounterHistory": [],
+        "routeMemory": {
+          "services": [],
+          "last": {},
+          "hiddenFloor": 0
+        },
+        "v5Boons": {
+          "echo": 0,
+          "ward": 0
+        },
+        "nextLuck": 0,
+        "counters": {
+          "rolls": 1,
+          "kills": 1,
+          "chests": 1,
+          "deaths": 0,
+          "highestDamage": 76569,
+          "bosses": 1
+        },
+        "player": {
+          "level": 80,
+          "xp": 434,
+          "gold": 502296,
+          "hp": 9337,
+          "talentPoints": 35,
+          "deepOfferings": 0,
+          "pactScars": 0,
+          "fateBlessings": 0,
+          "talents": {
+            "high": 0,
+            "four": 0,
+            "five": 0,
+            "six": 0,
+            "sum": 0,
+            "power": 0,
+            "resonance": 5,
+            "pair": 0,
+            "triple": 0,
+            "quartet": 0,
+            "choir": 0,
+            "echo": 5,
+            "critical": 5,
+            "keen": 5,
+            "crush": 0,
+            "pursuit": 0,
+            "opener": 0,
+            "slayer": 0,
+            "vitality": 0,
+            "guard": 0,
+            "leech": 0,
+            "recovery": 0,
+            "fortune": 0,
+            "smith": 0,
+            "luck": 0,
+            "attune": 0,
+            "omen": 0,
+            "mercy": 0,
+            "jackpot": 0,
+            "spark": 0,
+            "shatter": 0,
+            "diversity": 0,
+            "finality": 0,
+            "deepEcho": 0,
+            "chorusMend": 0,
+            "tripleBlade": 0,
+            "firstFire": 0,
+            "critAegis": 0,
+            "dawnCrit": 0,
+            "emberGuard": 0,
+            "phaseShelter": 0,
+            "lastResolve": 0,
+            "hunterStar": 0,
+            "gildedFaces": 0,
+            "sixRebirth": 0
+          },
+          "items": [
+            {
+              "id": "i1",
+              "slot": "weapon",
+              "rarity": 0,
+              "depth": 1,
+              "level": 2,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "weapon-2-0-0",
+              "profile": 0,
+              "theme": 2,
+              "name": "残响·雷鸣重刃"
+            },
+            {
+              "id": "i2",
+              "slot": "armor",
+              "rarity": 0,
+              "depth": 1,
+              "level": 1,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-armor-3-2-0",
+              "profile": 2,
+              "theme": 5,
+              "name": "残响·长明回响灵衣"
+            },
+            {
+              "id": "i3",
+              "slot": "relic",
+              "rarity": 0,
+              "depth": 1,
+              "level": 3,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-8-2-0",
+              "profile": 2,
+              "theme": 8,
+              "name": "残响·沙漏回环"
+            },
+            {
+              "id": "i4",
+              "slot": "weapon",
+              "rarity": 4,
+              "depth": 140,
+              "level": 79,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v5-weapon-1-0-4",
+              "profile": 0,
+              "theme": 1,
+              "name": "赤曜·合奏守誓重刃"
+            },
+            {
+              "id": "i5",
+              "slot": "armor",
+              "rarity": 4,
+              "depth": 140,
+              "level": 78,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-armor-2-0-4",
+              "profile": 0,
+              "theme": 2,
+              "name": "赤曜·共守守誓壁垒"
+            },
+            {
+              "id": "i6",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 81,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-6-2-4",
+              "profile": 2,
+              "theme": 6,
+              "name": "赤曜·暮光回环"
+            },
+            {
+              "id": "i7",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 82,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v5-relic-3-2-4",
+              "profile": 2,
+              "theme": 5,
+              "name": "赤曜·拾光回响回环"
+            },
+            {
+              "id": "i8",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 82,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-relic-4-0-4",
+              "profile": 0,
+              "theme": 4,
+              "name": "赤曜·满月守誓心核"
+            },
+            {
+              "id": "i10",
+              "slot": "relic",
+              "rarity": 6,
+              "depth": 140,
+              "level": 84,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-8-1-6",
+              "profile": 1,
+              "theme": 8,
+              "name": "溯源·沙漏棱镜"
+            }
+          ],
+          "equipped": {
+            "weapon": "i4",
+            "armor": "i5",
+            "relic": "i6",
+            "relic2": "i7",
+            "relic3": "i8"
+          }
+        },
+        "ward": 1867,
+        "roomUsed": false,
+        "blessing": 0,
+        "lootCreditedGold": 2296
+      }
+    },
+    {
+      "label": "after",
+      "scene": "rarity-6-open",
+      "fixtureSha256": "049e65170c517fd41b49e1ddefc1c79af7565d702a4e279ee7ddee9783a8da39",
+      "persistedSha256": "9a938c76d2d3ee8f7fd6d1f0738a0aff356f296b321a54d2329a989368502f89",
+      "fullExpectedState": {
+        "version": 5,
+        "revision": 3,
+        "runId": "qa-round-chest-6-20261017",
+        "rng": 3031976842,
+        "nextId": 11,
+        "floor": 140,
+        "phase": "loot",
+        "route": [
+          {
+            "id": "f140r0",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r1",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r2",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r3",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r4",
+            "type": "combat",
+            "quality": 0,
+            "done": true
+          },
+          {
+            "id": "f140r5",
+            "type": "boss",
+            "quality": 0,
+            "done": false
+          }
+        ],
+        "roomIndex": 5,
+        "fate": [
+          6,
+          6
+        ],
+        "enemy": {
+          "name": "蚀日无冕者",
+          "mechanic": "boss_eclipse",
+          "minFloor": 50,
+          "trait": "steady",
+          "identity": "太古星海的守门者",
+          "label": "奇数回合无 6 则反击 +25%；偶数回合三同伤害 +50%。",
+          "warning": "奇数回合无 6 则反击 +25%；偶数回合三同伤害 +50%。",
+          "counterplay": "构筑真正足够强时可以速杀；没有强制锁血。",
+          "note": "「带着你的刻点，越过这条界线。」",
+          "phaseLabel": "界线重铸",
+          "phaseNote": "半血且存活：凝聚 12% 阶段护盾，二阶段反击 +15%。",
+          "type": "boss",
+          "hp": 0,
+          "maxHp": 18591345,
+          "attack": 1381,
+          "shield": 0,
+          "maxShield": 2230962,
+          "turns": 1,
+          "combatRules": 4,
+          "stage": 2,
+          "encounterKey": "boss",
+          "wave": 1,
+          "openingEcho": 0
+        },
+        "chest": null,
+        "loot": {
+          "item": {
+            "id": "i10",
+            "slot": "relic",
+            "rarity": 6,
+            "depth": 140,
+            "level": 84,
+            "levelXp": 0,
+            "enhance": 0,
+            "locked": false,
+            "catalogId": "relic-8-1-6",
+            "profile": 1,
+            "theme": 8,
+            "name": "溯源·沙漏棱镜"
+          },
+          "gold": 2296,
+          "type": "boss",
+          "source": "蚀日无冕者"
+        },
+        "shop": [],
+        "lastRoll": {
+          "values": [
+            1,
+            1,
+            4,
+            1,
+            4,
+            2
+          ],
+          "best": 3,
+          "critical": true,
+          "follow": true,
+          "criticalMultiplier": 1.8,
+          "followMultiplier": 0.35,
+          "main": 51046,
+          "extra": 17866,
+          "echoDamage": 7657,
+          "total": 76569,
+          "absorbed": 0,
+          "hpDamage": 1,
+          "retaliation": 0,
+          "killed": true,
+          "phaseChanged": false,
+          "guarded": 0,
+          "luck": 0,
+          "luckActive": false,
+          "echoes": 0,
+          "highCount": 0,
+          "wardGain": 1867,
+          "dodged": false,
+          "mechanics": [
+            "蚀日缺刻 · 反击 +25%",
+            "三声断章 · 已触发",
+            "深层回响 · 追加 7657（不递归）",
+            "共鸣与余光护盾 +1867"
+          ]
+        },
+        "lastForge": null,
+        "log": [
+          {
+            "text": "获得溯源·沙漏棱镜 · 起源",
+            "tone": "origin"
+          },
+          {
+            "text": "蚀日无冕者倒下了 · 宝箱已出现。",
+            "tone": "gold"
+          },
+          {
+            "text": "1 · 1 · 4 · 1 · 4 · 2 → 76569 伤害 · 暴击 · 3 同共鸣",
+            "tone": "gold"
+          },
+          {
+            "text": "记录 1 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": ""
+          },
+          {
+            "text": "记录 2 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": "gold"
+          },
+          {
+            "text": "记录 3 · 深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴击追击、护盾吸收与首领阶段交替；本段仅是固定负载，不描述自然探索成绩。深层战斗合成记录：六骰同点共鸣、暴",
+            "tone": "rare"
+          }
+        ],
+        "completed": false,
+        "event": null,
+        "eventLuck": 0,
+        "eventPower": 0,
+        "encounterHistory": [],
+        "routeMemory": {
+          "services": [],
+          "last": {},
+          "hiddenFloor": 0
+        },
+        "v5Boons": {
+          "echo": 0,
+          "ward": 0
+        },
+        "nextLuck": 0,
+        "counters": {
+          "rolls": 1,
+          "kills": 1,
+          "chests": 1,
+          "deaths": 0,
+          "highestDamage": 76569,
+          "bosses": 1
+        },
+        "player": {
+          "level": 80,
+          "xp": 434,
+          "gold": 502296,
+          "hp": 9337,
+          "talentPoints": 35,
+          "deepOfferings": 0,
+          "pactScars": 0,
+          "fateBlessings": 0,
+          "talents": {
+            "high": 0,
+            "four": 0,
+            "five": 0,
+            "six": 0,
+            "sum": 0,
+            "power": 0,
+            "resonance": 5,
+            "pair": 0,
+            "triple": 0,
+            "quartet": 0,
+            "choir": 0,
+            "echo": 5,
+            "critical": 5,
+            "keen": 5,
+            "crush": 0,
+            "pursuit": 0,
+            "opener": 0,
+            "slayer": 0,
+            "vitality": 0,
+            "guard": 0,
+            "leech": 0,
+            "recovery": 0,
+            "fortune": 0,
+            "smith": 0,
+            "luck": 0,
+            "attune": 0,
+            "omen": 0,
+            "mercy": 0,
+            "jackpot": 0,
+            "spark": 0,
+            "shatter": 0,
+            "diversity": 0,
+            "finality": 0,
+            "deepEcho": 0,
+            "chorusMend": 0,
+            "tripleBlade": 0,
+            "firstFire": 0,
+            "critAegis": 0,
+            "dawnCrit": 0,
+            "emberGuard": 0,
+            "phaseShelter": 0,
+            "lastResolve": 0,
+            "hunterStar": 0,
+            "gildedFaces": 0,
+            "sixRebirth": 0
+          },
+          "items": [
+            {
+              "id": "i1",
+              "slot": "weapon",
+              "rarity": 0,
+              "depth": 1,
+              "level": 2,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "weapon-2-0-0",
+              "profile": 0,
+              "theme": 2,
+              "name": "残响·雷鸣重刃"
+            },
+            {
+              "id": "i2",
+              "slot": "armor",
+              "rarity": 0,
+              "depth": 1,
+              "level": 1,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-armor-3-2-0",
+              "profile": 2,
+              "theme": 5,
+              "name": "残响·长明回响灵衣"
+            },
+            {
+              "id": "i3",
+              "slot": "relic",
+              "rarity": 0,
+              "depth": 1,
+              "level": 3,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-8-2-0",
+              "profile": 2,
+              "theme": 8,
+              "name": "残响·沙漏回环"
+            },
+            {
+              "id": "i4",
+              "slot": "weapon",
+              "rarity": 4,
+              "depth": 140,
+              "level": 79,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v5-weapon-1-0-4",
+              "profile": 0,
+              "theme": 1,
+              "name": "赤曜·合奏守誓重刃"
+            },
+            {
+              "id": "i5",
+              "slot": "armor",
+              "rarity": 4,
+              "depth": 140,
+              "level": 78,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-armor-2-0-4",
+              "profile": 0,
+              "theme": 2,
+              "name": "赤曜·共守守誓壁垒"
+            },
+            {
+              "id": "i6",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 81,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-6-2-4",
+              "profile": 2,
+              "theme": 6,
+              "name": "赤曜·暮光回环"
+            },
+            {
+              "id": "i7",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 82,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v5-relic-3-2-4",
+              "profile": 2,
+              "theme": 5,
+              "name": "赤曜·拾光回响回环"
+            },
+            {
+              "id": "i8",
+              "slot": "relic",
+              "rarity": 4,
+              "depth": 140,
+              "level": 82,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "v4-relic-4-0-4",
+              "profile": 0,
+              "theme": 4,
+              "name": "赤曜·满月守誓心核"
+            },
+            {
+              "id": "i10",
+              "slot": "relic",
+              "rarity": 6,
+              "depth": 140,
+              "level": 84,
+              "levelXp": 0,
+              "enhance": 0,
+              "locked": false,
+              "catalogId": "relic-8-1-6",
+              "profile": 1,
+              "theme": 8,
+              "name": "溯源·沙漏棱镜"
+            }
+          ],
+          "equipped": {
+            "weapon": "i4",
+            "armor": "i5",
+            "relic": "i6",
+            "relic2": "i7",
+            "relic3": "i8"
+          }
+        },
+        "ward": 1867,
+        "roomUsed": false,
+        "blessing": 0,
+        "lootCreditedGold": 2296
+      }
+    }
+  ]
+}

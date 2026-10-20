@@ -1,0 +1,96 @@
+{
+  "source": "/workspace/scratch/d0f98f221ae6/work/Dice-Abyss",
+  "sourceVersion": "5.17.0",
+  "sourceHashes": {
+    "src/engine.js": "75c6d9fcc48c0cf49ee02e53ffb7b143a09a2c79738d3bb2eb5d0ae80b30872b",
+    "src/encounters.js": "c3c6e2d24049305d73982cf5db3b1cf02eee68f4e8e1659fd7e3021f74de0791",
+    "src/deep-rules.js": "6f6c096e37c9f18a6ca97625330a6ab8ce55b25852e677455d3a200c8200dbe1",
+    "src/equipment.js": "8c20de433f21931318e315b862b457d37a03b9596ea5df8f7cc4025691aaccd6",
+    "src/content.js": "4c0c2e4656c5a3482a5448a069ae2fa28367ba05d61c7d0c2c9866315f5c5526",
+    "src/rarity.js": "871356df147d027e1845f98c5574a1d9a71c0d17bd8717f457c9007d7c73b735",
+    "scripts/simulate.mjs": "3b0e2d6c5f8151714dd0d60596e6a2681fb79604592f3670f4bb93218bdf614f"
+  },
+  "sourceStable": true,
+  "seed": 15838,
+  "policy": {
+    "floors": 400,
+    "build": "luck",
+    "forecast": false,
+    "fusion": true,
+    "events": "adventurous",
+    "shop": true,
+    "talents": true,
+    "purchases": "expected"
+  },
+  "method": "Unmodified shipped runAdventure policy and complete real transitions from newGame. The compact comparison adapter checks its first 256 calls against the full original. No assigned progress/gear/HP/enemy/dice/RNG fields, no alternative seeds, and no post-hoc policy changes.",
+  "completed": true,
+  "finishReason": "COMPLETED",
+  "endingFloor": 400,
+  "endingPhase": "cleared",
+  "decisionIterations": 8383,
+  "observedStates": 8384,
+  "committedActions": 12528,
+  "rolls": 2639,
+  "deaths": 0,
+  "completedBattles": 1723,
+  "battleAttempts": 1723,
+  "level": 277,
+  "gold": 1876391,
+  "buys": 12,
+  "forges": 29,
+  "fusions": 284,
+  "spending": {
+    "shop": 49137,
+    "forge": 65527,
+    "fusion": 1217609
+  },
+  "checkpoints": [
+    {
+      "floor": 100,
+      "rolls": 709,
+      "deaths": 0,
+      "revision": 2518,
+      "level": 111,
+      "gold": 329807
+    },
+    {
+      "floor": 200,
+      "rolls": 1319,
+      "deaths": 0,
+      "revision": 5265,
+      "level": 178,
+      "gold": 1055878
+    },
+    {
+      "floor": 300,
+      "rolls": 1967,
+      "deaths": 0,
+      "revision": 8644,
+      "level": 232,
+      "gold": 1511025
+    },
+    {
+      "floor": 400,
+      "rolls": 2639,
+      "deaths": 0,
+      "revision": 12528,
+      "level": 277,
+      "gold": 1876391
+    }
+  ],
+  "finalStateSha256": "941ede84be8082d91df126b346daf49b6cc41d907d113a2f2e63415b840097bd",
+  "adapter": {
+    "sourceSha256": "3b0e2d6c5f8151714dd0d60596e6a2681fb79604592f3670f4bb93218bdf614f",
+    "comparisonSites": 3,
+    "calls": 1576361,
+    "verified": 256,
+    "viewBuilds": 4885
+  },
+  "codecRoundTrip": true,
+  "durationSeconds": 88.533586259,
+  "limitations": [
+    "One fixed existing policy trajectory is reachability evidence, not a population win rate, proof of balance, or comparison against the prior version.",
+    "Decision iterations and committed engine actions differ because the shipped simulator can allocate/equip/purchase several times in one iteration.",
+    "The floor-200 checkpoint is a prefix of this one journey."
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "created": "2026-10-19T04:51:32.265562+00:00",
+  "scope": "Read-only independent source review of new boon readout and deterministic event previews, plus one validator-accepted ward-cap transition probe. Existing unit modules were read, not re-run here; full gates are deferred until root freezes code.",
+  "sourceHashes": [
+    {
+      "path": "src/boon-readout.js",
+      "sha256": "323239b3c071a25a5373f1be3f0f9039794d77a9d9d6fa2976edefd9ffc9518b"
+    },
+    {
+      "path": "src/event-preview.js",
+      "sha256": "1766642e7af58c330cb3aaff3f27b33986cd157f879394c809e65efe47659888"
+    },
+    {
+      "path": "tests/boon-readout.test.mjs",
+      "sha256": "2b1a00b9e7d270e44daaeac65ba2307a050fd785742705dc75ffeed8f0277b2c"
+    },
+    {
+      "path": "tests/event-preview.test.mjs",
+      "sha256": "bf64c1788fcdfc62685bc3e690ab22f295a27fa044718f5e109c1c1503fa6ca9"
+    }
+  ],
+  "reviewedContracts": [
+    {
+      "contract": "Boon lifetime",
+      "finding": "Floor blessing/event power/event luck survive retry and clear on descent; pending nextLuck clears on roll/retry/descent. Reserve echo/ward is consumed at actual combat entry. Readout conditions match those authoritative branches."
+    },
+    {
+      "contract": "Luck contribution",
+      "finding": "The readout distinguishes raw temporary contribution and rounded effective whole-build luck; it calls stats for the latter and does not add raw points directly to effective luck."
+    },
+    {
+      "contract": "Spring",
+      "finding": "Preview uses floor rounding for 10%/35% shield and 35% healing, preserves larger current ward and caps HP exactly as applyEvent."
+    },
+    {
+      "contract": "Prayer",
+      "finding": "Preview uses stored prices, exact 20/30 temporary caps, and stats of a detached next-state copy for effective luck. Disabled choices return no after-state."
+    },
+    {
+      "contract": "Hollow scale",
+      "finding": "Preview follows the stored target ID, increments pactScars, respects item level cap/XP clearing, and uses stats on detached updated equipment for permanent max-HP and current-HP clipping."
+    },
+    {
+      "contract": "Silent anvil",
+      "finding": "Preview uses stored target and offer IDs, shows exactly one item removed and at most +2 enhancement; contradictory same-target/offer reference returns no invented upgrade preview."
+    },
+    {
+      "contract": "Reserved echo/ward purchases",
+      "finding": "Immediate event preview reports gold and reserve flags without prematurely granting combat damage or shield. At next entry, the existing engine still owns actual reward application."
+    },
+    {
+      "contract": "Read-only boundary",
+      "finding": "New model functions do not invoke transitions, random APIs, reward generation or storage writes; returned quote rows/groups are detached display data."
+    }
+  ],
+  "findings": [
+    {
+      "id": "ward-cap-copy",
+      "severity": "copy-precision",
+      "status": "reported-to-root",
+      "evidence": "ward-cap-readout-review.json",
+      "description": "A legal ward=1e15 state consumes a paid ward reserve on next combat entry but receives zero net ward because health() caps total ward. Expanded readout should mention the existing cap. No engine change is needed; immediate event quote is already correct."
+    }
+  ],
+  "browserRun": false,
+  "sourceEditsDuringThisReview": false
+}

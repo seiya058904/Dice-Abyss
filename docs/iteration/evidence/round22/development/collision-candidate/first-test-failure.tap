@@ -1,0 +1,220 @@
+TAP version 13
+# Subtest: fair independent one-to-six-dice enumeration quantifies the old diversity and new pair conditions
+ok 1 - fair independent one-to-six-dice enumeration quantifies the old diversity and new pair conditions
+  ---
+  duration_ms: 14.993367
+  type: 'test'
+  ...
+# Subtest: new profiles use authored mechanic and variant identity, never display names or a missing revision
+ok 2 - new profiles use authored mechanic and variant identity, never display names or a missing revision
+  ---
+  duration_ms: 0.617323
+  type: 'test'
+  ...
+# Subtest: only fresh selected alternates get the saved marker and label, without adding an RNG draw
+ok 3 - only fresh selected alternates get the saved marker and label, without adding an RNG draw
+  ---
+  duration_ms: 7.599697
+  type: 'test'
+  ...
+# Subtest: parity reversal is exact for every one-to-six-dice multiset, turn and strict-majority tie
+ok 4 - parity reversal is exact for every one-to-six-dice multiset, turn and strict-majority tie
+  ---
+  duration_ms: 45.868449
+  type: 'test'
+  ...
+# Subtest: sequence uses the pair only with its saved marker, and damage, rebuilding and guidance agree exhaustively
+ok 5 - sequence uses the pair only with its saved marker, and damage, rebuilding and guidance agree exhaustively
+  ---
+  duration_ms: 13.809982
+  type: 'test'
+  ...
+# Subtest: the codex advertises both targets while ordinary regional enemies retain their own exact labels
+ok 6 - the codex advertises both targets while ordinary regional enemies retain their own exact labels
+  ---
+  duration_ms: 0.383597
+  type: 'test'
+  ...
+# Subtest: save codec preserves new tags and old pending enemies, original labels and unknown fields exactly
+not ok 7 - save codec preserves new tags and old pending enemies, original labels and unknown fields exactly
+  ---
+  duration_ms: 6.901185
+  type: 'test'
+  location: '/workspace/scratch/a3dd46c18162/work/Dice-Abyss/tests/deep-variants-round22.test.mjs:99:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The expression evaluated to a falsy value:
+    
+      assert(validateSave(s))
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    battle (file:///workspace/scratch/a3dd46c18162/work/Dice-Abyss/tests/deep-variants-round22.test.mjs:20:58)
+    TestContext.<anonymous> (file:///workspace/scratch/a3dd46c18162/work/Dice-Abyss/tests/deep-variants-round22.test.mjs:101:11)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+    Test.postRun (node:internal/test_runner/test:1522:19)
+    Test.run (node:internal/test_runner/test:1447:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+  ...
+# Subtest: an unsupported revision or an out-of-scope marked enemy is rejected before serialization
+not ok 8 - an unsupported revision or an out-of-scope marked enemy is rejected before serialization
+  ---
+  duration_ms: 1.131453
+  type: 'test'
+  location: '/workspace/scratch/a3dd46c18162/work/Dice-Abyss/tests/deep-variants-round22.test.mjs:108:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The expression evaluated to a falsy value:
+    
+      assert(validateSave(s))
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    battle (file:///workspace/scratch/a3dd46c18162/work/Dice-Abyss/tests/deep-variants-round22.test.mjs:20:58)
+    TestContext.<anonymous> (file:///workspace/scratch/a3dd46c18162/work/Dice-Abyss/tests/deep-variants-round22.test.mjs:110:11)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+    Test.postRun (node:internal/test_runner/test:1522:19)
+    Test.run (node:internal/test_runner/test:1447:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+  ...
+# Subtest: actual engine rolls keep faces and RNG unchanged and settle both new counters inside the displayed retaliation bounds
+not ok 9 - actual engine rolls keep faces and RNG unchanged and settle both new counters inside the displayed retaliation bounds
+  ---
+  duration_ms: 2.413999
+  type: 'test'
+  location: '/workspace/scratch/a3dd46c18162/work/Dice-Abyss/tests/deep-variants-round22.test.mjs:116:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The expression evaluated to a falsy value:
+    
+      assert(validateSave(s))
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    battle (file:///workspace/scratch/a3dd46c18162/work/Dice-Abyss/tests/deep-variants-round22.test.mjs:20:58)
+    TestContext.<anonymous> (file:///workspace/scratch/a3dd46c18162/work/Dice-Abyss/tests/deep-variants-round22.test.mjs:119:16)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+    Test.postRun (node:internal/test_runner/test:1522:19)
+    Test.run (node:internal/test_runner/test:1447:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+  ...
+# Subtest: a killing hit prevents rebuilding and preserves the same earned chest and reward RNG
+not ok 10 - a killing hit prevents rebuilding and preserves the same earned chest and reward RNG
+  ---
+  duration_ms: 1.078205
+  type: 'test'
+  location: '/workspace/scratch/a3dd46c18162/work/Dice-Abyss/tests/deep-variants-round22.test.mjs:139:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The expression evaluated to a falsy value:
+    
+      assert(validateSave(s))
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    battle (file:///workspace/scratch/a3dd46c18162/work/Dice-Abyss/tests/deep-variants-round22.test.mjs:20:58)
+    TestContext.<anonymous> (file:///workspace/scratch/a3dd46c18162/work/Dice-Abyss/tests/deep-variants-round22.test.mjs:141:16)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+    Test.postRun (node:internal/test_runner/test:1522:19)
+    Test.run (node:internal/test_runner/test:1447:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+  ...
+# Subtest: a lethal retaliation does not rebuild, and retry retains the committed rule, identity, label and RNG
+not ok 11 - a lethal retaliation does not rebuild, and retry retains the committed rule, identity, label and RNG
+  ---
+  duration_ms: 0.835476
+  type: 'test'
+  location: '/workspace/scratch/a3dd46c18162/work/Dice-Abyss/tests/deep-variants-round22.test.mjs:149:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The expression evaluated to a falsy value:
+    
+      assert(validateSave(s))
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    battle (file:///workspace/scratch/a3dd46c18162/work/Dice-Abyss/tests/deep-variants-round22.test.mjs:20:58)
+    TestContext.<anonymous> (file:///workspace/scratch/a3dd46c18162/work/Dice-Abyss/tests/deep-variants-round22.test.mjs:151:11)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+    Test.postRun (node:internal/test_runner/test:1522:19)
+    Test.run (node:internal/test_runner/test:1447:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+  ...
+# Subtest: legacy pending chest and loot stay unchanged; a later enemy or wave independently gets current rules at creation
+not ok 12 - legacy pending chest and loot stay unchanged; a later enemy or wave independently gets current rules at creation
+  ---
+  duration_ms: 0.820994
+  type: 'test'
+  location: '/workspace/scratch/a3dd46c18162/work/Dice-Abyss/tests/deep-variants-round22.test.mjs:160:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The expression evaluated to a falsy value:
+    
+      assert(validateSave(s))
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    battle (file:///workspace/scratch/a3dd46c18162/work/Dice-Abyss/tests/deep-variants-round22.test.mjs:20:58)
+    TestContext.<anonymous> (file:///workspace/scratch/a3dd46c18162/work/Dice-Abyss/tests/deep-variants-round22.test.mjs:163:18)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+    Test.postRun (node:internal/test_runner/test:1522:19)
+    Test.run (node:internal/test_runner/test:1447:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+  ...
+# Subtest: unmarked alternate enemies keep the same numeric rules as their original partners
+ok 13 - unmarked alternate enemies keep the same numeric rules as their original partners
+  ---
+  duration_ms: 79.997523
+  type: 'test'
+  ...
+# Subtest: rule profiles and tactics do not mutate state or read RNG
+ok 14 - rule profiles and tactics do not mutate state or read RNG
+  ---
+  duration_ms: 0.609171
+  type: 'test'
+  ...
+1..14
+# tests 14
+# suites 0
+# pass 8
+# fail 6
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 191.475817

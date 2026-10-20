@@ -95,9 +95,11 @@ A defeat sends you back into the **same fight**, not back to the beginning. Your
 <a id="gameplay"></a>
 ## 📷 Gameplay
 
+> Historical image note (2026-10-17): the V4 screenshot below is a compressed WebP browsing copy, resized from 1920 × 1080 to 1600 × 900. It is not a capture from the current iteration. The original V4 gameplay description and test conclusions remain historical records.
+
 <p align="center">
-  <a href="docs/screenshots/gameplay-desktop.png">
-    <img width="900" src="docs/screenshots/gameplay-desktop.png" alt="Actual Dice Abyss gameplay in a 1920 by 1080 desktop browser, showing the dungeon interface, dice combat, equipment, and player status" />
+  <a href="screenshots/gameplay-desktop.webp">
+    <img width="900" src="screenshots/gameplay-desktop.webp" alt="Compressed historical Dice Abyss gameplay originally captured in a 1920 by 1080 desktop browser, showing the dungeon interface, dice combat, equipment, and player status" />
   </a>
 </p>
 

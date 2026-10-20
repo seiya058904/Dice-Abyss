@@ -1,0 +1,82 @@
+TAP version 13
+# Subtest: memorywell preview shows the exact full-health clip, recorded price and refunded plus unspent points
+ok 1 - memorywell preview shows the exact full-health clip, recorded price and refunded plus unspent points
+  ---
+  duration_ms: 10.983356
+  type: 'test'
+  ...
+# Subtest: wounded and exactly-at-new-cap life remain unchanged and are never described as a loss
+ok 2 - wounded and exactly-at-new-cap life remain unchanged and are never described as a loss
+  ---
+  duration_ms: 22.472249
+  type: 'test'
+  ...
+# Subtest: clearing other talents without vitality refunds points without inventing a life reduction
+ok 3 - clearing other talents without vitality refunds points without inventing a life reduction
+  ---
+  duration_ms: 3.78096
+  type: 'test'
+  ...
+# Subtest: preview stays read-only with a deeply frozen state, repeated rendering and existing boons
+ok 4 - preview stays read-only with a deeply frozen state, repeated rendering and existing boons
+  ---
+  duration_ms: 6.544545
+  type: 'test'
+  ...
+# Subtest: pending-well armor swaps update both life limits while preserving the original quote and current HP
+ok 5 - pending-well armor swaps update both life limits while preserving the original quote and current HP
+  ---
+  duration_ms: 7.175877
+  type: 'test'
+  ...
+# Subtest: points invested after entering the well are reflected without healing or repricing it
+ok 6 - points invested after entering the well are reflected without healing or repricing it
+  ---
+  duration_ms: 5.659856
+  type: 'test'
+  ...
+# Subtest: permanent scars and non-round equipment values use the real stats rounding and health cap
+ok 7 - permanent scars and non-round equipment values use the real stats rounding and health cap
+  ---
+  duration_ms: 9.273007
+  type: 'test'
+  ...
+# Subtest: legacy pending prices are quoted exactly, including free and capped-price valid records
+ok 8 - legacy pending prices are quoted exactly, including free and capped-price valid records
+  ---
+  duration_ms: 8.670356
+  type: 'test'
+  ...
+# Subtest: unaffordable, empty and over-cap offers remain disabled and never show a fictitious settled balance
+ok 9 - unaffordable, empty and over-cap offers remain disabled and never show a fictitious settled balance
+  ---
+  duration_ms: 6.080468
+  type: 'test'
+  ...
+# Subtest: the exact unspent-point cap can be reached, and reallocation never restores clipped life
+ok 10 - the exact unspent-point cap can be reached, and reallocation never restores clipped life
+  ---
+  duration_ms: 2.427658
+  type: 'test'
+  ...
+# Subtest: the room and confirmation fragment expose all four exact values without compact-number rounding
+ok 11 - the room and confirmation fragment expose all four exact values without compact-number rounding
+  ---
+  duration_ms: 2.426927
+  type: 'test'
+  ...
+# Subtest: resolved history, other events and non-event phases never receive a new reset preview
+ok 12 - resolved history, other events and non-event phases never receive a new reset preview
+  ---
+  duration_ms: 2.26028
+  type: 'test'
+  ...
+1..12
+# tests 12
+# suites 0
+# pass 12
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 100.604443

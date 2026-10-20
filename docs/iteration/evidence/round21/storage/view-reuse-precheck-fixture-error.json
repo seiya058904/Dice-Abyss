@@ -1,0 +1,4659 @@
+{
+  "kind": "Round21 per-render stats and benefit model reuse; exact pre-reuse HTML differential and fixed three-way Node CPU timing",
+  "createdAt": "2026-10-19T12:40:14.797Z",
+  "node": "v24.19.0",
+  "cpu": "AMD EPYC 9V74 80-Core Processor",
+  "baselineRoot": "/workspace/scratch/85c02edcd5e2/baseline/Dice-Abyss",
+  "preReuseRoot": "/workspace/scratch/85c02edcd5e2/save-audit/pre-view-reuse",
+  "currentRoot": "/workspace/scratch/85c02edcd5e2/work/Dice-Abyss",
+  "sourceHashes": {
+    "baseline": {
+      "src/views.js": "ae2fede007d7ed0b5a9b660add0ff7df89a76c93c3cabc3539741c9d2345bf07",
+      "src/boon-readout.js": "a791db47ce4c910c67cfe9ece95ea54520e79f39a126a2c82a46d9ba2c4bc38a",
+      "src/engine.js": "75c6d9fcc48c0cf49ee02e53ffb7b143a09a2c79738d3bb2eb5d0ae80b30872b",
+      "src/storage.js": "f5a990793a90ff59a57f38e4be8fcb9deaf54997dff9d9acec2cded73d2c8145",
+      "src/release.js": "d95506cb9ad535f7771f0f81055a49e510db003edff3d697ce91bde506be640b"
+    },
+    "preReuse": {
+      "src/views.js": "da176e50311a2ffea3674d6445bf0c363ea5073bd02a898ba8a507c77dc84926",
+      "src/boon-readout.js": "d44d2a22f1ab6d48f3e768ab59474aa4a9d3e741c1bf085d7614a4b187f76aac",
+      "src/engine.js": "75c6d9fcc48c0cf49ee02e53ffb7b143a09a2c79738d3bb2eb5d0ae80b30872b",
+      "src/storage.js": "daa6eeffc7a38692213228d748c7819739392a5eeaedc91ec62350c53319591c",
+      "src/release.js": "60fccdf0c566f0a9650c5d2bc18218c082f04454299d9f868a53f4008b5c0118"
+    },
+    "current": {
+      "src/views.js": "75c2b6b0c36ee6d34a8066fc4867c6f223dd630633687a347b703afee674c263",
+      "src/boon-readout.js": "ea732d4fe897633b67e5349ad57c1bd52dd1506bc84f8db3748eb6aea36f0bfc",
+      "src/engine.js": "75c6d9fcc48c0cf49ee02e53ffb7b143a09a2c79738d3bb2eb5d0ae80b30872b",
+      "src/storage.js": "daa6eeffc7a38692213228d748c7819739392a5eeaedc91ec62350c53319591c",
+      "src/release.js": "60fccdf0c566f0a9650c5d2bc18218c082f04454299d9f868a53f4008b5c0118"
+    }
+  },
+  "scriptSha256": "8205655bf29280230f46ad8dd4e87bac276572b629f2449270120348747b9f8b",
+  "verifyOnly": true,
+  "status": "FAIL",
+  "differential": [
+    {
+      "name": "new fate",
+      "phase": "fate",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "76326a107ddb67c4d0f04214092687c923c805e442b6e3f3c65f733bba6969dd",
+      "outputs": {
+        "gameView": {
+          "characters": 11322,
+          "sha256": "9bad707b159ead9755897e4dc0c2f98c78bcfdf79b38c28f6bd5d967e92d49b9"
+        },
+        "center": {
+          "characters": 2608,
+          "sha256": "d4d14872decf375df8c027b8a8b1f7630b6484cf0bd440c2893f6dc0984e1a3f"
+        },
+        "routeRail": {
+          "characters": 1361,
+          "sha256": "9d6da5e0565a80a330d7e978405b82027d93c5816909a9393251d9757e0ecdbd"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 2734,
+          "sha256": "b7aaba0a877605deff44c12e53a3b71f395b27c0413ff16715f5718d2af046c7"
+        },
+        "footer": {
+          "characters": 2996,
+          "sha256": "f816b87c05d71ace56493f4ad3815fd955ee73d7c9318b459d27ba013c3ed274"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "route selected",
+      "phase": "route",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "abcc2ec9b85ea3c8cc43c7da9f81904ab4894ffe2671b3a583429b99ea7a073f",
+      "outputs": {
+        "gameView": {
+          "characters": 14253,
+          "sha256": "f16c929bc6ae9e61bce1043e21b1afc2331f971fbdeec9907a3baac778e895fc"
+        },
+        "center": {
+          "characters": 4222,
+          "sha256": "619d085b0da3ff450c8e6c2601f714039a7b3582aa05067204dce07348f4624b"
+        },
+        "routeRail": {
+          "characters": 2762,
+          "sha256": "5c91833b1e765c9d49b008c9bc11172e1c77826997da47ca3e69568bb0a118fa"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 2734,
+          "sha256": "b7aaba0a877605deff44c12e53a3b71f395b27c0413ff16715f5718d2af046c7"
+        },
+        "footer": {
+          "characters": 2911,
+          "sha256": "6e3f56a0c4c75d3a3beea400121219d726c5c72f8c9fd0ccf5dba18c0c16f30e"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "room/combat",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "39c94b3f5be3de83ee3459f4998217f9d34d3fbb1f981e764fd2b39ee24fea28",
+      "outputs": {
+        "gameView": {
+          "characters": 21267,
+          "sha256": "840e6c30c0a9725f81448002850a63d6c0fea1481baaa09fbfb60854a0e53575"
+        },
+        "center": {
+          "characters": 9694,
+          "sha256": "108c7250fa0d54eae2ec4ce9116d02b84deb33b67ad545c1d0c90e0308584145"
+        },
+        "routeRail": {
+          "characters": 2695,
+          "sha256": "1956a62d111f93bbbf57aeabf958b370c5bb92de041052506a4cbbf07db1c227"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 3045,
+          "sha256": "6b95f4977f0c4f2994ec072d3393e4484fe21da504f1b971f4d96dfbc0e07405"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "room/elite",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "e74c8880e235f58c39cfec3449489714758224acb8ac8f5bba3abc0da87f486c",
+      "outputs": {
+        "gameView": {
+          "characters": 21318,
+          "sha256": "1479df4003ecbecb5f7fa65e7523765f53cea286e2138b59b7ad755ae7ddc11f"
+        },
+        "center": {
+          "characters": 9750,
+          "sha256": "e50a560b6af41ad78b8108c4549f4ea1a32b13467df0316e67de628c9e3934d2"
+        },
+        "routeRail": {
+          "characters": 2690,
+          "sha256": "17ec236b8b1184f305fad4acea46c80e91999fb11165b4ab804fa48fe191b434"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 3045,
+          "sha256": "6b95f4977f0c4f2994ec072d3393e4484fe21da504f1b971f4d96dfbc0e07405"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "room/boss",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "3509a3e79efa108b88bdb25a5d896fc56027c312364ea75a64f753b016fa9aca",
+      "outputs": {
+        "gameView": {
+          "characters": 21471,
+          "sha256": "c6e36ed2c511f4a0c0222752f55fab28a3c778fb3fb0901e153e3e5add577ff3"
+        },
+        "center": {
+          "characters": 9895,
+          "sha256": "b857ecca6cfcff62b4db9148af68c716d97d49a032228c22124b570ecd21f8e4"
+        },
+        "routeRail": {
+          "characters": 2698,
+          "sha256": "1b3ef4d8de6a276a7a4ad185323b16f5c8db4245c15872bcb64631e1e76feef2"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 3045,
+          "sha256": "6b95f4977f0c4f2994ec072d3393e4484fe21da504f1b971f4d96dfbc0e07405"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "room/gold",
+      "phase": "gold",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "a41662581f3171411eb6f735b8bef7363d391e8619c3e2b72de3bf9ea2ce3f35",
+      "outputs": {
+        "gameView": {
+          "characters": 12188,
+          "sha256": "9223b36d21cc3815a1a150844cfaf817db44787c0899776ef04f8aca93a996b0"
+        },
+        "center": {
+          "characters": 753,
+          "sha256": "54a77817fc8815392c9674da7b9e58dde7ab997f4da7d15843e23d89a955ecb5"
+        },
+        "routeRail": {
+          "characters": 2644,
+          "sha256": "936dcf743c27e3f43c2b032455214c489db1680cd725d652e2af1eb905c193ad"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 2960,
+          "sha256": "09b60e26149b0a2b9dd2911b277ac1404084107c10e38e754d4b640353e8d660"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "room/chest",
+      "phase": "chest",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "c53ef33ccde798c896916186db988bc48f28fcd8176378f44054e59824fa8999",
+      "outputs": {
+        "gameView": {
+          "characters": 18232,
+          "sha256": "497fc4aa70aaef293b7f02371d9faa77a0f1722f0994087c563dad7b447aad6f"
+        },
+        "center": {
+          "characters": 6755,
+          "sha256": "7bf3f699fcef51392afa829fd724b0f12d4c84bda3273f48d3e71ae58e3228d2"
+        },
+        "routeRail": {
+          "characters": 2654,
+          "sha256": "413966e885f7d2dc0d2c5dbb6b3b2bcd488bdb22f537b6c60e8027c05963d81e"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 2991,
+          "sha256": "f85e8df0c6ea8a93740c985fec98280a835a8e9867e4757815718efbd72352e1"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "room/merchant",
+      "phase": "merchant",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "d007135ca577ab8a553e7699f58b94c6b592fd1aa133fc83b094c49b592a855b",
+      "outputs": {
+        "gameView": {
+          "characters": 16081,
+          "sha256": "79d45767e32081304094a7233e5692d9d8ac599edf53c05a08ef1728817fa6eb"
+        },
+        "center": {
+          "characters": 4657,
+          "sha256": "45ed59763eca15880475c791625148fe9df246b203c472ba6c37ee3e9ef0b2bc"
+        },
+        "routeRail": {
+          "characters": 2634,
+          "sha256": "35fa629a221974c64123c1a1d1e8297fefdbe658eb297aa68afdf381c300464f"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 2955,
+          "sha256": "ed0175213d6eece2b999fdfceff7b0f7dbb78d2bf0d9137cf277ee4844874aee"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "room/forge",
+      "phase": "forge",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "00c2dc087a0504a1cbaf7ef7ad856f52fd434b49f19ee61fc001077c7eebb80e",
+      "outputs": {
+        "gameView": {
+          "characters": 15569,
+          "sha256": "bfaf79f92ffa7c650f3f9a5e4fd35ee94f4682abd0743ed996262719920934be"
+        },
+        "center": {
+          "characters": 4152,
+          "sha256": "cd005eb483ff72561938ec83e3fe8df7b5fa4f35d154cc17ef00a469bb5ad8d0"
+        },
+        "routeRail": {
+          "characters": 2630,
+          "sha256": "f4541267b594be48d83009aba07aac6bf7fa3f471c52ec407b314475e4cf4c28"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 2955,
+          "sha256": "74f0dfb402bc8a8683a3b94e7c48a0c2501c767bd49dc50ad02859342f6e8041"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "room/fusion",
+      "phase": "fusion",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "c8a4985b31aed3e796449721eaea2e2087d2f4c2b50496d72bf0dea171917f3e",
+      "outputs": {
+        "gameView": {
+          "characters": 15098,
+          "sha256": "8478f5ef6371cbf9f10862e965189dc170eba3492de768669ca97eb1f1b055e0"
+        },
+        "center": {
+          "characters": 10491,
+          "sha256": "927635f3fff1acc23d3e1a973269c6d076116463aeefe82c764418c785b0128e"
+        },
+        "routeRail": {
+          "characters": 2636,
+          "sha256": "cdff289e9bb4af33c56360b304f768179fb957cf4057f22a8c0037075a41dd67"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 2955,
+          "sha256": "290b6959da6d3f5d56497d75cb9bd21dc8eb2b3e772094c38e65137289b68b1a"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "room/vault",
+      "phase": "chest",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "d23f6c419a15f10d5887bb11f7b9a02a3b0d158bd396eabebe92d52d7ec7d815",
+      "outputs": {
+        "gameView": {
+          "characters": 18251,
+          "sha256": "e797c66e0ac13967f80618642b1e07034283a02ace178b00f2a052668734a834"
+        },
+        "center": {
+          "characters": 6773,
+          "sha256": "6e8e14ddb6ff0656fdf767f4d8fb8e52c3beb04420954a378dff441a7d20d8bb"
+        },
+        "routeRail": {
+          "characters": 2655,
+          "sha256": "8f49a3f7ea04d45c2cf6a9025eac8113eb6e10dcd28a78d0aecd4c09c07e2ac4"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 2991,
+          "sha256": "f85e8df0c6ea8a93740c985fec98280a835a8e9867e4757815718efbd72352e1"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "room/blackmarket",
+      "phase": "blackmarket",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "d6de76acaf42a4fce142e32ae353f53f940ad7dce32d4be67fdd3a43aeb8e779",
+      "outputs": {
+        "gameView": {
+          "characters": 16169,
+          "sha256": "5b02ae5b92944f0da10c719579b8ad5133fdf765e6b4ac0ae33c9cc4abcba7ca"
+        },
+        "center": {
+          "characters": 4727,
+          "sha256": "99d48c0665456484231003fedd9b9283f4c2cc50f8e775314e9edade1cc58fb6"
+        },
+        "routeRail": {
+          "characters": 2649,
+          "sha256": "62301b14404e0c043850e1edb48a163b561cc8c56b063a65929aeb0e92406555"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 2955,
+          "sha256": "37d596c1b8e6ef12f069cd44b0d5283ed18c55032e4a171dba8a1a7f15f8b016"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "room/altar",
+      "phase": "altar",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "1c5e9cc574e7ba11e359134ac4243d1a44493a512b45e686ff7a67085273b38e",
+      "outputs": {
+        "gameView": {
+          "characters": 12982,
+          "sha256": "195c8ce39defcc9bc055bea2bce90e0c820791934b95b9eef57a2a6961d9f4bf"
+        },
+        "center": {
+          "characters": 1561,
+          "sha256": "a16d728bb3fce118b987cca29d76590c3562fa8d10489546f197d56e8d95e103"
+        },
+        "routeRail": {
+          "characters": 2634,
+          "sha256": "fbadd0d32775bc9bcca2a1919b961943d8dc3fdaf8d36a60afac93299678ef4c"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 2955,
+          "sha256": "f5fca90d030bb27f3236d540c4b1f78f5bc6eb22b6ce9a0394e06fd88fa6b9a3"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "room/rest",
+      "phase": "rest",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "7ce1cb2a1791013cde899faf82ccdb6778f8f61cd5e1b5d51ce1f1f2f9a4b680",
+      "outputs": {
+        "gameView": {
+          "characters": 12195,
+          "sha256": "eae2d49552bb80ef07cd032284192756c1d294311ce43f5d6db86b0eae8d4e28"
+        },
+        "center": {
+          "characters": 769,
+          "sha256": "c8e48e926de630ba4337c904dd9183c71d443cda5fcc0c380dd0952223245dbb"
+        },
+        "routeRail": {
+          "characters": 2640,
+          "sha256": "688b4afb6b1c87bc7939d43da363ee61da9d6016f5f90902f5be977f3099d667"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 2955,
+          "sha256": "bf01f39699a752857a640ff7b6d5614f99e631530ae821ae33f62f8385b27e16"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "room/trial",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "cdfbd10a7f7cb0bd3178780563949b5a161a84e884db5cabc4e207482bf951c9",
+      "outputs": {
+        "gameView": {
+          "characters": 21271,
+          "sha256": "c1296398453b98fb2d238b280aeaf996e925d12c2ae7e97dc76aa17ad2956198"
+        },
+        "center": {
+          "characters": 9696,
+          "sha256": "8a07ebe69c9d27de24a10944bafd6aba5def35a42c73e30776c82a28ac96170f"
+        },
+        "routeRail": {
+          "characters": 2697,
+          "sha256": "a414fba518232002b657d3b8203f7ae6035593a33cb0db067d879a2724fe443b"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 3045,
+          "sha256": "6b95f4977f0c4f2994ec072d3393e4484fe21da504f1b971f4d96dfbc0e07405"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "room/armored",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "d96063ed7f444e68eae2f65dbc208993acad493a0d8ca3a1068c9adfbf057a35",
+      "outputs": {
+        "gameView": {
+          "characters": 21451,
+          "sha256": "8402290cfeaf98599e547dd81bcd623e07667f1bea413bc379dbba8606492c76"
+        },
+        "center": {
+          "characters": 9803,
+          "sha256": "7aa61e02e2b48c43bb4ba266693db2ebb97580ad7e565083a22f304c505b68f9"
+        },
+        "routeRail": {
+          "characters": 2770,
+          "sha256": "4783ddf9e9d936675db5f2352c7eef23b331da58c345de781003b0f46a40f44f"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 3045,
+          "sha256": "6b95f4977f0c4f2994ec072d3393e4484fe21da504f1b971f4d96dfbc0e07405"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "room/berserker",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "4166dac26156c4c182a8412fb10e923e68255e0223efe55ff56304686f088ed3",
+      "outputs": {
+        "gameView": {
+          "characters": 21151,
+          "sha256": "0cab9dfe71dc8d70ed5a172ed65ce6117467b4b829668f37be8c8a9217bd4357"
+        },
+        "center": {
+          "characters": 9503,
+          "sha256": "1aa0eb7de38c8f0c3d56929747eb47067a68211e27ef01e1a66d7a621290f4cd"
+        },
+        "routeRail": {
+          "characters": 2770,
+          "sha256": "0a1fa5dd1c6d5ba10b75616764d4eeb931674c1850f0faaa89e77b0b9bc8de6a"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 3045,
+          "sha256": "6b95f4977f0c4f2994ec072d3393e4484fe21da504f1b971f4d96dfbc0e07405"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "room/leech",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "832a75fbf12664475775dd7fb5572435cf956456c88e2dc6e125c242ebca3dd1",
+      "outputs": {
+        "gameView": {
+          "characters": 21448,
+          "sha256": "947a3e79dac56893a3539e9c5252b7ae7a4180d693452650eb7cd8a25d8c1907"
+        },
+        "center": {
+          "characters": 9800,
+          "sha256": "03b880211d99439cc21f497200101471038d4b49da99cf49e1837c948ab6f52e"
+        },
+        "routeRail": {
+          "characters": 2770,
+          "sha256": "184ff1225e28bc386d2314b732349323971b52d75df75fdf9641e0055192ab30"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 3045,
+          "sha256": "6b95f4977f0c4f2994ec072d3393e4484fe21da504f1b971f4d96dfbc0e07405"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "room/disruptor",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "cb91d649d35e23e1d85b775662e97b65157c7d1e5bfc4242e493ec3b9cad91f6",
+      "outputs": {
+        "gameView": {
+          "characters": 21156,
+          "sha256": "2247bf13962013a9789f91b0034e2c1812bafc6dea1edb83f2563ed34a7cbaae"
+        },
+        "center": {
+          "characters": 9508,
+          "sha256": "3c4953f6f4028b1683a20dc25c1baeeef559f2fdf5f83cab70073daa10f2f95d"
+        },
+        "routeRail": {
+          "characters": 2770,
+          "sha256": "714feba0c7946060250720b1e8c8e99cfdfc87a27630a93c8fe72afa253f0879"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 3045,
+          "sha256": "6b95f4977f0c4f2994ec072d3393e4484fe21da504f1b971f4d96dfbc0e07405"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "room/mirror",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "41f1470c9221f636e9648c9e23f88d69cb6aca567919925f56042a2cec4a101a",
+      "outputs": {
+        "gameView": {
+          "characters": 21114,
+          "sha256": "ae1b154797f480bb425b2ce027399274744bcf58a0a4a0745aa7c03bb566cf6e"
+        },
+        "center": {
+          "characters": 9467,
+          "sha256": "b9a0b5a6e060eeb66c5ca3a1b4de7e7e489878f30b502118fe90093bd19dc7ca"
+        },
+        "routeRail": {
+          "characters": 2769,
+          "sha256": "975495bdc998b15307a20b87b06cc096dd3e17e9a64c91519f1d249fa3a985a9"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 3045,
+          "sha256": "6b95f4977f0c4f2994ec072d3393e4484fe21da504f1b971f4d96dfbc0e07405"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "room/bandit",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "ed3e1350257a6982939ce4f83b7d4a27eecaf4c95d10eaa6e89a7ee0ed6635a3",
+      "outputs": {
+        "gameView": {
+          "characters": 21434,
+          "sha256": "1c7023f3db62bb8b3239721e7026ae8e1fb64a134f311b5900583d60f37ff7a6"
+        },
+        "center": {
+          "characters": 9787,
+          "sha256": "4d4d92c544f13d0dacf6d2616f897399f38eaff610995daab4037503fdafc9cf"
+        },
+        "routeRail": {
+          "characters": 2769,
+          "sha256": "8bf9a0b96c823e1e6713b7ea884432a71f8f7998d3c599ec5b658c8bce7eb719"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 3045,
+          "sha256": "6b95f4977f0c4f2994ec072d3393e4484fe21da504f1b971f4d96dfbc0e07405"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "room/gauntlet",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "60fa55d6fc8b9f775613d9557839fe381c60e5d4f804732bba0883c5971ee4f4",
+      "outputs": {
+        "gameView": {
+          "characters": 21104,
+          "sha256": "06d2ec41256e58cf0473f90dfcfee3333f830f08e6d44d3f1f39ed32ea2d17a2"
+        },
+        "center": {
+          "characters": 9457,
+          "sha256": "d2aa75e94a60781c71052bf8de550e894cbffe137a4b2d5705f479e5278cf050"
+        },
+        "routeRail": {
+          "characters": 2769,
+          "sha256": "50a4fa64eae499a3df3e3af1833e476b1e8a8cfd3c9a2feea787254185267dfa"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 3045,
+          "sha256": "6b95f4977f0c4f2994ec072d3393e4484fe21da504f1b971f4d96dfbc0e07405"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "room/duel",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "9558e98da56e877d63512180f16adc6cb6382fc5d972e2613c253c7570382bc8",
+      "outputs": {
+        "gameView": {
+          "characters": 21171,
+          "sha256": "bb1ebc59c01f2dd4ad9fdd59d4be4c9cb9226eaebd17b89a746a6119cb96eca8"
+        },
+        "center": {
+          "characters": 9524,
+          "sha256": "3020215367cea009a623d84f4f7e88a10a52527066a326ff636f8415afa61f97"
+        },
+        "routeRail": {
+          "characters": 2769,
+          "sha256": "428bba798fbfe3a233969cdb494f49d9dff28259e1d2a2a212861e90f8f31e53"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 3045,
+          "sha256": "6b95f4977f0c4f2994ec072d3393e4484fe21da504f1b971f4d96dfbc0e07405"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "room/storm",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "1b419d4ab72403516fcaa3df212eade507b85c6e31fd67d1b33e9076e3fffa21",
+      "outputs": {
+        "gameView": {
+          "characters": 21117,
+          "sha256": "70a47f1a3b598e4b4d008f10c2fb06457cd3414147e30843fe6c230f01a55ea0"
+        },
+        "center": {
+          "characters": 9469,
+          "sha256": "ba1eaf3473d056407a9130765a0f041662467f83d98250d965d703e8e9aa7304"
+        },
+        "routeRail": {
+          "characters": 2770,
+          "sha256": "3dd626565c24b6850e4bbae032a68918104954526354e96378c04bd06d4967c0"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 3045,
+          "sha256": "6b95f4977f0c4f2994ec072d3393e4484fe21da504f1b971f4d96dfbc0e07405"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "room/cursed",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "2365c11f41f9971a704df84c92de007664022685f5f7d2748d447a064ddabeaf",
+      "outputs": {
+        "gameView": {
+          "characters": 21115,
+          "sha256": "4a34a17fc8ae8f302818c5efa9a3a4c410f681050819cf7d08dc32f575b68744"
+        },
+        "center": {
+          "characters": 9467,
+          "sha256": "4d9befdedcad19d84a033d6e8627d0ab5187ad5cd3632381dd50455f3c1dc3ec"
+        },
+        "routeRail": {
+          "characters": 2770,
+          "sha256": "3895a8d62485486d95546235dbcb958e42a7c6f0fd49e0d2c753534f7f73ccfe"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 3045,
+          "sha256": "6b95f4977f0c4f2994ec072d3393e4484fe21da504f1b971f4d96dfbc0e07405"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "room/guardian",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "d893138f5aa935fdd87fa3c2c159a70d9ff0dffc32cbac51e4f542d6925734a6",
+      "outputs": {
+        "gameView": {
+          "characters": 21574,
+          "sha256": "68972082090aea6f4ffe87ce387324f555c9f61a27d0c250c50cee78cc3fe3bc"
+        },
+        "center": {
+          "characters": 9919,
+          "sha256": "dfe913fb2964f61baf6cb0a9578aa28e77e95ab98ebab035c5ee84a98d1c3c6c"
+        },
+        "routeRail": {
+          "characters": 2777,
+          "sha256": "8182dce66ac01efa8d8047956b2c888ae465bf2cdad3d97c2a0f12a6a712841b"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 3045,
+          "sha256": "6b95f4977f0c4f2994ec072d3393e4484fe21da504f1b971f4d96dfbc0e07405"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "room/hiddenboss",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "78ac7653065701fed38cdb74b828da0c5cfdda34cb66070b1dd05441403a6dff",
+      "outputs": {
+        "gameView": {
+          "characters": 21574,
+          "sha256": "6bfc60525729958e5812b661773b2122c1f8c1440ccfa624a9295f9479e81b2b"
+        },
+        "center": {
+          "characters": 9920,
+          "sha256": "ef83936979039cecc773c6720e8d10baf1a5986179ab645e7e7f0c2f699ca9d2"
+        },
+        "routeRail": {
+          "characters": 2776,
+          "sha256": "614ea45f4e66deb57145b47ddc6faacebd17f10b675a538cd00f273640b5b5a1"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 3045,
+          "sha256": "6b95f4977f0c4f2994ec072d3393e4484fe21da504f1b971f4d96dfbc0e07405"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "room/spring",
+      "phase": "event",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "12f3d0349d6b06ded60e968471d1cd3f2edc2bd5c3974eef8fcb7f76aa72df7c",
+      "outputs": {
+        "gameView": {
+          "characters": 14570,
+          "sha256": "e10973b8f8eeb69e59b4be465f3011dbb6eec5ab99e8125b14cc12610784a93d"
+        },
+        "center": {
+          "characters": 3042,
+          "sha256": "c61fcd7dc8adef6bef33dccf168255e36634f80b09df14fd71f6497809a3f64e"
+        },
+        "routeRail": {
+          "characters": 2707,
+          "sha256": "7038b71beec29915152838c8d97c9afd555a4b8bbf0e35b004e088679224bd3b"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 2989,
+          "sha256": "8c4b85e44f159334fe1657cff2e7de48c4c2d06951fd40462278da0cdf858e3a"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "room/prayer",
+      "phase": "event",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "a9a1fcf6f1d658e940a0995816822682c34b5e2a94121f0bcaa1be9bf129a4bb",
+      "outputs": {
+        "gameView": {
+          "characters": 14910,
+          "sha256": "e078f1d04326c1ad9efeaa8918470654dd5ce2bf0206312df0df8ba2aee18cba"
+        },
+        "center": {
+          "characters": 3381,
+          "sha256": "194afadfb179453ae018d765b2a1a225ea12a6202a1f5781b21b56d35d78b6f9"
+        },
+        "routeRail": {
+          "characters": 2708,
+          "sha256": "12d788cf05d0b89e917a266f150143499b9882355b7d899f18267f62fd3f6087"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 2989,
+          "sha256": "8c4b85e44f159334fe1657cff2e7de48c4c2d06951fd40462278da0cdf858e3a"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "room/gambit",
+      "phase": "event",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "0541438a45968d69f5f72c82bcac7185bd671fcd90eb2a3e50f73d19a4d62f6c",
+      "outputs": {
+        "gameView": {
+          "characters": 15229,
+          "sha256": "4ed59f66b2fbc1386f809f8a701fd49814640b289ddef467bb78a9e94b79e556"
+        },
+        "center": {
+          "characters": 3700,
+          "sha256": "c1c681317982046ba176e8c1cfd06ec5b11101a3e2305da9e8311403867c1fb6"
+        },
+        "routeRail": {
+          "characters": 2708,
+          "sha256": "5024aed3a69625939afc9af22f42f624a7531c4615a42d574f181f5c4fa09b17"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 2989,
+          "sha256": "8c4b85e44f159334fe1657cff2e7de48c4c2d06951fd40462278da0cdf858e3a"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "room/exchange",
+      "phase": "event",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "73a6e45a20309c150ed78b5ec9f236e1391a5456db9a7abd7e8ef67a70607250",
+      "outputs": {
+        "gameView": {
+          "characters": 13615,
+          "sha256": "cccb8a05f2d5e957d73f9624faab21a26c719f058b8dda82a7c6cbc8725a45a6"
+        },
+        "center": {
+          "characters": 2086,
+          "sha256": "942df71e831ad4b64fb550775a5b817f3c69a883d4638635cee56d68028049d1"
+        },
+        "routeRail": {
+          "characters": 2708,
+          "sha256": "08f9e211a5e0269b808cc083e21da3d3c045d2e2b55659fcccf1c2fd70bfecb0"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 2989,
+          "sha256": "8c4b85e44f159334fe1657cff2e7de48c4c2d06951fd40462278da0cdf858e3a"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "room/mystery",
+      "phase": "event",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "d497f30982c319570cbca82e9c4af447488d5881cea4947dbb8dda54620bff3b",
+      "outputs": {
+        "gameView": {
+          "characters": 12671,
+          "sha256": "ce6a8ae0ce706dee3913eadde20a44d78e4bd651ec09604f2d279f235d89f609"
+        },
+        "center": {
+          "characters": 1142,
+          "sha256": "49fc3ae57903ed8254cbcbba899836c24853a04d631e98fcda1d2d4935a806eb"
+        },
+        "routeRail": {
+          "characters": 2708,
+          "sha256": "5c921ece3886cbc3c9a3ade00a4dd27aa855e066de77f0ea7a84a4612896f6f7"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 2989,
+          "sha256": "8c4b85e44f159334fe1657cff2e7de48c4c2d06951fd40462278da0cdf858e3a"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "room/parity",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "4abcb188d2f1d7a7864a794e6f76ad0d36a62bfb1a1f935ed5f560c7d49b0d82",
+      "outputs": {
+        "gameView": {
+          "characters": 21300,
+          "sha256": "c9a3576c3f24845c3cfaf32edfbb36aadb9d965b2e7ccb9678464a6e167b39a5"
+        },
+        "center": {
+          "characters": 9653,
+          "sha256": "a1d884b07f22cf479a1fae6a5cbdd62321858e9cebf38ea6eaa20b05558662a5"
+        },
+        "routeRail": {
+          "characters": 2769,
+          "sha256": "56ae399de1621243b4640f37a823cfb9fa603c14b1301b37dd196064fe076566"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 3045,
+          "sha256": "6b95f4977f0c4f2994ec072d3393e4484fe21da504f1b971f4d96dfbc0e07405"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "room/sequence",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "4461afcfc999c78fbd3499979eaecac82a7ca0707ae6780b948baf16f37eb03f",
+      "outputs": {
+        "gameView": {
+          "characters": 21746,
+          "sha256": "f3e1e463f5c6dafe052635c6bc8c76fdd61a8ccfd0245d996153397ca71618df"
+        },
+        "center": {
+          "characters": 10098,
+          "sha256": "e7e653db6c0113e134df0c32ea96f2ae88adec31d589a671a2ba81305025de65"
+        },
+        "routeRail": {
+          "characters": 2770,
+          "sha256": "2b736fe3f7db84e5d6104c6b32eb6289cffd711b7cc97293bbd54fd378a9ca70"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 3045,
+          "sha256": "6b95f4977f0c4f2994ec072d3393e4484fe21da504f1b971f4d96dfbc0e07405"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "room/laststand",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "4ce79605662eb868531813b627e7ce4a890ef730ea629c93feea0cc7fb79f58d",
+      "outputs": {
+        "gameView": {
+          "characters": 21262,
+          "sha256": "85ac2830241496ae8baa411a503d9e3a8ecf697edff73c6e894a8fd35627d8aa"
+        },
+        "center": {
+          "characters": 9614,
+          "sha256": "9a60e2499c6aa84397821e507d6e3c514a41ec318d17a9b44ffe073cf29efd40"
+        },
+        "routeRail": {
+          "characters": 2770,
+          "sha256": "8b1eae096741f1c5a9d00a548a148d5288d1ecb3206c675455f1f571f748e60a"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 3045,
+          "sha256": "6b95f4977f0c4f2994ec072d3393e4484fe21da504f1b971f4d96dfbc0e07405"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "room/undertow",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "72683ed783d0f99ada56cf726d2481841199e8e258034e56eadb09a78ca3fcd1",
+      "outputs": {
+        "gameView": {
+          "characters": 21394,
+          "sha256": "feb92b545f7ba2293f05e7854c825754f5acbcc7c44a99c5f4555741eb11ec62"
+        },
+        "center": {
+          "characters": 9746,
+          "sha256": "066f76bd52d25523183f599b67bb15159e2b7c38d67cfb6fa44121c39c677f3f"
+        },
+        "routeRail": {
+          "characters": 2770,
+          "sha256": "2db7ca04a719fe5cc9def0ee1720f6961d9ff7a1e75602729c4e6a413c66d679"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 3045,
+          "sha256": "6b95f4977f0c4f2994ec072d3393e4484fe21da504f1b971f4d96dfbc0e07405"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "room/hush",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "c4261b65cbdc92a2b818380b23fd4809e8ea62470f7894f7f93cb0a503fc5f47",
+      "outputs": {
+        "gameView": {
+          "characters": 21686,
+          "sha256": "e939aaa2841afa64cb7aae360cdb1ce6a202bfb6372bacf88b27100609a50f24"
+        },
+        "center": {
+          "characters": 10039,
+          "sha256": "2ece78b36ae14707c15a9f2ae9deadb8dbd477cf43ed5500c6973ee45314d000"
+        },
+        "routeRail": {
+          "characters": 2769,
+          "sha256": "bd92e63bb4f612a164e52745f700d0134cd9938d70f53ec943c5723dc9d66fd7"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 3045,
+          "sha256": "6b95f4977f0c4f2994ec072d3393e4484fe21da504f1b971f4d96dfbc0e07405"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "room/hourward",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "9582df006a1c2d622971a65b988d9ed3c035ca2f2abd5f56429d9267f0c8f53b",
+      "outputs": {
+        "gameView": {
+          "characters": 21262,
+          "sha256": "d31f61808fb18f2f4b6fcd76224ed40c923ffbff97ca8e7e1e575a3ee9a9c790"
+        },
+        "center": {
+          "characters": 9615,
+          "sha256": "305f6990aec4716682f2af4b10b26d689a2f7f647d7a768f306a6bf3af5d5492"
+        },
+        "routeRail": {
+          "characters": 2769,
+          "sha256": "c3faa5f8cc8f5b1907d5902cf346fc19cdb6466841a0c62ad735d01a3bf2f58c"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 3045,
+          "sha256": "6b95f4977f0c4f2994ec072d3393e4484fe21da504f1b971f4d96dfbc0e07405"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "room/onslaught",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "854270bbc7c24bc5ed4fa7e49c7c37a8d40dada9b042d0dad716ed411b7952b8",
+      "outputs": {
+        "gameView": {
+          "characters": 21379,
+          "sha256": "0bb4028b922a535a154f6f65e8acb846708c8237d817944a3083d4f995785e5f"
+        },
+        "center": {
+          "characters": 9732,
+          "sha256": "56350a463786c57e1b90ca3fd429703547fac3f0e3bc746fd69ed01d64d8a144"
+        },
+        "routeRail": {
+          "characters": 2769,
+          "sha256": "4e3f099efbc09bb4d6011afa2b05c7b5a804b11d8744e7d151997246f0556d0a"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 3045,
+          "sha256": "6b95f4977f0c4f2994ec072d3393e4484fe21da504f1b971f4d96dfbc0e07405"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "room/bounty",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "47ec649b8d6c7fd9c44a12baeebfc1ac17f6d3896c5529809e3f63d15cc615b9",
+      "outputs": {
+        "gameView": {
+          "characters": 21685,
+          "sha256": "3311076efa4c73625a4ec98ec419d5c107cab1b14d143cc154f819dc99724fa7"
+        },
+        "center": {
+          "characters": 10037,
+          "sha256": "b9c152d8c7944c083909b095b9c83d406018d6d1303993d28180a1cb22d8e353"
+        },
+        "routeRail": {
+          "characters": 2770,
+          "sha256": "dc02aed27dc207a6c0b2ae711ff6746e8125a31afd388689d89da70149ad141d"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 3045,
+          "sha256": "6b95f4977f0c4f2994ec072d3393e4484fe21da504f1b971f4d96dfbc0e07405"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "room/abyssking",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "34be2feea0b9ac4ac3baa590c67e4f4a6b8d75cbf8fee72880da3d4c76b71e14",
+      "outputs": {
+        "gameView": {
+          "characters": 21733,
+          "sha256": "0015c61a1a6d19e9ef7b2758b01115e5b583110a92d0a36525e0ff6523c30108"
+        },
+        "center": {
+          "characters": 10080,
+          "sha256": "7df02e47ba75af83e1a062f9ffc21db526c851bd35db46b18610afec531c1a35"
+        },
+        "routeRail": {
+          "characters": 2775,
+          "sha256": "c17a80c7c3e5ea71748eece76f587784c408a1cc808ea40d3bd16e2d5ac44b90"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 3045,
+          "sha256": "6b95f4977f0c4f2994ec072d3393e4484fe21da504f1b971f4d96dfbc0e07405"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "room/archiveguard",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "5be55b017b575fb6b38e82f9103092a418a377f1ca9cba3c68ba2e0cffb0684d",
+      "outputs": {
+        "gameView": {
+          "characters": 21853,
+          "sha256": "5623b82ce0a429ed0e30d4350249e1fd65b6442e28ff37a22522b95538a6705d"
+        },
+        "center": {
+          "characters": 10199,
+          "sha256": "77fde3fa9465e61b5c89b0a08eb9b9df482ad382146538989bc9800d9ba0a50b"
+        },
+        "routeRail": {
+          "characters": 2776,
+          "sha256": "312651c151ecd878f2bae5d4d3087962098585d36073312c7c6020d4b3c3c708"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 3045,
+          "sha256": "6b95f4977f0c4f2994ec072d3393e4484fe21da504f1b971f4d96dfbc0e07405"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "room/bloodwell",
+      "phase": "event",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "39a7782e314291ac115d60b523b98d833b130ef201f9327c1fd2fd4e784215a1",
+      "outputs": {
+        "gameView": {
+          "characters": 12734,
+          "sha256": "423a1a102f8fa7bdaa220479964d61035a00b09f6ea60ce45b1885ef738f7e10"
+        },
+        "center": {
+          "characters": 1205,
+          "sha256": "f1c63fd9b85b73214622d9783214c0b13e7568458085c059607aa415f69ae290"
+        },
+        "routeRail": {
+          "characters": 2708,
+          "sha256": "326039c532aef78791c793b3337ff5da7c87d7992f84a89a783c62924118839b"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 2989,
+          "sha256": "8c4b85e44f159334fe1657cff2e7de48c4c2d06951fd40462278da0cdf858e3a"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "room/relicloom",
+      "phase": "event",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "bd9e6e750b2374f8d8a50149e3a07b93897a7a23cf54fe12f90055fc98bc9fc4",
+      "outputs": {
+        "gameView": {
+          "characters": 13194,
+          "sha256": "59b2c615d6ccba3eb22ef3505a41b00280deab381e9fe868b00c481ed3951f03"
+        },
+        "center": {
+          "characters": 1665,
+          "sha256": "6ec5f70692e2a97f185eaaee4eba8ec6ab65aaa7e2cbd461833f32d0e96fa143"
+        },
+        "routeRail": {
+          "characters": 2708,
+          "sha256": "b147f776f73f0b0b4a017946da05db4931184d68b05a12211f59751e77ee18f7"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 2989,
+          "sha256": "8c4b85e44f159334fe1657cff2e7de48c4c2d06951fd40462278da0cdf858e3a"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "room/offering",
+      "phase": "event",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "3827e38c43135665cc4329581bfcda4d6ae0133c48f126d789693e826532cdf4",
+      "outputs": {
+        "gameView": {
+          "characters": 13202,
+          "sha256": "4605e159d75c74c834ef1165182e581ef70d93fd2c2ce8fd6b108ad29085a975"
+        },
+        "center": {
+          "characters": 1673,
+          "sha256": "2644ce22cea727d4313d1de3a9d852a0424c3c11eb26811a9f16c09382dcbd4a"
+        },
+        "routeRail": {
+          "characters": 2708,
+          "sha256": "c8e0f3174f186a236e344d2a3e0cc7a51e432f34d999038ec3068a4afb05e0ac"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 2989,
+          "sha256": "8c4b85e44f159334fe1657cff2e7de48c4c2d06951fd40462278da0cdf858e3a"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "room/echochamber",
+      "phase": "event",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "e1763ca1fcb9d69af2cacf5e11f0d6136282ab901ce900dadd1309ed32c9d047",
+      "outputs": {
+        "gameView": {
+          "characters": 13468,
+          "sha256": "4a93e09701e90ada85ba4e4edff52447006297c1b05dfe83712d9ccb9dd3daa1"
+        },
+        "center": {
+          "characters": 1939,
+          "sha256": "8f2170c82ec9895a43bef7d10a718cf0480f64bc131f77faabf8f0c56adab397"
+        },
+        "routeRail": {
+          "characters": 2708,
+          "sha256": "7717256984712cb3ee25987215f4976ce63c0bf6bca747b0c1bc431412a4a29b"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 2989,
+          "sha256": "8c4b85e44f159334fe1657cff2e7de48c4c2d06951fd40462278da0cdf858e3a"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "room/wardbank",
+      "phase": "event",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "33b3d4dd372afafc3f0eeab0f1b2d7496a13306b7e1fd52bfc4f819fbf20eb73",
+      "outputs": {
+        "gameView": {
+          "characters": 13494,
+          "sha256": "92c908125b77c3aea4bae5dd3263d54161ed7127fbceaab0156fcfc376dc4d37"
+        },
+        "center": {
+          "characters": 1966,
+          "sha256": "f53d07043daa6b27d6ee5c09057160fa01fb2dab1b264b1a863aaa1ce741570d"
+        },
+        "routeRail": {
+          "characters": 2707,
+          "sha256": "e0a225891155c694fc567cfce44a05f08de34c9e7bcb99158fa504d54ea3cc7a"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 2989,
+          "sha256": "8c4b85e44f159334fe1657cff2e7de48c4c2d06951fd40462278da0cdf858e3a"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "room/starlibrary",
+      "phase": "event",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "45ab68d5463ef20b178127f2e46d1accec1d6f285d6df49b567825e45711b553",
+      "outputs": {
+        "gameView": {
+          "characters": 13366,
+          "sha256": "6554f7c994485b5139d579010ab0a4dc115785d93ad716e71c0fa48f3b5cd38d"
+        },
+        "center": {
+          "characters": 1837,
+          "sha256": "9a03d28415cb52e939c48c4e093adae988f32fc077dfc8f847caa926527c7f58"
+        },
+        "routeRail": {
+          "characters": 2708,
+          "sha256": "49beeef73f7b8ef16d8b58f5ffb8c8e816f5a670ea8129f61671789c715dbb3d"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 2989,
+          "sha256": "8c4b85e44f159334fe1657cff2e7de48c4c2d06951fd40462278da0cdf858e3a"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "room/abyssauction",
+      "phase": "event",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "2959fbf7ccf47d584b312ce9984d4e2049b773654be0606cb86271e3229d2a51",
+      "outputs": {
+        "gameView": {
+          "characters": 12871,
+          "sha256": "11431b202d0b11f65db9f234cf57b39e8822bc9a8cf8e05cc2f97ba74469ee17"
+        },
+        "center": {
+          "characters": 1342,
+          "sha256": "aa2a783694512112e45ee5cb22bf1a79d86f563f5bde6abcc3b5b987dfebe7f6"
+        },
+        "routeRail": {
+          "characters": 2708,
+          "sha256": "42a35cc3b658235366730ada32c9cca451b9eb0d33602fbf883b414bb39f27cb"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 2989,
+          "sha256": "8c4b85e44f159334fe1657cff2e7de48c4c2d06951fd40462278da0cdf858e3a"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "room/oathgate",
+      "phase": "event",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "c0eab501df1c646cd2ebfd1314ab4af6988df9d7673568a41c841c33d84069e2",
+      "outputs": {
+        "gameView": {
+          "characters": 12694,
+          "sha256": "a4e5a728e264ee0d676a6e6dc0a669c6018e3b4f7cea1b883f205d5c51e07a5e"
+        },
+        "center": {
+          "characters": 1165,
+          "sha256": "a7bc9cdabfce2427480421bf7c3101a2dc5401bd9ca4b39b8cb12f746c6f5a27"
+        },
+        "routeRail": {
+          "characters": 2708,
+          "sha256": "cefd14e0b1e84a2b3a7ead1845e3a6106017bff50c2814896aa27cae64381d2d"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 2989,
+          "sha256": "8c4b85e44f159334fe1657cff2e7de48c4c2d06951fd40462278da0cdf858e3a"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "room/wishingvault",
+      "phase": "event",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "ef43220b22517bab0b8b12fb9aa3835b12a33e58a40ba0e8621a21cac2613ede",
+      "outputs": {
+        "gameView": {
+          "characters": 14596,
+          "sha256": "59d11abd1e618abdae565300f8e2f5635cb7301388b2f17b156e9fa381eaf11d"
+        },
+        "center": {
+          "characters": 3067,
+          "sha256": "ef45615a816e53819ece69c5ba9ecb1af96f304af9873c41d13e9a39ad6a6df3"
+        },
+        "routeRail": {
+          "characters": 2708,
+          "sha256": "04ebe97deb82913a359199bc91e6c3ad20f58561147a656821e19ae54a1abe8d"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 2989,
+          "sha256": "8c4b85e44f159334fe1657cff2e7de48c4c2d06951fd40462278da0cdf858e3a"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "room/memorywell",
+      "phase": "event",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "00e39f75e3a1054518fd8b7b316dce3246ff4bdcf47f618c4c6b29bcc82f386a",
+      "outputs": {
+        "gameView": {
+          "characters": 13769,
+          "sha256": "9d1a23d3ce33fc464c11b95f411fee459786379c5c7c52ede128fedbf135867f"
+        },
+        "center": {
+          "characters": 2241,
+          "sha256": "489bf6d024f7f3e29225ac41a517695f23563923151ca6b60c411fcb5dab61fc"
+        },
+        "routeRail": {
+          "characters": 2707,
+          "sha256": "a3a40106dcb204898f35d9b0502036e421fc403ede253a220fc2293ff6ddc595"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 2989,
+          "sha256": "8c4b85e44f159334fe1657cff2e7de48c4c2d06951fd40462278da0cdf858e3a"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "no benefits/ready",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "39c94b3f5be3de83ee3459f4998217f9d34d3fbb1f981e764fd2b39ee24fea28",
+      "outputs": {
+        "gameView": {
+          "characters": 21267,
+          "sha256": "840e6c30c0a9725f81448002850a63d6c0fea1481baaa09fbfb60854a0e53575"
+        },
+        "center": {
+          "characters": 9694,
+          "sha256": "108c7250fa0d54eae2ec4ce9116d02b84deb33b67ad545c1d0c90e0308584145"
+        },
+        "routeRail": {
+          "characters": 2695,
+          "sha256": "1956a62d111f93bbbf57aeabf958b370c5bb92de041052506a4cbbf07db1c227"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 3045,
+          "sha256": "6b95f4977f0c4f2994ec072d3393e4484fe21da504f1b971f4d96dfbc0e07405"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "no benefits/rolling",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "39c94b3f5be3de83ee3459f4998217f9d34d3fbb1f981e764fd2b39ee24fea28",
+      "outputs": {
+        "gameView": {
+          "characters": 20989,
+          "sha256": "a3c5db6168e7b53d3ebf285e8e9e1cbf1ba011d05ae770e9a4daa44bb07b5027"
+        },
+        "center": {
+          "characters": 9699,
+          "sha256": "2ccd2677f4330c9f6f61b2f32294bc9905c3e2ebffb904bcefecda0da8ab010b"
+        },
+        "routeRail": {
+          "characters": 2695,
+          "sha256": "1956a62d111f93bbbf57aeabf958b370c5bb92de041052506a4cbbf07db1c227"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 2758,
+          "sha256": "f9e13db5777d2d68cab56172e3bfe23ceea9e31a6e0eaaa18460542025b8823a"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "no benefits/impact",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "39c94b3f5be3de83ee3459f4998217f9d34d3fbb1f981e764fd2b39ee24fea28",
+      "outputs": {
+        "gameView": {
+          "characters": 20984,
+          "sha256": "3f44daaae6ce31513571b19f6baa4fe9a6002a0cd4770c2016a16835a0adc439"
+        },
+        "center": {
+          "characters": 9694,
+          "sha256": "108c7250fa0d54eae2ec4ce9116d02b84deb33b67ad545c1d0c90e0308584145"
+        },
+        "routeRail": {
+          "characters": 2695,
+          "sha256": "1956a62d111f93bbbf57aeabf958b370c5bb92de041052506a4cbbf07db1c227"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 2758,
+          "sha256": "f9e13db5777d2d68cab56172e3bfe23ceea9e31a6e0eaaa18460542025b8823a"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "no benefits/details",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "39c94b3f5be3de83ee3459f4998217f9d34d3fbb1f981e764fd2b39ee24fea28",
+      "outputs": {
+        "gameView": {
+          "characters": 21287,
+          "sha256": "95a9dca6d444e6a130d9cdb30030cdd23650c5bcfcfd2255b9e6fe0603aa9a9b"
+        },
+        "center": {
+          "characters": 9694,
+          "sha256": "108c7250fa0d54eae2ec4ce9116d02b84deb33b67ad545c1d0c90e0308584145"
+        },
+        "routeRail": {
+          "characters": 2695,
+          "sha256": "1956a62d111f93bbbf57aeabf958b370c5bb92de041052506a4cbbf07db1c227"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 3045,
+          "sha256": "6b95f4977f0c4f2994ec072d3393e4484fe21da504f1b971f4d96dfbc0e07405"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "all benefits/ready",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "753857e742135e1a2d7fe82114f135a7605192d6359ccf0091a91b94f9a1c60f",
+      "outputs": {
+        "gameView": {
+          "characters": 24440,
+          "sha256": "3b8097792c7009fce6887c9ce9f0b329aaf75f949c4396b3d275771041415a26"
+        },
+        "center": {
+          "characters": 10453,
+          "sha256": "c6a6ad0e9f54739d6dcf51085d595e7d5abea16436ff0037bfa30d4f0523dd0f"
+        },
+        "routeRail": {
+          "characters": 5108,
+          "sha256": "3a87047d32dd71b0ac5ae5eacb9aff54e3ecc6dddac57ad4d3903a7feae21812"
+        },
+        "boonReadoutView": {
+          "characters": 2413,
+          "sha256": "624fb5cc6155d7446cd4b64916c09831285b1a502271d69ac00684b2a722ac02"
+        },
+        "equipmentRail": {
+          "characters": 4208,
+          "sha256": "c3450d8f0bf26150af836f9895c7ad42f11aedecd43769643fb3ab035304353b"
+        },
+        "footer": {
+          "characters": 3045,
+          "sha256": "6b95f4977f0c4f2994ec072d3393e4484fe21da504f1b971f4d96dfbc0e07405"
+        }
+      },
+      "benefitModelSha256": "f7ffc41e3d5e062700aa7c4c9784d442cc936674647752bad4df8e40530de896",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "all benefits/rolling",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "753857e742135e1a2d7fe82114f135a7605192d6359ccf0091a91b94f9a1c60f",
+      "outputs": {
+        "gameView": {
+          "characters": 24160,
+          "sha256": "cffc452a27c364e3cd47c7b0560ebafb101fae4a3152041276217c471bca4933"
+        },
+        "center": {
+          "characters": 10456,
+          "sha256": "08722052801c776ac577701fce74d09d51f00087029c2a804f93ebd175cfdbb4"
+        },
+        "routeRail": {
+          "characters": 5108,
+          "sha256": "3a87047d32dd71b0ac5ae5eacb9aff54e3ecc6dddac57ad4d3903a7feae21812"
+        },
+        "boonReadoutView": {
+          "characters": 2413,
+          "sha256": "624fb5cc6155d7446cd4b64916c09831285b1a502271d69ac00684b2a722ac02"
+        },
+        "equipmentRail": {
+          "characters": 4208,
+          "sha256": "c3450d8f0bf26150af836f9895c7ad42f11aedecd43769643fb3ab035304353b"
+        },
+        "footer": {
+          "characters": 2758,
+          "sha256": "f9e13db5777d2d68cab56172e3bfe23ceea9e31a6e0eaaa18460542025b8823a"
+        }
+      },
+      "benefitModelSha256": "f7ffc41e3d5e062700aa7c4c9784d442cc936674647752bad4df8e40530de896",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "all benefits/impact",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "753857e742135e1a2d7fe82114f135a7605192d6359ccf0091a91b94f9a1c60f",
+      "outputs": {
+        "gameView": {
+          "characters": 23398,
+          "sha256": "d6503d6309bf1cf8390eac64c04c4fcd18330d28cf6ee4d253c41c3469c1dbcd"
+        },
+        "center": {
+          "characters": 9694,
+          "sha256": "108c7250fa0d54eae2ec4ce9116d02b84deb33b67ad545c1d0c90e0308584145"
+        },
+        "routeRail": {
+          "characters": 5108,
+          "sha256": "3a87047d32dd71b0ac5ae5eacb9aff54e3ecc6dddac57ad4d3903a7feae21812"
+        },
+        "boonReadoutView": {
+          "characters": 2413,
+          "sha256": "624fb5cc6155d7446cd4b64916c09831285b1a502271d69ac00684b2a722ac02"
+        },
+        "equipmentRail": {
+          "characters": 4208,
+          "sha256": "c3450d8f0bf26150af836f9895c7ad42f11aedecd43769643fb3ab035304353b"
+        },
+        "footer": {
+          "characters": 2758,
+          "sha256": "f9e13db5777d2d68cab56172e3bfe23ceea9e31a6e0eaaa18460542025b8823a"
+        }
+      },
+      "benefitModelSha256": "f7ffc41e3d5e062700aa7c4c9784d442cc936674647752bad4df8e40530de896",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "all benefits/details",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "753857e742135e1a2d7fe82114f135a7605192d6359ccf0091a91b94f9a1c60f",
+      "outputs": {
+        "gameView": {
+          "characters": 24464,
+          "sha256": "7753b455b1f1239ee28d6f5d418606272087cec09a2944f3fe27e196fd6e2e9b"
+        },
+        "center": {
+          "characters": 10453,
+          "sha256": "c6a6ad0e9f54739d6dcf51085d595e7d5abea16436ff0037bfa30d4f0523dd0f"
+        },
+        "routeRail": {
+          "characters": 5112,
+          "sha256": "8a2c29716c5424004afccde1ca48ccbd7139c219f9b2373f926a7e68fb16639c"
+        },
+        "boonReadoutView": {
+          "characters": 2417,
+          "sha256": "0b891520bd085358fed6692ee85a3148c7a20fad198cf6fb8155e5dc6bf3e628"
+        },
+        "equipmentRail": {
+          "characters": 4208,
+          "sha256": "c3450d8f0bf26150af836f9895c7ad42f11aedecd43769643fb3ab035304353b"
+        },
+        "footer": {
+          "characters": 3045,
+          "sha256": "6b95f4977f0c4f2994ec072d3393e4484fe21da504f1b971f4d96dfbc0e07405"
+        }
+      },
+      "benefitModelSha256": "f7ffc41e3d5e062700aa7c4c9784d442cc936674647752bad4df8e40530de896",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "firstCritUsed undefined/ready",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "753857e742135e1a2d7fe82114f135a7605192d6359ccf0091a91b94f9a1c60f",
+      "outputs": {
+        "gameView": {
+          "characters": 24440,
+          "sha256": "3b8097792c7009fce6887c9ce9f0b329aaf75f949c4396b3d275771041415a26"
+        },
+        "center": {
+          "characters": 10453,
+          "sha256": "c6a6ad0e9f54739d6dcf51085d595e7d5abea16436ff0037bfa30d4f0523dd0f"
+        },
+        "routeRail": {
+          "characters": 5108,
+          "sha256": "3a87047d32dd71b0ac5ae5eacb9aff54e3ecc6dddac57ad4d3903a7feae21812"
+        },
+        "boonReadoutView": {
+          "characters": 2413,
+          "sha256": "624fb5cc6155d7446cd4b64916c09831285b1a502271d69ac00684b2a722ac02"
+        },
+        "equipmentRail": {
+          "characters": 4208,
+          "sha256": "c3450d8f0bf26150af836f9895c7ad42f11aedecd43769643fb3ab035304353b"
+        },
+        "footer": {
+          "characters": 3045,
+          "sha256": "6b95f4977f0c4f2994ec072d3393e4484fe21da504f1b971f4d96dfbc0e07405"
+        }
+      },
+      "benefitModelSha256": "f7ffc41e3d5e062700aa7c4c9784d442cc936674647752bad4df8e40530de896",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "firstCritUsed undefined/rolling",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "753857e742135e1a2d7fe82114f135a7605192d6359ccf0091a91b94f9a1c60f",
+      "outputs": {
+        "gameView": {
+          "characters": 24160,
+          "sha256": "cffc452a27c364e3cd47c7b0560ebafb101fae4a3152041276217c471bca4933"
+        },
+        "center": {
+          "characters": 10456,
+          "sha256": "08722052801c776ac577701fce74d09d51f00087029c2a804f93ebd175cfdbb4"
+        },
+        "routeRail": {
+          "characters": 5108,
+          "sha256": "3a87047d32dd71b0ac5ae5eacb9aff54e3ecc6dddac57ad4d3903a7feae21812"
+        },
+        "boonReadoutView": {
+          "characters": 2413,
+          "sha256": "624fb5cc6155d7446cd4b64916c09831285b1a502271d69ac00684b2a722ac02"
+        },
+        "equipmentRail": {
+          "characters": 4208,
+          "sha256": "c3450d8f0bf26150af836f9895c7ad42f11aedecd43769643fb3ab035304353b"
+        },
+        "footer": {
+          "characters": 2758,
+          "sha256": "f9e13db5777d2d68cab56172e3bfe23ceea9e31a6e0eaaa18460542025b8823a"
+        }
+      },
+      "benefitModelSha256": "f7ffc41e3d5e062700aa7c4c9784d442cc936674647752bad4df8e40530de896",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "firstCritUsed undefined/impact",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "753857e742135e1a2d7fe82114f135a7605192d6359ccf0091a91b94f9a1c60f",
+      "outputs": {
+        "gameView": {
+          "characters": 23398,
+          "sha256": "d6503d6309bf1cf8390eac64c04c4fcd18330d28cf6ee4d253c41c3469c1dbcd"
+        },
+        "center": {
+          "characters": 9694,
+          "sha256": "108c7250fa0d54eae2ec4ce9116d02b84deb33b67ad545c1d0c90e0308584145"
+        },
+        "routeRail": {
+          "characters": 5108,
+          "sha256": "3a87047d32dd71b0ac5ae5eacb9aff54e3ecc6dddac57ad4d3903a7feae21812"
+        },
+        "boonReadoutView": {
+          "characters": 2413,
+          "sha256": "624fb5cc6155d7446cd4b64916c09831285b1a502271d69ac00684b2a722ac02"
+        },
+        "equipmentRail": {
+          "characters": 4208,
+          "sha256": "c3450d8f0bf26150af836f9895c7ad42f11aedecd43769643fb3ab035304353b"
+        },
+        "footer": {
+          "characters": 2758,
+          "sha256": "f9e13db5777d2d68cab56172e3bfe23ceea9e31a6e0eaaa18460542025b8823a"
+        }
+      },
+      "benefitModelSha256": "f7ffc41e3d5e062700aa7c4c9784d442cc936674647752bad4df8e40530de896",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "firstCritUsed undefined/details",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "753857e742135e1a2d7fe82114f135a7605192d6359ccf0091a91b94f9a1c60f",
+      "outputs": {
+        "gameView": {
+          "characters": 24464,
+          "sha256": "7753b455b1f1239ee28d6f5d418606272087cec09a2944f3fe27e196fd6e2e9b"
+        },
+        "center": {
+          "characters": 10453,
+          "sha256": "c6a6ad0e9f54739d6dcf51085d595e7d5abea16436ff0037bfa30d4f0523dd0f"
+        },
+        "routeRail": {
+          "characters": 5112,
+          "sha256": "8a2c29716c5424004afccde1ca48ccbd7139c219f9b2373f926a7e68fb16639c"
+        },
+        "boonReadoutView": {
+          "characters": 2417,
+          "sha256": "0b891520bd085358fed6692ee85a3148c7a20fad198cf6fb8155e5dc6bf3e628"
+        },
+        "equipmentRail": {
+          "characters": 4208,
+          "sha256": "c3450d8f0bf26150af836f9895c7ad42f11aedecd43769643fb3ab035304353b"
+        },
+        "footer": {
+          "characters": 3045,
+          "sha256": "6b95f4977f0c4f2994ec072d3393e4484fe21da504f1b971f4d96dfbc0e07405"
+        }
+      },
+      "benefitModelSha256": "f7ffc41e3d5e062700aa7c4c9784d442cc936674647752bad4df8e40530de896",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "firstCritUsed false/ready",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "b611c1400913af03a47b5168583daea4595c747fad71da37e0aac006f1b5fed0",
+      "outputs": {
+        "gameView": {
+          "characters": 24440,
+          "sha256": "3b8097792c7009fce6887c9ce9f0b329aaf75f949c4396b3d275771041415a26"
+        },
+        "center": {
+          "characters": 10453,
+          "sha256": "c6a6ad0e9f54739d6dcf51085d595e7d5abea16436ff0037bfa30d4f0523dd0f"
+        },
+        "routeRail": {
+          "characters": 5108,
+          "sha256": "3a87047d32dd71b0ac5ae5eacb9aff54e3ecc6dddac57ad4d3903a7feae21812"
+        },
+        "boonReadoutView": {
+          "characters": 2413,
+          "sha256": "624fb5cc6155d7446cd4b64916c09831285b1a502271d69ac00684b2a722ac02"
+        },
+        "equipmentRail": {
+          "characters": 4208,
+          "sha256": "c3450d8f0bf26150af836f9895c7ad42f11aedecd43769643fb3ab035304353b"
+        },
+        "footer": {
+          "characters": 3045,
+          "sha256": "6b95f4977f0c4f2994ec072d3393e4484fe21da504f1b971f4d96dfbc0e07405"
+        }
+      },
+      "benefitModelSha256": "f7ffc41e3d5e062700aa7c4c9784d442cc936674647752bad4df8e40530de896",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "firstCritUsed false/rolling",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "b611c1400913af03a47b5168583daea4595c747fad71da37e0aac006f1b5fed0",
+      "outputs": {
+        "gameView": {
+          "characters": 24160,
+          "sha256": "cffc452a27c364e3cd47c7b0560ebafb101fae4a3152041276217c471bca4933"
+        },
+        "center": {
+          "characters": 10456,
+          "sha256": "08722052801c776ac577701fce74d09d51f00087029c2a804f93ebd175cfdbb4"
+        },
+        "routeRail": {
+          "characters": 5108,
+          "sha256": "3a87047d32dd71b0ac5ae5eacb9aff54e3ecc6dddac57ad4d3903a7feae21812"
+        },
+        "boonReadoutView": {
+          "characters": 2413,
+          "sha256": "624fb5cc6155d7446cd4b64916c09831285b1a502271d69ac00684b2a722ac02"
+        },
+        "equipmentRail": {
+          "characters": 4208,
+          "sha256": "c3450d8f0bf26150af836f9895c7ad42f11aedecd43769643fb3ab035304353b"
+        },
+        "footer": {
+          "characters": 2758,
+          "sha256": "f9e13db5777d2d68cab56172e3bfe23ceea9e31a6e0eaaa18460542025b8823a"
+        }
+      },
+      "benefitModelSha256": "f7ffc41e3d5e062700aa7c4c9784d442cc936674647752bad4df8e40530de896",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "firstCritUsed false/impact",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "b611c1400913af03a47b5168583daea4595c747fad71da37e0aac006f1b5fed0",
+      "outputs": {
+        "gameView": {
+          "characters": 23398,
+          "sha256": "d6503d6309bf1cf8390eac64c04c4fcd18330d28cf6ee4d253c41c3469c1dbcd"
+        },
+        "center": {
+          "characters": 9694,
+          "sha256": "108c7250fa0d54eae2ec4ce9116d02b84deb33b67ad545c1d0c90e0308584145"
+        },
+        "routeRail": {
+          "characters": 5108,
+          "sha256": "3a87047d32dd71b0ac5ae5eacb9aff54e3ecc6dddac57ad4d3903a7feae21812"
+        },
+        "boonReadoutView": {
+          "characters": 2413,
+          "sha256": "624fb5cc6155d7446cd4b64916c09831285b1a502271d69ac00684b2a722ac02"
+        },
+        "equipmentRail": {
+          "characters": 4208,
+          "sha256": "c3450d8f0bf26150af836f9895c7ad42f11aedecd43769643fb3ab035304353b"
+        },
+        "footer": {
+          "characters": 2758,
+          "sha256": "f9e13db5777d2d68cab56172e3bfe23ceea9e31a6e0eaaa18460542025b8823a"
+        }
+      },
+      "benefitModelSha256": "f7ffc41e3d5e062700aa7c4c9784d442cc936674647752bad4df8e40530de896",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "firstCritUsed false/details",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "b611c1400913af03a47b5168583daea4595c747fad71da37e0aac006f1b5fed0",
+      "outputs": {
+        "gameView": {
+          "characters": 24464,
+          "sha256": "7753b455b1f1239ee28d6f5d418606272087cec09a2944f3fe27e196fd6e2e9b"
+        },
+        "center": {
+          "characters": 10453,
+          "sha256": "c6a6ad0e9f54739d6dcf51085d595e7d5abea16436ff0037bfa30d4f0523dd0f"
+        },
+        "routeRail": {
+          "characters": 5112,
+          "sha256": "8a2c29716c5424004afccde1ca48ccbd7139c219f9b2373f926a7e68fb16639c"
+        },
+        "boonReadoutView": {
+          "characters": 2417,
+          "sha256": "0b891520bd085358fed6692ee85a3148c7a20fad198cf6fb8155e5dc6bf3e628"
+        },
+        "equipmentRail": {
+          "characters": 4208,
+          "sha256": "c3450d8f0bf26150af836f9895c7ad42f11aedecd43769643fb3ab035304353b"
+        },
+        "footer": {
+          "characters": 3045,
+          "sha256": "6b95f4977f0c4f2994ec072d3393e4484fe21da504f1b971f4d96dfbc0e07405"
+        }
+      },
+      "benefitModelSha256": "f7ffc41e3d5e062700aa7c4c9784d442cc936674647752bad4df8e40530de896",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "firstCritUsed true/ready",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "c8150943b727902cd6abba95c62f81b43036502e64973ff774f11462a43bd2fa",
+      "outputs": {
+        "gameView": {
+          "characters": 24416,
+          "sha256": "eb366420570bfd472b16a61615068820f00de6b689280d9dca4898535f7b0d04"
+        },
+        "center": {
+          "characters": 10453,
+          "sha256": "c6a6ad0e9f54739d6dcf51085d595e7d5abea16436ff0037bfa30d4f0523dd0f"
+        },
+        "routeRail": {
+          "characters": 5084,
+          "sha256": "10e0f203b17e48ffe36c14a0aa5878a3f4ca09a9a1f80f140da4efaa06e5aa9f"
+        },
+        "boonReadoutView": {
+          "characters": 2389,
+          "sha256": "03db4c117d5a89a1f3b0b936fc81c74b14e5cc220f347de41142fd0b2b1efe76"
+        },
+        "equipmentRail": {
+          "characters": 4208,
+          "sha256": "c3450d8f0bf26150af836f9895c7ad42f11aedecd43769643fb3ab035304353b"
+        },
+        "footer": {
+          "characters": 3045,
+          "sha256": "6b95f4977f0c4f2994ec072d3393e4484fe21da504f1b971f4d96dfbc0e07405"
+        }
+      },
+      "benefitModelSha256": "22770e416940ae439437ca771f72705535e502233e2f2f624b38918123e8e792",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "firstCritUsed true/rolling",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "c8150943b727902cd6abba95c62f81b43036502e64973ff774f11462a43bd2fa",
+      "outputs": {
+        "gameView": {
+          "characters": 24136,
+          "sha256": "f57b87645b15cc51682e84b4634d253dcdf6b0a3998858332537dd580ce7c867"
+        },
+        "center": {
+          "characters": 10456,
+          "sha256": "08722052801c776ac577701fce74d09d51f00087029c2a804f93ebd175cfdbb4"
+        },
+        "routeRail": {
+          "characters": 5084,
+          "sha256": "10e0f203b17e48ffe36c14a0aa5878a3f4ca09a9a1f80f140da4efaa06e5aa9f"
+        },
+        "boonReadoutView": {
+          "characters": 2389,
+          "sha256": "03db4c117d5a89a1f3b0b936fc81c74b14e5cc220f347de41142fd0b2b1efe76"
+        },
+        "equipmentRail": {
+          "characters": 4208,
+          "sha256": "c3450d8f0bf26150af836f9895c7ad42f11aedecd43769643fb3ab035304353b"
+        },
+        "footer": {
+          "characters": 2758,
+          "sha256": "f9e13db5777d2d68cab56172e3bfe23ceea9e31a6e0eaaa18460542025b8823a"
+        }
+      },
+      "benefitModelSha256": "22770e416940ae439437ca771f72705535e502233e2f2f624b38918123e8e792",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "firstCritUsed true/impact",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "c8150943b727902cd6abba95c62f81b43036502e64973ff774f11462a43bd2fa",
+      "outputs": {
+        "gameView": {
+          "characters": 23374,
+          "sha256": "25bf414008d37dc2f893d4d686b818bbf57190ab0fc06e015bb3d3c2cbf33262"
+        },
+        "center": {
+          "characters": 9694,
+          "sha256": "108c7250fa0d54eae2ec4ce9116d02b84deb33b67ad545c1d0c90e0308584145"
+        },
+        "routeRail": {
+          "characters": 5084,
+          "sha256": "10e0f203b17e48ffe36c14a0aa5878a3f4ca09a9a1f80f140da4efaa06e5aa9f"
+        },
+        "boonReadoutView": {
+          "characters": 2389,
+          "sha256": "03db4c117d5a89a1f3b0b936fc81c74b14e5cc220f347de41142fd0b2b1efe76"
+        },
+        "equipmentRail": {
+          "characters": 4208,
+          "sha256": "c3450d8f0bf26150af836f9895c7ad42f11aedecd43769643fb3ab035304353b"
+        },
+        "footer": {
+          "characters": 2758,
+          "sha256": "f9e13db5777d2d68cab56172e3bfe23ceea9e31a6e0eaaa18460542025b8823a"
+        }
+      },
+      "benefitModelSha256": "22770e416940ae439437ca771f72705535e502233e2f2f624b38918123e8e792",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "firstCritUsed true/details",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "c8150943b727902cd6abba95c62f81b43036502e64973ff774f11462a43bd2fa",
+      "outputs": {
+        "gameView": {
+          "characters": 24440,
+          "sha256": "7cb66a15724753f6ee64768a6f914cbe21e32257c59d28f6eea7dd5b1f772c4e"
+        },
+        "center": {
+          "characters": 10453,
+          "sha256": "c6a6ad0e9f54739d6dcf51085d595e7d5abea16436ff0037bfa30d4f0523dd0f"
+        },
+        "routeRail": {
+          "characters": 5088,
+          "sha256": "b3d14a8bca5dc67a0d38b502afd910d348ef16ca4a33cb97c3556af998b39f56"
+        },
+        "boonReadoutView": {
+          "characters": 2393,
+          "sha256": "48f0e17df7e1dd4734afe139b1b6674a04e9564be304b28f2bf0fc7449baaabe"
+        },
+        "equipmentRail": {
+          "characters": 4208,
+          "sha256": "c3450d8f0bf26150af836f9895c7ad42f11aedecd43769643fb3ab035304353b"
+        },
+        "footer": {
+          "characters": 3045,
+          "sha256": "6b95f4977f0c4f2994ec072d3393e4484fe21da504f1b971f4d96dfbc0e07405"
+        }
+      },
+      "benefitModelSha256": "22770e416940ae439437ca771f72705535e502233e2f2f624b38918123e8e792",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "dead/ready",
+      "phase": "dead",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "86fb1d14c96a8e36043bc006d4fe33b2329d1665942443c181ed1e6508e37535",
+      "outputs": {
+        "gameView": {
+          "characters": 14809,
+          "sha256": "7912122d000c361167bc8f170f17163834339b25b34d0b00af6c38e86006446e"
+        },
+        "center": {
+          "characters": 1553,
+          "sha256": "a36f3a7112b0264ad71c53ddf6b5d7a98a8b66ac37937fd5039eef0742383204"
+        },
+        "routeRail": {
+          "characters": 4472,
+          "sha256": "d44193090073fe498eb09e2a4420c3e20490b6da0abafed459551da5f817e113"
+        },
+        "boonReadoutView": {
+          "characters": 1777,
+          "sha256": "86cda98eed3b85cbf09d9aa68d5bc6434fb99f800b3d6ae7865e5cac7e8799e0"
+        },
+        "equipmentRail": {
+          "characters": 4208,
+          "sha256": "c3450d8f0bf26150af836f9895c7ad42f11aedecd43769643fb3ab035304353b"
+        },
+        "footer": {
+          "characters": 2952,
+          "sha256": "5c12719646fec5f9bd2a5030128c70567d29f721d4e6b7c070c7c0ce11fbade8"
+        }
+      },
+      "benefitModelSha256": "51a6c68c15aab2c33397728d69fd0b57642cfd86bc23457f54ab427062fdbb7e",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "dead/rolling",
+      "phase": "dead",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "86fb1d14c96a8e36043bc006d4fe33b2329d1665942443c181ed1e6508e37535",
+      "outputs": {
+        "gameView": {
+          "characters": 14523,
+          "sha256": "ca748ef3b758cbcd1d349220d5f4b244f19c1e3577f927b6140d2188ff311813"
+        },
+        "center": {
+          "characters": 1553,
+          "sha256": "a36f3a7112b0264ad71c53ddf6b5d7a98a8b66ac37937fd5039eef0742383204"
+        },
+        "routeRail": {
+          "characters": 4472,
+          "sha256": "d44193090073fe498eb09e2a4420c3e20490b6da0abafed459551da5f817e113"
+        },
+        "boonReadoutView": {
+          "characters": 1777,
+          "sha256": "86cda98eed3b85cbf09d9aa68d5bc6434fb99f800b3d6ae7865e5cac7e8799e0"
+        },
+        "equipmentRail": {
+          "characters": 4208,
+          "sha256": "c3450d8f0bf26150af836f9895c7ad42f11aedecd43769643fb3ab035304353b"
+        },
+        "footer": {
+          "characters": 2662,
+          "sha256": "462b9f588dfd2985b2c83a247e37d318ab293860aca82bf81afde2ab9edcdb7f"
+        }
+      },
+      "benefitModelSha256": "51a6c68c15aab2c33397728d69fd0b57642cfd86bc23457f54ab427062fdbb7e",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "dead/impact",
+      "phase": "dead",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "86fb1d14c96a8e36043bc006d4fe33b2329d1665942443c181ed1e6508e37535",
+      "outputs": {
+        "gameView": {
+          "characters": 14523,
+          "sha256": "ca748ef3b758cbcd1d349220d5f4b244f19c1e3577f927b6140d2188ff311813"
+        },
+        "center": {
+          "characters": 1553,
+          "sha256": "a36f3a7112b0264ad71c53ddf6b5d7a98a8b66ac37937fd5039eef0742383204"
+        },
+        "routeRail": {
+          "characters": 4472,
+          "sha256": "d44193090073fe498eb09e2a4420c3e20490b6da0abafed459551da5f817e113"
+        },
+        "boonReadoutView": {
+          "characters": 1777,
+          "sha256": "86cda98eed3b85cbf09d9aa68d5bc6434fb99f800b3d6ae7865e5cac7e8799e0"
+        },
+        "equipmentRail": {
+          "characters": 4208,
+          "sha256": "c3450d8f0bf26150af836f9895c7ad42f11aedecd43769643fb3ab035304353b"
+        },
+        "footer": {
+          "characters": 2662,
+          "sha256": "462b9f588dfd2985b2c83a247e37d318ab293860aca82bf81afde2ab9edcdb7f"
+        }
+      },
+      "benefitModelSha256": "51a6c68c15aab2c33397728d69fd0b57642cfd86bc23457f54ab427062fdbb7e",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "dead/details",
+      "phase": "dead",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "86fb1d14c96a8e36043bc006d4fe33b2329d1665942443c181ed1e6508e37535",
+      "outputs": {
+        "gameView": {
+          "characters": 14833,
+          "sha256": "55e2e12887de0eca0ea5bb7afd1e6acef227a122a5df2b0e283d93800e744de5"
+        },
+        "center": {
+          "characters": 1553,
+          "sha256": "a36f3a7112b0264ad71c53ddf6b5d7a98a8b66ac37937fd5039eef0742383204"
+        },
+        "routeRail": {
+          "characters": 4476,
+          "sha256": "31317ebc8fdb170bf36904d5b20c3d2ce78802c5ff9c52292f2029a6850694c1"
+        },
+        "boonReadoutView": {
+          "characters": 1781,
+          "sha256": "973b1662914aadc126934323b905eb02c7281d5c6377e48cdc76f8bbecc0ecd4"
+        },
+        "equipmentRail": {
+          "characters": 4208,
+          "sha256": "c3450d8f0bf26150af836f9895c7ad42f11aedecd43769643fb3ab035304353b"
+        },
+        "footer": {
+          "characters": 2952,
+          "sha256": "5c12719646fec5f9bd2a5030128c70567d29f721d4e6b7c070c7c0ce11fbade8"
+        }
+      },
+      "benefitModelSha256": "51a6c68c15aab2c33397728d69fd0b57642cfd86bc23457f54ab427062fdbb7e",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "cleared/ready",
+      "phase": "cleared",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "27652aed3c46ddd1e8db84b1e0b56a477aac6f4dc1cdc4d109b31a13d72a0f19",
+      "outputs": {
+        "gameView": {
+          "characters": 13380,
+          "sha256": "334cec8f4767dfcb7b8981b29ed1b2449d48d25d2aecd7d61d83e2c9dbf103d8"
+        },
+        "center": {
+          "characters": 257,
+          "sha256": "7ce23192fe386a96a323d5999cf91ac7ad1fadf4320c10059c836fa6a3816c35"
+        },
+        "routeRail": {
+          "characters": 4324,
+          "sha256": "6bedcebff2666525324e002d749e8b09fec2620fc7d52992a7e1fe7bf853aaa8"
+        },
+        "boonReadoutView": {
+          "characters": 1777,
+          "sha256": "f163b3653b1fb5fbe1bdcec6e01b4293b06970e19b3f2a387818b32d0615eeb0"
+        },
+        "equipmentRail": {
+          "characters": 4208,
+          "sha256": "c3450d8f0bf26150af836f9895c7ad42f11aedecd43769643fb3ab035304353b"
+        },
+        "footer": {
+          "characters": 2964,
+          "sha256": "1f8758f8fc038808258bcb6052629686d6cd662001b57591fef27194dd8fe7c2"
+        }
+      },
+      "benefitModelSha256": "22a7c5806001e4dbdbd32686c221d2a43dbd4839594ca90a3f893df3125a582c",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "cleared/rolling",
+      "phase": "cleared",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "27652aed3c46ddd1e8db84b1e0b56a477aac6f4dc1cdc4d109b31a13d72a0f19",
+      "outputs": {
+        "gameView": {
+          "characters": 13090,
+          "sha256": "979c09abe5f9eb40dbafe2d04c7a76d14d05c3188c4ca8963f48d8623d8067cb"
+        },
+        "center": {
+          "characters": 257,
+          "sha256": "7ce23192fe386a96a323d5999cf91ac7ad1fadf4320c10059c836fa6a3816c35"
+        },
+        "routeRail": {
+          "characters": 4324,
+          "sha256": "6bedcebff2666525324e002d749e8b09fec2620fc7d52992a7e1fe7bf853aaa8"
+        },
+        "boonReadoutView": {
+          "characters": 1777,
+          "sha256": "f163b3653b1fb5fbe1bdcec6e01b4293b06970e19b3f2a387818b32d0615eeb0"
+        },
+        "equipmentRail": {
+          "characters": 4208,
+          "sha256": "c3450d8f0bf26150af836f9895c7ad42f11aedecd43769643fb3ab035304353b"
+        },
+        "footer": {
+          "characters": 2670,
+          "sha256": "659317e04a49cbb22276643e7794a7418e7069ff35db8542eed2f5a59b06f3ce"
+        }
+      },
+      "benefitModelSha256": "22a7c5806001e4dbdbd32686c221d2a43dbd4839594ca90a3f893df3125a582c",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "cleared/impact",
+      "phase": "cleared",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "27652aed3c46ddd1e8db84b1e0b56a477aac6f4dc1cdc4d109b31a13d72a0f19",
+      "outputs": {
+        "gameView": {
+          "characters": 13090,
+          "sha256": "979c09abe5f9eb40dbafe2d04c7a76d14d05c3188c4ca8963f48d8623d8067cb"
+        },
+        "center": {
+          "characters": 257,
+          "sha256": "7ce23192fe386a96a323d5999cf91ac7ad1fadf4320c10059c836fa6a3816c35"
+        },
+        "routeRail": {
+          "characters": 4324,
+          "sha256": "6bedcebff2666525324e002d749e8b09fec2620fc7d52992a7e1fe7bf853aaa8"
+        },
+        "boonReadoutView": {
+          "characters": 1777,
+          "sha256": "f163b3653b1fb5fbe1bdcec6e01b4293b06970e19b3f2a387818b32d0615eeb0"
+        },
+        "equipmentRail": {
+          "characters": 4208,
+          "sha256": "c3450d8f0bf26150af836f9895c7ad42f11aedecd43769643fb3ab035304353b"
+        },
+        "footer": {
+          "characters": 2670,
+          "sha256": "659317e04a49cbb22276643e7794a7418e7069ff35db8542eed2f5a59b06f3ce"
+        }
+      },
+      "benefitModelSha256": "22a7c5806001e4dbdbd32686c221d2a43dbd4839594ca90a3f893df3125a582c",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "cleared/details",
+      "phase": "cleared",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "27652aed3c46ddd1e8db84b1e0b56a477aac6f4dc1cdc4d109b31a13d72a0f19",
+      "outputs": {
+        "gameView": {
+          "characters": 13404,
+          "sha256": "2fb0078ae5ab73f860b0e8818ed111fdac6050ac5b9361af052ef86a2ec81fe3"
+        },
+        "center": {
+          "characters": 257,
+          "sha256": "7ce23192fe386a96a323d5999cf91ac7ad1fadf4320c10059c836fa6a3816c35"
+        },
+        "routeRail": {
+          "characters": 4328,
+          "sha256": "b1bfaf7a4496d38f3ecaaffe91a31d206446d06621658c5195d7b8cb50ea8c75"
+        },
+        "boonReadoutView": {
+          "characters": 1781,
+          "sha256": "7daf7677aa41bc7b266ae52907548f9f04b88806d7d8b3eb985d2bc5133106b5"
+        },
+        "equipmentRail": {
+          "characters": 4208,
+          "sha256": "c3450d8f0bf26150af836f9895c7ad42f11aedecd43769643fb3ab035304353b"
+        },
+        "footer": {
+          "characters": 2964,
+          "sha256": "1f8758f8fc038808258bcb6052629686d6cd662001b57591fef27194dd8fe7c2"
+        }
+      },
+      "benefitModelSha256": "22a7c5806001e4dbdbd32686c221d2a43dbd4839594ca90a3f893df3125a582c",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "complete/ready",
+      "phase": "complete",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "cbda20183dd34eee7ae6f7bf12b3767570aaf1627321d028c70021d936b1976a",
+      "outputs": {
+        "gameView": {
+          "characters": 13473,
+          "sha256": "080fd12d73423aa836d7e6d93c137ee385974605a1a46638a65ad282023da80c"
+        },
+        "center": {
+          "characters": 353,
+          "sha256": "9bc641e82fd4f680cfe3d18fb6265ed10a2f4603392f401cf8ba2465ac97d0cd"
+        },
+        "routeRail": {
+          "characters": 4324,
+          "sha256": "6bedcebff2666525324e002d749e8b09fec2620fc7d52992a7e1fe7bf853aaa8"
+        },
+        "boonReadoutView": {
+          "characters": 1777,
+          "sha256": "f163b3653b1fb5fbe1bdcec6e01b4293b06970e19b3f2a387818b32d0615eeb0"
+        },
+        "equipmentRail": {
+          "characters": 4208,
+          "sha256": "c3450d8f0bf26150af836f9895c7ad42f11aedecd43769643fb3ab035304353b"
+        },
+        "footer": {
+          "characters": 2960,
+          "sha256": "008e6a45b1808731210b94fc42d4bc6667c3d31d3c3ceda38c3b8dfdd8f6ccc1"
+        }
+      },
+      "benefitModelSha256": "22a7c5806001e4dbdbd32686c221d2a43dbd4839594ca90a3f893df3125a582c",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "complete/rolling",
+      "phase": "complete",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "cbda20183dd34eee7ae6f7bf12b3767570aaf1627321d028c70021d936b1976a",
+      "outputs": {
+        "gameView": {
+          "characters": 13187,
+          "sha256": "03fc093fe383f126a259a9c8c0dac86ba2f12ff47b1a5e214379b55bc8cc3d2b"
+        },
+        "center": {
+          "characters": 353,
+          "sha256": "9bc641e82fd4f680cfe3d18fb6265ed10a2f4603392f401cf8ba2465ac97d0cd"
+        },
+        "routeRail": {
+          "characters": 4324,
+          "sha256": "6bedcebff2666525324e002d749e8b09fec2620fc7d52992a7e1fe7bf853aaa8"
+        },
+        "boonReadoutView": {
+          "characters": 1777,
+          "sha256": "f163b3653b1fb5fbe1bdcec6e01b4293b06970e19b3f2a387818b32d0615eeb0"
+        },
+        "equipmentRail": {
+          "characters": 4208,
+          "sha256": "c3450d8f0bf26150af836f9895c7ad42f11aedecd43769643fb3ab035304353b"
+        },
+        "footer": {
+          "characters": 2670,
+          "sha256": "659317e04a49cbb22276643e7794a7418e7069ff35db8542eed2f5a59b06f3ce"
+        }
+      },
+      "benefitModelSha256": "22a7c5806001e4dbdbd32686c221d2a43dbd4839594ca90a3f893df3125a582c",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "complete/impact",
+      "phase": "complete",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "cbda20183dd34eee7ae6f7bf12b3767570aaf1627321d028c70021d936b1976a",
+      "outputs": {
+        "gameView": {
+          "characters": 13187,
+          "sha256": "03fc093fe383f126a259a9c8c0dac86ba2f12ff47b1a5e214379b55bc8cc3d2b"
+        },
+        "center": {
+          "characters": 353,
+          "sha256": "9bc641e82fd4f680cfe3d18fb6265ed10a2f4603392f401cf8ba2465ac97d0cd"
+        },
+        "routeRail": {
+          "characters": 4324,
+          "sha256": "6bedcebff2666525324e002d749e8b09fec2620fc7d52992a7e1fe7bf853aaa8"
+        },
+        "boonReadoutView": {
+          "characters": 1777,
+          "sha256": "f163b3653b1fb5fbe1bdcec6e01b4293b06970e19b3f2a387818b32d0615eeb0"
+        },
+        "equipmentRail": {
+          "characters": 4208,
+          "sha256": "c3450d8f0bf26150af836f9895c7ad42f11aedecd43769643fb3ab035304353b"
+        },
+        "footer": {
+          "characters": 2670,
+          "sha256": "659317e04a49cbb22276643e7794a7418e7069ff35db8542eed2f5a59b06f3ce"
+        }
+      },
+      "benefitModelSha256": "22a7c5806001e4dbdbd32686c221d2a43dbd4839594ca90a3f893df3125a582c",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "complete/details",
+      "phase": "complete",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "cbda20183dd34eee7ae6f7bf12b3767570aaf1627321d028c70021d936b1976a",
+      "outputs": {
+        "gameView": {
+          "characters": 13497,
+          "sha256": "f1b4c1714764e9ddf549217d39ad5aaa98c372ac6e9ba613d95ea768cd825478"
+        },
+        "center": {
+          "characters": 353,
+          "sha256": "9bc641e82fd4f680cfe3d18fb6265ed10a2f4603392f401cf8ba2465ac97d0cd"
+        },
+        "routeRail": {
+          "characters": 4328,
+          "sha256": "b1bfaf7a4496d38f3ecaaffe91a31d206446d06621658c5195d7b8cb50ea8c75"
+        },
+        "boonReadoutView": {
+          "characters": 1781,
+          "sha256": "7daf7677aa41bc7b266ae52907548f9f04b88806d7d8b3eb985d2bc5133106b5"
+        },
+        "equipmentRail": {
+          "characters": 4208,
+          "sha256": "c3450d8f0bf26150af836f9895c7ad42f11aedecd43769643fb3ab035304353b"
+        },
+        "footer": {
+          "characters": 2960,
+          "sha256": "008e6a45b1808731210b94fc42d4bc6667c3d31d3c3ceda38c3b8dfdd8f6ccc1"
+        }
+      },
+      "benefitModelSha256": "22a7c5806001e4dbdbd32686c221d2a43dbd4839594ca90a3f893df3125a582c",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "chest after actual roll/ready",
+      "phase": "chest",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "5e3051d1753fa46e726c6bea6b47cd456aca960c78f3df10ab01d18664dc6499",
+      "outputs": {
+        "gameView": {
+          "characters": 19912,
+          "sha256": "43e476fd11a01cd676da991548beb590be2fb70b9a7d3fb86942ba7d732ecfbe"
+        },
+        "center": {
+          "characters": 6754,
+          "sha256": "5cb4f5c2f69d96a2fe73802347fe7344b3dbeff1100d9cbdecf6e736c6580121"
+        },
+        "routeRail": {
+          "characters": 4317,
+          "sha256": "d97db3d119013f7da9f5e9793675a1b20729a8b7350d0d04255e8b35dad43277"
+        },
+        "boonReadoutView": {
+          "characters": 1431,
+          "sha256": "db29f5fbb4f88859762acf5756e83e304c919cc9eae31b674415fe5f089e7b66"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "a9a9b4585a3b11e8d8fa489727d7635b033ebc1487c6061c22bed6a0271e1bfc"
+        },
+        "footer": {
+          "characters": 3009,
+          "sha256": "be1f942e585e27b4937bfa6b417d056d0b21042f691d090472d51a42bc1b60a7"
+        }
+      },
+      "benefitModelSha256": "02daf7d8af8af9816ac7edf6b2086001bde626f8e7cf0c30bdee38512e84c06a",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "chest after actual roll/rolling",
+      "phase": "chest",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "5e3051d1753fa46e726c6bea6b47cd456aca960c78f3df10ab01d18664dc6499",
+      "outputs": {
+        "gameView": {
+          "characters": 19623,
+          "sha256": "737497f3ba087c7b4e36f6cef9c752051bee81995d8d081b9da2152ac9cf96ed"
+        },
+        "center": {
+          "characters": 6754,
+          "sha256": "5cb4f5c2f69d96a2fe73802347fe7344b3dbeff1100d9cbdecf6e736c6580121"
+        },
+        "routeRail": {
+          "characters": 4317,
+          "sha256": "d97db3d119013f7da9f5e9793675a1b20729a8b7350d0d04255e8b35dad43277"
+        },
+        "boonReadoutView": {
+          "characters": 1431,
+          "sha256": "db29f5fbb4f88859762acf5756e83e304c919cc9eae31b674415fe5f089e7b66"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "a9a9b4585a3b11e8d8fa489727d7635b033ebc1487c6061c22bed6a0271e1bfc"
+        },
+        "footer": {
+          "characters": 2716,
+          "sha256": "57f2f14c7400cdcd3b29e48958cab812ec2d3e38042816fe1a6a46727897d715"
+        }
+      },
+      "benefitModelSha256": "02daf7d8af8af9816ac7edf6b2086001bde626f8e7cf0c30bdee38512e84c06a",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "chest after actual roll/impact",
+      "phase": "chest",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "5e3051d1753fa46e726c6bea6b47cd456aca960c78f3df10ab01d18664dc6499",
+      "outputs": {
+        "gameView": {
+          "characters": 19623,
+          "sha256": "737497f3ba087c7b4e36f6cef9c752051bee81995d8d081b9da2152ac9cf96ed"
+        },
+        "center": {
+          "characters": 6754,
+          "sha256": "5cb4f5c2f69d96a2fe73802347fe7344b3dbeff1100d9cbdecf6e736c6580121"
+        },
+        "routeRail": {
+          "characters": 4317,
+          "sha256": "d97db3d119013f7da9f5e9793675a1b20729a8b7350d0d04255e8b35dad43277"
+        },
+        "boonReadoutView": {
+          "characters": 1431,
+          "sha256": "db29f5fbb4f88859762acf5756e83e304c919cc9eae31b674415fe5f089e7b66"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "a9a9b4585a3b11e8d8fa489727d7635b033ebc1487c6061c22bed6a0271e1bfc"
+        },
+        "footer": {
+          "characters": 2716,
+          "sha256": "57f2f14c7400cdcd3b29e48958cab812ec2d3e38042816fe1a6a46727897d715"
+        }
+      },
+      "benefitModelSha256": "02daf7d8af8af9816ac7edf6b2086001bde626f8e7cf0c30bdee38512e84c06a",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "chest after actual roll/details",
+      "phase": "chest",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "5e3051d1753fa46e726c6bea6b47cd456aca960c78f3df10ab01d18664dc6499",
+      "outputs": {
+        "gameView": {
+          "characters": 19936,
+          "sha256": "0e7f5524239786391fa8413cc95da87902263c31231d0a9242b7bda98be303ca"
+        },
+        "center": {
+          "characters": 6754,
+          "sha256": "5cb4f5c2f69d96a2fe73802347fe7344b3dbeff1100d9cbdecf6e736c6580121"
+        },
+        "routeRail": {
+          "characters": 4321,
+          "sha256": "14dcad478162c5609e7e4ea45364c6510acb1c3db3e48519c5b8795eb3c99186"
+        },
+        "boonReadoutView": {
+          "characters": 1435,
+          "sha256": "c76d5f95695e1b5fc57ed0d7aa3bba1d956a373b1e9da543031a17ae9364cf8b"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "a9a9b4585a3b11e8d8fa489727d7635b033ebc1487c6061c22bed6a0271e1bfc"
+        },
+        "footer": {
+          "characters": 3009,
+          "sha256": "be1f942e585e27b4937bfa6b417d056d0b21042f691d090472d51a42bc1b60a7"
+        }
+      },
+      "benefitModelSha256": "02daf7d8af8af9816ac7edf6b2086001bde626f8e7cf0c30bdee38512e84c06a",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "loot after actual claim/ready",
+      "phase": "loot",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "cd19752bec1c061d68b1c1c3c589935d836f033d399bd4f37af9770015863df3",
+      "outputs": {
+        "gameView": {
+          "characters": 19565,
+          "sha256": "4b25d2fff3de6d926dac495af0c0396d28ad2bb2d004dd2f27cf7638128ceab7"
+        },
+        "center": {
+          "characters": 8150,
+          "sha256": "b0ebf4aa657a1a3db123c6905aea8410f1d2f75ee766f61249477e1d2d5f8201"
+        },
+        "routeRail": {
+          "characters": 4389,
+          "sha256": "27dbb714f1d108f99ec16448f86041a07ba76b47dc41f8805f0387dfa90dc2a9"
+        },
+        "boonReadoutView": {
+          "characters": 1431,
+          "sha256": "db29f5fbb4f88859762acf5756e83e304c919cc9eae31b674415fe5f089e7b66"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "a9a9b4585a3b11e8d8fa489727d7635b033ebc1487c6061c22bed6a0271e1bfc"
+        },
+        "footer": {
+          "characters": 2975,
+          "sha256": "0336f6637ec79f9a55282fc35ac28e803a3e412ca9cac84cc2f25b50879662b9"
+        }
+      },
+      "benefitModelSha256": "02daf7d8af8af9816ac7edf6b2086001bde626f8e7cf0c30bdee38512e84c06a",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "loot after actual claim/rolling",
+      "phase": "loot",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "cd19752bec1c061d68b1c1c3c589935d836f033d399bd4f37af9770015863df3",
+      "outputs": {
+        "gameView": {
+          "characters": 19279,
+          "sha256": "d6b4563e7c414f95aaa2956a5e8c4ffc0fc196705c6cbc1279a8acafcadfdad5"
+        },
+        "center": {
+          "characters": 8150,
+          "sha256": "b0ebf4aa657a1a3db123c6905aea8410f1d2f75ee766f61249477e1d2d5f8201"
+        },
+        "routeRail": {
+          "characters": 4389,
+          "sha256": "27dbb714f1d108f99ec16448f86041a07ba76b47dc41f8805f0387dfa90dc2a9"
+        },
+        "boonReadoutView": {
+          "characters": 1431,
+          "sha256": "db29f5fbb4f88859762acf5756e83e304c919cc9eae31b674415fe5f089e7b66"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "a9a9b4585a3b11e8d8fa489727d7635b033ebc1487c6061c22bed6a0271e1bfc"
+        },
+        "footer": {
+          "characters": 2685,
+          "sha256": "4be499dc99845faed2a0e49be9784969b96605e1126f0c006644e5b55d40bbb8"
+        }
+      },
+      "benefitModelSha256": "02daf7d8af8af9816ac7edf6b2086001bde626f8e7cf0c30bdee38512e84c06a",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "loot after actual claim/impact",
+      "phase": "loot",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "cd19752bec1c061d68b1c1c3c589935d836f033d399bd4f37af9770015863df3",
+      "outputs": {
+        "gameView": {
+          "characters": 19279,
+          "sha256": "d6b4563e7c414f95aaa2956a5e8c4ffc0fc196705c6cbc1279a8acafcadfdad5"
+        },
+        "center": {
+          "characters": 8150,
+          "sha256": "b0ebf4aa657a1a3db123c6905aea8410f1d2f75ee766f61249477e1d2d5f8201"
+        },
+        "routeRail": {
+          "characters": 4389,
+          "sha256": "27dbb714f1d108f99ec16448f86041a07ba76b47dc41f8805f0387dfa90dc2a9"
+        },
+        "boonReadoutView": {
+          "characters": 1431,
+          "sha256": "db29f5fbb4f88859762acf5756e83e304c919cc9eae31b674415fe5f089e7b66"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "a9a9b4585a3b11e8d8fa489727d7635b033ebc1487c6061c22bed6a0271e1bfc"
+        },
+        "footer": {
+          "characters": 2685,
+          "sha256": "4be499dc99845faed2a0e49be9784969b96605e1126f0c006644e5b55d40bbb8"
+        }
+      },
+      "benefitModelSha256": "02daf7d8af8af9816ac7edf6b2086001bde626f8e7cf0c30bdee38512e84c06a",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "loot after actual claim/details",
+      "phase": "loot",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "cd19752bec1c061d68b1c1c3c589935d836f033d399bd4f37af9770015863df3",
+      "outputs": {
+        "gameView": {
+          "characters": 19589,
+          "sha256": "0d1ba6cfd78ed88d8a76e9eb057969452ae24c352d46a9cb64068e7f6b9c6d81"
+        },
+        "center": {
+          "characters": 8150,
+          "sha256": "b0ebf4aa657a1a3db123c6905aea8410f1d2f75ee766f61249477e1d2d5f8201"
+        },
+        "routeRail": {
+          "characters": 4393,
+          "sha256": "7c43e40f80a41350d1fccd4319a90edce02026f37be6f9bbb5a016695f190d19"
+        },
+        "boonReadoutView": {
+          "characters": 1435,
+          "sha256": "c76d5f95695e1b5fc57ed0d7aa3bba1d956a373b1e9da543031a17ae9364cf8b"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "a9a9b4585a3b11e8d8fa489727d7635b033ebc1487c6061c22bed6a0271e1bfc"
+        },
+        "footer": {
+          "characters": 2975,
+          "sha256": "0336f6637ec79f9a55282fc35ac28e803a3e412ca9cac84cc2f25b50879662b9"
+        }
+      },
+      "benefitModelSha256": "02daf7d8af8af9816ac7edf6b2086001bde626f8e7cf0c30bdee38512e84c06a",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "impact with committed dead enemy/ready",
+      "phase": "combat",
+      "view": "game",
+      "validSave": false,
+      "stateSha256": "199803e3cb4bb4891b8b1980bb53ccfaf00832707b422f71dbfbce1f90caa678",
+      "outputs": {
+        "gameView": {
+          "characters": 23116,
+          "sha256": "e8c684f3f68c2106d723667a36e3e8fb3e65a529499cfed26eb8a7f184b818ff"
+        },
+        "center": {
+          "characters": 9922,
+          "sha256": "dedb2eec5def90049f92fa627ea66fd34cc5486173542bf7830d9d1c737b5823"
+        },
+        "routeRail": {
+          "characters": 4298,
+          "sha256": "231a9bbc72f4404f6ba923314e676888fd0484374ebd03814ea0964908a755c8"
+        },
+        "boonReadoutView": {
+          "characters": 1431,
+          "sha256": "db29f5fbb4f88859762acf5756e83e304c919cc9eae31b674415fe5f089e7b66"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "a9a9b4585a3b11e8d8fa489727d7635b033ebc1487c6061c22bed6a0271e1bfc"
+        },
+        "footer": {
+          "characters": 3063,
+          "sha256": "d5225a5c07cbc42a60e81d1f50c796b8800ac71e0870ac3fb40ad42a10008462"
+        }
+      },
+      "benefitModelSha256": "02daf7d8af8af9816ac7edf6b2086001bde626f8e7cf0c30bdee38512e84c06a",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "impact with committed dead enemy/rolling",
+      "phase": "combat",
+      "view": "game",
+      "validSave": false,
+      "stateSha256": "199803e3cb4bb4891b8b1980bb53ccfaf00832707b422f71dbfbce1f90caa678",
+      "outputs": {
+        "gameView": {
+          "characters": 22347,
+          "sha256": "5b4e3e6e5923244c57aedaac5f8cfbc063ef531971dbd8423eb9d83bd04aea44"
+        },
+        "center": {
+          "characters": 9436,
+          "sha256": "e32cc5136af0b9f0e8e3b4e038851fad8362a3c6f2ef305a03f260fdf7f4cdc3"
+        },
+        "routeRail": {
+          "characters": 4298,
+          "sha256": "231a9bbc72f4404f6ba923314e676888fd0484374ebd03814ea0964908a755c8"
+        },
+        "boonReadoutView": {
+          "characters": 1431,
+          "sha256": "db29f5fbb4f88859762acf5756e83e304c919cc9eae31b674415fe5f089e7b66"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "a9a9b4585a3b11e8d8fa489727d7635b033ebc1487c6061c22bed6a0271e1bfc"
+        },
+        "footer": {
+          "characters": 2776,
+          "sha256": "af1c97093c6084820656a0e93ee782f11e69111d1f69705a8bebe6358bbb9ede"
+        }
+      },
+      "benefitModelSha256": "02daf7d8af8af9816ac7edf6b2086001bde626f8e7cf0c30bdee38512e84c06a",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "impact with committed dead enemy/impact",
+      "phase": "combat",
+      "view": "game",
+      "validSave": false,
+      "stateSha256": "199803e3cb4bb4891b8b1980bb53ccfaf00832707b422f71dbfbce1f90caa678",
+      "outputs": {
+        "gameView": {
+          "characters": 22833,
+          "sha256": "735ad0a1fef92ef8a498b67cdcf14107e6bdac6dfb5a400a775d5a4be1509ab0"
+        },
+        "center": {
+          "characters": 9922,
+          "sha256": "dedb2eec5def90049f92fa627ea66fd34cc5486173542bf7830d9d1c737b5823"
+        },
+        "routeRail": {
+          "characters": 4298,
+          "sha256": "231a9bbc72f4404f6ba923314e676888fd0484374ebd03814ea0964908a755c8"
+        },
+        "boonReadoutView": {
+          "characters": 1431,
+          "sha256": "db29f5fbb4f88859762acf5756e83e304c919cc9eae31b674415fe5f089e7b66"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "a9a9b4585a3b11e8d8fa489727d7635b033ebc1487c6061c22bed6a0271e1bfc"
+        },
+        "footer": {
+          "characters": 2776,
+          "sha256": "af1c97093c6084820656a0e93ee782f11e69111d1f69705a8bebe6358bbb9ede"
+        }
+      },
+      "benefitModelSha256": "02daf7d8af8af9816ac7edf6b2086001bde626f8e7cf0c30bdee38512e84c06a",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "impact with committed dead enemy/details",
+      "phase": "combat",
+      "view": "game",
+      "validSave": false,
+      "stateSha256": "199803e3cb4bb4891b8b1980bb53ccfaf00832707b422f71dbfbce1f90caa678",
+      "outputs": {
+        "gameView": {
+          "characters": 23140,
+          "sha256": "5b2bec25883e33074a71484d1adc2f80ae3a85fcaed6fbac45fcb5303b1b273d"
+        },
+        "center": {
+          "characters": 9922,
+          "sha256": "dedb2eec5def90049f92fa627ea66fd34cc5486173542bf7830d9d1c737b5823"
+        },
+        "routeRail": {
+          "characters": 4302,
+          "sha256": "f3550ede553c2650927c83e7e36816a2361522737ceca7fe50c8f0487d4760d1"
+        },
+        "boonReadoutView": {
+          "characters": 1435,
+          "sha256": "c76d5f95695e1b5fc57ed0d7aa3bba1d956a373b1e9da543031a17ae9364cf8b"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "a9a9b4585a3b11e8d8fa489727d7635b033ebc1487c6061c22bed6a0271e1bfc"
+        },
+        "footer": {
+          "characters": 3063,
+          "sha256": "d5225a5c07cbc42a60e81d1f50c796b8800ac71e0870ac3fb40ad42a10008462"
+        }
+      },
+      "benefitModelSha256": "02daf7d8af8af9816ac7edf6b2086001bde626f8e7cf0c30bdee38512e84c06a",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "forge after actual commit/ready",
+      "phase": "forge",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "5016d2bbb72e6b0482758ffe5c2e82dc314817e74e230505fecb85dc4b0ab7e7",
+      "outputs": {
+        "gameView": {
+          "characters": 15920,
+          "sha256": "12d59803ac273fa14828bc19c85b6e7ab56b974449850f87f636580327867f82"
+        },
+        "center": {
+          "characters": 4428,
+          "sha256": "31dc5f0d4842d395a27b8eef33093c58085d5289d3b53ee442d955845ec208fd"
+        },
+        "routeRail": {
+          "characters": 2707,
+          "sha256": "a515584260511763e181b572366ae967a4657ca42bf6606761ed42340ec8dbd6"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "3e0afc1b1a4f0e9d0a83de5e7e1051280f6b8634c5461fc148bc99fe233466c7"
+        },
+        "footer": {
+          "characters": 2953,
+          "sha256": "23df9ef4ab2c1b3529039b8bce6e618634d982eddd6554d447839241ee86a7af"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "forge after actual commit/rolling",
+      "phase": "forge",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "5016d2bbb72e6b0482758ffe5c2e82dc314817e74e230505fecb85dc4b0ab7e7",
+      "outputs": {
+        "gameView": {
+          "characters": 15684,
+          "sha256": "adefde4d8d7426774dec69a50d4bbccf5e5b8b103310acba7bdd079546106712"
+        },
+        "center": {
+          "characters": 4476,
+          "sha256": "85b44a01733627999b8c75cd3ed4c137a561f6b11cc3b8857a6fd8c16379fcc8"
+        },
+        "routeRail": {
+          "characters": 2707,
+          "sha256": "a515584260511763e181b572366ae967a4657ca42bf6606761ed42340ec8dbd6"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "3e0afc1b1a4f0e9d0a83de5e7e1051280f6b8634c5461fc148bc99fe233466c7"
+        },
+        "footer": {
+          "characters": 2665,
+          "sha256": "7f1bee8814675d58bc3014e58d842e152723e7a2afe612066377a2a053c79259"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "forge after actual commit/impact",
+      "phase": "forge",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "5016d2bbb72e6b0482758ffe5c2e82dc314817e74e230505fecb85dc4b0ab7e7",
+      "outputs": {
+        "gameView": {
+          "characters": 15684,
+          "sha256": "adefde4d8d7426774dec69a50d4bbccf5e5b8b103310acba7bdd079546106712"
+        },
+        "center": {
+          "characters": 4476,
+          "sha256": "85b44a01733627999b8c75cd3ed4c137a561f6b11cc3b8857a6fd8c16379fcc8"
+        },
+        "routeRail": {
+          "characters": 2707,
+          "sha256": "a515584260511763e181b572366ae967a4657ca42bf6606761ed42340ec8dbd6"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "3e0afc1b1a4f0e9d0a83de5e7e1051280f6b8634c5461fc148bc99fe233466c7"
+        },
+        "footer": {
+          "characters": 2665,
+          "sha256": "7f1bee8814675d58bc3014e58d842e152723e7a2afe612066377a2a053c79259"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "forge after actual commit/details",
+      "phase": "forge",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "5016d2bbb72e6b0482758ffe5c2e82dc314817e74e230505fecb85dc4b0ab7e7",
+      "outputs": {
+        "gameView": {
+          "characters": 15940,
+          "sha256": "3e4cf69fa220096878392884b5a19fa7ed951d63ce865d36f1a68e322e82a1e5"
+        },
+        "center": {
+          "characters": 4428,
+          "sha256": "31dc5f0d4842d395a27b8eef33093c58085d5289d3b53ee442d955845ec208fd"
+        },
+        "routeRail": {
+          "characters": 2707,
+          "sha256": "a515584260511763e181b572366ae967a4657ca42bf6606761ed42340ec8dbd6"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "3e0afc1b1a4f0e9d0a83de5e7e1051280f6b8634c5461fc148bc99fe233466c7"
+        },
+        "footer": {
+          "characters": 2953,
+          "sha256": "23df9ef4ab2c1b3529039b8bce6e618634d982eddd6554d447839241ee86a7af"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "fusion workbench/ready",
+      "phase": "fusion",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "c8a4985b31aed3e796449721eaea2e2087d2f4c2b50496d72bf0dea171917f3e",
+      "outputs": {
+        "gameView": {
+          "characters": 15098,
+          "sha256": "8478f5ef6371cbf9f10862e965189dc170eba3492de768669ca97eb1f1b055e0"
+        },
+        "center": {
+          "characters": 10491,
+          "sha256": "927635f3fff1acc23d3e1a973269c6d076116463aeefe82c764418c785b0128e"
+        },
+        "routeRail": {
+          "characters": 2636,
+          "sha256": "cdff289e9bb4af33c56360b304f768179fb957cf4057f22a8c0037075a41dd67"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 2955,
+          "sha256": "290b6959da6d3f5d56497d75cb9bd21dc8eb2b3e772094c38e65137289b68b1a"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "fusion workbench/rolling",
+      "phase": "fusion",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "c8a4985b31aed3e796449721eaea2e2087d2f4c2b50496d72bf0dea171917f3e",
+      "outputs": {
+        "gameView": {
+          "characters": 14927,
+          "sha256": "0232cb535086332d0eff0d5ea0721c5ea2a4ecbe94adb47987cf6161bba028e4"
+        },
+        "center": {
+          "characters": 10604,
+          "sha256": "425847e0122b9c76b6d4a646602c5f6c685d60a88a46d0f5429b2a5a85008dba"
+        },
+        "routeRail": {
+          "characters": 2636,
+          "sha256": "cdff289e9bb4af33c56360b304f768179fb957cf4057f22a8c0037075a41dd67"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 2667,
+          "sha256": "adbee37c9a987e635276f34cb26b8871be26b82c0458d225686ca1f9096321ff"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "fusion workbench/impact",
+      "phase": "fusion",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "c8a4985b31aed3e796449721eaea2e2087d2f4c2b50496d72bf0dea171917f3e",
+      "outputs": {
+        "gameView": {
+          "characters": 14927,
+          "sha256": "0232cb535086332d0eff0d5ea0721c5ea2a4ecbe94adb47987cf6161bba028e4"
+        },
+        "center": {
+          "characters": 10604,
+          "sha256": "425847e0122b9c76b6d4a646602c5f6c685d60a88a46d0f5429b2a5a85008dba"
+        },
+        "routeRail": {
+          "characters": 2636,
+          "sha256": "cdff289e9bb4af33c56360b304f768179fb957cf4057f22a8c0037075a41dd67"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 2667,
+          "sha256": "adbee37c9a987e635276f34cb26b8871be26b82c0458d225686ca1f9096321ff"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "fusion workbench/details",
+      "phase": "fusion",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "c8a4985b31aed3e796449721eaea2e2087d2f4c2b50496d72bf0dea171917f3e",
+      "outputs": {
+        "gameView": {
+          "characters": 15118,
+          "sha256": "44e88c1f9bcc0555a3b7073808ef0ccf6b6046f0c98c32798b420e2fbd657545"
+        },
+        "center": {
+          "characters": 10491,
+          "sha256": "927635f3fff1acc23d3e1a973269c6d076116463aeefe82c764418c785b0128e"
+        },
+        "routeRail": {
+          "characters": 2636,
+          "sha256": "cdff289e9bb4af33c56360b304f768179fb957cf4057f22a8c0037075a41dd67"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 2955,
+          "sha256": "290b6959da6d3f5d56497d75cb9bd21dc8eb2b3e772094c38e65137289b68b1a"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "resolved gambit/ready",
+      "phase": "chest",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "538029024bc3ca535a19618ce867c90e8904db82801d6c0ee07b606323eea9ae",
+      "outputs": {
+        "gameView": {
+          "characters": 18386,
+          "sha256": "0e47371f65c4f8d15df576fa759bd980bf6a7903b25f5868e2ec478fa485b3ac"
+        },
+        "center": {
+          "characters": 6773,
+          "sha256": "6e8e14ddb6ff0656fdf767f4d8fb8e52c3beb04420954a378dff441a7d20d8bb"
+        },
+        "routeRail": {
+          "characters": 2792,
+          "sha256": "3fc436500fe477686598d38b1ce3b9279175b8df133a6408bbfb65cd2876293d"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 2989,
+          "sha256": "de22ea50c6cbf025cd21cf25a852545e660a3440013fa81b81030f509bb6f33d"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "resolved gambit/rolling",
+      "phase": "chest",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "538029024bc3ca535a19618ce867c90e8904db82801d6c0ee07b606323eea9ae",
+      "outputs": {
+        "gameView": {
+          "characters": 18097,
+          "sha256": "ca686d57fade978a0a6c728ea2fecb2a0dbb21c185472855981415714b00c722"
+        },
+        "center": {
+          "characters": 6773,
+          "sha256": "6e8e14ddb6ff0656fdf767f4d8fb8e52c3beb04420954a378dff441a7d20d8bb"
+        },
+        "routeRail": {
+          "characters": 2792,
+          "sha256": "3fc436500fe477686598d38b1ce3b9279175b8df133a6408bbfb65cd2876293d"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 2696,
+          "sha256": "4548fb20a75394b9c40d09b809242efdb69e3776b9a1ea16ada9b13747c1a7d7"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "resolved gambit/impact",
+      "phase": "chest",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "538029024bc3ca535a19618ce867c90e8904db82801d6c0ee07b606323eea9ae",
+      "outputs": {
+        "gameView": {
+          "characters": 18097,
+          "sha256": "ca686d57fade978a0a6c728ea2fecb2a0dbb21c185472855981415714b00c722"
+        },
+        "center": {
+          "characters": 6773,
+          "sha256": "6e8e14ddb6ff0656fdf767f4d8fb8e52c3beb04420954a378dff441a7d20d8bb"
+        },
+        "routeRail": {
+          "characters": 2792,
+          "sha256": "3fc436500fe477686598d38b1ce3b9279175b8df133a6408bbfb65cd2876293d"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 2696,
+          "sha256": "4548fb20a75394b9c40d09b809242efdb69e3776b9a1ea16ada9b13747c1a7d7"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "resolved gambit/details",
+      "phase": "chest",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "538029024bc3ca535a19618ce867c90e8904db82801d6c0ee07b606323eea9ae",
+      "outputs": {
+        "gameView": {
+          "characters": 18406,
+          "sha256": "81f7c359679fbb5a2e1ff997e42bb3d4dfd48507dcc997971101064c36c1918f"
+        },
+        "center": {
+          "characters": 6773,
+          "sha256": "6e8e14ddb6ff0656fdf767f4d8fb8e52c3beb04420954a378dff441a7d20d8bb"
+        },
+        "routeRail": {
+          "characters": 2792,
+          "sha256": "3fc436500fe477686598d38b1ce3b9279175b8df133a6408bbfb65cd2876293d"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 2989,
+          "sha256": "de22ea50c6cbf025cd21cf25a852545e660a3440013fa81b81030f509bb6f33d"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "combat/inventory",
+      "phase": "combat",
+      "view": "inventory",
+      "validSave": true,
+      "stateSha256": "753857e742135e1a2d7fe82114f135a7605192d6359ccf0091a91b94f9a1c60f",
+      "outputs": {
+        "gameView": {
+          "characters": 17491,
+          "sha256": "f6e637cb0a2606fb1ef1d48d6da771a60078fc664112dc0174d79d4f297e8917"
+        },
+        "center": {
+          "characters": 3589,
+          "sha256": "d3eb9956e738ff3461c6ea125513e123529122f898ca88e20902038038ccfe85"
+        },
+        "routeRail": {
+          "characters": 5108,
+          "sha256": "3a87047d32dd71b0ac5ae5eacb9aff54e3ecc6dddac57ad4d3903a7feae21812"
+        },
+        "boonReadoutView": {
+          "characters": 2413,
+          "sha256": "624fb5cc6155d7446cd4b64916c09831285b1a502271d69ac00684b2a722ac02"
+        },
+        "equipmentRail": {
+          "characters": 4208,
+          "sha256": "c3450d8f0bf26150af836f9895c7ad42f11aedecd43769643fb3ab035304353b"
+        },
+        "footer": {
+          "characters": 2957,
+          "sha256": "e3253026bdb1522d87e0ca74dd6c9829441ad3c0371a986f8908a7bcdc22b957"
+        }
+      },
+      "benefitModelSha256": "f7ffc41e3d5e062700aa7c4c9784d442cc936674647752bad4df8e40530de896",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "combat/talents",
+      "phase": "combat",
+      "view": "talents",
+      "validSave": true,
+      "stateSha256": "753857e742135e1a2d7fe82114f135a7605192d6359ccf0091a91b94f9a1c60f",
+      "outputs": {
+        "gameView": {
+          "characters": 45518,
+          "sha256": "95367d4c15c50b6643370c889f03a4906ec89a721eb1272c92f30cb900e93abd"
+        },
+        "center": {
+          "characters": 32822,
+          "sha256": "4021c4f5018e191ef8a21726b9c2d320d2ff0b8e82f3c94c9fcd032559d9cf39"
+        },
+        "routeRail": {
+          "characters": 5108,
+          "sha256": "3a87047d32dd71b0ac5ae5eacb9aff54e3ecc6dddac57ad4d3903a7feae21812"
+        },
+        "boonReadoutView": {
+          "characters": 2413,
+          "sha256": "624fb5cc6155d7446cd4b64916c09831285b1a502271d69ac00684b2a722ac02"
+        },
+        "equipmentRail": {
+          "characters": 4208,
+          "sha256": "c3450d8f0bf26150af836f9895c7ad42f11aedecd43769643fb3ab035304353b"
+        },
+        "footer": {
+          "characters": 2957,
+          "sha256": "5403c5caf10341f5306f752fdc1c1f37b2213381ef7c5348244f9ffef088065c"
+        }
+      },
+      "benefitModelSha256": "f7ffc41e3d5e062700aa7c4c9784d442cc936674647752bad4df8e40530de896",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "combat/codex",
+      "phase": "combat",
+      "view": "codex",
+      "validSave": true,
+      "stateSha256": "753857e742135e1a2d7fe82114f135a7605192d6359ccf0091a91b94f9a1c60f",
+      "outputs": {
+        "gameView": {
+          "characters": 19267,
+          "sha256": "c767c6b979c3075d2e402de91a2081743ad717e1795652657f2f7607b46dacff"
+        },
+        "center": {
+          "characters": 5377,
+          "sha256": "d57c7d13eecaacc29ec17c1e7297db6e3304fed76aa9f83cd2baab6c0a4ffa4a"
+        },
+        "routeRail": {
+          "characters": 5108,
+          "sha256": "3a87047d32dd71b0ac5ae5eacb9aff54e3ecc6dddac57ad4d3903a7feae21812"
+        },
+        "boonReadoutView": {
+          "characters": 2413,
+          "sha256": "624fb5cc6155d7446cd4b64916c09831285b1a502271d69ac00684b2a722ac02"
+        },
+        "equipmentRail": {
+          "characters": 4208,
+          "sha256": "c3450d8f0bf26150af836f9895c7ad42f11aedecd43769643fb3ab035304353b"
+        },
+        "footer": {
+          "characters": 2949,
+          "sha256": "c6aef2b4aa2a1ac41be7b4840031a12b9e290bf6d09f1a9a1bcfb4bc6f4f2b74"
+        }
+      },
+      "benefitModelSha256": "f7ffc41e3d5e062700aa7c4c9784d442cc936674647752bad4df8e40530de896",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "fusion/inventory",
+      "phase": "fusion",
+      "view": "inventory",
+      "validSave": true,
+      "stateSha256": "c8a4985b31aed3e796449721eaea2e2087d2f4c2b50496d72bf0dea171917f3e",
+      "outputs": {
+        "gameView": {
+          "characters": 15018,
+          "sha256": "cc255efda9c853eceaf067c291e9f04c46e12a6eace352750d0edf97a0597f94"
+        },
+        "center": {
+          "characters": 3589,
+          "sha256": "d3eb9956e738ff3461c6ea125513e123529122f898ca88e20902038038ccfe85"
+        },
+        "routeRail": {
+          "characters": 2636,
+          "sha256": "cdff289e9bb4af33c56360b304f768179fb957cf4057f22a8c0037075a41dd67"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 2957,
+          "sha256": "e3253026bdb1522d87e0ca74dd6c9829441ad3c0371a986f8908a7bcdc22b957"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "fusion/talents",
+      "phase": "fusion",
+      "view": "talents",
+      "validSave": true,
+      "stateSha256": "c8a4985b31aed3e796449721eaea2e2087d2f4c2b50496d72bf0dea171917f3e",
+      "outputs": {
+        "gameView": {
+          "characters": 45626,
+          "sha256": "93e30d96f881f14f64f86b97ab2b4056140345724a1174d8a0dcd854196d05a6"
+        },
+        "center": {
+          "characters": 32942,
+          "sha256": "62846bf1fed1b1829ae14a406a47783bd7618816b5cb2f03ec2e8f37c6a77cce"
+        },
+        "routeRail": {
+          "characters": 2636,
+          "sha256": "cdff289e9bb4af33c56360b304f768179fb957cf4057f22a8c0037075a41dd67"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 2957,
+          "sha256": "5403c5caf10341f5306f752fdc1c1f37b2213381ef7c5348244f9ffef088065c"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "fusion/codex",
+      "phase": "fusion",
+      "view": "codex",
+      "validSave": true,
+      "stateSha256": "c8a4985b31aed3e796449721eaea2e2087d2f4c2b50496d72bf0dea171917f3e",
+      "outputs": {
+        "gameView": {
+          "characters": 16794,
+          "sha256": "f9a5a3ab8f422de0fb42c3578ceaae47fc922998b7673ca627a12f9d6cf3cf8e"
+        },
+        "center": {
+          "characters": 5377,
+          "sha256": "d57c7d13eecaacc29ec17c1e7297db6e3304fed76aa9f83cd2baab6c0a4ffa4a"
+        },
+        "routeRail": {
+          "characters": 2636,
+          "sha256": "cdff289e9bb4af33c56360b304f768179fb957cf4057f22a8c0037075a41dd67"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 2949,
+          "sha256": "c6aef2b4aa2a1ac41be7b4840031a12b9e290bf6d09f1a9a1bcfb4bc6f4f2b74"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "event/inventory",
+      "phase": "event",
+      "view": "inventory",
+      "validSave": true,
+      "stateSha256": "33b3d4dd372afafc3f0eeab0f1b2d7496a13306b7e1fd52bfc4f819fbf20eb73",
+      "outputs": {
+        "gameView": {
+          "characters": 15089,
+          "sha256": "ff8217be9d03f8d969497216c9fb4c06890750eb2c6a3c41e200852321542b08"
+        },
+        "center": {
+          "characters": 3589,
+          "sha256": "d3eb9956e738ff3461c6ea125513e123529122f898ca88e20902038038ccfe85"
+        },
+        "routeRail": {
+          "characters": 2707,
+          "sha256": "e0a225891155c694fc567cfce44a05f08de34c9e7bcb99158fa504d54ea3cc7a"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 2957,
+          "sha256": "e3253026bdb1522d87e0ca74dd6c9829441ad3c0371a986f8908a7bcdc22b957"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "event/talents",
+      "phase": "event",
+      "view": "talents",
+      "validSave": true,
+      "stateSha256": "33b3d4dd372afafc3f0eeab0f1b2d7496a13306b7e1fd52bfc4f819fbf20eb73",
+      "outputs": {
+        "gameView": {
+          "characters": 45626,
+          "sha256": "93e30d96f881f14f64f86b97ab2b4056140345724a1174d8a0dcd854196d05a6"
+        },
+        "center": {
+          "characters": 32942,
+          "sha256": "62846bf1fed1b1829ae14a406a47783bd7618816b5cb2f03ec2e8f37c6a77cce"
+        },
+        "routeRail": {
+          "characters": 2707,
+          "sha256": "e0a225891155c694fc567cfce44a05f08de34c9e7bcb99158fa504d54ea3cc7a"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 2957,
+          "sha256": "5403c5caf10341f5306f752fdc1c1f37b2213381ef7c5348244f9ffef088065c"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "event/codex",
+      "phase": "event",
+      "view": "codex",
+      "validSave": true,
+      "stateSha256": "33b3d4dd372afafc3f0eeab0f1b2d7496a13306b7e1fd52bfc4f819fbf20eb73",
+      "outputs": {
+        "gameView": {
+          "characters": 16865,
+          "sha256": "d8d124a53c9d90389639f3085d1b95b3be2e468764bb32f579be95122a0b9f80"
+        },
+        "center": {
+          "characters": 5377,
+          "sha256": "d57c7d13eecaacc29ec17c1e7297db6e3304fed76aa9f83cd2baab6c0a4ffa4a"
+        },
+        "routeRail": {
+          "characters": 2707,
+          "sha256": "e0a225891155c694fc567cfce44a05f08de34c9e7bcb99158fa504d54ea3cc7a"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 2949,
+          "sha256": "c6aef2b4aa2a1ac41be7b4840031a12b9e290bf6d09f1a9a1bcfb4bc6f4f2b74"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "loot/inventory",
+      "phase": "loot",
+      "view": "inventory",
+      "validSave": true,
+      "stateSha256": "cd19752bec1c061d68b1c1c3c589935d836f033d399bd4f37af9770015863df3",
+      "outputs": {
+        "gameView": {
+          "characters": 16789,
+          "sha256": "dbd95fe1659fd6af72fae4be76343dd699624e2630f9f22935f388f84a1c4816"
+        },
+        "center": {
+          "characters": 3589,
+          "sha256": "3c03f438df2576cc2e52a302f8a22f3492129c3a69cb98a13afbcde10720d89d"
+        },
+        "routeRail": {
+          "characters": 4389,
+          "sha256": "27dbb714f1d108f99ec16448f86041a07ba76b47dc41f8805f0387dfa90dc2a9"
+        },
+        "boonReadoutView": {
+          "characters": 1431,
+          "sha256": "db29f5fbb4f88859762acf5756e83e304c919cc9eae31b674415fe5f089e7b66"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "a9a9b4585a3b11e8d8fa489727d7635b033ebc1487c6061c22bed6a0271e1bfc"
+        },
+        "footer": {
+          "characters": 2975,
+          "sha256": "cc030f6e0e73a47e9465cd6d4c47325669e496ffbcd3792e4a314f1670098b29"
+        }
+      },
+      "benefitModelSha256": "02daf7d8af8af9816ac7edf6b2086001bde626f8e7cf0c30bdee38512e84c06a",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "loot/talents",
+      "phase": "loot",
+      "view": "talents",
+      "validSave": true,
+      "stateSha256": "cd19752bec1c061d68b1c1c3c589935d836f033d399bd4f37af9770015863df3",
+      "outputs": {
+        "gameView": {
+          "characters": 45535,
+          "sha256": "68915b1c8fd90d6245bc1986a9fcd9ca2083454bfe3e6aa7ca386683ffc7225d"
+        },
+        "center": {
+          "characters": 32822,
+          "sha256": "4021c4f5018e191ef8a21726b9c2d320d2ff0b8e82f3c94c9fcd032559d9cf39"
+        },
+        "routeRail": {
+          "characters": 4389,
+          "sha256": "27dbb714f1d108f99ec16448f86041a07ba76b47dc41f8805f0387dfa90dc2a9"
+        },
+        "boonReadoutView": {
+          "characters": 1431,
+          "sha256": "db29f5fbb4f88859762acf5756e83e304c919cc9eae31b674415fe5f089e7b66"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "a9a9b4585a3b11e8d8fa489727d7635b033ebc1487c6061c22bed6a0271e1bfc"
+        },
+        "footer": {
+          "characters": 2975,
+          "sha256": "102034a04ede30fb539c486a4f6cf1a11e5bcfb54ed1fa64292e5672dbc911ab"
+        }
+      },
+      "benefitModelSha256": "02daf7d8af8af9816ac7edf6b2086001bde626f8e7cf0c30bdee38512e84c06a",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "loot/codex",
+      "phase": "loot",
+      "view": "codex",
+      "validSave": true,
+      "stateSha256": "cd19752bec1c061d68b1c1c3c589935d836f033d399bd4f37af9770015863df3",
+      "outputs": {
+        "gameView": {
+          "characters": 18565,
+          "sha256": "35abe025e92f5934c29039724c5dbbe54017bb53b8b2f013e604a5084f48361f"
+        },
+        "center": {
+          "characters": 5377,
+          "sha256": "d57c7d13eecaacc29ec17c1e7297db6e3304fed76aa9f83cd2baab6c0a4ffa4a"
+        },
+        "routeRail": {
+          "characters": 4389,
+          "sha256": "27dbb714f1d108f99ec16448f86041a07ba76b47dc41f8805f0387dfa90dc2a9"
+        },
+        "boonReadoutView": {
+          "characters": 1431,
+          "sha256": "db29f5fbb4f88859762acf5756e83e304c919cc9eae31b674415fe5f089e7b66"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "a9a9b4585a3b11e8d8fa489727d7635b033ebc1487c6061c22bed6a0271e1bfc"
+        },
+        "footer": {
+          "characters": 2967,
+          "sha256": "27c3087f2144cd1a0e69bad4bb6b331dca6a6cf7c88995788cfa873afce0361a"
+        }
+      },
+      "benefitModelSha256": "02daf7d8af8af9816ac7edf6b2086001bde626f8e7cf0c30bdee38512e84c06a",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "dead/inventory",
+      "phase": "dead",
+      "view": "inventory",
+      "validSave": true,
+      "stateSha256": "86fb1d14c96a8e36043bc006d4fe33b2329d1665942443c181ed1e6508e37535",
+      "outputs": {
+        "gameView": {
+          "characters": 16849,
+          "sha256": "0b87501b1e5868148a381ce0b837b2f02a9536bcd2ca3192ddab734d5446f8fa"
+        },
+        "center": {
+          "characters": 3589,
+          "sha256": "d3eb9956e738ff3461c6ea125513e123529122f898ca88e20902038038ccfe85"
+        },
+        "routeRail": {
+          "characters": 4472,
+          "sha256": "d44193090073fe498eb09e2a4420c3e20490b6da0abafed459551da5f817e113"
+        },
+        "boonReadoutView": {
+          "characters": 1777,
+          "sha256": "86cda98eed3b85cbf09d9aa68d5bc6434fb99f800b3d6ae7865e5cac7e8799e0"
+        },
+        "equipmentRail": {
+          "characters": 4208,
+          "sha256": "c3450d8f0bf26150af836f9895c7ad42f11aedecd43769643fb3ab035304353b"
+        },
+        "footer": {
+          "characters": 2951,
+          "sha256": "d86167bdc990bff6151c49ef02b9acf787e116811dffc66ee80598c9feb22669"
+        }
+      },
+      "benefitModelSha256": "51a6c68c15aab2c33397728d69fd0b57642cfd86bc23457f54ab427062fdbb7e",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "dead/talents",
+      "phase": "dead",
+      "view": "talents",
+      "validSave": true,
+      "stateSha256": "86fb1d14c96a8e36043bc006d4fe33b2329d1665942443c181ed1e6508e37535",
+      "outputs": {
+        "gameView": {
+          "characters": 45508,
+          "sha256": "1e8b77c241c2cc44e92b41e30d60478ca22de13f0e84b8ff22a726fb57f383c3"
+        },
+        "center": {
+          "characters": 32822,
+          "sha256": "4021c4f5018e191ef8a21726b9c2d320d2ff0b8e82f3c94c9fcd032559d9cf39"
+        },
+        "routeRail": {
+          "characters": 4472,
+          "sha256": "d44193090073fe498eb09e2a4420c3e20490b6da0abafed459551da5f817e113"
+        },
+        "boonReadoutView": {
+          "characters": 1777,
+          "sha256": "86cda98eed3b85cbf09d9aa68d5bc6434fb99f800b3d6ae7865e5cac7e8799e0"
+        },
+        "equipmentRail": {
+          "characters": 4208,
+          "sha256": "c3450d8f0bf26150af836f9895c7ad42f11aedecd43769643fb3ab035304353b"
+        },
+        "footer": {
+          "characters": 2951,
+          "sha256": "6ea497b26abebd4599acf4453caa9b26dcb184b5db129f65f2516c10f6508c6e"
+        }
+      },
+      "benefitModelSha256": "51a6c68c15aab2c33397728d69fd0b57642cfd86bc23457f54ab427062fdbb7e",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "dead/codex",
+      "phase": "dead",
+      "view": "codex",
+      "validSave": true,
+      "stateSha256": "86fb1d14c96a8e36043bc006d4fe33b2329d1665942443c181ed1e6508e37535",
+      "outputs": {
+        "gameView": {
+          "characters": 18625,
+          "sha256": "553c1e6deefbc12f083012ef96882410432c8f2847c3629ded78cbaacb92ebb6"
+        },
+        "center": {
+          "characters": 5377,
+          "sha256": "d57c7d13eecaacc29ec17c1e7297db6e3304fed76aa9f83cd2baab6c0a4ffa4a"
+        },
+        "routeRail": {
+          "characters": 4472,
+          "sha256": "d44193090073fe498eb09e2a4420c3e20490b6da0abafed459551da5f817e113"
+        },
+        "boonReadoutView": {
+          "characters": 1777,
+          "sha256": "86cda98eed3b85cbf09d9aa68d5bc6434fb99f800b3d6ae7865e5cac7e8799e0"
+        },
+        "equipmentRail": {
+          "characters": 4208,
+          "sha256": "c3450d8f0bf26150af836f9895c7ad42f11aedecd43769643fb3ab035304353b"
+        },
+        "footer": {
+          "characters": 2943,
+          "sha256": "def99d5dfdf91873ad733edc0039aa1749e5c130bd96bc1c9e3133303086a1e9"
+        }
+      },
+      "benefitModelSha256": "51a6c68c15aab2c33397728d69fd0b57642cfd86bc23457f54ab427062fdbb7e",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "frozen all benefits",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "753857e742135e1a2d7fe82114f135a7605192d6359ccf0091a91b94f9a1c60f",
+      "outputs": {
+        "gameView": {
+          "characters": 24444,
+          "sha256": "2b14044d206d572e9a861bd5677336211f414f9683f0ea3d6a91c5c235fcd312"
+        },
+        "center": {
+          "characters": 10453,
+          "sha256": "c6a6ad0e9f54739d6dcf51085d595e7d5abea16436ff0037bfa30d4f0523dd0f"
+        },
+        "routeRail": {
+          "characters": 5112,
+          "sha256": "8a2c29716c5424004afccde1ca48ccbd7139c219f9b2373f926a7e68fb16639c"
+        },
+        "boonReadoutView": {
+          "characters": 2417,
+          "sha256": "0b891520bd085358fed6692ee85a3148c7a20fad198cf6fb8155e5dc6bf3e628"
+        },
+        "equipmentRail": {
+          "characters": 4208,
+          "sha256": "c3450d8f0bf26150af836f9895c7ad42f11aedecd43769643fb3ab035304353b"
+        },
+        "footer": {
+          "characters": 3045,
+          "sha256": "6b95f4977f0c4f2994ec072d3393e4484fe21da504f1b971f4d96dfbc0e07405"
+        }
+      },
+      "benefitModelSha256": "f7ffc41e3d5e062700aa7c4c9784d442cc936674647752bad4df8e40530de896",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "same object/before equip",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "75c969797350f596043ea699fe253a877020394c0835447284bb022e38826c83",
+      "outputs": {
+        "gameView": {
+          "characters": 21267,
+          "sha256": "840e6c30c0a9725f81448002850a63d6c0fea1481baaa09fbfb60854a0e53575"
+        },
+        "center": {
+          "characters": 9694,
+          "sha256": "108c7250fa0d54eae2ec4ce9116d02b84deb33b67ad545c1d0c90e0308584145"
+        },
+        "routeRail": {
+          "characters": 2695,
+          "sha256": "1956a62d111f93bbbf57aeabf958b370c5bb92de041052506a4cbbf07db1c227"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 3045,
+          "sha256": "6b95f4977f0c4f2994ec072d3393e4484fe21da504f1b971f4d96dfbc0e07405"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "same object/equip and talent",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "a035d2ee1b9dd71abfd55920dd42cb212ed506c863363f0678cf9e99dabe400c",
+      "outputs": {
+        "gameView": {
+          "characters": 21877,
+          "sha256": "15bda556f369ccdc5a9b3d08b3ecf5cf210a1a0aaf34309a8a8f6dccff284eca"
+        },
+        "center": {
+          "characters": 9687,
+          "sha256": "a1ea19fc5d4d9da4a5935b8fb641a0000663cb4e922b2a04cbf12b856127b7bd"
+        },
+        "routeRail": {
+          "characters": 3251,
+          "sha256": "0687143f6e49ea23ee99c829620b0d8b08c3d24b5eec120f52c922d8b5461c54"
+        },
+        "boonReadoutView": {
+          "characters": 556,
+          "sha256": "2febe21041c0b700ab66ee9c3228bd9dd53f084b903bc33579ce2e41a8cbc07b"
+        },
+        "equipmentRail": {
+          "characters": 4250,
+          "sha256": "42bed3ab51d7ff96c2cf351ed708024c4aad68722eaf2543c50a9b50e5972276"
+        },
+        "footer": {
+          "characters": 3063,
+          "sha256": "9017319c617e2983e472751b2f54ca9eeafa1767ae53215afa11b607484dcd7e"
+        }
+      },
+      "benefitModelSha256": "8ecb84a2dbb6e1166f7fb9d391c9594fed2980e7c18eea0f106dc3201f19e33f",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "same object/spent",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "3a38f26e4cdafad4a25bd7d5483e0b49b9957cee0d253ba0bafd593969fe5860",
+      "outputs": {
+        "gameView": {
+          "characters": 21853,
+          "sha256": "6ac740f953daaa9bb0bee04c237457e59b73ab58511325905f576a711448ce4a"
+        },
+        "center": {
+          "characters": 9687,
+          "sha256": "a1ea19fc5d4d9da4a5935b8fb641a0000663cb4e922b2a04cbf12b856127b7bd"
+        },
+        "routeRail": {
+          "characters": 3227,
+          "sha256": "079731dc76946c99fe7adf1af04aad1b9993d4180d634e852f487afaa0a0b943"
+        },
+        "boonReadoutView": {
+          "characters": 532,
+          "sha256": "68b24d05061dae745caa022d43e255696068b7442e02dd55369ff9052ebb00a4"
+        },
+        "equipmentRail": {
+          "characters": 4250,
+          "sha256": "42bed3ab51d7ff96c2cf351ed708024c4aad68722eaf2543c50a9b50e5972276"
+        },
+        "footer": {
+          "characters": 3063,
+          "sha256": "9017319c617e2983e472751b2f54ca9eeafa1767ae53215afa11b607484dcd7e"
+        }
+      },
+      "benefitModelSha256": "4e72dceb487d88e8bc11d947563d5d4437da65c0f6bd9b7babc5116b7d84e00b",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    },
+    {
+      "name": "same object/remove effect",
+      "phase": "combat",
+      "view": "game",
+      "validSave": true,
+      "stateSha256": "02dde21404ac1c912c2e36d75e6350edc54234ae772702e40c23a4cab8c64a2e",
+      "outputs": {
+        "gameView": {
+          "characters": 21267,
+          "sha256": "840e6c30c0a9725f81448002850a63d6c0fea1481baaa09fbfb60854a0e53575"
+        },
+        "center": {
+          "characters": 9694,
+          "sha256": "108c7250fa0d54eae2ec4ce9116d02b84deb33b67ad545c1d0c90e0308584145"
+        },
+        "routeRail": {
+          "characters": 2695,
+          "sha256": "1956a62d111f93bbbf57aeabf958b370c5bb92de041052506a4cbbf07db1c227"
+        },
+        "boonReadoutView": {
+          "characters": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "equipmentRail": {
+          "characters": 4207,
+          "sha256": "134a5febb762d0133bcaf4676422340b2b6ee95c73dff04f33ad3a85775edd7f"
+        },
+        "footer": {
+          "characters": 3045,
+          "sha256": "6b95f4977f0c4f2994ec072d3393e4484fe21da504f1b971f4d96dfbc0e07405"
+        }
+      },
+      "benefitModelSha256": "aa2e609997af18b201c615df69e1aea1765c7c646bf0184bd454d7696fe7a70d",
+      "exactlyEqual": true,
+      "stateUiAndRngUnchanged": true
+    }
+  ],
+  "crossCall": [],
+  "timing": {
+    "status": "NOT_RUN",
+    "samplesPerVariantPerCell": 24,
+    "warmupTriplesPerCell": 6,
+    "method": "All six baseline/preReuse/current permutations repeated four times per cell after one full warmup cycle. The two exact seed27017 combat fixtures match the earlier zero-benefit32-item and10000-item late-equip cells. Time only complete gameView HTML generation. Setup, state/RNG checks, full output equality and hashes are outside intervals. Parent coordinates no competing agent browser or heavy Node jobs; other shared-host load remains uncontrolled. No DOM/layout/paint/native input/GPU measurement.",
+    "cells": []
+  },
+  "error": {
+    "name": "AssertionError",
+    "message": "Expected values to be strictly equal:\n\n3 !== 4\n",
+    "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n3 !== 4\n\n    at file:///workspace/scratch/85c02edcd5e2/work/Dice-Abyss/scripts/audit-view-reuse-round21.mjs:66:9"
+  },
+  "completedAt": "2026-10-19T12:40:15.526Z"
+}

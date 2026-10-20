@@ -1,0 +1,64 @@
+{
+  "countingPolicy": "Only final intended-version checks count as passed. Environment setup and superseded driver mistakes remain separate; no performance sample was replaced or removed.",
+  "attempts": [
+    {
+      "stage": "baseline HTTP first bind",
+      "status": "ENVIRONMENT_BLOCKED_THEN_RESOLVED",
+      "detail": "Sandbox bind initially returned EPERM. The same owned loopback server started under taskbook-authorized escalation."
+    },
+    {
+      "stage": "preferred browser extension",
+      "status": "ENVIRONMENT_BLOCKED",
+      "detail": "ERR_CONNECTION_REFUSED for executor 127.0.0.1:4276; the browser and executor did not share loopback."
+    },
+    {
+      "stage": "cloud browser",
+      "status": "ENVIRONMENT_BLOCKED",
+      "detail": "Same ERR_CONNECTION_REFUSED; no sign-in or authorization wall."
+    },
+    {
+      "stage": "Playwright built-in browser download",
+      "status": "ENVIRONMENT_SETUP_FAILED",
+      "detail": "Built-in CDN retries did not produce a valid ZIP. Official Chrome for Testing download was subsequently verified and used; binary is excluded from the game."
+    },
+    {
+      "stage": "baseline navigation first driver",
+      "status": "HARNESS_ERROR",
+      "detail": "Arbitrary scroll position did not leave the selected item action fully visible; some original UI-only rows also used an unconditional exact-state label. This report is superseded and not used for correctness counts. The final driver uses visible native controls and actual full-state assertions.",
+      "record": "attempt-baseline-navigation-v1.json"
+    },
+    {
+      "stage": "memorywell first driver",
+      "status": "HARNESS_ERROR",
+      "detail": "The whole-document selector counted the closed confirmation dialog fragment. Final assertions inspect the resolved event room and absence of an open dialog. Runtime behavior was not changed for this correction.",
+      "record": "attempt-memorywell-hidden-dialog.json"
+    },
+    {
+      "stage": "inventory narrow first driver",
+      "status": "HARNESS_ERROR",
+      "detail": "It incorrectly expected the existing small-window-note to be visible. The final driver records the 900px page width and CSS-hidden note as an existing limitation.",
+      "record": "attempt-inventory-narrow-v1.json"
+    },
+    {
+      "stage": "individual test command setup",
+      "status": "NO_TESTS_NOT_A_PASS",
+      "detail": "An unintended bounded glob matched no files, yielding zero tests. The corrected tests/*.test.mjs command executed all 360 cases.",
+      "record": "attempt-empty-test-pattern.json"
+    },
+    {
+      "stage": "final functional checks",
+      "status": "PASS_WITH_DECLARED_SCOPE",
+      "detail": "Final memorywell 335, inventory 175, core 43, prior-event 289, forge 286, talents 118, fusion 125, tooltip 109, title/context 9; lifecycle 11 cases. Narrow whole-page support remains KNOWN_LIMITATION."
+    },
+    {
+      "stage": "native latency protocol",
+      "status": "PASS",
+      "detail": "All 26 scheduled rows retained: 2 declared warmups plus 24 measured rows. No retries, outlier removal, quota override or selected-success summary."
+    },
+    {
+      "stage": "FX matrix",
+      "status": "MEASURED_WITH_LIMITATIONS",
+      "detail": "All 16 main and 14 coverage windows retained. One repeat per main cell, software rendering and substantial long stalls; no GPU/FPS speedup claim."
+    }
+  ]
+}

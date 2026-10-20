@@ -1,0 +1,67 @@
+{
+  "sequential": true,
+  "otherHeavyTasksStopped": true,
+  "runs": [
+    {
+      "label": "return-release",
+      "command": [
+        "node",
+        "scripts/qa-event-risk-performance-round20.mjs",
+        "--mode=return",
+        "--source=.",
+        "--baseline-source=/workspace/scratch/da3202002fbd/baseline/Dice-Abyss",
+        "--baseline-url=http://127.0.0.1:4200",
+        "--url=http://127.0.0.1:4201",
+        "--samples=12",
+        "--output=/workspace/scratch/da3202002fbd/analysis/browser-risk-return-release"
+      ],
+      "started": "2026-10-19T10:27:29.302992+00:00",
+      "finished": "2026-10-19T10:28:56.243626+00:00",
+      "seconds": 86.94065928459167,
+      "exitCode": 0,
+      "stdoutSha256": "b4c81ab9df95dba2a9376a13a3bf4e7e2a9b5f119353b9ee929923ac00786602",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "dialog-release",
+      "command": [
+        "node",
+        "scripts/qa-event-risk-performance-round20.mjs",
+        "--mode=dialog",
+        "--source=.",
+        "--baseline-source=/workspace/scratch/da3202002fbd/baseline/Dice-Abyss",
+        "--baseline-url=http://127.0.0.1:4200",
+        "--url=http://127.0.0.1:4201",
+        "--samples=12",
+        "--output=/workspace/scratch/da3202002fbd/analysis/browser-risk-dialog-release"
+      ],
+      "started": "2026-10-19T10:28:56.244031+00:00",
+      "finished": "2026-10-19T10:29:42.981715+00:00",
+      "seconds": 46.73770761489868,
+      "exitCode": 0,
+      "stdoutSha256": "b4c81ab9df95dba2a9376a13a3bf4e7e2a9b5f119353b9ee929923ac00786602",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "frames-and-inventory-release",
+      "command": [
+        "node",
+        "scripts/qa-performance-round12.mjs",
+        "--mode=all",
+        "--source=.",
+        "--baseline-source=/workspace/scratch/da3202002fbd/baseline/Dice-Abyss",
+        "--baseline-url=http://127.0.0.1:4200",
+        "--after-url=http://127.0.0.1:4201",
+        "--inventory-samples=12",
+        "--repeats=1",
+        "--output=/workspace/scratch/da3202002fbd/analysis/browser-performance-release"
+      ],
+      "started": "2026-10-19T10:29:42.982242+00:00",
+      "finished": "2026-10-19T10:33:20.114213+00:00",
+      "seconds": 217.13199400901794,
+      "exitCode": 0,
+      "stdoutSha256": "22eb852319c827d4769abc8cc87e8f8d8e1a783304186befefa2dcc956da55b2",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

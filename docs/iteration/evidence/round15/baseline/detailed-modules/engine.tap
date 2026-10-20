@@ -1,0 +1,76 @@
+TAP version 13
+# Subtest: every route has six linear rooms, mandatory encounters and two fixed boss milestones
+ok 1 - every route has six linear rooms, mandatory encounters and two fixed boss milestones
+  ---
+  duration_ms: 255.499827
+  type: 'test'
+  ...
+# Subtest: committed fate, rolls, unopened chests and loot survive round trips without rerolls or double grants
+ok 2 - committed fate, rolls, unopened chests and loot survive round trips without rerolls or double grants
+  ---
+  duration_ms: 10.922612
+  type: 'test'
+  ...
+# Subtest: all kills award one pending chest and dead enemies never retaliate
+ok 3 - all kills award one pending chest and dead enemies never retaliate
+  ---
+  duration_ms: 86.683523
+  type: 'test'
+  ...
+# Subtest: rarity makes a substantial same-level increase; modest enhancement never eclipses a fresh next-tier item
+ok 4 - rarity makes a substantial same-level increase; modest enhancement never eclipses a fresh next-tier item
+  ---
+  duration_ms: 0.685093
+  type: 'test'
+  ...
+# Subtest: upgrade labels compare character damage expectation including critical and follow-up passives
+ok 5 - upgrade labels compare character damage expectation including critical and follow-up passives
+  ---
+  duration_ms: 1.834321
+  type: 'test'
+  ...
+# Subtest: forge is item-bound, costs gold once and every dice outcome gives positive capped growth
+ok 6 - forge is item-bound, costs gold once and every dice outcome gives positive capped growth
+  ---
+  duration_ms: 125.944363
+  type: 'test'
+  ...
+# Subtest: fusion consumes selected materials once, raises levels and never transfers reinforcement
+ok 7 - fusion consumes selected materials once, raises levels and never transfers reinforcement
+  ---
+  duration_ms: 2.2671
+  type: 'test'
+  ...
+# Subtest: gold cannot go negative and rejected transactions do not mutate state or RNG
+ok 8 - gold cannot go negative and rejected transactions do not mutate state or RNG
+  ---
+  duration_ms: 0.837868
+  type: 'test'
+  ...
+# Subtest: death retries current enemy with long-term progress intact; armor swaps cannot heal
+ok 9 - death retries current enemy with long-term progress intact; armor swaps cannot heal
+  ---
+  duration_ms: 6.577581
+  type: 'test'
+  ...
+# Subtest: mirror recovery, corruption rejection, optimistic concurrency and quota failure are explicit
+ok 10 - mirror recovery, corruption rejection, optimistic concurrency and quota failure are explicit
+  ---
+  duration_ms: 3.897249
+  type: 'test'
+  ...
+# Subtest: 100 seeded full adventures complete ten floors with valid saves, six dice and both bosses
+ok 11 - 100 seeded full adventures complete ten floors with valid saves, six dice and both bosses
+  ---
+  duration_ms: 24383.183432
+  type: 'test'
+  ...
+1..11
+# tests 11
+# suites 0
+# pass 11
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 24898.876145

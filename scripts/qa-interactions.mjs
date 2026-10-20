@@ -181,12 +181,55 @@ function fusionFixture() {
   return { state, targets, materials };
 }
 async function selectFusion(page, fixture) {
+  const { state, targets, materials } = fixture;
   await page.locator('[data-action="fusion-slot"][data-slot="relic"]').click();
-  for (const id of fixture.targets) await page.locator(actSelector('fusion-target', id)).click();
-  for (const id of fixture.materials) await page.locator(actSelector('fusion-material', id)).click();
-  assert.equal(await page.locator('.fusion-targets [aria-pressed="true"]').count(), 3);
-  assert.equal(await page.locator('.fusion-outcomes [role="columnheader"]').count(), 7);
-  assert.equal(await page.locator('.fusion-outcomes [role="cell"]').count(), 24);
+  // The shipped workbench selects a destination slot, then an item card.
+  // fusion-target exists only inside an explicitly opened context menu.
+  for (const [index, id] of targets.entries()) {
+    await page.locator(`[data-action="fusion-pick-target"][data-index="${index}"]`).click();
+    await page.locator(actSelector('fusion-item', id)).click();
+  }
+  for (const id of materials) await page.locator(actSelector('fusion-item', id)).click();
+  const preview = E.fusionPreview(state, targets, materials, true);
+  assert(preview, 'The exact three-target fixture has a valid fusion preview');
+  assert(preview.protectedItems.some(item => item.locked), 'The fixture exercises explicit selection of locked material');
+  assert.deepEqual(await page.locator('.fusion-target-item').evaluateAll(nodes => nodes.map(node => node.dataset.fusionTooltip)), targets, 'All three targets occupy the intended slots in order');
+  for (const [className, ids] of [['is-target', targets], ['is-selected', materials]]) {
+    assert.deepEqual(await page.locator(`.fusion-card.${className}`).evaluateAll(nodes => nodes.map(node => ({ id: node.dataset.id, pressed: node.getAttribute('aria-pressed') })).sort((a, b) => a.id.localeCompare(b.id))),
+      [...ids].sort().map(id => ({ id, pressed: 'true' })), `Only the exact ${className} cards are selected`);
+  }
+  assert.equal(await page.locator('.fusion-six-outcomes').getAttribute('data-target-count'), String(targets.length));
+  const outcomes = await page.locator('.fusion-six-outcomes [data-fusion-face]').evaluateAll(nodes => nodes.map(node => ({
+    face: Number(node.dataset.fusionFace), multiplier: node.querySelector('.fusion-face-heading span')?.textContent.trim(),
+    levels: [...node.querySelectorAll('.fusion-face-level strong')].map(level => Number(level.textContent.replaceAll(',', ''))),
+    experience: node.querySelector('.fusion-face-xp')?.textContent.trim(),
+  })));
+  assert.deepEqual(outcomes, preview.outcomes.map(outcome => ({
+    face: outcome.value, multiplier: `×${outcome.boost}`, levels: outcome.upgrades.map(upgrade => upgrade.after.level),
+    experience: `+${outcome.total.toLocaleString('en-US')} XP`,
+  })), 'Every face displays the engine multiplier, total experience and all three target levels');
+  assert.equal((await page.locator('.fusion-selection-summary strong').innerText()).replace(/\s+/g, ' ').trim(), `${materials.length} 件材料 → ${targets.length} 件目标`);
+  assert.equal((await page.locator('.fusion-gold').innerText()).trim(), preview.cost.toLocaleString('en-US'));
+  assert.equal((await page.locator('.fusion-protection-warning').innerText()).trim(), `含 ${preview.protectedItems.length} 件受保护材料，需确认`);
+  note('Native slot/card selection displays exact targets, materials, six outcomes, cost and protection', { targets, materials, protected: preview.protectedItems.map(item => item.id), cost: preview.cost, outcomes });
+  await sameState(page, state, 'Fusion selection and previews preserve the complete save, mirror and RNG');
+  return preview;
+}
+async function checkFusionConfirmation(page, fixture, preview) {
+  const dialog = page.locator('dialog[open]');
+  assert.equal(await dialog.count(), 1, 'Protected materials require an open confirmation');
+  assert.equal(await dialog.locator('#dialog-title').innerText(), '确认消耗受保护材料？');
+  const rows = await dialog.locator('.salvage-list li').allTextContents();
+  assert.equal(rows.length, preview.materials.length, 'Confirmation lists every selected material');
+  for (const [index, item] of preview.materials.entries()) {
+    assert(rows[index].includes(item.name), `Confirmation includes material ${item.id} in selection order`);
+    assert.equal(rows[index].includes('已锁定'), !!item.locked, `Confirmation discloses the lock on ${item.id}`);
+  }
+  assert.equal(await dialog.locator('.salvage-list li.danger').count(), preview.protectedItems.length, 'Every protected material is marked');
+  assert.equal((await dialog.locator('.confirmation-copy > p').last().innerText()).replace(/\s+/g, ' ').trim(),
+    `花费 ${preview.cost.toLocaleString('en-US')} 金币 · 余额 ${(fixture.state.player.gold - preview.cost).toLocaleString('en-US')} 金币`);
+  assert.equal(await dialog.locator('[data-action="confirm"]').innerText(), '确认消耗并投骰');
+  await sameState(page, fixture.state, 'Opening protected fusion confirmation spends nothing and preserves the complete save');
 }
 async function storageFault(page, key) {
   await page.evaluate(key => {
@@ -213,7 +256,8 @@ async function run(name, kind, callback) {
   } catch (error) {
     activeCase.status = 'failed'; activeCase.error = error.stack || error.message;
     console.error(`FAIL ${name}: ${error.message}`);
-    for (const context of contexts) for (const page of context.pages()) if (!page.isClosed()) await shot(page, `${name}-failure`).catch(() => {});
+    const pages = [...contexts].flatMap(context => context.pages()).filter(page => !page.isClosed());
+    for (const [index, page] of pages.entries()) await shot(page, `${name}-failure${pages.length > 1 ? `-page-${index + 1}` : ''}`).catch(() => {});
   } finally {
     for (const context of contexts) await context.close();
     contexts.clear(); activeCase.finished = new Date().toISOString();
@@ -311,7 +355,9 @@ try {
     const beforeTalent = await saved(page);
     await step(page, { type: 'talent', id: 'power' });
     assert.equal((await saved(page)).player.talentPoints, beforeTalent.player.talentPoints - 1);
-    await page.locator('[data-action="talent-group"][data-id="critical"]').click();
+    // Desktop map and narrow-screen navigation intentionally expose the same
+    // action. Exercise the currently visible native control.
+    await page.locator('[data-action="talent-group"][data-id="critical"]:visible').click();
     await shot(page, 'talents');
     await page.locator('.main-nav [data-action="inventory"]').click();
     await shot(page, 'inventory');
@@ -331,14 +377,14 @@ try {
     const fixture = fusionFixture(), { state, targets, materials } = fixture;
     const { page } = await fresh('fusion-protected-three-relics', state);
     await continueGame(page); await shot(page, 'fusion-ready');
-    await selectFusion(page, fixture); await shot(page, 'fusion-three-relic-preview');
-    const preview = E.fusionPreview(state, targets, materials, true); assert(preview.protectedItems.length >= 1);
+    const preview = await selectFusion(page, fixture); await shot(page, 'fusion-three-relic-preview');
     await page.locator(actSelector('fusion-preview')).click();
-    assert.match(await page.locator('dialog[open]').innerText(), /受保护|珍贵/);
+    await checkFusionConfirmation(page, fixture, preview);
     await shot(page, 'fusion-confirm-protected');
     await closeDialog(page);
     await sameState(page, state, 'Cancel protected fusion preserves all material, target progress, gold and RNG');
     await page.locator(actSelector('fusion-preview')).click();
+    await checkFusionConfirmation(page, fixture, preview);
     const after = await step(page, { type: 'fuse', targets, materials, allowProtected: true }, { selector: 'dialog[open] [data-action="confirm"]' });
     for (const id of targets) assert.equal(after.player.items.find(item => item.id === id).enhance, state.player.items.find(item => item.id === id).enhance);
     assert(materials.every(id => !after.player.items.some(item => item.id === id)));
@@ -462,7 +508,8 @@ try {
   await run('two-tab-conflict-and-pending-cancel', 'Shared-origin isolated tabs; one explicit missed-event fault', async () => {
     const fixture = fusionFixture(), { page, context } = await fresh('fusion-sync-tab-A', fixture.state);
     const second = await addTab(context, 'fusion-sync-tab-B'); await continueGame(page); await continueGame(second);
-    await selectFusion(page, fixture); await page.locator(actSelector('fusion-preview')).click();
+    const preview = await selectFusion(page, fixture); await page.locator(actSelector('fusion-preview')).click();
+    await checkFusionConfirmation(page, fixture, preview);
     await second.locator('.main-nav [data-action="talents"]').click();
     const updated = await step(second, { type: 'talent', id: 'power' });
     await page.waitForFunction(() => !document.querySelector('dialog')?.open);

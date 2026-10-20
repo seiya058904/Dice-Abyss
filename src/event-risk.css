@@ -1,0 +1,47 @@
+/* The existing dark-metal room gains a readable decision table. No new art,
+   animation, font or persistent UI setting is needed. */
+.event-screen.event-risk-screen { overflow-y: auto; overscroll-behavior: contain; scrollbar-gutter: stable; gap: .8rem; }
+.event-screen.event-risk-screen > * { flex-shrink: 0; }
+.event-risk { width: 100%; min-width: 0; text-align: left; font-family: 'Abyss Text', sans-serif; font-size: max(13px, .86rem); line-height: 1.65; color: #e1ddd3; margin: .3rem 0 .6rem; }
+.event-risk-heading { display: flex; justify-content: space-between; align-items: baseline; gap: .5rem 1rem; flex-wrap: wrap; margin-bottom: .35rem; }
+.event-risk-heading h2 { color: #eee3c6; font-size: max(16px, 1.08rem); line-height: 1.5; font-weight: 600; }
+.event-risk-heading > span { color: #c4cbd0; font-size: inherit; }
+.event-risk-payment { color: #c1c8ce; font-size: inherit; margin-bottom: .55rem; }
+.event-risk-payment strong { color: #f0d3a0; font-variant-numeric: tabular-nums; font-weight: 600; }
+.event-risk-shortfall { display: block; color: #f1b5ad; margin-top: .2rem; }
+.event-risk table { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: inherit; }
+.event-risk th, .event-risk td { padding: .35rem .4rem; border-bottom: 1px solid #393f46; vertical-align: top; overflow-wrap: anywhere; }
+.event-risk thead th { color: #bdc7d0; font-weight: 400; padding-top: .3rem; font-size: max(12px, .8rem); }
+.event-risk tbody th { font-weight: 500; }
+.event-risk-table thead th:first-child { width: 21%; }
+.event-risk-table thead th:nth-child(2) { width: 20%; }
+.event-risk .event-risk-percent { color: #eee3c6; font-variant-numeric: tabular-nums; white-space: nowrap; font-weight: 600; }
+.event-risk td > strong { display: block; font-weight: 600; }
+.event-risk td > small { display: block; font-size: max(12px, .8rem); line-height: 1.65; color: #c4cbd0; margin-top: .1rem; }
+.event-risk .event-risk-balance { color: #d8c8a9; font-variant-numeric: tabular-nums; }
+.event-risk-refund { color: #dfc1af; }
+.event-risk-note { color: #bdc7d0; font-size: max(12px, .8rem); margin-top: .6rem; line-height: 1.8; }
+.event-risk-distribution { margin-top: .5rem; }
+.event-risk-distribution summary { cursor: pointer; color: #d5c49f; padding: .4rem 0; text-underline-offset: .22em; }
+.event-risk-distribution summary:hover { color: #f5e4bd; text-decoration: underline; }
+.event-risk-distribution summary:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.event-risk-distribution > p { margin: .25rem 0 .55rem; color: #bdc7d0; font-size: max(12px, .8rem); line-height: 1.75; }
+.event-risk-distribution table { text-align: right; font-variant-numeric: tabular-nums; }
+.event-risk-distribution th:first-child { text-align: left; }
+.event-risk-distribution th, .event-risk-distribution td { padding: .3rem .35rem; }
+.event-risk-distribution th small { display: block; font-size: max(11px, .73rem); color: #b8c0c7; line-height: 1.6; }
+.event-risk-choice { display: flex; flex-direction: column; gap: .1rem; width: 100%; text-align: left; color: #c5ced4; border-top: 1px solid #45444b; padding-top: .5rem; font-family: 'Abyss Text', sans-serif; font-size: max(12px, .8rem); line-height: 1.7; }
+.event-risk-choice b { color: #e4d2ad; font-variant-numeric: tabular-nums; font-weight: 600; }
+.event-risk-choice.is-unavailable { color: #edb8b1; }
+.game-dialog .event-risk { margin: 1rem 0; }
+.game-dialog .event-risk-heading h2 { font-size: max(16px, 1.08rem); letter-spacing: 0; }
+@media (max-width: 699px) {
+ .event-risk { font-size: max(14px, calc(14px * var(--user-scale))); }
+ .event-risk th, .event-risk td { padding-inline: .25rem; }
+ .event-risk-table thead th:first-child { width: 24%; }
+ .event-risk-table thead th:nth-child(2) { width: 23%; }
+ .event-risk td > small, .event-risk-note, .event-risk-distribution > p, .event-risk-choice { font-size: max(12px, calc(12px * var(--user-scale))); }
+ .event-risk-heading { align-items: flex-start; }
+ .event-risk-distribution table { font-size: max(12px, calc(12px * var(--user-scale))); }
+ .game-dialog .event-risk-distribution th, .game-dialog .event-risk-distribution td { padding-inline: .15rem; }
+}

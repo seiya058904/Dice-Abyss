@@ -1,0 +1,47 @@
+/* Defeat keeps the existing dark metal palette and the persistent retry key.
+   The review scrolls inside the desktop stage; narrow layouts use page flow. */
+.game-shell .death-screen.defeat-review {
+ --defeat-body:max(calc(13px * var(--user-scale)),.82rem);
+ --defeat-detail:max(calc(12px * var(--user-scale)),.76rem);
+ display:block;height:100%;min-height:0;overflow-y:auto;overscroll-behavior:contain;
+ padding:max(12px,.75rem) max(10px,.625rem) max(22px,1.375rem);text-align:left;scrollbar-gutter:stable;
+}
+.defeat-review .defeat-heading {display:flex;align-items:center;gap:max(12px,.75rem);}
+.defeat-review .defeat-heading .icon {width:max(25px,1.7rem);height:max(25px,1.7rem);color:var(--red);}
+.defeat-review .defeat-heading h1 {font-size:clamp(calc(24px * var(--user-scale)),2.2rem,calc(72px * var(--user-scale)));line-height:1.45;margin:0;letter-spacing:.025em;}
+.defeat-review .defeat-intro {font-size:max(calc(14px * var(--user-scale)),.88rem);margin:max(8px,.5rem) 0 max(18px,1.125rem);color:#c2c8ce;}
+.defeat-review .defeat-snapshot {display:flex;flex-wrap:wrap;gap:max(9px,.56rem) max(24px,1.5rem);margin:0;padding-bottom:max(16px,1rem);border-bottom:1px solid var(--line);}
+.defeat-review .defeat-snapshot > div {display:flex;align-items:baseline;gap:max(9px,.56rem);min-width:0;}
+.defeat-review .defeat-snapshot dt {font-size:var(--defeat-body);color:#b5bdc5;}
+.defeat-review .defeat-snapshot dd {margin:0;font-size:max(calc(14px * var(--user-scale)),.88rem);font-variant-numeric:tabular-nums;overflow-wrap:anywhere;}
+.defeat-review .defeat-snapshot dd span {color:#b5bdc5;}
+.defeat-review .defeat-snapshot .defeat-last-roll {flex-basis:100%;flex-wrap:wrap;gap:4px 9px;}
+.defeat-review .defeat-prepare {margin-top:max(20px,1.25rem);}
+.defeat-review h2 {font-size:max(calc(17px * var(--user-scale)),1.1rem);line-height:1.5;font-weight:600;margin:0 0 max(8px,.5rem);}
+.defeat-review .defeat-prepare > p {font-size:var(--defeat-body);line-height:1.85;color:#c2c8ce;}
+.defeat-review .defeat-prepare strong {font-weight:600;color:var(--text);font-variant-numeric:tabular-nums;}
+.defeat-review .defeat-actions {display:flex;flex-wrap:wrap;gap:max(8px,.5rem);margin:max(12px,.75rem) 0 max(10px,.625rem);}
+.defeat-review .defeat-actions button {min-height:max(44px,2.8rem);padding:max(9px,.56rem) max(13px,.82rem);font-size:var(--defeat-body);}
+.defeat-review .defeat-actions .defeat-armor {border-color:#8fa5b2;color:#d9e5ec;}
+.defeat-review .defeat-prepare .defeat-comparison-note {font-size:var(--defeat-detail);color:#b5bdc5;line-height:1.8;}
+.defeat-review .defeat-tactics {margin-top:max(18px,1.125rem);padding-top:max(17px,1.0625rem);border-top:1px solid var(--line);}
+.defeat-review .defeat-tactics p {font-size:var(--defeat-body);line-height:1.85;color:#c2c8ce;margin:max(6px,.375rem) 0;overflow-wrap:anywhere;}
+.defeat-review .defeat-tactics p b {font-weight:600;color:var(--text);margin-right:max(9px,.5625rem);}
+.defeat-review .defeat-tactics .defeat-counterplay {color:#d3c8a9;}
+.defeat-review .recovery-summary {margin:max(18px,1.125rem) 0 0;padding:max(16px,1rem) 0 0;border:0;border-top:1px solid var(--line);}
+.defeat-review .recovery-summary h2 {font-size:max(calc(15px * var(--user-scale)),1rem);}
+.defeat-review .recovery-summary p {font-size:var(--defeat-detail);line-height:1.85;color:#b5bdc5;margin:max(6px,.375rem) 0 0;}
+.defeat-review .recovery-summary .defeat-services {color:#c2c8ce;}
+@media(max-width:1099px) {
+ .game-shell .death-screen.defeat-review {height:auto;overflow:visible;overscroll-behavior:auto;padding:4px 0 12px;}
+ .defeat-review .defeat-heading h1 {font-size:calc(27px * var(--user-scale));}
+}
+@media(max-width:480px) {
+ .defeat-review .defeat-heading {gap:8px;align-items:flex-start;}
+ .defeat-review .defeat-heading .icon {margin-top:6px;width:21px;height:21px;}
+ .defeat-review .defeat-heading h1 {font-size:calc(24px * var(--user-scale));}
+ .defeat-review .defeat-snapshot {gap:8px;}
+ .defeat-review .defeat-snapshot > div {flex-basis:100%;flex-wrap:wrap;gap:4px 9px;}
+ .defeat-review .defeat-actions {gap:7px;}
+ .defeat-review .defeat-actions button {flex:1 1 108px;}
+}

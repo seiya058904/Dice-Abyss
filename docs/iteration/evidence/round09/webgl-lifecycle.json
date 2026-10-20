@@ -1,0 +1,318 @@
+{
+  "round": "09",
+  "status": "PASS",
+  "executedThisRound": true,
+  "case": "static-webgl-loss-and-restoration",
+  "scope": "One unchanged existing case executed once for each version after the performance batch. Supplementary lifecycle evidence, separate from the main 56 groups / 1848 checks.",
+  "counting": {
+    "versions": 2,
+    "runsPerVersion": 1,
+    "actualLoseRestoreCyclesPerVersion": 3,
+    "postRecoveryNativeRollsPerVersion": 1,
+    "includedInMainFunctionalTotals": false
+  },
+  "script": {
+    "path": "scripts/qa-iteration.mjs",
+    "bytes": 15495,
+    "inputAndCurrentSha256BeforeAndAfter": "e0e167c910156bccbb8cc55a253d9b0c43d7ec73c33e7bc354599aedc5510794",
+    "modified": false,
+    "labelSemantics": "Only the exact label baseline enables the old Round01 defect expectations. input-round09 and current-round09 both select the already-fixed three-cycle assertions."
+  },
+  "execution": {
+    "playwrightModule": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright",
+    "chromiumPath": "/tmp/dice-abyss-qa-browser/chrome-headless-shell-linux64/chrome-headless-shell",
+    "viewport": [
+      1920,
+      1080
+    ],
+    "deviceScaleFactor": 1,
+    "effects": "full",
+    "renderer": "ANGLE / SwiftShader software rendering",
+    "contexts": "Independent isolated browser contexts; loopback-only routes; synthetic seed1138 combat state; no user session.",
+    "runScheduling": "Two independent runs overlapped; this was functional lifecycle validation, not performance sampling."
+  },
+  "verifiedByUnchangedScript": [
+    "Each cycle invokes the actual WEBGL_lose_context extension loseContext and restoreContext methods and waits for context restoration.",
+    "During loss, GPU dice class disappears, at least six CSS fallback faces remain, the WebGL canvas is hidden, and the die-flight remains visible.",
+    "After restoration, the same single canvas is visible with ready status and GPU dice class restored.",
+    "After every completed loss/restoration cycle, the raw main-save string is byte-for-byte identical to its pre-cycle value.",
+    "After the third restoration, a native primary-action click commits one roll; the complete decoded main-save state deep-equals this version engine.transition(state,{type:roll})."
+  ],
+  "limitations": [
+    "Software WebGL extension lifecycle only; no physical GPU or actual driver reset.",
+    "Static combat scene followed by one native roll; no in-animation loss, browser suspension, operating-system sleep or device-removal test.",
+    "The original case compares the main-save raw string after restoration; it does not separately assert every localStorage key or mirror bytes.",
+    "Original report method and limitations include generic template text for other cases, such as invalid imports. Only the named WebGL case ran.",
+    "Screenshot files remain in the two original output folders. The lightweight packaged receipt preserves their filenames, sizes and hashes, without adding runtime images."
+  ],
+  "runs": [
+    {
+      "label": "input-round09",
+      "url": "http://127.0.0.1:4188",
+      "source": "/workspace/scratch/6a49cf7a9f47/baseline/Dice-Abyss",
+      "arguments": [
+        "--cases=static-webgl-loss-and-restoration",
+        "--source=/workspace/scratch/6a49cf7a9f47/baseline/Dice-Abyss",
+        "--url=http://127.0.0.1:4188",
+        "--label=input-round09",
+        "--output=/workspace/scratch/6a49cf7a9f47/review-browser/final-webgl/baseline"
+      ],
+      "processExitCode": 0,
+      "cycles": 3,
+      "postRecoveryNativeRolls": 1,
+      "rawReport": {
+        "workspaceRelativePath": "review-browser/final-webgl/baseline/input-round09-iteration.json",
+        "bytes": 3296,
+        "sha256": "b52cd5e357d06aae0e12ee1f874a6dce3ff72f8d8a4ce6db5c415bf39d1771bd"
+      },
+      "rawReportData": {
+        "label": "input-round09",
+        "sourceVersion": "5.8.0",
+        "sourceFiles": {
+          "src/app.js": "07fda8722d861f093b87e8db05cce901bc55295e6f889f0a28848de8b29a999d",
+          "src/views.js": "c80d9a3f16256435e613e18e850f8739c95a54123a1c56b246cd14af41ddc9da",
+          "src/dice-renderer.js": "a317cbe20fb1a0518a69eff10e3aa9b7dce5180a2b90543439fb830c86d66770",
+          "src/storage.js": "b8676eaee04c14de66c8bc1d8555b6927d41bf14a3dfc0598e8fbb37c1962c34",
+          "src/quality.css": "3785daf1b16c66942383c8285376a66fee42c2a21c0b1450c251870333919bb8",
+          "src/refinement.css": "79a8599ca5415c933de1161575edb25601f4efdbf57be4c45dc82033abb1fffd"
+        },
+        "started": "2026-10-18T08:42:16.972Z",
+        "method": "Native clicks and file-input imports in fresh Chromium contexts. Generated fixtures and deliberate faults are not personal saves or natural deep-floor play.",
+        "cases": [
+          {
+            "name": "static-webgl-loss-and-restoration",
+            "status": "passed",
+            "checks": [
+              {
+                "cycle": 1,
+                "lost": {
+                  "gpu": false,
+                  "fallbackFaces": 6,
+                  "canvasVisibility": "hidden",
+                  "flightVisibility": "visible",
+                  "phase": "combat"
+                },
+                "restored": {
+                  "gpu": true,
+                  "sameCanvas": true,
+                  "canvases": 1,
+                  "canvasVisibility": "visible",
+                  "status": "ready"
+                },
+                "saveUnchanged": true
+              },
+              {
+                "cycle": 2,
+                "lost": {
+                  "gpu": false,
+                  "fallbackFaces": 6,
+                  "canvasVisibility": "hidden",
+                  "flightVisibility": "visible",
+                  "phase": "combat"
+                },
+                "restored": {
+                  "gpu": true,
+                  "sameCanvas": true,
+                  "canvases": 1,
+                  "canvasVisibility": "visible",
+                  "status": "ready"
+                },
+                "saveUnchanged": true
+              },
+              {
+                "cycle": 3,
+                "lost": {
+                  "gpu": false,
+                  "fallbackFaces": 6,
+                  "canvasVisibility": "hidden",
+                  "flightVisibility": "visible",
+                  "phase": "combat"
+                },
+                "restored": {
+                  "gpu": true,
+                  "sameCanvas": true,
+                  "canvases": 1,
+                  "canvasVisibility": "visible",
+                  "status": "ready"
+                },
+                "saveUnchanged": true
+              },
+              {
+                "postRecoveryRoll": "one exact committed transition"
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "expectedErrors": [],
+        "screenshots": [
+          "input-round09-context-lost-fallback.png",
+          "input-round09-context-restored.png"
+        ],
+        "limitations": [
+          "Cloud software rendering, not hardware GPU or physical 4K validation.",
+          "WebGL loss uses WEBGL_lose_context, not an actual GPU driver reset.",
+          "Invalid imports are constructed faults with correct envelopes."
+        ],
+        "browser": "155.0.8059.84",
+        "environment": {
+          "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.8059.84 Safari/537.36",
+          "dpr": 1,
+          "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+          "webLocks": true
+        },
+        "finished": "2026-10-18T08:42:21.537Z",
+        "passed": 1,
+        "reproduced": 0,
+        "failed": 0
+      },
+      "sixReportedSourceFilesMatchAfterRun": true,
+      "screenshotFilesPreservedOutsideProject": [
+        {
+          "file": "input-round09-context-lost-fallback.png",
+          "bytes": 619021,
+          "sha256": "bcdc9da8eed243139d7729d2c12ac46dfc95e0ef0c6a7f43b7f34d617dc67c82"
+        },
+        {
+          "file": "input-round09-context-restored.png",
+          "bytes": 616736,
+          "sha256": "8e9d7b9d47cbe26306bc66591da6e47fbdee1b41f4078a96986e9a5ca1bc485d"
+        }
+      ]
+    },
+    {
+      "label": "current-round09",
+      "url": "http://127.0.0.1:4189",
+      "source": "/workspace/scratch/6a49cf7a9f47/work/Dice-Abyss",
+      "arguments": [
+        "--cases=static-webgl-loss-and-restoration",
+        "--source=/workspace/scratch/6a49cf7a9f47/work/Dice-Abyss",
+        "--url=http://127.0.0.1:4189",
+        "--label=current-round09",
+        "--output=/workspace/scratch/6a49cf7a9f47/review-browser/final-webgl/current"
+      ],
+      "processExitCode": 0,
+      "cycles": 3,
+      "postRecoveryNativeRolls": 1,
+      "rawReport": {
+        "workspaceRelativePath": "review-browser/final-webgl/current/current-round09-iteration.json",
+        "bytes": 3302,
+        "sha256": "2e6d8d0a295a3f1b8ee043f3891f7051689c3472334b9533e0dd924ec74f3d90"
+      },
+      "rawReportData": {
+        "label": "current-round09",
+        "sourceVersion": "5.9.0",
+        "sourceFiles": {
+          "src/app.js": "43d5e1cf594a30e302ff38f8444354f6c5848d98e03f46e422c436ee935e003f",
+          "src/views.js": "63b0c861517a66721a8a1daa8ff0dfd0089b5e0a124e2398a54e6b64a4e3e3bc",
+          "src/dice-renderer.js": "a317cbe20fb1a0518a69eff10e3aa9b7dce5180a2b90543439fb830c86d66770",
+          "src/storage.js": "2c5f648efe7df6a1c14710ea90fe2de83323141d5f5e285eec7fac8aa687a500",
+          "src/quality.css": "3785daf1b16c66942383c8285376a66fee42c2a21c0b1450c251870333919bb8",
+          "src/refinement.css": "79a8599ca5415c933de1161575edb25601f4efdbf57be4c45dc82033abb1fffd"
+        },
+        "started": "2026-10-18T08:42:18.706Z",
+        "method": "Native clicks and file-input imports in fresh Chromium contexts. Generated fixtures and deliberate faults are not personal saves or natural deep-floor play.",
+        "cases": [
+          {
+            "name": "static-webgl-loss-and-restoration",
+            "status": "passed",
+            "checks": [
+              {
+                "cycle": 1,
+                "lost": {
+                  "gpu": false,
+                  "fallbackFaces": 6,
+                  "canvasVisibility": "hidden",
+                  "flightVisibility": "visible",
+                  "phase": "combat"
+                },
+                "restored": {
+                  "gpu": true,
+                  "sameCanvas": true,
+                  "canvases": 1,
+                  "canvasVisibility": "visible",
+                  "status": "ready"
+                },
+                "saveUnchanged": true
+              },
+              {
+                "cycle": 2,
+                "lost": {
+                  "gpu": false,
+                  "fallbackFaces": 6,
+                  "canvasVisibility": "hidden",
+                  "flightVisibility": "visible",
+                  "phase": "combat"
+                },
+                "restored": {
+                  "gpu": true,
+                  "sameCanvas": true,
+                  "canvases": 1,
+                  "canvasVisibility": "visible",
+                  "status": "ready"
+                },
+                "saveUnchanged": true
+              },
+              {
+                "cycle": 3,
+                "lost": {
+                  "gpu": false,
+                  "fallbackFaces": 6,
+                  "canvasVisibility": "hidden",
+                  "flightVisibility": "visible",
+                  "phase": "combat"
+                },
+                "restored": {
+                  "gpu": true,
+                  "sameCanvas": true,
+                  "canvases": 1,
+                  "canvasVisibility": "visible",
+                  "status": "ready"
+                },
+                "saveUnchanged": true
+              },
+              {
+                "postRecoveryRoll": "one exact committed transition"
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "expectedErrors": [],
+        "screenshots": [
+          "current-round09-context-lost-fallback.png",
+          "current-round09-context-restored.png"
+        ],
+        "limitations": [
+          "Cloud software rendering, not hardware GPU or physical 4K validation.",
+          "WebGL loss uses WEBGL_lose_context, not an actual GPU driver reset.",
+          "Invalid imports are constructed faults with correct envelopes."
+        ],
+        "browser": "155.0.8059.84",
+        "environment": {
+          "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.8059.84 Safari/537.36",
+          "dpr": 1,
+          "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+          "webLocks": true
+        },
+        "finished": "2026-10-18T08:42:23.169Z",
+        "passed": 1,
+        "reproduced": 0,
+        "failed": 0
+      },
+      "sixReportedSourceFilesMatchAfterRun": true,
+      "screenshotFilesPreservedOutsideProject": [
+        {
+          "file": "current-round09-context-lost-fallback.png",
+          "bytes": 619018,
+          "sha256": "78ee37847c86640e750223cc8da5ede3bf1fa19abee0c7aa2b8ba0e67f67e057"
+        },
+        {
+          "file": "current-round09-context-restored.png",
+          "bytes": 616733,
+          "sha256": "ad2c4b2f52c25aad947ca57cd70b399ced624e442b343f122d7e461907141463"
+        }
+      ]
+    }
+  ]
+}

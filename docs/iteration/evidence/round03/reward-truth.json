@@ -1,0 +1,67 @@
+{
+  "method": "Synthetic independent event/room/kill fixtures from the same original state. Full resulting states match after removing only log text, event outcome wording and enemy label/warning/counterplay strings. All player data, purchases, chest contents, RNG, ID allocation, revision, combat and saved transaction fields compare exactly. No live save or natural progression claim.",
+  "baselineVersion": "5.3.0",
+  "sourceVersion": "5.3.0",
+  "cases": 6160,
+  "changedCopy": 536,
+  "highTierWitnesses": 503,
+  "gameplayFieldsIdentical": true,
+  "examples": [
+    {
+      "label": "30/3/gambit/roll",
+      "rngBefore": 4076504294,
+      "rarity": 3,
+      "before": "命运 6 点 · 史诗宝箱等待开启。",
+      "after": "命运 6 点 · 传说宝箱等待开启。"
+    },
+    {
+      "label": "30/4/gambit/safe",
+      "rngBefore": 316790697,
+      "rarity": 2,
+      "before": "保底交易完成 · 稀有宝箱等待开启。",
+      "after": "保底交易完成 · 史诗宝箱等待开启。"
+    },
+    {
+      "label": "30/4/exchange/relic",
+      "rngBefore": 913151131,
+      "rarity": 3,
+      "before": "旧遗物已置换，史诗遗物箱等待开启。",
+      "after": "旧遗物已置换，传说遗物箱等待开启。"
+    },
+    {
+      "label": "30/4/relic_exchange/accept",
+      "rngBefore": 913151131,
+      "rarity": 3,
+      "before": "旧遗物已消耗，史诗遗物箱等待开启。",
+      "after": "旧遗物已消耗，传说遗物箱等待开启。"
+    },
+    {
+      "label": "30/5/gambit/roll",
+      "rngBefore": 1474275873,
+      "rarity": 4,
+      "before": "命运 6 点 · 史诗宝箱等待开启。",
+      "after": "命运 6 点 · 神话宝箱等待开启。"
+    },
+    {
+      "label": "30/5/exchange/relic",
+      "rngBefore": 9825074,
+      "rarity": 4,
+      "before": "旧遗物已置换，史诗遗物箱等待开启。",
+      "after": "旧遗物已置换，神话遗物箱等待开启。"
+    },
+    {
+      "label": "30/5/relic_exchange/accept",
+      "rngBefore": 9825074,
+      "rarity": 4,
+      "before": "旧遗物已消耗，史诗遗物箱等待开启。",
+      "after": "旧遗物已消耗，神话遗物箱等待开启。"
+    },
+    {
+      "label": "30/14/exchange/relic",
+      "rngBefore": 46655275,
+      "rarity": 3,
+      "before": "旧遗物已置换，史诗遗物箱等待开启。",
+      "after": "旧遗物已置换，传说遗物箱等待开启。"
+    }
+  ]
+}

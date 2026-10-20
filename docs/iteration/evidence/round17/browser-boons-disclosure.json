@@ -1,0 +1,143 @@
+{
+  "started": "2026-10-19T04:58:39.041Z",
+  "sourceBefore": {
+    "index.html": "eabefea931b66d9a55918feed7d4019624983e411d10e0acf3b31690972aa21f",
+    "src/app.js": "c9439b8719640c9ae5ebe7c9d939901fdc4a3c3bfaea0ef24c28492ff91951b1",
+    "src/views.js": "2b8edcbe13fb3d8fb9a69eb51a1b2bc98e3819633d18f7d60675a73ebdf1b2e6",
+    "src/boons.css": "b80134e83dc796878c357ff80d36366d46d8a1545397aa1e066fd50a36042e60",
+    "src/boon-readout.js": "a791db47ce4c910c67cfe9ece95ea54520e79f39a126a2c82a46d9ba2c4bc38a",
+    "src/event-preview.js": "f18c9cac161638a146c13f0a292e4b2e11c98d9f9946fb9cb790bdd5d5a97f96",
+    "src/encounter-tactics.js": "bf988d9f44915df1869cd53dee7c1b720e569b652d8ca45bf88209e9170ed8f1",
+    "src/engine.js": "75c6d9fcc48c0cf49ee02e53ffb7b143a09a2c79738d3bb2eb5d0ae80b30872b",
+    "src/storage.js": "6bfcc60036c9f729c21b948ca98c7ac715e14049856fb9dded0baa2aeef2c561"
+  },
+  "url": "http://127.0.0.1:4189",
+  "cases": [
+    {
+      "name": "disclosure-keyboard-scroll-and-new-run",
+      "status": "PASS",
+      "checks": 11,
+      "trace": [
+        {
+          "label": "Space opens the native lifetime disclosure",
+          "passed": true
+        },
+        {
+          "label": "Space on summary never advances the game",
+          "actual": {
+            "phase": "event",
+            "floor": 140,
+            "revision": 1,
+            "rng": 2290656797,
+            "stateSha256": "96bf9ce8ec421aa44c1b45e0bf29a80632c38dee4a732fd608d0522aecca050c"
+          },
+          "expected": {
+            "phase": "event",
+            "floor": 140,
+            "revision": 1,
+            "rng": 2290656797,
+            "stateSha256": "96bf9ce8ec421aa44c1b45e0bf29a80632c38dee4a732fd608d0522aecca050c"
+          },
+          "passed": true
+        },
+        {
+          "label": "dense sidebar has reachable scrollable rules",
+          "passed": true
+        },
+        {
+          "label": "disclosure remains open after same-run renders",
+          "passed": true
+        },
+        {
+          "label": "same-run rerender retains sidebar scroll",
+          "actual": 953,
+          "expected": 953,
+          "passed": true
+        },
+        {
+          "label": "display settings and disclosure do not write game state",
+          "actual": {
+            "phase": "event",
+            "floor": 140,
+            "revision": 1,
+            "rng": 2290656797,
+            "stateSha256": "96bf9ce8ec421aa44c1b45e0bf29a80632c38dee4a732fd608d0522aecca050c"
+          },
+          "expected": {
+            "phase": "event",
+            "floor": 140,
+            "revision": 1,
+            "rng": 2290656797,
+            "stateSha256": "96bf9ce8ec421aa44c1b45e0bf29a80632c38dee4a732fd608d0522aecca050c"
+          },
+          "passed": true
+        },
+        {
+          "label": "returning from talents retains the same-run disclosure",
+          "passed": true
+        },
+        {
+          "label": "returning from talents retains sidebar scroll",
+          "actual": 953,
+          "expected": 953,
+          "passed": true
+        },
+        {
+          "label": "navigation preserves the full game state",
+          "actual": {
+            "phase": "event",
+            "floor": 140,
+            "revision": 1,
+            "rng": 2290656797,
+            "stateSha256": "96bf9ce8ec421aa44c1b45e0bf29a80632c38dee4a732fd608d0522aecca050c"
+          },
+          "expected": {
+            "phase": "event",
+            "floor": 140,
+            "revision": 1,
+            "rng": 2290656797,
+            "stateSha256": "96bf9ce8ec421aa44c1b45e0bf29a80632c38dee4a732fd608d0522aecca050c"
+          },
+          "passed": true
+        },
+        {
+          "label": "new-game confirmation starts a distinct run",
+          "passed": true
+        },
+        {
+          "label": "previous run benefits do not leak into a fresh run",
+          "actual": 0,
+          "expected": 0,
+          "passed": true
+        }
+      ],
+      "ms": 3143.468792
+    }
+  ],
+  "errors": [],
+  "screenshots": [],
+  "notes": [
+    "Natural fixture saves are unmodified recorded states from seed 7919, adventurous/luck; resuming them in a browser is a replay, not a new manual 200-floor playthrough.",
+    "Other fixtures use the existing eventFixture helper and validator. Boss variants change the mechanic in a copied natural combat save and are labelled synthetic.",
+    "Reduced motion and low effects keep functional assertions separate from the full/low performance audit. No hardware GPU or physical 4K claim.",
+    "Every committed action is compared with the full authoritative engine state, including RNG, revision, inventory and unknown fields.",
+    "A failed case is retained. --case permits a separate targeted rerun; reports are never silently merged or slow samples dropped."
+  ],
+  "browser": "155.0.8059.84",
+  "sourceAfter": {
+    "index.html": "eabefea931b66d9a55918feed7d4019624983e411d10e0acf3b31690972aa21f",
+    "src/app.js": "c9439b8719640c9ae5ebe7c9d939901fdc4a3c3bfaea0ef24c28492ff91951b1",
+    "src/views.js": "2b8edcbe13fb3d8fb9a69eb51a1b2bc98e3819633d18f7d60675a73ebdf1b2e6",
+    "src/boons.css": "b80134e83dc796878c357ff80d36366d46d8a1545397aa1e066fd50a36042e60",
+    "src/boon-readout.js": "a791db47ce4c910c67cfe9ece95ea54520e79f39a126a2c82a46d9ba2c4bc38a",
+    "src/event-preview.js": "f18c9cac161638a146c13f0a292e4b2e11c98d9f9946fb9cb790bdd5d5a97f96",
+    "src/encounter-tactics.js": "bf988d9f44915df1869cd53dee7c1b720e569b652d8ca45bf88209e9170ed8f1",
+    "src/engine.js": "75c6d9fcc48c0cf49ee02e53ffb7b143a09a2c79738d3bb2eb5d0ae80b30872b",
+    "src/storage.js": "6bfcc60036c9f729c21b948ca98c7ac715e14049856fb9dded0baa2aeef2c561"
+  },
+  "sourceUnchanged": true,
+  "checks": 11,
+  "finished": "2026-10-19T04:58:42.245Z",
+  "passed": 1,
+  "failed": 0
+}

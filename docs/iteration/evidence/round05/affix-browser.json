@@ -1,0 +1,161 @@
+{
+  "browser": "155.0.8059.84",
+  "synthetic": true,
+  "fixture": "Existing real catalog effects at legal assigned levels in an injected forge save; not a naturally played journey.",
+  "fixtureSha256": "b79afeead86ffa54d76064f21d1f334bcc19cbda154a46f426fed2a09ef4993c",
+  "selected": {
+    "criticalFollow": "i4",
+    "pierce": "i5",
+    "regen": "i6",
+    "barrier": "i7",
+    "pairWard": "i8",
+    "healBonus": "i9",
+    "goldBonus": "i10",
+    "followDamage": "i11"
+  },
+  "viewports": [
+    [
+      1366,
+      768
+    ],
+    [
+      1920,
+      1080
+    ],
+    [
+      2560,
+      1440
+    ],
+    [
+      3840,
+      2160
+    ]
+  ],
+  "cases": [
+    {
+      "name": "current-read-affixes-without-changing-build",
+      "url": "http://127.0.0.1:4193",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "Correct game page, real content and loaded offline fonts",
+          "pass": true
+        },
+        {
+          "label": "Catalog effect is rendered: 双同及以上且暴击：追击率",
+          "pass": true
+        },
+        {
+          "label": "Catalog effect is rendered: 穿盾",
+          "pass": true
+        },
+        {
+          "label": "Catalog effect is rendered: 战斗掷骰后存活：恢复最大生命",
+          "pass": true
+        },
+        {
+          "label": "Catalog effect is rendered: 开战：获得最大生命护盾",
+          "pass": true
+        },
+        {
+          "label": "Catalog effect is rendered: 双同及以上：获得最大生命护盾",
+          "pass": true
+        },
+        {
+          "label": "Catalog effect is rendered: 击杀：额外恢复最大生命",
+          "pass": true
+        },
+        {
+          "label": "Catalog effect is rendered: 宝箱金币",
+          "pass": true
+        },
+        {
+          "label": "Catalog effect is rendered: 追击追加主击",
+          "pass": true
+        },
+        {
+          "label": "1366: affix rows fit their text columns",
+          "pass": true,
+          "data": {
+            "clipped": [],
+            "centralRows": 34,
+            "compactRailRows": 10
+          }
+        },
+        {
+          "label": "1366: no document horizontal overflow",
+          "pass": true
+        },
+        {
+          "label": "1920: affix rows fit their text columns",
+          "pass": true,
+          "data": {
+            "clipped": [],
+            "centralRows": 34,
+            "compactRailRows": 10
+          }
+        },
+        {
+          "label": "1920: no document horizontal overflow",
+          "pass": true
+        },
+        {
+          "label": "2560: affix rows fit their text columns",
+          "pass": true,
+          "data": {
+            "clipped": [],
+            "centralRows": 34,
+            "compactRailRows": 10
+          }
+        },
+        {
+          "label": "2560: no document horizontal overflow",
+          "pass": true
+        },
+        {
+          "label": "3840: affix rows fit their text columns",
+          "pass": true,
+          "data": {
+            "clipped": [],
+            "centralRows": 34,
+            "compactRailRows": 10
+          }
+        },
+        {
+          "label": "3840: no document horizontal overflow",
+          "pass": true
+        },
+        {
+          "label": "All inventory views and viewport changes preserve exact main/mirror bytes",
+          "pass": true,
+          "data": {
+            "mainAndMirrorSha256": "25c6704fa0fab875c5e943aa4eae2190a653957fb95fd837e96c4214cf4f798a"
+          }
+        },
+        {
+          "label": "Forge uses the same fixed affix conditions",
+          "pass": true
+        },
+        {
+          "label": "Opening forge rules is a read-only action",
+          "pass": true,
+          "data": {
+            "mainAndMirrorSha256": "25c6704fa0fab875c5e943aa4eae2190a653957fb95fd837e96c4214cf4f798a"
+          }
+        },
+        {
+          "label": "Refresh preserves the exact synthetic build and RNG",
+          "pass": true,
+          "data": {
+            "mainAndMirrorSha256": "25c6704fa0fab875c5e943aa4eae2190a653957fb95fd837e96c4214cf4f798a"
+          }
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "status": "PASS",
+  "finished": "2026-10-17T17:03:59.243Z",
+  "checks": 21,
+  "driverSha256": "635bde37bdeee1e38bd721048e3bef43a66fac838c17ce458311ae643125ac77"
+}

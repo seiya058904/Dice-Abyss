@@ -1,11 +1,12 @@
-import {ABILITY_DEFS,DEEP_ROOMS} from './deep-content.js';
+import {ABILITY_DEFS,DEEP_ROOMS,deepVariantProfile} from './deep-content.js';
+import {LEVEL_CAP,xpPreview,xpSummary} from './experience.js';
 export function deepCombatModifiers(e,values,best,st,result){
- const sum=values.reduce((a,b)=>a+b,0),distinct=new Set(values).size,six=values.includes(6),high=values.filter(v=>v>=5).length,odd=values.filter(v=>v%2).length,turn=e.turns+1;
+ const sum=values.reduce((a,b)=>a+b,0),distinct=new Set(values).size,six=values.includes(6),high=values.filter(v=>v>=5).length,odd=values.filter(v=>v%2).length,turn=e.turns+1,variant=deepVariantProfile(e);
  const damage=(n,text)=>{result.damageMultiplier*=n;result.notes.push(text);};
  const counter=(n,text)=>{result.attackMultiplier*=n;result.notes.push(text);};
  switch(e.mechanic){
-  case 'parity':if((turn%2?odd:values.length-odd)>values.length/2)damage(1.35,'奇偶刻点吻合 · 伤害 +35%');break;
-  case 'sequence':if(distinct>=3)damage(1.4,'异点破阵 · 伤害 +40%');break;
+  case 'parity':if((((turn%2===1)!==!!variant)?odd:values.length-odd)>values.length/2)damage(1.35,'奇偶刻点吻合 · 伤害 +35%');break;
+  case 'sequence':if(variant?best>=2:distinct>=3)damage(1.4,variant?'合鸣破阵 · 伤害 +40%':'异点破阵 · 伤害 +40%');break;
   case 'undertow':if(sum>=24)damage(1.25,'总点24 · 截断深潮，伤害 +25%');break;
   case 'hush':if(best>=2)counter(.8,'合鸣寂声 · 反击 -20%');else{result.shieldPierce+=.5;result.notes.push('独声切面 · 穿盾 50%');}break;
   case 'hourward':if(turn%2)counter(.8,'逆时护幕 · 反击 -20%');else damage(1.35,'逆时破绽 · 伤害 +35%');break;
@@ -29,7 +30,10 @@ export function deepEnemyAttack(e,attack){
 }
 export function deepPostRetaliation(e,roll,result){
  if(e.hp<=0)return result;
- if(e.mechanic==='sequence'&&new Set(roll.values).size<3){result.enemyWard+=Math.ceil(e.maxHp*.03);result.notes.push('刻点不足 · 重筑 3% 护盾');}
+ if(e.mechanic==='sequence'){
+  const distinct=new Set(roll.values).size,variant=deepVariantProfile(e);
+  if(variant?distinct===roll.values.length:distinct<3){result.enemyWard+=Math.ceil(e.maxHp*.03);result.notes.push(variant?'独声未破阵 · 重筑 3% 护盾':'刻点不足 · 重筑 3% 护盾');}
+ }
  if(e.mechanic==='undertow'&&roll.values.reduce((a,b)=>a+b,0)<24){result.enemyHeal+=Math.ceil(e.maxHp*.02);result.notes.push('深潮回流 · 恢复 2% 敌方生命');}
  if(e.mechanic==='boss_thread'&&roll.best<2){result.enemyWard+=Math.ceil(e.maxHp*.02);result.notes.push('命线重织 · 重筑 2% 护盾');}
  return result;
@@ -43,7 +47,7 @@ export function abilityDefense(s,st,values,critical){
 }
 // Triggered equipment is resolved once per manual roll. Echo cannot crit, follow or echo again.
 export function abilityRoll(s,st,values,best,critical){
- const e=s.enemy,notes=[],six=values.includes(6),distinct=new Set(values).size,defense=abilityDefense(s,st,values,critical);
+ const e=s.enemy,notes=[],recoveryKeys=[],six=values.includes(6),distinct=new Set(values).size,defense=abilityDefense(s,st,values,critical);
  let damage=1,echo=0,pierce=0,heal=0;
  const trigger=(key,active,apply)=>{if(active&&st[key]>0){apply(st[key]);notes.push(ABILITY_DEFS[key].name+' · 已触发');}};
  trigger('sixShatter',six,n=>pierce+=n);
@@ -53,11 +57,17 @@ export function abilityRoll(s,st,values,best,critical){
  trigger('openingStrike',e.turns===0,n=>damage+=n);
  trigger('distinctStrike',distinct>=4,n=>damage+=n);
  for(const key of ['criticalWard','lowWard'])if(defense[key])notes.push(ABILITY_DEFS[key].name+' · 已触发');
- trigger('sixthMend',six,n=>heal+=st.maxHp*n);
- trigger('resonanceMend',best>=4,n=>heal+=st.maxHp*n);
+ // Faces can qualify before retaliation, but recovery requires surviving its
+ // complete settlement, including any later life drain. Keep typed recovery
+ // keys and their original note position until that outcome is known.
+ const recoveryIndex=notes.length;
+ for(const [key,active]of [['sixthMend',six],['resonanceMend',best>=4]])if(active&&st[key]>0){heal+=st.maxHp*st[key];recoveryKeys.push(key);}
  if(defense.resolveGuard)notes.push(ABILITY_DEFS.resolveGuard.name+' · 已触发');
  if(e.turns===0&&e.openingEcho){echo+=e.openingEcho;notes.push('蓄室回响 · 首掷追加主击 25%');}
- return {damage,echo:Math.min(1.4,echo),pierce,ward:defense.ward,heal:Math.floor(heal),counter:defense.counter,notes};
+ return {damage,echo:Math.min(1.4,echo),pierce,ward:defense.ward,heal:Math.floor(heal),counter:defense.counter,notes,recoveryKeys,recoveryIndex};
+}
+export function abilityRecoveryNotes(abilities,survived){
+ return abilities.recoveryKeys.map(key=>ABILITY_DEFS[key].name+(survived?' · 已触发':' · 未生效（本掷未存活）'));
 }
 const safeSpare=s=>s.player.items.filter(i=>!i.locked&&i.rarity<3&&!Object.values(s.player.equipped).includes(i.id)&&i.id!==s.loot?.item?.id);
 const option=(id,label,detail,cost,reward,disabled=false,reason='',confirm=null)=>({id,label,detail,cost,reward,disabled,reason,confirm,destructive:!!confirm});
@@ -81,7 +91,12 @@ export function deepEventChoices(s){
   case 'offering':choices=[option('accept','奉献旧物','永久获得一个可分配天赋点；与书库共用20次上限。',offered?.name||'无安全旧装备',`天赋点 +1（已得 ${s.player.deepOfferings||0}/20）`,!offered||!earnPoint,'无安全旧物或已达永久馈赠上限','永久消耗所列装备。')];break;
   case 'echochamber':choices=[option('accept','封存回声','下一场首掷追加 25% 主击伤害，仅一次；可跨楼层保留。',pay,'储备一次回声',!enough||!!s.v5Boons?.echo,'金币不足或已经储备',confirm)];break;
   case 'wardbank':choices=[option('accept','储备护幕','下一场开战增加最大生命50%的护盾，可跨楼层保留。',pay,'储备一次开场护盾',!enough||!!s.v5Boons?.ward,'金币不足或已经储备',confirm)];break;
-  case 'starlibrary':choices=[option('study','研读星卷','经验立即结算，升级可获得天赋点。',pay,`${Math.min(1e6,100+s.player.level*10)} 经验`,!enough,'金币不足',confirm),option('insight','永久领悟','与守望奉献共用20次上限；不是临时增益。',`${Math.min(1e8,e.costGold*3)} 金币`,'天赋点 +1',s.player.gold<Math.min(1e8,e.costGold*3)||!earnPoint,'金币不足或已达馈赠上限','支付三倍金币购买一个天赋点。')];break;
+  case 'starlibrary':{
+   const quote=xpPreview(s.player.xp,Math.min(1e6,100+s.player.level*10)),quoted=xpSummary(quote,String,'经验可计入');
+   const studyDetail=s.player.level===LEVEL_CAP?'已达角色等级上限；计入的经验会保留，不再升级。':s.player.talentPoints===2e6?'经验立即结算，可能升级；未分配天赋点已满，升级新增点数无法计入。':'经验立即结算，升级可获得天赋点。';
+   choices=[option('study','研读星卷',studyDetail,pay,quote.limited?quoted:`${quote.rawXp} 经验`,!enough,'金币不足',quote.limited?`支付 ${pay}；${quoted}${quote.creditedXp===0?'；经验计入为 0，金币仍会支付':''}；提交后不可撤销。`:confirm),option('insight','永久领悟','与守望奉献共用20次上限；不是临时增益。',`${Math.min(1e8,e.costGold*3)} 金币`,'天赋点 +1',s.player.gold<Math.min(1e8,e.costGold*3)||!earnPoint,'金币不足或已达馈赠上限','支付三倍金币购买一个天赋点。')];
+   choices[0].experience=quote;break;
+  }
   case 'abyssauction':choices=[option('accept','按原价成交','眼前就是已生成的奖品；购买后仍亲自开箱。',pay,`${apiRarityName(e.reward.item.rarity)} ${e.reward.item.name} · Lv.${e.reward.item.level} · +${e.reward.item.enhance}`,!enough,'金币不足',confirm)];break;
   case 'oathgate':choices=[option('accept','应下双星誓','连续两名逐星悬令精英，各自留下至少史诗的装备宝箱。','两场精英战斗','两只真实宝箱，三掷内击杀各有金币加成',false,'','立即进入两波精英战斗。')];break;
   case 'wishingvault':choices=[option('roll','投下两颗愿骰','总点≤5返半价；6–9至少史诗；10–12至少传说。幸运影响点数。',pay,'高阶从本层已解锁奖池中抽取；不保证永恒',!enough,'金币不足',confirm)];break;
@@ -106,7 +121,10 @@ export function applyDeepEvent(s,choice,api){
   case 'offering':remove();point();e.outcome='奉献完成，永久获得 1 天赋点。';break;
   case 'echochamber':pay();s.v5Boons={...s.v5Boons,echo:1};e.outcome='一声回响已储备，将在下一场首次掷骰触发。';break;
   case 'wardbank':pay();s.v5Boons={...s.v5Boons,ward:1};e.outcome='护幕已储备，将在下一场开战自动展开。';break;
-  case 'starlibrary':if(choice.id==='insight'){pay(Math.min(1e8,e.costGold*3));point();e.outcome='永久获得 1 天赋点。';}else{pay();api.gainXp(s,Math.min(1e6,100+s.player.level*10));e.outcome='星卷已研读，经验立即计入。';}break;
+  case 'starlibrary':if(choice.id==='insight'){pay(Math.min(1e8,e.costGold*3));point();e.outcome='永久获得 1 天赋点。';}else{
+   const quote=xpPreview(s.player.xp,Math.min(1e6,100+s.player.level*10));pay();api.gainXp(s,quote.rawXp);
+   e.outcome=quote.limited?`星卷已研读 · ${xpSummary(quote)}。${quote.creditedXp===0?`已支付 ${e.costGold} 金币，本次没有新增经验。`:''}`:'星卷已研读，经验立即计入。';
+  }break;
   case 'abyssauction':pay();s.chest=structuredClone(e.reward);s.loot=null;s.enemy=null;s.phase='chest';e.outcome='已成交；奖品没有重新抽取，宝箱等待开启。';break;
   case 'oathgate':{const room=s.route[s.roomIndex];room.wave=1;room.waves=2;room.waveType='bounty';s.enemy=api.createEnemy(s,'bounty');s.enemy.encounterKey='bounty';s.enemy.wave=1;s.phase='combat';e.outcome='双星誓成立，第一名精英现身。';break;}
   case 'wishingvault':{pay();e.rolls=[api.die(s),api.die(s)];const sum=e.rolls[0]+e.rolls[1];if(sum<=5){api.gainGold(s,Math.floor(e.costGold/2));e.outcome=`愿骰 ${e.rolls.join(' + ')} = ${sum}，已返还一半金币。`;}else{chest(sum>=10?3:2);e.outcome=`愿骰 ${e.rolls.join(' + ')} = ${sum}，宝箱已生成。`;}break;}

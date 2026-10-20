@@ -1,0 +1,97 @@
+{
+  "scope": "Read-only source and retained-artifact assessment of the two declared changes after the formal performance candidate. This is not a repeated performance run.",
+  "report": {
+    "path": "/workspace/scratch/5a5998079a95/audit/current/performance-main/performance-round.json",
+    "sha256": "42fe5793ed4ee0baa07a5068512db7193ed34c4fb3597c4689bef13a927746d5",
+    "status": "MEASURED_WITH_LIMITATIONS",
+    "mainAndCoverageWindows": 46
+  },
+  "driver": {
+    "path": "/workspace/scratch/5a5998079a95/work/Dice-Abyss/scripts/qa-performance-round12.mjs",
+    "sha256": "da299afda45fab616d29194bce12e14122a5bab9867159706a3331cd8f81d81a",
+    "matchesMeasuredDriver": true,
+    "newContextCallSites": 1,
+    "newPageCallSites": 1,
+    "setup": "fresh(variant) is called once for each of the two variants; each call creates its own context and one page.",
+    "actualHttpOrigins": {
+      "5.12.0": "http://127.0.0.1:4188",
+      "5.13.0": "http://127.0.0.1:4189"
+    },
+    "syntheticStorageDispatchInDriver": false,
+    "fixtureLoadFunction": "async function load(entry,state,effects){\n const {page}=entry,raw=S.encodeSave(state);await page.bringToFront();\n const capacity=await page.evaluate(({raw,keys,effects})=>{\n  localStorage.clear();const writes={};\n  for(const [label,key]of [['main',keys.main],['mirror',keys.mirror]]){\n   try{localStorage.setItem(key,raw);writes[label]={ok:localStorage.getItem(key)===raw};}\n   catch(error){writes[label]={ok:false,error:{name:error.name,message:error.message}};}\n  }\n  try{localStorage.setItem(keys.settings,JSON.stringify({sound:false,effects,scale:1}));writes.settings={ok:true};}\n  catch(error){writes.settings={ok:false,error:{name:error.name,message:error.message}};}\n  return {writes,mainCharacters:localStorage.getItem(keys.main)?.length??null,mirrorCharacters:localStorage.getItem(keys.mirror)?.length??null,keyCount:localStorage.length};\n },{raw,keys,effects});\n if(!capacity.writes.main.ok||!capacity.writes.settings.ok)return {ok:false,...capacity};\n await page.reload();await page.evaluate(()=>document.fonts.ready);\n assert.equal(await page.locator('[data-action=\"continue\"]').count(),1,'The real app must accept the persisted synthetic save');\n await page.locator('[data-action=\"continue\"]').click();\n await page.waitForFunction(()=>!document.querySelector('#current-room')?.classList.contains('busy'));\n assert.equal(await page.getAttribute('html','data-effects'),effects);\n await page.evaluate(({raw,keys})=>{window.__qaExpectedRaw=raw;window.__qaOriginalMirror=localStorage.getItem(keys.mirror);},{raw,keys});\n await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));\n return {ok:true,...capacity};\n}"
+  },
+  "storageListener": {
+    "basis": "Inference from the fingerprinted driver, final applied patch scope and documented native storage-event routing.",
+    "actualStorageEventCounterInHistoricalReport": null,
+    "nativeRouting": "Own-document localStorage writes do not fire the storage event on that same document. Other-document delivery requires a shared storage area and same origin.",
+    "primaryDocumentation": "https://developer.mozilla.org/en-US/docs/Web/API/Window/storage_event",
+    "assessment": "The isolated one-page contexts and distinct origins provide no second document to notify the measured page; the driver does not synthesize a storage event. The known final listener branch is therefore outside the exercised timing path. This is a source/protocol inference, not a retrospectively recorded zero-event count."
+  },
+  "recoveryCss": {
+    "scope": "Exactly two added .recovery-content button.primary normal/hover background, text and border color rules.",
+    "inventoryFullGameHtml": [
+      {
+        "label": "baseline",
+        "artifact": "inventory-source-baseline-game-view.html",
+        "sha256": "74fd1510292a50bad69a0bda933c291a9edc3c71ab46c30e0e0ab42504d52034",
+        "containsRecoveryContent": false
+      },
+      {
+        "label": "after",
+        "artifact": "inventory-source-after-game-view.html",
+        "sha256": "74fd1510292a50bad69a0bda933c291a9edc3c71ab46c30e0e0ab42504d52034",
+        "containsRecoveryContent": false
+      }
+    ],
+    "assessment": "The timed fixtures load valid saves before arming measurement and exercise normal inventory, combat and loot screens. The two new recovery-only selectors do not match those recorded flows. CSS loading/parsing occurs before the click-timing windows. This does not establish byte-identical final performance."
+  },
+  "finalSourceIdentity": "DIFFERENT_DECLARED",
+  "knownDifferences": [
+    {
+      "file": "src/app.js",
+      "measured": {
+        "exists": true,
+        "bytes": 45161,
+        "sha256": "fbba7d863ec8002cdb6cbf52e49419f7070dc5dda25de7bb37f6f614e5e653b5"
+      },
+      "final": {
+        "exists": true,
+        "bytes": 45779,
+        "sha256": "6d965d35fb499b23948e9f2d4256616d05298dce7468c2bd350c4180562dad08"
+      },
+      "scope": "Only the native storage-event listener: protect surviving memory when queued deletion notices arrive after another tab has written a replacement; preserve same-state presentation.",
+      "appliedPatch": {
+        "path": "/workspace/scratch/5a5998079a95/audit/queued-save-handler-applied.patch",
+        "sha256": "762c6174393b2b1f8fecbd4ca57ba9b8170072007db54ab22941694c73b1c0d8"
+      },
+      "measuredCandidateBody": "NOT_INDEPENDENTLY_RETAINED"
+    },
+    {
+      "file": "src/save-recovery.css",
+      "measured": {
+        "exists": true,
+        "bytes": 2407,
+        "sha256": "f88a619c1883669d3ba2c49bd01b0a80f5d02c68d7da3c7f64e5bc4196ca0ba0"
+      },
+      "final": {
+        "exists": true,
+        "bytes": 2606,
+        "sha256": "7085ab430d2f1193955b84848d8f2af88faeab0d065c427ee5e7b88b5e254c2e"
+      },
+      "scope": "Only primary-button normal/hover colors below .recovery-content on the recovery screen.",
+      "appliedPatch": {
+        "path": "/workspace/scratch/5a5998079a95/audit/recovery-hover-applied.patch",
+        "sha256": "23cb3437667846fbac7b54d781f2ba16147df3eaa77df04f97fdbdabf3109430"
+      },
+      "measuredCandidateBody": "NOT_INDEPENDENTLY_RETAINED"
+    }
+  ],
+  "requiredFinalChecks": [
+    "Actual cross-tab queued deletion and replacement regression on final app source",
+    "Final runtime HTTP identity smoke",
+    "Normal inventory and main-action smoke on final source",
+    "Recovery primary-button normal/hover contrast visual check"
+  ],
+  "decision": "A complete new 46-window performance matrix is not necessary to validate these two narrowly scoped fixes if the final focused checks pass. Keep the existing matrix labeled as measured candidate, keep DIFFERENT_DECLARED, and retain all software-renderer and missing-stage limitations. Do not state final source was benchmarked byte-for-byte.",
+  "candidateBodyLimitation": "The historical app.js and save-recovery.css bodies were not independently preserved by this reviewer. Their measured hashes/HTTP hashes and exact author-recorded applied patches remain intact. No inverse reconstruction was performed."
+}

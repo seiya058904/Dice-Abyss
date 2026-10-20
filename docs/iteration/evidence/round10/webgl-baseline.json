@@ -1,0 +1,101 @@
+{
+  "label": "baseline-v5.9",
+  "sourceVersion": "5.9.0",
+  "sourceFiles": {
+    "src/app.js": "43d5e1cf594a30e302ff38f8444354f6c5848d98e03f46e422c436ee935e003f",
+    "src/views.js": "63b0c861517a66721a8a1daa8ff0dfd0089b5e0a124e2398a54e6b64a4e3e3bc",
+    "src/dice-renderer.js": "a317cbe20fb1a0518a69eff10e3aa9b7dce5180a2b90543439fb830c86d66770",
+    "src/storage.js": "2c5f648efe7df6a1c14710ea90fe2de83323141d5f5e285eec7fac8aa687a500",
+    "src/quality.css": "3785daf1b16c66942383c8285376a66fee42c2a21c0b1450c251870333919bb8",
+    "src/refinement.css": "79a8599ca5415c933de1161575edb25601f4efdbf57be4c45dc82033abb1fffd"
+  },
+  "started": "2026-10-18T09:31:55.146Z",
+  "method": "Native clicks and file-input imports in fresh Chromium contexts. Generated fixtures and deliberate faults are not personal saves or natural deep-floor play.",
+  "cases": [
+    {
+      "name": "static-webgl-loss-and-restoration",
+      "status": "passed",
+      "checks": [
+        {
+          "cycle": 1,
+          "lost": {
+            "gpu": false,
+            "fallbackFaces": 6,
+            "canvasVisibility": "hidden",
+            "flightVisibility": "visible",
+            "phase": "combat"
+          },
+          "restored": {
+            "gpu": true,
+            "sameCanvas": true,
+            "canvases": 1,
+            "canvasVisibility": "visible",
+            "status": "ready"
+          },
+          "saveUnchanged": true
+        },
+        {
+          "cycle": 2,
+          "lost": {
+            "gpu": false,
+            "fallbackFaces": 6,
+            "canvasVisibility": "hidden",
+            "flightVisibility": "visible",
+            "phase": "combat"
+          },
+          "restored": {
+            "gpu": true,
+            "sameCanvas": true,
+            "canvases": 1,
+            "canvasVisibility": "visible",
+            "status": "ready"
+          },
+          "saveUnchanged": true
+        },
+        {
+          "cycle": 3,
+          "lost": {
+            "gpu": false,
+            "fallbackFaces": 6,
+            "canvasVisibility": "hidden",
+            "flightVisibility": "visible",
+            "phase": "combat"
+          },
+          "restored": {
+            "gpu": true,
+            "sameCanvas": true,
+            "canvases": 1,
+            "canvasVisibility": "visible",
+            "status": "ready"
+          },
+          "saveUnchanged": true
+        },
+        {
+          "postRecoveryRoll": "one exact committed transition"
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "expectedErrors": [],
+  "screenshots": [
+    "baseline-v5.9-context-lost-fallback.png",
+    "baseline-v5.9-context-restored.png"
+  ],
+  "limitations": [
+    "Cloud software rendering, not hardware GPU or physical 4K validation.",
+    "WebGL loss uses WEBGL_lose_context, not an actual GPU driver reset.",
+    "Invalid imports are constructed faults with correct envelopes."
+  ],
+  "browser": "155.0.8059.84",
+  "environment": {
+    "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.8059.84 Safari/537.36",
+    "dpr": 1,
+    "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+    "webLocks": true
+  },
+  "finished": "2026-10-18T09:31:59.457Z",
+  "passed": 1,
+  "reproduced": 0,
+  "failed": 0
+}

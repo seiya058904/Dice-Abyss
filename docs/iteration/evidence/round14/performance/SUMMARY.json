@@ -1,0 +1,5703 @@
+{
+  "kind": "DERIVED_NAVIGATION_SUMMARY_WITH_COMPLETE_ORIGINAL_REPORTS_RETAINED",
+  "measurementStatus": "MEASURED_WITH_LIMITATIONS",
+  "inventoryStatus": "OBSERVED_SLOWER_UNATTRIBUTED",
+  "risk": "OPEN_RISK",
+  "formal": {
+    "report": "formal-main/performance-round.json",
+    "reportSha256": "3d8313195f81642bc3fdf95030da291d920c30f31cfac883bc38450aa191f7e6",
+    "startedAt": "2026-10-18T16:59:31.614Z",
+    "completedAt": "2026-10-18T17:04:42.211Z",
+    "browser": "155.0.8059.84",
+    "sourceStable": true,
+    "inventory": {
+      "aggregate": {
+        "baseline": {
+          "samples": 12,
+          "p50": 125,
+          "p95": 343.3999999985099,
+          "p99": 343.3999999985099,
+          "max": 427.70000000298023,
+          "min": 75.5
+        },
+        "after": {
+          "samples": 12,
+          "p50": 244.80000000447035,
+          "p95": 512.0999999940395,
+          "p99": 512.0999999940395,
+          "max": 651.7999999970198,
+          "min": 74.30000000447035
+        }
+      },
+      "comparison": {
+        "medianDeltaMs": 119.80000000447035,
+        "medianPercentChange": 95.8400000035763,
+        "p95DeltaMs": 168.69999999552965,
+        "maxDeltaMs": 224.09999999403954
+      },
+      "allRuns": [
+        {
+          "label": "baseline",
+          "repeat": 1,
+          "pair": 1,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "position": 1,
+          "elapsedMs": 97.29999999701977,
+          "trusted": true,
+          "cards": 60,
+          "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+          "cardStatesSha256": "27ca76ba395a6d031ab5afda454684d50c2d9a56aeb0e8f10aca1d270b6b1d11",
+          "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+          "cardHtmlUtf8Bytes": 92909,
+          "actualCardHtmlFile": "inventory-actual-baseline-cards.html",
+          "expectedCardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+          "completeSourceDomMatched": true,
+          "completeHtmlStableWithinVariant": true,
+          "stateSha256": "81651ee106fc3033a2b0362328da887670562f378eb44436dd4cc915a6e53b7b",
+          "stateUnchanged": true,
+          "mirrorUnchanged": true
+        },
+        {
+          "label": "after",
+          "repeat": 1,
+          "pair": 1,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "position": 2,
+          "elapsedMs": 84.39999999850988,
+          "trusted": true,
+          "cards": 60,
+          "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+          "cardStatesSha256": "27ca76ba395a6d031ab5afda454684d50c2d9a56aeb0e8f10aca1d270b6b1d11",
+          "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+          "cardHtmlUtf8Bytes": 92909,
+          "actualCardHtmlFile": "inventory-actual-after-cards.html",
+          "expectedCardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+          "completeSourceDomMatched": true,
+          "completeHtmlStableWithinVariant": true,
+          "stateSha256": "81651ee106fc3033a2b0362328da887670562f378eb44436dd4cc915a6e53b7b",
+          "stateUnchanged": true,
+          "mirrorUnchanged": true
+        },
+        {
+          "label": "after",
+          "repeat": 2,
+          "pair": 2,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "position": 1,
+          "elapsedMs": 74.30000000447035,
+          "trusted": true,
+          "cards": 60,
+          "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+          "cardStatesSha256": "27ca76ba395a6d031ab5afda454684d50c2d9a56aeb0e8f10aca1d270b6b1d11",
+          "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+          "cardHtmlUtf8Bytes": 92909,
+          "actualCardHtmlFile": "inventory-actual-after-cards.html",
+          "expectedCardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+          "completeSourceDomMatched": true,
+          "completeHtmlStableWithinVariant": true,
+          "stateSha256": "81651ee106fc3033a2b0362328da887670562f378eb44436dd4cc915a6e53b7b",
+          "stateUnchanged": true,
+          "mirrorUnchanged": true
+        },
+        {
+          "label": "baseline",
+          "repeat": 2,
+          "pair": 2,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "position": 2,
+          "elapsedMs": 75.5,
+          "trusted": true,
+          "cards": 60,
+          "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+          "cardStatesSha256": "27ca76ba395a6d031ab5afda454684d50c2d9a56aeb0e8f10aca1d270b6b1d11",
+          "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+          "cardHtmlUtf8Bytes": 92909,
+          "actualCardHtmlFile": "inventory-actual-baseline-cards.html",
+          "expectedCardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+          "completeSourceDomMatched": true,
+          "completeHtmlStableWithinVariant": true,
+          "stateSha256": "81651ee106fc3033a2b0362328da887670562f378eb44436dd4cc915a6e53b7b",
+          "stateUnchanged": true,
+          "mirrorUnchanged": true
+        },
+        {
+          "label": "baseline",
+          "repeat": 3,
+          "pair": 3,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "position": 1,
+          "elapsedMs": 125,
+          "trusted": true,
+          "cards": 60,
+          "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+          "cardStatesSha256": "27ca76ba395a6d031ab5afda454684d50c2d9a56aeb0e8f10aca1d270b6b1d11",
+          "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+          "cardHtmlUtf8Bytes": 92909,
+          "actualCardHtmlFile": "inventory-actual-baseline-cards.html",
+          "expectedCardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+          "completeSourceDomMatched": true,
+          "completeHtmlStableWithinVariant": true,
+          "stateSha256": "81651ee106fc3033a2b0362328da887670562f378eb44436dd4cc915a6e53b7b",
+          "stateUnchanged": true,
+          "mirrorUnchanged": true
+        },
+        {
+          "label": "after",
+          "repeat": 3,
+          "pair": 3,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "position": 2,
+          "elapsedMs": 85.10000000149012,
+          "trusted": true,
+          "cards": 60,
+          "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+          "cardStatesSha256": "27ca76ba395a6d031ab5afda454684d50c2d9a56aeb0e8f10aca1d270b6b1d11",
+          "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+          "cardHtmlUtf8Bytes": 92909,
+          "actualCardHtmlFile": "inventory-actual-after-cards.html",
+          "expectedCardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+          "completeSourceDomMatched": true,
+          "completeHtmlStableWithinVariant": true,
+          "stateSha256": "81651ee106fc3033a2b0362328da887670562f378eb44436dd4cc915a6e53b7b",
+          "stateUnchanged": true,
+          "mirrorUnchanged": true
+        },
+        {
+          "label": "after",
+          "repeat": 4,
+          "pair": 4,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "position": 1,
+          "elapsedMs": 222.80000000447035,
+          "trusted": true,
+          "cards": 60,
+          "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+          "cardStatesSha256": "27ca76ba395a6d031ab5afda454684d50c2d9a56aeb0e8f10aca1d270b6b1d11",
+          "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+          "cardHtmlUtf8Bytes": 92909,
+          "actualCardHtmlFile": "inventory-actual-after-cards.html",
+          "expectedCardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+          "completeSourceDomMatched": true,
+          "completeHtmlStableWithinVariant": true,
+          "stateSha256": "81651ee106fc3033a2b0362328da887670562f378eb44436dd4cc915a6e53b7b",
+          "stateUnchanged": true,
+          "mirrorUnchanged": true
+        },
+        {
+          "label": "baseline",
+          "repeat": 4,
+          "pair": 4,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "position": 2,
+          "elapsedMs": 122.39999999850988,
+          "trusted": true,
+          "cards": 60,
+          "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+          "cardStatesSha256": "27ca76ba395a6d031ab5afda454684d50c2d9a56aeb0e8f10aca1d270b6b1d11",
+          "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+          "cardHtmlUtf8Bytes": 92909,
+          "actualCardHtmlFile": "inventory-actual-baseline-cards.html",
+          "expectedCardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+          "completeSourceDomMatched": true,
+          "completeHtmlStableWithinVariant": true,
+          "stateSha256": "81651ee106fc3033a2b0362328da887670562f378eb44436dd4cc915a6e53b7b",
+          "stateUnchanged": true,
+          "mirrorUnchanged": true
+        },
+        {
+          "label": "baseline",
+          "repeat": 5,
+          "pair": 5,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "position": 1,
+          "elapsedMs": 327.29999999701977,
+          "trusted": true,
+          "cards": 60,
+          "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+          "cardStatesSha256": "27ca76ba395a6d031ab5afda454684d50c2d9a56aeb0e8f10aca1d270b6b1d11",
+          "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+          "cardHtmlUtf8Bytes": 92909,
+          "actualCardHtmlFile": "inventory-actual-baseline-cards.html",
+          "expectedCardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+          "completeSourceDomMatched": true,
+          "completeHtmlStableWithinVariant": true,
+          "stateSha256": "81651ee106fc3033a2b0362328da887670562f378eb44436dd4cc915a6e53b7b",
+          "stateUnchanged": true,
+          "mirrorUnchanged": true
+        },
+        {
+          "label": "after",
+          "repeat": 5,
+          "pair": 5,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "position": 2,
+          "elapsedMs": 288.1000000014901,
+          "trusted": true,
+          "cards": 60,
+          "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+          "cardStatesSha256": "27ca76ba395a6d031ab5afda454684d50c2d9a56aeb0e8f10aca1d270b6b1d11",
+          "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+          "cardHtmlUtf8Bytes": 92909,
+          "actualCardHtmlFile": "inventory-actual-after-cards.html",
+          "expectedCardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+          "completeSourceDomMatched": true,
+          "completeHtmlStableWithinVariant": true,
+          "stateSha256": "81651ee106fc3033a2b0362328da887670562f378eb44436dd4cc915a6e53b7b",
+          "stateUnchanged": true,
+          "mirrorUnchanged": true
+        },
+        {
+          "label": "after",
+          "repeat": 6,
+          "pair": 6,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "position": 1,
+          "elapsedMs": 444.09999999403954,
+          "trusted": true,
+          "cards": 60,
+          "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+          "cardStatesSha256": "27ca76ba395a6d031ab5afda454684d50c2d9a56aeb0e8f10aca1d270b6b1d11",
+          "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+          "cardHtmlUtf8Bytes": 92909,
+          "actualCardHtmlFile": "inventory-actual-after-cards.html",
+          "expectedCardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+          "completeSourceDomMatched": true,
+          "completeHtmlStableWithinVariant": true,
+          "stateSha256": "81651ee106fc3033a2b0362328da887670562f378eb44436dd4cc915a6e53b7b",
+          "stateUnchanged": true,
+          "mirrorUnchanged": true
+        },
+        {
+          "label": "baseline",
+          "repeat": 6,
+          "pair": 6,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "position": 2,
+          "elapsedMs": 116.19999999552965,
+          "trusted": true,
+          "cards": 60,
+          "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+          "cardStatesSha256": "27ca76ba395a6d031ab5afda454684d50c2d9a56aeb0e8f10aca1d270b6b1d11",
+          "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+          "cardHtmlUtf8Bytes": 92909,
+          "actualCardHtmlFile": "inventory-actual-baseline-cards.html",
+          "expectedCardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+          "completeSourceDomMatched": true,
+          "completeHtmlStableWithinVariant": true,
+          "stateSha256": "81651ee106fc3033a2b0362328da887670562f378eb44436dd4cc915a6e53b7b",
+          "stateUnchanged": true,
+          "mirrorUnchanged": true
+        },
+        {
+          "label": "baseline",
+          "repeat": 7,
+          "pair": 7,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "position": 1,
+          "elapsedMs": 266.70000000298023,
+          "trusted": true,
+          "cards": 60,
+          "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+          "cardStatesSha256": "27ca76ba395a6d031ab5afda454684d50c2d9a56aeb0e8f10aca1d270b6b1d11",
+          "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+          "cardHtmlUtf8Bytes": 92909,
+          "actualCardHtmlFile": "inventory-actual-baseline-cards.html",
+          "expectedCardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+          "completeSourceDomMatched": true,
+          "completeHtmlStableWithinVariant": true,
+          "stateSha256": "81651ee106fc3033a2b0362328da887670562f378eb44436dd4cc915a6e53b7b",
+          "stateUnchanged": true,
+          "mirrorUnchanged": true
+        },
+        {
+          "label": "after",
+          "repeat": 7,
+          "pair": 7,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "position": 2,
+          "elapsedMs": 512.0999999940395,
+          "trusted": true,
+          "cards": 60,
+          "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+          "cardStatesSha256": "27ca76ba395a6d031ab5afda454684d50c2d9a56aeb0e8f10aca1d270b6b1d11",
+          "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+          "cardHtmlUtf8Bytes": 92909,
+          "actualCardHtmlFile": "inventory-actual-after-cards.html",
+          "expectedCardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+          "completeSourceDomMatched": true,
+          "completeHtmlStableWithinVariant": true,
+          "stateSha256": "81651ee106fc3033a2b0362328da887670562f378eb44436dd4cc915a6e53b7b",
+          "stateUnchanged": true,
+          "mirrorUnchanged": true
+        },
+        {
+          "label": "after",
+          "repeat": 8,
+          "pair": 8,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "position": 1,
+          "elapsedMs": 244.80000000447035,
+          "trusted": true,
+          "cards": 60,
+          "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+          "cardStatesSha256": "27ca76ba395a6d031ab5afda454684d50c2d9a56aeb0e8f10aca1d270b6b1d11",
+          "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+          "cardHtmlUtf8Bytes": 92909,
+          "actualCardHtmlFile": "inventory-actual-after-cards.html",
+          "expectedCardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+          "completeSourceDomMatched": true,
+          "completeHtmlStableWithinVariant": true,
+          "stateSha256": "81651ee106fc3033a2b0362328da887670562f378eb44436dd4cc915a6e53b7b",
+          "stateUnchanged": true,
+          "mirrorUnchanged": true
+        },
+        {
+          "label": "baseline",
+          "repeat": 8,
+          "pair": 8,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "position": 2,
+          "elapsedMs": 343.3999999985099,
+          "trusted": true,
+          "cards": 60,
+          "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+          "cardStatesSha256": "27ca76ba395a6d031ab5afda454684d50c2d9a56aeb0e8f10aca1d270b6b1d11",
+          "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+          "cardHtmlUtf8Bytes": 92909,
+          "actualCardHtmlFile": "inventory-actual-baseline-cards.html",
+          "expectedCardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+          "completeSourceDomMatched": true,
+          "completeHtmlStableWithinVariant": true,
+          "stateSha256": "81651ee106fc3033a2b0362328da887670562f378eb44436dd4cc915a6e53b7b",
+          "stateUnchanged": true,
+          "mirrorUnchanged": true
+        },
+        {
+          "label": "baseline",
+          "repeat": 9,
+          "pair": 9,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "position": 1,
+          "elapsedMs": 137.30000000447035,
+          "trusted": true,
+          "cards": 60,
+          "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+          "cardStatesSha256": "27ca76ba395a6d031ab5afda454684d50c2d9a56aeb0e8f10aca1d270b6b1d11",
+          "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+          "cardHtmlUtf8Bytes": 92909,
+          "actualCardHtmlFile": "inventory-actual-baseline-cards.html",
+          "expectedCardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+          "completeSourceDomMatched": true,
+          "completeHtmlStableWithinVariant": true,
+          "stateSha256": "81651ee106fc3033a2b0362328da887670562f378eb44436dd4cc915a6e53b7b",
+          "stateUnchanged": true,
+          "mirrorUnchanged": true
+        },
+        {
+          "label": "after",
+          "repeat": 9,
+          "pair": 9,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "position": 2,
+          "elapsedMs": 651.7999999970198,
+          "trusted": true,
+          "cards": 60,
+          "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+          "cardStatesSha256": "27ca76ba395a6d031ab5afda454684d50c2d9a56aeb0e8f10aca1d270b6b1d11",
+          "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+          "cardHtmlUtf8Bytes": 92909,
+          "actualCardHtmlFile": "inventory-actual-after-cards.html",
+          "expectedCardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+          "completeSourceDomMatched": true,
+          "completeHtmlStableWithinVariant": true,
+          "stateSha256": "81651ee106fc3033a2b0362328da887670562f378eb44436dd4cc915a6e53b7b",
+          "stateUnchanged": true,
+          "mirrorUnchanged": true
+        },
+        {
+          "label": "after",
+          "repeat": 10,
+          "pair": 10,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "position": 1,
+          "elapsedMs": 375.09999999403954,
+          "trusted": true,
+          "cards": 60,
+          "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+          "cardStatesSha256": "27ca76ba395a6d031ab5afda454684d50c2d9a56aeb0e8f10aca1d270b6b1d11",
+          "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+          "cardHtmlUtf8Bytes": 92909,
+          "actualCardHtmlFile": "inventory-actual-after-cards.html",
+          "expectedCardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+          "completeSourceDomMatched": true,
+          "completeHtmlStableWithinVariant": true,
+          "stateSha256": "81651ee106fc3033a2b0362328da887670562f378eb44436dd4cc915a6e53b7b",
+          "stateUnchanged": true,
+          "mirrorUnchanged": true
+        },
+        {
+          "label": "baseline",
+          "repeat": 10,
+          "pair": 10,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "position": 2,
+          "elapsedMs": 247.70000000298023,
+          "trusted": true,
+          "cards": 60,
+          "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+          "cardStatesSha256": "27ca76ba395a6d031ab5afda454684d50c2d9a56aeb0e8f10aca1d270b6b1d11",
+          "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+          "cardHtmlUtf8Bytes": 92909,
+          "actualCardHtmlFile": "inventory-actual-baseline-cards.html",
+          "expectedCardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+          "completeSourceDomMatched": true,
+          "completeHtmlStableWithinVariant": true,
+          "stateSha256": "81651ee106fc3033a2b0362328da887670562f378eb44436dd4cc915a6e53b7b",
+          "stateUnchanged": true,
+          "mirrorUnchanged": true
+        },
+        {
+          "label": "baseline",
+          "repeat": 11,
+          "pair": 11,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "position": 1,
+          "elapsedMs": 83.89999999850988,
+          "trusted": true,
+          "cards": 60,
+          "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+          "cardStatesSha256": "27ca76ba395a6d031ab5afda454684d50c2d9a56aeb0e8f10aca1d270b6b1d11",
+          "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+          "cardHtmlUtf8Bytes": 92909,
+          "actualCardHtmlFile": "inventory-actual-baseline-cards.html",
+          "expectedCardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+          "completeSourceDomMatched": true,
+          "completeHtmlStableWithinVariant": true,
+          "stateSha256": "81651ee106fc3033a2b0362328da887670562f378eb44436dd4cc915a6e53b7b",
+          "stateUnchanged": true,
+          "mirrorUnchanged": true
+        },
+        {
+          "label": "after",
+          "repeat": 11,
+          "pair": 11,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "position": 2,
+          "elapsedMs": 106.60000000149012,
+          "trusted": true,
+          "cards": 60,
+          "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+          "cardStatesSha256": "27ca76ba395a6d031ab5afda454684d50c2d9a56aeb0e8f10aca1d270b6b1d11",
+          "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+          "cardHtmlUtf8Bytes": 92909,
+          "actualCardHtmlFile": "inventory-actual-after-cards.html",
+          "expectedCardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+          "completeSourceDomMatched": true,
+          "completeHtmlStableWithinVariant": true,
+          "stateSha256": "81651ee106fc3033a2b0362328da887670562f378eb44436dd4cc915a6e53b7b",
+          "stateUnchanged": true,
+          "mirrorUnchanged": true
+        },
+        {
+          "label": "after",
+          "repeat": 12,
+          "pair": 12,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "position": 1,
+          "elapsedMs": 298.59999999403954,
+          "trusted": true,
+          "cards": 60,
+          "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+          "cardStatesSha256": "27ca76ba395a6d031ab5afda454684d50c2d9a56aeb0e8f10aca1d270b6b1d11",
+          "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+          "cardHtmlUtf8Bytes": 92909,
+          "actualCardHtmlFile": "inventory-actual-after-cards.html",
+          "expectedCardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+          "completeSourceDomMatched": true,
+          "completeHtmlStableWithinVariant": true,
+          "stateSha256": "81651ee106fc3033a2b0362328da887670562f378eb44436dd4cc915a6e53b7b",
+          "stateUnchanged": true,
+          "mirrorUnchanged": true
+        },
+        {
+          "label": "baseline",
+          "repeat": 12,
+          "pair": 12,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "position": 2,
+          "elapsedMs": 427.70000000298023,
+          "trusted": true,
+          "cards": 60,
+          "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+          "cardStatesSha256": "27ca76ba395a6d031ab5afda454684d50c2d9a56aeb0e8f10aca1d270b6b1d11",
+          "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+          "cardHtmlUtf8Bytes": 92909,
+          "actualCardHtmlFile": "inventory-actual-baseline-cards.html",
+          "expectedCardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+          "completeSourceDomMatched": true,
+          "completeHtmlStableWithinVariant": true,
+          "stateSha256": "81651ee106fc3033a2b0362328da887670562f378eb44436dd4cc915a6e53b7b",
+          "stateUnchanged": true,
+          "mirrorUnchanged": true
+        }
+      ],
+      "warmups": [
+        {
+          "label": "baseline",
+          "ok": true,
+          "writes": {
+            "main": {
+              "ok": true
+            },
+            "mirror": {
+              "ok": true
+            },
+            "settings": {
+              "ok": true
+            }
+          },
+          "mainCharacters": 2060957,
+          "mirrorCharacters": 2060957,
+          "keyCount": 3,
+          "warmupMs": 79.89999999850988,
+          "warmup": {
+            "elapsedMs": 79.89999999850988,
+            "trusted": true,
+            "cards": 60,
+            "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+            "cardStatesSha256": "27ca76ba395a6d031ab5afda454684d50c2d9a56aeb0e8f10aca1d270b6b1d11",
+            "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+            "cardHtmlUtf8Bytes": 92909,
+            "actualCardHtmlFile": "inventory-actual-baseline-cards.html",
+            "expectedCardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+            "completeSourceDomMatched": true,
+            "completeHtmlStableWithinVariant": true,
+            "stateSha256": "81651ee106fc3033a2b0362328da887670562f378eb44436dd4cc915a6e53b7b",
+            "stateUnchanged": true,
+            "mirrorUnchanged": true
+          }
+        },
+        {
+          "label": "after",
+          "ok": true,
+          "writes": {
+            "main": {
+              "ok": true
+            },
+            "mirror": {
+              "ok": true
+            },
+            "settings": {
+              "ok": true
+            }
+          },
+          "mainCharacters": 2060957,
+          "mirrorCharacters": 2060957,
+          "keyCount": 3,
+          "warmupMs": 88.60000000149012,
+          "warmup": {
+            "elapsedMs": 88.60000000149012,
+            "trusted": true,
+            "cards": 60,
+            "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+            "cardStatesSha256": "27ca76ba395a6d031ab5afda454684d50c2d9a56aeb0e8f10aca1d270b6b1d11",
+            "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+            "cardHtmlUtf8Bytes": 92909,
+            "actualCardHtmlFile": "inventory-actual-after-cards.html",
+            "expectedCardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+            "completeSourceDomMatched": true,
+            "completeHtmlStableWithinVariant": true,
+            "stateSha256": "81651ee106fc3033a2b0362328da887670562f378eb44436dd4cc915a6e53b7b",
+            "stateUnchanged": true,
+            "mirrorUnchanged": true
+          }
+        }
+      ]
+    },
+    "reviewSummary": {
+      "reviewStatus": "PASS",
+      "recordedEvidenceVerification": "PASS",
+      "recordedSourceIdentity": "PASS",
+      "finalSourceIdentity": "MATCH",
+      "measurementStatus": "MEASURED_WITH_LIMITATIONS",
+      "checksPassed": 57,
+      "failures": 0,
+      "formalInventorySamples": 24,
+      "retainedExcludedWarmups": 2,
+      "mainWindows": 32,
+      "coverageWindows": 14,
+      "allRafIntervals": 5424,
+      "allObservedLongTasks": 6,
+      "allOver50RafSamples": 61,
+      "missingFullEffectWindows": 7,
+      "mainPairedWindows": 16,
+      "currentMaxLongerPairs": 6,
+      "currentMaxShorterPairs": 10,
+      "eternalCurrentMaxLongerPairs": 4,
+      "eternalTotalPairs": 8
+    },
+    "sourceIdentity": {
+      "status": "PASS",
+      "pathsPerVersion": 51,
+      "beforeEqualsAfter": true,
+      "servedRuntimeEqualsRecordedCandidate": true,
+      "versionsMappedByHttpAndLocalPackage": true
+    },
+    "finalSourceIdentityStatus": "MATCH",
+    "mainPairedWindows": [
+      {
+        "pair": 1,
+        "scene": "boss-burst",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeat": 1,
+        "versionsInOrder": [
+          "5.13.0",
+          "5.14.0"
+        ],
+        "input": {
+          "section": "frames",
+          "window": 1,
+          "pair": 1,
+          "repeat": 1,
+          "position": 1,
+          "label": "baseline",
+          "version": "5.13.0",
+          "scene": "boss-burst",
+          "rarity": null,
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "frames": 169,
+          "actualWindowMs": 4211.30000000447,
+          "overrunMs": 11.300000004470348,
+          "firstFrameDelayMs": 11.400000005960464,
+          "p50": 16.69999999552965,
+          "p95": 19.200000002980232,
+          "p99": 142.60000000149012,
+          "max": 761.2999999970198,
+          "over50": 5,
+          "over100": 3,
+          "longTasks": 2,
+          "longTaskOverlapMs": 902,
+          "expectedFullStage": "combat",
+          "effectKinds": [
+            "idle",
+            "dice-only",
+            "combat"
+          ],
+          "expectedFullStageObserved": true,
+          "lowPathAccepted": false,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        "current": {
+          "section": "frames",
+          "window": 2,
+          "pair": 1,
+          "repeat": 1,
+          "position": 2,
+          "label": "after",
+          "version": "5.14.0",
+          "scene": "boss-burst",
+          "rarity": null,
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "frames": 48,
+          "actualWindowMs": 4211,
+          "overrunMs": 11,
+          "firstFrameDelayMs": 11.299999997019768,
+          "p50": 16.69999999552965,
+          "p95": 43.899999998509884,
+          "p99": 909.2999999970198,
+          "max": 2333.8000000044703,
+          "over50": 3,
+          "over100": 3,
+          "longTasks": 1,
+          "longTaskOverlapMs": 909,
+          "expectedFullStage": "combat",
+          "effectKinds": [
+            "idle",
+            "dice-only",
+            "combat"
+          ],
+          "expectedFullStageObserved": true,
+          "lowPathAccepted": false,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        "maxCurrentMinusInputMs": 1572.5000000074506,
+        "p95CurrentMinusInputMs": 24.69999999552965
+      },
+      {
+        "pair": 2,
+        "scene": "boss-burst",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeat": 2,
+        "versionsInOrder": [
+          "5.14.0",
+          "5.13.0"
+        ],
+        "input": {
+          "section": "frames",
+          "window": 4,
+          "pair": 2,
+          "repeat": 2,
+          "position": 2,
+          "label": "baseline",
+          "version": "5.13.0",
+          "scene": "boss-burst",
+          "rarity": null,
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "frames": 138,
+          "actualWindowMs": 4205.29999999702,
+          "overrunMs": 5.299999997019768,
+          "firstFrameDelayMs": 5.600000001490116,
+          "p50": 16.69999999552965,
+          "p95": 20.700000002980232,
+          "p99": 38.5,
+          "max": 1736.7000000029802,
+          "over50": 2,
+          "over100": 2,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "expectedFullStage": "combat",
+          "effectKinds": [
+            "idle",
+            "dice-only",
+            "combat"
+          ],
+          "expectedFullStageObserved": true,
+          "lowPathAccepted": false,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        "current": {
+          "section": "frames",
+          "window": 3,
+          "pair": 2,
+          "repeat": 2,
+          "position": 1,
+          "label": "after",
+          "version": "5.14.0",
+          "scene": "boss-burst",
+          "rarity": null,
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "frames": 181,
+          "actualWindowMs": 4205,
+          "overrunMs": 5,
+          "firstFrameDelayMs": 5.0999999940395355,
+          "p50": 16.69999999552965,
+          "p95": 19.30000000447035,
+          "p99": 36.80000000447035,
+          "max": 1074,
+          "over50": 2,
+          "over100": 2,
+          "longTasks": 1,
+          "longTaskOverlapMs": 155,
+          "expectedFullStage": "combat",
+          "effectKinds": [
+            "idle",
+            "dice-only",
+            "combat"
+          ],
+          "expectedFullStageObserved": true,
+          "lowPathAccepted": false,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        "maxCurrentMinusInputMs": -662.7000000029802,
+        "p95CurrentMinusInputMs": -1.3999999985098839
+      },
+      {
+        "pair": 3,
+        "scene": "boss-burst",
+        "width": 1920,
+        "height": 1080,
+        "effects": "low",
+        "repeat": 1,
+        "versionsInOrder": [
+          "5.13.0",
+          "5.14.0"
+        ],
+        "input": {
+          "section": "frames",
+          "window": 5,
+          "pair": 3,
+          "repeat": 1,
+          "position": 1,
+          "label": "baseline",
+          "version": "5.13.0",
+          "scene": "boss-burst",
+          "rarity": null,
+          "width": 1920,
+          "height": 1080,
+          "effects": "low",
+          "frames": 74,
+          "actualWindowMs": 4202.80000000447,
+          "overrunMs": 2.8000000044703484,
+          "firstFrameDelayMs": 2.8000000044703484,
+          "p50": 16.69999999552965,
+          "p95": 21.899999998509884,
+          "p99": 34.100000001490116,
+          "max": 3019.60000000149,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "expectedFullStage": "combat",
+          "effectKinds": [
+            "idle"
+          ],
+          "expectedFullStageObserved": null,
+          "lowPathAccepted": true,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        "current": {
+          "section": "frames",
+          "window": 6,
+          "pair": 3,
+          "repeat": 1,
+          "position": 2,
+          "label": "after",
+          "version": "5.14.0",
+          "scene": "boss-burst",
+          "rarity": null,
+          "width": 1920,
+          "height": 1080,
+          "effects": "low",
+          "frames": 172,
+          "actualWindowMs": 4208.10000000149,
+          "overrunMs": 8.100000001490116,
+          "firstFrameDelayMs": 8.299999997019768,
+          "p50": 16.69999999552965,
+          "p95": 17,
+          "p99": 28.5,
+          "max": 1384.2000000029802,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "expectedFullStage": "combat",
+          "effectKinds": [
+            "idle"
+          ],
+          "expectedFullStageObserved": null,
+          "lowPathAccepted": true,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        "maxCurrentMinusInputMs": -1635.3999999985099,
+        "p95CurrentMinusInputMs": -4.899999998509884
+      },
+      {
+        "pair": 4,
+        "scene": "boss-burst",
+        "width": 1920,
+        "height": 1080,
+        "effects": "low",
+        "repeat": 2,
+        "versionsInOrder": [
+          "5.14.0",
+          "5.13.0"
+        ],
+        "input": {
+          "section": "frames",
+          "window": 8,
+          "pair": 4,
+          "repeat": 2,
+          "position": 2,
+          "label": "baseline",
+          "version": "5.13.0",
+          "scene": "boss-burst",
+          "rarity": null,
+          "width": 1920,
+          "height": 1080,
+          "effects": "low",
+          "frames": 168,
+          "actualWindowMs": 4211.20000000298,
+          "overrunMs": 11.200000002980232,
+          "firstFrameDelayMs": 11.300000004470348,
+          "p50": 16.69999999552965,
+          "p95": 17,
+          "p99": 31.700000002980232,
+          "max": 1422.8000000044703,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "expectedFullStage": "combat",
+          "effectKinds": [
+            "idle"
+          ],
+          "expectedFullStageObserved": null,
+          "lowPathAccepted": true,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        "current": {
+          "section": "frames",
+          "window": 7,
+          "pair": 4,
+          "repeat": 2,
+          "position": 1,
+          "label": "after",
+          "version": "5.14.0",
+          "scene": "boss-burst",
+          "rarity": null,
+          "width": 1920,
+          "height": 1080,
+          "effects": "low",
+          "frames": 167,
+          "actualWindowMs": 4215.30000000447,
+          "overrunMs": 15.300000004470348,
+          "firstFrameDelayMs": 0.6000000014901161,
+          "p50": 16.69999999552965,
+          "p95": 17.399999998509884,
+          "p99": 37.80000000447035,
+          "max": 1462,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "expectedFullStage": "combat",
+          "effectKinds": [
+            "idle"
+          ],
+          "expectedFullStageObserved": null,
+          "lowPathAccepted": true,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        "maxCurrentMinusInputMs": 39.19999999552965,
+        "p95CurrentMinusInputMs": 0.3999999985098839
+      },
+      {
+        "pair": 5,
+        "scene": "eternal-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeat": 1,
+        "versionsInOrder": [
+          "5.13.0",
+          "5.14.0"
+        ],
+        "input": {
+          "section": "frames",
+          "window": 9,
+          "pair": 5,
+          "repeat": 1,
+          "position": 1,
+          "label": "baseline",
+          "version": "5.13.0",
+          "scene": "eternal-open",
+          "rarity": 7,
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "frames": 189,
+          "actualWindowMs": 4212.5,
+          "overrunMs": 12.5,
+          "firstFrameDelayMs": 11.100000001490116,
+          "p50": 16.69999999552965,
+          "p95": 19.5,
+          "p99": 74.69999999552965,
+          "max": 896.4000000059605,
+          "over50": 3,
+          "over100": 2,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "expectedFullStage": "loot-7",
+          "effectKinds": [
+            "idle",
+            "chest-charge",
+            "loot-7"
+          ],
+          "expectedFullStageObserved": true,
+          "lowPathAccepted": false,
+          "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+        },
+        "current": {
+          "section": "frames",
+          "window": 10,
+          "pair": 5,
+          "repeat": 1,
+          "position": 2,
+          "label": "after",
+          "version": "5.14.0",
+          "scene": "eternal-open",
+          "rarity": 7,
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "frames": 183,
+          "actualWindowMs": 4209.39999999851,
+          "overrunMs": 9.399999998509884,
+          "firstFrameDelayMs": 8.100000001490116,
+          "p50": 16.700000002980232,
+          "p95": 20.299999997019768,
+          "p99": 25.80000000447035,
+          "max": 1203,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "expectedFullStage": "loot-7",
+          "effectKinds": [
+            "idle",
+            "chest-charge",
+            "loot-7"
+          ],
+          "expectedFullStageObserved": true,
+          "lowPathAccepted": false,
+          "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+        },
+        "maxCurrentMinusInputMs": 306.59999999403954,
+        "p95CurrentMinusInputMs": 0.7999999970197678
+      },
+      {
+        "pair": 6,
+        "scene": "eternal-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "repeat": 2,
+        "versionsInOrder": [
+          "5.14.0",
+          "5.13.0"
+        ],
+        "input": {
+          "section": "frames",
+          "window": 12,
+          "pair": 6,
+          "repeat": 2,
+          "position": 2,
+          "label": "baseline",
+          "version": "5.13.0",
+          "scene": "eternal-open",
+          "rarity": 7,
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "frames": 162,
+          "actualWindowMs": 4206.60000000149,
+          "overrunMs": 6.600000001490116,
+          "firstFrameDelayMs": 6.200000002980232,
+          "p50": 16.700000002980232,
+          "p95": 18.80000000447035,
+          "p99": 20.700000002980232,
+          "max": 1556.5,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "expectedFullStage": "loot-7",
+          "effectKinds": [
+            "idle",
+            "chest-charge",
+            "loot-7"
+          ],
+          "expectedFullStageObserved": true,
+          "lowPathAccepted": false,
+          "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+        },
+        "current": {
+          "section": "frames",
+          "window": 11,
+          "pair": 6,
+          "repeat": 2,
+          "position": 1,
+          "label": "after",
+          "version": "5.14.0",
+          "scene": "eternal-open",
+          "rarity": 7,
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "frames": 147,
+          "actualWindowMs": 4204.29999999702,
+          "overrunMs": 4.299999997019768,
+          "firstFrameDelayMs": 4.5,
+          "p50": 16.69999999552965,
+          "p95": 19,
+          "p99": 26,
+          "max": 1795.7000000029802,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "expectedFullStage": "loot-7",
+          "effectKinds": [
+            "idle",
+            "chest-charge",
+            "loot-7"
+          ],
+          "expectedFullStageObserved": true,
+          "lowPathAccepted": false,
+          "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+        },
+        "maxCurrentMinusInputMs": 239.20000000298023,
+        "p95CurrentMinusInputMs": 0.19999999552965164
+      },
+      {
+        "pair": 7,
+        "scene": "eternal-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "low",
+        "repeat": 1,
+        "versionsInOrder": [
+          "5.13.0",
+          "5.14.0"
+        ],
+        "input": {
+          "section": "frames",
+          "window": 13,
+          "pair": 7,
+          "repeat": 1,
+          "position": 1,
+          "label": "baseline",
+          "version": "5.13.0",
+          "scene": "eternal-open",
+          "rarity": 7,
+          "width": 1920,
+          "height": 1080,
+          "effects": "low",
+          "frames": 112,
+          "actualWindowMs": 4210.29999999702,
+          "overrunMs": 10.299999997019768,
+          "firstFrameDelayMs": 10.5,
+          "p50": 16.69999999552965,
+          "p95": 17.30000000447035,
+          "p99": 20.200000002980232,
+          "max": 2381.89999999851,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "expectedFullStage": "loot-7",
+          "effectKinds": [
+            "idle"
+          ],
+          "expectedFullStageObserved": null,
+          "lowPathAccepted": true,
+          "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+        },
+        "current": {
+          "section": "frames",
+          "window": 14,
+          "pair": 7,
+          "repeat": 1,
+          "position": 2,
+          "label": "after",
+          "version": "5.14.0",
+          "scene": "eternal-open",
+          "rarity": 7,
+          "width": 1920,
+          "height": 1080,
+          "effects": "low",
+          "frames": 172,
+          "actualWindowMs": 4206.39999999851,
+          "overrunMs": 6.399999998509884,
+          "firstFrameDelayMs": 6.5999999940395355,
+          "p50": 16.69999999552965,
+          "p95": 17.100000001490116,
+          "p99": 19.700000002980232,
+          "max": 1375.3999999985099,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "expectedFullStage": "loot-7",
+          "effectKinds": [
+            "idle"
+          ],
+          "expectedFullStageObserved": null,
+          "lowPathAccepted": true,
+          "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+        },
+        "maxCurrentMinusInputMs": -1006.5,
+        "p95CurrentMinusInputMs": -0.20000000298023224
+      },
+      {
+        "pair": 8,
+        "scene": "eternal-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "low",
+        "repeat": 2,
+        "versionsInOrder": [
+          "5.14.0",
+          "5.13.0"
+        ],
+        "input": {
+          "section": "frames",
+          "window": 16,
+          "pair": 8,
+          "repeat": 2,
+          "position": 2,
+          "label": "baseline",
+          "version": "5.13.0",
+          "scene": "eternal-open",
+          "rarity": 7,
+          "width": 1920,
+          "height": 1080,
+          "effects": "low",
+          "frames": 175,
+          "actualWindowMs": 4205.30000000447,
+          "overrunMs": 5.300000004470348,
+          "firstFrameDelayMs": 6.200000002980232,
+          "p50": 16.69999999552965,
+          "p95": 17.399999998509884,
+          "p99": 26,
+          "max": 1326.6000000014901,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "expectedFullStage": "loot-7",
+          "effectKinds": [
+            "idle"
+          ],
+          "expectedFullStageObserved": null,
+          "lowPathAccepted": true,
+          "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+        },
+        "current": {
+          "section": "frames",
+          "window": 15,
+          "pair": 8,
+          "repeat": 2,
+          "position": 1,
+          "label": "after",
+          "version": "5.14.0",
+          "scene": "eternal-open",
+          "rarity": 7,
+          "width": 1920,
+          "height": 1080,
+          "effects": "low",
+          "frames": 148,
+          "actualWindowMs": 4211.89999999851,
+          "overrunMs": 11.899999998509884,
+          "firstFrameDelayMs": 12,
+          "p50": 16.69999999552965,
+          "p95": 18.700000002980232,
+          "p99": 27.80000000447035,
+          "max": 1774.8999999985099,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "expectedFullStage": "loot-7",
+          "effectKinds": [
+            "idle"
+          ],
+          "expectedFullStageObserved": null,
+          "lowPathAccepted": true,
+          "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+        },
+        "maxCurrentMinusInputMs": 448.29999999701977,
+        "p95CurrentMinusInputMs": 1.3000000044703484
+      },
+      {
+        "pair": 9,
+        "scene": "boss-burst",
+        "width": 3840,
+        "height": 2160,
+        "effects": "full",
+        "repeat": 1,
+        "versionsInOrder": [
+          "5.13.0",
+          "5.14.0"
+        ],
+        "input": {
+          "section": "frames",
+          "window": 17,
+          "pair": 9,
+          "repeat": 1,
+          "position": 1,
+          "label": "baseline",
+          "version": "5.13.0",
+          "scene": "boss-burst",
+          "rarity": null,
+          "width": 3840,
+          "height": 2160,
+          "effects": "full",
+          "frames": 8,
+          "actualWindowMs": 9657.5,
+          "overrunMs": 5457.5,
+          "firstFrameDelayMs": 10.399999998509884,
+          "p50": 16.5,
+          "p95": 20.69999999552965,
+          "p99": 20.69999999552965,
+          "max": 9548.90000000596,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "expectedFullStage": "combat",
+          "effectKinds": [
+            "idle",
+            "dice-only"
+          ],
+          "expectedFullStageObserved": false,
+          "lowPathAccepted": false,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        "current": {
+          "section": "frames",
+          "window": 18,
+          "pair": 9,
+          "repeat": 1,
+          "position": 2,
+          "label": "after",
+          "version": "5.14.0",
+          "scene": "boss-burst",
+          "rarity": null,
+          "width": 3840,
+          "height": 2160,
+          "effects": "full",
+          "frames": 13,
+          "actualWindowMs": 5326.0999999940395,
+          "overrunMs": 1126.0999999940395,
+          "firstFrameDelayMs": 8,
+          "p50": 16.600000001490116,
+          "p95": 88.70000000298023,
+          "p99": 88.70000000298023,
+          "max": 5062.79999999702,
+          "over50": 2,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "expectedFullStage": "combat",
+          "effectKinds": [
+            "idle",
+            "dice-only"
+          ],
+          "expectedFullStageObserved": false,
+          "lowPathAccepted": false,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        "maxCurrentMinusInputMs": -4486.100000008941,
+        "p95CurrentMinusInputMs": 68.00000000745058
+      },
+      {
+        "pair": 10,
+        "scene": "boss-burst",
+        "width": 3840,
+        "height": 2160,
+        "effects": "full",
+        "repeat": 2,
+        "versionsInOrder": [
+          "5.14.0",
+          "5.13.0"
+        ],
+        "input": {
+          "section": "frames",
+          "window": 20,
+          "pair": 10,
+          "repeat": 2,
+          "position": 2,
+          "label": "baseline",
+          "version": "5.13.0",
+          "scene": "boss-burst",
+          "rarity": null,
+          "width": 3840,
+          "height": 2160,
+          "effects": "full",
+          "frames": 10,
+          "actualWindowMs": 9123.30000000447,
+          "overrunMs": 4923.30000000447,
+          "firstFrameDelayMs": 10,
+          "p50": 16.600000001490116,
+          "p95": 22.700000002980232,
+          "p99": 22.700000002980232,
+          "max": 8977.40000000596,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "expectedFullStage": "combat",
+          "effectKinds": [
+            "idle",
+            "dice-only"
+          ],
+          "expectedFullStageObserved": false,
+          "lowPathAccepted": false,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        "current": {
+          "section": "frames",
+          "window": 19,
+          "pair": 10,
+          "repeat": 2,
+          "position": 1,
+          "label": "after",
+          "version": "5.14.0",
+          "scene": "boss-burst",
+          "rarity": null,
+          "width": 3840,
+          "height": 2160,
+          "effects": "full",
+          "frames": 23,
+          "actualWindowMs": 4248.9000000059605,
+          "overrunMs": 48.900000005960464,
+          "firstFrameDelayMs": 12.600000001490116,
+          "p50": 16.69999999552965,
+          "p95": 45.600000001490116,
+          "p99": 424.59999999403954,
+          "max": 3461.9000000059605,
+          "over50": 2,
+          "over100": 2,
+          "longTasks": 2,
+          "longTaskOverlapMs": 1187,
+          "expectedFullStage": "combat",
+          "effectKinds": [
+            "idle",
+            "dice-only"
+          ],
+          "expectedFullStageObserved": false,
+          "lowPathAccepted": false,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        "maxCurrentMinusInputMs": -5515.5,
+        "p95CurrentMinusInputMs": 22.899999998509884
+      },
+      {
+        "pair": 11,
+        "scene": "boss-burst",
+        "width": 3840,
+        "height": 2160,
+        "effects": "low",
+        "repeat": 1,
+        "versionsInOrder": [
+          "5.13.0",
+          "5.14.0"
+        ],
+        "input": {
+          "section": "frames",
+          "window": 21,
+          "pair": 11,
+          "repeat": 1,
+          "position": 1,
+          "label": "baseline",
+          "version": "5.13.0",
+          "scene": "boss-burst",
+          "rarity": null,
+          "width": 3840,
+          "height": 2160,
+          "effects": "low",
+          "frames": 35,
+          "actualWindowMs": 6162.60000000149,
+          "overrunMs": 1962.6000000014901,
+          "firstFrameDelayMs": 2.600000001490116,
+          "p50": 16.600000001490116,
+          "p95": 29.599999994039536,
+          "p99": 37.80000000447035,
+          "max": 5610.10000000149,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "expectedFullStage": "combat",
+          "effectKinds": [
+            "idle"
+          ],
+          "expectedFullStageObserved": null,
+          "lowPathAccepted": true,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        "current": {
+          "section": "frames",
+          "window": 22,
+          "pair": 11,
+          "repeat": 1,
+          "position": 2,
+          "label": "after",
+          "version": "5.14.0",
+          "scene": "boss-burst",
+          "rarity": null,
+          "width": 3840,
+          "height": 2160,
+          "effects": "low",
+          "frames": 25,
+          "actualWindowMs": 4880.0999999940395,
+          "overrunMs": 680.0999999940395,
+          "firstFrameDelayMs": 7.5999999940395355,
+          "p50": 16.700000002980232,
+          "p95": 33.5,
+          "p99": 52.899999998509884,
+          "max": 4443.5999999940395,
+          "over50": 2,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "expectedFullStage": "combat",
+          "effectKinds": [
+            "idle"
+          ],
+          "expectedFullStageObserved": null,
+          "lowPathAccepted": true,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        "maxCurrentMinusInputMs": -1166.5000000074506,
+        "p95CurrentMinusInputMs": 3.9000000059604645
+      },
+      {
+        "pair": 12,
+        "scene": "boss-burst",
+        "width": 3840,
+        "height": 2160,
+        "effects": "low",
+        "repeat": 2,
+        "versionsInOrder": [
+          "5.14.0",
+          "5.13.0"
+        ],
+        "input": {
+          "section": "frames",
+          "window": 24,
+          "pair": 12,
+          "repeat": 2,
+          "position": 2,
+          "label": "baseline",
+          "version": "5.13.0",
+          "scene": "boss-burst",
+          "rarity": null,
+          "width": 3840,
+          "height": 2160,
+          "effects": "low",
+          "frames": 30,
+          "actualWindowMs": 4954.5,
+          "overrunMs": 754.5,
+          "firstFrameDelayMs": 0.7999999970197678,
+          "p50": 16.600000001490116,
+          "p95": 46.29999999701977,
+          "p99": 47.29999999701977,
+          "max": 4465,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "expectedFullStage": "combat",
+          "effectKinds": [
+            "idle"
+          ],
+          "expectedFullStageObserved": null,
+          "lowPathAccepted": true,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        "current": {
+          "section": "frames",
+          "window": 23,
+          "pair": 12,
+          "repeat": 2,
+          "position": 1,
+          "label": "after",
+          "version": "5.14.0",
+          "scene": "boss-burst",
+          "rarity": null,
+          "width": 3840,
+          "height": 2160,
+          "effects": "low",
+          "frames": 29,
+          "actualWindowMs": 4535,
+          "overrunMs": 335,
+          "firstFrameDelayMs": 10.700000002980232,
+          "p50": 16.599999994039536,
+          "p95": 31.799999997019768,
+          "p99": 54.399999998509884,
+          "max": 4061.1999999955297,
+          "over50": 2,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "expectedFullStage": "combat",
+          "effectKinds": [
+            "idle"
+          ],
+          "expectedFullStageObserved": null,
+          "lowPathAccepted": true,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        "maxCurrentMinusInputMs": -403.80000000447035,
+        "p95CurrentMinusInputMs": -14.5
+      },
+      {
+        "pair": 13,
+        "scene": "eternal-open",
+        "width": 3840,
+        "height": 2160,
+        "effects": "full",
+        "repeat": 1,
+        "versionsInOrder": [
+          "5.13.0",
+          "5.14.0"
+        ],
+        "input": {
+          "section": "frames",
+          "window": 25,
+          "pair": 13,
+          "repeat": 1,
+          "position": 1,
+          "label": "baseline",
+          "version": "5.13.0",
+          "scene": "eternal-open",
+          "rarity": 7,
+          "width": 3840,
+          "height": 2160,
+          "effects": "full",
+          "frames": 93,
+          "actualWindowMs": 4203.70000000298,
+          "overrunMs": 3.7000000029802322,
+          "firstFrameDelayMs": 6.200000002980232,
+          "p50": 16.69999999552965,
+          "p95": 21.200000002980232,
+          "p99": 24.100000001490116,
+          "max": 2688.0999999940395,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "expectedFullStage": "loot-7",
+          "effectKinds": [
+            "idle",
+            "chest-charge",
+            "loot-7"
+          ],
+          "expectedFullStageObserved": true,
+          "lowPathAccepted": false,
+          "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+        },
+        "current": {
+          "section": "frames",
+          "window": 26,
+          "pair": 13,
+          "repeat": 1,
+          "position": 2,
+          "label": "after",
+          "version": "5.14.0",
+          "scene": "eternal-open",
+          "rarity": 7,
+          "width": 3840,
+          "height": 2160,
+          "effects": "full",
+          "frames": 26,
+          "actualWindowMs": 9701.09999999404,
+          "overrunMs": 5501.0999999940395,
+          "firstFrameDelayMs": 15,
+          "p50": 16.600000001490116,
+          "p95": 32.399999998509884,
+          "p99": 35.399999998509884,
+          "max": 9273.59999999404,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "expectedFullStage": "loot-7",
+          "effectKinds": [
+            "idle",
+            "chest-charge"
+          ],
+          "expectedFullStageObserved": false,
+          "lowPathAccepted": false,
+          "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+        },
+        "maxCurrentMinusInputMs": 6585.5,
+        "p95CurrentMinusInputMs": 11.199999995529652
+      },
+      {
+        "pair": 14,
+        "scene": "eternal-open",
+        "width": 3840,
+        "height": 2160,
+        "effects": "full",
+        "repeat": 2,
+        "versionsInOrder": [
+          "5.14.0",
+          "5.13.0"
+        ],
+        "input": {
+          "section": "frames",
+          "window": 28,
+          "pair": 14,
+          "repeat": 2,
+          "position": 2,
+          "label": "baseline",
+          "version": "5.13.0",
+          "scene": "eternal-open",
+          "rarity": 7,
+          "width": 3840,
+          "height": 2160,
+          "effects": "full",
+          "frames": 35,
+          "actualWindowMs": 10230.90000000596,
+          "overrunMs": 6030.9000000059605,
+          "firstFrameDelayMs": 11.700000002980232,
+          "p50": 16.700000002980232,
+          "p95": 24.399999998509884,
+          "p99": 27.200000002980232,
+          "max": 9662.60000000149,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "expectedFullStage": "loot-7",
+          "effectKinds": [
+            "idle",
+            "chest-charge"
+          ],
+          "expectedFullStageObserved": false,
+          "lowPathAccepted": false,
+          "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+        },
+        "current": {
+          "section": "frames",
+          "window": 27,
+          "pair": 14,
+          "repeat": 2,
+          "position": 1,
+          "label": "after",
+          "version": "5.14.0",
+          "scene": "eternal-open",
+          "rarity": 7,
+          "width": 3840,
+          "height": 2160,
+          "effects": "full",
+          "frames": 37,
+          "actualWindowMs": 5367.5,
+          "overrunMs": 1167.5,
+          "firstFrameDelayMs": 8,
+          "p50": 16.700000002980232,
+          "p95": 24.099999994039536,
+          "p99": 26,
+          "max": 4776.0999999940395,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "expectedFullStage": "loot-7",
+          "effectKinds": [
+            "idle",
+            "chest-charge"
+          ],
+          "expectedFullStageObserved": false,
+          "lowPathAccepted": false,
+          "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+        },
+        "maxCurrentMinusInputMs": -4886.500000007451,
+        "p95CurrentMinusInputMs": -0.30000000447034836
+      },
+      {
+        "pair": 15,
+        "scene": "eternal-open",
+        "width": 3840,
+        "height": 2160,
+        "effects": "low",
+        "repeat": 1,
+        "versionsInOrder": [
+          "5.13.0",
+          "5.14.0"
+        ],
+        "input": {
+          "section": "frames",
+          "window": 29,
+          "pair": 15,
+          "repeat": 1,
+          "position": 1,
+          "label": "baseline",
+          "version": "5.13.0",
+          "scene": "eternal-open",
+          "rarity": 7,
+          "width": 3840,
+          "height": 2160,
+          "effects": "low",
+          "frames": 37,
+          "actualWindowMs": 6873.30000000447,
+          "overrunMs": 2673.3000000044703,
+          "firstFrameDelayMs": 9.100000001490116,
+          "p50": 16.600000001490116,
+          "p95": 22.399999998509884,
+          "p99": 35.79999999701977,
+          "max": 6275.30000000447,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "expectedFullStage": "loot-7",
+          "effectKinds": [
+            "idle"
+          ],
+          "expectedFullStageObserved": null,
+          "lowPathAccepted": true,
+          "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+        },
+        "current": {
+          "section": "frames",
+          "window": 30,
+          "pair": 15,
+          "repeat": 1,
+          "position": 2,
+          "label": "after",
+          "version": "5.14.0",
+          "scene": "eternal-open",
+          "rarity": 7,
+          "width": 3840,
+          "height": 2160,
+          "effects": "low",
+          "frames": 32,
+          "actualWindowMs": 5550.20000000298,
+          "overrunMs": 1350.2000000029802,
+          "firstFrameDelayMs": 2.899999998509884,
+          "p50": 16.5,
+          "p95": 29.19999999552965,
+          "p99": 38.5,
+          "max": 5057.30000000447,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "expectedFullStage": "loot-7",
+          "effectKinds": [
+            "idle"
+          ],
+          "expectedFullStageObserved": null,
+          "lowPathAccepted": true,
+          "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+        },
+        "maxCurrentMinusInputMs": -1218,
+        "p95CurrentMinusInputMs": 6.799999997019768
+      },
+      {
+        "pair": 16,
+        "scene": "eternal-open",
+        "width": 3840,
+        "height": 2160,
+        "effects": "low",
+        "repeat": 2,
+        "versionsInOrder": [
+          "5.14.0",
+          "5.13.0"
+        ],
+        "input": {
+          "section": "frames",
+          "window": 32,
+          "pair": 16,
+          "repeat": 2,
+          "position": 2,
+          "label": "baseline",
+          "version": "5.13.0",
+          "scene": "eternal-open",
+          "rarity": 7,
+          "width": 3840,
+          "height": 2160,
+          "effects": "low",
+          "frames": 33,
+          "actualWindowMs": 5550.39999999851,
+          "overrunMs": 1350.3999999985099,
+          "firstFrameDelayMs": 16,
+          "p50": 16.600000001490116,
+          "p95": 26.399999998509884,
+          "p99": 30.200000002980232,
+          "max": 5021.5,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "expectedFullStage": "loot-7",
+          "effectKinds": [
+            "idle"
+          ],
+          "expectedFullStageObserved": null,
+          "lowPathAccepted": true,
+          "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+        },
+        "current": {
+          "section": "frames",
+          "window": 31,
+          "pair": 16,
+          "repeat": 2,
+          "position": 1,
+          "label": "after",
+          "version": "5.14.0",
+          "scene": "eternal-open",
+          "rarity": 7,
+          "width": 3840,
+          "height": 2160,
+          "effects": "low",
+          "frames": 31,
+          "actualWindowMs": 5462.4000000059605,
+          "overrunMs": 1262.4000000059605,
+          "firstFrameDelayMs": 6.300000004470348,
+          "p50": 16.69999999552965,
+          "p95": 37.79999999701977,
+          "p99": 38,
+          "max": 4955.4000000059605,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "expectedFullStage": "loot-7",
+          "effectKinds": [
+            "idle"
+          ],
+          "expectedFullStageObserved": null,
+          "lowPathAccepted": true,
+          "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+        },
+        "maxCurrentMinusInputMs": -66.09999999403954,
+        "p95CurrentMinusInputMs": 11.399999998509884
+      }
+    ],
+    "allMissingFullStages": [
+      {
+        "section": "frames",
+        "window": 17,
+        "pair": 9,
+        "repeat": 1,
+        "position": 1,
+        "label": "baseline",
+        "version": "5.13.0",
+        "scene": "boss-burst",
+        "rarity": null,
+        "width": 3840,
+        "height": 2160,
+        "effects": "full",
+        "frames": 8,
+        "actualWindowMs": 9657.5,
+        "overrunMs": 5457.5,
+        "firstFrameDelayMs": 10.399999998509884,
+        "p50": 16.5,
+        "p95": 20.69999999552965,
+        "p99": 20.69999999552965,
+        "max": 9548.90000000596,
+        "over50": 1,
+        "over100": 1,
+        "longTasks": 0,
+        "longTaskOverlapMs": 0,
+        "expectedFullStage": "combat",
+        "effectKinds": [
+          "idle",
+          "dice-only"
+        ],
+        "expectedFullStageObserved": false,
+        "lowPathAccepted": false,
+        "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+      },
+      {
+        "section": "frames",
+        "window": 18,
+        "pair": 9,
+        "repeat": 1,
+        "position": 2,
+        "label": "after",
+        "version": "5.14.0",
+        "scene": "boss-burst",
+        "rarity": null,
+        "width": 3840,
+        "height": 2160,
+        "effects": "full",
+        "frames": 13,
+        "actualWindowMs": 5326.0999999940395,
+        "overrunMs": 1126.0999999940395,
+        "firstFrameDelayMs": 8,
+        "p50": 16.600000001490116,
+        "p95": 88.70000000298023,
+        "p99": 88.70000000298023,
+        "max": 5062.79999999702,
+        "over50": 2,
+        "over100": 1,
+        "longTasks": 0,
+        "longTaskOverlapMs": 0,
+        "expectedFullStage": "combat",
+        "effectKinds": [
+          "idle",
+          "dice-only"
+        ],
+        "expectedFullStageObserved": false,
+        "lowPathAccepted": false,
+        "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+      },
+      {
+        "section": "frames",
+        "window": 19,
+        "pair": 10,
+        "repeat": 2,
+        "position": 1,
+        "label": "after",
+        "version": "5.14.0",
+        "scene": "boss-burst",
+        "rarity": null,
+        "width": 3840,
+        "height": 2160,
+        "effects": "full",
+        "frames": 23,
+        "actualWindowMs": 4248.9000000059605,
+        "overrunMs": 48.900000005960464,
+        "firstFrameDelayMs": 12.600000001490116,
+        "p50": 16.69999999552965,
+        "p95": 45.600000001490116,
+        "p99": 424.59999999403954,
+        "max": 3461.9000000059605,
+        "over50": 2,
+        "over100": 2,
+        "longTasks": 2,
+        "longTaskOverlapMs": 1187,
+        "expectedFullStage": "combat",
+        "effectKinds": [
+          "idle",
+          "dice-only"
+        ],
+        "expectedFullStageObserved": false,
+        "lowPathAccepted": false,
+        "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+      },
+      {
+        "section": "frames",
+        "window": 20,
+        "pair": 10,
+        "repeat": 2,
+        "position": 2,
+        "label": "baseline",
+        "version": "5.13.0",
+        "scene": "boss-burst",
+        "rarity": null,
+        "width": 3840,
+        "height": 2160,
+        "effects": "full",
+        "frames": 10,
+        "actualWindowMs": 9123.30000000447,
+        "overrunMs": 4923.30000000447,
+        "firstFrameDelayMs": 10,
+        "p50": 16.600000001490116,
+        "p95": 22.700000002980232,
+        "p99": 22.700000002980232,
+        "max": 8977.40000000596,
+        "over50": 1,
+        "over100": 1,
+        "longTasks": 0,
+        "longTaskOverlapMs": 0,
+        "expectedFullStage": "combat",
+        "effectKinds": [
+          "idle",
+          "dice-only"
+        ],
+        "expectedFullStageObserved": false,
+        "lowPathAccepted": false,
+        "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+      },
+      {
+        "section": "frames",
+        "window": 26,
+        "pair": 13,
+        "repeat": 1,
+        "position": 2,
+        "label": "after",
+        "version": "5.14.0",
+        "scene": "eternal-open",
+        "rarity": 7,
+        "width": 3840,
+        "height": 2160,
+        "effects": "full",
+        "frames": 26,
+        "actualWindowMs": 9701.09999999404,
+        "overrunMs": 5501.0999999940395,
+        "firstFrameDelayMs": 15,
+        "p50": 16.600000001490116,
+        "p95": 32.399999998509884,
+        "p99": 35.399999998509884,
+        "max": 9273.59999999404,
+        "over50": 1,
+        "over100": 1,
+        "longTasks": 0,
+        "longTaskOverlapMs": 0,
+        "expectedFullStage": "loot-7",
+        "effectKinds": [
+          "idle",
+          "chest-charge"
+        ],
+        "expectedFullStageObserved": false,
+        "lowPathAccepted": false,
+        "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+      },
+      {
+        "section": "frames",
+        "window": 27,
+        "pair": 14,
+        "repeat": 2,
+        "position": 1,
+        "label": "after",
+        "version": "5.14.0",
+        "scene": "eternal-open",
+        "rarity": 7,
+        "width": 3840,
+        "height": 2160,
+        "effects": "full",
+        "frames": 37,
+        "actualWindowMs": 5367.5,
+        "overrunMs": 1167.5,
+        "firstFrameDelayMs": 8,
+        "p50": 16.700000002980232,
+        "p95": 24.099999994039536,
+        "p99": 26,
+        "max": 4776.0999999940395,
+        "over50": 1,
+        "over100": 1,
+        "longTasks": 0,
+        "longTaskOverlapMs": 0,
+        "expectedFullStage": "loot-7",
+        "effectKinds": [
+          "idle",
+          "chest-charge"
+        ],
+        "expectedFullStageObserved": false,
+        "lowPathAccepted": false,
+        "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+      },
+      {
+        "section": "frames",
+        "window": 28,
+        "pair": 14,
+        "repeat": 2,
+        "position": 2,
+        "label": "baseline",
+        "version": "5.13.0",
+        "scene": "eternal-open",
+        "rarity": 7,
+        "width": 3840,
+        "height": 2160,
+        "effects": "full",
+        "frames": 35,
+        "actualWindowMs": 10230.90000000596,
+        "overrunMs": 6030.9000000059605,
+        "firstFrameDelayMs": 11.700000002980232,
+        "p50": 16.700000002980232,
+        "p95": 24.399999998509884,
+        "p99": 27.200000002980232,
+        "max": 9662.60000000149,
+        "over50": 1,
+        "over100": 1,
+        "longTasks": 0,
+        "longTaskOverlapMs": 0,
+        "expectedFullStage": "loot-7",
+        "effectKinds": [
+          "idle",
+          "chest-charge"
+        ],
+        "expectedFullStageObserved": false,
+        "lowPathAccepted": false,
+        "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+      }
+    ],
+    "allRafIntervalsAtLeast50Ms": [
+      {
+        "section": "frames",
+        "window": 1,
+        "pair": 1,
+        "repeat": 1,
+        "version": "5.13.0",
+        "scene": "boss-burst",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "sample": 27,
+        "startOffsetMs": 444.40000000596046,
+        "durationMs": 761.2999999970198
+      },
+      {
+        "section": "frames",
+        "window": 1,
+        "pair": 1,
+        "repeat": 1,
+        "version": "5.13.0",
+        "scene": "boss-burst",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "sample": 30,
+        "startOffsetMs": 1227.7000000029802,
+        "durationMs": 428.79999999701977
+      },
+      {
+        "section": "frames",
+        "window": 1,
+        "pair": 1,
+        "repeat": 1,
+        "version": "5.13.0",
+        "scene": "boss-burst",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "sample": 31,
+        "startOffsetMs": 1656.5,
+        "durationMs": 142.60000000149012
+      },
+      {
+        "section": "frames",
+        "window": 1,
+        "pair": 1,
+        "repeat": 1,
+        "version": "5.13.0",
+        "scene": "boss-burst",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "sample": 33,
+        "startOffsetMs": 1811.1000000014901,
+        "durationMs": 62.20000000298023
+      },
+      {
+        "section": "frames",
+        "window": 1,
+        "pair": 1,
+        "repeat": 1,
+        "version": "5.13.0",
+        "scene": "boss-burst",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "sample": 34,
+        "startOffsetMs": 1873.3000000044703,
+        "durationMs": 86
+      },
+      {
+        "section": "frames",
+        "window": 2,
+        "pair": 1,
+        "repeat": 1,
+        "version": "5.14.0",
+        "scene": "boss-burst",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "sample": 13,
+        "startOffsetMs": 194.5,
+        "durationMs": 210.29999999701977
+      },
+      {
+        "section": "frames",
+        "window": 2,
+        "pair": 1,
+        "repeat": 1,
+        "version": "5.14.0",
+        "scene": "boss-burst",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "sample": 15,
+        "startOffsetMs": 414.5,
+        "durationMs": 909.2999999970198
+      },
+      {
+        "section": "frames",
+        "window": 2,
+        "pair": 1,
+        "repeat": 1,
+        "version": "5.14.0",
+        "scene": "boss-burst",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "sample": 16,
+        "startOffsetMs": 1323.7999999970198,
+        "durationMs": 2333.8000000044703
+      },
+      {
+        "section": "frames",
+        "window": 3,
+        "pair": 2,
+        "repeat": 2,
+        "version": "5.14.0",
+        "scene": "boss-burst",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "sample": 20,
+        "startOffsetMs": 305,
+        "durationMs": 156
+      },
+      {
+        "section": "frames",
+        "window": 3,
+        "pair": 2,
+        "repeat": 2,
+        "version": "5.14.0",
+        "scene": "boss-burst",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "sample": 24,
+        "startOffsetMs": 505.09999999403954,
+        "durationMs": 1074
+      },
+      {
+        "section": "frames",
+        "window": 4,
+        "pair": 2,
+        "repeat": 2,
+        "version": "5.13.0",
+        "scene": "boss-burst",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "sample": 18,
+        "startOffsetMs": 274.20000000298023,
+        "durationMs": 197.79999999701977
+      },
+      {
+        "section": "frames",
+        "window": 4,
+        "pair": 2,
+        "repeat": 2,
+        "version": "5.13.0",
+        "scene": "boss-burst",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "sample": 19,
+        "startOffsetMs": 472,
+        "durationMs": 1736.7000000029802
+      },
+      {
+        "section": "frames",
+        "window": 5,
+        "pair": 3,
+        "repeat": 1,
+        "version": "5.13.0",
+        "scene": "boss-burst",
+        "width": 1920,
+        "height": 1080,
+        "effects": "low",
+        "sample": 37,
+        "startOffsetMs": 586.1000000014901,
+        "durationMs": 3019.60000000149
+      },
+      {
+        "section": "frames",
+        "window": 6,
+        "pair": 3,
+        "repeat": 1,
+        "version": "5.14.0",
+        "scene": "boss-burst",
+        "width": 1920,
+        "height": 1080,
+        "effects": "low",
+        "sample": 35,
+        "startOffsetMs": 558.2999999970198,
+        "durationMs": 1384.2000000029802
+      },
+      {
+        "section": "frames",
+        "window": 7,
+        "pair": 4,
+        "repeat": 2,
+        "version": "5.14.0",
+        "scene": "boss-burst",
+        "width": 1920,
+        "height": 1080,
+        "effects": "low",
+        "sample": 32,
+        "startOffsetMs": 515.9000000059605,
+        "durationMs": 1462
+      },
+      {
+        "section": "frames",
+        "window": 8,
+        "pair": 4,
+        "repeat": 2,
+        "version": "5.13.0",
+        "scene": "boss-burst",
+        "width": 1920,
+        "height": 1080,
+        "effects": "low",
+        "sample": 34,
+        "startOffsetMs": 565.3999999985099,
+        "durationMs": 1422.8000000044703
+      },
+      {
+        "section": "frames",
+        "window": 9,
+        "pair": 5,
+        "repeat": 1,
+        "version": "5.13.0",
+        "scene": "eternal-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "sample": 38,
+        "startOffsetMs": 612.1999999955297,
+        "durationMs": 896.4000000059605
+      },
+      {
+        "section": "frames",
+        "window": 9,
+        "pair": 5,
+        "repeat": 1,
+        "version": "5.13.0",
+        "scene": "eternal-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "sample": 42,
+        "startOffsetMs": 1544.2999999970198,
+        "durationMs": 167.10000000149012
+      },
+      {
+        "section": "frames",
+        "window": 9,
+        "pair": 5,
+        "repeat": 1,
+        "version": "5.13.0",
+        "scene": "eternal-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "sample": 170,
+        "startOffsetMs": 3827.60000000149,
+        "durationMs": 74.69999999552965
+      },
+      {
+        "section": "frames",
+        "window": 10,
+        "pair": 5,
+        "repeat": 1,
+        "version": "5.14.0",
+        "scene": "eternal-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "sample": 36,
+        "startOffsetMs": 574.8999999985099,
+        "durationMs": 1203
+      },
+      {
+        "section": "frames",
+        "window": 11,
+        "pair": 6,
+        "repeat": 2,
+        "version": "5.14.0",
+        "scene": "eternal-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "sample": 35,
+        "startOffsetMs": 553.8999999985099,
+        "durationMs": 1795.7000000029802
+      },
+      {
+        "section": "frames",
+        "window": 12,
+        "pair": 6,
+        "repeat": 2,
+        "version": "5.13.0",
+        "scene": "eternal-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "sample": 35,
+        "startOffsetMs": 556.5,
+        "durationMs": 1556.5
+      },
+      {
+        "section": "frames",
+        "window": 13,
+        "pair": 7,
+        "repeat": 1,
+        "version": "5.13.0",
+        "scene": "eternal-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "low",
+        "sample": 33,
+        "startOffsetMs": 527,
+        "durationMs": 2381.89999999851
+      },
+      {
+        "section": "frames",
+        "window": 14,
+        "pair": 7,
+        "repeat": 1,
+        "version": "5.14.0",
+        "scene": "eternal-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "low",
+        "sample": 36,
+        "startOffsetMs": 573.2999999970198,
+        "durationMs": 1375.3999999985099
+      },
+      {
+        "section": "frames",
+        "window": 15,
+        "pair": 8,
+        "repeat": 2,
+        "version": "5.14.0",
+        "scene": "eternal-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "low",
+        "sample": 37,
+        "startOffsetMs": 595.5,
+        "durationMs": 1774.8999999985099
+      },
+      {
+        "section": "frames",
+        "window": 16,
+        "pair": 8,
+        "repeat": 2,
+        "version": "5.13.0",
+        "scene": "eternal-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "low",
+        "sample": 36,
+        "startOffsetMs": 572.1000000014901,
+        "durationMs": 1326.6000000014901
+      },
+      {
+        "section": "frames",
+        "window": 17,
+        "pair": 9,
+        "repeat": 1,
+        "version": "5.13.0",
+        "scene": "boss-burst",
+        "width": 3840,
+        "height": 2160,
+        "effects": "full",
+        "sample": 8,
+        "startOffsetMs": 108.59999999403954,
+        "durationMs": 9548.90000000596
+      },
+      {
+        "section": "frames",
+        "window": 18,
+        "pair": 9,
+        "repeat": 1,
+        "version": "5.14.0",
+        "scene": "boss-burst",
+        "width": 3840,
+        "height": 2160,
+        "effects": "full",
+        "sample": 12,
+        "startOffsetMs": 174.59999999403954,
+        "durationMs": 88.70000000298023
+      },
+      {
+        "section": "frames",
+        "window": 18,
+        "pair": 9,
+        "repeat": 1,
+        "version": "5.14.0",
+        "scene": "boss-burst",
+        "width": 3840,
+        "height": 2160,
+        "effects": "full",
+        "sample": 13,
+        "startOffsetMs": 263.29999999701977,
+        "durationMs": 5062.79999999702
+      },
+      {
+        "section": "frames",
+        "window": 19,
+        "pair": 10,
+        "repeat": 2,
+        "version": "5.14.0",
+        "scene": "boss-burst",
+        "width": 3840,
+        "height": 2160,
+        "effects": "full",
+        "sample": 22,
+        "startOffsetMs": 362.40000000596046,
+        "durationMs": 424.59999999403954
+      },
+      {
+        "section": "frames",
+        "window": 19,
+        "pair": 10,
+        "repeat": 2,
+        "version": "5.14.0",
+        "scene": "boss-burst",
+        "width": 3840,
+        "height": 2160,
+        "effects": "full",
+        "sample": 23,
+        "startOffsetMs": 787,
+        "durationMs": 3461.9000000059605
+      },
+      {
+        "section": "frames",
+        "window": 20,
+        "pair": 10,
+        "repeat": 2,
+        "version": "5.13.0",
+        "scene": "boss-burst",
+        "width": 3840,
+        "height": 2160,
+        "effects": "full",
+        "sample": 10,
+        "startOffsetMs": 145.89999999850988,
+        "durationMs": 8977.40000000596
+      },
+      {
+        "section": "frames",
+        "window": 21,
+        "pair": 11,
+        "repeat": 1,
+        "version": "5.13.0",
+        "scene": "boss-burst",
+        "width": 3840,
+        "height": 2160,
+        "effects": "low",
+        "sample": 35,
+        "startOffsetMs": 552.5,
+        "durationMs": 5610.10000000149
+      },
+      {
+        "section": "frames",
+        "window": 22,
+        "pair": 11,
+        "repeat": 1,
+        "version": "5.14.0",
+        "scene": "boss-burst",
+        "width": 3840,
+        "height": 2160,
+        "effects": "low",
+        "sample": 9,
+        "startOffsetMs": 119.89999999850988,
+        "durationMs": 52.899999998509884
+      },
+      {
+        "section": "frames",
+        "window": 22,
+        "pair": 11,
+        "repeat": 1,
+        "version": "5.14.0",
+        "scene": "boss-burst",
+        "width": 3840,
+        "height": 2160,
+        "effects": "low",
+        "sample": 25,
+        "startOffsetMs": 436.5,
+        "durationMs": 4443.5999999940395
+      },
+      {
+        "section": "frames",
+        "window": 23,
+        "pair": 12,
+        "repeat": 2,
+        "version": "5.14.0",
+        "scene": "boss-burst",
+        "width": 3840,
+        "height": 2160,
+        "effects": "low",
+        "sample": 9,
+        "startOffsetMs": 123.70000000298023,
+        "durationMs": 54.399999998509884
+      },
+      {
+        "section": "frames",
+        "window": 23,
+        "pair": 12,
+        "repeat": 2,
+        "version": "5.14.0",
+        "scene": "boss-burst",
+        "width": 3840,
+        "height": 2160,
+        "effects": "low",
+        "sample": 29,
+        "startOffsetMs": 473.80000000447035,
+        "durationMs": 4061.1999999955297
+      },
+      {
+        "section": "frames",
+        "window": 24,
+        "pair": 12,
+        "repeat": 2,
+        "version": "5.13.0",
+        "scene": "boss-burst",
+        "width": 3840,
+        "height": 2160,
+        "effects": "low",
+        "sample": 30,
+        "startOffsetMs": 489.5,
+        "durationMs": 4465
+      },
+      {
+        "section": "frames",
+        "window": 25,
+        "pair": 13,
+        "repeat": 1,
+        "version": "5.13.0",
+        "scene": "eternal-open",
+        "width": 3840,
+        "height": 2160,
+        "effects": "full",
+        "sample": 30,
+        "startOffsetMs": 474.40000000596046,
+        "durationMs": 2688.0999999940395
+      },
+      {
+        "section": "frames",
+        "window": 26,
+        "pair": 13,
+        "repeat": 1,
+        "version": "5.14.0",
+        "scene": "eternal-open",
+        "width": 3840,
+        "height": 2160,
+        "effects": "full",
+        "sample": 26,
+        "startOffsetMs": 427.5,
+        "durationMs": 9273.59999999404
+      },
+      {
+        "section": "frames",
+        "window": 27,
+        "pair": 14,
+        "repeat": 2,
+        "version": "5.14.0",
+        "scene": "eternal-open",
+        "width": 3840,
+        "height": 2160,
+        "effects": "full",
+        "sample": 37,
+        "startOffsetMs": 591.4000000059605,
+        "durationMs": 4776.0999999940395
+      },
+      {
+        "section": "frames",
+        "window": 28,
+        "pair": 14,
+        "repeat": 2,
+        "version": "5.13.0",
+        "scene": "eternal-open",
+        "width": 3840,
+        "height": 2160,
+        "effects": "full",
+        "sample": 35,
+        "startOffsetMs": 568.3000000044703,
+        "durationMs": 9662.60000000149
+      },
+      {
+        "section": "frames",
+        "window": 29,
+        "pair": 15,
+        "repeat": 1,
+        "version": "5.13.0",
+        "scene": "eternal-open",
+        "width": 3840,
+        "height": 2160,
+        "effects": "low",
+        "sample": 37,
+        "startOffsetMs": 598,
+        "durationMs": 6275.30000000447
+      },
+      {
+        "section": "frames",
+        "window": 30,
+        "pair": 15,
+        "repeat": 1,
+        "version": "5.14.0",
+        "scene": "eternal-open",
+        "width": 3840,
+        "height": 2160,
+        "effects": "low",
+        "sample": 32,
+        "startOffsetMs": 492.8999999985099,
+        "durationMs": 5057.30000000447
+      },
+      {
+        "section": "frames",
+        "window": 31,
+        "pair": 16,
+        "repeat": 2,
+        "version": "5.14.0",
+        "scene": "eternal-open",
+        "width": 3840,
+        "height": 2160,
+        "effects": "low",
+        "sample": 31,
+        "startOffsetMs": 507,
+        "durationMs": 4955.4000000059605
+      },
+      {
+        "section": "frames",
+        "window": 32,
+        "pair": 16,
+        "repeat": 2,
+        "version": "5.13.0",
+        "scene": "eternal-open",
+        "width": 3840,
+        "height": 2160,
+        "effects": "low",
+        "sample": 33,
+        "startOffsetMs": 528.8999999985099,
+        "durationMs": 5021.5
+      },
+      {
+        "section": "coverage",
+        "window": 1,
+        "pair": 1,
+        "repeat": 1,
+        "version": "5.13.0",
+        "scene": "rarity-0-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "sample": 34,
+        "startOffsetMs": 540.2999999970198,
+        "durationMs": 2816.7000000029802
+      },
+      {
+        "section": "coverage",
+        "window": 2,
+        "pair": 1,
+        "repeat": 1,
+        "version": "5.14.0",
+        "scene": "rarity-0-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "sample": 32,
+        "startOffsetMs": 511.69999999552965,
+        "durationMs": 1506.9000000059605
+      },
+      {
+        "section": "coverage",
+        "window": 3,
+        "pair": 2,
+        "repeat": 1,
+        "version": "5.14.0",
+        "scene": "rarity-1-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "sample": 35,
+        "startOffsetMs": 555.6000000014901,
+        "durationMs": 335.6000000014901
+      },
+      {
+        "section": "coverage",
+        "window": 3,
+        "pair": 2,
+        "repeat": 1,
+        "version": "5.14.0",
+        "scene": "rarity-1-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "sample": 98,
+        "startOffsetMs": 1922.3000000044703,
+        "durationMs": 67.19999999552965
+      },
+      {
+        "section": "coverage",
+        "window": 4,
+        "pair": 2,
+        "repeat": 1,
+        "version": "5.13.0",
+        "scene": "rarity-1-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "sample": 35,
+        "startOffsetMs": 560.2999999970198,
+        "durationMs": 301.29999999701977
+      },
+      {
+        "section": "coverage",
+        "window": 5,
+        "pair": 3,
+        "repeat": 1,
+        "version": "5.13.0",
+        "scene": "rarity-2-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "sample": 36,
+        "startOffsetMs": 579.5,
+        "durationMs": 793.3000000044703
+      },
+      {
+        "section": "coverage",
+        "window": 6,
+        "pair": 3,
+        "repeat": 1,
+        "version": "5.14.0",
+        "scene": "rarity-2-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "sample": 36,
+        "startOffsetMs": 574.1000000014901,
+        "durationMs": 347.09999999403954
+      },
+      {
+        "section": "coverage",
+        "window": 7,
+        "pair": 4,
+        "repeat": 1,
+        "version": "5.14.0",
+        "scene": "rarity-3-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "sample": 35,
+        "startOffsetMs": 561.6000000014901,
+        "durationMs": 500.79999999701977
+      },
+      {
+        "section": "coverage",
+        "window": 8,
+        "pair": 4,
+        "repeat": 1,
+        "version": "5.13.0",
+        "scene": "rarity-3-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "sample": 36,
+        "startOffsetMs": 577.8999999985099,
+        "durationMs": 1312.7999999970198
+      },
+      {
+        "section": "coverage",
+        "window": 9,
+        "pair": 5,
+        "repeat": 1,
+        "version": "5.13.0",
+        "scene": "rarity-4-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "sample": 36,
+        "startOffsetMs": 578.3000000044703,
+        "durationMs": 1875.8999999985099
+      },
+      {
+        "section": "coverage",
+        "window": 10,
+        "pair": 5,
+        "repeat": 1,
+        "version": "5.14.0",
+        "scene": "rarity-4-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "sample": 34,
+        "startOffsetMs": 544.7000000029802,
+        "durationMs": 1949
+      },
+      {
+        "section": "coverage",
+        "window": 11,
+        "pair": 6,
+        "repeat": 1,
+        "version": "5.14.0",
+        "scene": "rarity-5-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "sample": 33,
+        "startOffsetMs": 531.3999999985099,
+        "durationMs": 1371.5
+      },
+      {
+        "section": "coverage",
+        "window": 12,
+        "pair": 6,
+        "repeat": 1,
+        "version": "5.13.0",
+        "scene": "rarity-5-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "sample": 36,
+        "startOffsetMs": 577.2999999970198,
+        "durationMs": 1750.5
+      },
+      {
+        "section": "coverage",
+        "window": 13,
+        "pair": 7,
+        "repeat": 1,
+        "version": "5.13.0",
+        "scene": "rarity-6-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "sample": 31,
+        "startOffsetMs": 479.29999999701977,
+        "durationMs": 1103.7000000029802
+      },
+      {
+        "section": "coverage",
+        "window": 14,
+        "pair": 7,
+        "repeat": 1,
+        "version": "5.14.0",
+        "scene": "rarity-6-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "sample": 35,
+        "startOffsetMs": 563,
+        "durationMs": 1324.2000000029802
+      }
+    ],
+    "allLongTasks": [
+      {
+        "section": "frames",
+        "window": 1,
+        "pair": 1,
+        "version": "5.13.0",
+        "scene": "boss-burst",
+        "name": "self",
+        "entryType": "longtask",
+        "startTime": 11172.60000000149,
+        "duration": 760,
+        "navigationId": 7407,
+        "attribution": [
+          {
+            "name": "unknown",
+            "entryType": "taskattribution",
+            "startTime": 0,
+            "duration": 0,
+            "navigationId": 7407,
+            "containerType": "window",
+            "containerSrc": "",
+            "containerId": "",
+            "containerName": ""
+          }
+        ],
+        "start": 11172.60000000149
+      },
+      {
+        "section": "frames",
+        "window": 1,
+        "pair": 1,
+        "version": "5.13.0",
+        "scene": "boss-burst",
+        "name": "self",
+        "entryType": "longtask",
+        "startTime": 12384.70000000298,
+        "duration": 142,
+        "navigationId": 7407,
+        "attribution": [
+          {
+            "name": "unknown",
+            "entryType": "taskattribution",
+            "startTime": 0,
+            "duration": 0,
+            "navigationId": 7407,
+            "containerType": "window",
+            "containerSrc": "",
+            "containerId": "",
+            "containerName": ""
+          }
+        ],
+        "start": 12384.70000000298
+      },
+      {
+        "section": "frames",
+        "window": 2,
+        "pair": 1,
+        "version": "5.14.0",
+        "scene": "boss-burst",
+        "name": "self",
+        "entryType": "longtask",
+        "startTime": 922.6000000014901,
+        "duration": 909,
+        "navigationId": 3926,
+        "attribution": [
+          {
+            "name": "unknown",
+            "entryType": "taskattribution",
+            "startTime": 0,
+            "duration": 0,
+            "navigationId": 3926,
+            "containerType": "window",
+            "containerSrc": "",
+            "containerId": "",
+            "containerName": ""
+          }
+        ],
+        "start": 922.6000000014901
+      },
+      {
+        "section": "frames",
+        "window": 3,
+        "pair": 2,
+        "version": "5.14.0",
+        "scene": "boss-burst",
+        "name": "self",
+        "entryType": "longtask",
+        "startTime": 1550.1000000014901,
+        "duration": 155,
+        "navigationId": 8490,
+        "attribution": [
+          {
+            "name": "unknown",
+            "entryType": "taskattribution",
+            "startTime": 0,
+            "duration": 0,
+            "navigationId": 8490,
+            "containerType": "window",
+            "containerSrc": "",
+            "containerId": "",
+            "containerName": ""
+          }
+        ],
+        "start": 1550.1000000014901
+      },
+      {
+        "section": "frames",
+        "window": 19,
+        "pair": 10,
+        "version": "5.14.0",
+        "scene": "boss-burst",
+        "name": "self",
+        "entryType": "longtask",
+        "startTime": 4761.4000000059605,
+        "duration": 424,
+        "navigationId": 3198,
+        "attribution": [
+          {
+            "name": "unknown",
+            "entryType": "taskattribution",
+            "startTime": 0,
+            "duration": 0,
+            "navigationId": 3198,
+            "containerType": "window",
+            "containerSrc": "",
+            "containerId": "",
+            "containerName": ""
+          }
+        ],
+        "start": 4761.4000000059605
+      },
+      {
+        "section": "frames",
+        "window": 19,
+        "pair": 10,
+        "version": "5.14.0",
+        "scene": "boss-burst",
+        "name": "self",
+        "entryType": "longtask",
+        "startTime": 5185.9000000059605,
+        "duration": 763,
+        "navigationId": 3198,
+        "attribution": [
+          {
+            "name": "unknown",
+            "entryType": "taskattribution",
+            "startTime": 0,
+            "duration": 0,
+            "navigationId": 3198,
+            "containerType": "window",
+            "containerSrc": "",
+            "containerId": "",
+            "containerName": ""
+          }
+        ],
+        "start": 5185.9000000059605
+      }
+    ],
+    "eightGradeCoverage": {
+      "5.13.0": [
+        {
+          "rarity": 0,
+          "windows": 1,
+          "observed": 1,
+          "allObserved": true,
+          "references": [
+            {
+              "section": "coverage",
+              "window": 1,
+              "repeat": 1
+            }
+          ]
+        },
+        {
+          "rarity": 1,
+          "windows": 1,
+          "observed": 1,
+          "allObserved": true,
+          "references": [
+            {
+              "section": "coverage",
+              "window": 4,
+              "repeat": 1
+            }
+          ]
+        },
+        {
+          "rarity": 2,
+          "windows": 1,
+          "observed": 1,
+          "allObserved": true,
+          "references": [
+            {
+              "section": "coverage",
+              "window": 5,
+              "repeat": 1
+            }
+          ]
+        },
+        {
+          "rarity": 3,
+          "windows": 1,
+          "observed": 1,
+          "allObserved": true,
+          "references": [
+            {
+              "section": "coverage",
+              "window": 8,
+              "repeat": 1
+            }
+          ]
+        },
+        {
+          "rarity": 4,
+          "windows": 1,
+          "observed": 1,
+          "allObserved": true,
+          "references": [
+            {
+              "section": "coverage",
+              "window": 9,
+              "repeat": 1
+            }
+          ]
+        },
+        {
+          "rarity": 5,
+          "windows": 1,
+          "observed": 1,
+          "allObserved": true,
+          "references": [
+            {
+              "section": "coverage",
+              "window": 12,
+              "repeat": 1
+            }
+          ]
+        },
+        {
+          "rarity": 6,
+          "windows": 1,
+          "observed": 1,
+          "allObserved": true,
+          "references": [
+            {
+              "section": "coverage",
+              "window": 13,
+              "repeat": 1
+            }
+          ]
+        },
+        {
+          "rarity": 7,
+          "windows": 2,
+          "observed": 2,
+          "allObserved": true,
+          "references": [
+            {
+              "section": "frames",
+              "window": 9,
+              "repeat": 1
+            },
+            {
+              "section": "frames",
+              "window": 12,
+              "repeat": 2
+            }
+          ]
+        }
+      ],
+      "5.14.0": [
+        {
+          "rarity": 0,
+          "windows": 1,
+          "observed": 1,
+          "allObserved": true,
+          "references": [
+            {
+              "section": "coverage",
+              "window": 2,
+              "repeat": 1
+            }
+          ]
+        },
+        {
+          "rarity": 1,
+          "windows": 1,
+          "observed": 1,
+          "allObserved": true,
+          "references": [
+            {
+              "section": "coverage",
+              "window": 3,
+              "repeat": 1
+            }
+          ]
+        },
+        {
+          "rarity": 2,
+          "windows": 1,
+          "observed": 1,
+          "allObserved": true,
+          "references": [
+            {
+              "section": "coverage",
+              "window": 6,
+              "repeat": 1
+            }
+          ]
+        },
+        {
+          "rarity": 3,
+          "windows": 1,
+          "observed": 1,
+          "allObserved": true,
+          "references": [
+            {
+              "section": "coverage",
+              "window": 7,
+              "repeat": 1
+            }
+          ]
+        },
+        {
+          "rarity": 4,
+          "windows": 1,
+          "observed": 1,
+          "allObserved": true,
+          "references": [
+            {
+              "section": "coverage",
+              "window": 10,
+              "repeat": 1
+            }
+          ]
+        },
+        {
+          "rarity": 5,
+          "windows": 1,
+          "observed": 1,
+          "allObserved": true,
+          "references": [
+            {
+              "section": "coverage",
+              "window": 11,
+              "repeat": 1
+            }
+          ]
+        },
+        {
+          "rarity": 6,
+          "windows": 1,
+          "observed": 1,
+          "allObserved": true,
+          "references": [
+            {
+              "section": "coverage",
+              "window": 14,
+              "repeat": 1
+            }
+          ]
+        },
+        {
+          "rarity": 7,
+          "windows": 2,
+          "observed": 2,
+          "allObserved": true,
+          "references": [
+            {
+              "section": "frames",
+              "window": 10,
+              "repeat": 1
+            },
+            {
+              "section": "frames",
+              "window": 11,
+              "repeat": 2
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "inventoryControls": [
+    {
+      "name": "inventory-aa-current",
+      "report": "inventory-aa-current/performance-round.json",
+      "reportSha256": "2c2513ceb2da105665dd9d7c01374397f8a43446d73410ce08dbabe973216570",
+      "startedAt": "2026-10-18T17:12:57.450Z",
+      "completedAt": "2026-10-18T17:13:26.834Z",
+      "labelsAreCreationPositionsNotImplicitVersionNames": true,
+      "versionByLabel": {
+        "baseline": "5.14.0",
+        "after": "5.14.0"
+      },
+      "status": "MEASURED",
+      "sourceStable": true,
+      "errors": [],
+      "aggregateByLabel": {
+        "baseline": {
+          "samples": 12,
+          "p50": 163.79999999701977,
+          "p95": 219.60000000149012,
+          "p99": 219.60000000149012,
+          "max": 247.39999999850988,
+          "min": 61.19999999552965
+        },
+        "after": {
+          "samples": 12,
+          "p50": 277.70000000298023,
+          "p95": 423.5,
+          "p99": 423.5,
+          "max": 577.2999999970198,
+          "min": 58.69999999552965
+        }
+      },
+      "labelComparison": {
+        "medianDeltaMs": 113.90000000596046,
+        "medianPercentChange": 69.53601954092356,
+        "p95DeltaMs": 203.89999999850988,
+        "maxDeltaMs": 329.8999999985099
+      },
+      "allPairs": [
+        {
+          "pair": 1,
+          "labelOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 80.60000000149012,
+          "afterMs": 79.39999999850988,
+          "afterMinusBaselineMs": -1.2000000029802322
+        },
+        {
+          "pair": 2,
+          "labelOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 61.19999999552965,
+          "afterMs": 90.5,
+          "afterMinusBaselineMs": 29.30000000447035
+        },
+        {
+          "pair": 3,
+          "labelOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 63.19999999552965,
+          "afterMs": 62.900000005960464,
+          "afterMinusBaselineMs": -0.29999998956918716
+        },
+        {
+          "pair": 4,
+          "labelOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 214.5,
+          "afterMs": 58.69999999552965,
+          "afterMinusBaselineMs": -155.80000000447035
+        },
+        {
+          "pair": 5,
+          "labelOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 247.39999999850988,
+          "afterMs": 577.2999999970198,
+          "afterMinusBaselineMs": 329.8999999985099
+        },
+        {
+          "pair": 6,
+          "labelOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 219.60000000149012,
+          "afterMs": 423.5,
+          "afterMinusBaselineMs": 203.89999999850988
+        },
+        {
+          "pair": 7,
+          "labelOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 217.69999999552965,
+          "afterMs": 303,
+          "afterMinusBaselineMs": 85.30000000447035
+        },
+        {
+          "pair": 8,
+          "labelOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 119.90000000596046,
+          "afterMs": 245,
+          "afterMinusBaselineMs": 125.09999999403954
+        },
+        {
+          "pair": 9,
+          "labelOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 207,
+          "afterMs": 308.79999999701977,
+          "afterMinusBaselineMs": 101.79999999701977
+        },
+        {
+          "pair": 10,
+          "labelOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 122.60000000149012,
+          "afterMs": 289.59999999403954,
+          "afterMinusBaselineMs": 166.99999999254942
+        },
+        {
+          "pair": 11,
+          "labelOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 217.89999999850988,
+          "afterMs": 420,
+          "afterMinusBaselineMs": 202.10000000149012
+        },
+        {
+          "pair": 12,
+          "labelOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 163.79999999701977,
+          "afterMs": 277.70000000298023,
+          "afterMinusBaselineMs": 113.90000000596046
+        }
+      ],
+      "warmups": [
+        {
+          "label": "baseline",
+          "ok": true,
+          "writes": {
+            "main": {
+              "ok": true
+            },
+            "mirror": {
+              "ok": true
+            },
+            "settings": {
+              "ok": true
+            }
+          },
+          "mainCharacters": 2060957,
+          "mirrorCharacters": 2060957,
+          "keyCount": 3,
+          "warmupMs": 72.59999999403954,
+          "warmup": {
+            "elapsedMs": 72.59999999403954,
+            "trusted": true,
+            "cards": 60,
+            "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+            "cardStatesSha256": "27ca76ba395a6d031ab5afda454684d50c2d9a56aeb0e8f10aca1d270b6b1d11",
+            "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+            "cardHtmlUtf8Bytes": 92909,
+            "actualCardHtmlFile": "inventory-actual-baseline-cards.html",
+            "expectedCardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+            "completeSourceDomMatched": true,
+            "completeHtmlStableWithinVariant": true,
+            "stateSha256": "81651ee106fc3033a2b0362328da887670562f378eb44436dd4cc915a6e53b7b",
+            "stateUnchanged": true,
+            "mirrorUnchanged": true
+          }
+        },
+        {
+          "label": "after",
+          "ok": true,
+          "writes": {
+            "main": {
+              "ok": true
+            },
+            "mirror": {
+              "ok": true
+            },
+            "settings": {
+              "ok": true
+            }
+          },
+          "mainCharacters": 2060957,
+          "mirrorCharacters": 2060957,
+          "keyCount": 3,
+          "warmupMs": 98.20000000298023,
+          "warmup": {
+            "elapsedMs": 98.20000000298023,
+            "trusted": true,
+            "cards": 60,
+            "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+            "cardStatesSha256": "27ca76ba395a6d031ab5afda454684d50c2d9a56aeb0e8f10aca1d270b6b1d11",
+            "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+            "cardHtmlUtf8Bytes": 92909,
+            "actualCardHtmlFile": "inventory-actual-after-cards.html",
+            "expectedCardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+            "completeSourceDomMatched": true,
+            "completeHtmlStableWithinVariant": true,
+            "stateSha256": "81651ee106fc3033a2b0362328da887670562f378eb44436dd4cc915a6e53b7b",
+            "stateUnchanged": true,
+            "mirrorUnchanged": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "inventory-reverse-ab",
+      "report": "inventory-reverse-ab/performance-round.json",
+      "reportSha256": "51033b9225971ac62bd02ee3db45198c227a818038b4fb6e6edbed23738ef329",
+      "startedAt": "2026-10-18T17:13:36.841Z",
+      "completedAt": "2026-10-18T17:14:06.314Z",
+      "labelsAreCreationPositionsNotImplicitVersionNames": true,
+      "versionByLabel": {
+        "baseline": "5.14.0",
+        "after": "5.13.0"
+      },
+      "status": "MEASURED",
+      "sourceStable": true,
+      "errors": [],
+      "aggregateByLabel": {
+        "baseline": {
+          "samples": 12,
+          "p50": 124.69999999552965,
+          "p95": 378,
+          "p99": 378,
+          "max": 494.09999999403954,
+          "min": 58.79999999701977
+        },
+        "after": {
+          "samples": 12,
+          "p50": 107.29999999701977,
+          "p95": 437.30000000447035,
+          "p99": 437.30000000447035,
+          "max": 440.8999999985099,
+          "min": 60.399999998509884
+        }
+      },
+      "labelComparison": {
+        "medianDeltaMs": -17.399999998509884,
+        "medianPercentChange": -13.953488371398281,
+        "p95DeltaMs": 59.30000000447035,
+        "maxDeltaMs": -53.19999999552965
+      },
+      "allPairs": [
+        {
+          "pair": 1,
+          "labelOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 86.40000000596046,
+          "afterMs": 67.10000000149012,
+          "afterMinusBaselineMs": -19.30000000447035
+        },
+        {
+          "pair": 2,
+          "labelOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 80.29999999701977,
+          "afterMs": 75,
+          "afterMinusBaselineMs": -5.299999997019768
+        },
+        {
+          "pair": 3,
+          "labelOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 58.79999999701977,
+          "afterMs": 60.399999998509884,
+          "afterMinusBaselineMs": 1.6000000014901161
+        },
+        {
+          "pair": 4,
+          "labelOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 124.69999999552965,
+          "afterMs": 83.79999999701977,
+          "afterMinusBaselineMs": -40.899999998509884
+        },
+        {
+          "pair": 5,
+          "labelOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 374.69999999552965,
+          "afterMs": 251,
+          "afterMinusBaselineMs": -123.69999999552965
+        },
+        {
+          "pair": 6,
+          "labelOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 217.69999999552965,
+          "afterMs": 307.3999999985099,
+          "afterMinusBaselineMs": 89.70000000298023
+        },
+        {
+          "pair": 7,
+          "labelOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 138.19999999552965,
+          "afterMs": 80.10000000149012,
+          "afterMinusBaselineMs": -58.099999994039536
+        },
+        {
+          "pair": 8,
+          "labelOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 62.099999994039536,
+          "afterMs": 437.30000000447035,
+          "afterMinusBaselineMs": 375.2000000104308
+        },
+        {
+          "pair": 9,
+          "labelOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 378,
+          "afterMs": 297.79999999701977,
+          "afterMinusBaselineMs": -80.20000000298023
+        },
+        {
+          "pair": 10,
+          "labelOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 108.79999999701977,
+          "afterMs": 254.80000000447035,
+          "afterMinusBaselineMs": 146.00000000745058
+        },
+        {
+          "pair": 11,
+          "labelOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 128.30000000447035,
+          "afterMs": 107.29999999701977,
+          "afterMinusBaselineMs": -21.00000000745058
+        },
+        {
+          "pair": 12,
+          "labelOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 494.09999999403954,
+          "afterMs": 440.8999999985099,
+          "afterMinusBaselineMs": -53.19999999552965
+        }
+      ],
+      "warmups": [
+        {
+          "label": "baseline",
+          "ok": true,
+          "writes": {
+            "main": {
+              "ok": true
+            },
+            "mirror": {
+              "ok": true
+            },
+            "settings": {
+              "ok": true
+            }
+          },
+          "mainCharacters": 2060957,
+          "mirrorCharacters": 2060957,
+          "keyCount": 3,
+          "warmupMs": 81.20000000298023,
+          "warmup": {
+            "elapsedMs": 81.20000000298023,
+            "trusted": true,
+            "cards": 60,
+            "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+            "cardStatesSha256": "27ca76ba395a6d031ab5afda454684d50c2d9a56aeb0e8f10aca1d270b6b1d11",
+            "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+            "cardHtmlUtf8Bytes": 92909,
+            "actualCardHtmlFile": "inventory-actual-baseline-cards.html",
+            "expectedCardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+            "completeSourceDomMatched": true,
+            "completeHtmlStableWithinVariant": true,
+            "stateSha256": "81651ee106fc3033a2b0362328da887670562f378eb44436dd4cc915a6e53b7b",
+            "stateUnchanged": true,
+            "mirrorUnchanged": true
+          }
+        },
+        {
+          "label": "after",
+          "ok": true,
+          "writes": {
+            "main": {
+              "ok": true
+            },
+            "mirror": {
+              "ok": true
+            },
+            "settings": {
+              "ok": true
+            }
+          },
+          "mainCharacters": 2060957,
+          "mirrorCharacters": 2060957,
+          "keyCount": 3,
+          "warmupMs": 80.79999999701977,
+          "warmup": {
+            "elapsedMs": 80.79999999701977,
+            "trusted": true,
+            "cards": 60,
+            "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+            "cardStatesSha256": "27ca76ba395a6d031ab5afda454684d50c2d9a56aeb0e8f10aca1d270b6b1d11",
+            "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+            "cardHtmlUtf8Bytes": 92909,
+            "actualCardHtmlFile": "inventory-actual-after-cards.html",
+            "expectedCardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+            "completeSourceDomMatched": true,
+            "completeHtmlStableWithinVariant": true,
+            "stateSha256": "81651ee106fc3033a2b0362328da887670562f378eb44436dd4cc915a6e53b7b",
+            "stateUnchanged": true,
+            "mirrorUnchanged": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "inventory-aa-baseline",
+      "report": "inventory-aa-baseline/performance-round.json",
+      "reportSha256": "0e28d5dc221570e07868d911dab88b96ad71a7de27933f2c5f9b9e789f6c4aac",
+      "startedAt": "2026-10-18T17:14:15.885Z",
+      "completedAt": "2026-10-18T17:14:44.997Z",
+      "labelsAreCreationPositionsNotImplicitVersionNames": true,
+      "versionByLabel": {
+        "baseline": "5.13.0",
+        "after": "5.13.0"
+      },
+      "status": "MEASURED",
+      "sourceStable": true,
+      "errors": [],
+      "aggregateByLabel": {
+        "baseline": {
+          "samples": 12,
+          "p50": 124.90000000596046,
+          "p95": 561.3000000044703,
+          "p99": 561.3000000044703,
+          "max": 561.7999999970198,
+          "min": 59.400000005960464
+        },
+        "after": {
+          "samples": 12,
+          "p50": 227.5,
+          "p95": 432.20000000298023,
+          "p99": 432.20000000298023,
+          "max": 536.3000000044703,
+          "min": 62.100000001490116
+        }
+      },
+      "labelComparison": {
+        "medianDeltaMs": 102.59999999403954,
+        "medianPercentChange": 82.14571656456626,
+        "p95DeltaMs": -129.10000000149012,
+        "maxDeltaMs": -25.49999999254942
+      },
+      "allPairs": [
+        {
+          "pair": 1,
+          "labelOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 68.20000000298023,
+          "afterMs": 67.89999999850988,
+          "afterMinusBaselineMs": -0.30000000447034836
+        },
+        {
+          "pair": 2,
+          "labelOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 59.400000005960464,
+          "afterMs": 62.100000001490116,
+          "afterMinusBaselineMs": 2.6999999955296516
+        },
+        {
+          "pair": 3,
+          "labelOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 64.69999999552965,
+          "afterMs": 63.899999998509884,
+          "afterMinusBaselineMs": -0.7999999970197678
+        },
+        {
+          "pair": 4,
+          "labelOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 203.19999999552965,
+          "afterMs": 63.80000000447035,
+          "afterMinusBaselineMs": -139.3999999910593
+        },
+        {
+          "pair": 5,
+          "labelOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 432.69999999552965,
+          "afterMs": 241,
+          "afterMinusBaselineMs": -191.69999999552965
+        },
+        {
+          "pair": 6,
+          "labelOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 197.29999999701977,
+          "afterMs": 322.8999999985099,
+          "afterMinusBaselineMs": 125.60000000149012
+        },
+        {
+          "pair": 7,
+          "labelOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 329.20000000298023,
+          "afterMs": 536.3000000044703,
+          "afterMinusBaselineMs": 207.10000000149012
+        },
+        {
+          "pair": 8,
+          "labelOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 61.100000001490116,
+          "afterMs": 398.30000000447035,
+          "afterMinusBaselineMs": 337.20000000298023
+        },
+        {
+          "pair": 9,
+          "labelOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 561.3000000044703,
+          "afterMs": 432.20000000298023,
+          "afterMinusBaselineMs": -129.10000000149012
+        },
+        {
+          "pair": 10,
+          "labelOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 561.7999999970198,
+          "afterMs": 409.69999999552965,
+          "afterMinusBaselineMs": -152.10000000149012
+        },
+        {
+          "pair": 11,
+          "labelOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 124.90000000596046,
+          "afterMs": 121.39999999850988,
+          "afterMinusBaselineMs": -3.5000000074505806
+        },
+        {
+          "pair": 12,
+          "labelOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 64.19999999552965,
+          "afterMs": 227.5,
+          "afterMinusBaselineMs": 163.30000000447035
+        }
+      ],
+      "warmups": [
+        {
+          "label": "baseline",
+          "ok": true,
+          "writes": {
+            "main": {
+              "ok": true
+            },
+            "mirror": {
+              "ok": true
+            },
+            "settings": {
+              "ok": true
+            }
+          },
+          "mainCharacters": 2060957,
+          "mirrorCharacters": 2060957,
+          "keyCount": 3,
+          "warmupMs": 73,
+          "warmup": {
+            "elapsedMs": 73,
+            "trusted": true,
+            "cards": 60,
+            "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+            "cardStatesSha256": "27ca76ba395a6d031ab5afda454684d50c2d9a56aeb0e8f10aca1d270b6b1d11",
+            "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+            "cardHtmlUtf8Bytes": 92909,
+            "actualCardHtmlFile": "inventory-actual-baseline-cards.html",
+            "expectedCardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+            "completeSourceDomMatched": true,
+            "completeHtmlStableWithinVariant": true,
+            "stateSha256": "81651ee106fc3033a2b0362328da887670562f378eb44436dd4cc915a6e53b7b",
+            "stateUnchanged": true,
+            "mirrorUnchanged": true
+          }
+        },
+        {
+          "label": "after",
+          "ok": true,
+          "writes": {
+            "main": {
+              "ok": true
+            },
+            "mirror": {
+              "ok": true
+            },
+            "settings": {
+              "ok": true
+            }
+          },
+          "mainCharacters": 2060957,
+          "mirrorCharacters": 2060957,
+          "keyCount": 3,
+          "warmupMs": 80,
+          "warmup": {
+            "elapsedMs": 80,
+            "trusted": true,
+            "cards": 60,
+            "cardIdsSha256": "ac98933daf2fa7ab7d67a07f893203c86f204c1a0d63ee8cb213e9c1f1468bfa",
+            "cardStatesSha256": "27ca76ba395a6d031ab5afda454684d50c2d9a56aeb0e8f10aca1d270b6b1d11",
+            "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+            "cardHtmlUtf8Bytes": 92909,
+            "actualCardHtmlFile": "inventory-actual-after-cards.html",
+            "expectedCardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+            "completeSourceDomMatched": true,
+            "completeHtmlStableWithinVariant": true,
+            "stateSha256": "81651ee106fc3033a2b0362328da887670562f378eb44436dd4cc915a6e53b7b",
+            "stateUnchanged": true,
+            "mirrorUnchanged": true
+          }
+        }
+      ]
+    }
+  ],
+  "effectCommands": {
+    "cases": 52,
+    "exactCanvasCommands": 52,
+    "readSavings": 49,
+    "moveSavings": 29
+  },
+  "nativePixels": {
+    "report": "native-effects-pixels-final/effects-pixels-round14.json",
+    "status": "STRICT_PIXEL_DIFFERENCE_RETAINED",
+    "cases": 18,
+    "strictEqualCases": 17,
+    "allStrictDifferences": [
+      {
+        "name": "loot-7",
+        "width": 3840,
+        "height": 2160,
+        "elapsed": 300,
+        "repeat": 1,
+        "fixtureSha256": "eefefce504c56241753803abfc88ead162aac2067a01da081124b75b39b6821a",
+        "variants": [
+          {
+            "label": "baseline",
+            "htmlSha256": "08e020888ddd1d4bdad5d53763a0fd379d2ce262aabb89b7a620b7307bb2b79f",
+            "rawRgba": {
+              "file": "rgba-16-baseline.bin.gz",
+              "gzipBytes": 138505,
+              "gzipSha256": "93e0cc73e604d99bd98bd941412727cba745d15452913d715c957f07cdcca1ae"
+            },
+            "width": 756,
+            "height": 712,
+            "rgbaBytes": 2153088,
+            "rgbaSha256": "85afc6326ec0dc488a2f2cded4b986f6ab4ec54e61ae60080096bc4bf9768179",
+            "nontransparent": 119479,
+            "alphaSum": 4363832,
+            "rect": {
+              "left": 1071.015625,
+              "top": 71.65625,
+              "width": 1664,
+              "height": 1567
+            },
+            "roi": "{\"x\":105,\"y\":0,\"width\":1664,\"height\":1567}",
+            "logical": "{\"width\":1929.25,\"height\":1654.84375}",
+            "pixels": 538272,
+            "materialPixels": 196173,
+            "kind": "loot-7",
+            "particles": 132,
+            "motif": "eternal-orbits",
+            "columns": 9,
+            "rims": 4,
+            "frames": 7,
+            "elapsed": 300,
+            "pending": {
+              "frames": 1,
+              "timers": 1
+            },
+            "firstChild": true
+          },
+          {
+            "label": "current",
+            "htmlSha256": "2e338904710afe158af182a3ab80026db062f89f374ac0d29a8f9dbcc5e95026",
+            "rawRgba": {
+              "file": "rgba-16-current.bin.gz",
+              "gzipBytes": 138504,
+              "gzipSha256": "22d8fb4d64e217a58ee515a47048c57879cd74b85ec90393a01950c302d3e7b4"
+            },
+            "width": 756,
+            "height": 712,
+            "rgbaBytes": 2153088,
+            "rgbaSha256": "1e2bde876c4b3465d72fe43c5cf89415a0edbed13b33320fb8383480a678dbb8",
+            "nontransparent": 119478,
+            "alphaSum": 4363831,
+            "rect": {
+              "left": 1071.015625,
+              "top": 71.65625,
+              "width": 1664,
+              "height": 1567
+            },
+            "roi": "{\"x\":105,\"y\":0,\"width\":1664,\"height\":1567}",
+            "logical": "{\"width\":1929.25,\"height\":1654.84375}",
+            "pixels": 538272,
+            "materialPixels": 196173,
+            "kind": "loot-7",
+            "particles": 132,
+            "motif": "eternal-orbits",
+            "columns": 9,
+            "rims": 4,
+            "frames": 7,
+            "elapsed": 300,
+            "pending": {
+              "frames": 1,
+              "timers": 1
+            },
+            "firstChild": true
+          }
+        ],
+        "status": "STRICT_DIFFERENCE",
+        "screenshot": "/workspace/scratch/8db1c7454cb5/audit/performance/native-effects-pixels-final/eternal-effect-3840.png",
+        "completeHtmlSame": false,
+        "exactPixelsAndGeometry": false,
+        "differenceMessage": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n... Skipped lines\n\n  {\n+   alphaSum: 4363831,\n-   alphaSum: 4363832,\n    columns: 9,\n    elapsed: 300,\n    firstChild: true,\n    frames: 7,\n    height: 712,\n...\n    motif: 'eternal-orbits',\n+   nontransparent: 119478,\n-   nontransparent: 119479,\n    particles: 132,\n    pending: {\n      frames: 1,\n      timers: 1\n    },\n...\n    rgbaBytes: 2153088,\n+   rgbaSha256: '1e2bde876c4b3465d72fe43c5cf89415a0edbed13b33320fb8383480a678dbb8',\n-   rgbaSha256: '85afc6326ec0dc488a2f2cded4b986f6ab4ec54e61ae60080096bc4bf9768179',\n    rims: 4,\n    roi: '{\"x\":105,\"y\":0,\"width\":1664,\"height\":1567}',\n    width: 756\n  }\n",
+        "rgbaDifference": {
+          "changedBytes": 2,
+          "changedPixels": 2,
+          "maxChannelDelta": 85,
+          "allChangedBytes": [
+            {
+              "byte": 2121717,
+              "pixel": 530429,
+              "x": 473,
+              "y": 701,
+              "channel": "g",
+              "baseline": 170,
+              "current": 85
+            },
+            {
+              "byte": 2124743,
+              "pixel": 531185,
+              "x": 473,
+              "y": 702,
+              "channel": "a",
+              "baseline": 1,
+              "current": 0
+            }
+          ]
+        }
+      }
+    ],
+    "sameSourceAAReport": "native-effects-aa-fourk-eternal/effects-pixels-round14.json",
+    "sameSourceAAStatus": "STRICT_PIXEL_DIFFERENCE_RETAINED",
+    "sameSourceAARepeats": 3,
+    "interpretation": "The same two differing full RGBA hashes occur in all three same-input-source context pairs. This does not require the source change; strict native pixel equality still fails and is not replaced by a tolerance."
+  },
+  "attribution": {
+    "report": "attribution-final/effects-attribution-round14.json",
+    "status": "DIAGNOSTIC_COMPLETE",
+    "timingIsIntrusiveAndPotentiallyContended": true,
+    "formalMultiSecondTailReproduced": false,
+    "allCases": [
+      {
+        "variant": "baseline",
+        "effects": "full",
+        "repeat": 1,
+        "pair": 1,
+        "position": 1,
+        "frameSummary": {
+          "frames": 235,
+          "actualWindowMs": 4212.0999999940395,
+          "maxIntervalMs": 192,
+          "kinds": [
+            "idle",
+            "chest-charge",
+            "loot-7"
+          ],
+          "peakDicePixels": 0
+        },
+        "nativeRectReads": 11,
+        "nativeDomWrites": 5,
+        "domWriteKinds": {
+          "innerHTML": 3,
+          "prepend": 2
+        },
+        "storageCalls": 8,
+        "canvasMethodCalls": 44393,
+        "canvasSubmissionMs": 36.799999959766865,
+        "allLongCanvasCallsAtLeast5Ms": [],
+        "allRafAtLeast50Ms": [
+          {
+            "ms": 150,
+            "intervalMs": 103.60000000149012,
+            "kind": "chest-charge",
+            "busy": true,
+            "effectFrames": 2,
+            "dicePixels": 0
+          },
+          {
+            "ms": 1637.2999999970198,
+            "intervalMs": 192,
+            "kind": "loot-7",
+            "busy": true,
+            "effectFrames": 3,
+            "dicePixels": 0
+          },
+          {
+            "ms": 3765.39999999851,
+            "intervalMs": 53.399999998509884,
+            "kind": "idle",
+            "busy": false,
+            "effectFrames": 0,
+            "dicePixels": 0
+          }
+        ],
+        "allLongTasks": [],
+        "allLongAnimationFrames": [
+          {
+            "name": "long-animation-frame",
+            "entryType": "long-animation-frame",
+            "startTime": 4127.5999999940395,
+            "duration": 103.10000000149012,
+            "navigationId": 254,
+            "paintTime": 4230.69999999553,
+            "presentationTime": 4256,
+            "renderStart": 4229.89999999851,
+            "styleAndLayoutStart": 4230.39999999851,
+            "firstUIEventTimestamp": 0,
+            "blockingDuration": 0,
+            "scripts": []
+          },
+          {
+            "name": "long-animation-frame",
+            "entryType": "long-animation-frame",
+            "startTime": 5527.39999999851,
+            "duration": 192.10000000149012,
+            "navigationId": 254,
+            "paintTime": 5719.5,
+            "presentationTime": 5760,
+            "renderStart": 5717.0999999940395,
+            "styleAndLayoutStart": 5719.19999999553,
+            "firstUIEventTimestamp": 0,
+            "blockingDuration": 0,
+            "scripts": []
+          },
+          {
+            "name": "long-animation-frame",
+            "entryType": "long-animation-frame",
+            "startTime": 7793,
+            "duration": 52.899999998509884,
+            "navigationId": 254,
+            "paintTime": 7845.89999999851,
+            "presentationTime": 7876,
+            "renderStart": 7845.29999999702,
+            "styleAndLayoutStart": 7845.5,
+            "firstUIEventTimestamp": 0,
+            "blockingDuration": 0,
+            "scripts": []
+          }
+        ],
+        "metricsDelta": {
+          "Timestamp": 4.30128899999545,
+          "AudioHandlers": 0,
+          "AudioWorkletProcessors": 0,
+          "Documents": -4,
+          "Frames": -3,
+          "JSEventListeners": 0,
+          "LayoutObjects": 662,
+          "MediaKeySessions": 0,
+          "MediaKeys": 0,
+          "Nodes": 865,
+          "Resources": -6,
+          "ContextLifecycleStateObservers": -4,
+          "V8PerContextDatas": 0,
+          "WorkerGlobalScopes": 0,
+          "UACSSResources": 0,
+          "RTCPeerConnections": 0,
+          "ResourceFetchers": -4,
+          "AdSubframes": 0,
+          "DetachedScriptStates": -6,
+          "ArrayBufferContents": 0,
+          "LayoutCount": 42,
+          "RecalcStyleCount": 120,
+          "LayoutDuration": 0.017155,
+          "RecalcStyleDuration": 0.026335,
+          "DevToolsCommandDuration": 0.00248,
+          "ScriptDuration": 0.137102,
+          "V8CompileDuration": 0,
+          "TaskDuration": 0.518116,
+          "TaskOtherDuration": 0.335044,
+          "ThreadTime": 0.394233,
+          "ProcessTime": 0.6599999999999999,
+          "JSHeapUsedSize": 1281864,
+          "JSHeapTotalSize": 786432,
+          "FirstMeaningfulPaint": 0,
+          "DomContentLoaded": 0,
+          "NavigationStart": 0
+        },
+        "canvasSnapshots": [
+          {
+            "ms": 12.199999995529652,
+            "kind": "idle",
+            "width": 300,
+            "height": 150,
+            "roi": null,
+            "logical": null,
+            "style": null,
+            "materialPixels": 0,
+            "particles": 0,
+            "motif": null
+          },
+          {
+            "ms": 29,
+            "kind": "chest-charge",
+            "width": 350,
+            "height": 465,
+            "roi": "{\"x\":578,\"y\":0,\"width\":771,\"height\":1023}",
+            "logical": "{\"width\":1929.25,\"height\":1654.84375}",
+            "style": "position: absolute; inset: 0px auto auto 578px; width: 771px; height: 1023px; pointer-events: none; z-index: 0;",
+            "materialPixels": 165300,
+            "particles": 22,
+            "motif": "none"
+          },
+          {
+            "ms": 1422.3999999985099,
+            "kind": "loot-7",
+            "width": 756,
+            "height": 712,
+            "roi": "{\"x\":105,\"y\":0,\"width\":1664,\"height\":1567}",
+            "logical": "{\"width\":1929.25,\"height\":1654.84375}",
+            "style": "position: absolute; inset: 0px auto auto 105px; width: 1664px; height: 1567px; pointer-events: none; z-index: 0;",
+            "materialPixels": 196173,
+            "particles": 132,
+            "motif": "eternal-orbits"
+          },
+          {
+            "ms": 3701.5,
+            "kind": "idle",
+            "width": 300,
+            "height": 150,
+            "roi": null,
+            "logical": null,
+            "style": null,
+            "materialPixels": 0,
+            "particles": 0,
+            "motif": null
+          }
+        ],
+        "allTraceSlicesAtLeast50Ms": [
+          {
+            "pid": 134195,
+            "tid": 134195,
+            "process": "GPU Process",
+            "thread": "CrGpuMain",
+            "name": "RunTask",
+            "category": "disabled-by-default-devtools.timeline",
+            "offsetMs": 1445.239,
+            "durationMs": 69.77,
+            "overlapMs": 69.77,
+            "phase": "X"
+          },
+          {
+            "pid": 134195,
+            "tid": 134195,
+            "process": "GPU Process",
+            "thread": "CrGpuMain",
+            "name": "ThreadControllerImpl::RunTask",
+            "category": "toplevel",
+            "offsetMs": 1445.24,
+            "durationMs": 69.767,
+            "overlapMs": 69.767,
+            "phase": "X"
+          },
+          {
+            "pid": 134195,
+            "tid": 134195,
+            "process": "GPU Process",
+            "thread": "CrGpuMain",
+            "name": "Scheduler::RunTask",
+            "category": "gpu,toplevel.flow",
+            "offsetMs": 1445.24,
+            "durationMs": 69.763,
+            "overlapMs": 69.763,
+            "phase": "X"
+          },
+          {
+            "pid": 134195,
+            "tid": 134195,
+            "process": "GPU Process",
+            "thread": "CrGpuMain",
+            "name": "GpuChannel::ExecuteDeferredRequest",
+            "category": "gpu",
+            "offsetMs": 1445.241,
+            "durationMs": 69.76,
+            "overlapMs": 69.76,
+            "phase": "X"
+          },
+          {
+            "pid": 134195,
+            "tid": 134195,
+            "process": "GPU Process",
+            "thread": "CrGpuMain",
+            "name": "GPUTask",
+            "category": "disabled-by-default-devtools.timeline",
+            "offsetMs": 1445.242,
+            "durationMs": 69.754,
+            "overlapMs": 69.754,
+            "phase": "X"
+          },
+          {
+            "pid": 134195,
+            "tid": 134195,
+            "process": "GPU Process",
+            "thread": "CrGpuMain",
+            "name": "RendererRasterWorker",
+            "category": "gpu",
+            "offsetMs": 1445.243,
+            "durationMs": 69.75,
+            "overlapMs": 69.75,
+            "phase": "X"
+          },
+          {
+            "pid": 134195,
+            "tid": 134195,
+            "process": "GPU Process",
+            "thread": "CrGpuMain",
+            "name": "CommandBuffer::Flush",
+            "category": "gpu,toplevel.flow",
+            "offsetMs": 1445.244,
+            "durationMs": 69.749,
+            "overlapMs": 69.749,
+            "phase": "X"
+          },
+          {
+            "pid": 134195,
+            "tid": 134195,
+            "process": "GPU Process",
+            "thread": "CrGpuMain",
+            "name": "CommandBufferStub::OnAsyncFlush",
+            "category": "gpu",
+            "offsetMs": 1445.244,
+            "durationMs": 69.748,
+            "overlapMs": 69.748,
+            "phase": "X"
+          },
+          {
+            "pid": 134195,
+            "tid": 134195,
+            "process": "GPU Process",
+            "thread": "CrGpuMain",
+            "name": "CommandBufferService:PutChanged",
+            "category": "gpu",
+            "offsetMs": 1445.245,
+            "durationMs": 69.746,
+            "overlapMs": 69.746,
+            "phase": "X"
+          },
+          {
+            "pid": 134195,
+            "tid": 134195,
+            "process": "GPU Process",
+            "thread": "CrGpuMain",
+            "name": "RasterDecoderImpl::DoEndRasterCHROMIUM",
+            "category": "gpu",
+            "offsetMs": 1445.814,
+            "durationMs": 69.159,
+            "overlapMs": 69.159,
+            "phase": "X"
+          },
+          {
+            "pid": 134195,
+            "tid": 134195,
+            "process": "GPU Process",
+            "thread": "CrGpuMain",
+            "name": "RasterDecoderImpl::DoEndRasterCHROMIUM::Flush",
+            "category": "gpu",
+            "offsetMs": 1445.815,
+            "durationMs": 68.933,
+            "overlapMs": 68.933,
+            "phase": "X"
+          },
+          {
+            "pid": 134195,
+            "tid": 134195,
+            "process": "GPU Process",
+            "thread": "CrGpuMain",
+            "name": "RunTask",
+            "category": "disabled-by-default-devtools.timeline",
+            "offsetMs": 1516.978,
+            "durationMs": 80.728,
+            "overlapMs": 80.728,
+            "phase": "X"
+          },
+          {
+            "pid": 134195,
+            "tid": 134195,
+            "process": "GPU Process",
+            "thread": "CrGpuMain",
+            "name": "ThreadControllerImpl::RunTask",
+            "category": "toplevel",
+            "offsetMs": 1516.979,
+            "durationMs": 80.725,
+            "overlapMs": 80.725,
+            "phase": "X"
+          },
+          {
+            "pid": 134195,
+            "tid": 134195,
+            "process": "GPU Process",
+            "thread": "CrGpuMain",
+            "name": "Scheduler::RunTask",
+            "category": "gpu,toplevel.flow",
+            "offsetMs": 1516.98,
+            "durationMs": 80.721,
+            "overlapMs": 80.721,
+            "phase": "X"
+          },
+          {
+            "pid": 134195,
+            "tid": 134195,
+            "process": "GPU Process",
+            "thread": "CrGpuMain",
+            "name": "GpuChannel::ExecuteDeferredRequest",
+            "category": "gpu",
+            "offsetMs": 1516.98,
+            "durationMs": 80.718,
+            "overlapMs": 80.718,
+            "phase": "X"
+          },
+          {
+            "pid": 134195,
+            "tid": 134195,
+            "process": "GPU Process",
+            "thread": "CrGpuMain",
+            "name": "GPUTask",
+            "category": "disabled-by-default-devtools.timeline",
+            "offsetMs": 1516.981,
+            "durationMs": 80.713,
+            "overlapMs": 80.713,
+            "phase": "X"
+          },
+          {
+            "pid": 134195,
+            "tid": 134195,
+            "process": "GPU Process",
+            "thread": "CrGpuMain",
+            "name": "RendererRasterWorker",
+            "category": "gpu",
+            "offsetMs": 1516.983,
+            "durationMs": 80.709,
+            "overlapMs": 80.709,
+            "phase": "X"
+          },
+          {
+            "pid": 134195,
+            "tid": 134195,
+            "process": "GPU Process",
+            "thread": "CrGpuMain",
+            "name": "CommandBuffer::Flush",
+            "category": "gpu,toplevel.flow",
+            "offsetMs": 1516.983,
+            "durationMs": 80.708,
+            "overlapMs": 80.708,
+            "phase": "X"
+          },
+          {
+            "pid": 134195,
+            "tid": 134195,
+            "process": "GPU Process",
+            "thread": "CrGpuMain",
+            "name": "CommandBufferStub::OnAsyncFlush",
+            "category": "gpu",
+            "offsetMs": 1516.984,
+            "durationMs": 80.707,
+            "overlapMs": 80.707,
+            "phase": "X"
+          },
+          {
+            "pid": 134195,
+            "tid": 134195,
+            "process": "GPU Process",
+            "thread": "CrGpuMain",
+            "name": "CommandBufferService:PutChanged",
+            "category": "gpu",
+            "offsetMs": 1516.984,
+            "durationMs": 80.707,
+            "overlapMs": 80.707,
+            "phase": "X"
+          },
+          {
+            "pid": 134195,
+            "tid": 134195,
+            "process": "GPU Process",
+            "thread": "CrGpuMain",
+            "name": "RasterDecoderImpl::DoEndRasterCHROMIUM",
+            "category": "gpu",
+            "offsetMs": 1517.96,
+            "durationMs": 79.714,
+            "overlapMs": 79.714,
+            "phase": "X"
+          },
+          {
+            "pid": 134195,
+            "tid": 134195,
+            "process": "GPU Process",
+            "thread": "CrGpuMain",
+            "name": "RasterDecoderImpl::DoEndRasterCHROMIUM::Flush",
+            "category": "gpu",
+            "offsetMs": 1517.961,
+            "durationMs": 79.458,
+            "overlapMs": 79.458,
+            "phase": "X"
+          },
+          {
+            "pid": 134195,
+            "tid": 134195,
+            "process": "GPU Process",
+            "thread": "CrGpuMain",
+            "name": "RunTask",
+            "category": "disabled-by-default-devtools.timeline",
+            "offsetMs": 2281.107,
+            "durationMs": 53.224,
+            "overlapMs": 53.224,
+            "phase": "X"
+          },
+          {
+            "pid": 134195,
+            "tid": 134195,
+            "process": "GPU Process",
+            "thread": "CrGpuMain",
+            "name": "ThreadControllerImpl::RunTask",
+            "category": "toplevel",
+            "offsetMs": 2281.107,
+            "durationMs": 53.223,
+            "overlapMs": 53.223,
+            "phase": "X"
+          },
+          {
+            "pid": 134195,
+            "tid": 134195,
+            "process": "GPU Process",
+            "thread": "CrGpuMain",
+            "name": "Scheduler::RunTask",
+            "category": "gpu,toplevel.flow",
+            "offsetMs": 2281.109,
+            "durationMs": 53.217,
+            "overlapMs": 53.217,
+            "phase": "X"
+          },
+          {
+            "pid": 134195,
+            "tid": 134195,
+            "process": "GPU Process",
+            "thread": "CrGpuMain",
+            "name": "GpuChannel::ExecuteDeferredRequest",
+            "category": "gpu",
+            "offsetMs": 2281.11,
+            "durationMs": 53.21,
+            "overlapMs": 53.21,
+            "phase": "X"
+          },
+          {
+            "pid": 134195,
+            "tid": 134195,
+            "process": "GPU Process",
+            "thread": "CrGpuMain",
+            "name": "GPUTask",
+            "category": "disabled-by-default-devtools.timeline",
+            "offsetMs": 2281.118,
+            "durationMs": 53.201,
+            "overlapMs": 53.201,
+            "phase": "X"
+          },
+          {
+            "pid": 134195,
+            "tid": 134195,
+            "process": "GPU Process",
+            "thread": "CrGpuMain",
+            "name": "RendererRasterWorker",
+            "category": "gpu",
+            "offsetMs": 2281.131,
+            "durationMs": 53.185,
+            "overlapMs": 53.185,
+            "phase": "X"
+          },
+          {
+            "pid": 134195,
+            "tid": 134195,
+            "process": "GPU Process",
+            "thread": "CrGpuMain",
+            "name": "CommandBuffer::Flush",
+            "category": "gpu,toplevel.flow",
+            "offsetMs": 2281.132,
+            "durationMs": 53.184,
+            "overlapMs": 53.184,
+            "phase": "X"
+          },
+          {
+            "pid": 134195,
+            "tid": 134195,
+            "process": "GPU Process",
+            "thread": "CrGpuMain",
+            "name": "CommandBufferStub::OnAsyncFlush",
+            "category": "gpu",
+            "offsetMs": 2281.133,
+            "durationMs": 53.182,
+            "overlapMs": 53.182,
+            "phase": "X"
+          },
+          {
+            "pid": 134195,
+            "tid": 134195,
+            "process": "GPU Process",
+            "thread": "CrGpuMain",
+            "name": "CommandBufferService:PutChanged",
+            "category": "gpu",
+            "offsetMs": 2281.137,
+            "durationMs": 53.176,
+            "overlapMs": 53.176,
+            "phase": "X"
+          },
+          {
+            "pid": 134195,
+            "tid": 134195,
+            "process": "GPU Process",
+            "thread": "CrGpuMain",
+            "name": "RasterDecoderImpl::DoEndRasterCHROMIUM",
+            "category": "gpu",
+            "offsetMs": 2282.137,
+            "durationMs": 51.882,
+            "overlapMs": 51.882,
+            "phase": "X"
+          },
+          {
+            "pid": 134195,
+            "tid": 134195,
+            "process": "GPU Process",
+            "thread": "CrGpuMain",
+            "name": "RasterDecoderImpl::DoEndRasterCHROMIUM::Flush",
+            "category": "gpu",
+            "offsetMs": 2282.14,
+            "durationMs": 51.864,
+            "overlapMs": 51.864,
+            "phase": "X"
+          }
+        ],
+        "traceDataLoss": false,
+        "rawTrace": {
+          "path": "/workspace/scratch/8db1c7454cb5/audit/performance/attribution-final/raw-traces/01-baseline-3840-full.json.gz",
+          "bytes": 17708468,
+          "sha256": "cdf341004754adbdcd37f9161ea7ca130fc7e18a4a347a8059fd500f90b3bfd3",
+          "gzipBytes": 1925987,
+          "gzipSha256": "08e2fcdd7d6ec66868313ce6c9aab099096541e5b6444fad90bc6a72a25bb20d"
+        }
+      },
+      {
+        "variant": "current",
+        "effects": "full",
+        "repeat": 1,
+        "pair": 1,
+        "position": 2,
+        "frameSummary": {
+          "frames": 251,
+          "actualWindowMs": 4212.5,
+          "maxIntervalMs": 49.30000000447035,
+          "kinds": [
+            "idle",
+            "chest-charge",
+            "loot-7"
+          ],
+          "peakDicePixels": 0
+        },
+        "nativeRectReads": 9,
+        "nativeDomWrites": 3,
+        "domWriteKinds": {
+          "innerHTML": 3
+        },
+        "storageCalls": 8,
+        "canvasMethodCalls": 49424,
+        "canvasSubmissionMs": 38.80000004172325,
+        "allLongCanvasCallsAtLeast5Ms": [],
+        "allRafAtLeast50Ms": [],
+        "allLongTasks": [],
+        "allLongAnimationFrames": [],
+        "metricsDelta": {
+          "Timestamp": 4.2679449999995995,
+          "AudioHandlers": 0,
+          "AudioWorkletProcessors": 0,
+          "Documents": -4,
+          "Frames": -2,
+          "JSEventListeners": 1,
+          "LayoutObjects": 662,
+          "MediaKeySessions": 0,
+          "MediaKeys": 0,
+          "Nodes": 867,
+          "Resources": -6,
+          "ContextLifecycleStateObservers": -4,
+          "V8PerContextDatas": 0,
+          "WorkerGlobalScopes": 0,
+          "UACSSResources": 0,
+          "RTCPeerConnections": 0,
+          "ResourceFetchers": -4,
+          "AdSubframes": 0,
+          "DetachedScriptStates": -4,
+          "ArrayBufferContents": 0,
+          "LayoutCount": 42,
+          "RecalcStyleCount": 136,
+          "LayoutDuration": 0.020252,
+          "RecalcStyleDuration": 0.038819,
+          "DevToolsCommandDuration": 0.002135,
+          "ScriptDuration": 0.151559,
+          "V8CompileDuration": 0,
+          "TaskDuration": 0.535145,
+          "TaskOtherDuration": 0.32238,
+          "ThreadTime": 0.417732,
+          "ProcessTime": 0.69,
+          "JSHeapUsedSize": -4236,
+          "JSHeapTotalSize": -786432,
+          "FirstMeaningfulPaint": 0,
+          "DomContentLoaded": 0,
+          "NavigationStart": 0
+        },
+        "canvasSnapshots": [
+          {
+            "ms": 12.199999995529652,
+            "kind": "idle",
+            "width": 300,
+            "height": 150,
+            "roi": null,
+            "logical": null,
+            "style": null,
+            "materialPixels": 0,
+            "particles": 0,
+            "motif": null
+          },
+          {
+            "ms": 31.099999994039536,
+            "kind": "chest-charge",
+            "width": 350,
+            "height": 465,
+            "roi": "{\"x\":578,\"y\":0,\"width\":771,\"height\":1023}",
+            "logical": "{\"width\":1929.25,\"height\":1654.84375}",
+            "style": "position: absolute; inset: 0px auto auto 578px; width: 771px; height: 1023px; pointer-events: none; z-index: 0;",
+            "materialPixels": 165300,
+            "particles": 22,
+            "motif": "none"
+          },
+          {
+            "ms": 1417.2999999970198,
+            "kind": "loot-7",
+            "width": 756,
+            "height": 712,
+            "roi": "{\"x\":105,\"y\":0,\"width\":1664,\"height\":1567}",
+            "logical": "{\"width\":1929.25,\"height\":1654.84375}",
+            "style": "position: absolute; inset: 0px auto auto 105px; width: 1664px; height: 1567px; pointer-events: none; z-index: 0;",
+            "materialPixels": 196173,
+            "particles": 132,
+            "motif": "eternal-orbits"
+          },
+          {
+            "ms": 3706.89999999851,
+            "kind": "idle",
+            "width": 300,
+            "height": 150,
+            "roi": null,
+            "logical": null,
+            "style": null,
+            "materialPixels": 0,
+            "particles": 0,
+            "motif": null
+          }
+        ],
+        "allTraceSlicesAtLeast50Ms": [],
+        "traceDataLoss": false,
+        "rawTrace": {
+          "path": "/workspace/scratch/8db1c7454cb5/audit/performance/attribution-final/raw-traces/02-current-3840-full.json.gz",
+          "bytes": 19346199,
+          "sha256": "1e491ff88516657f7dfbc5445b00d0f2fdc491ed25b6654a8a38e8ce066b15df",
+          "gzipBytes": 2108477,
+          "gzipSha256": "a1b4853ebfeaf6e6aee2fa38e712905375d760a78294d17861d2356de3094922"
+        }
+      },
+      {
+        "variant": "current",
+        "effects": "full",
+        "repeat": 2,
+        "pair": 2,
+        "position": 1,
+        "frameSummary": {
+          "frames": 250,
+          "actualWindowMs": 4212.10000000149,
+          "maxIntervalMs": 33.20000000298023,
+          "kinds": [
+            "idle",
+            "chest-charge",
+            "loot-7"
+          ],
+          "peakDicePixels": 0
+        },
+        "nativeRectReads": 9,
+        "nativeDomWrites": 3,
+        "domWriteKinds": {
+          "innerHTML": 3
+        },
+        "storageCalls": 8,
+        "canvasMethodCalls": 48614,
+        "canvasSubmissionMs": 35.30000005662441,
+        "allLongCanvasCallsAtLeast5Ms": [],
+        "allRafAtLeast50Ms": [],
+        "allLongTasks": [],
+        "allLongAnimationFrames": [],
+        "metricsDelta": {
+          "Timestamp": 4.2647239999932935,
+          "AudioHandlers": 0,
+          "AudioWorkletProcessors": 0,
+          "Documents": 0,
+          "Frames": 0,
+          "JSEventListeners": 0,
+          "LayoutObjects": 663,
+          "MediaKeySessions": 0,
+          "MediaKeys": 0,
+          "Nodes": 1935,
+          "Resources": 0,
+          "ContextLifecycleStateObservers": 0,
+          "V8PerContextDatas": 0,
+          "WorkerGlobalScopes": 0,
+          "UACSSResources": 0,
+          "RTCPeerConnections": 0,
+          "ResourceFetchers": 0,
+          "AdSubframes": 0,
+          "DetachedScriptStates": 0,
+          "ArrayBufferContents": 0,
+          "LayoutCount": 42,
+          "RecalcStyleCount": 135,
+          "LayoutDuration": 0.014864,
+          "RecalcStyleDuration": 0.027858,
+          "DevToolsCommandDuration": 0.0019909999999999997,
+          "ScriptDuration": 0.116136,
+          "V8CompileDuration": 0,
+          "TaskDuration": 0.38355,
+          "TaskOtherDuration": 0.222701,
+          "ThreadTime": 0.375115,
+          "ProcessTime": 0.6400000000000001,
+          "JSHeapUsedSize": 1993148,
+          "JSHeapTotalSize": 2359296,
+          "FirstMeaningfulPaint": 0,
+          "DomContentLoaded": 0,
+          "NavigationStart": 0
+        },
+        "canvasSnapshots": [
+          {
+            "ms": 12.200000002980232,
+            "kind": "idle",
+            "width": 300,
+            "height": 150,
+            "roi": null,
+            "logical": null,
+            "style": null,
+            "materialPixels": 0,
+            "particles": 0,
+            "motif": null
+          },
+          {
+            "ms": 28.899999998509884,
+            "kind": "chest-charge",
+            "width": 350,
+            "height": 465,
+            "roi": "{\"x\":578,\"y\":0,\"width\":771,\"height\":1023}",
+            "logical": "{\"width\":1929.25,\"height\":1654.84375}",
+            "style": "position: absolute; inset: 0px auto auto 578px; width: 771px; height: 1023px; pointer-events: none; z-index: 0;",
+            "materialPixels": 165300,
+            "particles": 22,
+            "motif": "none"
+          },
+          {
+            "ms": 1418.5,
+            "kind": "loot-7",
+            "width": 756,
+            "height": 712,
+            "roi": "{\"x\":105,\"y\":0,\"width\":1664,\"height\":1567}",
+            "logical": "{\"width\":1929.25,\"height\":1654.84375}",
+            "style": "position: absolute; inset: 0px auto auto 105px; width: 1664px; height: 1567px; pointer-events: none; z-index: 0;",
+            "materialPixels": 196173,
+            "particles": 132,
+            "motif": "eternal-orbits"
+          },
+          {
+            "ms": 3684.8000000044703,
+            "kind": "idle",
+            "width": 300,
+            "height": 150,
+            "roi": null,
+            "logical": null,
+            "style": null,
+            "materialPixels": 0,
+            "particles": 0,
+            "motif": null
+          }
+        ],
+        "allTraceSlicesAtLeast50Ms": [],
+        "traceDataLoss": false,
+        "rawTrace": {
+          "path": "/workspace/scratch/8db1c7454cb5/audit/performance/attribution-final/raw-traces/03-current-3840-full.json.gz",
+          "bytes": 19378549,
+          "sha256": "1385c484c7d33c712c4ff4731e133c8b9572a95b340d2f7d9a85d6ba523206bb",
+          "gzipBytes": 2076732,
+          "gzipSha256": "e8e26b1250a314ba962a2c0f9402cb8316626568215c2d98f9e4f97e0eb981cf"
+        }
+      },
+      {
+        "variant": "baseline",
+        "effects": "full",
+        "repeat": 2,
+        "pair": 2,
+        "position": 2,
+        "frameSummary": {
+          "frames": 253,
+          "actualWindowMs": 4212.29999999702,
+          "maxIntervalMs": 30.30000000447035,
+          "kinds": [
+            "idle",
+            "chest-charge",
+            "loot-7"
+          ],
+          "peakDicePixels": 0
+        },
+        "nativeRectReads": 11,
+        "nativeDomWrites": 5,
+        "domWriteKinds": {
+          "innerHTML": 3,
+          "prepend": 2
+        },
+        "storageCalls": 8,
+        "canvasMethodCalls": 49838,
+        "canvasSubmissionMs": 40.1000000089407,
+        "allLongCanvasCallsAtLeast5Ms": [],
+        "allRafAtLeast50Ms": [],
+        "allLongTasks": [],
+        "allLongAnimationFrames": [],
+        "metricsDelta": {
+          "Timestamp": 4.283542999997735,
+          "AudioHandlers": 0,
+          "AudioWorkletProcessors": 0,
+          "Documents": 0,
+          "Frames": 0,
+          "JSEventListeners": 0,
+          "LayoutObjects": 663,
+          "MediaKeySessions": 0,
+          "MediaKeys": 0,
+          "Nodes": 1266,
+          "Resources": 0,
+          "ContextLifecycleStateObservers": 0,
+          "V8PerContextDatas": 0,
+          "WorkerGlobalScopes": 0,
+          "UACSSResources": 0,
+          "RTCPeerConnections": 0,
+          "ResourceFetchers": 0,
+          "AdSubframes": 0,
+          "DetachedScriptStates": 0,
+          "ArrayBufferContents": 0,
+          "LayoutCount": 41,
+          "RecalcStyleCount": 136,
+          "LayoutDuration": 0.018243,
+          "RecalcStyleDuration": 0.030711,
+          "DevToolsCommandDuration": 0.002092,
+          "ScriptDuration": 0.135485,
+          "V8CompileDuration": 0,
+          "TaskDuration": 0.517467,
+          "TaskOtherDuration": 0.330936,
+          "ThreadTime": 0.416903,
+          "ProcessTime": 0.69,
+          "JSHeapUsedSize": 193584,
+          "JSHeapTotalSize": 524288,
+          "FirstMeaningfulPaint": 0,
+          "DomContentLoaded": 0,
+          "NavigationStart": 0
+        },
+        "canvasSnapshots": [
+          {
+            "ms": 12.299999997019768,
+            "kind": "idle",
+            "width": 300,
+            "height": 150,
+            "roi": null,
+            "logical": null,
+            "style": null,
+            "materialPixels": 0,
+            "particles": 0,
+            "motif": null
+          },
+          {
+            "ms": 29.19999999552965,
+            "kind": "chest-charge",
+            "width": 350,
+            "height": 465,
+            "roi": "{\"x\":578,\"y\":0,\"width\":771,\"height\":1023}",
+            "logical": "{\"width\":1929.25,\"height\":1654.84375}",
+            "style": "position: absolute; inset: 0px auto auto 578px; width: 771px; height: 1023px; pointer-events: none; z-index: 0;",
+            "materialPixels": 165300,
+            "particles": 22,
+            "motif": "none"
+          },
+          {
+            "ms": 1413.0999999940395,
+            "kind": "loot-7",
+            "width": 756,
+            "height": 712,
+            "roi": "{\"x\":105,\"y\":0,\"width\":1664,\"height\":1567}",
+            "logical": "{\"width\":1929.25,\"height\":1654.84375}",
+            "style": "position: absolute; inset: 0px auto auto 105px; width: 1664px; height: 1567px; pointer-events: none; z-index: 0;",
+            "materialPixels": 196173,
+            "particles": 132,
+            "motif": "eternal-orbits"
+          },
+          {
+            "ms": 3691.2999999970198,
+            "kind": "idle",
+            "width": 300,
+            "height": 150,
+            "roi": null,
+            "logical": null,
+            "style": null,
+            "materialPixels": 0,
+            "particles": 0,
+            "motif": null
+          }
+        ],
+        "allTraceSlicesAtLeast50Ms": [],
+        "traceDataLoss": false,
+        "rawTrace": {
+          "path": "/workspace/scratch/8db1c7454cb5/audit/performance/attribution-final/raw-traces/04-baseline-3840-full.json.gz",
+          "bytes": 19543246,
+          "sha256": "d98522719f6f99733a19823ed958f44ad26c45e89db93503f951b3549830e3f1",
+          "gzipBytes": 2110545,
+          "gzipSha256": "8ea7a92d335ffa003a3a37ffd67b7832232c2bab91825652de9232af66e0f395"
+        }
+      },
+      {
+        "variant": "baseline",
+        "effects": "low",
+        "repeat": 1,
+        "pair": 3,
+        "position": 1,
+        "frameSummary": {
+          "frames": 253,
+          "actualWindowMs": 4211.89999999851,
+          "maxIntervalMs": 35.899999998509884,
+          "kinds": [
+            "idle"
+          ],
+          "peakDicePixels": 0
+        },
+        "nativeRectReads": 0,
+        "nativeDomWrites": 3,
+        "domWriteKinds": {
+          "innerHTML": 3
+        },
+        "storageCalls": 8,
+        "canvasMethodCalls": 0,
+        "canvasSubmissionMs": 0,
+        "allLongCanvasCallsAtLeast5Ms": [],
+        "allRafAtLeast50Ms": [],
+        "allLongTasks": [],
+        "allLongAnimationFrames": [],
+        "metricsDelta": {
+          "Timestamp": 4.254942999999912,
+          "AudioHandlers": 0,
+          "AudioWorkletProcessors": 0,
+          "Documents": -1,
+          "Frames": -1,
+          "JSEventListeners": -1,
+          "LayoutObjects": 662,
+          "MediaKeySessions": 0,
+          "MediaKeys": 0,
+          "Nodes": 1057,
+          "Resources": -3,
+          "ContextLifecycleStateObservers": -1,
+          "V8PerContextDatas": 0,
+          "WorkerGlobalScopes": 0,
+          "UACSSResources": 0,
+          "RTCPeerConnections": 0,
+          "ResourceFetchers": -1,
+          "AdSubframes": 0,
+          "DetachedScriptStates": -2,
+          "ArrayBufferContents": 0,
+          "LayoutCount": 7,
+          "RecalcStyleCount": 20,
+          "LayoutDuration": 0.012789,
+          "RecalcStyleDuration": 0.016229,
+          "DevToolsCommandDuration": 0.00297,
+          "ScriptDuration": 0.030646,
+          "V8CompileDuration": 0,
+          "TaskDuration": 0.18962099999999998,
+          "TaskOtherDuration": 0.126987,
+          "ThreadTime": 0.18092699999999998,
+          "ProcessTime": 0.3199999999999994,
+          "JSHeapUsedSize": -91392,
+          "JSHeapTotalSize": 786432,
+          "FirstMeaningfulPaint": 0,
+          "DomContentLoaded": 0,
+          "NavigationStart": 0
+        },
+        "canvasSnapshots": [
+          {
+            "ms": 12,
+            "kind": "idle",
+            "width": 300,
+            "height": 150,
+            "roi": null,
+            "logical": null,
+            "style": null,
+            "materialPixels": 0,
+            "particles": 0,
+            "motif": null
+          }
+        ],
+        "allTraceSlicesAtLeast50Ms": [],
+        "traceDataLoss": false,
+        "rawTrace": {
+          "path": "/workspace/scratch/8db1c7454cb5/audit/performance/attribution-final/raw-traces/05-baseline-3840-low.json.gz",
+          "bytes": 7717915,
+          "sha256": "1bded384ecb3c260e511c26882ef0ce34c30a0e9182d999fe7e7193d0ffa907f",
+          "gzipBytes": 607902,
+          "gzipSha256": "619eb89fd752e5f62a9d23942c2091fb880abf9379f43c7e4d0bb80dba950e47"
+        }
+      },
+      {
+        "variant": "current",
+        "effects": "low",
+        "repeat": 1,
+        "pair": 3,
+        "position": 2,
+        "frameSummary": {
+          "frames": 253,
+          "actualWindowMs": 4212.79999999702,
+          "maxIntervalMs": 31.19999999552965,
+          "kinds": [
+            "idle"
+          ],
+          "peakDicePixels": 0
+        },
+        "nativeRectReads": 0,
+        "nativeDomWrites": 3,
+        "domWriteKinds": {
+          "innerHTML": 3
+        },
+        "storageCalls": 8,
+        "canvasMethodCalls": 0,
+        "canvasSubmissionMs": 0,
+        "allLongCanvasCallsAtLeast5Ms": [],
+        "allRafAtLeast50Ms": [],
+        "allLongTasks": [],
+        "allLongAnimationFrames": [],
+        "metricsDelta": {
+          "Timestamp": 4.245170000001963,
+          "AudioHandlers": 0,
+          "AudioWorkletProcessors": 0,
+          "Documents": 0,
+          "Frames": 0,
+          "JSEventListeners": -2,
+          "LayoutObjects": -59,
+          "MediaKeySessions": 0,
+          "MediaKeys": 0,
+          "Nodes": -23,
+          "Resources": 0,
+          "ContextLifecycleStateObservers": 0,
+          "V8PerContextDatas": 0,
+          "WorkerGlobalScopes": 0,
+          "UACSSResources": 0,
+          "RTCPeerConnections": 0,
+          "ResourceFetchers": 0,
+          "AdSubframes": 0,
+          "DetachedScriptStates": 0,
+          "ArrayBufferContents": 0,
+          "LayoutCount": 7,
+          "RecalcStyleCount": 20,
+          "LayoutDuration": 0.015499,
+          "RecalcStyleDuration": 0.014234,
+          "DevToolsCommandDuration": 0.002076,
+          "ScriptDuration": 0.024994,
+          "V8CompileDuration": 0,
+          "TaskDuration": 0.162936,
+          "TaskOtherDuration": 0.10613299999999999,
+          "ThreadTime": 0.15395999999999999,
+          "ProcessTime": 0.27000000000000046,
+          "JSHeapUsedSize": 700392,
+          "JSHeapTotalSize": -1048576,
+          "FirstMeaningfulPaint": 0,
+          "DomContentLoaded": 0,
+          "NavigationStart": 0
+        },
+        "canvasSnapshots": [
+          {
+            "ms": 13,
+            "kind": "idle",
+            "width": 300,
+            "height": 150,
+            "roi": null,
+            "logical": null,
+            "style": null,
+            "materialPixels": 0,
+            "particles": 0,
+            "motif": null
+          }
+        ],
+        "allTraceSlicesAtLeast50Ms": [],
+        "traceDataLoss": false,
+        "rawTrace": {
+          "path": "/workspace/scratch/8db1c7454cb5/audit/performance/attribution-final/raw-traces/06-current-3840-low.json.gz",
+          "bytes": 7902806,
+          "sha256": "d9000a78018610413b6d7658c9367fb423fbb42523505d9ee0e8b1b7c77fcddf",
+          "gzipBytes": 604731,
+          "gzipSha256": "bdb71404888844ed8508002f1f3a2d2b95445f1daeaea39023f2863b710eebb8"
+        }
+      },
+      {
+        "variant": "current",
+        "effects": "low",
+        "repeat": 2,
+        "pair": 4,
+        "position": 1,
+        "frameSummary": {
+          "frames": 253,
+          "actualWindowMs": 4212.70000000298,
+          "maxIntervalMs": 29.899999998509884,
+          "kinds": [
+            "idle"
+          ],
+          "peakDicePixels": 0
+        },
+        "nativeRectReads": 0,
+        "nativeDomWrites": 3,
+        "domWriteKinds": {
+          "innerHTML": 3
+        },
+        "storageCalls": 8,
+        "canvasMethodCalls": 0,
+        "canvasSubmissionMs": 0,
+        "allLongCanvasCallsAtLeast5Ms": [],
+        "allRafAtLeast50Ms": [],
+        "allLongTasks": [],
+        "allLongAnimationFrames": [],
+        "metricsDelta": {
+          "Timestamp": 4.242677000002004,
+          "AudioHandlers": 0,
+          "AudioWorkletProcessors": 0,
+          "Documents": 0,
+          "Frames": 0,
+          "JSEventListeners": 4,
+          "LayoutObjects": 2113,
+          "MediaKeySessions": 0,
+          "MediaKeys": 0,
+          "Nodes": 2035,
+          "Resources": 0,
+          "ContextLifecycleStateObservers": 0,
+          "V8PerContextDatas": 0,
+          "WorkerGlobalScopes": 0,
+          "UACSSResources": 0,
+          "RTCPeerConnections": 0,
+          "ResourceFetchers": 0,
+          "AdSubframes": 0,
+          "DetachedScriptStates": 0,
+          "ArrayBufferContents": 0,
+          "LayoutCount": 7,
+          "RecalcStyleCount": 20,
+          "LayoutDuration": 0.013599,
+          "RecalcStyleDuration": 0.01478,
+          "DevToolsCommandDuration": 0.001833,
+          "ScriptDuration": 0.027132,
+          "V8CompileDuration": 0,
+          "TaskDuration": 0.16244899999999998,
+          "TaskOtherDuration": 0.10510499999999999,
+          "ThreadTime": 0.165235,
+          "ProcessTime": 0.2699999999999996,
+          "JSHeapUsedSize": 590840,
+          "JSHeapTotalSize": -2883584,
+          "FirstMeaningfulPaint": 0,
+          "DomContentLoaded": 0,
+          "NavigationStart": 0
+        },
+        "canvasSnapshots": [
+          {
+            "ms": 13,
+            "kind": "idle",
+            "width": 300,
+            "height": 150,
+            "roi": null,
+            "logical": null,
+            "style": null,
+            "materialPixels": 0,
+            "particles": 0,
+            "motif": null
+          }
+        ],
+        "allTraceSlicesAtLeast50Ms": [],
+        "traceDataLoss": false,
+        "rawTrace": {
+          "path": "/workspace/scratch/8db1c7454cb5/audit/performance/attribution-final/raw-traces/07-current-3840-low.json.gz",
+          "bytes": 7504610,
+          "sha256": "3cf49eda7a9d21f788ba5b13fe60bd6218a7ddb412527a8abee34794787a7ceb",
+          "gzipBytes": 583217,
+          "gzipSha256": "095c73e6b8699b2c0b291b2d92326a4d44e0d21bda4374424d7bad7803939756"
+        }
+      },
+      {
+        "variant": "baseline",
+        "effects": "low",
+        "repeat": 2,
+        "pair": 4,
+        "position": 2,
+        "frameSummary": {
+          "frames": 250,
+          "actualWindowMs": 4211.5,
+          "maxIntervalMs": 86.39999999850988,
+          "kinds": [
+            "idle"
+          ],
+          "peakDicePixels": 0
+        },
+        "nativeRectReads": 0,
+        "nativeDomWrites": 3,
+        "domWriteKinds": {
+          "innerHTML": 3
+        },
+        "storageCalls": 8,
+        "canvasMethodCalls": 0,
+        "canvasSubmissionMs": 0,
+        "allLongCanvasCallsAtLeast5Ms": [],
+        "allRafAtLeast50Ms": [
+          {
+            "ms": 333.1000000014901,
+            "intervalMs": 86.39999999850988,
+            "kind": "idle",
+            "busy": false,
+            "effectFrames": 0,
+            "dicePixels": 0
+          }
+        ],
+        "allLongTasks": [],
+        "allLongAnimationFrames": [
+          {
+            "name": "long-animation-frame",
+            "entryType": "long-animation-frame",
+            "startTime": 3852.5,
+            "duration": 84.09999999403954,
+            "navigationId": 7884,
+            "paintTime": 3936.5999999940395,
+            "presentationTime": 3944,
+            "renderStart": 3935.7999999970198,
+            "styleAndLayoutStart": 3936,
+            "firstUIEventTimestamp": 0,
+            "blockingDuration": 0,
+            "scripts": []
+          }
+        ],
+        "metricsDelta": {
+          "Timestamp": 4.246462999995856,
+          "AudioHandlers": 0,
+          "AudioWorkletProcessors": 0,
+          "Documents": 0,
+          "Frames": 0,
+          "JSEventListeners": 4,
+          "LayoutObjects": 2113,
+          "MediaKeySessions": 0,
+          "MediaKeys": 0,
+          "Nodes": 2035,
+          "Resources": 0,
+          "ContextLifecycleStateObservers": 0,
+          "V8PerContextDatas": 0,
+          "WorkerGlobalScopes": 0,
+          "UACSSResources": 0,
+          "RTCPeerConnections": 0,
+          "ResourceFetchers": 0,
+          "AdSubframes": 0,
+          "DetachedScriptStates": 0,
+          "ArrayBufferContents": 0,
+          "LayoutCount": 7,
+          "RecalcStyleCount": 21,
+          "LayoutDuration": 0.01339,
+          "RecalcStyleDuration": 0.014175,
+          "DevToolsCommandDuration": 0.0021639999999999997,
+          "ScriptDuration": 0.029073,
+          "V8CompileDuration": 0,
+          "TaskDuration": 0.16283099999999998,
+          "TaskOtherDuration": 0.104029,
+          "ThreadTime": 0.167584,
+          "ProcessTime": 0.28000000000000025,
+          "JSHeapUsedSize": 945444,
+          "JSHeapTotalSize": 0,
+          "FirstMeaningfulPaint": 0,
+          "DomContentLoaded": 0,
+          "NavigationStart": 0
+        },
+        "canvasSnapshots": [
+          {
+            "ms": 11.600000001490116,
+            "kind": "idle",
+            "width": 300,
+            "height": 150,
+            "roi": null,
+            "logical": null,
+            "style": null,
+            "materialPixels": 0,
+            "particles": 0,
+            "motif": null
+          }
+        ],
+        "allTraceSlicesAtLeast50Ms": [],
+        "traceDataLoss": false,
+        "rawTrace": {
+          "path": "/workspace/scratch/8db1c7454cb5/audit/performance/attribution-final/raw-traces/08-baseline-3840-low.json.gz",
+          "bytes": 7543414,
+          "sha256": "076ac00f4fa113dbd1f354aa04083afc11d2979c61aa29330ec38c12a4e43f82",
+          "gzipBytes": 590293,
+          "gzipSha256": "d18aee121e04c324bad032a80c6f232e2b5a08432ff32311fbb2fa8440b76325"
+        }
+      }
+    ]
+  },
+  "scopeRecord": "measurement-scope-round14.json",
+  "rule": "This summary is for navigation. The complete original reports, DOM artifacts, raw RAF arrays, failures, per-method calls, metrics and all >=50ms trace slices are archived losslessly and restored by scripts/restore-round14-performance.mjs. No summary replaces those originals."
+}

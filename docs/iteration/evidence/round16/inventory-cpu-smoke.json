@@ -1,0 +1,2980 @@
+{
+  "protocol": "round16-browser-sync-js-attribution",
+  "status": "PASS",
+  "mode": "SMOKE",
+  "synthetic": true,
+  "seed": 20261017,
+  "startedAt": "2026-10-19T03:25:58.824Z",
+  "scriptSha256": "335028cf1a3fc0e8782f4a4aecbc7a09f8742a6e50ef5654d83ebf6ed15c37af",
+  "sourceBefore": {
+    "baseline": [
+      {
+        "file": "src/action-focus.js",
+        "bytes": 1672,
+        "sha256": "d5e383b4f8aeb138b6cdffc7f3dffe12cf0db7fcbac053df713dec60b3b95a98"
+      },
+      {
+        "file": "src/app.js",
+        "bytes": 48136,
+        "sha256": "1708721304f1874507b3e592fa2f7ffa3e15eb4eee516df6a34a68c7316e2753"
+      },
+      {
+        "file": "src/content.js",
+        "bytes": 13097,
+        "sha256": "4c0c2e4656c5a3482a5448a069ae2fa28367ba05d61c7d0c2c9866315f5c5526"
+      },
+      {
+        "file": "src/decisions.css",
+        "bytes": 3800,
+        "sha256": "0d1cb07494d08a26d39cca89d19f7ac875b78b67d5bf3fbad44b99a9a7a03b23"
+      },
+      {
+        "file": "src/deep-content.js",
+        "bytes": 10852,
+        "sha256": "040a5668b687cf9d7b7c8b31a67cee35660ebb0539af74c7d572614f138fef33"
+      },
+      {
+        "file": "src/deep-rules.js",
+        "bytes": 14103,
+        "sha256": "6f6c096e37c9f18a6ca97625330a6ab8ce55b25852e677455d3a200c8200dbe1"
+      },
+      {
+        "file": "src/deep.css",
+        "bytes": 10667,
+        "sha256": "24f0ed8bf2969232c660a595cd5e19b206066bc4a19a983e4bd3a277b82700cc"
+      },
+      {
+        "file": "src/defeat-review.css",
+        "bytes": 4128,
+        "sha256": "c2343b936d4456b36c557f3c821cdb812a3d6cdcc2c061ea11a2197a56158598"
+      },
+      {
+        "file": "src/defeat-review.js",
+        "bytes": 1183,
+        "sha256": "13c14a8184266dc4b443570e5e38b25b668bfa4b818401453d7248f5f6749938"
+      },
+      {
+        "file": "src/dice-motion.js",
+        "bytes": 5430,
+        "sha256": "3b088b9efa03552912bd92b18dc66d6122f45e2f12dc420305bb877deae5139a"
+      },
+      {
+        "file": "src/dice-renderer.js",
+        "bytes": 14522,
+        "sha256": "b40e1e1c808b00d319b70ce7546403c588cdcc8397bba684fe19b2f4c0bca6d8"
+      },
+      {
+        "file": "src/effects.js",
+        "bytes": 28007,
+        "sha256": "5f95f77e882a690f95215babda3cdedc0d398bbcfaabfecd3d486141200dc6f9"
+      },
+      {
+        "file": "src/encounter-tactics.js",
+        "bytes": 6963,
+        "sha256": "02e0da7aa57de321319812503556d9e5925463644222305755e86de6c3fa355b"
+      },
+      {
+        "file": "src/encounters.js",
+        "bytes": 35815,
+        "sha256": "c3c6e2d24049305d73982cf5db3b1cf02eee68f4e8e1659fd7e3021f74de0791"
+      },
+      {
+        "file": "src/engine.js",
+        "bytes": 41128,
+        "sha256": "75c6d9fcc48c0cf49ee02e53ffb7b143a09a2c79738d3bb2eb5d0ae80b30872b"
+      },
+      {
+        "file": "src/equipment-comparison.js",
+        "bytes": 11889,
+        "sha256": "2a2a819b22d0d1746893bb2222bfbeb7e6fcf20f10046fc7b64897c260be952d"
+      },
+      {
+        "file": "src/equipment-content.js",
+        "bytes": 6818,
+        "sha256": "d95b5e7c11d14eb764ea3cefb7eee73f35b2f9d48a8b640513eda9aefd1cc030"
+      },
+      {
+        "file": "src/equipment.js",
+        "bytes": 13951,
+        "sha256": "8c20de433f21931318e315b862b457d37a03b9596ea5df8f7cc4025691aaccd6"
+      },
+      {
+        "file": "src/expansion.css",
+        "bytes": 14871,
+        "sha256": "d5c01857bf02a4566270f23ef389aad76e033e50bd5440ecb13665ce81818424"
+      },
+      {
+        "file": "src/experience.css",
+        "bytes": 2513,
+        "sha256": "4a8175dfcf26c06e2e75126956d6e2d7749ef8c2f11c7026091faa7252c3c883"
+      },
+      {
+        "file": "src/experience.js",
+        "bytes": 881,
+        "sha256": "2bdd3727c59b537f45a22d2e9aae9a93908a76e29850c8e8e8e024cbeaf93c45"
+      },
+      {
+        "file": "src/forge.css",
+        "bytes": 7977,
+        "sha256": "9a7ee960f3494e39ac102abf7b9476cacffdd89eea1803e52469b441e124823f"
+      },
+      {
+        "file": "src/fusion-controller.js",
+        "bytes": 39446,
+        "sha256": "5a4a0c6a11c7a347ffcdaa0340d3c905d65aa5ba6b50e36e7135a9276537dd1a"
+      },
+      {
+        "file": "src/fusion-dom.js",
+        "bytes": 4843,
+        "sha256": "fb78398073fdccaea6680146c34ac18de75d926439c7044ed45da39f625e4023"
+      },
+      {
+        "file": "src/fusion-view.js",
+        "bytes": 24915,
+        "sha256": "e77542f7de4c6f39ac57098ffb7a277caab988cd4bcc9ea5f50080b0f08e96c1"
+      },
+      {
+        "file": "src/fusion-workbench.js",
+        "bytes": 8152,
+        "sha256": "06f206dc578534c641f0fe327c48a4ec70ccffeed79fe8076ccd83cfb56263bf"
+      },
+      {
+        "file": "src/fusion.css",
+        "bytes": 41208,
+        "sha256": "9b6fe3edaa023ae1c7702e60e3110d9450a6ca03a737f74dd984baf0fb083bc5"
+      },
+      {
+        "file": "src/gold.css",
+        "bytes": 2465,
+        "sha256": "bb1313da6f3a734567be73e23c606c56c1215bc976e166c9dc2b1fedb06c6393"
+      },
+      {
+        "file": "src/gold.js",
+        "bytes": 1329,
+        "sha256": "252aab60750432e1b5f1dc158c4a8f69e3dca5d72fa016b69c03c29ac651a244"
+      },
+      {
+        "file": "src/inventory-dom.js",
+        "bytes": 4792,
+        "sha256": "7f3b18a6b3dbcc3a0a100c94bab35d9e81a14d7a6c74e8eabfdff3d151d35bf0"
+      },
+      {
+        "file": "src/inventory-query.js",
+        "bytes": 874,
+        "sha256": "7cf093f155934779d21c4dceb0a6aeef2e467fdb8c763413c155b6c0fd52a4c5"
+      },
+      {
+        "file": "src/inventory-search.css",
+        "bytes": 1573,
+        "sha256": "cfb91edec23d0e706414f3c9a90b6ab46c0efec43d54ff5e01da85c9923e3de1"
+      },
+      {
+        "file": "src/polish.css",
+        "bytes": 7751,
+        "sha256": "84af5e0bfc563c830287d96103faff4b1673c7d363a9cfbc26995a5074265df8"
+      },
+      {
+        "file": "src/progression.css",
+        "bytes": 30151,
+        "sha256": "31125ec19b19b527f9d0499d9b045874b0d37e2d6eb8fdcc729e58bf783368ec"
+      },
+      {
+        "file": "src/quality.css",
+        "bytes": 5290,
+        "sha256": "3785daf1b16c66942383c8285376a66fee42c2a21c0b1450c251870333919bb8"
+      },
+      {
+        "file": "src/rarity.js",
+        "bytes": 2515,
+        "sha256": "871356df147d027e1845f98c5574a1d9a71c0d17bd8717f457c9007d7c73b735"
+      },
+      {
+        "file": "src/refinement.css",
+        "bytes": 10060,
+        "sha256": "79a8599ca5415c933de1161575edb25601f4efdbf57be4c45dc82033abb1fffd"
+      },
+      {
+        "file": "src/release.js",
+        "bytes": 340,
+        "sha256": "337a97663cb8961b40a0f4fbfa6274aa21aec308d2bf15c84ed892167f28b6b6"
+      },
+      {
+        "file": "src/responsive.css",
+        "bytes": 33069,
+        "sha256": "90bb585d66a88daa61a553112c66610b62b666aa07c28ad887b521534283cee8"
+      },
+      {
+        "file": "src/rooms.css",
+        "bytes": 29127,
+        "sha256": "a426209cd05ccb3125a88713ea8693b04b47b65e179c605538b5053fe616c606"
+      },
+      {
+        "file": "src/route-weights.js",
+        "bytes": 4425,
+        "sha256": "b21499b8c44a17ad09caab5e17f312073b269981b6ac7eb916b5f656912237dd"
+      },
+      {
+        "file": "src/save-capacity-view.js",
+        "bytes": 2059,
+        "sha256": "cd729b8ce91cf5aad772f0fcc468cfac5b389a48ff1a03e905907ade23ea7867"
+      },
+      {
+        "file": "src/save-recovery-view.js",
+        "bytes": 4355,
+        "sha256": "47e9041a86415c6bc04e5ae66803d6d8dfa6fbb2cabb8f800ce67f29a199153d"
+      },
+      {
+        "file": "src/save-recovery.css",
+        "bytes": 2606,
+        "sha256": "7085ab430d2f1193955b84848d8f2af88faeab0d065c427ee5e7b88b5e254c2e"
+      },
+      {
+        "file": "src/settings-focus.js",
+        "bytes": 1278,
+        "sha256": "7c4b93a9c8830598319e2a3d8d2750cb33f5c0a1cc5b89dbd6154b985db3366f"
+      },
+      {
+        "file": "src/storage.js",
+        "bytes": 31698,
+        "sha256": "6bfcc60036c9f729c21b948ca98c7ac715e14049856fb9dded0baa2aeef2c561"
+      },
+      {
+        "file": "src/styles.css",
+        "bytes": 34680,
+        "sha256": "dc835715e16e8698214d25202a39df6162c865287e6ac605c111486066764044"
+      },
+      {
+        "file": "src/talent.css",
+        "bytes": 15247,
+        "sha256": "350f583103186b0b44fc50317d92c20417fed82fe4e8667bf1776390b2425334"
+      },
+      {
+        "file": "src/views.js",
+        "bytes": 92910,
+        "sha256": "cc7b8a34b8e252c77ec4579b7b7bc781123c1f50a5d1c5a3d9a7ea728c8c2072"
+      },
+      {
+        "file": "src/visual-timeline.js",
+        "bytes": 2906,
+        "sha256": "f518084da44c2ea852bf902ba6ffc7f8f5a94ee815dac31bcc4726cc8cd44369"
+      },
+      {
+        "file": "src/visual.css",
+        "bytes": 47600,
+        "sha256": "35ec8f94b238d355f6fad93855d4b20794157e3d9c592dcf777cf25dcb2e05bd"
+      },
+      {
+        "file": "index.html",
+        "bytes": 2137,
+        "sha256": "e206980c6cf3ad3fd85d6584418d92524a3f99dab8935b8f8b8ea49d9dfac958"
+      },
+      {
+        "file": "package.json",
+        "bytes": 428,
+        "sha256": "9a9ebb41eaa9210c1554037a7bd92db7f3542c42a6261225eb1f1f4515e6a910"
+      }
+    ],
+    "after": [
+      {
+        "file": "src/action-focus.js",
+        "bytes": 1672,
+        "sha256": "d5e383b4f8aeb138b6cdffc7f3dffe12cf0db7fcbac053df713dec60b3b95a98"
+      },
+      {
+        "file": "src/app.js",
+        "bytes": 48136,
+        "sha256": "1708721304f1874507b3e592fa2f7ffa3e15eb4eee516df6a34a68c7316e2753"
+      },
+      {
+        "file": "src/content.js",
+        "bytes": 13097,
+        "sha256": "4c0c2e4656c5a3482a5448a069ae2fa28367ba05d61c7d0c2c9866315f5c5526"
+      },
+      {
+        "file": "src/decisions.css",
+        "bytes": 4004,
+        "sha256": "5e211e2fb4e72e6959ae7db8f570a3f2baacbd9c789cca90e89b9bd13a379588"
+      },
+      {
+        "file": "src/deep-content.js",
+        "bytes": 10852,
+        "sha256": "040a5668b687cf9d7b7c8b31a67cee35660ebb0539af74c7d572614f138fef33"
+      },
+      {
+        "file": "src/deep-rules.js",
+        "bytes": 14103,
+        "sha256": "6f6c096e37c9f18a6ca97625330a6ab8ce55b25852e677455d3a200c8200dbe1"
+      },
+      {
+        "file": "src/deep.css",
+        "bytes": 10667,
+        "sha256": "24f0ed8bf2969232c660a595cd5e19b206066bc4a19a983e4bd3a277b82700cc"
+      },
+      {
+        "file": "src/defeat-review.css",
+        "bytes": 4128,
+        "sha256": "c2343b936d4456b36c557f3c821cdb812a3d6cdcc2c061ea11a2197a56158598"
+      },
+      {
+        "file": "src/defeat-review.js",
+        "bytes": 1183,
+        "sha256": "13c14a8184266dc4b443570e5e38b25b668bfa4b818401453d7248f5f6749938"
+      },
+      {
+        "file": "src/dice-motion.js",
+        "bytes": 5430,
+        "sha256": "3b088b9efa03552912bd92b18dc66d6122f45e2f12dc420305bb877deae5139a"
+      },
+      {
+        "file": "src/dice-renderer.js",
+        "bytes": 14522,
+        "sha256": "b40e1e1c808b00d319b70ce7546403c588cdcc8397bba684fe19b2f4c0bca6d8"
+      },
+      {
+        "file": "src/effects.js",
+        "bytes": 28007,
+        "sha256": "5f95f77e882a690f95215babda3cdedc0d398bbcfaabfecd3d486141200dc6f9"
+      },
+      {
+        "file": "src/encounter-tactics.js",
+        "bytes": 6963,
+        "sha256": "02e0da7aa57de321319812503556d9e5925463644222305755e86de6c3fa355b"
+      },
+      {
+        "file": "src/encounters.js",
+        "bytes": 35815,
+        "sha256": "c3c6e2d24049305d73982cf5db3b1cf02eee68f4e8e1659fd7e3021f74de0791"
+      },
+      {
+        "file": "src/engine.js",
+        "bytes": 41128,
+        "sha256": "75c6d9fcc48c0cf49ee02e53ffb7b143a09a2c79738d3bb2eb5d0ae80b30872b"
+      },
+      {
+        "file": "src/equipment-comparison.js",
+        "bytes": 13371,
+        "sha256": "e47add10ce9cf308ac79fd1bbb4bc74e54b93e0f6b48e5dc97ac2eb314c6c9c4"
+      },
+      {
+        "file": "src/equipment-content.js",
+        "bytes": 6818,
+        "sha256": "d95b5e7c11d14eb764ea3cefb7eee73f35b2f9d48a8b640513eda9aefd1cc030"
+      },
+      {
+        "file": "src/equipment.js",
+        "bytes": 13951,
+        "sha256": "8c20de433f21931318e315b862b457d37a03b9596ea5df8f7cc4025691aaccd6"
+      },
+      {
+        "file": "src/expansion.css",
+        "bytes": 14871,
+        "sha256": "d5c01857bf02a4566270f23ef389aad76e033e50bd5440ecb13665ce81818424"
+      },
+      {
+        "file": "src/experience.css",
+        "bytes": 2513,
+        "sha256": "4a8175dfcf26c06e2e75126956d6e2d7749ef8c2f11c7026091faa7252c3c883"
+      },
+      {
+        "file": "src/experience.js",
+        "bytes": 881,
+        "sha256": "2bdd3727c59b537f45a22d2e9aae9a93908a76e29850c8e8e8e024cbeaf93c45"
+      },
+      {
+        "file": "src/forge.css",
+        "bytes": 7977,
+        "sha256": "9a7ee960f3494e39ac102abf7b9476cacffdd89eea1803e52469b441e124823f"
+      },
+      {
+        "file": "src/fusion-controller.js",
+        "bytes": 39446,
+        "sha256": "5a4a0c6a11c7a347ffcdaa0340d3c905d65aa5ba6b50e36e7135a9276537dd1a"
+      },
+      {
+        "file": "src/fusion-dom.js",
+        "bytes": 4843,
+        "sha256": "fb78398073fdccaea6680146c34ac18de75d926439c7044ed45da39f625e4023"
+      },
+      {
+        "file": "src/fusion-view.js",
+        "bytes": 24915,
+        "sha256": "e77542f7de4c6f39ac57098ffb7a277caab988cd4bcc9ea5f50080b0f08e96c1"
+      },
+      {
+        "file": "src/fusion-workbench.js",
+        "bytes": 8152,
+        "sha256": "06f206dc578534c641f0fe327c48a4ec70ccffeed79fe8076ccd83cfb56263bf"
+      },
+      {
+        "file": "src/fusion.css",
+        "bytes": 41208,
+        "sha256": "9b6fe3edaa023ae1c7702e60e3110d9450a6ca03a737f74dd984baf0fb083bc5"
+      },
+      {
+        "file": "src/gold.css",
+        "bytes": 2465,
+        "sha256": "bb1313da6f3a734567be73e23c606c56c1215bc976e166c9dc2b1fedb06c6393"
+      },
+      {
+        "file": "src/gold.js",
+        "bytes": 1329,
+        "sha256": "252aab60750432e1b5f1dc158c4a8f69e3dca5d72fa016b69c03c29ac651a244"
+      },
+      {
+        "file": "src/inventory-dom.js",
+        "bytes": 4792,
+        "sha256": "7f3b18a6b3dbcc3a0a100c94bab35d9e81a14d7a6c74e8eabfdff3d151d35bf0"
+      },
+      {
+        "file": "src/inventory-query.js",
+        "bytes": 1686,
+        "sha256": "463a8d340842b9deaacef262b4459ecc8d8e9503d01edddc9b7df902a31c03be"
+      },
+      {
+        "file": "src/inventory-search.css",
+        "bytes": 1573,
+        "sha256": "cfb91edec23d0e706414f3c9a90b6ab46c0efec43d54ff5e01da85c9923e3de1"
+      },
+      {
+        "file": "src/polish.css",
+        "bytes": 7751,
+        "sha256": "84af5e0bfc563c830287d96103faff4b1673c7d363a9cfbc26995a5074265df8"
+      },
+      {
+        "file": "src/progression.css",
+        "bytes": 30151,
+        "sha256": "31125ec19b19b527f9d0499d9b045874b0d37e2d6eb8fdcc729e58bf783368ec"
+      },
+      {
+        "file": "src/quality.css",
+        "bytes": 5290,
+        "sha256": "3785daf1b16c66942383c8285376a66fee42c2a21c0b1450c251870333919bb8"
+      },
+      {
+        "file": "src/rarity.js",
+        "bytes": 2515,
+        "sha256": "871356df147d027e1845f98c5574a1d9a71c0d17bd8717f457c9007d7c73b735"
+      },
+      {
+        "file": "src/refinement.css",
+        "bytes": 10060,
+        "sha256": "79a8599ca5415c933de1161575edb25601f4efdbf57be4c45dc82033abb1fffd"
+      },
+      {
+        "file": "src/release.js",
+        "bytes": 340,
+        "sha256": "7fc5bd4c46f3b985c25122b98b57d4e27aded61abfb2d5fcd8a7b1d69f37caab"
+      },
+      {
+        "file": "src/responsive.css",
+        "bytes": 33069,
+        "sha256": "90bb585d66a88daa61a553112c66610b62b666aa07c28ad887b521534283cee8"
+      },
+      {
+        "file": "src/rooms.css",
+        "bytes": 29127,
+        "sha256": "a426209cd05ccb3125a88713ea8693b04b47b65e179c605538b5053fe616c606"
+      },
+      {
+        "file": "src/route-weights.js",
+        "bytes": 4425,
+        "sha256": "b21499b8c44a17ad09caab5e17f312073b269981b6ac7eb916b5f656912237dd"
+      },
+      {
+        "file": "src/save-capacity-view.js",
+        "bytes": 2059,
+        "sha256": "cd729b8ce91cf5aad772f0fcc468cfac5b389a48ff1a03e905907ade23ea7867"
+      },
+      {
+        "file": "src/save-recovery-view.js",
+        "bytes": 4355,
+        "sha256": "47e9041a86415c6bc04e5ae66803d6d8dfa6fbb2cabb8f800ce67f29a199153d"
+      },
+      {
+        "file": "src/save-recovery.css",
+        "bytes": 2606,
+        "sha256": "7085ab430d2f1193955b84848d8f2af88faeab0d065c427ee5e7b88b5e254c2e"
+      },
+      {
+        "file": "src/settings-focus.js",
+        "bytes": 1278,
+        "sha256": "7c4b93a9c8830598319e2a3d8d2750cb33f5c0a1cc5b89dbd6154b985db3366f"
+      },
+      {
+        "file": "src/storage.js",
+        "bytes": 31698,
+        "sha256": "6bfcc60036c9f729c21b948ca98c7ac715e14049856fb9dded0baa2aeef2c561"
+      },
+      {
+        "file": "src/styles.css",
+        "bytes": 34680,
+        "sha256": "dc835715e16e8698214d25202a39df6162c865287e6ac605c111486066764044"
+      },
+      {
+        "file": "src/talent.css",
+        "bytes": 15247,
+        "sha256": "350f583103186b0b44fc50317d92c20417fed82fe4e8667bf1776390b2425334"
+      },
+      {
+        "file": "src/views.js",
+        "bytes": 94570,
+        "sha256": "1aed7caac52894bd35b03307f08ebf45382b9f6418050b47e2f09dc48f71971c"
+      },
+      {
+        "file": "src/visual-timeline.js",
+        "bytes": 2906,
+        "sha256": "f518084da44c2ea852bf902ba6ffc7f8f5a94ee815dac31bcc4726cc8cd44369"
+      },
+      {
+        "file": "src/visual.css",
+        "bytes": 47600,
+        "sha256": "35ec8f94b238d355f6fad93855d4b20794157e3d9c592dcf777cf25dcb2e05bd"
+      },
+      {
+        "file": "index.html",
+        "bytes": 2137,
+        "sha256": "d90d170fec59c847b3d8e63605044255af240698fc21ac65901e0fe5c441439e"
+      },
+      {
+        "file": "package.json",
+        "bytes": 428,
+        "sha256": "a9ac3b003ba42aecec656e89027f8ced0601843191b8eaade9d5aff830eae5ab"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "label": "baseline",
+      "root": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss",
+      "url": "http://127.0.0.1:4190/"
+    },
+    {
+      "label": "after",
+      "root": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss",
+      "url": "http://127.0.0.1:4191/"
+    }
+  ],
+  "fixtureManifest": [
+    {
+      "count": 243,
+      "seed": 20261017,
+      "runId": "round16-mixed-inventory-243-20261017",
+      "rng": 2140131191,
+      "phase": "rest",
+      "rawCharacters": 51408,
+      "rawUtf8Bytes": 55093,
+      "rawSha256": "fd896888bc56fb931c365157e29b30764f4e443d77951dc8104df59f3db953be",
+      "stateSha256": "01cee873e7cfa5e1f0ac9713e4f4144458ff46b0df5693ede92ab487cac14d66",
+      "equippedIds": [
+        "i241",
+        "i242",
+        "i243",
+        "i240",
+        "i237"
+      ]
+    },
+    {
+      "count": 10000,
+      "seed": 20261017,
+      "runId": "round16-mixed-inventory-10000-20261017",
+      "rng": 2124728557,
+      "phase": "rest",
+      "rawCharacters": 2043528,
+      "rawUtf8Bytes": 2194034,
+      "rawSha256": "4b2aaab906625cc4f2c9e321eb4bc39048dabf039feac6d67b9849a51496c621",
+      "stateSha256": "20fbd0e1b4319193e6d67104a524ec8dca46ec4f1f18b27f8f3f46c45269826a",
+      "equippedIds": [
+        "i10000",
+        "i9998",
+        "i9999",
+        "i9996",
+        "i9993"
+      ]
+    }
+  ],
+  "method": {
+    "scenarios": [
+      243,
+      10000
+    ],
+    "warmupPairs": 0,
+    "formalPairs": 1,
+    "callsPerPhasePerPair": 1,
+    "formalPhaseCalls": 24,
+    "warmupPhaseCalls": 0,
+    "pairOrder": "AB on odd formal pairs, BA on even pairs; declared warmup AB.",
+    "operationOrder": "Rotate power/rarity/level, rarity/level/power, level/power/rarity across formal rounds; selector then center on odd rounds, center then selector on even rounds. Both versions get the same order in each pair; warmup uses power/rarity/level, selector then center.",
+    "moduleIdentity": "Exact canonical src/inventory-query.js, src/views.js and src/storage.js URLs, already requested by the loaded application; dynamic import reuses the browser module map. No copied, transformed or query-suffixed function body.",
+    "state": "Separate production-decodeSave snapshot of the exact synthetic save also loaded by the real app. Not a handle to the private app state. All original item references and the complete decoded state are checked outside timing.",
+    "setup": "One real Continue then one real Inventory click per version/fixture verifies the visible first 60 IDs and full card DOM. This setup warms the application power path before the explicitly recorded warmup pair. Two rAF callbacks settle each version sequence outside all timed intervals.",
+    "boundary": "performance.now immediately around exactly one selectInventoryItems(items,ui) or center(state,ui) synchronous call in the page. No DOM insertion, getter instrumentation, serialization, hashing, assertions or await inside the interval.",
+    "interpretation": "Synchronous JavaScript elapsed time, including any GC or host preemption during the call; not OS thread CPU time, event-to-frame latency, paint, FPS or physical-device/GPU performance.",
+    "nesting": "center includes its own selector call, safe-salvage analysis and first-60-card HTML construction. The separately measured phases are not additive, and their subtraction is not a measured render-only interval.",
+    "allocation": "Normal production allocation is retained. Exact-result/state checks outside the interval also allocate and may influence later GC; no forced GC, object getters or manual JIT controls are used.",
+    "sampling": "Fixed 12 pairs plus one warmup, all samples retained, no retry, adaptive rounds, outlier removal or stopping on a favorable result. --smoke is one separate pair and is never pooled. Small single-call samples may be timer-quantized.",
+    "quantiles": "p50 is middle-two mean; p95 is nearest rank ceil(n*.95), hence max for n=12.",
+    "evidence": "Complete selection order/original references, exact own-source center HTML, in-memory full state and UI settings, and both original stored strings checked every measured call. Report contains hashes and samples, never the full save or HTML.",
+    "viewport": {
+      "width": 1920,
+      "height": 1080,
+      "deviceScaleFactor": 1
+    },
+    "settings": {
+      "sound": false,
+      "effects": "low",
+      "scale": 1
+    }
+  },
+  "host": {
+    "node": "v24.19.0",
+    "cpu": "AMD EPYC 9V74 80-Core Processor",
+    "cpuCount": 9,
+    "totalMemory": 10451439616,
+    "loadBefore": [
+      0.01,
+      0.93,
+      1.95
+    ],
+    "freeMemoryBefore": 9552621568,
+    "loadAfter": [
+      0.17,
+      0.93,
+      1.94
+    ],
+    "freeMemoryAfter": 9072164864
+  },
+  "httpIdentity": [
+    {
+      "label": "baseline",
+      "checks": [
+        {
+          "file": "src/action-focus.js",
+          "status": 200,
+          "bytes": 1672,
+          "sha256": "d5e383b4f8aeb138b6cdffc7f3dffe12cf0db7fcbac053df713dec60b3b95a98"
+        },
+        {
+          "file": "src/app.js",
+          "status": 200,
+          "bytes": 48136,
+          "sha256": "1708721304f1874507b3e592fa2f7ffa3e15eb4eee516df6a34a68c7316e2753"
+        },
+        {
+          "file": "src/content.js",
+          "status": 200,
+          "bytes": 13097,
+          "sha256": "4c0c2e4656c5a3482a5448a069ae2fa28367ba05d61c7d0c2c9866315f5c5526"
+        },
+        {
+          "file": "src/decisions.css",
+          "status": 200,
+          "bytes": 3800,
+          "sha256": "0d1cb07494d08a26d39cca89d19f7ac875b78b67d5bf3fbad44b99a9a7a03b23"
+        },
+        {
+          "file": "src/deep-content.js",
+          "status": 200,
+          "bytes": 10852,
+          "sha256": "040a5668b687cf9d7b7c8b31a67cee35660ebb0539af74c7d572614f138fef33"
+        },
+        {
+          "file": "src/deep-rules.js",
+          "status": 200,
+          "bytes": 14103,
+          "sha256": "6f6c096e37c9f18a6ca97625330a6ab8ce55b25852e677455d3a200c8200dbe1"
+        },
+        {
+          "file": "src/deep.css",
+          "status": 200,
+          "bytes": 10667,
+          "sha256": "24f0ed8bf2969232c660a595cd5e19b206066bc4a19a983e4bd3a277b82700cc"
+        },
+        {
+          "file": "src/defeat-review.css",
+          "status": 200,
+          "bytes": 4128,
+          "sha256": "c2343b936d4456b36c557f3c821cdb812a3d6cdcc2c061ea11a2197a56158598"
+        },
+        {
+          "file": "src/defeat-review.js",
+          "status": 200,
+          "bytes": 1183,
+          "sha256": "13c14a8184266dc4b443570e5e38b25b668bfa4b818401453d7248f5f6749938"
+        },
+        {
+          "file": "src/dice-motion.js",
+          "status": 200,
+          "bytes": 5430,
+          "sha256": "3b088b9efa03552912bd92b18dc66d6122f45e2f12dc420305bb877deae5139a"
+        },
+        {
+          "file": "src/dice-renderer.js",
+          "status": 200,
+          "bytes": 14522,
+          "sha256": "b40e1e1c808b00d319b70ce7546403c588cdcc8397bba684fe19b2f4c0bca6d8"
+        },
+        {
+          "file": "src/effects.js",
+          "status": 200,
+          "bytes": 28007,
+          "sha256": "5f95f77e882a690f95215babda3cdedc0d398bbcfaabfecd3d486141200dc6f9"
+        },
+        {
+          "file": "src/encounter-tactics.js",
+          "status": 200,
+          "bytes": 6963,
+          "sha256": "02e0da7aa57de321319812503556d9e5925463644222305755e86de6c3fa355b"
+        },
+        {
+          "file": "src/encounters.js",
+          "status": 200,
+          "bytes": 35815,
+          "sha256": "c3c6e2d24049305d73982cf5db3b1cf02eee68f4e8e1659fd7e3021f74de0791"
+        },
+        {
+          "file": "src/engine.js",
+          "status": 200,
+          "bytes": 41128,
+          "sha256": "75c6d9fcc48c0cf49ee02e53ffb7b143a09a2c79738d3bb2eb5d0ae80b30872b"
+        },
+        {
+          "file": "src/equipment-comparison.js",
+          "status": 200,
+          "bytes": 11889,
+          "sha256": "2a2a819b22d0d1746893bb2222bfbeb7e6fcf20f10046fc7b64897c260be952d"
+        },
+        {
+          "file": "src/equipment-content.js",
+          "status": 200,
+          "bytes": 6818,
+          "sha256": "d95b5e7c11d14eb764ea3cefb7eee73f35b2f9d48a8b640513eda9aefd1cc030"
+        },
+        {
+          "file": "src/equipment.js",
+          "status": 200,
+          "bytes": 13951,
+          "sha256": "8c20de433f21931318e315b862b457d37a03b9596ea5df8f7cc4025691aaccd6"
+        },
+        {
+          "file": "src/expansion.css",
+          "status": 200,
+          "bytes": 14871,
+          "sha256": "d5c01857bf02a4566270f23ef389aad76e033e50bd5440ecb13665ce81818424"
+        },
+        {
+          "file": "src/experience.css",
+          "status": 200,
+          "bytes": 2513,
+          "sha256": "4a8175dfcf26c06e2e75126956d6e2d7749ef8c2f11c7026091faa7252c3c883"
+        },
+        {
+          "file": "src/experience.js",
+          "status": 200,
+          "bytes": 881,
+          "sha256": "2bdd3727c59b537f45a22d2e9aae9a93908a76e29850c8e8e8e024cbeaf93c45"
+        },
+        {
+          "file": "src/forge.css",
+          "status": 200,
+          "bytes": 7977,
+          "sha256": "9a7ee960f3494e39ac102abf7b9476cacffdd89eea1803e52469b441e124823f"
+        },
+        {
+          "file": "src/fusion-controller.js",
+          "status": 200,
+          "bytes": 39446,
+          "sha256": "5a4a0c6a11c7a347ffcdaa0340d3c905d65aa5ba6b50e36e7135a9276537dd1a"
+        },
+        {
+          "file": "src/fusion-dom.js",
+          "status": 200,
+          "bytes": 4843,
+          "sha256": "fb78398073fdccaea6680146c34ac18de75d926439c7044ed45da39f625e4023"
+        },
+        {
+          "file": "src/fusion-view.js",
+          "status": 200,
+          "bytes": 24915,
+          "sha256": "e77542f7de4c6f39ac57098ffb7a277caab988cd4bcc9ea5f50080b0f08e96c1"
+        },
+        {
+          "file": "src/fusion-workbench.js",
+          "status": 200,
+          "bytes": 8152,
+          "sha256": "06f206dc578534c641f0fe327c48a4ec70ccffeed79fe8076ccd83cfb56263bf"
+        },
+        {
+          "file": "src/fusion.css",
+          "status": 200,
+          "bytes": 41208,
+          "sha256": "9b6fe3edaa023ae1c7702e60e3110d9450a6ca03a737f74dd984baf0fb083bc5"
+        },
+        {
+          "file": "src/gold.css",
+          "status": 200,
+          "bytes": 2465,
+          "sha256": "bb1313da6f3a734567be73e23c606c56c1215bc976e166c9dc2b1fedb06c6393"
+        },
+        {
+          "file": "src/gold.js",
+          "status": 200,
+          "bytes": 1329,
+          "sha256": "252aab60750432e1b5f1dc158c4a8f69e3dca5d72fa016b69c03c29ac651a244"
+        },
+        {
+          "file": "src/inventory-dom.js",
+          "status": 200,
+          "bytes": 4792,
+          "sha256": "7f3b18a6b3dbcc3a0a100c94bab35d9e81a14d7a6c74e8eabfdff3d151d35bf0"
+        },
+        {
+          "file": "src/inventory-query.js",
+          "status": 200,
+          "bytes": 874,
+          "sha256": "7cf093f155934779d21c4dceb0a6aeef2e467fdb8c763413c155b6c0fd52a4c5"
+        },
+        {
+          "file": "src/inventory-search.css",
+          "status": 200,
+          "bytes": 1573,
+          "sha256": "cfb91edec23d0e706414f3c9a90b6ab46c0efec43d54ff5e01da85c9923e3de1"
+        },
+        {
+          "file": "src/polish.css",
+          "status": 200,
+          "bytes": 7751,
+          "sha256": "84af5e0bfc563c830287d96103faff4b1673c7d363a9cfbc26995a5074265df8"
+        },
+        {
+          "file": "src/progression.css",
+          "status": 200,
+          "bytes": 30151,
+          "sha256": "31125ec19b19b527f9d0499d9b045874b0d37e2d6eb8fdcc729e58bf783368ec"
+        },
+        {
+          "file": "src/quality.css",
+          "status": 200,
+          "bytes": 5290,
+          "sha256": "3785daf1b16c66942383c8285376a66fee42c2a21c0b1450c251870333919bb8"
+        },
+        {
+          "file": "src/rarity.js",
+          "status": 200,
+          "bytes": 2515,
+          "sha256": "871356df147d027e1845f98c5574a1d9a71c0d17bd8717f457c9007d7c73b735"
+        },
+        {
+          "file": "src/refinement.css",
+          "status": 200,
+          "bytes": 10060,
+          "sha256": "79a8599ca5415c933de1161575edb25601f4efdbf57be4c45dc82033abb1fffd"
+        },
+        {
+          "file": "src/release.js",
+          "status": 200,
+          "bytes": 340,
+          "sha256": "337a97663cb8961b40a0f4fbfa6274aa21aec308d2bf15c84ed892167f28b6b6"
+        },
+        {
+          "file": "src/responsive.css",
+          "status": 200,
+          "bytes": 33069,
+          "sha256": "90bb585d66a88daa61a553112c66610b62b666aa07c28ad887b521534283cee8"
+        },
+        {
+          "file": "src/rooms.css",
+          "status": 200,
+          "bytes": 29127,
+          "sha256": "a426209cd05ccb3125a88713ea8693b04b47b65e179c605538b5053fe616c606"
+        },
+        {
+          "file": "src/route-weights.js",
+          "status": 200,
+          "bytes": 4425,
+          "sha256": "b21499b8c44a17ad09caab5e17f312073b269981b6ac7eb916b5f656912237dd"
+        },
+        {
+          "file": "src/save-capacity-view.js",
+          "status": 200,
+          "bytes": 2059,
+          "sha256": "cd729b8ce91cf5aad772f0fcc468cfac5b389a48ff1a03e905907ade23ea7867"
+        },
+        {
+          "file": "src/save-recovery-view.js",
+          "status": 200,
+          "bytes": 4355,
+          "sha256": "47e9041a86415c6bc04e5ae66803d6d8dfa6fbb2cabb8f800ce67f29a199153d"
+        },
+        {
+          "file": "src/save-recovery.css",
+          "status": 200,
+          "bytes": 2606,
+          "sha256": "7085ab430d2f1193955b84848d8f2af88faeab0d065c427ee5e7b88b5e254c2e"
+        },
+        {
+          "file": "src/settings-focus.js",
+          "status": 200,
+          "bytes": 1278,
+          "sha256": "7c4b93a9c8830598319e2a3d8d2750cb33f5c0a1cc5b89dbd6154b985db3366f"
+        },
+        {
+          "file": "src/storage.js",
+          "status": 200,
+          "bytes": 31698,
+          "sha256": "6bfcc60036c9f729c21b948ca98c7ac715e14049856fb9dded0baa2aeef2c561"
+        },
+        {
+          "file": "src/styles.css",
+          "status": 200,
+          "bytes": 34680,
+          "sha256": "dc835715e16e8698214d25202a39df6162c865287e6ac605c111486066764044"
+        },
+        {
+          "file": "src/talent.css",
+          "status": 200,
+          "bytes": 15247,
+          "sha256": "350f583103186b0b44fc50317d92c20417fed82fe4e8667bf1776390b2425334"
+        },
+        {
+          "file": "src/views.js",
+          "status": 200,
+          "bytes": 92910,
+          "sha256": "cc7b8a34b8e252c77ec4579b7b7bc781123c1f50a5d1c5a3d9a7ea728c8c2072"
+        },
+        {
+          "file": "src/visual-timeline.js",
+          "status": 200,
+          "bytes": 2906,
+          "sha256": "f518084da44c2ea852bf902ba6ffc7f8f5a94ee815dac31bcc4726cc8cd44369"
+        },
+        {
+          "file": "src/visual.css",
+          "status": 200,
+          "bytes": 47600,
+          "sha256": "35ec8f94b238d355f6fad93855d4b20794157e3d9c592dcf777cf25dcb2e05bd"
+        },
+        {
+          "file": "index.html",
+          "status": 200,
+          "bytes": 2137,
+          "sha256": "e206980c6cf3ad3fd85d6584418d92524a3f99dab8935b8f8b8ea49d9dfac958"
+        }
+      ]
+    },
+    {
+      "label": "after",
+      "checks": [
+        {
+          "file": "src/action-focus.js",
+          "status": 200,
+          "bytes": 1672,
+          "sha256": "d5e383b4f8aeb138b6cdffc7f3dffe12cf0db7fcbac053df713dec60b3b95a98"
+        },
+        {
+          "file": "src/app.js",
+          "status": 200,
+          "bytes": 48136,
+          "sha256": "1708721304f1874507b3e592fa2f7ffa3e15eb4eee516df6a34a68c7316e2753"
+        },
+        {
+          "file": "src/content.js",
+          "status": 200,
+          "bytes": 13097,
+          "sha256": "4c0c2e4656c5a3482a5448a069ae2fa28367ba05d61c7d0c2c9866315f5c5526"
+        },
+        {
+          "file": "src/decisions.css",
+          "status": 200,
+          "bytes": 4004,
+          "sha256": "5e211e2fb4e72e6959ae7db8f570a3f2baacbd9c789cca90e89b9bd13a379588"
+        },
+        {
+          "file": "src/deep-content.js",
+          "status": 200,
+          "bytes": 10852,
+          "sha256": "040a5668b687cf9d7b7c8b31a67cee35660ebb0539af74c7d572614f138fef33"
+        },
+        {
+          "file": "src/deep-rules.js",
+          "status": 200,
+          "bytes": 14103,
+          "sha256": "6f6c096e37c9f18a6ca97625330a6ab8ce55b25852e677455d3a200c8200dbe1"
+        },
+        {
+          "file": "src/deep.css",
+          "status": 200,
+          "bytes": 10667,
+          "sha256": "24f0ed8bf2969232c660a595cd5e19b206066bc4a19a983e4bd3a277b82700cc"
+        },
+        {
+          "file": "src/defeat-review.css",
+          "status": 200,
+          "bytes": 4128,
+          "sha256": "c2343b936d4456b36c557f3c821cdb812a3d6cdcc2c061ea11a2197a56158598"
+        },
+        {
+          "file": "src/defeat-review.js",
+          "status": 200,
+          "bytes": 1183,
+          "sha256": "13c14a8184266dc4b443570e5e38b25b668bfa4b818401453d7248f5f6749938"
+        },
+        {
+          "file": "src/dice-motion.js",
+          "status": 200,
+          "bytes": 5430,
+          "sha256": "3b088b9efa03552912bd92b18dc66d6122f45e2f12dc420305bb877deae5139a"
+        },
+        {
+          "file": "src/dice-renderer.js",
+          "status": 200,
+          "bytes": 14522,
+          "sha256": "b40e1e1c808b00d319b70ce7546403c588cdcc8397bba684fe19b2f4c0bca6d8"
+        },
+        {
+          "file": "src/effects.js",
+          "status": 200,
+          "bytes": 28007,
+          "sha256": "5f95f77e882a690f95215babda3cdedc0d398bbcfaabfecd3d486141200dc6f9"
+        },
+        {
+          "file": "src/encounter-tactics.js",
+          "status": 200,
+          "bytes": 6963,
+          "sha256": "02e0da7aa57de321319812503556d9e5925463644222305755e86de6c3fa355b"
+        },
+        {
+          "file": "src/encounters.js",
+          "status": 200,
+          "bytes": 35815,
+          "sha256": "c3c6e2d24049305d73982cf5db3b1cf02eee68f4e8e1659fd7e3021f74de0791"
+        },
+        {
+          "file": "src/engine.js",
+          "status": 200,
+          "bytes": 41128,
+          "sha256": "75c6d9fcc48c0cf49ee02e53ffb7b143a09a2c79738d3bb2eb5d0ae80b30872b"
+        },
+        {
+          "file": "src/equipment-comparison.js",
+          "status": 200,
+          "bytes": 13371,
+          "sha256": "e47add10ce9cf308ac79fd1bbb4bc74e54b93e0f6b48e5dc97ac2eb314c6c9c4"
+        },
+        {
+          "file": "src/equipment-content.js",
+          "status": 200,
+          "bytes": 6818,
+          "sha256": "d95b5e7c11d14eb764ea3cefb7eee73f35b2f9d48a8b640513eda9aefd1cc030"
+        },
+        {
+          "file": "src/equipment.js",
+          "status": 200,
+          "bytes": 13951,
+          "sha256": "8c20de433f21931318e315b862b457d37a03b9596ea5df8f7cc4025691aaccd6"
+        },
+        {
+          "file": "src/expansion.css",
+          "status": 200,
+          "bytes": 14871,
+          "sha256": "d5c01857bf02a4566270f23ef389aad76e033e50bd5440ecb13665ce81818424"
+        },
+        {
+          "file": "src/experience.css",
+          "status": 200,
+          "bytes": 2513,
+          "sha256": "4a8175dfcf26c06e2e75126956d6e2d7749ef8c2f11c7026091faa7252c3c883"
+        },
+        {
+          "file": "src/experience.js",
+          "status": 200,
+          "bytes": 881,
+          "sha256": "2bdd3727c59b537f45a22d2e9aae9a93908a76e29850c8e8e8e024cbeaf93c45"
+        },
+        {
+          "file": "src/forge.css",
+          "status": 200,
+          "bytes": 7977,
+          "sha256": "9a7ee960f3494e39ac102abf7b9476cacffdd89eea1803e52469b441e124823f"
+        },
+        {
+          "file": "src/fusion-controller.js",
+          "status": 200,
+          "bytes": 39446,
+          "sha256": "5a4a0c6a11c7a347ffcdaa0340d3c905d65aa5ba6b50e36e7135a9276537dd1a"
+        },
+        {
+          "file": "src/fusion-dom.js",
+          "status": 200,
+          "bytes": 4843,
+          "sha256": "fb78398073fdccaea6680146c34ac18de75d926439c7044ed45da39f625e4023"
+        },
+        {
+          "file": "src/fusion-view.js",
+          "status": 200,
+          "bytes": 24915,
+          "sha256": "e77542f7de4c6f39ac57098ffb7a277caab988cd4bcc9ea5f50080b0f08e96c1"
+        },
+        {
+          "file": "src/fusion-workbench.js",
+          "status": 200,
+          "bytes": 8152,
+          "sha256": "06f206dc578534c641f0fe327c48a4ec70ccffeed79fe8076ccd83cfb56263bf"
+        },
+        {
+          "file": "src/fusion.css",
+          "status": 200,
+          "bytes": 41208,
+          "sha256": "9b6fe3edaa023ae1c7702e60e3110d9450a6ca03a737f74dd984baf0fb083bc5"
+        },
+        {
+          "file": "src/gold.css",
+          "status": 200,
+          "bytes": 2465,
+          "sha256": "bb1313da6f3a734567be73e23c606c56c1215bc976e166c9dc2b1fedb06c6393"
+        },
+        {
+          "file": "src/gold.js",
+          "status": 200,
+          "bytes": 1329,
+          "sha256": "252aab60750432e1b5f1dc158c4a8f69e3dca5d72fa016b69c03c29ac651a244"
+        },
+        {
+          "file": "src/inventory-dom.js",
+          "status": 200,
+          "bytes": 4792,
+          "sha256": "7f3b18a6b3dbcc3a0a100c94bab35d9e81a14d7a6c74e8eabfdff3d151d35bf0"
+        },
+        {
+          "file": "src/inventory-query.js",
+          "status": 200,
+          "bytes": 1686,
+          "sha256": "463a8d340842b9deaacef262b4459ecc8d8e9503d01edddc9b7df902a31c03be"
+        },
+        {
+          "file": "src/inventory-search.css",
+          "status": 200,
+          "bytes": 1573,
+          "sha256": "cfb91edec23d0e706414f3c9a90b6ab46c0efec43d54ff5e01da85c9923e3de1"
+        },
+        {
+          "file": "src/polish.css",
+          "status": 200,
+          "bytes": 7751,
+          "sha256": "84af5e0bfc563c830287d96103faff4b1673c7d363a9cfbc26995a5074265df8"
+        },
+        {
+          "file": "src/progression.css",
+          "status": 200,
+          "bytes": 30151,
+          "sha256": "31125ec19b19b527f9d0499d9b045874b0d37e2d6eb8fdcc729e58bf783368ec"
+        },
+        {
+          "file": "src/quality.css",
+          "status": 200,
+          "bytes": 5290,
+          "sha256": "3785daf1b16c66942383c8285376a66fee42c2a21c0b1450c251870333919bb8"
+        },
+        {
+          "file": "src/rarity.js",
+          "status": 200,
+          "bytes": 2515,
+          "sha256": "871356df147d027e1845f98c5574a1d9a71c0d17bd8717f457c9007d7c73b735"
+        },
+        {
+          "file": "src/refinement.css",
+          "status": 200,
+          "bytes": 10060,
+          "sha256": "79a8599ca5415c933de1161575edb25601f4efdbf57be4c45dc82033abb1fffd"
+        },
+        {
+          "file": "src/release.js",
+          "status": 200,
+          "bytes": 340,
+          "sha256": "7fc5bd4c46f3b985c25122b98b57d4e27aded61abfb2d5fcd8a7b1d69f37caab"
+        },
+        {
+          "file": "src/responsive.css",
+          "status": 200,
+          "bytes": 33069,
+          "sha256": "90bb585d66a88daa61a553112c66610b62b666aa07c28ad887b521534283cee8"
+        },
+        {
+          "file": "src/rooms.css",
+          "status": 200,
+          "bytes": 29127,
+          "sha256": "a426209cd05ccb3125a88713ea8693b04b47b65e179c605538b5053fe616c606"
+        },
+        {
+          "file": "src/route-weights.js",
+          "status": 200,
+          "bytes": 4425,
+          "sha256": "b21499b8c44a17ad09caab5e17f312073b269981b6ac7eb916b5f656912237dd"
+        },
+        {
+          "file": "src/save-capacity-view.js",
+          "status": 200,
+          "bytes": 2059,
+          "sha256": "cd729b8ce91cf5aad772f0fcc468cfac5b389a48ff1a03e905907ade23ea7867"
+        },
+        {
+          "file": "src/save-recovery-view.js",
+          "status": 200,
+          "bytes": 4355,
+          "sha256": "47e9041a86415c6bc04e5ae66803d6d8dfa6fbb2cabb8f800ce67f29a199153d"
+        },
+        {
+          "file": "src/save-recovery.css",
+          "status": 200,
+          "bytes": 2606,
+          "sha256": "7085ab430d2f1193955b84848d8f2af88faeab0d065c427ee5e7b88b5e254c2e"
+        },
+        {
+          "file": "src/settings-focus.js",
+          "status": 200,
+          "bytes": 1278,
+          "sha256": "7c4b93a9c8830598319e2a3d8d2750cb33f5c0a1cc5b89dbd6154b985db3366f"
+        },
+        {
+          "file": "src/storage.js",
+          "status": 200,
+          "bytes": 31698,
+          "sha256": "6bfcc60036c9f729c21b948ca98c7ac715e14049856fb9dded0baa2aeef2c561"
+        },
+        {
+          "file": "src/styles.css",
+          "status": 200,
+          "bytes": 34680,
+          "sha256": "dc835715e16e8698214d25202a39df6162c865287e6ac605c111486066764044"
+        },
+        {
+          "file": "src/talent.css",
+          "status": 200,
+          "bytes": 15247,
+          "sha256": "350f583103186b0b44fc50317d92c20417fed82fe4e8667bf1776390b2425334"
+        },
+        {
+          "file": "src/views.js",
+          "status": 200,
+          "bytes": 94570,
+          "sha256": "1aed7caac52894bd35b03307f08ebf45382b9f6418050b47e2f09dc48f71971c"
+        },
+        {
+          "file": "src/visual-timeline.js",
+          "status": 200,
+          "bytes": 2906,
+          "sha256": "f518084da44c2ea852bf902ba6ffc7f8f5a94ee815dac31bcc4726cc8cd44369"
+        },
+        {
+          "file": "src/visual.css",
+          "status": 200,
+          "bytes": 47600,
+          "sha256": "35ec8f94b238d355f6fad93855d4b20794157e3d9c592dcf777cf25dcb2e05bd"
+        },
+        {
+          "file": "index.html",
+          "status": 200,
+          "bytes": 2137,
+          "sha256": "d90d170fec59c847b3d8e63605044255af240698fc21ac65901e0fe5c441439e"
+        }
+      ]
+    }
+  ],
+  "contexts": [
+    {
+      "label": "baseline",
+      "count": 243,
+      "urls": {
+        "inventory-query": "http://127.0.0.1:4190/src/inventory-query.js",
+        "views": "http://127.0.0.1:4190/src/views.js",
+        "storage": "http://127.0.0.1:4190/src/storage.js"
+      },
+      "alreadyLoaded": {
+        "inventory-query": true,
+        "views": true,
+        "storage": true
+      },
+      "stateExact": true,
+      "mainExact": true,
+      "mirrorExact": true,
+      "release": "5.15.0",
+      "effects": "low",
+      "visibility": "visible",
+      "crossOriginIsolated": false,
+      "setup": {
+        "visibleCards": 60,
+        "idsExact": true,
+        "cardsExact": true,
+        "mainExact": true,
+        "mirrorExact": true
+      },
+      "rawSha256": "fd896888bc56fb931c365157e29b30764f4e443d77951dc8104df59f3db953be",
+      "oracles": {
+        "power": {
+          "orderSha256": "bf84a83c1c4b21e1895abe3b92ae19590065e8b81deca3602dc56b53f2828282",
+          "htmlSha256": "092cce10c2e196da5a1e2d3445fb6d38682793b0306b6205b1f6bbe3833811fb"
+        },
+        "rarity": {
+          "orderSha256": "7de14713480e9693aac05e29fec4eb2fb3a2d8acd1e8f28610a6aea9b0521c84",
+          "htmlSha256": "96efcabe5eb5bb1af539063825a93f6bbf24d8626267ca7ae8796eeccb2687c8"
+        },
+        "level": {
+          "orderSha256": "5c5042c4286cca8d04de559aadb00d4c561e4634ef83be14dd80903ff715c428",
+          "htmlSha256": "3a9a415f7d3d9b29a81a4ff386c317e728d7ed48d15d2f0e2c77fb7eabd15e98"
+        }
+      }
+    },
+    {
+      "label": "after",
+      "count": 243,
+      "urls": {
+        "inventory-query": "http://127.0.0.1:4191/src/inventory-query.js",
+        "views": "http://127.0.0.1:4191/src/views.js",
+        "storage": "http://127.0.0.1:4191/src/storage.js"
+      },
+      "alreadyLoaded": {
+        "inventory-query": true,
+        "views": true,
+        "storage": true
+      },
+      "stateExact": true,
+      "mainExact": true,
+      "mirrorExact": true,
+      "release": "5.16.0",
+      "effects": "low",
+      "visibility": "visible",
+      "crossOriginIsolated": false,
+      "setup": {
+        "visibleCards": 60,
+        "idsExact": true,
+        "cardsExact": true,
+        "mainExact": true,
+        "mirrorExact": true
+      },
+      "rawSha256": "fd896888bc56fb931c365157e29b30764f4e443d77951dc8104df59f3db953be",
+      "oracles": {
+        "power": {
+          "orderSha256": "bf84a83c1c4b21e1895abe3b92ae19590065e8b81deca3602dc56b53f2828282",
+          "htmlSha256": "092cce10c2e196da5a1e2d3445fb6d38682793b0306b6205b1f6bbe3833811fb"
+        },
+        "rarity": {
+          "orderSha256": "7de14713480e9693aac05e29fec4eb2fb3a2d8acd1e8f28610a6aea9b0521c84",
+          "htmlSha256": "96efcabe5eb5bb1af539063825a93f6bbf24d8626267ca7ae8796eeccb2687c8"
+        },
+        "level": {
+          "orderSha256": "5c5042c4286cca8d04de559aadb00d4c561e4634ef83be14dd80903ff715c428",
+          "htmlSha256": "3a9a415f7d3d9b29a81a4ff386c317e728d7ed48d15d2f0e2c77fb7eabd15e98"
+        }
+      }
+    },
+    {
+      "label": "baseline",
+      "count": 10000,
+      "urls": {
+        "inventory-query": "http://127.0.0.1:4190/src/inventory-query.js",
+        "views": "http://127.0.0.1:4190/src/views.js",
+        "storage": "http://127.0.0.1:4190/src/storage.js"
+      },
+      "alreadyLoaded": {
+        "inventory-query": true,
+        "views": true,
+        "storage": true
+      },
+      "stateExact": true,
+      "mainExact": true,
+      "mirrorExact": true,
+      "release": "5.15.0",
+      "effects": "low",
+      "visibility": "visible",
+      "crossOriginIsolated": false,
+      "setup": {
+        "visibleCards": 60,
+        "idsExact": true,
+        "cardsExact": true,
+        "mainExact": true,
+        "mirrorExact": true
+      },
+      "rawSha256": "4b2aaab906625cc4f2c9e321eb4bc39048dabf039feac6d67b9849a51496c621",
+      "oracles": {
+        "power": {
+          "orderSha256": "ac62f065cc0330601a657ba1d6042d1504c1f0572929dba76eea7fc1177f286e",
+          "htmlSha256": "9c7c626b1877e6fc556742849e388d46ad4d3c2e7220d16af0ffad4eee7c0b93"
+        },
+        "rarity": {
+          "orderSha256": "e0543bd2fbcad93153a467527f7a6f0643170f88a974d7a149297089336c66bb",
+          "htmlSha256": "0b8e69ddba4df349e658eb8e56aeae4b903ee39c984b933cd9c28d318f2202b3"
+        },
+        "level": {
+          "orderSha256": "c7f38e7468b3e5f3c5e6b0b4bbc90e3dcc88e4a984fb24c8d86dcb0ade797808",
+          "htmlSha256": "5a62c055471d564dd30a54fed5da221a12998c61ddaa0a8918cbfa7cc72ef8fc"
+        }
+      }
+    },
+    {
+      "label": "after",
+      "count": 10000,
+      "urls": {
+        "inventory-query": "http://127.0.0.1:4191/src/inventory-query.js",
+        "views": "http://127.0.0.1:4191/src/views.js",
+        "storage": "http://127.0.0.1:4191/src/storage.js"
+      },
+      "alreadyLoaded": {
+        "inventory-query": true,
+        "views": true,
+        "storage": true
+      },
+      "stateExact": true,
+      "mainExact": true,
+      "mirrorExact": true,
+      "release": "5.16.0",
+      "effects": "low",
+      "visibility": "visible",
+      "crossOriginIsolated": false,
+      "setup": {
+        "visibleCards": 60,
+        "idsExact": true,
+        "cardsExact": true,
+        "mainExact": true,
+        "mirrorExact": true
+      },
+      "rawSha256": "4b2aaab906625cc4f2c9e321eb4bc39048dabf039feac6d67b9849a51496c621",
+      "oracles": {
+        "power": {
+          "orderSha256": "ac62f065cc0330601a657ba1d6042d1504c1f0572929dba76eea7fc1177f286e",
+          "htmlSha256": "9c7c626b1877e6fc556742849e388d46ad4d3c2e7220d16af0ffad4eee7c0b93"
+        },
+        "rarity": {
+          "orderSha256": "e0543bd2fbcad93153a467527f7a6f0643170f88a974d7a149297089336c66bb",
+          "htmlSha256": "0b8e69ddba4df349e658eb8e56aeae4b903ee39c984b933cd9c28d318f2202b3"
+        },
+        "level": {
+          "orderSha256": "c7f38e7468b3e5f3c5e6b0b4bbc90e3dcc88e4a984fb24c8d86dcb0ade797808",
+          "htmlSha256": "5a62c055471d564dd30a54fed5da221a12998c61ddaa0a8918cbfa7cc72ef8fc"
+        }
+      }
+    }
+  ],
+  "orders": [
+    {
+      "count": 243,
+      "round": 1,
+      "warmup": false,
+      "pairOrder": [
+        "baseline",
+        "after"
+      ],
+      "sortOrder": [
+        "power",
+        "rarity",
+        "level"
+      ],
+      "phaseOrder": [
+        "selector",
+        "center"
+      ]
+    },
+    {
+      "count": 10000,
+      "round": 1,
+      "warmup": false,
+      "pairOrder": [
+        "baseline",
+        "after"
+      ],
+      "sortOrder": [
+        "power",
+        "rarity",
+        "level"
+      ],
+      "phaseOrder": [
+        "selector",
+        "center"
+      ]
+    }
+  ],
+  "runs": [
+    {
+      "label": "baseline",
+      "count": 243,
+      "round": 1,
+      "warmup": false,
+      "pairOrder": [
+        "baseline",
+        "after"
+      ],
+      "position": 1,
+      "sortOrder": [
+        "power",
+        "rarity",
+        "level"
+      ],
+      "phaseOrder": [
+        "selector",
+        "center"
+      ],
+      "sort": "power",
+      "phase": "selector",
+      "start": 3711.5999999996275,
+      "end": 3711.800000000745,
+      "elapsedMs": 0.2000000011175871,
+      "resultExact": true,
+      "resultLength": 243,
+      "stateExact": true,
+      "uiExact": true,
+      "mainExact": true,
+      "mirrorExact": true,
+      "visibility": "visible",
+      "expectedResultSha256": "bf84a83c1c4b21e1895abe3b92ae19590065e8b81deca3602dc56b53f2828282",
+      "saveSha256": "fd896888bc56fb931c365157e29b30764f4e443d77951dc8104df59f3db953be",
+      "status": "PASS"
+    },
+    {
+      "label": "baseline",
+      "count": 243,
+      "round": 1,
+      "warmup": false,
+      "pairOrder": [
+        "baseline",
+        "after"
+      ],
+      "position": 1,
+      "sortOrder": [
+        "power",
+        "rarity",
+        "level"
+      ],
+      "phaseOrder": [
+        "selector",
+        "center"
+      ],
+      "sort": "power",
+      "phase": "center",
+      "start": 3715.0999999996275,
+      "end": 3736.4000000003725,
+      "elapsedMs": 21.300000000745058,
+      "resultExact": true,
+      "resultLength": 84162,
+      "stateExact": true,
+      "uiExact": true,
+      "mainExact": true,
+      "mirrorExact": true,
+      "visibility": "visible",
+      "expectedResultSha256": "092cce10c2e196da5a1e2d3445fb6d38682793b0306b6205b1f6bbe3833811fb",
+      "saveSha256": "fd896888bc56fb931c365157e29b30764f4e443d77951dc8104df59f3db953be",
+      "status": "PASS"
+    },
+    {
+      "label": "baseline",
+      "count": 243,
+      "round": 1,
+      "warmup": false,
+      "pairOrder": [
+        "baseline",
+        "after"
+      ],
+      "position": 1,
+      "sortOrder": [
+        "power",
+        "rarity",
+        "level"
+      ],
+      "phaseOrder": [
+        "selector",
+        "center"
+      ],
+      "sort": "rarity",
+      "phase": "selector",
+      "start": 3738.5,
+      "end": 3738.699999999255,
+      "elapsedMs": 0.19999999925494194,
+      "resultExact": true,
+      "resultLength": 243,
+      "stateExact": true,
+      "uiExact": true,
+      "mainExact": true,
+      "mirrorExact": true,
+      "visibility": "visible",
+      "expectedResultSha256": "7de14713480e9693aac05e29fec4eb2fb3a2d8acd1e8f28610a6aea9b0521c84",
+      "saveSha256": "fd896888bc56fb931c365157e29b30764f4e443d77951dc8104df59f3db953be",
+      "status": "PASS"
+    },
+    {
+      "label": "baseline",
+      "count": 243,
+      "round": 1,
+      "warmup": false,
+      "pairOrder": [
+        "baseline",
+        "after"
+      ],
+      "position": 1,
+      "sortOrder": [
+        "power",
+        "rarity",
+        "level"
+      ],
+      "phaseOrder": [
+        "selector",
+        "center"
+      ],
+      "sort": "rarity",
+      "phase": "center",
+      "start": 3740.300000000745,
+      "end": 3756.800000000745,
+      "elapsedMs": 16.5,
+      "resultExact": true,
+      "resultLength": 84100,
+      "stateExact": true,
+      "uiExact": true,
+      "mainExact": true,
+      "mirrorExact": true,
+      "visibility": "visible",
+      "expectedResultSha256": "96efcabe5eb5bb1af539063825a93f6bbf24d8626267ca7ae8796eeccb2687c8",
+      "saveSha256": "fd896888bc56fb931c365157e29b30764f4e443d77951dc8104df59f3db953be",
+      "status": "PASS"
+    },
+    {
+      "label": "baseline",
+      "count": 243,
+      "round": 1,
+      "warmup": false,
+      "pairOrder": [
+        "baseline",
+        "after"
+      ],
+      "position": 1,
+      "sortOrder": [
+        "power",
+        "rarity",
+        "level"
+      ],
+      "phaseOrder": [
+        "selector",
+        "center"
+      ],
+      "sort": "level",
+      "phase": "selector",
+      "start": 3761.5999999996275,
+      "end": 3761.5999999996275,
+      "elapsedMs": 0,
+      "resultExact": true,
+      "resultLength": 243,
+      "stateExact": true,
+      "uiExact": true,
+      "mainExact": true,
+      "mirrorExact": true,
+      "visibility": "visible",
+      "expectedResultSha256": "5c5042c4286cca8d04de559aadb00d4c561e4634ef83be14dd80903ff715c428",
+      "saveSha256": "fd896888bc56fb931c365157e29b30764f4e443d77951dc8104df59f3db953be",
+      "status": "PASS"
+    },
+    {
+      "label": "baseline",
+      "count": 243,
+      "round": 1,
+      "warmup": false,
+      "pairOrder": [
+        "baseline",
+        "after"
+      ],
+      "position": 1,
+      "sortOrder": [
+        "power",
+        "rarity",
+        "level"
+      ],
+      "phaseOrder": [
+        "selector",
+        "center"
+      ],
+      "sort": "level",
+      "phase": "center",
+      "start": 3763,
+      "end": 3778.5,
+      "elapsedMs": 15.5,
+      "resultExact": true,
+      "resultLength": 83914,
+      "stateExact": true,
+      "uiExact": true,
+      "mainExact": true,
+      "mirrorExact": true,
+      "visibility": "visible",
+      "expectedResultSha256": "3a9a415f7d3d9b29a81a4ff386c317e728d7ed48d15d2f0e2c77fb7eabd15e98",
+      "saveSha256": "fd896888bc56fb931c365157e29b30764f4e443d77951dc8104df59f3db953be",
+      "status": "PASS"
+    },
+    {
+      "label": "after",
+      "count": 243,
+      "round": 1,
+      "warmup": false,
+      "pairOrder": [
+        "baseline",
+        "after"
+      ],
+      "position": 2,
+      "sortOrder": [
+        "power",
+        "rarity",
+        "level"
+      ],
+      "phaseOrder": [
+        "selector",
+        "center"
+      ],
+      "sort": "power",
+      "phase": "selector",
+      "start": 2345.699999999255,
+      "end": 2345.800000000745,
+      "elapsedMs": 0.10000000149011612,
+      "resultExact": true,
+      "resultLength": 243,
+      "stateExact": true,
+      "uiExact": true,
+      "mainExact": true,
+      "mirrorExact": true,
+      "visibility": "visible",
+      "expectedResultSha256": "bf84a83c1c4b21e1895abe3b92ae19590065e8b81deca3602dc56b53f2828282",
+      "saveSha256": "fd896888bc56fb931c365157e29b30764f4e443d77951dc8104df59f3db953be",
+      "status": "PASS"
+    },
+    {
+      "label": "after",
+      "count": 243,
+      "round": 1,
+      "warmup": false,
+      "pairOrder": [
+        "baseline",
+        "after"
+      ],
+      "position": 2,
+      "sortOrder": [
+        "power",
+        "rarity",
+        "level"
+      ],
+      "phaseOrder": [
+        "selector",
+        "center"
+      ],
+      "sort": "power",
+      "phase": "center",
+      "start": 2347.199999999255,
+      "end": 2365.300000000745,
+      "elapsedMs": 18.100000001490116,
+      "resultExact": true,
+      "resultLength": 84162,
+      "stateExact": true,
+      "uiExact": true,
+      "mainExact": true,
+      "mirrorExact": true,
+      "visibility": "visible",
+      "expectedResultSha256": "092cce10c2e196da5a1e2d3445fb6d38682793b0306b6205b1f6bbe3833811fb",
+      "saveSha256": "fd896888bc56fb931c365157e29b30764f4e443d77951dc8104df59f3db953be",
+      "status": "PASS"
+    },
+    {
+      "label": "after",
+      "count": 243,
+      "round": 1,
+      "warmup": false,
+      "pairOrder": [
+        "baseline",
+        "after"
+      ],
+      "position": 2,
+      "sortOrder": [
+        "power",
+        "rarity",
+        "level"
+      ],
+      "phaseOrder": [
+        "selector",
+        "center"
+      ],
+      "sort": "rarity",
+      "phase": "selector",
+      "start": 2370.5,
+      "end": 2370.699999999255,
+      "elapsedMs": 0.19999999925494194,
+      "resultExact": true,
+      "resultLength": 243,
+      "stateExact": true,
+      "uiExact": true,
+      "mainExact": true,
+      "mirrorExact": true,
+      "visibility": "visible",
+      "expectedResultSha256": "7de14713480e9693aac05e29fec4eb2fb3a2d8acd1e8f28610a6aea9b0521c84",
+      "saveSha256": "fd896888bc56fb931c365157e29b30764f4e443d77951dc8104df59f3db953be",
+      "status": "PASS"
+    },
+    {
+      "label": "after",
+      "count": 243,
+      "round": 1,
+      "warmup": false,
+      "pairOrder": [
+        "baseline",
+        "after"
+      ],
+      "position": 2,
+      "sortOrder": [
+        "power",
+        "rarity",
+        "level"
+      ],
+      "phaseOrder": [
+        "selector",
+        "center"
+      ],
+      "sort": "rarity",
+      "phase": "center",
+      "start": 2374.0999999996275,
+      "end": 2388.9000000003725,
+      "elapsedMs": 14.800000000745058,
+      "resultExact": true,
+      "resultLength": 84100,
+      "stateExact": true,
+      "uiExact": true,
+      "mainExact": true,
+      "mirrorExact": true,
+      "visibility": "visible",
+      "expectedResultSha256": "96efcabe5eb5bb1af539063825a93f6bbf24d8626267ca7ae8796eeccb2687c8",
+      "saveSha256": "fd896888bc56fb931c365157e29b30764f4e443d77951dc8104df59f3db953be",
+      "status": "PASS"
+    },
+    {
+      "label": "after",
+      "count": 243,
+      "round": 1,
+      "warmup": false,
+      "pairOrder": [
+        "baseline",
+        "after"
+      ],
+      "position": 2,
+      "sortOrder": [
+        "power",
+        "rarity",
+        "level"
+      ],
+      "phaseOrder": [
+        "selector",
+        "center"
+      ],
+      "sort": "level",
+      "phase": "selector",
+      "start": 2391.0999999996275,
+      "end": 2391.300000000745,
+      "elapsedMs": 0.2000000011175871,
+      "resultExact": true,
+      "resultLength": 243,
+      "stateExact": true,
+      "uiExact": true,
+      "mainExact": true,
+      "mirrorExact": true,
+      "visibility": "visible",
+      "expectedResultSha256": "5c5042c4286cca8d04de559aadb00d4c561e4634ef83be14dd80903ff715c428",
+      "saveSha256": "fd896888bc56fb931c365157e29b30764f4e443d77951dc8104df59f3db953be",
+      "status": "PASS"
+    },
+    {
+      "label": "after",
+      "count": 243,
+      "round": 1,
+      "warmup": false,
+      "pairOrder": [
+        "baseline",
+        "after"
+      ],
+      "position": 2,
+      "sortOrder": [
+        "power",
+        "rarity",
+        "level"
+      ],
+      "phaseOrder": [
+        "selector",
+        "center"
+      ],
+      "sort": "level",
+      "phase": "center",
+      "start": 2392.5999999996275,
+      "end": 2405.699999999255,
+      "elapsedMs": 13.099999999627471,
+      "resultExact": true,
+      "resultLength": 83914,
+      "stateExact": true,
+      "uiExact": true,
+      "mainExact": true,
+      "mirrorExact": true,
+      "visibility": "visible",
+      "expectedResultSha256": "3a9a415f7d3d9b29a81a4ff386c317e728d7ed48d15d2f0e2c77fb7eabd15e98",
+      "saveSha256": "fd896888bc56fb931c365157e29b30764f4e443d77951dc8104df59f3db953be",
+      "status": "PASS"
+    },
+    {
+      "label": "baseline",
+      "count": 10000,
+      "round": 1,
+      "warmup": false,
+      "pairOrder": [
+        "baseline",
+        "after"
+      ],
+      "position": 1,
+      "sortOrder": [
+        "power",
+        "rarity",
+        "level"
+      ],
+      "phaseOrder": [
+        "selector",
+        "center"
+      ],
+      "sort": "power",
+      "phase": "selector",
+      "start": 3520.0999999996275,
+      "end": 3527.800000000745,
+      "elapsedMs": 7.700000001117587,
+      "resultExact": true,
+      "resultLength": 10000,
+      "stateExact": true,
+      "uiExact": true,
+      "mainExact": true,
+      "mirrorExact": true,
+      "visibility": "visible",
+      "expectedResultSha256": "ac62f065cc0330601a657ba1d6042d1504c1f0572929dba76eea7fc1177f286e",
+      "saveSha256": "4b2aaab906625cc4f2c9e321eb4bc39048dabf039feac6d67b9849a51496c621",
+      "status": "PASS"
+    },
+    {
+      "label": "baseline",
+      "count": 10000,
+      "round": 1,
+      "warmup": false,
+      "pairOrder": [
+        "baseline",
+        "after"
+      ],
+      "position": 1,
+      "sortOrder": [
+        "power",
+        "rarity",
+        "level"
+      ],
+      "phaseOrder": [
+        "selector",
+        "center"
+      ],
+      "sort": "power",
+      "phase": "center",
+      "start": 3540.2000000011176,
+      "end": 3566.7000000011176,
+      "elapsedMs": 26.5,
+      "resultExact": true,
+      "resultLength": 82469,
+      "stateExact": true,
+      "uiExact": true,
+      "mainExact": true,
+      "mirrorExact": true,
+      "visibility": "visible",
+      "expectedResultSha256": "9c7c626b1877e6fc556742849e388d46ad4d3c2e7220d16af0ffad4eee7c0b93",
+      "saveSha256": "4b2aaab906625cc4f2c9e321eb4bc39048dabf039feac6d67b9849a51496c621",
+      "status": "PASS"
+    },
+    {
+      "label": "baseline",
+      "count": 10000,
+      "round": 1,
+      "warmup": false,
+      "pairOrder": [
+        "baseline",
+        "after"
+      ],
+      "position": 1,
+      "sortOrder": [
+        "power",
+        "rarity",
+        "level"
+      ],
+      "phaseOrder": [
+        "selector",
+        "center"
+      ],
+      "sort": "rarity",
+      "phase": "selector",
+      "start": 3577.4000000003725,
+      "end": 3583.300000000745,
+      "elapsedMs": 5.900000000372529,
+      "resultExact": true,
+      "resultLength": 10000,
+      "stateExact": true,
+      "uiExact": true,
+      "mainExact": true,
+      "mirrorExact": true,
+      "visibility": "visible",
+      "expectedResultSha256": "e0543bd2fbcad93153a467527f7a6f0643170f88a974d7a149297089336c66bb",
+      "saveSha256": "4b2aaab906625cc4f2c9e321eb4bc39048dabf039feac6d67b9849a51496c621",
+      "status": "PASS"
+    },
+    {
+      "label": "baseline",
+      "count": 10000,
+      "round": 1,
+      "warmup": false,
+      "pairOrder": [
+        "baseline",
+        "after"
+      ],
+      "position": 1,
+      "sortOrder": [
+        "power",
+        "rarity",
+        "level"
+      ],
+      "phaseOrder": [
+        "selector",
+        "center"
+      ],
+      "sort": "rarity",
+      "phase": "center",
+      "start": 3602.5999999996275,
+      "end": 3628.7000000011176,
+      "elapsedMs": 26.100000001490116,
+      "resultExact": true,
+      "resultLength": 82469,
+      "stateExact": true,
+      "uiExact": true,
+      "mainExact": true,
+      "mirrorExact": true,
+      "visibility": "visible",
+      "expectedResultSha256": "0b8e69ddba4df349e658eb8e56aeae4b903ee39c984b933cd9c28d318f2202b3",
+      "saveSha256": "4b2aaab906625cc4f2c9e321eb4bc39048dabf039feac6d67b9849a51496c621",
+      "status": "PASS"
+    },
+    {
+      "label": "baseline",
+      "count": 10000,
+      "round": 1,
+      "warmup": false,
+      "pairOrder": [
+        "baseline",
+        "after"
+      ],
+      "position": 1,
+      "sortOrder": [
+        "power",
+        "rarity",
+        "level"
+      ],
+      "phaseOrder": [
+        "selector",
+        "center"
+      ],
+      "sort": "level",
+      "phase": "selector",
+      "start": 3643,
+      "end": 3648.0999999996275,
+      "elapsedMs": 5.099999999627471,
+      "resultExact": true,
+      "resultLength": 10000,
+      "stateExact": true,
+      "uiExact": true,
+      "mainExact": true,
+      "mirrorExact": true,
+      "visibility": "visible",
+      "expectedResultSha256": "c7f38e7468b3e5f3c5e6b0b4bbc90e3dcc88e4a984fb24c8d86dcb0ade797808",
+      "saveSha256": "4b2aaab906625cc4f2c9e321eb4bc39048dabf039feac6d67b9849a51496c621",
+      "status": "PASS"
+    },
+    {
+      "label": "baseline",
+      "count": 10000,
+      "round": 1,
+      "warmup": false,
+      "pairOrder": [
+        "baseline",
+        "after"
+      ],
+      "position": 1,
+      "sortOrder": [
+        "power",
+        "rarity",
+        "level"
+      ],
+      "phaseOrder": [
+        "selector",
+        "center"
+      ],
+      "sort": "level",
+      "phase": "center",
+      "start": 3660.300000000745,
+      "end": 3680.2000000011176,
+      "elapsedMs": 19.90000000037253,
+      "resultExact": true,
+      "resultLength": 82051,
+      "stateExact": true,
+      "uiExact": true,
+      "mainExact": true,
+      "mirrorExact": true,
+      "visibility": "visible",
+      "expectedResultSha256": "5a62c055471d564dd30a54fed5da221a12998c61ddaa0a8918cbfa7cc72ef8fc",
+      "saveSha256": "4b2aaab906625cc4f2c9e321eb4bc39048dabf039feac6d67b9849a51496c621",
+      "status": "PASS"
+    },
+    {
+      "label": "after",
+      "count": 10000,
+      "round": 1,
+      "warmup": false,
+      "pairOrder": [
+        "baseline",
+        "after"
+      ],
+      "position": 2,
+      "sortOrder": [
+        "power",
+        "rarity",
+        "level"
+      ],
+      "phaseOrder": [
+        "selector",
+        "center"
+      ],
+      "sort": "power",
+      "phase": "selector",
+      "start": 2803.2000000011176,
+      "end": 2806.60000000149,
+      "elapsedMs": 3.400000000372529,
+      "resultExact": true,
+      "resultLength": 10000,
+      "stateExact": true,
+      "uiExact": true,
+      "mainExact": true,
+      "mirrorExact": true,
+      "visibility": "visible",
+      "expectedResultSha256": "ac62f065cc0330601a657ba1d6042d1504c1f0572929dba76eea7fc1177f286e",
+      "saveSha256": "4b2aaab906625cc4f2c9e321eb4bc39048dabf039feac6d67b9849a51496c621",
+      "status": "PASS"
+    },
+    {
+      "label": "after",
+      "count": 10000,
+      "round": 1,
+      "warmup": false,
+      "pairOrder": [
+        "baseline",
+        "after"
+      ],
+      "position": 2,
+      "sortOrder": [
+        "power",
+        "rarity",
+        "level"
+      ],
+      "phaseOrder": [
+        "selector",
+        "center"
+      ],
+      "sort": "power",
+      "phase": "center",
+      "start": 2815,
+      "end": 2836.4000000003725,
+      "elapsedMs": 21.40000000037253,
+      "resultExact": true,
+      "resultLength": 82469,
+      "stateExact": true,
+      "uiExact": true,
+      "mainExact": true,
+      "mirrorExact": true,
+      "visibility": "visible",
+      "expectedResultSha256": "9c7c626b1877e6fc556742849e388d46ad4d3c2e7220d16af0ffad4eee7c0b93",
+      "saveSha256": "4b2aaab906625cc4f2c9e321eb4bc39048dabf039feac6d67b9849a51496c621",
+      "status": "PASS"
+    },
+    {
+      "label": "after",
+      "count": 10000,
+      "round": 1,
+      "warmup": false,
+      "pairOrder": [
+        "baseline",
+        "after"
+      ],
+      "position": 2,
+      "sortOrder": [
+        "power",
+        "rarity",
+        "level"
+      ],
+      "phaseOrder": [
+        "selector",
+        "center"
+      ],
+      "sort": "rarity",
+      "phase": "selector",
+      "start": 2846.2000000011176,
+      "end": 2849.2000000011176,
+      "elapsedMs": 3,
+      "resultExact": true,
+      "resultLength": 10000,
+      "stateExact": true,
+      "uiExact": true,
+      "mainExact": true,
+      "mirrorExact": true,
+      "visibility": "visible",
+      "expectedResultSha256": "e0543bd2fbcad93153a467527f7a6f0643170f88a974d7a149297089336c66bb",
+      "saveSha256": "4b2aaab906625cc4f2c9e321eb4bc39048dabf039feac6d67b9849a51496c621",
+      "status": "PASS"
+    },
+    {
+      "label": "after",
+      "count": 10000,
+      "round": 1,
+      "warmup": false,
+      "pairOrder": [
+        "baseline",
+        "after"
+      ],
+      "position": 2,
+      "sortOrder": [
+        "power",
+        "rarity",
+        "level"
+      ],
+      "phaseOrder": [
+        "selector",
+        "center"
+      ],
+      "sort": "rarity",
+      "phase": "center",
+      "start": 2859.2000000011176,
+      "end": 2874.9000000003725,
+      "elapsedMs": 15.699999999254942,
+      "resultExact": true,
+      "resultLength": 82469,
+      "stateExact": true,
+      "uiExact": true,
+      "mainExact": true,
+      "mirrorExact": true,
+      "visibility": "visible",
+      "expectedResultSha256": "0b8e69ddba4df349e658eb8e56aeae4b903ee39c984b933cd9c28d318f2202b3",
+      "saveSha256": "4b2aaab906625cc4f2c9e321eb4bc39048dabf039feac6d67b9849a51496c621",
+      "status": "PASS"
+    },
+    {
+      "label": "after",
+      "count": 10000,
+      "round": 1,
+      "warmup": false,
+      "pairOrder": [
+        "baseline",
+        "after"
+      ],
+      "position": 2,
+      "sortOrder": [
+        "power",
+        "rarity",
+        "level"
+      ],
+      "phaseOrder": [
+        "selector",
+        "center"
+      ],
+      "sort": "level",
+      "phase": "selector",
+      "start": 2882.9000000003725,
+      "end": 2885.2000000011176,
+      "elapsedMs": 2.300000000745058,
+      "resultExact": true,
+      "resultLength": 10000,
+      "stateExact": true,
+      "uiExact": true,
+      "mainExact": true,
+      "mirrorExact": true,
+      "visibility": "visible",
+      "expectedResultSha256": "c7f38e7468b3e5f3c5e6b0b4bbc90e3dcc88e4a984fb24c8d86dcb0ade797808",
+      "saveSha256": "4b2aaab906625cc4f2c9e321eb4bc39048dabf039feac6d67b9849a51496c621",
+      "status": "PASS"
+    },
+    {
+      "label": "after",
+      "count": 10000,
+      "round": 1,
+      "warmup": false,
+      "pairOrder": [
+        "baseline",
+        "after"
+      ],
+      "position": 2,
+      "sortOrder": [
+        "power",
+        "rarity",
+        "level"
+      ],
+      "phaseOrder": [
+        "selector",
+        "center"
+      ],
+      "sort": "level",
+      "phase": "center",
+      "start": 2893.7000000011176,
+      "end": 2910.60000000149,
+      "elapsedMs": 16.90000000037253,
+      "resultExact": true,
+      "resultLength": 82051,
+      "stateExact": true,
+      "uiExact": true,
+      "mainExact": true,
+      "mirrorExact": true,
+      "visibility": "visible",
+      "expectedResultSha256": "5a62c055471d564dd30a54fed5da221a12998c61ddaa0a8918cbfa7cc72ef8fc",
+      "saveSha256": "4b2aaab906625cc4f2c9e321eb4bc39048dabf039feac6d67b9849a51496c621",
+      "status": "PASS"
+    }
+  ],
+  "aggregates": [
+    {
+      "count": 243,
+      "label": "baseline",
+      "sort": "power",
+      "phase": "selector",
+      "n": 1,
+      "p50": 0.2000000011175871,
+      "p95": 0.2000000011175871,
+      "min": 0.2000000011175871,
+      "max": 0.2000000011175871,
+      "mean": 0.2000000011175871
+    },
+    {
+      "count": 243,
+      "label": "after",
+      "sort": "power",
+      "phase": "selector",
+      "n": 1,
+      "p50": 0.10000000149011612,
+      "p95": 0.10000000149011612,
+      "min": 0.10000000149011612,
+      "max": 0.10000000149011612,
+      "mean": 0.10000000149011612
+    },
+    {
+      "count": 243,
+      "label": "baseline",
+      "sort": "power",
+      "phase": "center",
+      "n": 1,
+      "p50": 21.300000000745058,
+      "p95": 21.300000000745058,
+      "min": 21.300000000745058,
+      "max": 21.300000000745058,
+      "mean": 21.300000000745058
+    },
+    {
+      "count": 243,
+      "label": "after",
+      "sort": "power",
+      "phase": "center",
+      "n": 1,
+      "p50": 18.100000001490116,
+      "p95": 18.100000001490116,
+      "min": 18.100000001490116,
+      "max": 18.100000001490116,
+      "mean": 18.100000001490116
+    },
+    {
+      "count": 243,
+      "label": "baseline",
+      "sort": "rarity",
+      "phase": "selector",
+      "n": 1,
+      "p50": 0.19999999925494194,
+      "p95": 0.19999999925494194,
+      "min": 0.19999999925494194,
+      "max": 0.19999999925494194,
+      "mean": 0.19999999925494194
+    },
+    {
+      "count": 243,
+      "label": "after",
+      "sort": "rarity",
+      "phase": "selector",
+      "n": 1,
+      "p50": 0.19999999925494194,
+      "p95": 0.19999999925494194,
+      "min": 0.19999999925494194,
+      "max": 0.19999999925494194,
+      "mean": 0.19999999925494194
+    },
+    {
+      "count": 243,
+      "label": "baseline",
+      "sort": "rarity",
+      "phase": "center",
+      "n": 1,
+      "p50": 16.5,
+      "p95": 16.5,
+      "min": 16.5,
+      "max": 16.5,
+      "mean": 16.5
+    },
+    {
+      "count": 243,
+      "label": "after",
+      "sort": "rarity",
+      "phase": "center",
+      "n": 1,
+      "p50": 14.800000000745058,
+      "p95": 14.800000000745058,
+      "min": 14.800000000745058,
+      "max": 14.800000000745058,
+      "mean": 14.800000000745058
+    },
+    {
+      "count": 243,
+      "label": "baseline",
+      "sort": "level",
+      "phase": "selector",
+      "n": 1,
+      "p50": 0,
+      "p95": 0,
+      "min": 0,
+      "max": 0,
+      "mean": 0
+    },
+    {
+      "count": 243,
+      "label": "after",
+      "sort": "level",
+      "phase": "selector",
+      "n": 1,
+      "p50": 0.2000000011175871,
+      "p95": 0.2000000011175871,
+      "min": 0.2000000011175871,
+      "max": 0.2000000011175871,
+      "mean": 0.2000000011175871
+    },
+    {
+      "count": 243,
+      "label": "baseline",
+      "sort": "level",
+      "phase": "center",
+      "n": 1,
+      "p50": 15.5,
+      "p95": 15.5,
+      "min": 15.5,
+      "max": 15.5,
+      "mean": 15.5
+    },
+    {
+      "count": 243,
+      "label": "after",
+      "sort": "level",
+      "phase": "center",
+      "n": 1,
+      "p50": 13.099999999627471,
+      "p95": 13.099999999627471,
+      "min": 13.099999999627471,
+      "max": 13.099999999627471,
+      "mean": 13.099999999627471
+    },
+    {
+      "count": 10000,
+      "label": "baseline",
+      "sort": "power",
+      "phase": "selector",
+      "n": 1,
+      "p50": 7.700000001117587,
+      "p95": 7.700000001117587,
+      "min": 7.700000001117587,
+      "max": 7.700000001117587,
+      "mean": 7.700000001117587
+    },
+    {
+      "count": 10000,
+      "label": "after",
+      "sort": "power",
+      "phase": "selector",
+      "n": 1,
+      "p50": 3.400000000372529,
+      "p95": 3.400000000372529,
+      "min": 3.400000000372529,
+      "max": 3.400000000372529,
+      "mean": 3.400000000372529
+    },
+    {
+      "count": 10000,
+      "label": "baseline",
+      "sort": "power",
+      "phase": "center",
+      "n": 1,
+      "p50": 26.5,
+      "p95": 26.5,
+      "min": 26.5,
+      "max": 26.5,
+      "mean": 26.5
+    },
+    {
+      "count": 10000,
+      "label": "after",
+      "sort": "power",
+      "phase": "center",
+      "n": 1,
+      "p50": 21.40000000037253,
+      "p95": 21.40000000037253,
+      "min": 21.40000000037253,
+      "max": 21.40000000037253,
+      "mean": 21.40000000037253
+    },
+    {
+      "count": 10000,
+      "label": "baseline",
+      "sort": "rarity",
+      "phase": "selector",
+      "n": 1,
+      "p50": 5.900000000372529,
+      "p95": 5.900000000372529,
+      "min": 5.900000000372529,
+      "max": 5.900000000372529,
+      "mean": 5.900000000372529
+    },
+    {
+      "count": 10000,
+      "label": "after",
+      "sort": "rarity",
+      "phase": "selector",
+      "n": 1,
+      "p50": 3,
+      "p95": 3,
+      "min": 3,
+      "max": 3,
+      "mean": 3
+    },
+    {
+      "count": 10000,
+      "label": "baseline",
+      "sort": "rarity",
+      "phase": "center",
+      "n": 1,
+      "p50": 26.100000001490116,
+      "p95": 26.100000001490116,
+      "min": 26.100000001490116,
+      "max": 26.100000001490116,
+      "mean": 26.100000001490116
+    },
+    {
+      "count": 10000,
+      "label": "after",
+      "sort": "rarity",
+      "phase": "center",
+      "n": 1,
+      "p50": 15.699999999254942,
+      "p95": 15.699999999254942,
+      "min": 15.699999999254942,
+      "max": 15.699999999254942,
+      "mean": 15.699999999254942
+    },
+    {
+      "count": 10000,
+      "label": "baseline",
+      "sort": "level",
+      "phase": "selector",
+      "n": 1,
+      "p50": 5.099999999627471,
+      "p95": 5.099999999627471,
+      "min": 5.099999999627471,
+      "max": 5.099999999627471,
+      "mean": 5.099999999627471
+    },
+    {
+      "count": 10000,
+      "label": "after",
+      "sort": "level",
+      "phase": "selector",
+      "n": 1,
+      "p50": 2.300000000745058,
+      "p95": 2.300000000745058,
+      "min": 2.300000000745058,
+      "max": 2.300000000745058,
+      "mean": 2.300000000745058
+    },
+    {
+      "count": 10000,
+      "label": "baseline",
+      "sort": "level",
+      "phase": "center",
+      "n": 1,
+      "p50": 19.90000000037253,
+      "p95": 19.90000000037253,
+      "min": 19.90000000037253,
+      "max": 19.90000000037253,
+      "mean": 19.90000000037253
+    },
+    {
+      "count": 10000,
+      "label": "after",
+      "sort": "level",
+      "phase": "center",
+      "n": 1,
+      "p50": 16.90000000037253,
+      "p95": 16.90000000037253,
+      "min": 16.90000000037253,
+      "max": 16.90000000037253,
+      "mean": 16.90000000037253
+    }
+  ],
+  "paired": [
+    {
+      "count": 243,
+      "sort": "power",
+      "phase": "selector",
+      "afterFaster": 1,
+      "afterSlower": 0,
+      "ties": 0,
+      "deltaSummary": {
+        "n": 1,
+        "p50": -0.09999999962747097,
+        "p95": -0.09999999962747097,
+        "min": -0.09999999962747097,
+        "max": -0.09999999962747097,
+        "mean": -0.09999999962747097
+      },
+      "deltas": [
+        {
+          "round": 1,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 0.2000000011175871,
+          "afterMs": 0.10000000149011612,
+          "afterMinusBaselineMs": -0.09999999962747097
+        }
+      ]
+    },
+    {
+      "count": 243,
+      "sort": "power",
+      "phase": "center",
+      "afterFaster": 1,
+      "afterSlower": 0,
+      "ties": 0,
+      "deltaSummary": {
+        "n": 1,
+        "p50": -3.199999999254942,
+        "p95": -3.199999999254942,
+        "min": -3.199999999254942,
+        "max": -3.199999999254942,
+        "mean": -3.199999999254942
+      },
+      "deltas": [
+        {
+          "round": 1,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 21.300000000745058,
+          "afterMs": 18.100000001490116,
+          "afterMinusBaselineMs": -3.199999999254942
+        }
+      ]
+    },
+    {
+      "count": 243,
+      "sort": "rarity",
+      "phase": "selector",
+      "afterFaster": 0,
+      "afterSlower": 0,
+      "ties": 1,
+      "deltaSummary": {
+        "n": 1,
+        "p50": 0,
+        "p95": 0,
+        "min": 0,
+        "max": 0,
+        "mean": 0
+      },
+      "deltas": [
+        {
+          "round": 1,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 0.19999999925494194,
+          "afterMs": 0.19999999925494194,
+          "afterMinusBaselineMs": 0
+        }
+      ]
+    },
+    {
+      "count": 243,
+      "sort": "rarity",
+      "phase": "center",
+      "afterFaster": 1,
+      "afterSlower": 0,
+      "ties": 0,
+      "deltaSummary": {
+        "n": 1,
+        "p50": -1.699999999254942,
+        "p95": -1.699999999254942,
+        "min": -1.699999999254942,
+        "max": -1.699999999254942,
+        "mean": -1.699999999254942
+      },
+      "deltas": [
+        {
+          "round": 1,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 16.5,
+          "afterMs": 14.800000000745058,
+          "afterMinusBaselineMs": -1.699999999254942
+        }
+      ]
+    },
+    {
+      "count": 243,
+      "sort": "level",
+      "phase": "selector",
+      "afterFaster": 0,
+      "afterSlower": 1,
+      "ties": 0,
+      "deltaSummary": {
+        "n": 1,
+        "p50": 0.2000000011175871,
+        "p95": 0.2000000011175871,
+        "min": 0.2000000011175871,
+        "max": 0.2000000011175871,
+        "mean": 0.2000000011175871
+      },
+      "deltas": [
+        {
+          "round": 1,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 0,
+          "afterMs": 0.2000000011175871,
+          "afterMinusBaselineMs": 0.2000000011175871
+        }
+      ]
+    },
+    {
+      "count": 243,
+      "sort": "level",
+      "phase": "center",
+      "afterFaster": 1,
+      "afterSlower": 0,
+      "ties": 0,
+      "deltaSummary": {
+        "n": 1,
+        "p50": -2.400000000372529,
+        "p95": -2.400000000372529,
+        "min": -2.400000000372529,
+        "max": -2.400000000372529,
+        "mean": -2.400000000372529
+      },
+      "deltas": [
+        {
+          "round": 1,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 15.5,
+          "afterMs": 13.099999999627471,
+          "afterMinusBaselineMs": -2.400000000372529
+        }
+      ]
+    },
+    {
+      "count": 10000,
+      "sort": "power",
+      "phase": "selector",
+      "afterFaster": 1,
+      "afterSlower": 0,
+      "ties": 0,
+      "deltaSummary": {
+        "n": 1,
+        "p50": -4.300000000745058,
+        "p95": -4.300000000745058,
+        "min": -4.300000000745058,
+        "max": -4.300000000745058,
+        "mean": -4.300000000745058
+      },
+      "deltas": [
+        {
+          "round": 1,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 7.700000001117587,
+          "afterMs": 3.400000000372529,
+          "afterMinusBaselineMs": -4.300000000745058
+        }
+      ]
+    },
+    {
+      "count": 10000,
+      "sort": "power",
+      "phase": "center",
+      "afterFaster": 1,
+      "afterSlower": 0,
+      "ties": 0,
+      "deltaSummary": {
+        "n": 1,
+        "p50": -5.099999999627471,
+        "p95": -5.099999999627471,
+        "min": -5.099999999627471,
+        "max": -5.099999999627471,
+        "mean": -5.099999999627471
+      },
+      "deltas": [
+        {
+          "round": 1,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 26.5,
+          "afterMs": 21.40000000037253,
+          "afterMinusBaselineMs": -5.099999999627471
+        }
+      ]
+    },
+    {
+      "count": 10000,
+      "sort": "rarity",
+      "phase": "selector",
+      "afterFaster": 1,
+      "afterSlower": 0,
+      "ties": 0,
+      "deltaSummary": {
+        "n": 1,
+        "p50": -2.900000000372529,
+        "p95": -2.900000000372529,
+        "min": -2.900000000372529,
+        "max": -2.900000000372529,
+        "mean": -2.900000000372529
+      },
+      "deltas": [
+        {
+          "round": 1,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 5.900000000372529,
+          "afterMs": 3,
+          "afterMinusBaselineMs": -2.900000000372529
+        }
+      ]
+    },
+    {
+      "count": 10000,
+      "sort": "rarity",
+      "phase": "center",
+      "afterFaster": 1,
+      "afterSlower": 0,
+      "ties": 0,
+      "deltaSummary": {
+        "n": 1,
+        "p50": -10.400000002235174,
+        "p95": -10.400000002235174,
+        "min": -10.400000002235174,
+        "max": -10.400000002235174,
+        "mean": -10.400000002235174
+      },
+      "deltas": [
+        {
+          "round": 1,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 26.100000001490116,
+          "afterMs": 15.699999999254942,
+          "afterMinusBaselineMs": -10.400000002235174
+        }
+      ]
+    },
+    {
+      "count": 10000,
+      "sort": "level",
+      "phase": "selector",
+      "afterFaster": 1,
+      "afterSlower": 0,
+      "ties": 0,
+      "deltaSummary": {
+        "n": 1,
+        "p50": -2.799999998882413,
+        "p95": -2.799999998882413,
+        "min": -2.799999998882413,
+        "max": -2.799999998882413,
+        "mean": -2.799999998882413
+      },
+      "deltas": [
+        {
+          "round": 1,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 5.099999999627471,
+          "afterMs": 2.300000000745058,
+          "afterMinusBaselineMs": -2.799999998882413
+        }
+      ]
+    },
+    {
+      "count": 10000,
+      "sort": "level",
+      "phase": "center",
+      "afterFaster": 1,
+      "afterSlower": 0,
+      "ties": 0,
+      "deltaSummary": {
+        "n": 1,
+        "p50": -3,
+        "p95": -3,
+        "min": -3,
+        "max": -3,
+        "mean": -3
+      },
+      "deltas": [
+        {
+          "round": 1,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 19.90000000037253,
+          "afterMs": 16.90000000037253,
+          "afterMinusBaselineMs": -3
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "browserConfiguration": {
+    "headless": true,
+    "launchArgs": [
+      "--no-sandbox",
+      "--disable-dev-shm-usage",
+      "--use-gl=angle",
+      "--use-angle=swiftshader",
+      "--enable-unsafe-swiftshader"
+    ],
+    "rendering": "ANGLE SwiftShader software rendering, matching the original UI protocol."
+  },
+  "browserVersion": "155.0.8059.84",
+  "activeCase": null,
+  "sourceAndScriptStable": true,
+  "completedAt": "2026-10-19T03:26:09.536Z"
+}

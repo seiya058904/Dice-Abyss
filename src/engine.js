@@ -1,14 +1,17 @@
-import {ABILITY_DEFS,DEEP_TALENTS,eraFor} from './deep-content.js';
-import {abilityRoll,abilityDefense} from './deep-rules.js';
+import {ABILITY_DEFS,DEEP_TALENTS,eraFor,freshDeepVariantProfile} from './deep-content.js';
+import {abilityRoll,abilityDefense,abilityRecoveryNotes} from './deep-rules.js';
 import {rollRarity,rarityProbabilities} from './rarity.js';
 import { RARITIES, SLOTS, ENEMIES, DICE_LEVELS, TALENTS, BOSSES, EQUIP_SLOTS } from './content.js';
 import {itemValue,itemStats,makeItem,forgeCost,fusionPreview,applyFusion,MAX_ITEM_LEVEL} from './equipment.js';
 import {COMBAT_ROOMS,EVENT_ROOMS,canonicalCombatType,encounterProfile,encounterShieldCapacity,initEncounterEnemy,generateExpandedRoute,combatModifiers,extraEnemyAttack,extraEnemyIntent,postRetaliation,encounterReward,eventStatBonuses,createEvent,eventChoices,applyEvent} from './encounters.js';
-export {itemValue,itemStats,makeItem,forgeCost,fusionPreview} from './equipment.js';
+import {GOLD_CAP,goldPreview,goldSummary} from './gold.js';
+import {LEVEL_CAP,xpPreview,xpSummary} from './experience.js';
+export {itemValue,itemStats,makeItem,forgeCost,forgePreview,fusionPreview} from './equipment.js';
+export {GOLD_CAP} from './gold.js';
+export {XP_CAP,LEVEL_CAP,xpPreview,xpSummary} from './experience.js';
 
 export const VERSION = 5;
 export const ENHANCE_CAP = 20;
-export const GOLD_CAP = 1e10;
 const copy = value => structuredClone(value);
 const safe = n => Math.min(Number.MAX_SAFE_INTEGER,Math.max(0,Math.round(n)));
 const health = n => Math.min(1e15,safe(n));
@@ -38,6 +41,30 @@ export const diceCount = s => DICE_LEVELS.filter(level => s.player.level >= leve
 export const xpNeeded = level => 18 + level * 10;
 export const equippedIds = s => Object.values(s.player.equipped).filter(Boolean);
 export const talent = (s, key) => s.player.talents[key] || 0;
+// A quantity is an explicit player choice; it never selects a node or changes
+// the build automatically. The same bounded quote drives UI and settlement.
+export function talentPreview(s,id,count=1) {
+ const definition=Object.hasOwn(TALENTS,id)?TALENTS[id]:null;
+ if(!definition||s.floor<(definition.floor||1)||!Number.isSafeInteger(s.player.talentPoints)||s.player.talentPoints<=0)return null;
+ if(count!=='max'&&(!Number.isSafeInteger(count)||count<=0))return null;
+ const beforeRank=talent(s,id),available=Math.min(s.player.talentPoints,definition.cap-beforeRank);
+ if(!Number.isSafeInteger(beforeRank)||beforeRank<0||available<=0)return null;
+ const invested=count==='max'?available:Math.min(count,available);
+ return {id,count:invested,beforeRank,afterRank:beforeRank+invested,availablePoints:s.player.talentPoints,remainingPoints:s.player.talentPoints-invested,capped:count!=='max'&&invested<count};
+}
+// A pending well quotes the current build and its already-recorded price.
+// Share stats with settlement instead of reconstructing the HP formula, and
+// clear only a shallow preview's talent table: no transition, RNG or asset write.
+export function memorywellPreview(s) {
+ if(s?.phase!=='event'||s.event?.key!=='memorywell'||s.event.status!=='pending')return null;
+ const choice=eventChoices(s).find(option=>option.id==='reset');if(!choice)return null;
+ const p=s.player,refundPoints=Object.values(p.talents).reduce((sum,rank)=>sum+rank,0);
+ const preview={...s,player:{...p,talents:Object.fromEntries(Object.keys(p.talents).map(key=>[key,0]))}};
+ const maxHp=stats(preview).maxHp,hp=Math.min(p.hp,maxHp),canReset=!choice.disabled;
+ return {canReset,reason:canReset?'':choice.reason,costGold:s.event.costGold,goldShortfall:Math.max(0,s.event.costGold-p.gold),refundPoints,hpLost:p.hp-hp,
+  before:{hp:p.hp,maxHp:stats(s).maxHp,gold:p.gold,talentPoints:p.talentPoints},
+  after:{hp,maxHp,gold:canReset?p.gold-s.event.costGold:null,talentPoints:p.talentPoints+refundPoints}};
+}
 // Logarithmic tail keeps every later floor finite, while depth still increases reward power.
 export const depthPower = depth => depth <= 10 ? depth : 10 + 12 * Math.log1p((depth - 10) / 12);
 export function equipSlot(s, item, requested) {
@@ -58,11 +85,24 @@ export function damageExpectation(s,st=stats(s)) {
  return triggered*st.attack*weighted/5*(1+pair*(.45+talent(s,'resonance')*.12))*(1+talent(s,'power')*.03+pair*(talent(s,'pair')*.1+st.pairBonus))*(1+crit*(.8+talent(s,'crush')*.1+st.critDamage))*(1+follow*(.35+talent(s,'pursuit')*.08+st.followDamage));
 }
 export function compareEquipment(s,item,requestedSlot) {
- const before=stats(s), next={...s,player:{...s.player,equipped:{...s.player.equipped},items:s.player.items}};
+ return compareEquipmentResult(s,item,requestedSlot,stats(s));
+}
+// A batch is one synchronous read of the current build, never a retained cache.
+// Only baseline stats and their damage expectation are shared; each candidate
+// still constructs and scores its own replacement. No prepared/trusted state
+// is accepted from callers or exposed in the returned, independent results.
+export function compareEquipmentBatch(s,items,requestedSlot) {
+ if(!items.length)return [];
+ const before=stats(s);let damage;
+ const beforeDamage=()=>damage??=damageExpectation(s,before);
+ return items.map(item=>compareEquipmentResult(s,item,requestedSlot,before,beforeDamage));
+}
+function compareEquipmentResult(s,item,requestedSlot,before,beforeDamage) {
+ const next={...s,player:{...s.player,equipped:{...s.player.equipped},items:s.player.items}};
  if (!next.player.items.some(i=>i.id===item.id)) next.player.items=[...next.player.items,item];
  const slot=equipSlot(s,item,requestedSlot);next.player.equipped[slot]=item.id;
  const after=stats(next),survival=st=>st.maxHp*(1+st.defense/Math.max(20,depthPower(s.floor)*6))/(1-st.reduction)*(1+st.barrier+st.regen*2)/(1-st.dodge),armor=item.slot==='armor';
- const delta=Math.round(((armor?survival(after)/survival(before):damageExpectation(next,after)/damageExpectation(s,before))-1)*100);
+ const delta=Math.round(((armor?survival(after)/survival(before):damageExpectation(next,after)/(beforeDamage?beforeDamage():damageExpectation(s,before)))-1)*100);
  const labels={attack:'攻击',maxHp:'生命',defense:'防御',luck:'幸运',echoChance:'跟随同点',crit:'暴击率',follow:'追击率',reduction:'减伤',pairWard:'同点护盾',critDamage:'暴击伤害',pierce:'穿盾',regen:'再生',barrier:'开场护盾',dodge:'闪避',criticalFollow:'共鸣暴击追击',followDamage:'追击伤害',goldBonus:'金币收益'};
  const preferred=armor?['maxHp','defense','reduction','dodge','barrier','regen']:item.slot==='weapon'?['attack','crit','follow','critDamage','pierce']:['luck','echoChance','pairWard','follow','crit','criticalFollow','goldBonus','attack'];
  const core=preferred.filter(key=>before[key]!==after[key]).slice(0,4).map(key=>({key,label:labels[key],before:before[key],after:after[key],delta:after[key]-before[key]}));
@@ -99,8 +139,9 @@ function log(s, text, tone = '') {
   s.log = s.log.slice(0, 6);
 }
 function gainGold(s,amount){
- const total=s.player.gold+amount;s.player.gold=Math.min(GOLD_CAP,total);
- if(total>GOLD_CAP)log(s,'金币已达持有上限 · 可先在商店与工坊投入','gold');
+ const receipt=goldPreview(s.player.gold,amount);s.player.gold=receipt.after;
+ if(receipt.overflow)log(s,'金币已达持有上限 · 可先在商店与工坊投入','gold');
+ return receipt;
 }
 export function salvagePreview(s,ids,allowProtected=false,allowOverflow=false) {
  const equipped=equippedIds(s),protectedId=s.loot?.item?.id;
@@ -112,13 +153,21 @@ export function salvagePreview(s,ids,allowProtected=false,allowOverflow=false) {
   items=s.player.items.filter(item=>safe(item)&&item.rarity<=1&&itemValue(item)<thresholds[item.slot]);
  }else{
   if(!Array.isArray(ids)||!ids.length||new Set(ids).size!==ids.length)return null;
-  items=ids.map(id=>s.player.items.find(item=>item.id===id));
+  // A confirmed batch can contain almost the entire bag. Resolve it in one
+  // pass while keeping request order and Array.find's first-match semantics.
+  // A single-item review retains its bounded scan without building an index.
+  if(ids.length===1)items=ids.map(id=>s.player.items.find(item=>item.id===id));
+  else{
+   const inventory=new Map();
+   for(const item of s.player.items)if(!inventory.has(item.id))inventory.set(item.id,item);
+   items=ids.map(id=>inventory.get(id));
+  }
   if(!items.every(safe))return null;
  }
  if(!items.length)return null;
  const gold=items.reduce((sum,item)=>sum+Math.max(1,Math.floor(itemValue(item)*.15)),0);
  if(!Number.isSafeInteger(gold))return null;
- const credited=Math.min(gold,GOLD_CAP-s.player.gold),overflow=gold-credited;
+ const {credited,overflow}=goldPreview(s.player.gold,gold);
  if(overflow&&!allowOverflow)return null;
  return {items,gold:credited,overflow,rawGold:gold};
 }
@@ -151,11 +200,12 @@ export function createEnemy(s,roomType) {
  const hp=health(deepPressure*(32+f*26+f*f*2.5)*tier*endurance*(template.trait==='stout'?1.3:template.trait==='fierce'?.85:1)*profile.hpMultiplier);
  const attack=health((8+f*3+f*f*.08)*(1+Math.min(9,f-1)*.065)*(type==='boss'?1.2:type==='elite'?1.15:1)*(template.trait==='fierce'?1.25:template.trait==='stout'?.8:1)*profile.attackMultiplier*Math.pow(tail,.4));
  const shield=['shield','ward'].includes(template.trait)?Math.round(hp*.2):0;
- return initEncounterEnemy({...template,type,hp,maxHp:hp,attack,shield,maxShield:Math.max(shield,type==='boss'?Math.ceil(hp*.12):0),turns:0,combatRules:4,stage:1},{...s.route[s.roomIndex],type:roomType});
+ const variantProfile=freshDeepVariantProfile(template);
+ return initEncounterEnemy({...template,...(variantProfile?{label:variantProfile.label}:{}),type,hp,maxHp:hp,attack,shield,maxShield:Math.max(shield,type==='boss'?Math.ceil(hp*.12):0),turns:0,combatRules:variantProfile?5:4,stage:1},{...s.route[s.roomIndex],type:roomType});
 }
 export function enemyAttack(e) {
  const trait=e.trait==='rage'&&e.hp<=e.maxHp/2?1.35:e.trait==='pulse'&&(e.turns+1)%3===0?1.6:e.trait==='ramp'?1+Math.min(.8,e.turns*.08):1;
- const challenge=[2,4].includes(e.combatRules)?(e.type==='elite'&&e.trait!=='pulse'&&(e.turns+1)%3===0?1.55:1)*(e.type==='boss'&&(e.stage===2||e.hp<=e.maxHp/2)?1.15:1):1;
+ const challenge=[2,4,5].includes(e.combatRules)?(e.type==='elite'&&e.trait!=='pulse'&&(e.turns+1)%3===0?1.55:1)*(e.type==='boss'&&(e.stage===2||e.hp<=e.maxHp/2)?1.15:1):1;
  return health(extraEnemyAttack(e,e.attack*trait*challenge));
 }
 const diceCombinations=new Map();
@@ -165,12 +215,12 @@ function possibleDice(count){
 }
 export function enemyIntent(stateOrEnemy) {
  const s=stateOrEnemy?.player?stateOrEnemy:null,e=s?s.enemy:stateOrEnemy;if(!e)return null;
- const st=s?stats(s):{maxHp:0,defense:0,reduction:0,dodge:0,pairWard:0},phase=e.type==='boss'&&(e.stage===2||(e.combatRules!==4&&e.hp<=e.maxHp/2))?2:1;
- const heavy=e.trait==='pulse'||([2,4].includes(e.combatRules)&&e.type==='elite'),turnsUntilHeavy=heavy?3-e.turns%3:null,extra=extraEnemyIntent(e),warning=turnsUntilHeavy===1||!!extra?.warning;
+ const st=s?stats(s):{maxHp:0,defense:0,reduction:0,dodge:0,pairWard:0},phase=e.type==='boss'&&(e.stage===2||(![4,5].includes(e.combatRules)&&e.hp<=e.maxHp/2))?2:1;
+ const heavy=e.trait==='pulse'||([2,4,5].includes(e.combatRules)&&e.type==='elite'),turnsUntilHeavy=heavy?3-e.turns%3:null,extra=extraEnemyIntent(e),warning=turnsUntilHeavy===1||!!extra?.warning;
  const count=s?diceCount(s):6,conditional=!!e.mechanic||st.dodge>0||st.pairWard>0||st.lowWard>0||(s&&talent(s,'mercy')>0),possibilities=conditional?possibleDice(count):[Array(count).fill(6)],healthStates=[e],criticalStates=st.criticalWard>0?[false,true]:[false];
  // A surviving hit may cross a rage threshold or boss phase. Forecast both, without looking at or consuming the next RNG draw.
  if(e.hp>1){
-  const phased=[2,4].includes(e.combatRules)&&e.type==='boss',half=Math.ceil(e.maxHp/2);
+  const phased=[2,4,5].includes(e.combatRules)&&e.type==='boss',half=Math.ceil(e.maxHp/2);
   // An odd maximum HP can enter phase two at ceil(half) before rage activates.
   // This intermediate state matters when the transition also grants player ward.
   if(phased&&e.stage!==2&&e.hp>half&&(e.trait==='rage'||e.mechanic==='berserker'))healthStates.push({...e,hp:half,stage:2});
@@ -180,9 +230,9 @@ export function enemyIntent(stateOrEnemy) {
  for(const values of possibilities){
   const best=Math.max(...values.map(v=>values.filter(n=>n===v).length));
   for(const candidate of healthStates){
-   const mod=e.combatRules===4?combatModifiers(candidate,values,best,st):{attackMultiplier:1,wardGain:0};
-   const post=e.combatRules===4?postRetaliation({...candidate,turns:e.turns+1},{values,best},st):{playerDrain:0},drain=safe(post.playerDrain||0);
-   const phaseChanged=[2,4].includes(e.combatRules)&&e.type==='boss'&&e.stage!==2&&e.hp>Math.ceil(e.maxHp/2)&&candidate.hp<=Math.ceil(e.maxHp/2);
+   const mod=[4,5].includes(e.combatRules)?combatModifiers(candidate,values,best,st):{attackMultiplier:1,wardGain:0};
+   const post=[4,5].includes(e.combatRules)?postRetaliation({...candidate,turns:e.turns+1},{values,best},st):{playerDrain:0},drain=safe(post.playerDrain||0);
+   const phaseChanged=[2,4,5].includes(e.combatRules)&&e.type==='boss'&&e.stage!==2&&e.hp>Math.ceil(e.maxHp/2)&&candidate.hp<=Math.ceil(e.maxHp/2);
    for(const critical of criticalStates){
     const defense=s?abilityDefense(s,st,values,critical):{ward:0,counter:1};
     const counter=s?Math.max(1,safe((enemyAttack(candidate)*(mod.attackMultiplier||1)*defense.counter-st.defense)*(1-st.reduction))):enemyAttack(candidate)*(mod.attackMultiplier||1);
@@ -194,8 +244,8 @@ export function enemyIntent(stateOrEnemy) {
  }
  if(!Number.isFinite(minDamage))minDamage=0;
  const attack=enemyAttack(e),conditionalDamage=maxDamage>minDamage?maxDamage:null;
- const label=extra?.label||(warning?'重击将至':[2,4].includes(e.combatRules)&&e.type==='boss'&&phase===2?'二阶段反击':e.trait==='rage'&&e.hp<=e.maxHp/2?'激怒反击':e.trait==='drain'?'汲取反击':e.trait==='ward'?'护盾反击':'下一次反击');
- const detail=[...new Set([e.label,extra?.detail,heavy?'每三回合重击 · 还有 '+turnsUntilHeavy+' 回合':null,[2,4].includes(e.combatRules)&&e.type==='boss'?(phase===1?'存活进入半血时展开 12% 阶段护盾'+(e.combatRules===2?'；旧版当次伤害止于半血':'；本击伤害完整生效'):'二阶段 · 反击 +15%'):null,maxDamage>minDamage?'点数与阈值可能改变反击 · 本击生命伤害 '+minDamage+'～'+maxDamage:null].filter(Boolean))].join(' · ');
+ const label=extra?.label||(warning?'重击将至':[2,4,5].includes(e.combatRules)&&e.type==='boss'&&phase===2?'二阶段反击':e.trait==='rage'&&e.hp<=e.maxHp/2?'激怒反击':e.trait==='drain'?'汲取反击':e.trait==='ward'?'护盾反击':'下一次反击');
+ const detail=[...new Set([e.label,extra?.detail,heavy?'每三回合重击 · 还有 '+turnsUntilHeavy+' 回合':null,[2,4,5].includes(e.combatRules)&&e.type==='boss'?(phase===1?'存活进入半血时展开 12% 阶段护盾'+(e.combatRules===2?'；旧版当次伤害止于半血':'；本击伤害完整生效'):'二阶段 · 反击 +15%'):null,maxDamage>minDamage?'点数与阈值可能改变反击 · 本击生命伤害 '+minDamage+'～'+maxDamage:null].filter(Boolean))].join(' · ');
  return {attack,damage:minDamage,minDamage,maxDamage,label,detail,warning,phase,turnsUntilHeavy,conditionalDamage};
 }
 
@@ -238,37 +288,44 @@ function enterRoom(s) {
   s.roomUsed=false; s.blessing=s.blessing||0;
 }
 function gainXp(s, amount) {
-  s.player.xp = Math.min(1e8,safe(s.player.xp+amount));
-  while (s.player.level<1e6&&s.player.xp >= xpNeeded(s.player.level)) {
+  const receipt=xpPreview(s.player.xp,amount);
+  s.player.xp = receipt.acceptedXp;
+  while (s.player.level<LEVEL_CAP&&s.player.xp >= xpNeeded(s.player.level)) {
+    const beforePoints=s.player.talentPoints;
     s.player.xp -= xpNeeded(s.player.level); s.player.level++; s.player.talentPoints=Math.min(2e6,s.player.talentPoints+2);
     s.player.hp = stats(s).maxHp;
-    log(s, `升至 Lv.${s.player.level} · 获得 2 天赋点${DICE_LEVELS.includes(s.player.level) ? ' · 新骰子解锁' : ''}`, 'gold');
+    const gainedPoints=s.player.talentPoints-beforePoints;
+    log(s, `升至 Lv.${s.player.level} · 获得 ${gainedPoints} 天赋点${gainedPoints<2?`（上限未计入 ${2-gainedPoints}）`:''}${DICE_LEVELS.includes(s.player.level) ? ' · 新骰子解锁' : ''}`, 'gold');
   }
+  return receipt;
 }
 export function resolveRoll(s) {
   const {values,echoes,odds}=drawDice(s,diceCount(s)),best=Math.max(...values.map(v=>values.filter(x=>x===v).length)),highCount=values.filter(v=>v>=5).length,st=stats(s),enemy=s.enemy;
   s.nextLuck=0;
   // Repair zero rebuild capacity in existing V5 regional encounters without
   // rerolling their identity, filling a shield or rewriting a pending reward.
-  if(enemy.combatRules===4)enemy.maxShield=encounterShieldCapacity(enemy);
-  const rules=enemy.combatRules===4,mod=rules?combatModifiers(enemy,values,best,st):{damageMultiplier:1,bonusDamage:0,shieldPierce:0,healPlayer:0,wardGain:0,attackMultiplier:1,notes:[]},mechanics=[...(mod.notes||[])];
+  if([4,5].includes(enemy.combatRules))enemy.maxShield=encounterShieldCapacity(enemy);
+  const rules=[4,5].includes(enemy.combatRules),mod=rules?combatModifiers(enemy,values,best,st):{damageMultiplier:1,bonusDamage:0,shieldPierce:0,healPlayer:0,wardGain:0,attackMultiplier:1,notes:[]},mechanics=[...(mod.notes||[])];
   const weighted=values.reduce((sum,v)=>sum+v*(1+(v>=5?talent(s,'high')*.12:0)+(v===4?talent(s,'four')*.15+st.fourBonus:v===5?talent(s,'five')*.15+st.fiveBonus:v===6?talent(s,'six')*.18+st.sixBonus:0)),0);
   const resonance=best>=2?1+(best-1)*.45+talent(s,'resonance')*.12:1;
   const critical=random(s)<Math.min(.9,st.crit+st.critBonus+(values.includes(6)?talent(s,'keen')*.03:0));
   const follow=random(s)<Math.min(.85,st.follow+st.followBonus+(best>=2?talent(s,'echo')*.03:0)+(critical&&best>=2?st.criticalFollow+talent(s,'spark')*.05:0));
-  const abilities=abilityRoll(s,st,values,best,critical);mechanics.push(...abilities.notes);
+  // Persist exactly the factors used by this settled roll. Later gear/talent
+  // changes must not rewrite its history; old saves may omit these two fields.
+  const criticalMultiplier=critical?1.8+talent(s,'crush')*.1+st.critDamage:1,followMultiplier=follow?.35+talent(s,'pursuit')*.08+st.followDamage:0;
+  const abilities=abilityRoll(s,st,values,best,critical),abilityNoteStart=mechanics.length;mechanics.push(...abilities.notes);
   enemy.openingEcho=0;
   if(critical&&!enemy.firstCritUsed&&st.firstCritLuck){enemy.firstCritUsed=true;s.nextLuck=Math.round(st.firstCritLuck);mechanics.push('启明星 · 幸运 +'+s.nextLuck+'（至同层下一次战斗掷骰结算，离层或重试清除）');}
   const bonus=1+talent(s,'power')*.03+(best>=2?talent(s,'pair')*.1+st.pairBonus:0)+(best>=3?talent(s,'triple')*.15:0)+(best>=4?talent(s,'quartet')*.2:0)+(best>=5?talent(s,'choir')*.3:0)+(values.reduce((a,b)=>a+b,0)>=18?talent(s,'sum')*.1+st.sumBonus:0)+(enemy.turns===0?talent(s,'opener')*.15+st.firstBonus:0)+(enemy.type!=='combat'?talent(s,'slayer')*.1+st.bossBonus:0)+(s.blessing||0)*.05;
-  const main=Math.max(1,safe((weighted*st.attack/5*resonance*bonus*(critical?1.8+talent(s,'crush')*.1+st.critDamage:1)*(mod.damageMultiplier||1)*abilities.damage+(mod.bonusDamage||0))*eventStatBonuses(s).damageMultiplier));
-  const extra=follow?Math.min(Number.MAX_SAFE_INTEGER-main,safe(main*(.35+talent(s,'pursuit')*.08+st.followDamage))):0,echoDamage=Math.min(Number.MAX_SAFE_INTEGER-main-extra,safe(main*abilities.echo)),total=main+extra+echoDamage;
+  const main=Math.max(1,safe((weighted*st.attack/5*resonance*bonus*criticalMultiplier*(mod.damageMultiplier||1)*abilities.damage+(mod.bonusDamage||0))*eventStatBonuses(s).damageMultiplier));
+  const extra=follow?Math.min(Number.MAX_SAFE_INTEGER-main,safe(main*followMultiplier)):0,echoDamage=Math.min(Number.MAX_SAFE_INTEGER-main-extra,safe(main*abilities.echo)),total=main+extra+echoDamage;
   if(echoDamage)mechanics.push('深层回响 · 追加 '+echoDamage+'（不递归）');
   const pierce=Math.min(1,st.pierce+(mod.shieldPierce||0)+abilities.pierce),absorbed=Math.min(enemy.shield,safe(total*(1-pierce)));enemy.shield-=absorbed;
   let hpDamage=Math.min(enemy.hp,total-absorbed),phaseChanged=false;const half=Math.ceil(enemy.maxHp/2);
-  if([2,4].includes(enemy.combatRules)&&enemy.type==='boss'&&enemy.stage!==2&&enemy.hp>half&&enemy.hp-hpDamage<=half){
+  if([2,4,5].includes(enemy.combatRules)&&enemy.type==='boss'&&enemy.stage!==2&&enemy.hp>half&&enemy.hp-hpDamage<=half){
     if(enemy.combatRules===2)hpDamage=enemy.hp-half;
     if(enemy.hp-hpDamage>0){enemy.stage=2;phaseChanged=true;}
-  }else if([2,4].includes(enemy.combatRules)&&enemy.type==='boss'&&enemy.hp<=half)enemy.stage=2;
+  }else if([2,4,5].includes(enemy.combatRules)&&enemy.type==='boss'&&enemy.hp<=half)enemy.stage=2;
   enemy.hp-=hpDamage;enemy.turns++;
   if(phaseChanged){enemy.shield=Math.min(enemy.maxShield,enemy.shield+Math.ceil(enemy.maxHp*.12));log(s,'首领进入二阶段 · 阶段护盾展开，反击 +15%','danger');}
   const killed=enemy.hp<=0,wardGain=health((values.includes(1)?st.maxHp*talent(s,'mercy')*.01:0)+(best>=2?st.maxHp*st.pairWard:0)+(mod.wardGain||0)+abilities.ward+(phaseChanged?st.maxHp*st.phaseWard:0));
@@ -286,21 +343,26 @@ export function resolveRoll(s) {
     if(rules&&s.player.hp>0){const post=postRetaliation(enemy,{values,best,critical,follow},st);enemy.hp=Math.min(enemy.maxHp,enemy.hp+safe(post.enemyHeal||0));enemy.shield=Math.min(enemy.maxShield,enemy.shield+safe(post.enemyWard||0));const drain=Math.min(s.player.hp,safe(post.playerDrain||0));s.player.hp-=drain;retaliation=safe(retaliation+drain);mechanics.push(...(post.notes||[]));}
   }
   if(s.player.hp>0){s.player.hp=Math.min(st.maxHp,s.player.hp+abilities.heal);if(critical)s.player.hp=Math.min(st.maxHp,s.player.hp+Math.floor(st.maxHp*talent(s,'leech')*.01));if(st.regen)s.player.hp=Math.min(st.maxHp,s.player.hp+Math.floor(st.maxHp*st.regen));}
+  const recoveryNotes=abilityRecoveryNotes(abilities,s.player.hp>0);if(recoveryNotes.length)mechanics.splice(abilityNoteStart+abilities.recoveryIndex,0,...recoveryNotes);
   s.counters.rolls=safe(s.counters.rolls+1);s.counters.highestDamage=Math.max(s.counters.highestDamage,total);
-  s.lastRoll={values,best,critical,follow,main,extra,echoDamage,total,absorbed,hpDamage,retaliation,killed,phaseChanged,guarded:enemy.combatRules===2&&phaseChanged?Math.max(0,total-absorbed-hpDamage):0,luck:odds.luck,luckActive:odds.luck>0||odds.echoChance>0,echoes,highCount,wardGain,dodged,mechanics:mechanics.slice(0,24)};
+  s.lastRoll={values,best,critical,follow,criticalMultiplier,followMultiplier,main,extra,echoDamage,total,absorbed,hpDamage,retaliation,killed,phaseChanged,guarded:enemy.combatRules===2&&phaseChanged?Math.max(0,total-absorbed-hpDamage):0,luck:odds.luck,luckActive:odds.luck>0||odds.echoChance>0,echoes,highCount,wardGain,dodged,mechanics:mechanics.slice(0,24)};
   log(s,values.join(' · ')+' → '+total+' 伤害'+(critical?' · 暴击':'')+(best>=2?' · '+best+' 同共鸣':'')+(echoes?' · 引导同点 '+echoes:''),best>=3||critical?'gold':'');
   if(killed){
     s.counters.kills=safe(s.counters.kills+1);if(enemy.type==='boss')s.counters.bosses=safe(s.counters.bosses+1);
     if(['elite','boss'].includes(enemy.type)&&st.eliteLuck){s.eventLuck=Math.min(20,(s.eventLuck||0)+Math.ceil(st.eliteLuck));mechanics.push('追星 · 本层幸运提升至 '+s.eventLuck);}
-    gainXp(s,Math.round((15+depthPower(s.floor)*4)*(enemy.type==='boss'?2.5:enemy.type==='elite'?1.5:1)));
+    const xpReceipt=gainXp(s,Math.round((15+depthPower(s.floor)*4)*(enemy.type==='boss'?2.5:enemy.type==='elite'?1.5:1)));
     s.player.hp=Math.min(stats(s).maxHp,s.player.hp+Math.ceil(stats(s).maxHp*(.16+talent(s,'recovery')*.03+st.healBonus)));
     const reward=encounterReward(enemy),rewardType=enemy.encounterKey&&COMBAT_ROOMS.has(enemy.encounterKey)?enemy.encounterKey:enemy.type;
     s.chest=createChest(s,rewardType,enemy.name);
-    if(s.chest.item.rarity<reward.minRarity)s.chest.item=makeItem(s,s.chest.item.slot,reward.minRarity,s.floor,rewardType);
+    // A minimum-rarity replacement keeps the same canonical source level band.
+    // In particular, bounty is an elite reward even when its epic floor applies.
+    if(s.chest.item.rarity<reward.minRarity)s.chest.item=makeItem(s,s.chest.item.slot,reward.minRarity,s.floor,canonicalCombatType(rewardType));
     const bounty=enemy.type==='trial'&&enemy.turns<=4?2:reward.goldMultiplier||1;
     s.chest.gold=Math.min(1e8,safe(s.chest.gold*bounty*(1+(highCount>=3?talent(s,'jackpot')*.1:0)+(values.filter(v=>v===6).length>=2?st.gildedSix:0))));
     s.lastRoll.mechanics=mechanics.slice(0,24);
-    if(bounty>1)log(s,'悬赏达成 · 金币 ×'+bounty,'gold');s.phase='chest';log(s,enemy.name+'倒下了 · 宝箱已出现。','gold');
+    if(bounty>1)log(s,'悬赏达成 · 金币 ×'+bounty,'gold');
+    if(xpReceipt.overflowXp)log(s,`战斗奖励 · ${xpSummary(xpReceipt)}。`,'gold');
+    s.phase='chest';log(s,enemy.name+'倒下了 · 宝箱已出现。','gold');
   }else if(!s.player.hp){s.phase='dead';s.counters.deaths=safe(s.counters.deaths+1);log(s,'余火未熄。成长与战利品仍然保留。','danger');}
 }
 function nextRoom(s) {
@@ -327,7 +389,7 @@ export function canAct(s, action) {
   if (action.type === 'descend') return ['cleared', 'complete'].includes(p) && s.floor < Number.MAX_SAFE_INTEGER;
   if (action.type === 'retry') return p === 'dead';
   if (action.type === 'equip') return s.player.items.some(i => i.id === action.id && !equippedIds(s).includes(i.id));
-  if (action.type === 'talent') return s.player.talentPoints > 0 && Object.hasOwn(TALENTS, action.id) && talent(s,action.id) < TALENTS[action.id].cap && s.floor >= (TALENTS[action.id].floor||1);
+  if (action.type === 'talent') return !!talentPreview(s,action.id,action.count);
   if (action.type === 'buy') { const offer = s.shop.find(o => o.id === action.id); return ['merchant','blackmarket'].includes(p) && offer && !offer.sold && s.player.gold >= offer.price && (offer.item?s.player.items.length<10000:s.player.hp < stats(s).maxHp); }
   if (action.type === 'forge') { const item = s.player.items.find(i => i.id === action.id); return p === 'forge' && item && Object.values(s.player.equipped).includes(item.id) && item.enhance < ENHANCE_CAP && s.player.gold >= forgeCost(s, item); }
   if (action.type === 'fuse') { const preview = fusionPreview(s, action.targets||action.target, action.materials||action.material,action.allowProtected); return p === 'fusion' && preview && s.player.gold >= preview.cost; }
@@ -343,22 +405,27 @@ export function transition(original, action) {
   switch (action.type) {
     case 'fate':
       s.fate = drawDice(s,2).values; s.route = generateRoute(s, s.fate); s.roomIndex = 0; s.phase = 'route';
-      if (s.fate[0] === s.fate[1]) { const gold=Math.round(20+depthPower(s.floor)*5);gainGold(s,gold); log(s, `命运双同 · 额外获得 ${gold} 金币。`, 'gold'); }
+      if (s.fate[0] === s.fate[1]) { const gold=Math.round(20+depthPower(s.floor)*5),receipt=gainGold(s,gold); log(s, receipt.overflow?`命运双同 · ${goldSummary(receipt)}。`:`命运双同 · 额外获得 ${gold} 金币。`, 'gold'); }
       log(s, `命运 ${s.fate.join(' / ')} · 路线已揭晓。`); break;
     case 'enter': enterRoom(s); break;
     case 'roll': resolveRoll(s); break;
-    case 'open':
-      s.loot = s.chest; gainGold(s,s.chest.gold); s.player.items.push(s.chest.item); s.chest = null; s.counters.chests=safe(s.counters.chests+1); s.phase = 'loot';
-      log(s, `获得${s.loot.item.name} · ${RARITIES[s.loot.item.rarity].name}`, RARITIES[s.loot.item.rarity].key); break;
+    case 'open': {
+      const receipt=gainGold(s,s.chest.gold);
+      // The reward records the claimed item; inventory owns its later changes.
+      // Deep-copy all item fields so unknown nested metadata also stays intact.
+      s.loot = s.chest; s.lootCreditedGold=receipt.credited; s.player.items.push(copy(s.chest.item)); s.chest = null; s.counters.chests=safe(s.counters.chests+1); s.phase = 'loot';
+      log(s, `获得${s.loot.item.name} · ${RARITIES[s.loot.item.rarity].name}${receipt.overflow?` · ${goldSummary(receipt)}`:''}`, RARITIES[s.loot.item.rarity].key); break;
+    }
     case 'next': nextRoom(s); break;
-    case 'gold':
-      gainGold(s,Math.round(65 + depthPower(s.floor) * 22) + (s.fate[0] + s.fate[1]) * 3);
-      log(s, `黄金房 · 获得 ${Math.round(65 + depthPower(s.floor) * 22) + (s.fate[0] + s.fate[1]) * 3} 金币。`, 'gold'); nextRoom(s); break;
+    case 'gold': {
+      const gold=Math.round(65 + depthPower(s.floor) * 22) + (s.fate[0] + s.fate[1]) * 3,receipt=gainGold(s,gold);
+      log(s, receipt.overflow?`黄金房 · ${goldSummary(receipt)}。`:`黄金房 · 获得 ${gold} 金币。`, 'gold'); nextRoom(s); break;
+    }
     case 'descend': s.floor++;s.nextLuck=0; s.blessing=0; s.ward=0;s.event=null;s.eventLuck=0;s.eventPower=0; s.phase = 'fate'; s.route = []; s.fate = null; s.roomIndex = 0; s.enemy = null; s.loot = null;s.chest=null; s.lastRoll = null; s.player.hp = stats(s).maxHp; break;
     case 'retry':
-      s.player.hp = stats(s).maxHp; s.enemy.hp = s.enemy.maxHp; s.enemy.shield = ![2,4].includes(s.enemy.combatRules)||['shield','ward'].includes(s.enemy.trait)?s.enemy.maxShield:0;
-      if(s.enemy.combatRules===4)s.enemy=initEncounterEnemy(s.enemy,{...s.route[s.roomIndex],type:s.enemy.encounterKey||s.enemy.type});
-      s.enemy.turns = 0;s.enemy.firstCritUsed=false;s.enemy.openingEcho=0;s.nextLuck=0;if([2,4].includes(s.enemy.combatRules))s.enemy.stage=1;s.ward=health(stats(s).maxHp*stats(s).barrier); s.lastRoll = null; s.phase = 'combat';
+      s.player.hp = stats(s).maxHp; s.enemy.hp = s.enemy.maxHp; s.enemy.shield = ![2,4,5].includes(s.enemy.combatRules)||['shield','ward'].includes(s.enemy.trait)?s.enemy.maxShield:0;
+      if([4,5].includes(s.enemy.combatRules))s.enemy=initEncounterEnemy(s.enemy,{...s.route[s.roomIndex],type:s.enemy.encounterKey||s.enemy.type});
+      s.enemy.turns = 0;s.enemy.firstCritUsed=false;s.enemy.openingEcho=0;s.nextLuck=0;if([2,4,5].includes(s.enemy.combatRules))s.enemy.stage=1;s.ward=health(stats(s).maxHp*stats(s).barrier); s.lastRoll = null; s.phase = 'combat';
       log(s, '在当前房间重燃余火 · 生命已恢复。'); break;
     case 'equip': {
       const oldMax = stats(s).maxHp; const item = s.player.items.find(i => i.id === action.id);
@@ -368,10 +435,15 @@ export function transition(original, action) {
       if (s.phase === 'dead') s.player.hp = 0;
       log(s, `装备${item.name}${stats(s).maxHp > oldMax ? ' · 生命上限提升' : ''}。`); break;
     }
-    case 'talent': s.player.talentPoints--; s.player.talents[action.id]=talent(s,action.id)+1; log(s, `${TALENTS[action.id].name}升至 ${s.player.talents[action.id]} 级。`, 'gold'); break;
+    case 'talent': {
+      const preview=talentPreview(s,action.id,action.count);
+      s.player.talentPoints=preview.remainingPoints;s.player.talents[action.id]=preview.afterRank;
+      log(s,preview.count===1?`${TALENTS[action.id].name}升至 ${preview.afterRank} 级。`:`${TALENTS[action.id].name}投入 ${preview.count} 点 → ${preview.afterRank} 级。`,'gold');break;
+    }
     case 'buy': {
       const offer = s.shop.find(o => o.id === action.id); offer.sold = true; s.player.gold -= offer.price;
-      if (offer.item) { s.player.items.push(offer.item); log(s, `购入${offer.item.name}。`); } else { s.player.hp = stats(s).maxHp; log(s, '余火补给 · 生命已恢复。'); } break;
+      // Sold offers are purchase snapshots, not aliases of mutable inventory.
+      if (offer.item) { s.player.items.push(copy(offer.item)); log(s, `购入${offer.item.name}。`); } else { s.player.hp = stats(s).maxHp; log(s, '余火补给 · 生命已恢复。'); } break;
     }
     case 'forge': {
       const item = s.player.items.find(i => i.id === action.id); s.player.gold -= forgeCost(s, item);
@@ -391,10 +463,13 @@ export function transition(original, action) {
     case 'salvage': {
       const preview=salvagePreview(s,action.ids,action.allowProtected,action.allowOverflow),ids=new Set(preview.items.map(item=>item.id));
       s.player.items=s.player.items.filter(item=>!ids.has(item.id));s.player.gold+=preview.gold;
-      log(s,`回收 ${preview.items.length} 件装备 · 获得 ${preview.gold} 金币`,'gold');break;
+      log(s,preview.overflow?`回收 ${preview.items.length} 件装备 · ${goldSummary({rawGold:preview.rawGold,credited:preview.gold,overflow:preview.overflow})}`:`回收 ${preview.items.length} 件装备 · 获得 ${preview.gold} 金币`,'gold');break;
     }
 
   }
+  // Event rewards can clear historical loot too. Keep its separate receipt
+  // for exactly the existing loot lifetime, including the cleared-floor view.
+  if(!s.loot)delete s.lootCreditedGold;
   s.revision++;
   return s;
 }

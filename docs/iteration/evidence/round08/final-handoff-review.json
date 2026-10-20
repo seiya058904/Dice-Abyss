@@ -1,0 +1,261 @@
+{
+  "review": "Round08 final content and handoff audit",
+  "reviewer": "gameplay author, independently rereading integration documents and evidence",
+  "observedAtUtc": "2026-10-18T07:21:00.350257+00:00",
+  "status": "PASS_WITH_NONBLOCKING_WORDING_NOTE",
+  "blockingFindings": 0,
+  "projectMutated": false,
+  "runtimeOrDocsChangedByReviewer": false,
+  "newTestsOrBrowsersRun": false,
+  "documentSnapshots": [
+    {
+      "path": "docs/iteration/STATE.json",
+      "sha256": "110f884813e25aa6c86a131e5f2e4d296a5848d20f11499b31ab57c5e72dfe47"
+    },
+    {
+      "path": "docs/iteration/LATEST_REPORT.md",
+      "sha256": "bf0895681c06c81282395c4c1180aeca0dd64142b162a9130e7d8a2c8c239f02"
+    },
+    {
+      "path": "docs/iteration/VERIFY.md",
+      "sha256": "cf1304ff5f4ed360a730c627f7c9692310de20eba456d8b0b2428a1b3b3b1bb9"
+    },
+    {
+      "path": "docs/iteration/INDEPENDENT_REVIEW.md",
+      "sha256": "f0149f916fd6bd9bba266e5fe20c4e788cbf7426ee680ada2690a38ca232a060"
+    },
+    {
+      "path": "docs/iteration/NEXT_ROUND.md",
+      "sha256": "41f809923fee3b74ba35bc684736c99a9a6282f411c4f1d8f41f2ed72dc77a05"
+    },
+    {
+      "path": "docs/iteration/HISTORY.md",
+      "sha256": "ab0ce6759711cc1f8102480dffdfc22bd9e2055c2389a3197eceadefd86a4839"
+    },
+    {
+      "path": "docs/iteration/PERFORMANCE.md",
+      "sha256": "829a00d5071360424a4336e10d1ac21f040d68a70bedd298a438936fd9af2bad"
+    }
+  ],
+  "sourceFreeze": {
+    "nonDocsFiles": 187,
+    "aggregateSha256": "0997931a78acbfe92c7dbc664ba2da3de0deabb73e54b8dec051e97317626666",
+    "allRecordedBytesAndHashesMatch": true,
+    "unrecordedNonDocsFiles": 0,
+    "originalTestModules": 41,
+    "originalFixtureFiles": 1,
+    "all42OriginalTestsAndFixturesByteIdentical": true
+  },
+  "checkedCounts": {
+    "unitTap": {
+      "baseline": {
+        "tests": 360,
+        "pass": 360,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "current": {
+        "tests": 393,
+        "pass": 393,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      }
+    },
+    "newModules": 5,
+    "newCases": 33,
+    "coreArchiveGate": {
+      "originalModules": 24,
+      "originalCases": 191,
+      "addedModules": 5,
+      "addedCases": 33,
+      "totalModules": 29,
+      "totalCases": 224,
+      "status": "Expected future candidate and final gate; not asserted executed by this review"
+    },
+    "combat": {
+      "legalActions": 196,
+      "completeStateComparisons": 198,
+      "saveRoundTrips": 396,
+      "readOnlyGuides": 63,
+      "historyBadgeAssertions": 6
+    },
+    "syntheticRuleContexts": 118144,
+    "syntheticGuideContexts": 768,
+    "naturalDeepFirstExamples": {
+      "count": 7,
+      "allSixDiceAndTurnOne": true,
+      "newGameJourneysAdded": 0
+    },
+    "independentSyntheticBattles": 96,
+    "saveClosureChecks": 41452,
+    "saveSizeCases": 4,
+    "browser": {
+      "browser-core-baseline.json": {
+        "groups": 6,
+        "checks": 43,
+        "unexpectedErrors": 0
+      },
+      "browser-core-current.json": {
+        "groups": 6,
+        "checks": 43,
+        "unexpectedErrors": 0
+      },
+      "browser-fusion.json": {
+        "groups": 12,
+        "checks": 125,
+        "unexpectedErrors": 0
+      },
+      "browser-forge.json": {
+        "groups": 3,
+        "checks": 286,
+        "unexpectedErrors": 0
+      },
+      "browser-talents.json": {
+        "groups": 5,
+        "checks": 118,
+        "unexpectedErrors": 0
+      },
+      "browser-readout.json": {
+        "groups": 6,
+        "checks": 678,
+        "unexpectedErrors": 0
+      },
+      "browser-rules-scroll.json": {
+        "groups": 1,
+        "checks": 35,
+        "unexpectedErrors": 0
+      },
+      "browser-action-focus.json": {
+        "groups": 8,
+        "checks": 42,
+        "unexpectedErrors": 0
+      }
+    },
+    "screenshots": {
+      "count": 6,
+      "bytes": 499678,
+      "allReceiptHashesMatch": true
+    }
+  },
+  "deepRawReportComparison": {
+    "matrices": [
+      {
+        "floors": 200,
+        "journeysPerVersion": 4,
+        "reportRowLeaves": 1423,
+        "differentPaths": [
+          "rows[0].finalStateSha256",
+          "rows[1].finalStateSha256",
+          "rows[2].finalStateSha256",
+          "rows[3].finalStateSha256"
+        ]
+      },
+      {
+        "floors": 400,
+        "journeysPerVersion": 4,
+        "reportRowLeaves": 1531,
+        "differentPaths": [
+          "rows[0].finalStateSha256",
+          "rows[1].finalStateSha256",
+          "rows[2].finalStateSha256",
+          "rows[3].finalStateSha256"
+        ]
+      }
+    ],
+    "totalReportRowLeaves": 2954,
+    "differentRawFinalStateHashes": 8,
+    "allOtherRecordedLeavesEqual": true,
+    "full400FloorFinalSnapshotsNotRetained": true,
+    "documentsDoNotClaimFullSnapshotIdentity": true
+  },
+  "compatibilityReview": {
+    "optionalMultipliersFiniteNonnegative": true,
+    "negativeSamePathExtensionsNowExplicitlyDisclosed": true,
+    "legacyMissingFieldsRemainAllowed": true,
+    "genericHistoricalLabelsDoNotUseCurrentBuild": true,
+    "talentsSparseObjectsAndMalformedContainersAreDistinguished": true
+  },
+  "performanceCrossCheck": {
+    "status": "MEASURED_WITH_LIMITATIONS",
+    "inventorySamplesTotal": 24,
+    "mainWindows": 16,
+    "coverageWindows": 14,
+    "all30OwnVersionTransitionsAndMirrorsCorrect": true,
+    "summary": {
+      "baseline": {
+        "inventory": {
+          "samples": 12,
+          "p50": 87.7,
+          "p95": 355.6,
+          "p99": 355.6,
+          "max": 531.8,
+          "min": 56.6
+        },
+        "mainMaxRafMs": 10736.5,
+        "mainFullStages": 3,
+        "mainFullWindows": 4
+      },
+      "after": {
+        "inventory": {
+          "samples": 12,
+          "p50": 70.8,
+          "p95": 208.8,
+          "p99": 208.8,
+          "max": 548.1,
+          "min": 53.2
+        },
+        "mainMaxRafMs": 9069.7,
+        "mainFullStages": 2,
+        "mainFullWindows": 4
+      }
+    },
+    "noGpuOrStableGainClaim": true,
+    "independentPerformanceReceiptMayStillBePending": true
+  },
+  "links": {
+    "currentMarkdownDocumentsChecked": 14,
+    "relativeLinkOccurrences": 120,
+    "unexpectedMissing": [],
+    "expectedPending": [
+      {
+        "document": "docs/iteration/PERFORMANCE.md",
+        "line": 66,
+        "target": "evidence/round08/performance-independent-review.json"
+      }
+    ],
+    "stateRootRelativeMissing": [],
+    "scope": "Current docs/iteration top-level Markdown and round08 README; existence of local link targets, not external URLs or archived-document semantics."
+  },
+  "findings": [
+    {
+      "id": "R08-DOC-SCOPE-01",
+      "severity": "P3",
+      "blocking": false,
+      "document": "docs/iteration/LATEST_REPORT.md",
+      "line": 24,
+      "excerpt": "全规则穷举与原生布局保护",
+      "issue": "决策表的“全规则穷举”比实际固定数值夹具下16机制的点数条件/效果边界更宽；正文和VERIFY已正确限定，表格建议同步收窄。",
+      "suggestedReplacement": "16机制点数条件与数值效果边界核对，加原生布局检查",
+      "evidence": [
+        "tests/encounter-tactics.test.mjs",
+        "docs/iteration/VERIFY.md"
+      ]
+    }
+  ],
+  "acceptedPending": [
+    "LATEST_REPORT package placeholder and STATE packaging/release pending status",
+    "Future fresh-code/core/http/package-budget receipts",
+    "performance-independent-review.json",
+    "Candidate and final ZIP identities and fresh extraction gates remain root-owned"
+  ],
+  "limits": [
+    "Read-only content/evidence review; does not replace final ZIP CRC/manifest/fresh extraction/test/HTTP gates.",
+    "Same natural paths, version replays and synthetic contexts remain separately counted.",
+    "118144 contexts are fixed-fixture rule-condition/effect checks, not complete battles, full builds, RNG distributions or all cap states.",
+    "6 screenshots are documentation evidence; receipt explicitly records the 4K viewport image downsampled to 1920x1080."
+  ]
+}

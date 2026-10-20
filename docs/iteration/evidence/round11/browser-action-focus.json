@@ -1,0 +1,339 @@
+{
+  "source": "/workspace/scratch/1c1a2fbce156/work/Dice-Abyss",
+  "url": "http://127.0.0.1:44111/",
+  "started": "2026-10-18T10:37:31.982Z",
+  "scriptSha256": "9b1399a5c3aa9e4057122183faef32ac99530fd827847510f8bde8367d3f2952",
+  "sourceBefore": {
+    "src/app.js": "5967ce857870085c15843978e2d9e1aedfec5d06e43af5c2563a78b271485218",
+    "src/action-focus.js": "d5e383b4f8aeb138b6cdffc7f3dffe12cf0db7fcbac053df713dec60b3b95a98",
+    "src/engine.js": "a84e8823a4e6632ec12ad6f497c71e2a0b427a41fe8773eb7c9cfc041f78cd1b",
+    "src/views.js": "1fd3da005d8e37d4b8ac0be4bf12dc53fd262645c5421a839c49224e28ce9266",
+    "src/storage.js": "2c5f648efe7df6a1c14710ea90fe2de83323141d5f5e285eec7fac8aa687a500"
+  },
+  "cases": [
+    {
+      "name": "enter-roll-chest-open-loot",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "correct page title",
+          "passed": true
+        },
+        {
+          "label": "meaningful nonblank game surface",
+          "passed": true
+        },
+        {
+          "label": "keyboard roll: complete decoded state",
+          "passed": true
+        },
+        {
+          "label": "keyboard roll: exact native mirror",
+          "passed": true
+        },
+        {
+          "label": "chest action receives previous primary focus",
+          "passed": true
+        },
+        {
+          "label": "keyboard open: complete decoded state",
+          "passed": true
+        },
+        {
+          "label": "keyboard open: exact native mirror",
+          "passed": true
+        },
+        {
+          "label": "loot action retains focus",
+          "passed": true
+        },
+        {
+          "label": "keyboard next: complete decoded state",
+          "passed": true
+        },
+        {
+          "label": "keyboard next: exact native mirror",
+          "passed": true
+        },
+        {
+          "label": "no runtime/console errors",
+          "passed": true
+        }
+      ],
+      "errors": [],
+      "before": {
+        "tag": "BUTTON",
+        "id": "primary-action",
+        "action": "roll",
+        "inDialog": false
+      },
+      "afterRoll": {
+        "tag": "BUTTON",
+        "id": "primary-action",
+        "action": "open",
+        "inDialog": false
+      },
+      "afterOpen": {
+        "tag": "BUTTON",
+        "id": "primary-action",
+        "action": "next",
+        "inDialog": false
+      }
+    },
+    {
+      "name": "space-fate-route-enter",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "Space fate: complete decoded state",
+          "passed": true
+        },
+        {
+          "label": "Space fate: exact native mirror",
+          "passed": true
+        },
+        {
+          "label": "route action receives focus",
+          "passed": true
+        },
+        {
+          "label": "Space enter: complete decoded state",
+          "passed": true
+        },
+        {
+          "label": "Space enter: exact native mirror",
+          "passed": true
+        },
+        {
+          "label": "no runtime/console errors",
+          "passed": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "during-reveal-focus",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "interfered one-roll result: complete decoded state",
+          "passed": true
+        },
+        {
+          "label": "interfered one-roll result: exact native mirror",
+          "passed": true
+        },
+        {
+          "label": "intentional move to settings is preserved",
+          "passed": true
+        },
+        {
+          "label": "no runtime/console errors",
+          "passed": true
+        }
+      ],
+      "errors": [],
+      "interference": {
+        "kind": "focus",
+        "ran": true
+      },
+      "after": {
+        "tag": "BUTTON",
+        "id": "",
+        "action": "settings",
+        "inDialog": false
+      }
+    },
+    {
+      "name": "during-reveal-skip",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "interfered one-roll result: complete decoded state",
+          "passed": true
+        },
+        {
+          "label": "interfered one-roll result: exact native mirror",
+          "passed": true
+        },
+        {
+          "label": "settled presentation returns its original primary focus",
+          "passed": true
+        },
+        {
+          "label": "no runtime/console errors",
+          "passed": true
+        }
+      ],
+      "errors": [],
+      "interference": {
+        "kind": "skip",
+        "ran": true
+      },
+      "after": {
+        "tag": "BUTTON",
+        "id": "primary-action",
+        "action": "open",
+        "inDialog": false
+      }
+    },
+    {
+      "name": "during-reveal-dialog",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "interfered one-roll result: complete decoded state",
+          "passed": true
+        },
+        {
+          "label": "interfered one-roll result: exact native mirror",
+          "passed": true
+        },
+        {
+          "label": "open dialog keeps focus",
+          "passed": true
+        },
+        {
+          "label": "no runtime/console errors",
+          "passed": true
+        }
+      ],
+      "errors": [],
+      "interference": {
+        "kind": "dialog",
+        "ran": true
+      },
+      "after": {
+        "tag": "BUTTON",
+        "id": "",
+        "action": "close-dialog",
+        "inDialog": true
+      }
+    },
+    {
+      "name": "during-reveal-hidden",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "interfered one-roll result: complete decoded state",
+          "passed": true
+        },
+        {
+          "label": "interfered one-roll result: exact native mirror",
+          "passed": true
+        },
+        {
+          "label": "settled presentation returns its original primary focus",
+          "passed": true
+        },
+        {
+          "label": "no runtime/console errors",
+          "passed": true
+        }
+      ],
+      "errors": [],
+      "interference": {
+        "kind": "hidden",
+        "ran": true
+      },
+      "after": {
+        "tag": "BUTTON",
+        "id": "primary-action",
+        "action": "open",
+        "inDialog": false
+      }
+    },
+    {
+      "name": "primary-save-failure",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "failed primary save preserves exact original raw",
+          "passed": true
+        },
+        {
+          "label": "failed transaction: complete decoded state",
+          "passed": true
+        },
+        {
+          "label": "failed transaction: exact native mirror",
+          "passed": true
+        },
+        {
+          "label": "failed save keeps the actionable origin",
+          "passed": true
+        },
+        {
+          "label": "no runtime/console errors",
+          "passed": true
+        }
+      ],
+      "errors": [],
+      "notice": "浏览器无法保存进度，本次操作未生效。请导出备份并检查存储权限。"
+    },
+    {
+      "name": "body-shortcut-scope-unchanged",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "existing BODY combat shortcut: complete decoded state",
+          "passed": true
+        },
+        {
+          "label": "existing BODY combat shortcut: exact native mirror",
+          "passed": true
+        },
+        {
+          "label": "no new focus policy for a BODY-origin shortcut",
+          "passed": true
+        },
+        {
+          "label": "no runtime/console errors",
+          "passed": true
+        }
+      ],
+      "errors": []
+    }
+  ],
+  "errors": [],
+  "notes": [
+    "Browser connector and CUA could not reach this loopback server (ERR_CONNECTION_REFUSED); using the user-authorized local Playwright fallback.",
+    "All game actions run through the real app handlers, native localStorage and Web Locks with validator-accepted synthetic starting states.",
+    "The two continuity groups use native Playwright Enter/Space. Timing-sensitive interference groups arm a MutationObserver that performs a DOM focus/click at the first busy render; no game method or timer is patched.",
+    "Visibility is a clearly labeled document-property/event injection, not actual OS suspension. Main-save failure injects one native setItem rejection before committing.",
+    "The run uses 1366x768 / Chrome software rendering / low effects / reduced motion; no timing, FPS or physical accessibility claim."
+  ],
+  "browser": "155.0.8059.84",
+  "page": {
+    "title": "骰狱：无尽深渊 · Dice Abyss",
+    "url": "http://127.0.0.1:44111/",
+    "viewport": {
+      "width": 1366,
+      "height": 768
+    },
+    "text": "骰狱：无尽深渊\n— D I C E　 A B Y S S —\n以骰为火\n点燃永夜\n图鉴\n全屏\n设置\n深渊探索\nDUNGEON\n第 1 层 · 遗忘入口\n余火年代\n已解锁至 传说\n\n「死亡并非终点，\n　而是更深的开始。」\n\n战斗\n01\n战斗\n02\n锻造\n03\n战斗\n04\n宝箱\n05\n精英\n06\n探索增益\nFATE\n本层命运\n6 + 2\n路线进度\n0 / 6\n累"
+  },
+  "servedHashes": {
+    "src/app.js": "5967ce857870085c15843978e2d9e1aedfec5d06e43af5c2563a78b271485218",
+    "src/action-focus.js": "d5e383b4f8aeb138b6cdffc7f3dffe12cf0db7fcbac053df713dec60b3b95a98",
+    "src/engine.js": "a84e8823a4e6632ec12ad6f497c71e2a0b427a41fe8773eb7c9cfc041f78cd1b",
+    "src/views.js": "1fd3da005d8e37d4b8ac0be4bf12dc53fd262645c5421a839c49224e28ce9266",
+    "src/storage.js": "2c5f648efe7df6a1c14710ea90fe2de83323141d5f5e285eec7fac8aa687a500"
+  },
+  "sourceAfter": {
+    "src/app.js": "5967ce857870085c15843978e2d9e1aedfec5d06e43af5c2563a78b271485218",
+    "src/action-focus.js": "d5e383b4f8aeb138b6cdffc7f3dffe12cf0db7fcbac053df713dec60b3b95a98",
+    "src/engine.js": "a84e8823a4e6632ec12ad6f497c71e2a0b427a41fe8773eb7c9cfc041f78cd1b",
+    "src/views.js": "1fd3da005d8e37d4b8ac0be4bf12dc53fd262645c5421a839c49224e28ce9266",
+    "src/storage.js": "2c5f648efe7df6a1c14710ea90fe2de83323141d5f5e285eec7fac8aa687a500"
+  },
+  "sourceStable": true,
+  "finished": "2026-10-18T10:37:53.450Z",
+  "summary": {
+    "groups": 8,
+    "passed": 8,
+    "failed": 0,
+    "checks": 42,
+    "errors": 0
+  }
+}

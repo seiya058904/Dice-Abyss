@@ -1,0 +1,95 @@
+/* The forge quotes the real item panel. All layout stays local to this room. */
+.forge-preview-screen .forge-target{container-type:inline-size}
+.forge-screen.forge-preview-screen.room-refined .forge-target{justify-content:flex-start;padding:1rem 1.1rem;gap:.65rem;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#8f8062 #0a1014}
+.forge-preview-screen .forge-target>*{flex-shrink:0}
+.forge-preview-screen .forge-item-heading{width:100%;padding-bottom:.55rem;border-bottom:1px solid #354047}
+.forge-preview-screen .forge-item-heading h2{margin:.25rem 0;font-size:1.25rem;overflow-wrap:anywhere}
+.forge-preview-screen .forge-decision{display:grid;grid-template-columns:9rem minmax(0,1fr);gap:1rem;align-items:center;width:100%;max-width:48rem}
+.forge-screen.forge-preview-screen.room-refined .forge-dice{height:8.5rem!important;margin:0;width:100%;display:flex;align-items:center;justify-content:center}
+.forge-preview-screen .forge-dice .cube-row{width:100%;padding:1rem 0;min-height:7rem}
+.forge-preview-screen .forge-dice .cube-die{--size:4.2rem!important}
+.forge-preview-screen .forge-forecast{min-width:0;text-align:left;padding:.4rem 0}
+.forge-forecast-heading{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:.3rem .8rem;margin-bottom:.7rem}
+.forge-forecast-heading h3{font:500 max(14px,.9rem)/1.6 'Abyss Text',sans-serif;color:#e3c995}
+.forge-forecast-heading>span{font-size:max(11px,.66rem);color:#b8c4ca}
+.forge-stat-forecast{display:flex;flex-wrap:wrap;gap:.7rem 2rem}
+.forge-stat-forecast>div{min-width:0}
+.forge-stat-forecast dt{font-size:max(12px,.7rem);color:#bfcbd2;margin-bottom:.3rem}
+.forge-stat-forecast dd{display:flex;align-items:baseline;gap:.45rem;flex-wrap:wrap;line-height:1.5;font-size:1.1rem;font-variant-numeric:tabular-nums}
+.forge-stat-forecast dd>span{color:#c4cdd2}
+.forge-stat-forecast dd>i{font-style:normal;color:#7f939f;font-size:.85rem}
+.forge-stat-forecast dd>strong{font-size:1.25rem;font-weight:600;color:#f1d191}
+.forge-stat-forecast small{font-size:max(11px,.68rem);line-height:1.7;color:#b8d9d0}
+.forge-forecast-note{font-size:max(11px,.65rem);line-height:1.7;margin-top:.55rem;color:#b8c6ce}
+.forge-screen.forge-preview-screen.room-refined .forge-rule{width:100%;max-width:48rem;gap:0;margin:.1rem 0}
+.forge-preview-screen .forge-six-outcomes>span{min-width:0;padding:.45rem .2rem;gap:.12rem;font-size:max(12px,.7rem)}
+.forge-preview-screen .forge-six-outcomes small{font-size:max(11px,.62rem)}
+.forge-screen.forge-preview-screen.room-refined .forge-rule b{font-size:1.2rem;margin-top:0}
+.forge-preview-screen .forge-face-stats{display:flex;flex-direction:column;gap:.3rem;border-top:1px solid #4b493c;margin-top:.35rem;padding-top:.35rem}
+.forge-preview-screen .forge-face-stats small{display:flex;flex-direction:column;gap:.1rem;color:#e0e5e7;line-height:1.55;overflow-wrap:anywhere}
+.forge-preview-screen .forge-face-stats em{font-style:normal;color:#bad5c8;font-size:max(11px,.62rem)}
+.forge-preview-screen .forge-spend{display:flex;flex-direction:column;align-items:center;gap:.4rem;width:100%;padding:.25rem 0}
+.forge-preview-screen .forge-spend>.primary{width:min(100%,25rem);min-height:2.9rem;font-size:max(13px,.86rem);color:#55efff;background:#09242c;border-color:#32dfee}
+.forge-preview-screen .forge-spend>.primary:hover:enabled{background:#113d46;color:#a6f7ff}
+.forge-preview-screen .forge-availability{font-size:max(12px,.72rem);margin:0}
+.forge-preview-screen .forge-availability strong{font-weight:500;color:#ecd49f}
+.forge-preview-screen .forge-availability.danger{color:#ffa3ab}
+.forge-item-details{width:100%;max-width:48rem;border-top:1px solid #38434a;padding-top:.45rem;text-align:left;font-size:max(12px,.69rem);color:#bdcbd3;line-height:1.8}
+.forge-item-details summary{cursor:pointer;list-style-position:inside;padding:.25rem .1rem;color:#cfdae1;min-height:1.8rem}
+.forge-item-details p{margin:.45rem .1rem;overflow-wrap:anywhere}
+.forge-preview-screen :is(summary,button):focus-visible{outline:2px solid #73dce6;outline-offset:3px}
+.forge-preview-screen ::selection{color:#071013;background:#cae9e7}
+.forge-preview-screen .slot-tabs{flex-wrap:wrap}
+.forge-preview-screen .slot-tabs>button{min-height:2.4rem;padding:.5rem .8rem}
+@media(max-width:900px){
+ html:has(.game-shell[data-scene="forge"]),body:has(.game-shell[data-scene="forge"]){min-width:0;overflow:auto}
+ .game-shell[data-scene="forge"]{min-width:0;height:auto;min-height:100svh;grid-template-rows:auto auto auto;padding:0 10px;overflow:visible}
+ .game-shell[data-scene="forge"] .topbar{min-width:0;min-height:64px;flex-wrap:wrap;gap:10px;padding:10px 0}
+ .game-shell[data-scene="forge"] .header-motto,.game-shell[data-scene="forge"] .location{display:none}
+ .game-shell[data-scene="forge"] .game-layout{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto auto auto;gap:12px}
+ .game-shell[data-scene="forge"] .center-panel{grid-column:1/-1;grid-row:1;margin:0;height:auto;min-height:0;padding:12px;overflow:visible}
+ .game-shell[data-scene="forge"] .forge-preview-screen{min-height:0}
+ .game-shell[data-scene="forge"] .forge-target{overflow:visible}
+ .game-shell[data-scene="forge"] .game-footer{grid-column:1/-1;grid-row:2}
+ .game-shell[data-scene="forge"] .left-rail{grid-column:1;grid-row:3;grid-template-rows:auto auto auto;gap:12px}
+ .game-shell[data-scene="forge"] .right-rail{grid-column:2;grid-row:3;margin:0;min-height:0}
+ .game-shell[data-scene="forge"] .bottomline{height:auto;min-height:24px;gap:8px;flex-wrap:wrap;font-size:10px}
+}
+@container(max-width:480px){
+ .forge-preview-screen .forge-decision{grid-template-columns:6rem minmax(0,1fr);gap:.55rem}
+ .forge-preview-screen .forge-dice .cube-die{--size:3.2rem!important}
+ .forge-stat-forecast{gap:.4rem .85rem}
+ .forge-stat-forecast dd{font-size:.9rem;gap:.3rem}
+ .forge-stat-forecast dd>strong{font-size:1rem}
+ .forge-forecast-heading{margin-bottom:.35rem}
+ .forge-forecast-heading>span{display:none}
+ .forge-screen.forge-preview-screen.room-refined .forge-rule{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .forge-preview-screen .forge-six-outcomes>span:nth-child(3){border-right:0}
+ .forge-preview-screen .forge-six-outcomes>span:nth-child(-n+3){border-bottom:1px solid #685842}
+}
+@media(max-width:600px){
+ .game-shell[data-scene="forge"]{padding:0 8px}
+ .game-shell[data-scene="forge"] .topbar{flex-wrap:nowrap;gap:6px}
+ .game-shell[data-scene="forge"] .brand>span{font-size:18px}
+ .game-shell[data-scene="forge"] .brand-sub{display:none}
+ .game-shell[data-scene="forge"] .brand>small{font-size:8px;letter-spacing:0}
+ .game-shell[data-scene="forge"] .header-actions{gap:5px}
+ .game-shell[data-scene="forge"] .header-actions button{min-width:32px;min-height:36px;padding:5px;font-size:11px}
+ .game-shell[data-scene="forge"] .header-actions button[data-action="fullscreen"]{display:none}
+ .game-shell[data-scene="forge"] .game-layout{grid-template-columns:minmax(0,1fr)}
+ .game-shell[data-scene="forge"] .left-rail{grid-column:1;grid-row:3}
+ .game-shell[data-scene="forge"] .right-rail{grid-column:1;grid-row:4}
+ .game-shell[data-scene="forge"] .game-footer{min-height:112px;grid-template-rows:54px 50px;gap:8px}
+ .game-shell[data-scene="forge"] .center-panel{padding:12px 9px}
+ .forge-preview-screen .room-heading h1{font-size:22px}
+ .forge-preview-screen .room-heading p{font-size:12px;line-height:1.6}
+ .forge-preview-screen .room-balance{font-size:11px}
+ .forge-preview-screen .room-balance b{font-size:16px}
+ .forge-screen.forge-preview-screen.room-refined .forge-target{padding:.7rem .65rem;gap:.55rem}
+ .forge-preview-screen .forge-item-heading h2{font-size:1.12rem}
+ .forge-preview-screen .slot-tabs{gap:0}
+ .forge-preview-screen .slot-tabs>button{flex:1;padding:.5rem .2rem;font-size:.72rem;min-height:2.75rem}
+ .forge-forecast-note{font-size:.68rem}
+ .forge-preview-screen .forge-spend>.primary{min-height:3rem}
+ .forge-item-details summary{min-height:2.5rem;padding:.4rem .1rem}
+}

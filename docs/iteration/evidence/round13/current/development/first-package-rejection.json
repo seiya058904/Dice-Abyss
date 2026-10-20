@@ -1,0 +1,70 @@
+{
+  "status": "REJECTED_BEFORE_EXTRACTION",
+  "archiveIdentity": {
+    "archive": "/workspace/scratch/5a5998079a95/output/Dice-Abyss-v5.13.0-cloud-round-13.zip",
+    "bytes": 21616034,
+    "decimalMB": 21.616034,
+    "sha256": "c61ac6481a365cca41c4d2b510eb45f1492cc15c688e6bb24bbb16fe6d63ef8e",
+    "files": 1275,
+    "manifestEntries": 1274,
+    "expandedBytes": 49851405,
+    "inputBytes": 20418260,
+    "growthBytes": 1197774,
+    "growthPercent": 5.866190360980816,
+    "strict50MBPass": true
+  },
+  "command": [
+    "python3",
+    "scripts/verify-package.py",
+    "/workspace/scratch/5a5998079a95/output/Dice-Abyss-v5.13.0-cloud-round-13.zip",
+    "--extract",
+    "/workspace/scratch/5a5998079a95/fresh-round13"
+  ],
+  "exitCode": 1,
+  "validatorError": "Manifest must have unique, sorted paths",
+  "reason": "Path-object sorting compares path components; verifier requires lexical sorting of complete POSIX relative strings.",
+  "firstMismatches": [
+    {
+      "index": 333,
+      "actual": "docs/iteration/evidence/round05/performance-final/fixture-manifest.json",
+      "expected": "docs/iteration/evidence/round05/performance-final.log"
+    },
+    {
+      "index": 334,
+      "actual": "docs/iteration/evidence/round05/performance-final/performance-review-summary.json",
+      "expected": "docs/iteration/evidence/round05/performance-final/fixture-manifest.json"
+    },
+    {
+      "index": 335,
+      "actual": "docs/iteration/evidence/round05/performance-final/performance-round.json",
+      "expected": "docs/iteration/evidence/round05/performance-final/performance-review-summary.json"
+    },
+    {
+      "index": 336,
+      "actual": "docs/iteration/evidence/round05/performance-final.log",
+      "expected": "docs/iteration/evidence/round05/performance-final/performance-round.json"
+    },
+    {
+      "index": 774,
+      "actual": "docs/iteration/evidence/round12/browser/baseline-core.json",
+      "expected": "docs/iteration/evidence/round12/browser-summary.json"
+    },
+    {
+      "index": 775,
+      "actual": "docs/iteration/evidence/round12/browser/core-current.json",
+      "expected": "docs/iteration/evidence/round12/browser/baseline-core.json"
+    },
+    {
+      "index": 776,
+      "actual": "docs/iteration/evidence/round12/browser/decisions-baseline.json",
+      "expected": "docs/iteration/evidence/round12/browser/core-current.json"
+    },
+    {
+      "index": 777,
+      "actual": "docs/iteration/evidence/round12/browser/decisions-current.json",
+      "expected": "docs/iteration/evidence/round12/browser/decisions-baseline.json"
+    }
+  ],
+  "correction": "Sort manifest rows by the exact relative path string. Verifier unchanged; regenerate complete archive and rerun every archive gate.",
+  "integrationProbeCorrection": "First root integration probe expected an array, but sourceAfter is a filename-to-SHA map; matched list was empty. Replaced with exact required-key set equality and four actual SHA comparisons. Native source itself and its passing report were unchanged."
+}

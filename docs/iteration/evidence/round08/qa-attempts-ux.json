@@ -1,0 +1,703 @@
+{
+  "schema": 1,
+  "recorded": "2026-10-18T07:04:00.846Z",
+  "status": "COMPLETE",
+  "environment": {
+    "browser": "155.0.8059.84",
+    "source": "/workspace/scratch/5c3c2b08656a/work/Dice-Abyss",
+    "url": "http://127.0.0.1:4289/",
+    "effects": "low",
+    "reducedMotion": true
+  },
+  "notes": [
+    "Every original attempt report and screenshot remains in the external audit workspace. This concise attempt summary is the intended package record of all real failures; duplicate FAIL screenshots need not ship.",
+    "Only attempt-04 is a product failure in this new native readout series. Attempts 01/02/03/06/07 are explicitly classified harness problems and are not counted as game regressions.",
+    "Complete readout: six groups / 678 checks. Additional real wheel case: one group / 35 checks, including 13 repeated environment checks and 22 case checks. Do not combine these into an invented independent sample count.",
+    "Portable focus: the same original eight groups / 42 checks re-run on the final runtime. Controlled focus/click/visibility/save-failure interference remains labeled; no OS suspension claim.",
+    "The natural seed7919 / 65-action path is a replay of the previously discovered sample, not a newly independent natural journey.",
+    "No timing/FPS/performance conclusions are derived from these suites. All of this agent's browsers have been closed before the parent performance window."
+  ],
+  "frozen": {
+    "src/app.js": {
+      "sha256": "07fda8722d861f093b87e8db05cce901bc55295e6f889f0a28848de8b29a999d",
+      "modifiedUtc": "2026-10-18T06:50:00.701Z"
+    },
+    "src/action-focus.js": {
+      "sha256": "d5e383b4f8aeb138b6cdffc7f3dffe12cf0db7fcbac053df713dec60b3b95a98",
+      "modifiedUtc": "2026-10-18T06:28:58.981Z"
+    },
+    "scripts/qa-combat-readout-browser.mjs": {
+      "sha256": "09fca2fd2656a47514be5eeb649d7092b901e5fda37a94ce20c3c3b2a289091e",
+      "modifiedUtc": "2026-10-18T06:58:43.682Z"
+    },
+    "scripts/qa-action-focus-browser.mjs": {
+      "sha256": "9b1399a5c3aa9e4057122183faef32ac99530fd827847510f8bde8367d3f2952",
+      "modifiedUtc": "2026-10-18T06:54:03.423Z"
+    }
+  },
+  "attempts": [
+    {
+      "directory": "attempt-01-summary-before",
+      "reportSha256": "a2b9d5d3ca9ee65e0bd47580754c09b3a11e735df9eefedaee00b65759f54710",
+      "classification": "harness",
+      "explanation": "The local server deliberately does not expose package.json. The script stopped during the served-file inventory, before testing keys. The public-file list was corrected.",
+      "started": "2026-10-18T06:45:24.014Z",
+      "finished": "2026-10-18T06:45:25.706Z",
+      "browser": "155.0.8059.84",
+      "scriptSha256": "77a1e92f929aa649bb2b0dc6a8e8d9ea80625015bd2a80e02a20fff0bf86bb42",
+      "sourceBefore": {
+        "src/app.js": "29039046f890eb767d2132500d4f1e05e6605a97e6ec6d038ff6a62527898a97",
+        "src/action-focus.js": "d5e383b4f8aeb138b6cdffc7f3dffe12cf0db7fcbac053df713dec60b3b95a98",
+        "src/engine.js": "d81ad2b7fd33ae6f55052a894460bb6e804f316c4488ff5faabaf4ed30473751",
+        "src/views.js": "c80d9a3f16256435e613e18e850f8739c95a54123a1c56b246cd14af41ddc9da",
+        "src/encounter-tactics.js": "02e0da7aa57de321319812503556d9e5925463644222305755e86de6c3fa355b",
+        "src/deep-rules.js": "6919b66ec8fbadea293ab4c4e3aa0b8c7a943e2ec44224b119287709d484581f",
+        "src/encounters.js": "40d4c41b57cc35c5246491c11f6e0cd6ecc51ebec7e4abe14f5c8a8ee0745c97",
+        "src/deep.css": "24f0ed8bf2969232c660a595cd5e19b206066bc4a19a983e4bd3a277b82700cc",
+        "src/storage.js": "b8676eaee04c14de66c8bc1d8555b6927d41bf14a3dfc0598e8fbb37c1962c34",
+        "index.html": "335acddc8319763fbc03dda2c674a184b0fa1d841d84852cdceb8aae97e3e230",
+        "package.json": "8581c407358747d9bfb60bab097b98927b689f8d8f38ca52add04ab04cd46b37"
+      },
+      "sourceStable": true,
+      "passed": false,
+      "checks": 11,
+      "errors": [],
+      "cases": [
+        {
+          "name": "summary-native-keys",
+          "status": "FAIL",
+          "checks": 11,
+          "failedAssertions": [
+            "package.json served"
+          ],
+          "errorHeadline": "AssertionError [ERR_ASSERTION]: package.json served"
+        }
+      ]
+    },
+    {
+      "directory": "attempt-02-summary-before",
+      "reportSha256": "e7ad1fdfdb05623bf54a13ccd397302ad4b462597ac56c4e73da10b1c254cf46",
+      "classification": "harness",
+      "explanation": "An invalid archive sentinel in test scaffolding correctly triggered the existing archive safeguard. Space requested a roll, but that fixture could not commit. This is not a new game defect.",
+      "started": "2026-10-18T06:45:55.175Z",
+      "finished": "2026-10-18T06:46:12.144Z",
+      "browser": "155.0.8059.84",
+      "scriptSha256": "3062c065e524db0c0926fef81b09f286f5004e12b9b01386f0b1d59c0429e48a",
+      "sourceBefore": {
+        "src/app.js": "29039046f890eb767d2132500d4f1e05e6605a97e6ec6d038ff6a62527898a97",
+        "src/action-focus.js": "d5e383b4f8aeb138b6cdffc7f3dffe12cf0db7fcbac053df713dec60b3b95a98",
+        "src/engine.js": "d81ad2b7fd33ae6f55052a894460bb6e804f316c4488ff5faabaf4ed30473751",
+        "src/views.js": "c80d9a3f16256435e613e18e850f8739c95a54123a1c56b246cd14af41ddc9da",
+        "src/encounter-tactics.js": "02e0da7aa57de321319812503556d9e5925463644222305755e86de6c3fa355b",
+        "src/deep-rules.js": "6919b66ec8fbadea293ab4c4e3aa0b8c7a943e2ec44224b119287709d484581f",
+        "src/encounters.js": "40d4c41b57cc35c5246491c11f6e0cd6ecc51ebec7e4abe14f5c8a8ee0745c97",
+        "src/deep.css": "24f0ed8bf2969232c660a595cd5e19b206066bc4a19a983e4bd3a277b82700cc",
+        "src/storage.js": "b8676eaee04c14de66c8bc1d8555b6927d41bf14a3dfc0598e8fbb37c1962c34",
+        "index.html": "335acddc8319763fbc03dda2c674a184b0fa1d841d84852cdceb8aae97e3e230",
+        "package.json": "8581c407358747d9bfb60bab097b98927b689f8d8f38ca52add04ab04cd46b37"
+      },
+      "sourceStable": true,
+      "passed": false,
+      "checks": 18,
+      "errors": [],
+      "cases": [
+        {
+          "name": "summary-native-keys",
+          "status": "FAIL",
+          "checks": 18,
+          "failedAssertions": [],
+          "errorHeadline": "TimeoutError: page.waitForFunction: Timeout 15000ms exceeded."
+        }
+      ]
+    },
+    {
+      "directory": "attempt-03-summary-before",
+      "reportSha256": "18497cc2ea681b87e5a9c1cb2aaa8c29a12b05ef806df34eef723fd76df1eeaf",
+      "classification": "harness",
+      "explanation": "The added native event/notice trace confirmed the same invalid-archive scaffolding problem: SUMMARY Space was prevented, and the app warned that the archive failed validation. Invalid archive scaffolding was removed.",
+      "started": "2026-10-18T06:48:19.459Z",
+      "finished": "2026-10-18T06:48:36.189Z",
+      "browser": "155.0.8059.84",
+      "scriptSha256": "25bd138179ec28322bb587ae9472c167d9f1d761287a3ea12d11383250efa0ad",
+      "sourceBefore": {
+        "src/app.js": "29039046f890eb767d2132500d4f1e05e6605a97e6ec6d038ff6a62527898a97",
+        "src/action-focus.js": "d5e383b4f8aeb138b6cdffc7f3dffe12cf0db7fcbac053df713dec60b3b95a98",
+        "src/engine.js": "d81ad2b7fd33ae6f55052a894460bb6e804f316c4488ff5faabaf4ed30473751",
+        "src/views.js": "c80d9a3f16256435e613e18e850f8739c95a54123a1c56b246cd14af41ddc9da",
+        "src/encounter-tactics.js": "02e0da7aa57de321319812503556d9e5925463644222305755e86de6c3fa355b",
+        "src/deep-rules.js": "6919b66ec8fbadea293ab4c4e3aa0b8c7a943e2ec44224b119287709d484581f",
+        "src/encounters.js": "40d4c41b57cc35c5246491c11f6e0cd6ecc51ebec7e4abe14f5c8a8ee0745c97",
+        "src/deep.css": "24f0ed8bf2969232c660a595cd5e19b206066bc4a19a983e4bd3a277b82700cc",
+        "src/storage.js": "b8676eaee04c14de66c8bc1d8555b6927d41bf14a3dfc0598e8fbb37c1962c34",
+        "index.html": "335acddc8319763fbc03dda2c674a184b0fa1d841d84852cdceb8aae97e3e230",
+        "package.json": "8581c407358747d9bfb60bab097b98927b689f8d8f38ca52add04ab04cd46b37"
+      },
+      "sourceStable": true,
+      "passed": false,
+      "checks": 18,
+      "errors": [],
+      "cases": [
+        {
+          "name": "summary-native-keys",
+          "status": "FAIL",
+          "checks": 18,
+          "failedAssertions": [],
+          "errorHeadline": "TimeoutError: page.waitForFunction: Timeout 15000ms exceeded."
+        }
+      ],
+      "nativeProbe": {
+        "events": [
+          {
+            "key": "Enter",
+            "code": "Enter",
+            "target": "SUMMARY",
+            "prevented": false
+          },
+          {
+            "key": "Tab",
+            "code": "Tab",
+            "target": "SUMMARY",
+            "prevented": false
+          },
+          {
+            "key": "Shift",
+            "code": "ShiftLeft",
+            "target": "BUTTON",
+            "prevented": false
+          },
+          {
+            "key": "Tab",
+            "code": "Tab",
+            "target": "BUTTON",
+            "prevented": false
+          },
+          {
+            "key": "Enter",
+            "code": "Enter",
+            "target": "SUMMARY",
+            "prevented": false
+          },
+          {
+            "key": " ",
+            "code": "Space",
+            "target": "SUMMARY",
+            "prevented": true
+          }
+        ],
+        "toasts": [
+          "升级前归档校验未通过，现有主档未覆盖。请先导出原始存档并检查归档。"
+        ],
+        "busy": [
+          false
+        ]
+      }
+    },
+    {
+      "directory": "attempt-04-summary-before",
+      "reportSha256": "3a95600d44f64b9a5b8d617c21358184dc301513f2d765628ff694b360f88cf8",
+      "classification": "product-defect",
+      "explanation": "With valid isolated storage, native Space on SUMMARY was intercepted by the global roll shortcut and durably committed an unintended combat roll. The authorized fix only adds summary to the interactive-target guard.",
+      "started": "2026-10-18T06:49:37.893Z",
+      "finished": "2026-10-18T06:49:42.068Z",
+      "browser": "155.0.8059.84",
+      "scriptSha256": "e364aca81c691b87a0b04068a914330076c1700bee556d976b5a261beb12d3b1",
+      "sourceBefore": {
+        "src/app.js": "29039046f890eb767d2132500d4f1e05e6605a97e6ec6d038ff6a62527898a97",
+        "src/action-focus.js": "d5e383b4f8aeb138b6cdffc7f3dffe12cf0db7fcbac053df713dec60b3b95a98",
+        "src/engine.js": "d81ad2b7fd33ae6f55052a894460bb6e804f316c4488ff5faabaf4ed30473751",
+        "src/views.js": "c80d9a3f16256435e613e18e850f8739c95a54123a1c56b246cd14af41ddc9da",
+        "src/encounter-tactics.js": "02e0da7aa57de321319812503556d9e5925463644222305755e86de6c3fa355b",
+        "src/deep-rules.js": "6919b66ec8fbadea293ab4c4e3aa0b8c7a943e2ec44224b119287709d484581f",
+        "src/encounters.js": "40d4c41b57cc35c5246491c11f6e0cd6ecc51ebec7e4abe14f5c8a8ee0745c97",
+        "src/deep.css": "24f0ed8bf2969232c660a595cd5e19b206066bc4a19a983e4bd3a277b82700cc",
+        "src/storage.js": "b8676eaee04c14de66c8bc1d8555b6927d41bf14a3dfc0598e8fbb37c1962c34",
+        "index.html": "335acddc8319763fbc03dda2c674a184b0fa1d841d84852cdceb8aae97e3e230",
+        "package.json": "8581c407358747d9bfb60bab097b98927b689f8d8f38ca52add04ab04cd46b37"
+      },
+      "sourceStable": true,
+      "passed": false,
+      "checks": 19,
+      "errors": [],
+      "cases": [
+        {
+          "name": "summary-native-keys",
+          "status": "FAIL",
+          "checks": 19,
+          "failedAssertions": [
+            "Space on native rules summary never commits a combat roll"
+          ],
+          "errorHeadline": "AssertionError [ERR_ASSERTION]: Space on native rules summary never commits a combat roll"
+        }
+      ],
+      "nativeProbe": {
+        "events": [
+          {
+            "key": "Enter",
+            "code": "Enter",
+            "target": "SUMMARY",
+            "prevented": false
+          },
+          {
+            "key": "Tab",
+            "code": "Tab",
+            "target": "SUMMARY",
+            "prevented": false
+          },
+          {
+            "key": "Shift",
+            "code": "ShiftLeft",
+            "target": "BUTTON",
+            "prevented": false
+          },
+          {
+            "key": "Tab",
+            "code": "Tab",
+            "target": "BUTTON",
+            "prevented": false
+          },
+          {
+            "key": "Enter",
+            "code": "Enter",
+            "target": "SUMMARY",
+            "prevented": false
+          },
+          {
+            "key": " ",
+            "code": "Space",
+            "target": "SUMMARY",
+            "prevented": true
+          }
+        ],
+        "toasts": [],
+        "busy": [
+          true,
+          true,
+          false
+        ]
+      },
+      "afterSpace": {
+        "focus": {
+          "tag": "BODY",
+          "id": "",
+          "summary": false
+        },
+        "phase": "dead",
+        "revision": 2,
+        "rolls": 1,
+        "deaths": 1,
+        "hp": 0,
+        "roll": {
+          "values": [
+            2,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "best": 3,
+          "critical": false,
+          "follow": false,
+          "criticalMultiplier": 1,
+          "followMultiplier": 0,
+          "main": 442,
+          "extra": 0,
+          "echoDamage": 0,
+          "total": 442,
+          "absorbed": 0,
+          "hpDamage": 442,
+          "retaliation": 1460,
+          "killed": false,
+          "phaseChanged": false,
+          "guarded": 0,
+          "luck": 0,
+          "luckActive": false,
+          "echoes": 0,
+          "highCount": 3,
+          "wardGain": 0,
+          "dodged": false,
+          "mechanics": []
+        },
+        "detailsOpen": null
+      }
+    },
+    {
+      "directory": "attempt-05-summary-after",
+      "reportSha256": "e96d288987a368734e859c82c7ae53c1768557123f3810c00c7d4243d2a112f1",
+      "classification": "pass",
+      "explanation": "The identical native summary sequence passed after the two-line app guard fix.",
+      "started": "2026-10-18T06:50:06.369Z",
+      "finished": "2026-10-18T06:50:08.365Z",
+      "browser": "155.0.8059.84",
+      "scriptSha256": "e364aca81c691b87a0b04068a914330076c1700bee556d976b5a261beb12d3b1",
+      "sourceBefore": {
+        "src/app.js": "07fda8722d861f093b87e8db05cce901bc55295e6f889f0a28848de8b29a999d",
+        "src/action-focus.js": "d5e383b4f8aeb138b6cdffc7f3dffe12cf0db7fcbac053df713dec60b3b95a98",
+        "src/engine.js": "d81ad2b7fd33ae6f55052a894460bb6e804f316c4488ff5faabaf4ed30473751",
+        "src/views.js": "c80d9a3f16256435e613e18e850f8739c95a54123a1c56b246cd14af41ddc9da",
+        "src/encounter-tactics.js": "02e0da7aa57de321319812503556d9e5925463644222305755e86de6c3fa355b",
+        "src/deep-rules.js": "6919b66ec8fbadea293ab4c4e3aa0b8c7a943e2ec44224b119287709d484581f",
+        "src/encounters.js": "40d4c41b57cc35c5246491c11f6e0cd6ecc51ebec7e4abe14f5c8a8ee0745c97",
+        "src/deep.css": "24f0ed8bf2969232c660a595cd5e19b206066bc4a19a983e4bd3a277b82700cc",
+        "src/storage.js": "b8676eaee04c14de66c8bc1d8555b6927d41bf14a3dfc0598e8fbb37c1962c34",
+        "index.html": "335acddc8319763fbc03dda2c674a184b0fa1d841d84852cdceb8aae97e3e230",
+        "package.json": "8581c407358747d9bfb60bab097b98927b689f8d8f38ca52add04ab04cd46b37"
+      },
+      "sourceStable": true,
+      "passed": true,
+      "checks": 24,
+      "errors": [],
+      "cases": [
+        {
+          "name": "summary-native-keys",
+          "status": "PASS",
+          "checks": 24,
+          "failedAssertions": []
+        }
+      ],
+      "nativeProbe": null,
+      "afterSpace": {
+        "focus": {
+          "tag": "SUMMARY",
+          "id": "",
+          "summary": true
+        },
+        "phase": "combat",
+        "revision": 1,
+        "rolls": 0,
+        "deaths": 0,
+        "hp": 311,
+        "roll": null,
+        "detailsOpen": true
+      }
+    },
+    {
+      "directory": "attempt-06-full",
+      "reportSha256": "041e9f884a5c211501cb23eb59fd15e840bd4a2849be6259349b335a27ea5b7b",
+      "classification": "harness",
+      "explanation": "Five groups passed; history starting labels and factors passed. History allocation then selected the narrow-layout branch navigation, which is hidden on desktop. The selector was changed to the visible map branch title.",
+      "started": "2026-10-18T06:50:44.409Z",
+      "finished": "2026-10-18T06:52:11.537Z",
+      "browser": "155.0.8059.84",
+      "scriptSha256": "e364aca81c691b87a0b04068a914330076c1700bee556d976b5a261beb12d3b1",
+      "sourceBefore": {
+        "src/app.js": "07fda8722d861f093b87e8db05cce901bc55295e6f889f0a28848de8b29a999d",
+        "src/action-focus.js": "d5e383b4f8aeb138b6cdffc7f3dffe12cf0db7fcbac053df713dec60b3b95a98",
+        "src/engine.js": "d81ad2b7fd33ae6f55052a894460bb6e804f316c4488ff5faabaf4ed30473751",
+        "src/views.js": "c80d9a3f16256435e613e18e850f8739c95a54123a1c56b246cd14af41ddc9da",
+        "src/encounter-tactics.js": "02e0da7aa57de321319812503556d9e5925463644222305755e86de6c3fa355b",
+        "src/deep-rules.js": "6919b66ec8fbadea293ab4c4e3aa0b8c7a943e2ec44224b119287709d484581f",
+        "src/encounters.js": "40d4c41b57cc35c5246491c11f6e0cd6ecc51ebec7e4abe14f5c8a8ee0745c97",
+        "src/deep.css": "24f0ed8bf2969232c660a595cd5e19b206066bc4a19a983e4bd3a277b82700cc",
+        "src/storage.js": "b8676eaee04c14de66c8bc1d8555b6927d41bf14a3dfc0598e8fbb37c1962c34",
+        "index.html": "335acddc8319763fbc03dda2c674a184b0fa1d841d84852cdceb8aae97e3e230",
+        "package.json": "8581c407358747d9bfb60bab097b98927b689f8d8f38ca52add04ab04cd46b37"
+      },
+      "sourceStable": true,
+      "passed": false,
+      "checks": 659,
+      "errors": [],
+      "cases": [
+        {
+          "name": "summary-native-keys",
+          "status": "PASS",
+          "checks": 24,
+          "failedAssertions": []
+        },
+        {
+          "name": "mechanic-fixtures",
+          "status": "PASS",
+          "checks": 495,
+          "failedAssertions": []
+        },
+        {
+          "name": "desktop-layouts",
+          "status": "PASS",
+          "checks": 105,
+          "failedAssertions": []
+        },
+        {
+          "name": "narrow-window",
+          "status": "PASS",
+          "checks": 2,
+          "failedAssertions": []
+        },
+        {
+          "name": "typed-imports",
+          "status": "PASS",
+          "checks": 25,
+          "failedAssertions": []
+        },
+        {
+          "name": "historical-factors",
+          "status": "FAIL",
+          "checks": 8,
+          "failedAssertions": [],
+          "errorHeadline": "TimeoutError: locator.click: Timeout 15000ms exceeded."
+        }
+      ],
+      "nativeProbe": null,
+      "afterSpace": {
+        "focus": {
+          "tag": "SUMMARY",
+          "id": "",
+          "summary": true
+        },
+        "phase": "combat",
+        "revision": 1,
+        "rolls": 0,
+        "deaths": 0,
+        "hp": 311,
+        "roll": null,
+        "detailsOpen": true
+      }
+    },
+    {
+      "directory": "attempt-07-history",
+      "reportSha256": "9ccedacde5239761802751bc76a9d552eb2346808a3ec93daf18dec6d221a2f8",
+      "classification": "harness",
+      "explanation": "The native crush and pursuit purchases both committed exact expected states and preserved the previous roll. Returning to combat used an ambiguous action selector shared by the primary and manual buttons. It was scoped to the primary button.",
+      "started": "2026-10-18T06:54:09.738Z",
+      "finished": "2026-10-18T06:54:15.916Z",
+      "browser": "155.0.8059.84",
+      "scriptSha256": "9aefddcbcc19415034f17845632adf2235ee89923fe931e9afbe42c2d4742ee2",
+      "sourceBefore": {
+        "src/app.js": "07fda8722d861f093b87e8db05cce901bc55295e6f889f0a28848de8b29a999d",
+        "src/action-focus.js": "d5e383b4f8aeb138b6cdffc7f3dffe12cf0db7fcbac053df713dec60b3b95a98",
+        "src/engine.js": "d81ad2b7fd33ae6f55052a894460bb6e804f316c4488ff5faabaf4ed30473751",
+        "src/views.js": "c80d9a3f16256435e613e18e850f8739c95a54123a1c56b246cd14af41ddc9da",
+        "src/encounter-tactics.js": "02e0da7aa57de321319812503556d9e5925463644222305755e86de6c3fa355b",
+        "src/deep-rules.js": "6919b66ec8fbadea293ab4c4e3aa0b8c7a943e2ec44224b119287709d484581f",
+        "src/encounters.js": "40d4c41b57cc35c5246491c11f6e0cd6ecc51ebec7e4abe14f5c8a8ee0745c97",
+        "src/deep.css": "24f0ed8bf2969232c660a595cd5e19b206066bc4a19a983e4bd3a277b82700cc",
+        "src/storage.js": "b8676eaee04c14de66c8bc1d8555b6927d41bf14a3dfc0598e8fbb37c1962c34",
+        "index.html": "335acddc8319763fbc03dda2c674a184b0fa1d841d84852cdceb8aae97e3e230",
+        "package.json": "8581c407358747d9bfb60bab097b98927b689f8d8f38ca52add04ab04cd46b37"
+      },
+      "sourceStable": true,
+      "passed": false,
+      "checks": 30,
+      "errors": [],
+      "cases": [
+        {
+          "name": "historical-factors",
+          "status": "FAIL",
+          "checks": 30,
+          "failedAssertions": [],
+          "errorHeadline": "Error: locator.click: Error: strict mode violation: locator('[data-action=\"game\"]') resolved to 2 elements:"
+        }
+      ]
+    },
+    {
+      "directory": "attempt-08-full",
+      "reportSha256": "110e2527bf49fe4fbc89b4440de94f1cc63d34388bd2ed2c899abafdba2fe876",
+      "classification": "pass",
+      "explanation": "Complete six-group native suite passed on the frozen runtime after the two history harness selectors were corrected.",
+      "started": "2026-10-18T06:55:23.122Z",
+      "finished": "2026-10-18T06:56:34.355Z",
+      "browser": "155.0.8059.84",
+      "scriptSha256": "c2f68de1c43f8b8599aca1764c045db578da1f21ca4bf8d7e7207c3b09f6bc9f",
+      "sourceBefore": {
+        "src/app.js": "07fda8722d861f093b87e8db05cce901bc55295e6f889f0a28848de8b29a999d",
+        "src/action-focus.js": "d5e383b4f8aeb138b6cdffc7f3dffe12cf0db7fcbac053df713dec60b3b95a98",
+        "src/engine.js": "d81ad2b7fd33ae6f55052a894460bb6e804f316c4488ff5faabaf4ed30473751",
+        "src/views.js": "c80d9a3f16256435e613e18e850f8739c95a54123a1c56b246cd14af41ddc9da",
+        "src/encounter-tactics.js": "02e0da7aa57de321319812503556d9e5925463644222305755e86de6c3fa355b",
+        "src/deep-rules.js": "6919b66ec8fbadea293ab4c4e3aa0b8c7a943e2ec44224b119287709d484581f",
+        "src/encounters.js": "40d4c41b57cc35c5246491c11f6e0cd6ecc51ebec7e4abe14f5c8a8ee0745c97",
+        "src/deep.css": "24f0ed8bf2969232c660a595cd5e19b206066bc4a19a983e4bd3a277b82700cc",
+        "src/storage.js": "b8676eaee04c14de66c8bc1d8555b6927d41bf14a3dfc0598e8fbb37c1962c34",
+        "index.html": "335acddc8319763fbc03dda2c674a184b0fa1d841d84852cdceb8aae97e3e230",
+        "package.json": "8581c407358747d9bfb60bab097b98927b689f8d8f38ca52add04ab04cd46b37"
+      },
+      "sourceStable": true,
+      "passed": true,
+      "checks": 678,
+      "errors": [],
+      "cases": [
+        {
+          "name": "summary-native-keys",
+          "status": "PASS",
+          "checks": 24,
+          "failedAssertions": []
+        },
+        {
+          "name": "mechanic-fixtures",
+          "status": "PASS",
+          "checks": 495,
+          "failedAssertions": []
+        },
+        {
+          "name": "desktop-layouts",
+          "status": "PASS",
+          "checks": 105,
+          "failedAssertions": []
+        },
+        {
+          "name": "narrow-window",
+          "status": "PASS",
+          "checks": 2,
+          "failedAssertions": []
+        },
+        {
+          "name": "typed-imports",
+          "status": "PASS",
+          "checks": 25,
+          "failedAssertions": []
+        },
+        {
+          "name": "historical-factors",
+          "status": "PASS",
+          "checks": 27,
+          "failedAssertions": []
+        }
+      ],
+      "nativeProbe": null,
+      "afterSpace": {
+        "focus": {
+          "tag": "SUMMARY",
+          "id": "",
+          "summary": true
+        },
+        "phase": "combat",
+        "revision": 1,
+        "rolls": 0,
+        "deaths": 0,
+        "hp": 311,
+        "roll": null,
+        "detailsOpen": true
+      }
+    },
+    {
+      "directory": "attempt-09-native-scroll",
+      "reportSha256": "7c63aeb49299cd4f2ef335ff381c991930ba45a0705c1ea9a739e2ce42f4c3f9",
+      "classification": "pass",
+      "explanation": "Additional real overflow/wheel coverage passed for the authored boss_infinite three-paragraph rules at 1366x768. The longest text by character count, boss_witness, did not actually overflow.",
+      "started": "2026-10-18T06:58:49.542Z",
+      "finished": "2026-10-18T06:58:52.992Z",
+      "browser": "155.0.8059.84",
+      "scriptSha256": "09fca2fd2656a47514be5eeb649d7092b901e5fda37a94ce20c3c3b2a289091e",
+      "sourceBefore": {
+        "src/app.js": "07fda8722d861f093b87e8db05cce901bc55295e6f889f0a28848de8b29a999d",
+        "src/action-focus.js": "d5e383b4f8aeb138b6cdffc7f3dffe12cf0db7fcbac053df713dec60b3b95a98",
+        "src/engine.js": "d81ad2b7fd33ae6f55052a894460bb6e804f316c4488ff5faabaf4ed30473751",
+        "src/views.js": "c80d9a3f16256435e613e18e850f8739c95a54123a1c56b246cd14af41ddc9da",
+        "src/encounter-tactics.js": "02e0da7aa57de321319812503556d9e5925463644222305755e86de6c3fa355b",
+        "src/deep-rules.js": "6919b66ec8fbadea293ab4c4e3aa0b8c7a943e2ec44224b119287709d484581f",
+        "src/encounters.js": "40d4c41b57cc35c5246491c11f6e0cd6ecc51ebec7e4abe14f5c8a8ee0745c97",
+        "src/deep.css": "24f0ed8bf2969232c660a595cd5e19b206066bc4a19a983e4bd3a277b82700cc",
+        "src/storage.js": "b8676eaee04c14de66c8bc1d8555b6927d41bf14a3dfc0598e8fbb37c1962c34",
+        "index.html": "335acddc8319763fbc03dda2c674a184b0fa1d841d84852cdceb8aae97e3e230",
+        "package.json": "8581c407358747d9bfb60bab097b98927b689f8d8f38ca52add04ab04cd46b37"
+      },
+      "sourceStable": true,
+      "passed": true,
+      "checks": 35,
+      "errors": [],
+      "cases": [
+        {
+          "name": "rules-native-scroll",
+          "status": "PASS",
+          "checks": 35,
+          "failedAssertions": []
+        }
+      ]
+    }
+  ],
+  "baselinePrimaryFocus": {
+    "reportSha256": "4b4a2606f80f446c5281646a50e27a4a8d46d4af9b925588cda52dbfc988dc45",
+    "browser": "155.0.8059.84",
+    "title": "骰狱：无尽深渊 · Dice Abyss",
+    "url": "http://127.0.0.1:4288/",
+    "viewport": {
+      "width": 1366,
+      "height": 768
+    },
+    "provenance": "Synthetic valid combat fixture with enemy HP set to 1 to reach chest in one manual roll; isolated browser context.",
+    "beforeFocus": {
+      "tag": "BUTTON",
+      "id": "primary-action",
+      "action": "roll"
+    },
+    "afterFocus": {
+      "tag": "BODY",
+      "id": ""
+    },
+    "phase": "chest",
+    "revisionAfterRoll": 3,
+    "revisionAfterSecondEnter": 3,
+    "defectReproduced": true,
+    "errors": []
+  },
+  "portableFocus": {
+    "reportSha256": "0463bbc9b9f41f7edd69367b3c5c54c683038b02231e7d013d11d2b37e670995",
+    "started": "2026-10-18T07:00:05.417Z",
+    "finished": "2026-10-18T07:00:19.034Z",
+    "scriptSha256": "9b1399a5c3aa9e4057122183faef32ac99530fd827847510f8bde8367d3f2952",
+    "sourceBefore": {
+      "src/app.js": "07fda8722d861f093b87e8db05cce901bc55295e6f889f0a28848de8b29a999d",
+      "src/action-focus.js": "d5e383b4f8aeb138b6cdffc7f3dffe12cf0db7fcbac053df713dec60b3b95a98",
+      "src/engine.js": "d81ad2b7fd33ae6f55052a894460bb6e804f316c4488ff5faabaf4ed30473751",
+      "src/views.js": "c80d9a3f16256435e613e18e850f8739c95a54123a1c56b246cd14af41ddc9da",
+      "src/storage.js": "b8676eaee04c14de66c8bc1d8555b6927d41bf14a3dfc0598e8fbb37c1962c34"
+    },
+    "servedHashes": {
+      "src/app.js": "07fda8722d861f093b87e8db05cce901bc55295e6f889f0a28848de8b29a999d",
+      "src/action-focus.js": "d5e383b4f8aeb138b6cdffc7f3dffe12cf0db7fcbac053df713dec60b3b95a98",
+      "src/engine.js": "d81ad2b7fd33ae6f55052a894460bb6e804f316c4488ff5faabaf4ed30473751",
+      "src/views.js": "c80d9a3f16256435e613e18e850f8739c95a54123a1c56b246cd14af41ddc9da",
+      "src/storage.js": "b8676eaee04c14de66c8bc1d8555b6927d41bf14a3dfc0598e8fbb37c1962c34"
+    },
+    "sourceStable": true,
+    "summary": {
+      "groups": 8,
+      "passed": 8,
+      "failed": 0,
+      "checks": 42,
+      "errors": 0
+    },
+    "cases": [
+      {
+        "name": "enter-roll-chest-open-loot",
+        "status": "PASS",
+        "checks": 11
+      },
+      {
+        "name": "space-fate-route-enter",
+        "status": "PASS",
+        "checks": 6
+      },
+      {
+        "name": "during-reveal-focus",
+        "status": "PASS",
+        "checks": 4
+      },
+      {
+        "name": "during-reveal-skip",
+        "status": "PASS",
+        "checks": 4
+      },
+      {
+        "name": "during-reveal-dialog",
+        "status": "PASS",
+        "checks": 4
+      },
+      {
+        "name": "during-reveal-hidden",
+        "status": "PASS",
+        "checks": 4
+      },
+      {
+        "name": "primary-save-failure",
+        "status": "PASS",
+        "checks": 5
+      },
+      {
+        "name": "body-shortcut-scope-unchanged",
+        "status": "PASS",
+        "checks": 4
+      }
+    ],
+    "errors": []
+  }
+}

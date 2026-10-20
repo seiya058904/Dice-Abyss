@@ -1,0 +1,52 @@
+TAP version 13
+# Subtest: same-run redraw restores collapsed carets and forward/backward selections in an unchanged draft
+ok 1 - same-run redraw restores collapsed carets and forward/backward selections in an unchanged draft
+  ---
+  duration_ms: 2.491494
+  type: 'test'
+  ...
+# Subtest: explicit result reset retains unchanged draft selection while resetting list scroll
+ok 2 - explicit result reset retains unchanged draft selection while resetting list scroll
+  ---
+  duration_ms: 1.052637
+  type: 'test'
+  ...
+# Subtest: trimmed, replaced and cleared text keeps its new selection instead of importing a stale range
+ok 3 - trimmed, replaced and cleared text keeps its new selection instead of importing a stale range
+  ---
+  duration_ms: 0.353443
+  type: 'test'
+  ...
+# Subtest: new runs neither focus a reused search control nor restore the previous run selection
+ok 4 - new runs neither focus a reused search control nor restore the previous run selection
+  ---
+  duration_ms: 0.206355
+  type: 'test'
+  ...
+# Subtest: a modal dialog retains focus and does not apply the background search selection
+ok 5 - a modal dialog retains focus and does not apply the background search selection
+  ---
+  duration_ms: 0.212284
+  type: 'test'
+  ...
+# Subtest: a retained native input with the correct selection receives no focus or selection reset
+ok 6 - a retained native input with the correct selection receives no focus or selection reset
+  ---
+  duration_ms: 0.18298
+  type: 'test'
+  ...
+# Subtest: an unfocused search field does not acquire focus during a background redraw
+ok 7 - an unfocused search field does not acquire focus during a background redraw
+  ---
+  duration_ms: 0.222359
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 16.147739

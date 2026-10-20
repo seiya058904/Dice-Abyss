@@ -1,0 +1,69 @@
+{
+  "at": "2026-10-19T10:11:37.256183+00:00",
+  "kind": "independent static review; not independently executed native browser",
+  "scripts": {
+    "scripts/qa-event-risk-round20.mjs": "abe58e484218c20a3cd23a2ea6b7e442278c2194e16dc99ec42ea1c6d1e3392b",
+    "scripts/qa-event-risk-performance-round20.mjs": "b2c2536b9e2111ae210b6284b1fa07123ad735526eebb5dcc2639e269d330d2a"
+  },
+  "browserRevisionsObserved": [
+    "unknown --case rejected",
+    "pageerror, console error/warning and requestfailed listeners",
+    "confirmation trial native click at all twelve layout fixtures",
+    "explicit scrollTop reset before representative screenshots"
+  ],
+  "browserOpenScope": [
+    "actual in-page equip then navigation back to event not included",
+    "HTTP error responses are not identical to requestfailed; console collection may catch them but no explicit response-status inventory",
+    "native details state/focus not preserved across generic render"
+  ],
+  "performanceProtocol": {
+    "cells": 4,
+    "versions": 2,
+    "samplesPerCellVersion": 12,
+    "measuredRows": 96,
+    "warmups": 8,
+    "pairs": 48,
+    "ordering": "alternating baseline/current and current/baseline",
+    "timing": "trusted native click capture to second requestAnimationFrame callback",
+    "sourceVerification": "each tracked served source body compared against source hash; runtime identity before/after",
+    "fixtures": "one complete validator-accepted state per cell shared by both versions; all durable strings compared exactly; 10000-item equipment at array tail",
+    "estimator": "sorted[Math.floor((n-1)*p)]; n=12 p95 is eleventh ascending sample",
+    "limits": [
+      "capture-before input delay excluded",
+      "rAF does not prove presented pixel or field INP",
+      "software rendering, 1920x1080 CSS viewport, low effects",
+      "no purchase/save operation is in measured action",
+      "12 observations per cell/version provide limited tail evidence"
+    ]
+  },
+  "recommendationsBeforeFinalMeasurement": [
+    "add script and fixture helper SHA provenance",
+    "record quantile estimator",
+    "run after other CPU work stops; retain failures and no replacement retries"
+  ],
+  "nativeBrowserFollowup": "BROWSER_ACCEPTANCE.round20.json",
+  "performanceProvenanceRevision": {
+    "sha256": "a2b1fd5c8b5d58d0a6a0cfa06ab65d976b40cc8bfa6e214315fee394b69a75a4",
+    "estimatorRecorded": true,
+    "driverShaRecordedAndVerified": true,
+    "helperShaBaselineCurrentEqualAndCurrentVerified": true
+  },
+  "returnModeReview": {
+    "at": "2026-10-19T10:27:14.434214+00:00",
+    "driverSha256": "7388ac94295eea9705b47ca32b6b28ef9ea65adddd004151eed4b22abd2d97c7",
+    "mode": "return",
+    "measuredRows": 96,
+    "warmups": 8,
+    "pairs": 48,
+    "timing": "native manual-control game click capture to second rAF with visible event screen",
+    "setupOutsideTiming": "talents navigation; no investment",
+    "durableStringsUnchanged": true,
+    "baselineAndFirstImplementationRawStatus": "MEASURED_WITH_LIMITATIONS",
+    "firstReportSha256": "60be726b05ccc9d2245826eaef6c6a385441c4a8b81089b33034721cc819a4f0",
+    "sourceViews": {
+      "baseline": "12d548a610141c2e8c0c2b03d0e8db492034a72c7beb34d58bca86b3242c0f44",
+      "current": "2fe02b409e0605f01b2aa2b90e69983c89a66a04906151bbfbc2af61631e0269"
+    },
+    "limits": "Each mode is its own 96+8 sample population; do not merge the confirmation and complete-event-return actions."
+  }
+}

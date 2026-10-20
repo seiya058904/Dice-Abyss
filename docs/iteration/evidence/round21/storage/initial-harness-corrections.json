@@ -1,0 +1,6 @@
+{
+  "firstTimingAttempt": "paired-attempt01-fixture-boundary-fail.json",
+  "timingAttemptProblem": "Emoji exact-byte fixture builder oscillated by 1 byte as checksum hex width changed; 75 transaction differential rows passed and 5 timing cells retained. Revised builder preserves whole Unicode code points and searches an ASCII suffix.",
+  "initialTargetedTestProblem": "The new entire-state deep equality assertion expected imported negative zero to remain -0 after canonical JSON storage. Baseline serialization also maps -0 to 0. Corrected assertion compares the entire native JSON value, with no field selection or change to runtime semantics.",
+  "runtimeCandidateChanged": false
+}

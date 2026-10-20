@@ -1,0 +1,197 @@
+{
+  "project": "Dice Abyss",
+  "round": 16,
+  "date": "2026-10-19",
+  "timeZone": "UTC",
+  "inputVersion": "5.15.0",
+  "outputVersion": "5.16.0",
+  "saveSchemaVersion": 5,
+  "inputZipSha256": "047194fd460dcd8499d486e58d559f4b185e8496132f68449d22b610e2691488",
+  "inputZipBytes": 26077385,
+  "baselineIdentity": {
+    "files": 1985,
+    "expandedBytes": 70462540,
+    "manifestEntries": 1984,
+    "integrity": "Fresh safe-path/CRC/full-manifest verification of actual uploaded ZIP and independent read-only baseline execution."
+  },
+  "previousRound": {
+    "round": 15,
+    "outputVersion": "5.15.0",
+    "state": "docs/iteration/archives/round15-state.json",
+    "report": "docs/iteration/archives/round15-report.md"
+  },
+  "releaseStatus": "SOURCE_VALIDATED_WITH_DOCUMENTED_LIMITATIONS",
+  "mainChanges": [
+    "Detailed equipment comparison now quotes immediate current/max HP and existing ward using actual equip semantics, including lost HP when lowering max HP and no revival/healing from browsing or swapping.",
+    "Conditional comparison explicitly identifies the current dice count, unreachable pair/three/four-dice triggers, and the next relevant dice unlock without changing existing score rows or trigger probabilities.",
+    "New comparison explanations have a local 12px minimum and were verified with keyboard, focus, scroll and six logical viewports."
+  ],
+  "rolledBack": [
+    "Per-call inventory score reuse reduced function computation but did not satisfy the native-page latency gate. Restore exact input inventory-query.js; preserve candidate code, all seven candidate-only tests and every timing batch under evidence/round16."
+  ],
+  "changedRuntimeFiles": [
+    "index.html",
+    "package.json",
+    "src/decisions.css",
+    "src/equipment-comparison.js",
+    "src/release.js",
+    "src/views.js"
+  ],
+  "newRuntimeFiles": [],
+  "runtimeDirectoryGrowthBytes": 3346,
+  "runtimeScopeGrowthBytes": 3346,
+  "regressionGuards": [
+    "All original 70 test modules and 2 fixtures are byte-identical. Two fonts, five license files and one font README remain byte-identical; these are one set of eight, not additive counts.",
+    "Schema5, V1-V4 migrations, storage keys, complete expected snapshots, unknown fields, IDs, Web Locks, validate-before-archive and save-before-presentation preserved.",
+    "Manual dice, six-room floors, one currency, five slots, eight rarity gates, Lv/XP/+N separation, nextLuck lifetime and defeat progression retained.",
+    "engine/equipment/storage/content/RNG/renderers/effects unchanged; inventory-query.js restored to exact input SHA 7cf093f155934779d21c4dceb0a6aeef2e467fdb8c763413c155b6c0fd52a4c5."
+  ],
+  "testSummary": {
+    "baselineModules": 70,
+    "baselineFineCases": 608,
+    "currentModules": 71,
+    "currentFineCases": 619,
+    "currentModulesPassed": 71,
+    "passed": 619,
+    "failed": 0,
+    "skipped": 0,
+    "cancelled": 0,
+    "todo": 0,
+    "newModules": 1,
+    "newFineCases": 11,
+    "currentFineCaseSeconds": 72.6385,
+    "currentFineCaseEvidence": "docs/iteration/evidence/round16/release-test-cases.json",
+    "withdrawnCandidate": {
+      "modules": 72,
+      "fineCases": 626,
+      "candidateOnlyTestsArchived": 7,
+      "defaultWrapperModules": 72
+    },
+    "baselineDefaultWrapperModules": 70,
+    "standardSeedsPerMeasuredVersion": 1000,
+    "noShoppingSeedsPerMeasuredVersion": 50,
+    "allStandardAndNoShoppingComplete": true,
+    "standardDeathsPerMeasuredVersion": 0,
+    "simulationBytesEqual": 9409,
+    "simulationSha256": "266fa5b56516410712395796f197a2e33ad1b1e16ede45de14b872f208007d77",
+    "simulationScope": "Fresh input and pre-rollback candidate. Engines/equipment/storage and all gameplay changes stayed identical through later selector restoration.",
+    "baselineHttp": 57,
+    "preRollbackHttp": 57,
+    "fontHan": 1048,
+    "fontCjkPunctuation": 20,
+    "missingGlyphs": 0,
+    "browserIterationSuites": {
+      "groups": 55,
+      "scenarioAssertions": 841,
+      "scope": "Eight full pre-rollback functional suites; source-identity gates counted separately. Save recovery is 11 groups / 96 scenario assertions."
+    },
+    "postRollbackBrowser": {
+      "groups": 19,
+      "scenarioAssertions": 376,
+      "suites": {
+        "core": "6/43",
+        "search": "10/171",
+        "comparison": "3/162"
+      },
+      "trackedFilesIncludingIndexAndPackage": 53,
+      "sourceStable": true
+    },
+    "lifecycleScenes": {
+      "total": 11,
+      "baseline": 3,
+      "current": 8
+    },
+    "webglContextLoss": {
+      "groups": 1,
+      "cycles": 3,
+      "postRestoreNativeRoll": true
+    },
+    "independentComparison": {
+      "cases": 1569,
+      "diceCombinations": 55986
+    },
+    "natural": {
+      "freshJourneysPerVersion": 4,
+      "seeds": [
+        7919,
+        15838,
+        23757,
+        31676
+      ],
+      "targetFloors": 400,
+      "completedJourneysPerVersion": 3,
+      "completedFloorsPerVersion": 1229,
+      "rollsPerVersion": 16805,
+      "battlesPerVersion": 5272,
+      "deathsPerVersion": 21,
+      "exitCodeEach": 2,
+      "incompleteSeed": 23757,
+      "incompleteFloor": 30,
+      "reason": "DEATH_RETRY_LIMIT",
+      "strictGates": 19,
+      "comparedNodes": 5221,
+      "numericLeaves": 3336,
+      "rngLeaves": 225,
+      "newContextObjects": 6,
+      "allowedMetadataDifferences": 4,
+      "unexplainedDifferences": 0,
+      "branchScope": "3 natural states / 9 free branches / 108 battles are not extra independent journeys."
+    },
+    "packageVerifierAdversarialCases": 30,
+    "performance": {
+      "status": "SORT_CANDIDATE_ROLLED_BACK; EFFECTS_MEASURED_WITH_LIMITATIONS",
+      "browser": "155.0.8059.84",
+      "renderer": "ANGLE Vulkan SwiftShader software",
+      "nodeFormalCalls": 1512,
+      "nativeRows": 208,
+      "nativeFormalRows": 192,
+      "sameSourceControlRows": 208,
+      "syncJsRows": 312,
+      "syncJsFormalRows": 288,
+      "cpuIndependentGates": 14,
+      "mainFrameWindows": 16,
+      "rarityCoverageWindows": 14,
+      "callbackIntervals": 4009,
+      "intervalsOver50ms": 40,
+      "intervalsOver100ms": 34,
+      "longTasks": 3,
+      "missingFullWindows": 3,
+      "maxIntervalMsInput": 11003.4,
+      "maxIntervalMsCandidate": 9160.2,
+      "scope": "All performance after/current labels refer to the withdrawn selector candidate; no final inventory or FPS speed-up claim."
+    }
+  },
+  "artifactBudget": {
+    "newRuntimeBitmapBytes": 0,
+    "newRuntimeDependencies": 0,
+    "selectedScreenshots": 4,
+    "selectedScreenshotBytes": 173648,
+    "hardZipBytesExclusive": 50000000,
+    "preferredZipBytesExclusive": 40000000,
+    "archiveIdentity": "Exact final ZIP bytes/count/SHA and fresh-extraction receipt stay outside the archive; FILE_MANIFEST excludes itself."
+  },
+  "openRisks": [
+    "P2: Native inventory/page tail latency remains unresolved; the sorting experiment was rolled back, not declared successful from lower function time.",
+    "P2: Software logical-4K seconds-long callback gaps and three incomplete full-effect windows.",
+    "P2: Near-5MB synchronous full-save validation/encoding/native dual writes; isolated storage candidate not shipped.",
+    "P3: Fixed natural no-spending power policy remains 3/4 complete; seed23757 fails at floor30.",
+    "NOT_TESTED: physical GPU/4K/mobile, OS Chinese IME, external screen reader, audio listening, native Windows launcher, OS power/background behavior."
+  ],
+  "nextRoundPriorities": [
+    "Attribute real page/DOM and native-storage latency before renewing the sort candidate.",
+    "Investigate exact complete-save capacity/encoding while preserving all transaction guards.",
+    "Predeclare a non-clairvoyant defensive natural strategy using existing equipment.",
+    "Test reachable conditional choices and meaningful content opportunities without mechanical catalogue growth.",
+    "Validate physical devices, real IME, screen readers and audio."
+  ],
+  "authority": [
+    "docs/iteration/LATEST_REPORT.md",
+    "docs/iteration/VERIFY.md",
+    "docs/iteration/PERFORMANCE.md",
+    "docs/iteration/GAMEPLAY_REVIEW.md",
+    "docs/iteration/NEXT_ROUND.md",
+    "docs/iteration/evidence/round16/README.md"
+  ],
+  "finalPackageProtocol": "Before delivery verify this exact final ZIP size/CRC/safe paths/full manifest in a fresh empty directory; run syntax, default 71 modules, actual 619 native TAP cases and real HTTP there, then verify files and ZIP identity again. This source record does not prefill that future external receipt.",
+  "handoffValid": true
+}

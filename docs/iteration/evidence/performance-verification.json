@@ -1,0 +1,123 @@
+{
+  "status": "MEASURED_WITH_LIMITATIONS",
+  "inventorySamples": 32,
+  "mainWindows": 48,
+  "coverageWindows": 14,
+  "allNative": true,
+  "all62ExactTransitions": true,
+  "all62MirrorsSaved": true,
+  "all62LogsSix": true,
+  "all32InventoryUnchanged": true,
+  "all32CardOuterHtmlEqual": true,
+  "cardOuterHtmlSha256": "18bcf7a54ef34eb31771afacbddfa5a9c47800f15540e56e83d225f460db1d34",
+  "scriptSha256": "98537f3f57a49080b19cf1ca378d54e1105ba2a32d027f38527e1536cf7752a7",
+  "httpSourcesMatchLocal": [
+    {
+      "label": "baseline",
+      "file": "src/views.js",
+      "url": "http://127.0.0.1:4188/src/views.js",
+      "status": 200,
+      "bytes": 76007,
+      "sha256": "81b1995cb58efe2ec0fde10c02a31f18b65cac293333b5f8d386cf209e203c0c",
+      "localMatch": true
+    },
+    {
+      "label": "baseline",
+      "file": "src/dice-renderer.js",
+      "url": "http://127.0.0.1:4188/src/dice-renderer.js",
+      "status": 200,
+      "bytes": 11661,
+      "sha256": "352e46389f3abbf61c810ad44dda042fb26c369d64befa22f36797a6df7004ed",
+      "localMatch": true
+    },
+    {
+      "label": "baseline",
+      "file": "src/storage.js",
+      "url": "http://127.0.0.1:4188/src/storage.js",
+      "status": 200,
+      "bytes": 23807,
+      "sha256": "cd9351677341ffce6227fd8df6a16bb330055f698fe4a284d6c182e513e863f1",
+      "localMatch": true
+    },
+    {
+      "label": "after",
+      "file": "src/views.js",
+      "url": "http://127.0.0.1:4189/src/views.js",
+      "status": 200,
+      "bytes": 76572,
+      "sha256": "3d2e06f6a70c0ae777de1847f65cd33ba1e4cbcfd77185c0fcee2e6e45cecf9b",
+      "localMatch": true
+    },
+    {
+      "label": "after",
+      "file": "src/dice-renderer.js",
+      "url": "http://127.0.0.1:4189/src/dice-renderer.js",
+      "status": 200,
+      "bytes": 13061,
+      "sha256": "a317cbe20fb1a0518a69eff10e3aa9b7dce5180a2b90543439fb830c86d66770",
+      "localMatch": true
+    },
+    {
+      "label": "after",
+      "file": "src/storage.js",
+      "url": "http://127.0.0.1:4189/src/storage.js",
+      "status": 200,
+      "bytes": 24600,
+      "sha256": "9df95e501a76c8d9d70e16bfe93fffa10258e28c7014aa4678bfeaeb7997262f",
+      "localMatch": true
+    }
+  ],
+  "fullEffectObservation": [
+    {
+      "width": 1920,
+      "scene": "boss-burst",
+      "baseline": {
+        "observed": 1,
+        "total": 3
+      },
+      "after": {
+        "observed": 0,
+        "total": 3
+      }
+    },
+    {
+      "width": 1920,
+      "scene": "eternal-open",
+      "baseline": {
+        "observed": 1,
+        "total": 3
+      },
+      "after": {
+        "observed": 0,
+        "total": 3
+      }
+    },
+    {
+      "width": 3840,
+      "scene": "boss-burst",
+      "baseline": {
+        "observed": 1,
+        "total": 3
+      },
+      "after": {
+        "observed": 1,
+        "total": 3
+      }
+    },
+    {
+      "width": 3840,
+      "scene": "eternal-open",
+      "baseline": {
+        "observed": 0,
+        "total": 3
+      },
+      "after": {
+        "observed": 0,
+        "total": 3
+      }
+    }
+  ],
+  "pairsAfterFaster": 12,
+  "errors": [],
+  "deadlineTriggered": false
+}

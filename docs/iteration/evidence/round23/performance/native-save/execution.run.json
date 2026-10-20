@@ -1,0 +1,21 @@
+{
+  "command": [
+    "node",
+    "scripts/qa-storage-latency.mjs",
+    "--baseline-source=/workspace/scratch/3b21be83b3da/baseline/Dice-Abyss",
+    "--current-source=/workspace/scratch/3b21be83b3da/work/Dice-Abyss",
+    "--baseline-url=http://127.0.0.1:4188/",
+    "--current-url=http://127.0.0.1:4189/",
+    "--balanced-order",
+    "--output=/workspace/scratch/3b21be83b3da/qa23/performance/native-save"
+  ],
+  "cwd": "/workspace/scratch/3b21be83b3da/work/Dice-Abyss",
+  "startedUTC": "2026-10-19T15:47:54.929533+00:00",
+  "finishedUTC": "2026-10-19T15:49:11.765388+00:00",
+  "seconds": 76.8354,
+  "exitCode": 0,
+  "stdoutSha256": "78b3a6e66ea850a52c71d486a34b53a63c5dfc46338ffbc17ff15a70400627f5",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "tail": "warmup 0 baseline: PASS click→write 96.700 ms; click→2RAF 191.800 ms\nwarmup 0 current: PASS click→write 134.700 ms; click→2RAF 231.400 ms\nmeasured 1 baseline: PASS click→write 116.600 ms; click→2RAF 211.000 ms\nmeasured 1 current: PASS click→write 121.100 ms; click→2RAF 273.400 ms\nmeasured 2 current: PASS click→write 143.500 ms; click→2RAF 239.500 ms\nmeasured 2 baseline: PASS click→write 143.500 ms; click→2RAF 253.100 ms\nmeasured 3 baseline: PASS click→write 120.900 ms; click→2RAF 224.100 ms\nmeasured 3 current: PASS click→write 116.500 ms; click→2RAF 207.200 ms\nmeasured 4 current: PASS click→write 112.700 ms; click→2RAF 212.600 ms\nmeasured 4 baseline: PASS click→write 119.100 ms; click→2RAF 214.500 ms\nmeasured 5 baseline: PASS click→write 128.300 ms; click→2RAF 225.700 ms\nmeasured 5 current: PASS click→write 135.300 ms; click→2RAF 239.800 ms\nmeasured 6 current: PASS click→write 107.600 ms; click→2RAF 212.300 ms\nmeasured 6 baseline: PASS click→write 176.900 ms; click→2RAF 297.500 ms\nmeasured 7 baseline: PASS click→write 127.000 ms; click→2RAF 217.400 ms\nmeasured 7 current: PASS click→write 135.000 ms; click→2RAF 264.800 ms\nmeasured 8 current: PASS click→write 133.900 ms; click→2RAF 223.900 ms\nmeasured 8 baseline: PASS click→write 123.400 ms; click→2RAF 216.000 ms\nmeasured 9 baseline: PASS click→write 106.100 ms; click→2RAF 202.700 ms\nmeasured 9 current: PASS click→write 121.800 ms; click→2RAF 210.800 ms\nmeasured 10 current: PASS click→write 125.500 ms; click→2RAF 220.800 ms\nmeasured 10 baseline: PASS click→write 133.900 ms; click→2RAF 229.900 ms\nmeasured 11 baseline: PASS click→write 118.400 ms; click→2RAF 203.700 ms\nmeasured 11 current: PASS click→write 115.700 ms; click→2RAF 203.800 ms\nmeasured 12 current: PASS click→write 110.700 ms; click→2RAF 213.900 ms\nmeasured 12 baseline: PASS click→write 111.000 ms; click→2RAF 203.700 ms\n{\"status\":\"PASS\",\"rows\":26,\"measuredRows\":24,\"browserClosed\":true,\"sourceStable\":true,\"scriptStable\":true,\"output\":\"/workspace/scratch/3b21be83b3da/qa23/performance/native-save\"}\n",
+  "stderrTail": ""
+}

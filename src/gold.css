@@ -1,0 +1,21 @@
+/* Gold receipts use the existing metal, amber and offline text styles. */
+.gold-incoming{width:min(100%,34rem);margin:.85rem auto .25rem;padding:.65rem .8rem;color:#e2c991;border-top:1px solid #665535;font-family:var(--font-text);font-size:max(.76rem,12px);line-height:1.6;flex-shrink:0}
+.gold-incoming>p{display:flex;justify-content:center;align-items:center;gap:.55rem;margin:0}
+.gold-incoming>p>.icon{width:1.05rem;height:1.05rem;flex-shrink:0}
+.gold-incoming>p>strong{font-family:var(--font-display);font-size:1.12rem;color:#ffe0a0;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.gold-incoming>small{display:block;margin-top:.3rem;color:#d7cbb8;font-size:max(.68rem,12px);text-align:center}
+.gold-limit-detail{width:100%;max-width:34rem;margin:.5rem auto 0;padding:.5rem 0 0;border-top:1px solid #76603b;font-family:var(--font-text);font-size:max(.72rem,12px);line-height:1.6;color:#ddd2ba;flex-shrink:0}
+.gold-limit-detail>p{display:flex;flex-wrap:wrap;justify-content:center;gap:.2rem .9rem;margin:0;font-size:inherit;letter-spacing:0}
+.gold-limit-detail strong{font-size:inherit;font-family:inherit;font-weight:600;color:#f0c29c;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.gold-limit-detail>small{display:block;font-size:max(.64rem,11px);color:#cabc9e;margin-top:.25rem;overflow-wrap:anywhere;text-align:center}
+.gold-screen>.gold-balance-preview{font-family:var(--font-text);font-size:max(.75rem,12px);letter-spacing:0;color:#d7cbb8;margin:.75rem 0}
+.gold-balance-preview strong{font-variant-numeric:tabular-nums;overflow-wrap:anywhere;color:#ffe0a0}
+.loot-screen .gold-reward{min-width:0}
+.loot-screen .gold-reward>strong{font-size:clamp(18px,1.65vw,30px);line-height:1.35;overflow-wrap:anywhere}
+.loot-screen .gold-reward>span{font-size:max(.9rem,13px)}
+.loot-screen .gold-reward>p{font-size:max(.7rem,12px);line-height:1.6;letter-spacing:0}
+.loot-screen .gold-reward>small{font-size:max(.65rem,11px);line-height:1.55;letter-spacing:0;color:#cabc9e}
+.gold-reward .gold-limit-detail>p{justify-content:flex-start;flex-direction:column;gap:.2rem}
+.gold-reward .gold-limit-detail>small{text-align:left}
+.player-gold[data-gold-capped]>span{flex-wrap:wrap;gap:.15rem .5rem;color:#f0c29c}
+@media(max-height:800px){.gold-incoming{margin:.4rem auto .1rem;padding:.35rem .55rem}.gold-limit-detail{margin-top:.3rem;padding-top:.3rem}.gold-reward>.icon{width:1.8rem;height:1.8rem}.loot-screen .gold-reward{gap:.2rem;padding:.55rem .65rem}}

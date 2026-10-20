@@ -1,0 +1,48 @@
+{
+  "at": "2026-10-19T05:22:26.723365+00:00",
+  "passed": true,
+  "script": "/workspace/scratch/d0f98f221ae6/work/Dice-Abyss/docs/iteration/evidence/round17/replay/final-source-review.py",
+  "scriptSha256": "129916d6b16fe7ecab931484e92a2472d53bf2fcc349ce5acf4b1a1a186daf32",
+  "standaloneCopySha256": "129916d6b16fe7ecab931484e92a2472d53bf2fcc349ce5acf4b1a1a186daf32",
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "/workspace/scratch/d0f98f221ae6/audit/storage17/portable-replay-check/standalone-review.py",
+    "--source",
+    "/workspace/scratch/d0f98f221ae6/audit/storage17/portable-replay-check/source-package",
+    "--baseline",
+    "/workspace/scratch/d0f98f221ae6/audit/storage17/portable-replay-check/prior-release",
+    "--evidence",
+    "/workspace/scratch/d0f98f221ae6/audit/storage17/portable-replay-check/archived-proof",
+    "--output",
+    "/workspace/scratch/d0f98f221ae6/audit/storage17/portable-replay-check/external-results"
+  ],
+  "cwd": "/workspace/scratch/d0f98f221ae6/audit/storage17/portable-replay-check",
+  "exitCode": 0,
+  "output": "/workspace/scratch/d0f98f221ae6/audit/storage17/portable-replay-check/external-results",
+  "relocatedInputs": true,
+  "originalSourceAndReportsUnchanged": {
+    "final-source-review.py": "62bb5d89455580f9e50c976128b131e99c5d4857f5c8960dfd055eed2530774d",
+    "final-source-review.json": "50ec8a66577b853e3c75e0418c1c2b85f8d118bbf32e1bd944bb7e0692f567c4",
+    "final-source-review.md": "81224fd3d4ec9e81046794bbe61867caf8404a90b7630337fde4c7100ff5e646"
+  },
+  "originalAssertionsAndResultDataMatch": true,
+  "frozenFiles": 262,
+  "testModules": 75,
+  "nativeTapCounts": {
+    "tests": 658,
+    "suites": 0,
+    "pass": 658,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0
+  },
+  "currentBrowserDistinctChecks": 351,
+  "helpPassed": true,
+  "sourceOutputRejected": {
+    "exitCode": 2,
+    "message": "standalone-review.py: error: --output must be outside --source: /workspace/scratch/d0f98f221ae6/audit/storage17/portable-replay-check/source-package/must-not-be-written",
+    "createdOutput": false
+  },
+  "scope": "Only archive replay file and this temporary audit layout/results were written; no application, browser or full tests were run."
+}

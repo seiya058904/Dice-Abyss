@@ -1,0 +1,367 @@
+✖ pending paid-dice previews exist for both rolls and the fixed gambler trade (1.819771ms)
+✖ zero-luck gambler groups are thirds and its fixed alternative has probability one (5.680821ms)
+✖ zero-luck wishing uses all thirty-six independent pairs: ten, twenty and six (2.273342ms)
+✖ visible talent luck drives both events through an independent closed-form oracle (1.313522ms)
+✖ visible floor luck drives both events through an independent closed-form oracle (1.010575ms)
+✖ visible next luck drives both events through an independent closed-form oracle (1.040939ms)
+✖ visible soft-cap luck drives both events through an independent closed-form oracle (2.189268ms)
+✖ same-roll echo investment does not alter either paid event distribution (0.866692ms)
+✖ paid-event dice counts do not follow the number of unlocked combat dice (1.7176ms)
+✖ pending metadata and saved future RNG never reveal or select an outcome (4.001568ms)
+✖ all preview inputs stay immutable, including full unknown event and item data (1.803617ms)
+✖ detached display arrays and outcome rows cannot write back to a saved game (0.943095ms)
+✖ exact cost 0: refunds round down after payment and safe prices are doubled (1.046878ms)
+✖ exact cost 1: refunds round down after payment and safe prices are doubled (0.769047ms)
+✖ exact cost 48: refunds round down after payment and safe prices are doubled (0.789228ms)
+✖ exact cost 835: refunds round down after payment and safe prices are doubled (0.687596ms)
+✖ exact cost 100000000: refunds round down after payment and safe prices are doubled (1.3732ms)
+✖ unaffordable choices still show real probabilities but no negative or imaginary balances (1.092656ms)
+✖ all rarity unlock boundaries preserve zero entries and each actual conditional prize pool (1.068961ms)
+✖ deep gambler rare and epic rolls retain distinct chest and vault high-tier source factors (0.645375ms)
+✖ wishing legendary floors retain higher tiers and exact base vault probabilities (0.629191ms)
+✖ already-pending below-unlock wishing events keep their existing behavior (1.297048ms)
+✖ actual seeded engine choices match every displayed gold outcome and supported prize range (2.841111ms)
+✖ next-combat luck survives both actual paid events and remains in a reopened quote (1.559967ms)
+✔ rejected, unsupported, malformed and resolved inputs cannot expose a pending risk quote (13.025693ms)
+ℹ tests 25
+ℹ suites 0
+ℹ pass 1
+ℹ fail 24
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 60.718236
+
+✖ failing tests:
+
+test at tests/event-risk-round20.test.mjs:35:1
+✖ pending paid-dice previews exist for both rolls and the fixed gambler trade (1.819771ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'undefined'
+  - 'function'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/da3202002fbd/work/Dice-Abyss/tests/event-risk-round20.test.mjs:36:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'undefined',
+    expected: 'function',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/event-risk-round20.test.mjs:42:1
+✖ zero-luck gambler groups are thirds and its fixed alternative has probability one (5.680821ms)
+  TypeError: Cannot read properties of null (reading 'luck')
+      at TestContext.<anonymous> (file:///workspace/scratch/da3202002fbd/work/Dice-Abyss/tests/event-risk-round20.test.mjs:43:62)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+
+test at tests/event-risk-round20.test.mjs:49:1
+✖ zero-luck wishing uses all thirty-six independent pairs: ten, twenty and six (2.273342ms)
+  TypeError: Cannot read properties of null (reading 'luck')
+      at TestContext.<anonymous> (file:///workspace/scratch/da3202002fbd/work/Dice-Abyss/tests/event-risk-round20.test.mjs:50:64)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+
+test at tests/event-risk-round20.test.mjs:56:56
+✖ visible talent luck drives both events through an independent closed-form oracle (1.313522ms)
+  TypeError: Cannot read properties of null (reading 'luck')
+      at TestContext.<anonymous> (file:///workspace/scratch/da3202002fbd/work/Dice-Abyss/tests/event-risk-round20.test.mjs:72:21)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+
+test at tests/event-risk-round20.test.mjs:56:56
+✖ visible floor luck drives both events through an independent closed-form oracle (1.010575ms)
+  TypeError: Cannot read properties of null (reading 'luck')
+      at TestContext.<anonymous> (file:///workspace/scratch/da3202002fbd/work/Dice-Abyss/tests/event-risk-round20.test.mjs:72:21)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+
+test at tests/event-risk-round20.test.mjs:56:56
+✖ visible next luck drives both events through an independent closed-form oracle (1.040939ms)
+  TypeError: Cannot read properties of null (reading 'luck')
+      at TestContext.<anonymous> (file:///workspace/scratch/da3202002fbd/work/Dice-Abyss/tests/event-risk-round20.test.mjs:72:21)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+
+test at tests/event-risk-round20.test.mjs:56:56
+✖ visible soft-cap luck drives both events through an independent closed-form oracle (2.189268ms)
+  TypeError: Cannot read properties of null (reading 'luck')
+      at TestContext.<anonymous> (file:///workspace/scratch/da3202002fbd/work/Dice-Abyss/tests/event-risk-round20.test.mjs:72:21)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+
+test at tests/event-risk-round20.test.mjs:77:1
+✖ same-roll echo investment does not alter either paid event distribution (0.866692ms)
+  TypeError: Cannot read properties of null (reading 'usesEcho')
+      at TestContext.<anonymous> (file:///workspace/scratch/da3202002fbd/work/Dice-Abyss/tests/event-risk-round20.test.mjs:81:22)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+
+test at tests/event-risk-round20.test.mjs:85:1
+✖ paid-event dice counts do not follow the number of unlocked combat dice (1.7176ms)
+  TypeError: Cannot read properties of null (reading 'diceCount')
+      at TestContext.<anonymous> (file:///workspace/scratch/da3202002fbd/work/Dice-Abyss/tests/event-risk-round20.test.mjs:89:50)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+
+test at tests/event-risk-round20.test.mjs:94:1
+✖ pending metadata and saved future RNG never reveal or select an outcome (4.001568ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert(original)
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/da3202002fbd/work/Dice-Abyss/tests/event-risk-round20.test.mjs:96:44)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: null,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/event-risk-round20.test.mjs:102:1
+✖ all preview inputs stay immutable, including full unknown event and item data (1.803617ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert(preview(s))
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/da3202002fbd/work/Dice-Abyss/tests/event-risk-round20.test.mjs:106:3)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: null,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/event-risk-round20.test.mjs:111:1
+✖ detached display arrays and outcome rows cannot write back to a saved game (0.943095ms)
+  TypeError: Cannot read properties of null (reading 'faces')
+      at TestContext.<anonymous> (file:///workspace/scratch/da3202002fbd/work/Dice-Abyss/tests/event-risk-round20.test.mjs:113:8)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+
+test at tests/event-risk-round20.test.mjs:117:36
+✖ exact cost 0: refunds round down after payment and safe prices are doubled (1.046878ms)
+  TypeError: Cannot read properties of null (reading 'outcomes')
+      at row (file:///workspace/scratch/da3202002fbd/work/Dice-Abyss/tests/event-risk-round20.test.mjs:33:28)
+      at TestContext.<anonymous> (file:///workspace/scratch/da3202002fbd/work/Dice-Abyss/tests/event-risk-round20.test.mjs:119:59)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+
+test at tests/event-risk-round20.test.mjs:117:36
+✖ exact cost 1: refunds round down after payment and safe prices are doubled (0.769047ms)
+  TypeError: Cannot read properties of null (reading 'outcomes')
+      at row (file:///workspace/scratch/da3202002fbd/work/Dice-Abyss/tests/event-risk-round20.test.mjs:33:28)
+      at TestContext.<anonymous> (file:///workspace/scratch/da3202002fbd/work/Dice-Abyss/tests/event-risk-round20.test.mjs:119:59)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+
+test at tests/event-risk-round20.test.mjs:117:36
+✖ exact cost 48: refunds round down after payment and safe prices are doubled (0.789228ms)
+  TypeError: Cannot read properties of null (reading 'outcomes')
+      at row (file:///workspace/scratch/da3202002fbd/work/Dice-Abyss/tests/event-risk-round20.test.mjs:33:28)
+      at TestContext.<anonymous> (file:///workspace/scratch/da3202002fbd/work/Dice-Abyss/tests/event-risk-round20.test.mjs:119:59)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+
+test at tests/event-risk-round20.test.mjs:117:36
+✖ exact cost 835: refunds round down after payment and safe prices are doubled (0.687596ms)
+  TypeError: Cannot read properties of null (reading 'outcomes')
+      at row (file:///workspace/scratch/da3202002fbd/work/Dice-Abyss/tests/event-risk-round20.test.mjs:33:28)
+      at TestContext.<anonymous> (file:///workspace/scratch/da3202002fbd/work/Dice-Abyss/tests/event-risk-round20.test.mjs:119:59)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+
+test at tests/event-risk-round20.test.mjs:117:36
+✖ exact cost 100000000: refunds round down after payment and safe prices are doubled (1.3732ms)
+  TypeError: Cannot read properties of null (reading 'outcomes')
+      at row (file:///workspace/scratch/da3202002fbd/work/Dice-Abyss/tests/event-risk-round20.test.mjs:33:28)
+      at TestContext.<anonymous> (file:///workspace/scratch/da3202002fbd/work/Dice-Abyss/tests/event-risk-round20.test.mjs:119:59)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+
+test at tests/event-risk-round20.test.mjs:132:1
+✖ unaffordable choices still show real probabilities but no negative or imaginary balances (1.092656ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert(risk)
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/da3202002fbd/work/Dice-Abyss/tests/event-risk-round20.test.mjs:136:33)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: null,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/event-risk-round20.test.mjs:146:1
+✖ all rarity unlock boundaries preserve zero entries and each actual conditional prize pool (1.068961ms)
+  TypeError: Cannot read properties of null (reading 'unlockedRarity')
+      at TestContext.<anonymous> (file:///workspace/scratch/da3202002fbd/work/Dice-Abyss/tests/event-risk-round20.test.mjs:149:51)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+
+test at tests/event-risk-round20.test.mjs:164:1
+✖ deep gambler rare and epic rolls retain distinct chest and vault high-tier source factors (0.645375ms)
+  TypeError: Cannot read properties of null (reading 'outcomes')
+      at row (file:///workspace/scratch/da3202002fbd/work/Dice-Abyss/tests/event-risk-round20.test.mjs:33:28)
+      at TestContext.<anonymous> (file:///workspace/scratch/da3202002fbd/work/Dice-Abyss/tests/event-risk-round20.test.mjs:168:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+
+test at tests/event-risk-round20.test.mjs:174:1
+✖ wishing legendary floors retain higher tiers and exact base vault probabilities (0.629191ms)
+  TypeError: Cannot read properties of null (reading 'outcomes')
+      at row (file:///workspace/scratch/da3202002fbd/work/Dice-Abyss/tests/event-risk-round20.test.mjs:33:28)
+      at TestContext.<anonymous> (file:///workspace/scratch/da3202002fbd/work/Dice-Abyss/tests/event-risk-round20.test.mjs:175:67)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+
+test at tests/event-risk-round20.test.mjs:182:1
+✖ already-pending below-unlock wishing events keep their existing behavior (1.297048ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert(risk)
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/da3202002fbd/work/Dice-Abyss/tests/event-risk-round20.test.mjs:183:60)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: null,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/event-risk-round20.test.mjs:188:1
+✖ actual seeded engine choices match every displayed gold outcome and supported prize range (2.841111ms)
+  TypeError: Cannot read properties of null (reading 'outcomes')
+      at row (file:///workspace/scratch/da3202002fbd/work/Dice-Abyss/tests/event-risk-round20.test.mjs:33:28)
+      at TestContext.<anonymous> (file:///workspace/scratch/da3202002fbd/work/Dice-Abyss/tests/event-risk-round20.test.mjs:196:18)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+
+test at tests/event-risk-round20.test.mjs:212:1
+✖ next-combat luck survives both actual paid events and remains in a reopened quote (1.559967ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert(risk)
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/da3202002fbd/work/Dice-Abyss/tests/event-risk-round20.test.mjs:214:78)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: null,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

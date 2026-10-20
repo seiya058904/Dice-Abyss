@@ -1,0 +1,23 @@
+{
+  "command": [
+    "node",
+    "scripts/qa-performance-round12.mjs",
+    "--source=/workspace/scratch/3b21be83b3da/work/Dice-Abyss",
+    "--baseline-source=/workspace/scratch/3b21be83b3da/baseline/Dice-Abyss",
+    "--baseline-url=http://127.0.0.1:4188/",
+    "--after-url=http://127.0.0.1:4189/",
+    "--mode=frames",
+    "--repeats=3",
+    "--sizes=1920x1080,3840x2160",
+    "--output=/workspace/scratch/3b21be83b3da/qa23/performance/frames"
+  ],
+  "cwd": "/workspace/scratch/3b21be83b3da/work/Dice-Abyss",
+  "startedUTC": "2026-10-19T15:50:01.083354+00:00",
+  "finishedUTC": "2026-10-19T15:56:23.314561+00:00",
+  "seconds": 382.2305,
+  "exitCode": 0,
+  "stdoutSha256": "85b237c871e4e5afa16924e1171fef71c0089fc9e8ab6e385b0c9a9ec6924d92",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "tail": "3: p95=43.1 max=4699.4ms frames=26\nframes baseline 3840 eternal-open full #1: p95=28.2 max=2951.6ms frames=76\nframes after 3840 eternal-open full #1: p95=27.3 max=10392.8ms frames=24\nframes after 3840 eternal-open full #2: p95=23.3 max=4605.1ms frames=31\nframes baseline 3840 eternal-open full #2: p95=23.9 max=9421.4ms frames=31\nframes baseline 3840 eternal-open full #3: p95=25.9 max=4225.9ms frames=33\nframes after 3840 eternal-open full #3: p95=23.4 max=9869.9ms frames=30\nframes after 3840 eternal-open low #1: p95=28.7 max=7056.3ms frames=34\nframes baseline 3840 eternal-open low #1: p95=27.0 max=5500.7ms frames=35\nframes baseline 3840 eternal-open low #2: p95=24.0 max=6164.4ms frames=35\nframes after 3840 eternal-open low #2: p95=27.9 max=5338.8ms frames=34\nframes after 3840 eternal-open low #3: p95=24.2 max=5322.9ms frames=34\nframes baseline 3840 eternal-open low #3: p95=34.0 max=5389.5ms frames=30\ncoverage baseline 1920 rarity-0-open full #1: p95=20.9 max=2905.9ms frames=75\ncoverage after 1920 rarity-0-open full #1: p95=20.5 max=1652.2ms frames=155\ncoverage after 1920 rarity-1-open full #1: p95=19.3 max=412.6ms frames=226\ncoverage baseline 1920 rarity-1-open full #1: p95=18.6 max=535.6ms frames=222\ncoverage baseline 1920 rarity-2-open full #1: p95=20.8 max=832.6ms frames=205\ncoverage after 1920 rarity-2-open full #1: p95=19.0 max=567.1ms frames=220\ncoverage after 1920 rarity-3-open full #1: p95=21.1 max=414.4ms frames=228\ncoverage baseline 1920 rarity-3-open full #1: p95=19.6 max=1488.7ms frames=164\ncoverage baseline 1920 rarity-4-open full #1: p95=23.3 max=2002.9ms frames=133\ncoverage after 1920 rarity-4-open full #1: p95=19.4 max=2053.8ms frames=132\ncoverage after 1920 rarity-5-open full #1: p95=21.4 max=1145.3ms frames=185\ncoverage baseline 1920 rarity-5-open full #1: p95=19.2 max=1808.4ms frames=142\ncoverage baseline 1920 rarity-6-open full #1: p95=20.4 max=912.5ms frames=200\ncoverage after 1920 rarity-6-open full #1: p95=19.9 max=1529.3ms frames=163\n{\n  \"output\": \"/workspace/scratch/3b21be83b3da/qa23/performance/frames/performance-round.json\",\n  \"status\": \"MEASURED_WITH_LIMITATIONS\",\n  \"inventorySamples\": 0,\n  \"frameWindows\": 48,\n  \"coverageWindows\": 14\n}\n",
+  "stderrTail": ""
+}

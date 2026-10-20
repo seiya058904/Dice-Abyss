@@ -1,0 +1,1095 @@
+{
+  "method": "Fresh floor-1 journeys with actual engine transitions and the existing simulator's expected-upgrade/shop/fusion/adventurous policy. Legacy invests one talent point per decision; other policies finish their selected talent priority before proceeding. A compact equipment read view is verified against the full comparison. Counterfactuals restart a naturally reached battle at its exact original RNG, HP, equipment and enemy state; all subsequent investments and swaps are legal engine actions.",
+  "sourceVersion": "5.3.0",
+  "environment": {
+    "node": "v24.19.0",
+    "platform": "linux",
+    "arch": "x64"
+  },
+  "sourceHashes": {
+    "src/engine.js": "afd66fe121e68536c88b7f583f68c9de3b349272a61011c277295dd460afd8d2",
+    "src/encounters.js": "3689b444d86038bad114fb9c14beb84fee75145d43097dd315cd1c4f6aa095c7",
+    "src/deep-rules.js": "6919b66ec8fbadea293ab4c4e3aa0b8c7a943e2ec44224b119287709d484581f",
+    "src/equipment.js": "294945cd13d7183007cb3138a07523a5fbbfc53dabfe0635dbcfa1a77fc2c465",
+    "scripts/simulate.mjs": "3b0e2d6c5f8151714dd0d60596e6a2681fb79604592f3670f4bb93218bdf614f"
+  },
+  "sourceStable": true,
+  "policy": "balanced",
+  "floors": 400,
+  "seeds": [
+    7919,
+    15838
+  ],
+  "adapter": {
+    "sourceSha256": "3b0e2d6c5f8151714dd0d60596e6a2681fb79604592f3670f4bb93218bdf614f",
+    "comparisonSites": 3,
+    "calls": 1146535,
+    "verified": 512,
+    "viewBuilds": 4877
+  },
+  "rows": [
+    {
+      "seed": 7919,
+      "policy": "balanced",
+      "completed": true,
+      "floors": 400,
+      "deaths": 0,
+      "rolls": 2066,
+      "level": 276,
+      "gold": 2561728,
+      "spending": {
+        "shop": 36540,
+        "forge": 40011,
+        "fusion": 1161678
+      },
+      "spent": 1444529,
+      "buys": 12,
+      "forges": 22,
+      "fusions": 283,
+      "inventoryItems": 582,
+      "spareRarities": [
+        {
+          "rarity": 0,
+          "name": "普通",
+          "count": 3
+        },
+        {
+          "rarity": 1,
+          "name": "稀有",
+          "count": 4
+        },
+        {
+          "rarity": 2,
+          "name": "史诗",
+          "count": 0
+        },
+        {
+          "rarity": 3,
+          "name": "传说",
+          "count": 320
+        },
+        {
+          "rarity": 4,
+          "name": "神话",
+          "count": 130
+        },
+        {
+          "rarity": 5,
+          "name": "太古",
+          "count": 75
+        },
+        {
+          "rarity": 6,
+          "name": "起源",
+          "count": 37
+        },
+        {
+          "rarity": 7,
+          "name": "永恒",
+          "count": 8
+        }
+      ],
+      "equipped": [
+        {
+          "id": "i1418",
+          "slot": "relic",
+          "rarity": 7,
+          "level": 226,
+          "levelXp": 389,
+          "enhance": 0,
+          "forgeQuote": 3041
+        },
+        {
+          "id": "i1653",
+          "slot": "weapon",
+          "rarity": 7,
+          "level": 261,
+          "levelXp": 2947,
+          "enhance": 11,
+          "forgeQuote": 4701
+        },
+        {
+          "id": "i2124",
+          "slot": "armor",
+          "rarity": 7,
+          "level": 275,
+          "levelXp": 1291,
+          "enhance": 0,
+          "forgeQuote": 3688
+        },
+        {
+          "id": "i2128",
+          "slot": "relic",
+          "rarity": 7,
+          "level": 271,
+          "levelXp": 1635,
+          "enhance": 0,
+          "forgeQuote": 3635
+        },
+        {
+          "id": "i2183",
+          "slot": "relic",
+          "rarity": 7,
+          "level": 278,
+          "levelXp": 0,
+          "enhance": 0,
+          "forgeQuote": 3727
+        }
+      ],
+      "allocationActions": 781,
+      "allocationPoints": 4891,
+      "finalTalentPoints": 0,
+      "finalTalents": {
+        "high": 5,
+        "four": 5,
+        "five": 5,
+        "six": 5,
+        "sum": 5,
+        "power": 367,
+        "resonance": 5,
+        "pair": 5,
+        "triple": 5,
+        "quartet": 5,
+        "choir": 5,
+        "echo": 5,
+        "critical": 5,
+        "keen": 5,
+        "crush": 5,
+        "pursuit": 5,
+        "opener": 5,
+        "slayer": 5,
+        "vitality": 5,
+        "guard": 5,
+        "leech": 5,
+        "recovery": 5,
+        "fortune": 5,
+        "smith": 5,
+        "luck": 5,
+        "attune": 5,
+        "omen": 5,
+        "mercy": 5,
+        "jackpot": 5,
+        "spark": 5,
+        "shatter": 3,
+        "diversity": 3,
+        "finality": 3,
+        "deepEcho": 3,
+        "chorusMend": 3,
+        "tripleBlade": 3,
+        "firstFire": 3,
+        "critAegis": 3,
+        "dawnCrit": 3,
+        "emberGuard": 3,
+        "phaseShelter": 3,
+        "lastResolve": 3,
+        "hunterStar": 3,
+        "gildedFaces": 3,
+        "sixRebirth": 3
+      },
+      "respecs": [
+        {
+          "floor": 53,
+          "unspentPoints": 134,
+          "investedPoints": 0
+        },
+        {
+          "floor": 159,
+          "unspentPoints": 301,
+          "investedPoints": 0
+        },
+        {
+          "floor": 173,
+          "unspentPoints": 319,
+          "investedPoints": 0
+        },
+        {
+          "floor": 198,
+          "unspentPoints": 347,
+          "investedPoints": 0
+        },
+        {
+          "floor": 202,
+          "unspentPoints": 353,
+          "investedPoints": 0
+        },
+        {
+          "floor": 246,
+          "unspentPoints": 404,
+          "investedPoints": 0
+        },
+        {
+          "floor": 258,
+          "unspentPoints": 416,
+          "investedPoints": 0
+        },
+        {
+          "floor": 320,
+          "unspentPoints": 481,
+          "investedPoints": 0
+        },
+        {
+          "floor": 347,
+          "unspentPoints": 509,
+          "investedPoints": 0
+        },
+        {
+          "floor": 357,
+          "unspentPoints": 519,
+          "investedPoints": 0
+        },
+        {
+          "floor": 392,
+          "unspentPoints": 551,
+          "investedPoints": 0
+        }
+      ],
+      "rounds": {
+        "combat": {
+          "n": 1161,
+          "min": 1,
+          "median": 1,
+          "p95": 2,
+          "max": 5,
+          "mean": 1.104
+        },
+        "elite": {
+          "n": 413,
+          "min": 1,
+          "median": 1,
+          "p95": 2,
+          "max": 5,
+          "mean": 1.24
+        },
+        "boss": {
+          "n": 130,
+          "min": 1,
+          "median": 2,
+          "p95": 4,
+          "max": 5,
+          "mean": 1.954
+        },
+        "trial": {
+          "n": 15,
+          "min": 1,
+          "median": 1,
+          "p95": 2,
+          "max": 2,
+          "mean": 1.2
+        }
+      },
+      "lateBosses": {
+        "n": 14,
+        "min": 1,
+        "median": 1,
+        "p95": 3,
+        "max": 4,
+        "mean": 1.786
+      },
+      "longest": [
+        {
+          "floor": 1,
+          "roomType": "combat",
+          "type": "combat",
+          "name": "空壳骑士",
+          "trait": "shield",
+          "mechanic": null,
+          "turns": 5,
+          "damageTaken": 2,
+          "phaseChanges": 0,
+          "heavyAttacks": 0,
+          "traitActivations": 2,
+          "startHp": 182,
+          "maxHp": 182,
+          "killed": true,
+          "endHp": 182,
+          "opening": {
+            "floor": 1,
+            "roomType": "combat",
+            "name": "空壳骑士",
+            "unspentPoints": 0,
+            "investedPoints": 0,
+            "powerRank": 0,
+            "damageEstimate": 19
+          }
+        },
+        {
+          "floor": 1,
+          "roomType": "elite",
+          "type": "elite",
+          "name": "空壳骑士",
+          "trait": "shield",
+          "mechanic": null,
+          "turns": 5,
+          "damageTaken": 0,
+          "phaseChanges": 0,
+          "heavyAttacks": 0,
+          "traitActivations": 1,
+          "startHp": 197,
+          "maxHp": 197,
+          "killed": true,
+          "endHp": 212,
+          "opening": {
+            "floor": 1,
+            "roomType": "elite",
+            "name": "空壳骑士",
+            "unspentPoints": 0,
+            "investedPoints": 2,
+            "powerRank": 0,
+            "damageEstimate": 62
+          }
+        },
+        {
+          "floor": 3,
+          "roomType": "elite",
+          "type": "elite",
+          "name": "余烬执灯人",
+          "trait": "drain",
+          "mechanic": null,
+          "turns": 5,
+          "damageTaken": 37,
+          "phaseChanges": 0,
+          "heavyAttacks": 0,
+          "traitActivations": 4,
+          "startHp": 347,
+          "maxHp": 347,
+          "killed": true,
+          "endHp": 347,
+          "opening": {
+            "floor": 3,
+            "roomType": "elite",
+            "name": "余烬执灯人",
+            "unspentPoints": 0,
+            "investedPoints": 10,
+            "powerRank": 0,
+            "damageEstimate": 651
+          }
+        },
+        {
+          "floor": 20,
+          "roomType": "boss",
+          "type": "boss",
+          "name": "幽潮女王",
+          "trait": "drain",
+          "mechanic": null,
+          "turns": 5,
+          "damageTaken": 0,
+          "phaseChanges": 1,
+          "heavyAttacks": 0,
+          "traitActivations": 4,
+          "startHp": 3336,
+          "maxHp": 3336,
+          "killed": true,
+          "endHp": 3355,
+          "opening": {
+            "floor": 20,
+            "roomType": "boss",
+            "name": "幽潮女王",
+            "unspentPoints": 0,
+            "investedPoints": 60,
+            "powerRank": 0,
+            "damageEstimate": 51487
+          }
+        },
+        {
+          "floor": 50,
+          "roomType": "boss",
+          "type": "boss",
+          "name": "熔棱督造者",
+          "trait": "steady",
+          "mechanic": "boss_cinder",
+          "turns": 5,
+          "damageTaken": 0,
+          "phaseChanges": 1,
+          "heavyAttacks": 0,
+          "traitActivations": 5,
+          "startHp": 5960,
+          "maxHp": 5960,
+          "killed": true,
+          "endHp": 5978,
+          "opening": {
+            "floor": 50,
+            "roomType": "boss",
+            "name": "熔棱督造者",
+            "unspentPoints": 0,
+            "investedPoints": 128,
+            "powerRank": 0,
+            "damageEstimate": 277021
+          }
+        },
+        {
+          "floor": 95,
+          "roomType": "boss",
+          "type": "boss",
+          "name": "六封掌印者",
+          "trait": "steady",
+          "mechanic": "boss_sixseal",
+          "turns": 5,
+          "damageTaken": 0,
+          "phaseChanges": 1,
+          "heavyAttacks": 0,
+          "traitActivations": 5,
+          "startHp": 18276,
+          "maxHp": 24589,
+          "killed": true,
+          "endHp": 24607,
+          "opening": {
+            "floor": 95,
+            "roomType": "boss",
+            "name": "六封掌印者",
+            "unspentPoints": 0,
+            "investedPoints": 209,
+            "powerRank": 19,
+            "damageEstimate": 1931591
+          }
+        },
+        {
+          "floor": 1,
+          "roomType": "combat",
+          "type": "combat",
+          "name": "空壳骑士",
+          "trait": "shield",
+          "mechanic": null,
+          "turns": 4,
+          "damageTaken": 0,
+          "phaseChanges": 0,
+          "heavyAttacks": 0,
+          "traitActivations": 2,
+          "startHp": 182,
+          "maxHp": 182,
+          "killed": true,
+          "endHp": 197,
+          "opening": {
+            "floor": 1,
+            "roomType": "combat",
+            "name": "空壳骑士",
+            "unspentPoints": 0,
+            "investedPoints": 0,
+            "powerRank": 0,
+            "damageEstimate": 19
+          }
+        },
+        {
+          "floor": 13,
+          "roomType": "elite",
+          "type": "elite",
+          "name": "星陨执灯人",
+          "trait": "shield",
+          "mechanic": null,
+          "turns": 4,
+          "damageTaken": 0,
+          "phaseChanges": 0,
+          "heavyAttacks": 0,
+          "traitActivations": 4,
+          "startHp": 1379,
+          "maxHp": 1379,
+          "killed": true,
+          "endHp": 1398,
+          "opening": {
+            "floor": 13,
+            "roomType": "elite",
+            "name": "星陨执灯人",
+            "unspentPoints": 0,
+            "investedPoints": 40,
+            "powerRank": 0,
+            "damageEstimate": 32823
+          }
+        }
+      ],
+      "milestones": {
+        "10": {
+          "floor": 10,
+          "gold": 2535,
+          "level": 18,
+          "hp": 1263,
+          "maxHp": 1263,
+          "attack": 538
+        },
+        "30": {
+          "floor": 30,
+          "gold": 22620,
+          "level": 44,
+          "hp": 3948,
+          "maxHp": 3948,
+          "attack": 1643
+        },
+        "50": {
+          "floor": 50,
+          "gold": 57920,
+          "level": 66,
+          "hp": 5978,
+          "maxHp": 5978,
+          "attack": 2423
+        },
+        "80": {
+          "floor": 80,
+          "gold": 171793,
+          "level": 94,
+          "hp": 7458,
+          "maxHp": 7458,
+          "attack": 7062
+        },
+        "140": {
+          "floor": 140,
+          "gold": 626627,
+          "level": 138,
+          "hp": 27697,
+          "maxHp": 27697,
+          "attack": 12428
+        },
+        "200": {
+          "floor": 200,
+          "gold": 1104386,
+          "level": 175,
+          "hp": 62988,
+          "maxHp": 62988,
+          "attack": 37993
+        },
+        "400": {
+          "floor": 400,
+          "gold": 2561728,
+          "level": 276,
+          "hp": 148874,
+          "maxHp": 148874,
+          "attack": 80046
+        }
+      },
+      "finalStateSha256": "1c93c105474c8d2e3262232fb57e08b5b2b035fc11fc51b2c5c61c344e636aec",
+      "encounterTraceSha256": "d6f7aa0f68de809f7f275b1c9a3f8f6525e90320cca3d4b23eb5cbe7ade36034",
+      "saveRoundTrip": true,
+      "counterfactuals": []
+    },
+    {
+      "seed": 15838,
+      "policy": "balanced",
+      "completed": true,
+      "floors": 400,
+      "deaths": 0,
+      "rolls": 2096,
+      "level": 275,
+      "gold": 2749595,
+      "spending": {
+        "shop": 9380,
+        "forge": 34846,
+        "fusion": 1211617
+      },
+      "spent": 1442620,
+      "buys": 4,
+      "forges": 20,
+      "fusions": 287,
+      "inventoryItems": 528,
+      "spareRarities": [
+        {
+          "rarity": 0,
+          "name": "普通",
+          "count": 9
+        },
+        {
+          "rarity": 1,
+          "name": "稀有",
+          "count": 1
+        },
+        {
+          "rarity": 2,
+          "name": "史诗",
+          "count": 0
+        },
+        {
+          "rarity": 3,
+          "name": "传说",
+          "count": 277
+        },
+        {
+          "rarity": 4,
+          "name": "神话",
+          "count": 125
+        },
+        {
+          "rarity": 5,
+          "name": "太古",
+          "count": 64
+        },
+        {
+          "rarity": 6,
+          "name": "起源",
+          "count": 34
+        },
+        {
+          "rarity": 7,
+          "name": "永恒",
+          "count": 13
+        }
+      ],
+      "equipped": [
+        {
+          "id": "i897",
+          "slot": "relic",
+          "rarity": 4,
+          "level": 187,
+          "levelXp": 1130,
+          "enhance": 0,
+          "forgeQuote": 2297
+        },
+        {
+          "id": "i950",
+          "slot": "relic",
+          "rarity": 6,
+          "level": 191,
+          "levelXp": 2308,
+          "enhance": 0,
+          "forgeQuote": 2931
+        },
+        {
+          "id": "i962",
+          "slot": "armor",
+          "rarity": 7,
+          "level": 240,
+          "levelXp": 322,
+          "enhance": 0,
+          "forgeQuote": 4032
+        },
+        {
+          "id": "i1064",
+          "slot": "relic",
+          "rarity": 7,
+          "level": 202,
+          "levelXp": 1127,
+          "enhance": 0,
+          "forgeQuote": 3405
+        },
+        {
+          "id": "i1279",
+          "slot": "weapon",
+          "rarity": 7,
+          "level": 255,
+          "levelXp": 2664,
+          "enhance": 9,
+          "forgeQuote": 5282
+        }
+      ],
+      "allocationActions": 744,
+      "allocationPoints": 4688,
+      "finalTalentPoints": 0,
+      "finalTalents": {
+        "high": 5,
+        "four": 5,
+        "five": 5,
+        "six": 5,
+        "sum": 5,
+        "power": 360,
+        "resonance": 5,
+        "pair": 5,
+        "triple": 5,
+        "quartet": 5,
+        "choir": 5,
+        "echo": 5,
+        "critical": 5,
+        "keen": 5,
+        "crush": 5,
+        "pursuit": 5,
+        "opener": 5,
+        "slayer": 5,
+        "vitality": 5,
+        "guard": 5,
+        "leech": 5,
+        "recovery": 5,
+        "fortune": 5,
+        "smith": 5,
+        "luck": 5,
+        "attune": 5,
+        "omen": 5,
+        "mercy": 5,
+        "jackpot": 5,
+        "spark": 5,
+        "shatter": 3,
+        "diversity": 3,
+        "finality": 3,
+        "deepEcho": 3,
+        "chorusMend": 3,
+        "tripleBlade": 3,
+        "firstFire": 3,
+        "critAegis": 3,
+        "dawnCrit": 3,
+        "emberGuard": 3,
+        "phaseShelter": 3,
+        "lastResolve": 3,
+        "hunterStar": 3,
+        "gildedFaces": 3,
+        "sixRebirth": 3
+      },
+      "respecs": [
+        {
+          "floor": 78,
+          "unspentPoints": 180,
+          "investedPoints": 0
+        },
+        {
+          "floor": 182,
+          "unspentPoints": 332,
+          "investedPoints": 0
+        },
+        {
+          "floor": 231,
+          "unspentPoints": 387,
+          "investedPoints": 0
+        },
+        {
+          "floor": 244,
+          "unspentPoints": 399,
+          "investedPoints": 0
+        },
+        {
+          "floor": 263,
+          "unspentPoints": 419,
+          "investedPoints": 0
+        },
+        {
+          "floor": 285,
+          "unspentPoints": 443,
+          "investedPoints": 0
+        },
+        {
+          "floor": 293,
+          "unspentPoints": 451,
+          "investedPoints": 0
+        },
+        {
+          "floor": 333,
+          "unspentPoints": 491,
+          "investedPoints": 0
+        },
+        {
+          "floor": 359,
+          "unspentPoints": 513,
+          "investedPoints": 0
+        },
+        {
+          "floor": 370,
+          "unspentPoints": 523,
+          "investedPoints": 0
+        }
+      ],
+      "rounds": {
+        "combat": {
+          "n": 1179,
+          "min": 1,
+          "median": 1,
+          "p95": 2,
+          "max": 5,
+          "mean": 1.115
+        },
+        "elite": {
+          "n": 403,
+          "min": 1,
+          "median": 1,
+          "p95": 2,
+          "max": 4,
+          "mean": 1.29
+        },
+        "boss": {
+          "n": 114,
+          "min": 1,
+          "median": 2,
+          "p95": 4,
+          "max": 6,
+          "mean": 2.105
+        },
+        "trial": {
+          "n": 18,
+          "min": 1,
+          "median": 1,
+          "p95": 2,
+          "max": 2,
+          "mean": 1.222
+        }
+      },
+      "lateBosses": {
+        "n": 16,
+        "min": 1,
+        "median": 1,
+        "p95": 3,
+        "max": 3,
+        "mean": 1.813
+      },
+      "longest": [
+        {
+          "floor": 35,
+          "roomType": "boss",
+          "type": "boss",
+          "name": "六封掌印者",
+          "trait": "steady",
+          "mechanic": "boss_sixseal",
+          "turns": 6,
+          "damageTaken": 0,
+          "phaseChanges": 1,
+          "heavyAttacks": 0,
+          "traitActivations": 6,
+          "startHp": 4495,
+          "maxHp": 4495,
+          "killed": true,
+          "endHp": 4495,
+          "opening": {
+            "floor": 35,
+            "roomType": "boss",
+            "name": "六封掌印者",
+            "unspentPoints": 0,
+            "investedPoints": 100,
+            "powerRank": 0,
+            "damageEstimate": 131313
+          }
+        },
+        {
+          "floor": 1,
+          "roomType": "combat",
+          "type": "combat",
+          "name": "空壳骑士",
+          "trait": "shield",
+          "mechanic": null,
+          "turns": 5,
+          "damageTaken": 7,
+          "phaseChanges": 0,
+          "heavyAttacks": 0,
+          "traitActivations": 1,
+          "startHp": 182,
+          "maxHp": 182,
+          "killed": true,
+          "endHp": 182,
+          "opening": {
+            "floor": 1,
+            "roomType": "combat",
+            "name": "空壳骑士",
+            "unspentPoints": 0,
+            "investedPoints": 0,
+            "powerRank": 0,
+            "damageEstimate": 19
+          }
+        },
+        {
+          "floor": 70,
+          "roomType": "boss",
+          "type": "boss",
+          "name": "永夜观测者",
+          "trait": "rage",
+          "mechanic": null,
+          "turns": 5,
+          "damageTaken": 0,
+          "phaseChanges": 1,
+          "heavyAttacks": 0,
+          "traitActivations": 5,
+          "startHp": 11440,
+          "maxHp": 11440,
+          "killed": true,
+          "endHp": 11440,
+          "opening": {
+            "floor": 70,
+            "roomType": "boss",
+            "name": "永夜观测者",
+            "unspentPoints": 0,
+            "investedPoints": 168,
+            "powerRank": 0,
+            "damageEstimate": 516469
+          }
+        },
+        {
+          "floor": 75,
+          "roomType": "boss",
+          "type": "boss",
+          "name": "倒悬钟主",
+          "trait": "pulse",
+          "mechanic": null,
+          "turns": 5,
+          "damageTaken": 0,
+          "phaseChanges": 1,
+          "heavyAttacks": 0,
+          "traitActivations": 5,
+          "startHp": 11785,
+          "maxHp": 11785,
+          "killed": true,
+          "endHp": 11804,
+          "opening": {
+            "floor": 75,
+            "roomType": "boss",
+            "name": "倒悬钟主",
+            "unspentPoints": 0,
+            "investedPoints": 174,
+            "powerRank": 0,
+            "damageEstimate": 521306
+          }
+        },
+        {
+          "floor": 1,
+          "roomType": "elite",
+          "type": "elite",
+          "name": "锈蚀看守",
+          "trait": "steady",
+          "mechanic": null,
+          "turns": 4,
+          "damageTaken": 0,
+          "phaseChanges": 0,
+          "heavyAttacks": 0,
+          "traitActivations": 1,
+          "startHp": 274,
+          "maxHp": 274,
+          "killed": true,
+          "endHp": 289,
+          "opening": {
+            "floor": 1,
+            "roomType": "elite",
+            "name": "锈蚀看守",
+            "unspentPoints": 0,
+            "investedPoints": 2,
+            "powerRank": 0,
+            "damageEstimate": 60
+          }
+        },
+        {
+          "floor": 3,
+          "roomType": "elite",
+          "type": "elite",
+          "name": "白骨遗忘者",
+          "trait": "drain",
+          "mechanic": null,
+          "turns": 4,
+          "damageTaken": 0,
+          "phaseChanges": 0,
+          "heavyAttacks": 0,
+          "traitActivations": 3,
+          "startHp": 452,
+          "maxHp": 452,
+          "killed": true,
+          "endHp": 452,
+          "opening": {
+            "floor": 3,
+            "roomType": "elite",
+            "name": "白骨遗忘者",
+            "unspentPoints": 0,
+            "investedPoints": 10,
+            "powerRank": 0,
+            "damageEstimate": 771
+          }
+        },
+        {
+          "floor": 4,
+          "roomType": "elite",
+          "type": "elite",
+          "name": "星陨执灯人",
+          "trait": "shield",
+          "mechanic": null,
+          "turns": 4,
+          "damageTaken": 0,
+          "phaseChanges": 0,
+          "heavyAttacks": 0,
+          "traitActivations": 4,
+          "startHp": 514,
+          "maxHp": 514,
+          "killed": true,
+          "endHp": 530,
+          "opening": {
+            "floor": 4,
+            "roomType": "elite",
+            "name": "星陨执灯人",
+            "unspentPoints": 0,
+            "investedPoints": 12,
+            "powerRank": 0,
+            "damageEstimate": 892
+          }
+        },
+        {
+          "floor": 30,
+          "roomType": "guardian",
+          "type": "boss",
+          "name": "旧城扉主",
+          "trait": "steady",
+          "mechanic": "guardian",
+          "turns": 4,
+          "damageTaken": 0,
+          "phaseChanges": 1,
+          "heavyAttacks": 0,
+          "traitActivations": 0,
+          "startHp": 3813,
+          "maxHp": 4199,
+          "killed": true,
+          "endHp": 4199,
+          "opening": {
+            "floor": 30,
+            "roomType": "guardian",
+            "name": "旧城扉主",
+            "unspentPoints": 0,
+            "investedPoints": 86,
+            "powerRank": 0,
+            "damageEstimate": 95397
+          }
+        }
+      ],
+      "milestones": {
+        "10": {
+          "floor": 10,
+          "gold": 4433,
+          "level": 18,
+          "hp": 1863,
+          "maxHp": 1863,
+          "attack": 601
+        },
+        "30": {
+          "floor": 30,
+          "gold": 37080,
+          "level": 45,
+          "hp": 4218,
+          "maxHp": 4218,
+          "attack": 1441
+        },
+        "50": {
+          "floor": 50,
+          "gold": 66951,
+          "level": 67,
+          "hp": 5361,
+          "maxHp": 5361,
+          "attack": 2105
+        },
+        "80": {
+          "floor": 80,
+          "gold": 202060,
+          "level": 93,
+          "hp": 14099,
+          "maxHp": 14099,
+          "attack": 3527
+        },
+        "140": {
+          "floor": 140,
+          "gold": 637835,
+          "level": 138,
+          "hp": 44378,
+          "maxHp": 44378,
+          "attack": 22864
+        },
+        "200": {
+          "floor": 200,
+          "gold": 1072006,
+          "level": 177,
+          "hp": 92746,
+          "maxHp": 92746,
+          "attack": 28514
+        },
+        "400": {
+          "floor": 400,
+          "gold": 2749595,
+          "level": 275,
+          "hp": 132233,
+          "maxHp": 132233,
+          "attack": 67084
+        }
+      },
+      "finalStateSha256": "fd26d4fc9fb38f946931af20042b32b2a62421c5174cfc00f8e4dd0b90f3d9ae",
+      "encounterTraceSha256": "86a97d8f47cc0ba9b4dbb9385a6e886850ed1711d62c2ecc64c02e868ce6635d",
+      "saveRoundTrip": true,
+      "counterfactuals": []
+    }
+  ],
+  "durationSeconds": 113.60155090299999,
+  "limitations": [
+    "Automated policies and two seeds do not estimate population win rates or human-play balance.",
+    "The existing economy policy upgrades only its weapon below +9, takes only expected equipment gains above 5%, and fuses unlocked non-equipped sub-legendary material; unused gold is not proof that all available spending lacks value.",
+    "Counterfactuals share the initial state and RNG but different luck, crit, survival or kill timing may change subsequent RNG consumption.",
+    "Fully allocating talents changes actual decision timing; comparisons describe policy sensitivity, not a numerical game-balance patch.",
+    "Damage expectation is a loadout estimate, not actual hit damage."
+  ]
+}

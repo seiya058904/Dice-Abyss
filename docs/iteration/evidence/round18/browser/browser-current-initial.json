@@ -1,0 +1,545 @@
+{
+  "source": "/workspace/scratch/f0146b2cbcc6/work/Dice-Abyss",
+  "url": "http://127.0.0.1:4189/",
+  "beforeMode": false,
+  "browser": "155.0.8059.84",
+  "synthetic": true,
+  "started": "2026-10-19T07:34:42.200Z",
+  "cases": [
+    {
+      "name": "material-review-compare-cancel-commit-refresh",
+      "status": "PASS",
+      "checks": 13,
+      "trace": [
+        {
+          "label": "page identity",
+          "passed": true
+        },
+        {
+          "label": "meaningful app renders",
+          "passed": true
+        },
+        {
+          "label": "concrete equipment replaces empty emblem",
+          "passed": true
+        },
+        {
+          "label": "equipment view has no unknown-emblem duplication",
+          "passed": true
+        },
+        {
+          "label": "material comparison is reachable",
+          "passed": true
+        },
+        {
+          "label": "comparison never writes game state",
+          "actualSha256": "fb29630bef6ee0929f9f1479c9c3c3bda0762fa5626586428d4002a88c17d882",
+          "expectedSha256": "fb29630bef6ee0929f9f1479c9c3c3bda0762fa5626586428d4002a88c17d882",
+          "passed": true
+        },
+        {
+          "label": "review names exact consumed item",
+          "passed": true
+        },
+        {
+          "label": "review names exact retained target",
+          "passed": true
+        },
+        {
+          "label": "payment cannot be replaced by nested comparison",
+          "passed": true
+        },
+        {
+          "label": "cancelling changes no full state",
+          "actualSha256": "fb29630bef6ee0929f9f1479c9c3c3bda0762fa5626586428d4002a88c17d882",
+          "expectedSha256": "fb29630bef6ee0929f9f1479c9c3c3bda0762fa5626586428d4002a88c17d882",
+          "passed": true
+        },
+        {
+          "label": "native accept matches full engine transaction",
+          "actualSha256": "ae603b61aa246d8a41feddcb8783cb8389188cd919bccb1970f6ff34478c7e7c",
+          "expectedSha256": "ae603b61aa246d8a41feddcb8783cb8389188cd919bccb1970f6ff34478c7e7c",
+          "passed": true
+        },
+        {
+          "label": "only material is consumed",
+          "passed": true
+        },
+        {
+          "label": "refresh preserves full committed result",
+          "actualSha256": "ae603b61aa246d8a41feddcb8783cb8389188cd919bccb1970f6ff34478c7e7c",
+          "expectedSha256": "ae603b61aa246d8a41feddcb8783cb8389188cd919bccb1970f6ff34478c7e7c",
+          "passed": true
+        }
+      ],
+      "ms": 3970.1297409999997
+    },
+    {
+      "name": "blank-materials-all-consumption-paths",
+      "status": "PASS",
+      "checks": 36,
+      "trace": [
+        {
+          "label": "exchange/salvage names blank item by ID",
+          "passed": true
+        },
+        {
+          "label": "exchange/salvage shows actual XP",
+          "passed": true
+        },
+        {
+          "label": "exchange/salvage never calls unnamed item missing",
+          "passed": true
+        },
+        {
+          "label": "exchange/salvage keeps XP in confirmation",
+          "passed": true
+        },
+        {
+          "label": "exchange/salvage review keeps full source state",
+          "actualSha256": "a1408f272889cea31b42b550527d6ba6c8303057ef95bf59f9132d008557ff77",
+          "expectedSha256": "a1408f272889cea31b42b550527d6ba6c8303057ef95bf59f9132d008557ff77",
+          "passed": true
+        },
+        {
+          "label": "exchange/salvage exact payment",
+          "actualSha256": "b7c0e3c4981fefb5d7b6252cf406f12d777fdaec4c9293e61b6b33703a04fe60",
+          "expectedSha256": "b7c0e3c4981fefb5d7b6252cf406f12d777fdaec4c9293e61b6b33703a04fe60",
+          "passed": true
+        },
+        {
+          "label": "exchange/relic names blank item by ID",
+          "passed": true
+        },
+        {
+          "label": "exchange/relic shows actual XP",
+          "passed": true
+        },
+        {
+          "label": "exchange/relic never calls unnamed item missing",
+          "passed": true
+        },
+        {
+          "label": "exchange/relic keeps XP in confirmation",
+          "passed": true
+        },
+        {
+          "label": "exchange/relic review keeps full source state",
+          "actualSha256": "a1408f272889cea31b42b550527d6ba6c8303057ef95bf59f9132d008557ff77",
+          "expectedSha256": "a1408f272889cea31b42b550527d6ba6c8303057ef95bf59f9132d008557ff77",
+          "passed": true
+        },
+        {
+          "label": "exchange/relic exact payment",
+          "actualSha256": "b9b522fd0963382be7e1ab033e8cd3d521ff8afded3e164fa465313e0618a04b",
+          "expectedSha256": "b9b522fd0963382be7e1ab033e8cd3d521ff8afded3e164fa465313e0618a04b",
+          "passed": true
+        },
+        {
+          "label": "relic_exchange/accept names blank item by ID",
+          "passed": true
+        },
+        {
+          "label": "relic_exchange/accept shows actual XP",
+          "passed": true
+        },
+        {
+          "label": "relic_exchange/accept never calls unnamed item missing",
+          "passed": true
+        },
+        {
+          "label": "relic_exchange/accept keeps XP in confirmation",
+          "passed": true
+        },
+        {
+          "label": "relic_exchange/accept review keeps full source state",
+          "actualSha256": "467fc4d466ab30b2e28ed9112330608d8dae73cb53a04c00589e0970b5e4ee30",
+          "expectedSha256": "467fc4d466ab30b2e28ed9112330608d8dae73cb53a04c00589e0970b5e4ee30",
+          "passed": true
+        },
+        {
+          "label": "relic_exchange/accept exact payment",
+          "actualSha256": "ef4c073aed5402f7222536a305f4a7cb7a1793054c2c5241ce85ad6d35058419",
+          "expectedSha256": "ef4c073aed5402f7222536a305f4a7cb7a1793054c2c5241ce85ad6d35058419",
+          "passed": true
+        },
+        {
+          "label": "silent_anvil/accept names blank item by ID",
+          "passed": true
+        },
+        {
+          "label": "silent_anvil/accept shows actual XP",
+          "passed": true
+        },
+        {
+          "label": "silent_anvil/accept never calls unnamed item missing",
+          "passed": true
+        },
+        {
+          "label": "silent_anvil/accept keeps XP in confirmation",
+          "passed": true
+        },
+        {
+          "label": "silent_anvil/accept review keeps full source state",
+          "actualSha256": "ae38cb0ce79d1e478e6969b224df0ff7efcc9ee4442f6d139da12178bf7c9140",
+          "expectedSha256": "ae38cb0ce79d1e478e6969b224df0ff7efcc9ee4442f6d139da12178bf7c9140",
+          "passed": true
+        },
+        {
+          "label": "silent_anvil/accept exact payment",
+          "actualSha256": "ae603b61aa246d8a41feddcb8783cb8389188cd919bccb1970f6ff34478c7e7c",
+          "expectedSha256": "ae603b61aa246d8a41feddcb8783cb8389188cd919bccb1970f6ff34478c7e7c",
+          "passed": true
+        },
+        {
+          "label": "offering/accept names blank item by ID",
+          "passed": true
+        },
+        {
+          "label": "offering/accept shows actual XP",
+          "passed": true
+        },
+        {
+          "label": "offering/accept never calls unnamed item missing",
+          "passed": true
+        },
+        {
+          "label": "offering/accept keeps XP in confirmation",
+          "passed": true
+        },
+        {
+          "label": "offering/accept review keeps full source state",
+          "actualSha256": "cc09e3164f3dc8e8bfe0537c40e35066e1477f6b962031ba9bbbbb3b40389860",
+          "expectedSha256": "cc09e3164f3dc8e8bfe0537c40e35066e1477f6b962031ba9bbbbb3b40389860",
+          "passed": true
+        },
+        {
+          "label": "offering/accept exact payment",
+          "actualSha256": "09630646a03f42c95e56062532caadf8a0746caa93518b75c39a5b142cb14d34",
+          "expectedSha256": "09630646a03f42c95e56062532caadf8a0746caa93518b75c39a5b142cb14d34",
+          "passed": true
+        },
+        {
+          "label": "relicloom/accept names blank item by ID",
+          "passed": true
+        },
+        {
+          "label": "relicloom/accept shows actual XP",
+          "passed": true
+        },
+        {
+          "label": "relicloom/accept never calls unnamed item missing",
+          "passed": true
+        },
+        {
+          "label": "relicloom/accept keeps XP in confirmation",
+          "passed": true
+        },
+        {
+          "label": "relicloom/accept review keeps full source state",
+          "actualSha256": "a8371a4d40baa9bd0da3a4b6fd0d8e22034d31c8a38462da985e36ed9f9af391",
+          "expectedSha256": "a8371a4d40baa9bd0da3a4b6fd0d8e22034d31c8a38462da985e36ed9f9af391",
+          "passed": true
+        },
+        {
+          "label": "relicloom/accept exact payment",
+          "actualSha256": "ee3958c2c5c69610efa3459367f6b9a28cc6354c7c91f32ddf97e40d49a58e7a",
+          "expectedSha256": "ee3958c2c5c69610efa3459367f6b9a28cc6354c7c91f32ddf97e40d49a58e7a",
+          "passed": true
+        }
+      ],
+      "ms": 9239.17251
+    },
+    {
+      "name": "protected-material-and-registered-target",
+      "status": "FAIL",
+      "checks": 0,
+      "trace": [],
+      "error": "TimeoutError: locator.click: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.main-nav [data-action=\"game\"]')\u001b[22m\n",
+      "stack": "locator.click: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.main-nav [data-action=\"game\"]')\u001b[22m\n\n    at /workspace/scratch/f0146b2cbcc6/work/Dice-Abyss/scripts/qa-event-equipment-round18.mjs:90:57\n    at async run (/workspace/scratch/f0146b2cbcc6/work/Dice-Abyss/scripts/qa-event-equipment-round18.mjs:43:6)\n    at async file:///workspace/scratch/f0146b2cbcc6/work/Dice-Abyss/scripts/qa-event-equipment-round18.mjs:88:3"
+    },
+    {
+      "name": "invalid-import-preservation-and-same-file-retry",
+      "status": "PASS",
+      "checks": 8,
+      "trace": [
+        {
+          "label": "specific contradictory-reference error persists",
+          "passed": true
+        },
+        {
+          "label": "invalid import never opens a commit review",
+          "passed": true
+        },
+        {
+          "label": "invalid import changes no main, mirror, settings or archive records",
+          "actualSha256": "fcb69c2e9caa599efb82a6d14857d26b54c1cebd97d825a94ad698686415f7e1",
+          "expectedSha256": "fcb69c2e9caa599efb82a6d14857d26b54c1cebd97d825a94ad698686415f7e1",
+          "passed": true
+        },
+        {
+          "label": "native input is reset for same filename retry",
+          "passed": true
+        },
+        {
+          "label": "same-name malformed retry still preserves all records",
+          "actualSha256": "fcb69c2e9caa599efb82a6d14857d26b54c1cebd97d825a94ad698686415f7e1",
+          "expectedSha256": "fcb69c2e9caa599efb82a6d14857d26b54c1cebd97d825a94ad698686415f7e1",
+          "passed": true
+        },
+        {
+          "label": "valid same-name retry still needs explicit confirmation",
+          "actualSha256": "fcb69c2e9caa599efb82a6d14857d26b54c1cebd97d825a94ad698686415f7e1",
+          "expectedSha256": "fcb69c2e9caa599efb82a6d14857d26b54c1cebd97d825a94ad698686415f7e1",
+          "passed": true
+        },
+        {
+          "label": "valid import preserves complete unknown fields and state",
+          "actualSha256": "fa05506b8d3c43249bd2e079e1ad895c4b12b8c817b77b9677aecfdae78d168c",
+          "expectedSha256": "fa05506b8d3c43249bd2e079e1ad895c4b12b8c817b77b9677aecfdae78d168c",
+          "passed": true
+        },
+        {
+          "label": "import refresh is exact",
+          "actualSha256": "fa05506b8d3c43249bd2e079e1ad895c4b12b8c817b77b9677aecfdae78d168c",
+          "expectedSha256": "fa05506b8d3c43249bd2e079e1ad895c4b12b8c817b77b9677aecfdae78d168c",
+          "passed": true
+        }
+      ],
+      "ms": 1859.4184200000018
+    },
+    {
+      "name": "stale-file-read-cancel-and-latest-selection",
+      "status": "PASS",
+      "checks": 5,
+      "trace": [
+        {
+          "label": "opening another chooser cancels old read before the next change",
+          "passed": true
+        },
+        {
+          "label": "late old read cannot commit or archive",
+          "actualSha256": "a462b5eb37c209aa0eb3ac66a8d27f6d94f86dfda9eb781917cba967e2e3002e",
+          "expectedSha256": "a462b5eb37c209aa0eb3ac66a8d27f6d94f86dfda9eb781917cba967e2e3002e",
+          "passed": true
+        },
+        {
+          "label": "latest selected file is the only imported state",
+          "actualSha256": "d1caf0766bfa0b54541df8879d92cc61ac4c6060e60353643eef8eb6888cbfcd",
+          "expectedSha256": "d1caf0766bfa0b54541df8879d92cc61ac4c6060e60353643eef8eb6888cbfcd",
+          "passed": true
+        },
+        {
+          "label": "closing settings prevents a late review from reopening",
+          "passed": true
+        },
+        {
+          "label": "closed stale read never changes game state",
+          "actualSha256": "d1caf0766bfa0b54541df8879d92cc61ac4c6060e60353643eef8eb6888cbfcd",
+          "expectedSha256": "d1caf0766bfa0b54541df8879d92cc61ac4c6060e60353643eef8eb6888cbfcd",
+          "passed": true
+        }
+      ],
+      "ms": 1809.904214000002
+    },
+    {
+      "name": "responsive-equipment-and-import-error",
+      "status": "PASS",
+      "checks": 36,
+      "trace": [
+        {
+          "label": "1366: material area fits viewport",
+          "passed": true
+        },
+        {
+          "label": "1366: no horizontal page overflow",
+          "passed": true
+        },
+        {
+          "label": "1366: long names and numeric rows fit readable bounds",
+          "passed": true
+        },
+        {
+          "label": "1366: confirmation fits and scrolls",
+          "passed": true
+        },
+        {
+          "label": "1366: responsive review never changes state",
+          "actualSha256": "fcc2898de9373e94885fc607ab891a9a8a031fbb91045cc1afdf5659d260d36d",
+          "expectedSha256": "fcc2898de9373e94885fc607ab891a9a8a031fbb91045cc1afdf5659d260d36d",
+          "passed": true
+        },
+        {
+          "label": "1366: import error remains readable without horizontal overflow",
+          "passed": true
+        },
+        {
+          "label": "1920: material area fits viewport",
+          "passed": true
+        },
+        {
+          "label": "1920: no horizontal page overflow",
+          "passed": true
+        },
+        {
+          "label": "1920: long names and numeric rows fit readable bounds",
+          "passed": true
+        },
+        {
+          "label": "1920: confirmation fits and scrolls",
+          "passed": true
+        },
+        {
+          "label": "1920: responsive review never changes state",
+          "actualSha256": "fcc2898de9373e94885fc607ab891a9a8a031fbb91045cc1afdf5659d260d36d",
+          "expectedSha256": "fcc2898de9373e94885fc607ab891a9a8a031fbb91045cc1afdf5659d260d36d",
+          "passed": true
+        },
+        {
+          "label": "1920: import error remains readable without horizontal overflow",
+          "passed": true
+        },
+        {
+          "label": "2560: material area fits viewport",
+          "passed": true
+        },
+        {
+          "label": "2560: no horizontal page overflow",
+          "passed": true
+        },
+        {
+          "label": "2560: long names and numeric rows fit readable bounds",
+          "passed": true
+        },
+        {
+          "label": "2560: confirmation fits and scrolls",
+          "passed": true
+        },
+        {
+          "label": "2560: responsive review never changes state",
+          "actualSha256": "fcc2898de9373e94885fc607ab891a9a8a031fbb91045cc1afdf5659d260d36d",
+          "expectedSha256": "fcc2898de9373e94885fc607ab891a9a8a031fbb91045cc1afdf5659d260d36d",
+          "passed": true
+        },
+        {
+          "label": "2560: import error remains readable without horizontal overflow",
+          "passed": true
+        },
+        {
+          "label": "3840: material area fits viewport",
+          "passed": true
+        },
+        {
+          "label": "3840: no horizontal page overflow",
+          "passed": true
+        },
+        {
+          "label": "3840: long names and numeric rows fit readable bounds",
+          "passed": true
+        },
+        {
+          "label": "3840: confirmation fits and scrolls",
+          "passed": true
+        },
+        {
+          "label": "3840: responsive review never changes state",
+          "actualSha256": "fcc2898de9373e94885fc607ab891a9a8a031fbb91045cc1afdf5659d260d36d",
+          "expectedSha256": "fcc2898de9373e94885fc607ab891a9a8a031fbb91045cc1afdf5659d260d36d",
+          "passed": true
+        },
+        {
+          "label": "3840: import error remains readable without horizontal overflow",
+          "passed": true
+        },
+        {
+          "label": "390: material area fits viewport",
+          "passed": true
+        },
+        {
+          "label": "390: no horizontal page overflow",
+          "passed": true
+        },
+        {
+          "label": "390: long names and numeric rows fit readable bounds",
+          "passed": true
+        },
+        {
+          "label": "390: confirmation fits and scrolls",
+          "passed": true
+        },
+        {
+          "label": "390: responsive review never changes state",
+          "actualSha256": "fcc2898de9373e94885fc607ab891a9a8a031fbb91045cc1afdf5659d260d36d",
+          "expectedSha256": "fcc2898de9373e94885fc607ab891a9a8a031fbb91045cc1afdf5659d260d36d",
+          "passed": true
+        },
+        {
+          "label": "390: import error remains readable without horizontal overflow",
+          "passed": true
+        },
+        {
+          "label": "320: material area fits viewport",
+          "passed": true
+        },
+        {
+          "label": "320: no horizontal page overflow",
+          "passed": true
+        },
+        {
+          "label": "320: long names and numeric rows fit readable bounds",
+          "passed": true
+        },
+        {
+          "label": "320: confirmation fits and scrolls",
+          "passed": true
+        },
+        {
+          "label": "320: responsive review never changes state",
+          "actualSha256": "fcc2898de9373e94885fc607ab891a9a8a031fbb91045cc1afdf5659d260d36d",
+          "expectedSha256": "fcc2898de9373e94885fc607ab891a9a8a031fbb91045cc1afdf5659d260d36d",
+          "passed": true
+        },
+        {
+          "label": "320: import error remains readable without horizontal overflow",
+          "passed": true
+        }
+      ],
+      "ms": 15778.020705999996
+    }
+  ],
+  "errors": [],
+  "checks": 98,
+  "notes": [
+    "Constructed valid entry states, actual UI actions and exact complete-state assertions.",
+    "Logical viewports and software rendering; not physical devices, screen-reader or GPU certification.",
+    "Failed file reads are delayed only inside isolated QA contexts to test ordering."
+  ],
+  "sourceHashes": [
+    {
+      "file": "src/app.js",
+      "sha256": "1ba0a720bb39630094515ce838048c53f18706ddd762b019d11238c091e267fc"
+    },
+    {
+      "file": "src/views.js",
+      "sha256": "94f6b5e52e41c496260fee8e7a1a0960bccab40333a0b96e4a138e145ec85296"
+    },
+    {
+      "file": "src/storage.js",
+      "sha256": "f5a990793a90ff59a57f38e4be8fcb9deaf54997dff9d9acec2cded73d2c8145"
+    },
+    {
+      "file": "src/encounters.js",
+      "sha256": "18e1a672849552d779b9763d3f990e953290b32911f123b9884e930166c42cec"
+    },
+    {
+      "file": "src/event-references.js",
+      "sha256": "a85a8fcede6550b3189e144c85fa71149e49a99e74f62fc43b9a5c82efaf1d36"
+    },
+    {
+      "file": "src/event-equipment.css",
+      "sha256": "6864426bc11debcc5c6a4213914f7a3a91eb6e8e600caf647d55a370052e4969"
+    }
+  ],
+  "finished": "2026-10-19T07:35:32.543Z",
+  "passed": false
+}

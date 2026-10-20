@@ -1,0 +1,99 @@
+{
+  "method": "Independent implementation-to-input full-state comparison for default talent actions, and batch-vs-repeated-input checks. Constructed points/ranks/floors; real engine-created combat/chest/dead phases; in-memory storage faults. No natural balance, browser concurrency or OS power-loss claim.",
+  "sourceBefore": {
+    "src/engine.js": "afd66fe121e68536c88b7f583f68c9de3b349272a61011c277295dd460afd8d2",
+    "src/storage.js": "f4cf7cb3fceed274fd2a929bc0d53c34b7c62046639a732f6229de72ef1e69f3",
+    "src/content.js": "4c0c2e4656c5a3482a5448a069ae2fa28367ba05d61c7d0c2c9866315f5c5526",
+    "src/encounters.js": "3689b444d86038bad114fb9c14beb84fee75145d43097dd315cd1c4f6aa095c7",
+    "src/deep-content.js": "040a5668b687cf9d7b7c8b31a67cee35660ebb0539af74c7d572614f138fef33",
+    "tests/talent-allocation.test.mjs": "05a65d1a8602cf671ae30818e370c2257056f70f1853b4f6a616c54728cc1b10"
+  },
+  "legacyCases": 1800,
+  "batchCases": 540,
+  "transactions": [
+    {
+      "phase": "fate",
+      "condition": "primary-failure",
+      "passed": true
+    },
+    {
+      "phase": "fate",
+      "condition": "mirror-failure",
+      "passed": true
+    },
+    {
+      "phase": "fate",
+      "condition": "same-revision-branch",
+      "passed": true
+    },
+    {
+      "phase": "combat",
+      "condition": "primary-failure",
+      "passed": true
+    },
+    {
+      "phase": "combat",
+      "condition": "mirror-failure",
+      "passed": true
+    },
+    {
+      "phase": "combat",
+      "condition": "same-revision-branch",
+      "passed": true
+    },
+    {
+      "phase": "chest",
+      "condition": "primary-failure",
+      "passed": true
+    },
+    {
+      "phase": "chest",
+      "condition": "mirror-failure",
+      "passed": true
+    },
+    {
+      "phase": "chest",
+      "condition": "same-revision-branch",
+      "passed": true
+    },
+    {
+      "phase": "dead",
+      "condition": "primary-failure",
+      "passed": true
+    },
+    {
+      "phase": "dead",
+      "condition": "mirror-failure",
+      "passed": true
+    },
+    {
+      "phase": "dead",
+      "condition": "same-revision-branch",
+      "passed": true
+    }
+  ],
+  "boundaries": [
+    {
+      "id": "power",
+      "invested": 1000000,
+      "remaining": 1000000,
+      "roundTrip": true
+    },
+    {
+      "id": "vitality",
+      "invested": 1000000,
+      "remaining": 1000000,
+      "roundTrip": true
+    }
+  ],
+  "sourceAfter": {
+    "src/engine.js": "afd66fe121e68536c88b7f583f68c9de3b349272a61011c277295dd460afd8d2",
+    "src/storage.js": "f4cf7cb3fceed274fd2a929bc0d53c34b7c62046639a732f6229de72ef1e69f3",
+    "src/content.js": "4c0c2e4656c5a3482a5448a069ae2fa28367ba05d61c7d0c2c9866315f5c5526",
+    "src/encounters.js": "3689b444d86038bad114fb9c14beb84fee75145d43097dd315cd1c4f6aa095c7",
+    "src/deep-content.js": "040a5668b687cf9d7b7c8b31a67cee35660ebb0539af74c7d572614f138fef33",
+    "tests/talent-allocation.test.mjs": "05a65d1a8602cf671ae30818e370c2257056f70f1853b4f6a616c54728cc1b10"
+  },
+  "durationSeconds": 0.8033518019999999,
+  "pass": true
+}

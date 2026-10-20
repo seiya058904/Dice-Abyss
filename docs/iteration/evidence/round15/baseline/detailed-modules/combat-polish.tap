@@ -1,0 +1,58 @@
+TAP version 13
+# Subtest: regional sequence enemies rebuild real shields in ordinary rooms, with no free opening shield
+ok 1 - regional sequence enemies rebuild real shields in ordinary rooms, with no free opening shield
+  ---
+  duration_ms: 10.616971
+  type: 'test'
+  ...
+# Subtest: existing V5 zero-capacity regional encounters recover on the next roll and replay identically
+ok 2 - existing V5 zero-capacity regional encounters recover on the next roll and replay identically
+  ---
+  duration_ms: 3.431431
+  type: 'test'
+  ...
+# Subtest: regional rebuild capacity is present across eras and remains bounded during repeated low-diversity rolls
+ok 3 - regional rebuild capacity is present across eras and remains bounded during repeated low-diversity rolls
+  ---
+  duration_ms: 50.929521
+  type: 'test'
+  ...
+# Subtest: rest heals and fills a weak shield while retaining a stronger existing shield
+ok 4 - rest heals and fills a weak shield while retaining a stronger existing shield
+  ---
+  duration_ms: 6.631656
+  type: 'test'
+  ...
+# Subtest: counter preview applies the same mandatory V5 low-health reduction as the actual roll
+ok 5 - counter preview applies the same mandatory V5 low-health reduction as the actual roll
+  ---
+  duration_ms: 59.774157
+  type: 'test'
+  ...
+# Subtest: small V5 critical/low-face wards no longer claim a possible zero-damage counter
+ok 6 - small V5 critical/low-face wards no longer claim a possible zero-damage counter
+  ---
+  duration_ms: 200.925344
+  type: 'test'
+  ...
+# Subtest: phase protection is forecast only for an actual possible phase change
+ok 7 - phase protection is forecast only for an actual possible phase change
+  ---
+  duration_ms: 14.245264
+  type: 'test'
+  ...
+# Subtest: legacy odd-HP phase boundaries retain a conservative forecast with new phase protection
+ok 8 - legacy odd-HP phase boundaries retain a conservative forecast with new phase protection
+  ---
+  duration_ms: 1.06233
+  type: 'test'
+  ...
+1..8
+# tests 8
+# suites 0
+# pass 8
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 358.90672

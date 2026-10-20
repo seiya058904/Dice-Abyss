@@ -1,0 +1,76 @@
+TAP version 13
+# Subtest: gold rooms report actual 10 or 0 rather than their 958 nominal reward at the cap
+ok 1 - gold rooms report actual 10 or 0 rather than their 958 nominal reward at the cap
+  ---
+  duration_ms: 6.191662
+  type: 'test'
+  ...
+# Subtest: fate doubles retain their RNG and report only the credited bonus when capped
+ok 2 - fate doubles retain their RNG and report only the credited bonus when capped
+  ---
+  duration_ms: 4.843059
+  type: 'test'
+  ...
+# Subtest: opening a chest keeps the nominal reward and persists its exact credited amount
+ok 3 - opening a chest keeps the nominal reward and persists its exact credited amount
+  ---
+  duration_ms: 5.629081
+  type: 'test'
+  ...
+# Subtest: a saved chest receipt survives later legal inventory transactions without being recomputed
+ok 4 - a saved chest receipt survives later legal inventory transactions without being recomputed
+  ---
+  duration_ms: 1.204621
+  type: 'test'
+  ...
+# Subtest: the separate receipt follows every original loot lifetime including imported event reward paths
+ok 5 - the separate receipt follows every original loot lifetime including imported event reward paths
+  ---
+  duration_ms: 13.804757
+  type: 'test'
+  ...
+# Subtest: exchange choices and confirmation disclose capped gold while keeping XP and explicit item consumption
+ok 6 - exchange choices and confirmation disclose capped gold while keeping XP and explicit item consumption
+  ---
+  duration_ms: 2.531082
+  type: 'test'
+  ...
+# Subtest: a pending exchange recomputes capacity read-only after an unrelated legal salvage
+ok 7 - a pending exchange recomputes capacity read-only after an unrelated legal salvage
+  ---
+  duration_ms: 1.254144
+  type: 'test'
+  ...
+# Subtest: refunds at full gold are gross receipts after payment, not positive net windfalls
+ok 8 - refunds at full gold are gross receipts after payment, not positive net windfalls
+  ---
+  duration_ms: 1.050172
+  type: 'test'
+  ...
+# Subtest: salvage continues to require explicit overflow acceptance and reports actual receipt plus loss
+ok 9 - salvage continues to require explicit overflow acceptance and reports actual receipt plus loss
+  ---
+  duration_ms: 0.576562
+  type: 'test'
+  ...
+# Subtest: ordinary gains preserve their original messages and the 80 gold starting balance
+ok 10 - ordinary gains preserve their original messages and the 80 gold starting balance
+  ---
+  duration_ms: 1.564012
+  type: 'test'
+  ...
+# Subtest: maximum legal item names and reward amounts keep capped receipt logs inside save limits
+ok 11 - maximum legal item names and reward amounts keep capped receipt logs inside save limits
+  ---
+  duration_ms: 2.209166
+  type: 'test'
+  ...
+1..11
+# tests 11
+# suites 0
+# pass 11
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 50.492028

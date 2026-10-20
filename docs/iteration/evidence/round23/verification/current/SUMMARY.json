@@ -1,0 +1,64 @@
+{
+  "status": "PASS",
+  "createdUTC": "2026-10-19T16:07:23.627514+00:00",
+  "check": {
+    "seconds": 6.4486,
+    "exitCode": 0,
+    "stdoutSha256": "8d7c2356973a77a7cd038ecf75a15b197647d996144927a460bb79a8758e56b3",
+    "stderrSha256": "7125f194612fcff2f454c05d848e7cb71facc1967b4d5017e25b34fdee3ba74f"
+  },
+  "native": {
+    "modules": 92,
+    "modulesPassed": 92,
+    "counts": {
+      "tests": 854,
+      "suites": 0,
+      "pass": 854,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0
+    },
+    "durationSeconds": 95.7804,
+    "captureSeconds": 95.8571,
+    "node": "v24.19.0",
+    "driverStdoutSha256": "45ba59b37ee6709d8ac55516c088933e93ed605a3b07135833f9128b77859d71",
+    "rawTapBytes": 225459,
+    "rawTapSha256": "079b8446b300919b1413d00547fd6cb8cb181a3c68b5526159ffa8cb2d203f5d",
+    "gzipTapBytes": 41451,
+    "gzipTapSha256": "3557b6c3b1fb0d7f7b10db197ba6792ad2bcd454ddaeb6de1fb0a23d6d9332cc"
+  },
+  "simulate": {
+    "method": "Direct comparison of all decompressed stdout bytes; no normalization, field removal or rewriting",
+    "baselineBytes": 9408,
+    "currentBytes": 9408,
+    "baselineSha256": "04c1b942a92882602686c9faa0cedcb011ca621a486147e0eb9278916c578721",
+    "currentSha256": "04c1b942a92882602686c9faa0cedcb011ca621a486147e0eb9278916c578721",
+    "bytesIdentical": true,
+    "standardSeeds": 1000,
+    "standardCompleted": 1000,
+    "standardFailures": [],
+    "noShoppingRuns": 50,
+    "noShoppingCompleted": 50,
+    "currentSeconds": 245.2336,
+    "exitCode": 0
+  },
+  "staticCorePassed": true,
+  "snapshotFileCount": 303,
+  "snapshotFilesStable": true,
+  "changedDuringVerification": [],
+  "runtimeChangedFiles": [
+    "index.html",
+    "package.json",
+    "src/dice-motion.js",
+    "src/effects.js",
+    "src/engine.js",
+    "src/release.js",
+    "src/views.js"
+  ],
+  "unchangedBaselineTestModules": 90,
+  "newTestModules": [
+    "tests/inventory-comparison-round23.test.mjs",
+    "tests/render-submission-round23.test.mjs"
+  ]
+}

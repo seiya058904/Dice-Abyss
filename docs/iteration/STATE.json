@@ -1,0 +1,347 @@
+{
+  "project": "Dice Abyss",
+  "round": 26,
+  "previousRound": 25,
+  "status": "COMPLETED_WITH_OPEN_RISKS",
+  "dateUTC": "2026-10-20",
+  "inputVersion": "5.25.0",
+  "outputVersion": "5.26.0",
+  "saveSchemaVersion": 5,
+  "inputZip": "Dice-Abyss-v5.25.0-cloud-round-25(1).zip",
+  "inputZipSha256": "e584e4d0ae24b5db78a3d83912a58185c69caea9da805efe73cdac4a5b27b698",
+  "inputZipBytes": 39038928,
+  "inputFiles": 3867,
+  "inputExpandedBytes": 96748363,
+  "baselineIdentity": "Only the supplied complete ZIP; read-only isolated baseline. All CRC/path/type/case/ratio checks and 3866 nonself manifest rows passed. No remote repository, deployment or private saves used.",
+  "roundFocus": "User requested primary effort on performance. Remove repeated inventory value calculations and conservative dice bounds projection work; preserve full native negative results and exact data safeguards.",
+  "mainChanges": [
+    "Per-call inventory sort keys: power valued at most once per item; rarity/level valued only for primary-key ties, no cross-action key cache.",
+    "Conservative projected sphere test reuses the exact prior moving-dice envelope only after proving containment; otherwise uses unchanged exact corner projection.",
+    "New verified reconstruction bridge restores the three recent exact input runtimes despite changed current modules. Original historical scripts and evidence retained.",
+    "Added 2 modules/21 targeted cases; all 101 old test/fixture files, 153 old scripts, 22 CSS and 8 font/license files are byte-identical."
+  ],
+  "runtimeChangedFiles": [
+    "index.html",
+    "package.json",
+    "src/dice-renderer.js",
+    "src/inventory-query.js",
+    "src/release.js"
+  ],
+  "runtimeAddedFiles": [],
+  "runtimeNetBytes": 2940,
+  "regressionGuards": [
+    "Schema5, original save keys/IDs/unknown fields, V1-V4 migrations, full expected snapshots, primary/mirror, Web Locks and transaction failure safety.",
+    "Manual dice, six-room routes, five equipment slots, eight rarity gates, one currency, independent Lv/+N, and retained build after death.",
+    "Rules, RNG, engine, storage, existing shaders, meshes, pixels budget, CSS, fonts and assets unchanged.",
+    "Existing inventory page reuse still depends on the established invalidation contract; new sort keys never outlive one call.",
+    "Original offscreen/unknown visibility, latest-pose reentry, native context restoration, deadline/cancellation and resize settlement remain protected."
+  ],
+  "testSummary": {
+    "baseline": {
+      "modules": 98,
+      "nativeCasesPassed": 902,
+      "failedCancelledSkippedTodo": 0
+    },
+    "current": {
+      "modules": 100,
+      "nativeCasesPassed": 923,
+      "failedCancelledSkippedTodo": 0
+    },
+    "newCases": {
+      "inventorySort": 12,
+      "diceBounds": 9
+    },
+    "simulation": {
+      "standardSeeds": 1000,
+      "noShoppingSeeds": 50,
+      "floorsPerRun": 10,
+      "completedAll": true,
+      "deaths": 0,
+      "fullStdoutBytesEach": 9408,
+      "fullStdoutSha256Each": "04c1b942a92882602686c9faa0cedcb011ca621a486147e0eb9278916c578721",
+      "byteIdentical": true,
+      "currentFour400FloorCohort": "NOT_RUN"
+    },
+    "browser": {
+      "coreGroupsPerVariant": 6,
+      "coreChecksPerVariant": 43,
+      "currentNavigationGroups": 12,
+      "currentNavigationChecks": 176,
+      "currentResizeScenes": 8,
+      "currentResizeChecks": 105,
+      "nativeContextCyclesPerVariant": 3,
+      "nativeContextChecksTotal": 62,
+      "contextReadPixelsWarnings": 4,
+      "surfaceFunctionalCasesTotal": 16,
+      "surfaceFunctionalPairs": 8,
+      "runtimeErrors": 0,
+      "independentServiceSuites": "NOT_RERUN_THIS_ROUND"
+    },
+    "http": {
+      "baselineResources": 66,
+      "currentResources": 66,
+      "result": "PASS"
+    },
+    "fonts": {
+      "han": 1059,
+      "cjkPunctuation": 21,
+      "fontStackDeclarations": 197,
+      "result": "PASS",
+      "historicalRepairTraces": "NOT_AVAILABLE"
+    }
+  },
+  "performance": {
+    "verdict": "MEASURED_CPU_GAINS_WITH_MIXED_NATIVE_RESULTS; no universal FPS, latency or native non-regression claim",
+    "environment": "Node24.19.0 Linux x64; Chromium155.0.8059.84 ANGLE Vulkan SwiftShader DPR1, simulated viewports.",
+    "inventoryCpu": {
+      "cells": 18,
+      "pairsPerCell": 12,
+      "iterationsPerSample": 10,
+      "selectionComparisons": 93,
+      "completeHtmlPairs": 45,
+      "tenThousandStandardP50Ms": {
+        "power": [
+          7.197087399999987,
+          2.0398492000000035
+        ],
+        "rarity": [
+          6.501794999999992,
+          4.429717200000004
+        ],
+        "level": [
+          7.8904755999999905,
+          5.1873848999999606
+        ]
+      },
+      "allTenThousandStandardPairsFaster": true,
+      "totalPairedDirections": {
+        "faster": 154,
+        "slower": 62
+      },
+      "smallInventoryAndControlRegressionsRetained": true
+    },
+    "diceCpu": {
+      "trajectoriesPerSample": 144,
+      "framesPerSample": 22320,
+      "pairs": 12,
+      "p50BatchMs": [
+        63.07619,
+        19.518078
+      ],
+      "p95BatchMs": [
+        69.902029,
+        22.106796
+      ],
+      "maxBatchMs": [
+        70.501014,
+        24.275935
+      ],
+      "projectedCorners": [
+        624960,
+        168480
+      ],
+      "trigCalls": [
+        468720,
+        126360
+      ],
+      "fastFrames": 18534,
+      "allExactBounds": true
+    },
+    "nativeInventory": {
+      "pairsPerAction": 12,
+      "formalActions": 72,
+      "warmupActions": 6,
+      "p50Ms": {
+        "open": [
+          83.4,
+          78.8
+        ],
+        "filter": [
+          71.9,
+          62.9
+        ],
+        "page": [
+          43.6,
+          46.3
+        ]
+      },
+      "p95Ms": {
+        "open": [
+          106,
+          104.7
+        ],
+        "filter": [
+          81.7,
+          71.4
+        ],
+        "page": [
+          52.9,
+          52.1
+        ]
+      },
+      "maxMs": {
+        "open": [
+          162.4,
+          361.3
+        ],
+        "filter": [
+          88.3,
+          77.7
+        ],
+        "page": [
+          53.6,
+          53.6
+        ]
+      },
+      "completeDomAndReclaimHtmlEqual": true,
+      "fullPrimaryMirrorBytesEqual": true
+    },
+    "frames": {
+      "mainWindows": 48,
+      "coverageWindows": 14,
+      "mainIntervals": [
+        5268,
+        5408
+      ],
+      "coverageIntervals": [
+        1521,
+        1510
+      ],
+      "rawPairedP95Directions": {
+        "faster": 10,
+        "slower": 14,
+        "equal": 0
+      },
+      "displayedPointOneMsP95Directions": {
+        "faster": 10,
+        "slower": 13,
+        "equal": 1
+      },
+      "pairedMaxDirections": {
+        "faster": 14,
+        "slower": 10
+      },
+      "p95CellMedianDirections": {
+        "faster": 5,
+        "slower": 3
+      },
+      "worstMainIntervalMs": [
+        2604.7,
+        862.3
+      ],
+      "longTasks": [
+        9,
+        8
+      ],
+      "longTaskOverlapMs": [
+        2827,
+        2036
+      ],
+      "allExpectedEffectsAndExactTransitions": true
+    }
+  },
+  "strictPixels": {
+    "crossVersion": {
+      "comparisons": 7,
+      "passed": 5,
+      "failed": 2,
+      "failurePixels": [
+        1,
+        4
+      ],
+      "maxRgbDelta": 1,
+      "alphaChangedPixels": 0
+    },
+    "sameVersionDiagnostic": {
+      "predeclaredPairs": 8,
+      "passed": 2,
+      "failed": 6,
+      "functionalFailures": 0,
+      "maxRgbDelta": 1,
+      "alphaChangedPixels": 0,
+      "interpretation": "Different source version is not necessary for the observed mismatch; exact cross-version equality and root cause remain unproved."
+    },
+    "historicalCanvasAndGLFailuresRetained": true
+  },
+  "openRisks": [
+    {
+      "priority": "P2",
+      "issue": "Native open max 162.4 to 361.3 ms and page p50 43.6 to 46.3 ms; complete interaction tails are not solved."
+    },
+    {
+      "priority": "P2",
+      "issue": "Native frame p95 remains slower in 3/8 cell medians, including 3/3 slower 1080p eternal/full runs; overall non-regression not proved."
+    },
+    {
+      "priority": "P2",
+      "issue": "Strict RGBA cross-version 2/7 and self-comparison 6/8 failures retained; source-version change not necessary, exact root cause unresolved."
+    },
+    {
+      "priority": "P2",
+      "issue": "Historical fixed 4x400 natural cohort remains 2/4 complete; current short simulation does not replace it."
+    },
+    {
+      "priority": "P2",
+      "issue": "Historical content-visibility candidate caused about 21-25 px anchor drift and remains rejected; current 1 px navigation checks do not validate a new placeholder scheme."
+    },
+    {
+      "priority": "P3",
+      "issue": "Small-bag sort setup overhead, some control p95 increases, heap peaks, independent save-speed tails and target physical devices remain open."
+    }
+  ],
+  "nextRoundPriorities": [
+    "Native open second-RAF and page latency causal isolation",
+    "Native frame/pixel causal isolation with preserved negative evidence",
+    "Large-list anchors, transaction and long-session resource cost",
+    "Deep policy diversity and the unresolved natural 4x400 cohort",
+    "Actual Windows/GPU/mobile/audio/screen-reader validation"
+  ],
+  "baselineRuntimeReconstruction": {
+    "files": 77,
+    "bytes": 9736977,
+    "verified": true,
+    "script": "scripts/restore-runtime-baseline-round26.py",
+    "supportedIterationInputs": [
+      24,
+      25,
+      26
+    ],
+    "legacyEntryPointsPreservedButNotRecommended": true
+  },
+  "evidenceIndex": "docs/iteration/evidence/round26/README.md",
+  "packaging": {
+    "hardZipBytesExclusive": 50000000,
+    "expandedBudgetInclusive": 100000000,
+    "idealZipBytesInclusive": 40000000,
+    "oldInputFilesRemoved": 0,
+    "logicalNewRgbaCaptures": 30,
+    "uniqueNewRgbaObjects": 8,
+    "exactDuplicateGzipBytesSaved": 772678,
+    "selectedLosslessScreenshotCount": 1,
+    "sourceFreshGate": {
+      "result": "PASS",
+      "finishedUTC": "2026-10-20T10:15:40.271207+00:00",
+      "receipt": "docs/iteration/evidence/round26/package/source-fresh-gate/receipt.json.gz",
+      "candidateSha256": "13eafd50ff2367a0e9ebb7ca2981a437912c10b697a1c4cc081d5ef55b81f01d",
+      "syntax": "PASS",
+      "nativeModules": 100,
+      "nativeCasesPassed": 923,
+      "httpResources": 66,
+      "crcManifestPathAndVersion": "PASS",
+      "extractedAndSourceFilesUnchanged": true,
+      "executionIdentity": {
+        "files": 358,
+        "bytes": 14318111,
+        "sha256": "57bf663b5ac6e80867417b8d739bdcdfe7064f95f35e4e73847c733fd880b334",
+        "method": "Sorted relative POSIX path, TAB, decimal bytes, TAB, SHA256, LF; UTF-8."
+      }
+    },
+    "finalEntityGate": "FINAL_ENTITY_RECHECK_REQUIRED_BY_DELIVERY_GATE",
+    "finalArchiveName": "Dice-Abyss-v5.26.0-cloud-round-26.zip",
+    "finalIdentityPolicy": "Actual byte size, decimal MB, growth and file count are recorded in the fixed 512-byte standard ZIP comment and final delivery. Final ZIP SHA256 and final-entity receipt remain outside the archive to avoid self-reference.",
+    "selectedLosslessScreenshotBytes": 55096,
+    "finalEntityReceiptPolicy": "After final packaging, the exact archive must pass new extraction, CRC/manifest/version, syntax, all 100 modules/923 native cases, 66 HTTP resources, and archive/tree immutability checks. Deliver only after success; exact archive SHA256 and the completed gate receipt are external, not self-embedded."
+  },
+  "handoffValid": true,
+  "handoffValidityScope": "Complete validated source and evidence handoff; release delivery additionally requires the exact final entity gate described above. Open P2/P3 findings are retained."
+}

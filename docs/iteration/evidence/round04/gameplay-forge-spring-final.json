@@ -1,0 +1,78 @@
+{
+  "method": "Synthetic valid scenes across early and deep floors, 24 seeded forge rolls, five equipment slots, +0/+18/+19/+20, smith and rich-room prices, and spring shields below/above both floors. Current transitions are compared to the untouched baseline using the same complete input object. Forge comparison excludes no field. Spring comparison excludes exactly event.outcome and the matching leading log text for accepted choices; all persisted assets/RNG/revision and other strings remain equal.",
+  "summary": {
+    "forgesAccepted": 1440,
+    "forgesRejectedAtCap": 480,
+    "previewChecks": 1920,
+    "springChoices": 900,
+    "springOutcomeChanges": 600,
+    "pendingDisplayChecks": 900,
+    "restAndBloodwellControls": 48
+  },
+  "facesBySlot": {
+    "weapon": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "armor": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "relic": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "relic2": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "relic3": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ]
+  },
+  "sourceHashes": {
+    "baseline": {
+      "src/engine.js": "afd66fe121e68536c88b7f583f68c9de3b349272a61011c277295dd460afd8d2",
+      "src/equipment.js": "294945cd13d7183007cb3138a07523a5fbbfc53dabfe0635dbcfa1a77fc2c465",
+      "src/encounters.js": "1cf841306e5a4bbcde1775754795d8fa26cdb65ae49216ccf2e45bea4b3b36f8",
+      "src/deep-rules.js": "6919b66ec8fbadea293ab4c4e3aa0b8c7a943e2ec44224b119287709d484581f"
+    },
+    "source": {
+      "src/engine.js": "8678e8cab02cec97edc057e1452271d57285e9cea87c7cfe37a397b45f568c66",
+      "src/equipment.js": "8c20de433f21931318e315b862b457d37a03b9596ea5df8f7cc4025691aaccd6",
+      "src/encounters.js": "b6e1b6e412f392e20a9f59b9fb73ffcb7664c17ccb54233d9888a5f21a81f75c",
+      "src/deep-rules.js": "6919b66ec8fbadea293ab4c4e3aa0b8c7a943e2ec44224b119287709d484581f"
+    }
+  },
+  "sourceStable": true,
+  "environment": {
+    "node": "v24.19.0",
+    "platform": "linux",
+    "arch": "x64"
+  },
+  "limits": [
+    "Synthetic boundary cases do not establish natural frequency, usability, economic balance, or player win rates.",
+    "Legacy resolved spring history is preserved by separate unit coverage; only pending choices and newly committed outcome wording are corrected."
+  ]
+}

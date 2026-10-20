@@ -1,0 +1,90 @@
+{
+  "scope": "Separate overlapping targeted runs. Counts must not be added or substituted for the root full-suite gate. Full TAP remains in scratch; small summaries and SHA-256 are packaged.",
+  "nodeVersion": "v24.19.0",
+  "runs": [
+    {
+      "label": "Input existing boundary tests",
+      "source": "/workspace/scratch/16b883e72bb3/baseline/Dice-Abyss",
+      "command": [
+        "node",
+        "--test",
+        "--test-isolation=none",
+        "--test-reporter=tap",
+        "tests/storage-size-boundary.test.mjs"
+      ],
+      "result": {
+        "tests": 10,
+        "pass": 10,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "rawTapSource": "/workspace/scratch/16b883e72bb3/scratch-evidence/capacity/baseline-boundary.tap",
+      "rawTapSha256": "02b27570e06e769d3912a5a61a9abb83973c3a863b7449e21f7cb42193b3bd0d",
+      "rawTapBytes": 2651
+    },
+    {
+      "label": "Storage-only independent regression",
+      "source": "/workspace/scratch/16b883e72bb3/work/Dice-Abyss",
+      "command": [
+        "node",
+        "--test",
+        "--test-isolation=none",
+        "--test-reporter=tap",
+        "tests/storage-capacity.test.mjs",
+        "tests/storage-size-boundary.test.mjs",
+        "tests/storage-read-reuse.test.mjs",
+        "tests/storage-polish.test.mjs",
+        "tests/iteration-storage.test.mjs",
+        "tests/gold-storage.test.mjs",
+        "tests/storage-import-shape.test.mjs"
+      ],
+      "result": {
+        "tests": 59,
+        "pass": 59,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "rawTapSource": "/workspace/scratch/16b883e72bb3/scratch-evidence/capacity/current-targeted.tap",
+      "rawTapSha256": "4afefe9bc19781849f88093bc3f5c55a5f5486cde87e5d0b57e32ac74b27714f",
+      "rawTapBytes": 15352
+    },
+    {
+      "label": "Read-only UI integration independent regression",
+      "source": "/workspace/scratch/16b883e72bb3/work/Dice-Abyss",
+      "command": [
+        "node",
+        "--test",
+        "--test-isolation=none",
+        "--test-reporter=tap",
+        "tests/decision-ui.test.mjs",
+        "tests/settings-focus.test.mjs",
+        "tests/equipment-comparison.test.mjs",
+        "tests/storage-capacity.test.mjs"
+      ],
+      "result": {
+        "tests": 34,
+        "pass": 34,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "rawTapSource": "/workspace/scratch/16b883e72bb3/scratch-evidence/capacity/ui-independent-targeted.tap",
+      "rawTapSha256": "6682d75e7fcf6b254e2aeaafd204db3ac4848ad7588d00d743dc74a8b85766a5",
+      "rawTapBytes": 8538
+    }
+  ],
+  "newStorageCapacityTests": 9,
+  "syntaxCheck": {
+    "command": [
+      "node",
+      "--check",
+      "src/storage.js"
+    ],
+    "exitCode": 0
+  }
+}

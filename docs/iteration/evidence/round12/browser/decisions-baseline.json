@@ -1,0 +1,199 @@
+{
+  "source": "/workspace/scratch/16b883e72bb3/baseline/Dice-Abyss",
+  "url": "http://127.0.0.1:4188/",
+  "expected": "baseline",
+  "started": "2026-10-18T11:47:41.873Z",
+  "sourceBefore": {
+    "index.html": "5d272baf3a27da526f071ae6d8c6626d6db20c02688f693608ae8b3e6891f91a",
+    "package.json": "9cdfb033cc5d2146d0a40fc47f2da5be54d43e87549337646d8c03900b4a97ec",
+    "src/app.js": "5967ce857870085c15843978e2d9e1aedfec5d06e43af5c2563a78b271485218",
+    "src/views.js": "1fd3da005d8e37d4b8ac0be4bf12dc53fd262645c5421a839c49224e28ce9266",
+    "src/engine.js": "a84e8823a4e6632ec12ad6f497c71e2a0b427a41fe8773eb7c9cfc041f78cd1b",
+    "src/storage.js": "2c5f648efe7df6a1c14710ea90fe2de83323141d5f5e285eec7fac8aa687a500",
+    "src/responsive.css": "90bb585d66a88daa61a553112c66610b62b666aa07c28ad887b521534283cee8"
+  },
+  "browser": "155.0.8059.84",
+  "cases": [
+    {
+      "name": "loot-live-lock-refresh",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "Normal application load restores the complete fixture",
+          "passed": true
+        },
+        {
+          "label": "Native open commits one exact complete engine result",
+          "passed": true
+        },
+        {
+          "label": "Native lock commits one exact complete engine result",
+          "passed": true
+        },
+        {
+          "label": "Reward record follows the expected baseline/fixed ownership semantics",
+          "passed": true
+        },
+        {
+          "label": "Native lock commits one exact complete engine result",
+          "passed": true
+        },
+        {
+          "label": "Both center and right-rail reward controls were inspected",
+          "passed": true
+        },
+        {
+          "label": "After reload then unlock, labels match the documented fixed/baseline state",
+          "passed": true
+        },
+        {
+          "label": "Owned item is actually unlocked",
+          "passed": true
+        }
+      ],
+      "screenshots": [
+        "reward-current-lock.png"
+      ],
+      "durationMs": 6031.862905
+    },
+    {
+      "name": "comparison-conditions-and-relic-slots",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "Normal application load restores the complete fixture",
+          "passed": true
+        },
+        {
+          "label": "Baseline contains the unqualified estimate",
+          "passed": true
+        },
+        {
+          "label": "Baseline has no condition comparison control",
+          "passed": true
+        }
+      ],
+      "screenshots": [
+        "comparison-baseline.png"
+      ],
+      "durationMs": 1487.7002970000003
+    },
+    {
+      "name": "full-shop-and-empty-filter",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "Normal application load restores the complete fixture",
+          "passed": true
+        },
+        {
+          "label": "Full bag actually disables all item purchases",
+          "passed": true
+        },
+        {
+          "label": "Disabled reason is accurate, or the baseline contradiction is reproduced",
+          "passed": true
+        },
+        {
+          "label": "Empty filter state is visible",
+          "passed": true
+        },
+        {
+          "label": "Baseline lacks one-step empty-filter recovery",
+          "passed": true
+        },
+        {
+          "label": "Disabled purchase and filtering preserve all stored bytes",
+          "passed": true
+        },
+        {
+          "label": "No item or gold is changed by recovery navigation",
+          "passed": true
+        }
+      ],
+      "screenshots": [
+        "full-shop.png"
+      ],
+      "durationMs": 1847.8195660000001
+    },
+    {
+      "name": "purchase-snapshot-and-compare",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "Normal application load restores the complete fixture",
+          "passed": true
+        },
+        {
+          "label": "Native buy commits one exact complete engine result",
+          "passed": true
+        },
+        {
+          "label": "Native lock commits one exact complete engine result",
+          "passed": true
+        },
+        {
+          "label": "Bought and locked state survives a normal reload",
+          "passed": true
+        }
+      ],
+      "screenshots": [],
+      "durationMs": 2510.5035320000006
+    },
+    {
+      "name": "capacity-check-export-and-safe-rejection",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "Normal application load restores the complete fixture",
+          "passed": true
+        },
+        {
+          "label": "The browser contains a real 4,999,900-byte UTF-8 envelope",
+          "passed": true
+        },
+        {
+          "label": "Baseline settings have no preflight capacity check",
+          "passed": true
+        }
+      ],
+      "screenshots": [
+        "capacity-baseline.png"
+      ],
+      "durationMs": 1835.6470549999995
+    },
+    {
+      "name": "responsive-new-controls",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "At least one requested case actually executed",
+          "passed": true
+        }
+      ],
+      "screenshots": [],
+      "skippedReason": "New-control layout belongs to the fixed build only.",
+      "durationMs": 0.16854899999998452
+    }
+  ],
+  "errors": [],
+  "blockedRequests": [],
+  "checks": 26,
+  "fixtureScope": "New isolated contexts; a native new game plus explicitly constructed valid saves. No private saves, quota overrides, remote accounts or deployments.",
+  "limitations": [
+    "Logical viewports and software rendering, not physical devices.",
+    "Near-limit and 10000-item fixtures intentionally have only a primary copy so no browser-quota override is needed.",
+    "Functional screenshot timings are not performance benchmarks."
+  ],
+  "sourceAfter": {
+    "index.html": "5d272baf3a27da526f071ae6d8c6626d6db20c02688f693608ae8b3e6891f91a",
+    "package.json": "9cdfb033cc5d2146d0a40fc47f2da5be54d43e87549337646d8c03900b4a97ec",
+    "src/app.js": "5967ce857870085c15843978e2d9e1aedfec5d06e43af5c2563a78b271485218",
+    "src/views.js": "1fd3da005d8e37d4b8ac0be4bf12dc53fd262645c5421a839c49224e28ce9266",
+    "src/engine.js": "a84e8823a4e6632ec12ad6f497c71e2a0b427a41fe8773eb7c9cfc041f78cd1b",
+    "src/storage.js": "2c5f648efe7df6a1c14710ea90fe2de83323141d5f5e285eec7fac8aa687a500",
+    "src/responsive.css": "90bb585d66a88daa61a553112c66610b62b666aa07c28ad887b521534283cee8"
+  },
+  "status": "PASS",
+  "finished": "2026-10-18T11:47:56.400Z"
+}

@@ -1,0 +1,156 @@
+{
+  "status": "HISTORICAL_FAILURES_PRESERVED_FINAL_RECHECK_PASS",
+  "reviewerDidNotOperateBrowser": true,
+  "baselineObstruction": {
+    "report": {
+      "source": "qa/tooltip-baseline/report.json",
+      "sha256": "aabf1e7e5acf55741313564f6c775f8e905b85c025ed3d4114216e127d52f82a"
+    },
+    "caseStatus": "PASS",
+    "statusMeaning": "Expected original native click obstruction and Escape recovery were reproduced; not a claim that baseline is obstruction-free.",
+    "nativeObstruction": "TimeoutError: locator.click: Timeout 1500ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-fusion-item=\"i98\"]')\u001b[22m\n\u001b[2m    - locator resolved to <button data-id=\"i98\" tabindex=\"-1\" draggable=\"true\" aria-pressed=\"false\" data-fusion-index=\"1\" data-fusion-item=\"i98\" data-action=\"fusion-item\" class=\"fusion-card common     \" aria-label=\"普通 残响·沙漏重刃 · Lv.6 · +2；可作材料；单击选择材料，右键查看操作\">…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <h3>残响·雷鸣刺剑</h3> from <div role=\"tooltip\" id=\"fusion-item-tooltip\" class=\"fusion-item-tooltip\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <h3>残响·雷鸣刺剑</h3> from <div role=\"tooltip\" id=\"fusion-item-tooltip\" class=\"fusion-item-tooltip\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    3 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <h3>残响·雷鸣刺剑</h3> from <div role=\"tooltip\" id=\"fusion-item-tooltip\" class=\"fusion-item-tooltip\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n",
+    "baselineHit": {
+      "tooltipOwnsPoint": true,
+      "topTag": "H3",
+      "topText": "残响·雷鸣刺剑",
+      "card": {
+        "x": 207.09375,
+        "y": 345.40625,
+        "width": 171.859375,
+        "height": 95.21875
+      }
+    }
+  },
+  "candidateFailures": [
+    {
+      "report": {
+        "source": "qa/tooltip-development/report.json",
+        "sha256": "d12e1696e66de04529aa09837a3ad2a16236c3084a88801c06d87f2904b26957"
+      },
+      "case": "long-dialog-keyboard-undo-expiry-and-focus-return",
+      "originalStatus": "FAIL",
+      "checksBeforeFailure": 10,
+      "originalError": "AssertionError [ERR_ASSERTION]: Native Tab remains in the modal",
+      "failedTrace": [
+        {
+          "label": "Native Tab remains in the modal",
+          "passed": false
+        }
+      ],
+      "resolution": "Final frozen native run passes the corresponding original behavior assertion; historical record remains FAIL.",
+      "finalReport": {
+        "source": "qa/tooltip-final-v2/report.json",
+        "sha256": "bf04965007ae8a51d4a6e8a61a8da348100962238fb2b664043148fc59d43ae3"
+      }
+    },
+    {
+      "report": {
+        "source": "qa/tooltip-development/report.json",
+        "sha256": "d12e1696e66de04529aa09837a3ad2a16236c3084a88801c06d87f2904b26957"
+      },
+      "case": "narrow-emulated-touch-details-and-selection",
+      "originalStatus": "FAIL",
+      "checksBeforeFailure": 8,
+      "originalError": "AssertionError [ERR_ASSERTION]: Touch close leaves no synthetic hover resurrection",
+      "failedTrace": [
+        {
+          "label": "Touch close leaves no synthetic hover resurrection",
+          "passed": false
+        }
+      ],
+      "resolution": "Final frozen native run passes the corresponding original behavior assertion; historical record remains FAIL.",
+      "finalReport": {
+        "source": "qa/tooltip-final-v2/report.json",
+        "sha256": "bf04965007ae8a51d4a6e8a61a8da348100962238fb2b664043148fc59d43ae3"
+      }
+    },
+    {
+      "report": {
+        "source": "qa/tooltip-final/report.json",
+        "sha256": "71d9fa6bc75de02d33f67e754853313f3a59610374e39c37cfbd8f3490e12cb7"
+      },
+      "case": "hover-journey-scroll-and-native-text-selection",
+      "originalStatus": "FAIL",
+      "checksBeforeFailure": 4,
+      "originalError": "AssertionError [ERR_ASSERTION]: Traversing intermediate rows keeps the inspected item\n+ actual - expected\n\n+ '残响·双焰天启重刃'\n- '残响·雷鸣刺剑'\n      ^\n",
+      "failedTrace": [],
+      "resolution": "Final frozen native run passes the corresponding original behavior assertion; historical record remains FAIL.",
+      "finalReport": {
+        "source": "qa/tooltip-final-v2/report.json",
+        "sha256": "bf04965007ae8a51d4a6e8a61a8da348100962238fb2b664043148fc59d43ae3"
+      }
+    },
+    {
+      "report": {
+        "source": "audit/current-fusion/browser-report.json",
+        "sha256": "aa475f3a9c5818b66d7bc14f90e5d229f508d32fb98583dfbca02e5b01655e78"
+      },
+      "case": "responsive-geometry",
+      "originalStatus": "FAIL",
+      "checksBeforeFailure": 0,
+      "originalError": "locator.click: Timeout 20000ms exceeded.\nCall log:\n  - waiting for locator('[data-action=\"fusion-all\"]')\n    - locator resolved to <button data-action=\"fusion-all\" class=\"fusion-bulk-main \">…</button>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <p class=\"fusion-tooltip-keys\">…</p> from <div role=\"tooltip\" id=\"fusion-item-tooltip\" class=\"fusion-item-tooltip\">…</div> subtree intercepts pointer events\n    - retrying click action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <p class=\"fusion-tooltip-keys\">…</p> from <div role=\"tooltip\" id=\"fusion-item-tooltip\" class=\"fusion-item-tooltip\">…</div> subtree intercepts pointer events\n    - retrying click action\n      - waiting 100ms\n    34 × waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - <p class=\"fusion-tooltip-keys\">…</p> from <div role=\"tooltip\" id=\"fusion-item-tooltip\" class=\"fusion-item-tooltip\">…</div> subtree intercepts pointer events\n     - retrying click action\n       - waiting 500ms\n\n    at /workspace/scratch/98883f3944af/round05/work/Dice-Abyss/scripts/qa-fusion-browser.mjs:111:138\n    at async run (/workspace/scratch/98883f3944af/round05/work/Dice-Abyss/scripts/qa-fusion-browser.mjs:65:9)\n    at async file:///workspace/scratch/98883f3944af/round05/work/Dice-Abyss/scripts/qa-fusion-browser.mjs:107:3",
+      "failedTrace": [],
+      "resolution": "Final frozen native run passes the corresponding original behavior assertion; historical record remains FAIL.",
+      "finalReport": {
+        "source": "qa/tooltip-final-v2/report.json",
+        "sha256": "bf04965007ae8a51d4a6e8a61a8da348100962238fb2b664043148fc59d43ae3"
+      }
+    }
+  ],
+  "candidateFirstFrozenControllerSha256": "2b7933747b44be954eefad41b94ace3dee0f42a51e03c738a72dc5d99693bd00",
+  "candidateHashProvenance": "Contemporaneous source review recorded this hash for qa/tooltip-final; that raw report did not itself record HTTP source hashes. The separate root responsive-geometry failure has no recorded loaded-source hash.",
+  "pendingEscapeHypothesis": {
+    "status": "RETRACTED_NOT_A_CONFIRMED_BASELINE_BUG",
+    "report": {
+      "source": "qa/tooltip-baseline-pending-escape/report.json",
+      "sha256": "e8eb6bcb6358ae236a5ce071cc47cb569d8f8935a52179771746e1659e998d11"
+    },
+    "actualObservation": {
+      "events": [
+        {
+          "type": "pointerover",
+          "item": "i99",
+          "time": 3093.1999999955297,
+          "visible": false,
+          "tag": "SPAN",
+          "class": "fusion-card-level"
+        },
+        {
+          "type": "keydown",
+          "key": "Escape",
+          "item": "i99",
+          "time": 3101,
+          "visible": false,
+          "tag": "BUTTON",
+          "class": "fusion-card common is-target    "
+        }
+      ],
+      "delayMs": 7.800000004470348,
+      "pending": true,
+      "reopened": false,
+      "finding": "The pending timer was cancelled. Reopening after pending Escape was not reproduced."
+    },
+    "waitAfterEscapeMsFromQAScript": 350,
+    "interpretation": "Original pending hover timer already cancels on early Escape. Current regression coverage preserves this behavior; no new timer fix is claimed."
+  },
+  "finalNative": {
+    "report": {
+      "source": "qa/tooltip-final-v2/report.json",
+      "sha256": "bf04965007ae8a51d4a6e8a61a8da348100962238fb2b664043148fc59d43ae3"
+    },
+    "casesPassed": 5,
+    "casesFailed": 0,
+    "checks": 109,
+    "consoleOrPageErrors": 0,
+    "sourceSha256": {
+      "fusion-controller.js": "ee36822e7db5a31eb45a57904e9cc758c990a682707d8e3ad312ca5772f1821f",
+      "fusion-view.js": "ce69eccdc65f183e5bc856a88ac77934f5c1dd2b61f23b034532539b1eee9fa7",
+      "fusion.css": "9b6fe3edaa023ae1c7702e60e3110d9450a6ca03a737f74dd984baf0fb083bc5"
+    },
+    "scriptSha256": "507f9bc66ec99b75ad7c40dbc7c6f3e43a32c0403319e4506706c8102c52cdcd"
+  },
+  "limits": [
+    "Browser runs were performed by the tooltip author and integration owner; this reviewer inspected the actual reports and source identities.",
+    "Counts from development, baseline, candidate and final runs are not summed."
+  ]
+}

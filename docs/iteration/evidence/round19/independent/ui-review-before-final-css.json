@@ -1,0 +1,123 @@
+{
+  "createdAt": "2026-10-19T08:45:51.676335+00:00",
+  "status": "VERIFIED_IN_NODE_WITH_BROWSER_SCOPE_RESERVED",
+  "scope": "Real app handlers, real game/storage/view/query modules; headless harness stubs effects, focus and DOM. Result textContent is freshly decoded from actual view HTML. No native browser or external screen reader claims.",
+  "reviewedRuntime": {
+    "src/app.js": {
+      "baselineSha256": "1ba0a720bb39630094515ce838048c53f18706ddd762b019d11238c091e267fc",
+      "currentSha256": "78ee59e167dccac294986be7f7521439195b4eea33db93d95144d38f6088c0c1"
+    },
+    "src/views.js": {
+      "baselineSha256": "94f6b5e52e41c496260fee8e7a1a0960bccab40333a0b96e4a138e145ec85296",
+      "currentSha256": "65e3a0a0271f5b23f22a421a9b96f4b89e0da4929f4076ea9b88100c897ba24a"
+    },
+    "src/inventory-query.js": {
+      "baselineSha256": "7cf093f155934779d21c4dceb0a6aeef2e467fdb8c763413c155b6c0fd52a4c5",
+      "currentSha256": "359c8d788a7a94010dcaaa6ec78a556857d9fe943fd8a56974e15f601baf2678"
+    },
+    "src/inventory-search.css": {
+      "baselineSha256": "cfb91edec23d0e706414f3c9a90b6ab46c0efec43d54ff5e01da85c9923e3de1",
+      "currentSha256": "532ba1bead7222a3d204a885bdf0f7a99a4f051d6ebb50cca1253704d802e9c6"
+    }
+  },
+  "unchangedCore": {
+    "src/engine.js": true,
+    "src/storage.js": true,
+    "src/equipment.js": true,
+    "src/equipment-content.js": true,
+    "src/equipment-comparison.js": true,
+    "src/deep-rules.js": true,
+    "src/event-references.js": true,
+    "src/encounters.js": true,
+    "src/gold.js": true,
+    "src/experience.js": true
+  },
+  "originalTestModules": 77,
+  "changedOriginalTests": [],
+  "newAuditTests": {
+    "tests/inventory-run-reset.test.mjs": "aea78f037ca74f3f29e1fbc244f35199a4620a7b5bec9c1db83e700cb7afb9ba",
+    "tests/inventory-announcements.test.mjs": "8fd61209ca60765b563e2dec438368c611caff3272b37803a60a6a208e7f0b24"
+  },
+  "reset": {
+    "baseline": {
+      "path": "/tmp/dice-round19-inventory-run-reset-baseline-native.tap",
+      "sha256": "e21af382e6edca25e179215728101161019b941a63e9042e5c11d72f0d8eb695",
+      "counts": {
+        "tests": 9,
+        "suites": 0,
+        "pass": 5,
+        "fail": 4,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      }
+    },
+    "current": {
+      "path": "/tmp/dice-round19-inventory-run-reset-current-native.tap",
+      "sha256": "71326932a9ed663e0663960c1a6fa1aeddb6e74fd57964c9f83fe4d3a6e489af",
+      "counts": {
+        "tests": 9,
+        "suites": 0,
+        "pass": 9,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      }
+    }
+  },
+  "announcements": {
+    "baseline": {
+      "path": "/tmp/dice-round19-inventory-announcements-baseline-native.tap",
+      "sha256": "2c07d59cd3e8d4076e6726f60371edbfad9bb1a309540d35ee1f6bba4c8b7fa3",
+      "counts": {
+        "tests": 12,
+        "suites": 0,
+        "pass": 3,
+        "fail": 9,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      }
+    },
+    "current": {
+      "path": "/tmp/dice-round19-inventory-announcements-current-native.tap",
+      "sha256": "aaf015a35c77b20b67ccc1276f4156d3d0d020a1aa533eeb4731b67ec31581ec",
+      "counts": {
+        "tests": 12,
+        "suites": 0,
+        "pass": 12,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      }
+    }
+  },
+  "baselineFailureAttribution": {
+    "reset": {
+      "confirmedOldBug": 4,
+      "controlsPassed": 5
+    },
+    "announcements": {
+      "confirmedOldStaleAnnouncement": 5,
+      "newDefenseFeatureCoverage": 4,
+      "controlsPassed": 3
+    }
+  },
+  "findings": [
+    "The four journey replacement paths now clear exclusion filters and retain sort preference.",
+    "Same-run synchronization, unchanged mirror, cancel, and failed primary writes preserve choices and complete state/disk.",
+    "Five existing explicit result changes now announce once from the actual post-render result.",
+    "The three new defense values and unsupported-value fallback announce current counts and do not save.",
+    "Draft input, comparisons and ordinary navigation do not replace unrelated notices.",
+    "Filter predicate uses itemStats, preserves legacy truth, does not mutate catalog, ownership, state or RNG.",
+    "No new P0/P1 or integration blocker found within the review scope."
+  ],
+  "notTested": [
+    "Physical keyboard/IME",
+    "Native focus and viewport layout (root owns browser QA)",
+    "External screen reader speech",
+    "Physical GPU/audio/Windows launcher"
+  ]
+}

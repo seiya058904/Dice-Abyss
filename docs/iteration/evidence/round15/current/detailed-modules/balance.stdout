@@ -1,0 +1,112 @@
+TAP version 13
+# Subtest: intent predicts ordinary retaliation exactly, including heavy timing, defense and rest ward
+ok 1 - intent predicts ordinary retaliation exactly, including heavy timing, defense and rest ward
+  ---
+  duration_ms: 118.7691
+  type: 'test'
+  ...
+# Subtest: elite third-turn windup is visible and does not multiply an existing pulse heavy twice
+ok 2 - elite third-turn windup is visible and does not multiply an existing pulse heavy twice
+  ---
+  duration_ms: 1.152572
+  type: 'test'
+  ...
+# Subtest: boss crossing half health creates one saved second phase and a breakable shield, including huge critical rolls
+ok 3 - boss crossing half health creates one saved second phase and a breakable shield, including huge critical rolls
+  ---
+  duration_ms: 11.5267
+  type: 'test'
+  ...
+# Subtest: a committed old enemy keeps its health, RNG, no phase gate and old attack behavior
+ok 4 - a committed old enemy keeps its health, RNG, no phase gate and old attack behavior
+  ---
+  duration_ms: 2.504486
+  type: 'test'
+  ...
+# Subtest: half-health attack increases have an explicit upper forecast before the crossing roll
+ok 5 - half-health attack increases have an explicit upper forecast before the crossing roll
+  ---
+  duration_ms: 1.458771
+  type: 'test'
+  ...
+# Subtest: retry resets phase once without inventing an opening shield or changing owned progress
+ok 6 - retry resets phase once without inventing an opening shield or changing owned progress
+  ---
+  duration_ms: 2.038422
+  type: 'test'
+  ...
+# Subtest: enemy power depends on floor and identity rather than secretly matching equipped gear
+ok 7 - enemy power depends on floor and identity rather than secretly matching equipped gear
+  ---
+  duration_ms: 6.717651
+  type: 'test'
+  ...
+# Subtest: leech applies to a surviving critical killing blow as described
+ok 8 - leech applies to a surviving critical killing blow as described
+  ---
+  duration_ms: 40.139669
+  type: 'test'
+  ...
+# Subtest: later merchants stock relevant tiers while already committed offers survive unchanged
+ok 9 - later merchants stock relevant tiers while already committed offers survive unchanged
+  ---
+  duration_ms: 6.397
+  type: 'test'
+  ...
+# Subtest: double fate rewards use bounded depth power even at the maximum supported floor
+ok 10 - double fate rewards use bounded depth power even at the maximum supported floor
+  ---
+  duration_ms: 16.850354
+  type: 'test'
+  ...
+# Subtest: safe salvage selects only inferior common/rare gear and protects locks, relic vacancies and current loot
+ok 11 - safe salvage selects only inferior common/rare gear and protects locks, relic vacancies and current loot
+  ---
+  duration_ms: 3.178705
+  type: 'test'
+  ...
+# Subtest: salvage frees a full inventory before claiming the same pending chest exactly once
+ok 12 - salvage frees a full inventory before claiming the same pending chest exactly once
+  ---
+  duration_ms: 79.554575
+  type: 'test'
+  ...
+# Subtest: gold boundary rejects lossy salvage and safely caps natural rewards without invalidating saves
+ok 13 - gold boundary rejects lossy salvage and safely caps natural rewards without invalidating saves
+  ---
+  duration_ms: 1.676701
+  type: 'test'
+  ...
+# Subtest: explicit protected salvage can free a full legendary inventory while current loot, locks and gear stay protected
+ok 14 - explicit protected salvage can free a full legendary inventory while current loot, locks and gear stay protected
+  ---
+  duration_ms: 94.423318
+  type: 'test'
+  ...
+# Subtest: seeded encounters retain multi-roll bosses, observable phases and real elite windups
+ok 15 - seeded encounters retain multi-roll bosses, observable phases and real elite windups
+  ---
+  duration_ms: 10236.605566
+  type: 'test'
+  ...
+# Subtest: future fusion quotes scale with target investment without changing any owned value or material contribution
+ok 16 - future fusion quotes scale with target investment without changing any owned value or material contribution
+  ---
+  duration_ms: 3.08117
+  type: 'test'
+  ...
+# Subtest: fusion previews all six exact rounded payouts and preserves positive three-relic sharing and capped reinforcement conversion
+ok 17 - fusion previews all six exact rounded payouts and preserves positive three-relic sharing and capped reinforcement conversion
+  ---
+  duration_ms: 163.833242
+  type: 'test'
+  ...
+1..17
+# tests 17
+# suites 0
+# pass 17
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 10812.315559

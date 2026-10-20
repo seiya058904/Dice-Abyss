@@ -1,0 +1,1868 @@
+{
+  "scope": "Independent Node full-array differential; no browser or timing claims",
+  "at": "2026-10-19T02:53:13.783Z",
+  "node": "v24.19.0",
+  "baselineRoot": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss",
+  "currentRoot": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss",
+  "scriptSha256": "a3c79a19e994b350bab1acb055d2c029d1abd3204891cd1a3ab04012d4860ea4",
+  "hashes": {
+    "baseline": {
+      "src/inventory-query.js": "7cf093f155934779d21c4dceb0a6aeef2e467fdb8c763413c155b6c0fd52a4c5",
+      "src/equipment.js": "8c20de433f21931318e315b862b457d37a03b9596ea5df8f7cc4025691aaccd6",
+      "src/engine.js": "75c6d9fcc48c0cf49ee02e53ffb7b143a09a2c79738d3bb2eb5d0ae80b30872b",
+      "src/storage.js": "6bfcc60036c9f729c21b948ca98c7ac715e14049856fb9dded0baa2aeef2c561"
+    },
+    "current": {
+      "src/inventory-query.js": "463a8d340842b9deaacef262b4459ecc8d8e9503d01edddc9b7df902a31c03be",
+      "src/equipment.js": "8c20de433f21931318e315b862b457d37a03b9596ea5df8f7cc4025691aaccd6",
+      "src/engine.js": "75c6d9fcc48c0cf49ee02e53ffb7b143a09a2c79738d3bb2eb5d0ae80b30872b",
+      "src/storage.js": "6bfcc60036c9f729c21b948ca98c7ac715e14049856fb9dded0baa2aeef2c561"
+    }
+  },
+  "status": "PASS",
+  "cases": [
+    {
+      "label": "32/power/all/empty",
+      "selected": 32,
+      "exactReferencesAndOrder": true,
+      "orderHash": "c345193b8321df68a3df73676714b959dcc7da87f65c559811e385982cc2e8a9"
+    },
+    {
+      "label": "32/power/all/  寒潮 ",
+      "selected": 6,
+      "exactReferencesAndOrder": true,
+      "orderHash": "e6e8e3bd2bb6b1665667550b1fec8834cb372a8f9220af8c8cc77cb0febc5825"
+    },
+    {
+      "label": "32/power/all/ECHO",
+      "selected": 12,
+      "exactReferencesAndOrder": true,
+      "orderHash": "9c2f2ced9d65fc136b149017e043ffd82f10b2be0cb1a0b846395bffb6fae519"
+    },
+    {
+      "label": "32/power/all/[Blade]",
+      "selected": 6,
+      "exactReferencesAndOrder": true,
+      "orderHash": "8bbfb6c696b46033abcfaa62f895755aa081dc67eb5832b5254ddb9aa31bf5dd"
+    },
+    {
+      "label": "32/power/all/<Blade>",
+      "selected": 6,
+      "exactReferencesAndOrder": true,
+      "orderHash": "95839c8f13ed68d757835338f92f48ee95872f53e3de148e67869e2aa4d61c86"
+    },
+    {
+      "label": "32/power/all/.*",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "32/power/weapon/empty",
+      "selected": 13,
+      "exactReferencesAndOrder": true,
+      "orderHash": "03665f1638ac82594c9b4a2f03718a9842a4a31b63cbec93b7f648afe733c299"
+    },
+    {
+      "label": "32/power/weapon/  寒潮 ",
+      "selected": 2,
+      "exactReferencesAndOrder": true,
+      "orderHash": "86401dcfe869d6c790121377464ed712e930d1b04fa34d6ea79d2f409814a21d"
+    },
+    {
+      "label": "32/power/weapon/ECHO",
+      "selected": 3,
+      "exactReferencesAndOrder": true,
+      "orderHash": "aecc9ea46d664d1b51deb246001270d1fd297daabf22a1de3ba2791aef8ecf30"
+    },
+    {
+      "label": "32/power/weapon/[Blade]",
+      "selected": 3,
+      "exactReferencesAndOrder": true,
+      "orderHash": "aecc9ea46d664d1b51deb246001270d1fd297daabf22a1de3ba2791aef8ecf30"
+    },
+    {
+      "label": "32/power/weapon/<Blade>",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "32/power/weapon/.*",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "32/power/armor/empty",
+      "selected": 7,
+      "exactReferencesAndOrder": true,
+      "orderHash": "3685d8072b5a9a5325051990579f6e5d7f91f760461eb51a1e756ee1ef99aa84"
+    },
+    {
+      "label": "32/power/armor/  寒潮 ",
+      "selected": 2,
+      "exactReferencesAndOrder": true,
+      "orderHash": "fd41a4c08e6d422afe1dc4f0962d4964a099ebb1b407e30e01c50f1bceb5b267"
+    },
+    {
+      "label": "32/power/armor/ECHO",
+      "selected": 2,
+      "exactReferencesAndOrder": true,
+      "orderHash": "171e99fe12ae7947bd5ce1d093797fd89ec3c1d923ec64872c55a5f71b2a3af8"
+    },
+    {
+      "label": "32/power/armor/[Blade]",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "32/power/armor/<Blade>",
+      "selected": 2,
+      "exactReferencesAndOrder": true,
+      "orderHash": "171e99fe12ae7947bd5ce1d093797fd89ec3c1d923ec64872c55a5f71b2a3af8"
+    },
+    {
+      "label": "32/power/armor/.*",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "32/power/relic/empty",
+      "selected": 2,
+      "exactReferencesAndOrder": true,
+      "orderHash": "d0da8edf60c5d2b1dfd2ae1e6663c8cb7cacdd28256846767758b1ffba1e0ea5"
+    },
+    {
+      "label": "32/power/relic/  寒潮 ",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "32/power/relic/ECHO",
+      "selected": 1,
+      "exactReferencesAndOrder": true,
+      "orderHash": "56ba125e0ecbcf371d7bd325297c102dfc0ba6295db31519ec4d09aaa8428372"
+    },
+    {
+      "label": "32/power/relic/[Blade]",
+      "selected": 1,
+      "exactReferencesAndOrder": true,
+      "orderHash": "56ba125e0ecbcf371d7bd325297c102dfc0ba6295db31519ec4d09aaa8428372"
+    },
+    {
+      "label": "32/power/relic/<Blade>",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "32/power/relic/.*",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "32/rarity/all/empty",
+      "selected": 32,
+      "exactReferencesAndOrder": true,
+      "orderHash": "59e6e5ffaa8ab61533e19daa34039a0d5dd80547ee0a330ea27cd628d30add4b"
+    },
+    {
+      "label": "32/rarity/all/  寒潮 ",
+      "selected": 6,
+      "exactReferencesAndOrder": true,
+      "orderHash": "bea2e9b97c91d3bc418bc0c22fd5691aee24976b05ba5a89e0881f5b07225567"
+    },
+    {
+      "label": "32/rarity/all/ECHO",
+      "selected": 12,
+      "exactReferencesAndOrder": true,
+      "orderHash": "a658e1f38449089388e4871301b9c9e0742765f5405b03c4b640d05d0da4e37e"
+    },
+    {
+      "label": "32/rarity/all/[Blade]",
+      "selected": 6,
+      "exactReferencesAndOrder": true,
+      "orderHash": "f4b676a3993cb01630a25db5772fda56c0a60a6ca50b72a2cd802453c148ce25"
+    },
+    {
+      "label": "32/rarity/all/<Blade>",
+      "selected": 6,
+      "exactReferencesAndOrder": true,
+      "orderHash": "efb2b74bea09da2207e96f668fb8bbf6b7330d803a0394d2a2080e0838c595d4"
+    },
+    {
+      "label": "32/rarity/all/.*",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "32/rarity/weapon/empty",
+      "selected": 13,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4df9ff44377fdf1c2d2d660e37a6b7b38bbce702dd95daa6b2b74aa4048c01b5"
+    },
+    {
+      "label": "32/rarity/weapon/  寒潮 ",
+      "selected": 2,
+      "exactReferencesAndOrder": true,
+      "orderHash": "86401dcfe869d6c790121377464ed712e930d1b04fa34d6ea79d2f409814a21d"
+    },
+    {
+      "label": "32/rarity/weapon/ECHO",
+      "selected": 3,
+      "exactReferencesAndOrder": true,
+      "orderHash": "aecc9ea46d664d1b51deb246001270d1fd297daabf22a1de3ba2791aef8ecf30"
+    },
+    {
+      "label": "32/rarity/weapon/[Blade]",
+      "selected": 3,
+      "exactReferencesAndOrder": true,
+      "orderHash": "aecc9ea46d664d1b51deb246001270d1fd297daabf22a1de3ba2791aef8ecf30"
+    },
+    {
+      "label": "32/rarity/weapon/<Blade>",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "32/rarity/weapon/.*",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "32/rarity/armor/empty",
+      "selected": 7,
+      "exactReferencesAndOrder": true,
+      "orderHash": "0bb2f959f3d3384ba171cef67a69dcb42e38597f0f99a1f02e6bd9f24910a0a9"
+    },
+    {
+      "label": "32/rarity/armor/  寒潮 ",
+      "selected": 2,
+      "exactReferencesAndOrder": true,
+      "orderHash": "fd41a4c08e6d422afe1dc4f0962d4964a099ebb1b407e30e01c50f1bceb5b267"
+    },
+    {
+      "label": "32/rarity/armor/ECHO",
+      "selected": 2,
+      "exactReferencesAndOrder": true,
+      "orderHash": "171e99fe12ae7947bd5ce1d093797fd89ec3c1d923ec64872c55a5f71b2a3af8"
+    },
+    {
+      "label": "32/rarity/armor/[Blade]",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "32/rarity/armor/<Blade>",
+      "selected": 2,
+      "exactReferencesAndOrder": true,
+      "orderHash": "171e99fe12ae7947bd5ce1d093797fd89ec3c1d923ec64872c55a5f71b2a3af8"
+    },
+    {
+      "label": "32/rarity/armor/.*",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "32/rarity/relic/empty",
+      "selected": 2,
+      "exactReferencesAndOrder": true,
+      "orderHash": "d0da8edf60c5d2b1dfd2ae1e6663c8cb7cacdd28256846767758b1ffba1e0ea5"
+    },
+    {
+      "label": "32/rarity/relic/  寒潮 ",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "32/rarity/relic/ECHO",
+      "selected": 1,
+      "exactReferencesAndOrder": true,
+      "orderHash": "56ba125e0ecbcf371d7bd325297c102dfc0ba6295db31519ec4d09aaa8428372"
+    },
+    {
+      "label": "32/rarity/relic/[Blade]",
+      "selected": 1,
+      "exactReferencesAndOrder": true,
+      "orderHash": "56ba125e0ecbcf371d7bd325297c102dfc0ba6295db31519ec4d09aaa8428372"
+    },
+    {
+      "label": "32/rarity/relic/<Blade>",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "32/rarity/relic/.*",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "32/level/all/empty",
+      "selected": 32,
+      "exactReferencesAndOrder": true,
+      "orderHash": "2a1bbe673fe2afb48de24e14def73f1be98e1cb12921813215449e9ead6e4517"
+    },
+    {
+      "label": "32/level/all/  寒潮 ",
+      "selected": 6,
+      "exactReferencesAndOrder": true,
+      "orderHash": "9eea88845c9423e34e9c57b2487c3d777b112d893d988b790b9877448bfb00f8"
+    },
+    {
+      "label": "32/level/all/ECHO",
+      "selected": 12,
+      "exactReferencesAndOrder": true,
+      "orderHash": "b4a5a2466271c60ed582ab26362512571cb5aa582ae614ecb6c6afc6f0bf395d"
+    },
+    {
+      "label": "32/level/all/[Blade]",
+      "selected": 6,
+      "exactReferencesAndOrder": true,
+      "orderHash": "84367e7eef8bd222e8d18cffc0d3e65bec3c386cf8d52a57aad3f42f1659254b"
+    },
+    {
+      "label": "32/level/all/<Blade>",
+      "selected": 6,
+      "exactReferencesAndOrder": true,
+      "orderHash": "fc0fabbd451b29e92e634eedef781591c8b3bf35851bdae9b6da74dd1199821f"
+    },
+    {
+      "label": "32/level/all/.*",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "32/level/weapon/empty",
+      "selected": 13,
+      "exactReferencesAndOrder": true,
+      "orderHash": "49249b7da7a698d0db2ac4ee6bf1bd05ee4d92563d12a5f365540ff67b1852e3"
+    },
+    {
+      "label": "32/level/weapon/  寒潮 ",
+      "selected": 2,
+      "exactReferencesAndOrder": true,
+      "orderHash": "86401dcfe869d6c790121377464ed712e930d1b04fa34d6ea79d2f409814a21d"
+    },
+    {
+      "label": "32/level/weapon/ECHO",
+      "selected": 3,
+      "exactReferencesAndOrder": true,
+      "orderHash": "54487238796b65e1d3f5ad32e7de8da0871b0801cd8f4fef2328c3b4fb6f1fca"
+    },
+    {
+      "label": "32/level/weapon/[Blade]",
+      "selected": 3,
+      "exactReferencesAndOrder": true,
+      "orderHash": "54487238796b65e1d3f5ad32e7de8da0871b0801cd8f4fef2328c3b4fb6f1fca"
+    },
+    {
+      "label": "32/level/weapon/<Blade>",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "32/level/weapon/.*",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "32/level/armor/empty",
+      "selected": 7,
+      "exactReferencesAndOrder": true,
+      "orderHash": "fbecd22f107081662b8ac19713289b95a492ae473ca1642b7abe82a14254014b"
+    },
+    {
+      "label": "32/level/armor/  寒潮 ",
+      "selected": 2,
+      "exactReferencesAndOrder": true,
+      "orderHash": "18764b2ea67b365406a2202354bb276a1dee5fd87e75c4438493e3ad0765e667"
+    },
+    {
+      "label": "32/level/armor/ECHO",
+      "selected": 2,
+      "exactReferencesAndOrder": true,
+      "orderHash": "171e99fe12ae7947bd5ce1d093797fd89ec3c1d923ec64872c55a5f71b2a3af8"
+    },
+    {
+      "label": "32/level/armor/[Blade]",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "32/level/armor/<Blade>",
+      "selected": 2,
+      "exactReferencesAndOrder": true,
+      "orderHash": "171e99fe12ae7947bd5ce1d093797fd89ec3c1d923ec64872c55a5f71b2a3af8"
+    },
+    {
+      "label": "32/level/armor/.*",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "32/level/relic/empty",
+      "selected": 2,
+      "exactReferencesAndOrder": true,
+      "orderHash": "d0da8edf60c5d2b1dfd2ae1e6663c8cb7cacdd28256846767758b1ffba1e0ea5"
+    },
+    {
+      "label": "32/level/relic/  寒潮 ",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "32/level/relic/ECHO",
+      "selected": 1,
+      "exactReferencesAndOrder": true,
+      "orderHash": "56ba125e0ecbcf371d7bd325297c102dfc0ba6295db31519ec4d09aaa8428372"
+    },
+    {
+      "label": "32/level/relic/[Blade]",
+      "selected": 1,
+      "exactReferencesAndOrder": true,
+      "orderHash": "56ba125e0ecbcf371d7bd325297c102dfc0ba6295db31519ec4d09aaa8428372"
+    },
+    {
+      "label": "32/level/relic/<Blade>",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "32/level/relic/.*",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "32/unknown-sort/all/empty",
+      "selected": 32,
+      "exactReferencesAndOrder": true,
+      "orderHash": "c345193b8321df68a3df73676714b959dcc7da87f65c559811e385982cc2e8a9"
+    },
+    {
+      "label": "32/unknown-sort/all/  寒潮 ",
+      "selected": 6,
+      "exactReferencesAndOrder": true,
+      "orderHash": "e6e8e3bd2bb6b1665667550b1fec8834cb372a8f9220af8c8cc77cb0febc5825"
+    },
+    {
+      "label": "32/unknown-sort/all/ECHO",
+      "selected": 12,
+      "exactReferencesAndOrder": true,
+      "orderHash": "9c2f2ced9d65fc136b149017e043ffd82f10b2be0cb1a0b846395bffb6fae519"
+    },
+    {
+      "label": "32/unknown-sort/all/[Blade]",
+      "selected": 6,
+      "exactReferencesAndOrder": true,
+      "orderHash": "8bbfb6c696b46033abcfaa62f895755aa081dc67eb5832b5254ddb9aa31bf5dd"
+    },
+    {
+      "label": "32/unknown-sort/all/<Blade>",
+      "selected": 6,
+      "exactReferencesAndOrder": true,
+      "orderHash": "95839c8f13ed68d757835338f92f48ee95872f53e3de148e67869e2aa4d61c86"
+    },
+    {
+      "label": "32/unknown-sort/all/.*",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "32/unknown-sort/weapon/empty",
+      "selected": 13,
+      "exactReferencesAndOrder": true,
+      "orderHash": "03665f1638ac82594c9b4a2f03718a9842a4a31b63cbec93b7f648afe733c299"
+    },
+    {
+      "label": "32/unknown-sort/weapon/  寒潮 ",
+      "selected": 2,
+      "exactReferencesAndOrder": true,
+      "orderHash": "86401dcfe869d6c790121377464ed712e930d1b04fa34d6ea79d2f409814a21d"
+    },
+    {
+      "label": "32/unknown-sort/weapon/ECHO",
+      "selected": 3,
+      "exactReferencesAndOrder": true,
+      "orderHash": "aecc9ea46d664d1b51deb246001270d1fd297daabf22a1de3ba2791aef8ecf30"
+    },
+    {
+      "label": "32/unknown-sort/weapon/[Blade]",
+      "selected": 3,
+      "exactReferencesAndOrder": true,
+      "orderHash": "aecc9ea46d664d1b51deb246001270d1fd297daabf22a1de3ba2791aef8ecf30"
+    },
+    {
+      "label": "32/unknown-sort/weapon/<Blade>",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "32/unknown-sort/weapon/.*",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "32/unknown-sort/armor/empty",
+      "selected": 7,
+      "exactReferencesAndOrder": true,
+      "orderHash": "3685d8072b5a9a5325051990579f6e5d7f91f760461eb51a1e756ee1ef99aa84"
+    },
+    {
+      "label": "32/unknown-sort/armor/  寒潮 ",
+      "selected": 2,
+      "exactReferencesAndOrder": true,
+      "orderHash": "fd41a4c08e6d422afe1dc4f0962d4964a099ebb1b407e30e01c50f1bceb5b267"
+    },
+    {
+      "label": "32/unknown-sort/armor/ECHO",
+      "selected": 2,
+      "exactReferencesAndOrder": true,
+      "orderHash": "171e99fe12ae7947bd5ce1d093797fd89ec3c1d923ec64872c55a5f71b2a3af8"
+    },
+    {
+      "label": "32/unknown-sort/armor/[Blade]",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "32/unknown-sort/armor/<Blade>",
+      "selected": 2,
+      "exactReferencesAndOrder": true,
+      "orderHash": "171e99fe12ae7947bd5ce1d093797fd89ec3c1d923ec64872c55a5f71b2a3af8"
+    },
+    {
+      "label": "32/unknown-sort/armor/.*",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "32/unknown-sort/relic/empty",
+      "selected": 2,
+      "exactReferencesAndOrder": true,
+      "orderHash": "d0da8edf60c5d2b1dfd2ae1e6663c8cb7cacdd28256846767758b1ffba1e0ea5"
+    },
+    {
+      "label": "32/unknown-sort/relic/  寒潮 ",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "32/unknown-sort/relic/ECHO",
+      "selected": 1,
+      "exactReferencesAndOrder": true,
+      "orderHash": "56ba125e0ecbcf371d7bd325297c102dfc0ba6295db31519ec4d09aaa8428372"
+    },
+    {
+      "label": "32/unknown-sort/relic/[Blade]",
+      "selected": 1,
+      "exactReferencesAndOrder": true,
+      "orderHash": "56ba125e0ecbcf371d7bd325297c102dfc0ba6295db31519ec4d09aaa8428372"
+    },
+    {
+      "label": "32/unknown-sort/relic/<Blade>",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "32/unknown-sort/relic/.*",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "1000/power/all/empty",
+      "selected": 1000,
+      "exactReferencesAndOrder": true,
+      "orderHash": "34d0c22a2297a0cc18d1c5977976b0315f3a701d59d20a5ef3b3888a1a041525"
+    },
+    {
+      "label": "1000/power/all/  寒潮 ",
+      "selected": 200,
+      "exactReferencesAndOrder": true,
+      "orderHash": "ccf4db5bbf7db88b68cf673efe8b1dc49adff1e535e9baa8f379f68ffc20603c"
+    },
+    {
+      "label": "1000/power/all/ECHO",
+      "selected": 399,
+      "exactReferencesAndOrder": true,
+      "orderHash": "ea6dd173d2d7a3994afa92ccc19e1c2bd10387d8be872f9f7348c67822c3d431"
+    },
+    {
+      "label": "1000/power/all/[Blade]",
+      "selected": 200,
+      "exactReferencesAndOrder": true,
+      "orderHash": "003376bcc1e8350013dac7fc96c642b1f36b3726be0df2ee871712b0659382a0"
+    },
+    {
+      "label": "1000/power/all/<Blade>",
+      "selected": 199,
+      "exactReferencesAndOrder": true,
+      "orderHash": "d3d35514b63a487bbdd4040a01a07e6bca2876d8b205a2769de05e6c03d7ef30"
+    },
+    {
+      "label": "1000/power/all/.*",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "1000/power/weapon/empty",
+      "selected": 322,
+      "exactReferencesAndOrder": true,
+      "orderHash": "ee090d1546c1bf10b00be925218c84cef9bd7e3b29d77e9a18dfa648dc4a4ff3"
+    },
+    {
+      "label": "1000/power/weapon/  寒潮 ",
+      "selected": 66,
+      "exactReferencesAndOrder": true,
+      "orderHash": "911bbc1d5bd847268d5301559870d60e1bb1e72dd20eea7f833edf9c5bd9b44f"
+    },
+    {
+      "label": "1000/power/weapon/ECHO",
+      "selected": 116,
+      "exactReferencesAndOrder": true,
+      "orderHash": "659bdbf6c52f8cee582ac899864c92aabe15adb3fc351fc4cef01cac13b711e5"
+    },
+    {
+      "label": "1000/power/weapon/[Blade]",
+      "selected": 57,
+      "exactReferencesAndOrder": true,
+      "orderHash": "3edce8bed7c75f97641cb0b12b493bf3762469d5bbe137f88c87187e0b55a28b"
+    },
+    {
+      "label": "1000/power/weapon/<Blade>",
+      "selected": 59,
+      "exactReferencesAndOrder": true,
+      "orderHash": "b6c16337f13531faacdfab38ff5c70425e0b5bf216920ae0183d26020099d805"
+    },
+    {
+      "label": "1000/power/weapon/.*",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "1000/power/armor/empty",
+      "selected": 321,
+      "exactReferencesAndOrder": true,
+      "orderHash": "3ad0ca5c0887590df574c18961e6b92e1031d682e4aa12af9f6b0034dd8196b3"
+    },
+    {
+      "label": "1000/power/armor/  寒潮 ",
+      "selected": 61,
+      "exactReferencesAndOrder": true,
+      "orderHash": "dccd15623d797e1c5680eab05832d81df4822824293151b9cddce1396f4cac1f"
+    },
+    {
+      "label": "1000/power/armor/ECHO",
+      "selected": 141,
+      "exactReferencesAndOrder": true,
+      "orderHash": "874765789554c9b3fe2cff4f36d8ff974ae1adee897c59c7146404fbb27fef77"
+    },
+    {
+      "label": "1000/power/armor/[Blade]",
+      "selected": 70,
+      "exactReferencesAndOrder": true,
+      "orderHash": "e25fcb56107b4c33d0e635eaa31720f3b50fcc3f056a6087e195edf9a2babe9c"
+    },
+    {
+      "label": "1000/power/armor/<Blade>",
+      "selected": 71,
+      "exactReferencesAndOrder": true,
+      "orderHash": "6be37e8648d38d1f88c239a628ce01825fb652ccbdc2985bb529992bbb7e4b1e"
+    },
+    {
+      "label": "1000/power/armor/.*",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "1000/power/relic/empty",
+      "selected": 44,
+      "exactReferencesAndOrder": true,
+      "orderHash": "f58c99a96fabd92fa6a6af92a4e8df6f1089ebeb99e01460a7432968f839f664"
+    },
+    {
+      "label": "1000/power/relic/  寒潮 ",
+      "selected": 10,
+      "exactReferencesAndOrder": true,
+      "orderHash": "28aaf45b5d31a5b80e439639a085909ef64001d0064242afdbdbab7433bac54d"
+    },
+    {
+      "label": "1000/power/relic/ECHO",
+      "selected": 18,
+      "exactReferencesAndOrder": true,
+      "orderHash": "623f3cdefe4eb68ba5590fe58a3e526991b6e28afce1f288988f999386d5dcd7"
+    },
+    {
+      "label": "1000/power/relic/[Blade]",
+      "selected": 8,
+      "exactReferencesAndOrder": true,
+      "orderHash": "ff9e83315fa839e6570511b50826d24596ae29a82255944eb9961a3f2433c99e"
+    },
+    {
+      "label": "1000/power/relic/<Blade>",
+      "selected": 10,
+      "exactReferencesAndOrder": true,
+      "orderHash": "6f5871d70bc355cf79fcfa456c59d9d77b353a5359a608915482259849437d0c"
+    },
+    {
+      "label": "1000/power/relic/.*",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "1000/rarity/all/empty",
+      "selected": 1000,
+      "exactReferencesAndOrder": true,
+      "orderHash": "12c7e0826b74270bda24d6cbf8f90246963f8a81b47483c3b4ef781f220acff3"
+    },
+    {
+      "label": "1000/rarity/all/  寒潮 ",
+      "selected": 200,
+      "exactReferencesAndOrder": true,
+      "orderHash": "885553efae439ff0c0a44c9a4c45c1c5dc72a68146afb16957e086ba588a8130"
+    },
+    {
+      "label": "1000/rarity/all/ECHO",
+      "selected": 399,
+      "exactReferencesAndOrder": true,
+      "orderHash": "daf2aa2c85a112462d470c3e2eab6b1d5ad6ac88fd1b68c7db133290ed21e576"
+    },
+    {
+      "label": "1000/rarity/all/[Blade]",
+      "selected": 200,
+      "exactReferencesAndOrder": true,
+      "orderHash": "bb85212c2fa8dc0fe9debec94fc24541c4182984776577075c1d133db860b9e4"
+    },
+    {
+      "label": "1000/rarity/all/<Blade>",
+      "selected": 199,
+      "exactReferencesAndOrder": true,
+      "orderHash": "be0749d3a5155aa7ae5471c1ba8f7b814a1534432df7397d8a6a26c16f93b9ad"
+    },
+    {
+      "label": "1000/rarity/all/.*",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "1000/rarity/weapon/empty",
+      "selected": 322,
+      "exactReferencesAndOrder": true,
+      "orderHash": "2d70f0805354f2a283366e6731a0d2151e7ce74115e65d5922b50d9efc06cacc"
+    },
+    {
+      "label": "1000/rarity/weapon/  寒潮 ",
+      "selected": 66,
+      "exactReferencesAndOrder": true,
+      "orderHash": "db861f97c8354812a2d8dbd9ca6bd9898f0e054ee004ee8ff10f3189dff36d3c"
+    },
+    {
+      "label": "1000/rarity/weapon/ECHO",
+      "selected": 116,
+      "exactReferencesAndOrder": true,
+      "orderHash": "f0804320634311f96232a08ae791311d063a7a111f0bfbbaa0071c2d0cde3a8b"
+    },
+    {
+      "label": "1000/rarity/weapon/[Blade]",
+      "selected": 57,
+      "exactReferencesAndOrder": true,
+      "orderHash": "7396fff5fd1fef7ca4f97053394227e2ce730bfcdac264b24dfe65f53f057e2b"
+    },
+    {
+      "label": "1000/rarity/weapon/<Blade>",
+      "selected": 59,
+      "exactReferencesAndOrder": true,
+      "orderHash": "bd022acd9d0dd36aec0d751471628a9ec888c5c455784c10c4f5ef47cb221689"
+    },
+    {
+      "label": "1000/rarity/weapon/.*",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "1000/rarity/armor/empty",
+      "selected": 321,
+      "exactReferencesAndOrder": true,
+      "orderHash": "6a969359474e4b37475cc056c45b40766d69efda783e803af83a1e39ed3cb350"
+    },
+    {
+      "label": "1000/rarity/armor/  寒潮 ",
+      "selected": 61,
+      "exactReferencesAndOrder": true,
+      "orderHash": "1d0037555f6eae5fb5aabe6c9b6f058c27e979d0b0e74e557b8a984842f5dcb0"
+    },
+    {
+      "label": "1000/rarity/armor/ECHO",
+      "selected": 141,
+      "exactReferencesAndOrder": true,
+      "orderHash": "223e0196aa485559474a0bff216b4b54d02d27f70d48cd327814f00c4a37f5ba"
+    },
+    {
+      "label": "1000/rarity/armor/[Blade]",
+      "selected": 70,
+      "exactReferencesAndOrder": true,
+      "orderHash": "18a75ed644a29204a5640e34844c3ebf6cc67335eaeacf36ae1bdfc2e3a5eae7"
+    },
+    {
+      "label": "1000/rarity/armor/<Blade>",
+      "selected": 71,
+      "exactReferencesAndOrder": true,
+      "orderHash": "ea1513f8934c3ef398ca21df2afb0b92a3445b0cd604ff20c7cf3ca9a42e24c6"
+    },
+    {
+      "label": "1000/rarity/armor/.*",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "1000/rarity/relic/empty",
+      "selected": 44,
+      "exactReferencesAndOrder": true,
+      "orderHash": "f58c99a96fabd92fa6a6af92a4e8df6f1089ebeb99e01460a7432968f839f664"
+    },
+    {
+      "label": "1000/rarity/relic/  寒潮 ",
+      "selected": 10,
+      "exactReferencesAndOrder": true,
+      "orderHash": "28aaf45b5d31a5b80e439639a085909ef64001d0064242afdbdbab7433bac54d"
+    },
+    {
+      "label": "1000/rarity/relic/ECHO",
+      "selected": 18,
+      "exactReferencesAndOrder": true,
+      "orderHash": "623f3cdefe4eb68ba5590fe58a3e526991b6e28afce1f288988f999386d5dcd7"
+    },
+    {
+      "label": "1000/rarity/relic/[Blade]",
+      "selected": 8,
+      "exactReferencesAndOrder": true,
+      "orderHash": "ff9e83315fa839e6570511b50826d24596ae29a82255944eb9961a3f2433c99e"
+    },
+    {
+      "label": "1000/rarity/relic/<Blade>",
+      "selected": 10,
+      "exactReferencesAndOrder": true,
+      "orderHash": "6f5871d70bc355cf79fcfa456c59d9d77b353a5359a608915482259849437d0c"
+    },
+    {
+      "label": "1000/rarity/relic/.*",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "1000/level/all/empty",
+      "selected": 1000,
+      "exactReferencesAndOrder": true,
+      "orderHash": "c937d2a1da8e773c5070321ebe6c32dd091b24e83ae2fd79d89daf9829c420c0"
+    },
+    {
+      "label": "1000/level/all/  寒潮 ",
+      "selected": 200,
+      "exactReferencesAndOrder": true,
+      "orderHash": "ddbcac5eb48fdc47af302fac84d134e089bbe09ea715c5cb167dba91e2ab9e6e"
+    },
+    {
+      "label": "1000/level/all/ECHO",
+      "selected": 399,
+      "exactReferencesAndOrder": true,
+      "orderHash": "f50f773de647d7204efb1534d2f3d55bfcdef0df5dc6ed758f375f1514e126e8"
+    },
+    {
+      "label": "1000/level/all/[Blade]",
+      "selected": 200,
+      "exactReferencesAndOrder": true,
+      "orderHash": "5cb6714c5a9acf993b0c59aafc3ec6b44862c5f0bc0446010ea4dabb9b758261"
+    },
+    {
+      "label": "1000/level/all/<Blade>",
+      "selected": 199,
+      "exactReferencesAndOrder": true,
+      "orderHash": "5f774293e4f332aa96750984910fa009f09850083d65fca5b1364caa250a4536"
+    },
+    {
+      "label": "1000/level/all/.*",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "1000/level/weapon/empty",
+      "selected": 322,
+      "exactReferencesAndOrder": true,
+      "orderHash": "767010992a81378484089ff92bbc49a6c87b02445ba79020e7248c99d4eb6026"
+    },
+    {
+      "label": "1000/level/weapon/  寒潮 ",
+      "selected": 66,
+      "exactReferencesAndOrder": true,
+      "orderHash": "ddf64f7bea6ace153db26cab639594d9d407114d41cb4102e6fc1fa5369fb529"
+    },
+    {
+      "label": "1000/level/weapon/ECHO",
+      "selected": 116,
+      "exactReferencesAndOrder": true,
+      "orderHash": "278b644d967c65d39f3efbb96293ede9ab39ae4d8b5c604f9552d4a9d482d21b"
+    },
+    {
+      "label": "1000/level/weapon/[Blade]",
+      "selected": 57,
+      "exactReferencesAndOrder": true,
+      "orderHash": "e20a18501b490e13712c9c25b8b06e2cf990fe1dcfb71e96a9f599a1730d4485"
+    },
+    {
+      "label": "1000/level/weapon/<Blade>",
+      "selected": 59,
+      "exactReferencesAndOrder": true,
+      "orderHash": "e9d9bdf0e0656e29ef542e3f3891bde2a6400dd8e3e2965f60459624326e7b20"
+    },
+    {
+      "label": "1000/level/weapon/.*",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "1000/level/armor/empty",
+      "selected": 321,
+      "exactReferencesAndOrder": true,
+      "orderHash": "aa32b99a1022832f194ccb4907d684a0e29e4fafce9b8edd17f1d1f837f7cb1c"
+    },
+    {
+      "label": "1000/level/armor/  寒潮 ",
+      "selected": 61,
+      "exactReferencesAndOrder": true,
+      "orderHash": "35c07b738275c469fad4808c0effb63602ac5b56bd3a9dfbc9ce12290b16b3de"
+    },
+    {
+      "label": "1000/level/armor/ECHO",
+      "selected": 141,
+      "exactReferencesAndOrder": true,
+      "orderHash": "fe3f47d66cc87b9198f3202b3cd96eb3e398d0bb7ddd27ab1e1df7d99b4b375d"
+    },
+    {
+      "label": "1000/level/armor/[Blade]",
+      "selected": 70,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4a063c5e98cca2938aff17f4d9c1ef4b57f5382504825679e7a3433cf8f71cfa"
+    },
+    {
+      "label": "1000/level/armor/<Blade>",
+      "selected": 71,
+      "exactReferencesAndOrder": true,
+      "orderHash": "13f4bb9da9daa33ef1a921f7233fb9c99f3505bbf1a9c273988b637ac88f4331"
+    },
+    {
+      "label": "1000/level/armor/.*",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "1000/level/relic/empty",
+      "selected": 44,
+      "exactReferencesAndOrder": true,
+      "orderHash": "b1e39a157a375a24b13a1911437aed5953b47dcb5c49068c65f4d8d709b8db46"
+    },
+    {
+      "label": "1000/level/relic/  寒潮 ",
+      "selected": 10,
+      "exactReferencesAndOrder": true,
+      "orderHash": "01410b3dedc0c6c55df105c5942a3a34614f9d9dcc83fae63ae080f1de8ac473"
+    },
+    {
+      "label": "1000/level/relic/ECHO",
+      "selected": 18,
+      "exactReferencesAndOrder": true,
+      "orderHash": "7b50ded551a96b27db73d3f03bd821d6381a38a1b2fa969b98e7213f58d3bfc8"
+    },
+    {
+      "label": "1000/level/relic/[Blade]",
+      "selected": 8,
+      "exactReferencesAndOrder": true,
+      "orderHash": "90db6cea9eb78bc095ab862ce2fc30359a19c7a32c5e3208df931051439a2f3e"
+    },
+    {
+      "label": "1000/level/relic/<Blade>",
+      "selected": 10,
+      "exactReferencesAndOrder": true,
+      "orderHash": "8eaf43db69c3a74ef50e7e7292f6bbe3a71889d5a58a671dd3413709632c0dda"
+    },
+    {
+      "label": "1000/level/relic/.*",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "1000/unknown-sort/all/empty",
+      "selected": 1000,
+      "exactReferencesAndOrder": true,
+      "orderHash": "34d0c22a2297a0cc18d1c5977976b0315f3a701d59d20a5ef3b3888a1a041525"
+    },
+    {
+      "label": "1000/unknown-sort/all/  寒潮 ",
+      "selected": 200,
+      "exactReferencesAndOrder": true,
+      "orderHash": "ccf4db5bbf7db88b68cf673efe8b1dc49adff1e535e9baa8f379f68ffc20603c"
+    },
+    {
+      "label": "1000/unknown-sort/all/ECHO",
+      "selected": 399,
+      "exactReferencesAndOrder": true,
+      "orderHash": "ea6dd173d2d7a3994afa92ccc19e1c2bd10387d8be872f9f7348c67822c3d431"
+    },
+    {
+      "label": "1000/unknown-sort/all/[Blade]",
+      "selected": 200,
+      "exactReferencesAndOrder": true,
+      "orderHash": "003376bcc1e8350013dac7fc96c642b1f36b3726be0df2ee871712b0659382a0"
+    },
+    {
+      "label": "1000/unknown-sort/all/<Blade>",
+      "selected": 199,
+      "exactReferencesAndOrder": true,
+      "orderHash": "d3d35514b63a487bbdd4040a01a07e6bca2876d8b205a2769de05e6c03d7ef30"
+    },
+    {
+      "label": "1000/unknown-sort/all/.*",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "1000/unknown-sort/weapon/empty",
+      "selected": 322,
+      "exactReferencesAndOrder": true,
+      "orderHash": "ee090d1546c1bf10b00be925218c84cef9bd7e3b29d77e9a18dfa648dc4a4ff3"
+    },
+    {
+      "label": "1000/unknown-sort/weapon/  寒潮 ",
+      "selected": 66,
+      "exactReferencesAndOrder": true,
+      "orderHash": "911bbc1d5bd847268d5301559870d60e1bb1e72dd20eea7f833edf9c5bd9b44f"
+    },
+    {
+      "label": "1000/unknown-sort/weapon/ECHO",
+      "selected": 116,
+      "exactReferencesAndOrder": true,
+      "orderHash": "659bdbf6c52f8cee582ac899864c92aabe15adb3fc351fc4cef01cac13b711e5"
+    },
+    {
+      "label": "1000/unknown-sort/weapon/[Blade]",
+      "selected": 57,
+      "exactReferencesAndOrder": true,
+      "orderHash": "3edce8bed7c75f97641cb0b12b493bf3762469d5bbe137f88c87187e0b55a28b"
+    },
+    {
+      "label": "1000/unknown-sort/weapon/<Blade>",
+      "selected": 59,
+      "exactReferencesAndOrder": true,
+      "orderHash": "b6c16337f13531faacdfab38ff5c70425e0b5bf216920ae0183d26020099d805"
+    },
+    {
+      "label": "1000/unknown-sort/weapon/.*",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "1000/unknown-sort/armor/empty",
+      "selected": 321,
+      "exactReferencesAndOrder": true,
+      "orderHash": "3ad0ca5c0887590df574c18961e6b92e1031d682e4aa12af9f6b0034dd8196b3"
+    },
+    {
+      "label": "1000/unknown-sort/armor/  寒潮 ",
+      "selected": 61,
+      "exactReferencesAndOrder": true,
+      "orderHash": "dccd15623d797e1c5680eab05832d81df4822824293151b9cddce1396f4cac1f"
+    },
+    {
+      "label": "1000/unknown-sort/armor/ECHO",
+      "selected": 141,
+      "exactReferencesAndOrder": true,
+      "orderHash": "874765789554c9b3fe2cff4f36d8ff974ae1adee897c59c7146404fbb27fef77"
+    },
+    {
+      "label": "1000/unknown-sort/armor/[Blade]",
+      "selected": 70,
+      "exactReferencesAndOrder": true,
+      "orderHash": "e25fcb56107b4c33d0e635eaa31720f3b50fcc3f056a6087e195edf9a2babe9c"
+    },
+    {
+      "label": "1000/unknown-sort/armor/<Blade>",
+      "selected": 71,
+      "exactReferencesAndOrder": true,
+      "orderHash": "6be37e8648d38d1f88c239a628ce01825fb652ccbdc2985bb529992bbb7e4b1e"
+    },
+    {
+      "label": "1000/unknown-sort/armor/.*",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "1000/unknown-sort/relic/empty",
+      "selected": 44,
+      "exactReferencesAndOrder": true,
+      "orderHash": "f58c99a96fabd92fa6a6af92a4e8df6f1089ebeb99e01460a7432968f839f664"
+    },
+    {
+      "label": "1000/unknown-sort/relic/  寒潮 ",
+      "selected": 10,
+      "exactReferencesAndOrder": true,
+      "orderHash": "28aaf45b5d31a5b80e439639a085909ef64001d0064242afdbdbab7433bac54d"
+    },
+    {
+      "label": "1000/unknown-sort/relic/ECHO",
+      "selected": 18,
+      "exactReferencesAndOrder": true,
+      "orderHash": "623f3cdefe4eb68ba5590fe58a3e526991b6e28afce1f288988f999386d5dcd7"
+    },
+    {
+      "label": "1000/unknown-sort/relic/[Blade]",
+      "selected": 8,
+      "exactReferencesAndOrder": true,
+      "orderHash": "ff9e83315fa839e6570511b50826d24596ae29a82255944eb9961a3f2433c99e"
+    },
+    {
+      "label": "1000/unknown-sort/relic/<Blade>",
+      "selected": 10,
+      "exactReferencesAndOrder": true,
+      "orderHash": "6f5871d70bc355cf79fcfa456c59d9d77b353a5359a608915482259849437d0c"
+    },
+    {
+      "label": "1000/unknown-sort/relic/.*",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "10000/power/all/empty",
+      "selected": 10000,
+      "exactReferencesAndOrder": true,
+      "orderHash": "ddd0607bf6f16adb8f98ac1b9442983d4cd7ce780a90f8cadddb95b4bbda5972"
+    },
+    {
+      "label": "10000/power/all/  寒潮 ",
+      "selected": 2000,
+      "exactReferencesAndOrder": true,
+      "orderHash": "ae7f64125e728dbd686a8f3d664dcd316a3d2d43b3598a98f48e2aad6caafb07"
+    },
+    {
+      "label": "10000/power/all/ECHO",
+      "selected": 3999,
+      "exactReferencesAndOrder": true,
+      "orderHash": "310bdbc31353b1ceb200dca65c4a46a687bdacf42d4243bdb43db7ba5a6efd57"
+    },
+    {
+      "label": "10000/power/all/[Blade]",
+      "selected": 2000,
+      "exactReferencesAndOrder": true,
+      "orderHash": "ccbde78fd3762e7f735ea4cbf5582f718c7fa17df03741bb6071923baf3b741c"
+    },
+    {
+      "label": "10000/power/all/<Blade>",
+      "selected": 1999,
+      "exactReferencesAndOrder": true,
+      "orderHash": "c15cc039a47cc075df92cf7b753141947c3eaad0d986063d3004bbc214db6198"
+    },
+    {
+      "label": "10000/power/all/.*",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "10000/power/weapon/empty",
+      "selected": 3326,
+      "exactReferencesAndOrder": true,
+      "orderHash": "9363b69298c24f9434c65e4395d3dd3aebd3c4e15a191c784db44e92fb456f9e"
+    },
+    {
+      "label": "10000/power/weapon/  寒潮 ",
+      "selected": 665,
+      "exactReferencesAndOrder": true,
+      "orderHash": "2078816f60fed935234f8109b303bedf62f87e825e218f3e677173d6e968a828"
+    },
+    {
+      "label": "10000/power/weapon/ECHO",
+      "selected": 1307,
+      "exactReferencesAndOrder": true,
+      "orderHash": "f8c2b5b0add725f0053db8f13905dec2a8eb4bec47e0f2231c6914f0ae73de9d"
+    },
+    {
+      "label": "10000/power/weapon/[Blade]",
+      "selected": 636,
+      "exactReferencesAndOrder": true,
+      "orderHash": "ca25f8f9168ed5f3d08d54015ff622429d7d377a94c1cc66a8cf0f5f21cb04af"
+    },
+    {
+      "label": "10000/power/weapon/<Blade>",
+      "selected": 671,
+      "exactReferencesAndOrder": true,
+      "orderHash": "800522b11ec412ab9876407d6dd2d6a7ceffeb540ec3e653355948eec6f4c617"
+    },
+    {
+      "label": "10000/power/weapon/.*",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "10000/power/armor/empty",
+      "selected": 3360,
+      "exactReferencesAndOrder": true,
+      "orderHash": "0de1d9a5929fe1605598d750435cc619e9b2dcb5d717c477e0d65c674ca36c9c"
+    },
+    {
+      "label": "10000/power/armor/  寒潮 ",
+      "selected": 648,
+      "exactReferencesAndOrder": true,
+      "orderHash": "e9135593c0ccef75879e6416ed4c54c3b7993fb7cb61d0756634f9a69ed1787c"
+    },
+    {
+      "label": "10000/power/armor/ECHO",
+      "selected": 1388,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4dd6f4fb02b82e7f4d8f1101cc518187b644e5c15ce9a50dbb12b5115e69d1a1"
+    },
+    {
+      "label": "10000/power/armor/[Blade]",
+      "selected": 686,
+      "exactReferencesAndOrder": true,
+      "orderHash": "52296e64378a1bcdd9eaaf70dc44425323bd2df18600b4757e5a7f1448901ab1"
+    },
+    {
+      "label": "10000/power/armor/<Blade>",
+      "selected": 702,
+      "exactReferencesAndOrder": true,
+      "orderHash": "b45b0a2c3802ee925b10d6dbed10d3eb45096b562245d23bcda810643a7ba0d2"
+    },
+    {
+      "label": "10000/power/armor/.*",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "10000/power/relic/empty",
+      "selected": 421,
+      "exactReferencesAndOrder": true,
+      "orderHash": "54189292dd7388252e73ffa2a56a7187add459c120592e4691c9aaee0a451818"
+    },
+    {
+      "label": "10000/power/relic/  寒潮 ",
+      "selected": 73,
+      "exactReferencesAndOrder": true,
+      "orderHash": "6b3f107261b130e1cb97fecf3940c30803b8c023117641332c6f2783d6c43bf9"
+    },
+    {
+      "label": "10000/power/relic/ECHO",
+      "selected": 167,
+      "exactReferencesAndOrder": true,
+      "orderHash": "2b8a0b5a0dde94415f72543cac5ae7fc330d2224b78f7f7081a356f1ce46e60f"
+    },
+    {
+      "label": "10000/power/relic/[Blade]",
+      "selected": 87,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4ce8bce442ce474d14d5c8fa476fe79dda979a85fde196e890427a0b38c00dda"
+    },
+    {
+      "label": "10000/power/relic/<Blade>",
+      "selected": 80,
+      "exactReferencesAndOrder": true,
+      "orderHash": "1727e83ccf99c3a83735def4c2b0316c31691e433150154bd5e3d5c68978fa0e"
+    },
+    {
+      "label": "10000/power/relic/.*",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "10000/rarity/all/empty",
+      "selected": 10000,
+      "exactReferencesAndOrder": true,
+      "orderHash": "b2ba610524188f32cea3edd97b82ef6ca95ee30b78d5da4975c870261b1ee9fd"
+    },
+    {
+      "label": "10000/rarity/all/  寒潮 ",
+      "selected": 2000,
+      "exactReferencesAndOrder": true,
+      "orderHash": "357d39fc51141f26f3c8be14607991bad50c8ac9616e9b32ce1f96d74ba6d7d7"
+    },
+    {
+      "label": "10000/rarity/all/ECHO",
+      "selected": 3999,
+      "exactReferencesAndOrder": true,
+      "orderHash": "47877ebe0151669cf34b082e790f188a04326f0eddc804af32aab0d0d0fc5002"
+    },
+    {
+      "label": "10000/rarity/all/[Blade]",
+      "selected": 2000,
+      "exactReferencesAndOrder": true,
+      "orderHash": "e0cda509921dde15cb411c8c59359ded1a4eafb1e081c9440b2529874e1c4c4f"
+    },
+    {
+      "label": "10000/rarity/all/<Blade>",
+      "selected": 1999,
+      "exactReferencesAndOrder": true,
+      "orderHash": "1712beee7e5b35a3c1b1f07dea54cbb15c2a70c72faa0094ce5621dfe3fc160d"
+    },
+    {
+      "label": "10000/rarity/all/.*",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "10000/rarity/weapon/empty",
+      "selected": 3326,
+      "exactReferencesAndOrder": true,
+      "orderHash": "2d2f0a399fde58f406d1df94e8d6f84f2413aa7f150cd0ffe1395f14c585607b"
+    },
+    {
+      "label": "10000/rarity/weapon/  寒潮 ",
+      "selected": 665,
+      "exactReferencesAndOrder": true,
+      "orderHash": "6ebb237fee79bda2710238ae52c48f5fa9b30cb32e630efd36168011c30b220f"
+    },
+    {
+      "label": "10000/rarity/weapon/ECHO",
+      "selected": 1307,
+      "exactReferencesAndOrder": true,
+      "orderHash": "77daf212ef996d105d53d64d31fb536a9375dc825456a253555d97d3b13c71a9"
+    },
+    {
+      "label": "10000/rarity/weapon/[Blade]",
+      "selected": 636,
+      "exactReferencesAndOrder": true,
+      "orderHash": "3c2b47282a537677c831b17ecb527e2621013ba73070833c4300bd3f4a9e0bc5"
+    },
+    {
+      "label": "10000/rarity/weapon/<Blade>",
+      "selected": 671,
+      "exactReferencesAndOrder": true,
+      "orderHash": "2bc5f610bdf8acef2926c19be8105fa2b76be7821079cc9b420c0bdea048edf0"
+    },
+    {
+      "label": "10000/rarity/weapon/.*",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "10000/rarity/armor/empty",
+      "selected": 3360,
+      "exactReferencesAndOrder": true,
+      "orderHash": "190bbe8ee78756a795fffd32d71f6ec2a78d45e492ab181c08be4f80d961487e"
+    },
+    {
+      "label": "10000/rarity/armor/  寒潮 ",
+      "selected": 648,
+      "exactReferencesAndOrder": true,
+      "orderHash": "5ebb64681e0af73d70723b3df71eb2e01996f788e81d27357ccd5590bd52a546"
+    },
+    {
+      "label": "10000/rarity/armor/ECHO",
+      "selected": 1388,
+      "exactReferencesAndOrder": true,
+      "orderHash": "df7f613949f2f88f86642ba3246f05477b3bd6bb1e6a11434886f59f3d89437c"
+    },
+    {
+      "label": "10000/rarity/armor/[Blade]",
+      "selected": 686,
+      "exactReferencesAndOrder": true,
+      "orderHash": "e9d845681bf3e7e5b06f343fd358d62c0c398760788164f2379ffef56a86456a"
+    },
+    {
+      "label": "10000/rarity/armor/<Blade>",
+      "selected": 702,
+      "exactReferencesAndOrder": true,
+      "orderHash": "495237aab66243ba24d4a404a561ff9618618ad4905c55f78c123b9f71452a72"
+    },
+    {
+      "label": "10000/rarity/armor/.*",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "10000/rarity/relic/empty",
+      "selected": 421,
+      "exactReferencesAndOrder": true,
+      "orderHash": "54189292dd7388252e73ffa2a56a7187add459c120592e4691c9aaee0a451818"
+    },
+    {
+      "label": "10000/rarity/relic/  寒潮 ",
+      "selected": 73,
+      "exactReferencesAndOrder": true,
+      "orderHash": "6b3f107261b130e1cb97fecf3940c30803b8c023117641332c6f2783d6c43bf9"
+    },
+    {
+      "label": "10000/rarity/relic/ECHO",
+      "selected": 167,
+      "exactReferencesAndOrder": true,
+      "orderHash": "2b8a0b5a0dde94415f72543cac5ae7fc330d2224b78f7f7081a356f1ce46e60f"
+    },
+    {
+      "label": "10000/rarity/relic/[Blade]",
+      "selected": 87,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4ce8bce442ce474d14d5c8fa476fe79dda979a85fde196e890427a0b38c00dda"
+    },
+    {
+      "label": "10000/rarity/relic/<Blade>",
+      "selected": 80,
+      "exactReferencesAndOrder": true,
+      "orderHash": "1727e83ccf99c3a83735def4c2b0316c31691e433150154bd5e3d5c68978fa0e"
+    },
+    {
+      "label": "10000/rarity/relic/.*",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "10000/level/all/empty",
+      "selected": 10000,
+      "exactReferencesAndOrder": true,
+      "orderHash": "2dd556ec0ecee0db19aa0e7abe361a7f8e57a71d3304a91577fc6cb9f2ab7a29"
+    },
+    {
+      "label": "10000/level/all/  寒潮 ",
+      "selected": 2000,
+      "exactReferencesAndOrder": true,
+      "orderHash": "1123b312833f4d0077a0c3a7fafb06ce189cf9c1c0cd24ffc5323b364a1e53d8"
+    },
+    {
+      "label": "10000/level/all/ECHO",
+      "selected": 3999,
+      "exactReferencesAndOrder": true,
+      "orderHash": "3c785989f8f805b5418881c3dc629787cdddd4ffc313a3ff681f12be311b7b33"
+    },
+    {
+      "label": "10000/level/all/[Blade]",
+      "selected": 2000,
+      "exactReferencesAndOrder": true,
+      "orderHash": "cf805b37bb433c98f1478776f519cc249541e436159c694951310a2140cf637e"
+    },
+    {
+      "label": "10000/level/all/<Blade>",
+      "selected": 1999,
+      "exactReferencesAndOrder": true,
+      "orderHash": "7113e2b11b0d2a1c9f65eb28171517de631df43979f90882c707038db6f94428"
+    },
+    {
+      "label": "10000/level/all/.*",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "10000/level/weapon/empty",
+      "selected": 3326,
+      "exactReferencesAndOrder": true,
+      "orderHash": "e6da08df1234b684e7ffc6e683f1f6fab181ae420d50078ac0c6fb2f3ebc6913"
+    },
+    {
+      "label": "10000/level/weapon/  寒潮 ",
+      "selected": 665,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f530190b3465adc9f68feddd3e4f9a2c0e9b598c82216d5dbf2ea7a34c7271a"
+    },
+    {
+      "label": "10000/level/weapon/ECHO",
+      "selected": 1307,
+      "exactReferencesAndOrder": true,
+      "orderHash": "d9c665694f3d95b0154dfe21f8cb4dc6f2fe5e62d9275d7ae6e4eb711551ea39"
+    },
+    {
+      "label": "10000/level/weapon/[Blade]",
+      "selected": 636,
+      "exactReferencesAndOrder": true,
+      "orderHash": "a10f7a554dd608bd9d117077362f38a7185d7ff0c595bd5436ce512b7fa1e71c"
+    },
+    {
+      "label": "10000/level/weapon/<Blade>",
+      "selected": 671,
+      "exactReferencesAndOrder": true,
+      "orderHash": "d3d7fa5d2344bcd93ce8115f99d2f44d4bdf58f022646e62d4b243b8ca1c4127"
+    },
+    {
+      "label": "10000/level/weapon/.*",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "10000/level/armor/empty",
+      "selected": 3360,
+      "exactReferencesAndOrder": true,
+      "orderHash": "bb4f1f7b2d08389a56eab89e1b6f026de12b910cf519be634419883258e208b8"
+    },
+    {
+      "label": "10000/level/armor/  寒潮 ",
+      "selected": 648,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4b87166487f60798a2cd4d8b963a6a2f54d087d354416d355405e5489c01fde2"
+    },
+    {
+      "label": "10000/level/armor/ECHO",
+      "selected": 1388,
+      "exactReferencesAndOrder": true,
+      "orderHash": "ee06c55985dbf8a50dcc616ae566ad2b6220e954083d73b02316f84595f9a891"
+    },
+    {
+      "label": "10000/level/armor/[Blade]",
+      "selected": 686,
+      "exactReferencesAndOrder": true,
+      "orderHash": "b8bef2aa875db7dd3e51e07e9e03ddbe792abb6435364d822945675719950246"
+    },
+    {
+      "label": "10000/level/armor/<Blade>",
+      "selected": 702,
+      "exactReferencesAndOrder": true,
+      "orderHash": "edef5012175bba7857b86718ca59f2b792abb156124a99f89fa6ed03b30bc478"
+    },
+    {
+      "label": "10000/level/armor/.*",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "10000/level/relic/empty",
+      "selected": 421,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4ee3b7f122b6123ec7f6bbe6007a678f156f0871fe469c99f08be5ad47f43a2f"
+    },
+    {
+      "label": "10000/level/relic/  寒潮 ",
+      "selected": 73,
+      "exactReferencesAndOrder": true,
+      "orderHash": "c002393e687dabf99270fbae6719b5e3bf609690009898bd67b8b07e7e2724d5"
+    },
+    {
+      "label": "10000/level/relic/ECHO",
+      "selected": 167,
+      "exactReferencesAndOrder": true,
+      "orderHash": "e09aa3df3289bd003a0006e3a83cb1ead8c9b658808d24d8ece02dfb7508a941"
+    },
+    {
+      "label": "10000/level/relic/[Blade]",
+      "selected": 87,
+      "exactReferencesAndOrder": true,
+      "orderHash": "867805f11380cd0f499d2c901341ae52ffff331bdbf6036899e2af8099dd406d"
+    },
+    {
+      "label": "10000/level/relic/<Blade>",
+      "selected": 80,
+      "exactReferencesAndOrder": true,
+      "orderHash": "5c7aa9c647b6d12f8f626b4cdc7f1dfebad03ed96c641adc3ed9818fa03de024"
+    },
+    {
+      "label": "10000/level/relic/.*",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "10000/unknown-sort/all/empty",
+      "selected": 10000,
+      "exactReferencesAndOrder": true,
+      "orderHash": "ddd0607bf6f16adb8f98ac1b9442983d4cd7ce780a90f8cadddb95b4bbda5972"
+    },
+    {
+      "label": "10000/unknown-sort/all/  寒潮 ",
+      "selected": 2000,
+      "exactReferencesAndOrder": true,
+      "orderHash": "ae7f64125e728dbd686a8f3d664dcd316a3d2d43b3598a98f48e2aad6caafb07"
+    },
+    {
+      "label": "10000/unknown-sort/all/ECHO",
+      "selected": 3999,
+      "exactReferencesAndOrder": true,
+      "orderHash": "310bdbc31353b1ceb200dca65c4a46a687bdacf42d4243bdb43db7ba5a6efd57"
+    },
+    {
+      "label": "10000/unknown-sort/all/[Blade]",
+      "selected": 2000,
+      "exactReferencesAndOrder": true,
+      "orderHash": "ccbde78fd3762e7f735ea4cbf5582f718c7fa17df03741bb6071923baf3b741c"
+    },
+    {
+      "label": "10000/unknown-sort/all/<Blade>",
+      "selected": 1999,
+      "exactReferencesAndOrder": true,
+      "orderHash": "c15cc039a47cc075df92cf7b753141947c3eaad0d986063d3004bbc214db6198"
+    },
+    {
+      "label": "10000/unknown-sort/all/.*",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "10000/unknown-sort/weapon/empty",
+      "selected": 3326,
+      "exactReferencesAndOrder": true,
+      "orderHash": "9363b69298c24f9434c65e4395d3dd3aebd3c4e15a191c784db44e92fb456f9e"
+    },
+    {
+      "label": "10000/unknown-sort/weapon/  寒潮 ",
+      "selected": 665,
+      "exactReferencesAndOrder": true,
+      "orderHash": "2078816f60fed935234f8109b303bedf62f87e825e218f3e677173d6e968a828"
+    },
+    {
+      "label": "10000/unknown-sort/weapon/ECHO",
+      "selected": 1307,
+      "exactReferencesAndOrder": true,
+      "orderHash": "f8c2b5b0add725f0053db8f13905dec2a8eb4bec47e0f2231c6914f0ae73de9d"
+    },
+    {
+      "label": "10000/unknown-sort/weapon/[Blade]",
+      "selected": 636,
+      "exactReferencesAndOrder": true,
+      "orderHash": "ca25f8f9168ed5f3d08d54015ff622429d7d377a94c1cc66a8cf0f5f21cb04af"
+    },
+    {
+      "label": "10000/unknown-sort/weapon/<Blade>",
+      "selected": 671,
+      "exactReferencesAndOrder": true,
+      "orderHash": "800522b11ec412ab9876407d6dd2d6a7ceffeb540ec3e653355948eec6f4c617"
+    },
+    {
+      "label": "10000/unknown-sort/weapon/.*",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "10000/unknown-sort/armor/empty",
+      "selected": 3360,
+      "exactReferencesAndOrder": true,
+      "orderHash": "0de1d9a5929fe1605598d750435cc619e9b2dcb5d717c477e0d65c674ca36c9c"
+    },
+    {
+      "label": "10000/unknown-sort/armor/  寒潮 ",
+      "selected": 648,
+      "exactReferencesAndOrder": true,
+      "orderHash": "e9135593c0ccef75879e6416ed4c54c3b7993fb7cb61d0756634f9a69ed1787c"
+    },
+    {
+      "label": "10000/unknown-sort/armor/ECHO",
+      "selected": 1388,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4dd6f4fb02b82e7f4d8f1101cc518187b644e5c15ce9a50dbb12b5115e69d1a1"
+    },
+    {
+      "label": "10000/unknown-sort/armor/[Blade]",
+      "selected": 686,
+      "exactReferencesAndOrder": true,
+      "orderHash": "52296e64378a1bcdd9eaaf70dc44425323bd2df18600b4757e5a7f1448901ab1"
+    },
+    {
+      "label": "10000/unknown-sort/armor/<Blade>",
+      "selected": 702,
+      "exactReferencesAndOrder": true,
+      "orderHash": "b45b0a2c3802ee925b10d6dbed10d3eb45096b562245d23bcda810643a7ba0d2"
+    },
+    {
+      "label": "10000/unknown-sort/armor/.*",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "10000/unknown-sort/relic/empty",
+      "selected": 421,
+      "exactReferencesAndOrder": true,
+      "orderHash": "54189292dd7388252e73ffa2a56a7187add459c120592e4691c9aaee0a451818"
+    },
+    {
+      "label": "10000/unknown-sort/relic/  寒潮 ",
+      "selected": 73,
+      "exactReferencesAndOrder": true,
+      "orderHash": "6b3f107261b130e1cb97fecf3940c30803b8c023117641332c6f2783d6c43bf9"
+    },
+    {
+      "label": "10000/unknown-sort/relic/ECHO",
+      "selected": 167,
+      "exactReferencesAndOrder": true,
+      "orderHash": "2b8a0b5a0dde94415f72543cac5ae7fc330d2224b78f7f7081a356f1ce46e60f"
+    },
+    {
+      "label": "10000/unknown-sort/relic/[Blade]",
+      "selected": 87,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4ce8bce442ce474d14d5c8fa476fe79dda979a85fde196e890427a0b38c00dda"
+    },
+    {
+      "label": "10000/unknown-sort/relic/<Blade>",
+      "selected": 80,
+      "exactReferencesAndOrder": true,
+      "orderHash": "1727e83ccf99c3a83735def4c2b0316c31691e433150154bd5e3d5c68978fa0e"
+    },
+    {
+      "label": "10000/unknown-sort/relic/.*",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "duplicate IDs and repeated references/power",
+      "selected": 5,
+      "exactReferencesAndOrder": true,
+      "orderHash": "94f18c759c10cfa4bfb9db587064a47aae0bcb329000cb06e225704d8448d617"
+    },
+    {
+      "label": "duplicate IDs and repeated references/rarity",
+      "selected": 5,
+      "exactReferencesAndOrder": true,
+      "orderHash": "94f18c759c10cfa4bfb9db587064a47aae0bcb329000cb06e225704d8448d617"
+    },
+    {
+      "label": "duplicate IDs and repeated references/level",
+      "selected": 5,
+      "exactReferencesAndOrder": true,
+      "orderHash": "94f18c759c10cfa4bfb9db587064a47aae0bcb329000cb06e225704d8448d617"
+    },
+    {
+      "label": "before same-object mutation/power",
+      "selected": 3,
+      "exactReferencesAndOrder": true,
+      "orderHash": "63aa0b0fc3b7e062893fb9220d89c0839d4ab02d43a05b1a5f35b2d4b4716419"
+    },
+    {
+      "label": "after same-object mutation/power",
+      "selected": 3,
+      "exactReferencesAndOrder": true,
+      "orderHash": "c36c52781232a7dc19a0a0f491e8b5f8fa063104e9a94d280cc460285d1dfe5a"
+    },
+    {
+      "label": "before same-object mutation/rarity",
+      "selected": 3,
+      "exactReferencesAndOrder": true,
+      "orderHash": "63aa0b0fc3b7e062893fb9220d89c0839d4ab02d43a05b1a5f35b2d4b4716419"
+    },
+    {
+      "label": "after same-object mutation/rarity",
+      "selected": 3,
+      "exactReferencesAndOrder": true,
+      "orderHash": "c36c52781232a7dc19a0a0f491e8b5f8fa063104e9a94d280cc460285d1dfe5a"
+    },
+    {
+      "label": "before same-object mutation/level",
+      "selected": 3,
+      "exactReferencesAndOrder": true,
+      "orderHash": "63aa0b0fc3b7e062893fb9220d89c0839d4ab02d43a05b1a5f35b2d4b4716419"
+    },
+    {
+      "label": "after same-object mutation/level",
+      "selected": 3,
+      "exactReferencesAndOrder": true,
+      "orderHash": "c36c52781232a7dc19a0a0f491e8b5f8fa063104e9a94d280cc460285d1dfe5a"
+    },
+    {
+      "label": "rarity coercion/0",
+      "selected": 3,
+      "exactReferencesAndOrder": true,
+      "orderHash": "63aa0b0fc3b7e062893fb9220d89c0839d4ab02d43a05b1a5f35b2d4b4716419"
+    },
+    {
+      "label": "rarity coercion/0",
+      "selected": 3,
+      "exactReferencesAndOrder": true,
+      "orderHash": "63aa0b0fc3b7e062893fb9220d89c0839d4ab02d43a05b1a5f35b2d4b4716419"
+    },
+    {
+      "label": "rarity coercion/7",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "rarity coercion/7",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "rarity coercion/",
+      "selected": 3,
+      "exactReferencesAndOrder": true,
+      "orderHash": "63aa0b0fc3b7e062893fb9220d89c0839d4ab02d43a05b1a5f35b2d4b4716419"
+    },
+    {
+      "label": "rarity coercion/bad-value",
+      "selected": 0,
+      "exactReferencesAndOrder": true,
+      "orderHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "label": "rarity coercion/null",
+      "selected": 3,
+      "exactReferencesAndOrder": true,
+      "orderHash": "63aa0b0fc3b7e062893fb9220d89c0839d4ab02d43a05b1a5f35b2d4b4716419"
+    }
+  ],
+  "mutations": [
+    {
+      "inventorySort": "power",
+      "firstChanged": true,
+      "noCrossCallValueCache": true
+    },
+    {
+      "inventorySort": "rarity",
+      "firstChanged": true,
+      "noCrossCallValueCache": true
+    },
+    {
+      "inventorySort": "level",
+      "firstChanged": true,
+      "noCrossCallValueCache": true
+    }
+  ],
+  "sourceAndScriptStable": true,
+  "completedAt": "2026-10-19T02:53:18.077Z"
+}

@@ -1,0 +1,1056 @@
+{
+  "label": "baseline",
+  "source": "/workspace/scratch/4454855f6034/baseline/Dice-Abyss",
+  "baseURL": "http://127.0.0.1:4188",
+  "started": "2026-10-17T10:16:27.430Z",
+  "browser": "155.0.8059.84",
+  "method": "Native Playwright mouse/keyboard/file-input interactions in fresh Chromium contexts; exact persisted states compared with deterministic engine transitions. No UI internals assigned.",
+  "limitations": [
+    "Synthetic fixtures target otherwise lengthy or probabilistic branches; they are not claims of human natural play.",
+    "Storage quota and missed-storage-event cases intentionally inject browser faults.",
+    "This driver records correctness and screenshots, not frame-rate measurements."
+  ],
+  "cases": [
+    {
+      "name": "fresh-manual-play",
+      "kind": "Actual new-game UI through first reward, random seed from browser",
+      "started": "2026-10-17T10:16:27.511Z",
+      "checks": [
+        {
+          "name": "Idle fate does not roll automatically",
+          "revision": 0,
+          "rng": 665389688,
+          "phase": "fate",
+          "stateSha256": "dbf7e47de10ae3a7cc76cecdf8f60448bf0bb8c1b9b7084a9a1126d58da435b4"
+        },
+        {
+          "name": "UI fate persists one exact engine transition",
+          "revision": 1,
+          "rng": 2628719929,
+          "phase": "route",
+          "stateSha256": "fbaaedc54142906df1dda8803d7cfc906bfedbbcee95027e095689dcb45d09e4"
+        },
+        {
+          "name": "UI enter persists one exact engine transition",
+          "revision": 2,
+          "rng": 3205057949,
+          "phase": "combat",
+          "stateSha256": "3b605c27d24441d31478f2430321d851e02aa316e36a87b4f89ee7e3bc858f0d"
+        },
+        {
+          "name": "UI roll persists one exact engine transition",
+          "revision": 3,
+          "rng": 2087488488,
+          "phase": "combat",
+          "stateSha256": "b7d78408415b34153597c5ee367aac078f95899c18dafea6d30b9e9e77b1a7ec"
+        },
+        {
+          "name": "UI roll persists one exact engine transition",
+          "revision": 4,
+          "rng": 1068705853,
+          "phase": "combat",
+          "stateSha256": "e2adcb1022b335d501c61e24f09b29efad6d267af50fd987213a2e010e34f21e"
+        },
+        {
+          "name": "UI roll persists one exact engine transition",
+          "revision": 5,
+          "rng": 3570260327,
+          "phase": "combat",
+          "stateSha256": "d5e968cc1e9ca984e9a902a5a53b5588d8cd0677551523e22eb4cea66341f94c"
+        },
+        {
+          "name": "UI roll persists one exact engine transition",
+          "revision": 6,
+          "rng": 1454347029,
+          "phase": "combat",
+          "stateSha256": "2fe203eb0aaa42c249ffb9e6eccd2127ff4cd03e99976081551cd757dfdbe7d2"
+        },
+        {
+          "name": "UI roll persists one exact engine transition",
+          "revision": 7,
+          "rng": 3585820560,
+          "phase": "combat",
+          "stateSha256": "0aa792f8d5f53702566d6fde3222b211041a12c5f4cc577501e1ff07410ec0b0"
+        },
+        {
+          "name": "UI roll persists one exact engine transition",
+          "revision": 8,
+          "rng": 2382690670,
+          "phase": "combat",
+          "stateSha256": "5f602c2db6bfd8b578ed27355537aa67d1b9fe2965340e883ea8740377f15a43"
+        },
+        {
+          "name": "UI roll persists one exact engine transition",
+          "revision": 9,
+          "rng": 2597089585,
+          "phase": "combat",
+          "stateSha256": "b6d5d4e47a259bedb181ebc2eb236602bf04f7222f36be290510006c4e99573a"
+        },
+        {
+          "name": "UI roll persists one exact engine transition",
+          "revision": 10,
+          "rng": 518960155,
+          "phase": "chest",
+          "stateSha256": "e05036e83aae812283a40105cb2d444d97d315b3b302187b599e94c5fb19c9e9"
+        },
+        {
+          "name": "Refresh keeps the exact pending chest and RNG",
+          "revision": 10,
+          "rng": 518960155,
+          "phase": "chest",
+          "stateSha256": "e05036e83aae812283a40105cb2d444d97d315b3b302187b599e94c5fb19c9e9"
+        },
+        {
+          "name": "UI open persists one exact engine transition",
+          "revision": 11,
+          "rng": 518960155,
+          "phase": "loot",
+          "stateSha256": "927c94e9317be22ae5933d63d9e8fdea7b187c76d06ce588b82c24607804e4d1"
+        },
+        {
+          "name": "Reload does not grant the chest a second time",
+          "revision": 11,
+          "rng": 518960155,
+          "phase": "loot",
+          "stateSha256": "927c94e9317be22ae5933d63d9e8fdea7b187c76d06ce588b82c24607804e4d1"
+        }
+      ],
+      "status": "passed",
+      "finished": "2026-10-17T10:17:08.550Z"
+    },
+    {
+      "name": "rapid-click-space-refresh",
+      "kind": "Synthetic long-lived encounter, native rapid clicks and keyboard",
+      "started": "2026-10-17T10:17:08.556Z",
+      "checks": [
+        {
+          "name": "Rapid native inputs preserve the exact number and order of legitimate engine transitions",
+          "revision": 2,
+          "rng": 3623057853,
+          "phase": "combat",
+          "stateSha256": "78cca27a8b56597924c206f022e4651bad2ef995384fefe787ed6dd8537c6115"
+        },
+        {
+          "name": "Input dispatch is classified at the actual browser event, without treating an input after reveal as a duplicate",
+          "busyInputs": 21,
+          "eligibleInputs": 1,
+          "committedRolls": 1,
+          "inputs": [
+            {
+              "type": "pointerdown",
+              "time": 2028.4000000022352,
+              "busy": false,
+              "action": "roll",
+              "disabled": false,
+              "code": null,
+              "repeat": false,
+              "formControl": true
+            },
+            {
+              "type": "click",
+              "time": 2028.800000000745,
+              "busy": false,
+              "action": "roll",
+              "disabled": false,
+              "code": null,
+              "repeat": false,
+              "formControl": true
+            },
+            {
+              "type": "keydown",
+              "time": 2086.5,
+              "busy": true,
+              "action": null,
+              "disabled": false,
+              "code": "Space",
+              "repeat": false,
+              "formControl": false
+            },
+            {
+              "type": "pointerdown",
+              "time": 2092.7000000029802,
+              "busy": true,
+              "action": "roll",
+              "disabled": true,
+              "code": null,
+              "repeat": false,
+              "formControl": true
+            },
+            {
+              "type": "pointerdown",
+              "time": 2099.60000000149,
+              "busy": true,
+              "action": "roll",
+              "disabled": true,
+              "code": null,
+              "repeat": false,
+              "formControl": true
+            },
+            {
+              "type": "pointerdown",
+              "time": 2106.900000002235,
+              "busy": true,
+              "action": "roll",
+              "disabled": true,
+              "code": null,
+              "repeat": false,
+              "formControl": true
+            },
+            {
+              "type": "pointerdown",
+              "time": 2116.2000000029802,
+              "busy": true,
+              "action": "roll",
+              "disabled": true,
+              "code": null,
+              "repeat": false,
+              "formControl": true
+            },
+            {
+              "type": "pointerdown",
+              "time": 2123.7000000029802,
+              "busy": true,
+              "action": "roll",
+              "disabled": true,
+              "code": null,
+              "repeat": false,
+              "formControl": true
+            },
+            {
+              "type": "pointerdown",
+              "time": 2131,
+              "busy": true,
+              "action": "roll",
+              "disabled": true,
+              "code": null,
+              "repeat": false,
+              "formControl": true
+            },
+            {
+              "type": "pointerdown",
+              "time": 2133.800000000745,
+              "busy": true,
+              "action": "roll",
+              "disabled": true,
+              "code": null,
+              "repeat": false,
+              "formControl": true
+            },
+            {
+              "type": "pointerdown",
+              "time": 2147.10000000149,
+              "busy": true,
+              "action": "roll",
+              "disabled": true,
+              "code": null,
+              "repeat": false,
+              "formControl": true
+            },
+            {
+              "type": "pointerdown",
+              "time": 2158.800000000745,
+              "busy": true,
+              "action": "roll",
+              "disabled": true,
+              "code": null,
+              "repeat": false,
+              "formControl": true
+            },
+            {
+              "type": "pointerdown",
+              "time": 2163.400000002235,
+              "busy": true,
+              "action": "roll",
+              "disabled": true,
+              "code": null,
+              "repeat": false,
+              "formControl": true
+            },
+            {
+              "type": "pointerdown",
+              "time": 2175.300000000745,
+              "busy": true,
+              "action": "roll",
+              "disabled": true,
+              "code": null,
+              "repeat": false,
+              "formControl": true
+            },
+            {
+              "type": "pointerdown",
+              "time": 2183.800000000745,
+              "busy": true,
+              "action": "roll",
+              "disabled": true,
+              "code": null,
+              "repeat": false,
+              "formControl": true
+            },
+            {
+              "type": "keydown",
+              "time": 2192.300000000745,
+              "busy": true,
+              "action": null,
+              "disabled": false,
+              "code": "Space",
+              "repeat": false,
+              "formControl": false
+            },
+            {
+              "type": "keydown",
+              "time": 2195.800000000745,
+              "busy": true,
+              "action": null,
+              "disabled": false,
+              "code": "Space",
+              "repeat": false,
+              "formControl": false
+            },
+            {
+              "type": "keydown",
+              "time": 2200.7000000029802,
+              "busy": true,
+              "action": null,
+              "disabled": false,
+              "code": "Space",
+              "repeat": false,
+              "formControl": false
+            },
+            {
+              "type": "keydown",
+              "time": 2205.5,
+              "busy": true,
+              "action": null,
+              "disabled": false,
+              "code": "Space",
+              "repeat": false,
+              "formControl": false
+            },
+            {
+              "type": "keydown",
+              "time": 2210.300000000745,
+              "busy": true,
+              "action": null,
+              "disabled": false,
+              "code": "Space",
+              "repeat": false,
+              "formControl": false
+            },
+            {
+              "type": "keydown",
+              "time": 2214.900000002235,
+              "busy": true,
+              "action": null,
+              "disabled": false,
+              "code": "Space",
+              "repeat": false,
+              "formControl": false
+            },
+            {
+              "type": "keydown",
+              "time": 2220.7000000029802,
+              "busy": true,
+              "action": null,
+              "disabled": false,
+              "code": "Space",
+              "repeat": false,
+              "formControl": false
+            },
+            {
+              "type": "keydown",
+              "time": 2227.800000000745,
+              "busy": true,
+              "action": null,
+              "disabled": false,
+              "code": "Space",
+              "repeat": false,
+              "formControl": false
+            }
+          ]
+        },
+        {
+          "name": "Refresh during reveal preserves the already committed roll and RNG",
+          "revision": 3,
+          "rng": 632717625,
+          "phase": "combat",
+          "stateSha256": "6173f96c055ebde4d5c5fdc9ad35ca7d94596637b63bc80d2b42bbf4571897f4"
+        },
+        {
+          "name": "UI roll persists one exact engine transition",
+          "revision": 4,
+          "rng": 179006175,
+          "phase": "combat",
+          "stateSha256": "08a675813350bcd399701fa4ff78ff8cc54faade64eaed3a5bb0545295e5bb7d"
+        },
+        {
+          "name": "Unfocused native Space performs exactly one roll",
+          "revision": 4,
+          "rng": 179006175,
+          "phase": "combat",
+          "stateSha256": "08a675813350bcd399701fa4ff78ff8cc54faade64eaed3a5bb0545295e5bb7d"
+        },
+        {
+          "name": "UI roll persists one exact engine transition",
+          "revision": 5,
+          "rng": 3836040414,
+          "phase": "combat",
+          "stateSha256": "6b267813cb46d42461a667c9feadf2fa9d8f4c20087c5fc3975c6f3fef85c673"
+        },
+        {
+          "name": "Skip is a presentation action; state is unchanged after the exact roll comparison"
+        }
+      ],
+      "status": "passed",
+      "finished": "2026-10-17T10:17:27.849Z"
+    },
+    {
+      "name": "forge-talents-inventory-settings",
+      "kind": "Synthetic service fixture; actual control clicks",
+      "started": "2026-10-17T10:17:27.852Z",
+      "checks": [
+        {
+          "name": "UI forge persists one exact engine transition",
+          "revision": 2,
+          "rng": 1293041500,
+          "phase": "forge",
+          "stateSha256": "b94d9ee914305538adefc57ca27662a16dafc6b9db77b2645a3e324dda62aed1"
+        },
+        {
+          "name": "UI talent persists one exact engine transition",
+          "revision": 3,
+          "rng": 1293041500,
+          "phase": "forge",
+          "stateSha256": "3adfe8e0c84d5b85719d18aced624e7b60651c5e39e85fa62bb398ac59586f4d"
+        },
+        {
+          "name": "Presentation settings do not consume game RNG or revision",
+          "revision": 3,
+          "rng": 1293041500,
+          "phase": "forge",
+          "stateSha256": "3adfe8e0c84d5b85719d18aced624e7b60651c5e39e85fa62bb398ac59586f4d"
+        },
+        {
+          "name": "Low effects and UI scale survive reload"
+        }
+      ],
+      "status": "passed",
+      "finished": "2026-10-17T10:17:44.302Z"
+    },
+    {
+      "name": "fusion-protected-three-relics",
+      "kind": "Synthetic equipped targets and protected material; real confirmation",
+      "started": "2026-10-17T10:17:44.305Z",
+      "checks": [
+        {
+          "name": "Cancel protected fusion preserves all material, target progress, gold and RNG",
+          "revision": 1,
+          "rng": 3588911926,
+          "phase": "fusion",
+          "stateSha256": "d49b740370e2f7cf57cc7490e4fc9d041103e5df80049302dad50bf563077b2a"
+        },
+        {
+          "name": "UI fuse persists one exact engine transition",
+          "revision": 2,
+          "rng": 3927122160,
+          "phase": "fusion",
+          "stateSha256": "1abf59049accd95e4f2a4af2bc2d2398360dd72ebfcfa4e935b7c90385f48bb2"
+        },
+        {
+          "name": "Reload neither repeats fusion nor loses target enhancement",
+          "revision": 2,
+          "rng": 3927122160,
+          "phase": "fusion",
+          "stateSha256": "1abf59049accd95e4f2a4af2bc2d2398360dd72ebfcfa4e935b7c90385f48bb2"
+        }
+      ],
+      "status": "passed",
+      "finished": "2026-10-17T10:17:58.594Z"
+    },
+    {
+      "name": "merchant-and-paid-events",
+      "kind": "Synthetic shop and event fixtures; real paid actions",
+      "started": "2026-10-17T10:17:58.598Z",
+      "checks": [
+        {
+          "name": "UI buy persists one exact engine transition",
+          "revision": 2,
+          "rng": 3986728615,
+          "phase": "merchant",
+          "stateSha256": "a7181c5f5e5bee61b5ffbe511a362aa2d93bfd57e3192f69ccfa3c7f0deb80c0"
+        },
+        {
+          "name": "UI buy persists one exact engine transition",
+          "revision": 3,
+          "rng": 3986728615,
+          "phase": "merchant",
+          "stateSha256": "f5ab802d289c079993a60e46f8f4a39b96f58f6d20ca003434c334ab6165cf11"
+        },
+        {
+          "name": "Cancel paid prayer leaves gold, life, luck and RNG unchanged",
+          "revision": 1,
+          "rng": 3523296831,
+          "phase": "event",
+          "stateSha256": "3eb6306916eca21d94281b2407073aea8785f12d0ad29716148ae58e986a6032"
+        },
+        {
+          "name": "UI event-choice persists one exact engine transition",
+          "revision": 2,
+          "rng": 3523296831,
+          "phase": "event",
+          "stateSha256": "417169173ec94298cc7279b4d86b615d77f19f65c4a58b07f623059240d934fe"
+        },
+        {
+          "name": "UI event-choice persists one exact engine transition",
+          "revision": 2,
+          "rng": 1293041500,
+          "phase": "event",
+          "stateSha256": "0b85213f65dc70a7e356485530041e3324ead2e59a2556298d42a37aa30161de"
+        },
+        {
+          "name": "Paid random event result and reward remain settled after refresh",
+          "revision": 2,
+          "rng": 1293041500,
+          "phase": "event",
+          "stateSha256": "0b85213f65dc70a7e356485530041e3324ead2e59a2556298d42a37aa30161de"
+        }
+      ],
+      "status": "passed",
+      "finished": "2026-10-17T10:18:13.779Z"
+    },
+    {
+      "name": "next-luck-cross-room",
+      "kind": "Synthetic first-crit setup; subsequent room generated by normal engine transitions",
+      "started": "2026-10-17T10:18:13.784Z",
+      "checks": [
+        {
+          "name": "UI roll persists one exact engine transition",
+          "revision": 2,
+          "rng": 3270159353,
+          "phase": "chest",
+          "stateSha256": "6f8a811183067fb7e79c32fd6341c1225aaf25be5ed42e3823054d0cb5ca279e"
+        },
+        {
+          "name": "UI open persists one exact engine transition",
+          "revision": 3,
+          "rng": 3270159353,
+          "phase": "loot",
+          "stateSha256": "984b961b0cf4d0f6f8df6ca3b3b0b87aab1e1fa36d1bb1d96f6ec3af8b0bafb6"
+        },
+        {
+          "name": "Pending next-combat luck survives save reload",
+          "revision": 3,
+          "rng": 3270159353,
+          "phase": "loot",
+          "stateSha256": "984b961b0cf4d0f6f8df6ca3b3b0b87aab1e1fa36d1bb1d96f6ec3af8b0bafb6"
+        },
+        {
+          "name": "UI next persists one exact engine transition",
+          "revision": 4,
+          "rng": 1629412512,
+          "phase": "combat",
+          "stateSha256": "8908da8064da1dfba13c63abf06dc155183b2a1478039d730c092615189856ee"
+        },
+        {
+          "name": "UI roll persists one exact engine transition",
+          "revision": 5,
+          "rng": 1623534426,
+          "phase": "dead",
+          "stateSha256": "d90af1632945a11c9c1e8b7fd24d86a0c5c61dc0ab4c75f9db99b24126462d2b"
+        },
+        {
+          "name": "First-crit luck survives kill, chest, reload and room entry; next combat roll consumes it once",
+          "expectedLuck": 15
+        }
+      ],
+      "status": "passed",
+      "finished": "2026-10-17T10:18:23.383Z"
+    },
+    {
+      "name": "v4-import-export-archive",
+      "kind": "Authentic constructed V4 baseline fixture envelopes; native import/export UI",
+      "started": "2026-10-17T10:18:23.384Z",
+      "checks": [
+        {
+          "name": "Cancel V4 import preserves the active original bytes and creates no archive"
+        },
+        {
+          "name": "Import B commits its exact migrated state",
+          "revision": 2,
+          "rng": 1178001003,
+          "phase": "fusion",
+          "stateSha256": "a1ade34cc7d4451466540119106e305ff6771bf72f6e95c84cb4b2ebdfecc69b"
+        },
+        {
+          "name": "Import B archives and exports active V4 A before replacement, byte for byte"
+        },
+        {
+          "name": "V4 import Constructed V4 engine fixture / fate",
+          "revision": 0,
+          "rng": 279232657,
+          "phase": "fate",
+          "stateSha256": "7a1ff9f7abc03332d9664e9d427de0a150709600971919deaaa6727102e66932"
+        },
+        {
+          "name": "V4 import Constructed V4 engine fixture / combat",
+          "revision": 1,
+          "rng": 2657238410,
+          "phase": "combat",
+          "stateSha256": "7b4e7e4decd889c7550221881dc821cb301454985cf1d196251b04907c81916d"
+        },
+        {
+          "name": "V4 import Constructed V4 engine fixture / boss",
+          "revision": 1,
+          "rng": 279232657,
+          "phase": "combat",
+          "stateSha256": "d470a7fde3b285ada0c16224787e47b508c4d69bf05f7a343c7e9472a082b71c"
+        },
+        {
+          "name": "V4 import Constructed V4 engine fixture / chest",
+          "revision": 1,
+          "rng": 579199574,
+          "phase": "chest",
+          "stateSha256": "b21e93bc3097e068e64998de74699fd938ea8416c838be53ef7463d867dada75"
+        },
+        {
+          "name": "V4 import Constructed V4 engine fixture / loot",
+          "revision": 2,
+          "rng": 579199574,
+          "phase": "loot",
+          "stateSha256": "b1ea6a6f492933b3d85aa49aa243b8e177730b62cd33a3f488b976388c006d1e"
+        },
+        {
+          "name": "V4 import Constructed V4 engine fixture / merchant",
+          "revision": 2,
+          "rng": 3596378641,
+          "phase": "merchant",
+          "stateSha256": "56461ec39cbf26c378f5258de2a015537261cf52581663fb9381c13957ea01ff"
+        },
+        {
+          "name": "V4 import Constructed V4 engine fixture / blackmarket",
+          "revision": 1,
+          "rng": 3596378641,
+          "phase": "blackmarket",
+          "stateSha256": "55bc0abd6c67985a5c4d85c4d7e946d10bf7d3cbbd4443cd138f4e31d26ca688"
+        },
+        {
+          "name": "V4 import Constructed V4 engine fixture / forge",
+          "revision": 2,
+          "rng": 2657238410,
+          "phase": "forge",
+          "stateSha256": "d48e290ff1fa52590f4a29c526a1a6696c0f9d77e5fe8469f9a34e680c23a129"
+        },
+        {
+          "name": "V4 import Constructed V4 engine fixture / fusion",
+          "revision": 2,
+          "rng": 1178001003,
+          "phase": "fusion",
+          "stateSha256": "a1ade34cc7d4451466540119106e305ff6771bf72f6e95c84cb4b2ebdfecc69b"
+        },
+        {
+          "name": "V4 import Constructed V4 engine fixture / prayer",
+          "revision": 1,
+          "rng": 279232657,
+          "phase": "event",
+          "stateSha256": "da346fab7d4bfb5afb62c457d608e35063cf170f6587b8b873a872fb2eb3e394"
+        },
+        {
+          "name": "V4 import Constructed V4 engine fixture / rest",
+          "revision": 1,
+          "rng": 279232657,
+          "phase": "rest",
+          "stateSha256": "21a22d9db7a197969183982ac081645c7941a6eabefc5f5f53616651eeb17119"
+        }
+      ],
+      "status": "passed",
+      "finished": "2026-10-17T10:18:55.367Z"
+    },
+    {
+      "name": "corruption-and-quota-recovery",
+      "kind": "Injected malformed main payload and browser quota faults",
+      "started": "2026-10-17T10:18:55.380Z",
+      "checks": [
+        {
+          "name": "First recovered action repairs main and mirror using the recovered RNG",
+          "revision": 1,
+          "rng": 3211856448,
+          "phase": "route",
+          "stateSha256": "195121783b85814287b949e04dcb554c8954afa41a5a9b5fcedd8eeea590bde4"
+        },
+        {
+          "name": "Primary quota failure leaves both saves and game RNG unchanged",
+          "revision": 0,
+          "rng": 2448976952,
+          "phase": "fate",
+          "stateSha256": "3a64837cd07e47720874073ab0bef16f913d0e4e035cff27a2798ebb41a93418"
+        },
+        {
+          "name": "UI fate persists one exact engine transition",
+          "revision": 1,
+          "rng": 3211856448,
+          "phase": "route",
+          "stateSha256": "195121783b85814287b949e04dcb554c8954afa41a5a9b5fcedd8eeea590bde4"
+        },
+        {
+          "name": "Mirror quota failure still commits exactly one valid main save",
+          "revision": 1,
+          "rng": 3211856448,
+          "phase": "route",
+          "stateSha256": "195121783b85814287b949e04dcb554c8954afa41a5a9b5fcedd8eeea590bde4"
+        },
+        {
+          "name": "UI enter persists one exact engine transition",
+          "revision": 2,
+          "rng": 1494347484,
+          "phase": "combat",
+          "stateSha256": "d6b403b5cd8f2e8b5e345470250c5ef22bced9c1ad222c3de3ada0489fa0e361"
+        },
+        {
+          "name": "The next successful transaction rebuilds the failed mirror"
+        }
+      ],
+      "status": "passed",
+      "finished": "2026-10-17T10:19:11.548Z"
+    },
+    {
+      "name": "two-tab-conflict-and-pending-cancel",
+      "kind": "Shared-origin isolated tabs; one explicit missed-event fault",
+      "started": "2026-10-17T10:19:11.551Z",
+      "checks": [
+        {
+          "name": "UI talent persists one exact engine transition",
+          "revision": 2,
+          "rng": 3588911926,
+          "phase": "fusion",
+          "stateSha256": "f0b3c94c34a79642fb3c2f571f86f2e278c4bf6970a924caead8ec5035a9187c"
+        },
+        {
+          "name": "Another tab update closes a pending material confirmation and synchronizes exact state",
+          "revision": 2,
+          "rng": 3588911926,
+          "phase": "fusion",
+          "stateSha256": "f0b3c94c34a79642fb3c2f571f86f2e278c4bf6970a924caead8ec5035a9187c"
+        },
+        {
+          "name": "A stale empty tab cannot replace a newly created run",
+          "revision": 0,
+          "rng": 3333594333,
+          "phase": "fate",
+          "stateSha256": "abcbc958597b0a5ebd15f2e140d34347d38c7f227322379f6e2e2ddc1c85b62c"
+        },
+        {
+          "name": "The same stale empty tab cannot import over the newer run or create archive side effects"
+        }
+      ],
+      "status": "passed",
+      "finished": "2026-10-17T10:19:31.681Z"
+    }
+  ],
+  "errors": [],
+  "fixtures": [
+    {
+      "name": "actual-browser-created-new-game",
+      "provenance": "New game created by native UI; browser crypto seed retained for reproducibility",
+      "sha256": "899de62ee3b23510b6aff3b68e449cdaa87c7678bb83ecb241478cf4c7a01195"
+    },
+    {
+      "name": "rapid-click-space-refresh",
+      "provenance": "Constructed current V5 engine fixture",
+      "sha256": "32c077416ff1eb00e211216a55a138138f5c9cafc9e4bad312d45f9be16d199f"
+    },
+    {
+      "name": "forge-talents-inventory-settings",
+      "provenance": "Constructed current V5 engine fixture",
+      "sha256": "14c9cb546bf5e12acabc853d0ce47bc3d55c899bb034922727fd1404976c2850"
+    },
+    {
+      "name": "fusion-protected-three-relics",
+      "provenance": "Constructed current V5 engine fixture",
+      "sha256": "3f594b05c182361e47c4c90c568e9f730a3f2232ce7e2aa08ebcdbba2574a47a"
+    },
+    {
+      "name": "merchant",
+      "provenance": "Constructed current V5 engine fixture",
+      "sha256": "af0f05c683ae5f8bd3eca099d3b4a7aa94736bc87c1b2c3146ca7ced14b05e1f"
+    },
+    {
+      "name": "paid-prayer",
+      "provenance": "Constructed current V5 engine fixture",
+      "sha256": "24eed2acfd65f1c31cca37d7caf99fbbfdae7c43fc7c287a182d486693706a76"
+    },
+    {
+      "name": "paid-gambit",
+      "provenance": "Constructed current V5 engine fixture",
+      "sha256": "5e894e87b144ab319fa69d8ef719d87753acf0a0473e0c94807c26dc277f7b9d"
+    },
+    {
+      "name": "next-luck-cross-room",
+      "provenance": "Constructed current V5 engine fixture",
+      "sha256": "fd18fce93e0d1f5c742f47b4b5139c5a1bab8d6fe09e717a72b757df222544b8"
+    },
+    {
+      "name": "active-unarchived-v4-A",
+      "provenance": "Explicit raw import/recovery fixture",
+      "sha256": "d53aa5d8641f1baeea3674308118e0d1ae02a8aab10e3a887cacbcd156f7e7c7"
+    },
+    {
+      "name": "Constructed V4 engine fixture / fate",
+      "provenance": "Checked-in original V4 engine fixture envelope",
+      "sha256": "5378df5f35cbdd04a2fde622e717859ae193817d8714a50c0fd174051d9ce7cf"
+    },
+    {
+      "name": "Constructed V4 engine fixture / combat",
+      "provenance": "Checked-in original V4 engine fixture envelope",
+      "sha256": "d53aa5d8641f1baeea3674308118e0d1ae02a8aab10e3a887cacbcd156f7e7c7"
+    },
+    {
+      "name": "Constructed V4 engine fixture / boss",
+      "provenance": "Checked-in original V4 engine fixture envelope",
+      "sha256": "bc7db47c20723a0e86fed810044ec8c5c5d519698423659d80d922003cbf935c"
+    },
+    {
+      "name": "Constructed V4 engine fixture / chest",
+      "provenance": "Checked-in original V4 engine fixture envelope",
+      "sha256": "acd2fb874a8d4901d5b13eca12361880ef215863da79892d512653840044f4d4"
+    },
+    {
+      "name": "Constructed V4 engine fixture / loot",
+      "provenance": "Checked-in original V4 engine fixture envelope",
+      "sha256": "eddf134a657ed8f5219050195c966b5819b730966caec93b6a8b15db266f9d6b"
+    },
+    {
+      "name": "Constructed V4 engine fixture / merchant",
+      "provenance": "Checked-in original V4 engine fixture envelope",
+      "sha256": "92ece4330a1f984ff018e9ddf4f63c7bbed51d4bd20c095d4974cb03dae72467"
+    },
+    {
+      "name": "Constructed V4 engine fixture / blackmarket",
+      "provenance": "Checked-in original V4 engine fixture envelope",
+      "sha256": "f40e75cd5a4ab3a6cdf26787f59352376b47cffc38c72469825a61ff5f57d91d"
+    },
+    {
+      "name": "Constructed V4 engine fixture / forge",
+      "provenance": "Checked-in original V4 engine fixture envelope",
+      "sha256": "9e9a28d9b36d2508da78a64c9c0397d49f7459079fb144c669e6d82f8b7f0611"
+    },
+    {
+      "name": "Constructed V4 engine fixture / fusion",
+      "provenance": "Checked-in original V4 engine fixture envelope",
+      "sha256": "4452c8970378e895e4273cba4e36ee990635047b7109323fc6d0d69b641d6f11"
+    },
+    {
+      "name": "Constructed V4 engine fixture / prayer",
+      "provenance": "Checked-in original V4 engine fixture envelope",
+      "sha256": "b996f3d419f45f4daec64781cfa7bfabe4431f08cdb3cd7dcc813c0b6310535a"
+    },
+    {
+      "name": "Constructed V4 engine fixture / rest",
+      "provenance": "Checked-in original V4 engine fixture envelope",
+      "sha256": "7f48383f294b347dbe2ef8e0b81cefc4cc93bce4b62d6676beb3b377754dcec4"
+    },
+    {
+      "name": "corrupted-main-valid-mirror",
+      "provenance": "Explicit raw import/recovery fixture",
+      "sha256": "298cf79cec723f834641cb6cfb665256faee5d2a7560467d36f2299a90e91e69"
+    },
+    {
+      "name": "primary-quota-failure",
+      "provenance": "Constructed current V5 engine fixture",
+      "sha256": "0c89d1b36ea4e12811768d5946cd56423b1a52c0cc6c7b22bf0f59119c04d64b"
+    },
+    {
+      "name": "mirror-quota-failure",
+      "provenance": "Constructed current V5 engine fixture",
+      "sha256": "0c89d1b36ea4e12811768d5946cd56423b1a52c0cc6c7b22bf0f59119c04d64b"
+    },
+    {
+      "name": "fusion-sync-tab-A",
+      "provenance": "Constructed current V5 engine fixture",
+      "sha256": "3f594b05c182361e47c4c90c568e9f730a3f2232ce7e2aa08ebcdbba2574a47a"
+    }
+  ],
+  "screenshots": [
+    "baseline-interaction-title.png",
+    "baseline-interaction-manual-route.png",
+    "baseline-interaction-manual-chest.png",
+    "baseline-interaction-manual-loot.png",
+    "baseline-interaction-combat-after-space.png",
+    "baseline-interaction-forge-ready.png",
+    "baseline-interaction-forge-result.png",
+    "baseline-interaction-talents.png",
+    "baseline-interaction-inventory.png",
+    "baseline-interaction-settings.png",
+    "baseline-interaction-fusion-ready.png",
+    "baseline-interaction-fusion-three-relic-preview.png",
+    "baseline-interaction-fusion-confirm-protected.png",
+    "baseline-interaction-fusion-result-three-relics.png",
+    "baseline-interaction-merchant-ready.png",
+    "baseline-interaction-merchant-purchased.png",
+    "baseline-interaction-event-prayer-ready.png",
+    "baseline-interaction-event-prayer-confirm.png",
+    "baseline-interaction-event-prayer-result.png",
+    "baseline-interaction-event-gambit-result.png",
+    "baseline-interaction-next-luck-new-room.png",
+    "baseline-interaction-v4-migrated-rest.png",
+    "baseline-interaction-corrupted-main-recovered.png",
+    "baseline-interaction-primary-quota-error.png",
+    "baseline-interaction-mirror-quota-warning.png",
+    "baseline-interaction-two-tab-pending-confirm-cancelled.png",
+    "baseline-interaction-stale-empty-start-rejected.png",
+    "baseline-interaction-stale-empty-import-rejected.png"
+  ],
+  "finished": "2026-10-17T10:19:31.759Z",
+  "passed": 9,
+  "failed": 0,
+  "_archive": {
+    "sourceReport": "baseline-interactions.json",
+    "originalBytes": 125697,
+    "originalSha256": "e33651bceb649e282fcfab71ed61dce9ca4aebc82586d8f81fc68682f7b9e2ac",
+    "method": "All case checks, statuses, errors and geometry issue candidates retained. Full fixture raw strings and repetitive geometry control/text lists omitted; reconstruct with the shipped QA script. Original screenshot names identify capture provenance; selected visual sheets are in visual/.",
+    "omittedRaw": [
+      {
+        "path": "/fixtures/0/raw",
+        "characters": 2168,
+        "bytes": 2237,
+        "sha256": "899de62ee3b23510b6aff3b68e449cdaa87c7678bb83ecb241478cf4c7a01195"
+      },
+      {
+        "path": "/fixtures/1/raw",
+        "characters": 3021,
+        "bytes": 3178,
+        "sha256": "32c077416ff1eb00e211216a55a138138f5c9cafc9e4bad312d45f9be16d199f"
+      },
+      {
+        "path": "/fixtures/2/raw",
+        "characters": 2618,
+        "bytes": 2679,
+        "sha256": "14c9cb546bf5e12acabc853d0ce47bc3d55c899bb034922727fd1404976c2850"
+      },
+      {
+        "path": "/fixtures/3/raw",
+        "characters": 3817,
+        "bytes": 3968,
+        "sha256": "3f594b05c182361e47c4c90c568e9f730a3f2232ce7e2aa08ebcdbba2574a47a"
+      },
+      {
+        "path": "/fixtures/4/raw",
+        "characters": 3428,
+        "bytes": 3532,
+        "sha256": "af0f05c683ae5f8bd3eca099d3b4a7aa94736bc87c1b2c3146ca7ced14b05e1f"
+      },
+      {
+        "path": "/fixtures/5/raw",
+        "characters": 2853,
+        "bytes": 2960,
+        "sha256": "24eed2acfd65f1c31cca37d7caf99fbbfdae7c43fc7c287a182d486693706a76"
+      },
+      {
+        "path": "/fixtures/6/raw",
+        "characters": 2855,
+        "bytes": 2966,
+        "sha256": "5e894e87b144ab319fa69d8ef719d87753acf0a0473e0c94807c26dc277f7b9d"
+      },
+      {
+        "path": "/fixtures/7/raw",
+        "characters": 2996,
+        "bytes": 3153,
+        "sha256": "fd18fce93e0d1f5c742f47b4b5139c5a1bab8d6fe09e717a72b757df222544b8"
+      },
+      {
+        "path": "/fixtures/8/raw",
+        "characters": 3016,
+        "bytes": 3206,
+        "sha256": "d53aa5d8641f1baeea3674308118e0d1ae02a8aab10e3a887cacbcd156f7e7c7"
+      },
+      {
+        "path": "/fixtures/9/raw",
+        "characters": 2191,
+        "bytes": 2286,
+        "sha256": "5378df5f35cbdd04a2fde622e717859ae193817d8714a50c0fd174051d9ce7cf"
+      },
+      {
+        "path": "/fixtures/10/raw",
+        "characters": 3016,
+        "bytes": 3206,
+        "sha256": "d53aa5d8641f1baeea3674308118e0d1ae02a8aab10e3a887cacbcd156f7e7c7"
+      },
+      {
+        "path": "/fixtures/11/raw",
+        "characters": 3134,
+        "bytes": 3447,
+        "sha256": "bc7db47c20723a0e86fed810044ec8c5c5d519698423659d80d922003cbf935c"
+      },
+      {
+        "path": "/fixtures/12/raw",
+        "characters": 2883,
+        "bytes": 2999,
+        "sha256": "acd2fb874a8d4901d5b13eca12361880ef215863da79892d512653840044f4d4"
+      },
+      {
+        "path": "/fixtures/13/raw",
+        "characters": 3127,
+        "bytes": 3278,
+        "sha256": "eddf134a657ed8f5219050195c966b5819b730966caec93b6a8b15db266f9d6b"
+      },
+      {
+        "path": "/fixtures/14/raw",
+        "characters": 3686,
+        "bytes": 3864,
+        "sha256": "92ece4330a1f984ff018e9ddf4f63c7bbed51d4bd20c095d4974cb03dae72467"
+      },
+      {
+        "path": "/fixtures/15/raw",
+        "characters": 3450,
+        "bytes": 3588,
+        "sha256": "f40e75cd5a4ab3a6cdf26787f59352376b47cffc38c72469825a61ff5f57d91d"
+      },
+      {
+        "path": "/fixtures/16/raw",
+        "characters": 2737,
+        "bytes": 2864,
+        "sha256": "9e9a28d9b36d2508da78a64c9c0397d49f7459079fb144c669e6d82f8b7f0611"
+      },
+      {
+        "path": "/fixtures/17/raw",
+        "characters": 3842,
+        "bytes": 3972,
+        "sha256": "4452c8970378e895e4273cba4e36ee990635047b7109323fc6d0d69b641d6f11"
+      },
+      {
+        "path": "/fixtures/18/raw",
+        "characters": 2865,
+        "bytes": 3006,
+        "sha256": "b996f3d419f45f4daec64781cfa7bfabe4431f08cdb3cd7dcc813c0b6310535a"
+      },
+      {
+        "path": "/fixtures/19/raw",
+        "characters": 2626,
+        "bytes": 2721,
+        "sha256": "7f48383f294b347dbe2ef8e0b81cefc4cc93bce4b62d6676beb3b377754dcec4"
+      },
+      {
+        "path": "/fixtures/20/raw",
+        "characters": 22,
+        "bytes": 22,
+        "sha256": "298cf79cec723f834641cb6cfb665256faee5d2a7560467d36f2299a90e91e69"
+      },
+      {
+        "path": "/fixtures/21/raw",
+        "characters": 2146,
+        "bytes": 2207,
+        "sha256": "0c89d1b36ea4e12811768d5946cd56423b1a52c0cc6c7b22bf0f59119c04d64b"
+      },
+      {
+        "path": "/fixtures/22/raw",
+        "characters": 2146,
+        "bytes": 2207,
+        "sha256": "0c89d1b36ea4e12811768d5946cd56423b1a52c0cc6c7b22bf0f59119c04d64b"
+      },
+      {
+        "path": "/fixtures/23/raw",
+        "characters": 3817,
+        "bytes": 3968,
+        "sha256": "3f594b05c182361e47c4c90c568e9f730a3f2232ce7e2aa08ebcdbba2574a47a"
+      }
+    ]
+  }
+}

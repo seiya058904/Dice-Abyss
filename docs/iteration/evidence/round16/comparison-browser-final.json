@@ -1,0 +1,1999 @@
+{
+  "audit": "round16-comparison-native-browser",
+  "source": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss",
+  "url": "http://127.0.0.1:4191/",
+  "expected": "current",
+  "started": "2026-10-19T02:58:43.244Z",
+  "scriptSha256": "808365f8e60a061d40194c9125ca14e6f4d82d81384f4339b5e48b4cc59c7798",
+  "sourceBefore": {
+    "src/views.js": "1aed7caac52894bd35b03307f08ebf45382b9f6418050b47e2f09dc48f71971c",
+    "src/equipment-comparison.js": "e47add10ce9cf308ac79fd1bbb4bc74e54b93e0f6b48e5dc97ac2eb314c6c9c4",
+    "src/engine.js": "75c6d9fcc48c0cf49ee02e53ffb7b143a09a2c79738d3bb2eb5d0ae80b30872b",
+    "src/equipment.js": "8c20de433f21931318e315b862b457d37a03b9596ea5df8f7cc4025691aaccd6",
+    "src/storage.js": "6bfcc60036c9f729c21b948ca98c7ac715e14049856fb9dded0baa2aeef2c561",
+    "src/decisions.css": "5e211e2fb4e72e6959ae7db8f570a3f2baacbd9c789cca90e89b9bd13a379588"
+  },
+  "cases": [
+    {
+      "name": "natural-first-loot-and-eight-hp-clamp",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "Application restores the complete valid isolated fixture",
+          "passed": true
+        },
+        {
+          "label": "Native fate saves one exact complete transition",
+          "passed": true
+        },
+        {
+          "label": "Native fate retains exact primary and mirror equality",
+          "passed": true
+        },
+        {
+          "label": "Native enter saves one exact complete transition",
+          "passed": true
+        },
+        {
+          "label": "Native enter retains exact primary and mirror equality",
+          "passed": true
+        },
+        {
+          "label": "Native roll saves one exact complete transition",
+          "passed": true
+        },
+        {
+          "label": "Native roll retains exact primary and mirror equality",
+          "passed": true
+        },
+        {
+          "label": "Native roll saves one exact complete transition",
+          "passed": true
+        },
+        {
+          "label": "Native roll retains exact primary and mirror equality",
+          "passed": true
+        },
+        {
+          "label": "Native open saves one exact complete transition",
+          "passed": true
+        },
+        {
+          "label": "Native open retains exact primary and mirror equality",
+          "passed": true
+        },
+        {
+          "label": "Seed 3 naturally reaches the exact one-die first-loot checkpoint",
+          "passed": true
+        },
+        {
+          "label": "Native comparison dialog opens",
+          "passed": true
+        },
+        {
+          "label": "Displayed HP and maximum HP match the complete equip transition",
+          "passed": true
+        },
+        {
+          "label": "Displayed current shield matches actual unchanged shield",
+          "passed": true
+        },
+        {
+          "label": "One die explicitly marks pair ward unattainable",
+          "passed": true
+        },
+        {
+          "label": "The impossible condition explains the exact next-die unlock level",
+          "passed": true
+        },
+        {
+          "label": "Reading a comparison writes neither save copy",
+          "passed": true
+        },
+        {
+          "label": "Existing +82% survival estimate is unchanged",
+          "passed": true
+        },
+        {
+          "label": "Escape closes comparison",
+          "passed": true
+        },
+        {
+          "label": "Escape restores the original comparison control",
+          "passed": true
+        },
+        {
+          "label": "Native comparison dialog opens",
+          "passed": true
+        },
+        {
+          "label": "Space within an open comparison does not roll or save",
+          "passed": true
+        },
+        {
+          "label": "Native next saves one exact complete transition",
+          "passed": true
+        },
+        {
+          "label": "Native next retains exact primary and mirror equality",
+          "passed": true
+        },
+        {
+          "label": "Natural next battle grants the actual original opening shield",
+          "passed": true
+        },
+        {
+          "label": "Native comparison dialog opens",
+          "passed": true
+        },
+        {
+          "label": "Displayed HP and maximum HP match the complete equip transition",
+          "passed": true
+        },
+        {
+          "label": "Displayed current shield matches actual unchanged shield",
+          "passed": true
+        },
+        {
+          "label": "One die explicitly marks pair ward unattainable",
+          "passed": true
+        },
+        {
+          "label": "The impossible condition explains the exact next-die unlock level",
+          "passed": true
+        },
+        {
+          "label": "Reading a comparison writes neither save copy",
+          "passed": true
+        },
+        {
+          "label": "Escape closes comparison",
+          "passed": true
+        },
+        {
+          "label": "Escape restores the original comparison control",
+          "passed": true
+        },
+        {
+          "label": "Native equip saves one exact complete transition",
+          "passed": true
+        },
+        {
+          "label": "Native equip retains exact primary and mirror equality",
+          "passed": true
+        },
+        {
+          "label": "Higher maximum HP grants no free healing and preserves existing shield",
+          "passed": true
+        },
+        {
+          "label": "Native roll saves one exact complete transition",
+          "passed": true
+        },
+        {
+          "label": "Native roll retains exact primary and mirror equality",
+          "passed": true
+        },
+        {
+          "label": "One ordinary roll produces the natural injured regeneration checkpoint",
+          "passed": true
+        },
+        {
+          "label": "Native comparison dialog opens",
+          "passed": true
+        },
+        {
+          "label": "Displayed HP and maximum HP match the complete equip transition",
+          "passed": true
+        },
+        {
+          "label": "Displayed current shield matches actual unchanged shield",
+          "passed": true
+        },
+        {
+          "label": "Reading a comparison writes neither save copy",
+          "passed": true
+        },
+        {
+          "label": "Lowering maximum HP clearly warns about the exact eight-point loss",
+          "passed": true
+        },
+        {
+          "label": "Escape closes comparison",
+          "passed": true
+        },
+        {
+          "label": "Escape restores the original comparison control",
+          "passed": true
+        },
+        {
+          "label": "The clipping warning itself changes no state",
+          "passed": true
+        },
+        {
+          "label": "Native equip saves one exact complete transition",
+          "passed": true
+        },
+        {
+          "label": "Native equip retains exact primary and mirror equality",
+          "passed": true
+        },
+        {
+          "label": "Real equip clamps eight HP and keeps the existing shield",
+          "passed": true
+        },
+        {
+          "label": "Normal reload preserves the exact natural post-swap state",
+          "passed": true
+        }
+      ],
+      "transactions": [
+        {
+          "action": {
+            "type": "fate"
+          },
+          "phase": "route",
+          "revision": 1,
+          "stateSha256": "ef542ac2ca16e998697df273e840194b0c91211f1e3f84939e3d93fb4f9bd684",
+          "hp": 165,
+          "maxHp": 165,
+          "ward": 0
+        },
+        {
+          "action": {
+            "type": "enter"
+          },
+          "phase": "combat",
+          "revision": 2,
+          "stateSha256": "75ba0b88d3b4e5d6330ba8d4f3dba9fa69d2aeeab92f86a3b4a206b50df9ccac",
+          "hp": 165,
+          "maxHp": 165,
+          "ward": 4
+        },
+        {
+          "action": {
+            "type": "roll"
+          },
+          "phase": "combat",
+          "revision": 3,
+          "stateSha256": "3ee46d0e39ae5246f276e2bb7a7e7d8d33954ee42cde23d4213d13043034986c",
+          "hp": 163,
+          "maxHp": 165,
+          "ward": 0
+        },
+        {
+          "action": {
+            "type": "roll"
+          },
+          "phase": "chest",
+          "revision": 4,
+          "stateSha256": "3701a8cf29a2d8eadb702b6898bcc9243b01826cee0a675eab0f48c19b1a6db5",
+          "hp": 165,
+          "maxHp": 165,
+          "ward": 0
+        },
+        {
+          "action": {
+            "type": "open"
+          },
+          "phase": "loot",
+          "revision": 5,
+          "stateSha256": "0346475193a92c4bd70d2444bd73c391045f6417d9a3294e93de5cfafaf59d2c",
+          "hp": 165,
+          "maxHp": 165,
+          "ward": 0
+        },
+        {
+          "action": {
+            "type": "next"
+          },
+          "phase": "combat",
+          "revision": 6,
+          "stateSha256": "61edecd0479d52e8f91951984936f1f57a37bebf1a4e40ca7d6f32dc8b292880",
+          "hp": 165,
+          "maxHp": 165,
+          "ward": 4
+        },
+        {
+          "action": {
+            "type": "equip",
+            "id": "i4"
+          },
+          "phase": "combat",
+          "revision": 7,
+          "stateSha256": "c47132ceabcefc74212cebb10f63362dc76bcc5fd07867a94d523c87638edd60",
+          "hp": 165,
+          "maxHp": 224,
+          "ward": 4
+        },
+        {
+          "action": {
+            "type": "roll"
+          },
+          "phase": "combat",
+          "revision": 8,
+          "stateSha256": "e18b2cf5513d15b3a57eb690c2a055981d1343d9f59766605be2c9c621ac0ece",
+          "hp": 173,
+          "maxHp": 224,
+          "ward": 3
+        },
+        {
+          "action": {
+            "type": "equip",
+            "id": "i2"
+          },
+          "phase": "combat",
+          "revision": 9,
+          "stateSha256": "1ebb1328a5a4b636640cbb44e783419f7f7b9e3e1d23c266f3ce050660a7af1d",
+          "hp": 165,
+          "maxHp": 165,
+          "ward": 3
+        }
+      ],
+      "screenshots": [
+        "natural-first-loot.png",
+        "natural-eight-hp-clamp.png"
+      ],
+      "layouts": [],
+      "durationMs": 13064.594175
+    },
+    {
+      "name": "six-viewports-and-scrollable-close",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "Application restores the complete valid isolated fixture",
+          "passed": true
+        },
+        {
+          "label": "Native comparison dialog opens",
+          "passed": true
+        },
+        {
+          "label": "1366x768: every required comparison and context node exists",
+          "passed": true
+        },
+        {
+          "label": "1366x768: new vitals, dice count and unattainable-condition text are present",
+          "passed": true
+        },
+        {
+          "label": "1366x768: page has no horizontal overflow",
+          "passed": true,
+          "scrollWidth": 1366,
+          "clientWidth": 1366
+        },
+        {
+          "label": "1366x768: .game-dialog has no horizontal clipping",
+          "passed": true,
+          "selector": ".game-dialog",
+          "left": 456.796875,
+          "right": 909.203125,
+          "top": 46.078125,
+          "bottom": 721.90625,
+          "scrollWidth": 450,
+          "clientWidth": 450
+        },
+        {
+          "label": "1366x768: .comparison-detail has no horizontal clipping",
+          "passed": true,
+          "selector": ".comparison-detail",
+          "left": 482.921875,
+          "right": 883.078125,
+          "top": 118.15625,
+          "bottom": 943.875,
+          "scrollWidth": 400,
+          "clientWidth": 400
+        },
+        {
+          "label": "1366x768: [data-comparison-context] has no horizontal clipping",
+          "passed": true,
+          "selector": "[data-comparison-context]",
+          "left": 482.921875,
+          "right": 883.078125,
+          "top": 310,
+          "bottom": 503.953125,
+          "scrollWidth": 400,
+          "clientWidth": 400
+        },
+        {
+          "label": "1366x768: [data-comparison-context-key=\"hp\"] dd has no horizontal clipping",
+          "passed": true,
+          "selector": "[data-comparison-context-key=\"hp\"] dd",
+          "left": 482.921875,
+          "right": 883.078125,
+          "top": 372.078125,
+          "bottom": 391.078125,
+          "scrollWidth": 400,
+          "clientWidth": 400
+        },
+        {
+          "label": "1366x768: [data-comparison-context-key=\"ward\"] dd has no horizontal clipping",
+          "passed": true,
+          "selector": "[data-comparison-context-key=\"ward\"] dd",
+          "left": 482.921875,
+          "right": 883.078125,
+          "top": 434.15625,
+          "bottom": 453.15625,
+          "scrollWidth": 400,
+          "clientWidth": 400
+        },
+        {
+          "label": "1366x768: [data-comparison-key=\"pairWard\"] has no horizontal clipping",
+          "passed": true,
+          "selector": "[data-comparison-key=\"pairWard\"]",
+          "left": 482.921875,
+          "right": 883.078125,
+          "top": 658.84375,
+          "bottom": 765.015625,
+          "scrollWidth": 400,
+          "clientWidth": 400
+        },
+        {
+          "label": "1366x768: dialog frame fits the viewport",
+          "passed": true,
+          "selector": ".game-dialog",
+          "left": 456.796875,
+          "right": 909.203125,
+          "top": 46.078125,
+          "bottom": 721.90625,
+          "scrollWidth": 450,
+          "clientWidth": 450
+        },
+        {
+          "label": "1366x768: new explanation text is at least 11.5 CSS px",
+          "passed": true,
+          "fonts": [
+            {
+              "text": "当前生命 / 生命上限",
+              "fontSize": 12.5672
+            },
+            {
+              "text": "165 / 165→165 / 224",
+              "fontSize": 12.5672
+            },
+            {
+              "text": "当前护盾",
+              "fontSize": 12.5672
+            },
+            {
+              "text": "0→0",
+              "fontSize": 12.5672
+            },
+            {
+              "text": "当前使用 1 颗战斗骰；骰数足够仍须满足对应触发条件。",
+              "fontSize": 12
+            },
+            {
+              "text": "当前仅 1 颗战斗骰，战斗中无法触发；第 2 颗骰在 Lv.2 解锁。",
+              "fontSize": 12
+            }
+          ]
+        },
+        {
+          "label": "1366x768: long comparison close action is reachable",
+          "passed": true
+        },
+        {
+          "label": "1366x768: native footer closes modal",
+          "passed": true
+        },
+        {
+          "label": "1366x768: focus returns after scrolling and closing",
+          "passed": true
+        },
+        {
+          "label": "Native comparison dialog opens",
+          "passed": true
+        },
+        {
+          "label": "1920x1080: every required comparison and context node exists",
+          "passed": true
+        },
+        {
+          "label": "1920x1080: new vitals, dice count and unattainable-condition text are present",
+          "passed": true
+        },
+        {
+          "label": "1920x1080: page has no horizontal overflow",
+          "passed": true,
+          "scrollWidth": 1920,
+          "clientWidth": 1920
+        },
+        {
+          "label": "1920x1080: .game-dialog has no horizontal clipping",
+          "passed": true,
+          "selector": ".game-dialog",
+          "left": 642.046875,
+          "right": 1277.9375,
+          "top": 64.796875,
+          "bottom": 1015.1875,
+          "scrollWidth": 634,
+          "clientWidth": 634
+        },
+        {
+          "label": "1920x1080: .comparison-detail has no horizontal clipping",
+          "passed": true,
+          "selector": ".comparison-detail",
+          "left": 678.359375,
+          "right": 1241.625,
+          "top": 164.90625,
+          "bottom": 1253.53125,
+          "scrollWidth": 563,
+          "clientWidth": 563
+        },
+        {
+          "label": "1920x1080: [data-comparison-context] has no horizontal clipping",
+          "passed": true,
+          "selector": "[data-comparison-context]",
+          "left": 678.359375,
+          "right": 1241.625,
+          "top": 403.109375,
+          "bottom": 663.90625,
+          "scrollWidth": 563,
+          "clientWidth": 563
+        },
+        {
+          "label": "1920x1080: [data-comparison-context-key=\"hp\"] dd has no horizontal clipping",
+          "passed": true,
+          "selector": "[data-comparison-context-key=\"hp\"] dd",
+          "left": 678.359375,
+          "right": 1241.625,
+          "top": 488.25,
+          "bottom": 513.25,
+          "scrollWidth": 563,
+          "clientWidth": 563
+        },
+        {
+          "label": "1920x1080: [data-comparison-context-key=\"ward\"] dd has no horizontal clipping",
+          "passed": true,
+          "selector": "[data-comparison-context-key=\"ward\"] dd",
+          "left": 678.359375,
+          "right": 1241.625,
+          "top": 573.390625,
+          "bottom": 598.390625,
+          "scrollWidth": 563,
+          "clientWidth": 563
+        },
+        {
+          "label": "1920x1080: [data-comparison-key=\"pairWard\"] has no horizontal clipping",
+          "passed": true,
+          "selector": "[data-comparison-key=\"pairWard\"]",
+          "left": 678.359375,
+          "right": 1241.625,
+          "top": 872.09375,
+          "bottom": 1013.671875,
+          "scrollWidth": 563,
+          "clientWidth": 563
+        },
+        {
+          "label": "1920x1080: dialog frame fits the viewport",
+          "passed": true,
+          "selector": ".game-dialog",
+          "left": 642.046875,
+          "right": 1277.9375,
+          "top": 64.796875,
+          "bottom": 1015.1875,
+          "scrollWidth": 634,
+          "clientWidth": 634
+        },
+        {
+          "label": "1920x1080: new explanation text is at least 11.5 CSS px",
+          "passed": true,
+          "fonts": [
+            {
+              "text": "当前生命 / 生命上限",
+              "fontSize": 17.664
+            },
+            {
+              "text": "165 / 165→165 / 224",
+              "fontSize": 17.664
+            },
+            {
+              "text": "当前护盾",
+              "fontSize": 17.664
+            },
+            {
+              "text": "0→0",
+              "fontSize": 17.664
+            },
+            {
+              "text": "当前使用 1 颗战斗骰；骰数足够仍须满足对应触发条件。",
+              "fontSize": 15.191
+            },
+            {
+              "text": "当前仅 1 颗战斗骰，战斗中无法触发；第 2 颗骰在 Lv.2 解锁。",
+              "fontSize": 15.191
+            }
+          ]
+        },
+        {
+          "label": "1920x1080: long comparison close action is reachable",
+          "passed": true
+        },
+        {
+          "label": "1920x1080: native footer closes modal",
+          "passed": true
+        },
+        {
+          "label": "1920x1080: focus returns after scrolling and closing",
+          "passed": true
+        },
+        {
+          "label": "Native comparison dialog opens",
+          "passed": true
+        },
+        {
+          "label": "2560x1440: every required comparison and context node exists",
+          "passed": true
+        },
+        {
+          "label": "2560x1440: new vitals, dice count and unattainable-condition text are present",
+          "passed": true
+        },
+        {
+          "label": "2560x1440: page has no horizontal overflow",
+          "passed": true,
+          "scrollWidth": 2560,
+          "clientWidth": 2560
+        },
+        {
+          "label": "2560x1440: .game-dialog has no horizontal clipping",
+          "passed": true,
+          "selector": ".game-dialog",
+          "left": 856.0625,
+          "right": 1703.921875,
+          "top": 86.40625,
+          "bottom": 1353.59375,
+          "scrollWidth": 846,
+          "clientWidth": 846
+        },
+        {
+          "label": "2560x1440: .comparison-detail has no horizontal clipping",
+          "passed": true,
+          "selector": ".comparison-detail",
+          "left": 904.15625,
+          "right": 1655.828125,
+          "top": 218.90625,
+          "bottom": 1647.125,
+          "scrollWidth": 752,
+          "clientWidth": 752
+        },
+        {
+          "label": "2560x1440: [data-comparison-context] has no horizontal clipping",
+          "passed": true,
+          "selector": "[data-comparison-context]",
+          "left": 904.15625,
+          "right": 1655.828125,
+          "top": 510.6875,
+          "bottom": 859.796875,
+          "scrollWidth": 752,
+          "clientWidth": 752
+        },
+        {
+          "label": "2560x1440: [data-comparison-context-key=\"hp\"] dd has no horizontal clipping",
+          "passed": true,
+          "selector": "[data-comparison-context-key=\"hp\"] dd",
+          "left": 904.15625,
+          "right": 1655.828125,
+          "top": 624.5625,
+          "bottom": 658.5625,
+          "scrollWidth": 752,
+          "clientWidth": 752
+        },
+        {
+          "label": "2560x1440: [data-comparison-context-key=\"ward\"] dd has no horizontal clipping",
+          "passed": true,
+          "selector": "[data-comparison-context-key=\"ward\"] dd",
+          "left": 904.15625,
+          "right": 1655.828125,
+          "top": 738.4375,
+          "bottom": 772.4375,
+          "scrollWidth": 752,
+          "clientWidth": 752
+        },
+        {
+          "label": "2560x1440: [data-comparison-key=\"pairWard\"] has no horizontal clipping",
+          "passed": true,
+          "selector": "[data-comparison-key=\"pairWard\"]",
+          "left": 904.15625,
+          "right": 1655.828125,
+          "top": 1138.4375,
+          "bottom": 1327.59375,
+          "scrollWidth": 752,
+          "clientWidth": 752
+        },
+        {
+          "label": "2560x1440: dialog frame fits the viewport",
+          "passed": true,
+          "selector": ".game-dialog",
+          "left": 856.0625,
+          "right": 1703.921875,
+          "top": 86.40625,
+          "bottom": 1353.59375,
+          "scrollWidth": 846,
+          "clientWidth": 846
+        },
+        {
+          "label": "2560x1440: new explanation text is at least 11.5 CSS px",
+          "passed": true,
+          "fonts": [
+            {
+              "text": "当前生命 / 生命上限",
+              "fontSize": 23.552
+            },
+            {
+              "text": "165 / 165→165 / 224",
+              "fontSize": 23.552
+            },
+            {
+              "text": "当前护盾",
+              "fontSize": 23.552
+            },
+            {
+              "text": "0→0",
+              "fontSize": 23.552
+            },
+            {
+              "text": "当前使用 1 颗战斗骰；骰数足够仍须满足对应触发条件。",
+              "fontSize": 20.2547
+            },
+            {
+              "text": "当前仅 1 颗战斗骰，战斗中无法触发；第 2 颗骰在 Lv.2 解锁。",
+              "fontSize": 20.2547
+            }
+          ]
+        },
+        {
+          "label": "2560x1440: long comparison close action is reachable",
+          "passed": true
+        },
+        {
+          "label": "2560x1440: native footer closes modal",
+          "passed": true
+        },
+        {
+          "label": "2560x1440: focus returns after scrolling and closing",
+          "passed": true
+        },
+        {
+          "label": "Native comparison dialog opens",
+          "passed": true
+        },
+        {
+          "label": "3840x2160: every required comparison and context node exists",
+          "passed": true
+        },
+        {
+          "label": "3840x2160: new vitals, dice count and unattainable-condition text are present",
+          "passed": true
+        },
+        {
+          "label": "3840x2160: page has no horizontal overflow",
+          "passed": true,
+          "scrollWidth": 3840,
+          "clientWidth": 3840
+        },
+        {
+          "label": "3840x2160: .game-dialog has no horizontal clipping",
+          "passed": true,
+          "selector": ".game-dialog",
+          "left": 1284.09375,
+          "right": 2555.890625,
+          "top": 129.59375,
+          "bottom": 2030.390625,
+          "scrollWidth": 1270,
+          "clientWidth": 1270
+        },
+        {
+          "label": "3840x2160: .comparison-detail has no horizontal clipping",
+          "passed": true,
+          "selector": ".comparison-detail",
+          "left": 1355.734375,
+          "right": 2484.25,
+          "top": 326.84375,
+          "bottom": 2426.90625,
+          "scrollWidth": 1129,
+          "clientWidth": 1129
+        },
+        {
+          "label": "3840x2160: [data-comparison-context] has no horizontal clipping",
+          "passed": true,
+          "selector": "[data-comparison-context]",
+          "left": 1355.734375,
+          "right": 2484.25,
+          "top": 725.75,
+          "bottom": 1248.40625,
+          "scrollWidth": 1129,
+          "clientWidth": 1129
+        },
+        {
+          "label": "3840x2160: [data-comparison-context-key=\"hp\"] dd has no horizontal clipping",
+          "passed": true,
+          "selector": "[data-comparison-context-key=\"hp\"] dd",
+          "left": 1355.734375,
+          "right": 2484.25,
+          "top": 896.0625,
+          "bottom": 947.0625,
+          "scrollWidth": 1129,
+          "clientWidth": 1129
+        },
+        {
+          "label": "3840x2160: [data-comparison-context-key=\"ward\"] dd has no horizontal clipping",
+          "passed": true,
+          "selector": "[data-comparison-context-key=\"ward\"] dd",
+          "left": 1355.734375,
+          "right": 2484.25,
+          "top": 1066.375,
+          "bottom": 1117.375,
+          "scrollWidth": 1129,
+          "clientWidth": 1129
+        },
+        {
+          "label": "3840x2160: [data-comparison-key=\"pairWard\"] has no horizontal clipping",
+          "passed": true,
+          "selector": "[data-comparison-key=\"pairWard\"]",
+          "left": 1355.734375,
+          "right": 2484.25,
+          "top": 1665.859375,
+          "bottom": 1949.078125,
+          "scrollWidth": 1129,
+          "clientWidth": 1129
+        },
+        {
+          "label": "3840x2160: dialog frame fits the viewport",
+          "passed": true,
+          "selector": ".game-dialog",
+          "left": 1284.09375,
+          "right": 2555.890625,
+          "top": 129.59375,
+          "bottom": 2030.390625,
+          "scrollWidth": 1270,
+          "clientWidth": 1270
+        },
+        {
+          "label": "3840x2160: new explanation text is at least 11.5 CSS px",
+          "passed": true,
+          "fonts": [
+            {
+              "text": "当前生命 / 生命上限",
+              "fontSize": 35.328
+            },
+            {
+              "text": "165 / 165→165 / 224",
+              "fontSize": 35.328
+            },
+            {
+              "text": "当前护盾",
+              "fontSize": 35.328
+            },
+            {
+              "text": "0→0",
+              "fontSize": 35.328
+            },
+            {
+              "text": "当前使用 1 颗战斗骰；骰数足够仍须满足对应触发条件。",
+              "fontSize": 30.3821
+            },
+            {
+              "text": "当前仅 1 颗战斗骰，战斗中无法触发；第 2 颗骰在 Lv.2 解锁。",
+              "fontSize": 30.3821
+            }
+          ]
+        },
+        {
+          "label": "3840x2160: long comparison close action is reachable",
+          "passed": true
+        },
+        {
+          "label": "3840x2160: native footer closes modal",
+          "passed": true
+        },
+        {
+          "label": "3840x2160: focus returns after scrolling and closing",
+          "passed": true
+        },
+        {
+          "label": "Native comparison dialog opens",
+          "passed": true
+        },
+        {
+          "label": "390x844: every required comparison and context node exists",
+          "passed": true
+        },
+        {
+          "label": "390x844: new vitals, dice count and unattainable-condition text are present",
+          "passed": true
+        },
+        {
+          "label": "390x844: page has no horizontal overflow",
+          "passed": true,
+          "scrollWidth": 390,
+          "clientWidth": 390
+        },
+        {
+          "label": "390x844: .game-dialog has no horizontal clipping",
+          "passed": true,
+          "selector": ".game-dialog",
+          "left": 12,
+          "right": 378,
+          "top": 12,
+          "bottom": 832,
+          "scrollWidth": 364,
+          "clientWidth": 364
+        },
+        {
+          "label": "390x844: .comparison-detail has no horizontal clipping",
+          "passed": true,
+          "selector": ".comparison-detail",
+          "left": 29,
+          "right": 361,
+          "top": 87,
+          "bottom": 1066.140625,
+          "scrollWidth": 332,
+          "clientWidth": 332
+        },
+        {
+          "label": "390x844: [data-comparison-context] has no horizontal clipping",
+          "passed": true,
+          "selector": "[data-comparison-context]",
+          "left": 29,
+          "right": 361,
+          "top": 311.703125,
+          "bottom": 519.40625,
+          "scrollWidth": 332,
+          "clientWidth": 332
+        },
+        {
+          "label": "390x844: [data-comparison-context-key=\"hp\"] dd has no horizontal clipping",
+          "passed": true,
+          "selector": "[data-comparison-context-key=\"hp\"] dd",
+          "left": 29,
+          "right": 361,
+          "top": 379.578125,
+          "bottom": 399.578125,
+          "scrollWidth": 332,
+          "clientWidth": 332
+        },
+        {
+          "label": "390x844: [data-comparison-context-key=\"ward\"] dd has no horizontal clipping",
+          "passed": true,
+          "selector": "[data-comparison-context-key=\"ward\"] dd",
+          "left": 29,
+          "right": 361,
+          "top": 447.453125,
+          "bottom": 467.453125,
+          "scrollWidth": 332,
+          "clientWidth": 332
+        },
+        {
+          "label": "390x844: [data-comparison-key=\"pairWard\"] has no horizontal clipping",
+          "passed": true,
+          "selector": "[data-comparison-key=\"pairWard\"]",
+          "left": 29,
+          "right": 361,
+          "top": 703.828125,
+          "bottom": 835.28125,
+          "scrollWidth": 332,
+          "clientWidth": 332
+        },
+        {
+          "label": "390x844: dialog frame fits the viewport",
+          "passed": true,
+          "selector": ".game-dialog",
+          "left": 12,
+          "right": 378,
+          "top": 12,
+          "bottom": 832,
+          "scrollWidth": 364,
+          "clientWidth": 364
+        },
+        {
+          "label": "390x844: new explanation text is at least 11.5 CSS px",
+          "passed": true,
+          "fonts": [
+            {
+              "text": "当前生命 / 生命上限",
+              "fontSize": 14
+            },
+            {
+              "text": "165 / 165→165 / 224",
+              "fontSize": 14
+            },
+            {
+              "text": "当前护盾",
+              "fontSize": 14
+            },
+            {
+              "text": "0→0",
+              "fontSize": 14
+            },
+            {
+              "text": "当前使用 1 颗战斗骰；骰数足够仍须满足对应触发条件。",
+              "fontSize": 12.04
+            },
+            {
+              "text": "当前仅 1 颗战斗骰，战斗中无法触发；第 2 颗骰在 Lv.2 解锁。",
+              "fontSize": 12.04
+            }
+          ]
+        },
+        {
+          "label": "390x844: long comparison close action is reachable",
+          "passed": true
+        },
+        {
+          "label": "390x844: native footer closes modal",
+          "passed": true
+        },
+        {
+          "label": "390x844: focus returns after scrolling and closing",
+          "passed": true
+        },
+        {
+          "label": "Native comparison dialog opens",
+          "passed": true
+        },
+        {
+          "label": "320x740: every required comparison and context node exists",
+          "passed": true
+        },
+        {
+          "label": "320x740: new vitals, dice count and unattainable-condition text are present",
+          "passed": true
+        },
+        {
+          "label": "320x740: page has no horizontal overflow",
+          "passed": true,
+          "scrollWidth": 320,
+          "clientWidth": 320
+        },
+        {
+          "label": "320x740: .game-dialog has no horizontal clipping",
+          "passed": true,
+          "selector": ".game-dialog",
+          "left": 12,
+          "right": 308,
+          "top": 12,
+          "bottom": 728,
+          "scrollWidth": 294,
+          "clientWidth": 294
+        },
+        {
+          "label": "320x740: .comparison-detail has no horizontal clipping",
+          "passed": true,
+          "selector": ".comparison-detail",
+          "left": 29,
+          "right": 291,
+          "top": 87,
+          "bottom": 1132.28125,
+          "scrollWidth": 262,
+          "clientWidth": 262
+        },
+        {
+          "label": "320x740: [data-comparison-context] has no horizontal clipping",
+          "passed": true,
+          "selector": "[data-comparison-context]",
+          "left": 29,
+          "right": 291,
+          "top": 336.890625,
+          "bottom": 544.59375,
+          "scrollWidth": 262,
+          "clientWidth": 262
+        },
+        {
+          "label": "320x740: [data-comparison-context-key=\"hp\"] dd has no horizontal clipping",
+          "passed": true,
+          "selector": "[data-comparison-context-key=\"hp\"] dd",
+          "left": 29,
+          "right": 291,
+          "top": 404.765625,
+          "bottom": 424.765625,
+          "scrollWidth": 262,
+          "clientWidth": 262
+        },
+        {
+          "label": "320x740: [data-comparison-context-key=\"ward\"] dd has no horizontal clipping",
+          "passed": true,
+          "selector": "[data-comparison-context-key=\"ward\"] dd",
+          "left": 29,
+          "right": 291,
+          "top": 472.640625,
+          "bottom": 492.640625,
+          "scrollWidth": 262,
+          "clientWidth": 262
+        },
+        {
+          "label": "320x740: [data-comparison-key=\"pairWard\"] has no horizontal clipping",
+          "passed": true,
+          "selector": "[data-comparison-key=\"pairWard\"]",
+          "left": 29,
+          "right": 291,
+          "top": 750.09375,
+          "bottom": 901.421875,
+          "scrollWidth": 262,
+          "clientWidth": 262
+        },
+        {
+          "label": "320x740: dialog frame fits the viewport",
+          "passed": true,
+          "selector": ".game-dialog",
+          "left": 12,
+          "right": 308,
+          "top": 12,
+          "bottom": 728,
+          "scrollWidth": 294,
+          "clientWidth": 294
+        },
+        {
+          "label": "320x740: new explanation text is at least 11.5 CSS px",
+          "passed": true,
+          "fonts": [
+            {
+              "text": "当前生命 / 生命上限",
+              "fontSize": 14
+            },
+            {
+              "text": "165 / 165→165 / 224",
+              "fontSize": 14
+            },
+            {
+              "text": "当前护盾",
+              "fontSize": 14
+            },
+            {
+              "text": "0→0",
+              "fontSize": 14
+            },
+            {
+              "text": "当前使用 1 颗战斗骰；骰数足够仍须满足对应触发条件。",
+              "fontSize": 12.04
+            },
+            {
+              "text": "当前仅 1 颗战斗骰，战斗中无法触发；第 2 颗骰在 Lv.2 解锁。",
+              "fontSize": 12.04
+            }
+          ]
+        },
+        {
+          "label": "320x740: long comparison close action is reachable",
+          "passed": true
+        },
+        {
+          "label": "320x740: native footer closes modal",
+          "passed": true
+        },
+        {
+          "label": "320x740: focus returns after scrolling and closing",
+          "passed": true
+        },
+        {
+          "label": "All six viewport checks preserve exact primary and mirror bytes",
+          "passed": true
+        },
+        {
+          "label": "Viewport changes retain all RNG, revision and player fields",
+          "passed": true
+        }
+      ],
+      "transactions": [],
+      "screenshots": [
+        "comparison-1920.png",
+        "comparison-390.png",
+        "comparison-320.png"
+      ],
+      "layouts": [
+        {
+          "width": 1366,
+          "height": 768,
+          "body": {
+            "scrollWidth": 1366,
+            "clientWidth": 1366
+          },
+          "nodes": [
+            {
+              "selector": ".game-dialog",
+              "left": 456.796875,
+              "right": 909.203125,
+              "top": 46.078125,
+              "bottom": 721.90625,
+              "scrollWidth": 450,
+              "clientWidth": 450
+            },
+            {
+              "selector": ".comparison-detail",
+              "left": 482.921875,
+              "right": 883.078125,
+              "top": 118.15625,
+              "bottom": 943.875,
+              "scrollWidth": 400,
+              "clientWidth": 400
+            },
+            {
+              "selector": "[data-comparison-context]",
+              "left": 482.921875,
+              "right": 883.078125,
+              "top": 310,
+              "bottom": 503.953125,
+              "scrollWidth": 400,
+              "clientWidth": 400
+            },
+            {
+              "selector": "[data-comparison-context-key=\"hp\"] dd",
+              "left": 482.921875,
+              "right": 883.078125,
+              "top": 372.078125,
+              "bottom": 391.078125,
+              "scrollWidth": 400,
+              "clientWidth": 400
+            },
+            {
+              "selector": "[data-comparison-context-key=\"ward\"] dd",
+              "left": 482.921875,
+              "right": 883.078125,
+              "top": 434.15625,
+              "bottom": 453.15625,
+              "scrollWidth": 400,
+              "clientWidth": 400
+            },
+            {
+              "selector": "[data-comparison-key=\"pairWard\"]",
+              "left": 482.921875,
+              "right": 883.078125,
+              "top": 658.84375,
+              "bottom": 765.015625,
+              "scrollWidth": 400,
+              "clientWidth": 400
+            }
+          ],
+          "fonts": [
+            {
+              "text": "当前生命 / 生命上限",
+              "fontSize": 12.5672
+            },
+            {
+              "text": "165 / 165→165 / 224",
+              "fontSize": 12.5672
+            },
+            {
+              "text": "当前护盾",
+              "fontSize": 12.5672
+            },
+            {
+              "text": "0→0",
+              "fontSize": 12.5672
+            },
+            {
+              "text": "当前使用 1 颗战斗骰；骰数足够仍须满足对应触发条件。",
+              "fontSize": 12
+            },
+            {
+              "text": "当前仅 1 颗战斗骰，战斗中无法触发；第 2 颗骰在 Lv.2 解锁。",
+              "fontSize": 12
+            }
+          ]
+        },
+        {
+          "width": 1920,
+          "height": 1080,
+          "body": {
+            "scrollWidth": 1920,
+            "clientWidth": 1920
+          },
+          "nodes": [
+            {
+              "selector": ".game-dialog",
+              "left": 642.046875,
+              "right": 1277.9375,
+              "top": 64.796875,
+              "bottom": 1015.1875,
+              "scrollWidth": 634,
+              "clientWidth": 634
+            },
+            {
+              "selector": ".comparison-detail",
+              "left": 678.359375,
+              "right": 1241.625,
+              "top": 164.90625,
+              "bottom": 1253.53125,
+              "scrollWidth": 563,
+              "clientWidth": 563
+            },
+            {
+              "selector": "[data-comparison-context]",
+              "left": 678.359375,
+              "right": 1241.625,
+              "top": 403.109375,
+              "bottom": 663.90625,
+              "scrollWidth": 563,
+              "clientWidth": 563
+            },
+            {
+              "selector": "[data-comparison-context-key=\"hp\"] dd",
+              "left": 678.359375,
+              "right": 1241.625,
+              "top": 488.25,
+              "bottom": 513.25,
+              "scrollWidth": 563,
+              "clientWidth": 563
+            },
+            {
+              "selector": "[data-comparison-context-key=\"ward\"] dd",
+              "left": 678.359375,
+              "right": 1241.625,
+              "top": 573.390625,
+              "bottom": 598.390625,
+              "scrollWidth": 563,
+              "clientWidth": 563
+            },
+            {
+              "selector": "[data-comparison-key=\"pairWard\"]",
+              "left": 678.359375,
+              "right": 1241.625,
+              "top": 872.09375,
+              "bottom": 1013.671875,
+              "scrollWidth": 563,
+              "clientWidth": 563
+            }
+          ],
+          "fonts": [
+            {
+              "text": "当前生命 / 生命上限",
+              "fontSize": 17.664
+            },
+            {
+              "text": "165 / 165→165 / 224",
+              "fontSize": 17.664
+            },
+            {
+              "text": "当前护盾",
+              "fontSize": 17.664
+            },
+            {
+              "text": "0→0",
+              "fontSize": 17.664
+            },
+            {
+              "text": "当前使用 1 颗战斗骰；骰数足够仍须满足对应触发条件。",
+              "fontSize": 15.191
+            },
+            {
+              "text": "当前仅 1 颗战斗骰，战斗中无法触发；第 2 颗骰在 Lv.2 解锁。",
+              "fontSize": 15.191
+            }
+          ]
+        },
+        {
+          "width": 2560,
+          "height": 1440,
+          "body": {
+            "scrollWidth": 2560,
+            "clientWidth": 2560
+          },
+          "nodes": [
+            {
+              "selector": ".game-dialog",
+              "left": 856.0625,
+              "right": 1703.921875,
+              "top": 86.40625,
+              "bottom": 1353.59375,
+              "scrollWidth": 846,
+              "clientWidth": 846
+            },
+            {
+              "selector": ".comparison-detail",
+              "left": 904.15625,
+              "right": 1655.828125,
+              "top": 218.90625,
+              "bottom": 1647.125,
+              "scrollWidth": 752,
+              "clientWidth": 752
+            },
+            {
+              "selector": "[data-comparison-context]",
+              "left": 904.15625,
+              "right": 1655.828125,
+              "top": 510.6875,
+              "bottom": 859.796875,
+              "scrollWidth": 752,
+              "clientWidth": 752
+            },
+            {
+              "selector": "[data-comparison-context-key=\"hp\"] dd",
+              "left": 904.15625,
+              "right": 1655.828125,
+              "top": 624.5625,
+              "bottom": 658.5625,
+              "scrollWidth": 752,
+              "clientWidth": 752
+            },
+            {
+              "selector": "[data-comparison-context-key=\"ward\"] dd",
+              "left": 904.15625,
+              "right": 1655.828125,
+              "top": 738.4375,
+              "bottom": 772.4375,
+              "scrollWidth": 752,
+              "clientWidth": 752
+            },
+            {
+              "selector": "[data-comparison-key=\"pairWard\"]",
+              "left": 904.15625,
+              "right": 1655.828125,
+              "top": 1138.4375,
+              "bottom": 1327.59375,
+              "scrollWidth": 752,
+              "clientWidth": 752
+            }
+          ],
+          "fonts": [
+            {
+              "text": "当前生命 / 生命上限",
+              "fontSize": 23.552
+            },
+            {
+              "text": "165 / 165→165 / 224",
+              "fontSize": 23.552
+            },
+            {
+              "text": "当前护盾",
+              "fontSize": 23.552
+            },
+            {
+              "text": "0→0",
+              "fontSize": 23.552
+            },
+            {
+              "text": "当前使用 1 颗战斗骰；骰数足够仍须满足对应触发条件。",
+              "fontSize": 20.2547
+            },
+            {
+              "text": "当前仅 1 颗战斗骰，战斗中无法触发；第 2 颗骰在 Lv.2 解锁。",
+              "fontSize": 20.2547
+            }
+          ]
+        },
+        {
+          "width": 3840,
+          "height": 2160,
+          "body": {
+            "scrollWidth": 3840,
+            "clientWidth": 3840
+          },
+          "nodes": [
+            {
+              "selector": ".game-dialog",
+              "left": 1284.09375,
+              "right": 2555.890625,
+              "top": 129.59375,
+              "bottom": 2030.390625,
+              "scrollWidth": 1270,
+              "clientWidth": 1270
+            },
+            {
+              "selector": ".comparison-detail",
+              "left": 1355.734375,
+              "right": 2484.25,
+              "top": 326.84375,
+              "bottom": 2426.90625,
+              "scrollWidth": 1129,
+              "clientWidth": 1129
+            },
+            {
+              "selector": "[data-comparison-context]",
+              "left": 1355.734375,
+              "right": 2484.25,
+              "top": 725.75,
+              "bottom": 1248.40625,
+              "scrollWidth": 1129,
+              "clientWidth": 1129
+            },
+            {
+              "selector": "[data-comparison-context-key=\"hp\"] dd",
+              "left": 1355.734375,
+              "right": 2484.25,
+              "top": 896.0625,
+              "bottom": 947.0625,
+              "scrollWidth": 1129,
+              "clientWidth": 1129
+            },
+            {
+              "selector": "[data-comparison-context-key=\"ward\"] dd",
+              "left": 1355.734375,
+              "right": 2484.25,
+              "top": 1066.375,
+              "bottom": 1117.375,
+              "scrollWidth": 1129,
+              "clientWidth": 1129
+            },
+            {
+              "selector": "[data-comparison-key=\"pairWard\"]",
+              "left": 1355.734375,
+              "right": 2484.25,
+              "top": 1665.859375,
+              "bottom": 1949.078125,
+              "scrollWidth": 1129,
+              "clientWidth": 1129
+            }
+          ],
+          "fonts": [
+            {
+              "text": "当前生命 / 生命上限",
+              "fontSize": 35.328
+            },
+            {
+              "text": "165 / 165→165 / 224",
+              "fontSize": 35.328
+            },
+            {
+              "text": "当前护盾",
+              "fontSize": 35.328
+            },
+            {
+              "text": "0→0",
+              "fontSize": 35.328
+            },
+            {
+              "text": "当前使用 1 颗战斗骰；骰数足够仍须满足对应触发条件。",
+              "fontSize": 30.3821
+            },
+            {
+              "text": "当前仅 1 颗战斗骰，战斗中无法触发；第 2 颗骰在 Lv.2 解锁。",
+              "fontSize": 30.3821
+            }
+          ]
+        },
+        {
+          "width": 390,
+          "height": 844,
+          "body": {
+            "scrollWidth": 390,
+            "clientWidth": 390
+          },
+          "nodes": [
+            {
+              "selector": ".game-dialog",
+              "left": 12,
+              "right": 378,
+              "top": 12,
+              "bottom": 832,
+              "scrollWidth": 364,
+              "clientWidth": 364
+            },
+            {
+              "selector": ".comparison-detail",
+              "left": 29,
+              "right": 361,
+              "top": 87,
+              "bottom": 1066.140625,
+              "scrollWidth": 332,
+              "clientWidth": 332
+            },
+            {
+              "selector": "[data-comparison-context]",
+              "left": 29,
+              "right": 361,
+              "top": 311.703125,
+              "bottom": 519.40625,
+              "scrollWidth": 332,
+              "clientWidth": 332
+            },
+            {
+              "selector": "[data-comparison-context-key=\"hp\"] dd",
+              "left": 29,
+              "right": 361,
+              "top": 379.578125,
+              "bottom": 399.578125,
+              "scrollWidth": 332,
+              "clientWidth": 332
+            },
+            {
+              "selector": "[data-comparison-context-key=\"ward\"] dd",
+              "left": 29,
+              "right": 361,
+              "top": 447.453125,
+              "bottom": 467.453125,
+              "scrollWidth": 332,
+              "clientWidth": 332
+            },
+            {
+              "selector": "[data-comparison-key=\"pairWard\"]",
+              "left": 29,
+              "right": 361,
+              "top": 703.828125,
+              "bottom": 835.28125,
+              "scrollWidth": 332,
+              "clientWidth": 332
+            }
+          ],
+          "fonts": [
+            {
+              "text": "当前生命 / 生命上限",
+              "fontSize": 14
+            },
+            {
+              "text": "165 / 165→165 / 224",
+              "fontSize": 14
+            },
+            {
+              "text": "当前护盾",
+              "fontSize": 14
+            },
+            {
+              "text": "0→0",
+              "fontSize": 14
+            },
+            {
+              "text": "当前使用 1 颗战斗骰；骰数足够仍须满足对应触发条件。",
+              "fontSize": 12.04
+            },
+            {
+              "text": "当前仅 1 颗战斗骰，战斗中无法触发；第 2 颗骰在 Lv.2 解锁。",
+              "fontSize": 12.04
+            }
+          ]
+        },
+        {
+          "width": 320,
+          "height": 740,
+          "body": {
+            "scrollWidth": 320,
+            "clientWidth": 320
+          },
+          "nodes": [
+            {
+              "selector": ".game-dialog",
+              "left": 12,
+              "right": 308,
+              "top": 12,
+              "bottom": 728,
+              "scrollWidth": 294,
+              "clientWidth": 294
+            },
+            {
+              "selector": ".comparison-detail",
+              "left": 29,
+              "right": 291,
+              "top": 87,
+              "bottom": 1132.28125,
+              "scrollWidth": 262,
+              "clientWidth": 262
+            },
+            {
+              "selector": "[data-comparison-context]",
+              "left": 29,
+              "right": 291,
+              "top": 336.890625,
+              "bottom": 544.59375,
+              "scrollWidth": 262,
+              "clientWidth": 262
+            },
+            {
+              "selector": "[data-comparison-context-key=\"hp\"] dd",
+              "left": 29,
+              "right": 291,
+              "top": 404.765625,
+              "bottom": 424.765625,
+              "scrollWidth": 262,
+              "clientWidth": 262
+            },
+            {
+              "selector": "[data-comparison-context-key=\"ward\"] dd",
+              "left": 29,
+              "right": 291,
+              "top": 472.640625,
+              "bottom": 492.640625,
+              "scrollWidth": 262,
+              "clientWidth": 262
+            },
+            {
+              "selector": "[data-comparison-key=\"pairWard\"]",
+              "left": 29,
+              "right": 291,
+              "top": 750.09375,
+              "bottom": 901.421875,
+              "scrollWidth": 262,
+              "clientWidth": 262
+            }
+          ],
+          "fonts": [
+            {
+              "text": "当前生命 / 生命上限",
+              "fontSize": 14
+            },
+            {
+              "text": "165 / 165→165 / 224",
+              "fontSize": 14
+            },
+            {
+              "text": "当前护盾",
+              "fontSize": 14
+            },
+            {
+              "text": "0→0",
+              "fontSize": 14
+            },
+            {
+              "text": "当前使用 1 颗战斗骰；骰数足够仍须满足对应触发条件。",
+              "fontSize": 12.04
+            },
+            {
+              "text": "当前仅 1 颗战斗骰，战斗中无法触发；第 2 颗骰在 Lv.2 解锁。",
+              "fontSize": 12.04
+            }
+          ]
+        }
+      ],
+      "durationMs": 9839.128412
+    },
+    {
+      "name": "synthetic-large-shield-boundary",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "Application restores the complete valid isolated fixture",
+          "passed": true
+        },
+        {
+          "label": "Native comparison dialog opens",
+          "passed": true
+        },
+        {
+          "label": "320x740-large-shield: every required comparison and context node exists",
+          "passed": true
+        },
+        {
+          "label": "320x740-large-shield: new vitals, dice count and unattainable-condition text are present",
+          "passed": true
+        },
+        {
+          "label": "320x740-large-shield: page has no horizontal overflow",
+          "passed": true,
+          "scrollWidth": 320,
+          "clientWidth": 320
+        },
+        {
+          "label": "320x740-large-shield: .game-dialog has no horizontal clipping",
+          "passed": true,
+          "selector": ".game-dialog",
+          "left": 12,
+          "right": 308,
+          "top": 12,
+          "bottom": 728,
+          "scrollWidth": 294,
+          "clientWidth": 294
+        },
+        {
+          "label": "320x740-large-shield: .comparison-detail has no horizontal clipping",
+          "passed": true,
+          "selector": ".comparison-detail",
+          "left": 29,
+          "right": 291,
+          "top": 87,
+          "bottom": 1132.28125,
+          "scrollWidth": 262,
+          "clientWidth": 262
+        },
+        {
+          "label": "320x740-large-shield: [data-comparison-context] has no horizontal clipping",
+          "passed": true,
+          "selector": "[data-comparison-context]",
+          "left": 29,
+          "right": 291,
+          "top": 336.890625,
+          "bottom": 544.59375,
+          "scrollWidth": 262,
+          "clientWidth": 262
+        },
+        {
+          "label": "320x740-large-shield: [data-comparison-context-key=\"hp\"] dd has no horizontal clipping",
+          "passed": true,
+          "selector": "[data-comparison-context-key=\"hp\"] dd",
+          "left": 29,
+          "right": 291,
+          "top": 404.765625,
+          "bottom": 424.765625,
+          "scrollWidth": 262,
+          "clientWidth": 262
+        },
+        {
+          "label": "320x740-large-shield: [data-comparison-context-key=\"ward\"] dd has no horizontal clipping",
+          "passed": true,
+          "selector": "[data-comparison-context-key=\"ward\"] dd",
+          "left": 29,
+          "right": 291,
+          "top": 472.640625,
+          "bottom": 492.640625,
+          "scrollWidth": 262,
+          "clientWidth": 262
+        },
+        {
+          "label": "320x740-large-shield: [data-comparison-key=\"pairWard\"] has no horizontal clipping",
+          "passed": true,
+          "selector": "[data-comparison-key=\"pairWard\"]",
+          "left": 29,
+          "right": 291,
+          "top": 750.09375,
+          "bottom": 901.421875,
+          "scrollWidth": 262,
+          "clientWidth": 262
+        },
+        {
+          "label": "320x740-large-shield: dialog frame fits the viewport",
+          "passed": true,
+          "selector": ".game-dialog",
+          "left": 12,
+          "right": 308,
+          "top": 12,
+          "bottom": 728,
+          "scrollWidth": 294,
+          "clientWidth": 294
+        },
+        {
+          "label": "320x740-large-shield: new explanation text is at least 11.5 CSS px",
+          "passed": true,
+          "fonts": [
+            {
+              "text": "当前生命 / 生命上限",
+              "fontSize": 14
+            },
+            {
+              "text": "165 / 165→165 / 224",
+              "fontSize": 14
+            },
+            {
+              "text": "当前护盾",
+              "fontSize": 14
+            },
+            {
+              "text": "1000万亿→1000万亿",
+              "fontSize": 14
+            },
+            {
+              "text": "当前使用 1 颗战斗骰；骰数足够仍须满足对应触发条件。",
+              "fontSize": 12.04
+            },
+            {
+              "text": "当前仅 1 颗战斗骰，战斗中无法触发；第 2 颗骰在 Lv.2 解锁。",
+              "fontSize": 12.04
+            }
+          ]
+        },
+        {
+          "label": "Existing large-number formatter remains readable at the valid shield boundary",
+          "passed": true
+        },
+        {
+          "label": "Escape closes comparison",
+          "passed": true
+        },
+        {
+          "label": "Escape restores the original comparison control",
+          "passed": true
+        },
+        {
+          "label": "Boundary explanation writes no save",
+          "passed": true
+        }
+      ],
+      "transactions": [],
+      "screenshots": [
+        "large-shield-320.png"
+      ],
+      "layouts": [
+        {
+          "width": 320,
+          "height": 740,
+          "body": {
+            "scrollWidth": 320,
+            "clientWidth": 320
+          },
+          "nodes": [
+            {
+              "selector": ".game-dialog",
+              "left": 12,
+              "right": 308,
+              "top": 12,
+              "bottom": 728,
+              "scrollWidth": 294,
+              "clientWidth": 294
+            },
+            {
+              "selector": ".comparison-detail",
+              "left": 29,
+              "right": 291,
+              "top": 87,
+              "bottom": 1132.28125,
+              "scrollWidth": 262,
+              "clientWidth": 262
+            },
+            {
+              "selector": "[data-comparison-context]",
+              "left": 29,
+              "right": 291,
+              "top": 336.890625,
+              "bottom": 544.59375,
+              "scrollWidth": 262,
+              "clientWidth": 262
+            },
+            {
+              "selector": "[data-comparison-context-key=\"hp\"] dd",
+              "left": 29,
+              "right": 291,
+              "top": 404.765625,
+              "bottom": 424.765625,
+              "scrollWidth": 262,
+              "clientWidth": 262
+            },
+            {
+              "selector": "[data-comparison-context-key=\"ward\"] dd",
+              "left": 29,
+              "right": 291,
+              "top": 472.640625,
+              "bottom": 492.640625,
+              "scrollWidth": 262,
+              "clientWidth": 262
+            },
+            {
+              "selector": "[data-comparison-key=\"pairWard\"]",
+              "left": 29,
+              "right": 291,
+              "top": 750.09375,
+              "bottom": 901.421875,
+              "scrollWidth": 262,
+              "clientWidth": 262
+            }
+          ],
+          "fonts": [
+            {
+              "text": "当前生命 / 生命上限",
+              "fontSize": 14
+            },
+            {
+              "text": "165 / 165→165 / 224",
+              "fontSize": 14
+            },
+            {
+              "text": "当前护盾",
+              "fontSize": 14
+            },
+            {
+              "text": "1000万亿→1000万亿",
+              "fontSize": 14
+            },
+            {
+              "text": "当前使用 1 颗战斗骰；骰数足够仍须满足对应触发条件。",
+              "fontSize": 12.04
+            },
+            {
+              "text": "当前仅 1 颗战斗骰，战斗中无法触发；第 2 颗骰在 Lv.2 解锁。",
+              "fontSize": 12.04
+            }
+          ]
+        }
+      ],
+      "fixtureKind": "Synthetic ward=1e15 on an otherwise naturally reached valid combat state; not a natural reward.",
+      "durationMs": 2210.9121730000006
+    }
+  ],
+  "errors": [],
+  "blockedRequests": [],
+  "checks": 162,
+  "method": "Seed 3 starts from newGame. Every subsequent native game action is compared recursively with the complete engine transition, including RNG, runId, revision and assets. Read-only comparisons check both exact stored envelopes. Layout fixtures continue that natural sequence; the large-ward boundary is separately marked synthetic.",
+  "limitations": [
+    "Logical viewports at scale 1 with software rendering; no physical mobile, 4K GPU, native IME or audio assessment.",
+    "Screenshots and functional waits are not performance measurements.",
+    "This selected natural seed demonstrates explanation accuracy; it is not a win-rate sample."
+  ],
+  "browser": "155.0.8059.84",
+  "sourceAfter": {
+    "src/views.js": "1aed7caac52894bd35b03307f08ebf45382b9f6418050b47e2f09dc48f71971c",
+    "src/equipment-comparison.js": "e47add10ce9cf308ac79fd1bbb4bc74e54b93e0f6b48e5dc97ac2eb314c6c9c4",
+    "src/engine.js": "75c6d9fcc48c0cf49ee02e53ffb7b143a09a2c79738d3bb2eb5d0ae80b30872b",
+    "src/equipment.js": "8c20de433f21931318e315b862b457d37a03b9596ea5df8f7cc4025691aaccd6",
+    "src/storage.js": "6bfcc60036c9f729c21b948ca98c7ac715e14049856fb9dded0baa2aeef2c561",
+    "src/decisions.css": "5e211e2fb4e72e6959ae7db8f570a3f2baacbd9c789cca90e89b9bd13a379588"
+  },
+  "status": "PASS",
+  "finished": "2026-10-19T02:59:09.331Z"
+}

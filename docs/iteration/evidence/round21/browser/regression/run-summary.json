@@ -1,0 +1,81 @@
+{
+  "purpose": "Fresh release correctness only; may run concurrently with deterministic Node simulations, never used for performance claims.",
+  "started": 1792414512.0085073,
+  "suites": [
+    {
+      "name": "core",
+      "command": [
+        "node",
+        "scripts/qa-core-browser.mjs",
+        "--source=/workspace/scratch/85c02edcd5e2/work/Dice-Abyss",
+        "--url=http://127.0.0.1:4189/",
+        "--label=round21",
+        "--output=/workspace/scratch/85c02edcd5e2/qa/browser-release-regression/core"
+      ],
+      "exitCode": 0,
+      "elapsedSeconds": 33.380027294158936,
+      "scriptSha256": "543569a14a1edb3c0dd281e99f85beb1e5a543634468ebeaa2af232f13452e2c"
+    },
+    {
+      "name": "interactions",
+      "command": [
+        "node",
+        "scripts/qa-interactions.mjs",
+        "--source=/workspace/scratch/85c02edcd5e2/work/Dice-Abyss",
+        "--url=http://127.0.0.1:4189/",
+        "--label=round21",
+        "--output=/workspace/scratch/85c02edcd5e2/qa/browser-release-regression/interactions",
+        "--cases=rapid-click-space-refresh,forge-talents-inventory-settings,fusion-protected-three-relics,merchant-and-paid-events,next-luck-cross-room,v4-import-export-archive"
+      ],
+      "exitCode": 0,
+      "elapsedSeconds": 106.23327445983887,
+      "scriptSha256": "3a45097ba2404607cf902cc65ebd3488c8a5912cdf1d8570ea8202269820ab40"
+    },
+    {
+      "name": "pages",
+      "command": [
+        "node",
+        "scripts/qa-pages.mjs",
+        "--source=/workspace/scratch/85c02edcd5e2/work/Dice-Abyss",
+        "--url=http://127.0.0.1:4189/",
+        "--label=round21",
+        "--output=/workspace/scratch/85c02edcd5e2/qa/browser-release-regression/pages",
+        "--cases=eight-rarity-chest-reward,codex-gates-30-50-80-140"
+      ],
+      "exitCode": 0,
+      "elapsedSeconds": 44.07477807998657,
+      "scriptSha256": "aa2defcf2da061ba1b3fc1c6a0d8b91ceae0b215e2822d816e4a95db5750ac13"
+    },
+    {
+      "name": "webgl",
+      "command": [
+        "node",
+        "scripts/qa-iteration.mjs",
+        "--source=/workspace/scratch/85c02edcd5e2/work/Dice-Abyss",
+        "--url=http://127.0.0.1:4189/",
+        "--label=round21",
+        "--output=/workspace/scratch/85c02edcd5e2/qa/browser-release-regression/webgl",
+        "--cases=static-webgl-loss-and-restoration"
+      ],
+      "exitCode": 0,
+      "elapsedSeconds": 6.365130662918091,
+      "scriptSha256": "e0e167c910156bccbb8cc55a253d9b0c43d7ec73c33e7bc354599aedc5510794"
+    },
+    {
+      "name": "environment",
+      "command": [
+        "node",
+        "scripts/qa-environment.mjs",
+        "--source=/workspace/scratch/85c02edcd5e2/work/Dice-Abyss",
+        "--url=http://127.0.0.1:4189/",
+        "--label=round21",
+        "--output=/workspace/scratch/85c02edcd5e2/qa/browser-release-regression/environment"
+      ],
+      "exitCode": 0,
+      "elapsedSeconds": 13.173385620117188,
+      "scriptSha256": "4e2788a081dbaa53953b39eea8c0835698c4df6dafc6e10c66af84e3fe115685"
+    }
+  ],
+  "finished": 1792414715.2377286,
+  "allPassed": true
+}

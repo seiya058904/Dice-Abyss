@@ -1,0 +1,264 @@
+{
+  "status": "PASS",
+  "identity": "5.13.0",
+  "completedUTC": "2026-10-18T16:44:37Z",
+  "environment": {
+    "dateUTC": "2026-10-18T16:36:18Z",
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+    "python": "3.12.14",
+    "node": "v24.19.0",
+    "npm": "11.9.0",
+    "cpuCount": 9,
+    "root": "/workspace/scratch/8db1c7454cb5/baseline/Dice-Abyss",
+    "sourceFileCount": 1277,
+    "sourceBytes": 49856850
+  },
+  "inputZip": {
+    "zip": "Dice-Abyss-v5.13.0-cloud-round-13(1).zip",
+    "bytes": 21618697,
+    "sha256": "2e2fa7c86c64addf0bf37e051c6cd30d25fd6568af90a6dada9c9d4e505df910",
+    "entries": 1277,
+    "fileEntries": 1277,
+    "uncompressedBytes": 49856850,
+    "duplicates": [],
+    "caseFoldCollisions": [],
+    "unsafePaths": [],
+    "symlinks": [],
+    "encrypted": [],
+    "crcFailure": null,
+    "rootNames": [
+      "Dice-Abyss"
+    ]
+  },
+  "manifest": {
+    "matching": 1276,
+    "entries": 1276,
+    "missing": 0,
+    "mismatched": 0,
+    "extra": 0,
+    "selfExcluded": "docs/iteration/FILE_MANIFEST.json",
+    "historicalManifestNote": "docs/v5/FILE_MANIFEST.json is preserved as a historical snapshot and does not match the current release tree."
+  },
+  "sourceUnchanged": true,
+  "sourceChanges": {
+    "added": [],
+    "removed": [],
+    "changed": []
+  },
+  "checks": {
+    "command": [
+      "npm",
+      "run",
+      "check"
+    ],
+    "cwd": "/workspace/scratch/8db1c7454cb5/baseline/Dice-Abyss",
+    "startedUTC": "2026-10-18T16:36:31Z",
+    "durationSeconds": 3.336,
+    "exitCode": 0
+  },
+  "defaultTests": {
+    "execution": {
+      "command": [
+        "npm",
+        "test"
+      ],
+      "cwd": "/workspace/scratch/8db1c7454cb5/baseline/Dice-Abyss",
+      "startedUTC": "2026-10-18T16:36:34Z",
+      "durationSeconds": 71.382,
+      "exitCode": 0
+    },
+    "modules": 63,
+    "pass": 63,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0
+  },
+  "fineTests": {
+    "execution": {
+      "command": [
+        "node",
+        "--test",
+        "--test-isolation=none",
+        "--test-reporter=tap",
+        "tests/action-focus.test.mjs",
+        "tests/balance.test.mjs",
+        "tests/combat-polish.test.mjs",
+        "tests/content-depth.test.mjs",
+        "tests/decision-ui.test.mjs",
+        "tests/dice-indexed-mesh.test.mjs",
+        "tests/dice-motion.test.mjs",
+        "tests/dice-renderer.test.mjs",
+        "tests/effects.test.mjs",
+        "tests/encounter-tactics.test.mjs",
+        "tests/encounters.test.mjs",
+        "tests/engine.test.mjs",
+        "tests/equipment-comparison.test.mjs",
+        "tests/equipment-levels.test.mjs",
+        "tests/equipment-polish.test.mjs",
+        "tests/event-context.test.mjs",
+        "tests/expansion.test.mjs",
+        "tests/fixed-affix-truth.test.mjs",
+        "tests/forge-preview.test.mjs",
+        "tests/fusion-controller.test.mjs",
+        "tests/fusion-gold-cap.test.mjs",
+        "tests/fusion-selection.test.mjs",
+        "tests/fusion-tooltip.test.mjs",
+        "tests/fusion-workbench.test.mjs",
+        "tests/gold-exchange-xp.test.mjs",
+        "tests/gold-preview.test.mjs",
+        "tests/gold-settlement.test.mjs",
+        "tests/gold-storage.test.mjs",
+        "tests/gold-view.test.mjs",
+        "tests/intent-ranges.test.mjs",
+        "tests/inventory-position.test.mjs",
+        "tests/item-ownership.test.mjs",
+        "tests/iteration-gameplay.test.mjs",
+        "tests/iteration-render.test.mjs",
+        "tests/iteration-storage.test.mjs",
+        "tests/launcher-release.test.mjs",
+        "tests/memorywell-preview.test.mjs",
+        "tests/migration-levels.test.mjs",
+        "tests/renderer-delay.test.mjs",
+        "tests/reward-copy.test.mjs",
+        "tests/roll-history.test.mjs",
+        "tests/round10-independent.test.mjs",
+        "tests/round10-xp-core.test.mjs",
+        "tests/round10-xp-ui.test.mjs",
+        "tests/save-polish.test.mjs",
+        "tests/settings-focus.test.mjs",
+        "tests/spring-truth.test.mjs",
+        "tests/storage-capacity.test.mjs",
+        "tests/storage-import-shape.test.mjs",
+        "tests/storage-polish.test.mjs",
+        "tests/storage-read-reuse.test.mjs",
+        "tests/storage-recovery-events.test.mjs",
+        "tests/storage-recovery-restore.test.mjs",
+        "tests/storage-roll-multipliers.test.mjs",
+        "tests/storage-size-boundary.test.mjs",
+        "tests/storage-talents-shape.test.mjs",
+        "tests/talent-allocation.test.mjs",
+        "tests/talent-view.test.mjs",
+        "tests/v5-compatibility.test.mjs",
+        "tests/v5-systems.test.mjs",
+        "tests/views-polish.test.mjs",
+        "tests/views.test.mjs",
+        "tests/visual-timeline.test.mjs"
+      ],
+      "cwd": "/workspace/scratch/8db1c7454cb5/baseline/Dice-Abyss",
+      "startedUTC": "2026-10-18T16:38:29Z",
+      "durationSeconds": 120.076,
+      "exitCode": 0
+    },
+    "summary": {
+      "tests": 571,
+      "suites": 0,
+      "pass": 571,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0,
+      "durationMs": 120012.25695,
+      "failures": []
+    }
+  },
+  "simulation": {
+    "seeds": 1000,
+    "completed": 1000,
+    "failures": [],
+    "deaths": {
+      "min": 0,
+      "median": 0,
+      "p95": 0,
+      "max": 0,
+      "mean": 0
+    },
+    "extraNoShoppingSeeds": 50,
+    "extraNoShoppingCompleted": 50,
+    "extraNoShoppingDeaths": 0,
+    "combatRounds": {
+      "combat": {
+        "min": 1,
+        "median": 2,
+        "p95": 4,
+        "max": 9,
+        "mean": 1.8
+      },
+      "elite": {
+        "min": 1,
+        "median": 2,
+        "p95": 4,
+        "max": 9,
+        "mean": 2.48
+      },
+      "boss": {
+        "min": 1,
+        "median": 4,
+        "p95": 7,
+        "max": 10,
+        "mean": 4.27
+      },
+      "trial": {
+        "min": 1,
+        "median": 2,
+        "p95": 4,
+        "max": 7,
+        "mean": 2.04
+      }
+    },
+    "totalRolls": {
+      "min": 64,
+      "median": 86,
+      "p95": 101,
+      "max": 115,
+      "mean": 86.5
+    },
+    "finalLevel": {
+      "min": 17,
+      "median": 18,
+      "p95": 18,
+      "max": 19,
+      "mean": 17.67
+    },
+    "floorsPerAdventure": 10,
+    "rawOutputBytes": 9409,
+    "rawOutputSha256": "266fa5b56516410712395796f197a2e33ad1b1e16ede45de14b872f208007d77",
+    "scalarLeaves": 377,
+    "execution": {
+      "command": [
+        "node",
+        "scripts/simulate.mjs",
+        "1000"
+      ],
+      "cwd": "/workspace/scratch/8db1c7454cb5/baseline/Dice-Abyss",
+      "startedUTC": "2026-10-18T16:40:29Z",
+      "durationSeconds": 202.782,
+      "exitCode": 0
+    }
+  },
+  "http": {
+    "status": "PASS",
+    "report": "http-escalated.json",
+    "files": 52,
+    "firstAttempt": "Sandbox denied loopback listen (EPERM); preserved http.stderr and obtained automatic tool approval before successful rerun.",
+    "toolReportedWallSeconds": 0.54887193
+  },
+  "fonts": {
+    "status": "PASS",
+    "sourceFiles": 47,
+    "han": 1045,
+    "cjkPunctuation": 20,
+    "missingGlyphs": 0,
+    "filesAndLicenses": 8,
+    "bytes": 8680958,
+    "toolReportedWallSeconds": 0.577391069,
+    "historicalRepairTrace": "NOT_AVAILABLE in original upload; current coverage/stack audit passed independently."
+  },
+  "sourceReview": "independent-source-review.json",
+  "budget": "input-budget.json",
+  "notClaimed": [
+    "No browser or screenshot checks were performed by this reviewer.",
+    "No actual Windows execution, physical GPU/phone, power-loss or real localStorage quota validation.",
+    "Recorded execution times are test durations, not a controlled product performance comparison."
+  ]
+}

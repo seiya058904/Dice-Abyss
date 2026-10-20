@@ -1,0 +1,1966 @@
+TAP version 13
+# Subtest: intent predicts ordinary retaliation exactly, including heavy timing, defense and rest ward
+ok 1 - intent predicts ordinary retaliation exactly, including heavy timing, defense and rest ward
+  ---
+  duration_ms: 83.286983
+  type: 'test'
+  ...
+# Subtest: elite third-turn windup is visible and does not multiply an existing pulse heavy twice
+ok 2 - elite third-turn windup is visible and does not multiply an existing pulse heavy twice
+  ---
+  duration_ms: 0.634958
+  type: 'test'
+  ...
+# Subtest: boss crossing half health creates one saved second phase and a breakable shield, including huge critical rolls
+ok 3 - boss crossing half health creates one saved second phase and a breakable shield, including huge critical rolls
+  ---
+  duration_ms: 8.216501
+  type: 'test'
+  ...
+# Subtest: a committed old enemy keeps its health, RNG, no phase gate and old attack behavior
+ok 4 - a committed old enemy keeps its health, RNG, no phase gate and old attack behavior
+  ---
+  duration_ms: 1.657049
+  type: 'test'
+  ...
+# Subtest: half-health attack increases have an explicit upper forecast before the crossing roll
+ok 5 - half-health attack increases have an explicit upper forecast before the crossing roll
+  ---
+  duration_ms: 0.731681
+  type: 'test'
+  ...
+# Subtest: retry resets phase once without inventing an opening shield or changing owned progress
+ok 6 - retry resets phase once without inventing an opening shield or changing owned progress
+  ---
+  duration_ms: 1.071163
+  type: 'test'
+  ...
+# Subtest: enemy power depends on floor and identity rather than secretly matching equipped gear
+ok 7 - enemy power depends on floor and identity rather than secretly matching equipped gear
+  ---
+  duration_ms: 2.991421
+  type: 'test'
+  ...
+# Subtest: leech applies to a surviving critical killing blow as described
+ok 8 - leech applies to a surviving critical killing blow as described
+  ---
+  duration_ms: 18.179804
+  type: 'test'
+  ...
+# Subtest: later merchants stock relevant tiers while already committed offers survive unchanged
+ok 9 - later merchants stock relevant tiers while already committed offers survive unchanged
+  ---
+  duration_ms: 3.216143
+  type: 'test'
+  ...
+# Subtest: double fate rewards use bounded depth power even at the maximum supported floor
+ok 10 - double fate rewards use bounded depth power even at the maximum supported floor
+  ---
+  duration_ms: 7.485381
+  type: 'test'
+  ...
+# Subtest: safe salvage selects only inferior common/rare gear and protects locks, relic vacancies and current loot
+ok 11 - safe salvage selects only inferior common/rare gear and protects locks, relic vacancies and current loot
+  ---
+  duration_ms: 2.051001
+  type: 'test'
+  ...
+# Subtest: salvage frees a full inventory before claiming the same pending chest exactly once
+ok 12 - salvage frees a full inventory before claiming the same pending chest exactly once
+  ---
+  duration_ms: 41.927817
+  type: 'test'
+  ...
+# Subtest: gold boundary rejects lossy salvage and safely caps natural rewards without invalidating saves
+ok 13 - gold boundary rejects lossy salvage and safely caps natural rewards without invalidating saves
+  ---
+  duration_ms: 1.275264
+  type: 'test'
+  ...
+# Subtest: explicit protected salvage can free a full legendary inventory while current loot, locks and gear stay protected
+ok 14 - explicit protected salvage can free a full legendary inventory while current loot, locks and gear stay protected
+  ---
+  duration_ms: 74.298101
+  type: 'test'
+  ...
+# Subtest: seeded encounters retain multi-roll bosses, observable phases and real elite windups
+ok 15 - seeded encounters retain multi-roll bosses, observable phases and real elite windups
+  ---
+  duration_ms: 7258.984356
+  type: 'test'
+  ...
+# Subtest: future fusion quotes scale with target investment without changing any owned value or material contribution
+ok 16 - future fusion quotes scale with target investment without changing any owned value or material contribution
+  ---
+  duration_ms: 2.129086
+  type: 'test'
+  ...
+# Subtest: fusion previews all six exact rounded payouts and preserves positive three-relic sharing and capped reinforcement conversion
+ok 17 - fusion previews all six exact rounded payouts and preserves positive three-relic sharing and capped reinforcement conversion
+  ---
+  duration_ms: 144.006189
+  type: 'test'
+  ...
+# Subtest: regional sequence enemies rebuild real shields in ordinary rooms, with no free opening shield
+ok 18 - regional sequence enemies rebuild real shields in ordinary rooms, with no free opening shield
+  ---
+  duration_ms: 1.280402
+  type: 'test'
+  ...
+# Subtest: existing V5 zero-capacity regional encounters recover on the next roll and replay identically
+ok 19 - existing V5 zero-capacity regional encounters recover on the next roll and replay identically
+  ---
+  duration_ms: 1.175116
+  type: 'test'
+  ...
+# Subtest: regional rebuild capacity is present across eras and remains bounded during repeated low-diversity rolls
+ok 20 - regional rebuild capacity is present across eras and remains bounded during repeated low-diversity rolls
+  ---
+  duration_ms: 24.272899
+  type: 'test'
+  ...
+# Subtest: rest heals and fills a weak shield while retaining a stronger existing shield
+ok 21 - rest heals and fills a weak shield while retaining a stronger existing shield
+  ---
+  duration_ms: 3.61999
+  type: 'test'
+  ...
+# Subtest: counter preview applies the same mandatory V5 low-health reduction as the actual roll
+ok 22 - counter preview applies the same mandatory V5 low-health reduction as the actual roll
+  ---
+  duration_ms: 32.334373
+  type: 'test'
+  ...
+# Subtest: small V5 critical/low-face wards no longer claim a possible zero-damage counter
+ok 23 - small V5 critical/low-face wards no longer claim a possible zero-damage counter
+  ---
+  duration_ms: 115.935956
+  type: 'test'
+  ...
+# Subtest: phase protection is forecast only for an actual possible phase change
+ok 24 - phase protection is forecast only for an actual possible phase change
+  ---
+  duration_ms: 12.666007
+  type: 'test'
+  ...
+# Subtest: legacy odd-HP phase boundaries retain a conservative forecast with new phase protection
+ok 25 - legacy odd-HP phase boundaries retain a conservative forecast with new phase protection
+  ---
+  duration_ms: 1.196227
+  type: 'test'
+  ...
+# Subtest: 1536 equipment entries expose real slot-specific effects and distinct signatures at a shared level
+ok 26 - 1536 equipment entries expose real slot-specific effects and distinct signatures at a shared level
+  ---
+  duration_ms: 8.244613
+  type: 'test'
+  ...
+# Subtest: every preserved V4 equipment effect changes a real engine roll, entry shield or chest reward
+ok 27 - every preserved V4 equipment effect changes a real engine roll, entry shield or chest reward
+  ---
+  duration_ms: 72.029523
+  type: 'test'
+  ...
+# Subtest: all 100 enemy identities and 18 bosses are obtainable from depth-eligible natural pools
+ok 28 - all 100 enemy identities and 18 bosses are obtainable from depth-eligible natural pools
+  ---
+  duration_ms: 7.703593
+  type: 'test'
+  ...
+# Subtest: all fifty generated room types enter, persist and resolve; every wave requires a real kill and opening
+ok 29 - all fifty generated room types enter, persist and resolve; every wave requires a real kill and opening
+  ---
+  duration_ms: 1544.991202
+  type: 'test'
+  ...
+# Subtest: luck changes actual dice distributions and resonance while preserving low faces and deterministic saved values
+ok 30 - luck changes actual dice distributions and resonance while preserving low faces and deterministic saved values
+  ---
+  duration_ms: 607.136999
+  type: 'test'
+  ...
+# Subtest: both variants of each new encounter produce different real engine outcomes under shared dice seeds
+ok 31 - both variants of each new encounter produce different real engine outcomes under shared dice seeds
+  ---
+  duration_ms: 12.979802
+  type: 'test'
+  ...
+# Subtest: all six V4 added boss mechanics still affect actual combat after their normal floor-cycle appearance
+ok 32 - all six V4 added boss mechanics still affect actual combat after their normal floor-cycle appearance
+  ---
+  duration_ms: 7.161563
+  type: 'test'
+  ...
+# Subtest: all eight mystery templates occur through generated routes and commit through real engine save transactions
+ok 33 - all eight mystery templates occur through generated routes and commit through real engine save transactions
+  ---
+  duration_ms: 233.944626
+  type: 'test'
+  ...
+# Subtest: one to six visual bodies bounce, stay finite and settle onto committed front faces
+ok 34 - one to six visual bodies bounce, stay finite and settle onto committed front faces
+  ---
+  duration_ms: 7.357043
+  type: 'test'
+  ...
+# Subtest: visual motion is reproducible and never consumes the gameplay RNG
+ok 35 - visual motion is reproducible and never consumes the gameplay RNG
+  ---
+  duration_ms: 1.845057
+  type: 'test'
+  ...
+# Subtest: a first animation timestamp earlier than initialization cannot index a negative frame
+ok 36 - a first animation timestamp earlier than initialization cannot index a negative frame
+  ---
+  duration_ms: 2.208454
+  type: 'test'
+  ...
+# Subtest: uniforms shared across shader stages declare the same type and effective precision
+ok 37 - uniforms shared across shader stages declare the same type and effective precision
+  ---
+  duration_ms: 0.977564
+  type: 'test'
+  ...
+# Subtest: beveled dice mesh has six complete faces, finite unit normals and a bounded body
+ok 38 - beveled dice mesh has six complete faces, finite unit normals and a bounded body
+  ---
+  duration_ms: 9.706213
+  type: 'test'
+  ...
+# Subtest: crop keeps the original perspective and screen coordinates across resting and moving windows
+ok 39 - crop keeps the original perspective and screen coordinates across resting and moving windows
+  ---
+  duration_ms: 1.501529
+  type: 'test'
+  ...
+# Subtest: resting crop tightly bounds 1–6 complete bodies at several user scales
+ok 40 - resting crop tightly bounds 1–6 complete bodies at several user scales
+  ---
+  duration_ms: 27.890615
+  type: 'test'
+  ...
+# Subtest: flight window contains complete bodies across generated trajectories and only grows until rest
+ok 41 - flight window contains complete bodies across generated trajectories and only grows until rest
+  ---
+  duration_ms: 97.739186
+  type: 'test'
+  ...
+# Subtest: buffer resize never creates a transient allocation larger than old or final pixel counts
+ok 42 - buffer resize never creates a transient allocation larger than old or final pixel counts
+  ---
+  duration_ms: 0.33867
+  type: 'test'
+  ...
+# Subtest: flame geometry is cached and material-batched while RAF opacity and cleanup remain live
+ok 43 - flame geometry is cached and material-batched while RAF opacity and cleanup remain live
+  ---
+  duration_ms: 25.916399
+  type: 'test'
+  ...
+# Subtest: fifty room types are reachable; service deck completes each four-floor block and gaps never exceed seven
+ok 44 - fifty room types are reachable; service deck completes each four-floor block and gaps never exceed seven
+  ---
+  duration_ms: 799.150517
+  type: 'test'
+  ...
+# Subtest: twenty-four new enemies and six bosses carry actual mechanics, profiles and visible intent
+ok 45 - twenty-four new enemies and six bosses carry actual mechanics, profiles and visible intent
+  ---
+  duration_ms: 0.692343
+  type: 'test'
+  ...
+# Subtest: six new boss rules change damage, retaliation, recovery or player shield under their named conditions
+ok 46 - six new boss rules change damage, retaliation, recovery or player shield under their named conditions
+  ---
+  duration_ms: 0.401774
+  type: 'test'
+  ...
+# Subtest: special encounters have real triggers without mutating dice or hidden invulnerability
+ok 47 - special encounters have real triggers without mutating dice or hidden invulnerability
+  ---
+  duration_ms: 0.501541
+  type: 'test'
+  ...
+# Subtest: each authored enemy pair has a mechanically different second variant, not only a different name
+ok 48 - each authored enemy pair has a mechanically different second variant, not only a different name
+  ---
+  duration_ms: 9.37851
+  type: 'test'
+  ...
+# Subtest: all eight mystery templates are conditional, serializable, executable and safely rejectable
+ok 49 - all eight mystery templates are conditional, serializable, executable and safely rejectable
+  ---
+  duration_ms: 2.327069
+  type: 'test'
+  ...
+# Subtest: events apply concrete costs and bounded benefits; protected/missing materials disable offers
+ok 50 - events apply concrete costs and bounded benefits; protected/missing materials disable offers
+  ---
+  duration_ms: 0.662669
+  type: 'test'
+  ...
+# Subtest: gambit commits all six faces once, stage pools stay eligible, and item level caps normalize progress
+ok 51 - gambit commits all six faces once, stage pools stay eligible, and item level caps normalize progress
+  ---
+  duration_ms: 0.874062
+  type: 'test'
+  ...
+# Subtest: temporary buff offers reject saturation atomically and disclose the actual remaining gain
+ok 52 - temporary buff offers reject saturation atomically and disclose the actual remaining gain
+  ---
+  duration_ms: 0.747805
+  type: 'test'
+  ...
+# Subtest: every route has six linear rooms, mandatory encounters and two fixed boss milestones
+ok 53 - every route has six linear rooms, mandatory encounters and two fixed boss milestones
+  ---
+  duration_ms: 155.322206
+  type: 'test'
+  ...
+# Subtest: committed fate, rolls, unopened chests and loot survive round trips without rerolls or double grants
+ok 54 - committed fate, rolls, unopened chests and loot survive round trips without rerolls or double grants
+  ---
+  duration_ms: 4.064187
+  type: 'test'
+  ...
+# Subtest: all kills award one pending chest and dead enemies never retaliate
+ok 55 - all kills award one pending chest and dead enemies never retaliate
+  ---
+  duration_ms: 84.931812
+  type: 'test'
+  ...
+# Subtest: rarity makes a substantial same-level increase; modest enhancement never eclipses a fresh next-tier item
+ok 56 - rarity makes a substantial same-level increase; modest enhancement never eclipses a fresh next-tier item
+  ---
+  duration_ms: 0.539708
+  type: 'test'
+  ...
+# Subtest: upgrade labels compare character damage expectation including critical and follow-up passives
+ok 57 - upgrade labels compare character damage expectation including critical and follow-up passives
+  ---
+  duration_ms: 0.586237
+  type: 'test'
+  ...
+# Subtest: forge is item-bound, costs gold once and every dice outcome gives positive capped growth
+ok 58 - forge is item-bound, costs gold once and every dice outcome gives positive capped growth
+  ---
+  duration_ms: 94.68798
+  type: 'test'
+  ...
+# Subtest: fusion consumes selected materials once, raises levels and never transfers reinforcement
+ok 59 - fusion consumes selected materials once, raises levels and never transfers reinforcement
+  ---
+  duration_ms: 1.32664
+  type: 'test'
+  ...
+# Subtest: gold cannot go negative and rejected transactions do not mutate state or RNG
+ok 60 - gold cannot go negative and rejected transactions do not mutate state or RNG
+  ---
+  duration_ms: 0.828534
+  type: 'test'
+  ...
+# Subtest: death retries current enemy with long-term progress intact; armor swaps cannot heal
+ok 61 - death retries current enemy with long-term progress intact; armor swaps cannot heal
+  ---
+  duration_ms: 6.724137
+  type: 'test'
+  ...
+# Subtest: mirror recovery, corruption rejection, optimistic concurrency and quota failure are explicit
+ok 62 - mirror recovery, corruption rejection, optimistic concurrency and quota failure are explicit
+  ---
+  duration_ms: 3.88372
+  type: 'test'
+  ...
+# Subtest: 100 seeded full adventures complete ten floors with valid saves, six dice and both bosses
+ok 63 - 100 seeded full adventures complete ten floors with valid saves, six dice and both bosses
+  ---
+  duration_ms: 21745.727451
+  type: 'test'
+  ...
+# Subtest: 1536 equipment entries retain every original catalog id and add actual role-specific combinations
+ok 64 - 1536 equipment entries retain every original catalog id and add actual role-specific combinations
+  ---
+  duration_ms: 2.010231
+  type: 'test'
+  ...
+# Subtest: equipment power follows level, rarity, reinforcement and explicit progress while source depth has no effect
+ok 65 - equipment power follows level, rarity, reinforcement and explicit progress while source depth has no effect
+  ---
+  duration_ms: 0.158564
+  type: 'test'
+  ...
+# Subtest: ordinary drops center on character level and special rewards modestly exceed that band without wear gates
+ok 66 - ordinary drops center on character level and special rewards modestly exceed that band without wear gates
+  ---
+  duration_ms: 6.532025
+  type: 'test'
+  ...
+# Subtest: bulk level progress agrees with sequential XP awards across the curve and high-level flat tail
+ok 67 - bulk level progress agrees with sequential XP awards across the curve and high-level flat tail
+  ---
+  duration_ms: 0.410427
+  type: 'test'
+  ...
+# Subtest: representative old catalog and pre-catalog assets retain rounded value with growth removed and repeatable conversion
+ok 68 - representative old catalog and pre-catalog assets retain rounded value with growth removed and repeatable conversion
+  ---
+  duration_ms: 23.656615
+  type: 'test'
+  ...
+# Subtest: all dice faces award positive level XP, high faces are visible and three relic targets share exact atomic rewards
+ok 69 - all dice faces award positive level XP, high faces are visible and three relic targets share exact atomic rewards
+  ---
+  duration_ms: 2.257487
+  type: 'test'
+  ...
+# Subtest: fusion protects equipped/current-loot materials absolutely and confirms locked, legendary or higher-tier consumption
+ok 70 - fusion protects equipped/current-loot materials absolutely and confirms locked, legendary or higher-tier consumption
+  ---
+  duration_ms: 0.273063
+  type: 'test'
+  ...
+# Subtest: strict item schema rejects hidden growth, invalid progress, catalog spoofing and unsafe extremes
+ok 71 - strict item schema rejects hidden growth, invalid progress, catalog spoofing and unsafe extremes
+  ---
+  duration_ms: 0.416566
+  type: 'test'
+  ...
+# Subtest: late forging and over-level fusion offer sustained gold investment with honest discounts and safe unaffordable quotes
+ok 72 - late forging and over-level fusion offer sustained gold investment with honest discounts and safe unaffordable quotes
+  ---
+  duration_ms: 0.276399
+  type: 'test'
+  ...
+# Subtest: linear safe-material selection matches full previews for each slot, rarity, lock and pending loot
+ok 73 - linear safe-material selection matches full previews for each slot, rarity, lock and pending loot
+  ---
+  duration_ms: 20.260656
+  type: 'test'
+  ...
+# Subtest: safe-material selection preserves three-relic XP sharing and highest-roll cap protection
+ok 74 - safe-material selection preserves three-relic XP sharing and highest-roll cap protection
+  ---
+  duration_ms: 0.508682
+  type: 'test'
+  ...
+# Subtest: selecting 10,000 items excludes equipped, locked, treasured and pending loot without drawing RNG
+ok 75 - selecting 10,000 items excludes equipped, locked, treasured and pending loot without drawing RNG
+  ---
+  duration_ms: 27.501809
+  type: 'test'
+  ...
+# Subtest: protected fusion requires the explicit boolean confirmation and rejected requests preserve assets
+ok 76 - protected fusion requires the explicit boolean confirmation and rejected requests preserve assets
+  ---
+  duration_ms: 0.52825
+  type: 'test'
+  ...
+# Subtest: offering keeps the reserved name after locking and never substitutes another safe item
+ok 77 - offering keeps the reserved name after locking and never substitutes another safe item
+  ---
+  duration_ms: 0.812501
+  type: 'test'
+  ...
+# Subtest: relicloom keeps the reserved name after locking and never substitutes another safe item
+ok 78 - relicloom keeps the reserved name after locking and never substitutes another safe item
+  ---
+  duration_ms: 0.596281
+  type: 'test'
+  ...
+# Subtest: reserved material reasons distinguish missing, absent, equipped, loot and rarity protection
+ok 79 - reserved material reasons distinguish missing, absent, equipped, loot and rarity protection
+  ---
+  duration_ms: 6.838578
+  type: 'test'
+  ...
+# Subtest: an existing unnamed reserved item keeps an explicit ID instead of being called missing
+ok 80 - an existing unnamed reserved item keeps an explicit ID instead of being called missing
+  ---
+  duration_ms: 14.19441
+  type: 'test'
+  ...
+# Subtest: offering separates the shared gift count from the unallocated-point safety cap
+ok 81 - offering separates the shared gift count from the unallocated-point safety cap
+  ---
+  duration_ms: 0.438188
+  type: 'test'
+  ...
+# Subtest: bloodwell displays its entry snapshot charge through larger and smaller armor swaps
+ok 82 - bloodwell displays its entry snapshot charge through larger and smaller armor swaps
+  ---
+  duration_ms: 1.538975
+  type: 'test'
+  ...
+# Subtest: bloodwell keeps exact saved charges, refuses lethal payment and can safely leave at the boundary
+ok 83 - bloodwell keeps exact saved charges, refuses lethal payment and can safely leave at the boundary
+  ---
+  duration_ms: 1.35311
+  type: 'test'
+  ...
+# Subtest: resolved offering and bloodwell text, outcomes and save bytes remain historical records
+ok 84 - resolved offering and bloodwell text, outcomes and save bytes remain historical records
+  ---
+  duration_ms: 1.354502
+  type: 'test'
+  ...
+# Subtest: memorywell explains HP clipping at reset and restoring vitality never heals the lost HP
+ok 85 - memorywell explains HP clipping at reset and restoring vitality never heals the lost HP
+  ---
+  duration_ms: 2.299428
+  type: 'test'
+  ...
+# Subtest: all 22 existing event keys retain legal choices, explicit payment, once-only claims and save closure
+ok 86 - all 22 existing event keys retain legal choices, explicit payment, once-only claims and save closure
+  ---
+  duration_ms: 120.027704
+  type: 'test'
+  ...
+# Subtest: 1536 catalog entries are unique, obtainable and have distinct role-specific signatures
+ok 87 - 1536 catalog entries are unique, obtainable and have distinct role-specific signatures
+  ---
+  duration_ms: 50.533129
+  type: 'test'
+  ...
+# Subtest: three relics stack once, replacement keeps ownership, duplicate equip cannot duplicate effects
+ok 88 - three relics stack once, replacement keeps ownership, duplicate equip cannot duplicate effects
+  ---
+  duration_ms: 1.200845
+  type: 'test'
+  ...
+# Subtest: legacy migration preserves identity, original investment, RNG and pending reward across depths
+ok 89 - legacy migration preserves identity, original investment, RNG and pending reward across depths
+  ---
+  duration_ms: 4.461233
+  type: 'test'
+  ...
+# Subtest: batch fusion atomically divides positive XP among three targets and protects materials for every face
+ok 90 - batch fusion atomically divides positive XP among three targets and protects materials for every face
+  ---
+  duration_ms: 467.76823
+  type: 'test'
+  ...
+# Subtest: all 50 rooms enter, interact, save and exit without optional purchases blocking progress
+ok 91 - all 50 rooms enter, interact, save and exit without optional purchases blocking progress
+  ---
+  duration_ms: 29.80362
+  type: 'test'
+  ...
+# Subtest: all 30 preserved V4 talents have observable combat, luck, stat or economic effects
+ok 92 - all 30 preserved V4 talents have observable combat, luck, stat or economic effects
+  ---
+  duration_ms: 227.627328
+  type: 'test'
+  ...
+# Subtest: high-depth routes, enemies and saves remain finite; 1000 seeds reach all room types with high fate favoring ordinary reward chests rather than enlarging rare pool mass
+ok 93 - high-depth routes, enemies and saves remain finite; 1000 seeds reach all room types with high fate favoring ordinary reward chests rather than enlarging rare pool mass
+  ---
+  duration_ms: 660.808386
+  type: 'test'
+  ...
+# Subtest: continuous adventures reach 20, 50 and 100 with valid saves and no artificial ending
+ok 94 - continuous adventures reach 20, 50 and 100 with valid saves and no artificial ending
+  ---
+  duration_ms: 64079.354178
+  type: 'test'
+  ...
+# Subtest: critical-follow copy states both gates and distinguishes critical-only from resonance plus critical
+ok 95 - critical-follow copy states both gates and distinguishes critical-only from resonance plus critical
+  ---
+  duration_ms: 43.494253
+  type: 'test'
+  ...
+# Subtest: pierce copy describes shield bypass without claiming increased unshielded damage
+ok 96 - pierce copy describes shield bypass without claiming increased unshielded damage
+  ---
+  duration_ms: 0.186546
+  type: 'test'
+  ...
+# Subtest: ward and recovery copy names maximum HP, timing, survival and additive kill recovery
+ok 97 - ward and recovery copy names maximum HP, timing, survival and additive kill recovery
+  ---
+  duration_ms: 0.255548
+  type: 'test'
+  ...
+# Subtest: follow-damage copy identifies the main-hit base and keeps inactive follow damage at zero
+ok 98 - follow-damage copy identifies the main-hit base and keeps inactive follow damage at zero
+  ---
+  duration_ms: 0.198994
+  type: 'test'
+  ...
+# Subtest: gold-affix copy is limited to chests while gold rooms, fate, exchanges and salvage keep base rewards
+ok 99 - gold-affix copy is limited to chests while gold rooms, fate, exchanges and salvage keep base rewards
+  ---
+  duration_ms: 0.166256
+  type: 'test'
+  ...
+# Subtest: compact equipped labels keep precise critical conditions and expose the complete details without mutating saves
+ok 100 - compact equipped labels keep precise critical conditions and expose the complete details without mutating saves
+  ---
+  duration_ms: 1.083872
+  type: 'test'
+  ...
+# Subtest: six-face previews agree with actual deterministic rolls for all five equipped slots without healing or changing level
+ok 101 - six-face previews agree with actual deterministic rolls for all five equipped slots without healing or changing level
+  ---
+  duration_ms: 28.211629
+  type: 'test'
+  ...
+# Subtest: forge quotes expose the cap, affordability and eligibility while stale quotes never authorize spending
+ok 102 - forge quotes expose the cap, affordability and eligibility while stale quotes never authorize spending
+  ---
+  duration_ms: 0.564664
+  type: 'test'
+  ...
+# Subtest: all authored catalog variants and migrated armor keep fixed traits separate from actual item-stat changes
+ok 103 - all authored catalog variants and migrated armor keep fixed traits separate from actual item-stat changes
+  ---
+  duration_ms: 24.688113
+  type: 'test'
+  ...
+# Subtest: late quotes retain exact smith and rich-room prices, safe ceiling and frozen snapshot data
+ok 104 - late quotes retain exact smith and rich-room prices, safe ceiling and frozen snapshot data
+  ---
+  duration_ms: 0.845279
+  type: 'test'
+  ...
+# Subtest: low-level relic rounding can increase reinforcement with no immediate item-panel gain
+ok 105 - low-level relic rounding can increase reinforcement with no immediate item-panel gain
+  ---
+  duration_ms: 0.680976
+  type: 'test'
+  ...
+# Subtest: 10,000-item controller clicks avoid duplicate view models and unused cancellation plans
+ok 106 - 10,000-item controller clicks avoid duplicate view models and unused cancellation plans
+  ---
+  duration_ms: 192.09076
+  type: 'test'
+  ...
+# Subtest: fresh partial renders retain legal materials while tracking in-place equipment, filters and new-run identities
+ok 107 - fresh partial renders retain legal materials while tracking in-place equipment, filters and new-run identities
+  ---
+  duration_ms: 5.105875
+  type: 'test'
+  ...
+# Subtest: batch placement, force-all, cancellation and undo preserve exact current budget and protected choices
+ok 108 - batch placement, force-all, cancellation and undo preserve exact current budget and protected choices
+  ---
+  duration_ms: 7.601182
+  type: 'test'
+  ...
+# Subtest: workbench bulk scope excludes explicit keep rules and includes higher-quality protected materials
+ok 109 - workbench bulk scope excludes explicit keep rules and includes higher-quality protected materials
+  ---
+  duration_ms: 0.695918
+  type: 'test'
+  ...
+# Subtest: budget keeps the most XP per gold and preserves both quote rounding steps at exact boundaries
+ok 110 - budget keeps the most XP per gold and preserves both quote rounding steps at exact boundaries
+  ---
+  duration_ms: 0.645183
+  type: 'test'
+  ...
+# Subtest: over-level and fractional three-relic costs match the engine at the last affordable piece
+ok 111 - over-level and fractional three-relic costs match the engine at the last affordable piece
+  ---
+  duration_ms: 0.646496
+  type: 'test'
+  ...
+# Subtest: budget never treats the capped impossible quote as affordable, while place-all remains a quote
+ok 112 - budget never treats the capped impossible quote as affordable, while place-all remains a quote
+  ---
+  duration_ms: 0.29726
+  type: 'test'
+  ...
+# Subtest: normalization retains legal selected materials through target changes without mutating filters or pagination
+ok 113 - normalization retains legal selected materials through target changes without mutating filters or pagination
+  ---
+  duration_ms: 0.571985
+  type: 'test'
+  ...
+# Subtest: model keeps equipment identities in one searchable pool and defaults to latest acquisition first
+ok 114 - model keeps equipment identities in one searchable pool and defaults to latest acquisition first
+  ---
+  duration_ms: 1.242156
+  type: 'test'
+  ...
+# Subtest: model clamps only its returned page and always limits cards to the current 24-item page
+ok 115 - model clamps only its returned page and always limits cards to the current 24-item page
+  ---
+  duration_ms: 1.195476
+  type: 'test'
+  ...
+# Subtest: controller model omits only the preview and reflects in-place state and selection changes
+ok 116 - controller model omits only the preview and reflects in-place state and selection changes
+  ---
+  duration_ms: 2.782102
+  type: 'test'
+  ...
+# Subtest: placing a batch without unused preview keeps exact quotes, selection and safety at all budget boundaries
+ok 117 - placing a batch without unused preview keeps exact quotes, selection and safety at all budget boundaries
+  ---
+  duration_ms: 37.339092
+  type: 'test'
+  ...
+# Subtest: batch safety considers aggregate highest-roll XP, skips oversized materials and can still use smaller ones
+ok 118 - batch safety considers aggregate highest-roll XP, skips oversized materials and can still use smaller ones
+  ---
+  duration_ms: 0.651563
+  type: 'test'
+  ...
+# Subtest: three-relic safety uses the engine remainder order at the exact last experience point
+ok 119 - three-relic safety uses the engine remainder order at the exact last experience point
+  ---
+  duration_ms: 0.243159
+  type: 'test'
+  ...
+# Subtest: 10,000-item planning has bounded full-inventory scans and model construction still exposes only one page
+ok 120 - 10,000-item planning has bounded full-inventory scans and model construction still exposes only one page
+  ---
+  duration_ms: 32.50913
+  type: 'test'
+  ...
+# Subtest: passive details never occupy the card pool, settlement, trigger or details access control
+ok 121 - passive details never occupy the card pool, settlement, trigger or details access control
+  ---
+  duration_ms: 1.462862
+  type: 'test'
+  ...
+# Subtest: a scrolled narrow pool without free reading space uses the explicit dialog path
+ok 122 - a scrolled narrow pool without free reading space uses the explicit dialog path
+  ---
+  duration_ms: 0.110443
+  type: 'test'
+  ...
+# Subtest: dense controls and repeated pool rectangles leave a safe preview without consuming input space
+ok 123 - dense controls and repeated pool rectangles leave a safe preview without consuming input space
+  ---
+  duration_ms: 14.554878
+  type: 'test'
+  ...
+# Subtest: transit corridors connect all four panel directions without capturing same-row browsing
+ok 124 - transit corridors connect all four panel directions without capturing same-row browsing
+  ---
+  duration_ms: 0.370628
+  type: 'test'
+  ...
+# Subtest: Escape cancels pending hover and same-anchor inner movements cannot resurrect it
+ok 125 - Escape cancels pending hover and same-anchor inner movements cannot resurrect it
+  ---
+  duration_ms: 2.411784
+  type: 'test'
+  ...
+# Subtest: pointer transit, internal scrolling and text reading retain the passive details
+ok 126 - pointer transit, internal scrolling and text reading retain the passive details
+  ---
+  duration_ms: 0.7918
+  type: 'test'
+  ...
+# Subtest: a paused trip across another card retains the inspected item and exiting the corridor resumes hover
+ok 127 - a paused trip across another card retains the inspected item and exiting the corridor resumes hover
+  ---
+  duration_ms: 0.927781
+  type: 'test'
+  ...
+# Subtest: a focus-only preview does not reserve intermediate cards before a pointer journey begins
+ok 128 - a focus-only preview does not reserve intermediate cards before a pointer journey begins
+  ---
+  duration_ms: 0.839921
+  type: 'test'
+  ...
+# Subtest: touch selection does not create a passive overlay; explicit details restore focus without actions
+ok 129 - touch selection does not create a passive overlay; explicit details restore focus without actions
+  ---
+  duration_ms: 1.081127
+  type: 'test'
+  ...
+# Subtest: touch dialog close ignores compatibility mouseover on a different exposed card
+ok 130 - touch dialog close ignores compatibility mouseover on a different exposed card
+  ---
+  duration_ms: 0.729057
+  type: 'test'
+  ...
+# Subtest: an inspection survives UI-only refresh but closes on state or target change
+ok 131 - an inspection survives UI-only refresh but closes on state or target change
+  ---
+  duration_ms: 0.558185
+  type: 'test'
+  ...
+# Subtest: one-click ten-weapon plan consumes exactly nine, commits one die result and persists once
+ok 132 - one-click ten-weapon plan consumes exactly nine, commits one die result and persists once
+  ---
+  duration_ms: 6.23219
+  type: 'test'
+  ...
+# Subtest: default bulk protection and explicit protected consumption retain all absolute exclusions
+ok 133 - default bulk protection and explicit protected consumption retain all absolute exclusions
+  ---
+  duration_ms: 2.58546
+  type: 'test'
+  ...
+# Subtest: budget boundaries use executable engine quotes, including fractional target averages and zero budget
+ok 134 - budget boundaries use executable engine quotes, including fractional target averages and zero budget
+  ---
+  duration_ms: 30.530616
+  type: 'test'
+  ...
+# Subtest: three relic targets share all six actual die outcomes without losing identities, enhancement or save validity
+ok 135 - three relic targets share all six actual die outcomes without losing identities, enhancement or save validity
+  ---
+  duration_ms: 7.561734
+  type: 'test'
+  ...
+# Subtest: failed fusion storage and stale snapshots cannot overwrite the active saved inventory
+ok 136 - failed fusion storage and stale snapshots cannot overwrite the active saved inventory
+  ---
+  duration_ms: 2.04419
+  type: 'test'
+  ...
+# Subtest: a fusion mirror warning retains one durable result and reload cannot reroll it
+ok 137 - a fusion mirror warning retains one durable result and reload cannot reroll it
+  ---
+  duration_ms: 1.822593
+  type: 'test'
+  ...
+# Subtest: ten thousand items render only the requested 24-card pool page; selection retains filters and page
+ok 138 - ten thousand items render only the requested 24-card pool page; selection retains filters and page
+  ---
+  duration_ms: 86.193722
+  type: 'test'
+  ...
+# Subtest: committed fusion presents actual level and main-attribute increments with six preview faces
+ok 139 - committed fusion presents actual level and main-attribute increments with six preview faces
+  ---
+  duration_ms: 5.643945
+  type: 'test'
+  ...
+# Subtest: conditional low faces and a surviving berserker threshold cannot exceed the visible forecast
+ok 140 - conditional low faces and a surviving berserker threshold cannot exceed the visible forecast
+  ---
+  duration_ms: 45.076151
+  type: 'test'
+  ...
+# Subtest: all six added bosses include same-hit phase escalation and dice-dependent attacks in visible bounds
+ok 141 - all six added bosses include same-hit phase escalation and dice-dependent attacks in visible bounds
+  ---
+  duration_ms: 794.345767
+  type: 'test'
+  ...
+# Subtest: all encounter variants and periodic turns forecast actual counters across one to six dice
+ok 142 - all encounter variants and periodic turns forecast actual counters across one to six dice
+  ---
+  duration_ms: 181.548993
+  type: 'test'
+  ...
+# Subtest: ward, conditional ward and dodge are included, while cursed life loss bypasses ward
+ok 143 - ward, conditional ward and dodge are included, while cursed life loss bypasses ward
+  ---
+  duration_ms: 197.460976
+  type: 'test'
+  ...
+# Subtest: duel and elite use the same canonical rarity roll, gold and item level band
+ok 144 - duel and elite use the same canonical rarity roll, gold and item level band
+  ---
+  duration_ms: 57.775276
+  type: 'test'
+  ...
+# Subtest: bounty epic-floor replacement retains the canonical elite equipment level bonus
+ok 145 - bounty epic-floor replacement retains the canonical elite equipment level bonus
+  ---
+  duration_ms: 2.478563
+  type: 'test'
+  ...
+# Subtest: bounty rewards preserve the elite band across deep stages, seeds and character-level boundaries
+ok 146 - bounty rewards preserve the elite band across deep stages, seeds and character-level boundaries
+  ---
+  duration_ms: 281.246229
+  type: 'test'
+  ...
+# Subtest: both oathgate waves preserve epic rewards and elite levels through claim and reload
+ok 147 - both oathgate waves preserve epic rewards and elite levels through claim and reload
+  ---
+  duration_ms: 2.123498
+  type: 'test'
+  ...
+# Subtest: a lethal ordinary dice condition is not described as a boss half-health transition
+ok 148 - a lethal ordinary dice condition is not described as a boss half-health transition
+  ---
+  duration_ms: 4.897407
+  type: 'test'
+  ...
+# Subtest: Infinite Echo names the four-distinct-face threshold and keeps the phase-two triple rule
+ok 149 - Infinite Echo names the four-distinct-face threshold and keeps the phase-two triple rule
+  ---
+  duration_ms: 0.208679
+  type: 'test'
+  ...
+# Subtest: First-fire Witness explicitly counts three 5/6 faces, excluding fours and preserving its first roll
+ok 150 - First-fire Witness explicitly counts three 5/6 faces, excluding fours and preserving its first roll
+  ---
+  duration_ms: 0.118085
+  type: 'test'
+  ...
+# Subtest: idle GPU dice rebuild resources and redraw the same canvas immediately after context restoration
+ok 151 - idle GPU dice rebuild resources and redraw the same canvas immediately after context restoration
+  ---
+  duration_ms: 28.199421
+  type: 'test'
+  ...
+# Subtest: a scene mounted while context is lost owns restoration, and an old stop cannot detach it
+ok 152 - a scene mounted while context is lost owns restoration, and an old stop cannot detach it
+  ---
+  duration_ms: 18.557162
+  type: 'test'
+  ...
+# Subtest: restoration uses the latest visual pose without adding an animation loop
+ok 153 - restoration uses the latest visual pose without adding an animation loop
+  ---
+  duration_ms: 11.286739
+  type: 'test'
+  ...
+# Subtest: failed GPU resource recovery keeps CSS dice visible and a later successful restore can recover
+ok 154 - failed GPU resource recovery keeps CSS dice visible and a later successful restore can recover
+  ---
+  duration_ms: 23.546686
+  type: 'test'
+  ...
+# Subtest: stopped or disconnected scenes are never redrawn by later restoration callbacks
+ok 155 - stopped or disconnected scenes are never redrawn by later restoration callbacks
+  ---
+  duration_ms: 12.451811
+  type: 'test'
+  ...
+# Subtest: paged inventory comparisons match full inventory semantics and never cache an old build
+ok 156 - paged inventory comparisons match full inventory semantics and never cache an old build
+  ---
+  duration_ms: 449.581935
+  type: 'test'
+  ...
+# Subtest: inventory guidance names the active ordering, including the default
+ok 157 - inventory guidance names the active ordering, including the default
+  ---
+  duration_ms: 0.952277
+  type: 'test'
+  ...
+# Subtest: a normal commit archives the readable V4 mirror instead of a checksummed but invalid primary
+ok 158 - a normal commit archives the readable V4 mirror instead of a checksummed but invalid primary
+  ---
+  duration_ms: 2.054626
+  type: 'test'
+  ...
+# Subtest: recovery from V1–V3 mirrors preserves both immutable original archives across later saves
+ok 159 - recovery from V1–V3 mirrors preserves both immutable original archives across later saves
+  ---
+  duration_ms: 7.419073
+  type: 'test'
+  ...
+# Subtest: archive-write failure after mirror recovery leaves both active disk copies intact
+ok 160 - archive-write failure after mirror recovery leaves both active disk copies intact
+  ---
+  duration_ms: 3.645778
+  type: 'test'
+  ...
+# Subtest: a pending auction without its committed reward is rejected before importing or claiming archive slots
+ok 161 - a pending auction without its committed reward is rejected before importing or claiming archive slots
+  ---
+  duration_ms: 1.579624
+  type: 'test'
+  ...
+# Subtest: event-triggered combat or death without an enemy cannot replace valid progress
+ok 162 - event-triggered combat or death without an enemy cannot replace valid progress
+  ---
+  duration_ms: 3.106961
+  type: 'test'
+  ...
+# Subtest: pending auction reward collisions with owned equipment are rejected before any import writes
+ok 163 - pending auction reward collisions with owned equipment are rejected before any import writes
+  ---
+  duration_ms: 2.181363
+  type: 'test'
+  ...
+# Subtest: resolved auction history can retain its owned reward through a later import
+ok 164 - resolved auction history can retain its owned reward through a later import
+  ---
+  duration_ms: 2.238698
+  type: 'test'
+  ...
+# Subtest: a valid auction remains deterministic through import, purchase, chest, loot and a rejected second claim
+ok 165 - a valid auction remains deterministic through import, purchase, chest, loot and a rejected second claim
+  ---
+  duration_ms: 3.067963
+  type: 'test'
+  ...
+# Subtest: ordinary events and direct chests keep their legal null enemy; resolved history does not require an optional auction preview
+ok 166 - ordinary events and direct chests keep their legal null enemy; resolved history does not require an optional auction preview
+  ---
+  duration_ms: 2.383252
+  type: 'test'
+  ...
+# Subtest: event combat retains valid multi-wave, death and retry transitions without regenerating committed rewards on load
+ok 167 - event combat retains valid multi-wave, death and retry transitions without regenerating committed rewards on load
+  ---
+  duration_ms: 2.372025
+  type: 'test'
+  ...
+# Subtest: 10,000 generated items still round-trip and primary-write failure leaves the current transaction intact
+ok 168 - 10,000 generated items still round-trip and primary-write failure leaves the current transaction intact
+  ---
+  duration_ms: 262.038805
+  type: 'test'
+  ...
+# Subtest: an existing V5 server without release identity is rejected instead of opening the old folder
+ok 169 - an existing V5 server without release identity is rejected instead of opening the old folder
+  ---
+  duration_ms: 0.668779
+  type: 'test'
+  ...
+# Subtest: only the expected release with the game title and save/build major is accepted
+ok 170 - only the expected release with the game title and save/build major is accepted
+  ---
+  duration_ms: 0.304601
+  type: 'test'
+  ...
+# Subtest: release metadata handles quoted HTML attribute order and ignores commented markers
+ok 171 - release metadata handles quoted HTML attribute order and ignores commented markers
+  ---
+  duration_ms: 0.174098
+  type: 'test'
+  ...
+# Subtest: conflicting or duplicate release markers cannot certify a current local service
+ok 172 - conflicting or duplicate release markers cannot certify a current local service
+  ---
+  duration_ms: 0.132866
+  type: 'test'
+  ...
+# Subtest: the shipped index identifies the same release as package metadata
+ok 173 - the shipped index identifies the same release as package metadata
+  ---
+  duration_ms: 15.906315
+  type: 'test'
+  ...
+# Subtest: V1, V2 and V3 migrate every owned and pending item without changing identity, investment, enemy or transaction state
+ok 174 - V1, V2 and V3 migrate every owned and pending item without changing identity, investment, enemy or transaction state
+  ---
+  duration_ms: 23.814551
+  type: 'test'
+  ...
+# Subtest: legacy three-relic positions and all old talent ranks survive repeated load and migration
+ok 175 - legacy three-relic positions and all old talent ranks survive repeated load and migration
+  ---
+  duration_ms: 3.160009
+  type: 'test'
+  ...
+# Subtest: primary/mirror recovery and the first V4 commit retain the original raw archive for rollback
+ok 176 - primary/mirror recovery and the first V4 commit retain the original raw archive for rollback
+  ---
+  duration_ms: 2.345827
+  type: 'test'
+  ...
+# Subtest: migration/archive failures leave original browser assets untouched and state corruption is rejected
+ok 177 - migration/archive failures leave original browser assets untouched and state corruption is rejected
+  ---
+  duration_ms: 2.982087
+  type: 'test'
+  ...
+# Subtest: V4 narrow new-schema fields reject bad waves, encounter mechanics, events and roll metadata
+ok 178 - V4 narrow new-schema fields reject bad waves, encounter mechanics, events and roll metadata
+  ---
+  duration_ms: 1.573656
+  type: 'test'
+  ...
+# Subtest: legacy aggregate HP crossing the V4 cap rejects migration without clipping assets or replacing raw
+ok 179 - legacy aggregate HP crossing the V4 cap rejects migration without clipping assets or replacing raw
+  ---
+  duration_ms: 3.833875
+  type: 'test'
+  ...
+# Subtest: a late first dice frame begins the throw rather than silently landing
+ok 180 - a late first dice frame begins the throw rather than silently landing
+  ---
+  duration_ms: 0.883075
+  type: 'test'
+  ...
+# Subtest: combat material survives a delayed first frame and is drawn on the next visible sample
+ok 181 - combat material survives a delayed first frame and is drawn on the next visible sample
+  ---
+  duration_ms: 7.365154
+  type: 'test'
+  ...
+# Subtest: deep event promises describe a minimum and settlement names the actual generated rarity
+ok 182 - deep event promises describe a minimum and settlement names the actual generated rarity
+  ---
+  duration_ms: 1.932375
+  type: 'test'
+  ...
+# Subtest: random gambling outcomes name their actual reward through all depth bands
+ok 183 - random gambling outcomes name their actual reward through all depth bands
+  ---
+  duration_ms: 130.298277
+  type: 'test'
+  ...
+# Subtest: early guaranteed transactions remain exact while the codex separates deep eligibility
+ok 184 - early guaranteed transactions remain exact while the codex separates deep eligibility
+  ---
+  duration_ms: 1.416113
+  type: 'test'
+  ...
+# Subtest: pending legacy mystery copy is corrected without rewriting the saved event or reward
+ok 185 - pending legacy mystery copy is corrected without rewriting the saved event or reward
+  ---
+  duration_ms: 1.209938
+  type: 'test'
+  ...
+# Subtest: shielded boss instructions allow the existing legal piercing counterplay
+ok 186 - shielded boss instructions allow the existing legal piercing counterplay
+  ---
+  duration_ms: 0.372461
+  type: 'test'
+  ...
+# Subtest: actual old V1, V2 and V3 equipment migrates while committed combat snapshots keep enemy, dice and RNG
+ok 187 - actual old V1, V2 and V3 equipment migrates while committed combat snapshots keep enemy, dice and RNG
+  ---
+  duration_ms: 4.742639
+  type: 'test'
+  ...
+# Subtest: new enemy and roll fields accept only their narrow optional types and numeric bounds
+ok 188 - new enemy and roll fields accept only their narrow optional types and numeric bounds
+  ---
+  duration_ms: 6.223647
+  type: 'test'
+  ...
+# Subtest: a saved phase transition continues identically and retry saves the reset stage
+ok 189 - a saved phase transition continues identically and retry saves the reset stage
+  ---
+  duration_ms: 1.914148
+  type: 'test'
+  ...
+# Subtest: new rules4 allow a sufficiently strong killing blow without adding the old half-health hard gate
+ok 190 - new rules4 allow a sufficiently strong killing blow without adding the old half-health hard gate
+  ---
+  duration_ms: 0.743759
+  type: 'test'
+  ...
+# Subtest: spring healing and ward options explicitly top up a floor while preserving stronger shields
+ok 191 - spring healing and ward options explicitly top up a floor while preserving stronger shields
+  ---
+  duration_ms: 9.453971
+  type: 'test'
+  ...
+# Subtest: legacy pending spring display stays read-only and resolved history is not rewritten
+ok 192 - legacy pending spring display stays read-only and resolved history is not rewritten
+  ---
+  duration_ms: 1.016231
+  type: 'test'
+  ...
+# Subtest: declining a spring retains player assets, shield and random state
+ok 193 - declining a spring retains player assets, shield and random state
+  ---
+  duration_ms: 0.357909
+  type: 'test'
+  ...
+# Subtest: healing offers cannot import malformed or complete equipment through the heal ID exemption
+ok 194 - healing offers cannot import malformed or complete equipment through the heal ID exemption
+  ---
+  duration_ms: 3.477929
+  type: 'test'
+  ...
+# Subtest: legitimate absent or null healing payloads still import, heal once and preserve item purchases
+ok 195 - legitimate absent or null healing payloads still import, heal once and preserve item purchases
+  ---
+  duration_ms: 9.939257
+  type: 'test'
+  ...
+# Subtest: pending rewards must have an already issued ID before an import can replace progress
+ok 196 - pending rewards must have an already issued ID before an import can replace progress
+  ---
+  duration_ms: 1.427329
+  type: 'test'
+  ...
+# Subtest: unsold shop offers cannot collide with owned IDs or future IDs; sold history survives recycling
+ok 197 - unsold shop offers cannot collide with owned IDs or future IDs; sold history survives recycling
+  ---
+  duration_ms: 1.231049
+  type: 'test'
+  ...
+# Subtest: consumed fusion records survive refresh and contradictory resurrected material is rejected
+ok 198 - consumed fusion records survive refresh and contradictory resurrected material is rejected
+  ---
+  duration_ms: 1.211069
+  type: 'test'
+  ...
+# Subtest: an imported branch with the same run ID and revision cannot be overwritten by a stale window
+ok 199 - an imported branch with the same run ID and revision cannot be overwritten by a stale window
+  ---
+  duration_ms: 1.428922
+  type: 'test'
+  ...
+# Subtest: serialized start and import clients with stale null snapshots cannot overwrite a newly created run
+ok 200 - serialized start and import clients with stale null snapshots cannot overwrite a newly created run
+  ---
+  duration_ms: 1.509801
+  type: 'test'
+  ...
+# Subtest: null permits identical migration snapshots, rejects a same-revision branch, and undefined keeps explicit replacement available
+ok 201 - null permits identical migration snapshots, rejects a same-revision branch, and undefined keeps explicit replacement available
+  ---
+  duration_ms: 1.416173
+  type: 'test'
+  ...
+# Subtest: importing V4 B preserves active V4 A first, including recovery from its valid mirror
+ok 202 - importing V4 B preserves active V4 A first, including recovery from its valid mirror
+  ---
+  duration_ms: 13.64871
+  type: 'test'
+  ...
+# Subtest: a stale or mismatched import performs zero archive or active-save writes
+ok 203 - a stale or mismatched import performs zero archive or active-save writes
+  ---
+  duration_ms: 12.675181
+  type: 'test'
+  ...
+# Subtest: import archive quota failure preserves both active V4 copies and main failure retains the correct original archive
+ok 204 - import archive quota failure preserves both active V4 copies and main failure retains the correct original archive
+  ---
+  duration_ms: 12.679458
+  type: 'test'
+  ...
+# Subtest: main quota failure leaves both snapshots intact; mirror quota warns after a durable main commit
+ok 205 - main quota failure leaves both snapshots intact; mirror quota warns after a durable main commit
+  ---
+  duration_ms: 2.107254
+  type: 'test'
+  ...
+# Subtest: mirror recovery reports its limitation when the only latest copy was subsequently corrupted
+ok 206 - mirror recovery reports its limitation when the only latest copy was subsequently corrupted
+  ---
+  duration_ms: 1.000799
+  type: 'test'
+  ...
+# Subtest: corrupt JSON and wrong schema fall back read-only and do not silently reset a run
+ok 207 - corrupt JSON and wrong schema fall back read-only and do not silently reset a run
+  ---
+  duration_ms: 1.107336
+  type: 'test'
+  ...
+# Subtest: a newly committed save at exactly 5,000,000 ASCII characters and bytes remains readable
+ok 208 - a newly committed save at exactly 5,000,000 ASCII characters and bytes remains readable
+  ---
+  duration_ms: 78.690914
+  type: 'test'
+  ...
+# Subtest: a newly committed multibyte save at exactly 5,000,000 UTF-8 bytes remains readable and importable
+ok 209 - a newly committed multibyte save at exactly 5,000,000 UTF-8 bytes remains readable and importable
+  ---
+  duration_ms: 86.971751
+  type: 'test'
+  ...
+# Subtest: a save one byte above the new-write limit is rejected without changing either active copy
+ok 210 - a save one byte above the new-write limit is rejected without changing either active copy
+  ---
+  duration_ms: 122.905813
+  type: 'test'
+  ...
+# Subtest: an accepted near-limit import cannot commit a fate result that its own loader rejects
+ok 211 - an accepted near-limit import cannot commit a fate result that its own loader rejects
+  ---
+  duration_ms: 347.481113
+  type: 'test'
+  ...
+# Subtest: previously readable CJK and non-BMP saves remain available for rescue while oversized writes are rejected
+ok 212 - previously readable CJK and non-BMP saves remain available for rescue while oversized writes are rejected
+  ---
+  duration_ms: 138.693603
+  type: 'test'
+  ...
+# Subtest: an oversized current-schema import performs no primary, mirror or archive writes
+ok 213 - an oversized current-schema import performs no primary, mirror or archive writes
+  ---
+  duration_ms: 41.726752
+  type: 'test'
+  ...
+# Subtest: V4 migration growth is checked before an imported original claims immutable archive slots
+ok 214 - V4 migration growth is checked before an imported original claims immutable archive slots
+  ---
+  duration_ms: 155.930865
+  type: 'test'
+  ...
+# Subtest: an oversized first migrated commit preserves both original copies and leaves archives unclaimed
+ok 215 - an oversized first migrated commit preserves both original copies and leaves archives unclaimed
+  ---
+  duration_ms: 216.383078
+  type: 'test'
+  ...
+# Subtest: stale expected snapshots retain priority and cannot be bypassed by an oversized candidate
+ok 216 - stale expected snapshots retain priority and cannot be bypassed by an oversized candidate
+  ---
+  duration_ms: 33.064431
+  type: 'test'
+  ...
+# Subtest: ordinary 10,000-item saves still commit, mirror and preserve exact equipment and RNG
+ok 217 - ordinary 10,000-item saves still commit, mirror and preserve exact equipment and RNG
+  ---
+  duration_ms: 260.632878
+  type: 'test'
+  ...
+# Subtest: legacy talent clicks still invest exactly one point with the original result text
+ok 218 - legacy talent clicks still invest exactly one point with the original result text
+  ---
+  duration_ms: 0.539257
+  type: 'test'
+  ...
+# Subtest: batch allocation matches repeated legal single investments without healing or changing RNG
+ok 219 - batch allocation matches repeated legal single investments without healing or changing RNG
+  ---
+  duration_ms: 7.704465
+  type: 'test'
+  ...
+# Subtest: quantities respect available points, per-node caps and deep-floor unlocks
+ok 220 - quantities respect available points, per-node caps and deep-floor unlocks
+  ---
+  duration_ms: 0.269809
+  type: 'test'
+  ...
+# Subtest: invalid quantity requests and unknown nodes cannot consume assets
+ok 221 - invalid quantity requests and unknown nodes cannot consume assets
+  ---
+  duration_ms: 0.760954
+  type: 'test'
+  ...
+# Subtest: maximum-node purchases are bounded, atomic and preserve dead-state HP
+ok 222 - maximum-node purchases are bounded, atomic and preserve dead-state HP
+  ---
+  duration_ms: 1.066806
+  type: 'test'
+  ...
+# Subtest: allocation defaults to one point and presets only change a pure production quote
+ok 223 - allocation defaults to one point and presets only change a pure production quote
+  ---
+  duration_ms: 4.93324
+  type: 'test'
+  ...
+# Subtest: all presets show actual point and rank changes when wallet or the selected node cap is smaller
+ok 224 - all presets show actual point and rank changes when wallet or the selected node cap is smaller
+  ---
+  duration_ms: 2.751656
+  type: 'test'
+  ...
+# Subtest: every selected branch keeps the original nodes, floor gates, caps and busy state
+ok 225 - every selected branch keeps the original nodes, floor gates, caps and busy state
+  ---
+  duration_ms: 4.645334
+  type: 'test'
+  ...
+# Subtest: power, treasure and conditional deep benefits keep threshold numbers unchanged
+ok 226 - power, treasure and conditional deep benefits keep threshold numbers unchanged
+  ---
+  duration_ms: 0.618074
+  type: 'test'
+  ...
+# Subtest: talent layout supplies a stable scroll region, accessible preview, and five compact branch controls
+ok 227 - talent layout supplies a stable scroll region, accessible preview, and five compact branch controls
+  ---
+  duration_ms: 1.886929
+  type: 'test'
+  ...
+# Subtest: V5 retains all 648 V4 catalog identities, names, multipliers and attributes at four levels
+ok 228 - V5 retains all 648 V4 catalog identities, names, multipliers and attributes at four levels
+  ---
+  duration_ms: 6.632822
+  type: 'test'
+  ...
+# Subtest: V5 reproduces 2320 V4 floor 1–29 reward/shop fixtures and ending RNG exactly
+ok 229 - V5 reproduces 2320 V4 floor 1–29 reward/shop fixtures and ending RNG exactly
+  ---
+  duration_ms: 450.230523
+  type: 'test'
+  ...
+# Subtest: V4→V5 preserves committed assets and RNG: Constructed V4 engine fixture / fate
+ok 230 - V4→V5 preserves committed assets and RNG: Constructed V4 engine fixture / fate
+  ---
+  duration_ms: 1.46126
+  type: 'test'
+  ...
+# Subtest: V4→V5 preserves committed assets and RNG: Constructed V4 engine fixture / combat
+ok 231 - V4→V5 preserves committed assets and RNG: Constructed V4 engine fixture / combat
+  ---
+  duration_ms: 1.222477
+  type: 'test'
+  ...
+# Subtest: V4→V5 preserves committed assets and RNG: Constructed V4 engine fixture / boss
+ok 232 - V4→V5 preserves committed assets and RNG: Constructed V4 engine fixture / boss
+  ---
+  duration_ms: 1.092805
+  type: 'test'
+  ...
+# Subtest: V4→V5 preserves committed assets and RNG: Constructed V4 engine fixture / chest
+ok 233 - V4→V5 preserves committed assets and RNG: Constructed V4 engine fixture / chest
+  ---
+  duration_ms: 1.216868
+  type: 'test'
+  ...
+# Subtest: V4→V5 preserves committed assets and RNG: Constructed V4 engine fixture / loot
+ok 234 - V4→V5 preserves committed assets and RNG: Constructed V4 engine fixture / loot
+  ---
+  duration_ms: 0.958406
+  type: 'test'
+  ...
+# Subtest: V4→V5 preserves committed assets and RNG: Constructed V4 engine fixture / merchant
+ok 235 - V4→V5 preserves committed assets and RNG: Constructed V4 engine fixture / merchant
+  ---
+  duration_ms: 1.236637
+  type: 'test'
+  ...
+# Subtest: V4→V5 preserves committed assets and RNG: Constructed V4 engine fixture / blackmarket
+ok 236 - V4→V5 preserves committed assets and RNG: Constructed V4 engine fixture / blackmarket
+  ---
+  duration_ms: 0.986958
+  type: 'test'
+  ...
+# Subtest: V4→V5 preserves committed assets and RNG: Constructed V4 engine fixture / forge
+ok 237 - V4→V5 preserves committed assets and RNG: Constructed V4 engine fixture / forge
+  ---
+  duration_ms: 0.912188
+  type: 'test'
+  ...
+# Subtest: V4→V5 preserves committed assets and RNG: Constructed V4 engine fixture / fusion
+ok 238 - V4→V5 preserves committed assets and RNG: Constructed V4 engine fixture / fusion
+  ---
+  duration_ms: 1.366279
+  type: 'test'
+  ...
+# Subtest: V4→V5 preserves committed assets and RNG: Constructed V4 engine fixture / prayer
+ok 239 - V4→V5 preserves committed assets and RNG: Constructed V4 engine fixture / prayer
+  ---
+  duration_ms: 1.125523
+  type: 'test'
+  ...
+# Subtest: V4→V5 preserves committed assets and RNG: Constructed V4 engine fixture / rest
+ok 240 - V4→V5 preserves committed assets and RNG: Constructed V4 engine fixture / rest
+  ---
+  duration_ms: 1.254593
+  type: 'test'
+  ...
+# Subtest: V4 archive failure prevents overwriting either active save; a corrupt archive is not silently replaced
+ok 241 - V4 archive failure prevents overwriting either active save; a corrupt archive is not silently replaced
+  ---
+  duration_ms: 0.66967
+  type: 'test'
+  ...
+# Subtest: V5 real equipment trigger / sixShatter
+ok 242 - V5 real equipment trigger / sixShatter
+  ---
+  duration_ms: 1.389534
+  type: 'test'
+  ...
+# Subtest: V5 real equipment trigger / tripleStrike
+ok 243 - V5 real equipment trigger / tripleStrike
+  ---
+  duration_ms: 1.109009
+  type: 'test'
+  ...
+# Subtest: V5 real equipment trigger / execution
+ok 244 - V5 real equipment trigger / execution
+  ---
+  duration_ms: 0.849886
+  type: 'test'
+  ...
+# Subtest: V5 real equipment trigger / openingStrike
+ok 245 - V5 real equipment trigger / openingStrike
+  ---
+  duration_ms: 0.861964
+  type: 'test'
+  ...
+# Subtest: V5 real equipment trigger / distinctStrike
+ok 246 - V5 real equipment trigger / distinctStrike
+  ---
+  duration_ms: 0.695198
+  type: 'test'
+  ...
+# Subtest: V5 real equipment trigger / criticalWard
+ok 247 - V5 real equipment trigger / criticalWard
+  ---
+  duration_ms: 1.046036
+  type: 'test'
+  ...
+# Subtest: V5 real equipment trigger / lowWard
+ok 248 - V5 real equipment trigger / lowWard
+  ---
+  duration_ms: 0.7984
+  type: 'test'
+  ...
+# Subtest: V5 real equipment trigger / phaseWard
+ok 249 - V5 real equipment trigger / phaseWard
+  ---
+  duration_ms: 0.724601
+  type: 'test'
+  ...
+# Subtest: V5 real equipment trigger / sixthMend
+ok 250 - V5 real equipment trigger / sixthMend
+  ---
+  duration_ms: 0.680145
+  type: 'test'
+  ...
+# Subtest: V5 real equipment trigger / resolveGuard
+ok 251 - V5 real equipment trigger / resolveGuard
+  ---
+  duration_ms: 0.830827
+  type: 'test'
+  ...
+# Subtest: V5 real equipment trigger / echoRelic
+ok 252 - V5 real equipment trigger / echoRelic
+  ---
+  duration_ms: 0.811029
+  type: 'test'
+  ...
+# Subtest: V5 real equipment trigger / firstCritLuck
+ok 253 - V5 real equipment trigger / firstCritLuck
+  ---
+  duration_ms: 0.815796
+  type: 'test'
+  ...
+# Subtest: V5 real equipment trigger / eliteLuck
+ok 254 - V5 real equipment trigger / eliteLuck
+  ---
+  duration_ms: 0.900501
+  type: 'test'
+  ...
+# Subtest: V5 real equipment trigger / gildedSix
+ok 255 - V5 real equipment trigger / gildedSix
+  ---
+  duration_ms: 0.779823
+  type: 'test'
+  ...
+# Subtest: V5 real equipment trigger / resonanceMend
+ok 256 - V5 real equipment trigger / resonanceMend
+  ---
+  duration_ms: 3.873724
+  type: 'test'
+  ...
+# Subtest: V5 gated talent, metadata, actual effect / shatter
+ok 257 - V5 gated talent, metadata, actual effect / shatter
+  ---
+  duration_ms: 1.107687
+  type: 'test'
+  ...
+# Subtest: V5 gated talent, metadata, actual effect / diversity
+ok 258 - V5 gated talent, metadata, actual effect / diversity
+  ---
+  duration_ms: 0.767995
+  type: 'test'
+  ...
+# Subtest: V5 gated talent, metadata, actual effect / finality
+ok 259 - V5 gated talent, metadata, actual effect / finality
+  ---
+  duration_ms: 0.802305
+  type: 'test'
+  ...
+# Subtest: V5 gated talent, metadata, actual effect / deepEcho
+ok 260 - V5 gated talent, metadata, actual effect / deepEcho
+  ---
+  duration_ms: 1.119655
+  type: 'test'
+  ...
+# Subtest: V5 gated talent, metadata, actual effect / chorusMend
+ok 261 - V5 gated talent, metadata, actual effect / chorusMend
+  ---
+  duration_ms: 3.861496
+  type: 'test'
+  ...
+# Subtest: V5 gated talent, metadata, actual effect / tripleBlade
+ok 262 - V5 gated talent, metadata, actual effect / tripleBlade
+  ---
+  duration_ms: 1.179493
+  type: 'test'
+  ...
+# Subtest: V5 gated talent, metadata, actual effect / firstFire
+ok 263 - V5 gated talent, metadata, actual effect / firstFire
+  ---
+  duration_ms: 0.888463
+  type: 'test'
+  ...
+# Subtest: V5 gated talent, metadata, actual effect / critAegis
+ok 264 - V5 gated talent, metadata, actual effect / critAegis
+  ---
+  duration_ms: 1.236337
+  type: 'test'
+  ...
+# Subtest: V5 gated talent, metadata, actual effect / dawnCrit
+ok 265 - V5 gated talent, metadata, actual effect / dawnCrit
+  ---
+  duration_ms: 1.135337
+  type: 'test'
+  ...
+# Subtest: V5 gated talent, metadata, actual effect / emberGuard
+ok 266 - V5 gated talent, metadata, actual effect / emberGuard
+  ---
+  duration_ms: 0.899219
+  type: 'test'
+  ...
+# Subtest: V5 gated talent, metadata, actual effect / phaseShelter
+ok 267 - V5 gated talent, metadata, actual effect / phaseShelter
+  ---
+  duration_ms: 0.787674
+  type: 'test'
+  ...
+# Subtest: V5 gated talent, metadata, actual effect / lastResolve
+ok 268 - V5 gated talent, metadata, actual effect / lastResolve
+  ---
+  duration_ms: 0.761876
+  type: 'test'
+  ...
+# Subtest: V5 gated talent, metadata, actual effect / hunterStar
+ok 269 - V5 gated talent, metadata, actual effect / hunterStar
+  ---
+  duration_ms: 1.083271
+  type: 'test'
+  ...
+# Subtest: V5 gated talent, metadata, actual effect / gildedFaces
+ok 270 - V5 gated talent, metadata, actual effect / gildedFaces
+  ---
+  duration_ms: 0.89302
+  type: 'test'
+  ...
+# Subtest: V5 gated talent, metadata, actual effect / sixRebirth
+ok 271 - V5 gated talent, metadata, actual effect / sixRebirth
+  ---
+  duration_ms: 0.787194
+  type: 'test'
+  ...
+# Subtest: all deep room and boss rule families alter actual damage, protection or retaliation, not only labels
+ok 272 - all deep room and boss rule families alter actual damage, protection or retaliation, not only labels
+  ---
+  duration_ms: 9.872549
+  type: 'test'
+  ...
+# Subtest: powerful gear can kill every new boss without a forced half-health gate
+ok 273 - powerful gear can kill every new boss without a forced half-health gate
+  ---
+  duration_ms: 3.45756
+  type: 'test'
+  ...
+# Subtest: V5 event accepts once, refuses safely, previews real cost and survives reload / bloodwell
+ok 274 - V5 event accepts once, refuses safely, previews real cost and survives reload / bloodwell
+  ---
+  duration_ms: 1.581577
+  type: 'test'
+  ...
+# Subtest: V5 event accepts once, refuses safely, previews real cost and survives reload / relicloom
+ok 275 - V5 event accepts once, refuses safely, previews real cost and survives reload / relicloom
+  ---
+  duration_ms: 1.067758
+  type: 'test'
+  ...
+# Subtest: V5 event accepts once, refuses safely, previews real cost and survives reload / offering
+ok 276 - V5 event accepts once, refuses safely, previews real cost and survives reload / offering
+  ---
+  duration_ms: 1.07559
+  type: 'test'
+  ...
+# Subtest: V5 event accepts once, refuses safely, previews real cost and survives reload / echochamber
+ok 277 - V5 event accepts once, refuses safely, previews real cost and survives reload / echochamber
+  ---
+  duration_ms: 1.456653
+  type: 'test'
+  ...
+# Subtest: V5 event accepts once, refuses safely, previews real cost and survives reload / wardbank
+ok 278 - V5 event accepts once, refuses safely, previews real cost and survives reload / wardbank
+  ---
+  duration_ms: 1.314022
+  type: 'test'
+  ...
+# Subtest: V5 event accepts once, refuses safely, previews real cost and survives reload / starlibrary
+ok 279 - V5 event accepts once, refuses safely, previews real cost and survives reload / starlibrary
+  ---
+  duration_ms: 0.971286
+  type: 'test'
+  ...
+# Subtest: V5 event accepts once, refuses safely, previews real cost and survives reload / abyssauction
+ok 280 - V5 event accepts once, refuses safely, previews real cost and survives reload / abyssauction
+  ---
+  duration_ms: 1.21807
+  type: 'test'
+  ...
+# Subtest: V5 event accepts once, refuses safely, previews real cost and survives reload / oathgate
+ok 281 - V5 event accepts once, refuses safely, previews real cost and survives reload / oathgate
+  ---
+  duration_ms: 1.992334
+  type: 'test'
+  ...
+# Subtest: V5 event accepts once, refuses safely, previews real cost and survives reload / wishingvault
+ok 282 - V5 event accepts once, refuses safely, previews real cost and survives reload / wishingvault
+  ---
+  duration_ms: 1.100265
+  type: 'test'
+  ...
+# Subtest: V5 event accepts once, refuses safely, previews real cost and survives reload / memorywell
+ok 283 - V5 event accepts once, refuses safely, previews real cost and survives reload / memorywell
+  ---
+  duration_ms: 0.932067
+  type: 'test'
+  ...
+# Subtest: eight-tier protections, finite growth, three relic slots and explicit gold-overflow recycling cannot trap a full bag
+ok 284 - eight-tier protections, finite growth, three relic slots and explicit gold-overflow recycling cannot trap a full bag
+  ---
+  duration_ms: 121.890823
+  type: 'test'
+  ...
+# Subtest: unlock gates have exact zero early probability; each late source retains lower rarities and all top tiers are drawable
+ok 285 - unlock gates have exact zero early probability; each late source retains lower rarities and all top tiers are drawable
+  ---
+  duration_ms: 1.836253
+  type: 'test'
+  ...
+# Subtest: all six deep stages and eight rarity filters render real rule data without mutating state or RNG
+ok 286 - all six deep stages and eight rarity filters render real rule data without mutating state or RNG
+  ---
+  duration_ms: 3.780387
+  type: 'test'
+  ...
+# Subtest: a weapon losing penetration explicitly warns about thick shields instead of claiming an unconditional upgrade
+ok 287 - a weapon losing penetration explicitly warns about thick shields instead of claiming an unconditional upgrade
+  ---
+  duration_ms: 0.471587
+  type: 'test'
+  ...
+# Subtest: first-crit luck survives chest claim, save reload and room entry, then affects the first roll once
+ok 288 - first-crit luck survives chest claim, save reload and room entry, then affects the first roll once
+  ---
+  duration_ms: 1.432597
+  type: 'test'
+  ...
+# Subtest: first-crit luck survives a multi-wave transition and is consumed by the next wave roll
+ok 289 - first-crit luck survives a multi-wave transition and is consumed by the next wave roll
+  ---
+  duration_ms: 0.96764
+  type: 'test'
+  ...
+# Subtest: first-crit luck persists through intervening transactions and clears on floor departure or retry
+ok 290 - first-crit luck persists through intervening transactions and clears on floor departure or retry
+  ---
+  duration_ms: 0.79809
+  type: 'test'
+  ...
+# Subtest: 10,000-item fusion renders one page of 24 cards and preserves all selections beyond the page
+ok 291 - 10,000-item fusion renders one page of 24 cards and preserves all selections beyond the page
+  ---
+  duration_ms: 78.350382
+  type: 'test'
+  ...
+# Subtest: fusion shows each protection explicitly while manual selection stays available for review
+ok 292 - fusion shows each protection explicitly while manual selection stays available for review
+  ---
+  duration_ms: 2.401168
+  type: 'test'
+  ...
+# Subtest: three retained relics show all six exact outcomes, kept enhancement and one truthful total cost
+ok 293 - three retained relics show all six exact outcomes, kept enhancement and one truthful total cost
+  ---
+  duration_ms: 2.290054
+  type: 'test'
+  ...
+# Subtest: fusion empty and unavailable states explain the next step, with every write control disabled in flight
+ok 294 - fusion empty and unavailable states explain the next step, with every write control disabled in flight
+  ---
+  duration_ms: 1.909151
+  type: 'test'
+  ...
+# Subtest: rolling dice contain no committed face information and settled dice retain every exact result
+ok 295 - rolling dice contain no committed face information and settled dice retain every exact result
+  ---
+  duration_ms: 1.669236
+  type: 'test'
+  ...
+# Subtest: the decorative battle altar does not alter dice count, indexed geometry or unrevealed results
+ok 296 - the decorative battle altar does not alter dice count, indexed geometry or unrevealed results
+  ---
+  duration_ms: 2.505362
+  type: 'test'
+  ...
+# Subtest: waiting fate always has two dice and other idle room dice ignore stale combat rollValues
+ok 297 - waiting fate always has two dice and other idle room dice ignore stale combat rollValues
+  ---
+  duration_ms: 3.829869
+  type: 'test'
+  ...
+# Subtest: forge and fusion result banners stay withheld during the next committed roll
+ok 298 - forge and fusion result banners stay withheld during the next committed roll
+  ---
+  duration_ms: 1.528058
+  type: 'test'
+  ...
+# Subtest: deep-floor double-fate reward text matches actual gold credited below the cap
+ok 299 - deep-floor double-fate reward text matches actual gold credited below the cap
+  ---
+  duration_ms: 7.280338
+  type: 'test'
+  ...
+# Subtest: rest preview agrees with actual recovery and labels preservation of an existing stronger shield
+ok 300 - rest preview agrees with actual recovery and labels preservation of an existing stronger shield
+  ---
+  duration_ms: 1.344107
+  type: 'test'
+  ...
+# Subtest: event labels call an option free only when its actual stated cost is none
+ok 301 - event labels call an option free only when its actual stated cost is none
+  ---
+  duration_ms: 9.358209
+  type: 'test'
+  ...
+# Subtest: every generated room renders and an empty relic comparison does not dereference a missing item
+ok 302 - every generated room renders and an empty relic comparison does not dereference a missing item
+  ---
+  duration_ms: 19.253121
+  type: 'test'
+  ...
+# Subtest: a roll in motion never reveals the previous resonance, critical or follow-up result
+ok 303 - a roll in motion never reveals the previous resonance, critical or follow-up result
+  ---
+  duration_ms: 0.569792
+  type: 'test'
+  ...
+# Subtest: forge displays all actual capped outcomes instead of promising impossible enhancement
+ok 304 - forge displays all actual capped outcomes instead of promising impossible enhancement
+  ---
+  duration_ms: 0.875504
+  type: 'test'
+  ...
+# Subtest: ten thousand owned items render at most sixty cards, and stale pages clamp to the last actual page
+ok 305 - ten thousand owned items render at most sixty cards, and stale pages clamp to the last actual page
+  ---
+  duration_ms: 46.820478
+  type: 'test'
+  ...
+# Subtest: talent totals multiply additive multipliers as well as percentage bonuses
+ok 306 - talent totals multiply additive multipliers as well as percentage bonuses
+  ---
+  duration_ms: 1.434079
+  type: 'test'
+  ...
+# Subtest: manual recycling is available for a spare legendary but not equipped, locked or current loot
+ok 307 - manual recycling is available for a spare legendary but not equipped, locked or current loot
+  ---
+  duration_ms: 0.666936
+  type: 'test'
+  ...
+# Subtest: the destiny map preserves all 30 legacy nodes and exposes selected deep nodes with real floor gates
+ok 308 - the destiny map preserves all 30 legacy nodes and exposes selected deep nodes with real floor gates
+  ---
+  duration_ms: 1.765839
+  type: 'test'
+  ...
+# Subtest: fusion shows all six concrete XP outcomes and preserved enhancement for three relics
+ok 309 - fusion shows all six concrete XP outcomes and preserved enhancement for three relics
+  ---
+  duration_ms: 0.950855
+  type: 'test'
+  ...
+# Subtest: event terms are real, refusal is always available and resolved outcomes render without choices
+ok 310 - event terms are real, refusal is always available and resolved outcomes render without choices
+  ---
+  duration_ms: 0.759403
+  type: 'test'
+  ...
+# Subtest: equipment identity exposes level, enhancement and source without legacy growth
+ok 311 - equipment identity exposes level, enhancement and source without legacy growth
+  ---
+  duration_ms: 0.60859
+  type: 'test'
+  ...
+# Subtest: actual lucky roll feedback remains hidden while the next roll is moving
+ok 312 - actual lucky roll feedback remains hidden while the next roll is moving
+  ---
+  duration_ms: 0.551234
+  type: 'test'
+  ...
+# Subtest: equipment comparisons preserve percentage units and additive critical bonuses
+ok 313 - equipment comparisons preserve percentage units and additive critical bonuses
+  ---
+  duration_ms: 0.313083
+  type: 'test'
+  ...
+# Subtest: armor labels its main health bonus explicitly
+ok 314 - armor labels its main health bonus explicitly
+  ---
+  duration_ms: 0.206104
+  type: 'test'
+  ...
+# Subtest: unreadable saves retain an explicit raw export entry in settings
+ok 315 - unreadable saves retain an explicit raw export entry in settings
+  ---
+  duration_ms: 0.114699
+  type: 'test'
+  ...
+# Subtest: loot comparison includes all five real build branches and current invested point totals
+ok 316 - loot comparison includes all five real build branches and current invested point totals
+  ---
+  duration_ms: 0.846772
+  type: 'test'
+  ...
+# Subtest: gambit animation uses its committed face and withholds the outcome until settled
+ok 317 - gambit animation uses its committed face and withholds the outcome until settled
+  ---
+  duration_ms: 1.388612
+  type: 'test'
+  ...
+# Subtest: inactive scenes create no RAF, deadline timer or visibility listener
+ok 318 - inactive scenes create no RAF, deadline timer or visibility listener
+  ---
+  duration_ms: 0.299523
+  type: 'test'
+  ...
+# Subtest: a late first sample is bounded and later normal frames preserve wall-clock pacing
+ok 319 - a late first sample is bounded and later normal frames preserve wall-clock pacing
+  ---
+  duration_ms: 0.709889
+  type: 'test'
+  ...
+# Subtest: a subsequent long scheduling gap advances real elapsed time without extending slow motion
+ok 320 - a subsequent long scheduling gap advances real elapsed time without extending slow motion
+  ---
+  duration_ms: 0.250981
+  type: 'test'
+  ...
+# Subtest: an earlier first timestamp is clamped and does not move the visual clock backward
+ok 321 - an earlier first timestamp is clamped and does not move the visual clock backward
+  ---
+  duration_ms: 0.1353
+  type: 'test'
+  ...
+# Subtest: render cancellation settles every old waiter and cannot stop a replacement timeline
+ok 322 - render cancellation settles every old waiter and cannot stop a replacement timeline
+  ---
+  duration_ms: 0.150833
+  type: 'test'
+  ...
+# Subtest: missing RAF reaches a fixed explicit deadline and frees waiters and listeners
+ok 323 - missing RAF reaches a fixed explicit deadline and frees waiters and listeners
+  ---
+  duration_ms: 0.157002
+  type: 'test'
+  ...
+# Subtest: backgrounding cancels immediately and an already hidden scene never starts RAF
+ok 324 - backgrounding cancels immediately and an already hidden scene never starts RAF
+  ---
+  duration_ms: 0.246885
+  type: 'test'
+  ...
+# Subtest: an effect can finish before the phase wait without rerasterizing its last frame
+ok 325 - an effect can finish before the phase wait without rerasterizing its last frame
+  ---
+  duration_ms: 0.225603
+  type: 'test'
+  ...
+# Subtest: a synthetic cleanup failure still releases old waiters and permits a new scene
+ok 326 - a synthetic cleanup failure still releases old waiters and permits a new scene
+  ---
+  duration_ms: 0.36534
+  type: 'test'
+  ...
+1..326
+# tests 326
+# suites 0
+# pass 326
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 104954.426884

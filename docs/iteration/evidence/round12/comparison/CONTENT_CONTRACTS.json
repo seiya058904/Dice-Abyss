@@ -1,0 +1,104 @@
+{
+  "scope": "Read-only comparison of the unchanged content, equipment, deep rules, encounter, rarity and route modules. Does not claim engine.js or storage.js are byte-identical; those include separately reviewed ownership fixes.",
+  "allSelectedFilesByteIdentical": true,
+  "files": [
+    {
+      "file": "src/content.js",
+      "byteIdentical": true,
+      "baselineSha256": "4c0c2e4656c5a3482a5448a069ae2fa28367ba05d61c7d0c2c9866315f5c5526",
+      "currentSha256": "4c0c2e4656c5a3482a5448a069ae2fa28367ba05d61c7d0c2c9866315f5c5526"
+    },
+    {
+      "file": "src/equipment.js",
+      "byteIdentical": true,
+      "baselineSha256": "8c20de433f21931318e315b862b457d37a03b9596ea5df8f7cc4025691aaccd6",
+      "currentSha256": "8c20de433f21931318e315b862b457d37a03b9596ea5df8f7cc4025691aaccd6"
+    },
+    {
+      "file": "src/equipment-content.js",
+      "byteIdentical": true,
+      "baselineSha256": "d95b5e7c11d14eb764ea3cefb7eee73f35b2f9d48a8b640513eda9aefd1cc030",
+      "currentSha256": "d95b5e7c11d14eb764ea3cefb7eee73f35b2f9d48a8b640513eda9aefd1cc030"
+    },
+    {
+      "file": "src/deep-content.js",
+      "byteIdentical": true,
+      "baselineSha256": "040a5668b687cf9d7b7c8b31a67cee35660ebb0539af74c7d572614f138fef33",
+      "currentSha256": "040a5668b687cf9d7b7c8b31a67cee35660ebb0539af74c7d572614f138fef33"
+    },
+    {
+      "file": "src/deep-rules.js",
+      "byteIdentical": true,
+      "baselineSha256": "c9bf6e3419308bdc1bb62836586cfb18f4b62aadea16aa5e0fc33fa6f4794485",
+      "currentSha256": "c9bf6e3419308bdc1bb62836586cfb18f4b62aadea16aa5e0fc33fa6f4794485"
+    },
+    {
+      "file": "src/encounters.js",
+      "byteIdentical": true,
+      "baselineSha256": "c3c6e2d24049305d73982cf5db3b1cf02eee68f4e8e1659fd7e3021f74de0791",
+      "currentSha256": "c3c6e2d24049305d73982cf5db3b1cf02eee68f4e8e1659fd7e3021f74de0791"
+    },
+    {
+      "file": "src/rarity.js",
+      "byteIdentical": true,
+      "baselineSha256": "871356df147d027e1845f98c5574a1d9a71c0d17bd8717f457c9007d7c73b735",
+      "currentSha256": "871356df147d027e1845f98c5574a1d9a71c0d17bd8717f457c9007d7c73b735"
+    },
+    {
+      "file": "src/route-weights.js",
+      "byteIdentical": true,
+      "baselineSha256": "b21499b8c44a17ad09caab5e17f312073b269981b6ac7eb916b5f656912237dd",
+      "currentSha256": "b21499b8c44a17ad09caab5e17f312073b269981b6ac7eb916b5f656912237dd"
+    }
+  ],
+  "documentedContracts": {
+    "catalogEntries": 1536,
+    "rarityNames": [
+      "普通",
+      "稀有",
+      "史诗",
+      "传说",
+      "神话",
+      "太古",
+      "起源",
+      "永恒"
+    ],
+    "rarityFloorGates": [
+      1,
+      1,
+      1,
+      1,
+      30,
+      50,
+      80,
+      140
+    ],
+    "combatDiceLevelGates": [
+      1,
+      2,
+      3,
+      5,
+      8,
+      11
+    ],
+    "roomsPerFloor": 6,
+    "equipmentSlots": [
+      "weapon",
+      "armor",
+      "relic",
+      "relic2",
+      "relic3"
+    ],
+    "saveSchema": 5
+  },
+  "contractEvidence": [
+    "src/equipment-content.js",
+    "src/rarity.js",
+    "src/content.js",
+    "tests/engine.test.mjs",
+    "tests/content-depth.test.mjs",
+    "tests/v5-systems.test.mjs",
+    "docs/iteration/evidence/round12/full-test-summary.json",
+    "docs/iteration/evidence/round12/preserved-input-contracts.json"
+  ]
+}

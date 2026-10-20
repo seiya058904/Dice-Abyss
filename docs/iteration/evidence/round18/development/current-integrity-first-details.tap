@@ -1,0 +1,342 @@
+TAP version 13
+# Subtest: same-ID imported anvil references are rejected before any original save or archive is replaced
+ok 1 - same-ID imported anvil references are rejected before any original save or archive is replaced
+  ---
+  duration_ms: 17.77207
+  type: 'test'
+  ...
+# Subtest: same-ID anvil rejection retains the actual target, every asset, RNG and revision
+ok 2 - same-ID anvil rejection retains the actual target, every asset, RNG and revision
+  ---
+  duration_ms: 1.462333
+  type: 'test'
+  ...
+# Subtest: hollow_scale rejects an imported armor target instead of performing a weapon upgrade on it
+ok 3 - hollow_scale rejects an imported armor target instead of performing a weapon upgrade on it
+  ---
+  duration_ms: 1.661387
+  type: 'test'
+  ...
+# Subtest: hollow_scale rejects an imported relic target instead of performing a weapon upgrade on it
+ok 4 - hollow_scale rejects an imported relic target instead of performing a weapon upgrade on it
+  ---
+  duration_ms: 3.522739
+  type: 'test'
+  ...
+# Subtest: silent_anvil rejects an imported armor target instead of performing a weapon upgrade on it
+ok 5 - silent_anvil rejects an imported armor target instead of performing a weapon upgrade on it
+  ---
+  duration_ms: 0.905249
+  type: 'test'
+  ...
+# Subtest: silent_anvil rejects an imported relic target instead of performing a weapon upgrade on it
+ok 6 - silent_anvil rejects an imported relic target instead of performing a weapon upgrade on it
+  ---
+  duration_ms: 0.842717
+  type: 'test'
+  ...
+# Subtest: exchange/salvage rejects unissued material IDs without guessing another safe item
+ok 7 - exchange/salvage rejects unissued material IDs without guessing another safe item
+  ---
+  duration_ms: 3.042409
+  type: 'test'
+  ...
+# Subtest: exchange/relic rejects unissued material IDs without guessing another safe item
+not ok 8 - exchange/relic rejects unissued material IDs without guessing another safe item
+  ---
+  duration_ms: 1.452578
+  type: 'test'
+  location: '/workspace/scratch/f0146b2cbcc6/work/Dice-Abyss/tests/event-integrity.test.mjs:87:39'
+  failureType: 'testCodeFailure'
+  error: |-
+    the displayed choice must reject the exact same transaction
+    + actual - expected
+    
+    + undefined
+    - true
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  operator: 'strictEqual'
+  stack: |-
+    rejectsAction (file:///workspace/scratch/f0146b2cbcc6/work/Dice-Abyss/tests/event-integrity.test.mjs:46:9)
+    TestContext.<anonymous> (file:///workspace/scratch/f0146b2cbcc6/work/Dice-Abyss/tests/event-integrity.test.mjs:90:33)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+    Test.postRun (node:internal/test_runner/test:1522:19)
+    Test.run (node:internal/test_runner/test:1447:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+  ...
+# Subtest: relic_exchange/accept rejects unissued material IDs without guessing another safe item
+ok 9 - relic_exchange/accept rejects unissued material IDs without guessing another safe item
+  ---
+  duration_ms: 17.428012
+  type: 'test'
+  ...
+# Subtest: silent_anvil/accept rejects unissued material IDs without guessing another safe item
+ok 10 - silent_anvil/accept rejects unissued material IDs without guessing another safe item
+  ---
+  duration_ms: 1.667867
+  type: 'test'
+  ...
+# Subtest: offering/accept rejects unissued material IDs without guessing another safe item
+ok 11 - offering/accept rejects unissued material IDs without guessing another safe item
+  ---
+  duration_ms: 2.572404
+  type: 'test'
+  ...
+# Subtest: relicloom/accept rejects unissued material IDs without guessing another safe item
+ok 12 - relicloom/accept rejects unissued material IDs without guessing another safe item
+  ---
+  duration_ms: 2.452457
+  type: 'test'
+  ...
+# Subtest: hollow_scale rejects unissued target IDs without using the currently equipped weapon
+ok 13 - hollow_scale rejects unissued target IDs without using the currently equipped weapon
+  ---
+  duration_ms: 0.702188
+  type: 'test'
+  ...
+# Subtest: silent_anvil rejects unissued target IDs without using the currently equipped weapon
+ok 14 - silent_anvil rejects unissued target IDs without using the currently equipped weapon
+  ---
+  duration_ms: 0.895154
+  type: 'test'
+  ...
+# Subtest: exchange/salvage rejects duplicate material IDs at both import and direct payment boundaries
+ok 15 - exchange/salvage rejects duplicate material IDs at both import and direct payment boundaries
+  ---
+  duration_ms: 1.110632
+  type: 'test'
+  ...
+# Subtest: exchange/relic rejects duplicate material IDs at both import and direct payment boundaries
+ok 16 - exchange/relic rejects duplicate material IDs at both import and direct payment boundaries
+  ---
+  duration_ms: 1.056512
+  type: 'test'
+  ...
+# Subtest: relic_exchange/accept rejects duplicate material IDs at both import and direct payment boundaries
+ok 17 - relic_exchange/accept rejects duplicate material IDs at both import and direct payment boundaries
+  ---
+  duration_ms: 0.91959
+  type: 'test'
+  ...
+# Subtest: silent_anvil/accept rejects duplicate material IDs at both import and direct payment boundaries
+ok 18 - silent_anvil/accept rejects duplicate material IDs at both import and direct payment boundaries
+  ---
+  duration_ms: 0.939409
+  type: 'test'
+  ...
+# Subtest: offering/accept rejects duplicate material IDs at both import and direct payment boundaries
+ok 19 - offering/accept rejects duplicate material IDs at both import and direct payment boundaries
+  ---
+  duration_ms: 0.984936
+  type: 'test'
+  ...
+# Subtest: relicloom/accept rejects duplicate material IDs at both import and direct payment boundaries
+ok 20 - relicloom/accept rejects duplicate material IDs at both import and direct payment boundaries
+  ---
+  duration_ms: 1.270058
+  type: 'test'
+  ...
+# Subtest: hollow_scale rejects duplicate target IDs without selecting the first matching object
+ok 21 - hollow_scale rejects duplicate target IDs without selecting the first matching object
+  ---
+  duration_ms: 0.846312
+  type: 'test'
+  ...
+# Subtest: silent_anvil rejects duplicate target IDs without selecting the first matching object
+ok 22 - silent_anvil rejects duplicate target IDs without selecting the first matching object
+  ---
+  duration_ms: 0.996784
+  type: 'test'
+  ...
+# Subtest: exchange/salvage keeps legally removed or unregistered materials readable but never replaces them
+ok 23 - exchange/salvage keeps legally removed or unregistered materials readable but never replaces them
+  ---
+  duration_ms: 5.092631
+  type: 'test'
+  ...
+# Subtest: exchange/relic keeps legally removed or unregistered materials readable but never replaces them
+not ok 24 - exchange/relic keeps legally removed or unregistered materials readable but never replaces them
+  ---
+  duration_ms: 1.187476
+  type: 'test'
+  location: '/workspace/scratch/f0146b2cbcc6/work/Dice-Abyss/tests/event-integrity.test.mjs:109:39'
+  failureType: 'testCodeFailure'
+  error: |-
+    the displayed choice must reject the exact same transaction
+    + actual - expected
+    
+    + undefined
+    - true
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  operator: 'strictEqual'
+  stack: |-
+    rejectsAction (file:///workspace/scratch/f0146b2cbcc6/work/Dice-Abyss/tests/event-integrity.test.mjs:46:9)
+    TestContext.<anonymous> (file:///workspace/scratch/f0146b2cbcc6/work/Dice-Abyss/tests/event-integrity.test.mjs:114:27)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+    Test.postRun (node:internal/test_runner/test:1522:19)
+    Test.run (node:internal/test_runner/test:1447:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+  ...
+# Subtest: relic_exchange/accept keeps legally removed or unregistered materials readable but never replaces them
+ok 25 - relic_exchange/accept keeps legally removed or unregistered materials readable but never replaces them
+  ---
+  duration_ms: 2.851587
+  type: 'test'
+  ...
+# Subtest: silent_anvil/accept keeps legally removed or unregistered materials readable but never replaces them
+ok 26 - silent_anvil/accept keeps legally removed or unregistered materials readable but never replaces them
+  ---
+  duration_ms: 2.436914
+  type: 'test'
+  ...
+# Subtest: offering/accept keeps legally removed or unregistered materials readable but never replaces them
+ok 27 - offering/accept keeps legally removed or unregistered materials readable but never replaces them
+  ---
+  duration_ms: 3.153263
+  type: 'test'
+  ...
+# Subtest: relicloom/accept keeps legally removed or unregistered materials readable but never replaces them
+ok 28 - relicloom/accept keeps legally removed or unregistered materials readable but never replaces them
+  ---
+  duration_ms: 1.915433
+  type: 'test'
+  ...
+# Subtest: hollow_scale keeps a legally salvaged or absent registered weapon readable and never chooses a replacement
+ok 29 - hollow_scale keeps a legally salvaged or absent registered weapon readable and never chooses a replacement
+  ---
+  duration_ms: 1.82611
+  type: 'test'
+  ...
+# Subtest: silent_anvil keeps a legally salvaged or absent registered weapon readable and never chooses a replacement
+ok 30 - silent_anvil keeps a legally salvaged or absent registered weapon readable and never chooses a replacement
+  ---
+  duration_ms: 1.643911
+  type: 'test'
+  ...
+# Subtest: exchange/salvage rechecks material protection changes and can resume with the original unlocked object
+ok 31 - exchange/salvage rechecks material protection changes and can resume with the original unlocked object
+  ---
+  duration_ms: 3.996951
+  type: 'test'
+  ...
+# Subtest: exchange/relic rechecks material protection changes and can resume with the original unlocked object
+ok 32 - exchange/relic rechecks material protection changes and can resume with the original unlocked object
+  ---
+  duration_ms: 3.253361
+  type: 'test'
+  ...
+# Subtest: relic_exchange/accept rechecks material protection changes and can resume with the original unlocked object
+ok 33 - relic_exchange/accept rechecks material protection changes and can resume with the original unlocked object
+  ---
+  duration_ms: 3.303486
+  type: 'test'
+  ...
+# Subtest: silent_anvil/accept rechecks material protection changes and can resume with the original unlocked object
+ok 34 - silent_anvil/accept rechecks material protection changes and can resume with the original unlocked object
+  ---
+  duration_ms: 2.193514
+  type: 'test'
+  ...
+# Subtest: offering/accept rechecks material protection changes and can resume with the original unlocked object
+ok 35 - offering/accept rechecks material protection changes and can resume with the original unlocked object
+  ---
+  duration_ms: 2.403725
+  type: 'test'
+  ...
+# Subtest: relicloom/accept rechecks material protection changes and can resume with the original unlocked object
+ok 36 - relicloom/accept rechecks material protection changes and can resume with the original unlocked object
+  ---
+  duration_ms: 2.611131
+  type: 'test'
+  ...
+# Subtest: hollow_scale upgrades the original registered weapon after a real swap and lock without touching the replacement
+ok 37 - hollow_scale upgrades the original registered weapon after a real swap and lock without touching the replacement
+  ---
+  duration_ms: 2.059776
+  type: 'test'
+  ...
+# Subtest: silent_anvil upgrades the original registered weapon after a real swap and lock without touching the replacement
+ok 38 - silent_anvil upgrades the original registered weapon after a real swap and lock without touching the replacement
+  ---
+  duration_ms: 1.71123
+  type: 'test'
+  ...
+# Subtest: exchange/salvage displays empty and whitespace names as the actual registered ID and still consumes only that object
+ok 39 - exchange/salvage displays empty and whitespace names as the actual registered ID and still consumes only that object
+  ---
+  duration_ms: 2.859549
+  type: 'test'
+  ...
+# Subtest: exchange/relic displays empty and whitespace names as the actual registered ID and still consumes only that object
+ok 40 - exchange/relic displays empty and whitespace names as the actual registered ID and still consumes only that object
+  ---
+  duration_ms: 3.429862
+  type: 'test'
+  ...
+# Subtest: relic_exchange/accept displays empty and whitespace names as the actual registered ID and still consumes only that object
+ok 41 - relic_exchange/accept displays empty and whitespace names as the actual registered ID and still consumes only that object
+  ---
+  duration_ms: 3.500176
+  type: 'test'
+  ...
+# Subtest: silent_anvil/accept displays empty and whitespace names as the actual registered ID and still consumes only that object
+ok 42 - silent_anvil/accept displays empty and whitespace names as the actual registered ID and still consumes only that object
+  ---
+  duration_ms: 4.217267
+  type: 'test'
+  ...
+# Subtest: offering/accept displays empty and whitespace names as the actual registered ID and still consumes only that object
+ok 43 - offering/accept displays empty and whitespace names as the actual registered ID and still consumes only that object
+  ---
+  duration_ms: 2.02889
+  type: 'test'
+  ...
+# Subtest: relicloom/accept displays empty and whitespace names as the actual registered ID and still consumes only that object
+ok 44 - relicloom/accept displays empty and whitespace names as the actual registered ID and still consumes only that object
+  ---
+  duration_ms: 2.391867
+  type: 'test'
+  ...
+# Subtest: resolved historical anvil records remain readable without inventing an asset that an older version consumed
+ok 45 - resolved historical anvil records remain readable without inventing an asset that an older version consumed
+  ---
+  duration_ms: 0.953019
+  type: 'test'
+  ...
+# Subtest: exact legacy item IDs, including leading zeroes, and unknown nested fields survive read-only reference checks
+ok 46 - exact legacy item IDs, including leading zeroes, and unknown nested fields survive read-only reference checks
+  ---
+  duration_ms: 2.88096
+  type: 'test'
+  ...
+# Subtest: normal V1–V4 migrations retain original strings, identities and unknown metadata through import
+ok 47 - normal V1–V4 migrations retain original strings, identities and unknown metadata through import
+  ---
+  duration_ms: 22.444485
+  type: 'test'
+  ...
+# Subtest: full expected snapshots still reject same-revision unknown-field conflicts before a valid event import writes anything
+ok 48 - full expected snapshots still reject same-revision unknown-field conflicts before a valid event import writes anything
+  ---
+  duration_ms: 1.890205
+  type: 'test'
+  ...
+1..48
+# tests 48
+# suites 0
+# pass 46
+# fail 2
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 227.504669

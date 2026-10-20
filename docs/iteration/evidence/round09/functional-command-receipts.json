@@ -1,0 +1,223 @@
+[
+  {
+    "name": "current-independent-syntax",
+    "command": [
+      "node",
+      "--check",
+      "scripts/audit-gold-independent.mjs"
+    ],
+    "cwd": "/workspace/scratch/6a49cf7a9f47/work/Dice-Abyss",
+    "startedUTC": "2026-10-18T08:22:06.058672+00:00",
+    "durationSeconds": 0.033,
+    "exitCode": 0,
+    "logBytes": 0,
+    "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "current-independent-gold",
+    "command": [
+      "node",
+      "scripts/audit-gold-independent.mjs",
+      "--baseline",
+      "/workspace/scratch/6a49cf7a9f47/baseline/Dice-Abyss",
+      "--source",
+      "/workspace/scratch/6a49cf7a9f47/work/Dice-Abyss",
+      "--output",
+      "/workspace/scratch/6a49cf7a9f47/review-current/final/verified/current-independent-gold.json"
+    ],
+    "cwd": "/workspace/scratch/6a49cf7a9f47/work/Dice-Abyss",
+    "startedUTC": "2026-10-18T08:22:06.107703+00:00",
+    "durationSeconds": 4.743,
+    "exitCode": 0,
+    "logBytes": 5211,
+    "logSha256": "9c0a00fc82859fad56ab0aef5841a31222d87163394aa0235a0f307a07a42f97"
+  },
+  {
+    "name": "current-check",
+    "command": [
+      "npm",
+      "run",
+      "check"
+    ],
+    "cwd": "/workspace/scratch/6a49cf7a9f47/work/Dice-Abyss",
+    "startedUTC": "2026-10-18T08:22:10.866130+00:00",
+    "durationSeconds": 2.943,
+    "exitCode": 0,
+    "logBytes": 196,
+    "logSha256": "82917f4913340249d56418bd0740724353b82fda9aabe7ec23243e4d7cd129c6"
+  },
+  {
+    "name": "current-npm-test",
+    "command": [
+      "npm",
+      "test"
+    ],
+    "cwd": "/workspace/scratch/6a49cf7a9f47/work/Dice-Abyss",
+    "startedUTC": "2026-10-18T08:22:13.829506+00:00",
+    "durationSeconds": 82.202,
+    "exitCode": 0,
+    "logBytes": 2826,
+    "logSha256": "3e53dc2ad3afcc22bf66c46f49088f04b650b7d6d04da31f5ef7cd2f3a344b97"
+  },
+  {
+    "name": "current-full-serial",
+    "command": [
+      "node",
+      "--test",
+      "--test-isolation=none",
+      "--test-reporter=tap",
+      "tests/action-focus.test.mjs",
+      "tests/balance.test.mjs",
+      "tests/combat-polish.test.mjs",
+      "tests/content-depth.test.mjs",
+      "tests/dice-motion.test.mjs",
+      "tests/dice-renderer.test.mjs",
+      "tests/effects.test.mjs",
+      "tests/encounter-tactics.test.mjs",
+      "tests/encounters.test.mjs",
+      "tests/engine.test.mjs",
+      "tests/equipment-levels.test.mjs",
+      "tests/equipment-polish.test.mjs",
+      "tests/event-context.test.mjs",
+      "tests/expansion.test.mjs",
+      "tests/fixed-affix-truth.test.mjs",
+      "tests/forge-preview.test.mjs",
+      "tests/fusion-controller.test.mjs",
+      "tests/fusion-gold-cap.test.mjs",
+      "tests/fusion-selection.test.mjs",
+      "tests/fusion-tooltip.test.mjs",
+      "tests/fusion-workbench.test.mjs",
+      "tests/gold-exchange-xp.test.mjs",
+      "tests/gold-preview.test.mjs",
+      "tests/gold-settlement.test.mjs",
+      "tests/gold-storage.test.mjs",
+      "tests/gold-view.test.mjs",
+      "tests/intent-ranges.test.mjs",
+      "tests/inventory-position.test.mjs",
+      "tests/iteration-gameplay.test.mjs",
+      "tests/iteration-render.test.mjs",
+      "tests/iteration-storage.test.mjs",
+      "tests/launcher-release.test.mjs",
+      "tests/memorywell-preview.test.mjs",
+      "tests/migration-levels.test.mjs",
+      "tests/renderer-delay.test.mjs",
+      "tests/reward-copy.test.mjs",
+      "tests/roll-history.test.mjs",
+      "tests/save-polish.test.mjs",
+      "tests/spring-truth.test.mjs",
+      "tests/storage-import-shape.test.mjs",
+      "tests/storage-polish.test.mjs",
+      "tests/storage-read-reuse.test.mjs",
+      "tests/storage-roll-multipliers.test.mjs",
+      "tests/storage-size-boundary.test.mjs",
+      "tests/storage-talents-shape.test.mjs",
+      "tests/talent-allocation.test.mjs",
+      "tests/talent-view.test.mjs",
+      "tests/v5-compatibility.test.mjs",
+      "tests/v5-systems.test.mjs",
+      "tests/views-polish.test.mjs",
+      "tests/views.test.mjs",
+      "tests/visual-timeline.test.mjs"
+    ],
+    "cwd": "/workspace/scratch/6a49cf7a9f47/work/Dice-Abyss",
+    "startedUTC": "2026-10-18T08:23:36.049063+00:00",
+    "durationSeconds": 121.366,
+    "exitCode": 0,
+    "logBytes": 106240,
+    "logSha256": "4e8c4fe8603d130f3e137bab4fba9ab494bededcae0d2c921a3dce0be1f7d88b"
+  },
+  {
+    "name": "current-simulate-1000",
+    "command": [
+      "node",
+      "scripts/simulate.mjs",
+      "1000"
+    ],
+    "cwd": "/workspace/scratch/6a49cf7a9f47/work/Dice-Abyss",
+    "startedUTC": "2026-10-18T08:25:37.440747+00:00",
+    "durationSeconds": 191.104,
+    "exitCode": 0,
+    "logBytes": 9409,
+    "logSha256": "266fa5b56516410712395796f197a2e33ad1b1e16ede45de14b872f208007d77"
+  },
+  {
+    "name": "current-deep-200",
+    "command": [
+      "node",
+      "scripts/audit-economy-round06.mjs",
+      "--floors",
+      "200",
+      "--seeds",
+      "7919",
+      "--builds",
+      "resonance,bulwark",
+      "--policies",
+      "conservative,duplicate-materials",
+      "--output",
+      "/workspace/scratch/6a49cf7a9f47/review-current/final/verified/current-deep-200.json"
+    ],
+    "cwd": "/workspace/scratch/6a49cf7a9f47/work/Dice-Abyss",
+    "startedUTC": "2026-10-18T08:28:48.560354+00:00",
+    "durationSeconds": 32.575,
+    "exitCode": 0,
+    "logBytes": 1069,
+    "logSha256": "e05fbe40fad7786c87daf6d8196a0c7ecbfc794398695d644f75924bda36b5dd"
+  },
+  {
+    "name": "current-deep-400",
+    "command": [
+      "node",
+      "scripts/audit-economy-round06.mjs",
+      "--floors",
+      "400",
+      "--seeds",
+      "31676",
+      "--builds",
+      "resonance,bulwark",
+      "--policies",
+      "conservative,duplicate-materials",
+      "--output",
+      "/workspace/scratch/6a49cf7a9f47/review-current/final/verified/current-deep-400.json"
+    ],
+    "cwd": "/workspace/scratch/6a49cf7a9f47/work/Dice-Abyss",
+    "startedUTC": "2026-10-18T08:29:21.149892+00:00",
+    "durationSeconds": 124.955,
+    "exitCode": 0,
+    "logBytes": 1076,
+    "logSha256": "603f308e194ccf108b5b1f25aa4e50dd7777db855f522387041de627b0682b3b"
+  },
+  {
+    "name": "current-save-closure",
+    "command": [
+      "node",
+      "scripts/audit-save-closure.mjs",
+      "--source",
+      "/workspace/scratch/6a49cf7a9f47/work/Dice-Abyss",
+      "--output",
+      "/workspace/scratch/6a49cf7a9f47/review-current/final/verified/current-save-closure.json"
+    ],
+    "cwd": "/workspace/scratch/6a49cf7a9f47/work/Dice-Abyss",
+    "startedUTC": "2026-10-18T08:31:26.118410+00:00",
+    "durationSeconds": 4.83,
+    "exitCode": 0,
+    "logBytes": 1349,
+    "logSha256": "13493f4a1ab729e0b929d45f97ba75d24de47ca2ede4829eab6f72504bf99af6"
+  },
+  {
+    "name": "current-save-size",
+    "command": [
+      "node",
+      "scripts/audit-save-size.mjs",
+      "--source",
+      "/workspace/scratch/6a49cf7a9f47/work/Dice-Abyss",
+      "--output",
+      "/workspace/scratch/6a49cf7a9f47/review-current/final/verified/current-save-size.json"
+    ],
+    "cwd": "/workspace/scratch/6a49cf7a9f47/work/Dice-Abyss",
+    "startedUTC": "2026-10-18T08:31:30.961737+00:00",
+    "durationSeconds": 0.766,
+    "exitCode": 0,
+    "logBytes": 2703,
+    "logSha256": "6efe894234272e9be9e636a6de7b9d51a9f51bc787ecf2dc892db920b7d96adc"
+  }
+]

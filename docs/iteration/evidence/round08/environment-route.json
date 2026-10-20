@@ -1,0 +1,27 @@
+{
+  "taskDate": "2026-10-18",
+  "timezone": "Asia/Shanghai",
+  "node": "24.19.0",
+  "playwright": "1.62.1",
+  "browser": "Google Chrome for Testing 155.0.8059.84",
+  "browserExecutable": "/tmp/dice-round06-browser/chrome-headless-shell-linux64/chrome-headless-shell",
+  "browserRouting": [
+    {
+      "method": "Browser plugin",
+      "result": "INVOCATION_FAILED",
+      "reason": "net::ERR_CONNECTION_REFUSED for requested local game http://127.0.0.1:4288/; remote connected browser cannot reach server"
+    },
+    {
+      "method": "CUA cloud browser",
+      "result": "INVOCATION_FAILED",
+      "reason": "net::ERR_CONNECTION_REFUSED for same loopback origin"
+    },
+    {
+      "method": "Local Playwright / installed Chromium",
+      "result": "AVAILABLE",
+      "reason": "Task explicitly allows Chromium/Playwright; isolated local test saves only. Sandbox requires approved escalation for loopback server/browser process."
+    }
+  ],
+  "rendering": "ANGLE SwiftShader software; actual context renderer measured separately.",
+  "permissions": "Only uploaded isolated working copy and local tests; no remote repository/site/service modifications."
+}

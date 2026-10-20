@@ -1,0 +1,41 @@
+{
+  "project": "file:///workspace/scratch/4454855f6034/baseline/Dice-Abyss/",
+  "node": "v24.19.0",
+  "kind": "synthetic fault-injection, no user saves",
+  "findings": [
+    {
+      "id": "SAVE-ARCHIVE-01",
+      "activeRecovered": true,
+      "invalidPrimaryAcceptedAsArchive": true,
+      "validOriginalArchivePreserved": false,
+      "archiveDecodeError": "存档内容不完整或版本不兼容。",
+      "activeSaveValid": true
+    },
+    {
+      "id": "SAVE-SCHEMA-01",
+      "mutation": "delete pending abyssauction.event.reward",
+      "accepted": true,
+      "importError": null,
+      "previousRunOverwritten": true,
+      "renderError": "Cannot read properties of undefined (reading 'item')"
+    },
+    {
+      "id": "SAVE-SCHEMA-02",
+      "mutation": "null enemy in active event-triggered combat",
+      "accepted": true,
+      "importError": null,
+      "previousRunOverwritten": true,
+      "renderError": "Cannot read properties of null (reading 'damage')",
+      "rollError": "Cannot read properties of null (reading 'combatRules')"
+    }
+  ],
+  "capacity": {
+    "items": 10000,
+    "rawCharacters": 1999573,
+    "utf8Bytes": 2147451,
+    "twoCopiesUtf16CodeUnitBytes": 7998292,
+    "encodedMs": 73.12374900000003,
+    "decodedMs": 79.10241500000001,
+    "roundtrip": true
+  }
+}

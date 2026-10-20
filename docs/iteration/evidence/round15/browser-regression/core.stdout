@@ -1,0 +1,35 @@
+title-new-manual-fate-continue: PASS
+manual-combat-chest-equip-refresh: PASS
+inventory-scroll-lock-and-settings: FAIL
+primary-save-failure-recovery: PASS
+mirror-write-warning-keeps-durable-result: PASS
+cross-tab-sync-cancels-stale-confirmation: PASS
+{
+  "checks": 35,
+  "passes": 5,
+  "failures": [
+    {
+      "name": "inventory-scroll-lock-and-settings",
+      "status": "FAIL",
+      "checks": 3,
+      "trace": [
+        {
+          "label": "inventory fixture remains valid",
+          "passed": true
+        },
+        {
+          "label": "inventory keeps its existing sixty-item page",
+          "passed": true
+        },
+        {
+          "label": "a lock button is fully visible after scrolling",
+          "passed": false
+        }
+      ],
+      "ms": 952.5684020000008,
+      "error": "AssertionError [ERR_ASSERTION]: a lock button is fully visible after scrolling",
+      "stack": "AssertionError [ERR_ASSERTION]: a lock button is fully visible after scrolling\n    at check (file:///workspace/scratch/2e03d78caae4/work/Dice-Abyss/scripts/qa-core-browser.mjs:24:88)\n    at file:///workspace/scratch/2e03d78caae4/work/Dice-Abyss/scripts/qa-core-browser.mjs:52:279\n    at async run (file:///workspace/scratch/2e03d78caae4/work/Dice-Abyss/scripts/qa-core-browser.mjs:32:140)\n    at async file:///workspace/scratch/2e03d78caae4/work/Dice-Abyss/scripts/qa-core-browser.mjs:49:2"
+    }
+  ],
+  "errors": []
+}

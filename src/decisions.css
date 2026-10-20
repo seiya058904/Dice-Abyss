@@ -1,0 +1,51 @@
+/* Readable decision details in the existing dark, metallic game UI. */
+.save-capacity {margin-top:1.2rem;padding-top:1rem;border-top:1px solid var(--line);}
+.save-capacity-header,.capacity-heading {display:flex;align-items:center;justify-content:space-between;gap:1rem;}
+.save-capacity-header h4 {margin:0;font-size:1em;font-weight:600;}
+.save-capacity-header button {flex-shrink:0;}
+.save-capacity-result {margin-top:.65rem;}
+.save-capacity-result p,.capacity-reading small {color:#b5b8bf;line-height:1.7;font-size:.86em;}
+.capacity-reading .capacity-heading {color:var(--green);margin-bottom:.5rem;}
+.capacity-reading.near-limit .capacity-heading,.capacity-reading.at-limit .capacity-heading {color:var(--gold);}
+.capacity-reading.over-limit .capacity-heading {color:#ff9299;}
+.capacity-reading meter {display:block;width:100%;height:.6rem;margin:.6rem 0 .75rem;accent-color:var(--green);}
+.capacity-reading meter::-webkit-meter-bar {background:var(--surface-raised);border:1px solid var(--line);border-radius:0;}
+.capacity-reading meter::-webkit-meter-optimum-value {background:var(--green);}
+.capacity-reading meter::-webkit-meter-suboptimum-value {background:var(--gold);}
+.capacity-reading meter::-webkit-meter-even-less-good-value {background:var(--red);}
+.capacity-reading .capacity-exact {margin-bottom:.65rem;color:var(--text);font-variant-numeric:tabular-nums;}
+.capacity-reading small {display:block;margin-top:.65rem;}
+.item-actions {flex-wrap:wrap;}
+.item-comparison.condition-tradeoff .comparison-verdict {color:var(--gold);}
+.comparison-detail {color:var(--text);}
+.comparison-detail > p {margin:.65rem 0;color:#b5b8bf;overflow-wrap:anywhere;}
+.comparison-detail h3 {font-size:1.12em;line-height:1.65;overflow-wrap:anywhere;}
+.comparison-detail-slot {display:flex;align-items:center;gap:.85rem;margin:.8rem 0;}
+.comparison-detail-slot select {flex:1;min-width:0;}
+.comparison-detail .item-comparison {margin:.8rem 0;padding:.85rem 0;border-block:1px solid var(--line);}
+.comparison-detail .comparison-verdict {font-size:calc(13px * var(--user-scale));}
+.comparison-detail .comparison-verdict small,.comparison-detail .item-comparison > small {font-size:calc(12px * var(--user-scale));line-height:1.65;}
+.game-dialog .comparison-detail .item-comparison dl > div {font-size:calc(12px * var(--user-scale));}
+.comparison-detail h4 {margin:1.1rem 0 .7rem;font-size:1em;}
+.comparison-conditions {margin:0;}
+.comparison-conditions > div {padding:.7rem 0;border-top:1px solid var(--line);}
+.comparison-conditions dt {font-weight:600;line-height:1.6;}
+.comparison-conditions dt small {display:block;margin-top:.18rem;color:#b5b8bf;font-weight:400;line-height:1.65;}
+.comparison-conditions dd {margin:.35rem 0 0;font-variant-numeric:tabular-nums;color:var(--text);}
+.comparison-conditions dd span {padding:0 .45rem;color:#b5b8bf;}
+.comparison-conditions dd small {margin-left:.7rem;color:var(--gold);font-size:.82em;}
+.comparison-limits {margin:.7rem 0;padding-left:1.2rem;line-height:1.8;color:var(--gold);}
+.comparison-detail .comparison-scope {font-size:.86em;line-height:1.75;color:#b5b8bf;}
+/* Comparison explanations remain legible at the compact desktop scale. */
+.comparison-detail .comparison-scope,.comparison-conditions dt small {font-size:max(12px,calc(12px * var(--user-scale)),.86em);}
+.shop-item .compare-offer {margin-top:.55rem;}
+.shop-capacity-note {display:flex;align-items:center;justify-content:space-between;gap:1rem;margin:.7rem 0;padding:.8rem 0;border-block:1px solid var(--line);color:var(--gold);}
+.shop-capacity-note p {font-size:.85em;}
+.room-empty .empty-filter-actions {display:flex;justify-content:center;gap:.7rem;flex-wrap:wrap;margin-top:.8rem;}
+@media(max-width:480px) {
+  .save-capacity-header,.shop-capacity-note {align-items:flex-start;gap:.6rem;}
+  .save-capacity-header h4 {padding-top:.35rem;}
+  .shop-capacity-note {flex-direction:column;}
+  .comparison-detail-slot {flex-wrap:wrap;}
+  .comparison-conditions dd small {display:block;margin:.2rem 0 0;}
+}

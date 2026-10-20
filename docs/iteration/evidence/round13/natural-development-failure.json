@@ -1,0 +1,48 @@
+{
+  "kind": "development audit assumption failure, not confirmed product bug",
+  "command": "node scripts/audit-natural-multiseed-round13.mjs --source /workspace/scratch/5a5998079a95/baseline/Dice-Abyss --output /workspace/scratch/5a5998079a95/audit/natural-baseline-round13.json",
+  "scriptSha256": "46ba387e616efb8651dcce7b89de63e050ea2f246eed3e7ec491fb6f72bb952e",
+  "exitCode": 1,
+  "reportedCompletedSeeds": [
+    {
+      "seed": 7919,
+      "floors": 400,
+      "rolls": 5422,
+      "deaths": 0,
+      "battlesWithRetaliation": 609,
+      "grossRetaliationDamage": 8002,
+      "qualified": {
+        "200": 0,
+        "400": 3
+      },
+      "captures": 3,
+      "branches": 9
+    },
+    {
+      "seed": 15838,
+      "floors": 400,
+      "rolls": 5034,
+      "deaths": 0,
+      "battlesWithRetaliation": 600,
+      "grossRetaliationDamage": 82920,
+      "qualified": {
+        "200": 0,
+        "400": 0
+      },
+      "captures": 0,
+      "branches": 0
+    }
+  ],
+  "failure": "AssertionError: Natural fixed policy did not reach floor 400: seed 23757",
+  "unknownFromThisAbortedOutput": [
+    "Third seed ending floor, phase and exact rolls were not printed before the assertion.",
+    "Fourth seed was not executed."
+  ],
+  "correctionPlan": [
+    "Keep original seeds, strategy and original 160000-decision budget.",
+    "Record incomplete journeys, exact ending state statistics and exit code 2 instead of losing the entire report.",
+    "Write compact per-journey progress outside the project.",
+    "Correct catalog metadata: CATALOG is an object of three arrays, not one array."
+  ],
+  "sampleCounting": "The rerun supersedes this development attempt; do not add repeated seed prefixes to formal counts."
+}

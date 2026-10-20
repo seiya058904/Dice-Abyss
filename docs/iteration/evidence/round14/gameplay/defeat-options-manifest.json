@@ -1,0 +1,78 @@
+{
+  "format": "dice-abyss-round14-common-gzip-evidence-v1",
+  "method": "The complete baseline report is stored once as gzip. The current report differs only in two existing root identity fields, whose replacements preserve original root order. Full rows, details, hints, action lists, roll traces, unknown fields and all failures remain available. Every restored byte length and SHA256 must equal its original.",
+  "common": {
+    "archive": "defeat-options-common.json.gz",
+    "archiveBytes": 671066,
+    "archiveSha256": "a50eb805d811196e3cd916810bef53475d467e8c6040a53fcbcbbb7e1622b938",
+    "bytes": 13833528,
+    "sha256": "5bb56bd1e079a1872fe069aa3caff1ebfbf8128cd8443134c30786649ec8cbe4"
+  },
+  "records": [
+    {
+      "name": "defeat-options-baseline.json",
+      "bytes": 13833528,
+      "sha256": "5bb56bd1e079a1872fe069aa3caff1ebfbf8128cd8443134c30786649ec8cbe4",
+      "rootKeys": [
+        "audit",
+        "source",
+        "sourceVersion",
+        "sourceHashes",
+        "sourceStable",
+        "scriptSha256",
+        "inputSha256",
+        "terminal",
+        "terminalLegal",
+        "openingEnemy",
+        "method",
+        "summary",
+        "rows",
+        "limitations"
+      ],
+      "identityUpdates": {}
+    },
+    {
+      "name": "defeat-options-current.json",
+      "bytes": 13833524,
+      "sha256": "96b7cb21d48502d876efd4b4e36870eabcd35a845f9723bda372958fe0c6ae67",
+      "rootKeys": [
+        "audit",
+        "source",
+        "sourceVersion",
+        "sourceHashes",
+        "sourceStable",
+        "scriptSha256",
+        "inputSha256",
+        "terminal",
+        "terminalLegal",
+        "openingEnemy",
+        "method",
+        "summary",
+        "rows",
+        "limitations"
+      ],
+      "identityUpdates": {
+        "source": "/workspace/scratch/8db1c7454cb5/work/Dice-Abyss",
+        "sourceVersion": "5.14.0"
+      }
+    }
+  ],
+  "pairedComparison": {
+    "fullFields": [
+      "terminal",
+      "terminalLegal",
+      "openingEnemy",
+      "method",
+      "summary",
+      "rows",
+      "limitations"
+    ],
+    "fullRowsEqual": true,
+    "rows": 215,
+    "excludedGameplayFields": [],
+    "identityDifferences": [
+      "source",
+      "sourceVersion"
+    ]
+  }
+}

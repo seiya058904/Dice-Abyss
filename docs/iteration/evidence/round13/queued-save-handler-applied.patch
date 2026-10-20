@@ -1,0 +1,18 @@
+--- measured-candidate/src/app.js
++++ final/src/app.js
+@@
+   if(!updated.state&&state){protectMemory(updated);return;}
+-  if ((event.key === BACKUP_KEY || event.key === null) && updated.state && state && JSON.stringify(updated.state) === JSON.stringify(state)) {
++  const sameState=updated.state&&state&&JSON.stringify(updated.state)===JSON.stringify(state);
++  // A donor can delete and recreate both keys in one task, before this tab
++  // receives the deletion notification. The readable replacement is a
++  // candidate, never permission to discard the surviving memory. Run/revision
++  // alone cannot distinguish an imported branch with different unknown data.
++  if(state&&updated.state&&(event.key===null||event.newValue===null)&&!sameState){protectMemory(updated);return;}
++  // The later writes in an identical delete/recreate sequence must also keep
++  // the active presentation and confirmation. Ordinary changed saves below
++  // still synchronize automatically; this comparison only runs on events.
++  if (sameState) {
+     if (ui.saveError !== (updated.warning || '')) { ui.saveError=updated.warning || ''; if (!ui.busy) render(); }
+     return;
+   }

@@ -1,0 +1,59 @@
+{
+  "status": "NO_NEW_CONFIRMED_DEFECTS_OR_BLOCKERS_IN_REVIEWED_SCOPE",
+  "completedAtUtc": "2026-10-17T15:42:25.384256+00:00",
+  "reviewer": "storage_review; forge UI and CSS authored by other collaborators",
+  "method": [
+    "Read-only inspection of supplied 1366×768 and 390×844 screenshots.",
+    "Read-only inspection of src/forge.css, forge markup/forecast in src/views.js and README release-scope statements.",
+    "Checked forge selector usage in source; no browser, test suite or code mutation performed for this UI review."
+  ],
+  "sourceSha256": {
+    "src/forge.css": "9a7ee960f3494e39ac102abf7b9476cacffdd89eea1803e52469b441e124823f",
+    "src/views.js": "03c9e88e3a6eff1c59aa2331a3531a56e2996c7771fb69780434d6926b8da0c6"
+  },
+  "screenshots": [
+    {
+      "path": "/workspace/scratch/49a55c8e3a8f/qa/current/forge-qa/forge-1366.png",
+      "sha256": "a701db85558405551223160d679e054e9b8e99fb6b7012ad9251c8eca5ddb005",
+      "width": 1366,
+      "height": 768
+    },
+    {
+      "path": "/workspace/scratch/49a55c8e3a8f/qa/current/forge-qa/forge-390.png",
+      "sha256": "a78be52df4055629d440957675c8a87ae0fd2e0490d8b16a9d421643b915a72e",
+      "width": 390,
+      "height": 844
+    }
+  ],
+  "newFindings": [],
+  "observations": [
+    {
+      "area": "1366 desktop layout",
+      "result": "Five slot targets, item heading, actual item-stat range, all six face outcomes and the primary 43-gold action are visible without observed overlap or horizontal clipping. Secondary details continue below the internal viewport."
+    },
+    {
+      "area": "390 forge reflow",
+      "result": "Five tabs fit; six outcomes reflow to three columns by two rows. The primary action, payment balance and native details summary are visible without observed horizontal overflow in the supplied screenshot."
+    },
+    {
+      "area": "Information hierarchy and truth",
+      "result": "The shown level-1 +0 armor quotes item HP 40 → 40–44 and defense 3 → 3. Faces 1–2 retain HP 40; faces 3–6 show HP 44. Zero-rounded defense gain is explicitly unchanged. The 43-gold cost and visible 99,957 balance agree with the 100,000 gold shown. The item-stat qualification and unchanged fixed-trait rules remain explicit in the template."
+    },
+    {
+      "area": "Scope containment",
+      "result": "Page/shell reflow overrides are gated by .game-shell[data-scene=\"forge\"] or html/body :has that forge scene. Other bare forge-specific component classes are used only by the forge markup in the reviewed source; no known selector effect outside forge was found."
+    }
+  ],
+  "scrollReachability": {
+    "desktopSource": "The forge target declares overflow-y:auto and direct children flex-shrink:0, so below-fold notes/details remain part of a scrollable target rather than being shrunk away.",
+    "desktopScreenshot": "The primary action is visible; the screenshot alone cannot demonstrate wheel/keyboard scroll or the complete lower content.",
+    "parentReportedRuntimeEvidence": "Root explicitly reported vertical scroll reachability and actual action clicks with all five slot saves completed. This reviewer did not repeat those browser operations.",
+    "narrowScreenshot": "The supplied 390 screenshot shows the primary action and balance. Source permits forge-page auto height/scroll; content beyond the captured fold was not interactively rechecked here."
+  },
+  "limitations": [
+    "This is a bounded static cross-review, not an independent browser interaction, persistence, keyboard, screen-reader or physical-touch certification.",
+    "No claims are made about every equipment state, zoom level or viewport from two screenshots.",
+    "The game remains desktop-first; the forge-specific narrow reflow does not establish global phone support.",
+    "No renderer timing or performance conclusion is derived from these screenshots."
+  ]
+}

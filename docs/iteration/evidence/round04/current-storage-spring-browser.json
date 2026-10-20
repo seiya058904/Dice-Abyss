@@ -1,0 +1,566 @@
+{
+  "started": "2026-10-17T15:53:38.712Z",
+  "synthetic": true,
+  "browser": "155.0.8059.84",
+  "baselineUrl": "http://127.0.0.1:4192",
+  "url": "http://127.0.0.1:4193",
+  "groups": [
+    {
+      "name": "baseline-malformed-merchant",
+      "status": "BASELINE_DEFECT_REPRODUCED",
+      "checks": [
+        {
+          "label": "src/storage.js served",
+          "passed": true
+        },
+        {
+          "label": "src/encounters.js served",
+          "passed": true
+        },
+        {
+          "label": "src/app.js served",
+          "passed": true
+        },
+        {
+          "label": "src/views.js served",
+          "passed": true
+        },
+        {
+          "label": "the input baseline accepts the otherwise valid malformed offer",
+          "passed": true
+        },
+        {
+          "label": "input baseline shows the real shop rendering exception",
+          "passed": true
+        },
+        {
+          "label": "input baseline replaced the journey with the malformed shop",
+          "passed": true,
+          "detail": {
+            "actualSha256": "ef2252ac5818a9cbba9523cb8426155594ec01782e42ddf1d653215f1b1b0593",
+            "expectedSha256": "ef2252ac5818a9cbba9523cb8426155594ec01782e42ddf1d653215f1b1b0593"
+          }
+        }
+      ],
+      "sourceHashes": {
+        "src/storage.js": "f4cf7cb3fceed274fd2a929bc0d53c34b7c62046639a732f6229de72ef1e69f3",
+        "src/encounters.js": "1cf841306e5a4bbcde1775754795d8fa26cdb65ae49216ccf2e45bea4b3b36f8",
+        "src/app.js": "60978f73ee347457518c62433b3d0447d9cd59a2c9609f8602b6a3c8fb1dd98d",
+        "src/views.js": "a4f990890cd479763000041aa1c730c6254ca6d944a7b1e4decc34a5d70fc5cc"
+      }
+    },
+    {
+      "name": "merchant-reject-and-valid-purchase",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "src/storage.js served",
+          "passed": true
+        },
+        {
+          "label": "src/encounters.js served",
+          "passed": true
+        },
+        {
+          "label": "src/app.js served",
+          "passed": true
+        },
+        {
+          "label": "src/views.js served",
+          "passed": true
+        },
+        {
+          "label": "rejection preserves every key including absent archives",
+          "passed": true,
+          "detail": {
+            "actualSha256": "d6da54630a0d3dd4cab999c3eec6f7a1ef20714da1e111d8832060f3ec1ef256",
+            "expectedSha256": "d6da54630a0d3dd4cab999c3eec6f7a1ef20714da1e111d8832060f3ec1ef256"
+          }
+        },
+        {
+          "label": "invalid file has no replacement confirmation",
+          "passed": true
+        },
+        {
+          "label": "valid import waits without writing",
+          "passed": true,
+          "detail": {
+            "actualSha256": "d6da54630a0d3dd4cab999c3eec6f7a1ef20714da1e111d8832060f3ec1ef256",
+            "expectedSha256": "d6da54630a0d3dd4cab999c3eec6f7a1ef20714da1e111d8832060f3ec1ef256"
+          }
+        },
+        {
+          "label": "valid counterpart imported primary",
+          "passed": true,
+          "detail": {
+            "actualSha256": "a7c7801433ccc481242fc5a0a620ff104f3bf2193a26e02ff9edcdb0c4b0cbb7",
+            "expectedSha256": "a7c7801433ccc481242fc5a0a620ff104f3bf2193a26e02ff9edcdb0c4b0cbb7"
+          }
+        },
+        {
+          "label": "valid counterpart imported mirror",
+          "passed": true,
+          "detail": {
+            "actualSha256": "a7c7801433ccc481242fc5a0a620ff104f3bf2193a26e02ff9edcdb0c4b0cbb7",
+            "expectedSha256": "a7c7801433ccc481242fc5a0a620ff104f3bf2193a26e02ff9edcdb0c4b0cbb7"
+          }
+        },
+        {
+          "label": "valid counterpart imported complete state",
+          "passed": true,
+          "detail": {
+            "actualSha256": "dacc6df8a7643369c79d87bdc3f6d6fb58d2e496a83c297dd9e1e9cb575cb609",
+            "expectedSha256": "dacc6df8a7643369c79d87bdc3f6d6fb58d2e496a83c297dd9e1e9cb575cb609"
+          }
+        },
+        {
+          "label": "native healing purchase primary",
+          "passed": true,
+          "detail": {
+            "actualSha256": "8ae7a58222c8ff8d907ce88f414b8418ef645bab78a1f693717f0067da842428",
+            "expectedSha256": "8ae7a58222c8ff8d907ce88f414b8418ef645bab78a1f693717f0067da842428"
+          }
+        },
+        {
+          "label": "native healing purchase mirror",
+          "passed": true,
+          "detail": {
+            "actualSha256": "8ae7a58222c8ff8d907ce88f414b8418ef645bab78a1f693717f0067da842428",
+            "expectedSha256": "8ae7a58222c8ff8d907ce88f414b8418ef645bab78a1f693717f0067da842428"
+          }
+        },
+        {
+          "label": "native healing purchase complete state",
+          "passed": true,
+          "detail": {
+            "actualSha256": "a4ed30d8784976721fa734e5be8341794a70bd14c42d30c6aac123ae292aa533",
+            "expectedSha256": "a4ed30d8784976721fa734e5be8341794a70bd14c42d30c6aac123ae292aa533"
+          }
+        },
+        {
+          "label": "used supply cannot be purchased twice",
+          "passed": true
+        },
+        {
+          "label": "purchase really restores full HP",
+          "passed": true
+        },
+        {
+          "label": "ordinary equipment purchase still commits once primary",
+          "passed": true,
+          "detail": {
+            "actualSha256": "3662729340fe169a43cd56f28b03f55c7481bce6219c834461e6fc1e1d153af5",
+            "expectedSha256": "3662729340fe169a43cd56f28b03f55c7481bce6219c834461e6fc1e1d153af5"
+          }
+        },
+        {
+          "label": "ordinary equipment purchase still commits once mirror",
+          "passed": true,
+          "detail": {
+            "actualSha256": "3662729340fe169a43cd56f28b03f55c7481bce6219c834461e6fc1e1d153af5",
+            "expectedSha256": "3662729340fe169a43cd56f28b03f55c7481bce6219c834461e6fc1e1d153af5"
+          }
+        },
+        {
+          "label": "ordinary equipment purchase still commits once complete state",
+          "passed": true,
+          "detail": {
+            "actualSha256": "ece81bd352d25166af0f9f1a5ac0c325d83e108d368ca9adb7c50e30845589a6",
+            "expectedSha256": "ece81bd352d25166af0f9f1a5ac0c325d83e108d368ca9adb7c50e30845589a6"
+          }
+        },
+        {
+          "label": "refresh restores both purchases primary",
+          "passed": true,
+          "detail": {
+            "actualSha256": "3662729340fe169a43cd56f28b03f55c7481bce6219c834461e6fc1e1d153af5",
+            "expectedSha256": "3662729340fe169a43cd56f28b03f55c7481bce6219c834461e6fc1e1d153af5"
+          }
+        },
+        {
+          "label": "refresh restores both purchases mirror",
+          "passed": true,
+          "detail": {
+            "actualSha256": "3662729340fe169a43cd56f28b03f55c7481bce6219c834461e6fc1e1d153af5",
+            "expectedSha256": "3662729340fe169a43cd56f28b03f55c7481bce6219c834461e6fc1e1d153af5"
+          }
+        },
+        {
+          "label": "refresh restores both purchases complete state",
+          "passed": true,
+          "detail": {
+            "actualSha256": "ece81bd352d25166af0f9f1a5ac0c325d83e108d368ca9adb7c50e30845589a6",
+            "expectedSha256": "ece81bd352d25166af0f9f1a5ac0c325d83e108d368ca9adb7c50e30845589a6"
+          }
+        }
+      ],
+      "sourceHashes": {
+        "src/storage.js": "76ba648fa1fc9fe8f9b5058f743735858dda8dd2f5b94b4802637e16ee7fef2d",
+        "src/encounters.js": "b6e1b6e412f392e20a9f59b9fb73ffcb7664c17ccb54233d9888a5f21a81f75c",
+        "src/app.js": "f15894a3005dc94ff3a63d3ab4db983a239f6ea83f01d5b6c8b22ee8cb6a83ec",
+        "src/views.js": "03c9e88e3a6eff1c59aa2331a3531a56e2996c7771fb69780434d6926b8da0c6"
+      }
+    },
+    {
+      "name": "blackmarket-reject-and-valid-purchase",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "src/storage.js served",
+          "passed": true
+        },
+        {
+          "label": "src/encounters.js served",
+          "passed": true
+        },
+        {
+          "label": "src/app.js served",
+          "passed": true
+        },
+        {
+          "label": "src/views.js served",
+          "passed": true
+        },
+        {
+          "label": "rejection preserves every key including absent archives",
+          "passed": true,
+          "detail": {
+            "actualSha256": "bd4c8d5b8215ba52ef525a02f9b7f9abca9899316334b64e5206e80536626620",
+            "expectedSha256": "bd4c8d5b8215ba52ef525a02f9b7f9abca9899316334b64e5206e80536626620"
+          }
+        },
+        {
+          "label": "invalid file has no replacement confirmation",
+          "passed": true
+        },
+        {
+          "label": "valid import waits without writing",
+          "passed": true,
+          "detail": {
+            "actualSha256": "bd4c8d5b8215ba52ef525a02f9b7f9abca9899316334b64e5206e80536626620",
+            "expectedSha256": "bd4c8d5b8215ba52ef525a02f9b7f9abca9899316334b64e5206e80536626620"
+          }
+        },
+        {
+          "label": "valid counterpart imported primary",
+          "passed": true,
+          "detail": {
+            "actualSha256": "fcb84cc6dff6a267851ec8313c046c30176b7d6833cd29fb6651c2f474ef23ac",
+            "expectedSha256": "fcb84cc6dff6a267851ec8313c046c30176b7d6833cd29fb6651c2f474ef23ac"
+          }
+        },
+        {
+          "label": "valid counterpart imported mirror",
+          "passed": true,
+          "detail": {
+            "actualSha256": "fcb84cc6dff6a267851ec8313c046c30176b7d6833cd29fb6651c2f474ef23ac",
+            "expectedSha256": "fcb84cc6dff6a267851ec8313c046c30176b7d6833cd29fb6651c2f474ef23ac"
+          }
+        },
+        {
+          "label": "valid counterpart imported complete state",
+          "passed": true,
+          "detail": {
+            "actualSha256": "c6386fe2803caa06d0fcc4085144128ac2e44ee37fe04523180dd2060e9c2384",
+            "expectedSha256": "c6386fe2803caa06d0fcc4085144128ac2e44ee37fe04523180dd2060e9c2384"
+          }
+        },
+        {
+          "label": "native healing purchase primary",
+          "passed": true,
+          "detail": {
+            "actualSha256": "26e5548a058fec15fc821a984be9a318b4e26391716f45225eff5a8e58acca11",
+            "expectedSha256": "26e5548a058fec15fc821a984be9a318b4e26391716f45225eff5a8e58acca11"
+          }
+        },
+        {
+          "label": "native healing purchase mirror",
+          "passed": true,
+          "detail": {
+            "actualSha256": "26e5548a058fec15fc821a984be9a318b4e26391716f45225eff5a8e58acca11",
+            "expectedSha256": "26e5548a058fec15fc821a984be9a318b4e26391716f45225eff5a8e58acca11"
+          }
+        },
+        {
+          "label": "native healing purchase complete state",
+          "passed": true,
+          "detail": {
+            "actualSha256": "097480fa73e9788ecae75679c4b3ff5f6454796abfe7e5a96299495b82d7f92d",
+            "expectedSha256": "097480fa73e9788ecae75679c4b3ff5f6454796abfe7e5a96299495b82d7f92d"
+          }
+        },
+        {
+          "label": "used supply cannot be purchased twice",
+          "passed": true
+        },
+        {
+          "label": "purchase really restores full HP",
+          "passed": true
+        },
+        {
+          "label": "ordinary equipment purchase still commits once primary",
+          "passed": true,
+          "detail": {
+            "actualSha256": "71410819fd7d27db7e41d93257a2b2710cb163099643e71469890f9a81faa7f8",
+            "expectedSha256": "71410819fd7d27db7e41d93257a2b2710cb163099643e71469890f9a81faa7f8"
+          }
+        },
+        {
+          "label": "ordinary equipment purchase still commits once mirror",
+          "passed": true,
+          "detail": {
+            "actualSha256": "71410819fd7d27db7e41d93257a2b2710cb163099643e71469890f9a81faa7f8",
+            "expectedSha256": "71410819fd7d27db7e41d93257a2b2710cb163099643e71469890f9a81faa7f8"
+          }
+        },
+        {
+          "label": "ordinary equipment purchase still commits once complete state",
+          "passed": true,
+          "detail": {
+            "actualSha256": "d47f412ce839e050f6c28666a2227ba56a066f0c5a6538c22337df3cc8d42b7c",
+            "expectedSha256": "d47f412ce839e050f6c28666a2227ba56a066f0c5a6538c22337df3cc8d42b7c"
+          }
+        },
+        {
+          "label": "refresh restores both purchases primary",
+          "passed": true,
+          "detail": {
+            "actualSha256": "71410819fd7d27db7e41d93257a2b2710cb163099643e71469890f9a81faa7f8",
+            "expectedSha256": "71410819fd7d27db7e41d93257a2b2710cb163099643e71469890f9a81faa7f8"
+          }
+        },
+        {
+          "label": "refresh restores both purchases mirror",
+          "passed": true,
+          "detail": {
+            "actualSha256": "71410819fd7d27db7e41d93257a2b2710cb163099643e71469890f9a81faa7f8",
+            "expectedSha256": "71410819fd7d27db7e41d93257a2b2710cb163099643e71469890f9a81faa7f8"
+          }
+        },
+        {
+          "label": "refresh restores both purchases complete state",
+          "passed": true,
+          "detail": {
+            "actualSha256": "d47f412ce839e050f6c28666a2227ba56a066f0c5a6538c22337df3cc8d42b7c",
+            "expectedSha256": "d47f412ce839e050f6c28666a2227ba56a066f0c5a6538c22337df3cc8d42b7c"
+          }
+        }
+      ],
+      "sourceHashes": {
+        "src/storage.js": "76ba648fa1fc9fe8f9b5058f743735858dda8dd2f5b94b4802637e16ee7fef2d",
+        "src/encounters.js": "b6e1b6e412f392e20a9f59b9fb73ffcb7664c17ccb54233d9888a5f21a81f75c",
+        "src/app.js": "f15894a3005dc94ff3a63d3ab4db983a239f6ea83f01d5b6c8b22ee8cb6a83ec",
+        "src/views.js": "03c9e88e3a6eff1c59aa2331a3531a56e2996c7771fb69780434d6926b8da0c6"
+      }
+    },
+    {
+      "name": "spring-stronger-ward-and-history",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "src/storage.js served",
+          "passed": true
+        },
+        {
+          "label": "src/encounters.js served",
+          "passed": true
+        },
+        {
+          "label": "src/app.js served",
+          "passed": true
+        },
+        {
+          "label": "src/views.js served",
+          "passed": true
+        },
+        {
+          "label": "pending choice states a shield floor",
+          "passed": true
+        },
+        {
+          "label": "pending choice explains the stronger existing shield",
+          "passed": true
+        },
+        {
+          "label": "reading the pending spring is byte-for-byte read-only",
+          "passed": true,
+          "detail": {
+            "actualSha256": "45ea001c92932c98e9ce362d4a340c3484bf27b66ea3799fe4877ba8ab3cf106",
+            "expectedSha256": "45ea001c92932c98e9ce362d4a340c3484bf27b66ea3799fe4877ba8ab3cf106"
+          }
+        },
+        {
+          "label": "spring commits the actual healing and shield result primary",
+          "passed": true,
+          "detail": {
+            "actualSha256": "4b13f045d734920df58708b6bb78a5d3dd3b191eabe15426846da06871599211",
+            "expectedSha256": "4b13f045d734920df58708b6bb78a5d3dd3b191eabe15426846da06871599211"
+          }
+        },
+        {
+          "label": "spring commits the actual healing and shield result mirror",
+          "passed": true,
+          "detail": {
+            "actualSha256": "4b13f045d734920df58708b6bb78a5d3dd3b191eabe15426846da06871599211",
+            "expectedSha256": "4b13f045d734920df58708b6bb78a5d3dd3b191eabe15426846da06871599211"
+          }
+        },
+        {
+          "label": "spring commits the actual healing and shield result complete state",
+          "passed": true,
+          "detail": {
+            "actualSha256": "e62424c55d1f255b14270ff923581816b0026af788119ef939af3fb91bbcd634",
+            "expectedSha256": "e62424c55d1f255b14270ff923581816b0026af788119ef939af3fb91bbcd634"
+          }
+        },
+        {
+          "label": "stronger shield is retained without an additive reward",
+          "passed": true
+        },
+        {
+          "label": "settlement states the real shield rule",
+          "passed": true
+        },
+        {
+          "label": "refresh keeps resolved spring result primary",
+          "passed": true,
+          "detail": {
+            "actualSha256": "4b13f045d734920df58708b6bb78a5d3dd3b191eabe15426846da06871599211",
+            "expectedSha256": "4b13f045d734920df58708b6bb78a5d3dd3b191eabe15426846da06871599211"
+          }
+        },
+        {
+          "label": "refresh keeps resolved spring result mirror",
+          "passed": true,
+          "detail": {
+            "actualSha256": "4b13f045d734920df58708b6bb78a5d3dd3b191eabe15426846da06871599211",
+            "expectedSha256": "4b13f045d734920df58708b6bb78a5d3dd3b191eabe15426846da06871599211"
+          }
+        },
+        {
+          "label": "refresh keeps resolved spring result complete state",
+          "passed": true,
+          "detail": {
+            "actualSha256": "e62424c55d1f255b14270ff923581816b0026af788119ef939af3fb91bbcd634",
+            "expectedSha256": "e62424c55d1f255b14270ff923581816b0026af788119ef939af3fb91bbcd634"
+          }
+        },
+        {
+          "label": "pending choice states a shield floor",
+          "passed": true
+        },
+        {
+          "label": "pending choice explains the stronger existing shield",
+          "passed": true
+        },
+        {
+          "label": "reading the pending spring is byte-for-byte read-only",
+          "passed": true,
+          "detail": {
+            "actualSha256": "45ea001c92932c98e9ce362d4a340c3484bf27b66ea3799fe4877ba8ab3cf106",
+            "expectedSha256": "45ea001c92932c98e9ce362d4a340c3484bf27b66ea3799fe4877ba8ab3cf106"
+          }
+        },
+        {
+          "label": "spring commits the actual healing and shield result primary",
+          "passed": true,
+          "detail": {
+            "actualSha256": "9df7da6dd0a77886e488af233845a1bce467c8612b252591c896d9c432535be2",
+            "expectedSha256": "9df7da6dd0a77886e488af233845a1bce467c8612b252591c896d9c432535be2"
+          }
+        },
+        {
+          "label": "spring commits the actual healing and shield result mirror",
+          "passed": true,
+          "detail": {
+            "actualSha256": "9df7da6dd0a77886e488af233845a1bce467c8612b252591c896d9c432535be2",
+            "expectedSha256": "9df7da6dd0a77886e488af233845a1bce467c8612b252591c896d9c432535be2"
+          }
+        },
+        {
+          "label": "spring commits the actual healing and shield result complete state",
+          "passed": true,
+          "detail": {
+            "actualSha256": "cd126193b1af78104b36bcd91db3f7249dfa275040575c1d0956acc3cf273918",
+            "expectedSha256": "cd126193b1af78104b36bcd91db3f7249dfa275040575c1d0956acc3cf273918"
+          }
+        },
+        {
+          "label": "stronger shield is retained without an additive reward",
+          "passed": true
+        },
+        {
+          "label": "settlement states the real shield rule",
+          "passed": true
+        },
+        {
+          "label": "refresh keeps resolved spring result primary",
+          "passed": true,
+          "detail": {
+            "actualSha256": "9df7da6dd0a77886e488af233845a1bce467c8612b252591c896d9c432535be2",
+            "expectedSha256": "9df7da6dd0a77886e488af233845a1bce467c8612b252591c896d9c432535be2"
+          }
+        },
+        {
+          "label": "refresh keeps resolved spring result mirror",
+          "passed": true,
+          "detail": {
+            "actualSha256": "9df7da6dd0a77886e488af233845a1bce467c8612b252591c896d9c432535be2",
+            "expectedSha256": "9df7da6dd0a77886e488af233845a1bce467c8612b252591c896d9c432535be2"
+          }
+        },
+        {
+          "label": "refresh keeps resolved spring result complete state",
+          "passed": true,
+          "detail": {
+            "actualSha256": "cd126193b1af78104b36bcd91db3f7249dfa275040575c1d0956acc3cf273918",
+            "expectedSha256": "cd126193b1af78104b36bcd91db3f7249dfa275040575c1d0956acc3cf273918"
+          }
+        },
+        {
+          "label": "already resolved historical text stays historical",
+          "passed": true
+        },
+        {
+          "label": "display does not rewrite historical outcome primary",
+          "passed": true,
+          "detail": {
+            "actualSha256": "89406ea8e88a163a1c80ab9dbf6bf4957434668607265f5ea5675eb17cbabc3b",
+            "expectedSha256": "89406ea8e88a163a1c80ab9dbf6bf4957434668607265f5ea5675eb17cbabc3b"
+          }
+        },
+        {
+          "label": "display does not rewrite historical outcome mirror",
+          "passed": true,
+          "detail": {
+            "actualSha256": "89406ea8e88a163a1c80ab9dbf6bf4957434668607265f5ea5675eb17cbabc3b",
+            "expectedSha256": "89406ea8e88a163a1c80ab9dbf6bf4957434668607265f5ea5675eb17cbabc3b"
+          }
+        },
+        {
+          "label": "display does not rewrite historical outcome complete state",
+          "passed": true,
+          "detail": {
+            "actualSha256": "cee869547b8d7429b31edce2c944ffcaa25c3e2da75a1d2c38b92d296b3d2f1d",
+            "expectedSha256": "cee869547b8d7429b31edce2c944ffcaa25c3e2da75a1d2c38b92d296b3d2f1d"
+          }
+        }
+      ],
+      "sourceHashes": {
+        "src/storage.js": "76ba648fa1fc9fe8f9b5058f743735858dda8dd2f5b94b4802637e16ee7fef2d",
+        "src/encounters.js": "b6e1b6e412f392e20a9f59b9fb73ffcb7664c17ccb54233d9888a5f21a81f75c",
+        "src/app.js": "f15894a3005dc94ff3a63d3ab4db983a239f6ea83f01d5b6c8b22ee8cb6a83ec",
+        "src/views.js": "03c9e88e3a6eff1c59aa2331a3531a56e2996c7771fb69780434d6926b8da0c6"
+      }
+    }
+  ],
+  "errors": [],
+  "checks": 79,
+  "notes": [
+    "Only initial fixture installation assigns localStorage; imports use the native file chooser and actual confirmation.",
+    "The baseline defect is expected and recorded separately from current passes. This is a malformed-import test, not evidence of naturally generated corruption.",
+    "No physical GPU, mobile hardware, real user save or OS power-loss claims."
+  ],
+  "finished": "2026-10-17T15:54:22.629Z",
+  "passed": true
+}

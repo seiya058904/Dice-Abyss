@@ -1,0 +1,304 @@
+{
+  "method": "Actual check.mjs source in a VM, replacing only imports, file enumeration, spawnSync, exit and logging. Four current-source conditions; optional four baseline observations. Real smoke-http.mjs on an owned occupied port and an OS-selected free port. No browser, timing, gameplay or full-suite claims.",
+  "node": "v24.19.0",
+  "started": "2026-10-17T11:13:20.270Z",
+  "checks": [
+    {
+      "label": "after",
+      "scenario": "spawn-error",
+      "sourceSha256": "0a0db38f3352b9f5bccdfb008f016970cb989aa401b44589119c0e4c49d1c306",
+      "exitCode": 1,
+      "effectiveExitCode": 1,
+      "expectedExitCode": 1,
+      "spawnCalls": 1,
+      "logs": [],
+      "errors": [
+        "Syntax check could not run for src/probe.mjs: synthetic EAGAIN"
+      ],
+      "correctBehavior": true
+    },
+    {
+      "label": "after",
+      "scenario": "terminated",
+      "sourceSha256": "0a0db38f3352b9f5bccdfb008f016970cb989aa401b44589119c0e4c49d1c306",
+      "exitCode": 1,
+      "effectiveExitCode": 1,
+      "expectedExitCode": 1,
+      "spawnCalls": 1,
+      "logs": [],
+      "errors": [
+        "Syntax check could not run for src/probe.mjs: SIGKILL"
+      ],
+      "correctBehavior": true
+    },
+    {
+      "label": "after",
+      "scenario": "syntax-failure",
+      "sourceSha256": "0a0db38f3352b9f5bccdfb008f016970cb989aa401b44589119c0e4c49d1c306",
+      "exitCode": 2,
+      "effectiveExitCode": 2,
+      "expectedExitCode": 2,
+      "spawnCalls": 1,
+      "logs": [],
+      "errors": [],
+      "correctBehavior": true
+    },
+    {
+      "label": "after",
+      "scenario": "success",
+      "sourceSha256": "0a0db38f3352b9f5bccdfb008f016970cb989aa401b44589119c0e4c49d1c306",
+      "exitCode": null,
+      "effectiveExitCode": 0,
+      "expectedExitCode": 0,
+      "spawnCalls": 2,
+      "logs": [
+        "All JavaScript modules passed syntax checks."
+      ],
+      "errors": [],
+      "correctBehavior": true
+    }
+  ],
+  "baselineProvided": false,
+  "http": {
+    "occupied": {
+      "port": 35459,
+      "ownedHolderPid": 30372,
+      "code": 1,
+      "signal": null,
+      "pid": 30380,
+      "stdout": "",
+      "stderr": "file://<source>/scripts/smoke-http.mjs:15\nconst assertChildAlive=()=>{if(startupError||exited||child.exitCode!==null||child.signalCode!==null)throw Error('Server startup or lifetime failed: '+(startupError?.message||startup));};\n                                                                                                          ^\n\nError: Server startup or lifetime failed: node:events:487\n      throw er; // Unhandled 'error' event\n      ^\n\nError: listen EADDRINUSE: address already in use 127.0.0.1:35459\n    at Server.setupListenHandle [as _listen2] (node:net:2167:16)\n    at listenInCluster (node:net:2224:12)\n    at node:net:2448:7\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)\nEmitted 'error' event on Server instance at:\n    at emitErrorNT (node:net:2203:8)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {\n  code: 'EADDRINUSE',\n  errno: -98,\n  syscall: 'listen',\n  address: '127.0.0.1',\n  port: 35459\n}\n\nNode.js v24.19.0\n\n    at assertChildAlive (file://<source>/scripts/smoke-http.mjs:15:107)\n    at file://<source>/scripts/smoke-http.mjs:19:41\n\nNode.js v24.19.0\n",
+      "diagnosticsTruncated": false,
+      "holderStillAlive": true,
+      "outputUnchanged": true,
+      "holderStillServesIdenticalIndex": true,
+      "ownedHolderStopped": true
+    },
+    "free": {
+      "port": 37181,
+      "code": 0,
+      "signal": null,
+      "pid": 30400,
+      "stdout": "{\"files\":30,\"allPassed\":true}\n",
+      "stderr": "",
+      "diagnosticsTruncated": false,
+      "audit": {
+        "method": "Confirmed readiness from the spawned server itself; byte-compared shipping modules/styles/SVG/WebP/fonts; verified relative imports, CSS URLs and binary MIME types; rejected metadata/test paths. No DOM, browser interaction or screenshot claims.",
+        "node": "v24.19.0",
+        "release": "5.2.0",
+        "port": 37181,
+        "spawnedServerReady": true,
+        "files": 30,
+        "rows": [
+          {
+            "file": "index.html",
+            "status": 200,
+            "bytes": 1584,
+            "type": "text/html; charset=utf-8"
+          },
+          {
+            "file": "favicon.svg",
+            "status": 200,
+            "bytes": 326,
+            "type": "image/svg+xml"
+          },
+          {
+            "file": "src/abyss-portal.webp",
+            "status": 200,
+            "bytes": 171736,
+            "type": "image/webp"
+          },
+          {
+            "file": "src/app.js",
+            "status": 200,
+            "bytes": 28410,
+            "type": "text/javascript; charset=utf-8"
+          },
+          {
+            "file": "src/content.js",
+            "status": 200,
+            "bytes": 12937,
+            "type": "text/javascript; charset=utf-8"
+          },
+          {
+            "file": "src/deep-content.js",
+            "status": 200,
+            "bytes": 10852,
+            "type": "text/javascript; charset=utf-8"
+          },
+          {
+            "file": "src/deep-rules.js",
+            "status": 200,
+            "bytes": 12741,
+            "type": "text/javascript; charset=utf-8"
+          },
+          {
+            "file": "src/deep.css",
+            "status": 200,
+            "bytes": 6772,
+            "type": "text/css; charset=utf-8"
+          },
+          {
+            "file": "src/dice-motion.js",
+            "status": 200,
+            "bytes": 5481,
+            "type": "text/javascript; charset=utf-8"
+          },
+          {
+            "file": "src/dice-renderer.js",
+            "status": 200,
+            "bytes": 13061,
+            "type": "text/javascript; charset=utf-8"
+          },
+          {
+            "file": "src/effects.js",
+            "status": 200,
+            "bytes": 27511,
+            "type": "text/javascript; charset=utf-8"
+          },
+          {
+            "file": "src/encounters.js",
+            "status": 200,
+            "bytes": 30346,
+            "type": "text/javascript; charset=utf-8"
+          },
+          {
+            "file": "src/engine.js",
+            "status": 200,
+            "bytes": 36763,
+            "type": "text/javascript; charset=utf-8"
+          },
+          {
+            "file": "src/equipment-content.js",
+            "status": 200,
+            "bytes": 6818,
+            "type": "text/javascript; charset=utf-8"
+          },
+          {
+            "file": "src/equipment.js",
+            "status": 200,
+            "bytes": 11897,
+            "type": "text/javascript; charset=utf-8"
+          },
+          {
+            "file": "src/expansion.css",
+            "status": 200,
+            "bytes": 14871,
+            "type": "text/css; charset=utf-8"
+          },
+          {
+            "file": "src/hud-frame.svg",
+            "status": 200,
+            "bytes": 659,
+            "type": "image/svg+xml"
+          },
+          {
+            "file": "src/polish.css",
+            "status": 200,
+            "bytes": 7751,
+            "type": "text/css; charset=utf-8"
+          },
+          {
+            "file": "src/progression.css",
+            "status": 200,
+            "bytes": 30151,
+            "type": "text/css; charset=utf-8"
+          },
+          {
+            "file": "src/quality.css",
+            "status": 200,
+            "bytes": 5290,
+            "type": "text/css; charset=utf-8"
+          },
+          {
+            "file": "src/rarity.js",
+            "status": 200,
+            "bytes": 2515,
+            "type": "text/javascript; charset=utf-8"
+          },
+          {
+            "file": "src/refinement.css",
+            "status": 200,
+            "bytes": 10060,
+            "type": "text/css; charset=utf-8"
+          },
+          {
+            "file": "src/rooms.css",
+            "status": 200,
+            "bytes": 29127,
+            "type": "text/css; charset=utf-8"
+          },
+          {
+            "file": "src/route-weights.js",
+            "status": 200,
+            "bytes": 4425,
+            "type": "text/javascript; charset=utf-8"
+          },
+          {
+            "file": "src/storage.js",
+            "status": 200,
+            "bytes": 24600,
+            "type": "text/javascript; charset=utf-8"
+          },
+          {
+            "file": "src/styles.css",
+            "status": 200,
+            "bytes": 34680,
+            "type": "text/css; charset=utf-8"
+          },
+          {
+            "file": "src/views.js",
+            "status": 200,
+            "bytes": 76572,
+            "type": "text/javascript; charset=utf-8"
+          },
+          {
+            "file": "src/visual.css",
+            "status": 200,
+            "bytes": 47600,
+            "type": "text/css; charset=utf-8"
+          },
+          {
+            "file": "src/fonts/SourceHanSansCN-VF.otf.woff2",
+            "status": 200,
+            "bytes": 7995716,
+            "type": "font/woff2"
+          },
+          {
+            "file": "src/fonts/fusion-pixel-12px-proportional-zh_hans.otf.woff2",
+            "status": 200,
+            "bytes": 661212,
+            "type": "font/woff2"
+          }
+        ],
+        "allPassed": true
+      },
+      "portClosedAfterSmoke": true
+    }
+  },
+  "status": "PASS",
+  "notes": [
+    "Only child processes spawned by this audit (and their own process groups on POSIX) are terminated. No process is found or killed by port.",
+    "Temporary ports are reserved through an OS bind, then released for the shipping server; a lost bind race fails safely.",
+    "Source and temporary-directory paths in diagnostics are normalized; release identifiers and hashes are read from the audited files."
+  ],
+  "release": {
+    "name": "dice-abyss",
+    "packageVersion": "5.2.0",
+    "htmlRelease": "5.2.0",
+    "htmlBuild": "5",
+    "packageSha256": "c654583ef0a73ec01eb1b174c3b07691f5a7348e8a05a4fd16edec6d40bbd612",
+    "indexSha256": "032fe44d77d605ce0f9a5f0c330aa84a00d4378628226103a68a484fcf7f4468"
+  },
+  "baselineStatus": "NOT_PROVIDED — current-source checks remain fully runnable",
+  "sourceFiles": {
+    "check": "0a0db38f3352b9f5bccdfb008f016970cb989aa401b44589119c0e4c49d1c306",
+    "smoke": "e884686e4df86723f51347c6b7290ed555a94a2f2dba9e4c39139d794c3f4ba1",
+    "serve": "4595f951bac37d0ca8ed41ab5be7c047d2daa04b7e24d2c4ef4e57a3d6718642"
+  },
+  "currentChecksPassed": 4,
+  "totalCheckObservations": 4,
+  "historicalIncorrectBranches": 0,
+  "ownedChildrenRemaining": 0,
+  "finished": "2026-10-17T11:13:25.094Z"
+}

@@ -1,0 +1,226 @@
+{
+  "started": "2026-10-19T14:14:58.458Z",
+  "suite": "inventory",
+  "expected": "current",
+  "url": "http://127.0.0.1:4222/",
+  "sourceBefore": {
+    "index.html": "f1001c485cb68386367b46b6bc40213c87a232da534dd80409d7a24f1fa34132",
+    "package.json": "fdc59fc4c5a28b0d6169253577bbbeab30341bc9830e16b362a3ba34c2ed2583",
+    "src/release.js": "7e33eda42706dfc8a32aef8975cc04c8be04ecf7cb75647eb7d4d3286d83ab72",
+    "src/app.js": "de8712715446bff65843d63167f0b2b5e3a9507fdbfde5d84a41475d926cd1be",
+    "src/views.js": "1b278428479f9a9daee7973ede38b84b16113cf83cf665a6e9d2cbdec5d6fb22",
+    "src/engine.js": "340fa90ef963abfc874fa4932af80264a87a569f1d51030d9e9b29b3dbc2192e",
+    "src/storage.js": "2b505d6dab2c5f018eff3f1bd5d6d927a885a175f812bd620ae898b3fead7f05",
+    "src/inventory-dom.js": "fd202b44a427eb7ff2c5ea5ccaaff8014f5faa4b4f85c280ff1fa5078bfd641f",
+    "src/inventory-render.js": "f4ad0ef260fcfedc50796edc2d8cc956a364ffb7f5e1c109f82414e5a696d99a",
+    "src/deep-rules.js": "5e3a9b50d5b339a6290df58a5712aa1b1d1017b6a615c409dec86c5683b6dd74",
+    "src/deep-content.js": "a68b20c8af5740f3939965b10e624fa1f684e8050dd4f2426862c26bf1fe3840",
+    "src/encounter-tactics.js": "749ef952fcec8932d8ce51c75544d40b572ed9c3941f94df98c4ae2d74e25f82",
+    "src/deep.css": "d4b579f479f51e2bc15fddf02f1c5c7b443c233546e482a43bdfe00783b73621"
+  },
+  "scriptSha256": "65ceb1914feb3dd75f0b85c7b8e902430f4f7a4ead964aea7dfa77b717f39b7a",
+  "cases": [
+    {
+      "name": "same-run-native-storage-preserves-draft-selection",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "native keyboard creates middle selection",
+          "passed": true,
+          "actualSha256": "f25ed8cd5464710aff6e5d655a575ac273cb9c19d696e53fa13de05db97454ca",
+          "expectedSha256": "f25ed8cd5464710aff6e5d655a575ac273cb9c19d696e53fa13de05db97454ca"
+        },
+        {
+          "label": "same-run unsubmitted draft survives",
+          "passed": true,
+          "actualSha256": "1ddeaeee022372b7f20bb0c2873b048fa063a56ea6e1e40344c010a4be64e1e8",
+          "expectedSha256": "1ddeaeee022372b7f20bb0c2873b048fa063a56ea6e1e40344c010a4be64e1e8"
+        },
+        {
+          "label": "focus stays in search",
+          "passed": true
+        },
+        {
+          "label": "same-run storage update preserves exact selection and direction",
+          "passed": true,
+          "actualSha256": "3c0b5b716ee31e199f03a73774abc80abe9aad5e9674bb6d5dedfd03924600ec",
+          "expectedSha256": "3c0b5b716ee31e199f03a73774abc80abe9aad5e9674bb6d5dedfd03924600ec"
+        },
+        {
+          "label": "peer lock remains one complete engine transition",
+          "passed": true,
+          "actualSha256": "3aebf2456e2beecf7bae19502f5076e782315e6fec2d83cafff601c5460ddf56",
+          "expectedSha256": "3aebf2456e2beecf7bae19502f5076e782315e6fec2d83cafff601c5460ddf56"
+        },
+        {
+          "label": "peer lock remains one complete engine transition mirror",
+          "passed": true,
+          "actualSha256": "b827262bde4083499099c5eec632c2afba0545c500bd36ede05ca7fe13cce17c",
+          "expectedSha256": "b827262bde4083499099c5eec632c2afba0545c500bd36ede05ca7fe13cce17c"
+        },
+        {
+          "label": "typing replaces the intended selection after synchronization",
+          "passed": true,
+          "actualSha256": "caa5eecda051c81a925488420fdd6027eb7b578b877d2de45950335e2ee4539b",
+          "expectedSha256": "caa5eecda051c81a925488420fdd6027eb7b578b877d2de45950335e2ee4539b"
+        }
+      ],
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "before": {
+        "value": "甲乙丙丁戊己",
+        "start": 2,
+        "end": 4,
+        "direction": "forward",
+        "focused": true
+      },
+      "after": {
+        "value": "甲乙丙丁戊己",
+        "start": 2,
+        "end": 4,
+        "direction": "forward",
+        "focused": true
+      },
+      "nextTypedValue": "甲乙x戊己",
+      "screenshots": [
+        "same-run-caret.jpg"
+      ]
+    },
+    {
+      "name": "pure-inventory-actions-keep-state-and-correct-results",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "weapon filter shows only actual weapons",
+          "passed": true
+        },
+        {
+          "label": "submitted search has matching items",
+          "passed": true
+        },
+        {
+          "label": "search submission keeps keyboard focus",
+          "passed": true
+        },
+        {
+          "label": "current keeps all outer shell nodes during pure view changes",
+          "passed": true
+        },
+        {
+          "label": "view-only actions never alter save or RNG",
+          "passed": true,
+          "actualSha256": "aea27ace0587d94ab0afefa99fb8200b086da381f0fb157c282986e1abdd1892",
+          "expectedSha256": "aea27ace0587d94ab0afefa99fb8200b086da381f0fb157c282986e1abdd1892"
+        },
+        {
+          "label": "view-only actions never alter save or RNG mirror",
+          "passed": true,
+          "actualSha256": "56d007747d2a299be2a68dbf8d31d7c899026ba11794a6de7c3b012e5738209f",
+          "expectedSha256": "56d007747d2a299be2a68dbf8d31d7c899026ba11794a6de7c3b012e5738209f"
+        }
+      ],
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "controls": [
+        {
+          "action": "filter",
+          "slot": "",
+          "text": "全部 300"
+        },
+        {
+          "action": "filter",
+          "slot": "weapon",
+          "text": "武器 100"
+        },
+        {
+          "action": "filter",
+          "slot": "armor",
+          "text": "防具 100"
+        },
+        {
+          "action": "filter",
+          "slot": "relic",
+          "text": "遗物 100"
+        },
+        {
+          "action": "inventory-query-clear",
+          "text": "清除名称"
+        },
+        {
+          "action": "salvage-preview",
+          "text": "当前无可回收批次"
+        },
+        {
+          "action": "compare-details",
+          "id": "i17",
+          "text": "比较条件"
+        },
+        {
+          "action": "lock",
+          "id": "i17",
+          "text": "锁定"
+        },
+        {
+          "action": "salvage-item",
+          "id": "i17",
+          "text": "回收"
+        },
+        {
+          "action": "equip",
+          "id": "i17",
+          "text": "装备"
+        },
+        {
+          "action": "compare-details",
+          "id": "i56",
+          "text": "比较条件"
+        },
+        {
+          "action": "lock",
+          "id": "i56",
+          "text": "锁定"
+        }
+      ],
+      "shellIdentity": {
+        "top": true,
+        "left": true,
+        "right": true,
+        "bottom": true
+      },
+      "screenshots": [
+        "inventory-results.jpg"
+      ]
+    }
+  ],
+  "errors": [],
+  "notes": [
+    "All contexts and saves are disposable. Fixture preparation uses the real validator and codec. No private save or external server is touched.",
+    "Inputs use native pointer/keyboard/select controls and real localStorage/Web Locks. Only initial test fixtures are installed programmatically.",
+    "Synthetic fixtures are not natural gameplay evidence. Full save equality compares every field, including RNG, revision, unknown fields and pending rewards.",
+    "Functional checks use low effects and reduced motion. Separate performance scripts record their own protocols; none certify physical Windows or hardware GPU performance."
+  ],
+  "browser": "155.0.8059.84",
+  "finished": "2026-10-19T14:15:05.748Z",
+  "sourceAfter": {
+    "index.html": "f1001c485cb68386367b46b6bc40213c87a232da534dd80409d7a24f1fa34132",
+    "package.json": "fdc59fc4c5a28b0d6169253577bbbeab30341bc9830e16b362a3ba34c2ed2583",
+    "src/release.js": "7e33eda42706dfc8a32aef8975cc04c8be04ecf7cb75647eb7d4d3286d83ab72",
+    "src/app.js": "de8712715446bff65843d63167f0b2b5e3a9507fdbfde5d84a41475d926cd1be",
+    "src/views.js": "1b278428479f9a9daee7973ede38b84b16113cf83cf665a6e9d2cbdec5d6fb22",
+    "src/engine.js": "340fa90ef963abfc874fa4932af80264a87a569f1d51030d9e9b29b3dbc2192e",
+    "src/storage.js": "2b505d6dab2c5f018eff3f1bd5d6d927a885a175f812bd620ae898b3fead7f05",
+    "src/inventory-dom.js": "fd202b44a427eb7ff2c5ea5ccaaff8014f5faa4b4f85c280ff1fa5078bfd641f",
+    "src/inventory-render.js": "f4ad0ef260fcfedc50796edc2d8cc956a364ffb7f5e1c109f82414e5a696d99a",
+    "src/deep-rules.js": "5e3a9b50d5b339a6290df58a5712aa1b1d1017b6a615c409dec86c5683b6dd74",
+    "src/deep-content.js": "a68b20c8af5740f3939965b10e624fa1f684e8050dd4f2426862c26bf1fe3840",
+    "src/encounter-tactics.js": "749ef952fcec8932d8ce51c75544d40b572ed9c3941f94df98c4ae2d74e25f82",
+    "src/deep.css": "d4b579f479f51e2bc15fddf02f1c5c7b443c233546e482a43bdfe00783b73621"
+  },
+  "sourceUnchanged": true,
+  "checks": 13,
+  "failed": 0
+}

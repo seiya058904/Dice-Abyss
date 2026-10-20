@@ -1,0 +1,1447 @@
+{
+  "derivation": "Read-only summary of both retained native batches, never pooled",
+  "batches": {
+    "inventory-latency": {
+      "status": "MEASURED",
+      "sourceUnchanged": true,
+      "errors": [],
+      "totalRuns": 78,
+      "formalRuns": 72,
+      "warmupRuns": 6,
+      "actions": {
+        "open": {
+          "baseline": {
+            "elapsedMs": {
+              "n": 12,
+              "p50": 72.5,
+              "p95": 81.30000000074506,
+              "p99": 81.30000000074506,
+              "max": 301.6000000014901,
+              "min": 64.5
+            },
+            "cdpObservationMs": {
+              "ScriptDuration": {
+                "n": 12,
+                "p50": 27.363,
+                "p95": 30.164,
+                "p99": 30.164,
+                "max": 32.665,
+                "min": 24.331
+              },
+              "LayoutDuration": {
+                "n": 12,
+                "p50": 21.885,
+                "p95": 25.442,
+                "p99": 25.442,
+                "max": 37.703,
+                "min": 19.108
+              },
+              "RecalcStyleDuration": {
+                "n": 12,
+                "p50": 14.994,
+                "p95": 19.834999999999997,
+                "p99": 19.834999999999997,
+                "max": 25.112,
+                "min": 14.179999999999998
+              },
+              "TaskDuration": {
+                "n": 12,
+                "p50": 205.488,
+                "p95": 608.907,
+                "p99": 608.907,
+                "max": 720.409,
+                "min": 69.64700000000002
+              }
+            },
+            "firstFrameDelayMs": {
+              "n": 12,
+              "p50": 67.40000000037253,
+              "p95": 76.90000000037253,
+              "p99": 76.90000000037253,
+              "max": 95.30000000074506,
+              "min": 60.80000000074506
+            },
+            "longTaskCount": 12,
+            "maxLongTaskMs": 95
+          },
+          "current": {
+            "elapsedMs": {
+              "n": 12,
+              "p50": 73.30000000074506,
+              "p95": 80.5,
+              "p99": 80.5,
+              "max": 87.09999999962747,
+              "min": 66.70000000111759
+            },
+            "cdpObservationMs": {
+              "ScriptDuration": {
+                "n": 12,
+                "p50": 27.749999999999996,
+                "p95": 30.626,
+                "p99": 30.626,
+                "max": 36.678000000000004,
+                "min": 23.826
+              },
+              "LayoutDuration": {
+                "n": 12,
+                "p50": 22.753,
+                "p95": 25.525,
+                "p99": 25.525,
+                "max": 28.682,
+                "min": 20.277
+              },
+              "RecalcStyleDuration": {
+                "n": 12,
+                "p50": 16.372999999999998,
+                "p95": 17.706,
+                "p99": 17.706,
+                "max": 19.752,
+                "min": 14.861999999999998
+              },
+              "TaskDuration": {
+                "n": 12,
+                "p50": 82.06900000000006,
+                "p95": 631.584,
+                "p99": 631.584,
+                "max": 673.193,
+                "min": 76.26300000000008
+              }
+            },
+            "firstFrameDelayMs": {
+              "n": 12,
+              "p50": 69.10000000149012,
+              "p95": 75.40000000037253,
+              "p99": 75.40000000037253,
+              "max": 82.19999999925494,
+              "min": 62.59999999962747
+            },
+            "longTaskCount": 12,
+            "maxLongTaskMs": 81
+          },
+          "pairedDeltaMs": {
+            "values": [
+              -6.599999999627471,
+              7.500000001862645,
+              -221.10000000149012,
+              -0.49999999813735485,
+              5.900000000372529,
+              4.900000000372529,
+              -12.099999999627471,
+              -1.3999999985098839,
+              1.1000000014901161,
+              0.5,
+              10.300000000745058,
+              8.999999998137355
+            ],
+            "summary": {
+              "n": 12,
+              "p50": 0.5,
+              "p95": 8.999999998137355,
+              "p99": 8.999999998137355,
+              "max": 10.300000000745058,
+              "min": -221.10000000149012
+            }
+          },
+          "faster": 5,
+          "slower": 7,
+          "equal": 0,
+          "percentChange": {
+            "p50": 1.1034482768897291,
+            "p95": -0.9840098410058173,
+            "max": -71.12068965543862
+          },
+          "negativePairs": [
+            {
+              "pair": 2,
+              "deltaMs": 7.500000001862645
+            },
+            {
+              "pair": 5,
+              "deltaMs": 5.900000000372529
+            },
+            {
+              "pair": 6,
+              "deltaMs": 4.900000000372529
+            },
+            {
+              "pair": 9,
+              "deltaMs": 1.1000000014901161
+            },
+            {
+              "pair": 10,
+              "deltaMs": 0.5
+            },
+            {
+              "pair": 11,
+              "deltaMs": 10.300000000745058
+            },
+            {
+              "pair": 12,
+              "deltaMs": 8.999999998137355
+            }
+          ],
+          "strictOutliersOver200Ms": [
+            {
+              "pair": 3,
+              "label": "baseline",
+              "elapsedMs": 301.6000000014901,
+              "firstFrameDelayMs": 95.30000000074506,
+              "cdpObservationMs": {
+                "ScriptDuration": 29.353,
+                "LayoutDuration": 37.703,
+                "RecalcStyleDuration": 25.112,
+                "TaskDuration": 310.026
+              }
+            }
+          ]
+        },
+        "filter": {
+          "baseline": {
+            "elapsedMs": {
+              "n": 12,
+              "p50": 69.09999999962747,
+              "p95": 79.30000000074506,
+              "p99": 79.30000000074506,
+              "max": 143.59999999962747,
+              "min": 55
+            },
+            "cdpObservationMs": {
+              "ScriptDuration": {
+                "n": 12,
+                "p50": 29.420999999999996,
+                "p95": 35.426,
+                "p99": 35.426,
+                "max": 99.86200000000001,
+                "min": 23.219000000000005
+              },
+              "LayoutDuration": {
+                "n": 12,
+                "p50": 16.259,
+                "p95": 22.254999999999995,
+                "p99": 22.254999999999995,
+                "max": 22.306000000000004,
+                "min": 15.374999999999996
+              },
+              "RecalcStyleDuration": {
+                "n": 12,
+                "p50": 13.971,
+                "p95": 17.124000000000002,
+                "p99": 17.124000000000002,
+                "max": 19.314,
+                "min": 11.482
+              },
+              "TaskDuration": {
+                "n": 12,
+                "p50": 77.175,
+                "p95": 87.10600000000002,
+                "p99": 87.10600000000002,
+                "max": 152.71600000000007,
+                "min": 62.777000000000086
+              }
+            },
+            "firstFrameDelayMs": {
+              "n": 12,
+              "p50": 64.80000000074506,
+              "p95": 75.30000000074506,
+              "p99": 75.30000000074506,
+              "max": 138.59999999962747,
+              "min": 52.19999999925494
+            },
+            "longTaskCount": 12,
+            "maxLongTaskMs": 137
+          },
+          "current": {
+            "elapsedMs": {
+              "n": 12,
+              "p50": 66.5,
+              "p95": 80.09999999962747,
+              "p99": 80.09999999962747,
+              "max": 91.80000000074506,
+              "min": 51.20000000111759
+            },
+            "cdpObservationMs": {
+              "ScriptDuration": {
+                "n": 12,
+                "p50": 29.218999999999998,
+                "p95": 32.17,
+                "p99": 32.17,
+                "max": 38.915000000000006,
+                "min": 20.595000000000002
+              },
+              "LayoutDuration": {
+                "n": 12,
+                "p50": 16.578,
+                "p95": 22.018000000000004,
+                "p99": 22.018000000000004,
+                "max": 22.96,
+                "min": 14.049000000000003
+              },
+              "RecalcStyleDuration": {
+                "n": 12,
+                "p50": 12,
+                "p95": 22.091,
+                "p99": 22.091,
+                "max": 28.443,
+                "min": 11.216000000000001
+              },
+              "TaskDuration": {
+                "n": 12,
+                "p50": 75.0599999999999,
+                "p95": 87.75299999999997,
+                "p99": 87.75299999999997,
+                "max": 103.437,
+                "min": 58.15900000000007
+              }
+            },
+            "firstFrameDelayMs": {
+              "n": 12,
+              "p50": 62,
+              "p95": 75.80000000074506,
+              "p99": 75.80000000074506,
+              "max": 85.30000000074506,
+              "min": 48.20000000111759
+            },
+            "longTaskCount": 11,
+            "maxLongTaskMs": 87
+          },
+          "pairedDeltaMs": {
+            "values": [
+              -3.400000000372529,
+              16.5,
+              8.800000000745058,
+              -70.99999999813735,
+              -14.199999999254942,
+              1.099999999627471,
+              -20.699999999254942,
+              -3.799999998882413,
+              -4.400000000372529,
+              -5.200000001117587,
+              5.099999999627471,
+              16.5
+            ],
+            "summary": {
+              "n": 12,
+              "p50": -3.799999998882413,
+              "p95": 16.5,
+              "p99": 16.5,
+              "max": 16.5,
+              "min": -70.99999999813735
+            }
+          },
+          "faster": 7,
+          "slower": 5,
+          "equal": 0,
+          "percentChange": {
+            "p50": -3.7626628070064894,
+            "p95": 1.0088272369166429,
+            "max": -36.072423397644
+          },
+          "negativePairs": [
+            {
+              "pair": 2,
+              "deltaMs": 16.5
+            },
+            {
+              "pair": 3,
+              "deltaMs": 8.800000000745058
+            },
+            {
+              "pair": 6,
+              "deltaMs": 1.099999999627471
+            },
+            {
+              "pair": 11,
+              "deltaMs": 5.099999999627471
+            },
+            {
+              "pair": 12,
+              "deltaMs": 16.5
+            }
+          ],
+          "strictOutliersOver200Ms": []
+        },
+        "page": {
+          "baseline": {
+            "elapsedMs": {
+              "n": 12,
+              "p50": 48.90000000037253,
+              "p95": 51.70000000111759,
+              "p99": 51.70000000111759,
+              "max": 55.69999999925494,
+              "min": 42.09999999962747
+            },
+            "cdpObservationMs": {
+              "ScriptDuration": {
+                "n": 12,
+                "p50": 16.025,
+                "p95": 18.131,
+                "p99": 18.131,
+                "max": 20.589999999999996,
+                "min": 13.594999999999995
+              },
+              "LayoutDuration": {
+                "n": 12,
+                "p50": 14.870999999999995,
+                "p95": 16.878999999999998,
+                "p99": 16.878999999999998,
+                "max": 16.892999999999997,
+                "min": 13.155
+              },
+              "RecalcStyleDuration": {
+                "n": 12,
+                "p50": 11.538,
+                "p95": 12.923999999999998,
+                "p99": 12.923999999999998,
+                "max": 15.921000000000001,
+                "min": 10.427
+              },
+              "TaskDuration": {
+                "n": 12,
+                "p50": 55.24799999999996,
+                "p95": 59.784999999999975,
+                "p99": 59.784999999999975,
+                "max": 63.20000000000003,
+                "min": 47.76799999999981
+              }
+            },
+            "firstFrameDelayMs": {
+              "n": 12,
+              "p50": 46,
+              "p95": 48.90000000037253,
+              "p99": 48.90000000037253,
+              "max": 53,
+              "min": 39.399999998509884
+            },
+            "longTaskCount": 1,
+            "maxLongTaskMs": 54
+          },
+          "current": {
+            "elapsedMs": {
+              "n": 12,
+              "p50": 45.40000000037253,
+              "p95": 53.5,
+              "p99": 53.5,
+              "max": 66,
+              "min": 40.59999999962747
+            },
+            "cdpObservationMs": {
+              "ScriptDuration": {
+                "n": 12,
+                "p50": 14.468999999999996,
+                "p95": 18.893999999999995,
+                "p99": 18.893999999999995,
+                "max": 19.929999999999996,
+                "min": 12.458999999999998
+              },
+              "LayoutDuration": {
+                "n": 12,
+                "p50": 14.311999999999998,
+                "p95": 16.947999999999997,
+                "p99": 16.947999999999997,
+                "max": 18.918999999999997,
+                "min": 12.500000000000004
+              },
+              "RecalcStyleDuration": {
+                "n": 12,
+                "p50": 11.147000000000004,
+                "p95": 13.952,
+                "p99": 13.952,
+                "max": 22.509,
+                "min": 9.852999999999998
+              },
+              "TaskDuration": {
+                "n": 12,
+                "p50": 52.419,
+                "p95": 63.14599999999992,
+                "p99": 63.14599999999992,
+                "max": 72.30500000000006,
+                "min": 47.37800000000014
+              }
+            },
+            "firstFrameDelayMs": {
+              "n": 12,
+              "p50": 42.19999999925494,
+              "p95": 49.90000000037253,
+              "p99": 49.90000000037253,
+              "max": 62.5,
+              "min": 38.09999999962747
+            },
+            "longTaskCount": 2,
+            "maxLongTaskMs": 63
+          },
+          "pairedDeltaMs": {
+            "values": [
+              -13.299999998882413,
+              -3.5,
+              -5.799999998882413,
+              20.90000000037253,
+              -9.599999999627471,
+              -6,
+              -0.8999999985098839,
+              4.200000001117587,
+              3.300000000745058,
+              2.300000002607703,
+              10.300000000745058,
+              -8.300000000745058
+            ],
+            "summary": {
+              "n": 12,
+              "p50": -3.5,
+              "p95": 10.300000000745058,
+              "p99": 10.300000000745058,
+              "max": 20.90000000037253,
+              "min": -13.299999998882413
+            }
+          },
+          "faster": 7,
+          "slower": 5,
+          "equal": 0,
+          "percentChange": {
+            "p50": -7.15746421262441,
+            "p95": 3.48162475598357,
+            "max": 18.49192100697097
+          },
+          "negativePairs": [
+            {
+              "pair": 4,
+              "deltaMs": 20.90000000037253
+            },
+            {
+              "pair": 8,
+              "deltaMs": 4.200000001117587
+            },
+            {
+              "pair": 9,
+              "deltaMs": 3.300000000745058
+            },
+            {
+              "pair": 10,
+              "deltaMs": 2.300000002607703
+            },
+            {
+              "pair": 11,
+              "deltaMs": 10.300000000745058
+            }
+          ],
+          "strictOutliersOver200Ms": []
+        }
+      },
+      "protocol": {
+        "createdAt": "2026-10-20T05:24:00.566Z",
+        "pairs": 12,
+        "samplesPerActionPerVersion": 12,
+        "warmupsPerActionPerVersion": 1,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "pair": 0,
+            "label": "baseline"
+          },
+          {
+            "phase": "warmup",
+            "pair": 0,
+            "label": "current"
+          },
+          {
+            "phase": "measured",
+            "pair": 1,
+            "label": "baseline"
+          },
+          {
+            "phase": "measured",
+            "pair": 1,
+            "label": "current"
+          },
+          {
+            "phase": "measured",
+            "pair": 2,
+            "label": "current"
+          },
+          {
+            "phase": "measured",
+            "pair": 2,
+            "label": "baseline"
+          },
+          {
+            "phase": "measured",
+            "pair": 3,
+            "label": "baseline"
+          },
+          {
+            "phase": "measured",
+            "pair": 3,
+            "label": "current"
+          },
+          {
+            "phase": "measured",
+            "pair": 4,
+            "label": "current"
+          },
+          {
+            "phase": "measured",
+            "pair": 4,
+            "label": "baseline"
+          },
+          {
+            "phase": "measured",
+            "pair": 5,
+            "label": "baseline"
+          },
+          {
+            "phase": "measured",
+            "pair": 5,
+            "label": "current"
+          },
+          {
+            "phase": "measured",
+            "pair": 6,
+            "label": "current"
+          },
+          {
+            "phase": "measured",
+            "pair": 6,
+            "label": "baseline"
+          },
+          {
+            "phase": "measured",
+            "pair": 7,
+            "label": "baseline"
+          },
+          {
+            "phase": "measured",
+            "pair": 7,
+            "label": "current"
+          },
+          {
+            "phase": "measured",
+            "pair": 8,
+            "label": "current"
+          },
+          {
+            "phase": "measured",
+            "pair": 8,
+            "label": "baseline"
+          },
+          {
+            "phase": "measured",
+            "pair": 9,
+            "label": "baseline"
+          },
+          {
+            "phase": "measured",
+            "pair": 9,
+            "label": "current"
+          },
+          {
+            "phase": "measured",
+            "pair": 10,
+            "label": "current"
+          },
+          {
+            "phase": "measured",
+            "pair": 10,
+            "label": "baseline"
+          },
+          {
+            "phase": "measured",
+            "pair": 11,
+            "label": "baseline"
+          },
+          {
+            "phase": "measured",
+            "pair": 11,
+            "label": "current"
+          },
+          {
+            "phase": "measured",
+            "pair": 12,
+            "label": "current"
+          },
+          {
+            "phase": "measured",
+            "pair": 12,
+            "label": "baseline"
+          }
+        ],
+        "fixture": {
+          "seed": 27017,
+          "runId": "qa-round06-native-storage-10000-27017",
+          "items": 10000,
+          "rawCharacters": 2039245,
+          "rawUtf8Bytes": 2190143,
+          "rawSha256": "c4390fd5079e909fbf54e01471647ca68f609c375c302415ac7bbf673dae5ab5",
+          "stateSha256": "887b97d4dd72aa091e1b901c9217c8fbfb4cee382bf0119060d03ab5eb9c5ebd"
+        },
+        "viewport": {
+          "width": 1920,
+          "height": 1080
+        },
+        "deviceScaleFactor": 1,
+        "effects": "low",
+        "reducedMotion": "reduce",
+        "actions": [
+          "Native first inventory open from the game screen",
+          "Native weapon filter click from all-items page 0",
+          "Native next-page click from weapon page 0 to page 1"
+        ],
+        "clock": "Trusted click capture listener to the second requestAnimationFrame callback. UI handlers, rendering and observed frame delay included; protocol transport and correctness checks excluded.",
+        "cdpClock": "CDP Performance cumulative counters are read after the explicit locator trial check but before the actual Playwright click, and again after the measured promise is read back. This wider observation includes browser/automation work before click dispatch and after the second RAF; it is not the exact latency window or engine-only CPU time.",
+        "deadline": "A fixed 30-second host deadline bounds reading each measured browser promise even if the renderer cannot run its own timer. Failure retains its active case and never substitutes another sample.",
+        "quantile": "Sorted rank floor((n-1)*p). Paired differences use current minus baseline. Only the fixed warmups are excluded. No tail removal, adaptive sample count or retry replacement.",
+        "lifecycle": "One Chromium process; a fresh context and real native main/mirror save for each scheduled entry. Open then filter then page always in this declared order. Contexts never overlap.",
+        "correctness": "Across versions only the explicit reclaim-on-demand strip is excluded and separately retained; every other node must remain equal. Each complete inventory section is compared with its own source center(state,ui), parsed by native DOMParser. Card IDs, actions, text and all attributes are retained. Complete persisted bytes and decoded state including RNG are unchanged; primary and mirror must be identical.",
+        "sourceIdentity": "All JavaScript and CSS under src plus index/package metadata are hashed before module imports and after all samples. Every scheduled context checks the navigated document and served runtime bytes against those identities before timing. Package metadata remains HTTP 404 and its local version must match the served release.",
+        "limits": [
+          "Synthetic fixed 10000-item inventory; not natural-player distribution.",
+          "Software ANGLE SwiftShader and browser callback latency; not physical GPU FPS, disk durability or a save-transaction speed claim.",
+          "No engine, storage, quota, Web Locks, handler or animation API is replaced."
+        ]
+      },
+      "allFormalOracles": {
+        "trusted": true,
+        "completeDomEqual": true,
+        "fullSaveUnchanged": true,
+        "mirrorIdentical": true
+      }
+    },
+    "inventory-latency-final": {
+      "status": "MEASURED",
+      "sourceUnchanged": true,
+      "errors": [],
+      "totalRuns": 78,
+      "formalRuns": 72,
+      "warmupRuns": 6,
+      "actions": {
+        "open": {
+          "baseline": {
+            "elapsedMs": {
+              "n": 12,
+              "p50": 77.09999999962747,
+              "p95": 464.3999999985099,
+              "p99": 464.3999999985099,
+              "max": 624,
+              "min": 63.70000000111759
+            },
+            "cdpObservationMs": {
+              "ScriptDuration": {
+                "n": 12,
+                "p50": 26.305,
+                "p95": 41.455,
+                "p99": 41.455,
+                "max": 65.765,
+                "min": 23.206
+              },
+              "LayoutDuration": {
+                "n": 12,
+                "p50": 21.293,
+                "p95": 33.945,
+                "p99": 33.945,
+                "max": 39.527,
+                "min": 19.314999999999998
+              },
+              "RecalcStyleDuration": {
+                "n": 12,
+                "p50": 15.297999999999998,
+                "p95": 24.632,
+                "p99": 24.632,
+                "max": 31.051000000000002,
+                "min": 14.482
+              },
+              "TaskDuration": {
+                "n": 12,
+                "p50": 91.92800000000007,
+                "p95": 588.885,
+                "p99": 588.885,
+                "max": 755.549,
+                "min": 70.409
+              }
+            },
+            "firstFrameDelayMs": {
+              "n": 12,
+              "p50": 71.90000000037253,
+              "p95": 96.09999999962747,
+              "p99": 96.09999999962747,
+              "max": 135.5,
+              "min": 59.600000001490116
+            },
+            "longTaskCount": 12,
+            "maxLongTaskMs": 136
+          },
+          "current": {
+            "elapsedMs": {
+              "n": 12,
+              "p50": 72.60000000149012,
+              "p95": 98.40000000037253,
+              "p99": 98.40000000037253,
+              "max": 516,
+              "min": 66.09999999962747
+            },
+            "cdpObservationMs": {
+              "ScriptDuration": {
+                "n": 12,
+                "p50": 25.73,
+                "p95": 34.665,
+                "p99": 34.665,
+                "max": 54.341,
+                "min": 23.966
+              },
+              "LayoutDuration": {
+                "n": 12,
+                "p50": 22.015,
+                "p95": 28.476000000000003,
+                "p99": 28.476000000000003,
+                "max": 30.404999999999998,
+                "min": 19.516000000000002
+              },
+              "RecalcStyleDuration": {
+                "n": 12,
+                "p50": 15.381,
+                "p95": 22.036,
+                "p99": 22.036,
+                "max": 22.591,
+                "min": 14.423
+              },
+              "TaskDuration": {
+                "n": 12,
+                "p50": 190.66200000000006,
+                "p95": 824.039,
+                "p99": 824.039,
+                "max": 971.1229999999999,
+                "min": 72.24000000000002
+              }
+            },
+            "firstFrameDelayMs": {
+              "n": 12,
+              "p50": 67.19999999925494,
+              "p95": 92,
+              "p99": 92,
+              "max": 99.40000000037253,
+              "min": 60.69999999925494
+            },
+            "longTaskCount": 12,
+            "maxLongTaskMs": 99
+          },
+          "pairedDeltaMs": {
+            "values": [
+              7.099999999627471,
+              6.500000001862645,
+              -397.3999999985099,
+              -13.699999999254942,
+              32,
+              -20,
+              -9.900000000372529,
+              3.999999998137355,
+              -532.5999999996275,
+              452.2000000011176,
+              -373.90000000037253,
+              7.5
+            ],
+            "summary": {
+              "n": 12,
+              "p50": -9.900000000372529,
+              "p95": 32,
+              "p99": 32,
+              "max": 452.2000000011176,
+              "min": -532.5999999996275
+            }
+          },
+          "faster": 6,
+          "slower": 6,
+          "equal": 0,
+          "percentChange": {
+            "p50": -5.836575873098704,
+            "p95": -78.81136950889572,
+            "max": -17.307692307692314
+          },
+          "negativePairs": [
+            {
+              "pair": 1,
+              "deltaMs": 7.099999999627471
+            },
+            {
+              "pair": 2,
+              "deltaMs": 6.500000001862645
+            },
+            {
+              "pair": 5,
+              "deltaMs": 32
+            },
+            {
+              "pair": 8,
+              "deltaMs": 3.999999998137355
+            },
+            {
+              "pair": 10,
+              "deltaMs": 452.2000000011176
+            },
+            {
+              "pair": 12,
+              "deltaMs": 7.5
+            }
+          ],
+          "strictOutliersOver200Ms": [
+            {
+              "pair": 3,
+              "label": "baseline",
+              "elapsedMs": 464.3999999985099,
+              "firstFrameDelayMs": 93,
+              "cdpObservationMs": {
+                "ScriptDuration": 41.455,
+                "LayoutDuration": 31.39,
+                "RecalcStyleDuration": 15.805,
+                "TaskDuration": 471.955
+              }
+            },
+            {
+              "pair": 9,
+              "label": "baseline",
+              "elapsedMs": 624,
+              "firstFrameDelayMs": 135.5,
+              "cdpObservationMs": {
+                "ScriptDuration": 65.765,
+                "LayoutDuration": 33.945,
+                "RecalcStyleDuration": 31.051000000000002,
+                "TaskDuration": 755.549
+              }
+            },
+            {
+              "pair": 10,
+              "label": "current",
+              "elapsedMs": 516,
+              "firstFrameDelayMs": 99.40000000037253,
+              "cdpObservationMs": {
+                "ScriptDuration": 54.341,
+                "LayoutDuration": 23.703000000000003,
+                "RecalcStyleDuration": 18.909000000000002,
+                "TaskDuration": 971.1229999999999
+              }
+            },
+            {
+              "pair": 11,
+              "label": "baseline",
+              "elapsedMs": 450.09999999962747,
+              "firstFrameDelayMs": 96.09999999962747,
+              "cdpObservationMs": {
+                "ScriptDuration": 36.873,
+                "LayoutDuration": 39.527,
+                "RecalcStyleDuration": 14.53,
+                "TaskDuration": 457.512
+              }
+            }
+          ]
+        },
+        "filter": {
+          "baseline": {
+            "elapsedMs": {
+              "n": 12,
+              "p50": 57,
+              "p95": 66.79999999888241,
+              "p99": 66.79999999888241,
+              "max": 82.5,
+              "min": 50
+            },
+            "cdpObservationMs": {
+              "ScriptDuration": {
+                "n": 12,
+                "p50": 22.630999999999997,
+                "p95": 31.490000000000006,
+                "p99": 31.490000000000006,
+                "max": 41.979,
+                "min": 20.069999999999997
+              },
+              "LayoutDuration": {
+                "n": 12,
+                "p50": 15.510999999999997,
+                "p95": 18.969,
+                "p99": 18.969,
+                "max": 22.677,
+                "min": 14.176999999999998
+              },
+              "RecalcStyleDuration": {
+                "n": 12,
+                "p50": 12.161000000000001,
+                "p95": 16.583000000000002,
+                "p99": 16.583000000000002,
+                "max": 21.154,
+                "min": 10.774
+              },
+              "TaskDuration": {
+                "n": 12,
+                "p50": 63.60499999999991,
+                "p95": 78.60299999999998,
+                "p99": 78.60299999999998,
+                "max": 90.45399999999992,
+                "min": 56.375000000000064
+              }
+            },
+            "firstFrameDelayMs": {
+              "n": 12,
+              "p50": 53.899999998509884,
+              "p95": 63.19999999925494,
+              "p99": 63.19999999925494,
+              "max": 76.59999999962747,
+              "min": 47.40000000037253
+            },
+            "longTaskCount": 10,
+            "maxLongTaskMs": 77
+          },
+          "current": {
+            "elapsedMs": {
+              "n": 12,
+              "p50": 55.59999999962747,
+              "p95": 76.69999999925494,
+              "p99": 76.69999999925494,
+              "max": 95.69999999925494,
+              "min": 51.09999999962747
+            },
+            "cdpObservationMs": {
+              "ScriptDuration": {
+                "n": 12,
+                "p50": 22.199000000000005,
+                "p95": 32.971000000000004,
+                "p99": 32.971000000000004,
+                "max": 36.377,
+                "min": 20.065999999999992
+              },
+              "LayoutDuration": {
+                "n": 12,
+                "p50": 15.810999999999998,
+                "p95": 20.555,
+                "p99": 20.555,
+                "max": 43.36300000000001,
+                "min": 14.076999999999996
+              },
+              "RecalcStyleDuration": {
+                "n": 12,
+                "p50": 11.985,
+                "p95": 16.185,
+                "p99": 16.185,
+                "max": 17.025,
+                "min": 10.765999999999998
+              },
+              "TaskDuration": {
+                "n": 12,
+                "p50": 64.85700000000006,
+                "p95": 86.07600000000004,
+                "p99": 86.07600000000004,
+                "max": 103.94400000000003,
+                "min": 57.99700000000008
+              }
+            },
+            "firstFrameDelayMs": {
+              "n": 12,
+              "p50": 52.5,
+              "p95": 73.19999999925494,
+              "p99": 73.19999999925494,
+              "max": 92.79999999888241,
+              "min": 48.09999999962747
+            },
+            "longTaskCount": 9,
+            "maxLongTaskMs": 94
+          },
+          "pairedDeltaMs": {
+            "values": [
+              -11.5,
+              -0.5,
+              -12.099999999627471,
+              2.899999998509884,
+              6.199999999254942,
+              45.69999999925494,
+              23.399999998509884,
+              1.099999999627471,
+              -16.09999999962747,
+              -5.900000000372529,
+              -10.899999998509884,
+              12.600000001490116
+            ],
+            "summary": {
+              "n": 12,
+              "p50": -0.5,
+              "p95": 23.399999998509884,
+              "p99": 23.399999998509884,
+              "max": 45.69999999925494,
+              "min": -16.09999999962747
+            }
+          },
+          "faster": 6,
+          "slower": 6,
+          "equal": 0,
+          "percentChange": {
+            "p50": -2.4561403515307556,
+            "p95": 14.820359282242745,
+            "max": 15.999999999096893
+          },
+          "negativePairs": [
+            {
+              "pair": 4,
+              "deltaMs": 2.899999998509884
+            },
+            {
+              "pair": 5,
+              "deltaMs": 6.199999999254942
+            },
+            {
+              "pair": 6,
+              "deltaMs": 45.69999999925494
+            },
+            {
+              "pair": 7,
+              "deltaMs": 23.399999998509884
+            },
+            {
+              "pair": 8,
+              "deltaMs": 1.099999999627471
+            },
+            {
+              "pair": 12,
+              "deltaMs": 12.600000001490116
+            }
+          ],
+          "strictOutliersOver200Ms": []
+        },
+        "page": {
+          "baseline": {
+            "elapsedMs": {
+              "n": 12,
+              "p50": 43.90000000037253,
+              "p95": 49.5,
+              "p99": 49.5,
+              "max": 59.19999999925494,
+              "min": 42.79999999888241
+            },
+            "cdpObservationMs": {
+              "ScriptDuration": {
+                "n": 12,
+                "p50": 14.336000000000002,
+                "p95": 15.741000000000005,
+                "p99": 15.741000000000005,
+                "max": 19.103,
+                "min": 13.979999999999999
+              },
+              "LayoutDuration": {
+                "n": 12,
+                "p50": 13.767000000000008,
+                "p95": 15.211000000000002,
+                "p99": 15.211000000000002,
+                "max": 15.676999999999996,
+                "min": 12.644000000000002
+              },
+              "RecalcStyleDuration": {
+                "n": 12,
+                "p50": 10.638999999999996,
+                "p95": 11.213000000000001,
+                "p99": 11.213000000000001,
+                "max": 11.307999999999998,
+                "min": 9.984
+              },
+              "TaskDuration": {
+                "n": 12,
+                "p50": 49.30100000000004,
+                "p95": 56.60100000000013,
+                "p99": 56.60100000000013,
+                "max": 65.28900000000016,
+                "min": 48.90700000000003
+              }
+            },
+            "firstFrameDelayMs": {
+              "n": 12,
+              "p50": 41,
+              "p95": 46.09999999962747,
+              "p99": 46.09999999962747,
+              "max": 50.5,
+              "min": 40
+            },
+            "longTaskCount": 0,
+            "maxLongTaskMs": 0
+          },
+          "current": {
+            "elapsedMs": {
+              "n": 12,
+              "p50": 43.600000001490116,
+              "p95": 47.09999999962747,
+              "p99": 47.09999999962747,
+              "max": 51.40000000037253,
+              "min": 40.19999999925494
+            },
+            "cdpObservationMs": {
+              "ScriptDuration": {
+                "n": 12,
+                "p50": 13.410999999999992,
+                "p95": 14.568999999999999,
+                "p99": 14.568999999999999,
+                "max": 14.582999999999991,
+                "min": 12.363
+              },
+              "LayoutDuration": {
+                "n": 12,
+                "p50": 13.643000000000002,
+                "p95": 15.141000000000002,
+                "p99": 15.141000000000002,
+                "max": 17.361,
+                "min": 12.435000000000002
+              },
+              "RecalcStyleDuration": {
+                "n": 12,
+                "p50": 10.415999999999999,
+                "p95": 11.243000000000002,
+                "p99": 11.243000000000002,
+                "max": 12.707999999999997,
+                "min": 9.781999999999998
+              },
+              "TaskDuration": {
+                "n": 12,
+                "p50": 50.39699999999981,
+                "p95": 53.02299999999982,
+                "p99": 53.02299999999982,
+                "max": 58.899000000000036,
+                "min": 46.341999999999885
+              }
+            },
+            "firstFrameDelayMs": {
+              "n": 12,
+              "p50": 40.40000000037253,
+              "p95": 43,
+              "p99": 43,
+              "max": 47.59999999962747,
+              "min": 37.399999998509884
+            },
+            "longTaskCount": 0,
+            "maxLongTaskMs": 0
+          },
+          "pairedDeltaMs": {
+            "values": [
+              3,
+              -5.099999999627471,
+              -6.899999998509884,
+              0.7000000011175871,
+              -1.200000001117587,
+              -3.200000001117587,
+              4.799999998882413,
+              -15.299999998882413,
+              3.599999999627471,
+              -3.199999999254942,
+              1.299999998882413,
+              -0.09999999962747097
+            ],
+            "summary": {
+              "n": 12,
+              "p50": -1.200000001117587,
+              "p95": 3.599999999627471,
+              "p99": 3.599999999627471,
+              "max": 4.799999998882413,
+              "min": -15.299999998882413
+            }
+          },
+          "faster": 7,
+          "slower": 5,
+          "equal": 0,
+          "percentChange": {
+            "p50": -0.6833712958539073,
+            "p95": -4.848484849237433,
+            "max": -13.17567567395368
+          },
+          "negativePairs": [
+            {
+              "pair": 1,
+              "deltaMs": 3
+            },
+            {
+              "pair": 4,
+              "deltaMs": 0.7000000011175871
+            },
+            {
+              "pair": 7,
+              "deltaMs": 4.799999998882413
+            },
+            {
+              "pair": 9,
+              "deltaMs": 3.599999999627471
+            },
+            {
+              "pair": 11,
+              "deltaMs": 1.299999998882413
+            }
+          ],
+          "strictOutliersOver200Ms": []
+        }
+      },
+      "protocol": {
+        "createdAt": "2026-10-20T05:53:07.916Z",
+        "pairs": 12,
+        "samplesPerActionPerVersion": 12,
+        "warmupsPerActionPerVersion": 1,
+        "schedule": [
+          {
+            "phase": "warmup",
+            "pair": 0,
+            "label": "baseline"
+          },
+          {
+            "phase": "warmup",
+            "pair": 0,
+            "label": "current"
+          },
+          {
+            "phase": "measured",
+            "pair": 1,
+            "label": "baseline"
+          },
+          {
+            "phase": "measured",
+            "pair": 1,
+            "label": "current"
+          },
+          {
+            "phase": "measured",
+            "pair": 2,
+            "label": "current"
+          },
+          {
+            "phase": "measured",
+            "pair": 2,
+            "label": "baseline"
+          },
+          {
+            "phase": "measured",
+            "pair": 3,
+            "label": "baseline"
+          },
+          {
+            "phase": "measured",
+            "pair": 3,
+            "label": "current"
+          },
+          {
+            "phase": "measured",
+            "pair": 4,
+            "label": "current"
+          },
+          {
+            "phase": "measured",
+            "pair": 4,
+            "label": "baseline"
+          },
+          {
+            "phase": "measured",
+            "pair": 5,
+            "label": "baseline"
+          },
+          {
+            "phase": "measured",
+            "pair": 5,
+            "label": "current"
+          },
+          {
+            "phase": "measured",
+            "pair": 6,
+            "label": "current"
+          },
+          {
+            "phase": "measured",
+            "pair": 6,
+            "label": "baseline"
+          },
+          {
+            "phase": "measured",
+            "pair": 7,
+            "label": "baseline"
+          },
+          {
+            "phase": "measured",
+            "pair": 7,
+            "label": "current"
+          },
+          {
+            "phase": "measured",
+            "pair": 8,
+            "label": "current"
+          },
+          {
+            "phase": "measured",
+            "pair": 8,
+            "label": "baseline"
+          },
+          {
+            "phase": "measured",
+            "pair": 9,
+            "label": "baseline"
+          },
+          {
+            "phase": "measured",
+            "pair": 9,
+            "label": "current"
+          },
+          {
+            "phase": "measured",
+            "pair": 10,
+            "label": "current"
+          },
+          {
+            "phase": "measured",
+            "pair": 10,
+            "label": "baseline"
+          },
+          {
+            "phase": "measured",
+            "pair": 11,
+            "label": "baseline"
+          },
+          {
+            "phase": "measured",
+            "pair": 11,
+            "label": "current"
+          },
+          {
+            "phase": "measured",
+            "pair": 12,
+            "label": "current"
+          },
+          {
+            "phase": "measured",
+            "pair": 12,
+            "label": "baseline"
+          }
+        ],
+        "fixture": {
+          "seed": 27017,
+          "runId": "qa-round06-native-storage-10000-27017",
+          "items": 10000,
+          "rawCharacters": 2039245,
+          "rawUtf8Bytes": 2190143,
+          "rawSha256": "c4390fd5079e909fbf54e01471647ca68f609c375c302415ac7bbf673dae5ab5",
+          "stateSha256": "887b97d4dd72aa091e1b901c9217c8fbfb4cee382bf0119060d03ab5eb9c5ebd"
+        },
+        "viewport": {
+          "width": 1920,
+          "height": 1080
+        },
+        "deviceScaleFactor": 1,
+        "effects": "low",
+        "reducedMotion": "reduce",
+        "actions": [
+          "Native first inventory open from the game screen",
+          "Native weapon filter click from all-items page 0",
+          "Native next-page click from weapon page 0 to page 1"
+        ],
+        "clock": "Trusted click capture listener to the second requestAnimationFrame callback. UI handlers, rendering and observed frame delay included; protocol transport and correctness checks excluded.",
+        "cdpClock": "CDP Performance cumulative counters are read after the explicit locator trial check but before the actual Playwright click, and again after the measured promise is read back. This wider observation includes browser/automation work before click dispatch and after the second RAF; it is not the exact latency window or engine-only CPU time.",
+        "deadline": "A fixed 30-second host deadline bounds reading each measured browser promise even if the renderer cannot run its own timer. Failure retains its active case and never substitutes another sample.",
+        "quantile": "Sorted rank floor((n-1)*p). Paired differences use current minus baseline. Only the fixed warmups are excluded. No tail removal, adaptive sample count or retry replacement.",
+        "lifecycle": "One Chromium process; a fresh context and real native main/mirror save for each scheduled entry. Open then filter then page always in this declared order. Contexts never overlap.",
+        "correctness": "Across versions only the explicit reclaim-on-demand strip is excluded and separately retained; every other node must remain equal. Each complete inventory section is compared with its own source center(state,ui), parsed by native DOMParser. Card IDs, actions, text and all attributes are retained. Complete persisted bytes and decoded state including RNG are unchanged; primary and mirror must be identical.",
+        "sourceIdentity": "All JavaScript and CSS under src plus index/package metadata are hashed before module imports and after all samples. Every scheduled context checks the navigated document and served runtime bytes against those identities before timing. Package metadata remains HTTP 404 and its local version must match the served release.",
+        "limits": [
+          "Synthetic fixed 10000-item inventory; not natural-player distribution.",
+          "Software ANGLE SwiftShader and browser callback latency; not physical GPU FPS, disk durability or a save-transaction speed claim.",
+          "No engine, storage, quota, Web Locks, handler or animation API is replaced."
+        ]
+      },
+      "allFormalOracles": {
+        "trusted": true,
+        "completeDomEqual": true,
+        "fullSaveUnchanged": true,
+        "mirrorIdentical": true
+      }
+    }
+  }
+}

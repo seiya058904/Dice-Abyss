@@ -1,0 +1,28 @@
+{
+  "step": "natural-400",
+  "command": [
+    "node",
+    "scripts/audit-natural-multiseed-round13.mjs",
+    "--source",
+    ".",
+    "--output",
+    "/workspace/scratch/61dab2872cc5/audit/current/natural-400.json"
+  ],
+  "cwd": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss",
+  "started": "2026-10-19T02:59:19.833343+00:00",
+  "finished": "2026-10-19T03:04:58.005577+00:00",
+  "durationSeconds": 338.17225,
+  "exitCode": 2,
+  "acceptedExitCodes": [
+    0,
+    2
+  ],
+  "passedExitGate": true,
+  "stdoutFile": "/workspace/scratch/61dab2872cc5/audit/current/natural-400.log",
+  "stderrFile": "/workspace/scratch/61dab2872cc5/audit/current/natural-400.stderr.log",
+  "stdoutBytes": 2226,
+  "stderrBytes": 0,
+  "stdoutSha256": "07adee81a99ecab66053db3f7ae9f66cdcf26e66d4a3e1617357d78c575a1afc",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "exitTwoMeaning": "Bounded natural policy may remain incomplete; the retained full report must separately confirm seed 23757 at floor 30 with DEATH_RETRY_LIMIT. Exit 2 is not a victory or an unconditional pass."
+}

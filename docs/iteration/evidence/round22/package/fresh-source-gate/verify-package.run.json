@@ -1,0 +1,35 @@
+{
+  "name": "verify-package",
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "/workspace/scratch/a3dd46c18162/work/Dice-Abyss/scripts/verify-package.py",
+    "/workspace/scratch/a3dd46c18162/qa/final-package-gate/candidate-v5.22.0.zip",
+    "--extract",
+    "/workspace/scratch/a3dd46c18162/qa/final-package-gate/fresh-candidate",
+    "--output",
+    "/workspace/scratch/a3dd46c18162/qa/final-package-gate/full-source-gate/package-report.json"
+  ],
+  "cwd": "/workspace/scratch/a3dd46c18162/work/Dice-Abyss",
+  "startedAt": "2026-10-19T14:54:51.989254+00:00",
+  "finishedAt": "2026-10-19T14:54:54.412023+00:00",
+  "durationSeconds": 2.4228,
+  "exitCode": 0,
+  "error": null,
+  "cleanup": {
+    "started": true,
+    "pid": 149553,
+    "exitBeforeCleanup": 0,
+    "exitAfterCleanup": 0,
+    "stopped": true
+  },
+  "stdout": {
+    "path": "verify-package.stdout",
+    "bytes": 452,
+    "sha256": "8039ad799b2633eb220a2476edf862f4243f96f35990b5e06baac4a479359856"
+  },
+  "stderr": {
+    "path": "verify-package.stderr",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

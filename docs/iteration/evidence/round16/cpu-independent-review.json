@@ -1,0 +1,4310 @@
+{
+  "audit": "round16-independent-sync-js-candidate-review",
+  "status": "PASS_EVIDENCE_AND_STATISTICS_FOR_WITHDRAWN_CANDIDATE",
+  "created": "2026-10-19T03:35:25.036031+00:00",
+  "input": {
+    "path": "/workspace/scratch/61dab2872cc5/audit/current/inventory-cpu-formal.json",
+    "bytes": 378958,
+    "sha256": "aa9bbb2b559267c6ae2792b48d394ac170ceb3b6c2df02e6939bcd8a6a64e845"
+  },
+  "reviewScript": {
+    "path": "/workspace/scratch/61dab2872cc5/audit/storage/review-cpu.py",
+    "sha256": "939dbfa1ca16198c8f553168089a0f80e8c999bd76121a1e6508984a4dddf2ca"
+  },
+  "driver": {
+    "path": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/scripts/qa-inventory-cpu-round16.mjs",
+    "sha256": "335028cf1a3fc0e8782f4a4aecbc7a09f8742a6e50ef5654d83ebf6ed15c37af"
+  },
+  "sampling": {
+    "calls": 312,
+    "formal": 288,
+    "warmup": 24,
+    "aggregates": 24,
+    "pairedGroups": 12,
+    "samplesPerAggregate": 12
+  },
+  "method": "Python statistics.median and sorted nearest-rank ceil(n*0.95), independently recalculated from the immutable raw elapsedMs rows; tolerance 1e-9 ms for comparing numeric summaries. No browser, benchmark, simulation or fixture generation was executed.",
+  "checks": [
+    {
+      "label": "Recorded formal candidate run succeeded and reports stable source/driver",
+      "passed": true
+    },
+    {
+      "label": "Declared fixed call counts, no smoke pooling",
+      "passed": true
+    },
+    {
+      "label": "Actual CPU driver matches the execution SHA256",
+      "passed": true,
+      "evidence": "335028cf1a3fc0e8782f4a4aecbc7a09f8742a6e50ef5654d83ebf6ed15c37af"
+    },
+    {
+      "label": "Every recorded source and served-source identity matches, using the explicit archived candidate for its reverted inventory module",
+      "passed": true,
+      "evidence": {
+        "sourceIdentities": 106,
+        "httpIdentities": 104
+      }
+    },
+    {
+      "label": "The sole later product difference is the explicitly authorized inventory rollback",
+      "passed": true,
+      "evidence": [
+        {
+          "label": "after",
+          "file": "src/inventory-query.js",
+          "bytes": 1686,
+          "sha256": "463a8d340842b9deaacef262b4459ecc8d8e9503d01edddc9b7df902a31c03be",
+          "identitySource": "archived-withdrawn-candidate",
+          "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/docs/iteration/evidence/round16/experimental/inventory-query.js.txt",
+          "currentProductSha256": "7cf093f155934779d21c4dceb0a6aeef2e467fdb8c763413c155b6c0fd52a4c5"
+        }
+      ]
+    },
+    {
+      "label": "Current inventory module exactly matches the untouched input bytes",
+      "passed": true
+    },
+    {
+      "label": "Both complete fixture identities equal the original native run and same-source control",
+      "passed": true
+    },
+    {
+      "label": "All four contexts reused canonical already-loaded modules; exact initial state/saves, visible 60-card setup, and full result-oracle hashes match",
+      "passed": true
+    },
+    {
+      "label": "All 312 raw calls follow the exact fixed AB/BA, three-sort rotation and phase order",
+      "passed": true
+    },
+    {
+      "label": "Exactly 288 formal and 24 separately retained warmup calls",
+      "passed": true
+    },
+    {
+      "label": "Every call retains exact complete output, original references (selector), full state/UI and both complete persisted strings",
+      "passed": true
+    },
+    {
+      "label": "All 24 aggregate n/p50/p95/max/min/mean values match independent Python calculations",
+      "passed": true
+    },
+    {
+      "label": "All 12 paired groups preserve all original 12 deltas, signs, rounds, orders and independent delta summaries",
+      "passed": true
+    },
+    {
+      "label": "Input reports, archived candidate, current runtime and review/driver bytes remain unchanged during this read-only review",
+      "passed": true
+    }
+  ],
+  "sourceIdentityEvidence": [
+    {
+      "label": "baseline",
+      "file": "src/action-focus.js",
+      "bytes": 1672,
+      "sha256": "d5e383b4f8aeb138b6cdffc7f3dffe12cf0db7fcbac053df713dec60b3b95a98",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/action-focus.js",
+      "currentProductSha256": "d5e383b4f8aeb138b6cdffc7f3dffe12cf0db7fcbac053df713dec60b3b95a98"
+    },
+    {
+      "label": "baseline",
+      "file": "src/app.js",
+      "bytes": 48136,
+      "sha256": "1708721304f1874507b3e592fa2f7ffa3e15eb4eee516df6a34a68c7316e2753",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/app.js",
+      "currentProductSha256": "1708721304f1874507b3e592fa2f7ffa3e15eb4eee516df6a34a68c7316e2753"
+    },
+    {
+      "label": "baseline",
+      "file": "src/content.js",
+      "bytes": 13097,
+      "sha256": "4c0c2e4656c5a3482a5448a069ae2fa28367ba05d61c7d0c2c9866315f5c5526",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/content.js",
+      "currentProductSha256": "4c0c2e4656c5a3482a5448a069ae2fa28367ba05d61c7d0c2c9866315f5c5526"
+    },
+    {
+      "label": "baseline",
+      "file": "src/decisions.css",
+      "bytes": 3800,
+      "sha256": "0d1cb07494d08a26d39cca89d19f7ac875b78b67d5bf3fbad44b99a9a7a03b23",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/decisions.css",
+      "currentProductSha256": "0d1cb07494d08a26d39cca89d19f7ac875b78b67d5bf3fbad44b99a9a7a03b23"
+    },
+    {
+      "label": "baseline",
+      "file": "src/deep-content.js",
+      "bytes": 10852,
+      "sha256": "040a5668b687cf9d7b7c8b31a67cee35660ebb0539af74c7d572614f138fef33",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/deep-content.js",
+      "currentProductSha256": "040a5668b687cf9d7b7c8b31a67cee35660ebb0539af74c7d572614f138fef33"
+    },
+    {
+      "label": "baseline",
+      "file": "src/deep-rules.js",
+      "bytes": 14103,
+      "sha256": "6f6c096e37c9f18a6ca97625330a6ab8ce55b25852e677455d3a200c8200dbe1",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/deep-rules.js",
+      "currentProductSha256": "6f6c096e37c9f18a6ca97625330a6ab8ce55b25852e677455d3a200c8200dbe1"
+    },
+    {
+      "label": "baseline",
+      "file": "src/deep.css",
+      "bytes": 10667,
+      "sha256": "24f0ed8bf2969232c660a595cd5e19b206066bc4a19a983e4bd3a277b82700cc",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/deep.css",
+      "currentProductSha256": "24f0ed8bf2969232c660a595cd5e19b206066bc4a19a983e4bd3a277b82700cc"
+    },
+    {
+      "label": "baseline",
+      "file": "src/defeat-review.css",
+      "bytes": 4128,
+      "sha256": "c2343b936d4456b36c557f3c821cdb812a3d6cdcc2c061ea11a2197a56158598",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/defeat-review.css",
+      "currentProductSha256": "c2343b936d4456b36c557f3c821cdb812a3d6cdcc2c061ea11a2197a56158598"
+    },
+    {
+      "label": "baseline",
+      "file": "src/defeat-review.js",
+      "bytes": 1183,
+      "sha256": "13c14a8184266dc4b443570e5e38b25b668bfa4b818401453d7248f5f6749938",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/defeat-review.js",
+      "currentProductSha256": "13c14a8184266dc4b443570e5e38b25b668bfa4b818401453d7248f5f6749938"
+    },
+    {
+      "label": "baseline",
+      "file": "src/dice-motion.js",
+      "bytes": 5430,
+      "sha256": "3b088b9efa03552912bd92b18dc66d6122f45e2f12dc420305bb877deae5139a",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/dice-motion.js",
+      "currentProductSha256": "3b088b9efa03552912bd92b18dc66d6122f45e2f12dc420305bb877deae5139a"
+    },
+    {
+      "label": "baseline",
+      "file": "src/dice-renderer.js",
+      "bytes": 14522,
+      "sha256": "b40e1e1c808b00d319b70ce7546403c588cdcc8397bba684fe19b2f4c0bca6d8",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/dice-renderer.js",
+      "currentProductSha256": "b40e1e1c808b00d319b70ce7546403c588cdcc8397bba684fe19b2f4c0bca6d8"
+    },
+    {
+      "label": "baseline",
+      "file": "src/effects.js",
+      "bytes": 28007,
+      "sha256": "5f95f77e882a690f95215babda3cdedc0d398bbcfaabfecd3d486141200dc6f9",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/effects.js",
+      "currentProductSha256": "5f95f77e882a690f95215babda3cdedc0d398bbcfaabfecd3d486141200dc6f9"
+    },
+    {
+      "label": "baseline",
+      "file": "src/encounter-tactics.js",
+      "bytes": 6963,
+      "sha256": "02e0da7aa57de321319812503556d9e5925463644222305755e86de6c3fa355b",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/encounter-tactics.js",
+      "currentProductSha256": "02e0da7aa57de321319812503556d9e5925463644222305755e86de6c3fa355b"
+    },
+    {
+      "label": "baseline",
+      "file": "src/encounters.js",
+      "bytes": 35815,
+      "sha256": "c3c6e2d24049305d73982cf5db3b1cf02eee68f4e8e1659fd7e3021f74de0791",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/encounters.js",
+      "currentProductSha256": "c3c6e2d24049305d73982cf5db3b1cf02eee68f4e8e1659fd7e3021f74de0791"
+    },
+    {
+      "label": "baseline",
+      "file": "src/engine.js",
+      "bytes": 41128,
+      "sha256": "75c6d9fcc48c0cf49ee02e53ffb7b143a09a2c79738d3bb2eb5d0ae80b30872b",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/engine.js",
+      "currentProductSha256": "75c6d9fcc48c0cf49ee02e53ffb7b143a09a2c79738d3bb2eb5d0ae80b30872b"
+    },
+    {
+      "label": "baseline",
+      "file": "src/equipment-comparison.js",
+      "bytes": 11889,
+      "sha256": "2a2a819b22d0d1746893bb2222bfbeb7e6fcf20f10046fc7b64897c260be952d",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/equipment-comparison.js",
+      "currentProductSha256": "2a2a819b22d0d1746893bb2222bfbeb7e6fcf20f10046fc7b64897c260be952d"
+    },
+    {
+      "label": "baseline",
+      "file": "src/equipment-content.js",
+      "bytes": 6818,
+      "sha256": "d95b5e7c11d14eb764ea3cefb7eee73f35b2f9d48a8b640513eda9aefd1cc030",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/equipment-content.js",
+      "currentProductSha256": "d95b5e7c11d14eb764ea3cefb7eee73f35b2f9d48a8b640513eda9aefd1cc030"
+    },
+    {
+      "label": "baseline",
+      "file": "src/equipment.js",
+      "bytes": 13951,
+      "sha256": "8c20de433f21931318e315b862b457d37a03b9596ea5df8f7cc4025691aaccd6",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/equipment.js",
+      "currentProductSha256": "8c20de433f21931318e315b862b457d37a03b9596ea5df8f7cc4025691aaccd6"
+    },
+    {
+      "label": "baseline",
+      "file": "src/expansion.css",
+      "bytes": 14871,
+      "sha256": "d5c01857bf02a4566270f23ef389aad76e033e50bd5440ecb13665ce81818424",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/expansion.css",
+      "currentProductSha256": "d5c01857bf02a4566270f23ef389aad76e033e50bd5440ecb13665ce81818424"
+    },
+    {
+      "label": "baseline",
+      "file": "src/experience.css",
+      "bytes": 2513,
+      "sha256": "4a8175dfcf26c06e2e75126956d6e2d7749ef8c2f11c7026091faa7252c3c883",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/experience.css",
+      "currentProductSha256": "4a8175dfcf26c06e2e75126956d6e2d7749ef8c2f11c7026091faa7252c3c883"
+    },
+    {
+      "label": "baseline",
+      "file": "src/experience.js",
+      "bytes": 881,
+      "sha256": "2bdd3727c59b537f45a22d2e9aae9a93908a76e29850c8e8e8e024cbeaf93c45",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/experience.js",
+      "currentProductSha256": "2bdd3727c59b537f45a22d2e9aae9a93908a76e29850c8e8e8e024cbeaf93c45"
+    },
+    {
+      "label": "baseline",
+      "file": "src/forge.css",
+      "bytes": 7977,
+      "sha256": "9a7ee960f3494e39ac102abf7b9476cacffdd89eea1803e52469b441e124823f",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/forge.css",
+      "currentProductSha256": "9a7ee960f3494e39ac102abf7b9476cacffdd89eea1803e52469b441e124823f"
+    },
+    {
+      "label": "baseline",
+      "file": "src/fusion-controller.js",
+      "bytes": 39446,
+      "sha256": "5a4a0c6a11c7a347ffcdaa0340d3c905d65aa5ba6b50e36e7135a9276537dd1a",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/fusion-controller.js",
+      "currentProductSha256": "5a4a0c6a11c7a347ffcdaa0340d3c905d65aa5ba6b50e36e7135a9276537dd1a"
+    },
+    {
+      "label": "baseline",
+      "file": "src/fusion-dom.js",
+      "bytes": 4843,
+      "sha256": "fb78398073fdccaea6680146c34ac18de75d926439c7044ed45da39f625e4023",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/fusion-dom.js",
+      "currentProductSha256": "fb78398073fdccaea6680146c34ac18de75d926439c7044ed45da39f625e4023"
+    },
+    {
+      "label": "baseline",
+      "file": "src/fusion-view.js",
+      "bytes": 24915,
+      "sha256": "e77542f7de4c6f39ac57098ffb7a277caab988cd4bcc9ea5f50080b0f08e96c1",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/fusion-view.js",
+      "currentProductSha256": "e77542f7de4c6f39ac57098ffb7a277caab988cd4bcc9ea5f50080b0f08e96c1"
+    },
+    {
+      "label": "baseline",
+      "file": "src/fusion-workbench.js",
+      "bytes": 8152,
+      "sha256": "06f206dc578534c641f0fe327c48a4ec70ccffeed79fe8076ccd83cfb56263bf",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/fusion-workbench.js",
+      "currentProductSha256": "06f206dc578534c641f0fe327c48a4ec70ccffeed79fe8076ccd83cfb56263bf"
+    },
+    {
+      "label": "baseline",
+      "file": "src/fusion.css",
+      "bytes": 41208,
+      "sha256": "9b6fe3edaa023ae1c7702e60e3110d9450a6ca03a737f74dd984baf0fb083bc5",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/fusion.css",
+      "currentProductSha256": "9b6fe3edaa023ae1c7702e60e3110d9450a6ca03a737f74dd984baf0fb083bc5"
+    },
+    {
+      "label": "baseline",
+      "file": "src/gold.css",
+      "bytes": 2465,
+      "sha256": "bb1313da6f3a734567be73e23c606c56c1215bc976e166c9dc2b1fedb06c6393",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/gold.css",
+      "currentProductSha256": "bb1313da6f3a734567be73e23c606c56c1215bc976e166c9dc2b1fedb06c6393"
+    },
+    {
+      "label": "baseline",
+      "file": "src/gold.js",
+      "bytes": 1329,
+      "sha256": "252aab60750432e1b5f1dc158c4a8f69e3dca5d72fa016b69c03c29ac651a244",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/gold.js",
+      "currentProductSha256": "252aab60750432e1b5f1dc158c4a8f69e3dca5d72fa016b69c03c29ac651a244"
+    },
+    {
+      "label": "baseline",
+      "file": "src/inventory-dom.js",
+      "bytes": 4792,
+      "sha256": "7f3b18a6b3dbcc3a0a100c94bab35d9e81a14d7a6c74e8eabfdff3d151d35bf0",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/inventory-dom.js",
+      "currentProductSha256": "7f3b18a6b3dbcc3a0a100c94bab35d9e81a14d7a6c74e8eabfdff3d151d35bf0"
+    },
+    {
+      "label": "baseline",
+      "file": "src/inventory-query.js",
+      "bytes": 874,
+      "sha256": "7cf093f155934779d21c4dceb0a6aeef2e467fdb8c763413c155b6c0fd52a4c5",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/inventory-query.js",
+      "currentProductSha256": "7cf093f155934779d21c4dceb0a6aeef2e467fdb8c763413c155b6c0fd52a4c5"
+    },
+    {
+      "label": "baseline",
+      "file": "src/inventory-search.css",
+      "bytes": 1573,
+      "sha256": "cfb91edec23d0e706414f3c9a90b6ab46c0efec43d54ff5e01da85c9923e3de1",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/inventory-search.css",
+      "currentProductSha256": "cfb91edec23d0e706414f3c9a90b6ab46c0efec43d54ff5e01da85c9923e3de1"
+    },
+    {
+      "label": "baseline",
+      "file": "src/polish.css",
+      "bytes": 7751,
+      "sha256": "84af5e0bfc563c830287d96103faff4b1673c7d363a9cfbc26995a5074265df8",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/polish.css",
+      "currentProductSha256": "84af5e0bfc563c830287d96103faff4b1673c7d363a9cfbc26995a5074265df8"
+    },
+    {
+      "label": "baseline",
+      "file": "src/progression.css",
+      "bytes": 30151,
+      "sha256": "31125ec19b19b527f9d0499d9b045874b0d37e2d6eb8fdcc729e58bf783368ec",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/progression.css",
+      "currentProductSha256": "31125ec19b19b527f9d0499d9b045874b0d37e2d6eb8fdcc729e58bf783368ec"
+    },
+    {
+      "label": "baseline",
+      "file": "src/quality.css",
+      "bytes": 5290,
+      "sha256": "3785daf1b16c66942383c8285376a66fee42c2a21c0b1450c251870333919bb8",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/quality.css",
+      "currentProductSha256": "3785daf1b16c66942383c8285376a66fee42c2a21c0b1450c251870333919bb8"
+    },
+    {
+      "label": "baseline",
+      "file": "src/rarity.js",
+      "bytes": 2515,
+      "sha256": "871356df147d027e1845f98c5574a1d9a71c0d17bd8717f457c9007d7c73b735",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/rarity.js",
+      "currentProductSha256": "871356df147d027e1845f98c5574a1d9a71c0d17bd8717f457c9007d7c73b735"
+    },
+    {
+      "label": "baseline",
+      "file": "src/refinement.css",
+      "bytes": 10060,
+      "sha256": "79a8599ca5415c933de1161575edb25601f4efdbf57be4c45dc82033abb1fffd",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/refinement.css",
+      "currentProductSha256": "79a8599ca5415c933de1161575edb25601f4efdbf57be4c45dc82033abb1fffd"
+    },
+    {
+      "label": "baseline",
+      "file": "src/release.js",
+      "bytes": 340,
+      "sha256": "337a97663cb8961b40a0f4fbfa6274aa21aec308d2bf15c84ed892167f28b6b6",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/release.js",
+      "currentProductSha256": "337a97663cb8961b40a0f4fbfa6274aa21aec308d2bf15c84ed892167f28b6b6"
+    },
+    {
+      "label": "baseline",
+      "file": "src/responsive.css",
+      "bytes": 33069,
+      "sha256": "90bb585d66a88daa61a553112c66610b62b666aa07c28ad887b521534283cee8",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/responsive.css",
+      "currentProductSha256": "90bb585d66a88daa61a553112c66610b62b666aa07c28ad887b521534283cee8"
+    },
+    {
+      "label": "baseline",
+      "file": "src/rooms.css",
+      "bytes": 29127,
+      "sha256": "a426209cd05ccb3125a88713ea8693b04b47b65e179c605538b5053fe616c606",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/rooms.css",
+      "currentProductSha256": "a426209cd05ccb3125a88713ea8693b04b47b65e179c605538b5053fe616c606"
+    },
+    {
+      "label": "baseline",
+      "file": "src/route-weights.js",
+      "bytes": 4425,
+      "sha256": "b21499b8c44a17ad09caab5e17f312073b269981b6ac7eb916b5f656912237dd",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/route-weights.js",
+      "currentProductSha256": "b21499b8c44a17ad09caab5e17f312073b269981b6ac7eb916b5f656912237dd"
+    },
+    {
+      "label": "baseline",
+      "file": "src/save-capacity-view.js",
+      "bytes": 2059,
+      "sha256": "cd729b8ce91cf5aad772f0fcc468cfac5b389a48ff1a03e905907ade23ea7867",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/save-capacity-view.js",
+      "currentProductSha256": "cd729b8ce91cf5aad772f0fcc468cfac5b389a48ff1a03e905907ade23ea7867"
+    },
+    {
+      "label": "baseline",
+      "file": "src/save-recovery-view.js",
+      "bytes": 4355,
+      "sha256": "47e9041a86415c6bc04e5ae66803d6d8dfa6fbb2cabb8f800ce67f29a199153d",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/save-recovery-view.js",
+      "currentProductSha256": "47e9041a86415c6bc04e5ae66803d6d8dfa6fbb2cabb8f800ce67f29a199153d"
+    },
+    {
+      "label": "baseline",
+      "file": "src/save-recovery.css",
+      "bytes": 2606,
+      "sha256": "7085ab430d2f1193955b84848d8f2af88faeab0d065c427ee5e7b88b5e254c2e",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/save-recovery.css",
+      "currentProductSha256": "7085ab430d2f1193955b84848d8f2af88faeab0d065c427ee5e7b88b5e254c2e"
+    },
+    {
+      "label": "baseline",
+      "file": "src/settings-focus.js",
+      "bytes": 1278,
+      "sha256": "7c4b93a9c8830598319e2a3d8d2750cb33f5c0a1cc5b89dbd6154b985db3366f",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/settings-focus.js",
+      "currentProductSha256": "7c4b93a9c8830598319e2a3d8d2750cb33f5c0a1cc5b89dbd6154b985db3366f"
+    },
+    {
+      "label": "baseline",
+      "file": "src/storage.js",
+      "bytes": 31698,
+      "sha256": "6bfcc60036c9f729c21b948ca98c7ac715e14049856fb9dded0baa2aeef2c561",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/storage.js",
+      "currentProductSha256": "6bfcc60036c9f729c21b948ca98c7ac715e14049856fb9dded0baa2aeef2c561"
+    },
+    {
+      "label": "baseline",
+      "file": "src/styles.css",
+      "bytes": 34680,
+      "sha256": "dc835715e16e8698214d25202a39df6162c865287e6ac605c111486066764044",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/styles.css",
+      "currentProductSha256": "dc835715e16e8698214d25202a39df6162c865287e6ac605c111486066764044"
+    },
+    {
+      "label": "baseline",
+      "file": "src/talent.css",
+      "bytes": 15247,
+      "sha256": "350f583103186b0b44fc50317d92c20417fed82fe4e8667bf1776390b2425334",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/talent.css",
+      "currentProductSha256": "350f583103186b0b44fc50317d92c20417fed82fe4e8667bf1776390b2425334"
+    },
+    {
+      "label": "baseline",
+      "file": "src/views.js",
+      "bytes": 92910,
+      "sha256": "cc7b8a34b8e252c77ec4579b7b7bc781123c1f50a5d1c5a3d9a7ea728c8c2072",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/views.js",
+      "currentProductSha256": "cc7b8a34b8e252c77ec4579b7b7bc781123c1f50a5d1c5a3d9a7ea728c8c2072"
+    },
+    {
+      "label": "baseline",
+      "file": "src/visual-timeline.js",
+      "bytes": 2906,
+      "sha256": "f518084da44c2ea852bf902ba6ffc7f8f5a94ee815dac31bcc4726cc8cd44369",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/visual-timeline.js",
+      "currentProductSha256": "f518084da44c2ea852bf902ba6ffc7f8f5a94ee815dac31bcc4726cc8cd44369"
+    },
+    {
+      "label": "baseline",
+      "file": "src/visual.css",
+      "bytes": 47600,
+      "sha256": "35ec8f94b238d355f6fad93855d4b20794157e3d9c592dcf777cf25dcb2e05bd",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/src/visual.css",
+      "currentProductSha256": "35ec8f94b238d355f6fad93855d4b20794157e3d9c592dcf777cf25dcb2e05bd"
+    },
+    {
+      "label": "baseline",
+      "file": "index.html",
+      "bytes": 2137,
+      "sha256": "e206980c6cf3ad3fd85d6584418d92524a3f99dab8935b8f8b8ea49d9dfac958",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/index.html",
+      "currentProductSha256": "e206980c6cf3ad3fd85d6584418d92524a3f99dab8935b8f8b8ea49d9dfac958"
+    },
+    {
+      "label": "baseline",
+      "file": "package.json",
+      "bytes": 428,
+      "sha256": "9a9ebb41eaa9210c1554037a7bd92db7f3542c42a6261225eb1f1f4515e6a910",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/package.json",
+      "currentProductSha256": "9a9ebb41eaa9210c1554037a7bd92db7f3542c42a6261225eb1f1f4515e6a910"
+    },
+    {
+      "label": "after",
+      "file": "src/action-focus.js",
+      "bytes": 1672,
+      "sha256": "d5e383b4f8aeb138b6cdffc7f3dffe12cf0db7fcbac053df713dec60b3b95a98",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/src/action-focus.js",
+      "currentProductSha256": "d5e383b4f8aeb138b6cdffc7f3dffe12cf0db7fcbac053df713dec60b3b95a98"
+    },
+    {
+      "label": "after",
+      "file": "src/app.js",
+      "bytes": 48136,
+      "sha256": "1708721304f1874507b3e592fa2f7ffa3e15eb4eee516df6a34a68c7316e2753",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/src/app.js",
+      "currentProductSha256": "1708721304f1874507b3e592fa2f7ffa3e15eb4eee516df6a34a68c7316e2753"
+    },
+    {
+      "label": "after",
+      "file": "src/content.js",
+      "bytes": 13097,
+      "sha256": "4c0c2e4656c5a3482a5448a069ae2fa28367ba05d61c7d0c2c9866315f5c5526",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/src/content.js",
+      "currentProductSha256": "4c0c2e4656c5a3482a5448a069ae2fa28367ba05d61c7d0c2c9866315f5c5526"
+    },
+    {
+      "label": "after",
+      "file": "src/decisions.css",
+      "bytes": 4004,
+      "sha256": "5e211e2fb4e72e6959ae7db8f570a3f2baacbd9c789cca90e89b9bd13a379588",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/src/decisions.css",
+      "currentProductSha256": "5e211e2fb4e72e6959ae7db8f570a3f2baacbd9c789cca90e89b9bd13a379588"
+    },
+    {
+      "label": "after",
+      "file": "src/deep-content.js",
+      "bytes": 10852,
+      "sha256": "040a5668b687cf9d7b7c8b31a67cee35660ebb0539af74c7d572614f138fef33",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/src/deep-content.js",
+      "currentProductSha256": "040a5668b687cf9d7b7c8b31a67cee35660ebb0539af74c7d572614f138fef33"
+    },
+    {
+      "label": "after",
+      "file": "src/deep-rules.js",
+      "bytes": 14103,
+      "sha256": "6f6c096e37c9f18a6ca97625330a6ab8ce55b25852e677455d3a200c8200dbe1",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/src/deep-rules.js",
+      "currentProductSha256": "6f6c096e37c9f18a6ca97625330a6ab8ce55b25852e677455d3a200c8200dbe1"
+    },
+    {
+      "label": "after",
+      "file": "src/deep.css",
+      "bytes": 10667,
+      "sha256": "24f0ed8bf2969232c660a595cd5e19b206066bc4a19a983e4bd3a277b82700cc",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/src/deep.css",
+      "currentProductSha256": "24f0ed8bf2969232c660a595cd5e19b206066bc4a19a983e4bd3a277b82700cc"
+    },
+    {
+      "label": "after",
+      "file": "src/defeat-review.css",
+      "bytes": 4128,
+      "sha256": "c2343b936d4456b36c557f3c821cdb812a3d6cdcc2c061ea11a2197a56158598",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/src/defeat-review.css",
+      "currentProductSha256": "c2343b936d4456b36c557f3c821cdb812a3d6cdcc2c061ea11a2197a56158598"
+    },
+    {
+      "label": "after",
+      "file": "src/defeat-review.js",
+      "bytes": 1183,
+      "sha256": "13c14a8184266dc4b443570e5e38b25b668bfa4b818401453d7248f5f6749938",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/src/defeat-review.js",
+      "currentProductSha256": "13c14a8184266dc4b443570e5e38b25b668bfa4b818401453d7248f5f6749938"
+    },
+    {
+      "label": "after",
+      "file": "src/dice-motion.js",
+      "bytes": 5430,
+      "sha256": "3b088b9efa03552912bd92b18dc66d6122f45e2f12dc420305bb877deae5139a",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/src/dice-motion.js",
+      "currentProductSha256": "3b088b9efa03552912bd92b18dc66d6122f45e2f12dc420305bb877deae5139a"
+    },
+    {
+      "label": "after",
+      "file": "src/dice-renderer.js",
+      "bytes": 14522,
+      "sha256": "b40e1e1c808b00d319b70ce7546403c588cdcc8397bba684fe19b2f4c0bca6d8",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/src/dice-renderer.js",
+      "currentProductSha256": "b40e1e1c808b00d319b70ce7546403c588cdcc8397bba684fe19b2f4c0bca6d8"
+    },
+    {
+      "label": "after",
+      "file": "src/effects.js",
+      "bytes": 28007,
+      "sha256": "5f95f77e882a690f95215babda3cdedc0d398bbcfaabfecd3d486141200dc6f9",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/src/effects.js",
+      "currentProductSha256": "5f95f77e882a690f95215babda3cdedc0d398bbcfaabfecd3d486141200dc6f9"
+    },
+    {
+      "label": "after",
+      "file": "src/encounter-tactics.js",
+      "bytes": 6963,
+      "sha256": "02e0da7aa57de321319812503556d9e5925463644222305755e86de6c3fa355b",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/src/encounter-tactics.js",
+      "currentProductSha256": "02e0da7aa57de321319812503556d9e5925463644222305755e86de6c3fa355b"
+    },
+    {
+      "label": "after",
+      "file": "src/encounters.js",
+      "bytes": 35815,
+      "sha256": "c3c6e2d24049305d73982cf5db3b1cf02eee68f4e8e1659fd7e3021f74de0791",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/src/encounters.js",
+      "currentProductSha256": "c3c6e2d24049305d73982cf5db3b1cf02eee68f4e8e1659fd7e3021f74de0791"
+    },
+    {
+      "label": "after",
+      "file": "src/engine.js",
+      "bytes": 41128,
+      "sha256": "75c6d9fcc48c0cf49ee02e53ffb7b143a09a2c79738d3bb2eb5d0ae80b30872b",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/src/engine.js",
+      "currentProductSha256": "75c6d9fcc48c0cf49ee02e53ffb7b143a09a2c79738d3bb2eb5d0ae80b30872b"
+    },
+    {
+      "label": "after",
+      "file": "src/equipment-comparison.js",
+      "bytes": 13371,
+      "sha256": "e47add10ce9cf308ac79fd1bbb4bc74e54b93e0f6b48e5dc97ac2eb314c6c9c4",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/src/equipment-comparison.js",
+      "currentProductSha256": "e47add10ce9cf308ac79fd1bbb4bc74e54b93e0f6b48e5dc97ac2eb314c6c9c4"
+    },
+    {
+      "label": "after",
+      "file": "src/equipment-content.js",
+      "bytes": 6818,
+      "sha256": "d95b5e7c11d14eb764ea3cefb7eee73f35b2f9d48a8b640513eda9aefd1cc030",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/src/equipment-content.js",
+      "currentProductSha256": "d95b5e7c11d14eb764ea3cefb7eee73f35b2f9d48a8b640513eda9aefd1cc030"
+    },
+    {
+      "label": "after",
+      "file": "src/equipment.js",
+      "bytes": 13951,
+      "sha256": "8c20de433f21931318e315b862b457d37a03b9596ea5df8f7cc4025691aaccd6",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/src/equipment.js",
+      "currentProductSha256": "8c20de433f21931318e315b862b457d37a03b9596ea5df8f7cc4025691aaccd6"
+    },
+    {
+      "label": "after",
+      "file": "src/expansion.css",
+      "bytes": 14871,
+      "sha256": "d5c01857bf02a4566270f23ef389aad76e033e50bd5440ecb13665ce81818424",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/src/expansion.css",
+      "currentProductSha256": "d5c01857bf02a4566270f23ef389aad76e033e50bd5440ecb13665ce81818424"
+    },
+    {
+      "label": "after",
+      "file": "src/experience.css",
+      "bytes": 2513,
+      "sha256": "4a8175dfcf26c06e2e75126956d6e2d7749ef8c2f11c7026091faa7252c3c883",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/src/experience.css",
+      "currentProductSha256": "4a8175dfcf26c06e2e75126956d6e2d7749ef8c2f11c7026091faa7252c3c883"
+    },
+    {
+      "label": "after",
+      "file": "src/experience.js",
+      "bytes": 881,
+      "sha256": "2bdd3727c59b537f45a22d2e9aae9a93908a76e29850c8e8e8e024cbeaf93c45",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/src/experience.js",
+      "currentProductSha256": "2bdd3727c59b537f45a22d2e9aae9a93908a76e29850c8e8e8e024cbeaf93c45"
+    },
+    {
+      "label": "after",
+      "file": "src/forge.css",
+      "bytes": 7977,
+      "sha256": "9a7ee960f3494e39ac102abf7b9476cacffdd89eea1803e52469b441e124823f",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/src/forge.css",
+      "currentProductSha256": "9a7ee960f3494e39ac102abf7b9476cacffdd89eea1803e52469b441e124823f"
+    },
+    {
+      "label": "after",
+      "file": "src/fusion-controller.js",
+      "bytes": 39446,
+      "sha256": "5a4a0c6a11c7a347ffcdaa0340d3c905d65aa5ba6b50e36e7135a9276537dd1a",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/src/fusion-controller.js",
+      "currentProductSha256": "5a4a0c6a11c7a347ffcdaa0340d3c905d65aa5ba6b50e36e7135a9276537dd1a"
+    },
+    {
+      "label": "after",
+      "file": "src/fusion-dom.js",
+      "bytes": 4843,
+      "sha256": "fb78398073fdccaea6680146c34ac18de75d926439c7044ed45da39f625e4023",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/src/fusion-dom.js",
+      "currentProductSha256": "fb78398073fdccaea6680146c34ac18de75d926439c7044ed45da39f625e4023"
+    },
+    {
+      "label": "after",
+      "file": "src/fusion-view.js",
+      "bytes": 24915,
+      "sha256": "e77542f7de4c6f39ac57098ffb7a277caab988cd4bcc9ea5f50080b0f08e96c1",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/src/fusion-view.js",
+      "currentProductSha256": "e77542f7de4c6f39ac57098ffb7a277caab988cd4bcc9ea5f50080b0f08e96c1"
+    },
+    {
+      "label": "after",
+      "file": "src/fusion-workbench.js",
+      "bytes": 8152,
+      "sha256": "06f206dc578534c641f0fe327c48a4ec70ccffeed79fe8076ccd83cfb56263bf",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/src/fusion-workbench.js",
+      "currentProductSha256": "06f206dc578534c641f0fe327c48a4ec70ccffeed79fe8076ccd83cfb56263bf"
+    },
+    {
+      "label": "after",
+      "file": "src/fusion.css",
+      "bytes": 41208,
+      "sha256": "9b6fe3edaa023ae1c7702e60e3110d9450a6ca03a737f74dd984baf0fb083bc5",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/src/fusion.css",
+      "currentProductSha256": "9b6fe3edaa023ae1c7702e60e3110d9450a6ca03a737f74dd984baf0fb083bc5"
+    },
+    {
+      "label": "after",
+      "file": "src/gold.css",
+      "bytes": 2465,
+      "sha256": "bb1313da6f3a734567be73e23c606c56c1215bc976e166c9dc2b1fedb06c6393",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/src/gold.css",
+      "currentProductSha256": "bb1313da6f3a734567be73e23c606c56c1215bc976e166c9dc2b1fedb06c6393"
+    },
+    {
+      "label": "after",
+      "file": "src/gold.js",
+      "bytes": 1329,
+      "sha256": "252aab60750432e1b5f1dc158c4a8f69e3dca5d72fa016b69c03c29ac651a244",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/src/gold.js",
+      "currentProductSha256": "252aab60750432e1b5f1dc158c4a8f69e3dca5d72fa016b69c03c29ac651a244"
+    },
+    {
+      "label": "after",
+      "file": "src/inventory-dom.js",
+      "bytes": 4792,
+      "sha256": "7f3b18a6b3dbcc3a0a100c94bab35d9e81a14d7a6c74e8eabfdff3d151d35bf0",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/src/inventory-dom.js",
+      "currentProductSha256": "7f3b18a6b3dbcc3a0a100c94bab35d9e81a14d7a6c74e8eabfdff3d151d35bf0"
+    },
+    {
+      "label": "after",
+      "file": "src/inventory-query.js",
+      "bytes": 1686,
+      "sha256": "463a8d340842b9deaacef262b4459ecc8d8e9503d01edddc9b7df902a31c03be",
+      "identitySource": "archived-withdrawn-candidate",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/docs/iteration/evidence/round16/experimental/inventory-query.js.txt",
+      "currentProductSha256": "7cf093f155934779d21c4dceb0a6aeef2e467fdb8c763413c155b6c0fd52a4c5"
+    },
+    {
+      "label": "after",
+      "file": "src/inventory-search.css",
+      "bytes": 1573,
+      "sha256": "cfb91edec23d0e706414f3c9a90b6ab46c0efec43d54ff5e01da85c9923e3de1",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/src/inventory-search.css",
+      "currentProductSha256": "cfb91edec23d0e706414f3c9a90b6ab46c0efec43d54ff5e01da85c9923e3de1"
+    },
+    {
+      "label": "after",
+      "file": "src/polish.css",
+      "bytes": 7751,
+      "sha256": "84af5e0bfc563c830287d96103faff4b1673c7d363a9cfbc26995a5074265df8",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/src/polish.css",
+      "currentProductSha256": "84af5e0bfc563c830287d96103faff4b1673c7d363a9cfbc26995a5074265df8"
+    },
+    {
+      "label": "after",
+      "file": "src/progression.css",
+      "bytes": 30151,
+      "sha256": "31125ec19b19b527f9d0499d9b045874b0d37e2d6eb8fdcc729e58bf783368ec",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/src/progression.css",
+      "currentProductSha256": "31125ec19b19b527f9d0499d9b045874b0d37e2d6eb8fdcc729e58bf783368ec"
+    },
+    {
+      "label": "after",
+      "file": "src/quality.css",
+      "bytes": 5290,
+      "sha256": "3785daf1b16c66942383c8285376a66fee42c2a21c0b1450c251870333919bb8",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/src/quality.css",
+      "currentProductSha256": "3785daf1b16c66942383c8285376a66fee42c2a21c0b1450c251870333919bb8"
+    },
+    {
+      "label": "after",
+      "file": "src/rarity.js",
+      "bytes": 2515,
+      "sha256": "871356df147d027e1845f98c5574a1d9a71c0d17bd8717f457c9007d7c73b735",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/src/rarity.js",
+      "currentProductSha256": "871356df147d027e1845f98c5574a1d9a71c0d17bd8717f457c9007d7c73b735"
+    },
+    {
+      "label": "after",
+      "file": "src/refinement.css",
+      "bytes": 10060,
+      "sha256": "79a8599ca5415c933de1161575edb25601f4efdbf57be4c45dc82033abb1fffd",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/src/refinement.css",
+      "currentProductSha256": "79a8599ca5415c933de1161575edb25601f4efdbf57be4c45dc82033abb1fffd"
+    },
+    {
+      "label": "after",
+      "file": "src/release.js",
+      "bytes": 340,
+      "sha256": "7fc5bd4c46f3b985c25122b98b57d4e27aded61abfb2d5fcd8a7b1d69f37caab",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/src/release.js",
+      "currentProductSha256": "7fc5bd4c46f3b985c25122b98b57d4e27aded61abfb2d5fcd8a7b1d69f37caab"
+    },
+    {
+      "label": "after",
+      "file": "src/responsive.css",
+      "bytes": 33069,
+      "sha256": "90bb585d66a88daa61a553112c66610b62b666aa07c28ad887b521534283cee8",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/src/responsive.css",
+      "currentProductSha256": "90bb585d66a88daa61a553112c66610b62b666aa07c28ad887b521534283cee8"
+    },
+    {
+      "label": "after",
+      "file": "src/rooms.css",
+      "bytes": 29127,
+      "sha256": "a426209cd05ccb3125a88713ea8693b04b47b65e179c605538b5053fe616c606",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/src/rooms.css",
+      "currentProductSha256": "a426209cd05ccb3125a88713ea8693b04b47b65e179c605538b5053fe616c606"
+    },
+    {
+      "label": "after",
+      "file": "src/route-weights.js",
+      "bytes": 4425,
+      "sha256": "b21499b8c44a17ad09caab5e17f312073b269981b6ac7eb916b5f656912237dd",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/src/route-weights.js",
+      "currentProductSha256": "b21499b8c44a17ad09caab5e17f312073b269981b6ac7eb916b5f656912237dd"
+    },
+    {
+      "label": "after",
+      "file": "src/save-capacity-view.js",
+      "bytes": 2059,
+      "sha256": "cd729b8ce91cf5aad772f0fcc468cfac5b389a48ff1a03e905907ade23ea7867",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/src/save-capacity-view.js",
+      "currentProductSha256": "cd729b8ce91cf5aad772f0fcc468cfac5b389a48ff1a03e905907ade23ea7867"
+    },
+    {
+      "label": "after",
+      "file": "src/save-recovery-view.js",
+      "bytes": 4355,
+      "sha256": "47e9041a86415c6bc04e5ae66803d6d8dfa6fbb2cabb8f800ce67f29a199153d",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/src/save-recovery-view.js",
+      "currentProductSha256": "47e9041a86415c6bc04e5ae66803d6d8dfa6fbb2cabb8f800ce67f29a199153d"
+    },
+    {
+      "label": "after",
+      "file": "src/save-recovery.css",
+      "bytes": 2606,
+      "sha256": "7085ab430d2f1193955b84848d8f2af88faeab0d065c427ee5e7b88b5e254c2e",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/src/save-recovery.css",
+      "currentProductSha256": "7085ab430d2f1193955b84848d8f2af88faeab0d065c427ee5e7b88b5e254c2e"
+    },
+    {
+      "label": "after",
+      "file": "src/settings-focus.js",
+      "bytes": 1278,
+      "sha256": "7c4b93a9c8830598319e2a3d8d2750cb33f5c0a1cc5b89dbd6154b985db3366f",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/src/settings-focus.js",
+      "currentProductSha256": "7c4b93a9c8830598319e2a3d8d2750cb33f5c0a1cc5b89dbd6154b985db3366f"
+    },
+    {
+      "label": "after",
+      "file": "src/storage.js",
+      "bytes": 31698,
+      "sha256": "6bfcc60036c9f729c21b948ca98c7ac715e14049856fb9dded0baa2aeef2c561",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/src/storage.js",
+      "currentProductSha256": "6bfcc60036c9f729c21b948ca98c7ac715e14049856fb9dded0baa2aeef2c561"
+    },
+    {
+      "label": "after",
+      "file": "src/styles.css",
+      "bytes": 34680,
+      "sha256": "dc835715e16e8698214d25202a39df6162c865287e6ac605c111486066764044",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/src/styles.css",
+      "currentProductSha256": "dc835715e16e8698214d25202a39df6162c865287e6ac605c111486066764044"
+    },
+    {
+      "label": "after",
+      "file": "src/talent.css",
+      "bytes": 15247,
+      "sha256": "350f583103186b0b44fc50317d92c20417fed82fe4e8667bf1776390b2425334",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/src/talent.css",
+      "currentProductSha256": "350f583103186b0b44fc50317d92c20417fed82fe4e8667bf1776390b2425334"
+    },
+    {
+      "label": "after",
+      "file": "src/views.js",
+      "bytes": 94570,
+      "sha256": "1aed7caac52894bd35b03307f08ebf45382b9f6418050b47e2f09dc48f71971c",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/src/views.js",
+      "currentProductSha256": "1aed7caac52894bd35b03307f08ebf45382b9f6418050b47e2f09dc48f71971c"
+    },
+    {
+      "label": "after",
+      "file": "src/visual-timeline.js",
+      "bytes": 2906,
+      "sha256": "f518084da44c2ea852bf902ba6ffc7f8f5a94ee815dac31bcc4726cc8cd44369",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/src/visual-timeline.js",
+      "currentProductSha256": "f518084da44c2ea852bf902ba6ffc7f8f5a94ee815dac31bcc4726cc8cd44369"
+    },
+    {
+      "label": "after",
+      "file": "src/visual.css",
+      "bytes": 47600,
+      "sha256": "35ec8f94b238d355f6fad93855d4b20794157e3d9c592dcf777cf25dcb2e05bd",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/src/visual.css",
+      "currentProductSha256": "35ec8f94b238d355f6fad93855d4b20794157e3d9c592dcf777cf25dcb2e05bd"
+    },
+    {
+      "label": "after",
+      "file": "index.html",
+      "bytes": 2137,
+      "sha256": "d90d170fec59c847b3d8e63605044255af240698fc21ac65901e0fe5c441439e",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/index.html",
+      "currentProductSha256": "d90d170fec59c847b3d8e63605044255af240698fc21ac65901e0fe5c441439e"
+    },
+    {
+      "label": "after",
+      "file": "package.json",
+      "bytes": 428,
+      "sha256": "a9ac3b003ba42aecec656e89027f8ced0601843191b8eaade9d5aff830eae5ab",
+      "identitySource": "current-on-disk",
+      "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/package.json",
+      "currentProductSha256": "a9ac3b003ba42aecec656e89027f8ced0601843191b8eaade9d5aff830eae5ab"
+    }
+  ],
+  "postExecutionRollback": {
+    "recordedRunStable": true,
+    "laterProductDifferences": [
+      {
+        "label": "after",
+        "file": "src/inventory-query.js",
+        "bytes": 1686,
+        "sha256": "463a8d340842b9deaacef262b4459ecc8d8e9503d01edddc9b7df902a31c03be",
+        "identitySource": "archived-withdrawn-candidate",
+        "verifiedPath": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/docs/iteration/evidence/round16/experimental/inventory-query.js.txt",
+        "currentProductSha256": "7cf093f155934779d21c4dceb0a6aeef2e467fdb8c763413c155b6c0fd52a4c5"
+      }
+    ],
+    "candidateArchivedBytesVerified": true,
+    "currentInventoryEqualsOriginalInputBytes": true,
+    "interpretation": "The explicitly authorized later rollback is not evidence of source instability during the earlier candidate measurement."
+  },
+  "aggregates": [
+    {
+      "count": 243,
+      "label": "baseline",
+      "sort": "power",
+      "phase": "selector",
+      "n": 12,
+      "p50": 0.09999999962747097,
+      "p95": 0.19999999925494194,
+      "min": 0,
+      "max": 0.19999999925494194,
+      "mean": 0.09166666663562258,
+      "rawElapsedMs": [
+        0,
+        0.09999999962747097,
+        0.09999999962747097,
+        0.10000000149011612,
+        0.09999999962747097,
+        0,
+        0.19999999925494194,
+        0.09999999962747097,
+        0.09999999962747097,
+        0,
+        0.19999999925494194,
+        0.10000000149011612
+      ],
+      "sampleRowIndices": [
+        12,
+        35,
+        38,
+        55,
+        64,
+        81,
+        84,
+        107,
+        110,
+        127,
+        136,
+        153
+      ]
+    },
+    {
+      "count": 243,
+      "label": "after",
+      "sort": "power",
+      "phase": "selector",
+      "n": 12,
+      "p50": 0.09999999962747097,
+      "p95": 0.09999999962747097,
+      "min": 0,
+      "max": 0.09999999962747097,
+      "mean": 0.06666666641831398,
+      "rawElapsedMs": [
+        0.09999999962747097,
+        0.09999999962747097,
+        0,
+        0,
+        0.09999999962747097,
+        0.09999999962747097,
+        0.09999999962747097,
+        0.09999999962747097,
+        0,
+        0.09999999962747097,
+        0.09999999962747097,
+        0
+      ],
+      "sampleRowIndices": [
+        18,
+        29,
+        44,
+        49,
+        70,
+        75,
+        90,
+        101,
+        116,
+        121,
+        142,
+        147
+      ]
+    },
+    {
+      "count": 243,
+      "label": "baseline",
+      "sort": "power",
+      "phase": "center",
+      "n": 12,
+      "p50": 10.299999999813735,
+      "p95": 14.5,
+      "min": 7.699999999254942,
+      "max": 14.5,
+      "mean": 10.633333333457509,
+      "rawElapsedMs": [
+        13.5,
+        14.5,
+        13.5,
+        9.200000001117587,
+        9.5,
+        8.299999998882413,
+        8.900000000372529,
+        7.699999999254942,
+        10.700000001117587,
+        11.200000001117587,
+        10.599999999627471,
+        10
+      ],
+      "sampleRowIndices": [
+        13,
+        34,
+        39,
+        54,
+        65,
+        80,
+        85,
+        106,
+        111,
+        126,
+        137,
+        152
+      ]
+    },
+    {
+      "count": 243,
+      "label": "after",
+      "sort": "power",
+      "phase": "center",
+      "n": 12,
+      "p50": 8.75,
+      "p95": 13.199999999254942,
+      "min": 7.400000000372529,
+      "max": 13.199999999254942,
+      "mean": 9.233333333395422,
+      "rawElapsedMs": [
+        10.599999999627471,
+        13.199999999254942,
+        9,
+        8,
+        10.300000000745058,
+        9.699999999254942,
+        7.600000001490116,
+        7.400000000372529,
+        7.800000000745058,
+        7.400000000372529,
+        8.5,
+        11.299999998882413
+      ],
+      "sampleRowIndices": [
+        19,
+        28,
+        45,
+        48,
+        71,
+        74,
+        91,
+        100,
+        117,
+        120,
+        143,
+        146
+      ]
+    },
+    {
+      "count": 243,
+      "label": "baseline",
+      "sort": "rarity",
+      "phase": "selector",
+      "n": 12,
+      "p50": 0.09999999962747097,
+      "p95": 0.10000000149011612,
+      "min": 0,
+      "max": 0.10000000149011612,
+      "mean": 0.07500000018626451,
+      "rawElapsedMs": [
+        0,
+        0.09999999962747097,
+        0,
+        0.10000000149011612,
+        0.09999999962747097,
+        0.09999999962747097,
+        0.10000000149011612,
+        0.09999999962747097,
+        0.09999999962747097,
+        0.10000000149011612,
+        0.09999999962747097,
+        0
+      ],
+      "sampleRowIndices": [
+        14,
+        31,
+        40,
+        57,
+        60,
+        83,
+        86,
+        103,
+        112,
+        129,
+        132,
+        155
+      ]
+    },
+    {
+      "count": 243,
+      "label": "after",
+      "sort": "rarity",
+      "phase": "selector",
+      "n": 12,
+      "p50": 0.049999999813735485,
+      "p95": 0.10000000149011612,
+      "min": 0,
+      "max": 0.10000000149011612,
+      "mean": 0.04999999996895591,
+      "rawElapsedMs": [
+        0.09999999962747097,
+        0.10000000149011612,
+        0,
+        0,
+        0,
+        0,
+        0.09999999962747097,
+        0,
+        0.09999999962747097,
+        0,
+        0.09999999962747097,
+        0.09999999962747097
+      ],
+      "sampleRowIndices": [
+        20,
+        25,
+        46,
+        51,
+        66,
+        77,
+        92,
+        97,
+        118,
+        123,
+        138,
+        149
+      ]
+    },
+    {
+      "count": 243,
+      "label": "baseline",
+      "sort": "rarity",
+      "phase": "center",
+      "n": 12,
+      "p50": 9.600000000558794,
+      "p95": 11.799999998882413,
+      "min": 8,
+      "max": 11.799999998882413,
+      "mean": 9.574999999875823,
+      "rawElapsedMs": [
+        11.799999998882413,
+        9.800000000745058,
+        10,
+        9.099999999627471,
+        9.900000000372529,
+        8,
+        9.400000000372529,
+        8.699999999254942,
+        9.900000000372529,
+        9.099999999627471,
+        9.199999999254942,
+        10
+      ],
+      "sampleRowIndices": [
+        15,
+        30,
+        41,
+        56,
+        61,
+        82,
+        87,
+        102,
+        113,
+        128,
+        133,
+        154
+      ]
+    },
+    {
+      "count": 243,
+      "label": "after",
+      "sort": "rarity",
+      "phase": "center",
+      "n": 12,
+      "p50": 8.850000000558794,
+      "p95": 13.300000000745058,
+      "min": 7.299999998882413,
+      "max": 13.300000000745058,
+      "mean": 9.066666666418314,
+      "rawElapsedMs": [
+        9.299999998882413,
+        13.300000000745058,
+        7.5,
+        8.599999999627471,
+        9.399999998509884,
+        9.5,
+        8.800000000745058,
+        7.599999999627471,
+        7.299999998882413,
+        7.800000000745058,
+        8.900000000372529,
+        10.799999998882413
+      ],
+      "sampleRowIndices": [
+        21,
+        24,
+        47,
+        50,
+        67,
+        76,
+        93,
+        96,
+        119,
+        122,
+        139,
+        148
+      ]
+    },
+    {
+      "count": 243,
+      "label": "baseline",
+      "sort": "level",
+      "phase": "selector",
+      "n": 12,
+      "p50": 0.049999999813735485,
+      "p95": 0.19999999925494194,
+      "min": 0,
+      "max": 0.19999999925494194,
+      "mean": 0.05833333327124516,
+      "rawElapsedMs": [
+        0,
+        0.09999999962747097,
+        0.09999999962747097,
+        0,
+        0,
+        0.09999999962747097,
+        0,
+        0.19999999925494194,
+        0.10000000149011612,
+        0.09999999962747097,
+        0,
+        0
+      ],
+      "sampleRowIndices": [
+        16,
+        33,
+        36,
+        59,
+        62,
+        79,
+        88,
+        105,
+        108,
+        131,
+        134,
+        151
+      ]
+    },
+    {
+      "count": 243,
+      "label": "after",
+      "sort": "level",
+      "phase": "selector",
+      "n": 12,
+      "p50": 0.049999999813735485,
+      "p95": 0.19999999925494194,
+      "min": 0,
+      "max": 0.19999999925494194,
+      "mean": 0.05833333327124516,
+      "rawElapsedMs": [
+        0.19999999925494194,
+        0.09999999962747097,
+        0.09999999962747097,
+        0.09999999962747097,
+        0,
+        0,
+        0,
+        0,
+        0.09999999962747097,
+        0.10000000149011612,
+        0,
+        0
+      ],
+      "sampleRowIndices": [
+        22,
+        27,
+        42,
+        53,
+        68,
+        73,
+        94,
+        99,
+        114,
+        125,
+        140,
+        145
+      ]
+    },
+    {
+      "count": 243,
+      "label": "baseline",
+      "sort": "level",
+      "phase": "center",
+      "n": 12,
+      "p50": 9.5,
+      "p95": 44.19999999925494,
+      "min": 8.400000000372529,
+      "max": 44.19999999925494,
+      "mean": 13.0,
+      "rawElapsedMs": [
+        9.5,
+        17.09999999962747,
+        11.900000000372529,
+        9.5,
+        8.600000001490116,
+        44.19999999925494,
+        8.799999998882413,
+        9.300000000745058,
+        8.5,
+        9.799999998882413,
+        10.400000000372529,
+        8.400000000372529
+      ],
+      "sampleRowIndices": [
+        17,
+        32,
+        37,
+        58,
+        63,
+        78,
+        89,
+        104,
+        109,
+        130,
+        135,
+        150
+      ]
+    },
+    {
+      "count": 243,
+      "label": "after",
+      "sort": "level",
+      "phase": "center",
+      "n": 12,
+      "p50": 9.099999999627471,
+      "p95": 16.199999999254942,
+      "min": 7.800000000745058,
+      "max": 16.199999999254942,
+      "mean": 9.766666666759798,
+      "rawElapsedMs": [
+        10.800000000745058,
+        16.199999999254942,
+        9,
+        9,
+        10.200000001117587,
+        9.199999999254942,
+        8.100000001490116,
+        8.199999999254942,
+        7.800000000745058,
+        8,
+        9.399999998509884,
+        11.300000000745058
+      ],
+      "sampleRowIndices": [
+        23,
+        26,
+        43,
+        52,
+        69,
+        72,
+        95,
+        98,
+        115,
+        124,
+        141,
+        144
+      ]
+    },
+    {
+      "count": 10000,
+      "label": "baseline",
+      "sort": "power",
+      "phase": "selector",
+      "n": 12,
+      "p50": 6.4500000001862645,
+      "p95": 119.40000000037253,
+      "min": 5.300000000745058,
+      "max": 119.40000000037253,
+      "mean": 15.84999999978269,
+      "rawElapsedMs": [
+        7.099999999627471,
+        5.300000000745058,
+        5.400000000372529,
+        6.699999999254942,
+        5.699999999254942,
+        7.799999998882413,
+        7,
+        119.40000000037253,
+        5.799999998882413,
+        6.200000001117587,
+        8,
+        5.799999998882413
+      ],
+      "sampleRowIndices": [
+        168,
+        191,
+        194,
+        211,
+        220,
+        237,
+        240,
+        263,
+        266,
+        283,
+        292,
+        309
+      ]
+    },
+    {
+      "count": 10000,
+      "label": "after",
+      "sort": "power",
+      "phase": "selector",
+      "n": 12,
+      "p50": 2.799999998882413,
+      "p95": 3.899999998509884,
+      "min": 2.399999998509884,
+      "max": 3.899999998509884,
+      "mean": 2.841666666480402,
+      "rawElapsedMs": [
+        3,
+        2.5,
+        3.899999998509884,
+        2.5,
+        2.600000001490116,
+        2.900000000372529,
+        3.099999999627471,
+        3.100000001490116,
+        2.799999998882413,
+        2.799999998882413,
+        2.5,
+        2.399999998509884
+      ],
+      "sampleRowIndices": [
+        174,
+        185,
+        200,
+        205,
+        226,
+        231,
+        246,
+        257,
+        272,
+        277,
+        298,
+        303
+      ]
+    },
+    {
+      "count": 10000,
+      "label": "baseline",
+      "sort": "power",
+      "phase": "center",
+      "n": 12,
+      "p50": 18.59999999962747,
+      "p95": 25.5,
+      "min": 15,
+      "max": 25.5,
+      "mean": 18.875,
+      "rawElapsedMs": [
+        25.5,
+        15.399999998509884,
+        15,
+        18.90000000037253,
+        19.09999999962747,
+        18.5,
+        18.200000001117587,
+        18.699999999254942,
+        18.699999999254942,
+        23.700000001117587,
+        17.600000001490116,
+        17.199999999254942
+      ],
+      "sampleRowIndices": [
+        169,
+        190,
+        195,
+        210,
+        221,
+        236,
+        241,
+        262,
+        267,
+        282,
+        293,
+        308
+      ]
+    },
+    {
+      "count": 10000,
+      "label": "after",
+      "sort": "power",
+      "phase": "center",
+      "n": 12,
+      "p50": 15.350000000558794,
+      "p95": 21.700000001117587,
+      "min": 12.800000000745058,
+      "max": 21.700000001117587,
+      "mean": 15.900000000062088,
+      "rawElapsedMs": [
+        21.700000001117587,
+        12.800000000745058,
+        15.300000000745058,
+        14.900000000372529,
+        13.699999999254942,
+        15.400000000372529,
+        15.599999999627471,
+        19.5,
+        15.899999998509884,
+        19.09999999962747,
+        13.300000000745058,
+        13.599999999627471
+      ],
+      "sampleRowIndices": [
+        175,
+        184,
+        201,
+        204,
+        227,
+        230,
+        247,
+        256,
+        273,
+        276,
+        299,
+        302
+      ]
+    },
+    {
+      "count": 10000,
+      "label": "baseline",
+      "sort": "rarity",
+      "phase": "selector",
+      "n": 12,
+      "p50": 5.0,
+      "p95": 11.699999999254942,
+      "min": 4.199999999254942,
+      "max": 11.699999999254942,
+      "mean": 5.866666666076829,
+      "rawElapsedMs": [
+        6.799999998882413,
+        4.199999999254942,
+        4.199999999254942,
+        5.299999998882413,
+        8.299999998882413,
+        4.5,
+        11.699999999254942,
+        4.5,
+        4.5,
+        5.899999998509884,
+        5.799999998882413,
+        4.700000001117587
+      ],
+      "sampleRowIndices": [
+        170,
+        187,
+        196,
+        213,
+        216,
+        239,
+        242,
+        259,
+        268,
+        285,
+        288,
+        311
+      ]
+    },
+    {
+      "count": 10000,
+      "label": "after",
+      "sort": "rarity",
+      "phase": "selector",
+      "n": 12,
+      "p50": 3.2499999990686774,
+      "p95": 6.099999999627471,
+      "min": 2.699999999254942,
+      "max": 6.099999999627471,
+      "mean": 3.6166666666977108,
+      "rawElapsedMs": [
+        2.800000000745058,
+        2.699999999254942,
+        2.900000000372529,
+        3.099999999627471,
+        2.900000000372529,
+        6.099999999627471,
+        3.900000000372529,
+        3.599999999627471,
+        5.5,
+        3.800000000745058,
+        3.399999998509884,
+        2.700000001117587
+      ],
+      "sampleRowIndices": [
+        176,
+        181,
+        202,
+        207,
+        222,
+        233,
+        248,
+        253,
+        274,
+        279,
+        294,
+        305
+      ]
+    },
+    {
+      "count": 10000,
+      "label": "baseline",
+      "sort": "rarity",
+      "phase": "center",
+      "n": 12,
+      "p50": 16.84999999962747,
+      "p95": 21.40000000037253,
+      "min": 14.200000001117587,
+      "max": 21.40000000037253,
+      "mean": 16.88333333345751,
+      "rawElapsedMs": [
+        18,
+        15.599999999627471,
+        14.400000000372529,
+        15.5,
+        17,
+        16.90000000037253,
+        20.700000001117587,
+        14.299999998882413,
+        17.800000000745058,
+        21.40000000037253,
+        16.799999998882413,
+        14.200000001117587
+      ],
+      "sampleRowIndices": [
+        171,
+        186,
+        197,
+        212,
+        217,
+        238,
+        243,
+        258,
+        269,
+        284,
+        289,
+        310
+      ]
+    },
+    {
+      "count": 10000,
+      "label": "after",
+      "sort": "rarity",
+      "phase": "center",
+      "n": 12,
+      "p50": 17.0,
+      "p95": 22.59999999962747,
+      "min": 13,
+      "max": 22.59999999962747,
+      "mean": 17.62499999968956,
+      "rawElapsedMs": [
+        14.799999998882413,
+        21.59999999962747,
+        13,
+        21.59999999962747,
+        17.09999999962747,
+        20.300000000745058,
+        13.900000000372529,
+        16.90000000037253,
+        17.399999998509884,
+        22.59999999962747,
+        16.59999999962747,
+        15.699999999254942
+      ],
+      "sampleRowIndices": [
+        177,
+        180,
+        203,
+        206,
+        223,
+        232,
+        249,
+        252,
+        275,
+        278,
+        295,
+        304
+      ]
+    },
+    {
+      "count": 10000,
+      "label": "baseline",
+      "sort": "level",
+      "phase": "selector",
+      "n": 12,
+      "p50": 3.6000000005587935,
+      "p95": 5,
+      "min": 3.300000000745058,
+      "max": 5,
+      "mean": 3.700000000341485,
+      "rawElapsedMs": [
+        3.599999999627471,
+        3.300000000745058,
+        3.600000001490116,
+        3.5,
+        3.600000001490116,
+        3.400000000372529,
+        3.599999999627471,
+        3.699999999254942,
+        5,
+        3.400000000372529,
+        3.800000000745058,
+        3.900000000372529
+      ],
+      "sampleRowIndices": [
+        172,
+        189,
+        192,
+        215,
+        218,
+        235,
+        244,
+        261,
+        264,
+        287,
+        290,
+        307
+      ]
+    },
+    {
+      "count": 10000,
+      "label": "after",
+      "sort": "level",
+      "phase": "selector",
+      "n": 12,
+      "p50": 2.6500000013038516,
+      "p95": 4.100000001490116,
+      "min": 2.399999998509884,
+      "max": 4.100000001490116,
+      "mean": 2.7916666668218872,
+      "rawElapsedMs": [
+        2.700000001117587,
+        2.5,
+        3,
+        2.5,
+        2.600000001490116,
+        2.899999998509884,
+        2.900000000372529,
+        3,
+        4.100000001490116,
+        2.400000000372529,
+        2.5,
+        2.399999998509884
+      ],
+      "sampleRowIndices": [
+        178,
+        183,
+        198,
+        209,
+        224,
+        229,
+        250,
+        255,
+        270,
+        281,
+        296,
+        301
+      ]
+    },
+    {
+      "count": 10000,
+      "label": "baseline",
+      "sort": "level",
+      "phase": "center",
+      "n": 12,
+      "p50": 16.34999999962747,
+      "p95": 22.399999998509884,
+      "min": 13,
+      "max": 22.399999998509884,
+      "mean": 17.0,
+      "rawElapsedMs": [
+        15.900000000372529,
+        16.59999999962747,
+        13,
+        15.800000000745058,
+        14.900000000372529,
+        16.09999999962747,
+        17.5,
+        19.699999999254942,
+        22.399999998509884,
+        20.100000001490116,
+        14.899999998509884,
+        17.100000001490116
+      ],
+      "sampleRowIndices": [
+        173,
+        188,
+        193,
+        214,
+        219,
+        234,
+        245,
+        260,
+        265,
+        286,
+        291,
+        306
+      ]
+    },
+    {
+      "count": 10000,
+      "label": "after",
+      "sort": "level",
+      "phase": "center",
+      "n": 12,
+      "p50": 14.250000000931323,
+      "p95": 26,
+      "min": 12.599999999627471,
+      "max": 26,
+      "mean": 15.541666666821888,
+      "rawElapsedMs": [
+        15.5,
+        12.599999999627471,
+        13.300000000745058,
+        13.200000001117587,
+        13.099999999627471,
+        15,
+        13.199999999254942,
+        17.700000001117587,
+        26,
+        18.399999998509884,
+        14.900000000372529,
+        13.600000001490116
+      ],
+      "sampleRowIndices": [
+        179,
+        182,
+        199,
+        208,
+        225,
+        228,
+        251,
+        254,
+        271,
+        280,
+        297,
+        300
+      ]
+    }
+  ],
+  "paired": [
+    {
+      "count": 243,
+      "sort": "power",
+      "phase": "selector",
+      "afterFaster": 6,
+      "afterSlower": 3,
+      "ties": 3,
+      "deltaSummary": {
+        "n": 12,
+        "p50": -0.049999999813735485,
+        "p95": 0.09999999962747097,
+        "min": -0.10000000149011612,
+        "max": 0.09999999962747097,
+        "mean": -0.0250000002173086
+      },
+      "deltas": [
+        {
+          "round": 1,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 0,
+          "afterMs": 0.09999999962747097,
+          "afterMinusBaselineMs": 0.09999999962747097
+        },
+        {
+          "round": 2,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 0.09999999962747097,
+          "afterMs": 0.09999999962747097,
+          "afterMinusBaselineMs": 0.0
+        },
+        {
+          "round": 3,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 0.09999999962747097,
+          "afterMs": 0,
+          "afterMinusBaselineMs": -0.09999999962747097
+        },
+        {
+          "round": 4,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 0.10000000149011612,
+          "afterMs": 0,
+          "afterMinusBaselineMs": -0.10000000149011612
+        },
+        {
+          "round": 5,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 0.09999999962747097,
+          "afterMs": 0.09999999962747097,
+          "afterMinusBaselineMs": 0.0
+        },
+        {
+          "round": 6,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 0,
+          "afterMs": 0.09999999962747097,
+          "afterMinusBaselineMs": 0.09999999962747097
+        },
+        {
+          "round": 7,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 0.19999999925494194,
+          "afterMs": 0.09999999962747097,
+          "afterMinusBaselineMs": -0.09999999962747097
+        },
+        {
+          "round": 8,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 0.09999999962747097,
+          "afterMs": 0.09999999962747097,
+          "afterMinusBaselineMs": 0.0
+        },
+        {
+          "round": 9,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 0.09999999962747097,
+          "afterMs": 0,
+          "afterMinusBaselineMs": -0.09999999962747097
+        },
+        {
+          "round": 10,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 0,
+          "afterMs": 0.09999999962747097,
+          "afterMinusBaselineMs": 0.09999999962747097
+        },
+        {
+          "round": 11,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 0.19999999925494194,
+          "afterMs": 0.09999999962747097,
+          "afterMinusBaselineMs": -0.09999999962747097
+        },
+        {
+          "round": 12,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 0.10000000149011612,
+          "afterMs": 0,
+          "afterMinusBaselineMs": -0.10000000149011612
+        }
+      ],
+      "byOrder": [
+        {
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "n": 6,
+          "p50": -0.09999999962747097,
+          "p95": 0.09999999962747097,
+          "min": -0.09999999962747097,
+          "max": 0.09999999962747097,
+          "mean": -0.049999999813735485
+        },
+        {
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "n": 6,
+          "p50": 0.0,
+          "p95": 0.09999999962747097,
+          "min": -0.10000000149011612,
+          "max": 0.09999999962747097,
+          "mean": -6.20881716410319e-10
+        }
+      ]
+    },
+    {
+      "count": 243,
+      "sort": "power",
+      "phase": "center",
+      "afterFaster": 9,
+      "afterSlower": 3,
+      "ties": 0,
+      "deltaSummary": {
+        "n": 12,
+        "p50": -1.2999999998137355,
+        "p95": 1.400000000372529,
+        "min": -4.5,
+        "max": 1.400000000372529,
+        "mean": -1.4000000000620882
+      },
+      "deltas": [
+        {
+          "round": 1,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 13.5,
+          "afterMs": 10.599999999627471,
+          "afterMinusBaselineMs": -2.900000000372529
+        },
+        {
+          "round": 2,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 14.5,
+          "afterMs": 13.199999999254942,
+          "afterMinusBaselineMs": -1.300000000745058
+        },
+        {
+          "round": 3,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 13.5,
+          "afterMs": 9,
+          "afterMinusBaselineMs": -4.5
+        },
+        {
+          "round": 4,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 9.200000001117587,
+          "afterMs": 8,
+          "afterMinusBaselineMs": -1.200000001117587
+        },
+        {
+          "round": 5,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 9.5,
+          "afterMs": 10.300000000745058,
+          "afterMinusBaselineMs": 0.8000000007450581
+        },
+        {
+          "round": 6,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 8.299999998882413,
+          "afterMs": 9.699999999254942,
+          "afterMinusBaselineMs": 1.400000000372529
+        },
+        {
+          "round": 7,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 8.900000000372529,
+          "afterMs": 7.600000001490116,
+          "afterMinusBaselineMs": -1.299999998882413
+        },
+        {
+          "round": 8,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 7.699999999254942,
+          "afterMs": 7.400000000372529,
+          "afterMinusBaselineMs": -0.2999999988824129
+        },
+        {
+          "round": 9,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 10.700000001117587,
+          "afterMs": 7.800000000745058,
+          "afterMinusBaselineMs": -2.900000000372529
+        },
+        {
+          "round": 10,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 11.200000001117587,
+          "afterMs": 7.400000000372529,
+          "afterMinusBaselineMs": -3.800000000745058
+        },
+        {
+          "round": 11,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 10.599999999627471,
+          "afterMs": 8.5,
+          "afterMinusBaselineMs": -2.099999999627471
+        },
+        {
+          "round": 12,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 10,
+          "afterMs": 11.299999998882413,
+          "afterMinusBaselineMs": 1.299999998882413
+        }
+      ],
+      "byOrder": [
+        {
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "n": 6,
+          "p50": -2.5,
+          "p95": 0.8000000007450581,
+          "min": -4.5,
+          "max": 0.8000000007450581,
+          "mean": -2.1499999997516475
+        },
+        {
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "n": 6,
+          "p50": -0.75,
+          "p95": 1.400000000372529,
+          "min": -3.800000000745058,
+          "max": 1.400000000372529,
+          "mean": -0.650000000372529
+        }
+      ]
+    },
+    {
+      "count": 243,
+      "sort": "rarity",
+      "phase": "selector",
+      "afterFaster": 6,
+      "afterSlower": 3,
+      "ties": 3,
+      "deltaSummary": {
+        "n": 12,
+        "p50": -9.313225746154785e-10,
+        "p95": 0.09999999962747097,
+        "min": -0.10000000149011612,
+        "max": 0.09999999962747097,
+        "mean": -0.0250000002173086
+      },
+      "deltas": [
+        {
+          "round": 1,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 0,
+          "afterMs": 0.09999999962747097,
+          "afterMinusBaselineMs": 0.09999999962747097
+        },
+        {
+          "round": 2,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 0.09999999962747097,
+          "afterMs": 0.10000000149011612,
+          "afterMinusBaselineMs": 1.862645149230957e-09
+        },
+        {
+          "round": 3,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 0,
+          "afterMs": 0,
+          "afterMinusBaselineMs": 0
+        },
+        {
+          "round": 4,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 0.10000000149011612,
+          "afterMs": 0,
+          "afterMinusBaselineMs": -0.10000000149011612
+        },
+        {
+          "round": 5,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 0.09999999962747097,
+          "afterMs": 0,
+          "afterMinusBaselineMs": -0.09999999962747097
+        },
+        {
+          "round": 6,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 0.09999999962747097,
+          "afterMs": 0,
+          "afterMinusBaselineMs": -0.09999999962747097
+        },
+        {
+          "round": 7,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 0.10000000149011612,
+          "afterMs": 0.09999999962747097,
+          "afterMinusBaselineMs": -1.862645149230957e-09
+        },
+        {
+          "round": 8,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 0.09999999962747097,
+          "afterMs": 0,
+          "afterMinusBaselineMs": -0.09999999962747097
+        },
+        {
+          "round": 9,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 0.09999999962747097,
+          "afterMs": 0.09999999962747097,
+          "afterMinusBaselineMs": 0.0
+        },
+        {
+          "round": 10,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 0.10000000149011612,
+          "afterMs": 0,
+          "afterMinusBaselineMs": -0.10000000149011612
+        },
+        {
+          "round": 11,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 0.09999999962747097,
+          "afterMs": 0.09999999962747097,
+          "afterMinusBaselineMs": 0.0
+        },
+        {
+          "round": 12,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 0,
+          "afterMs": 0.09999999962747097,
+          "afterMinusBaselineMs": 0.09999999962747097
+        }
+      ],
+      "byOrder": [
+        {
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "n": 6,
+          "p50": 0.0,
+          "p95": 0.09999999962747097,
+          "min": -0.09999999962747097,
+          "max": 0.09999999962747097,
+          "mean": -3.104408582051595e-10
+        },
+        {
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "n": 6,
+          "p50": -0.09999999962747097,
+          "p95": 0.09999999962747097,
+          "min": -0.10000000149011612,
+          "max": 0.09999999962747097,
+          "mean": -0.050000000124176346
+        }
+      ]
+    },
+    {
+      "count": 243,
+      "sort": "rarity",
+      "phase": "center",
+      "afterFaster": 9,
+      "afterSlower": 3,
+      "ties": 0,
+      "deltaSummary": {
+        "n": 12,
+        "p50": -0.5500000007450581,
+        "p95": 3.5,
+        "min": -2.600000001490116,
+        "max": 3.5,
+        "mean": -0.5083333334575096
+      },
+      "deltas": [
+        {
+          "round": 1,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 11.799999998882413,
+          "afterMs": 9.299999998882413,
+          "afterMinusBaselineMs": -2.5
+        },
+        {
+          "round": 2,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 9.800000000745058,
+          "afterMs": 13.300000000745058,
+          "afterMinusBaselineMs": 3.5
+        },
+        {
+          "round": 3,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 10,
+          "afterMs": 7.5,
+          "afterMinusBaselineMs": -2.5
+        },
+        {
+          "round": 4,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 9.099999999627471,
+          "afterMs": 8.599999999627471,
+          "afterMinusBaselineMs": -0.5
+        },
+        {
+          "round": 5,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 9.900000000372529,
+          "afterMs": 9.399999998509884,
+          "afterMinusBaselineMs": -0.5000000018626451
+        },
+        {
+          "round": 6,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 8,
+          "afterMs": 9.5,
+          "afterMinusBaselineMs": 1.5
+        },
+        {
+          "round": 7,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 9.400000000372529,
+          "afterMs": 8.800000000745058,
+          "afterMinusBaselineMs": -0.599999999627471
+        },
+        {
+          "round": 8,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 8.699999999254942,
+          "afterMs": 7.599999999627471,
+          "afterMinusBaselineMs": -1.099999999627471
+        },
+        {
+          "round": 9,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 9.900000000372529,
+          "afterMs": 7.299999998882413,
+          "afterMinusBaselineMs": -2.600000001490116
+        },
+        {
+          "round": 10,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 9.099999999627471,
+          "afterMs": 7.800000000745058,
+          "afterMinusBaselineMs": -1.299999998882413
+        },
+        {
+          "round": 11,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 9.199999999254942,
+          "afterMs": 8.900000000372529,
+          "afterMinusBaselineMs": -0.2999999988824129
+        },
+        {
+          "round": 12,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 10,
+          "afterMs": 10.799999998882413,
+          "afterMinusBaselineMs": 0.7999999988824129
+        }
+      ],
+      "byOrder": [
+        {
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "n": 6,
+          "p50": -1.5499999998137355,
+          "p95": -0.2999999988824129,
+          "min": -2.600000001490116,
+          "max": -0.2999999988824129,
+          "mean": -1.5000000003104408
+        },
+        {
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "n": 6,
+          "p50": 0.14999999944120646,
+          "p95": 3.5,
+          "min": -1.299999998882413,
+          "max": 3.5,
+          "mean": 0.4833333333954215
+        }
+      ]
+    },
+    {
+      "count": 243,
+      "sort": "level",
+      "phase": "selector",
+      "afterFaster": 3,
+      "afterSlower": 3,
+      "ties": 6,
+      "deltaSummary": {
+        "n": 12,
+        "p50": 0.0,
+        "p95": 0.19999999925494194,
+        "min": -0.19999999925494194,
+        "max": 0.19999999925494194,
+        "mean": 0.0
+      },
+      "deltas": [
+        {
+          "round": 1,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 0,
+          "afterMs": 0.19999999925494194,
+          "afterMinusBaselineMs": 0.19999999925494194
+        },
+        {
+          "round": 2,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 0.09999999962747097,
+          "afterMs": 0.09999999962747097,
+          "afterMinusBaselineMs": 0.0
+        },
+        {
+          "round": 3,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 0.09999999962747097,
+          "afterMs": 0.09999999962747097,
+          "afterMinusBaselineMs": 0.0
+        },
+        {
+          "round": 4,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 0,
+          "afterMs": 0.09999999962747097,
+          "afterMinusBaselineMs": 0.09999999962747097
+        },
+        {
+          "round": 5,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 0,
+          "afterMs": 0,
+          "afterMinusBaselineMs": 0
+        },
+        {
+          "round": 6,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 0.09999999962747097,
+          "afterMs": 0,
+          "afterMinusBaselineMs": -0.09999999962747097
+        },
+        {
+          "round": 7,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 0,
+          "afterMs": 0,
+          "afterMinusBaselineMs": 0
+        },
+        {
+          "round": 8,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 0.19999999925494194,
+          "afterMs": 0,
+          "afterMinusBaselineMs": -0.19999999925494194
+        },
+        {
+          "round": 9,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 0.10000000149011612,
+          "afterMs": 0.09999999962747097,
+          "afterMinusBaselineMs": -1.862645149230957e-09
+        },
+        {
+          "round": 10,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 0.09999999962747097,
+          "afterMs": 0.10000000149011612,
+          "afterMinusBaselineMs": 1.862645149230957e-09
+        },
+        {
+          "round": 11,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 0,
+          "afterMs": 0,
+          "afterMinusBaselineMs": 0
+        },
+        {
+          "round": 12,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 0,
+          "afterMs": 0,
+          "afterMinusBaselineMs": 0
+        }
+      ],
+      "byOrder": [
+        {
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "n": 6,
+          "p50": 0.0,
+          "p95": 0.19999999925494194,
+          "min": -1.862645149230957e-09,
+          "max": 0.19999999925494194,
+          "mean": 0.03333333289871613
+        },
+        {
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "n": 6,
+          "p50": 0.0,
+          "p95": 0.09999999962747097,
+          "min": -0.19999999925494194,
+          "max": 0.09999999962747097,
+          "mean": -0.03333333289871613
+        }
+      ]
+    },
+    {
+      "count": 243,
+      "sort": "level",
+      "phase": "center",
+      "afterFaster": 9,
+      "afterSlower": 3,
+      "ties": 0,
+      "deltaSummary": {
+        "n": 12,
+        "p50": -0.7999999998137355,
+        "p95": 2.900000000372529,
+        "min": -35.0,
+        "max": 2.900000000372529,
+        "mean": -3.2333333332402012
+      },
+      "deltas": [
+        {
+          "round": 1,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 9.5,
+          "afterMs": 10.800000000745058,
+          "afterMinusBaselineMs": 1.300000000745058
+        },
+        {
+          "round": 2,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 17.09999999962747,
+          "afterMs": 16.199999999254942,
+          "afterMinusBaselineMs": -0.900000000372529
+        },
+        {
+          "round": 3,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 11.900000000372529,
+          "afterMs": 9,
+          "afterMinusBaselineMs": -2.900000000372529
+        },
+        {
+          "round": 4,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 9.5,
+          "afterMs": 9,
+          "afterMinusBaselineMs": -0.5
+        },
+        {
+          "round": 5,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 8.600000001490116,
+          "afterMs": 10.200000001117587,
+          "afterMinusBaselineMs": 1.599999999627471
+        },
+        {
+          "round": 6,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 44.19999999925494,
+          "afterMs": 9.199999999254942,
+          "afterMinusBaselineMs": -35.0
+        },
+        {
+          "round": 7,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 8.799999998882413,
+          "afterMs": 8.100000001490116,
+          "afterMinusBaselineMs": -0.6999999973922968
+        },
+        {
+          "round": 8,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 9.300000000745058,
+          "afterMs": 8.199999999254942,
+          "afterMinusBaselineMs": -1.1000000014901161
+        },
+        {
+          "round": 9,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 8.5,
+          "afterMs": 7.800000000745058,
+          "afterMinusBaselineMs": -0.6999999992549419
+        },
+        {
+          "round": 10,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 9.799999998882413,
+          "afterMs": 8,
+          "afterMinusBaselineMs": -1.799999998882413
+        },
+        {
+          "round": 11,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 10.400000000372529,
+          "afterMs": 9.399999998509884,
+          "afterMinusBaselineMs": -1.0000000018626451
+        },
+        {
+          "round": 12,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 8.400000000372529,
+          "afterMs": 11.300000000745058,
+          "afterMinusBaselineMs": 2.900000000372529
+        }
+      ],
+      "byOrder": [
+        {
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "n": 6,
+          "p50": -0.6999999983236194,
+          "p95": 1.599999999627471,
+          "min": -2.900000000372529,
+          "max": 1.599999999627471,
+          "mean": -0.3999999997516473
+        },
+        {
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "n": 6,
+          "p50": -1.0000000009313226,
+          "p95": 2.900000000372529,
+          "min": -35.0,
+          "max": 2.900000000372529,
+          "mean": -6.0666666667287545
+        }
+      ]
+    },
+    {
+      "count": 10000,
+      "sort": "power",
+      "phase": "selector",
+      "afterFaster": 12,
+      "afterSlower": 0,
+      "ties": 0,
+      "deltaSummary": {
+        "n": 12,
+        "p50": -3.6500000013038516,
+        "p95": -1.5000000018626451,
+        "min": -116.29999999888241,
+        "max": -1.5000000018626451,
+        "mean": -13.00833333330229
+      },
+      "deltas": [
+        {
+          "round": 1,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 7.099999999627471,
+          "afterMs": 3,
+          "afterMinusBaselineMs": -4.099999999627471
+        },
+        {
+          "round": 2,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 5.300000000745058,
+          "afterMs": 2.5,
+          "afterMinusBaselineMs": -2.800000000745058
+        },
+        {
+          "round": 3,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 5.400000000372529,
+          "afterMs": 3.899999998509884,
+          "afterMinusBaselineMs": -1.5000000018626451
+        },
+        {
+          "round": 4,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 6.699999999254942,
+          "afterMs": 2.5,
+          "afterMinusBaselineMs": -4.199999999254942
+        },
+        {
+          "round": 5,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 5.699999999254942,
+          "afterMs": 2.600000001490116,
+          "afterMinusBaselineMs": -3.099999997764826
+        },
+        {
+          "round": 6,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 7.799999998882413,
+          "afterMs": 2.900000000372529,
+          "afterMinusBaselineMs": -4.899999998509884
+        },
+        {
+          "round": 7,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 7,
+          "afterMs": 3.099999999627471,
+          "afterMinusBaselineMs": -3.900000000372529
+        },
+        {
+          "round": 8,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 119.40000000037253,
+          "afterMs": 3.100000001490116,
+          "afterMinusBaselineMs": -116.29999999888241
+        },
+        {
+          "round": 9,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 5.799999998882413,
+          "afterMs": 2.799999998882413,
+          "afterMinusBaselineMs": -3.0
+        },
+        {
+          "round": 10,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 6.200000001117587,
+          "afterMs": 2.799999998882413,
+          "afterMinusBaselineMs": -3.400000002235174
+        },
+        {
+          "round": 11,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 8,
+          "afterMs": 2.5,
+          "afterMinusBaselineMs": -5.5
+        },
+        {
+          "round": 12,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 5.799999998882413,
+          "afterMs": 2.399999998509884,
+          "afterMinusBaselineMs": -3.400000000372529
+        }
+      ],
+      "byOrder": [
+        {
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "n": 6,
+          "p50": -3.4999999990686774,
+          "p95": -1.5000000018626451,
+          "min": -5.5,
+          "max": -1.5000000018626451,
+          "mean": -3.5166666666045785
+        },
+        {
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "n": 6,
+          "p50": -3.800000000745058,
+          "p95": -2.800000000745058,
+          "min": -116.29999999888241,
+          "max": -2.800000000745058,
+          "mean": -22.5
+        }
+      ]
+    },
+    {
+      "count": 10000,
+      "sort": "power",
+      "phase": "center",
+      "afterFaster": 10,
+      "afterSlower": 2,
+      "ties": 0,
+      "deltaSummary": {
+        "n": 12,
+        "p50": -3.349999999627471,
+        "p95": 0.8000000007450581,
+        "min": -5.400000000372529,
+        "max": 0.8000000007450581,
+        "mean": -2.974999999937912
+      },
+      "deltas": [
+        {
+          "round": 1,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 25.5,
+          "afterMs": 21.700000001117587,
+          "afterMinusBaselineMs": -3.799999998882413
+        },
+        {
+          "round": 2,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 15.399999998509884,
+          "afterMs": 12.800000000745058,
+          "afterMinusBaselineMs": -2.599999997764826
+        },
+        {
+          "round": 3,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 15,
+          "afterMs": 15.300000000745058,
+          "afterMinusBaselineMs": 0.30000000074505806
+        },
+        {
+          "round": 4,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 18.90000000037253,
+          "afterMs": 14.900000000372529,
+          "afterMinusBaselineMs": -4.0
+        },
+        {
+          "round": 5,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 19.09999999962747,
+          "afterMs": 13.699999999254942,
+          "afterMinusBaselineMs": -5.400000000372529
+        },
+        {
+          "round": 6,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 18.5,
+          "afterMs": 15.400000000372529,
+          "afterMinusBaselineMs": -3.099999999627471
+        },
+        {
+          "round": 7,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 18.200000001117587,
+          "afterMs": 15.599999999627471,
+          "afterMinusBaselineMs": -2.600000001490116
+        },
+        {
+          "round": 8,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 18.699999999254942,
+          "afterMs": 19.5,
+          "afterMinusBaselineMs": 0.8000000007450581
+        },
+        {
+          "round": 9,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 18.699999999254942,
+          "afterMs": 15.899999998509884,
+          "afterMinusBaselineMs": -2.800000000745058
+        },
+        {
+          "round": 10,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 23.700000001117587,
+          "afterMs": 19.09999999962747,
+          "afterMinusBaselineMs": -4.600000001490116
+        },
+        {
+          "round": 11,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 17.600000001490116,
+          "afterMs": 13.300000000745058,
+          "afterMinusBaselineMs": -4.300000000745058
+        },
+        {
+          "round": 12,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 17.199999999254942,
+          "afterMs": 13.599999999627471,
+          "afterMinusBaselineMs": -3.599999999627471
+        }
+      ],
+      "byOrder": [
+        {
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "n": 6,
+          "p50": -3.2999999998137355,
+          "p95": 0.30000000074505806,
+          "min": -5.400000000372529,
+          "max": 0.30000000074505806,
+          "mean": -3.1000000002483525
+        },
+        {
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "n": 6,
+          "p50": -3.349999999627471,
+          "p95": 0.8000000007450581,
+          "min": -4.600000001490116,
+          "max": 0.8000000007450581,
+          "mean": -2.849999999627471
+        }
+      ]
+    },
+    {
+      "count": 10000,
+      "sort": "rarity",
+      "phase": "selector",
+      "afterFaster": 10,
+      "afterSlower": 2,
+      "ties": 0,
+      "deltaSummary": {
+        "n": 12,
+        "p50": -2.049999998882413,
+        "p95": 1.599999999627471,
+        "min": -7.799999998882413,
+        "max": 1.599999999627471,
+        "mean": -2.2499999993791184
+      },
+      "deltas": [
+        {
+          "round": 1,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 6.799999998882413,
+          "afterMs": 2.800000000745058,
+          "afterMinusBaselineMs": -3.999999998137355
+        },
+        {
+          "round": 2,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 4.199999999254942,
+          "afterMs": 2.699999999254942,
+          "afterMinusBaselineMs": -1.5
+        },
+        {
+          "round": 3,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 4.199999999254942,
+          "afterMs": 2.900000000372529,
+          "afterMinusBaselineMs": -1.299999998882413
+        },
+        {
+          "round": 4,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 5.299999998882413,
+          "afterMs": 3.099999999627471,
+          "afterMinusBaselineMs": -2.199999999254942
+        },
+        {
+          "round": 5,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 8.299999998882413,
+          "afterMs": 2.900000000372529,
+          "afterMinusBaselineMs": -5.399999998509884
+        },
+        {
+          "round": 6,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 4.5,
+          "afterMs": 6.099999999627471,
+          "afterMinusBaselineMs": 1.599999999627471
+        },
+        {
+          "round": 7,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 11.699999999254942,
+          "afterMs": 3.900000000372529,
+          "afterMinusBaselineMs": -7.799999998882413
+        },
+        {
+          "round": 8,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 4.5,
+          "afterMs": 3.599999999627471,
+          "afterMinusBaselineMs": -0.900000000372529
+        },
+        {
+          "round": 9,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 4.5,
+          "afterMs": 5.5,
+          "afterMinusBaselineMs": 1.0
+        },
+        {
+          "round": 10,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 5.899999998509884,
+          "afterMs": 3.800000000745058,
+          "afterMinusBaselineMs": -2.099999997764826
+        },
+        {
+          "round": 11,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 5.799999998882413,
+          "afterMs": 3.399999998509884,
+          "afterMinusBaselineMs": -2.400000000372529
+        },
+        {
+          "round": 12,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 4.700000001117587,
+          "afterMs": 2.700000001117587,
+          "afterMinusBaselineMs": -2.0
+        }
+      ],
+      "byOrder": [
+        {
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "n": 6,
+          "p50": -3.199999999254942,
+          "p95": 1.0,
+          "min": -7.799999998882413,
+          "max": 1.0,
+          "mean": -3.3166666657974324
+        },
+        {
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "n": 6,
+          "p50": -1.75,
+          "p95": 1.599999999627471,
+          "min": -2.199999999254942,
+          "max": 1.599999999627471,
+          "mean": -1.1833333329608042
+        }
+      ]
+    },
+    {
+      "count": 10000,
+      "sort": "rarity",
+      "phase": "center",
+      "afterFaster": 5,
+      "afterSlower": 7,
+      "ties": 0,
+      "deltaSummary": {
+        "n": 12,
+        "p50": 0.6499999994412065,
+        "p95": 6.099999999627471,
+        "min": -6.800000000745058,
+        "max": 6.099999999627471,
+        "mean": 0.7416666662320495
+      },
+      "deltas": [
+        {
+          "round": 1,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 18,
+          "afterMs": 14.799999998882413,
+          "afterMinusBaselineMs": -3.200000001117587
+        },
+        {
+          "round": 2,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 15.599999999627471,
+          "afterMs": 21.59999999962747,
+          "afterMinusBaselineMs": 6.0
+        },
+        {
+          "round": 3,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 14.400000000372529,
+          "afterMs": 13,
+          "afterMinusBaselineMs": -1.400000000372529
+        },
+        {
+          "round": 4,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 15.5,
+          "afterMs": 21.59999999962747,
+          "afterMinusBaselineMs": 6.099999999627471
+        },
+        {
+          "round": 5,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 17,
+          "afterMs": 17.09999999962747,
+          "afterMinusBaselineMs": 0.09999999962747097
+        },
+        {
+          "round": 6,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 16.90000000037253,
+          "afterMs": 20.300000000745058,
+          "afterMinusBaselineMs": 3.400000000372529
+        },
+        {
+          "round": 7,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 20.700000001117587,
+          "afterMs": 13.900000000372529,
+          "afterMinusBaselineMs": -6.800000000745058
+        },
+        {
+          "round": 8,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 14.299999998882413,
+          "afterMs": 16.90000000037253,
+          "afterMinusBaselineMs": 2.600000001490116
+        },
+        {
+          "round": 9,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 17.800000000745058,
+          "afterMs": 17.399999998509884,
+          "afterMinusBaselineMs": -0.4000000022351742
+        },
+        {
+          "round": 10,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 21.40000000037253,
+          "afterMs": 22.59999999962747,
+          "afterMinusBaselineMs": 1.199999999254942
+        },
+        {
+          "round": 11,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 16.799999998882413,
+          "afterMs": 16.59999999962747,
+          "afterMinusBaselineMs": -0.19999999925494194
+        },
+        {
+          "round": 12,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 14.200000001117587,
+          "afterMs": 15.699999999254942,
+          "afterMinusBaselineMs": 1.4999999981373549
+        }
+      ],
+      "byOrder": [
+        {
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "n": 6,
+          "p50": -0.9000000013038516,
+          "p95": 0.09999999962747097,
+          "min": -6.800000000745058,
+          "max": 0.09999999962747097,
+          "mean": -1.9833333340163033
+        },
+        {
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "n": 6,
+          "p50": 3.0000000009313226,
+          "p95": 6.099999999627471,
+          "min": 1.199999999254942,
+          "max": 6.099999999627471,
+          "mean": 3.466666666480402
+        }
+      ]
+    },
+    {
+      "count": 10000,
+      "sort": "level",
+      "phase": "selector",
+      "afterFaster": 12,
+      "afterSlower": 0,
+      "ties": 0,
+      "deltaSummary": {
+        "n": 12,
+        "p50": -0.8999999985098839,
+        "p95": -0.5000000018626451,
+        "min": -1.5000000018626451,
+        "max": -0.5000000018626451,
+        "mean": -0.9083333335195979
+      },
+      "deltas": [
+        {
+          "round": 1,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 3.599999999627471,
+          "afterMs": 2.700000001117587,
+          "afterMinusBaselineMs": -0.8999999985098839
+        },
+        {
+          "round": 2,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 3.300000000745058,
+          "afterMs": 2.5,
+          "afterMinusBaselineMs": -0.8000000007450581
+        },
+        {
+          "round": 3,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 3.600000001490116,
+          "afterMs": 3,
+          "afterMinusBaselineMs": -0.6000000014901161
+        },
+        {
+          "round": 4,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 3.5,
+          "afterMs": 2.5,
+          "afterMinusBaselineMs": -1.0
+        },
+        {
+          "round": 5,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 3.600000001490116,
+          "afterMs": 2.600000001490116,
+          "afterMinusBaselineMs": -1.0
+        },
+        {
+          "round": 6,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 3.400000000372529,
+          "afterMs": 2.899999998509884,
+          "afterMinusBaselineMs": -0.5000000018626451
+        },
+        {
+          "round": 7,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 3.599999999627471,
+          "afterMs": 2.900000000372529,
+          "afterMinusBaselineMs": -0.6999999992549419
+        },
+        {
+          "round": 8,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 3.699999999254942,
+          "afterMs": 3,
+          "afterMinusBaselineMs": -0.6999999992549419
+        },
+        {
+          "round": 9,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 5,
+          "afterMs": 4.100000001490116,
+          "afterMinusBaselineMs": -0.8999999985098839
+        },
+        {
+          "round": 10,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 3.400000000372529,
+          "afterMs": 2.400000000372529,
+          "afterMinusBaselineMs": -1.0
+        },
+        {
+          "round": 11,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 3.800000000745058,
+          "afterMs": 2.5,
+          "afterMinusBaselineMs": -1.300000000745058
+        },
+        {
+          "round": 12,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 3.900000000372529,
+          "afterMs": 2.399999998509884,
+          "afterMinusBaselineMs": -1.5000000018626451
+        }
+      ],
+      "byOrder": [
+        {
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "n": 6,
+          "p50": -0.8999999985098839,
+          "p95": -0.6000000014901161,
+          "min": -1.300000000745058,
+          "max": -0.6000000014901161,
+          "mean": -0.8999999997516474
+        },
+        {
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "n": 6,
+          "p50": -0.900000000372529,
+          "p95": -0.5000000018626451,
+          "min": -1.5000000018626451,
+          "max": -0.5000000018626451,
+          "mean": -0.9166666672875484
+        }
+      ]
+    },
+    {
+      "count": 10000,
+      "sort": "level",
+      "phase": "center",
+      "afterFaster": 9,
+      "afterSlower": 3,
+      "ties": 0,
+      "deltaSummary": {
+        "n": 12,
+        "p50": -1.7500000018626451,
+        "p95": 3.600000001490116,
+        "min": -4.300000000745058,
+        "max": 3.600000001490116,
+        "mean": -1.458333333178113
+      },
+      "deltas": [
+        {
+          "round": 1,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 15.900000000372529,
+          "afterMs": 15.5,
+          "afterMinusBaselineMs": -0.40000000037252903
+        },
+        {
+          "round": 2,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 16.59999999962747,
+          "afterMs": 12.599999999627471,
+          "afterMinusBaselineMs": -4.0
+        },
+        {
+          "round": 3,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 13,
+          "afterMs": 13.300000000745058,
+          "afterMinusBaselineMs": 0.30000000074505806
+        },
+        {
+          "round": 4,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 15.800000000745058,
+          "afterMs": 13.200000001117587,
+          "afterMinusBaselineMs": -2.599999999627471
+        },
+        {
+          "round": 5,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 14.900000000372529,
+          "afterMs": 13.099999999627471,
+          "afterMinusBaselineMs": -1.800000000745058
+        },
+        {
+          "round": 6,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 16.09999999962747,
+          "afterMs": 15,
+          "afterMinusBaselineMs": -1.099999999627471
+        },
+        {
+          "round": 7,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 17.5,
+          "afterMs": 13.199999999254942,
+          "afterMinusBaselineMs": -4.300000000745058
+        },
+        {
+          "round": 8,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 19.699999999254942,
+          "afterMs": 17.700000001117587,
+          "afterMinusBaselineMs": -1.9999999981373549
+        },
+        {
+          "round": 9,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 22.399999998509884,
+          "afterMs": 26,
+          "afterMinusBaselineMs": 3.600000001490116
+        },
+        {
+          "round": 10,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 20.100000001490116,
+          "afterMs": 18.399999998509884,
+          "afterMinusBaselineMs": -1.7000000029802322
+        },
+        {
+          "round": 11,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselineMs": 14.899999998509884,
+          "afterMs": 14.900000000372529,
+          "afterMinusBaselineMs": 1.862645149230957e-09
+        },
+        {
+          "round": 12,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselineMs": 17.100000001490116,
+          "afterMs": 13.600000001490116,
+          "afterMinusBaselineMs": -3.5
+        }
+      ],
+      "byOrder": [
+        {
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "n": 6,
+          "p50": -0.19999999925494194,
+          "p95": 3.600000001490116,
+          "min": -4.300000000745058,
+          "max": 3.600000001490116,
+          "mean": -0.4333333329608043
+        },
+        {
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "n": 6,
+          "p50": -2.299999998882413,
+          "p95": -1.099999999627471,
+          "min": -4.0,
+          "max": -1.099999999627471,
+          "mean": -2.4833333333954215
+        }
+      ]
+    }
+  ],
+  "allHigherCells": [
+    {
+      "count": 243,
+      "sort": "rarity",
+      "phase": "center",
+      "metric": "p95",
+      "baseline": 11.799999998882413,
+      "after": 13.300000000745058,
+      "deltaMs": 1.5000000018626451,
+      "deltaPercent": 12.711864423768748
+    },
+    {
+      "count": 243,
+      "sort": "rarity",
+      "phase": "center",
+      "metric": "max",
+      "baseline": 11.799999998882413,
+      "after": 13.300000000745058,
+      "deltaMs": 1.5000000018626451,
+      "deltaPercent": 12.711864423768748
+    },
+    {
+      "count": 10000,
+      "sort": "rarity",
+      "phase": "center",
+      "metric": "p50",
+      "baseline": 16.84999999962747,
+      "after": 17.0,
+      "deltaMs": 0.15000000037252903,
+      "deltaPercent": 0.8902077173640777
+    },
+    {
+      "count": 10000,
+      "sort": "rarity",
+      "phase": "center",
+      "metric": "p95",
+      "baseline": 21.40000000037253,
+      "after": 22.59999999962747,
+      "deltaMs": 1.199999999254942,
+      "deltaPercent": 5.607476631934816
+    },
+    {
+      "count": 10000,
+      "sort": "rarity",
+      "phase": "center",
+      "metric": "max",
+      "baseline": 21.40000000037253,
+      "after": 22.59999999962747,
+      "deltaMs": 1.199999999254942,
+      "deltaPercent": 5.607476631934816
+    },
+    {
+      "count": 10000,
+      "sort": "rarity",
+      "phase": "center",
+      "metric": "mean",
+      "baseline": 16.88333333345751,
+      "after": 17.62499999968956,
+      "deltaMs": 0.7416666662320495,
+      "deltaPercent": 4.392892396208858
+    },
+    {
+      "count": 10000,
+      "sort": "level",
+      "phase": "center",
+      "metric": "p95",
+      "baseline": 22.399999998509884,
+      "after": 26,
+      "deltaMs": 3.600000001490116,
+      "deltaPercent": 16.071428579150005
+    },
+    {
+      "count": 10000,
+      "sort": "level",
+      "phase": "center",
+      "metric": "max",
+      "baseline": 22.399999998509884,
+      "after": 26,
+      "deltaMs": 3.600000001490116,
+      "deltaPercent": 16.071428579150005
+    }
+  ],
+  "precisionNotes": {
+    "zeroDurationFormalCalls": 28,
+    "nonzeroPairedDeltasSmallerThanOneMicrosecond": [
+      {
+        "count": 243,
+        "sort": "rarity",
+        "phase": "selector",
+        "round": 2,
+        "pairOrder": [
+          "after",
+          "baseline"
+        ],
+        "baselineMs": 0.09999999962747097,
+        "afterMs": 0.10000000149011612,
+        "afterMinusBaselineMs": 1.862645149230957e-09
+      },
+      {
+        "count": 243,
+        "sort": "rarity",
+        "phase": "selector",
+        "round": 7,
+        "pairOrder": [
+          "baseline",
+          "after"
+        ],
+        "baselineMs": 0.10000000149011612,
+        "afterMs": 0.09999999962747097,
+        "afterMinusBaselineMs": -1.862645149230957e-09
+      },
+      {
+        "count": 243,
+        "sort": "level",
+        "phase": "selector",
+        "round": 9,
+        "pairOrder": [
+          "baseline",
+          "after"
+        ],
+        "baselineMs": 0.10000000149011612,
+        "afterMs": 0.09999999962747097,
+        "afterMinusBaselineMs": -1.862645149230957e-09
+      },
+      {
+        "count": 243,
+        "sort": "level",
+        "phase": "selector",
+        "round": 10,
+        "pairOrder": [
+          "after",
+          "baseline"
+        ],
+        "baselineMs": 0.09999999962747097,
+        "afterMs": 0.10000000149011612,
+        "afterMinusBaselineMs": 1.862645149230957e-09
+      },
+      {
+        "count": 10000,
+        "sort": "level",
+        "phase": "center",
+        "round": 11,
+        "pairOrder": [
+          "baseline",
+          "after"
+        ],
+        "baselineMs": 14.899999998509884,
+        "afterMs": 14.900000000372529,
+        "afterMinusBaselineMs": 1.862645149230957e-09
+      }
+    ],
+    "interpretation": "Original raw sign counts are preserved, including floating-point residuals near zero. These residuals and timer-quantized 0/0.1 ms selector calls must not be interpreted as resolved tiny performance changes."
+  },
+  "nativePageContext": [
+    {
+      "count": 10000,
+      "sort": "power",
+      "originalNative": {
+        "baseline": {
+          "n": 12,
+          "p50": 211.54999999981374,
+          "p95": 498.09999999962747,
+          "min": 70,
+          "max": 498.09999999962747,
+          "mean": 229.75833333314708
+        },
+        "after": {
+          "n": 12,
+          "p50": 286.09999999962747,
+          "p95": 446.30000000074506,
+          "min": 147.5,
+          "max": 446.30000000074506,
+          "mean": 284.3749999996896
+        }
+      },
+      "sameSourceControl": {
+        "baseline": {
+          "n": 12,
+          "p50": 174.84999999869615,
+          "p95": 690.6999999992549,
+          "min": 72.09999999962747,
+          "max": 690.6999999992549,
+          "mean": 248.24166666623205
+        },
+        "after": {
+          "n": 12,
+          "p50": 334.65000000037253,
+          "p95": 630.1999999992549,
+          "min": 177.7999999988824,
+          "max": 630.1999999992549,
+          "mean": 384.0583333329608
+        }
+      }
+    },
+    {
+      "count": 10000,
+      "sort": "rarity",
+      "originalNative": {
+        "baseline": {
+          "n": 12,
+          "p50": 161.65000000037253,
+          "p95": 375.80000000074506,
+          "min": 72.19999999925494,
+          "max": 375.80000000074506,
+          "mean": 191.17499999981374
+        },
+        "after": {
+          "n": 12,
+          "p50": 274.59999999962747,
+          "p95": 717.5,
+          "min": 62.40000000037253,
+          "max": 717.5,
+          "mean": 301.7833333333644
+        }
+      },
+      "sameSourceControl": {
+        "baseline": {
+          "n": 12,
+          "p50": 247.65000000037253,
+          "p95": 529.9000000003725,
+          "min": 71.20000000111759,
+          "max": 529.9000000003725,
+          "mean": 277.99166666685295
+        },
+        "after": {
+          "n": 12,
+          "p50": 153.1499999994412,
+          "p95": 483.5,
+          "min": 95,
+          "max": 483.5,
+          "mean": 211.25
+        }
+      }
+    },
+    {
+      "count": 10000,
+      "sort": "level",
+      "originalNative": {
+        "baseline": {
+          "n": 12,
+          "p50": 315.4999999990687,
+          "p95": 549,
+          "min": 71.90000000037253,
+          "max": 549,
+          "mean": 289.79999999981374
+        },
+        "after": {
+          "n": 12,
+          "p50": 282.55000000074506,
+          "p95": 723.9000000003725,
+          "min": 66.60000000149012,
+          "max": 723.9000000003725,
+          "mean": 318.1750000002794
+        }
+      },
+      "sameSourceControl": {
+        "baseline": {
+          "n": 12,
+          "p50": 330.04999999981374,
+          "p95": 619.1000000014901,
+          "min": 65.90000000037253,
+          "max": 619.1000000014901,
+          "mean": 321.3750000003104
+        },
+        "after": {
+          "n": 12,
+          "p50": 320.95000000018626,
+          "p95": 446.40000000037253,
+          "min": 90,
+          "max": 446.40000000037253,
+          "mean": 290.87499999984476
+        }
+      }
+    }
+  ],
+  "relatedInputs": {
+    "native": {
+      "path": "/workspace/scratch/61dab2872cc5/audit/current/inventory-sort-formal.json",
+      "sha256": "390be8d98837aa3a03811258bb6d7e8435b1998ac7a6ad25240041614b38bc1c"
+    },
+    "sameSourceControl": {
+      "path": "/workspace/scratch/61dab2872cc5/audit/current/inventory-sort-same-source-control.json",
+      "sha256": "eb9480442a4bafa46986ee3af7acd01b58c97c381770534311047a44d95edb8e"
+    }
+  },
+  "sourceReview": {
+    "validityBlockersFound": [],
+    "findings": [
+      "The immediate performance.now pair surrounds exactly one original synchronous selector or center call in the page.",
+      "Canonical imported function objects and independent production-decodeSave state are used; this is not a timed trusted-input action or a handle to private app state.",
+      "Exact full selection/reference or HTML comparisons, complete JSON state/UI checks and both full save-string checks occur after timing.",
+      "AB/BA order, three-sort rotation and phase-order rotation are fixed and the observed 312 rows exactly match those loops.",
+      "center already invokes selector and returns HTML; intervals are not additive, and center-minus-selector is not a directly measured rendering cost.",
+      "Elapsed intervals can include host preemption/GC, and outside validation allocations can affect a later interval. DOM insertion, paint and rAF completion are outside this measurement."
+    ]
+  },
+  "independentDecision": {
+    "recommendation": "REVERT_INVENTORY_SORT_OPTIMIZATION_FOR_THIS_RELEASE",
+    "nativePageRegressionRiskClosed": false,
+    "causalProductRegressionEstablished": false,
+    "reason": "The large-inventory selector shows synchronous elapsed-time benefits, but they do not establish a favorable native page outcome. Original native unfavorable observations remain; same-source control variability does not identify their cause or remove them. Whole-center attribution also retains unfavorable median/tail cells. Given the iteration requirement to improve or revert observed deterioration, restore the known input inventory selector and retain this candidate, cost tests and every result as explicit experimental evidence.",
+    "scope": "Keep the independently verified equipment-comparison context, real HP/ward explanations, dice-count conditions and local font correction. These are separate from the withdrawn inventory sorting optimization.",
+    "productChangesPerformedByReviewer": false
+  }
+}

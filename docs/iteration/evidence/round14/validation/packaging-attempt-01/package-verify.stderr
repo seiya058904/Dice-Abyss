@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/workspace/scratch/8db1c7454cb5/baseline/Dice-Abyss/scripts/verify-package.py", line 182, in <module>
+    result = verify(args.zip.resolve(), args.extract if args.extract else None)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/8db1c7454cb5/baseline/Dice-Abyss/scripts/verify-package.py", line 143, in verify
+    require(paths == sorted(paths) and len(paths) == len(set(paths)), 'Manifest must have unique, sorted paths')
+  File "/workspace/scratch/8db1c7454cb5/baseline/Dice-Abyss/scripts/verify-package.py", line 29, in require
+    raise ValueError(message)
+ValueError: Manifest must have unique, sorted paths

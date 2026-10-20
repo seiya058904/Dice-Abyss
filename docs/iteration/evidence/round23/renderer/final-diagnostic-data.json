@@ -1,0 +1,606 @@
+{
+  "reportIdentities": {
+    "02": {
+      "path": "/workspace/scratch/3b21be83b3da/qa23/renderer-candidate-attempt02/renderer-round23.json",
+      "sha256": "ee9d37894da54ad6099294253488f191b67d1408dcaa70227f2d561f295b5ed6",
+      "started": "2026-10-19T15:38:09.711Z",
+      "finished": "2026-10-19T15:38:21.337Z",
+      "scriptSHA": "7ec12f38a61400f36eb72a94e42b8095521ebf24b1a1abdab66ee7c976dd0693",
+      "status": "FAILED_RENDERER_EQUIVALENCE"
+    },
+    "03": {
+      "path": "/workspace/scratch/3b21be83b3da/qa23/renderer-candidate-attempt03/renderer-round23.json",
+      "sha256": "d9ad3ded9e40a49ee0e525cc6ba3612327e3aa194c5f1e62d41c96895db45e56",
+      "started": "2026-10-19T15:40:59.059Z",
+      "finished": "2026-10-19T15:41:09.393Z",
+      "scriptSHA": "7ec12f38a61400f36eb72a94e42b8095521ebf24b1a1abdab66ee7c976dd0693",
+      "status": "FAILED"
+    },
+    "04": {
+      "path": "/workspace/scratch/3b21be83b3da/qa23/renderer-final-attempt04/renderer-round23.json",
+      "sha256": "4621ba891693a63c05a33df697f7747ce24d734127c52e6805cf22535c82548f",
+      "started": "2026-10-19T15:43:37.744Z",
+      "finished": "2026-10-19T15:43:47.840Z",
+      "scriptSHA": "7ec12f38a61400f36eb72a94e42b8095521ebf24b1a1abdab66ee7c976dd0693",
+      "status": "FAILED"
+    }
+  },
+  "rendererIdentity": {
+    "baseline": {
+      "file": "src/dice-renderer.js",
+      "bytes": 14522,
+      "sha256": "b40e1e1c808b00d319b70ce7546403c588cdcc8397bba684fe19b2f4c0bca6d8"
+    },
+    "current": {
+      "file": "src/dice-renderer.js",
+      "bytes": 14522,
+      "sha256": "b40e1e1c808b00d319b70ce7546403c588cdcc8397bba684fe19b2f4c0bca6d8"
+    }
+  },
+  "manifestFiles": 28,
+  "cssFiles": 22,
+  "sourceDifferencesInManifest": [
+    "index.html",
+    "src/dice-motion.js",
+    "src/effects.js"
+  ],
+  "posthocLocalBytesStillMatchSourcesBefore": {
+    "baseline": true,
+    "current": true
+  },
+  "localAllRuntimeSourceDifferences": [
+    "src/release.js",
+    "src/effects.js",
+    "src/views.js",
+    "src/dice-motion.js",
+    "src/engine.js"
+  ],
+  "localFontChecks": [
+    {
+      "file": "src/fonts/fusion-pixel-12px-proportional-zh_hans.otf.woff2",
+      "sameLocalBytes": true,
+      "bytes": 661212,
+      "sha256": "de421b3da7b20e045f0712ee838f30c225f4610b348efb37e2b31baa98860cbf"
+    },
+    {
+      "file": "src/fonts/SourceHanSansCN-VF.otf.woff2",
+      "sameLocalBytes": true,
+      "bytes": 7995716,
+      "sha256": "7087698d52240614659957608d8c4ad446759aee3208409dc9f566412e7af8f4"
+    },
+    {
+      "file": "src/fonts/README.md",
+      "sameLocalBytes": true,
+      "bytes": 1013,
+      "sha256": "9dc4b44f2b19d5a93825698b17f9fce3833512ffb31edae718d727f1cb8db91e"
+    },
+    {
+      "file": "src/fonts/source-han-sans-OFL.txt",
+      "sameLocalBytes": true,
+      "bytes": 4463,
+      "sha256": "fcac737e761ec63dbfbdce11030a1780161920d80315edba9c8beff1c2bac5a2"
+    },
+    {
+      "file": "src/fonts/fusion-pixel-OFL.txt",
+      "sameLocalBytes": true,
+      "bytes": 4418,
+      "sha256": "bc518cf64b8032c07690f33cc270c35c179255a6ac8efa7c165ebae7e8f76a63"
+    }
+  ],
+  "cases": [
+    {
+      "name": "six-dice-face-0",
+      "scene": {
+        "viewport": [
+          1920,
+          1080
+        ],
+        "count": 6,
+        "size": 160,
+        "width": 1540,
+        "height": 224,
+        "name": "six-dice-face-0",
+        "face": 0
+      },
+      "equalRecordedFields": [
+        "width",
+        "height",
+        "error",
+        "opaquePixels",
+        "programLinked",
+        "quality",
+        "pixelBudget",
+        "poses",
+        "values",
+        "uniforms",
+        "rgbaBytes"
+      ],
+      "unequalRecordedFields": [],
+      "pixels": 899392,
+      "changedPixels": 32,
+      "changedChannels": 32,
+      "maxDelta": 1,
+      "alphaChanged": 0,
+      "sameComparisonAs03": true,
+      "baselinePixelSHAEquals03": true,
+      "currentPixelSHAEquals03": true
+    },
+    {
+      "name": "six-dice-face-1",
+      "scene": {
+        "viewport": [
+          1920,
+          1080
+        ],
+        "count": 6,
+        "size": 160,
+        "width": 1540,
+        "height": 224,
+        "name": "six-dice-face-1",
+        "face": 1
+      },
+      "equalRecordedFields": [
+        "width",
+        "height",
+        "error",
+        "opaquePixels",
+        "programLinked",
+        "quality",
+        "pixelBudget",
+        "poses",
+        "values",
+        "uniforms",
+        "rgbaBytes"
+      ],
+      "unequalRecordedFields": [],
+      "pixels": 899392,
+      "changedPixels": 0,
+      "changedChannels": 0,
+      "maxDelta": 0,
+      "alphaChanged": 0,
+      "sameComparisonAs03": true,
+      "baselinePixelSHAEquals03": true,
+      "currentPixelSHAEquals03": true
+    },
+    {
+      "name": "six-dice-face-2",
+      "scene": {
+        "viewport": [
+          1920,
+          1080
+        ],
+        "count": 6,
+        "size": 160,
+        "width": 1540,
+        "height": 224,
+        "name": "six-dice-face-2",
+        "face": 2
+      },
+      "equalRecordedFields": [
+        "width",
+        "height",
+        "error",
+        "opaquePixels",
+        "programLinked",
+        "quality",
+        "pixelBudget",
+        "poses",
+        "values",
+        "uniforms",
+        "rgbaBytes"
+      ],
+      "unequalRecordedFields": [],
+      "pixels": 899392,
+      "changedPixels": 0,
+      "changedChannels": 0,
+      "maxDelta": 0,
+      "alphaChanged": 0,
+      "sameComparisonAs03": true,
+      "baselinePixelSHAEquals03": true,
+      "currentPixelSHAEquals03": true
+    },
+    {
+      "name": "six-dice-face-3",
+      "scene": {
+        "viewport": [
+          1920,
+          1080
+        ],
+        "count": 6,
+        "size": 160,
+        "width": 1540,
+        "height": 224,
+        "name": "six-dice-face-3",
+        "face": 3
+      },
+      "equalRecordedFields": [
+        "width",
+        "height",
+        "error",
+        "opaquePixels",
+        "programLinked",
+        "quality",
+        "pixelBudget",
+        "poses",
+        "values",
+        "uniforms",
+        "rgbaBytes"
+      ],
+      "unequalRecordedFields": [],
+      "pixels": 899392,
+      "changedPixels": 0,
+      "changedChannels": 0,
+      "maxDelta": 0,
+      "alphaChanged": 0,
+      "sameComparisonAs03": true,
+      "baselinePixelSHAEquals03": true,
+      "currentPixelSHAEquals03": true
+    },
+    {
+      "name": "six-dice-face-4",
+      "scene": {
+        "viewport": [
+          1920,
+          1080
+        ],
+        "count": 6,
+        "size": 160,
+        "width": 1540,
+        "height": 224,
+        "name": "six-dice-face-4",
+        "face": 4
+      },
+      "equalRecordedFields": [
+        "width",
+        "height",
+        "error",
+        "opaquePixels",
+        "programLinked",
+        "quality",
+        "pixelBudget",
+        "poses",
+        "values",
+        "uniforms",
+        "rgbaBytes"
+      ],
+      "unequalRecordedFields": [],
+      "pixels": 899392,
+      "changedPixels": 0,
+      "changedChannels": 0,
+      "maxDelta": 0,
+      "alphaChanged": 0,
+      "sameComparisonAs03": true,
+      "baselinePixelSHAEquals03": true,
+      "currentPixelSHAEquals03": true
+    },
+    {
+      "name": "six-dice-face-5",
+      "scene": {
+        "viewport": [
+          1920,
+          1080
+        ],
+        "count": 6,
+        "size": 160,
+        "width": 1540,
+        "height": 224,
+        "name": "six-dice-face-5",
+        "face": 5
+      },
+      "equalRecordedFields": [
+        "width",
+        "height",
+        "error",
+        "opaquePixels",
+        "programLinked",
+        "quality",
+        "pixelBudget",
+        "poses",
+        "values",
+        "uniforms",
+        "rgbaBytes"
+      ],
+      "unequalRecordedFields": [],
+      "pixels": 899392,
+      "changedPixels": 0,
+      "changedChannels": 0,
+      "maxDelta": 0,
+      "alphaChanged": 0,
+      "sameComparisonAs03": true,
+      "baselinePixelSHAEquals03": true,
+      "currentPixelSHAEquals03": true
+    },
+    {
+      "name": "six-faces-repeated-values",
+      "scene": {
+        "viewport": [
+          1920,
+          1080
+        ],
+        "count": 6,
+        "size": 160,
+        "width": 1540,
+        "height": 224,
+        "name": "six-faces-repeated-values",
+        "repeated": true
+      },
+      "equalRecordedFields": [
+        "width",
+        "height",
+        "error",
+        "opaquePixels",
+        "programLinked",
+        "quality",
+        "pixelBudget",
+        "poses",
+        "values",
+        "uniforms",
+        "rgbaBytes"
+      ],
+      "unequalRecordedFields": [],
+      "pixels": 899392,
+      "changedPixels": 0,
+      "changedChannels": 0,
+      "maxDelta": 0,
+      "alphaChanged": 0,
+      "sameComparisonAs03": true,
+      "baselinePixelSHAEquals03": true,
+      "currentPixelSHAEquals03": true
+    },
+    {
+      "name": "six-dice-rest",
+      "scene": {
+        "viewport": [
+          1920,
+          1080
+        ],
+        "count": 6,
+        "size": 160,
+        "width": 1540,
+        "height": 224,
+        "name": "six-dice-rest"
+      },
+      "equalRecordedFields": [
+        "width",
+        "height",
+        "error",
+        "opaquePixels",
+        "programLinked",
+        "quality",
+        "pixelBudget",
+        "poses",
+        "values",
+        "uniforms",
+        "rgbaBytes"
+      ],
+      "unequalRecordedFields": [],
+      "pixels": 333802,
+      "changedPixels": 52,
+      "changedChannels": 78,
+      "maxDelta": 1,
+      "alphaChanged": 0,
+      "sameComparisonAs03": true,
+      "baselinePixelSHAEquals03": true,
+      "currentPixelSHAEquals03": true
+    },
+    {
+      "name": "six-dice-flight",
+      "scene": {
+        "viewport": [
+          1920,
+          1080
+        ],
+        "count": 6,
+        "size": 160,
+        "width": 1540,
+        "height": 224,
+        "name": "six-dice-flight",
+        "motion": 45
+      },
+      "equalRecordedFields": [
+        "width",
+        "height",
+        "error",
+        "opaquePixels",
+        "programLinked",
+        "quality",
+        "pixelBudget",
+        "poses",
+        "values",
+        "uniforms",
+        "rgbaBytes"
+      ],
+      "unequalRecordedFields": [],
+      "pixels": 899392,
+      "changedPixels": 7,
+      "changedChannels": 17,
+      "maxDelta": 1,
+      "alphaChanged": 0,
+      "sameComparisonAs03": true,
+      "baselinePixelSHAEquals03": true,
+      "currentPixelSHAEquals03": true
+    },
+    {
+      "name": "six-dice-settling",
+      "scene": {
+        "viewport": [
+          1920,
+          1080
+        ],
+        "count": 6,
+        "size": 160,
+        "width": 1540,
+        "height": 224,
+        "name": "six-dice-settling",
+        "motion": 110
+      },
+      "equalRecordedFields": [
+        "width",
+        "height",
+        "error",
+        "opaquePixels",
+        "programLinked",
+        "quality",
+        "pixelBudget",
+        "poses",
+        "values",
+        "uniforms",
+        "rgbaBytes"
+      ],
+      "unequalRecordedFields": [],
+      "pixels": 899130,
+      "changedPixels": 21,
+      "changedChannels": 34,
+      "maxDelta": 1,
+      "alphaChanged": 0,
+      "sameComparisonAs03": true,
+      "baselinePixelSHAEquals03": true,
+      "currentPixelSHAEquals03": true
+    },
+    {
+      "name": "single-die-rest",
+      "scene": {
+        "viewport": [
+          1920,
+          1080
+        ],
+        "count": 1,
+        "size": 160,
+        "width": 600,
+        "height": 224,
+        "name": "single-die-rest"
+      },
+      "equalRecordedFields": [
+        "width",
+        "height",
+        "error",
+        "opaquePixels",
+        "programLinked",
+        "quality",
+        "pixelBudget",
+        "poses",
+        "values",
+        "uniforms",
+        "rgbaBytes"
+      ],
+      "unequalRecordedFields": [],
+      "pixels": 53460,
+      "changedPixels": 0,
+      "changedChannels": 0,
+      "maxDelta": 0,
+      "alphaChanged": 0,
+      "sameComparisonAs03": true,
+      "baselinePixelSHAEquals03": true,
+      "currentPixelSHAEquals03": true
+    },
+    {
+      "name": "fourk-six-dice-rest",
+      "scene": {
+        "name": "fourk-six-dice-rest",
+        "viewport": [
+          3840,
+          2160
+        ],
+        "count": 6,
+        "size": 320,
+        "width": 3080,
+        "height": 384
+      },
+      "equalRecordedFields": [
+        "width",
+        "height",
+        "error",
+        "opaquePixels",
+        "programLinked",
+        "quality",
+        "pixelBudget",
+        "poses",
+        "values",
+        "uniforms",
+        "rgbaBytes"
+      ],
+      "unequalRecordedFields": [],
+      "pixels": 1304635,
+      "changedPixels": 195,
+      "changedChannels": 310,
+      "maxDelta": 1,
+      "alphaChanged": 0,
+      "sameComparisonAs03": true,
+      "baselinePixelSHAEquals03": true,
+      "currentPixelSHAEquals03": true
+    }
+  ],
+  "terminal": [
+    {
+      "name": "terminal-six-dice-100",
+      "lastFrameDraws": {
+        "baseline": 12,
+        "current": 6
+      },
+      "quality": {
+        "baseline": "rest",
+        "current": "rest"
+      },
+      "pixels": 133488,
+      "changedPixels": 17,
+      "maxDelta": 1,
+      "alphaChanged": 0,
+      "sameComparisonAs03": true,
+      "sameBothPixelHashesAs03": true
+    },
+    {
+      "name": "terminal-six-dice-160",
+      "lastFrameDraws": {
+        "baseline": 12,
+        "current": 6
+      },
+      "quality": {
+        "baseline": "rest",
+        "current": "rest"
+      },
+      "pixels": 333802,
+      "changedPixels": 52,
+      "maxDelta": 1,
+      "alphaChanged": 0,
+      "sameComparisonAs03": true,
+      "sameBothPixelHashesAs03": true
+    }
+  ],
+  "restorationRecorded": [
+    {
+      "label": "baseline",
+      "lost": {
+        "state": "lost",
+        "gpu": false
+      },
+      "restored": {
+        "state": "ready",
+        "gpu": true
+      },
+      "comparison": {
+        "exact": false,
+        "bytes": 3597568,
+        "pixels": 899392,
+        "changedPixels": 4,
+        "changedChannels": 11,
+        "alphaChangedPixels": 0,
+        "maxChannelDelta": 1,
+        "sumAbsoluteChannelDelta": 11
+      },
+      "sameBothPixelHashesAs03": true
+    }
+  ],
+  "sourceAfterMissing": true,
+  "errors": [],
+  "failure": "Automatic restored redraw must preserve every byte of the current pose",
+  "definitionChecks": {
+    "src/dice-motion.js": {
+      "unchangedRelevantDefinitions": true,
+      "sha256": "0a40131f027f6329c40a134ef352a7e614e4eef23c1e24e7f9799f74473b6fdf"
+    },
+    "src/views.js": {
+      "unchangedRelevantDefinitions": true,
+      "sha256": "cc8139a8d4c43289f3bd28463c9d5bdb2c9490db3069c8b0c6b1a1e03b3d2764"
+    }
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "started": "2026-10-19T01:22:18.903652+00:00",
+  "completed": "2026-10-19T01:28:40.414649+00:00",
+  "durationSeconds": 381.511,
+  "source": "/workspace/scratch/2e03d78caae4/work/Dice-Abyss",
+  "version": "5.15.0",
+  "checks": {
+    "syntax": true,
+    "defaultAllModules": true,
+    "detailedAllModules": true,
+    "actualFineCaseCountMatchesPlanning": true,
+    "standardAndNoShoppingComplete": true,
+    "deterministicSimulationMatchesBaseline": true,
+    "originalTestsFixturesFontsAssetsPreserved": true,
+    "executionSourceStable": true,
+    "retainedOutputHashesMatch": true
+  },
+  "pass": true,
+  "moduleCounts": {
+    "tests": 70,
+    "suites": 0,
+    "pass": 70,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0
+  },
+  "fineCounts": {
+    "tests": 608,
+    "suites": 0,
+    "pass": 608,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0
+  },
+  "simulation": {
+    "standardSeeds": 1000,
+    "standardCompleted": 1000,
+    "standardFailures": [],
+    "deaths": {
+      "min": 0,
+      "median": 0,
+      "p95": 0,
+      "max": 0,
+      "mean": 0
+    },
+    "noShoppingSeeds": 50,
+    "noShoppingCompleted": 50,
+    "noShoppingDeaths": 0,
+    "jsonBytes": 9409,
+    "jsonSha256": "266fa5b56516410712395796f197a2e33ad1b1e16ede45de14b872f208007d77",
+    "baselineJsonSha256": "266fa5b56516410712395796f197a2e33ad1b1e16ede45de14b872f208007d77",
+    "byteIdenticalToFreshBaseline": true,
+    "scope": "Existing fixed-seed standard policy and its 50 no-shopping runs; no natural-policy performance or win-rate claim.",
+    "pass": true
+  },
+  "preservationGroups": {
+    "font-license-notice": {
+      "files": 8,
+      "bytes": 8680958,
+      "preserved": 8
+    },
+    "original-test-fixture": {
+      "files": 2,
+      "bytes": 1424048,
+      "preserved": 2
+    },
+    "original-test-module": {
+      "files": 67,
+      "bytes": 523008,
+      "preserved": 67
+    },
+    "other-runtime-asset": {
+      "files": 3,
+      "bytes": 172721,
+      "preserved": 3
+    }
+  },
+  "sourceChanges": [],
+  "retainedOutputErrors": [],
+  "outputReceiptCount": 75,
+  "outputManifest": "OUTPUT_MANIFEST.json",
+  "limits": [
+    "No browser, HTTP, natural-policy or product performance gate is executed by this runner.",
+    "Tests/simulation are validation workloads, not timing comparisons.",
+    "Expectation counts are explicit planning gates; actual native TAP counts are retained and never replaced by expected values."
+  ]
+}

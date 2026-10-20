@@ -1,0 +1,107 @@
+[
+  {
+    "name": "check",
+    "command": [
+      "npm",
+      "run",
+      "check"
+    ],
+    "cwd": "/workspace/scratch/d0f98f221ae6/work/Dice-Abyss",
+    "started": "2026-10-19T05:00:00.624393+00:00",
+    "finished": "2026-10-19T05:00:04.547775+00:00",
+    "durationSeconds": 3.9231,
+    "exitCode": 0,
+    "stdout": {
+      "file": "check.stdout",
+      "bytes": 98,
+      "sha256": "94bb652f7cb40e7e0bf24dc5334809c6cd4bc7afee13d318ac7786620c718dd6"
+    },
+    "stderr": {
+      "file": "check.stderr",
+      "bytes": 99,
+      "sha256": "7125f194612fcff2f454c05d848e7cb71facc1967b4d5017e25b34fdee3ba74f"
+    }
+  },
+  {
+    "name": "npm-test",
+    "command": [
+      "npm",
+      "test"
+    ],
+    "cwd": "/workspace/scratch/d0f98f221ae6/work/Dice-Abyss",
+    "started": "2026-10-19T05:00:04.548263+00:00",
+    "finished": "2026-10-19T05:01:16.025428+00:00",
+    "durationSeconds": 71.4769,
+    "exitCode": 0,
+    "stdout": {
+      "file": "npm-test.stdout",
+      "bytes": 3903,
+      "sha256": "08ff1f02c31edbf535862cb9bc42ba3e77e007b84347bbb95f12d00c5a157163"
+    },
+    "stderr": {
+      "file": "npm-test.stderr",
+      "bytes": 99,
+      "sha256": "7125f194612fcff2f454c05d848e7cb71facc1967b4d5017e25b34fdee3ba74f"
+    },
+    "defaultReporterCounts": {
+      "tests": 75,
+      "suites": 0,
+      "pass": 75,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0
+    },
+    "countInterpretation": "Default node --test reports file wrappers in this environment; the separate native TAP pass gives assertion-level counts."
+  },
+  {
+    "name": "test-cases",
+    "command": [
+      "python3",
+      "scripts/verify-test-cases.py",
+      "--output",
+      "/workspace/scratch/d0f98f221ae6/audit/current17/test-cases",
+      "--workers",
+      "4"
+    ],
+    "cwd": "/workspace/scratch/d0f98f221ae6/work/Dice-Abyss",
+    "started": "2026-10-19T05:01:16.026145+00:00",
+    "finished": "2026-10-19T05:02:30.048656+00:00",
+    "durationSeconds": 74.0223,
+    "exitCode": 0,
+    "stdout": {
+      "file": "test-cases.stdout",
+      "bytes": 777,
+      "sha256": "473ee1ff510bf7a11582ab1e203c4ca81dfe474412e22105b77faa4ba8d69c08"
+    },
+    "stderr": {
+      "file": "test-cases.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "name": "offline-fonts",
+    "command": [
+      "python3",
+      "scripts/audit-offline-fonts.py",
+      "--output",
+      "/workspace/scratch/d0f98f221ae6/audit/current17/offline-fonts.json"
+    ],
+    "cwd": "/workspace/scratch/d0f98f221ae6/work/Dice-Abyss",
+    "started": "2026-10-19T05:02:30.049023+00:00",
+    "finished": "2026-10-19T05:02:30.721146+00:00",
+    "durationSeconds": 0.6719,
+    "exitCode": 0,
+    "stdout": {
+      "file": "offline-fonts.stdout",
+      "bytes": 1608,
+      "sha256": "296d52c7d9fe8c87d77ef9a5f096af24c51ce62278dc0532711bdd4e4fab1ad5"
+    },
+    "stderr": {
+      "file": "offline-fonts.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+]

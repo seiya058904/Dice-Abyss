@@ -1,0 +1,671 @@
+{
+  "label": "round21",
+  "source": "/workspace/scratch/85c02edcd5e2/work/Dice-Abyss",
+  "baseURL": "http://127.0.0.1:4189/",
+  "mode": "pages",
+  "started": "2026-10-19T12:57:32.469Z",
+  "browser": "155.0.8059.84",
+  "method": "Native Playwright mouse, keyboard, and select actions in fresh Chromium contexts. Fixture seeding only through isolated localStorage; application internals are never assigned. Persisted states compared with exact engine transitions.",
+  "limitations": [
+    "Synthetic targeted states are not natural-play or drop-frequency samples.",
+    "Geometry records DOM Range and control rectangles, not actual glyph ink. Scroll-clipped content is recorded separately from non-scroll clipping.",
+    "Overlap and clipping candidates require visual review; the driver does not silently relabel them as passed.",
+    "No performance, FPS or physical-GPU claims are made by this script."
+  ],
+  "cases": [
+    {
+      "name": "eight-rarity-chest-reward",
+      "status": "passed",
+      "started": "2026-10-19T12:57:32.470Z",
+      "checks": [
+        {
+          "name": "Fixture continuation leaves the exact save untouched",
+          "revision": 1,
+          "rng": 536826642,
+          "gold": 250000,
+          "items": 3,
+          "stateSha256": "2f3dfcf9dcd7e49126bcdd68811e29aa370cf0f69b24faeb8c5174eefdc1e6f2"
+        },
+        {
+          "name": "Native open commits exactly one engine transition",
+          "revision": 2,
+          "rng": 536826642,
+          "gold": 250038,
+          "items": 4,
+          "stateSha256": "02c807c3333ade8417fda286c290eeb34dc6c7be274628f94e048313e3830147"
+        },
+        {
+          "name": "Rarity 0: 普通 at gate floor 1",
+          "pending": "i5",
+          "rewardClass": "common",
+          "floor": 1,
+          "rngUnchanged": true
+        },
+        {
+          "name": "Rarity 0: reload cannot grant the pending chest twice",
+          "revision": 2,
+          "rng": 536826642,
+          "gold": 250038,
+          "items": 4,
+          "stateSha256": "02c807c3333ade8417fda286c290eeb34dc6c7be274628f94e048313e3830147"
+        },
+        {
+          "name": "Fixture continuation leaves the exact save untouched",
+          "revision": 1,
+          "rng": 536826642,
+          "gold": 250000,
+          "items": 3,
+          "stateSha256": "873f018602075b84fa91e3e0f5ca583f9d3ad5526dfe07655f0febdd5fb32526"
+        },
+        {
+          "name": "Native open commits exactly one engine transition",
+          "revision": 2,
+          "rng": 536826642,
+          "gold": 250038,
+          "items": 4,
+          "stateSha256": "7ec16aeab6eacc3bf41f698d4b5060db0967c9ed40d73a9d239e9c6aca71704f"
+        },
+        {
+          "name": "Rarity 1: 稀有 at gate floor 1",
+          "pending": "i5",
+          "rewardClass": "rare",
+          "floor": 1,
+          "rngUnchanged": true
+        },
+        {
+          "name": "Rarity 1: reload cannot grant the pending chest twice",
+          "revision": 2,
+          "rng": 536826642,
+          "gold": 250038,
+          "items": 4,
+          "stateSha256": "7ec16aeab6eacc3bf41f698d4b5060db0967c9ed40d73a9d239e9c6aca71704f"
+        },
+        {
+          "name": "Fixture continuation leaves the exact save untouched",
+          "revision": 1,
+          "rng": 536826642,
+          "gold": 250000,
+          "items": 3,
+          "stateSha256": "6439d5d3ec65f605fc9a86b6bb3f3886bdf39ef04a9244d861e74f78cdf721f2"
+        },
+        {
+          "name": "Native open commits exactly one engine transition",
+          "revision": 2,
+          "rng": 536826642,
+          "gold": 250038,
+          "items": 4,
+          "stateSha256": "b0aebf43934da40c4dda87a2090b95bb0e376bae8e6fc6ffb8042808ac4b6457"
+        },
+        {
+          "name": "Rarity 2: 史诗 at gate floor 1",
+          "pending": "i5",
+          "rewardClass": "epic",
+          "floor": 1,
+          "rngUnchanged": true
+        },
+        {
+          "name": "Rarity 2: reload cannot grant the pending chest twice",
+          "revision": 2,
+          "rng": 536826642,
+          "gold": 250038,
+          "items": 4,
+          "stateSha256": "b0aebf43934da40c4dda87a2090b95bb0e376bae8e6fc6ffb8042808ac4b6457"
+        },
+        {
+          "name": "Fixture continuation leaves the exact save untouched",
+          "revision": 1,
+          "rng": 536826642,
+          "gold": 250000,
+          "items": 3,
+          "stateSha256": "a6a302c0fef884563f92c255ebd61dabaa2b70396e2535ac05287bebf08afb9e"
+        },
+        {
+          "name": "Native open commits exactly one engine transition",
+          "revision": 2,
+          "rng": 536826642,
+          "gold": 250038,
+          "items": 4,
+          "stateSha256": "4115b5b8fe30e7acbf76f3979b5c29cf939d7ca97ad40fdd4aedc08cf8a6d055"
+        },
+        {
+          "name": "Rarity 3: 传说 at gate floor 1",
+          "pending": "i5",
+          "rewardClass": "legendary",
+          "floor": 1,
+          "rngUnchanged": true
+        },
+        {
+          "name": "Rarity 3: reload cannot grant the pending chest twice",
+          "revision": 2,
+          "rng": 536826642,
+          "gold": 250038,
+          "items": 4,
+          "stateSha256": "4115b5b8fe30e7acbf76f3979b5c29cf939d7ca97ad40fdd4aedc08cf8a6d055"
+        },
+        {
+          "name": "Fixture continuation leaves the exact save untouched",
+          "revision": 1,
+          "rng": 536826642,
+          "gold": 250000,
+          "items": 3,
+          "stateSha256": "b4b8fd2831201017e54031c3ab421cb9c676d6cdbe6727b5f912f45ff5a6367c"
+        },
+        {
+          "name": "Native open commits exactly one engine transition",
+          "revision": 2,
+          "rng": 536826642,
+          "gold": 250282,
+          "items": 4,
+          "stateSha256": "e2cd47fb26a7bd8bc5bbc6a090dce66f011428f11d4cda8ef1710a372fe67615"
+        },
+        {
+          "name": "Rarity 4: 神话 at gate floor 30",
+          "pending": "i5",
+          "rewardClass": "mythic",
+          "floor": 30,
+          "rngUnchanged": true
+        },
+        {
+          "name": "Rarity 4: reload cannot grant the pending chest twice",
+          "revision": 2,
+          "rng": 536826642,
+          "gold": 250282,
+          "items": 4,
+          "stateSha256": "e2cd47fb26a7bd8bc5bbc6a090dce66f011428f11d4cda8ef1710a372fe67615"
+        },
+        {
+          "name": "Fixture continuation leaves the exact save untouched",
+          "revision": 1,
+          "rng": 536826642,
+          "gold": 250000,
+          "items": 3,
+          "stateSha256": "c364e374645f2037c5bd47bbbea4c15823e65210996ef38e18d4fd3a3f2354b9"
+        },
+        {
+          "name": "Native open commits exactly one engine transition",
+          "revision": 2,
+          "rng": 536826642,
+          "gold": 250350,
+          "items": 4,
+          "stateSha256": "23f1b1a379dd764ecb2bdb2eeb4de09a8f6aace3216330bf3421502d39357497"
+        },
+        {
+          "name": "Rarity 5: 太古 at gate floor 50",
+          "pending": "i5",
+          "rewardClass": "ancient",
+          "floor": 50,
+          "rngUnchanged": true
+        },
+        {
+          "name": "Rarity 5: reload cannot grant the pending chest twice",
+          "revision": 2,
+          "rng": 536826642,
+          "gold": 250350,
+          "items": 4,
+          "stateSha256": "23f1b1a379dd764ecb2bdb2eeb4de09a8f6aace3216330bf3421502d39357497"
+        },
+        {
+          "name": "Fixture continuation leaves the exact save untouched",
+          "revision": 1,
+          "rng": 536826642,
+          "gold": 250000,
+          "items": 3,
+          "stateSha256": "3b586ef26e53941d50f11413b87f7facecd6b3a9672c19b1d94a474a5f6658c0"
+        },
+        {
+          "name": "Native open commits exactly one engine transition",
+          "revision": 2,
+          "rng": 536826642,
+          "gold": 250414,
+          "items": 4,
+          "stateSha256": "72ce174b118039e71bff7fe4ea184aa4f6aa8cce3a5cce62c8436324a808d7cb"
+        },
+        {
+          "name": "Rarity 6: 起源 at gate floor 80",
+          "pending": "i5",
+          "rewardClass": "origin",
+          "floor": 80,
+          "rngUnchanged": true
+        },
+        {
+          "name": "Rarity 6: reload cannot grant the pending chest twice",
+          "revision": 2,
+          "rng": 536826642,
+          "gold": 250414,
+          "items": 4,
+          "stateSha256": "72ce174b118039e71bff7fe4ea184aa4f6aa8cce3a5cce62c8436324a808d7cb"
+        },
+        {
+          "name": "Fixture continuation leaves the exact save untouched",
+          "revision": 1,
+          "rng": 536826642,
+          "gold": 250000,
+          "items": 3,
+          "stateSha256": "2caa5658de328509ae0da7025ed0869ccd157b73b20ad1d0780b48fd3b3ab31d"
+        },
+        {
+          "name": "Native open commits exactly one engine transition",
+          "revision": 2,
+          "rng": 536826642,
+          "gold": 250492,
+          "items": 4,
+          "stateSha256": "771638f09190428057266876a819a6775078fc152d69535c1e68e8f2fb435321"
+        },
+        {
+          "name": "Rarity 7: 永恒 at gate floor 140",
+          "pending": "i5",
+          "rewardClass": "eternal",
+          "floor": 140,
+          "rngUnchanged": true
+        },
+        {
+          "name": "Rarity 7: reload cannot grant the pending chest twice",
+          "revision": 2,
+          "rng": 536826642,
+          "gold": 250492,
+          "items": 4,
+          "stateSha256": "771638f09190428057266876a819a6775078fc152d69535c1e68e8f2fb435321"
+        }
+      ],
+      "finished": "2026-10-19T12:58:06.649Z"
+    },
+    {
+      "name": "codex-gates-30-50-80-140",
+      "status": "passed",
+      "started": "2026-10-19T12:58:06.651Z",
+      "checks": [
+        {
+          "name": "Fixture continuation leaves the exact save untouched",
+          "revision": 1,
+          "rng": 3523296831,
+          "gold": 250000,
+          "items": 3,
+          "stateSha256": "3f177195d8c107f3a97be844c03d784ccfa9e665a2a822ee1eb209e19706da0f"
+        },
+        {
+          "name": "Codex floor 30: filters preserve RNG, gold and inventory",
+          "revision": 1,
+          "rng": 3523296831,
+          "gold": 250000,
+          "items": 3,
+          "stateSha256": "3f177195d8c107f3a97be844c03d784ccfa9e665a2a822ee1eb209e19706da0f"
+        },
+        {
+          "name": "Exact codex unlocks and six source distributions at floor 30",
+          "unlocked": [
+            "普通",
+            "稀有",
+            "史诗",
+            "传说",
+            "神话"
+          ]
+        },
+        {
+          "name": "Fixture continuation leaves the exact save untouched",
+          "revision": 1,
+          "rng": 3523296831,
+          "gold": 250000,
+          "items": 3,
+          "stateSha256": "fb23da70c99517cbea68973d8647f4cbe2e691316360c3153ff637b3233fb556"
+        },
+        {
+          "name": "Codex floor 50: filters preserve RNG, gold and inventory",
+          "revision": 1,
+          "rng": 3523296831,
+          "gold": 250000,
+          "items": 3,
+          "stateSha256": "fb23da70c99517cbea68973d8647f4cbe2e691316360c3153ff637b3233fb556"
+        },
+        {
+          "name": "Exact codex unlocks and six source distributions at floor 50",
+          "unlocked": [
+            "普通",
+            "稀有",
+            "史诗",
+            "传说",
+            "神话",
+            "太古"
+          ]
+        },
+        {
+          "name": "Fixture continuation leaves the exact save untouched",
+          "revision": 1,
+          "rng": 3523296831,
+          "gold": 250000,
+          "items": 3,
+          "stateSha256": "6cc687713323c2509e4bb8421e57c3e1d848ffff9370f71b23561016fbdf6418"
+        },
+        {
+          "name": "Codex floor 80: filters preserve RNG, gold and inventory",
+          "revision": 1,
+          "rng": 3523296831,
+          "gold": 250000,
+          "items": 3,
+          "stateSha256": "6cc687713323c2509e4bb8421e57c3e1d848ffff9370f71b23561016fbdf6418"
+        },
+        {
+          "name": "Exact codex unlocks and six source distributions at floor 80",
+          "unlocked": [
+            "普通",
+            "稀有",
+            "史诗",
+            "传说",
+            "神话",
+            "太古",
+            "起源"
+          ]
+        },
+        {
+          "name": "Fixture continuation leaves the exact save untouched",
+          "revision": 1,
+          "rng": 3523296831,
+          "gold": 250000,
+          "items": 3,
+          "stateSha256": "5c409dcdea989faaf69dd4653e3a4c2ce31b7500cb9f38581d6b519247ad5c09"
+        },
+        {
+          "name": "Codex floor 140: filters preserve RNG, gold and inventory",
+          "revision": 1,
+          "rng": 3523296831,
+          "gold": 250000,
+          "items": 3,
+          "stateSha256": "5c409dcdea989faaf69dd4653e3a4c2ce31b7500cb9f38581d6b519247ad5c09"
+        },
+        {
+          "name": "Exact codex unlocks and six source distributions at floor 140",
+          "unlocked": [
+            "普通",
+            "稀有",
+            "史诗",
+            "传说",
+            "神话",
+            "太古",
+            "起源",
+            "永恒"
+          ]
+        }
+      ],
+      "finished": "2026-10-19T12:58:15.291Z"
+    }
+  ],
+  "geometry": [],
+  "errors": [],
+  "screenshots": [
+    "round21-pages-reward-common-1920.png",
+    "round21-pages-reward-rare-1920.png",
+    "round21-pages-reward-epic-1920.png",
+    "round21-pages-reward-mythic-1920.png",
+    "round21-pages-reward-ancient-1920.png",
+    "round21-pages-reward-origin-1920.png"
+  ],
+  "environments": [
+    {
+      "case": "eight-rarity-chest-reward",
+      "width": 1920,
+      "height": 1080,
+      "dpr": 1,
+      "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "fonts": [
+        {
+          "family": "Abyss Pixel",
+          "weight": "400",
+          "status": "loaded"
+        },
+        {
+          "family": "Abyss Text",
+          "weight": "250 900",
+          "status": "loaded"
+        }
+      ],
+      "bodyFamily": "\"Abyss Text\", \"Microsoft YaHei\", sans-serif",
+      "textCoverageLoaded": true,
+      "webLocks": true
+    },
+    {
+      "case": "eight-rarity-chest-reward",
+      "width": 1920,
+      "height": 1080,
+      "dpr": 1,
+      "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "fonts": [
+        {
+          "family": "Abyss Pixel",
+          "weight": "400",
+          "status": "loaded"
+        },
+        {
+          "family": "Abyss Text",
+          "weight": "250 900",
+          "status": "loaded"
+        }
+      ],
+      "bodyFamily": "\"Abyss Text\", \"Microsoft YaHei\", sans-serif",
+      "textCoverageLoaded": true,
+      "webLocks": true
+    },
+    {
+      "case": "eight-rarity-chest-reward",
+      "width": 1920,
+      "height": 1080,
+      "dpr": 1,
+      "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "fonts": [
+        {
+          "family": "Abyss Pixel",
+          "weight": "400",
+          "status": "loaded"
+        },
+        {
+          "family": "Abyss Text",
+          "weight": "250 900",
+          "status": "loaded"
+        }
+      ],
+      "bodyFamily": "\"Abyss Text\", \"Microsoft YaHei\", sans-serif",
+      "textCoverageLoaded": true,
+      "webLocks": true
+    },
+    {
+      "case": "eight-rarity-chest-reward",
+      "width": 1920,
+      "height": 1080,
+      "dpr": 1,
+      "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "fonts": [
+        {
+          "family": "Abyss Pixel",
+          "weight": "400",
+          "status": "loaded"
+        },
+        {
+          "family": "Abyss Text",
+          "weight": "250 900",
+          "status": "loaded"
+        }
+      ],
+      "bodyFamily": "\"Abyss Text\", \"Microsoft YaHei\", sans-serif",
+      "textCoverageLoaded": true,
+      "webLocks": true
+    },
+    {
+      "case": "eight-rarity-chest-reward",
+      "width": 1920,
+      "height": 1080,
+      "dpr": 1,
+      "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "fonts": [
+        {
+          "family": "Abyss Pixel",
+          "weight": "400",
+          "status": "loaded"
+        },
+        {
+          "family": "Abyss Text",
+          "weight": "250 900",
+          "status": "loaded"
+        }
+      ],
+      "bodyFamily": "\"Abyss Text\", \"Microsoft YaHei\", sans-serif",
+      "textCoverageLoaded": true,
+      "webLocks": true
+    },
+    {
+      "case": "eight-rarity-chest-reward",
+      "width": 1920,
+      "height": 1080,
+      "dpr": 1,
+      "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "fonts": [
+        {
+          "family": "Abyss Pixel",
+          "weight": "400",
+          "status": "loaded"
+        },
+        {
+          "family": "Abyss Text",
+          "weight": "250 900",
+          "status": "loaded"
+        }
+      ],
+      "bodyFamily": "\"Abyss Text\", \"Microsoft YaHei\", sans-serif",
+      "textCoverageLoaded": true,
+      "webLocks": true
+    },
+    {
+      "case": "eight-rarity-chest-reward",
+      "width": 1920,
+      "height": 1080,
+      "dpr": 1,
+      "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "fonts": [
+        {
+          "family": "Abyss Pixel",
+          "weight": "400",
+          "status": "loaded"
+        },
+        {
+          "family": "Abyss Text",
+          "weight": "250 900",
+          "status": "loaded"
+        }
+      ],
+      "bodyFamily": "\"Abyss Text\", \"Microsoft YaHei\", sans-serif",
+      "textCoverageLoaded": true,
+      "webLocks": true
+    },
+    {
+      "case": "eight-rarity-chest-reward",
+      "width": 1920,
+      "height": 1080,
+      "dpr": 1,
+      "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "fonts": [
+        {
+          "family": "Abyss Pixel",
+          "weight": "400",
+          "status": "loaded"
+        },
+        {
+          "family": "Abyss Text",
+          "weight": "250 900",
+          "status": "loaded"
+        }
+      ],
+      "bodyFamily": "\"Abyss Text\", \"Microsoft YaHei\", sans-serif",
+      "textCoverageLoaded": true,
+      "webLocks": true
+    },
+    {
+      "case": "codex-gates-30-50-80-140",
+      "width": 1920,
+      "height": 1080,
+      "dpr": 1,
+      "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "fonts": [
+        {
+          "family": "Abyss Pixel",
+          "weight": "400",
+          "status": "loaded"
+        },
+        {
+          "family": "Abyss Text",
+          "weight": "250 900",
+          "status": "loaded"
+        }
+      ],
+      "bodyFamily": "\"Abyss Text\", \"Microsoft YaHei\", sans-serif",
+      "textCoverageLoaded": true,
+      "webLocks": true
+    },
+    {
+      "case": "codex-gates-30-50-80-140",
+      "width": 1920,
+      "height": 1080,
+      "dpr": 1,
+      "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "fonts": [
+        {
+          "family": "Abyss Pixel",
+          "weight": "400",
+          "status": "loaded"
+        },
+        {
+          "family": "Abyss Text",
+          "weight": "250 900",
+          "status": "loaded"
+        }
+      ],
+      "bodyFamily": "\"Abyss Text\", \"Microsoft YaHei\", sans-serif",
+      "textCoverageLoaded": true,
+      "webLocks": true
+    },
+    {
+      "case": "codex-gates-30-50-80-140",
+      "width": 1920,
+      "height": 1080,
+      "dpr": 1,
+      "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "fonts": [
+        {
+          "family": "Abyss Pixel",
+          "weight": "400",
+          "status": "loaded"
+        },
+        {
+          "family": "Abyss Text",
+          "weight": "250 900",
+          "status": "loaded"
+        }
+      ],
+      "bodyFamily": "\"Abyss Text\", \"Microsoft YaHei\", sans-serif",
+      "textCoverageLoaded": true,
+      "webLocks": true
+    },
+    {
+      "case": "codex-gates-30-50-80-140",
+      "width": 1920,
+      "height": 1080,
+      "dpr": 1,
+      "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "fonts": [
+        {
+          "family": "Abyss Pixel",
+          "weight": "400",
+          "status": "loaded"
+        },
+        {
+          "family": "Abyss Text",
+          "weight": "250 900",
+          "status": "loaded"
+        }
+      ],
+      "bodyFamily": "\"Abyss Text\", \"Microsoft YaHei\", sans-serif",
+      "textCoverageLoaded": true,
+      "webLocks": true
+    }
+  ],
+  "fixtureManifest": "round21-pages-fixtures.json",
+  "finished": "2026-10-19T12:58:15.676Z",
+  "passed": 2,
+  "failed": 0
+}

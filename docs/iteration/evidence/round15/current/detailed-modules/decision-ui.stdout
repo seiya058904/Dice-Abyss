@@ -1,0 +1,58 @@
+TAP version 13
+# Subtest: a first-hit tradeoff cannot be presented as an unqualified upgrade on equipment cards
+ok 1 - a first-hit tradeoff cannot be presented as an unqualified upgrade on equipment cards
+  ---
+  duration_ms: 33.346158
+  type: 'test'
+  ...
+# Subtest: comparison details escape player-visible names and preserve inventory, RNG and revision
+ok 2 - comparison details escape player-visible names and preserve inventory, RNG and revision
+  ---
+  duration_ms: 1.79177
+  type: 'test'
+  ...
+# Subtest: reward cards use the current owned item while the received snapshot stays unchanged
+ok 3 - reward cards use the current owned item while the received snapshot stays unchanged
+  ---
+  duration_ms: 11.290453
+  type: 'test'
+  ...
+# Subtest: full merchant and black market explain the same inventory restriction enforced by canAct
+ok 4 - full merchant and black market explain the same inventory restriction enforced by canAct
+  ---
+  duration_ms: 33.359046
+  type: 'test'
+  ...
+# Subtest: sold items stay labeled as historical purchases after the owned object changes
+ok 5 - sold items stay labeled as historical purchases after the owned object changes
+  ---
+  duration_ms: 8.839836
+  type: 'test'
+  ...
+# Subtest: empty filtered inventory offers clearing both filters without claiming the bag is empty
+ok 6 - empty filtered inventory offers clearing both filters without claiming the bag is empty
+  ---
+  duration_ms: 1.009912
+  type: 'test'
+  ...
+# Subtest: settings capacity check is explicit, disabled without a readable save, and does not imply browser quota
+ok 7 - settings capacity check is explicit, disabled without a readable save, and does not imply browser quota
+  ---
+  duration_ms: 1.00832
+  type: 'test'
+  ...
+# Subtest: capacity messages distinguish exact exhaustion from oversized historical data without promising a successful cleanup
+ok 8 - capacity messages distinguish exact exhaustion from oversized historical data without promising a successful cleanup
+  ---
+  duration_ms: 0.154737
+  type: 'test'
+  ...
+1..8
+# tests 8
+# suites 0
+# pass 8
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 119.496513

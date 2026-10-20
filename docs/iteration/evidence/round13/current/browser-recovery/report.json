@@ -1,0 +1,94 @@
+{
+  "source": "/workspace/scratch/5a5998079a95/work/Dice-Abyss",
+  "url": "http://127.0.0.1:4189/",
+  "expected": "fixed",
+  "started": "2026-10-18T15:19:31.246Z",
+  "sourceBefore": {
+    "src/app.js": "6d965d35fb499b23948e9f2d4256616d05298dce7468c2bd350c4180562dad08",
+    "src/storage.js": "6bfcc60036c9f729c21b948ca98c7ac715e14049856fb9dded0baa2aeef2c561",
+    "src/save-recovery-view.js": "47e9041a86415c6bc04e5ae66803d6d8dfa6fbb2cabb8f800ce67f29a199153d",
+    "src/save-recovery.css": "f88a619c1883669d3ba2c49bd01b0a80f5d02c68d7da3c7f64e5bc4196ca0ba0"
+  },
+  "cases": [
+    {
+      "name": "clear-memory-export-restore",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "Complete fixture loads into both browser records",
+          "passed": true
+        },
+        {
+          "label": "clear delivers a real trusted localStorage event with a null key",
+          "passed": true
+        },
+        {
+          "label": "Loss handling performs no automatic save",
+          "passed": true
+        },
+        {
+          "label": "First recovery entry moves focus to its visible explanation",
+          "passed": true
+        },
+        {
+          "label": "Game transaction controls are replaced by the recovery surface",
+          "passed": true
+        },
+        {
+          "label": "Space cannot write a new game step during protection",
+          "passed": true
+        },
+        {
+          "label": "The downloaded memory envelope is exactly the complete original",
+          "passed": true
+        },
+        {
+          "label": "Restore requires explicit confirmation",
+          "passed": true
+        },
+        {
+          "label": "Opening the restore confirmation does not write",
+          "passed": true
+        },
+        {
+          "label": "Confirmed restore writes the exact full memory envelope to both records",
+          "passed": true
+        },
+        {
+          "label": "The next native game action commits the exact engine result after restoration",
+          "passed": true
+        }
+      ],
+      "screenshots": [
+        "recovery-missing-desktop.png"
+      ],
+      "downloads": [
+        {
+          "file": "clear-memory-export-restore-memory.json",
+          "suggestedFilename": "Dice-Abyss-memory-F1-Lv1.json",
+          "bytes": 2333,
+          "sha256": "6096e1420ba90296c13bf1a110eba76e5dfa79628a9ab9ad05fe7a6e6c924ac8"
+        }
+      ],
+      "events": [
+        {
+          "key": null,
+          "area": "local",
+          "trusted": true,
+          "oldLength": null,
+          "newLength": null
+        }
+      ],
+      "durationMs": 3652.7903279999996
+    }
+  ],
+  "checks": 11,
+  "errors": [],
+  "browser": "155.0.8059.84",
+  "scope": "Fresh isolated contexts with complete constructed valid saves; native storage.clear/removeItem/setItem, native sessionStorage iframe events, actual downloads and existing Web Locks.",
+  "limitations": [
+    "Logical browser viewports, not physical devices or external screen readers.",
+    "Explicit storage-write fault injection remains in node tests; this driver does not override browser quota.",
+    "No claim that localStorage offers atomic compare-and-set when Web Locks are unavailable or noncooperating writers bypass the lock."
+  ]
+}

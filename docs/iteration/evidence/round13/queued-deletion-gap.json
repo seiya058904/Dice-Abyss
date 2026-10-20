@@ -1,0 +1,35 @@
+{
+  "audit": "queued deletion notification after same-task replacement",
+  "status": "CONFIRMED_GAP",
+  "appSha256": "fbba7d863ec8002cdb6cbf52e49419f7070dc5dda25de7bb37f6f614e5e653b5",
+  "method": "Real app module in existing VM browser harness. Queue deletion event delivery until after an external same-task clear/remove and both new records are already present. This models browser storage task order; native delivery is still to be verified.",
+  "rows": [
+    {
+      "kind": "clear-then-new-run",
+      "eventKey": null,
+      "eventNewValue": null,
+      "oldMemoryPreserved": false,
+      "oldMemoryStillExported": false,
+      "protectedMode": false,
+      "newBrowserSaveUntouched": true,
+      "appWrites": 0,
+      "currentMemoryRunId": "88013-1792336356104",
+      "oldMemoryRunId": "13013-1792336356087",
+      "newRunId": "88013-1792336356104"
+    },
+    {
+      "kind": "remove-both-then-new-run",
+      "eventKey": "dice-abyss:save:v1",
+      "eventNewValue": null,
+      "oldMemoryPreserved": false,
+      "oldMemoryStillExported": false,
+      "protectedMode": false,
+      "newBrowserSaveUntouched": true,
+      "appWrites": 0,
+      "currentMemoryRunId": "88013-1792336356108",
+      "oldMemoryRunId": "13013-1792336356106",
+      "newRunId": "88013-1792336356108"
+    }
+  ],
+  "limitation": "This is a surviving-memory protection gap, not an overwrite of the new disk save and not a new combat/save-schema regression."
+}

@@ -1,0 +1,47 @@
+{
+  "freshExecution": true,
+  "startedAtUtc": "2026-10-18T03:09:48.066043+00:00",
+  "finishedAtUtc": "2026-10-18T03:09:48.158984+00:00",
+  "cwd": "/workspace/scratch/5f6ca1e00aa7/work/Dice-Abyss",
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "scripts/test-package-verifier.py",
+    "--script",
+    "scripts/verify-package.py",
+    "--output",
+    "/workspace/scratch/5f6ca1e00aa7/qa/package/verifier-round06"
+  ],
+  "PYTHONDONTWRITEBYTECODE": "1",
+  "outputDidNotExistBeforeRun": true,
+  "exitCode": 0,
+  "caseCount": 30,
+  "expectationsMet": 30,
+  "accepted": 2,
+  "rejected": 28,
+  "rejectionsWithoutExtractionChanges": 28,
+  "outsideSentinelUnchanged": true,
+  "sourceFiles": [
+    {
+      "path": "scripts/verify-package.py",
+      "bytes": 10444,
+      "sha256": "9fc558350ef9ae936d3b74f2288d88a7c911af4e4c189188ea9236e0f64323ad",
+      "baselineByteEqual": true
+    },
+    {
+      "path": "scripts/test-package-verifier.py",
+      "bytes": 8383,
+      "sha256": "0d9734c3374a4de0b7c27ac8dff4dfd72a0e7b564a01249adace7afb0e34fddd",
+      "baselineByteEqual": true
+    }
+  ],
+  "resultPath": "/workspace/scratch/5f6ca1e00aa7/qa/package/verifier-round06/results.json",
+  "logPath": "/workspace/scratch/5f6ca1e00aa7/qa/package/verifier-round06.log",
+  "resultsSha256": "6c2569d139590589f0d6c5ec6eac583f04897898d9af7829b56274bbe600c8c1",
+  "logSha256": "6c2569d139590589f0d6c5ec6eac583f04897898d9af7829b56274bbe600c8c1",
+  "notes": [
+    "Original self-test and original verifier are unchanged from input.",
+    "All sample ZIPs and test-only symlinks are inside the fresh external QA output.",
+    "Limits cases lower configured bounds using tiny ZIPs;not a50MB/200MB disk stress benchmark.",
+    "30 verifier cases are separate from game unit tests,gameplay journeys and final ZIP acceptance."
+  ]
+}

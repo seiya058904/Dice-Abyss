@@ -1,0 +1,41 @@
+{
+  "round": 9,
+  "scope": "Report/harness corrections only, not additional product failures or extra passing samples.",
+  "items": [
+    {
+      "id": "browser-sum",
+      "kind": "REPORT_ARITHMETIC",
+      "superseded": 1864,
+      "verified": 1848,
+      "terms": [
+        43,
+        125,
+        286,
+        118,
+        700,
+        42,
+        316,
+        218
+      ],
+      "reportedToUser": true,
+      "source": "browser-summary.json",
+      "underlyingReportsChanged": false
+    },
+    {
+      "id": "independent-relic-exchange-fixture",
+      "kind": "HARNESS_FIXTURE",
+      "error": "Reviewer first used relic_exchange as a direct room type; baseline validator rejected it.",
+      "resolution": "Generated a real mystery room and seed with the event key, then reran the complete final independent matrix.",
+      "source": "functional-summary.json",
+      "runtimeChanged": false
+    },
+    {
+      "id": "lifecycle-merchant-fixture",
+      "kind": "HARNESS_FIXTURE",
+      "error": "One hand-authored merchant offer was rejected by the original validator.",
+      "resolution": "Replaced with the engine-generated four-offer legal fixture before testing transactions.",
+      "source": "gold-lifecycle-independent.json",
+      "runtimeChanged": false
+    }
+  ]
+}

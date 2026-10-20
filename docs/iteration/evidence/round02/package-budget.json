@@ -1,0 +1,136 @@
+{
+  "round": 2,
+  "created": "2026-10-17T12:47:33.287870+00:00",
+  "hardZipLimitExclusiveBytes": 50000000,
+  "idealZipLimitBytes": 40000000,
+  "warningZipBytes": 45000000,
+  "input": {
+    "zipBytes": 11545325,
+    "files": 216,
+    "expandedBytes": 15174045,
+    "groups": {
+      "auditable_evidence": {
+        "files": 97,
+        "expandedBytes": 3591710,
+        "compressedPayloadBytes": 2099825
+      },
+      "documentation_and_handoff": {
+        "files": 23,
+        "expandedBytes": 325158,
+        "compressedPayloadBytes": 185776
+      },
+      "launchers_and_qa_scripts": {
+        "files": 32,
+        "expandedBytes": 282600,
+        "compressedPayloadBytes": 103047
+      },
+      "offline_fonts_and_licenses": {
+        "files": 8,
+        "expandedBytes": 8680958,
+        "compressedPayloadBytes": 8655134
+      },
+      "project_metadata": {
+        "files": 4,
+        "expandedBytes": 2415,
+        "compressedPayloadBytes": 1091
+      },
+      "runtime_source": {
+        "files": 26,
+        "expandedBytes": 493141,
+        "compressedPayloadBytes": 160438
+      },
+      "runtime_visual_assets": {
+        "files": 2,
+        "expandedBytes": 172395,
+        "compressedPayloadBytes": 172162
+      },
+      "tests_and_fixtures": {
+        "files": 24,
+        "expandedBytes": 1625668,
+        "compressedPayloadBytes": 131912
+      }
+    },
+    "note": "Compressed payload totals exclude ZIP central/local headers; zipBytes is the actual entire input ZIP."
+  },
+  "outputContentSnapshot": {
+    "stage": "Before candidate ZIP and fresh-extraction evidence archival; exact final count/ZIP bytes in external delivery record.",
+    "excludedFromSnapshot": [
+      "docs/iteration/FILE_MANIFEST.json",
+      "docs/iteration/evidence/round02/package-budget.json"
+    ],
+    "files": 260,
+    "bytes": 16302163,
+    "groups": {
+      "auditable_evidence": {
+        "files": 128,
+        "bytes": 4545167
+      },
+      "documentation_and_handoff": {
+        "files": 24,
+        "bytes": 313451
+      },
+      "launchers_and_qa_scripts": {
+        "files": 37,
+        "bytes": 350088
+      },
+      "offline_fonts_and_licenses": {
+        "files": 8,
+        "bytes": 8680958
+      },
+      "project_metadata": {
+        "files": 4,
+        "bytes": 2415
+      },
+      "runtime_source": {
+        "files": 31,
+        "bytes": 583450
+      },
+      "runtime_visual_assets": {
+        "files": 2,
+        "bytes": 172395
+      },
+      "tests_and_fixtures": {
+        "files": 26,
+        "bytes": 1654239
+      }
+    }
+  },
+  "assetPolicy": {
+    "newRuntimeBitmapBytes": 0,
+    "fontFilesByteIdentical": 8,
+    "screenshots": 11,
+    "screenshotOriginalBytes": 3971583,
+    "screenshotWebPBytes": 756224,
+    "noRuntimeDependenciesAdded": true
+  },
+  "excluded": [
+    "unselected concept bitmap",
+    "original PNG screenshots and4K frames",
+    "browser binaries/profiles/cache",
+    "node_modules",
+    "temporary full logs/raw simulation JSON",
+    "input and old ZIPs",
+    "baseline/work duplicate trees",
+    "repository history"
+  ],
+  "candidateZip": {
+    "zip": "candidate-v5.3.0.zip",
+    "bytes": 12419989,
+    "decimalMB": 12.419989,
+    "sha256": "2dc49504ee90f50786e646d43ddc2ace967813b266bade68b47e07d394801523",
+    "files": 262,
+    "manifestEntries": 261,
+    "version": "5.3.0",
+    "round": 2,
+    "crcVerified": true,
+    "allManifestHashesVerified": true,
+    "extractedFilesVerified": true,
+    "expandedBytes": 16350691,
+    "entries": 262,
+    "pathSafetyVerified": true,
+    "expandedBudgetVerified": true,
+    "identity": "Code-tested candidate before this evidence/metadata archival; not the final delivery ZIP.",
+    "growthFromInputPercent": 7.5759
+  },
+  "cleanupNote": "Pre-extraction archive inventory caught three duplicate raw core screenshots; removed before the tested candidate. All11 WebP scenes and source hashes remain."
+}

@@ -1,0 +1,61 @@
+{
+  "scope": "Capacity safety, independent UI integration and original-input failure-feedback evidence. Detailed TAP is not duplicated; overlapping test runs are not added together.",
+  "artifacts": {
+    "REVIEW.md": {
+      "bytes": 3289,
+      "sha256": "ef5947e9ac2a8250057f754a44fe586ad95bbd5783b8afa8430a0edfda265162"
+    },
+    "UI_REVIEW.md": {
+      "bytes": 4241,
+      "sha256": "c65ca31c8edad0ada8a65fb8ce2686463302b5549e83fa81943f35e1531efeb3"
+    },
+    "audit-capacity.mjs": {
+      "bytes": 5820,
+      "sha256": "1ee07141a55808d7b4cae7a51cf90320716145293b892ca170a4814c0d827742"
+    },
+    "baseline-audit.json": {
+      "bytes": 2208,
+      "sha256": "21949f520a6b7a80dcc148c05eb5afb6f8932fb826d810f0874d7ca285007a48"
+    },
+    "current-ui-markup-audit.json": {
+      "bytes": 3094,
+      "sha256": "b18a2d31e757053280635f3ff109b83b1fe7f3fce501683f57a233aa3e563a85"
+    },
+    "package-audit-summary.json": {
+      "bytes": 3549,
+      "sha256": "cb7f1bd8de81d9b277d6d2fffaaebca47e0db2d48c96e161dbef89d220fe0924"
+    },
+    "test-summary.json": {
+      "bytes": 2824,
+      "sha256": "dd0b03bad7adedd3d8326ccf4b638d6d5c5b39a9adb64884b0e33236d1b23e03"
+    },
+    "ui-handler-probe.json": {
+      "bytes": 2562,
+      "sha256": "df68476ce21e8cef9315a7dd8a47a06e81b4ab41119ec31ae7d3f7327e63f936"
+    },
+    "ui-handler-probe.mjs": {
+      "bytes": 9877,
+      "sha256": "9ea0efe648b017cf45121298719a0cc63bdd84cd7cb81cdf1ae88850c64c6f60"
+    },
+    "ui-review-summary.json": {
+      "bytes": 2270,
+      "sha256": "be3c56fb0b3ebcfef12dd7408b5e2b55e12508a14d0530f8661ba4c18925f025"
+    }
+  },
+  "status": "PASS_WITH_OPEN_P3",
+  "openFindings": [
+    {
+      "status": "OPEN_P3",
+      "name": "Missing immediate feedback after all save copies are externally removed",
+      "introducedInRound12": false,
+      "baselineCurrentStorageListenerBytesEqual": true,
+      "storageListenerSha256": "740b848c2de706635a089f5ff87b1840cd200a1109b5aa659e781c3f159cc605",
+      "impact": "Settings can retain capacity for the last valid in-memory state. This state remains fully exportable. The complete expected-snapshot guard still rejects a subsequent write.",
+      "runtimeModifiedForFinding": false
+    }
+  ],
+  "primaryReport": "REVIEW.md",
+  "uiReport": "UI_REVIEW.md",
+  "guide": "../../../SAVE_CAPACITY.md",
+  "historicalFailurePreserved": "../../round06/save-size-baseline.json"
+}

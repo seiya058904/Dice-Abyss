@@ -1,0 +1,4858 @@
+{
+  "scope": "Offline independent audit of complete recorded samples and artifacts; no timing replay or source game execution.",
+  "inputs": [
+    "/workspace/scratch/16b883e72bb3/scratch-evidence/performance-round12",
+    "/workspace/scratch/16b883e72bb3/scratch-evidence/performance-round12-reverse"
+  ],
+  "checks": [
+    {
+      "name": "performance-round12 source identities, runtime HTTP and local metadata",
+      "status": "PASS",
+      "pathsPerVersion": 46,
+      "sourceBeforeAfterAndLocalFilesExact": true,
+      "allRuntimeHttpBytesExact": true
+    },
+    {
+      "name": "performance-round12 complete fixture manifest",
+      "status": "PASS",
+      "fixtures": 10
+    },
+    {
+      "name": "performance-round12 complete 60-card artifacts and all lossless differences",
+      "status": "PASS",
+      "byVersion": {
+        "5.11.0": {
+          "cardsSha256": "0bff297d9c1e32bc76302dc84ce0e383702ac4456e330f010feb2e79c3319727",
+          "cardBytes": 83779,
+          "gameHtmlSha256": "605ed0d79634ff24e1ad16170852aedee17972178edc8f064ad890c0cd19e866",
+          "gameHtmlBytes": 99688,
+          "fullStateSha256": "81651ee106fc3033a2b0362328da887670562f378eb44436dd4cc915a6e53b7b",
+          "rawSaveSha256": "f60066f0e55853c6053e66134a84a5d831ca552595ad463ce51273d79f4aee2f",
+          "cardStatesSha256": "27ca76ba395a6d031ab5afda454684d50c2d9a56aeb0e8f10aca1d270b6b1d11",
+          "completeItemStatesSha256": "7594f6ee9d409120e27fef5c91d8ef509da5a67ef2c3b8b03369cf2b23bf39fd"
+        },
+        "5.12.0": {
+          "cardsSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+          "cardBytes": 92909,
+          "gameHtmlSha256": "74fd1510292a50bad69a0bda933c291a9edc3c71ab46c30e0e0ab42504d52034",
+          "gameHtmlBytes": 108818,
+          "fullStateSha256": "81651ee106fc3033a2b0362328da887670562f378eb44436dd4cc915a6e53b7b",
+          "rawSaveSha256": "f60066f0e55853c6053e66134a84a5d831ca552595ad463ce51273d79f4aee2f",
+          "cardStatesSha256": "27ca76ba395a6d031ab5afda454684d50c2d9a56aeb0e8f10aca1d270b6b1d11",
+          "completeItemStatesSha256": "7594f6ee9d409120e27fef5c91d8ef509da5a67ef2c3b8b03369cf2b23bf39fd"
+        }
+      },
+      "cardsCompared": 60,
+      "cardsChanged": 55,
+      "cardBytesAdded": 9130
+    },
+    {
+      "name": "performance-round12 all inventory samples, warmups, ordering and full state references",
+      "status": "PASS",
+      "formalSamples": 24,
+      "retainedExcludedWarmups": 2,
+      "fullStateSha256": "81651ee106fc3033a2b0362328da887670562f378eb44436dd4cc915a6e53b7b",
+      "rawCharactersPerStoredCopy": 2060957
+    },
+    {
+      "name": "performance-round12 frames sample counts and alternating ordering",
+      "status": "PASS",
+      "windows": 32
+    },
+    {
+      "name": "performance-round12 frames raw window 1",
+      "status": "PASS",
+      "retainedRafIntervals": 241,
+      "observedLongTasks": 1,
+      "overlappingLongTasks": 1
+    },
+    {
+      "name": "performance-round12 frames raw window 2",
+      "status": "PASS",
+      "retainedRafIntervals": 218,
+      "observedLongTasks": 1,
+      "overlappingLongTasks": 1
+    },
+    {
+      "name": "performance-round12 frames raw window 3",
+      "status": "PASS",
+      "retainedRafIntervals": 213,
+      "observedLongTasks": 0,
+      "overlappingLongTasks": 0
+    },
+    {
+      "name": "performance-round12 frames raw window 4",
+      "status": "PASS",
+      "retainedRafIntervals": 223,
+      "observedLongTasks": 0,
+      "overlappingLongTasks": 0
+    },
+    {
+      "name": "performance-round12 frames raw window 5",
+      "status": "PASS",
+      "retainedRafIntervals": 235,
+      "observedLongTasks": 0,
+      "overlappingLongTasks": 0
+    },
+    {
+      "name": "performance-round12 frames raw window 6",
+      "status": "PASS",
+      "retainedRafIntervals": 235,
+      "observedLongTasks": 0,
+      "overlappingLongTasks": 0
+    },
+    {
+      "name": "performance-round12 frames raw window 7",
+      "status": "PASS",
+      "retainedRafIntervals": 193,
+      "observedLongTasks": 0,
+      "overlappingLongTasks": 0
+    },
+    {
+      "name": "performance-round12 frames raw window 8",
+      "status": "PASS",
+      "retainedRafIntervals": 222,
+      "observedLongTasks": 0,
+      "overlappingLongTasks": 0
+    },
+    {
+      "name": "performance-round12 frames raw window 9",
+      "status": "PASS",
+      "retainedRafIntervals": 24,
+      "observedLongTasks": 0,
+      "overlappingLongTasks": 0
+    },
+    {
+      "name": "performance-round12 frames raw window 10",
+      "status": "PASS",
+      "retainedRafIntervals": 33,
+      "observedLongTasks": 0,
+      "overlappingLongTasks": 0
+    },
+    {
+      "name": "performance-round12 frames raw window 11",
+      "status": "PASS",
+      "retainedRafIntervals": 146,
+      "observedLongTasks": 0,
+      "overlappingLongTasks": 0
+    },
+    {
+      "name": "performance-round12 frames raw window 12",
+      "status": "PASS",
+      "retainedRafIntervals": 165,
+      "observedLongTasks": 0,
+      "overlappingLongTasks": 0
+    },
+    {
+      "name": "performance-round12 frames raw window 13",
+      "status": "PASS",
+      "retainedRafIntervals": 219,
+      "observedLongTasks": 0,
+      "overlappingLongTasks": 0
+    },
+    {
+      "name": "performance-round12 frames raw window 14",
+      "status": "PASS",
+      "retainedRafIntervals": 184,
+      "observedLongTasks": 0,
+      "overlappingLongTasks": 0
+    },
+    {
+      "name": "performance-round12 frames raw window 15",
+      "status": "PASS",
+      "retainedRafIntervals": 94,
+      "observedLongTasks": 0,
+      "overlappingLongTasks": 0
+    },
+    {
+      "name": "performance-round12 frames raw window 16",
+      "status": "PASS",
+      "retainedRafIntervals": 155,
+      "observedLongTasks": 0,
+      "overlappingLongTasks": 0
+    },
+    {
+      "name": "performance-round12 frames raw window 17",
+      "status": "PASS",
+      "retainedRafIntervals": 11,
+      "observedLongTasks": 0,
+      "overlappingLongTasks": 0
+    },
+    {
+      "name": "performance-round12 frames raw window 18",
+      "status": "PASS",
+      "retainedRafIntervals": 12,
+      "observedLongTasks": 0,
+      "overlappingLongTasks": 0
+    },
+    {
+      "name": "performance-round12 frames raw window 19",
+      "status": "PASS",
+      "retainedRafIntervals": 137,
+      "observedLongTasks": 0,
+      "overlappingLongTasks": 0
+    },
+    {
+      "name": "performance-round12 frames raw window 20",
+      "status": "PASS",
+      "retainedRafIntervals": 146,
+      "observedLongTasks": 0,
+      "overlappingLongTasks": 0
+    },
+    {
+      "name": "performance-round12 frames raw window 21",
+      "status": "PASS",
+      "retainedRafIntervals": 192,
+      "observedLongTasks": 0,
+      "overlappingLongTasks": 0
+    },
+    {
+      "name": "performance-round12 frames raw window 22",
+      "status": "PASS",
+      "retainedRafIntervals": 63,
+      "observedLongTasks": 0,
+      "overlappingLongTasks": 0
+    },
+    {
+      "name": "performance-round12 frames raw window 23",
+      "status": "PASS",
+      "retainedRafIntervals": 26,
+      "observedLongTasks": 0,
+      "overlappingLongTasks": 0
+    },
+    {
+      "name": "performance-round12 frames raw window 24",
+      "status": "PASS",
+      "retainedRafIntervals": 123,
+      "observedLongTasks": 0,
+      "overlappingLongTasks": 0
+    },
+    {
+      "name": "performance-round12 frames raw window 25",
+      "status": "PASS",
+      "retainedRafIntervals": 11,
+      "observedLongTasks": 0,
+      "overlappingLongTasks": 0
+    },
+    {
+      "name": "performance-round12 frames raw window 26",
+      "status": "PASS",
+      "retainedRafIntervals": 14,
+      "observedLongTasks": 0,
+      "overlappingLongTasks": 0
+    },
+    {
+      "name": "performance-round12 frames raw window 27",
+      "status": "PASS",
+      "retainedRafIntervals": 24,
+      "observedLongTasks": 0,
+      "overlappingLongTasks": 0
+    },
+    {
+      "name": "performance-round12 frames raw window 28",
+      "status": "PASS",
+      "retainedRafIntervals": 32,
+      "observedLongTasks": 0,
+      "overlappingLongTasks": 0
+    },
+    {
+      "name": "performance-round12 frames raw window 29",
+      "status": "PASS",
+      "retainedRafIntervals": 73,
+      "observedLongTasks": 0,
+      "overlappingLongTasks": 0
+    },
+    {
+      "name": "performance-round12 frames raw window 30",
+      "status": "PASS",
+      "retainedRafIntervals": 28,
+      "observedLongTasks": 0,
+      "overlappingLongTasks": 0
+    },
+    {
+      "name": "performance-round12 frames raw window 31",
+      "status": "PASS",
+      "retainedRafIntervals": 32,
+      "observedLongTasks": 0,
+      "overlappingLongTasks": 0
+    },
+    {
+      "name": "performance-round12 frames raw window 32",
+      "status": "PASS",
+      "retainedRafIntervals": 29,
+      "observedLongTasks": 0,
+      "overlappingLongTasks": 0
+    },
+    {
+      "name": "performance-round12 frames all aggregate cells and persisted-state hashes",
+      "status": "PASS",
+      "aggregateCells": 32
+    },
+    {
+      "name": "performance-round12 coverage sample counts and alternating ordering",
+      "status": "PASS",
+      "windows": 14
+    },
+    {
+      "name": "performance-round12 coverage raw window 1",
+      "status": "PASS",
+      "retainedRafIntervals": 78,
+      "observedLongTasks": 0,
+      "overlappingLongTasks": 0
+    },
+    {
+      "name": "performance-round12 coverage raw window 2",
+      "status": "PASS",
+      "retainedRafIntervals": 149,
+      "observedLongTasks": 0,
+      "overlappingLongTasks": 0
+    },
+    {
+      "name": "performance-round12 coverage raw window 3",
+      "status": "PASS",
+      "retainedRafIntervals": 230,
+      "observedLongTasks": 0,
+      "overlappingLongTasks": 0
+    },
+    {
+      "name": "performance-round12 coverage raw window 4",
+      "status": "PASS",
+      "retainedRafIntervals": 217,
+      "observedLongTasks": 0,
+      "overlappingLongTasks": 0
+    },
+    {
+      "name": "performance-round12 coverage raw window 5",
+      "status": "PASS",
+      "retainedRafIntervals": 212,
+      "observedLongTasks": 0,
+      "overlappingLongTasks": 0
+    },
+    {
+      "name": "performance-round12 coverage raw window 6",
+      "status": "PASS",
+      "retainedRafIntervals": 220,
+      "observedLongTasks": 0,
+      "overlappingLongTasks": 0
+    },
+    {
+      "name": "performance-round12 coverage raw window 7",
+      "status": "PASS",
+      "retainedRafIntervals": 233,
+      "observedLongTasks": 0,
+      "overlappingLongTasks": 0
+    },
+    {
+      "name": "performance-round12 coverage raw window 8",
+      "status": "PASS",
+      "retainedRafIntervals": 176,
+      "observedLongTasks": 0,
+      "overlappingLongTasks": 0
+    },
+    {
+      "name": "performance-round12 coverage raw window 9",
+      "status": "PASS",
+      "retainedRafIntervals": 150,
+      "observedLongTasks": 0,
+      "overlappingLongTasks": 0
+    },
+    {
+      "name": "performance-round12 coverage raw window 10",
+      "status": "PASS",
+      "retainedRafIntervals": 130,
+      "observedLongTasks": 0,
+      "overlappingLongTasks": 0
+    },
+    {
+      "name": "performance-round12 coverage raw window 11",
+      "status": "PASS",
+      "retainedRafIntervals": 163,
+      "observedLongTasks": 0,
+      "overlappingLongTasks": 0
+    },
+    {
+      "name": "performance-round12 coverage raw window 12",
+      "status": "PASS",
+      "retainedRafIntervals": 144,
+      "observedLongTasks": 0,
+      "overlappingLongTasks": 0
+    },
+    {
+      "name": "performance-round12 coverage raw window 13",
+      "status": "PASS",
+      "retainedRafIntervals": 181,
+      "observedLongTasks": 0,
+      "overlappingLongTasks": 0
+    },
+    {
+      "name": "performance-round12 coverage raw window 14",
+      "status": "PASS",
+      "retainedRafIntervals": 168,
+      "observedLongTasks": 0,
+      "overlappingLongTasks": 0
+    },
+    {
+      "name": "performance-round12 coverage all aggregate cells and persisted-state hashes",
+      "status": "PASS",
+      "aggregateCells": 14
+    },
+    {
+      "name": "performance-round12 final limitation status",
+      "status": "PASS",
+      "fewerThanThreeMainRepeats": true,
+      "unobservedFullEffectWindows": 5,
+      "errors": 0
+    },
+    {
+      "name": "performance-round12-reverse source identities, runtime HTTP and local metadata",
+      "status": "PASS",
+      "pathsPerVersion": 46,
+      "sourceBeforeAfterAndLocalFilesExact": true,
+      "allRuntimeHttpBytesExact": true
+    },
+    {
+      "name": "performance-round12-reverse complete fixture manifest",
+      "status": "PASS",
+      "fixtures": 10
+    },
+    {
+      "name": "performance-round12-reverse complete 60-card artifacts and all lossless differences",
+      "status": "PASS",
+      "byVersion": {
+        "5.12.0": {
+          "cardsSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+          "cardBytes": 92909,
+          "gameHtmlSha256": "74fd1510292a50bad69a0bda933c291a9edc3c71ab46c30e0e0ab42504d52034",
+          "gameHtmlBytes": 108818,
+          "fullStateSha256": "81651ee106fc3033a2b0362328da887670562f378eb44436dd4cc915a6e53b7b",
+          "rawSaveSha256": "f60066f0e55853c6053e66134a84a5d831ca552595ad463ce51273d79f4aee2f",
+          "cardStatesSha256": "27ca76ba395a6d031ab5afda454684d50c2d9a56aeb0e8f10aca1d270b6b1d11",
+          "completeItemStatesSha256": "7594f6ee9d409120e27fef5c91d8ef509da5a67ef2c3b8b03369cf2b23bf39fd"
+        },
+        "5.11.0": {
+          "cardsSha256": "0bff297d9c1e32bc76302dc84ce0e383702ac4456e330f010feb2e79c3319727",
+          "cardBytes": 83779,
+          "gameHtmlSha256": "605ed0d79634ff24e1ad16170852aedee17972178edc8f064ad890c0cd19e866",
+          "gameHtmlBytes": 99688,
+          "fullStateSha256": "81651ee106fc3033a2b0362328da887670562f378eb44436dd4cc915a6e53b7b",
+          "rawSaveSha256": "f60066f0e55853c6053e66134a84a5d831ca552595ad463ce51273d79f4aee2f",
+          "cardStatesSha256": "27ca76ba395a6d031ab5afda454684d50c2d9a56aeb0e8f10aca1d270b6b1d11",
+          "completeItemStatesSha256": "7594f6ee9d409120e27fef5c91d8ef509da5a67ef2c3b8b03369cf2b23bf39fd"
+        }
+      },
+      "cardsCompared": 60,
+      "cardsChanged": 55,
+      "cardBytesAdded": 9130
+    },
+    {
+      "name": "performance-round12-reverse all inventory samples, warmups, ordering and full state references",
+      "status": "PASS",
+      "formalSamples": 24,
+      "retainedExcludedWarmups": 2,
+      "fullStateSha256": "81651ee106fc3033a2b0362328da887670562f378eb44436dd4cc915a6e53b7b",
+      "rawCharactersPerStoredCopy": 2060957
+    },
+    {
+      "name": "performance-round12-reverse final limitation status",
+      "status": "PASS",
+      "fewerThanThreeMainRepeats": false,
+      "unobservedFullEffectWindows": 0,
+      "errors": 0
+    },
+    {
+      "name": "cross-batch exact fixtures, per-version source identities and complete DOM",
+      "status": "PASS",
+      "labelsMappedByHttpReleaseAndLocalPackage": true,
+      "sourceAndDomPerVersionIdenticalAcrossBatches": true
+    }
+  ],
+  "failures": [],
+  "batches": [
+    {
+      "name": "performance-round12",
+      "reportSha256": "61a6e1d1253c279bc860fd2634943944582eaa24335e336ca80a344128dc8850",
+      "mode": "all",
+      "status": "MEASURED_WITH_LIMITATIONS",
+      "startedAt": "2026-10-18T12:06:43.984Z",
+      "completedAt": "2026-10-18T12:11:41.434Z",
+      "scriptSha256": "da299afda45fab616d29194bce12e14122a5bab9867159706a3331cd8f81d81a",
+      "versionByLabel": {
+        "baseline": "5.11.0",
+        "after": "5.12.0"
+      },
+      "contextCreationVersions": [
+        "5.11.0",
+        "5.12.0"
+      ],
+      "inventoryByVersion": {
+        "5.11.0": {
+          "samples": 12,
+          "p50": 117.10000000149012,
+          "p95": 432.29999999701977,
+          "p99": 432.29999999701977,
+          "max": 551.2999999970198,
+          "min": 58,
+          "mean": 180.6333333340784,
+          "allChronologicalSamples": [
+            {
+              "repeat": 1,
+              "pair": 1,
+              "position": 1,
+              "elapsedMs": 64.29999999701977
+            },
+            {
+              "repeat": 2,
+              "pair": 2,
+              "position": 2,
+              "elapsedMs": 68.90000000596046
+            },
+            {
+              "repeat": 3,
+              "pair": 3,
+              "position": 1,
+              "elapsedMs": 62.600000001490116
+            },
+            {
+              "repeat": 4,
+              "pair": 4,
+              "position": 2,
+              "elapsedMs": 117.10000000149012
+            },
+            {
+              "repeat": 5,
+              "pair": 5,
+              "position": 1,
+              "elapsedMs": 432.29999999701977
+            },
+            {
+              "repeat": 6,
+              "pair": 6,
+              "position": 2,
+              "elapsedMs": 233.30000000447035
+            },
+            {
+              "repeat": 7,
+              "pair": 7,
+              "position": 1,
+              "elapsedMs": 58
+            },
+            {
+              "repeat": 8,
+              "pair": 8,
+              "position": 2,
+              "elapsedMs": 71.30000000447035
+            },
+            {
+              "repeat": 9,
+              "pair": 9,
+              "position": 1,
+              "elapsedMs": 222.79999999701977
+            },
+            {
+              "repeat": 10,
+              "pair": 10,
+              "position": 2,
+              "elapsedMs": 143.60000000149012
+            },
+            {
+              "repeat": 11,
+              "pair": 11,
+              "position": 1,
+              "elapsedMs": 551.2999999970198
+            },
+            {
+              "repeat": 12,
+              "pair": 12,
+              "position": 2,
+              "elapsedMs": 142.10000000149012
+            }
+          ],
+          "byPairPosition": {
+            "1": {
+              "samples": 6,
+              "p50": 64.29999999701977,
+              "p95": 432.29999999701977,
+              "p99": 432.29999999701977,
+              "max": 551.2999999970198,
+              "min": 58
+            },
+            "2": {
+              "samples": 6,
+              "p50": 117.10000000149012,
+              "p95": 143.60000000149012,
+              "p99": 143.60000000149012,
+              "max": 233.30000000447035,
+              "min": 68.90000000596046
+            }
+          }
+        },
+        "5.12.0": {
+          "samples": 12,
+          "p50": 228.09999999403954,
+          "p95": 539.1000000014901,
+          "p99": 539.1000000014901,
+          "max": 544.8999999985099,
+          "min": 63.20000000298023,
+          "mean": 245.76666666815677,
+          "allChronologicalSamples": [
+            {
+              "repeat": 1,
+              "pair": 1,
+              "position": 2,
+              "elapsedMs": 63.20000000298023
+            },
+            {
+              "repeat": 2,
+              "pair": 2,
+              "position": 1,
+              "elapsedMs": 76.60000000149012
+            },
+            {
+              "repeat": 3,
+              "pair": 3,
+              "position": 2,
+              "elapsedMs": 80.90000000596046
+            },
+            {
+              "repeat": 4,
+              "pair": 4,
+              "position": 1,
+              "elapsedMs": 98.5
+            },
+            {
+              "repeat": 5,
+              "pair": 5,
+              "position": 2,
+              "elapsedMs": 539.1000000014901
+            },
+            {
+              "repeat": 6,
+              "pair": 6,
+              "position": 1,
+              "elapsedMs": 242.20000000298023
+            },
+            {
+              "repeat": 7,
+              "pair": 7,
+              "position": 2,
+              "elapsedMs": 358.70000000298023
+            },
+            {
+              "repeat": 8,
+              "pair": 8,
+              "position": 1,
+              "elapsedMs": 228.09999999403954
+            },
+            {
+              "repeat": 9,
+              "pair": 9,
+              "position": 2,
+              "elapsedMs": 77.70000000298023
+            },
+            {
+              "repeat": 10,
+              "pair": 10,
+              "position": 1,
+              "elapsedMs": 544.8999999985099
+            },
+            {
+              "repeat": 11,
+              "pair": 11,
+              "position": 2,
+              "elapsedMs": 402.20000000298023
+            },
+            {
+              "repeat": 12,
+              "pair": 12,
+              "position": 1,
+              "elapsedMs": 237.10000000149012
+            }
+          ],
+          "byPairPosition": {
+            "1": {
+              "samples": 6,
+              "p50": 228.09999999403954,
+              "p95": 242.20000000298023,
+              "p99": 242.20000000298023,
+              "max": 544.8999999985099,
+              "min": 76.60000000149012
+            },
+            "2": {
+              "samples": 6,
+              "p50": 80.90000000596046,
+              "p95": 402.20000000298023,
+              "p99": 402.20000000298023,
+              "max": 539.1000000014901,
+              "min": 63.20000000298023
+            }
+          }
+        }
+      },
+      "inventoryPairs": [
+        {
+          "pair": 1,
+          "versionsInOrder": [
+            "5.11.0",
+            "5.12.0"
+          ],
+          "oldMs": 64.29999999701977,
+          "currentMs": 63.20000000298023,
+          "currentMinusOldMs": -1.0999999940395355
+        },
+        {
+          "pair": 2,
+          "versionsInOrder": [
+            "5.12.0",
+            "5.11.0"
+          ],
+          "oldMs": 68.90000000596046,
+          "currentMs": 76.60000000149012,
+          "currentMinusOldMs": 7.699999995529652
+        },
+        {
+          "pair": 3,
+          "versionsInOrder": [
+            "5.11.0",
+            "5.12.0"
+          ],
+          "oldMs": 62.600000001490116,
+          "currentMs": 80.90000000596046,
+          "currentMinusOldMs": 18.30000000447035
+        },
+        {
+          "pair": 4,
+          "versionsInOrder": [
+            "5.12.0",
+            "5.11.0"
+          ],
+          "oldMs": 117.10000000149012,
+          "currentMs": 98.5,
+          "currentMinusOldMs": -18.600000001490116
+        },
+        {
+          "pair": 5,
+          "versionsInOrder": [
+            "5.11.0",
+            "5.12.0"
+          ],
+          "oldMs": 432.29999999701977,
+          "currentMs": 539.1000000014901,
+          "currentMinusOldMs": 106.80000000447035
+        },
+        {
+          "pair": 6,
+          "versionsInOrder": [
+            "5.12.0",
+            "5.11.0"
+          ],
+          "oldMs": 233.30000000447035,
+          "currentMs": 242.20000000298023,
+          "currentMinusOldMs": 8.899999998509884
+        },
+        {
+          "pair": 7,
+          "versionsInOrder": [
+            "5.11.0",
+            "5.12.0"
+          ],
+          "oldMs": 58,
+          "currentMs": 358.70000000298023,
+          "currentMinusOldMs": 300.70000000298023
+        },
+        {
+          "pair": 8,
+          "versionsInOrder": [
+            "5.12.0",
+            "5.11.0"
+          ],
+          "oldMs": 71.30000000447035,
+          "currentMs": 228.09999999403954,
+          "currentMinusOldMs": 156.7999999895692
+        },
+        {
+          "pair": 9,
+          "versionsInOrder": [
+            "5.11.0",
+            "5.12.0"
+          ],
+          "oldMs": 222.79999999701977,
+          "currentMs": 77.70000000298023,
+          "currentMinusOldMs": -145.09999999403954
+        },
+        {
+          "pair": 10,
+          "versionsInOrder": [
+            "5.12.0",
+            "5.11.0"
+          ],
+          "oldMs": 143.60000000149012,
+          "currentMs": 544.8999999985099,
+          "currentMinusOldMs": 401.29999999701977
+        },
+        {
+          "pair": 11,
+          "versionsInOrder": [
+            "5.11.0",
+            "5.12.0"
+          ],
+          "oldMs": 551.2999999970198,
+          "currentMs": 402.20000000298023,
+          "currentMinusOldMs": -149.09999999403954
+        },
+        {
+          "pair": 12,
+          "versionsInOrder": [
+            "5.12.0",
+            "5.11.0"
+          ],
+          "oldMs": 142.10000000149012,
+          "currentMs": 237.10000000149012,
+          "currentMinusOldMs": 95
+        }
+      ],
+      "windows": [
+        {
+          "section": "frames",
+          "index": 1,
+          "version": "5.11.0",
+          "scene": "boss-burst",
+          "width": 1366,
+          "height": 768,
+          "effects": "full",
+          "frames": 241,
+          "actualWindowMs": 4212.89999999851,
+          "overrunMs": 12.899999998509884,
+          "p50": 16.69999999552965,
+          "p95": 18,
+          "p99": 34.29999999701977,
+          "max": 121.5,
+          "over50": 2,
+          "over100": 1,
+          "longTasks": 1,
+          "longTaskOverlapMs": 121,
+          "effectKinds": [
+            "idle",
+            "dice-only",
+            "combat"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        {
+          "section": "frames",
+          "index": 2,
+          "version": "5.12.0",
+          "scene": "boss-burst",
+          "width": 1366,
+          "height": 768,
+          "effects": "full",
+          "frames": 218,
+          "actualWindowMs": 4203.39999999851,
+          "overrunMs": 3.399999998509884,
+          "p50": 16.69999999552965,
+          "p95": 18.899999998509884,
+          "p99": 41.80000000447035,
+          "max": 383.1000000014901,
+          "over50": 2,
+          "over100": 2,
+          "longTasks": 1,
+          "longTaskOverlapMs": 207,
+          "effectKinds": [
+            "idle",
+            "dice-only",
+            "combat"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        {
+          "section": "frames",
+          "index": 3,
+          "version": "5.12.0",
+          "scene": "boss-burst",
+          "width": 1366,
+          "height": 768,
+          "effects": "low",
+          "frames": 213,
+          "actualWindowMs": 4205,
+          "overrunMs": 5,
+          "p50": 16.69999999552965,
+          "p95": 17,
+          "p99": 27.5,
+          "max": 685.3000000044703,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        {
+          "section": "frames",
+          "index": 4,
+          "version": "5.11.0",
+          "scene": "boss-burst",
+          "width": 1366,
+          "height": 768,
+          "effects": "low",
+          "frames": 223,
+          "actualWindowMs": 4211.29999999702,
+          "overrunMs": 11.299999997019768,
+          "p50": 16.69999999552965,
+          "p95": 17,
+          "p99": 28.200000002980232,
+          "max": 523.9000000059605,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        {
+          "section": "frames",
+          "index": 5,
+          "version": "5.11.0",
+          "scene": "eternal-open",
+          "width": 1366,
+          "height": 768,
+          "effects": "full",
+          "frames": 235,
+          "actualWindowMs": 4211.5,
+          "overrunMs": 11.5,
+          "p50": 16.69999999552965,
+          "p95": 18.200000002980232,
+          "p99": 44.20000000298023,
+          "max": 175.60000000149012,
+          "over50": 2,
+          "over100": 2,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle",
+            "chest-charge",
+            "loot-7"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+        },
+        {
+          "section": "frames",
+          "index": 6,
+          "version": "5.12.0",
+          "scene": "eternal-open",
+          "width": 1366,
+          "height": 768,
+          "effects": "full",
+          "frames": 235,
+          "actualWindowMs": 4211.80000000447,
+          "overrunMs": 11.800000004470348,
+          "p50": 16.69999999552965,
+          "p95": 18.5,
+          "p99": 22.299999997019768,
+          "max": 322.70000000298023,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle",
+            "chest-charge",
+            "loot-7"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+        },
+        {
+          "section": "frames",
+          "index": 7,
+          "version": "5.12.0",
+          "scene": "eternal-open",
+          "width": 1366,
+          "height": 768,
+          "effects": "low",
+          "frames": 193,
+          "actualWindowMs": 4205.30000000447,
+          "overrunMs": 5.300000004470348,
+          "p50": 16.69999999552965,
+          "p95": 17.399999998509884,
+          "p99": 22.399999998509884,
+          "max": 1033.7000000029802,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+        },
+        {
+          "section": "frames",
+          "index": 8,
+          "version": "5.11.0",
+          "scene": "eternal-open",
+          "width": 1366,
+          "height": 768,
+          "effects": "low",
+          "frames": 222,
+          "actualWindowMs": 4211.10000000149,
+          "overrunMs": 11.100000001490116,
+          "p50": 16.69999999552965,
+          "p95": 17.200000002980232,
+          "p99": 19.399999998509884,
+          "max": 547.5,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+        },
+        {
+          "section": "frames",
+          "index": 9,
+          "version": "5.11.0",
+          "scene": "boss-burst",
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "frames": 24,
+          "actualWindowMs": 4207.69999999553,
+          "overrunMs": 7.699999995529652,
+          "p50": 16.399999998509884,
+          "p95": 28.899999998509884,
+          "p99": 29.399999998509884,
+          "max": 3842.2999999970198,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle",
+            "dice-only",
+            "combat"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        {
+          "section": "frames",
+          "index": 10,
+          "version": "5.12.0",
+          "scene": "boss-burst",
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "frames": 33,
+          "actualWindowMs": 4210.10000000149,
+          "overrunMs": 10.100000001490116,
+          "p50": 16.69999999552965,
+          "p95": 26.30000000447035,
+          "p99": 44.19999999552965,
+          "max": 3665,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle",
+            "dice-only",
+            "combat"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        {
+          "section": "frames",
+          "index": 11,
+          "version": "5.12.0",
+          "scene": "boss-burst",
+          "width": 1920,
+          "height": 1080,
+          "effects": "low",
+          "frames": 146,
+          "actualWindowMs": 4206.70000000298,
+          "overrunMs": 6.700000002980232,
+          "p50": 16.69999999552965,
+          "p95": 18.200000002980232,
+          "p99": 32.600000001490116,
+          "max": 1801.5,
+          "over50": 2,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        {
+          "section": "frames",
+          "index": 12,
+          "version": "5.11.0",
+          "scene": "boss-burst",
+          "width": 1920,
+          "height": 1080,
+          "effects": "low",
+          "frames": 165,
+          "actualWindowMs": 4211.19999999553,
+          "overrunMs": 11.199999995529652,
+          "p50": 16.69999999552965,
+          "p95": 17.200000002980232,
+          "p99": 28.399999998509884,
+          "max": 1501.3999999985099,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        {
+          "section": "frames",
+          "index": 13,
+          "version": "5.11.0",
+          "scene": "eternal-open",
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "frames": 219,
+          "actualWindowMs": 4210.29999999702,
+          "overrunMs": 10.299999997019768,
+          "p50": 16.69999999552965,
+          "p95": 18.900000005960464,
+          "p99": 21,
+          "max": 596.3999999985099,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle",
+            "chest-charge",
+            "loot-7"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+        },
+        {
+          "section": "frames",
+          "index": 14,
+          "version": "5.12.0",
+          "scene": "eternal-open",
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "frames": 184,
+          "actualWindowMs": 4211.89999999851,
+          "overrunMs": 11.899999998509884,
+          "p50": 16.69999999552965,
+          "p95": 19.600000001490116,
+          "p99": 23.400000005960464,
+          "max": 1168.3999999985099,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle",
+            "chest-charge",
+            "loot-7"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+        },
+        {
+          "section": "frames",
+          "index": 15,
+          "version": "5.12.0",
+          "scene": "eternal-open",
+          "width": 1920,
+          "height": 1080,
+          "effects": "low",
+          "frames": 94,
+          "actualWindowMs": 4207.9000000059605,
+          "overrunMs": 7.9000000059604645,
+          "p50": 16.69999999552965,
+          "p95": 20.19999999552965,
+          "p99": 32.80000000447035,
+          "max": 2679.4000000059605,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+        },
+        {
+          "section": "frames",
+          "index": 16,
+          "version": "5.11.0",
+          "scene": "eternal-open",
+          "width": 1920,
+          "height": 1080,
+          "effects": "low",
+          "frames": 155,
+          "actualWindowMs": 4211.60000000149,
+          "overrunMs": 11.600000001490116,
+          "p50": 16.69999999552965,
+          "p95": 17.5,
+          "p99": 21.100000001490116,
+          "max": 1658.1000000014901,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+        },
+        {
+          "section": "frames",
+          "index": 17,
+          "version": "5.11.0",
+          "scene": "boss-burst",
+          "width": 2560,
+          "height": 1440,
+          "effects": "full",
+          "frames": 11,
+          "actualWindowMs": 4866,
+          "overrunMs": 666,
+          "p50": 16.600000001490116,
+          "p95": 27.400000005960464,
+          "p99": 27.400000005960464,
+          "max": 4706.19999999553,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle",
+            "dice-only"
+          ],
+          "effectObserved": false,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        {
+          "section": "frames",
+          "index": 18,
+          "version": "5.12.0",
+          "scene": "boss-burst",
+          "width": 2560,
+          "height": 1440,
+          "effects": "full",
+          "frames": 12,
+          "actualWindowMs": 4627.69999999553,
+          "overrunMs": 427.69999999552965,
+          "p50": 16.399999998509884,
+          "p95": 27.700000002980232,
+          "p99": 27.700000002980232,
+          "max": 4456.29999999702,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle",
+            "dice-only"
+          ],
+          "effectObserved": false,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        {
+          "section": "frames",
+          "index": 19,
+          "version": "5.12.0",
+          "scene": "boss-burst",
+          "width": 2560,
+          "height": 1440,
+          "effects": "low",
+          "frames": 137,
+          "actualWindowMs": 4203.60000000149,
+          "overrunMs": 3.600000001490116,
+          "p50": 16.69999999552965,
+          "p95": 18,
+          "p99": 34.20000000298023,
+          "max": 1971.1000000014901,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        {
+          "section": "frames",
+          "index": 20,
+          "version": "5.11.0",
+          "scene": "boss-burst",
+          "width": 2560,
+          "height": 1440,
+          "effects": "low",
+          "frames": 146,
+          "actualWindowMs": 4200.79999999702,
+          "overrunMs": 0.7999999970197678,
+          "p50": 16.600000001490116,
+          "p95": 18.399999998509884,
+          "p99": 38.5,
+          "max": 1809.8999999985099,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        {
+          "section": "frames",
+          "index": 21,
+          "version": "5.11.0",
+          "scene": "eternal-open",
+          "width": 2560,
+          "height": 1440,
+          "effects": "full",
+          "frames": 192,
+          "actualWindowMs": 4206.79999999702,
+          "overrunMs": 6.799999997019768,
+          "p50": 16.69999999552965,
+          "p95": 20.400000005960464,
+          "p99": 29.200000002980232,
+          "max": 1037.6000000014901,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle",
+            "chest-charge",
+            "loot-7"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+        },
+        {
+          "section": "frames",
+          "index": 22,
+          "version": "5.12.0",
+          "scene": "eternal-open",
+          "width": 2560,
+          "height": 1440,
+          "effects": "full",
+          "frames": 63,
+          "actualWindowMs": 4215.39999999851,
+          "overrunMs": 15.399999998509884,
+          "p50": 16.69999999552965,
+          "p95": 20.400000005960464,
+          "p99": 21.799999997019768,
+          "max": 3220.60000000149,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle",
+            "chest-charge",
+            "loot-7"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+        },
+        {
+          "section": "frames",
+          "index": 23,
+          "version": "5.12.0",
+          "scene": "eternal-open",
+          "width": 2560,
+          "height": 1440,
+          "effects": "low",
+          "frames": 26,
+          "actualWindowMs": 4433.29999999702,
+          "overrunMs": 233.29999999701977,
+          "p50": 16.799999997019768,
+          "p95": 23.30000000447035,
+          "p99": 38.30000000447035,
+          "max": 4023.7999999970198,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+        },
+        {
+          "section": "frames",
+          "index": 24,
+          "version": "5.11.0",
+          "scene": "eternal-open",
+          "width": 2560,
+          "height": 1440,
+          "effects": "low",
+          "frames": 123,
+          "actualWindowMs": 4202.5999999940395,
+          "overrunMs": 2.5999999940395355,
+          "p50": 16.600000001490116,
+          "p95": 18,
+          "p99": 31,
+          "max": 2177.39999999851,
+          "over50": 2,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+        },
+        {
+          "section": "frames",
+          "index": 25,
+          "version": "5.11.0",
+          "scene": "boss-burst",
+          "width": 3840,
+          "height": 2160,
+          "effects": "full",
+          "frames": 11,
+          "actualWindowMs": 9897.70000000298,
+          "overrunMs": 5697.70000000298,
+          "p50": 16,
+          "p95": 24.80000000447035,
+          "p99": 24.80000000447035,
+          "max": 9748.70000000298,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle",
+            "dice-only"
+          ],
+          "effectObserved": false,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        {
+          "section": "frames",
+          "index": 26,
+          "version": "5.12.0",
+          "scene": "boss-burst",
+          "width": 3840,
+          "height": 2160,
+          "effects": "full",
+          "frames": 14,
+          "actualWindowMs": 5483.89999999851,
+          "overrunMs": 1283.8999999985099,
+          "p50": 16.600000001490116,
+          "p95": 27.100000001490116,
+          "p99": 27.100000001490116,
+          "max": 5277.19999999553,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle",
+            "dice-only"
+          ],
+          "effectObserved": false,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        {
+          "section": "frames",
+          "index": 27,
+          "version": "5.12.0",
+          "scene": "boss-burst",
+          "width": 3840,
+          "height": 2160,
+          "effects": "low",
+          "frames": 24,
+          "actualWindowMs": 5830.70000000298,
+          "overrunMs": 1630.7000000029802,
+          "p50": 16.5,
+          "p95": 29,
+          "p99": 51.600000001490116,
+          "max": 5444.70000000298,
+          "over50": 2,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        {
+          "section": "frames",
+          "index": 28,
+          "version": "5.11.0",
+          "scene": "boss-burst",
+          "width": 3840,
+          "height": 2160,
+          "effects": "low",
+          "frames": 32,
+          "actualWindowMs": 4896.80000000447,
+          "overrunMs": 696.8000000044703,
+          "p50": 16.5,
+          "p95": 38.70000000298023,
+          "p99": 51.600000001490116,
+          "max": 4358.10000000149,
+          "over50": 2,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        {
+          "section": "frames",
+          "index": 29,
+          "version": "5.11.0",
+          "scene": "eternal-open",
+          "width": 3840,
+          "height": 2160,
+          "effects": "full",
+          "frames": 73,
+          "actualWindowMs": 4211.5,
+          "overrunMs": 11.5,
+          "p50": 16.69999999552965,
+          "p95": 23.600000001490116,
+          "p99": 26.69999999552965,
+          "max": 3005.8000000044703,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle",
+            "chest-charge",
+            "loot-7"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+        },
+        {
+          "section": "frames",
+          "index": 30,
+          "version": "5.12.0",
+          "scene": "eternal-open",
+          "width": 3840,
+          "height": 2160,
+          "effects": "full",
+          "frames": 28,
+          "actualWindowMs": 9422.89999999851,
+          "overrunMs": 5222.89999999851,
+          "p50": 16.700000002980232,
+          "p95": 24.899999998509884,
+          "p99": 25,
+          "max": 8993.39999999851,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle",
+            "chest-charge"
+          ],
+          "effectObserved": false,
+          "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+        },
+        {
+          "section": "frames",
+          "index": 31,
+          "version": "5.12.0",
+          "scene": "eternal-open",
+          "width": 3840,
+          "height": 2160,
+          "effects": "low",
+          "frames": 32,
+          "actualWindowMs": 7452.5,
+          "overrunMs": 3252.5,
+          "p50": 16.69999999552965,
+          "p95": 27.200000002980232,
+          "p99": 37.69999999552965,
+          "max": 6938.29999999702,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+        },
+        {
+          "section": "frames",
+          "index": 32,
+          "version": "5.11.0",
+          "scene": "eternal-open",
+          "width": 3840,
+          "height": 2160,
+          "effects": "low",
+          "frames": 29,
+          "actualWindowMs": 5446.20000000298,
+          "overrunMs": 1246.2000000029802,
+          "p50": 16.600000001490116,
+          "p95": 30.599999994039536,
+          "p99": 44.5,
+          "max": 4996.70000000298,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+        },
+        {
+          "section": "coverage",
+          "index": 1,
+          "version": "5.11.0",
+          "scene": "rarity-0-open",
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "frames": 78,
+          "actualWindowMs": 4207.4000000059605,
+          "overrunMs": 7.4000000059604645,
+          "p50": 16.69999999552965,
+          "p95": 21.200000002980232,
+          "p99": 58.099999994039536,
+          "max": 2892.2000000029802,
+          "over50": 2,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle",
+            "chest-charge",
+            "loot-0"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "62f4bfe70b47c2d87f6c49c774c38e5c3fa0d3fc0beaecb9c84f40aa9c487c04"
+        },
+        {
+          "section": "coverage",
+          "index": 2,
+          "version": "5.12.0",
+          "scene": "rarity-0-open",
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "frames": 149,
+          "actualWindowMs": 4214,
+          "overrunMs": 14,
+          "p50": 16.69999999552965,
+          "p95": 20.30000000447035,
+          "p99": 21.200000002980232,
+          "max": 1762.7000000029802,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle",
+            "chest-charge",
+            "loot-0"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "62f4bfe70b47c2d87f6c49c774c38e5c3fa0d3fc0beaecb9c84f40aa9c487c04"
+        },
+        {
+          "section": "coverage",
+          "index": 3,
+          "version": "5.12.0",
+          "scene": "rarity-1-open",
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "frames": 230,
+          "actualWindowMs": 4213.79999999702,
+          "overrunMs": 13.799999997019768,
+          "p50": 16.69999999552965,
+          "p95": 19,
+          "p99": 21.80000000447035,
+          "max": 379.09999999403954,
+          "over50": 2,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle",
+            "chest-charge",
+            "loot-1"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "422376f30bbe4675c7c03287040b447a4ed7a5e61e38a77037de1d7323cc7074"
+        },
+        {
+          "section": "coverage",
+          "index": 4,
+          "version": "5.11.0",
+          "scene": "rarity-1-open",
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "frames": 217,
+          "actualWindowMs": 4210.5,
+          "overrunMs": 10.5,
+          "p50": 16.69999999552965,
+          "p95": 20.600000001490116,
+          "p99": 21,
+          "max": 620.3999999985099,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle",
+            "chest-charge",
+            "loot-1"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "422376f30bbe4675c7c03287040b447a4ed7a5e61e38a77037de1d7323cc7074"
+        },
+        {
+          "section": "coverage",
+          "index": 5,
+          "version": "5.11.0",
+          "scene": "rarity-2-open",
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "frames": 212,
+          "actualWindowMs": 4211,
+          "overrunMs": 11,
+          "p50": 16.69999999552965,
+          "p95": 20.799999997019768,
+          "p99": 21.80000000447035,
+          "max": 714,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle",
+            "chest-charge",
+            "loot-2"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "57d27e609340c9c8a79c0ecec9c907bbb95c95c03fa2f508cb68a2f5d9efdf31"
+        },
+        {
+          "section": "coverage",
+          "index": 6,
+          "version": "5.12.0",
+          "scene": "rarity-2-open",
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "frames": 220,
+          "actualWindowMs": 4209.70000000298,
+          "overrunMs": 9.700000002980232,
+          "p50": 16.69999999552965,
+          "p95": 19.799999997019768,
+          "p99": 21.399999998509884,
+          "max": 580.2000000029802,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle",
+            "chest-charge",
+            "loot-2"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "57d27e609340c9c8a79c0ecec9c907bbb95c95c03fa2f508cb68a2f5d9efdf31"
+        },
+        {
+          "section": "coverage",
+          "index": 7,
+          "version": "5.12.0",
+          "scene": "rarity-3-open",
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "frames": 233,
+          "actualWindowMs": 4216.20000000298,
+          "overrunMs": 16.200000002980232,
+          "p50": 16.69999999552965,
+          "p95": 21.5,
+          "p99": 21.80000000447035,
+          "max": 367.20000000298023,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle",
+            "chest-charge",
+            "loot-3"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "92b749acd97feae954a379333546e959034ecfcd30a4b6a4fe9511da85386d77"
+        },
+        {
+          "section": "coverage",
+          "index": 8,
+          "version": "5.11.0",
+          "scene": "rarity-3-open",
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "frames": 176,
+          "actualWindowMs": 4208.70000000298,
+          "overrunMs": 8.700000002980232,
+          "p50": 16.69999999552965,
+          "p95": 21.80000000447035,
+          "p99": 29.100000001490116,
+          "max": 1282.1000000014901,
+          "over50": 2,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle",
+            "chest-charge",
+            "loot-3"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "92b749acd97feae954a379333546e959034ecfcd30a4b6a4fe9511da85386d77"
+        },
+        {
+          "section": "coverage",
+          "index": 9,
+          "version": "5.11.0",
+          "scene": "rarity-4-open",
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "frames": 150,
+          "actualWindowMs": 4207,
+          "overrunMs": 7,
+          "p50": 16.69999999552965,
+          "p95": 21.799999997019768,
+          "p99": 22.100000001490116,
+          "max": 1751.5999999940395,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle",
+            "chest-charge",
+            "loot-4"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "0a864bd161d5e0036cadac3f057c9093ef57235979e4e1d5e4047965c5cf9a12"
+        },
+        {
+          "section": "coverage",
+          "index": 10,
+          "version": "5.12.0",
+          "scene": "rarity-4-open",
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "frames": 130,
+          "actualWindowMs": 4210,
+          "overrunMs": 10,
+          "p50": 16.69999999552965,
+          "p95": 20.400000005960464,
+          "p99": 22.30000000447035,
+          "max": 2074.89999999851,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle",
+            "chest-charge",
+            "loot-4"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "0a864bd161d5e0036cadac3f057c9093ef57235979e4e1d5e4047965c5cf9a12"
+        },
+        {
+          "section": "coverage",
+          "index": 11,
+          "version": "5.12.0",
+          "scene": "rarity-5-open",
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "frames": 163,
+          "actualWindowMs": 4216.20000000298,
+          "overrunMs": 16.200000002980232,
+          "p50": 16.69999999552965,
+          "p95": 22.19999999552965,
+          "p99": 22.799999997019768,
+          "max": 1532.1999999955297,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle",
+            "chest-charge",
+            "loot-5"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "02319729faaad67a51d426749c992ca8387b7ebab033969ec683f0d1489f73ab"
+        },
+        {
+          "section": "coverage",
+          "index": 12,
+          "version": "5.11.0",
+          "scene": "rarity-5-open",
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "frames": 144,
+          "actualWindowMs": 4207.89999999851,
+          "overrunMs": 7.899999998509884,
+          "p50": 16.69999999552965,
+          "p95": 19.599999994039536,
+          "p99": 22.5,
+          "max": 1827.2000000029802,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle",
+            "chest-charge",
+            "loot-5"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "02319729faaad67a51d426749c992ca8387b7ebab033969ec683f0d1489f73ab"
+        },
+        {
+          "section": "coverage",
+          "index": 13,
+          "version": "5.11.0",
+          "scene": "rarity-6-open",
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "frames": 181,
+          "actualWindowMs": 4212.69999999553,
+          "overrunMs": 12.699999995529652,
+          "p50": 16.69999999552965,
+          "p95": 22.600000001490116,
+          "p99": 27,
+          "max": 1177.8000000044703,
+          "over50": 2,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle",
+            "chest-charge",
+            "loot-6"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "9a938c76d2d3ee8f7fd6d1f0738a0aff356f296b321a54d2329a989368502f89"
+        },
+        {
+          "section": "coverage",
+          "index": 14,
+          "version": "5.12.0",
+          "scene": "rarity-6-open",
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "frames": 168,
+          "actualWindowMs": 4212.70000000298,
+          "overrunMs": 12.700000002980232,
+          "p50": 16.69999999552965,
+          "p95": 20.30000000447035,
+          "p99": 23.099999994039536,
+          "max": 1445.6000000014901,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle",
+            "chest-charge",
+            "loot-6"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "9a938c76d2d3ee8f7fd6d1f0738a0aff356f296b321a54d2329a989368502f89"
+        }
+      ],
+      "slowRafSamples": [
+        {
+          "section": "frames",
+          "window": 1,
+          "version": "5.11.0",
+          "scene": "boss-burst",
+          "width": 1366,
+          "height": 768,
+          "effects": "full",
+          "sample": 27,
+          "startOffsetMs": 446.1000000014901,
+          "durationMs": 121.5
+        },
+        {
+          "section": "frames",
+          "window": 1,
+          "version": "5.11.0",
+          "scene": "boss-burst",
+          "width": 1366,
+          "height": 768,
+          "effects": "full",
+          "sample": 77,
+          "startOffsetMs": 1415.3999999985099,
+          "durationMs": 53.20000000298023
+        },
+        {
+          "section": "frames",
+          "window": 2,
+          "version": "5.12.0",
+          "scene": "boss-burst",
+          "width": 1366,
+          "height": 768,
+          "effects": "full",
+          "sample": 26,
+          "startOffsetMs": 427.5,
+          "durationMs": 207.59999999403954
+        },
+        {
+          "section": "frames",
+          "window": 2,
+          "version": "5.12.0",
+          "scene": "boss-burst",
+          "width": 1366,
+          "height": 768,
+          "effects": "full",
+          "sample": 27,
+          "startOffsetMs": 635.0999999940395,
+          "durationMs": 383.1000000014901
+        },
+        {
+          "section": "frames",
+          "window": 3,
+          "version": "5.12.0",
+          "scene": "boss-burst",
+          "width": 1366,
+          "height": 768,
+          "effects": "low",
+          "sample": 32,
+          "startOffsetMs": 521.6999999955297,
+          "durationMs": 685.3000000044703
+        },
+        {
+          "section": "frames",
+          "window": 4,
+          "version": "5.11.0",
+          "scene": "boss-burst",
+          "width": 1366,
+          "height": 768,
+          "effects": "low",
+          "sample": 35,
+          "startOffsetMs": 562.0999999940395,
+          "durationMs": 523.9000000059605
+        },
+        {
+          "section": "frames",
+          "window": 5,
+          "version": "5.11.0",
+          "scene": "eternal-open",
+          "width": 1366,
+          "height": 768,
+          "effects": "full",
+          "sample": 32,
+          "startOffsetMs": 528.7000000029802,
+          "durationMs": 175.60000000149012
+        },
+        {
+          "section": "frames",
+          "window": 5,
+          "version": "5.11.0",
+          "scene": "eternal-open",
+          "width": 1366,
+          "height": 768,
+          "effects": "full",
+          "sample": 78,
+          "startOffsetMs": 1428.9000000059605,
+          "durationMs": 151.5
+        },
+        {
+          "section": "frames",
+          "window": 6,
+          "version": "5.12.0",
+          "scene": "eternal-open",
+          "width": 1366,
+          "height": 768,
+          "effects": "full",
+          "sample": 35,
+          "startOffsetMs": 562.7000000029802,
+          "durationMs": 322.70000000298023
+        },
+        {
+          "section": "frames",
+          "window": 7,
+          "version": "5.12.0",
+          "scene": "eternal-open",
+          "width": 1366,
+          "height": 768,
+          "effects": "low",
+          "sample": 37,
+          "startOffsetMs": 588.7000000029802,
+          "durationMs": 1033.7000000029802
+        },
+        {
+          "section": "frames",
+          "window": 8,
+          "version": "5.11.0",
+          "scene": "eternal-open",
+          "width": 1366,
+          "height": 768,
+          "effects": "low",
+          "sample": 36,
+          "startOffsetMs": 577.7000000029802,
+          "durationMs": 547.5
+        },
+        {
+          "section": "frames",
+          "window": 9,
+          "version": "5.11.0",
+          "scene": "boss-burst",
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "sample": 13,
+          "startOffsetMs": 191.39999999850988,
+          "durationMs": 3842.2999999970198
+        },
+        {
+          "section": "frames",
+          "window": 10,
+          "version": "5.12.0",
+          "scene": "boss-burst",
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "sample": 11,
+          "startOffsetMs": 160.29999999701977,
+          "durationMs": 3665
+        },
+        {
+          "section": "frames",
+          "window": 11,
+          "version": "5.12.0",
+          "scene": "boss-burst",
+          "width": 1920,
+          "height": 1080,
+          "effects": "low",
+          "sample": 8,
+          "startOffsetMs": 108.30000000447035,
+          "durationMs": 50.5
+        },
+        {
+          "section": "frames",
+          "window": 11,
+          "version": "5.12.0",
+          "scene": "boss-burst",
+          "width": 1920,
+          "height": 1080,
+          "effects": "low",
+          "sample": 34,
+          "startOffsetMs": 556.8999999985099,
+          "durationMs": 1801.5
+        },
+        {
+          "section": "frames",
+          "window": 12,
+          "version": "5.11.0",
+          "scene": "boss-burst",
+          "width": 1920,
+          "height": 1080,
+          "effects": "low",
+          "sample": 34,
+          "startOffsetMs": 544.7999999970198,
+          "durationMs": 1501.3999999985099
+        },
+        {
+          "section": "frames",
+          "window": 13,
+          "version": "5.11.0",
+          "scene": "eternal-open",
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "sample": 37,
+          "startOffsetMs": 593.7999999970198,
+          "durationMs": 596.3999999985099
+        },
+        {
+          "section": "frames",
+          "window": 14,
+          "version": "5.12.0",
+          "scene": "eternal-open",
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "sample": 37,
+          "startOffsetMs": 595.5,
+          "durationMs": 1168.3999999985099
+        },
+        {
+          "section": "frames",
+          "window": 15,
+          "version": "5.12.0",
+          "scene": "eternal-open",
+          "width": 1920,
+          "height": 1080,
+          "effects": "low",
+          "sample": 31,
+          "startOffsetMs": 491.5,
+          "durationMs": 2679.4000000059605
+        },
+        {
+          "section": "frames",
+          "window": 16,
+          "version": "5.11.0",
+          "scene": "eternal-open",
+          "width": 1920,
+          "height": 1080,
+          "effects": "low",
+          "sample": 35,
+          "startOffsetMs": 561.6000000014901,
+          "durationMs": 1658.1000000014901
+        },
+        {
+          "section": "frames",
+          "window": 17,
+          "version": "5.11.0",
+          "scene": "boss-burst",
+          "width": 2560,
+          "height": 1440,
+          "effects": "full",
+          "sample": 11,
+          "startOffsetMs": 159.80000000447035,
+          "durationMs": 4706.19999999553
+        },
+        {
+          "section": "frames",
+          "window": 18,
+          "version": "5.12.0",
+          "scene": "boss-burst",
+          "width": 2560,
+          "height": 1440,
+          "effects": "full",
+          "sample": 12,
+          "startOffsetMs": 171.39999999850988,
+          "durationMs": 4456.29999999702
+        },
+        {
+          "section": "frames",
+          "window": 19,
+          "version": "5.12.0",
+          "scene": "boss-burst",
+          "width": 2560,
+          "height": 1440,
+          "effects": "low",
+          "sample": 33,
+          "startOffsetMs": 520.5,
+          "durationMs": 1971.1000000014901
+        },
+        {
+          "section": "frames",
+          "window": 20,
+          "version": "5.11.0",
+          "scene": "boss-burst",
+          "width": 2560,
+          "height": 1440,
+          "effects": "low",
+          "sample": 36,
+          "startOffsetMs": 567.6000000014901,
+          "durationMs": 1809.8999999985099
+        },
+        {
+          "section": "frames",
+          "window": 21,
+          "version": "5.11.0",
+          "scene": "eternal-open",
+          "width": 2560,
+          "height": 1440,
+          "effects": "full",
+          "sample": 36,
+          "startOffsetMs": 573.6999999955297,
+          "durationMs": 1037.6000000014901
+        },
+        {
+          "section": "frames",
+          "window": 22,
+          "version": "5.12.0",
+          "scene": "eternal-open",
+          "width": 2560,
+          "height": 1440,
+          "effects": "full",
+          "sample": 33,
+          "startOffsetMs": 514.0999999940395,
+          "durationMs": 3220.60000000149
+        },
+        {
+          "section": "frames",
+          "window": 23,
+          "version": "5.12.0",
+          "scene": "eternal-open",
+          "width": 2560,
+          "height": 1440,
+          "effects": "low",
+          "sample": 26,
+          "startOffsetMs": 409.5,
+          "durationMs": 4023.7999999970198
+        },
+        {
+          "section": "frames",
+          "window": 24,
+          "version": "5.11.0",
+          "scene": "eternal-open",
+          "width": 2560,
+          "height": 1440,
+          "effects": "low",
+          "sample": 7,
+          "startOffsetMs": 86,
+          "durationMs": 53.29999999701977
+        },
+        {
+          "section": "frames",
+          "window": 24,
+          "version": "5.11.0",
+          "scene": "eternal-open",
+          "width": 2560,
+          "height": 1440,
+          "effects": "low",
+          "sample": 35,
+          "startOffsetMs": 569.8999999985099,
+          "durationMs": 2177.39999999851
+        },
+        {
+          "section": "frames",
+          "window": 25,
+          "version": "5.11.0",
+          "scene": "boss-burst",
+          "width": 3840,
+          "height": 2160,
+          "effects": "full",
+          "sample": 11,
+          "startOffsetMs": 149,
+          "durationMs": 9748.70000000298
+        },
+        {
+          "section": "frames",
+          "window": 26,
+          "version": "5.12.0",
+          "scene": "boss-burst",
+          "width": 3840,
+          "height": 2160,
+          "effects": "full",
+          "sample": 14,
+          "startOffsetMs": 206.70000000298023,
+          "durationMs": 5277.19999999553
+        },
+        {
+          "section": "frames",
+          "window": 27,
+          "version": "5.12.0",
+          "scene": "boss-burst",
+          "width": 3840,
+          "height": 2160,
+          "effects": "low",
+          "sample": 8,
+          "startOffsetMs": 103.29999999701977,
+          "durationMs": 51.600000001490116
+        },
+        {
+          "section": "frames",
+          "window": 27,
+          "version": "5.12.0",
+          "scene": "boss-burst",
+          "width": 3840,
+          "height": 2160,
+          "effects": "low",
+          "sample": 24,
+          "startOffsetMs": 386,
+          "durationMs": 5444.70000000298
+        },
+        {
+          "section": "frames",
+          "window": 28,
+          "version": "5.11.0",
+          "scene": "boss-burst",
+          "width": 3840,
+          "height": 2160,
+          "effects": "low",
+          "sample": 9,
+          "startOffsetMs": 121.70000000298023,
+          "durationMs": 51.600000001490116
+        },
+        {
+          "section": "frames",
+          "window": 28,
+          "version": "5.11.0",
+          "scene": "boss-burst",
+          "width": 3840,
+          "height": 2160,
+          "effects": "low",
+          "sample": 32,
+          "startOffsetMs": 538.7000000029802,
+          "durationMs": 4358.10000000149
+        },
+        {
+          "section": "frames",
+          "window": 29,
+          "version": "5.11.0",
+          "scene": "eternal-open",
+          "width": 3840,
+          "height": 2160,
+          "effects": "full",
+          "sample": 31,
+          "startOffsetMs": 511.5,
+          "durationMs": 3005.8000000044703
+        },
+        {
+          "section": "frames",
+          "window": 30,
+          "version": "5.12.0",
+          "scene": "eternal-open",
+          "width": 3840,
+          "height": 2160,
+          "effects": "full",
+          "sample": 28,
+          "startOffsetMs": 429.5,
+          "durationMs": 8993.39999999851
+        },
+        {
+          "section": "frames",
+          "window": 31,
+          "version": "5.12.0",
+          "scene": "eternal-open",
+          "width": 3840,
+          "height": 2160,
+          "effects": "low",
+          "sample": 32,
+          "startOffsetMs": 514.2000000029802,
+          "durationMs": 6938.29999999702
+        },
+        {
+          "section": "frames",
+          "window": 32,
+          "version": "5.11.0",
+          "scene": "eternal-open",
+          "width": 3840,
+          "height": 2160,
+          "effects": "low",
+          "sample": 29,
+          "startOffsetMs": 449.5,
+          "durationMs": 4996.70000000298
+        },
+        {
+          "section": "coverage",
+          "window": 1,
+          "version": "5.11.0",
+          "scene": "rarity-0-open",
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "sample": 35,
+          "startOffsetMs": 557.6000000014901,
+          "durationMs": 2892.2000000029802
+        },
+        {
+          "section": "coverage",
+          "window": 1,
+          "version": "5.11.0",
+          "scene": "rarity-0-open",
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "sample": 40,
+          "startOffsetMs": 3518.4000000059605,
+          "durationMs": 58.099999994039536
+        },
+        {
+          "section": "coverage",
+          "window": 2,
+          "version": "5.12.0",
+          "scene": "rarity-0-open",
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "sample": 33,
+          "startOffsetMs": 527,
+          "durationMs": 1762.7000000029802
+        },
+        {
+          "section": "coverage",
+          "window": 3,
+          "version": "5.12.0",
+          "scene": "rarity-1-open",
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "sample": 38,
+          "startOffsetMs": 598,
+          "durationMs": 379.09999999403954
+        },
+        {
+          "section": "coverage",
+          "window": 3,
+          "version": "5.12.0",
+          "scene": "rarity-1-open",
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "sample": 100,
+          "startOffsetMs": 1980.7999999970198,
+          "durationMs": 80.5
+        },
+        {
+          "section": "coverage",
+          "window": 4,
+          "version": "5.11.0",
+          "scene": "rarity-1-open",
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "sample": 34,
+          "startOffsetMs": 544.3000000044703,
+          "durationMs": 620.3999999985099
+        },
+        {
+          "section": "coverage",
+          "window": 5,
+          "version": "5.11.0",
+          "scene": "rarity-2-open",
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "sample": 31,
+          "startOffsetMs": 495.5,
+          "durationMs": 714
+        },
+        {
+          "section": "coverage",
+          "window": 6,
+          "version": "5.12.0",
+          "scene": "rarity-2-open",
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "sample": 36,
+          "startOffsetMs": 576.8999999985099,
+          "durationMs": 580.2000000029802
+        },
+        {
+          "section": "coverage",
+          "window": 7,
+          "version": "5.12.0",
+          "scene": "rarity-3-open",
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "sample": 38,
+          "startOffsetMs": 600.5,
+          "durationMs": 367.20000000298023
+        },
+        {
+          "section": "coverage",
+          "window": 8,
+          "version": "5.11.0",
+          "scene": "rarity-3-open",
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "sample": 34,
+          "startOffsetMs": 542.1000000014901,
+          "durationMs": 1282.1000000014901
+        },
+        {
+          "section": "coverage",
+          "window": 8,
+          "version": "5.11.0",
+          "scene": "rarity-3-open",
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "sample": 38,
+          "startOffsetMs": 1861,
+          "durationMs": 55
+        },
+        {
+          "section": "coverage",
+          "window": 9,
+          "version": "5.11.0",
+          "scene": "rarity-4-open",
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "sample": 32,
+          "startOffsetMs": 492.6000000014901,
+          "durationMs": 1751.5999999940395
+        },
+        {
+          "section": "coverage",
+          "window": 10,
+          "version": "5.12.0",
+          "scene": "rarity-4-open",
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "sample": 37,
+          "startOffsetMs": 595.3000000044703,
+          "durationMs": 2074.89999999851
+        },
+        {
+          "section": "coverage",
+          "window": 11,
+          "version": "5.12.0",
+          "scene": "rarity-5-open",
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "sample": 35,
+          "startOffsetMs": 561.8000000044703,
+          "durationMs": 1532.1999999955297
+        },
+        {
+          "section": "coverage",
+          "window": 12,
+          "version": "5.11.0",
+          "scene": "rarity-5-open",
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "sample": 39,
+          "startOffsetMs": 623.6000000014901,
+          "durationMs": 1827.2000000029802
+        },
+        {
+          "section": "coverage",
+          "window": 13,
+          "version": "5.11.0",
+          "scene": "rarity-6-open",
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "sample": 10,
+          "startOffsetMs": 146.10000000149012,
+          "durationMs": 54.69999999552965
+        },
+        {
+          "section": "coverage",
+          "window": 13,
+          "version": "5.11.0",
+          "scene": "rarity-6-open",
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "sample": 31,
+          "startOffsetMs": 530.7999999970198,
+          "durationMs": 1177.8000000044703
+        },
+        {
+          "section": "coverage",
+          "window": 14,
+          "version": "5.12.0",
+          "scene": "rarity-6-open",
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "sample": 38,
+          "startOffsetMs": 612.8999999985099,
+          "durationMs": 1445.6000000014901
+        }
+      ],
+      "missingEffects": [
+        {
+          "section": "frames",
+          "index": 17,
+          "version": "5.11.0",
+          "scene": "boss-burst",
+          "width": 2560,
+          "height": 1440,
+          "effects": "full",
+          "frames": 11,
+          "actualWindowMs": 4866,
+          "overrunMs": 666,
+          "p50": 16.600000001490116,
+          "p95": 27.400000005960464,
+          "p99": 27.400000005960464,
+          "max": 4706.19999999553,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle",
+            "dice-only"
+          ],
+          "effectObserved": false,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        {
+          "section": "frames",
+          "index": 18,
+          "version": "5.12.0",
+          "scene": "boss-burst",
+          "width": 2560,
+          "height": 1440,
+          "effects": "full",
+          "frames": 12,
+          "actualWindowMs": 4627.69999999553,
+          "overrunMs": 427.69999999552965,
+          "p50": 16.399999998509884,
+          "p95": 27.700000002980232,
+          "p99": 27.700000002980232,
+          "max": 4456.29999999702,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle",
+            "dice-only"
+          ],
+          "effectObserved": false,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        {
+          "section": "frames",
+          "index": 25,
+          "version": "5.11.0",
+          "scene": "boss-burst",
+          "width": 3840,
+          "height": 2160,
+          "effects": "full",
+          "frames": 11,
+          "actualWindowMs": 9897.70000000298,
+          "overrunMs": 5697.70000000298,
+          "p50": 16,
+          "p95": 24.80000000447035,
+          "p99": 24.80000000447035,
+          "max": 9748.70000000298,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle",
+            "dice-only"
+          ],
+          "effectObserved": false,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        {
+          "section": "frames",
+          "index": 26,
+          "version": "5.12.0",
+          "scene": "boss-burst",
+          "width": 3840,
+          "height": 2160,
+          "effects": "full",
+          "frames": 14,
+          "actualWindowMs": 5483.89999999851,
+          "overrunMs": 1283.8999999985099,
+          "p50": 16.600000001490116,
+          "p95": 27.100000001490116,
+          "p99": 27.100000001490116,
+          "max": 5277.19999999553,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle",
+            "dice-only"
+          ],
+          "effectObserved": false,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        {
+          "section": "frames",
+          "index": 30,
+          "version": "5.12.0",
+          "scene": "eternal-open",
+          "width": 3840,
+          "height": 2160,
+          "effects": "full",
+          "frames": 28,
+          "actualWindowMs": 9422.89999999851,
+          "overrunMs": 5222.89999999851,
+          "p50": 16.700000002980232,
+          "p95": 24.899999998509884,
+          "p99": 25,
+          "max": 8993.39999999851,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle",
+            "chest-charge"
+          ],
+          "effectObserved": false,
+          "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+        }
+      ],
+      "sourceIdentity": {
+        "5.11.0": {
+          "root": "/workspace/scratch/16b883e72bb3/baseline/Dice-Abyss",
+          "localFiles": 46,
+          "runtimePresent": 42,
+          "runtimeAbsent": 3,
+          "package404": 1,
+          "release": "5.11.0",
+          "documentUrl": "http://127.0.0.1:4188/",
+          "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+        },
+        "5.12.0": {
+          "root": "/workspace/scratch/16b883e72bb3/work/Dice-Abyss",
+          "localFiles": 46,
+          "runtimePresent": 45,
+          "runtimeAbsent": 0,
+          "package404": 1,
+          "release": "5.12.0",
+          "documentUrl": "http://127.0.0.1:4189/",
+          "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+        }
+      },
+      "dom": {
+        "byVersion": {
+          "5.11.0": {
+            "cardsSha256": "0bff297d9c1e32bc76302dc84ce0e383702ac4456e330f010feb2e79c3319727",
+            "cardBytes": 83779,
+            "gameHtmlSha256": "605ed0d79634ff24e1ad16170852aedee17972178edc8f064ad890c0cd19e866",
+            "gameHtmlBytes": 99688,
+            "fullStateSha256": "81651ee106fc3033a2b0362328da887670562f378eb44436dd4cc915a6e53b7b",
+            "rawSaveSha256": "f60066f0e55853c6053e66134a84a5d831ca552595ad463ce51273d79f4aee2f",
+            "cardStatesSha256": "27ca76ba395a6d031ab5afda454684d50c2d9a56aeb0e8f10aca1d270b6b1d11",
+            "completeItemStatesSha256": "7594f6ee9d409120e27fef5c91d8ef509da5a67ef2c3b8b03369cf2b23bf39fd"
+          },
+          "5.12.0": {
+            "cardsSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+            "cardBytes": 92909,
+            "gameHtmlSha256": "74fd1510292a50bad69a0bda933c291a9edc3c71ab46c30e0e0ab42504d52034",
+            "gameHtmlBytes": 108818,
+            "fullStateSha256": "81651ee106fc3033a2b0362328da887670562f378eb44436dd4cc915a6e53b7b",
+            "rawSaveSha256": "f60066f0e55853c6053e66134a84a5d831ca552595ad463ce51273d79f4aee2f",
+            "cardStatesSha256": "27ca76ba395a6d031ab5afda454684d50c2d9a56aeb0e8f10aca1d270b6b1d11",
+            "completeItemStatesSha256": "7594f6ee9d409120e27fef5c91d8ef509da5a67ef2c3b8b03369cf2b23bf39fd"
+          }
+        },
+        "cardsCompared": 60,
+        "cardsChanged": 55,
+        "cardBytesAdded": 9130
+      },
+      "currentSlowerPairs": 8,
+      "currentFasterPairs": 4,
+      "retainedRafIntervals": 6204,
+      "retainedObservedLongTasks": 2,
+      "expectedLimitations": {
+        "fewerThanThreeMainRepeats": true,
+        "unobservedFullEffectWindows": 5,
+        "errors": 0
+      }
+    },
+    {
+      "name": "performance-round12-reverse",
+      "reportSha256": "c3f3aa838fd7e0f7496d334780a33e18fd31847ed481399a6b3fbdf03c8e7462",
+      "mode": "inventory",
+      "status": "MEASURED",
+      "startedAt": "2026-10-18T12:12:36.556Z",
+      "completedAt": "2026-10-18T12:13:04.872Z",
+      "scriptSha256": "da299afda45fab616d29194bce12e14122a5bab9867159706a3331cd8f81d81a",
+      "versionByLabel": {
+        "baseline": "5.12.0",
+        "after": "5.11.0"
+      },
+      "contextCreationVersions": [
+        "5.12.0",
+        "5.11.0"
+      ],
+      "inventoryByVersion": {
+        "5.12.0": {
+          "samples": 12,
+          "p50": 98.29999999701977,
+          "p95": 382.5,
+          "p99": 382.5,
+          "max": 428.5,
+          "min": 52.70000000298023,
+          "mean": 169.69999999925494,
+          "allChronologicalSamples": [
+            {
+              "repeat": 1,
+              "pair": 1,
+              "position": 1,
+              "elapsedMs": 98.29999999701977
+            },
+            {
+              "repeat": 2,
+              "pair": 2,
+              "position": 2,
+              "elapsedMs": 59
+            },
+            {
+              "repeat": 3,
+              "pair": 3,
+              "position": 1,
+              "elapsedMs": 52.70000000298023
+            },
+            {
+              "repeat": 4,
+              "pair": 4,
+              "position": 2,
+              "elapsedMs": 68.09999999403954
+            },
+            {
+              "repeat": 5,
+              "pair": 5,
+              "position": 1,
+              "elapsedMs": 428.5
+            },
+            {
+              "repeat": 6,
+              "pair": 6,
+              "position": 2,
+              "elapsedMs": 63.5
+            },
+            {
+              "repeat": 7,
+              "pair": 7,
+              "position": 1,
+              "elapsedMs": 194.79999999701977
+            },
+            {
+              "repeat": 8,
+              "pair": 8,
+              "position": 2,
+              "elapsedMs": 135
+            },
+            {
+              "repeat": 9,
+              "pair": 9,
+              "position": 1,
+              "elapsedMs": 93.59999999403954
+            },
+            {
+              "repeat": 10,
+              "pair": 10,
+              "position": 2,
+              "elapsedMs": 295.70000000298023
+            },
+            {
+              "repeat": 11,
+              "pair": 11,
+              "position": 1,
+              "elapsedMs": 382.5
+            },
+            {
+              "repeat": 12,
+              "pair": 12,
+              "position": 2,
+              "elapsedMs": 164.70000000298023
+            }
+          ],
+          "byPairPosition": {
+            "1": {
+              "samples": 6,
+              "p50": 98.29999999701977,
+              "p95": 382.5,
+              "p99": 382.5,
+              "max": 428.5,
+              "min": 52.70000000298023
+            },
+            "2": {
+              "samples": 6,
+              "p50": 68.09999999403954,
+              "p95": 164.70000000298023,
+              "p99": 164.70000000298023,
+              "max": 295.70000000298023,
+              "min": 59
+            }
+          }
+        },
+        "5.11.0": {
+          "samples": 12,
+          "p50": 207.10000000149012,
+          "p95": 418,
+          "p99": 418,
+          "max": 430.59999999403954,
+          "min": 65.10000000149012,
+          "mean": 221.98333333308497,
+          "allChronologicalSamples": [
+            {
+              "repeat": 1,
+              "pair": 1,
+              "position": 2,
+              "elapsedMs": 81.20000000298023
+            },
+            {
+              "repeat": 2,
+              "pair": 2,
+              "position": 1,
+              "elapsedMs": 65.10000000149012
+            },
+            {
+              "repeat": 3,
+              "pair": 3,
+              "position": 2,
+              "elapsedMs": 71
+            },
+            {
+              "repeat": 4,
+              "pair": 4,
+              "position": 1,
+              "elapsedMs": 73
+            },
+            {
+              "repeat": 5,
+              "pair": 5,
+              "position": 2,
+              "elapsedMs": 272.79999999701977
+            },
+            {
+              "repeat": 6,
+              "pair": 6,
+              "position": 1,
+              "elapsedMs": 110.09999999403954
+            },
+            {
+              "repeat": 7,
+              "pair": 7,
+              "position": 2,
+              "elapsedMs": 430.59999999403954
+            },
+            {
+              "repeat": 8,
+              "pair": 8,
+              "position": 1,
+              "elapsedMs": 376.6000000014901
+            },
+            {
+              "repeat": 9,
+              "pair": 9,
+              "position": 2,
+              "elapsedMs": 245.90000000596046
+            },
+            {
+              "repeat": 10,
+              "pair": 10,
+              "position": 1,
+              "elapsedMs": 312.3999999985099
+            },
+            {
+              "repeat": 11,
+              "pair": 11,
+              "position": 2,
+              "elapsedMs": 207.10000000149012
+            },
+            {
+              "repeat": 12,
+              "pair": 12,
+              "position": 1,
+              "elapsedMs": 418
+            }
+          ],
+          "byPairPosition": {
+            "1": {
+              "samples": 6,
+              "p50": 110.09999999403954,
+              "p95": 376.6000000014901,
+              "p99": 376.6000000014901,
+              "max": 418,
+              "min": 65.10000000149012
+            },
+            "2": {
+              "samples": 6,
+              "p50": 207.10000000149012,
+              "p95": 272.79999999701977,
+              "p99": 272.79999999701977,
+              "max": 430.59999999403954,
+              "min": 71
+            }
+          }
+        }
+      },
+      "inventoryPairs": [
+        {
+          "pair": 1,
+          "versionsInOrder": [
+            "5.12.0",
+            "5.11.0"
+          ],
+          "oldMs": 81.20000000298023,
+          "currentMs": 98.29999999701977,
+          "currentMinusOldMs": 17.099999994039536
+        },
+        {
+          "pair": 2,
+          "versionsInOrder": [
+            "5.11.0",
+            "5.12.0"
+          ],
+          "oldMs": 65.10000000149012,
+          "currentMs": 59,
+          "currentMinusOldMs": -6.100000001490116
+        },
+        {
+          "pair": 3,
+          "versionsInOrder": [
+            "5.12.0",
+            "5.11.0"
+          ],
+          "oldMs": 71,
+          "currentMs": 52.70000000298023,
+          "currentMinusOldMs": -18.299999997019768
+        },
+        {
+          "pair": 4,
+          "versionsInOrder": [
+            "5.11.0",
+            "5.12.0"
+          ],
+          "oldMs": 73,
+          "currentMs": 68.09999999403954,
+          "currentMinusOldMs": -4.9000000059604645
+        },
+        {
+          "pair": 5,
+          "versionsInOrder": [
+            "5.12.0",
+            "5.11.0"
+          ],
+          "oldMs": 272.79999999701977,
+          "currentMs": 428.5,
+          "currentMinusOldMs": 155.70000000298023
+        },
+        {
+          "pair": 6,
+          "versionsInOrder": [
+            "5.11.0",
+            "5.12.0"
+          ],
+          "oldMs": 110.09999999403954,
+          "currentMs": 63.5,
+          "currentMinusOldMs": -46.599999994039536
+        },
+        {
+          "pair": 7,
+          "versionsInOrder": [
+            "5.12.0",
+            "5.11.0"
+          ],
+          "oldMs": 430.59999999403954,
+          "currentMs": 194.79999999701977,
+          "currentMinusOldMs": -235.79999999701977
+        },
+        {
+          "pair": 8,
+          "versionsInOrder": [
+            "5.11.0",
+            "5.12.0"
+          ],
+          "oldMs": 376.6000000014901,
+          "currentMs": 135,
+          "currentMinusOldMs": -241.60000000149012
+        },
+        {
+          "pair": 9,
+          "versionsInOrder": [
+            "5.12.0",
+            "5.11.0"
+          ],
+          "oldMs": 245.90000000596046,
+          "currentMs": 93.59999999403954,
+          "currentMinusOldMs": -152.30000001192093
+        },
+        {
+          "pair": 10,
+          "versionsInOrder": [
+            "5.11.0",
+            "5.12.0"
+          ],
+          "oldMs": 312.3999999985099,
+          "currentMs": 295.70000000298023,
+          "currentMinusOldMs": -16.69999999552965
+        },
+        {
+          "pair": 11,
+          "versionsInOrder": [
+            "5.12.0",
+            "5.11.0"
+          ],
+          "oldMs": 207.10000000149012,
+          "currentMs": 382.5,
+          "currentMinusOldMs": 175.39999999850988
+        },
+        {
+          "pair": 12,
+          "versionsInOrder": [
+            "5.11.0",
+            "5.12.0"
+          ],
+          "oldMs": 418,
+          "currentMs": 164.70000000298023,
+          "currentMinusOldMs": -253.29999999701977
+        }
+      ],
+      "windows": [],
+      "slowRafSamples": [],
+      "missingEffects": [],
+      "sourceIdentity": {
+        "5.12.0": {
+          "root": "/workspace/scratch/16b883e72bb3/work/Dice-Abyss",
+          "localFiles": 46,
+          "runtimePresent": 45,
+          "runtimeAbsent": 0,
+          "package404": 1,
+          "release": "5.12.0",
+          "documentUrl": "http://127.0.0.1:4189/",
+          "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+        },
+        "5.11.0": {
+          "root": "/workspace/scratch/16b883e72bb3/baseline/Dice-Abyss",
+          "localFiles": 46,
+          "runtimePresent": 42,
+          "runtimeAbsent": 3,
+          "package404": 1,
+          "release": "5.11.0",
+          "documentUrl": "http://127.0.0.1:4188/",
+          "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+        }
+      },
+      "dom": {
+        "byVersion": {
+          "5.12.0": {
+            "cardsSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+            "cardBytes": 92909,
+            "gameHtmlSha256": "74fd1510292a50bad69a0bda933c291a9edc3c71ab46c30e0e0ab42504d52034",
+            "gameHtmlBytes": 108818,
+            "fullStateSha256": "81651ee106fc3033a2b0362328da887670562f378eb44436dd4cc915a6e53b7b",
+            "rawSaveSha256": "f60066f0e55853c6053e66134a84a5d831ca552595ad463ce51273d79f4aee2f",
+            "cardStatesSha256": "27ca76ba395a6d031ab5afda454684d50c2d9a56aeb0e8f10aca1d270b6b1d11",
+            "completeItemStatesSha256": "7594f6ee9d409120e27fef5c91d8ef509da5a67ef2c3b8b03369cf2b23bf39fd"
+          },
+          "5.11.0": {
+            "cardsSha256": "0bff297d9c1e32bc76302dc84ce0e383702ac4456e330f010feb2e79c3319727",
+            "cardBytes": 83779,
+            "gameHtmlSha256": "605ed0d79634ff24e1ad16170852aedee17972178edc8f064ad890c0cd19e866",
+            "gameHtmlBytes": 99688,
+            "fullStateSha256": "81651ee106fc3033a2b0362328da887670562f378eb44436dd4cc915a6e53b7b",
+            "rawSaveSha256": "f60066f0e55853c6053e66134a84a5d831ca552595ad463ce51273d79f4aee2f",
+            "cardStatesSha256": "27ca76ba395a6d031ab5afda454684d50c2d9a56aeb0e8f10aca1d270b6b1d11",
+            "completeItemStatesSha256": "7594f6ee9d409120e27fef5c91d8ef509da5a67ef2c3b8b03369cf2b23bf39fd"
+          }
+        },
+        "cardsCompared": 60,
+        "cardsChanged": 55,
+        "cardBytesAdded": 9130
+      },
+      "currentSlowerPairs": 3,
+      "currentFasterPairs": 9,
+      "retainedRafIntervals": 0,
+      "retainedObservedLongTasks": 0,
+      "expectedLimitations": {
+        "fewerThanThreeMainRepeats": false,
+        "unobservedFullEffectWindows": 0,
+        "errors": 0
+      }
+    }
+  ],
+  "inventoryComparison": {
+    "batches": [
+      {
+        "name": "performance-round12",
+        "contextCreationVersions": [
+          "5.11.0",
+          "5.12.0"
+        ],
+        "old": {
+          "samples": 12,
+          "p50": 117.10000000149012,
+          "p95": 432.29999999701977,
+          "p99": 432.29999999701977,
+          "max": 551.2999999970198,
+          "min": 58,
+          "mean": 180.6333333340784,
+          "allChronologicalSamples": [
+            {
+              "repeat": 1,
+              "pair": 1,
+              "position": 1,
+              "elapsedMs": 64.29999999701977
+            },
+            {
+              "repeat": 2,
+              "pair": 2,
+              "position": 2,
+              "elapsedMs": 68.90000000596046
+            },
+            {
+              "repeat": 3,
+              "pair": 3,
+              "position": 1,
+              "elapsedMs": 62.600000001490116
+            },
+            {
+              "repeat": 4,
+              "pair": 4,
+              "position": 2,
+              "elapsedMs": 117.10000000149012
+            },
+            {
+              "repeat": 5,
+              "pair": 5,
+              "position": 1,
+              "elapsedMs": 432.29999999701977
+            },
+            {
+              "repeat": 6,
+              "pair": 6,
+              "position": 2,
+              "elapsedMs": 233.30000000447035
+            },
+            {
+              "repeat": 7,
+              "pair": 7,
+              "position": 1,
+              "elapsedMs": 58
+            },
+            {
+              "repeat": 8,
+              "pair": 8,
+              "position": 2,
+              "elapsedMs": 71.30000000447035
+            },
+            {
+              "repeat": 9,
+              "pair": 9,
+              "position": 1,
+              "elapsedMs": 222.79999999701977
+            },
+            {
+              "repeat": 10,
+              "pair": 10,
+              "position": 2,
+              "elapsedMs": 143.60000000149012
+            },
+            {
+              "repeat": 11,
+              "pair": 11,
+              "position": 1,
+              "elapsedMs": 551.2999999970198
+            },
+            {
+              "repeat": 12,
+              "pair": 12,
+              "position": 2,
+              "elapsedMs": 142.10000000149012
+            }
+          ],
+          "byPairPosition": {
+            "1": {
+              "samples": 6,
+              "p50": 64.29999999701977,
+              "p95": 432.29999999701977,
+              "p99": 432.29999999701977,
+              "max": 551.2999999970198,
+              "min": 58
+            },
+            "2": {
+              "samples": 6,
+              "p50": 117.10000000149012,
+              "p95": 143.60000000149012,
+              "p99": 143.60000000149012,
+              "max": 233.30000000447035,
+              "min": 68.90000000596046
+            }
+          }
+        },
+        "current": {
+          "samples": 12,
+          "p50": 228.09999999403954,
+          "p95": 539.1000000014901,
+          "p99": 539.1000000014901,
+          "max": 544.8999999985099,
+          "min": 63.20000000298023,
+          "mean": 245.76666666815677,
+          "allChronologicalSamples": [
+            {
+              "repeat": 1,
+              "pair": 1,
+              "position": 2,
+              "elapsedMs": 63.20000000298023
+            },
+            {
+              "repeat": 2,
+              "pair": 2,
+              "position": 1,
+              "elapsedMs": 76.60000000149012
+            },
+            {
+              "repeat": 3,
+              "pair": 3,
+              "position": 2,
+              "elapsedMs": 80.90000000596046
+            },
+            {
+              "repeat": 4,
+              "pair": 4,
+              "position": 1,
+              "elapsedMs": 98.5
+            },
+            {
+              "repeat": 5,
+              "pair": 5,
+              "position": 2,
+              "elapsedMs": 539.1000000014901
+            },
+            {
+              "repeat": 6,
+              "pair": 6,
+              "position": 1,
+              "elapsedMs": 242.20000000298023
+            },
+            {
+              "repeat": 7,
+              "pair": 7,
+              "position": 2,
+              "elapsedMs": 358.70000000298023
+            },
+            {
+              "repeat": 8,
+              "pair": 8,
+              "position": 1,
+              "elapsedMs": 228.09999999403954
+            },
+            {
+              "repeat": 9,
+              "pair": 9,
+              "position": 2,
+              "elapsedMs": 77.70000000298023
+            },
+            {
+              "repeat": 10,
+              "pair": 10,
+              "position": 1,
+              "elapsedMs": 544.8999999985099
+            },
+            {
+              "repeat": 11,
+              "pair": 11,
+              "position": 2,
+              "elapsedMs": 402.20000000298023
+            },
+            {
+              "repeat": 12,
+              "pair": 12,
+              "position": 1,
+              "elapsedMs": 237.10000000149012
+            }
+          ],
+          "byPairPosition": {
+            "1": {
+              "samples": 6,
+              "p50": 228.09999999403954,
+              "p95": 242.20000000298023,
+              "p99": 242.20000000298023,
+              "max": 544.8999999985099,
+              "min": 76.60000000149012
+            },
+            "2": {
+              "samples": 6,
+              "p50": 80.90000000596046,
+              "p95": 402.20000000298023,
+              "p99": 402.20000000298023,
+              "max": 539.1000000014901,
+              "min": 63.20000000298023
+            }
+          }
+        },
+        "p50CurrentMinusOldMs": 110.99999999254942,
+        "p95CurrentMinusOldMs": 106.80000000447035,
+        "maxCurrentMinusOldMs": -6.399999998509884,
+        "currentSlowerPairs": 8,
+        "currentFasterPairs": 4
+      },
+      {
+        "name": "performance-round12-reverse",
+        "contextCreationVersions": [
+          "5.12.0",
+          "5.11.0"
+        ],
+        "old": {
+          "samples": 12,
+          "p50": 207.10000000149012,
+          "p95": 418,
+          "p99": 418,
+          "max": 430.59999999403954,
+          "min": 65.10000000149012,
+          "mean": 221.98333333308497,
+          "allChronologicalSamples": [
+            {
+              "repeat": 1,
+              "pair": 1,
+              "position": 2,
+              "elapsedMs": 81.20000000298023
+            },
+            {
+              "repeat": 2,
+              "pair": 2,
+              "position": 1,
+              "elapsedMs": 65.10000000149012
+            },
+            {
+              "repeat": 3,
+              "pair": 3,
+              "position": 2,
+              "elapsedMs": 71
+            },
+            {
+              "repeat": 4,
+              "pair": 4,
+              "position": 1,
+              "elapsedMs": 73
+            },
+            {
+              "repeat": 5,
+              "pair": 5,
+              "position": 2,
+              "elapsedMs": 272.79999999701977
+            },
+            {
+              "repeat": 6,
+              "pair": 6,
+              "position": 1,
+              "elapsedMs": 110.09999999403954
+            },
+            {
+              "repeat": 7,
+              "pair": 7,
+              "position": 2,
+              "elapsedMs": 430.59999999403954
+            },
+            {
+              "repeat": 8,
+              "pair": 8,
+              "position": 1,
+              "elapsedMs": 376.6000000014901
+            },
+            {
+              "repeat": 9,
+              "pair": 9,
+              "position": 2,
+              "elapsedMs": 245.90000000596046
+            },
+            {
+              "repeat": 10,
+              "pair": 10,
+              "position": 1,
+              "elapsedMs": 312.3999999985099
+            },
+            {
+              "repeat": 11,
+              "pair": 11,
+              "position": 2,
+              "elapsedMs": 207.10000000149012
+            },
+            {
+              "repeat": 12,
+              "pair": 12,
+              "position": 1,
+              "elapsedMs": 418
+            }
+          ],
+          "byPairPosition": {
+            "1": {
+              "samples": 6,
+              "p50": 110.09999999403954,
+              "p95": 376.6000000014901,
+              "p99": 376.6000000014901,
+              "max": 418,
+              "min": 65.10000000149012
+            },
+            "2": {
+              "samples": 6,
+              "p50": 207.10000000149012,
+              "p95": 272.79999999701977,
+              "p99": 272.79999999701977,
+              "max": 430.59999999403954,
+              "min": 71
+            }
+          }
+        },
+        "current": {
+          "samples": 12,
+          "p50": 98.29999999701977,
+          "p95": 382.5,
+          "p99": 382.5,
+          "max": 428.5,
+          "min": 52.70000000298023,
+          "mean": 169.69999999925494,
+          "allChronologicalSamples": [
+            {
+              "repeat": 1,
+              "pair": 1,
+              "position": 1,
+              "elapsedMs": 98.29999999701977
+            },
+            {
+              "repeat": 2,
+              "pair": 2,
+              "position": 2,
+              "elapsedMs": 59
+            },
+            {
+              "repeat": 3,
+              "pair": 3,
+              "position": 1,
+              "elapsedMs": 52.70000000298023
+            },
+            {
+              "repeat": 4,
+              "pair": 4,
+              "position": 2,
+              "elapsedMs": 68.09999999403954
+            },
+            {
+              "repeat": 5,
+              "pair": 5,
+              "position": 1,
+              "elapsedMs": 428.5
+            },
+            {
+              "repeat": 6,
+              "pair": 6,
+              "position": 2,
+              "elapsedMs": 63.5
+            },
+            {
+              "repeat": 7,
+              "pair": 7,
+              "position": 1,
+              "elapsedMs": 194.79999999701977
+            },
+            {
+              "repeat": 8,
+              "pair": 8,
+              "position": 2,
+              "elapsedMs": 135
+            },
+            {
+              "repeat": 9,
+              "pair": 9,
+              "position": 1,
+              "elapsedMs": 93.59999999403954
+            },
+            {
+              "repeat": 10,
+              "pair": 10,
+              "position": 2,
+              "elapsedMs": 295.70000000298023
+            },
+            {
+              "repeat": 11,
+              "pair": 11,
+              "position": 1,
+              "elapsedMs": 382.5
+            },
+            {
+              "repeat": 12,
+              "pair": 12,
+              "position": 2,
+              "elapsedMs": 164.70000000298023
+            }
+          ],
+          "byPairPosition": {
+            "1": {
+              "samples": 6,
+              "p50": 98.29999999701977,
+              "p95": 382.5,
+              "p99": 382.5,
+              "max": 428.5,
+              "min": 52.70000000298023
+            },
+            "2": {
+              "samples": 6,
+              "p50": 68.09999999403954,
+              "p95": 164.70000000298023,
+              "p99": 164.70000000298023,
+              "max": 295.70000000298023,
+              "min": 59
+            }
+          }
+        },
+        "p50CurrentMinusOldMs": -108.80000000447035,
+        "p95CurrentMinusOldMs": -35.5,
+        "maxCurrentMinusOldMs": -2.0999999940395355,
+        "currentSlowerPairs": 3,
+        "currentFasterPairs": 9
+      }
+    ],
+    "pooledDescriptiveOnly": {
+      "5.11.0": {
+        "samples": 24,
+        "p50": 142.10000000149012,
+        "p95": 430.59999999403954,
+        "p99": 432.29999999701977,
+        "max": 551.2999999970198,
+        "min": 58
+      },
+      "5.12.0": {
+        "samples": 24,
+        "p50": 135,
+        "p95": 428.5,
+        "p99": 539.1000000014901,
+        "max": 544.8999999985099,
+        "min": 52.70000000298023
+      }
+    },
+    "pooledNotAReplacementForTwoBatches": true
+  },
+  "mainFrameComparison": {
+    "pairs": [
+      {
+        "scene": "boss-burst",
+        "width": 1366,
+        "height": 768,
+        "effects": "full",
+        "old": {
+          "section": "frames",
+          "index": 1,
+          "version": "5.11.0",
+          "scene": "boss-burst",
+          "width": 1366,
+          "height": 768,
+          "effects": "full",
+          "frames": 241,
+          "actualWindowMs": 4212.89999999851,
+          "overrunMs": 12.899999998509884,
+          "p50": 16.69999999552965,
+          "p95": 18,
+          "p99": 34.29999999701977,
+          "max": 121.5,
+          "over50": 2,
+          "over100": 1,
+          "longTasks": 1,
+          "longTaskOverlapMs": 121,
+          "effectKinds": [
+            "idle",
+            "dice-only",
+            "combat"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        "current": {
+          "section": "frames",
+          "index": 2,
+          "version": "5.12.0",
+          "scene": "boss-burst",
+          "width": 1366,
+          "height": 768,
+          "effects": "full",
+          "frames": 218,
+          "actualWindowMs": 4203.39999999851,
+          "overrunMs": 3.399999998509884,
+          "p50": 16.69999999552965,
+          "p95": 18.899999998509884,
+          "p99": 41.80000000447035,
+          "max": 383.1000000014901,
+          "over50": 2,
+          "over100": 2,
+          "longTasks": 1,
+          "longTaskOverlapMs": 207,
+          "effectKinds": [
+            "idle",
+            "dice-only",
+            "combat"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        "maxCurrentMinusOldMs": 261.6000000014901,
+        "p95CurrentMinusOldMs": 0.8999999985098839
+      },
+      {
+        "scene": "boss-burst",
+        "width": 1366,
+        "height": 768,
+        "effects": "low",
+        "old": {
+          "section": "frames",
+          "index": 4,
+          "version": "5.11.0",
+          "scene": "boss-burst",
+          "width": 1366,
+          "height": 768,
+          "effects": "low",
+          "frames": 223,
+          "actualWindowMs": 4211.29999999702,
+          "overrunMs": 11.299999997019768,
+          "p50": 16.69999999552965,
+          "p95": 17,
+          "p99": 28.200000002980232,
+          "max": 523.9000000059605,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        "current": {
+          "section": "frames",
+          "index": 3,
+          "version": "5.12.0",
+          "scene": "boss-burst",
+          "width": 1366,
+          "height": 768,
+          "effects": "low",
+          "frames": 213,
+          "actualWindowMs": 4205,
+          "overrunMs": 5,
+          "p50": 16.69999999552965,
+          "p95": 17,
+          "p99": 27.5,
+          "max": 685.3000000044703,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        "maxCurrentMinusOldMs": 161.39999999850988,
+        "p95CurrentMinusOldMs": 0
+      },
+      {
+        "scene": "eternal-open",
+        "width": 1366,
+        "height": 768,
+        "effects": "full",
+        "old": {
+          "section": "frames",
+          "index": 5,
+          "version": "5.11.0",
+          "scene": "eternal-open",
+          "width": 1366,
+          "height": 768,
+          "effects": "full",
+          "frames": 235,
+          "actualWindowMs": 4211.5,
+          "overrunMs": 11.5,
+          "p50": 16.69999999552965,
+          "p95": 18.200000002980232,
+          "p99": 44.20000000298023,
+          "max": 175.60000000149012,
+          "over50": 2,
+          "over100": 2,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle",
+            "chest-charge",
+            "loot-7"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+        },
+        "current": {
+          "section": "frames",
+          "index": 6,
+          "version": "5.12.0",
+          "scene": "eternal-open",
+          "width": 1366,
+          "height": 768,
+          "effects": "full",
+          "frames": 235,
+          "actualWindowMs": 4211.80000000447,
+          "overrunMs": 11.800000004470348,
+          "p50": 16.69999999552965,
+          "p95": 18.5,
+          "p99": 22.299999997019768,
+          "max": 322.70000000298023,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle",
+            "chest-charge",
+            "loot-7"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+        },
+        "maxCurrentMinusOldMs": 147.10000000149012,
+        "p95CurrentMinusOldMs": 0.29999999701976776
+      },
+      {
+        "scene": "eternal-open",
+        "width": 1366,
+        "height": 768,
+        "effects": "low",
+        "old": {
+          "section": "frames",
+          "index": 8,
+          "version": "5.11.0",
+          "scene": "eternal-open",
+          "width": 1366,
+          "height": 768,
+          "effects": "low",
+          "frames": 222,
+          "actualWindowMs": 4211.10000000149,
+          "overrunMs": 11.100000001490116,
+          "p50": 16.69999999552965,
+          "p95": 17.200000002980232,
+          "p99": 19.399999998509884,
+          "max": 547.5,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+        },
+        "current": {
+          "section": "frames",
+          "index": 7,
+          "version": "5.12.0",
+          "scene": "eternal-open",
+          "width": 1366,
+          "height": 768,
+          "effects": "low",
+          "frames": 193,
+          "actualWindowMs": 4205.30000000447,
+          "overrunMs": 5.300000004470348,
+          "p50": 16.69999999552965,
+          "p95": 17.399999998509884,
+          "p99": 22.399999998509884,
+          "max": 1033.7000000029802,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+        },
+        "maxCurrentMinusOldMs": 486.20000000298023,
+        "p95CurrentMinusOldMs": 0.19999999552965164
+      },
+      {
+        "scene": "boss-burst",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "old": {
+          "section": "frames",
+          "index": 9,
+          "version": "5.11.0",
+          "scene": "boss-burst",
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "frames": 24,
+          "actualWindowMs": 4207.69999999553,
+          "overrunMs": 7.699999995529652,
+          "p50": 16.399999998509884,
+          "p95": 28.899999998509884,
+          "p99": 29.399999998509884,
+          "max": 3842.2999999970198,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle",
+            "dice-only",
+            "combat"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        "current": {
+          "section": "frames",
+          "index": 10,
+          "version": "5.12.0",
+          "scene": "boss-burst",
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "frames": 33,
+          "actualWindowMs": 4210.10000000149,
+          "overrunMs": 10.100000001490116,
+          "p50": 16.69999999552965,
+          "p95": 26.30000000447035,
+          "p99": 44.19999999552965,
+          "max": 3665,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle",
+            "dice-only",
+            "combat"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        "maxCurrentMinusOldMs": -177.29999999701977,
+        "p95CurrentMinusOldMs": -2.5999999940395355
+      },
+      {
+        "scene": "boss-burst",
+        "width": 1920,
+        "height": 1080,
+        "effects": "low",
+        "old": {
+          "section": "frames",
+          "index": 12,
+          "version": "5.11.0",
+          "scene": "boss-burst",
+          "width": 1920,
+          "height": 1080,
+          "effects": "low",
+          "frames": 165,
+          "actualWindowMs": 4211.19999999553,
+          "overrunMs": 11.199999995529652,
+          "p50": 16.69999999552965,
+          "p95": 17.200000002980232,
+          "p99": 28.399999998509884,
+          "max": 1501.3999999985099,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        "current": {
+          "section": "frames",
+          "index": 11,
+          "version": "5.12.0",
+          "scene": "boss-burst",
+          "width": 1920,
+          "height": 1080,
+          "effects": "low",
+          "frames": 146,
+          "actualWindowMs": 4206.70000000298,
+          "overrunMs": 6.700000002980232,
+          "p50": 16.69999999552965,
+          "p95": 18.200000002980232,
+          "p99": 32.600000001490116,
+          "max": 1801.5,
+          "over50": 2,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        "maxCurrentMinusOldMs": 300.1000000014901,
+        "p95CurrentMinusOldMs": 1
+      },
+      {
+        "scene": "eternal-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "full",
+        "old": {
+          "section": "frames",
+          "index": 13,
+          "version": "5.11.0",
+          "scene": "eternal-open",
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "frames": 219,
+          "actualWindowMs": 4210.29999999702,
+          "overrunMs": 10.299999997019768,
+          "p50": 16.69999999552965,
+          "p95": 18.900000005960464,
+          "p99": 21,
+          "max": 596.3999999985099,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle",
+            "chest-charge",
+            "loot-7"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+        },
+        "current": {
+          "section": "frames",
+          "index": 14,
+          "version": "5.12.0",
+          "scene": "eternal-open",
+          "width": 1920,
+          "height": 1080,
+          "effects": "full",
+          "frames": 184,
+          "actualWindowMs": 4211.89999999851,
+          "overrunMs": 11.899999998509884,
+          "p50": 16.69999999552965,
+          "p95": 19.600000001490116,
+          "p99": 23.400000005960464,
+          "max": 1168.3999999985099,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle",
+            "chest-charge",
+            "loot-7"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+        },
+        "maxCurrentMinusOldMs": 572,
+        "p95CurrentMinusOldMs": 0.6999999955296516
+      },
+      {
+        "scene": "eternal-open",
+        "width": 1920,
+        "height": 1080,
+        "effects": "low",
+        "old": {
+          "section": "frames",
+          "index": 16,
+          "version": "5.11.0",
+          "scene": "eternal-open",
+          "width": 1920,
+          "height": 1080,
+          "effects": "low",
+          "frames": 155,
+          "actualWindowMs": 4211.60000000149,
+          "overrunMs": 11.600000001490116,
+          "p50": 16.69999999552965,
+          "p95": 17.5,
+          "p99": 21.100000001490116,
+          "max": 1658.1000000014901,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+        },
+        "current": {
+          "section": "frames",
+          "index": 15,
+          "version": "5.12.0",
+          "scene": "eternal-open",
+          "width": 1920,
+          "height": 1080,
+          "effects": "low",
+          "frames": 94,
+          "actualWindowMs": 4207.9000000059605,
+          "overrunMs": 7.9000000059604645,
+          "p50": 16.69999999552965,
+          "p95": 20.19999999552965,
+          "p99": 32.80000000447035,
+          "max": 2679.4000000059605,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+        },
+        "maxCurrentMinusOldMs": 1021.3000000044703,
+        "p95CurrentMinusOldMs": 2.6999999955296516
+      },
+      {
+        "scene": "boss-burst",
+        "width": 2560,
+        "height": 1440,
+        "effects": "full",
+        "old": {
+          "section": "frames",
+          "index": 17,
+          "version": "5.11.0",
+          "scene": "boss-burst",
+          "width": 2560,
+          "height": 1440,
+          "effects": "full",
+          "frames": 11,
+          "actualWindowMs": 4866,
+          "overrunMs": 666,
+          "p50": 16.600000001490116,
+          "p95": 27.400000005960464,
+          "p99": 27.400000005960464,
+          "max": 4706.19999999553,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle",
+            "dice-only"
+          ],
+          "effectObserved": false,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        "current": {
+          "section": "frames",
+          "index": 18,
+          "version": "5.12.0",
+          "scene": "boss-burst",
+          "width": 2560,
+          "height": 1440,
+          "effects": "full",
+          "frames": 12,
+          "actualWindowMs": 4627.69999999553,
+          "overrunMs": 427.69999999552965,
+          "p50": 16.399999998509884,
+          "p95": 27.700000002980232,
+          "p99": 27.700000002980232,
+          "max": 4456.29999999702,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle",
+            "dice-only"
+          ],
+          "effectObserved": false,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        "maxCurrentMinusOldMs": -249.89999999850988,
+        "p95CurrentMinusOldMs": 0.29999999701976776
+      },
+      {
+        "scene": "boss-burst",
+        "width": 2560,
+        "height": 1440,
+        "effects": "low",
+        "old": {
+          "section": "frames",
+          "index": 20,
+          "version": "5.11.0",
+          "scene": "boss-burst",
+          "width": 2560,
+          "height": 1440,
+          "effects": "low",
+          "frames": 146,
+          "actualWindowMs": 4200.79999999702,
+          "overrunMs": 0.7999999970197678,
+          "p50": 16.600000001490116,
+          "p95": 18.399999998509884,
+          "p99": 38.5,
+          "max": 1809.8999999985099,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        "current": {
+          "section": "frames",
+          "index": 19,
+          "version": "5.12.0",
+          "scene": "boss-burst",
+          "width": 2560,
+          "height": 1440,
+          "effects": "low",
+          "frames": 137,
+          "actualWindowMs": 4203.60000000149,
+          "overrunMs": 3.600000001490116,
+          "p50": 16.69999999552965,
+          "p95": 18,
+          "p99": 34.20000000298023,
+          "max": 1971.1000000014901,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        "maxCurrentMinusOldMs": 161.20000000298023,
+        "p95CurrentMinusOldMs": -0.3999999985098839
+      },
+      {
+        "scene": "eternal-open",
+        "width": 2560,
+        "height": 1440,
+        "effects": "full",
+        "old": {
+          "section": "frames",
+          "index": 21,
+          "version": "5.11.0",
+          "scene": "eternal-open",
+          "width": 2560,
+          "height": 1440,
+          "effects": "full",
+          "frames": 192,
+          "actualWindowMs": 4206.79999999702,
+          "overrunMs": 6.799999997019768,
+          "p50": 16.69999999552965,
+          "p95": 20.400000005960464,
+          "p99": 29.200000002980232,
+          "max": 1037.6000000014901,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle",
+            "chest-charge",
+            "loot-7"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+        },
+        "current": {
+          "section": "frames",
+          "index": 22,
+          "version": "5.12.0",
+          "scene": "eternal-open",
+          "width": 2560,
+          "height": 1440,
+          "effects": "full",
+          "frames": 63,
+          "actualWindowMs": 4215.39999999851,
+          "overrunMs": 15.399999998509884,
+          "p50": 16.69999999552965,
+          "p95": 20.400000005960464,
+          "p99": 21.799999997019768,
+          "max": 3220.60000000149,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle",
+            "chest-charge",
+            "loot-7"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+        },
+        "maxCurrentMinusOldMs": 2183,
+        "p95CurrentMinusOldMs": 0
+      },
+      {
+        "scene": "eternal-open",
+        "width": 2560,
+        "height": 1440,
+        "effects": "low",
+        "old": {
+          "section": "frames",
+          "index": 24,
+          "version": "5.11.0",
+          "scene": "eternal-open",
+          "width": 2560,
+          "height": 1440,
+          "effects": "low",
+          "frames": 123,
+          "actualWindowMs": 4202.5999999940395,
+          "overrunMs": 2.5999999940395355,
+          "p50": 16.600000001490116,
+          "p95": 18,
+          "p99": 31,
+          "max": 2177.39999999851,
+          "over50": 2,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+        },
+        "current": {
+          "section": "frames",
+          "index": 23,
+          "version": "5.12.0",
+          "scene": "eternal-open",
+          "width": 2560,
+          "height": 1440,
+          "effects": "low",
+          "frames": 26,
+          "actualWindowMs": 4433.29999999702,
+          "overrunMs": 233.29999999701977,
+          "p50": 16.799999997019768,
+          "p95": 23.30000000447035,
+          "p99": 38.30000000447035,
+          "max": 4023.7999999970198,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+        },
+        "maxCurrentMinusOldMs": 1846.3999999985099,
+        "p95CurrentMinusOldMs": 5.300000004470348
+      },
+      {
+        "scene": "boss-burst",
+        "width": 3840,
+        "height": 2160,
+        "effects": "full",
+        "old": {
+          "section": "frames",
+          "index": 25,
+          "version": "5.11.0",
+          "scene": "boss-burst",
+          "width": 3840,
+          "height": 2160,
+          "effects": "full",
+          "frames": 11,
+          "actualWindowMs": 9897.70000000298,
+          "overrunMs": 5697.70000000298,
+          "p50": 16,
+          "p95": 24.80000000447035,
+          "p99": 24.80000000447035,
+          "max": 9748.70000000298,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle",
+            "dice-only"
+          ],
+          "effectObserved": false,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        "current": {
+          "section": "frames",
+          "index": 26,
+          "version": "5.12.0",
+          "scene": "boss-burst",
+          "width": 3840,
+          "height": 2160,
+          "effects": "full",
+          "frames": 14,
+          "actualWindowMs": 5483.89999999851,
+          "overrunMs": 1283.8999999985099,
+          "p50": 16.600000001490116,
+          "p95": 27.100000001490116,
+          "p99": 27.100000001490116,
+          "max": 5277.19999999553,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle",
+            "dice-only"
+          ],
+          "effectObserved": false,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        "maxCurrentMinusOldMs": -4471.500000007451,
+        "p95CurrentMinusOldMs": 2.2999999970197678
+      },
+      {
+        "scene": "boss-burst",
+        "width": 3840,
+        "height": 2160,
+        "effects": "low",
+        "old": {
+          "section": "frames",
+          "index": 28,
+          "version": "5.11.0",
+          "scene": "boss-burst",
+          "width": 3840,
+          "height": 2160,
+          "effects": "low",
+          "frames": 32,
+          "actualWindowMs": 4896.80000000447,
+          "overrunMs": 696.8000000044703,
+          "p50": 16.5,
+          "p95": 38.70000000298023,
+          "p99": 51.600000001490116,
+          "max": 4358.10000000149,
+          "over50": 2,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        "current": {
+          "section": "frames",
+          "index": 27,
+          "version": "5.12.0",
+          "scene": "boss-burst",
+          "width": 3840,
+          "height": 2160,
+          "effects": "low",
+          "frames": 24,
+          "actualWindowMs": 5830.70000000298,
+          "overrunMs": 1630.7000000029802,
+          "p50": 16.5,
+          "p95": 29,
+          "p99": 51.600000001490116,
+          "max": 5444.70000000298,
+          "over50": 2,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "a6f8c1d135506eb86667925f306e31283226052992d4d73d61b018c068bc9749"
+        },
+        "maxCurrentMinusOldMs": 1086.6000000014901,
+        "p95CurrentMinusOldMs": -9.700000002980232
+      },
+      {
+        "scene": "eternal-open",
+        "width": 3840,
+        "height": 2160,
+        "effects": "full",
+        "old": {
+          "section": "frames",
+          "index": 29,
+          "version": "5.11.0",
+          "scene": "eternal-open",
+          "width": 3840,
+          "height": 2160,
+          "effects": "full",
+          "frames": 73,
+          "actualWindowMs": 4211.5,
+          "overrunMs": 11.5,
+          "p50": 16.69999999552965,
+          "p95": 23.600000001490116,
+          "p99": 26.69999999552965,
+          "max": 3005.8000000044703,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle",
+            "chest-charge",
+            "loot-7"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+        },
+        "current": {
+          "section": "frames",
+          "index": 30,
+          "version": "5.12.0",
+          "scene": "eternal-open",
+          "width": 3840,
+          "height": 2160,
+          "effects": "full",
+          "frames": 28,
+          "actualWindowMs": 9422.89999999851,
+          "overrunMs": 5222.89999999851,
+          "p50": 16.700000002980232,
+          "p95": 24.899999998509884,
+          "p99": 25,
+          "max": 8993.39999999851,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle",
+            "chest-charge"
+          ],
+          "effectObserved": false,
+          "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+        },
+        "maxCurrentMinusOldMs": 5987.5999999940395,
+        "p95CurrentMinusOldMs": 1.2999999970197678
+      },
+      {
+        "scene": "eternal-open",
+        "width": 3840,
+        "height": 2160,
+        "effects": "low",
+        "old": {
+          "section": "frames",
+          "index": 32,
+          "version": "5.11.0",
+          "scene": "eternal-open",
+          "width": 3840,
+          "height": 2160,
+          "effects": "low",
+          "frames": 29,
+          "actualWindowMs": 5446.20000000298,
+          "overrunMs": 1246.2000000029802,
+          "p50": 16.600000001490116,
+          "p95": 30.599999994039536,
+          "p99": 44.5,
+          "max": 4996.70000000298,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+        },
+        "current": {
+          "section": "frames",
+          "index": 31,
+          "version": "5.12.0",
+          "scene": "eternal-open",
+          "width": 3840,
+          "height": 2160,
+          "effects": "low",
+          "frames": 32,
+          "actualWindowMs": 7452.5,
+          "overrunMs": 3252.5,
+          "p50": 16.69999999552965,
+          "p95": 27.200000002980232,
+          "p99": 37.69999999552965,
+          "max": 6938.29999999702,
+          "over50": 1,
+          "over100": 1,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0,
+          "effectKinds": [
+            "idle"
+          ],
+          "effectObserved": true,
+          "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+        },
+        "maxCurrentMinusOldMs": 1941.5999999940395,
+        "p95CurrentMinusOldMs": -3.3999999910593033
+      }
+    ],
+    "currentMaxLongerPairs": 13,
+    "totalPairs": 16,
+    "eternalMaxLongerPairs": 8,
+    "eternalTotalPairs": 8,
+    "fullStageObserved": {
+      "5.11.0": {
+        "observed": 6,
+        "windows": 8
+      },
+      "5.12.0": {
+        "observed": 5,
+        "windows": 8
+      }
+    },
+    "scope": "One window per version/cell, no reversed frame matrix. The inventory reversal does not close or explain the independently observed frame slowdowns."
+  },
+  "requiredDisclosure4kEternal": {
+    "windows": [
+      {
+        "section": "frames",
+        "index": 29,
+        "version": "5.11.0",
+        "scene": "eternal-open",
+        "width": 3840,
+        "height": 2160,
+        "effects": "full",
+        "frames": 73,
+        "actualWindowMs": 4211.5,
+        "overrunMs": 11.5,
+        "p50": 16.69999999552965,
+        "p95": 23.600000001490116,
+        "p99": 26.69999999552965,
+        "max": 3005.8000000044703,
+        "over50": 1,
+        "over100": 1,
+        "longTasks": 0,
+        "longTaskOverlapMs": 0,
+        "effectKinds": [
+          "idle",
+          "chest-charge",
+          "loot-7"
+        ],
+        "effectObserved": true,
+        "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+      },
+      {
+        "section": "frames",
+        "index": 30,
+        "version": "5.12.0",
+        "scene": "eternal-open",
+        "width": 3840,
+        "height": 2160,
+        "effects": "full",
+        "frames": 28,
+        "actualWindowMs": 9422.89999999851,
+        "overrunMs": 5222.89999999851,
+        "p50": 16.700000002980232,
+        "p95": 24.899999998509884,
+        "p99": 25,
+        "max": 8993.39999999851,
+        "over50": 1,
+        "over100": 1,
+        "longTasks": 0,
+        "longTaskOverlapMs": 0,
+        "effectKinds": [
+          "idle",
+          "chest-charge"
+        ],
+        "effectObserved": false,
+        "persistedSha256": "0e235da65de24a677707cb38e00480fd3d529fc74e488bf0adb15bf0d7847c81"
+      }
+    ],
+    "scope": "One measured window per version. The current build has a much longer retained interval and did not expose the target loot-7 stage during its measured window; this case remains an open software-renderer performance/coverage risk."
+  },
+  "duplicateHtml": {
+    "groups": [
+      {
+        "sha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+        "bytes": 92909,
+        "paths": [
+          "/workspace/scratch/16b883e72bb3/scratch-evidence/performance-round12/inventory-actual-after-cards.html",
+          "/workspace/scratch/16b883e72bb3/scratch-evidence/performance-round12/inventory-source-after-cards.html",
+          "/workspace/scratch/16b883e72bb3/scratch-evidence/performance-round12-reverse/inventory-actual-baseline-cards.html",
+          "/workspace/scratch/16b883e72bb3/scratch-evidence/performance-round12-reverse/inventory-source-baseline-cards.html"
+        ]
+      },
+      {
+        "sha256": "0bff297d9c1e32bc76302dc84ce0e383702ac4456e330f010feb2e79c3319727",
+        "bytes": 83779,
+        "paths": [
+          "/workspace/scratch/16b883e72bb3/scratch-evidence/performance-round12/inventory-actual-baseline-cards.html",
+          "/workspace/scratch/16b883e72bb3/scratch-evidence/performance-round12/inventory-source-baseline-cards.html",
+          "/workspace/scratch/16b883e72bb3/scratch-evidence/performance-round12-reverse/inventory-actual-after-cards.html",
+          "/workspace/scratch/16b883e72bb3/scratch-evidence/performance-round12-reverse/inventory-source-after-cards.html"
+        ]
+      },
+      {
+        "sha256": "74fd1510292a50bad69a0bda933c291a9edc3c71ab46c30e0e0ab42504d52034",
+        "bytes": 108818,
+        "paths": [
+          "/workspace/scratch/16b883e72bb3/scratch-evidence/performance-round12/inventory-source-after-game-view.html",
+          "/workspace/scratch/16b883e72bb3/scratch-evidence/performance-round12-reverse/inventory-source-baseline-game-view.html"
+        ]
+      },
+      {
+        "sha256": "605ed0d79634ff24e1ad16170852aedee17972178edc8f064ad890c0cd19e866",
+        "bytes": 99688,
+        "paths": [
+          "/workspace/scratch/16b883e72bb3/scratch-evidence/performance-round12/inventory-source-baseline-game-view.html",
+          "/workspace/scratch/16b883e72bb3/scratch-evidence/performance-round12-reverse/inventory-source-after-game-view.html"
+        ]
+      }
+    ],
+    "totalBytes": 1123764,
+    "uniqueBytes": 385194,
+    "potentialByteSavingsWithoutDeletingContent": 738570,
+    "action": "No data deleted or changed. A future package-only content-addressed HTML directory and explicit original-path-to-SHA manifest could share identical bytes, provided replay readers resolve aliases and every original report remains intact. Keeping all present files is simpler at this small byte scale."
+  },
+  "interpretation": {
+    "inventory": "The direction reverses between complete batches after reversing context creation order. These data do not support a stable speed improvement or a fixed version-caused slowdown. This is an association with batch/order conditions, not proof that creation order is the bottleneck. All 48 timed inventory samples and four excluded-but-retained warmups remain visible.",
+    "frames": "The main matrix uses one window per cell. Current-build maximum intervals are longer in 13/16 paired cells, including all 8 eternal-open cells; this signal needs to remain visible even though its repeatability and version attribution are not established. No reversed frame matrix was measured. All five unobserved full-effect windows and every slow callback remain in the data. Near-16.7ms p50 and the fixed floor-rank p95/p99 can coexist with single multi-second gaps; use complete traces/max/overrun to assess stalls.",
+    "stateAndDom": "Offline checks validate artifact bytes, hashes, all 60 complete card pairs, lossless differences, every recorded state/DOM assertion and cross-scene committed-state hash consistency. Full decoded browser saves and a fresh native DOM parse were not re-executed in this offline review; those exact comparisons are performed by the recorded, fingerprinted measurement script.",
+    "longTasks": "Only two long tasks were recorded across 6204 RAF intervals in the main run. Missing long-task entries during large callback gaps do not identify the responsible subsystem or establish that the browser/main thread was fast.",
+    "hardware": "ANGLE SwiftShader software-rendered Chromium data are not physical GPU or physical 4K60 validation."
+  },
+  "offlineHarnessCorrection": "The first offline audit assumed --source contained the new measurement script. In the intentionally reversed batch --source is the old tree, while the same current-tree script drives both origins. The checker now locates the fingerprinted script in either mapped tree. The initial offline path error is retained separately and is not a product or measurement failure.",
+  "summary": {
+    "status": "PASS",
+    "checksPassed": 61,
+    "failures": 0,
+    "inventoryTimedSamples": 48,
+    "frameWindows": 46,
+    "allRafIntervals": 6204,
+    "allObservedLongTasks": 2,
+    "missingFullEffectWindows": 5
+  },
+  "offlineReviewScript": {
+    "path": "/workspace/scratch/16b883e72bb3/scratch-evidence/performance-round12-independent/review.mjs",
+    "sha256": "a1e1c76555d1acc65a40bb7abe160508af92582a60d3c983186cdc8541b97a22",
+    "noBrowserOrGameExecution": true
+  },
+  "chineseReviewConclusion": {
+    "inventory": "两批按实际版本映射后背包变化方向反转；不支持稳定提速或固定版本回退归因，不应单凭首批噪声回滚功能，也不能宣称性能无回归。",
+    "frames": "主矩阵当前版本最大间隔在13/16对更长，永恒开箱8/8均更长；每格只有一次且没有反转帧矩阵，重复性和因果归因未确定。必须保留公开风险。",
+    "requiredDisclosure": "3840×2160 永恒开箱 full 最大间隔 3005.8→8993.4 ms，当前窗口未观察到 loot-7；此风险不能由1920品质覆盖或背包反转结果关闭。",
+    "measurementScope": "软件Chromium/SwiftShader、回调间隔数据，非实体GPU、实体4K60或私人玩家存档认证。"
+  }
+}

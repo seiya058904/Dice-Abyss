@@ -1,0 +1,419 @@
+{
+  "verdict": "PASS_COMBINED_CORRECTED_COVERAGE",
+  "release": "5.21.0",
+  "browser": "155.0.8059.84",
+  "scope": "13 gameplay cases from attempt2 plus all21 layout cells from the corrected layout-only attempt; no complete34-case batch is reclassified as passing.",
+  "combined": {
+    "uniqueCases": 34,
+    "gameplayCases": 13,
+    "layoutCells": 21,
+    "checks": 1882,
+    "gameplayChecks": 829,
+    "layoutChecks": 1053,
+    "manualTransitionsVerified": 46,
+    "verifiedActionsByType": {
+      "roll": 35,
+      "open": 7,
+      "talent": 2,
+      "retry": 1,
+      "next": 1
+    },
+    "pageErrors": 0,
+    "gameFailuresObserved": 0
+  },
+  "attempts": [
+    {
+      "id": "2026-10-19T12-55-05-953Z-120214",
+      "report": "/workspace/scratch/85c02edcd5e2/qa/browser-battle-round21/2026-10-19T12-55-05-953Z-120214/report.json",
+      "originalVerdict": "FAIL",
+      "cases": 34,
+      "passed": 5,
+      "failed": 29,
+      "checks": 695,
+      "manualTransitionsVerified": 26,
+      "pageErrors": 0,
+      "sourceUnchanged": true,
+      "reviewedFailureClassification": "harness: incorrect sibling selector",
+      "triage": "/workspace/scratch/85c02edcd5e2/qa/browser-battle-round21/2026-10-19T12-55-05-953Z-120214/triage.json"
+    },
+    {
+      "id": "2026-10-19T13-00-12-442Z-125244",
+      "report": "/workspace/scratch/85c02edcd5e2/qa/browser-battle-round21/2026-10-19T13-00-12-442Z-125244/report.json",
+      "originalVerdict": "FAIL",
+      "cases": 34,
+      "passed": 21,
+      "failed": 13,
+      "checks": 1577,
+      "manualTransitionsVerified": 46,
+      "pageErrors": 0,
+      "sourceUnchanged": true,
+      "reviewedFailureClassification": "harness: unsupported universal font floor",
+      "triage": "/workspace/scratch/85c02edcd5e2/qa/browser-battle-round21/2026-10-19T13-00-12-442Z-125244/triage.json"
+    },
+    {
+      "id": "2026-10-19T13-11-14-267Z-127836",
+      "report": "/workspace/scratch/85c02edcd5e2/qa/browser-battle-round21/2026-10-19T13-11-14-267Z-127836/report.json",
+      "originalVerdict": "PASS",
+      "cases": 21,
+      "passed": 21,
+      "failed": 0,
+      "checks": 1053,
+      "manualTransitionsVerified": 0,
+      "pageErrors": 0,
+      "sourceUnchanged": true,
+      "reviewedFailureClassification": "none",
+      "triage": null
+    }
+  ],
+  "driver": {
+    "file": "/workspace/scratch/85c02edcd5e2/work/Dice-Abyss/scripts/qa-battle-windows-round21.mjs",
+    "finalSha256": "8f1f8e2397856546ed2f1c31b041b9e974ad74058d81e96ce8e4db44c3d92526",
+    "originalSha256": "c8db48a8a3608e6bb5995ed4c78003cd876edbe3e34187630ae72b0a7668802c",
+    "afterSelectorFixSha256": "2afa77eaac9cb61a12a280928dd70fd5c578fc09ede1b177ae993da7ff1765a3",
+    "exactLayoutDiff": "/workspace/scratch/85c02edcd5e2/qa/browser-battle-round21/2026-10-19T13-00-12-442Z-125244/driver-layout-correction.patch",
+    "preservedOriginal": "/workspace/scratch/85c02edcd5e2/qa/browser-battle-round21/2026-10-19T12-55-05-953Z-120214/driver-before-selector-fix.mjs",
+    "preservedBeforeLayoutFix": "/workspace/scratch/85c02edcd5e2/qa/browser-battle-round21/2026-10-19T13-00-12-442Z-125244/driver-before-font-scope-fix.mjs",
+    "preservedFinal": "/workspace/scratch/85c02edcd5e2/qa/browser-battle-round21/2026-10-19T13-00-12-442Z-125244/driver-layout-corrected.mjs"
+  },
+  "runtime": {
+    "sourceUnchangedWithinAllAttempts": true,
+    "secondAndFinalAttemptsIdentical": true,
+    "currentFilesStillMatch": true,
+    "sha256": {
+      "index.html": "1e50476c2d56aea670b54d0adcb2bd38790d695b4a310844826adf985deea2f5",
+      "src/app.js": "baf8e04656b34df73feb324e5e0518bb050743683bd68c0316e83b73f545f24f",
+      "src/views.js": "75c2b6b0c36ee6d34a8066fc4867c6f223dd630633687a347b703afee674c263",
+      "src/styles.css": "dc835715e16e8698214d25202a39df6162c865287e6ac605c111486066764044",
+      "src/boons.css": "c7e1a15c1f11985322c645ec6b58057600222dae3a964c032cc85d1426634fcd",
+      "src/deep-content.js": "8c8b67239dd7d09e625dfbcaebcb8b60d87277bec25cbd4ba90790f566040b08",
+      "src/equipment-comparison.js": "e541c104874cfb9b6a7807b38aedacc2423dbe129ae5c435b7b0cd18473a0a4d",
+      "src/boon-readout.js": "ea732d4fe897633b67e5349ad57c1bd52dd1506bc84f8db3748eb6aea36f0bfc",
+      "src/encounter-tactics.js": "2af78d0b912eb1e4ae8fb17884b3107304a97c8c596846003f35ec9f76d75ce3",
+      "src/encounters.js": "e485b531d6ed59954cdc8c7b50ab5dd84c1a64449852b7b56fce667489369d76",
+      "src/engine.js": "75c6d9fcc48c0cf49ee02e53ffb7b143a09a2c79738d3bb2eb5d0ae80b30872b",
+      "src/storage.js": "daa6eeffc7a38692213228d748c7819739392a5eeaedc91ec62350c53319591c"
+    }
+  },
+  "fontCriterion": {
+    "boonAndBannerMinimum": 12,
+    "inheritedTacticsMinimum": 11,
+    "units": "CSS pixels",
+    "reason": "Unchanged src/deep.css uses font-size:max(.68rem,11px) for .combat-tactics dl>div. Existing scripts/qa-boons-round17.mjs checks a12px floor for .event-choice-preview,.boon-entry,.combat-boon-ready p and excludes tactics. The new driver incorrectly expanded that criterion; only its scope was corrected. This establishes no product font improvement.",
+    "deepCssBaselineAndCurrentSha256": "24f0ed8bf2969232c660a595cd5e19b206066bc4a19a983e4bd3a277b82700cc"
+  },
+  "fontMeasurementsAll21Cells": [
+    {
+      "case": "dense-1366x768-scale-0.9",
+      "width": 1366,
+      "height": 768,
+      "scale": 0.9,
+      "minimumBoonCssPixels": 12,
+      "minimumTacticsCssPixels": 11,
+      "beforeAndAfterDisclosuresMatch": true,
+      "documentScrollWidth": 1366,
+      "internalOverflow": [],
+      "checks": 50
+    },
+    {
+      "case": "dense-1366x768-scale-1",
+      "width": 1366,
+      "height": 768,
+      "scale": 1.0,
+      "minimumBoonCssPixels": 12,
+      "minimumTacticsCssPixels": 11,
+      "beforeAndAfterDisclosuresMatch": true,
+      "documentScrollWidth": 1366,
+      "internalOverflow": [],
+      "checks": 51
+    },
+    {
+      "case": "dense-1366x768-scale-1.1",
+      "width": 1366,
+      "height": 768,
+      "scale": 1.1,
+      "minimumBoonCssPixels": 12,
+      "minimumTacticsCssPixels": 11,
+      "beforeAndAfterDisclosuresMatch": true,
+      "documentScrollWidth": 1366,
+      "internalOverflow": [],
+      "checks": 50
+    },
+    {
+      "case": "dense-1920x1080-scale-0.9",
+      "width": 1920,
+      "height": 1080,
+      "scale": 0.9,
+      "minimumBoonCssPixels": 12,
+      "minimumTacticsCssPixels": 11,
+      "beforeAndAfterDisclosuresMatch": true,
+      "documentScrollWidth": 1920,
+      "internalOverflow": [],
+      "checks": 50
+    },
+    {
+      "case": "dense-1920x1080-scale-1",
+      "width": 1920,
+      "height": 1080,
+      "scale": 1.0,
+      "minimumBoonCssPixels": 12.8947,
+      "minimumTacticsCssPixels": 12.0115,
+      "beforeAndAfterDisclosuresMatch": true,
+      "documentScrollWidth": 1920,
+      "internalOverflow": [],
+      "checks": 50
+    },
+    {
+      "case": "dense-1920x1080-scale-1.1",
+      "width": 1920,
+      "height": 1080,
+      "scale": 1.1,
+      "minimumBoonCssPixels": 13.5605,
+      "minimumTacticsCssPixels": 12.6317,
+      "beforeAndAfterDisclosuresMatch": true,
+      "documentScrollWidth": 1920,
+      "internalOverflow": [],
+      "checks": 50
+    },
+    {
+      "case": "dense-2560x1440-scale-0.9",
+      "width": 2560,
+      "height": 1440,
+      "scale": 0.9,
+      "minimumBoonCssPixels": 15.4737,
+      "minimumTacticsCssPixels": 14.4138,
+      "beforeAndAfterDisclosuresMatch": true,
+      "documentScrollWidth": 2560,
+      "internalOverflow": [],
+      "checks": 50
+    },
+    {
+      "case": "dense-2560x1440-scale-1",
+      "width": 2560,
+      "height": 1440,
+      "scale": 1.0,
+      "minimumBoonCssPixels": 17.193,
+      "minimumTacticsCssPixels": 16.0154,
+      "beforeAndAfterDisclosuresMatch": true,
+      "documentScrollWidth": 2560,
+      "internalOverflow": [],
+      "checks": 50
+    },
+    {
+      "case": "dense-2560x1440-scale-1.1",
+      "width": 2560,
+      "height": 1440,
+      "scale": 1.1,
+      "minimumBoonCssPixels": 18.0806,
+      "minimumTacticsCssPixels": 16.8422,
+      "beforeAndAfterDisclosuresMatch": true,
+      "documentScrollWidth": 2560,
+      "internalOverflow": [],
+      "checks": 50
+    },
+    {
+      "case": "dense-3840x2160-scale-0.9",
+      "width": 3840,
+      "height": 2160,
+      "scale": 0.9,
+      "minimumBoonCssPixels": 23.2105,
+      "minimumTacticsCssPixels": 21.6207,
+      "beforeAndAfterDisclosuresMatch": true,
+      "documentScrollWidth": 3840,
+      "internalOverflow": [],
+      "checks": 50
+    },
+    {
+      "case": "dense-3840x2160-scale-1",
+      "width": 3840,
+      "height": 2160,
+      "scale": 1.0,
+      "minimumBoonCssPixels": 25.7894,
+      "minimumTacticsCssPixels": 24.023,
+      "beforeAndAfterDisclosuresMatch": true,
+      "documentScrollWidth": 3840,
+      "internalOverflow": [],
+      "checks": 50
+    },
+    {
+      "case": "dense-3840x2160-scale-1.1",
+      "width": 3840,
+      "height": 2160,
+      "scale": 1.1,
+      "minimumBoonCssPixels": 26.28,
+      "minimumTacticsCssPixels": 24.48,
+      "beforeAndAfterDisclosuresMatch": true,
+      "documentScrollWidth": 3840,
+      "internalOverflow": [],
+      "checks": 50
+    },
+    {
+      "case": "dense-1099x900-scale-0.9",
+      "width": 1099,
+      "height": 900,
+      "scale": 0.9,
+      "minimumBoonCssPixels": 12,
+      "minimumTacticsCssPixels": 11,
+      "beforeAndAfterDisclosuresMatch": true,
+      "documentScrollWidth": 1099,
+      "internalOverflow": [],
+      "checks": 50
+    },
+    {
+      "case": "dense-1099x900-scale-1",
+      "width": 1099,
+      "height": 900,
+      "scale": 1.0,
+      "minimumBoonCssPixels": 12,
+      "minimumTacticsCssPixels": 11,
+      "beforeAndAfterDisclosuresMatch": true,
+      "documentScrollWidth": 1099,
+      "internalOverflow": [],
+      "checks": 50
+    },
+    {
+      "case": "dense-1099x900-scale-1.1",
+      "width": 1099,
+      "height": 900,
+      "scale": 1.1,
+      "minimumBoonCssPixels": 12,
+      "minimumTacticsCssPixels": 11,
+      "beforeAndAfterDisclosuresMatch": true,
+      "documentScrollWidth": 1099,
+      "internalOverflow": [],
+      "checks": 50
+    },
+    {
+      "case": "dense-390x844-scale-0.9",
+      "width": 390,
+      "height": 844,
+      "scale": 0.9,
+      "minimumBoonCssPixels": 12,
+      "minimumTacticsCssPixels": 11,
+      "beforeAndAfterDisclosuresMatch": true,
+      "documentScrollWidth": 390,
+      "internalOverflow": [],
+      "checks": 50
+    },
+    {
+      "case": "dense-390x844-scale-1",
+      "width": 390,
+      "height": 844,
+      "scale": 1.0,
+      "minimumBoonCssPixels": 12,
+      "minimumTacticsCssPixels": 11,
+      "beforeAndAfterDisclosuresMatch": true,
+      "documentScrollWidth": 390,
+      "internalOverflow": [],
+      "checks": 51
+    },
+    {
+      "case": "dense-390x844-scale-1.1",
+      "width": 390,
+      "height": 844,
+      "scale": 1.1,
+      "minimumBoonCssPixels": 12,
+      "minimumTacticsCssPixels": 11,
+      "beforeAndAfterDisclosuresMatch": true,
+      "documentScrollWidth": 390,
+      "internalOverflow": [],
+      "checks": 50
+    },
+    {
+      "case": "dense-320x740-scale-0.9",
+      "width": 320,
+      "height": 740,
+      "scale": 0.9,
+      "minimumBoonCssPixels": 12,
+      "minimumTacticsCssPixels": 11,
+      "beforeAndAfterDisclosuresMatch": true,
+      "documentScrollWidth": 320,
+      "internalOverflow": [],
+      "checks": 50
+    },
+    {
+      "case": "dense-320x740-scale-1",
+      "width": 320,
+      "height": 740,
+      "scale": 1.0,
+      "minimumBoonCssPixels": 12,
+      "minimumTacticsCssPixels": 11,
+      "beforeAndAfterDisclosuresMatch": true,
+      "documentScrollWidth": 320,
+      "internalOverflow": [],
+      "checks": 50
+    },
+    {
+      "case": "dense-320x740-scale-1.1",
+      "width": 320,
+      "height": 740,
+      "scale": 1.1,
+      "minimumBoonCssPixels": 12,
+      "minimumTacticsCssPixels": 11,
+      "beforeAndAfterDisclosuresMatch": true,
+      "documentScrollWidth": 320,
+      "internalOverflow": [],
+      "checks": 51
+    }
+  ],
+  "screenshots": [
+    {
+      "file": "/workspace/scratch/85c02edcd5e2/qa/browser-battle-round21/2026-10-19T13-11-14-267Z-127836/dense-1366-scale-1-opportunity-viewport.png",
+      "width": 1366,
+      "height": 768,
+      "scale": 1,
+      "inspected": true,
+      "finding": "Bandit countdown, earned gold luck and muted unused opportunity are simultaneously visible within their clips. Manual roll is unobstructed. Lifetime disclosure is natively open with its focus outline visible."
+    },
+    {
+      "file": "/workspace/scratch/85c02edcd5e2/qa/browser-battle-round21/2026-10-19T13-11-14-267Z-127836/dense-390-scale-1-combat-viewport.png",
+      "width": 390,
+      "height": 844,
+      "scale": 1,
+      "inspected": true,
+      "finding": "Complete bandit countdown, damage warning, earned-luck and echo banners, six dice and manual action are visible. Opportunity is in a later document section."
+    },
+    {
+      "file": "/workspace/scratch/85c02edcd5e2/qa/browser-battle-round21/2026-10-19T13-11-14-267Z-127836/dense-390-scale-1-opportunity-viewport.png",
+      "width": 390,
+      "height": 844,
+      "scale": 1,
+      "inspected": true,
+      "finding": "Native scroll shows earned luck, complete unused opportunity and expanded lifetime explanation. Fixed manual control remains visible; combat guide is outside this viewport."
+    },
+    {
+      "file": "/workspace/scratch/85c02edcd5e2/qa/browser-battle-round21/2026-10-19T13-11-14-267Z-127836/dense-320-scale-1.1-combat-viewport.png",
+      "width": 320,
+      "height": 740,
+      "scale": 1.1,
+      "inspected": true,
+      "finding": "Countdown and manual action remain visible. Inherited narrative and rule-summary text wrap cleanly. Dice fall below this short viewport. No horizontal clipping is visible."
+    },
+    {
+      "file": "/workspace/scratch/85c02edcd5e2/qa/browser-battle-round21/2026-10-19T13-11-14-267Z-127836/dense-320-scale-1.1-opportunity-viewport.png",
+      "width": 320,
+      "height": 740,
+      "scale": 1.1,
+      "inspected": true,
+      "finding": "Native scroll shows the complete availability row and expanded lifetime explanation with manual control visible. Earned luck is above this viewport, so this frame makes no simultaneous-visibility claim."
+    }
+  ],
+  "otherVerifiedEvidence": {
+    "spentAndEarnedLuckScreenshot": "/workspace/scratch/85c02edcd5e2/qa/browser-battle-round21/2026-10-19T13-00-12-442Z-125244/critical-used-and-earned-luck.png",
+    "parentAlsoInspectedSpentAndEarnedScreenshot": true,
+    "oldPendingNote": "Exact historic variant1 raw three-roll note stays verbatim in stored state while rendered authored note says two. Custom imported notes remain literal and escaped. Both bandits end in the same complete state as actual baseline browser actions.",
+    "animation": "Real MutationObserver evidence covers pre-roll, committed impact and settled stages. An opportunity is never shown as a granted current-roll boon. Dead/defeated combatants have no live availability row.",
+    "keyboard": "All21 cells toggle encounter and lifetime native disclosures with Space, retain focus, preserve exact game state and finish with a reachable enabled manual control.",
+    "nativeActions": "35 rolls,7 opens,2 talent purchases,1 retry,1 next:46 exact transitions, including8 baseline rolls and38 current actions."
+  },
+  "rawStdout": {
+    "attempt1": "No separate stdout file; untouched full original report, failure screenshots and original driver are preserved.",
+    "attempt2": "/workspace/scratch/85c02edcd5e2/qa/browser-battle-round21/complete-after-selector-fix.stdout.log",
+    "layoutOnly": "/workspace/scratch/85c02edcd5e2/qa/browser-battle-round21/layout-after-font-scope-fix.stdout.log"
+  },
+  "limitations": [
+    "Constructed validator-approved stress fixtures; not natural-progress playthrough evidence.",
+    "Headless Chrome, reduced motion, low effects and software rendering; no performance, physical4K hardware or font-size improvement claim.",
+    "At390/320 combat and opportunity occupy separate document sections; screenshots use native scrolling and distinct real viewports.",
+    "The initial color-study pair hid its target below the sidebar scroll fold and is preserved as a harness-framing failure, never final visual proof. Final screenshots use shipped CSS without injection."
+  ]
+}

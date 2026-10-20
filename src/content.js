@@ -14,11 +14,11 @@ export const ROOM_DETAILS = {
  merchant:{purpose:'武器、防具、遗物各一件，另有一次全额治疗。',reward:'可预览属性后购买，也可直接离开。'},
  forge:{purpose:'只强化当前装备的这一件，每次必定提升。',reward:'1–2 点 +1，3–4 点 +2，5–6 点 +3；单件上限 +20。',rich:'丰饶命运：本层锻造费用八折。'},
  fusion:{purpose:'保留目标，消耗同类材料，成长与强化分别累计。',reward:'1–4 点基础成长，5 点额外 +30%，6 点额外 +40%；最多三件遗物均分。'},
- vault:{purpose:'无需战斗的高品质秘藏。',reward:'必得史诗或传说装备：传说概率 30%，另有金币。'},
- blackmarket:{purpose:'高品质装备交易，仍可逐件预览后购买。',reward:'三类装备至少史诗，其中一类为传说；不强制购买。'},
+ vault:{purpose:'无需战斗的高品质秘藏。',reward:'史诗保底，另有金币；1–29层传说概率30%，30层起高阶机会按当前深度抽取。'},
+ blackmarket:{purpose:'高品质装备交易，仍可逐件预览后购买。',reward:'三类装备至少史诗，其中一类至少传说；高阶按深度解锁，不强制购买。'},
  altar:{purpose:'投一颗祝福骰，增加本层伤害。',reward:'每点 +5%，本房限领一次，进入下一层清除。'},
  rest:{purpose:'恢复全部生命，并储备下一场战斗的护盾。',reward:'获得最大生命 25% 的护盾；本房限领一次。'},
- trial:{purpose:'击败悬赏目标；四次掷骰内完成有额外报酬。',reward:'必得史诗或传说装备，四回合内击杀使宝箱金币翻倍。'},
+ trial:{purpose:'击败悬赏目标；四次掷骰内完成有额外报酬。',reward:'史诗保底，高阶按深度解锁；四回合内击杀使宝箱金币翻倍。'},
 };
 Object.assign(ROOM_DETAILS,ROOM_ADDITION_DETAILS);
 ROOM_DETAILS.fusion={purpose:'保留目标，消耗同类材料，提升装备等级与等级经验。',reward:'1–4 点基础经验，5 点 ×1.75，6 点 ×2.5；最多三件遗物均分，强化不继承。'};
@@ -46,7 +46,7 @@ export const DICE_LEVELS = [1, 2, 3, 5, 8, 11];
 // Thirty authored families per slot, each with four genuinely stronger rarity tiers.
 export const EQUIP_SLOTS = { weapon: '武器', armor: '防具', relic: '遗物 I', relic2: '遗物 II', relic3: '遗物 III' };
 export const BOSSES = [
- {name:'骸骨君王',identity:'王座守门者',trait:'shield',label:'开场骨盾 · 先吸收伤害',note:'「在我的王座之下，遗忘也是臣服。」',warning:'先击破骨盾，才能削减生命。',counterplay:'护盾不会自行恢复，持续伤害可以耗尽它。',phaseLabel:'碎冠再临'},
+ {name:'骸骨君王',identity:'王座守门者',trait:'shield',label:'开场骨盾 · 吸收未穿盾伤害',note:'「在我的王座之下，遗忘也是臣服。」',warning:'骨盾吸收未穿盾的伤害；穿盾可以直接削减生命。',counterplay:'没有周期重筑；穿盾可绕过骨盾，持续伤害也能耗尽它。',phaseLabel:'碎冠再临'},
  {name:'永夜观测者',identity:'终点的见证者',trait:'rage',label:'半血后反击 +35%',note:'「我已见过你的终点。」',warning:'这一击若压入半血，反击立即变强。',counterplay:'看清下次反击，带着充足生命进入后半场。',phaseLabel:'终夜凝视'},
  {name:'倒悬钟主',identity:'第三声钟的主人',trait:'pulse',label:'第 3 / 6 / 9… 回合反击 ×1.6',note:'「第三声钟响，只为你。」',warning:'每逢第三回合，下一次反击为钟鸣重击。',counterplay:'重击前留意生命与护盾，击杀可避免反击。',phaseLabel:'末钟倒响'},
  {name:'幽潮女王',identity:'归潮的统治者',trait:'drain',label:'存活反击后恢复最大生命 2%',note:'「潮水终将收回一切。」',warning:'只要她在这一击后存活，反击后便会回血。',counterplay:'共鸣与暴击可压过恢复；终结一击不会触发回血。',phaseLabel:'满潮封域'},
@@ -59,7 +59,7 @@ const ENEMY_TRAITS = {
  drain:{label:'反击后恢复最大生命 2%',warning:'存活反击后回血，击杀可阻止恢复。'},
  ramp:{label:'反击逐回合 +8%，最多 +80%',warning:'持久战中反击越来越强。'},
  ward:{label:'每三回合重筑 5% 护盾',warning:'护盾先吸收伤害，重筑量按最大生命计算。'},
- shield:{label:'开场护盾 · 先吸收伤害',warning:'护盾耗尽后才会损失生命。'},
+ shield:{label:'开场护盾 · 吸收未穿盾伤害',warning:'穿盾伤害直接削减生命，其余伤害先由护盾吸收。'},
  fierce:{label:'攻击 +25% · 生命 -15%',warning:'伤害较高，但生命较低。'},
 };
 const ENEMY_NOTES = [

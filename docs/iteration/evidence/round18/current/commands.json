@@ -1,0 +1,37 @@
+[
+  {
+    "label": "check",
+    "command": [
+      "npm",
+      "run",
+      "check"
+    ],
+    "started": "2026-10-19T07:41:01.539676+00:00",
+    "exitCode": 0,
+    "durationSeconds": 4.7115
+  },
+  {
+    "label": "npm-test",
+    "command": [
+      "npm",
+      "test"
+    ],
+    "started": "2026-10-19T07:41:06.251358+00:00",
+    "exitCode": 0,
+    "durationSeconds": 96.1075
+  },
+  {
+    "label": "native-cases",
+    "command": [
+      "python3",
+      "scripts/verify-test-cases.py",
+      "--output",
+      "/workspace/scratch/f0146b2cbcc6/analysis/current/native-tests",
+      "--workers",
+      "4"
+    ],
+    "started": "2026-10-19T07:42:42.359106+00:00",
+    "exitCode": 0,
+    "durationSeconds": 94.7909
+  }
+]

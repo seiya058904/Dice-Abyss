@@ -1,0 +1,24 @@
+{
+  "detectedAt": "2026-10-19T14:53:06.502925+00:00",
+  "stage": "Before any ZIP gate extraction/test/server execution",
+  "reason": "Prepared identity rows used pathlib component order; runtime snapshot used full path string order. Compare the same unchanged identities under one canonical full string order.",
+  "preparedRows": 301,
+  "pathBytesHashMappingUnchanged": true,
+  "gameSourceOrZIPChanged": false,
+  "projectCommandsExecutedBeforeCorrection": 0,
+  "runnerBeforeSha256": "a9da0481e766c74d913ed7859466f80a86f2b080f0169a95e0981e28d51911f2",
+  "preservedBeforeRunner": "development/run-final-gate-before-canonical-sort.py",
+  "preparedEvidenceSha256": "027fce36ba171549367419d26e7ab56be4ff8f4c143978ed23842ca92dee6035",
+  "runnerAfterSha256": "e6ba59c71048b4660dc3bafe94e4a920c91583ac3582e3e51ae50b8617f9d36e",
+  "pythonSyntaxParsed": true,
+  "additionalCorrections": [
+    {
+      "at": "2026-10-19T15:02:40.092374+00:00",
+      "reason": "Support either default wrapper totals or native case totals from the actual same npm test invocation, validating native totals against the measured identical-source reference. No test rerun.",
+      "beforeRunner": "development/run-final-gate-before-native-counter-support.py",
+      "beforeSha256": "e6ba59c71048b4660dc3bafe94e4a920c91583ac3582e3e51ae50b8617f9d36e",
+      "afterSha256": "65aba4be47cafb0d14c4692f5babe45fa967a9a4543da07fc751a734333ac529",
+      "gameFilesChanged": false
+    }
+  ]
+}

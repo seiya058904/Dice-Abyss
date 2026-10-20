@@ -1,0 +1,1520 @@
+{
+  "started": "2026-10-18T09:28:13.513Z",
+  "url": "http://127.0.0.1:4320/",
+  "browser": "155.0.8059.84",
+  "contextCount": 1,
+  "synthetic": true,
+  "method": "Native clicks in one new independent Playwright context. LocalStorage is seeded only with validated synthetic fixtures. No user browser or save is read. DOM selection plus exact decoded main/mirror state establish the result.",
+  "browserRouting": "The root recorded extension and cloud CDP ERR_CONNECTION_REFUSED for this local server; the taskbook permits Playwright and root explicitly requested this independent context.",
+  "viewports": [
+    {
+      "width": 1366,
+      "height": 768
+    },
+    {
+      "width": 375,
+      "height": 812
+    }
+  ],
+  "sourceBefore": {
+    "src/fusion-view.js": "e77542f7de4c6f39ac57098ffb7a277caab988cd4bcc9ea5f50080b0f08e96c1",
+    "src/fusion-controller.js": "5a4a0c6a11c7a347ffcdaa0340d3c905d65aa5ba6b50e36e7135a9276537dd1a",
+    "src/equipment.js": "8c20de433f21931318e315b862b457d37a03b9596ea5df8f7cc4025691aaccd6"
+  },
+  "cases": [
+    {
+      "name": "single-cap-1366x768",
+      "kind": "single-cap",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "checks": [
+        {
+          "name": "Correct page identity",
+          "title": "骰狱：无尽深渊 · Dice Abyss",
+          "url": "http://127.0.0.1:4320/"
+        },
+        {
+          "name": "Requested loopback URL retained"
+        },
+        {
+          "name": "Meaningful fusion page, not blank"
+        },
+        {
+          "name": "No framework error overlay"
+        },
+        {
+          "name": "Loaded fixture is exact: main and mirror agree"
+        },
+        {
+          "name": "Loaded fixture is exact"
+        },
+        {
+          "name": "Native card clicks select intended material IDs"
+        },
+        {
+          "name": "Native card click retains intended target"
+        },
+        {
+          "name": "Selection changes no save or RNG: main and mirror agree"
+        },
+        {
+          "name": "Selection changes no save or RNG"
+        },
+        {
+          "name": "Over-cap primary action is truly disabled"
+        },
+        {
+          "name": "Readable cap condition and full capacity"
+        },
+        {
+          "name": "No false one-gold deficit, negative balance or sentinel price"
+        },
+        {
+          "name": "Single-material price directs player to change target"
+        },
+        {
+          "name": "Single-material price does not promise an impossible reduction"
+        },
+        {
+          "name": "Primary action remains in the viewport",
+          "text": "费用超过持有上限",
+          "rect": {
+            "left": 1065.328125,
+            "top": 622.640625,
+            "right": 1327.328125,
+            "bottom": 662.640625,
+            "width": 262,
+            "height": 40
+          },
+          "fontSize": 16,
+          "horizontalTextOverflow": false,
+          "inViewport": true,
+          "unoccluded": true,
+          "documentWidth": 1366,
+          "viewportWidth": 1366,
+          "viewportHeight": 768,
+          "scrollY": 0
+        },
+        {
+          "name": "Primary label is not horizontally clipped"
+        },
+        {
+          "name": "Fusion surface has no horizontal document overflow",
+          "text": "费用超过持有上限",
+          "rect": {
+            "left": 1065.328125,
+            "top": 622.640625,
+            "right": 1327.328125,
+            "bottom": 662.640625,
+            "width": 262,
+            "height": 40
+          },
+          "fontSize": 16,
+          "horizontalTextOverflow": false,
+          "inViewport": true,
+          "unoccluded": true,
+          "documentWidth": 1366,
+          "viewportWidth": 1366,
+          "viewportHeight": 768,
+          "scrollY": 0
+        },
+        {
+          "name": "Disabled-button native click preserves selected materials"
+        },
+        {
+          "name": "Disabled-button native click preserves target"
+        },
+        {
+          "name": "Disabled-button click consumes nothing: main and mirror agree"
+        },
+        {
+          "name": "Disabled-button click consumes nothing"
+        },
+        {
+          "name": "Expanded fee detail distinguishes capped quote"
+        },
+        {
+          "name": "Fee detail never calls sentinel the true price"
+        },
+        {
+          "name": "Cap explanation is reachable without a fixed overlay covering it",
+          "text": "单件材料费用超过金币持有上限。请更换目标后再试。持有上限 10,000,000,000 金币。",
+          "rect": {
+            "left": 1065.328125,
+            "top": 288.25,
+            "right": 1324.328125,
+            "bottom": 321.84375,
+            "width": 259,
+            "height": 33.59375
+          },
+          "fontSize": 12,
+          "horizontalTextOverflow": false,
+          "inViewport": true,
+          "unoccluded": true,
+          "documentWidth": 1366,
+          "viewportWidth": 1366,
+          "viewportHeight": 768,
+          "scrollY": 0
+        },
+        {
+          "name": "Full cap explanation fits and uses at least 12px text"
+        },
+        {
+          "name": "Boundary is constructed, not naturally reached",
+          "playerLevel": 100,
+          "targetLevel": 1000000,
+          "quotedCost": 10000000001,
+          "gold": 10000000000,
+          "viewport": {
+            "width": 1366,
+            "height": 768
+          }
+        },
+        {
+          "name": "No console or page errors in this flow"
+        }
+      ],
+      "screenshots": [
+        "single-cap-1366x768-overview.png",
+        "single-cap-1366x768-cap-explanation.png"
+      ],
+      "status": "passed",
+      "fixture": {
+        "gold": 10000000000,
+        "playerLevel": 100,
+        "targetLevel": 1000000,
+        "materials": 1,
+        "cost": 10000000001,
+        "stateSha256": "29aeb6c8ba3778f3e7e4f990f1ae300c351618a2719d83db7da8ef482cfe37cc"
+      },
+      "initialLayout": {
+        "text": "费用超过持有上限",
+        "rect": {
+          "left": 1065.328125,
+          "top": 622.640625,
+          "right": 1327.328125,
+          "bottom": 662.640625,
+          "width": 262,
+          "height": 40
+        },
+        "fontSize": 16,
+        "horizontalTextOverflow": false,
+        "inViewport": true,
+        "unoccluded": true,
+        "documentWidth": 1366,
+        "viewportWidth": 1366,
+        "viewportHeight": 768,
+        "scrollY": 0
+      },
+      "warningLayout": {
+        "text": "单件材料费用超过金币持有上限。请更换目标后再试。持有上限 10,000,000,000 金币。",
+        "rect": {
+          "left": 1065.328125,
+          "top": 288.25,
+          "right": 1324.328125,
+          "bottom": 321.84375,
+          "width": 259,
+          "height": 33.59375
+        },
+        "fontSize": 12,
+        "horizontalTextOverflow": false,
+        "inViewport": true,
+        "unoccluded": true,
+        "documentWidth": 1366,
+        "viewportWidth": 1366,
+        "viewportHeight": 768,
+        "scrollY": 0
+      }
+    },
+    {
+      "name": "bulk-cap-1366x768",
+      "kind": "bulk-cap",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "checks": [
+        {
+          "name": "Correct page identity",
+          "title": "骰狱：无尽深渊 · Dice Abyss",
+          "url": "http://127.0.0.1:4320/"
+        },
+        {
+          "name": "Requested loopback URL retained"
+        },
+        {
+          "name": "Meaningful fusion page, not blank"
+        },
+        {
+          "name": "No framework error overlay"
+        },
+        {
+          "name": "Loaded fixture is exact: main and mirror agree"
+        },
+        {
+          "name": "Loaded fixture is exact"
+        },
+        {
+          "name": "Native card clicks select intended material IDs"
+        },
+        {
+          "name": "Native card click retains intended target"
+        },
+        {
+          "name": "Selection changes no save or RNG: main and mirror agree"
+        },
+        {
+          "name": "Selection changes no save or RNG"
+        },
+        {
+          "name": "Over-cap primary action is truly disabled"
+        },
+        {
+          "name": "Readable cap condition and full capacity"
+        },
+        {
+          "name": "No false one-gold deficit, negative balance or sentinel price"
+        },
+        {
+          "name": "Bulk-only price offers a possible reduction"
+        },
+        {
+          "name": "Primary action remains in the viewport",
+          "text": "费用超过持有上限",
+          "rect": {
+            "left": 1065.328125,
+            "top": 622.640625,
+            "right": 1327.328125,
+            "bottom": 662.640625,
+            "width": 262,
+            "height": 40
+          },
+          "fontSize": 16,
+          "horizontalTextOverflow": false,
+          "inViewport": true,
+          "unoccluded": true,
+          "documentWidth": 1366,
+          "viewportWidth": 1366,
+          "viewportHeight": 768,
+          "scrollY": 0
+        },
+        {
+          "name": "Primary label is not horizontally clipped"
+        },
+        {
+          "name": "Fusion surface has no horizontal document overflow",
+          "text": "费用超过持有上限",
+          "rect": {
+            "left": 1065.328125,
+            "top": 622.640625,
+            "right": 1327.328125,
+            "bottom": 662.640625,
+            "width": 262,
+            "height": 40
+          },
+          "fontSize": 16,
+          "horizontalTextOverflow": false,
+          "inViewport": true,
+          "unoccluded": true,
+          "documentWidth": 1366,
+          "viewportWidth": 1366,
+          "viewportHeight": 768,
+          "scrollY": 0
+        },
+        {
+          "name": "Disabled-button native click preserves selected materials"
+        },
+        {
+          "name": "Disabled-button native click preserves target"
+        },
+        {
+          "name": "Disabled-button click consumes nothing: main and mirror agree"
+        },
+        {
+          "name": "Disabled-button click consumes nothing"
+        },
+        {
+          "name": "Expanded fee detail distinguishes capped quote"
+        },
+        {
+          "name": "Fee detail never calls sentinel the true price"
+        },
+        {
+          "name": "Cap explanation is reachable without a fixed overlay covering it",
+          "text": "本次费用超过金币持有上限。请减少材料或更换目标后再试。持有上限 10,000,000,000 金币。",
+          "rect": {
+            "left": 1065.328125,
+            "top": 288.25,
+            "right": 1324.328125,
+            "bottom": 321.84375,
+            "width": 259,
+            "height": 33.59375
+          },
+          "fontSize": 12,
+          "horizontalTextOverflow": false,
+          "inViewport": true,
+          "unoccluded": true,
+          "documentWidth": 1366,
+          "viewportWidth": 1366,
+          "viewportHeight": 768,
+          "scrollY": 0
+        },
+        {
+          "name": "Full cap explanation fits and uses at least 12px text"
+        },
+        {
+          "name": "Removing one material preserves the remaining material"
+        },
+        {
+          "name": "A now-payable single-material combination enables fusion"
+        },
+        {
+          "name": "Reduced combination clears the obsolete cap warning"
+        },
+        {
+          "name": "Reduction is a preview only: main and mirror agree"
+        },
+        {
+          "name": "Reduction is a preview only"
+        },
+        {
+          "name": "Boundary is constructed, not naturally reached",
+          "playerLevel": 100,
+          "targetLevel": 500000,
+          "quotedCost": 10000000001,
+          "gold": 10000000000,
+          "viewport": {
+            "width": 1366,
+            "height": 768
+          }
+        },
+        {
+          "name": "No console or page errors in this flow"
+        }
+      ],
+      "screenshots": [
+        "bulk-cap-1366x768-overview.png",
+        "bulk-cap-1366x768-cap-explanation.png"
+      ],
+      "status": "passed",
+      "fixture": {
+        "gold": 10000000000,
+        "playerLevel": 100,
+        "targetLevel": 500000,
+        "materials": 2,
+        "cost": 10000000001,
+        "stateSha256": "6e1a5725b74f0cb0083a375c1311fd8956a21d8aa5182f369db58f6c318c80af"
+      },
+      "initialLayout": {
+        "text": "费用超过持有上限",
+        "rect": {
+          "left": 1065.328125,
+          "top": 622.640625,
+          "right": 1327.328125,
+          "bottom": 662.640625,
+          "width": 262,
+          "height": 40
+        },
+        "fontSize": 16,
+        "horizontalTextOverflow": false,
+        "inViewport": true,
+        "unoccluded": true,
+        "documentWidth": 1366,
+        "viewportWidth": 1366,
+        "viewportHeight": 768,
+        "scrollY": 0
+      },
+      "warningLayout": {
+        "text": "本次费用超过金币持有上限。请减少材料或更换目标后再试。持有上限 10,000,000,000 金币。",
+        "rect": {
+          "left": 1065.328125,
+          "top": 288.25,
+          "right": 1324.328125,
+          "bottom": 321.84375,
+          "width": 259,
+          "height": 33.59375
+        },
+        "fontSize": 12,
+        "horizontalTextOverflow": false,
+        "inViewport": true,
+        "unoccluded": true,
+        "documentWidth": 1366,
+        "viewportWidth": 1366,
+        "viewportHeight": 768,
+        "scrollY": 0
+      }
+    },
+    {
+      "name": "budget-1366x768",
+      "kind": "budget",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "checks": [
+        {
+          "name": "Correct page identity",
+          "title": "骰狱：无尽深渊 · Dice Abyss",
+          "url": "http://127.0.0.1:4320/"
+        },
+        {
+          "name": "Requested loopback URL retained"
+        },
+        {
+          "name": "Meaningful fusion page, not blank"
+        },
+        {
+          "name": "No framework error overlay"
+        },
+        {
+          "name": "Loaded fixture is exact: main and mirror agree"
+        },
+        {
+          "name": "Loaded fixture is exact"
+        },
+        {
+          "name": "Native card clicks select intended material IDs"
+        },
+        {
+          "name": "Native card click retains intended target"
+        },
+        {
+          "name": "Selection changes no save or RNG: main and mirror agree"
+        },
+        {
+          "name": "Selection changes no save or RNG"
+        },
+        {
+          "name": "Ordinary shortage keeps budget adjustment enabled"
+        },
+        {
+          "name": "Primary action names budget adjustment"
+        },
+        {
+          "name": "Unaffordable preview never presents a negative settled balance"
+        },
+        {
+          "name": "Ordinary shortage is not mislabeled a cap condition"
+        },
+        {
+          "name": "Primary action remains in the viewport",
+          "text": "按预算调整材料",
+          "rect": {
+            "left": 1065.328125,
+            "top": 622.640625,
+            "right": 1327.328125,
+            "bottom": 662.640625,
+            "width": 262,
+            "height": 40
+          },
+          "fontSize": 16,
+          "horizontalTextOverflow": false,
+          "inViewport": true,
+          "unoccluded": true,
+          "documentWidth": 1366,
+          "viewportWidth": 1366,
+          "viewportHeight": 768,
+          "scrollY": 0
+        },
+        {
+          "name": "Primary label is not horizontally clipped"
+        },
+        {
+          "name": "Fusion surface has no horizontal document overflow",
+          "text": "按预算调整材料",
+          "rect": {
+            "left": 1065.328125,
+            "top": 622.640625,
+            "right": 1327.328125,
+            "bottom": 662.640625,
+            "width": 262,
+            "height": 40
+          },
+          "fontSize": 16,
+          "horizontalTextOverflow": false,
+          "inViewport": true,
+          "unoccluded": true,
+          "documentWidth": 1366,
+          "viewportWidth": 1366,
+          "viewportHeight": 768,
+          "scrollY": 0
+        },
+        {
+          "name": "Budget action keeps the affordable two-material combination"
+        },
+        {
+          "name": "Budget repair only uses originally eligible materials"
+        },
+        {
+          "name": "Repaired combination can use the ordinary fusion action"
+        },
+        {
+          "name": "Budget adjustment consumes no item, money or RNG: main and mirror agree"
+        },
+        {
+          "name": "Budget adjustment consumes no item, money or RNG"
+        },
+        {
+          "name": "No console or page errors in this flow"
+        }
+      ],
+      "screenshots": [
+        "budget-1366x768-overview.png",
+        "budget-1366x768-budget-adjusted.png"
+      ],
+      "status": "passed",
+      "fixture": {
+        "gold": 516,
+        "playerLevel": 100,
+        "targetLevel": 100,
+        "materials": 3,
+        "cost": 774,
+        "stateSha256": "b4b08e0aa679f29596b3e098daddba454e77a28898faca0a1e3435bce0d562b6"
+      },
+      "initialLayout": {
+        "text": "按预算调整材料",
+        "rect": {
+          "left": 1065.328125,
+          "top": 622.640625,
+          "right": 1327.328125,
+          "bottom": 662.640625,
+          "width": 262,
+          "height": 40
+        },
+        "fontSize": 16,
+        "horizontalTextOverflow": false,
+        "inViewport": true,
+        "unoccluded": true,
+        "documentWidth": 1366,
+        "viewportWidth": 1366,
+        "viewportHeight": 768,
+        "scrollY": 0
+      }
+    },
+    {
+      "name": "exact-cap-1366x768",
+      "kind": "exact-cap",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "checks": [
+        {
+          "name": "Correct page identity",
+          "title": "骰狱：无尽深渊 · Dice Abyss",
+          "url": "http://127.0.0.1:4320/"
+        },
+        {
+          "name": "Requested loopback URL retained"
+        },
+        {
+          "name": "Meaningful fusion page, not blank"
+        },
+        {
+          "name": "No framework error overlay"
+        },
+        {
+          "name": "Loaded fixture is exact: main and mirror agree"
+        },
+        {
+          "name": "Loaded fixture is exact"
+        },
+        {
+          "name": "Native card clicks select intended material IDs"
+        },
+        {
+          "name": "Native card click retains intended target"
+        },
+        {
+          "name": "Selection changes no save or RNG: main and mirror agree"
+        },
+        {
+          "name": "Selection changes no save or RNG"
+        },
+        {
+          "name": "An exact-cap quote remains executable"
+        },
+        {
+          "name": "Exact-cap action keeps normal intent"
+        },
+        {
+          "name": "Exact-cap quote is not falsely disabled"
+        },
+        {
+          "name": "Exact-cap preview states zero remaining balance"
+        },
+        {
+          "name": "Primary action remains in the viewport",
+          "text": "投骰融合",
+          "rect": {
+            "left": 1065.328125,
+            "top": 622.640625,
+            "right": 1327.328125,
+            "bottom": 662.640625,
+            "width": 262,
+            "height": 40
+          },
+          "fontSize": 16,
+          "horizontalTextOverflow": false,
+          "inViewport": true,
+          "unoccluded": true,
+          "documentWidth": 1366,
+          "viewportWidth": 1366,
+          "viewportHeight": 768,
+          "scrollY": 0
+        },
+        {
+          "name": "Primary label is not horizontally clipped"
+        },
+        {
+          "name": "Fusion surface has no horizontal document overflow",
+          "text": "投骰融合",
+          "rect": {
+            "left": 1065.328125,
+            "top": 622.640625,
+            "right": 1327.328125,
+            "bottom": 662.640625,
+            "width": 262,
+            "height": 40
+          },
+          "fontSize": 16,
+          "horizontalTextOverflow": false,
+          "inViewport": true,
+          "unoccluded": true,
+          "documentWidth": 1366,
+          "viewportWidth": 1366,
+          "viewportHeight": 768,
+          "scrollY": 0
+        },
+        {
+          "name": "Authoritative engine accepts exact-cap quote"
+        },
+        {
+          "name": "Authoritative exact-cap cost spends exactly available funds"
+        },
+        {
+          "name": "One native exact-cap fusion equals the entire engine transition: main and mirror agree"
+        },
+        {
+          "name": "One native exact-cap fusion equals the entire engine transition"
+        },
+        {
+          "name": "Completed exact-cap fusion has no negative balance"
+        },
+        {
+          "name": "Completed fusion clears consumed material selection"
+        },
+        {
+          "name": "Reload retains the completed exact-cap transaction: main and mirror agree"
+        },
+        {
+          "name": "Reload retains the completed exact-cap transaction"
+        },
+        {
+          "name": "No console or page errors in this flow"
+        }
+      ],
+      "screenshots": [
+        "exact-cap-1366x768-overview.png",
+        "exact-cap-1366x768-completed.png"
+      ],
+      "status": "passed",
+      "fixture": {
+        "gold": 10000000000,
+        "playerLevel": 5870,
+        "targetLevel": 4945533,
+        "materials": 1,
+        "cost": 10000000000,
+        "stateSha256": "76a6ffca8e133a0c7f8523157211913251382aee157f350a41d029a7a7246b0d"
+      },
+      "initialLayout": {
+        "text": "投骰融合",
+        "rect": {
+          "left": 1065.328125,
+          "top": 622.640625,
+          "right": 1327.328125,
+          "bottom": 662.640625,
+          "width": 262,
+          "height": 40
+        },
+        "fontSize": 16,
+        "horizontalTextOverflow": false,
+        "inViewport": true,
+        "unoccluded": true,
+        "documentWidth": 1366,
+        "viewportWidth": 1366,
+        "viewportHeight": 768,
+        "scrollY": 0
+      }
+    },
+    {
+      "name": "single-cap-375x812",
+      "kind": "single-cap",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "checks": [
+        {
+          "name": "Correct page identity",
+          "title": "骰狱：无尽深渊 · Dice Abyss",
+          "url": "http://127.0.0.1:4320/"
+        },
+        {
+          "name": "Requested loopback URL retained"
+        },
+        {
+          "name": "Meaningful fusion page, not blank"
+        },
+        {
+          "name": "No framework error overlay"
+        },
+        {
+          "name": "Loaded fixture is exact: main and mirror agree"
+        },
+        {
+          "name": "Loaded fixture is exact"
+        },
+        {
+          "name": "Native card clicks select intended material IDs"
+        },
+        {
+          "name": "Native card click retains intended target"
+        },
+        {
+          "name": "Selection changes no save or RNG: main and mirror agree"
+        },
+        {
+          "name": "Selection changes no save or RNG"
+        },
+        {
+          "name": "Over-cap primary action is truly disabled"
+        },
+        {
+          "name": "Readable cap condition and full capacity"
+        },
+        {
+          "name": "No false one-gold deficit, negative balance or sentinel price"
+        },
+        {
+          "name": "Single-material price directs player to change target"
+        },
+        {
+          "name": "Single-material price does not promise an impossible reduction"
+        },
+        {
+          "name": "Primary action remains in the viewport",
+          "text": "费用超过持有上限",
+          "rect": {
+            "left": 18,
+            "top": 751,
+            "right": 357,
+            "bottom": 794,
+            "width": 339,
+            "height": 43
+          },
+          "fontSize": 17,
+          "horizontalTextOverflow": false,
+          "inViewport": true,
+          "unoccluded": true,
+          "documentWidth": 375,
+          "viewportWidth": 375,
+          "viewportHeight": 812,
+          "scrollY": 0
+        },
+        {
+          "name": "Primary label is not horizontally clipped"
+        },
+        {
+          "name": "Fusion surface has no horizontal document overflow",
+          "text": "费用超过持有上限",
+          "rect": {
+            "left": 18,
+            "top": 751,
+            "right": 357,
+            "bottom": 794,
+            "width": 339,
+            "height": 43
+          },
+          "fontSize": 17,
+          "horizontalTextOverflow": false,
+          "inViewport": true,
+          "unoccluded": true,
+          "documentWidth": 375,
+          "viewportWidth": 375,
+          "viewportHeight": 812,
+          "scrollY": 0
+        },
+        {
+          "name": "Disabled-button native click preserves selected materials"
+        },
+        {
+          "name": "Disabled-button native click preserves target"
+        },
+        {
+          "name": "Disabled-button click consumes nothing: main and mirror agree"
+        },
+        {
+          "name": "Disabled-button click consumes nothing"
+        },
+        {
+          "name": "Expanded fee detail distinguishes capped quote"
+        },
+        {
+          "name": "Fee detail never calls sentinel the true price"
+        },
+        {
+          "name": "Cap explanation is reachable without a fixed overlay covering it",
+          "text": "单件材料费用超过金币持有上限。请更换目标后再试。持有上限 10,000,000,000 金币。",
+          "rect": {
+            "left": 31,
+            "top": 288.046875,
+            "right": 341,
+            "bottom": 321.640625,
+            "width": 310,
+            "height": 33.59375
+          },
+          "fontSize": 12,
+          "horizontalTextOverflow": false,
+          "inViewport": true,
+          "unoccluded": true,
+          "documentWidth": 375,
+          "viewportWidth": 375,
+          "viewportHeight": 812,
+          "scrollY": 733
+        },
+        {
+          "name": "Full cap explanation fits and uses at least 12px text"
+        },
+        {
+          "name": "Boundary is constructed, not naturally reached",
+          "playerLevel": 100,
+          "targetLevel": 1000000,
+          "quotedCost": 10000000001,
+          "gold": 10000000000,
+          "viewport": {
+            "width": 375,
+            "height": 812
+          }
+        },
+        {
+          "name": "No console or page errors in this flow"
+        }
+      ],
+      "screenshots": [
+        "single-cap-375x812-overview.png",
+        "single-cap-375x812-cap-explanation.png"
+      ],
+      "status": "passed",
+      "fixture": {
+        "gold": 10000000000,
+        "playerLevel": 100,
+        "targetLevel": 1000000,
+        "materials": 1,
+        "cost": 10000000001,
+        "stateSha256": "29aeb6c8ba3778f3e7e4f990f1ae300c351618a2719d83db7da8ef482cfe37cc"
+      },
+      "initialLayout": {
+        "text": "费用超过持有上限",
+        "rect": {
+          "left": 18,
+          "top": 751,
+          "right": 357,
+          "bottom": 794,
+          "width": 339,
+          "height": 43
+        },
+        "fontSize": 17,
+        "horizontalTextOverflow": false,
+        "inViewport": true,
+        "unoccluded": true,
+        "documentWidth": 375,
+        "viewportWidth": 375,
+        "viewportHeight": 812,
+        "scrollY": 0
+      },
+      "warningLayout": {
+        "text": "单件材料费用超过金币持有上限。请更换目标后再试。持有上限 10,000,000,000 金币。",
+        "rect": {
+          "left": 31,
+          "top": 288.046875,
+          "right": 341,
+          "bottom": 321.640625,
+          "width": 310,
+          "height": 33.59375
+        },
+        "fontSize": 12,
+        "horizontalTextOverflow": false,
+        "inViewport": true,
+        "unoccluded": true,
+        "documentWidth": 375,
+        "viewportWidth": 375,
+        "viewportHeight": 812,
+        "scrollY": 733
+      }
+    },
+    {
+      "name": "bulk-cap-375x812",
+      "kind": "bulk-cap",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "checks": [
+        {
+          "name": "Correct page identity",
+          "title": "骰狱：无尽深渊 · Dice Abyss",
+          "url": "http://127.0.0.1:4320/"
+        },
+        {
+          "name": "Requested loopback URL retained"
+        },
+        {
+          "name": "Meaningful fusion page, not blank"
+        },
+        {
+          "name": "No framework error overlay"
+        },
+        {
+          "name": "Loaded fixture is exact: main and mirror agree"
+        },
+        {
+          "name": "Loaded fixture is exact"
+        },
+        {
+          "name": "Native card clicks select intended material IDs"
+        },
+        {
+          "name": "Native card click retains intended target"
+        },
+        {
+          "name": "Selection changes no save or RNG: main and mirror agree"
+        },
+        {
+          "name": "Selection changes no save or RNG"
+        },
+        {
+          "name": "Over-cap primary action is truly disabled"
+        },
+        {
+          "name": "Readable cap condition and full capacity"
+        },
+        {
+          "name": "No false one-gold deficit, negative balance or sentinel price"
+        },
+        {
+          "name": "Bulk-only price offers a possible reduction"
+        },
+        {
+          "name": "Primary action remains in the viewport",
+          "text": "费用超过持有上限",
+          "rect": {
+            "left": 18,
+            "top": 751,
+            "right": 357,
+            "bottom": 794,
+            "width": 339,
+            "height": 43
+          },
+          "fontSize": 17,
+          "horizontalTextOverflow": false,
+          "inViewport": true,
+          "unoccluded": true,
+          "documentWidth": 375,
+          "viewportWidth": 375,
+          "viewportHeight": 812,
+          "scrollY": 0
+        },
+        {
+          "name": "Primary label is not horizontally clipped"
+        },
+        {
+          "name": "Fusion surface has no horizontal document overflow",
+          "text": "费用超过持有上限",
+          "rect": {
+            "left": 18,
+            "top": 751,
+            "right": 357,
+            "bottom": 794,
+            "width": 339,
+            "height": 43
+          },
+          "fontSize": 17,
+          "horizontalTextOverflow": false,
+          "inViewport": true,
+          "unoccluded": true,
+          "documentWidth": 375,
+          "viewportWidth": 375,
+          "viewportHeight": 812,
+          "scrollY": 0
+        },
+        {
+          "name": "Disabled-button native click preserves selected materials"
+        },
+        {
+          "name": "Disabled-button native click preserves target"
+        },
+        {
+          "name": "Disabled-button click consumes nothing: main and mirror agree"
+        },
+        {
+          "name": "Disabled-button click consumes nothing"
+        },
+        {
+          "name": "Expanded fee detail distinguishes capped quote"
+        },
+        {
+          "name": "Fee detail never calls sentinel the true price"
+        },
+        {
+          "name": "Cap explanation is reachable without a fixed overlay covering it",
+          "text": "本次费用超过金币持有上限。请减少材料或更换目标后再试。持有上限 10,000,000,000 金币。",
+          "rect": {
+            "left": 31,
+            "top": 288.046875,
+            "right": 341,
+            "bottom": 321.640625,
+            "width": 310,
+            "height": 33.59375
+          },
+          "fontSize": 12,
+          "horizontalTextOverflow": false,
+          "inViewport": true,
+          "unoccluded": true,
+          "documentWidth": 375,
+          "viewportWidth": 375,
+          "viewportHeight": 812,
+          "scrollY": 853
+        },
+        {
+          "name": "Full cap explanation fits and uses at least 12px text"
+        },
+        {
+          "name": "Removing one material preserves the remaining material"
+        },
+        {
+          "name": "A now-payable single-material combination enables fusion"
+        },
+        {
+          "name": "Reduced combination clears the obsolete cap warning"
+        },
+        {
+          "name": "Reduction is a preview only: main and mirror agree"
+        },
+        {
+          "name": "Reduction is a preview only"
+        },
+        {
+          "name": "Boundary is constructed, not naturally reached",
+          "playerLevel": 100,
+          "targetLevel": 500000,
+          "quotedCost": 10000000001,
+          "gold": 10000000000,
+          "viewport": {
+            "width": 375,
+            "height": 812
+          }
+        },
+        {
+          "name": "No console or page errors in this flow"
+        }
+      ],
+      "screenshots": [
+        "bulk-cap-375x812-overview.png",
+        "bulk-cap-375x812-cap-explanation.png"
+      ],
+      "status": "passed",
+      "fixture": {
+        "gold": 10000000000,
+        "playerLevel": 100,
+        "targetLevel": 500000,
+        "materials": 2,
+        "cost": 10000000001,
+        "stateSha256": "6e1a5725b74f0cb0083a375c1311fd8956a21d8aa5182f369db58f6c318c80af"
+      },
+      "initialLayout": {
+        "text": "费用超过持有上限",
+        "rect": {
+          "left": 18,
+          "top": 751,
+          "right": 357,
+          "bottom": 794,
+          "width": 339,
+          "height": 43
+        },
+        "fontSize": 17,
+        "horizontalTextOverflow": false,
+        "inViewport": true,
+        "unoccluded": true,
+        "documentWidth": 375,
+        "viewportWidth": 375,
+        "viewportHeight": 812,
+        "scrollY": 0
+      },
+      "warningLayout": {
+        "text": "本次费用超过金币持有上限。请减少材料或更换目标后再试。持有上限 10,000,000,000 金币。",
+        "rect": {
+          "left": 31,
+          "top": 288.046875,
+          "right": 341,
+          "bottom": 321.640625,
+          "width": 310,
+          "height": 33.59375
+        },
+        "fontSize": 12,
+        "horizontalTextOverflow": false,
+        "inViewport": true,
+        "unoccluded": true,
+        "documentWidth": 375,
+        "viewportWidth": 375,
+        "viewportHeight": 812,
+        "scrollY": 853
+      }
+    },
+    {
+      "name": "budget-375x812",
+      "kind": "budget",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "checks": [
+        {
+          "name": "Correct page identity",
+          "title": "骰狱：无尽深渊 · Dice Abyss",
+          "url": "http://127.0.0.1:4320/"
+        },
+        {
+          "name": "Requested loopback URL retained"
+        },
+        {
+          "name": "Meaningful fusion page, not blank"
+        },
+        {
+          "name": "No framework error overlay"
+        },
+        {
+          "name": "Loaded fixture is exact: main and mirror agree"
+        },
+        {
+          "name": "Loaded fixture is exact"
+        },
+        {
+          "name": "Native card clicks select intended material IDs"
+        },
+        {
+          "name": "Native card click retains intended target"
+        },
+        {
+          "name": "Selection changes no save or RNG: main and mirror agree"
+        },
+        {
+          "name": "Selection changes no save or RNG"
+        },
+        {
+          "name": "Ordinary shortage keeps budget adjustment enabled"
+        },
+        {
+          "name": "Primary action names budget adjustment"
+        },
+        {
+          "name": "Unaffordable preview never presents a negative settled balance"
+        },
+        {
+          "name": "Ordinary shortage is not mislabeled a cap condition"
+        },
+        {
+          "name": "Primary action remains in the viewport",
+          "text": "按预算调整材料",
+          "rect": {
+            "left": 18,
+            "top": 751,
+            "right": 357,
+            "bottom": 794,
+            "width": 339,
+            "height": 43
+          },
+          "fontSize": 17,
+          "horizontalTextOverflow": false,
+          "inViewport": true,
+          "unoccluded": true,
+          "documentWidth": 375,
+          "viewportWidth": 375,
+          "viewportHeight": 812,
+          "scrollY": 0
+        },
+        {
+          "name": "Primary label is not horizontally clipped"
+        },
+        {
+          "name": "Fusion surface has no horizontal document overflow",
+          "text": "按预算调整材料",
+          "rect": {
+            "left": 18,
+            "top": 751,
+            "right": 357,
+            "bottom": 794,
+            "width": 339,
+            "height": 43
+          },
+          "fontSize": 17,
+          "horizontalTextOverflow": false,
+          "inViewport": true,
+          "unoccluded": true,
+          "documentWidth": 375,
+          "viewportWidth": 375,
+          "viewportHeight": 812,
+          "scrollY": 0
+        },
+        {
+          "name": "Budget action keeps the affordable two-material combination"
+        },
+        {
+          "name": "Budget repair only uses originally eligible materials"
+        },
+        {
+          "name": "Repaired combination can use the ordinary fusion action"
+        },
+        {
+          "name": "Budget adjustment consumes no item, money or RNG: main and mirror agree"
+        },
+        {
+          "name": "Budget adjustment consumes no item, money or RNG"
+        },
+        {
+          "name": "No console or page errors in this flow"
+        }
+      ],
+      "screenshots": [
+        "budget-375x812-overview.png",
+        "budget-375x812-budget-adjusted.png"
+      ],
+      "status": "passed",
+      "fixture": {
+        "gold": 516,
+        "playerLevel": 100,
+        "targetLevel": 100,
+        "materials": 3,
+        "cost": 774,
+        "stateSha256": "b4b08e0aa679f29596b3e098daddba454e77a28898faca0a1e3435bce0d562b6"
+      },
+      "initialLayout": {
+        "text": "按预算调整材料",
+        "rect": {
+          "left": 18,
+          "top": 751,
+          "right": 357,
+          "bottom": 794,
+          "width": 339,
+          "height": 43
+        },
+        "fontSize": 17,
+        "horizontalTextOverflow": false,
+        "inViewport": true,
+        "unoccluded": true,
+        "documentWidth": 375,
+        "viewportWidth": 375,
+        "viewportHeight": 812,
+        "scrollY": 0
+      }
+    },
+    {
+      "name": "exact-cap-375x812",
+      "kind": "exact-cap",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "checks": [
+        {
+          "name": "Correct page identity",
+          "title": "骰狱：无尽深渊 · Dice Abyss",
+          "url": "http://127.0.0.1:4320/"
+        },
+        {
+          "name": "Requested loopback URL retained"
+        },
+        {
+          "name": "Meaningful fusion page, not blank"
+        },
+        {
+          "name": "No framework error overlay"
+        },
+        {
+          "name": "Loaded fixture is exact: main and mirror agree"
+        },
+        {
+          "name": "Loaded fixture is exact"
+        },
+        {
+          "name": "Native card clicks select intended material IDs"
+        },
+        {
+          "name": "Native card click retains intended target"
+        },
+        {
+          "name": "Selection changes no save or RNG: main and mirror agree"
+        },
+        {
+          "name": "Selection changes no save or RNG"
+        },
+        {
+          "name": "An exact-cap quote remains executable"
+        },
+        {
+          "name": "Exact-cap action keeps normal intent"
+        },
+        {
+          "name": "Exact-cap quote is not falsely disabled"
+        },
+        {
+          "name": "Exact-cap preview states zero remaining balance"
+        },
+        {
+          "name": "Primary action remains in the viewport",
+          "text": "投骰融合",
+          "rect": {
+            "left": 18,
+            "top": 751,
+            "right": 357,
+            "bottom": 794,
+            "width": 339,
+            "height": 43
+          },
+          "fontSize": 17,
+          "horizontalTextOverflow": false,
+          "inViewport": true,
+          "unoccluded": true,
+          "documentWidth": 375,
+          "viewportWidth": 375,
+          "viewportHeight": 812,
+          "scrollY": 0
+        },
+        {
+          "name": "Primary label is not horizontally clipped"
+        },
+        {
+          "name": "Fusion surface has no horizontal document overflow",
+          "text": "投骰融合",
+          "rect": {
+            "left": 18,
+            "top": 751,
+            "right": 357,
+            "bottom": 794,
+            "width": 339,
+            "height": 43
+          },
+          "fontSize": 17,
+          "horizontalTextOverflow": false,
+          "inViewport": true,
+          "unoccluded": true,
+          "documentWidth": 375,
+          "viewportWidth": 375,
+          "viewportHeight": 812,
+          "scrollY": 0
+        },
+        {
+          "name": "Authoritative engine accepts exact-cap quote"
+        },
+        {
+          "name": "Authoritative exact-cap cost spends exactly available funds"
+        },
+        {
+          "name": "One native exact-cap fusion equals the entire engine transition: main and mirror agree"
+        },
+        {
+          "name": "One native exact-cap fusion equals the entire engine transition"
+        },
+        {
+          "name": "Completed exact-cap fusion has no negative balance"
+        },
+        {
+          "name": "Completed fusion clears consumed material selection"
+        },
+        {
+          "name": "Reload retains the completed exact-cap transaction: main and mirror agree"
+        },
+        {
+          "name": "Reload retains the completed exact-cap transaction"
+        },
+        {
+          "name": "No console or page errors in this flow"
+        }
+      ],
+      "screenshots": [
+        "exact-cap-375x812-overview.png",
+        "exact-cap-375x812-completed.png"
+      ],
+      "status": "passed",
+      "fixture": {
+        "gold": 10000000000,
+        "playerLevel": 5870,
+        "targetLevel": 4945533,
+        "materials": 1,
+        "cost": 10000000000,
+        "stateSha256": "76a6ffca8e133a0c7f8523157211913251382aee157f350a41d029a7a7246b0d"
+      },
+      "initialLayout": {
+        "text": "投骰融合",
+        "rect": {
+          "left": 18,
+          "top": 751,
+          "right": 357,
+          "bottom": 794,
+          "width": 339,
+          "height": 43
+        },
+        "fontSize": 17,
+        "horizontalTextOverflow": false,
+        "inViewport": true,
+        "unoccluded": true,
+        "documentWidth": 375,
+        "viewportWidth": 375,
+        "viewportHeight": 812,
+        "scrollY": 0
+      }
+    }
+  ],
+  "screenshots": [
+    "single-cap-1366x768-overview.png",
+    "single-cap-1366x768-cap-explanation.png",
+    "bulk-cap-1366x768-overview.png",
+    "bulk-cap-1366x768-cap-explanation.png",
+    "budget-1366x768-overview.png",
+    "budget-1366x768-budget-adjusted.png",
+    "exact-cap-1366x768-overview.png",
+    "exact-cap-1366x768-completed.png",
+    "single-cap-375x812-overview.png",
+    "single-cap-375x812-cap-explanation.png",
+    "bulk-cap-375x812-overview.png",
+    "bulk-cap-375x812-cap-explanation.png",
+    "budget-375x812-overview.png",
+    "budget-375x812-budget-adjusted.png",
+    "exact-cap-375x812-overview.png",
+    "exact-cap-375x812-completed.png"
+  ],
+  "errors": [],
+  "warnings": [],
+  "network": {
+    "blocked": [],
+    "failed": [],
+    "httpErrors": []
+  },
+  "limitations": [
+    "Synthetic extreme levels/prices do not establish natural late-game incidence.",
+    "375px checks cover the existing fusion-specific responsive surface, not the overall desktop-first game.",
+    "Shared headless software rendering verifies behavior/layout only; it is not a performance or physical-device result."
+  ],
+  "finished": "2026-10-18T09:28:30.681Z",
+  "sourceAfter": {
+    "src/fusion-view.js": "e77542f7de4c6f39ac57098ffb7a277caab988cd4bcc9ea5f50080b0f08e96c1",
+    "src/fusion-controller.js": "5a4a0c6a11c7a347ffcdaa0340d3c905d65aa5ba6b50e36e7135a9276537dd1a",
+    "src/equipment.js": "8c20de433f21931318e315b862b457d37a03b9596ea5df8f7cc4025691aaccd6"
+  },
+  "productionSourceUnchanged": true,
+  "status": "passed",
+  "checkCount": 218,
+  "caseCount": 8
+}

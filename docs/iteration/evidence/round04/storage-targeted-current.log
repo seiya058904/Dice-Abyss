@@ -1,0 +1,196 @@
+TAP version 13
+# Subtest: a normal commit archives the readable V4 mirror instead of a checksummed but invalid primary
+ok 1 - a normal commit archives the readable V4 mirror instead of a checksummed but invalid primary
+  ---
+  duration_ms: 31.231374
+  type: 'test'
+  ...
+# Subtest: recovery from V1–V3 mirrors preserves both immutable original archives across later saves
+ok 2 - recovery from V1–V3 mirrors preserves both immutable original archives across later saves
+  ---
+  duration_ms: 23.919213
+  type: 'test'
+  ...
+# Subtest: archive-write failure after mirror recovery leaves both active disk copies intact
+ok 3 - archive-write failure after mirror recovery leaves both active disk copies intact
+  ---
+  duration_ms: 11.894957
+  type: 'test'
+  ...
+# Subtest: a pending auction without its committed reward is rejected before importing or claiming archive slots
+ok 4 - a pending auction without its committed reward is rejected before importing or claiming archive slots
+  ---
+  duration_ms: 8.123431
+  type: 'test'
+  ...
+# Subtest: event-triggered combat or death without an enemy cannot replace valid progress
+ok 5 - event-triggered combat or death without an enemy cannot replace valid progress
+  ---
+  duration_ms: 21.502937
+  type: 'test'
+  ...
+# Subtest: pending auction reward collisions with owned equipment are rejected before any import writes
+ok 6 - pending auction reward collisions with owned equipment are rejected before any import writes
+  ---
+  duration_ms: 19.749915
+  type: 'test'
+  ...
+# Subtest: resolved auction history can retain its owned reward through a later import
+ok 7 - resolved auction history can retain its owned reward through a later import
+  ---
+  duration_ms: 13.443095
+  type: 'test'
+  ...
+# Subtest: a valid auction remains deterministic through import, purchase, chest, loot and a rejected second claim
+ok 8 - a valid auction remains deterministic through import, purchase, chest, loot and a rejected second claim
+  ---
+  duration_ms: 38.054394
+  type: 'test'
+  ...
+# Subtest: ordinary events and direct chests keep their legal null enemy; resolved history does not require an optional auction preview
+ok 9 - ordinary events and direct chests keep their legal null enemy; resolved history does not require an optional auction preview
+  ---
+  duration_ms: 7.808937
+  type: 'test'
+  ...
+# Subtest: event combat retains valid multi-wave, death and retry transitions without regenerating committed rewards on load
+ok 10 - event combat retains valid multi-wave, death and retry transitions without regenerating committed rewards on load
+  ---
+  duration_ms: 12.200329
+  type: 'test'
+  ...
+# Subtest: 10,000 generated items still round-trip and primary-write failure leaves the current transaction intact
+ok 11 - 10,000 generated items still round-trip and primary-write failure leaves the current transaction intact
+  ---
+  duration_ms: 647.957363
+  type: 'test'
+  ...
+# Subtest: V1, V2 and V3 migrate every owned and pending item without changing identity, investment, enemy or transaction state
+ok 12 - V1, V2 and V3 migrate every owned and pending item without changing identity, investment, enemy or transaction state
+  ---
+  duration_ms: 44.497065
+  type: 'test'
+  ...
+# Subtest: legacy three-relic positions and all old talent ranks survive repeated load and migration
+ok 13 - legacy three-relic positions and all old talent ranks survive repeated load and migration
+  ---
+  duration_ms: 12.994343
+  type: 'test'
+  ...
+# Subtest: primary/mirror recovery and the first V4 commit retain the original raw archive for rollback
+ok 14 - primary/mirror recovery and the first V4 commit retain the original raw archive for rollback
+  ---
+  duration_ms: 6.693646
+  type: 'test'
+  ...
+# Subtest: migration/archive failures leave original browser assets untouched and state corruption is rejected
+ok 15 - migration/archive failures leave original browser assets untouched and state corruption is rejected
+  ---
+  duration_ms: 6.076645
+  type: 'test'
+  ...
+# Subtest: V4 narrow new-schema fields reject bad waves, encounter mechanics, events and roll metadata
+ok 16 - V4 narrow new-schema fields reject bad waves, encounter mechanics, events and roll metadata
+  ---
+  duration_ms: 7.757649
+  type: 'test'
+  ...
+# Subtest: legacy aggregate HP crossing the V4 cap rejects migration without clipping assets or replacing raw
+ok 17 - legacy aggregate HP crossing the V4 cap rejects migration without clipping assets or replacing raw
+  ---
+  duration_ms: 8.637565
+  type: 'test'
+  ...
+# Subtest: healing offers cannot import malformed or complete equipment through the heal ID exemption
+ok 18 - healing offers cannot import malformed or complete equipment through the heal ID exemption
+  ---
+  duration_ms: 13.775974
+  type: 'test'
+  ...
+# Subtest: legitimate absent or null healing payloads still import, heal once and preserve item purchases
+ok 19 - legitimate absent or null healing payloads still import, heal once and preserve item purchases
+  ---
+  duration_ms: 39.105029
+  type: 'test'
+  ...
+# Subtest: pending rewards must have an already issued ID before an import can replace progress
+ok 20 - pending rewards must have an already issued ID before an import can replace progress
+  ---
+  duration_ms: 2.994583
+  type: 'test'
+  ...
+# Subtest: unsold shop offers cannot collide with owned IDs or future IDs; sold history survives recycling
+ok 21 - unsold shop offers cannot collide with owned IDs or future IDs; sold history survives recycling
+  ---
+  duration_ms: 2.636551
+  type: 'test'
+  ...
+# Subtest: consumed fusion records survive refresh and contradictory resurrected material is rejected
+ok 22 - consumed fusion records survive refresh and contradictory resurrected material is rejected
+  ---
+  duration_ms: 4.422336
+  type: 'test'
+  ...
+# Subtest: an imported branch with the same run ID and revision cannot be overwritten by a stale window
+ok 23 - an imported branch with the same run ID and revision cannot be overwritten by a stale window
+  ---
+  duration_ms: 6.142295
+  type: 'test'
+  ...
+# Subtest: serialized start and import clients with stale null snapshots cannot overwrite a newly created run
+ok 24 - serialized start and import clients with stale null snapshots cannot overwrite a newly created run
+  ---
+  duration_ms: 3.049043
+  type: 'test'
+  ...
+# Subtest: null permits identical migration snapshots, rejects a same-revision branch, and undefined keeps explicit replacement available
+ok 25 - null permits identical migration snapshots, rejects a same-revision branch, and undefined keeps explicit replacement available
+  ---
+  duration_ms: 3.27896
+  type: 'test'
+  ...
+# Subtest: importing V4 B preserves active V4 A first, including recovery from its valid mirror
+ok 26 - importing V4 B preserves active V4 A first, including recovery from its valid mirror
+  ---
+  duration_ms: 30.433166
+  type: 'test'
+  ...
+# Subtest: a stale or mismatched import performs zero archive or active-save writes
+ok 27 - a stale or mismatched import performs zero archive or active-save writes
+  ---
+  duration_ms: 120.898508
+  type: 'test'
+  ...
+# Subtest: import archive quota failure preserves both active V4 copies and main failure retains the correct original archive
+ok 28 - import archive quota failure preserves both active V4 copies and main failure retains the correct original archive
+  ---
+  duration_ms: 21.784643
+  type: 'test'
+  ...
+# Subtest: main quota failure leaves both snapshots intact; mirror quota warns after a durable main commit
+ok 29 - main quota failure leaves both snapshots intact; mirror quota warns after a durable main commit
+  ---
+  duration_ms: 7.0527
+  type: 'test'
+  ...
+# Subtest: mirror recovery reports its limitation when the only latest copy was subsequently corrupted
+ok 30 - mirror recovery reports its limitation when the only latest copy was subsequently corrupted
+  ---
+  duration_ms: 2.392654
+  type: 'test'
+  ...
+# Subtest: corrupt JSON and wrong schema fall back read-only and do not silently reset a run
+ok 31 - corrupt JSON and wrong schema fall back read-only and do not silently reset a run
+  ---
+  duration_ms: 4.158499
+  type: 'test'
+  ...
+1..31
+# tests 31
+# suites 0
+# pass 31
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1347.17521

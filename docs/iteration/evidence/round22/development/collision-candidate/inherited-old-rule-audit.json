@@ -1,0 +1,319 @@
+{
+  "kind": "Constructed deterministic gameplay audit. Not a natural journey or balance result.",
+  "sourceVersion": "5.21.0",
+  "sourceHashes": {
+    "src/engine.js": "49ff3b5686c005c59cd51a4de71fc6397c3f84c91e12073bae888a295e043573",
+    "src/storage.js": "a66840968096723e10c27e2e0ca53402911caf771318b9f5a56bcdebbb753a47",
+    "src/encounters.js": "e485b531d6ed59954cdc8c7b50ab5dd84c1a64449852b7b56fce667489369d76",
+    "src/deep-content.js": "d5d5479b263158841d9b4822a815520cc2f3dc2dde7de050a8bc9e31a94c0fde",
+    "src/deep-rules.js": "5e3a9b50d5b339a6290df58a5712aa1b1d1017b6a615c409dec86c5683b6dd74",
+    "src/boon-readout.js": "ea732d4fe897633b67e5349ad57c1bd52dd1506bc84f8db3748eb6aea36f0bfc"
+  },
+  "firstEligibleCrit": {
+    "firstWithoutEffect": {
+      "turn": 2,
+      "values": [
+        4,
+        2,
+        1,
+        1,
+        6,
+        2
+      ],
+      "critical": true,
+      "firstCritLuck": 0,
+      "nextLuck": 0,
+      "firstCritUsed": null,
+      "rng": 921621069,
+      "readout": {
+        "groups": [],
+        "empty": true
+      },
+      "stateSha256": "00895baea4999f124e86123469da11aae7b290960a33c7f65eb496ddd6e7c23e"
+    },
+    "afterLearning": {
+      "turn": 2,
+      "values": [
+        4,
+        2,
+        1,
+        1,
+        6,
+        2
+      ],
+      "critical": true,
+      "firstCritLuck": 5,
+      "nextLuck": 0,
+      "firstCritUsed": null,
+      "rng": 921621069,
+      "readout": {
+        "groups": [
+          {
+            "key": "combatTrigger",
+            "name": "本场触发机会",
+            "entries": [
+              {
+                "key": "firstCritLuck",
+                "name": "启明星",
+                "value": "暴击时原始幸运 +5",
+                "when": "本场尚未触发 · 每场一次",
+                "detail": "持有该效果期间的首次暴击才会占用机会；此前没有此效果时的暴击不计。幸运持续至同层下一次战斗掷骰结算，下楼或重燃清除。"
+              }
+            ]
+          }
+        ],
+        "empty": false
+      },
+      "stateSha256": "7e9e8f04d74a709e52e4732124ffe9acf2a0a730c8ec24f9031c56619c4d9bda"
+    },
+    "firstWithEffect": {
+      "turn": 9,
+      "values": [
+        1,
+        1,
+        5,
+        4,
+        5,
+        6
+      ],
+      "critical": true,
+      "firstCritLuck": 5,
+      "nextLuck": 5,
+      "firstCritUsed": true,
+      "rng": 4265380523,
+      "readout": {
+        "groups": [
+          {
+            "key": "nextRoll",
+            "name": "待结算幸运",
+            "entries": [
+              {
+                "key": "nextLuck",
+                "name": "启明星余辉",
+                "value": "原始幸运 +5",
+                "when": "至同层下一次战斗掷骰结算",
+                "detail": "生效期间也参与事件、锻造与融合掷骰，以及新生成宝箱的幸运计算；这些操作与开箱不消耗它，也不改变已生成的奖励。下楼或重燃清除。当前总幸运投入 8 → 有效幸运 8，按现有软上限与取整结算。"
+              }
+            ]
+          },
+          {
+            "key": "combatTrigger",
+            "name": "本场触发机会",
+            "entries": [
+              {
+                "key": "firstCritLuck",
+                "name": "启明星",
+                "value": "本场已触发",
+                "when": "下一场或重燃后可再触发",
+                "detail": "本场已触发；后续暴击、换装或提高天赋等级都不会再发放。下一名敌人或重燃后可重新触发。"
+              }
+            ]
+          }
+        ],
+        "empty": false
+      },
+      "stateSha256": "bfacfa19c0fb79aca4e252d84e588212f14b03834e6c06df04fceabb4616b540"
+    },
+    "afterUpgrading": {
+      "turn": 9,
+      "values": [
+        1,
+        1,
+        5,
+        4,
+        5,
+        6
+      ],
+      "critical": true,
+      "firstCritLuck": 10,
+      "nextLuck": 5,
+      "firstCritUsed": true,
+      "rng": 4265380523,
+      "readout": {
+        "groups": [
+          {
+            "key": "nextRoll",
+            "name": "待结算幸运",
+            "entries": [
+              {
+                "key": "nextLuck",
+                "name": "启明星余辉",
+                "value": "原始幸运 +5",
+                "when": "至同层下一次战斗掷骰结算",
+                "detail": "生效期间也参与事件、锻造与融合掷骰，以及新生成宝箱的幸运计算；这些操作与开箱不消耗它，也不改变已生成的奖励。下楼或重燃清除。当前总幸运投入 8 → 有效幸运 8，按现有软上限与取整结算。"
+              }
+            ]
+          },
+          {
+            "key": "combatTrigger",
+            "name": "本场触发机会",
+            "entries": [
+              {
+                "key": "firstCritLuck",
+                "name": "启明星",
+                "value": "本场已触发",
+                "when": "下一场或重燃后可再触发",
+                "detail": "本场已触发；后续暴击、换装或提高天赋等级都不会再发放。下一名敌人或重燃后可重新触发。"
+              }
+            ]
+          }
+        ],
+        "empty": false
+      },
+      "stateSha256": "ae6b3e3f39eab64a27482ea2fcaa4c138960eac92ea883730f26942907107c64"
+    },
+    "laterCritical": {
+      "turn": 24,
+      "values": [
+        4,
+        4,
+        6,
+        6,
+        2,
+        5
+      ],
+      "critical": true,
+      "firstCritLuck": 10,
+      "nextLuck": 0,
+      "firstCritUsed": true,
+      "rng": 3421469896,
+      "readout": {
+        "groups": [
+          {
+            "key": "combatTrigger",
+            "name": "本场触发机会",
+            "entries": [
+              {
+                "key": "firstCritLuck",
+                "name": "启明星",
+                "value": "本场已触发",
+                "when": "下一场或重燃后可再触发",
+                "detail": "本场已触发；后续暴击、换装或提高天赋等级都不会再发放。下一名敌人或重燃后可重新触发。"
+              }
+            ]
+          }
+        ],
+        "empty": false
+      },
+      "stateSha256": "8cfb29da68a444609acf7a7d8ac07440aac2a4b8e1f9e79a5942c36042b25f14"
+    },
+    "roundTrips": 5,
+    "conclusion": "Earlier criticals without the effect do not consume it; the first later eligible critical grants luck, and upgrading does not rearm the same battle."
+  },
+  "bandit": {
+    "name": "截路金匪",
+    "narrative": "趁旅者停顿清点财物，前两击是夺回它的机会。",
+    "label": "前两击伤害 +15%；两回合内金币 ×3",
+    "rewards": [
+      {
+        "settledTurns": 1,
+        "goldMultiplier": 3,
+        "minRarity": 0
+      },
+      {
+        "settledTurns": 2,
+        "goldMultiplier": 3,
+        "minRarity": 0
+      },
+      {
+        "settledTurns": 3,
+        "goldMultiplier": 1,
+        "minRarity": 0
+      }
+    ],
+    "conclusion": "The alternate bandit has a two-roll triple-gold window; the current authored narrative says two attacks."
+  },
+  "deepPairs": [
+    {
+      "mechanic": "parity",
+      "names": [
+        "奇刻巡官",
+        "偶刻监军"
+      ],
+      "comparedCases": 7384,
+      "identicalOutcome": true
+    },
+    {
+      "mechanic": "sequence",
+      "names": [
+        "散星守卫",
+        "离序执灯者"
+      ],
+      "comparedCases": 7384,
+      "identicalOutcome": true
+    },
+    {
+      "mechanic": "laststand",
+      "names": [
+        "暮年卫长",
+        "末焰执旗者"
+      ],
+      "comparedCases": 7384,
+      "identicalOutcome": true
+    },
+    {
+      "mechanic": "undertow",
+      "names": [
+        "深潮猎鲸者",
+        "沉海牧群者"
+      ],
+      "comparedCases": 7384,
+      "identicalOutcome": true
+    },
+    {
+      "mechanic": "hush",
+      "names": [
+        "无声收割者",
+        "寂语司钟"
+      ],
+      "comparedCases": 7384,
+      "identicalOutcome": true
+    },
+    {
+      "mechanic": "hourward",
+      "names": [
+        "逆时切面",
+        "倒序棱骑"
+      ],
+      "comparedCases": 7384,
+      "identicalOutcome": true
+    },
+    {
+      "mechanic": "onslaught",
+      "names": [
+        "古阵先锋",
+        "星骨后军"
+      ],
+      "comparedCases": 7384,
+      "identicalOutcome": true
+    },
+    {
+      "mechanic": "bounty",
+      "names": [
+        "悬星逃王",
+        "索印行刑官"
+      ],
+      "comparedCases": 7384,
+      "identicalOutcome": true
+    },
+    {
+      "mechanic": "abyssking",
+      "names": [
+        "遗忘深渊王",
+        "无冕之主"
+      ],
+      "comparedCases": 7384,
+      "identicalOutcome": true
+    },
+    {
+      "mechanic": "archiveguard",
+      "names": [
+        "始初藏书者",
+        "终页封存者"
+      ],
+      "comparedCases": 7384,
+      "identicalOutcome": true
+    }
+  ],
+  "deepVariantRisk": "Giving existing variant=1 saved enemies new behavior would rewrite pending combat semantics. Defer until newly-created enemies can be explicitly versioned while old saved enemies retain their prior rules, and stage/wave/retry/intent/label/reward validation is covered."
+}

@@ -1,0 +1,46 @@
+{
+  "createdAt": "2026-10-19T11:58:01.732080+00:00",
+  "baselineSha256": "f5a990793a90ff59a57f38e4be8fcb9deaf54997dff9d9acec2cded73d2c8145",
+  "candidateSha256": "fdf1df7c0d5cc55e6ccd3ebf08180d0a56044c2aad27c1093a920281aa3c30ac",
+  "scope": "isolated full-payload snapshot comparison reuse only; work and baseline unchanged",
+  "fixtures": {
+    "seed": 27017,
+    "items": [
+      32,
+      1000,
+      10000
+    ],
+    "nearLimitUnknownMetadata": [
+      "ASCII",
+      "Chinese",
+      "astral emoji",
+      "mixed"
+    ],
+    "nearLimitBytes": 4950000
+  },
+  "timing": {
+    "warmupPairs": 3,
+    "formalPairs": 20,
+    "order": "AB on even pairs, BA on odd; same exact before/after/raw snapshots; transition and assertions excluded",
+    "clock": "performance.now()",
+    "storage": "synchronous Map only",
+    "browser": false,
+    "claims": "CPU saveGame only, no disk/DOM/user latency conclusion"
+  },
+  "additionalDifferential": [
+    "noncanonical payload whitespace",
+    "escaped Unicode",
+    "noncanonical numeric spellings",
+    "duplicate keys",
+    "integer-like key ordering",
+    "unknown nested fields",
+    "negative zero",
+    "V1-V4 migrations",
+    "same revision unknown field conflict",
+    "corrupt legacy archive",
+    "source changed during reread",
+    "read errors",
+    "primary/mirror write errors"
+  ],
+  "componentAttribution": "separate diagnostic run with JSON.parse / JSON.stringify / TextEncoder timing wrappers and Map getItem/setItem; validation/checksum and call glue form unattributed remainder; never used as total timing"
+}

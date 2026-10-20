@@ -1,0 +1,105 @@
+{
+  "status": "PASSED_FULL_FRESH_SOURCE_GATE",
+  "source": "/workspace/scratch/3b21be83b3da/qa23/package/source-unpack/Dice-Abyss",
+  "startedUTC": "2026-10-19T16:36:40.298462+00:00",
+  "finishedUTC": "2026-10-19T16:38:03.922781+00:00",
+  "receiptAssembledUTC": "2026-10-19T16:39:54.867693+00:00",
+  "seconds": 83.6243,
+  "durationScope": "Check child start through HTTP child completion; report collector failed afterwards and was reconciled from preserved successful raw runs without re-execution.",
+  "identityScope": "All src/scripts/tests files, index/package/README/favicon, and all .js/.mjs/.py anywhere in project. Final repack only changes reports/evidence.",
+  "executionIdentityFiles": 386,
+  "executionIdentityStable": true,
+  "commands": [
+    {
+      "name": "check",
+      "command": [
+        "npm",
+        "run",
+        "check"
+      ],
+      "cwd": "/workspace/scratch/3b21be83b3da/qa23/package/source-unpack/Dice-Abyss",
+      "startedUTC": "2026-10-19T16:36:40.298462+00:00",
+      "finishedUTC": "2026-10-19T16:36:45.063714+00:00",
+      "seconds": 4.7653,
+      "exitCode": 0,
+      "stdout": {
+        "bytes": 98,
+        "sha256": "8d7c2356973a77a7cd038ecf75a15b197647d996144927a460bb79a8758e56b3",
+        "gzipBytes": 107,
+        "gzipSha256": "e91ff49bdd9db4e115686c972ec71c3826f3eed4f3dc730392582af1c90b615b"
+      },
+      "stderr": {
+        "bytes": 99,
+        "sha256": "7125f194612fcff2f454c05d848e7cb71facc1967b4d5017e25b34fdee3ba74f",
+        "gzipBytes": 101,
+        "gzipSha256": "934a9d56e1b77b540f21becd97102d1b7088e8e2eba852118cfc29df5c6f4bb7"
+      }
+    },
+    {
+      "name": "test",
+      "command": [
+        "npm",
+        "test"
+      ],
+      "cwd": "/workspace/scratch/3b21be83b3da/qa23/package/source-unpack/Dice-Abyss",
+      "startedUTC": "2026-10-19T16:36:45.064348+00:00",
+      "finishedUTC": "2026-10-19T16:38:03.123201+00:00",
+      "seconds": 78.0589,
+      "exitCode": 0,
+      "stdout": {
+        "bytes": 90795,
+        "sha256": "174b9b0d1612bde21ad6cdd1a0050c303ece956d3f9aad0a21f013898aadd54d",
+        "gzipBytes": 30463,
+        "gzipSha256": "802471d13a72e4cff11aecbd9ce355c8a9874fa4d302d84d6c5bff5283a2ba01"
+      },
+      "stderr": {
+        "bytes": 99,
+        "sha256": "7125f194612fcff2f454c05d848e7cb71facc1967b4d5017e25b34fdee3ba74f",
+        "gzipBytes": 101,
+        "gzipSha256": "934a9d56e1b77b540f21becd97102d1b7088e8e2eba852118cfc29df5c6f4bb7"
+      },
+      "tapSummary": {
+        "tests": 854,
+        "suites": 0,
+        "pass": 854,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      }
+    },
+    {
+      "name": "http",
+      "command": [
+        "node",
+        "scripts/smoke-http.mjs",
+        "--output",
+        "/workspace/scratch/3b21be83b3da/qa23/package/fresh-source-gate/http-report.json"
+      ],
+      "cwd": "/workspace/scratch/3b21be83b3da/qa23/package/source-unpack/Dice-Abyss",
+      "startedUTC": "2026-10-19T16:38:03.138251+00:00",
+      "finishedUTC": "2026-10-19T16:38:03.922781+00:00",
+      "seconds": 0.7845,
+      "exitCode": 0,
+      "stdout": {
+        "bytes": 30,
+        "sha256": "beb2466927c505cd3e8983418692a44c049cb01ddd8d0319201cbdb6751b2982",
+        "gzipBytes": 50,
+        "gzipSha256": "8206fa1b606a1f575d28214c8bdaabb6abf2369b365f7f5ef56fea81834da14b"
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "gzipBytes": 20,
+        "gzipSha256": "f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec"
+      }
+    }
+  ],
+  "freshSyntaxModules": 166,
+  "freshDefaultModules": 92,
+  "freshDefaultCases": 854,
+  "httpAssets": 65,
+  "reportCollectionCorrection": "report-collection-correction.json",
+  "originalCollectorExitCode": 1,
+  "childCommandsAllPassed": true
+}

@@ -1,0 +1,170 @@
+{
+  "status": "PASS",
+  "baselineVersion": "5.18.0",
+  "round": 18,
+  "syntax": "PASS",
+  "defaultTestModules": 77,
+  "nativeTestCases": {
+    "tests": 713,
+    "suites": 0,
+    "pass": 713,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0
+  },
+  "simulation": {
+    "seeds": 1000,
+    "completed": 1000,
+    "failures": [],
+    "noShoppingSeeds": 50,
+    "noShoppingCompleted": 50,
+    "noShoppingDeaths": 0,
+    "deaths": {
+      "min": 0,
+      "median": 0,
+      "p95": 0,
+      "max": 0,
+      "mean": 0
+    },
+    "bytes": 9409,
+    "sha256": "266fa5b56516410712395796f197a2e33ad1b1e16ede45de14b872f208007d77",
+    "byteIdenticalToRound18Current": true,
+    "defaultFloors": 10
+  },
+  "http": {
+    "files": 62,
+    "allPassed": true,
+    "initialAttempt": "Sandbox loopback listen EPERM, preserved; reviewed local-only escalation passed.",
+    "report": "http-smoke.json"
+  },
+  "baselineImmutable": {
+    "filesBefore": 2365,
+    "filesAfter": 2365,
+    "added": [],
+    "missing": [],
+    "changed": [],
+    "unchanged": true,
+    "allFilesEqualUploadedZip": true,
+    "checkedAt": "2026-10-19T08:39:23.858733+00:00"
+  },
+  "nativeTapAudited": {
+    "modules": 77,
+    "allStdoutShasMatch": true,
+    "allNativeCountersMatch": true,
+    "allSourceShasMatch": true,
+    "counts": {
+      "tests": 713,
+      "suites": 0,
+      "pass": 713,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0
+    },
+    "method": "Independently split preserved gzip native TAP by module, rehashed original stdout, reparsed the actual final counters, and compared each test source SHA.",
+    "failures": []
+  },
+  "gates": {
+    "syntax": {
+      "name": "syntax",
+      "command": [
+        "npm",
+        "run",
+        "check"
+      ],
+      "cwd": "/workspace/scratch/793424e1640c/baseline/Dice-Abyss",
+      "started": "2026-10-19T08:34:36.744770+00:00",
+      "finished": "2026-10-19T08:34:45.271035+00:00",
+      "elapsedSeconds": 8.5263,
+      "exitCode": 0,
+      "stdout": "/workspace/scratch/793424e1640c/qa-baseline/syntax.stdout",
+      "stderr": "/workspace/scratch/793424e1640c/qa-baseline/syntax.stderr"
+    },
+    "npm-test": {
+      "name": "npm-test",
+      "command": [
+        "npm",
+        "test"
+      ],
+      "cwd": "/workspace/scratch/793424e1640c/baseline/Dice-Abyss",
+      "started": "2026-10-19T08:34:36.716597+00:00",
+      "finished": "2026-10-19T08:36:18.088221+00:00",
+      "elapsedSeconds": 101.3716,
+      "exitCode": 0,
+      "stdout": "/workspace/scratch/793424e1640c/qa-baseline/npm-test.stdout",
+      "stderr": "/workspace/scratch/793424e1640c/qa-baseline/npm-test.stderr"
+    },
+    "native-test": {
+      "name": "native-test",
+      "command": [
+        "python3",
+        "scripts/verify-test-cases.py",
+        "--output",
+        "/workspace/scratch/793424e1640c/qa-baseline/native-cases"
+      ],
+      "cwd": "/workspace/scratch/793424e1640c/baseline/Dice-Abyss",
+      "started": "2026-10-19T08:36:29.709396+00:00",
+      "finished": "2026-10-19T08:37:54.437232+00:00",
+      "elapsedSeconds": 84.7278,
+      "exitCode": 0,
+      "stdout": "/workspace/scratch/793424e1640c/qa-baseline/native-test.stdout",
+      "stderr": "/workspace/scratch/793424e1640c/qa-baseline/native-test.stderr"
+    },
+    "simulation": {
+      "name": "simulation",
+      "command": [
+        "node",
+        "scripts/simulate.mjs",
+        "1000"
+      ],
+      "cwd": "/workspace/scratch/793424e1640c/baseline/Dice-Abyss",
+      "started": "2026-10-19T08:34:36.755050+00:00",
+      "finished": "2026-10-19T08:38:42.082603+00:00",
+      "elapsedSeconds": 245.3276,
+      "exitCode": 0,
+      "stdout": "/workspace/scratch/793424e1640c/qa-baseline/simulation.stdout",
+      "stderr": "/workspace/scratch/793424e1640c/qa-baseline/simulation.stderr"
+    },
+    "http-smoke": {
+      "name": "http-smoke",
+      "command": [
+        "node",
+        "scripts/smoke-http.mjs",
+        "--output",
+        "/workspace/scratch/793424e1640c/qa-baseline/http-smoke.json"
+      ],
+      "cwd": "/workspace/scratch/793424e1640c/baseline/Dice-Abyss",
+      "started": "2026-10-19T08:34:36.754651+00:00",
+      "finished": "2026-10-19T08:34:37.032221+00:00",
+      "elapsedSeconds": 0.2777,
+      "exitCode": 1,
+      "stdout": "/workspace/scratch/793424e1640c/qa-baseline/http-smoke.stdout",
+      "stderr": "/workspace/scratch/793424e1640c/qa-baseline/http-smoke.stderr"
+    },
+    "http-smoke-escalated": {
+      "name": "http-smoke-escalated",
+      "command": [
+        "node",
+        "scripts/smoke-http.mjs",
+        "--output",
+        "/workspace/scratch/793424e1640c/qa-baseline/http-smoke.json"
+      ],
+      "cwd": "/workspace/scratch/793424e1640c/baseline/Dice-Abyss",
+      "started": "2026-10-19T08:35:00.552576+00:00",
+      "finished": "2026-10-19T08:35:01.473130+00:00",
+      "elapsedSeconds": 0.9206,
+      "exitCode": 0,
+      "stdout": "/workspace/scratch/793424e1640c/qa-baseline/http-smoke-escalated.stdout",
+      "stderr": "/workspace/scratch/793424e1640c/qa-baseline/http-smoke-escalated.stderr"
+    }
+  },
+  "packageAudit": "input-package-verification.json",
+  "archiveFindings": "archive-findings.json",
+  "archiveCompressionAudit": "archive-compression-audit.json",
+  "documentLinks": "current-document-links.json",
+  "noSourceEdits": true,
+  "noBrowserOperations": true,
+  "noRemoteActions": true,
+  "timingScope": "Actual elapsed time for independently requested gates; syntax, default npm suite, and simulation started concurrently. Native case count started after npm suite completed, while simulation was still running. These timings are not performance A/B measurements."
+}

@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-19",
+  "os": "Linux container",
+  "node": "v24.19.0",
+  "browser": "Chromium 155.0.8059.84",
+  "playwright": "1.62.1",
+  "route": "Standalone locally installed Playwright, authorized by the uploaded taskbook",
+  "preferredBrowserAttempts": [
+    {
+      "route": "Browser extension",
+      "target": "http://127.0.0.1:4188/",
+      "result": "ERR_CONNECTION_REFUSED"
+    },
+    {
+      "route": "Cloud browser",
+      "target": "http://127.0.0.1:4188/",
+      "result": "ERR_CONNECTION_REFUSED"
+    }
+  ],
+  "sandbox": "Default loopback listen and Chromium sandbox launch failed EPERM; approved local QA escalation used",
+  "renderer": "ANGLE SwiftShader software; no physical GPU claim",
+  "sessions": "New isolated test contexts, synthetic and scripted naturally generated states only",
+  "styleContext": "Impeccable context loader could not install its engine in the restricted path; incumbent README and source were read directly",
+  "notTested": [
+    "Physical GPU / physical 4K / physical phone",
+    "Operating system Chinese IME",
+    "External screen reader",
+    "Actual audio listening",
+    "Native Windows launcher",
+    "OS power loss, sleep and actual background lifecycle"
+  ]
+}

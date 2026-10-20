@@ -1,0 +1,934 @@
+{
+  "started": "2026-10-19T02:58:50.684Z",
+  "browser": "155.0.8059.84",
+  "url": "http://127.0.0.1:4191/",
+  "method": "Native mouse and keyboard actions in new Chromium contexts; exact decoded main/mirror states compared with authoritative engine transitions. Fixture and storage-failure injection are deliberate QA setup, never player data.",
+  "synthetic": true,
+  "cases": [
+    {
+      "name": "quantity-preview-and-exact-commit",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "Correct page identity",
+          "passed": true
+        },
+        {
+          "label": "Opening the talent screen is read-only",
+          "passed": true,
+          "revision": 0,
+          "rng": 3523296831,
+          "points": 369,
+          "stateSha256": "b02ea5f2e3ba78f814d6603d0e34d3d2e68bbb841deacd0f82fcc155039de269"
+        },
+        {
+          "label": "Four bounded quantity presets are exposed",
+          "passed": true
+        },
+        {
+          "label": "New screen defaults to one point",
+          "passed": true
+        },
+        {
+          "label": "Quantity choice has an accessible selected state",
+          "passed": true
+        },
+        {
+          "label": "The node exposes the exact investment",
+          "passed": true
+        },
+        {
+          "label": "Preview names the node, resulting rank and remaining points",
+          "passed": true,
+          "text": "无尽锋刃\n高点裁决 · 基础节点\n实际投入 +10 点\n节点等级\n1 → 11\n节点累计贡献\n全部伤害 +3% → 全部伤害 +33%\n投入后剩余\n359 点\n\n点击节点后才会投入，当前仅为预览。"
+        },
+        {
+          "label": "Quantity and hover preview never consume points or RNG",
+          "passed": true,
+          "revision": 0,
+          "rng": 3523296831,
+          "points": 369,
+          "stateSha256": "b02ea5f2e3ba78f814d6603d0e34d3d2e68bbb841deacd0f82fcc155039de269"
+        },
+        {
+          "label": "power: one exact 10-point request",
+          "passed": true,
+          "revision": 1,
+          "rng": 3523296831,
+          "points": 359,
+          "stateSha256": "1d9c306e00a40d9631897573436a2f7f68e879e0f14587dfcb211243901afdf6"
+        },
+        {
+          "label": "Keyboard focus follows the same usable node after rendering",
+          "passed": true
+        },
+        {
+          "label": "Current-node max respects the five-rank cap",
+          "passed": true
+        },
+        {
+          "label": "high: one exact max-point request",
+          "passed": true,
+          "revision": 2,
+          "rng": 3523296831,
+          "points": 354,
+          "stateSha256": "6391618e99cfcecb6d211152c330fefd1e15aa3c7619891fd93bd320308840e7"
+        },
+        {
+          "label": "A completed node is disabled",
+          "passed": true
+        },
+        {
+          "label": "Deep nodes retain their three-rank cap",
+          "passed": true
+        },
+        {
+          "label": "shatter: one exact max-point request",
+          "passed": true,
+          "revision": 3,
+          "rng": 3523296831,
+          "points": 351,
+          "stateSha256": "e86fc878c6952547aebbec30b99509bf4eeaae11d35a306cea7e3d7cdb3b9b1f"
+        },
+        {
+          "label": "Unlimited-growth node max uses only remaining points",
+          "passed": true
+        },
+        {
+          "label": "power: one exact max-point request",
+          "passed": true,
+          "revision": 4,
+          "rng": 3523296831,
+          "points": 0,
+          "stateSha256": "fa479e2e7071c4e28a03664c0a281db51d61c57e0a01a58abe805f2f43a9bd3f"
+        },
+        {
+          "label": "Current-node max spends the exact remainder",
+          "passed": true
+        },
+        {
+          "label": "Zero balance blocks a further investment",
+          "passed": true
+        },
+        {
+          "label": "Refresh preserves every committed talent, RNG and revision",
+          "passed": true,
+          "revision": 4,
+          "rng": 3523296831,
+          "points": 0,
+          "stateSha256": "fa479e2e7071c4e28a03664c0a281db51d61c57e0a01a58abe805f2f43a9bd3f"
+        }
+      ],
+      "elapsedMs": 5986.377444
+    },
+    {
+      "name": "unlock-cap-and-dead-state",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "Correct page identity",
+          "passed": true
+        },
+        {
+          "label": "Opening the talent screen is read-only",
+          "passed": true,
+          "revision": 0,
+          "rng": 3523296831,
+          "points": 2,
+          "stateSha256": "42b9ccad4c89b01795925ba3334634eb69bb50ba6af437dfb9dae4bc94e13ea7"
+        },
+        {
+          "label": "Floor 29 cannot invest in the floor-30 talent",
+          "passed": true
+        },
+        {
+          "label": "A ten-point request previews the two available points",
+          "passed": true
+        },
+        {
+          "label": "power: one exact 10-point request",
+          "passed": true,
+          "revision": 1,
+          "rng": 3523296831,
+          "points": 0,
+          "stateSha256": "111ebcf7851fcfe99df872860dbeebd7263308d25daba25efdcb661c6e5d0a4e"
+        },
+        {
+          "label": "Insufficient balance truncates rather than overspends",
+          "passed": true
+        },
+        {
+          "label": "Correct page identity",
+          "passed": true
+        },
+        {
+          "label": "Opening the talent screen is read-only",
+          "passed": true,
+          "revision": 0,
+          "rng": 3523296831,
+          "points": 8,
+          "stateSha256": "8a83a8a50bbe9999b865f2bd6dd938332509bbdc67177dfe24b5a5643c7013a7"
+        },
+        {
+          "label": "Near-cap talent previews one actual point",
+          "passed": true
+        },
+        {
+          "label": "high: one exact 10-point request",
+          "passed": true,
+          "revision": 1,
+          "rng": 3523296831,
+          "points": 7,
+          "stateSha256": "827cc7c37895d792aae423c3cfcabd5a3e4b8b3b18ee6706f5f37764678c91dc"
+        },
+        {
+          "label": "Floor 30 unlocks precisely the original deep node",
+          "passed": true
+        },
+        {
+          "label": "Correct page identity",
+          "passed": true
+        },
+        {
+          "label": "Opening the talent screen is read-only",
+          "passed": true,
+          "revision": 2,
+          "rng": 3623057853,
+          "points": 2,
+          "stateSha256": "765df4247e7663bfd915170fd6c81bb063b8e5e47e50bdbcab77c12d85d1bec6"
+        },
+        {
+          "label": "power: one exact max-point request",
+          "passed": true,
+          "revision": 3,
+          "rng": 3623057853,
+          "points": 0,
+          "stateSha256": "a229c6e715d842e9d5a7d5f0b3e3b29d965f5e937db18a67fb0f0746d031c3a0"
+        },
+        {
+          "label": "Investing while defeated neither heals nor revives",
+          "passed": true
+        },
+        {
+          "label": "Returning to the room preserves the real death screen",
+          "passed": true
+        }
+      ],
+      "elapsedMs": 8705.339982
+    },
+    {
+      "name": "scroll-and-keyboard-retention",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "Correct page identity",
+          "passed": true
+        },
+        {
+          "label": "Opening the talent screen is read-only",
+          "passed": true,
+          "revision": 0,
+          "rng": 3523296831,
+          "points": 20,
+          "stateSha256": "a9249ba10e33b9070114a43772a0a74c76e0dfe7ebe3b696a8e30ebe676926cf"
+        },
+        {
+          "label": "shatter: one exact 1-point request",
+          "passed": true,
+          "revision": 1,
+          "rng": 3523296831,
+          "points": 19,
+          "stateSha256": "dbc683d671e55c16ecf9523e2da12208f9699aa179b6c69752e98269acec02de"
+        },
+        {
+          "label": "A keyboard investment preserves talent scroll position",
+          "passed": true,
+          "before": 340,
+          "after": 340
+        },
+        {
+          "label": "The keyboard remains on the same still-usable deep node",
+          "passed": true
+        },
+        {
+          "label": "Space activates the focused talent once without a combat roll",
+          "passed": true,
+          "revision": 2,
+          "rng": 3523296831,
+          "points": 18,
+          "stateSha256": "fd752f972660827a35359c6c98dfe0c7613ab11522dc5d64da761b8214b817f6"
+        }
+      ],
+      "elapsedMs": 2492.4153600000027
+    },
+    {
+      "name": "save-failure-and-cross-tab",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "Correct page identity",
+          "passed": true
+        },
+        {
+          "label": "Opening the talent screen is read-only",
+          "passed": true,
+          "revision": 0,
+          "rng": 3523296831,
+          "points": 369,
+          "stateSha256": "b02ea5f2e3ba78f814d6603d0e34d3d2e68bbb841deacd0f82fcc155039de269"
+        },
+        {
+          "label": "Failed primary write preserves both durable copies",
+          "passed": true
+        },
+        {
+          "label": "Failure leaves the intended investment available",
+          "passed": true
+        },
+        {
+          "label": "power: one exact 10-point request",
+          "passed": true,
+          "revision": 1,
+          "rng": 3523296831,
+          "points": 359,
+          "stateSha256": "1d9c306e00a40d9631897573436a2f7f68e879e0f14587dfcb211243901afdf6"
+        },
+        {
+          "label": "power: one exact 10-point request",
+          "passed": true,
+          "revision": 2,
+          "rng": 3523296831,
+          "points": 349,
+          "stateSha256": "47ccbbdd883ddc5b1f4c94031b53d5ddc84f5afdc30e5a996ed077ed71c214da"
+        },
+        {
+          "label": "Other tab rebuilds its max quote from the synchronized balance",
+          "passed": true
+        },
+        {
+          "label": "power: one exact max-point request",
+          "passed": true,
+          "revision": 3,
+          "rng": 3523296831,
+          "points": 0,
+          "stateSha256": "facc3965d59f8ea1326a0e77fa3f11cb1a7e14cf00db2b8aadb29fda7041616d"
+        },
+        {
+          "label": "Both tabs retain the same final build and branch",
+          "passed": true,
+          "revision": 3,
+          "rng": 3523296831,
+          "points": 0,
+          "stateSha256": "facc3965d59f8ea1326a0e77fa3f11cb1a7e14cf00db2b8aadb29fda7041616d"
+        },
+        {
+          "label": "Browser provides the existing cross-tab Web Locks path",
+          "passed": true
+        }
+      ],
+      "elapsedMs": 2825.2664760000007
+    },
+    {
+      "name": "four-desktop-and-narrow-layouts",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "Correct page identity",
+          "passed": true
+        },
+        {
+          "label": "Opening the talent screen is read-only",
+          "passed": true,
+          "revision": 0,
+          "rng": 3523296831,
+          "points": 369,
+          "stateSha256": "b02ea5f2e3ba78f814d6603d0e34d3d2e68bbb841deacd0f82fcc155039de269"
+        },
+        {
+          "label": "1366: no horizontal page overflow",
+          "passed": true
+        },
+        {
+          "label": "1366: both offline font families are available",
+          "passed": true
+        },
+        {
+          "label": "1366: quantity controls have usable in-bounds hit areas",
+          "passed": true
+        },
+        {
+          "label": "1366: quantity controls 0/1 do not overlap",
+          "passed": true
+        },
+        {
+          "label": "1366: quantity controls 0/2 do not overlap",
+          "passed": true
+        },
+        {
+          "label": "1366: quantity controls 0/3 do not overlap",
+          "passed": true
+        },
+        {
+          "label": "1366: quantity controls 1/2 do not overlap",
+          "passed": true
+        },
+        {
+          "label": "1366: quantity controls 1/3 do not overlap",
+          "passed": true
+        },
+        {
+          "label": "1366: quantity controls 2/3 do not overlap",
+          "passed": true
+        },
+        {
+          "label": "1366: responsive layout and quantity choice remain read-only",
+          "passed": true,
+          "revision": 0,
+          "rng": 3523296831,
+          "points": 369,
+          "stateSha256": "b02ea5f2e3ba78f814d6603d0e34d3d2e68bbb841deacd0f82fcc155039de269"
+        },
+        {
+          "label": "Correct page identity",
+          "passed": true
+        },
+        {
+          "label": "Opening the talent screen is read-only",
+          "passed": true,
+          "revision": 0,
+          "rng": 3523296831,
+          "points": 369,
+          "stateSha256": "b02ea5f2e3ba78f814d6603d0e34d3d2e68bbb841deacd0f82fcc155039de269"
+        },
+        {
+          "label": "1920: no horizontal page overflow",
+          "passed": true
+        },
+        {
+          "label": "1920: both offline font families are available",
+          "passed": true
+        },
+        {
+          "label": "1920: quantity controls have usable in-bounds hit areas",
+          "passed": true
+        },
+        {
+          "label": "1920: quantity controls 0/1 do not overlap",
+          "passed": true
+        },
+        {
+          "label": "1920: quantity controls 0/2 do not overlap",
+          "passed": true
+        },
+        {
+          "label": "1920: quantity controls 0/3 do not overlap",
+          "passed": true
+        },
+        {
+          "label": "1920: quantity controls 1/2 do not overlap",
+          "passed": true
+        },
+        {
+          "label": "1920: quantity controls 1/3 do not overlap",
+          "passed": true
+        },
+        {
+          "label": "1920: quantity controls 2/3 do not overlap",
+          "passed": true
+        },
+        {
+          "label": "1920: responsive layout and quantity choice remain read-only",
+          "passed": true,
+          "revision": 0,
+          "rng": 3523296831,
+          "points": 369,
+          "stateSha256": "b02ea5f2e3ba78f814d6603d0e34d3d2e68bbb841deacd0f82fcc155039de269"
+        },
+        {
+          "label": "Correct page identity",
+          "passed": true
+        },
+        {
+          "label": "Opening the talent screen is read-only",
+          "passed": true,
+          "revision": 0,
+          "rng": 3523296831,
+          "points": 369,
+          "stateSha256": "b02ea5f2e3ba78f814d6603d0e34d3d2e68bbb841deacd0f82fcc155039de269"
+        },
+        {
+          "label": "2560: no horizontal page overflow",
+          "passed": true
+        },
+        {
+          "label": "2560: both offline font families are available",
+          "passed": true
+        },
+        {
+          "label": "2560: quantity controls have usable in-bounds hit areas",
+          "passed": true
+        },
+        {
+          "label": "2560: quantity controls 0/1 do not overlap",
+          "passed": true
+        },
+        {
+          "label": "2560: quantity controls 0/2 do not overlap",
+          "passed": true
+        },
+        {
+          "label": "2560: quantity controls 0/3 do not overlap",
+          "passed": true
+        },
+        {
+          "label": "2560: quantity controls 1/2 do not overlap",
+          "passed": true
+        },
+        {
+          "label": "2560: quantity controls 1/3 do not overlap",
+          "passed": true
+        },
+        {
+          "label": "2560: quantity controls 2/3 do not overlap",
+          "passed": true
+        },
+        {
+          "label": "2560: responsive layout and quantity choice remain read-only",
+          "passed": true,
+          "revision": 0,
+          "rng": 3523296831,
+          "points": 369,
+          "stateSha256": "b02ea5f2e3ba78f814d6603d0e34d3d2e68bbb841deacd0f82fcc155039de269"
+        },
+        {
+          "label": "Correct page identity",
+          "passed": true
+        },
+        {
+          "label": "Opening the talent screen is read-only",
+          "passed": true,
+          "revision": 0,
+          "rng": 3523296831,
+          "points": 369,
+          "stateSha256": "b02ea5f2e3ba78f814d6603d0e34d3d2e68bbb841deacd0f82fcc155039de269"
+        },
+        {
+          "label": "3840: no horizontal page overflow",
+          "passed": true
+        },
+        {
+          "label": "3840: both offline font families are available",
+          "passed": true
+        },
+        {
+          "label": "3840: quantity controls have usable in-bounds hit areas",
+          "passed": true
+        },
+        {
+          "label": "3840: quantity controls 0/1 do not overlap",
+          "passed": true
+        },
+        {
+          "label": "3840: quantity controls 0/2 do not overlap",
+          "passed": true
+        },
+        {
+          "label": "3840: quantity controls 0/3 do not overlap",
+          "passed": true
+        },
+        {
+          "label": "3840: quantity controls 1/2 do not overlap",
+          "passed": true
+        },
+        {
+          "label": "3840: quantity controls 1/3 do not overlap",
+          "passed": true
+        },
+        {
+          "label": "3840: quantity controls 2/3 do not overlap",
+          "passed": true
+        },
+        {
+          "label": "3840: responsive layout and quantity choice remain read-only",
+          "passed": true,
+          "revision": 0,
+          "rng": 3523296831,
+          "points": 369,
+          "stateSha256": "b02ea5f2e3ba78f814d6603d0e34d3d2e68bbb841deacd0f82fcc155039de269"
+        },
+        {
+          "label": "Correct page identity",
+          "passed": true
+        },
+        {
+          "label": "Opening the talent screen is read-only",
+          "passed": true,
+          "revision": 0,
+          "rng": 3523296831,
+          "points": 369,
+          "stateSha256": "b02ea5f2e3ba78f814d6603d0e34d3d2e68bbb841deacd0f82fcc155039de269"
+        },
+        {
+          "label": "390: no horizontal page overflow",
+          "passed": true
+        },
+        {
+          "label": "390: both offline font families are available",
+          "passed": true
+        },
+        {
+          "label": "390: quantity controls have usable in-bounds hit areas",
+          "passed": true
+        },
+        {
+          "label": "390: quantity controls 0/1 do not overlap",
+          "passed": true
+        },
+        {
+          "label": "390: quantity controls 0/2 do not overlap",
+          "passed": true
+        },
+        {
+          "label": "390: quantity controls 0/3 do not overlap",
+          "passed": true
+        },
+        {
+          "label": "390: quantity controls 1/2 do not overlap",
+          "passed": true
+        },
+        {
+          "label": "390: quantity controls 1/3 do not overlap",
+          "passed": true
+        },
+        {
+          "label": "390: quantity controls 2/3 do not overlap",
+          "passed": true
+        },
+        {
+          "label": "390: active-branch nodes are reachable",
+          "passed": true
+        },
+        {
+          "label": "power: one exact 10-point request",
+          "passed": true,
+          "revision": 1,
+          "rng": 3523296831,
+          "points": 359,
+          "stateSha256": "1d9c306e00a40d9631897573436a2f7f68e879e0f14587dfcb211243901afdf6"
+        },
+        {
+          "label": "390: real investment works in the narrow layout",
+          "passed": true
+        },
+        {
+          "label": "390: switching a branch is read-only",
+          "passed": true,
+          "revision": 1,
+          "rng": 3523296831,
+          "points": 359,
+          "stateSha256": "1d9c306e00a40d9631897573436a2f7f68e879e0f14587dfcb211243901afdf6"
+        },
+        {
+          "label": "390: selected branch controls visible nodes",
+          "passed": true
+        },
+        {
+          "label": "luck: one exact 5-point request",
+          "passed": true,
+          "revision": 2,
+          "rng": 3523296831,
+          "points": 354,
+          "stateSha256": "5fabf57138bf595c4f9232e57e13506224afbdd4285d3d35a7bcfb71ffee6201"
+        },
+        {
+          "label": "390: another branch accepts one exact native investment",
+          "passed": true
+        }
+      ],
+      "elapsedMs": 18277.935921
+    }
+  ],
+  "checks": 118,
+  "errors": [],
+  "warnings": [],
+  "geometry": [
+    {
+      "width": 1366,
+      "height": 768,
+      "scrollWidth": 1366,
+      "presets": [
+        {
+          "x": 383.71875,
+          "y": 144.953125,
+          "right": 517.109375,
+          "bottom": 182.953125,
+          "width": 133.390625,
+          "height": 38
+        },
+        {
+          "x": 522.75,
+          "y": 144.953125,
+          "right": 656.140625,
+          "bottom": 182.953125,
+          "width": 133.390625,
+          "height": 38
+        },
+        {
+          "x": 661.78125,
+          "y": 144.953125,
+          "right": 795.171875,
+          "bottom": 182.953125,
+          "width": 133.390625,
+          "height": 38
+        },
+        {
+          "x": 800.8125,
+          "y": 144.953125,
+          "right": 1040.921875,
+          "bottom": 182.953125,
+          "width": 240.109375,
+          "height": 38
+        }
+      ],
+      "screen": {
+        "x": 325.046875,
+        "y": 212.375,
+        "right": 1040.9375,
+        "bottom": 479.140625,
+        "width": 715.890625,
+        "height": 266.765625
+      },
+      "fonts": [
+        true,
+        true
+      ],
+      "count": 33
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "scrollWidth": 1920,
+      "presets": [
+        {
+          "x": 527.46875,
+          "y": 191.703125,
+          "right": 717.515625,
+          "bottom": 229.703125,
+          "width": 190.046875,
+          "height": 38
+        },
+        {
+          "x": 725.453125,
+          "y": 191.703125,
+          "right": 915.5,
+          "bottom": 229.703125,
+          "width": 190.046875,
+          "height": 38
+        },
+        {
+          "x": 923.4375,
+          "y": 191.703125,
+          "right": 1113.484375,
+          "bottom": 229.703125,
+          "width": 190.046875,
+          "height": 38
+        },
+        {
+          "x": 1121.421875,
+          "y": 191.703125,
+          "right": 1463.515625,
+          "bottom": 229.703125,
+          "width": 342.09375,
+          "height": 38
+        }
+      ],
+      "screen": {
+        "x": 456.46875,
+        "y": 265.75,
+        "right": 1463.515625,
+        "bottom": 695.734375,
+        "width": 1007.046875,
+        "height": 429.984375
+      },
+      "fonts": [
+        true,
+        true
+      ],
+      "count": 33
+    },
+    {
+      "width": 2560,
+      "height": 1440,
+      "scrollWidth": 2560,
+      "presets": [
+        {
+          "x": 700.3125,
+          "y": 254.921875,
+          "right": 954.390625,
+          "bottom": 300.421875,
+          "width": 254.078125,
+          "height": 45.5
+        },
+        {
+          "x": 964.984375,
+          "y": 254.921875,
+          "right": 1219.0625,
+          "bottom": 300.421875,
+          "width": 254.078125,
+          "height": 45.5
+        },
+        {
+          "x": 1229.65625,
+          "y": 254.921875,
+          "right": 1483.734375,
+          "bottom": 300.421875,
+          "width": 254.078125,
+          "height": 45.5
+        },
+        {
+          "x": 1494.328125,
+          "y": 254.921875,
+          "right": 1951.671875,
+          "bottom": 300.421875,
+          "width": 457.34375,
+          "height": 45.5
+        }
+      ],
+      "screen": {
+        "x": 608.296875,
+        "y": 348.15625,
+        "right": 1951.6875,
+        "bottom": 948.140625,
+        "width": 1343.390625,
+        "height": 599.984375
+      },
+      "fonts": [
+        true,
+        true
+      ],
+      "count": 33
+    },
+    {
+      "width": 3840,
+      "height": 2160,
+      "scrollWidth": 3840,
+      "presets": [
+        {
+          "x": 1053.984375,
+          "y": 381.4375,
+          "right": 1434.46875,
+          "bottom": 448.703125,
+          "width": 380.484375,
+          "height": 67.265625
+        },
+        {
+          "x": 1450.359375,
+          "y": 381.4375,
+          "right": 1830.84375,
+          "bottom": 448.703125,
+          "width": 380.484375,
+          "height": 67.265625
+        },
+        {
+          "x": 1846.734375,
+          "y": 381.4375,
+          "right": 2227.234375,
+          "bottom": 448.703125,
+          "width": 380.5,
+          "height": 67.265625
+        },
+        {
+          "x": 2243.125,
+          "y": 381.4375,
+          "right": 2928,
+          "bottom": 448.703125,
+          "width": 684.875,
+          "height": 67.265625
+        }
+      ],
+      "screen": {
+        "x": 911.96875,
+        "y": 519.8125,
+        "right": 2928.015625,
+        "bottom": 1512.71875,
+        "width": 2016.046875,
+        "height": 992.90625
+      },
+      "fonts": [
+        true,
+        true
+      ],
+      "count": 33
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "presets": [
+        {
+          "x": 25,
+          "y": 228,
+          "right": 95.640625,
+          "bottom": 268,
+          "width": 70.640625,
+          "height": 40
+        },
+        {
+          "x": 100.640625,
+          "y": 228,
+          "right": 171.296875,
+          "bottom": 268,
+          "width": 70.65625,
+          "height": 40
+        },
+        {
+          "x": 176.296875,
+          "y": 228,
+          "right": 246.953125,
+          "bottom": 268,
+          "width": 70.65625,
+          "height": 40
+        },
+        {
+          "x": 251.953125,
+          "y": 228,
+          "right": 365,
+          "bottom": 268,
+          "width": 113.046875,
+          "height": 40
+        }
+      ],
+      "screen": {
+        "x": 25,
+        "y": 384.28125,
+        "right": 365,
+        "bottom": 618,
+        "width": 340,
+        "height": 233.71875
+      },
+      "fonts": [
+        true,
+        true
+      ],
+      "count": 33
+    }
+  ],
+  "screenshots": [
+    "talents-preview-1440.png",
+    "talents-keyboard-1366.png",
+    "talents-1366.png",
+    "talents-1920.png",
+    "talents-2560.png",
+    "talents-3840.png",
+    "talents-390.png",
+    "talents-390-invested.png"
+  ],
+  "limitations": [
+    "Viewport emulation is not physical mobile/4K hardware validation.",
+    "ANGLE SwiftShader is software rendering; these functional observations do not measure hardware FPS.",
+    "Storage quota injection is not physical power loss.",
+    "Keyboard semantics are checked; no external screen reader was used."
+  ],
+  "finished": "2026-10-19T02:59:36.289Z",
+  "pass": true
+}

@@ -1,0 +1,657 @@
+{
+  "started": "2026-10-18T06:58:49.542Z",
+  "source": "/workspace/scratch/5c3c2b08656a/work/Dice-Abyss",
+  "url": "http://127.0.0.1:4289/",
+  "scriptSha256": "09fca2fd2656a47514be5eeb649d7092b901e5fda37a94ce20c3c3b2a289091e",
+  "sourceBefore": {
+    "src/app.js": "07fda8722d861f093b87e8db05cce901bc55295e6f889f0a28848de8b29a999d",
+    "src/action-focus.js": "d5e383b4f8aeb138b6cdffc7f3dffe12cf0db7fcbac053df713dec60b3b95a98",
+    "src/engine.js": "d81ad2b7fd33ae6f55052a894460bb6e804f316c4488ff5faabaf4ed30473751",
+    "src/views.js": "c80d9a3f16256435e613e18e850f8739c95a54123a1c56b246cd14af41ddc9da",
+    "src/encounter-tactics.js": "02e0da7aa57de321319812503556d9e5925463644222305755e86de6c3fa355b",
+    "src/deep-rules.js": "6919b66ec8fbadea293ab4c4e3aa0b8c7a943e2ec44224b119287709d484581f",
+    "src/encounters.js": "40d4c41b57cc35c5246491c11f6e0cd6ecc51ebec7e4abe14f5c8a8ee0745c97",
+    "src/deep.css": "24f0ed8bf2969232c660a595cd5e19b206066bc4a19a983e4bd3a277b82700cc",
+    "src/storage.js": "b8676eaee04c14de66c8bc1d8555b6927d41bf14a3dfc0598e8fbb37c1962c34",
+    "index.html": "335acddc8319763fbc03dda2c674a184b0fa1d841d84852cdceb8aae97e3e230",
+    "package.json": "8581c407358747d9bfb60bab097b98927b689f8d8f38ca52add04ab04cd46b37"
+  },
+  "cases": [
+    {
+      "name": "rules-native-scroll",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "src/app.js served",
+          "passed": true
+        },
+        {
+          "label": "src/action-focus.js served",
+          "passed": true
+        },
+        {
+          "label": "src/engine.js served",
+          "passed": true
+        },
+        {
+          "label": "src/views.js served",
+          "passed": true
+        },
+        {
+          "label": "src/encounter-tactics.js served",
+          "passed": true
+        },
+        {
+          "label": "src/deep-rules.js served",
+          "passed": true
+        },
+        {
+          "label": "src/encounters.js served",
+          "passed": true
+        },
+        {
+          "label": "src/deep.css served",
+          "passed": true
+        },
+        {
+          "label": "src/storage.js served",
+          "passed": true
+        },
+        {
+          "label": "index.html served",
+          "passed": true
+        },
+        {
+          "label": "Browser server serves the exact chosen source",
+          "passed": true,
+          "actualSha256": "4065158e42f7be4d666b2cd67fd40411c392bb6f7943a2a15a63934175adb80c",
+          "expectedSha256": "4065158e42f7be4d666b2cd67fd40411c392bb6f7943a2a15a63934175adb80c"
+        },
+        {
+          "label": "correct meaningful game page",
+          "passed": true
+        },
+        {
+          "label": "native Web Locks available",
+          "passed": true
+        },
+        {
+          "label": "scroll fixture closed: required visible regions exist",
+          "passed": true
+        },
+        {
+          "label": "scroll fixture closed: readout/counter/rules do not overlap dice/result/action",
+          "passed": true,
+          "detail": {
+            "conflicts": [],
+            "boxes": {
+              "guide": {
+                "x": 356.203125,
+                "y": 179.453125,
+                "right": 853.21875,
+                "bottom": 224.203125,
+                "width": 497.015625,
+                "height": 44.75
+              },
+              "counter": {
+                "x": 860.75,
+                "y": 179.453125,
+                "right": 1016.640625,
+                "bottom": 237.59375,
+                "width": 155.890625,
+                "height": 58.140625
+              },
+              "rules": {
+                "x": 356.203125,
+                "y": 241.984375,
+                "right": 1016.640625,
+                "bottom": 262.078125,
+                "width": 660.4375,
+                "height": 20.09375
+              },
+              "caption": {
+                "x": 356.203125,
+                "y": 270.234375,
+                "right": 1016.640625,
+                "bottom": 290.46875,
+                "width": 660.4375,
+                "height": 20.234375
+              },
+              "dice": {
+                "x": 356.203125,
+                "y": 362.90625,
+                "right": 1016.640625,
+                "bottom": 492.953125,
+                "width": 660.4375,
+                "height": 130.046875
+              },
+              "result": {
+                "x": 356.203125,
+                "y": 556,
+                "right": 1016.640625,
+                "bottom": 601.140625,
+                "width": 660.4375,
+                "height": 45.140625
+              },
+              "primary": {
+                "x": 566.390625,
+                "y": 690.90625,
+                "right": 806.4375,
+                "bottom": 738.234375,
+                "width": 240.046875,
+                "height": 47.328125
+              },
+              "panel": {
+                "x": 343.265625,
+                "y": 25.140625,
+                "right": 1029.578125,
+                "bottom": 613.4375,
+                "width": 686.3125,
+                "height": 588.296875
+              }
+            }
+          }
+        },
+        {
+          "label": "scroll fixture closed: desktop whole page fits viewport",
+          "passed": true
+        },
+        {
+          "label": "scroll fixture closed: primary action stays in viewport",
+          "passed": true
+        },
+        {
+          "label": "scroll fixture closed: guide fits the center panel",
+          "passed": true
+        },
+        {
+          "label": "scroll fixture open: required visible regions exist",
+          "passed": true
+        },
+        {
+          "label": "scroll fixture open: readout/counter/rules do not overlap dice/result/action",
+          "passed": true,
+          "detail": {
+            "conflicts": [],
+            "boxes": {
+              "guide": {
+                "x": 356.203125,
+                "y": 179.453125,
+                "right": 853.21875,
+                "bottom": 224.203125,
+                "width": 497.015625,
+                "height": 44.75
+              },
+              "counter": {
+                "x": 860.75,
+                "y": 179.453125,
+                "right": 1016.640625,
+                "bottom": 237.59375,
+                "width": 155.890625,
+                "height": 58.140625
+              },
+              "rules": {
+                "x": 356.203125,
+                "y": 241.984375,
+                "right": 1016.640625,
+                "bottom": 317.375,
+                "width": 660.4375,
+                "height": 75.390625
+              },
+              "caption": {
+                "x": 356.203125,
+                "y": 325.53125,
+                "right": 1016.640625,
+                "bottom": 345.765625,
+                "width": 660.4375,
+                "height": 20.234375
+              },
+              "dice": {
+                "x": 356.203125,
+                "y": 390.5625,
+                "right": 1016.640625,
+                "bottom": 520.609375,
+                "width": 660.4375,
+                "height": 130.046875
+              },
+              "result": {
+                "x": 356.203125,
+                "y": 556,
+                "right": 1016.640625,
+                "bottom": 601.140625,
+                "width": 660.4375,
+                "height": 45.140625
+              },
+              "primary": {
+                "x": 566.390625,
+                "y": 690.90625,
+                "right": 806.4375,
+                "bottom": 738.234375,
+                "width": 240.046875,
+                "height": 47.328125
+              },
+              "panel": {
+                "x": 343.265625,
+                "y": 25.140625,
+                "right": 1029.578125,
+                "bottom": 613.4375,
+                "width": 686.3125,
+                "height": 588.296875
+              }
+            }
+          }
+        },
+        {
+          "label": "scroll fixture open: desktop whole page fits viewport",
+          "passed": true
+        },
+        {
+          "label": "scroll fixture open: primary action stays in viewport",
+          "passed": true
+        },
+        {
+          "label": "scroll fixture open: guide fits the center panel",
+          "passed": true
+        },
+        {
+          "label": "authored rules genuinely overflow at 1366x768",
+          "passed": true
+        },
+        {
+          "label": "native scroll at bottom: required visible regions exist",
+          "passed": true
+        },
+        {
+          "label": "native scroll at bottom: readout/counter/rules do not overlap dice/result/action",
+          "passed": true,
+          "detail": {
+            "conflicts": [],
+            "boxes": {
+              "guide": {
+                "x": 356.203125,
+                "y": 179.453125,
+                "right": 853.21875,
+                "bottom": 224.203125,
+                "width": 497.015625,
+                "height": 44.75
+              },
+              "counter": {
+                "x": 860.75,
+                "y": 179.453125,
+                "right": 1016.640625,
+                "bottom": 237.59375,
+                "width": 155.890625,
+                "height": 58.140625
+              },
+              "rules": {
+                "x": 356.203125,
+                "y": 241.984375,
+                "right": 1016.640625,
+                "bottom": 317.375,
+                "width": 660.4375,
+                "height": 75.390625
+              },
+              "caption": {
+                "x": 356.203125,
+                "y": 325.53125,
+                "right": 1016.640625,
+                "bottom": 345.765625,
+                "width": 660.4375,
+                "height": 20.234375
+              },
+              "dice": {
+                "x": 356.203125,
+                "y": 390.5625,
+                "right": 1016.640625,
+                "bottom": 520.609375,
+                "width": 660.4375,
+                "height": 130.046875
+              },
+              "result": {
+                "x": 356.203125,
+                "y": 556,
+                "right": 1016.640625,
+                "bottom": 601.140625,
+                "width": 660.4375,
+                "height": 45.140625
+              },
+              "primary": {
+                "x": 566.390625,
+                "y": 690.90625,
+                "right": 806.4375,
+                "bottom": 738.234375,
+                "width": 240.046875,
+                "height": 47.328125
+              },
+              "panel": {
+                "x": 343.265625,
+                "y": 25.140625,
+                "right": 1029.578125,
+                "bottom": 613.4375,
+                "width": 686.3125,
+                "height": 588.296875
+              }
+            }
+          }
+        },
+        {
+          "label": "native scroll at bottom: desktop whole page fits viewport",
+          "passed": true
+        },
+        {
+          "label": "native scroll at bottom: primary action stays in viewport",
+          "passed": true
+        },
+        {
+          "label": "native scroll at bottom: guide fits the center panel",
+          "passed": true
+        },
+        {
+          "label": "native wheel scrolls the rules body",
+          "passed": true
+        },
+        {
+          "label": "wheel leaves native summary focus intact",
+          "passed": true
+        },
+        {
+          "label": "reverse native wheel returns to the summary",
+          "passed": true
+        },
+        {
+          "label": "Enter still closes the scrollable native disclosure",
+          "passed": true
+        },
+        {
+          "label": "native wheel and disclosure keys preserve all storage bytes",
+          "passed": true,
+          "actualSha256": "a32f05083d9f9b9435deadc3782cbb6a07cf5b8311211ed4fc1befb13dae9e9c",
+          "expectedSha256": "a32f05083d9f9b9435deadc3782cbb6a07cf5b8311211ed4fc1befb13dae9e9c"
+        },
+        {
+          "label": "rules-native-scroll: no page/console errors",
+          "passed": true,
+          "actualSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "expectedSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "errors": [],
+      "closed": {
+        "viewport": {
+          "width": 1366,
+          "height": 768
+        },
+        "documentWidth": 1366,
+        "boxes": {
+          "guide": {
+            "x": 356.203125,
+            "y": 179.453125,
+            "right": 853.21875,
+            "bottom": 224.203125,
+            "width": 497.015625,
+            "height": 44.75
+          },
+          "counter": {
+            "x": 860.75,
+            "y": 179.453125,
+            "right": 1016.640625,
+            "bottom": 237.59375,
+            "width": 155.890625,
+            "height": 58.140625
+          },
+          "rules": {
+            "x": 356.203125,
+            "y": 241.984375,
+            "right": 1016.640625,
+            "bottom": 262.078125,
+            "width": 660.4375,
+            "height": 20.09375
+          },
+          "caption": {
+            "x": 356.203125,
+            "y": 270.234375,
+            "right": 1016.640625,
+            "bottom": 290.46875,
+            "width": 660.4375,
+            "height": 20.234375
+          },
+          "dice": {
+            "x": 356.203125,
+            "y": 362.90625,
+            "right": 1016.640625,
+            "bottom": 492.953125,
+            "width": 660.4375,
+            "height": 130.046875
+          },
+          "result": {
+            "x": 356.203125,
+            "y": 556,
+            "right": 1016.640625,
+            "bottom": 601.140625,
+            "width": 660.4375,
+            "height": 45.140625
+          },
+          "primary": {
+            "x": 566.390625,
+            "y": 690.90625,
+            "right": 806.4375,
+            "bottom": 738.234375,
+            "width": 240.046875,
+            "height": 47.328125
+          },
+          "panel": {
+            "x": 343.265625,
+            "y": 25.140625,
+            "right": 1029.578125,
+            "bottom": 613.4375,
+            "width": 686.3125,
+            "height": 588.296875
+          }
+        },
+        "rules": {
+          "open": false,
+          "scrollTop": 0,
+          "scrollHeight": 20,
+          "clientHeight": 20
+        }
+      },
+      "open": {
+        "viewport": {
+          "width": 1366,
+          "height": 768
+        },
+        "documentWidth": 1366,
+        "boxes": {
+          "guide": {
+            "x": 356.203125,
+            "y": 179.453125,
+            "right": 853.21875,
+            "bottom": 224.203125,
+            "width": 497.015625,
+            "height": 44.75
+          },
+          "counter": {
+            "x": 860.75,
+            "y": 179.453125,
+            "right": 1016.640625,
+            "bottom": 237.59375,
+            "width": 155.890625,
+            "height": 58.140625
+          },
+          "rules": {
+            "x": 356.203125,
+            "y": 241.984375,
+            "right": 1016.640625,
+            "bottom": 317.375,
+            "width": 660.4375,
+            "height": 75.390625
+          },
+          "caption": {
+            "x": 356.203125,
+            "y": 325.53125,
+            "right": 1016.640625,
+            "bottom": 345.765625,
+            "width": 660.4375,
+            "height": 20.234375
+          },
+          "dice": {
+            "x": 356.203125,
+            "y": 390.5625,
+            "right": 1016.640625,
+            "bottom": 520.609375,
+            "width": 660.4375,
+            "height": 130.046875
+          },
+          "result": {
+            "x": 356.203125,
+            "y": 556,
+            "right": 1016.640625,
+            "bottom": 601.140625,
+            "width": 660.4375,
+            "height": 45.140625
+          },
+          "primary": {
+            "x": 566.390625,
+            "y": 690.90625,
+            "right": 806.4375,
+            "bottom": 738.234375,
+            "width": 240.046875,
+            "height": 47.328125
+          },
+          "panel": {
+            "x": 343.265625,
+            "y": 25.140625,
+            "right": 1029.578125,
+            "bottom": 613.4375,
+            "width": 686.3125,
+            "height": 588.296875
+          }
+        },
+        "rules": {
+          "open": true,
+          "scrollTop": 0,
+          "scrollHeight": 93,
+          "clientHeight": 74
+        }
+      },
+      "scrolled": {
+        "viewport": {
+          "width": 1366,
+          "height": 768
+        },
+        "documentWidth": 1366,
+        "boxes": {
+          "guide": {
+            "x": 356.203125,
+            "y": 179.453125,
+            "right": 853.21875,
+            "bottom": 224.203125,
+            "width": 497.015625,
+            "height": 44.75
+          },
+          "counter": {
+            "x": 860.75,
+            "y": 179.453125,
+            "right": 1016.640625,
+            "bottom": 237.59375,
+            "width": 155.890625,
+            "height": 58.140625
+          },
+          "rules": {
+            "x": 356.203125,
+            "y": 241.984375,
+            "right": 1016.640625,
+            "bottom": 317.375,
+            "width": 660.4375,
+            "height": 75.390625
+          },
+          "caption": {
+            "x": 356.203125,
+            "y": 325.53125,
+            "right": 1016.640625,
+            "bottom": 345.765625,
+            "width": 660.4375,
+            "height": 20.234375
+          },
+          "dice": {
+            "x": 356.203125,
+            "y": 390.5625,
+            "right": 1016.640625,
+            "bottom": 520.609375,
+            "width": 660.4375,
+            "height": 130.046875
+          },
+          "result": {
+            "x": 356.203125,
+            "y": 556,
+            "right": 1016.640625,
+            "bottom": 601.140625,
+            "width": 660.4375,
+            "height": 45.140625
+          },
+          "primary": {
+            "x": 566.390625,
+            "y": 690.90625,
+            "right": 806.4375,
+            "bottom": 738.234375,
+            "width": 240.046875,
+            "height": 47.328125
+          },
+          "panel": {
+            "x": 343.265625,
+            "y": 25.140625,
+            "right": 1029.578125,
+            "bottom": 613.4375,
+            "width": 686.3125,
+            "height": 588.296875
+          }
+        },
+        "rules": {
+          "open": true,
+          "scrollTop": 19,
+          "scrollHeight": 93,
+          "clientHeight": 74
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "screenshots": [],
+  "notes": [
+    "The Browser connector and cloud CUA could not reach the loopback server in the authoring environment (ERR_CONNECTION_REFUSED). This script uses the user-authorized local Playwright fallback.",
+    "Deep contexts are explicitly synthetic: a real generated encounter at a selected floor, with declared turn, stage, wave and level boundaries. They are validator-accepted fixtures, not naturally reached journeys.",
+    "The history path replays the shipped seed7919 / 65-action reproduction. This is a recheck of that one existing natural sample, not an additional independent journey.",
+    "Native keyboard, pointer, file chooser, localStorage and Web Locks execute the app handlers. Only initial fixture installation assigns localStorage; no RNG, timer, storage method or engine action is patched.",
+    "Reduced motion, low effects and software Chromium are functional/layout conditions. This suite makes no timing, FPS, hardware GPU, physical phone or OS suspension claim.",
+    "390px records the existing 900px whole-page minimum. It is not counted as a new mobile layout pass."
+  ],
+  "browser": "155.0.8059.84",
+  "environment": {
+    "title": "骰狱：无尽深渊 · Dice Abyss",
+    "url": "http://127.0.0.1:4289/",
+    "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.8059.84 Safari/537.36",
+    "release": "5.8.0",
+    "webLocks": true,
+    "viewport": {
+      "width": 1366,
+      "height": 768
+    }
+  },
+  "sourceAfter": {
+    "src/app.js": "07fda8722d861f093b87e8db05cce901bc55295e6f889f0a28848de8b29a999d",
+    "src/action-focus.js": "d5e383b4f8aeb138b6cdffc7f3dffe12cf0db7fcbac053df713dec60b3b95a98",
+    "src/engine.js": "d81ad2b7fd33ae6f55052a894460bb6e804f316c4488ff5faabaf4ed30473751",
+    "src/views.js": "c80d9a3f16256435e613e18e850f8739c95a54123a1c56b246cd14af41ddc9da",
+    "src/encounter-tactics.js": "02e0da7aa57de321319812503556d9e5925463644222305755e86de6c3fa355b",
+    "src/deep-rules.js": "6919b66ec8fbadea293ab4c4e3aa0b8c7a943e2ec44224b119287709d484581f",
+    "src/encounters.js": "40d4c41b57cc35c5246491c11f6e0cd6ecc51ebec7e4abe14f5c8a8ee0745c97",
+    "src/deep.css": "24f0ed8bf2969232c660a595cd5e19b206066bc4a19a983e4bd3a277b82700cc",
+    "src/storage.js": "b8676eaee04c14de66c8bc1d8555b6927d41bf14a3dfc0598e8fbb37c1962c34",
+    "index.html": "335acddc8319763fbc03dda2c674a184b0fa1d841d84852cdceb8aae97e3e230",
+    "package.json": "8581c407358747d9bfb60bab097b98927b689f8d8f38ca52add04ab04cd46b37"
+  },
+  "sourceStable": true,
+  "finished": "2026-10-18T06:58:52.992Z",
+  "checks": 35,
+  "passed": true
+}

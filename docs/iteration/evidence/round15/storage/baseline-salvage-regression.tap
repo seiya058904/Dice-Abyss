@@ -1,0 +1,60 @@
+TAP version 13
+# Subtest: large reviewed batches require a linear number of inventory ID reads
+not ok 1 - large reviewed batches require a linear number of inventory ID reads
+  ---
+  duration_ms: 6.571546
+  type: 'test'
+  location: '/workspace/scratch/2e03d78caae4/work/Dice-Abyss/tests/salvage-batch.test.mjs:24:1'
+  failureType: 'testCodeFailure'
+  error: '100 items / 93 selected performed 5091 ID reads; reviewed batches must not rescan the bag for every selected ID'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///workspace/scratch/2e03d78caae4/work/Dice-Abyss/tests/salvage-batch.test.mjs:31:3)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.start (node:internal/test_runner/test:1242:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+  ...
+# Subtest: batch quotes retain reviewed order and original references without changing any state
+ok 2 - batch quotes retain reviewed order and original references without changing any state
+  ---
+  duration_ms: 23.98487
+  type: 'test'
+  ...
+# Subtest: single and batch requests reject malformed IDs and every protected inventory owner
+ok 3 - single and batch requests reject malformed IDs and every protected inventory owner
+  ---
+  duration_ms: 3.16761
+  type: 'test'
+  ...
+# Subtest: rare protected equipment and capped gold still require their explicit confirmations
+ok 4 - rare protected equipment and capped gold still require their explicit confirmations
+  ---
+  duration_ms: 4.980897
+  type: 'test'
+  ...
+# Subtest: a full 10,000-item reviewed batch settles once, survives save/reload, and preserves all remaining data
+ok 5 - a full 10,000-item reviewed batch settles once, survives save/reload, and preserves all remaining data
+  ---
+  duration_ms: 1642.532867
+  type: 'test'
+  ...
+# Subtest: a malformed duplicate inventory entry cannot replace the first reviewed item
+ok 6 - a malformed duplicate inventory entry cannot replace the first reviewed item
+  ---
+  duration_ms: 0.888907
+  type: 'test'
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 5
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1708.850939

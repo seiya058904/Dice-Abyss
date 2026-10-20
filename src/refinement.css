@@ -24,6 +24,7 @@ button{font-family:inherit}
 .health-track{box-shadow:inset 0 0 0 1px #e6969e45,0 0 0 2px #050506,0 0 0 3px #5c6267}
 .health-track>span{background:linear-gradient(#ff6a77 0 12%,#ee1d38 14% 75%,#a30d25 78%);box-shadow:none}
 .gpu-dice{position:relative;isolation:isolate}
+.cube-row:not(.gpu-dice)>.dice-surface{visibility:hidden}
 .gpu-dice .die-flight{visibility:hidden}
 .gpu-dice .cube-die{filter:none!important}
 .gpu-dice .die-shadow{height:1.5rem;bottom:1.7rem;background:radial-gradient(ellipse,#020203 15%,#82939e2b 33%,transparent 67%);opacity:.7}

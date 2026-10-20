@@ -1,0 +1,52 @@
+TAP version 13
+# Subtest: literal name search combines with slot and rarity without changing inventory or RNG
+ok 1 - literal name search combines with slot and rarity without changing inventory or RNG
+  ---
+  duration_ms: 7.209927
+  type: 'test'
+  ...
+# Subtest: search is case-insensitive literal text, not a regular expression or HTML
+ok 2 - search is case-insensitive literal text, not a regular expression or HTML
+  ---
+  duration_ms: 13.388703
+  type: 'test'
+  ...
+# Subtest: empty search preserves original ordering for all sorts and equal-value ties
+ok 3 - empty search preserves original ordering for all sorts and equal-value ties
+  ---
+  duration_ms: 0.535872
+  type: 'test'
+  ...
+# Subtest: search covers the complete ten-thousand-item bag before paging and never changes recycling scope
+ok 4 - search covers the complete ten-thousand-item bag before paging and never changes recycling scope
+  ---
+  duration_ms: 107.748537
+  type: 'test'
+  ...
+# Subtest: no matches expose a clear-all-filter recovery and an explicit search form
+ok 5 - no matches expose a clear-all-filter recovery and an explicit search form
+  ---
+  duration_ms: 1.467508
+  type: 'test'
+  ...
+# Subtest: dedicated preparation clears both searched and draft names but ordinary navigation retains them
+ok 6 - dedicated preparation clears both searched and draft names but ordinary navigation retains them
+  ---
+  duration_ms: 15.011238
+  type: 'test'
+  ...
+# Subtest: clear-name retains other filters and clear-all resets all three without a save
+ok 7 - clear-name retains other filters and clear-all resets all three without a save
+  ---
+  duration_ms: 6.268407
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 156.219057

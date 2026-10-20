@@ -1,0 +1,58 @@
+TAP version 13
+# Subtest: settings close restores a remounted opener after a visual preference redraw
+ok 1 - settings close restores a remounted opener after a visual preference redraw
+  ---
+  duration_ms: 1.806267
+  type: 'test'
+  ...
+# Subtest: closing after a replaced dialog child returns to settings
+ok 2 - closing after a replaced dialog child returns to settings
+  ---
+  duration_ms: 0.144604
+  type: 'test'
+  ...
+# Subtest: a player-selected control after dismissal is never overridden
+ok 3 - a player-selected control after dismissal is never overridden
+  ---
+  duration_ms: 0.191683
+  type: 'test'
+  ...
+# Subtest: title, view and run changes each invalidate the settings return target
+ok 4 - title, view and run changes each invalidate the settings return target
+  ---
+  duration_ms: 3.010817
+  type: 'test'
+  ...
+# Subtest: confirm, import or cross-tab cancellation cannot restore a stale opener
+ok 5 - confirm, import or cross-tab cancellation cannot restore a stale opener
+  ---
+  duration_ms: 0.155159
+  type: 'test'
+  ...
+# Subtest: an old close event cannot move focus outside a currently open modal
+ok 6 - an old close event cannot move focus outside a currently open modal
+  ---
+  duration_ms: 0.171503
+  type: 'test'
+  ...
+# Subtest: hidden and disabled settings controls never receive focus
+ok 7 - hidden and disabled settings controls never receive focus
+  ---
+  duration_ms: 0.192684
+  type: 'test'
+  ...
+# Subtest: settings return cannot be armed by a control outside the app
+ok 8 - settings return cannot be armed by a control outside the app
+  ---
+  duration_ms: 0.171394
+  type: 'test'
+  ...
+1..8
+# tests 8
+# suites 0
+# pass 8
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 21.408666

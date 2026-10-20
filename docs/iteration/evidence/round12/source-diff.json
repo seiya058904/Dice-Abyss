@@ -1,0 +1,100 @@
+{
+  "inputBaselineManifestStillMatches": true,
+  "inputManifestEntriesChecked": 1011,
+  "runtimeChanges": [
+    {
+      "path": "index.html",
+      "kind": "changed",
+      "beforeBytes": 1902,
+      "afterBytes": 1957,
+      "beforeSha256": "5d272baf3a27da526f071ae6d8c6626d6db20c02688f693608ae8b3e6891f91a",
+      "afterSha256": "519a40219c852a1512d83168d02e5be8850d0b1025bdad48c4d9b28beaff9ab0"
+    },
+    {
+      "path": "package.json",
+      "kind": "changed",
+      "beforeBytes": 428,
+      "afterBytes": 428,
+      "beforeSha256": "9cdfb033cc5d2146d0a40fc47f2da5be54d43e87549337646d8c03900b4a97ec",
+      "afterSha256": "3ee7593dfb3b2f30e142054e1a83c6087e5ee62acb47887c1b0c349202a69d5d"
+    },
+    {
+      "path": "src/app.js",
+      "kind": "changed",
+      "beforeBytes": 36709,
+      "afterBytes": 38215,
+      "beforeSha256": "5967ce857870085c15843978e2d9e1aedfec5d06e43af5c2563a78b271485218",
+      "afterSha256": "ac4f138fc46d19efac8f782ed97c5a8d873903cc5c43a067ccac94fe2267f515"
+    },
+    {
+      "path": "src/decisions.css",
+      "kind": "new",
+      "beforeBytes": 0,
+      "afterBytes": 3800,
+      "beforeSha256": null,
+      "afterSha256": "0d1cb07494d08a26d39cca89d19f7ac875b78b67d5bf3fbad44b99a9a7a03b23"
+    },
+    {
+      "path": "src/engine.js",
+      "kind": "changed",
+      "beforeBytes": 40225,
+      "afterBytes": 40477,
+      "beforeSha256": "a84e8823a4e6632ec12ad6f497c71e2a0b427a41fe8773eb7c9cfc041f78cd1b",
+      "afterSha256": "32a60a0a5799eb5d515deaa65a3a7f07f4653c68d3c31ff3a61ce402b18f56cf"
+    },
+    {
+      "path": "src/equipment-comparison.js",
+      "kind": "new",
+      "beforeBytes": 0,
+      "afterBytes": 11889,
+      "beforeSha256": null,
+      "afterSha256": "2a2a819b22d0d1746893bb2222bfbeb7e6fcf20f10046fc7b64897c260be952d"
+    },
+    {
+      "path": "src/save-capacity-view.js",
+      "kind": "new",
+      "beforeBytes": 0,
+      "afterBytes": 2059,
+      "beforeSha256": null,
+      "afterSha256": "cd729b8ce91cf5aad772f0fcc468cfac5b389a48ff1a03e905907ade23ea7867"
+    },
+    {
+      "path": "src/storage.js",
+      "kind": "changed",
+      "beforeBytes": 28096,
+      "afterBytes": 29600,
+      "beforeSha256": "2c5f648efe7df6a1c14710ea90fe2de83323141d5f5e285eec7fac8aa687a500",
+      "afterSha256": "a50ec7eac5c487b0a269e00272110e93563c6ce716287c2028f9860600418566"
+    },
+    {
+      "path": "src/views.js",
+      "kind": "changed",
+      "beforeBytes": 85124,
+      "afterBytes": 89603,
+      "beforeSha256": "1fd3da005d8e37d4b8ac0be4bf12dc53fd262645c5421a839c49224e28ce9266",
+      "afterSha256": "e5d6a1a2d6c88ad59b62e2a96e229201e626363d8cdb98915c6fb7217b9188a6"
+    }
+  ],
+  "runtimeGrowthBytes": 25544,
+  "newTestModules": [
+    "tests/decision-ui.test.mjs",
+    "tests/equipment-comparison.test.mjs",
+    "tests/item-ownership.test.mjs",
+    "tests/storage-capacity.test.mjs"
+  ],
+  "newOrChangedQaScripts": [
+    "scripts/audit-conditional-comparison-round12.mjs",
+    "scripts/audit-item-ownership-round12.mjs",
+    "scripts/audit-save-alias-round11.mjs",
+    "scripts/qa-decisions-round12.mjs",
+    "scripts/qa-performance-round12.mjs"
+  ],
+  "originalTestModules": 56,
+  "originalFixtures": 2,
+  "originalFontAndLicenseFiles": 8,
+  "newRuntimeBitmapFiles": 0,
+  "newRuntimeDependencies": 0,
+  "saveSchemaVersion": 5,
+  "gameplayRuleChanges": "Only object ownership at open/buy. No combat/economy/loot/RNG formulas or content IDs changed.",
+  "removedInputFiles": []
+}

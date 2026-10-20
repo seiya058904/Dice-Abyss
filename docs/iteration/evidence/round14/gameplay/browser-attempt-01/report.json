@@ -1,0 +1,5240 @@
+{
+  "audit": "round14-native-defeat-review",
+  "source": "/workspace/scratch/8db1c7454cb5/work/Dice-Abyss",
+  "baseline": "/workspace/scratch/8db1c7454cb5/baseline/Dice-Abyss",
+  "url": "http://127.0.0.1:4389/",
+  "baselineUrl": "http://127.0.0.1:4388/",
+  "started": "2026-10-18T16:48:50.707Z",
+  "scriptSha256": "906b9048d7c19b554a0895ebef5f0021662bdfa2c76f2c6a8ecf8c053a09d7e2",
+  "inputSha256": "e07123620ee0a9a6ebe2c3160666857e484179dca452d937f2a2f444bcb8e0fa",
+  "sourceBefore": {
+    "index.html": "078012a5dba96182d938e065b8a6fae9ef6813b6c508a198a06bfb942faaeaed",
+    "package.json": "a5f7ad3321ab3f6027f5adbd4df005a43fa6bb831973ad327978e460bf3b2e9b",
+    "src/app.js": "141b481d0507aba11d18e515f70a747757aede7f3d57b84c98ec0c4219da5043",
+    "src/views.js": "926527525de6286a39cd868447857f93c16f7d4adfa7f7e150952b6301894e7e",
+    "src/engine.js": "32a60a0a5799eb5d515deaa65a3a7f07f4653c68d3c31ff3a61ce402b18f56cf",
+    "src/storage.js": "6bfcc60036c9f729c21b948ca98c7ac715e14049856fb9dded0baa2aeef2c561",
+    "src/defeat-review.js": "e34f1de6808bb2a6a4f8d5c0c768beead5946631f78cc16a8857a33938dbd396",
+    "src/defeat-review.css": "97cddec78f4f594596690d63c0ffe9ee2afca40a876be5bcc5ae91f9f43c9d06",
+    "src/release.js": "c9ded47c6c31089294fdb4ea6c442e730fa07062a721bb3d9438c2ce5171123b",
+    "src/responsive.css": "90bb585d66a88daa61a553112c66610b62b666aa07c28ad887b521534283cee8"
+  },
+  "baselineBefore": {
+    "index.html": "386aa0970911d4b9ae49b95d16ce755dd511139aaed89cc15ca9f8c2b084694c",
+    "package.json": "32e896ab1019ed66518766334366dc561751fd85448605298f10761432a7aa10",
+    "src/app.js": "6d965d35fb499b23948e9f2d4256616d05298dce7468c2bd350c4180562dad08",
+    "src/views.js": "e5d6a1a2d6c88ad59b62e2a96e229201e626363d8cdb98915c6fb7217b9188a6",
+    "src/engine.js": "32a60a0a5799eb5d515deaa65a3a7f07f4653c68d3c31ff3a61ce402b18f56cf",
+    "src/storage.js": "6bfcc60036c9f729c21b948ca98c7ac715e14049856fb9dded0baa2aeef2c561",
+    "src/responsive.css": "90bb585d66a88daa61a553112c66610b62b666aa07c28ad887b521534283cee8"
+  },
+  "cases": [
+    {
+      "name": "baseline-same-dead-1366",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "validator accepts the complete initial fixture",
+          "passed": true
+        },
+        {
+          "label": "correct page URL and title",
+          "passed": true
+        },
+        {
+          "label": "meaningful nonblank game",
+          "passed": true
+        },
+        {
+          "label": "no framework error overlay",
+          "passed": true
+        },
+        {
+          "label": "initial app load complete decoded state",
+          "passed": true
+        },
+        {
+          "label": "initial app load primary and mirror bytes",
+          "passed": true
+        },
+        {
+          "label": "same saved natural defeat renders in input build",
+          "passed": true
+        },
+        {
+          "label": "input build retains its original short death message",
+          "passed": true
+        },
+        {
+          "label": "no relevant runtime or console errors",
+          "passed": true
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "baseline-dead-1366.png"
+      ],
+      "stateChecks": [
+        {
+          "label": "initial app load",
+          "revision": 1348,
+          "rng": 3380821009,
+          "phase": "dead",
+          "stateSha256": "731321a0a90ac853b03f191cf1847ff96e9a7fc12c76d23b4a4841e1e90c58f3",
+          "rawSha256": "4539ff28ae3ee512bf1f4be034c8d78d7fe7464aa45696c4e699309231dfb3aa"
+        }
+      ],
+      "identity": {
+        "url": "http://127.0.0.1:4388/",
+        "title": "骰狱：无尽深渊 · Dice Abyss",
+        "viewport": {
+          "width": 1366,
+          "height": 768
+        },
+        "scale": 1,
+        "bodyText": "骰狱：无尽深渊\n— D I C E　 A B Y S S —\n以骰为火\n点燃永夜\n图鉴\n全屏\n设置\n深渊探索\nDUNGEON\n第 30 层 · 深渊之眼\n神话断层\n已解锁至 神话\n\n「死亡并非终点，\n　而是更深的开始。」\n\n奇偶哨站\n01\n镜像对手\n02\n商人\n03\n黄金盗匪\n04\n赤誓血井\n05\n首领\n06\n探索增益\nFATE\n本层命运\n2 + 4\n路线进度\n5 / 6\n累计胜利\n125\n最高伤"
+      }
+    },
+    {
+      "name": "current-1366x768",
+      "status": "FAIL",
+      "checks": [
+        {
+          "label": "validator accepts the complete initial fixture",
+          "passed": true
+        },
+        {
+          "label": "correct page URL and title",
+          "passed": true
+        },
+        {
+          "label": "meaningful nonblank game",
+          "passed": true
+        },
+        {
+          "label": "no framework error overlay",
+          "passed": true
+        },
+        {
+          "label": "initial app load complete decoded state",
+          "passed": true
+        },
+        {
+          "label": "initial app load primary and mirror bytes",
+          "passed": true
+        },
+        {
+          "label": "natural 134 alternatives / 47 armor / zero-points copy",
+          "passed": true
+        },
+        {
+          "label": "current-1366x768 has no document horizontal overflow",
+          "passed": true,
+          "detail": 1366
+        },
+        {
+          "label": "current-1366x768 review stays inside horizontal viewport",
+          "passed": true
+        },
+        {
+          "label": "current-1366x768 complete text and controls wrap without clipping",
+          "passed": true,
+          "detail": []
+        },
+        {
+          "label": "current-1366x768 persistent retry remains visible",
+          "passed": true
+        },
+        {
+          "label": "current-1366x768 desktop review does not cover action footer",
+          "passed": true
+        },
+        {
+          "label": "current-1366x768 desktop review scrolls natively",
+          "passed": true
+        },
+        {
+          "label": "new review text passes 4.5:1 against conservative surface bound",
+          "passed": true,
+          "detail": 8.454851099314283
+        },
+        {
+          "label": "preparation control keeps a 44px target",
+          "passed": true
+        },
+        {
+          "label": "preparation control has a visible keyboard focus ring",
+          "passed": true
+        },
+        {
+          "label": "preparation control keeps a 44px target",
+          "passed": true
+        },
+        {
+          "label": "preparation control has a visible keyboard focus ring",
+          "passed": true
+        },
+        {
+          "label": "preparation control keeps a 44px target",
+          "passed": true
+        },
+        {
+          "label": "preparation control has a visible keyboard focus ring",
+          "passed": true
+        },
+        {
+          "label": "navigation to inventory preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "native weapon/eternal filters preserve both raw saves",
+          "passed": true
+        },
+        {
+          "label": "the real retained inventory has no rarity-seven candidates",
+          "passed": true
+        },
+        {
+          "label": "navigation to dead preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "navigation to inventory preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "defeat armor entry clears stale rarity",
+          "passed": true
+        },
+        {
+          "label": "defeat armor entry selects armor",
+          "passed": true
+        },
+        {
+          "label": "armor filter receives visible keyboard focus",
+          "passed": true,
+          "detail": {
+            "action": "filter",
+            "slot": "armor",
+            "id": "",
+            "pressed": null,
+            "text": "防具 48",
+            "visible": true,
+            "outline": {
+              "style": "none",
+              "width": "3px",
+              "color": "rgb(232, 231, 226)"
+            }
+          }
+        },
+        {
+          "label": "all 48 owned armor items appear, including the equipped piece",
+          "passed": true
+        },
+        {
+          "label": "navigation to dead preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "navigation to inventory preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "open bag entry clears stale rarity",
+          "passed": true
+        },
+        {
+          "label": "open bag entry selects all slots",
+          "passed": true
+        },
+        {
+          "label": "all-slots filter receives visible focus",
+          "passed": true,
+          "detail": {
+            "action": "filter",
+            "slot": "",
+            "id": "",
+            "pressed": null,
+            "text": "全部 139",
+            "visible": true,
+            "outline": {
+              "style": "none",
+              "width": "3px",
+              "color": "rgb(232, 231, 226)"
+            }
+          }
+        },
+        {
+          "label": "navigation to dead preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "navigation to talents preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "selected talent branch receives visible focus",
+          "passed": false,
+          "detail": {
+            "action": "talents",
+            "id": "",
+            "pressed": null,
+            "text": "天赋",
+            "visible": true,
+            "outline": {
+              "style": "none",
+              "width": "3px",
+              "color": "rgb(232, 231, 226)"
+            }
+          }
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "current-1366x768.png",
+        "current-1366x768-FAIL.png"
+      ],
+      "stateChecks": [
+        {
+          "label": "initial app load",
+          "revision": 1348,
+          "rng": 3380821009,
+          "phase": "dead",
+          "stateSha256": "731321a0a90ac853b03f191cf1847ff96e9a7fc12c76d23b4a4841e1e90c58f3",
+          "rawSha256": "4539ff28ae3ee512bf1f4be034c8d78d7fe7464aa45696c4e699309231dfb3aa"
+        }
+      ],
+      "identity": {
+        "url": "http://127.0.0.1:4389/",
+        "title": "骰狱：无尽深渊 · Dice Abyss",
+        "viewport": {
+          "width": 1366,
+          "height": 768
+        },
+        "scale": 1,
+        "bodyText": "骰狱：无尽深渊\n— D I C E　 A B Y S S —\n以骰为火\n点燃永夜\n图鉴\n全屏\n设置\n深渊探索\nDUNGEON\n第 30 层 · 深渊之眼\n神话断层\n已解锁至 神话\n\n「死亡并非终点，\n　而是更深的开始。」\n\n奇偶哨站\n01\n镜像对手\n02\n商人\n03\n黄金盗匪\n04\n赤誓血井\n05\n首领\n06\n探索增益\nFATE\n本层命运\n2 + 4\n路线进度\n5 / 6\n累计胜利\n125\n最高伤"
+      },
+      "layouts": [
+        {
+          "label": "current-1366x768",
+          "viewport": {
+            "width": 1366,
+            "height": 768
+          },
+          "documentWidth": 1366,
+          "room": {
+            "left": 356.203125,
+            "right": 1016.640625,
+            "top": 37.4375,
+            "bottom": 601.140625,
+            "clientWidth": 650,
+            "scrollWidth": 650,
+            "clientHeight": 564,
+            "scrollHeight": 657,
+            "overflowY": "auto"
+          },
+          "primary": {
+            "left": 566.390625,
+            "right": 806.4375,
+            "top": 690.90625,
+            "bottom": 738.234375
+          },
+          "footer": {
+            "top": 690.90625,
+            "bottom": 744.515625
+          },
+          "typography": [
+            {
+              "text": "余火，尚未熄灭。",
+              "font": "29.369px",
+              "lineHeight": "42.585px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "裂星守望暂时挡住了去路。成长与战利品仍在。",
+              "font": "14px",
+              "lineHeight": "25.2px",
+              "color": "rgb(194, 200, 206)"
+            },
+            {
+              "text": "本次战斗",
+              "font": "13px",
+              "lineHeight": "normal",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "18 掷",
+              "font": "14px",
+              "lineHeight": "normal",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "敌人剩余生命",
+              "font": "13px",
+              "lineHeight": "normal",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "172,884 / 582,011",
+              "font": "14px",
+              "lineHeight": "normal",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "最后一掷",
+              "font": "13px",
+              "lineHeight": "normal",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "对敌生命伤害 24,547 · 所受反击 212",
+              "font": "14px",
+              "lineHeight": "normal",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "重燃前，整理构筑",
+              "font": "17px",
+              "lineHeight": "25.5px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "背包中有 134 件未装备物品，其中防具 47 件。 当前没有未用天赋点。",
+              "font": "13px",
+              "lineHeight": "24.05px",
+              "color": "rgb(194, 200, 206)"
+            },
+            {
+              "text": "调整防具",
+              "font": "13px",
+              "lineHeight": "18.2px",
+              "color": "rgb(217, 229, 236)"
+            },
+            {
+              "text": "打开背包",
+              "font": "13px",
+              "lineHeight": "18.2px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "查看天赋",
+              "font": "13px",
+              "lineHeight": "18.2px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "在装备的「比较条件」中查看恢复与触发护盾。基础估值不能保证这一战的存活结果。",
+              "font": "12px",
+              "lineHeight": "21.6px",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "敌方机制回顾",
+              "font": "17px",
+              "lineHeight": "25.5px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "特性第 3 / 6 / 9… 次反击后重筑护盾，上限为初始护盾。",
+              "font": "13px",
+              "lineHeight": "24.05px",
+              "color": "rgb(194, 200, 206)"
+            },
+            {
+              "text": "换相存活且首次跨过半血时凝聚 12% 护盾；二阶段反击增强 15%，溢出伤害不会被强制阻断。",
+              "font": "13px",
+              "lineHeight": "24.05px",
+              "color": "rgb(194, 200, 206)"
+            },
+            {
+              "text": "应对护盾先吸伤；在重筑前形成共鸣可减少消耗。",
+              "font": "13px",
+              "lineHeight": "24.05px",
+              "color": "rgb(211, 200, 169)"
+            },
+            {
+              "text": "在当前房间重燃余火",
+              "font": "15px",
+              "lineHeight": "22.5px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "重燃不消耗金币，按重燃时的构筑恢复全部生命；敌人从头开始。装备、金币、天赋和已完成的房间全部保留。",
+              "font": "12px",
+              "lineHeight": "22.2px",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "现有护盾与下一掷临时幸运不继承；开战护盾按当前构筑重新计算。",
+              "font": "12px",
+              "lineHeight": "22.2px",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "购物、锻造、融合与洗点需要对应房间。当前可以换装、投入可用天赋，或重燃后继续挑战。",
+              "font": "12px",
+              "lineHeight": "22.2px",
+              "color": "rgb(194, 200, 206)"
+            }
+          ],
+          "horizontalOverflow": []
+        }
+      ],
+      "contrast": [
+        {
+          "text": "余火，尚未熄灭。",
+          "color": "rgb(232, 231, 226)",
+          "font": 29.369,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "裂星守望暂时挡住了去路。成长与战利品仍在。",
+          "color": "rgb(194, 200, 206)",
+          "font": 14,
+          "contrast": 9.52359487763639
+        },
+        {
+          "text": "本次战斗",
+          "color": "rgb(181, 189, 197)",
+          "font": 13,
+          "contrast": 8.454851099314283
+        },
+        {
+          "text": "18 掷",
+          "color": "rgb(232, 231, 226)",
+          "font": 14,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "敌人剩余生命",
+          "color": "rgb(181, 189, 197)",
+          "font": 13,
+          "contrast": 8.454851099314283
+        },
+        {
+          "text": "172,884 / 582,011",
+          "color": "rgb(232, 231, 226)",
+          "font": 14,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "最后一掷",
+          "color": "rgb(181, 189, 197)",
+          "font": 13,
+          "contrast": 8.454851099314283
+        },
+        {
+          "text": "对敌生命伤害 24,547 · 所受反击 212",
+          "color": "rgb(232, 231, 226)",
+          "font": 14,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "重燃前，整理构筑",
+          "color": "rgb(232, 231, 226)",
+          "font": 17,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "背包中有 134 件未装备物品，其中防具 47 件。 当前没有未用天赋点。",
+          "color": "rgb(194, 200, 206)",
+          "font": 13,
+          "contrast": 9.52359487763639
+        },
+        {
+          "text": "调整防具",
+          "color": "rgb(217, 229, 236)",
+          "font": 13,
+          "contrast": 12.524843254552662
+        },
+        {
+          "text": "打开背包",
+          "color": "rgb(232, 231, 226)",
+          "font": 13,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "查看天赋",
+          "color": "rgb(232, 231, 226)",
+          "font": 13,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "在装备的「比较条件」中查看恢复与触发护盾。基础估值不能保证这一战的存活结果。",
+          "color": "rgb(181, 189, 197)",
+          "font": 12,
+          "contrast": 8.454851099314283
+        },
+        {
+          "text": "敌方机制回顾",
+          "color": "rgb(232, 231, 226)",
+          "font": 17,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "特性第 3 / 6 / 9… 次反击后重筑护盾，上限为初始护盾。",
+          "color": "rgb(194, 200, 206)",
+          "font": 13,
+          "contrast": 9.52359487763639
+        },
+        {
+          "text": "换相存活且首次跨过半血时凝聚 12% 护盾；二阶段反击增强 15%，溢出伤害不会被强制阻断",
+          "color": "rgb(194, 200, 206)",
+          "font": 13,
+          "contrast": 9.52359487763639
+        },
+        {
+          "text": "应对护盾先吸伤；在重筑前形成共鸣可减少消耗。",
+          "color": "rgb(211, 200, 169)",
+          "font": 13,
+          "contrast": 9.64416471525514
+        },
+        {
+          "text": "在当前房间重燃余火",
+          "color": "rgb(232, 231, 226)",
+          "font": 15,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "重燃不消耗金币，按重燃时的构筑恢复全部生命；敌人从头开始。装备、金币、天赋和已完成的房间全",
+          "color": "rgb(181, 189, 197)",
+          "font": 12,
+          "contrast": 8.454851099314283
+        },
+        {
+          "text": "现有护盾与下一掷临时幸运不继承；开战护盾按当前构筑重新计算。",
+          "color": "rgb(181, 189, 197)",
+          "font": 12,
+          "contrast": 8.454851099314283
+        },
+        {
+          "text": "购物、锻造、融合与洗点需要对应房间。当前可以换装、投入可用天赋，或重燃后继续挑战。",
+          "color": "rgb(194, 200, 206)",
+          "font": 12,
+          "contrast": 9.52359487763639
+        }
+      ],
+      "controlStates": [
+        {
+          "hover": {
+            "text": "调整防具",
+            "color": "rgb(217, 229, 236)",
+            "background": "rgb(20, 32, 39)",
+            "border": "rgb(143, 165, 178)",
+            "height": 44
+          },
+          "focus": {
+            "action": "inventory",
+            "slot": "armor",
+            "id": "",
+            "pressed": null,
+            "text": "调整防具",
+            "visible": true,
+            "outline": {
+              "style": "solid",
+              "width": "2px",
+              "color": "rgb(54, 229, 244)"
+            }
+          }
+        },
+        {
+          "hover": {
+            "text": "打开背包",
+            "color": "rgb(255, 255, 255)",
+            "background": "rgb(20, 32, 39)",
+            "border": "rgb(54, 229, 244)",
+            "height": 44
+          },
+          "focus": {
+            "action": "inventory",
+            "slot": "",
+            "id": "",
+            "pressed": null,
+            "text": "打开背包",
+            "visible": true,
+            "outline": {
+              "style": "solid",
+              "width": "2px",
+              "color": "rgb(54, 229, 244)"
+            }
+          }
+        },
+        {
+          "hover": {
+            "text": "查看天赋",
+            "color": "rgb(255, 255, 255)",
+            "background": "rgb(20, 32, 39)",
+            "border": "rgb(54, 229, 244)",
+            "height": 44
+          },
+          "focus": {
+            "action": "talents",
+            "id": "",
+            "pressed": null,
+            "text": "查看天赋",
+            "visible": true,
+            "outline": {
+              "style": "solid",
+              "width": "2px",
+              "color": "rgb(54, 229, 244)"
+            }
+          }
+        }
+      ],
+      "error": "AssertionError [ERR_ASSERTION]: selected talent branch receives visible focus",
+      "stack": "AssertionError [ERR_ASSERTION]: selected talent branch receives visible focus\n    at check (file:///workspace/scratch/8db1c7454cb5/work/Dice-Abyss/scripts/qa-defeat-round14.mjs:33:112)\n    at navigationChecks (file:///workspace/scratch/8db1c7454cb5/work/Dice-Abyss/scripts/qa-defeat-round14.mjs:95:26)\n    at async file:///workspace/scratch/8db1c7454cb5/work/Dice-Abyss/scripts/qa-defeat-round14.mjs:119:297\n    at async run (file:///workspace/scratch/8db1c7454cb5/work/Dice-Abyss/scripts/qa-defeat-round14.mjs:114:157)\n    at async file:///workspace/scratch/8db1c7454cb5/work/Dice-Abyss/scripts/qa-defeat-round14.mjs:119:3"
+    },
+    {
+      "name": "current-1920x1080",
+      "status": "FAIL",
+      "checks": [
+        {
+          "label": "validator accepts the complete initial fixture",
+          "passed": true
+        },
+        {
+          "label": "correct page URL and title",
+          "passed": true
+        },
+        {
+          "label": "meaningful nonblank game",
+          "passed": true
+        },
+        {
+          "label": "no framework error overlay",
+          "passed": true
+        },
+        {
+          "label": "initial app load complete decoded state",
+          "passed": true
+        },
+        {
+          "label": "initial app load primary and mirror bytes",
+          "passed": true
+        },
+        {
+          "label": "natural 134 alternatives / 47 armor / zero-points copy",
+          "passed": true
+        },
+        {
+          "label": "current-1920x1080 has no document horizontal overflow",
+          "passed": true,
+          "detail": 1920
+        },
+        {
+          "label": "current-1920x1080 review stays inside horizontal viewport",
+          "passed": true
+        },
+        {
+          "label": "current-1920x1080 complete text and controls wrap without clipping",
+          "passed": true,
+          "detail": []
+        },
+        {
+          "label": "current-1920x1080 persistent retry remains visible",
+          "passed": true
+        },
+        {
+          "label": "current-1920x1080 desktop review does not cover action footer",
+          "passed": true
+        },
+        {
+          "label": "new review text passes 4.5:1 against conservative surface bound",
+          "passed": true,
+          "detail": 8.454851099314283
+        },
+        {
+          "label": "preparation control keeps a 44px target",
+          "passed": true
+        },
+        {
+          "label": "preparation control has a visible keyboard focus ring",
+          "passed": true
+        },
+        {
+          "label": "preparation control keeps a 44px target",
+          "passed": true
+        },
+        {
+          "label": "preparation control has a visible keyboard focus ring",
+          "passed": true
+        },
+        {
+          "label": "preparation control keeps a 44px target",
+          "passed": true
+        },
+        {
+          "label": "preparation control has a visible keyboard focus ring",
+          "passed": true
+        },
+        {
+          "label": "navigation to inventory preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "native weapon/eternal filters preserve both raw saves",
+          "passed": true
+        },
+        {
+          "label": "the real retained inventory has no rarity-seven candidates",
+          "passed": true
+        },
+        {
+          "label": "navigation to dead preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "navigation to inventory preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "defeat armor entry clears stale rarity",
+          "passed": true
+        },
+        {
+          "label": "defeat armor entry selects armor",
+          "passed": true
+        },
+        {
+          "label": "armor filter receives visible keyboard focus",
+          "passed": true,
+          "detail": {
+            "action": "filter",
+            "slot": "armor",
+            "id": "",
+            "pressed": null,
+            "text": "防具 48",
+            "visible": true,
+            "outline": {
+              "style": "none",
+              "width": "3px",
+              "color": "rgb(232, 231, 226)"
+            }
+          }
+        },
+        {
+          "label": "all 48 owned armor items appear, including the equipped piece",
+          "passed": true
+        },
+        {
+          "label": "navigation to dead preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "navigation to inventory preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "open bag entry clears stale rarity",
+          "passed": true
+        },
+        {
+          "label": "open bag entry selects all slots",
+          "passed": true
+        },
+        {
+          "label": "all-slots filter receives visible focus",
+          "passed": true,
+          "detail": {
+            "action": "filter",
+            "slot": "",
+            "id": "",
+            "pressed": null,
+            "text": "全部 139",
+            "visible": true,
+            "outline": {
+              "style": "none",
+              "width": "3px",
+              "color": "rgb(232, 231, 226)"
+            }
+          }
+        },
+        {
+          "label": "navigation to dead preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "navigation to talents preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "selected talent branch receives visible focus",
+          "passed": false,
+          "detail": {
+            "action": "talents",
+            "id": "",
+            "pressed": null,
+            "text": "天赋",
+            "visible": true,
+            "outline": {
+              "style": "none",
+              "width": "3px",
+              "color": "rgb(232, 231, 226)"
+            }
+          }
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "current-1920x1080.png",
+        "current-1920x1080-FAIL.png"
+      ],
+      "stateChecks": [
+        {
+          "label": "initial app load",
+          "revision": 1348,
+          "rng": 3380821009,
+          "phase": "dead",
+          "stateSha256": "731321a0a90ac853b03f191cf1847ff96e9a7fc12c76d23b4a4841e1e90c58f3",
+          "rawSha256": "4539ff28ae3ee512bf1f4be034c8d78d7fe7464aa45696c4e699309231dfb3aa"
+        }
+      ],
+      "identity": {
+        "url": "http://127.0.0.1:4389/",
+        "title": "骰狱：无尽深渊 · Dice Abyss",
+        "viewport": {
+          "width": 1920,
+          "height": 1080
+        },
+        "scale": 1,
+        "bodyText": "骰狱：无尽深渊\n— D I C E　 A B Y S S —\n以骰为火\n点燃永夜\n图鉴\n全屏\n设置\n深渊探索\nDUNGEON\n第 30 层 · 深渊之眼\n神话断层\n已解锁至 神话\n\n「死亡并非终点，\n　而是更深的开始。」\n\n奇偶哨站\n01\n镜像对手\n02\n商人\n03\n黄金盗匪\n04\n赤誓血井\n05\n首领\n06\n探索增益\nFATE\n本层命运\n2 + 4\n路线进度\n5 / 6\n累计胜利\n125\n最高伤"
+      },
+      "layouts": [
+        {
+          "label": "current-1920x1080",
+          "viewport": {
+            "width": 1920,
+            "height": 1080
+          },
+          "documentWidth": 1920,
+          "room": {
+            "left": 500.265625,
+            "right": 1429.375,
+            "top": 52.21875,
+            "bottom": 845.875,
+            "clientWidth": 919,
+            "scrollWidth": 919,
+            "clientHeight": 794,
+            "scrollHeight": 794,
+            "overflowY": "auto"
+          },
+          "primary": {
+            "left": 796.109375,
+            "right": 1133.515625,
+            "top": 972.484375,
+            "bottom": 1037.40625
+          },
+          "footer": {
+            "top": 972.484375,
+            "bottom": 1046.234375
+          },
+          "typography": [
+            {
+              "text": "余火，尚未熄灭。",
+              "font": "34px",
+              "lineHeight": "49.3px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "裂星守望暂时挡住了去路。成长与战利品仍在。",
+              "font": "14px",
+              "lineHeight": "25.2px",
+              "color": "rgb(194, 200, 206)"
+            },
+            {
+              "text": "本次战斗",
+              "font": "13px",
+              "lineHeight": "normal",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "18 掷",
+              "font": "14px",
+              "lineHeight": "normal",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "敌人剩余生命",
+              "font": "13px",
+              "lineHeight": "normal",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "172,884 / 582,011",
+              "font": "14px",
+              "lineHeight": "normal",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "最后一掷",
+              "font": "13px",
+              "lineHeight": "normal",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "对敌生命伤害 24,547 · 所受反击 212",
+              "font": "14px",
+              "lineHeight": "normal",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "重燃前，整理构筑",
+              "font": "17px",
+              "lineHeight": "25.5px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "背包中有 134 件未装备物品，其中防具 47 件。 当前没有未用天赋点。",
+              "font": "13px",
+              "lineHeight": "24.05px",
+              "color": "rgb(194, 200, 206)"
+            },
+            {
+              "text": "调整防具",
+              "font": "13px",
+              "lineHeight": "18.2px",
+              "color": "rgb(217, 229, 236)"
+            },
+            {
+              "text": "打开背包",
+              "font": "13px",
+              "lineHeight": "18.2px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "查看天赋",
+              "font": "13px",
+              "lineHeight": "18.2px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "在装备的「比较条件」中查看恢复与触发护盾。基础估值不能保证这一战的存活结果。",
+              "font": "12px",
+              "lineHeight": "21.6px",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "敌方机制回顾",
+              "font": "17px",
+              "lineHeight": "25.5px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "特性第 3 / 6 / 9… 次反击后重筑护盾，上限为初始护盾。",
+              "font": "13px",
+              "lineHeight": "24.05px",
+              "color": "rgb(194, 200, 206)"
+            },
+            {
+              "text": "换相存活且首次跨过半血时凝聚 12% 护盾；二阶段反击增强 15%，溢出伤害不会被强制阻断。",
+              "font": "13px",
+              "lineHeight": "24.05px",
+              "color": "rgb(194, 200, 206)"
+            },
+            {
+              "text": "应对护盾先吸伤；在重筑前形成共鸣可减少消耗。",
+              "font": "13px",
+              "lineHeight": "24.05px",
+              "color": "rgb(211, 200, 169)"
+            },
+            {
+              "text": "在当前房间重燃余火",
+              "font": "15px",
+              "lineHeight": "22.5px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "重燃不消耗金币，按重燃时的构筑恢复全部生命；敌人从头开始。装备、金币、天赋和已完成的房间全部保留。",
+              "font": "12px",
+              "lineHeight": "22.2px",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "现有护盾与下一掷临时幸运不继承；开战护盾按当前构筑重新计算。",
+              "font": "12px",
+              "lineHeight": "22.2px",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "购物、锻造、融合与洗点需要对应房间。当前可以换装、投入可用天赋，或重燃后继续挑战。",
+              "font": "12px",
+              "lineHeight": "22.2px",
+              "color": "rgb(194, 200, 206)"
+            }
+          ],
+          "horizontalOverflow": []
+        }
+      ],
+      "contrast": [
+        {
+          "text": "余火，尚未熄灭。",
+          "color": "rgb(232, 231, 226)",
+          "font": 34,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "裂星守望暂时挡住了去路。成长与战利品仍在。",
+          "color": "rgb(194, 200, 206)",
+          "font": 14,
+          "contrast": 9.52359487763639
+        },
+        {
+          "text": "本次战斗",
+          "color": "rgb(181, 189, 197)",
+          "font": 13,
+          "contrast": 8.454851099314283
+        },
+        {
+          "text": "18 掷",
+          "color": "rgb(232, 231, 226)",
+          "font": 14,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "敌人剩余生命",
+          "color": "rgb(181, 189, 197)",
+          "font": 13,
+          "contrast": 8.454851099314283
+        },
+        {
+          "text": "172,884 / 582,011",
+          "color": "rgb(232, 231, 226)",
+          "font": 14,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "最后一掷",
+          "color": "rgb(181, 189, 197)",
+          "font": 13,
+          "contrast": 8.454851099314283
+        },
+        {
+          "text": "对敌生命伤害 24,547 · 所受反击 212",
+          "color": "rgb(232, 231, 226)",
+          "font": 14,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "重燃前，整理构筑",
+          "color": "rgb(232, 231, 226)",
+          "font": 17,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "背包中有 134 件未装备物品，其中防具 47 件。 当前没有未用天赋点。",
+          "color": "rgb(194, 200, 206)",
+          "font": 13,
+          "contrast": 9.52359487763639
+        },
+        {
+          "text": "调整防具",
+          "color": "rgb(217, 229, 236)",
+          "font": 13,
+          "contrast": 12.524843254552662
+        },
+        {
+          "text": "打开背包",
+          "color": "rgb(232, 231, 226)",
+          "font": 13,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "查看天赋",
+          "color": "rgb(232, 231, 226)",
+          "font": 13,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "在装备的「比较条件」中查看恢复与触发护盾。基础估值不能保证这一战的存活结果。",
+          "color": "rgb(181, 189, 197)",
+          "font": 12,
+          "contrast": 8.454851099314283
+        },
+        {
+          "text": "敌方机制回顾",
+          "color": "rgb(232, 231, 226)",
+          "font": 17,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "特性第 3 / 6 / 9… 次反击后重筑护盾，上限为初始护盾。",
+          "color": "rgb(194, 200, 206)",
+          "font": 13,
+          "contrast": 9.52359487763639
+        },
+        {
+          "text": "换相存活且首次跨过半血时凝聚 12% 护盾；二阶段反击增强 15%，溢出伤害不会被强制阻断",
+          "color": "rgb(194, 200, 206)",
+          "font": 13,
+          "contrast": 9.52359487763639
+        },
+        {
+          "text": "应对护盾先吸伤；在重筑前形成共鸣可减少消耗。",
+          "color": "rgb(211, 200, 169)",
+          "font": 13,
+          "contrast": 9.64416471525514
+        },
+        {
+          "text": "在当前房间重燃余火",
+          "color": "rgb(232, 231, 226)",
+          "font": 15,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "重燃不消耗金币，按重燃时的构筑恢复全部生命；敌人从头开始。装备、金币、天赋和已完成的房间全",
+          "color": "rgb(181, 189, 197)",
+          "font": 12,
+          "contrast": 8.454851099314283
+        },
+        {
+          "text": "现有护盾与下一掷临时幸运不继承；开战护盾按当前构筑重新计算。",
+          "color": "rgb(181, 189, 197)",
+          "font": 12,
+          "contrast": 8.454851099314283
+        },
+        {
+          "text": "购物、锻造、融合与洗点需要对应房间。当前可以换装、投入可用天赋，或重燃后继续挑战。",
+          "color": "rgb(194, 200, 206)",
+          "font": 12,
+          "contrast": 9.52359487763639
+        }
+      ],
+      "controlStates": [
+        {
+          "hover": {
+            "text": "调整防具",
+            "color": "rgb(217, 229, 236)",
+            "background": "rgb(20, 32, 39)",
+            "border": "rgb(143, 165, 178)",
+            "height": 44
+          },
+          "focus": {
+            "action": "inventory",
+            "slot": "armor",
+            "id": "",
+            "pressed": null,
+            "text": "调整防具",
+            "visible": true,
+            "outline": {
+              "style": "solid",
+              "width": "2px",
+              "color": "rgb(54, 229, 244)"
+            }
+          }
+        },
+        {
+          "hover": {
+            "text": "打开背包",
+            "color": "rgb(255, 255, 255)",
+            "background": "rgb(20, 32, 39)",
+            "border": "rgb(54, 229, 244)",
+            "height": 44
+          },
+          "focus": {
+            "action": "inventory",
+            "slot": "",
+            "id": "",
+            "pressed": null,
+            "text": "打开背包",
+            "visible": true,
+            "outline": {
+              "style": "solid",
+              "width": "2px",
+              "color": "rgb(54, 229, 244)"
+            }
+          }
+        },
+        {
+          "hover": {
+            "text": "查看天赋",
+            "color": "rgb(255, 255, 255)",
+            "background": "rgb(20, 32, 39)",
+            "border": "rgb(54, 229, 244)",
+            "height": 44
+          },
+          "focus": {
+            "action": "talents",
+            "id": "",
+            "pressed": null,
+            "text": "查看天赋",
+            "visible": true,
+            "outline": {
+              "style": "solid",
+              "width": "2px",
+              "color": "rgb(54, 229, 244)"
+            }
+          }
+        }
+      ],
+      "error": "AssertionError [ERR_ASSERTION]: selected talent branch receives visible focus",
+      "stack": "AssertionError [ERR_ASSERTION]: selected talent branch receives visible focus\n    at check (file:///workspace/scratch/8db1c7454cb5/work/Dice-Abyss/scripts/qa-defeat-round14.mjs:33:112)\n    at navigationChecks (file:///workspace/scratch/8db1c7454cb5/work/Dice-Abyss/scripts/qa-defeat-round14.mjs:95:26)\n    at async file:///workspace/scratch/8db1c7454cb5/work/Dice-Abyss/scripts/qa-defeat-round14.mjs:119:297\n    at async run (file:///workspace/scratch/8db1c7454cb5/work/Dice-Abyss/scripts/qa-defeat-round14.mjs:114:157)\n    at async file:///workspace/scratch/8db1c7454cb5/work/Dice-Abyss/scripts/qa-defeat-round14.mjs:119:3"
+    },
+    {
+      "name": "current-2560x1440",
+      "status": "FAIL",
+      "checks": [
+        {
+          "label": "validator accepts the complete initial fixture",
+          "passed": true
+        },
+        {
+          "label": "correct page URL and title",
+          "passed": true
+        },
+        {
+          "label": "meaningful nonblank game",
+          "passed": true
+        },
+        {
+          "label": "no framework error overlay",
+          "passed": true
+        },
+        {
+          "label": "initial app load complete decoded state",
+          "passed": true
+        },
+        {
+          "label": "initial app load primary and mirror bytes",
+          "passed": true
+        },
+        {
+          "label": "natural 134 alternatives / 47 armor / zero-points copy",
+          "passed": true
+        },
+        {
+          "label": "current-2560x1440 has no document horizontal overflow",
+          "passed": true,
+          "detail": 2560
+        },
+        {
+          "label": "current-2560x1440 review stays inside horizontal viewport",
+          "passed": true
+        },
+        {
+          "label": "current-2560x1440 complete text and controls wrap without clipping",
+          "passed": true,
+          "detail": []
+        },
+        {
+          "label": "current-2560x1440 persistent retry remains visible",
+          "passed": true
+        },
+        {
+          "label": "current-2560x1440 desktop review does not cover action footer",
+          "passed": true
+        },
+        {
+          "label": "new review text passes 4.5:1 against conservative surface bound",
+          "passed": true,
+          "detail": 8.454851099314283
+        },
+        {
+          "label": "preparation control keeps a 44px target",
+          "passed": true
+        },
+        {
+          "label": "preparation control has a visible keyboard focus ring",
+          "passed": true
+        },
+        {
+          "label": "preparation control keeps a 44px target",
+          "passed": true
+        },
+        {
+          "label": "preparation control has a visible keyboard focus ring",
+          "passed": true
+        },
+        {
+          "label": "preparation control keeps a 44px target",
+          "passed": true
+        },
+        {
+          "label": "preparation control has a visible keyboard focus ring",
+          "passed": true
+        },
+        {
+          "label": "navigation to inventory preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "native weapon/eternal filters preserve both raw saves",
+          "passed": true
+        },
+        {
+          "label": "the real retained inventory has no rarity-seven candidates",
+          "passed": true
+        },
+        {
+          "label": "navigation to dead preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "navigation to inventory preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "defeat armor entry clears stale rarity",
+          "passed": true
+        },
+        {
+          "label": "defeat armor entry selects armor",
+          "passed": true
+        },
+        {
+          "label": "armor filter receives visible keyboard focus",
+          "passed": true,
+          "detail": {
+            "action": "filter",
+            "slot": "armor",
+            "id": "",
+            "pressed": null,
+            "text": "防具 48",
+            "visible": true,
+            "outline": {
+              "style": "none",
+              "width": "3px",
+              "color": "rgb(232, 231, 226)"
+            }
+          }
+        },
+        {
+          "label": "all 48 owned armor items appear, including the equipped piece",
+          "passed": true
+        },
+        {
+          "label": "navigation to dead preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "navigation to inventory preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "open bag entry clears stale rarity",
+          "passed": true
+        },
+        {
+          "label": "open bag entry selects all slots",
+          "passed": true
+        },
+        {
+          "label": "all-slots filter receives visible focus",
+          "passed": true,
+          "detail": {
+            "action": "filter",
+            "slot": "",
+            "id": "",
+            "pressed": null,
+            "text": "全部 139",
+            "visible": true,
+            "outline": {
+              "style": "none",
+              "width": "3px",
+              "color": "rgb(232, 231, 226)"
+            }
+          }
+        },
+        {
+          "label": "navigation to dead preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "navigation to talents preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "selected talent branch receives visible focus",
+          "passed": false,
+          "detail": {
+            "action": "talents",
+            "id": "",
+            "pressed": null,
+            "text": "天赋",
+            "visible": true,
+            "outline": {
+              "style": "none",
+              "width": "3px",
+              "color": "rgb(232, 231, 226)"
+            }
+          }
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "current-2560x1440.png",
+        "current-2560x1440-FAIL.png"
+      ],
+      "stateChecks": [
+        {
+          "label": "initial app load",
+          "revision": 1348,
+          "rng": 3380821009,
+          "phase": "dead",
+          "stateSha256": "731321a0a90ac853b03f191cf1847ff96e9a7fc12c76d23b4a4841e1e90c58f3",
+          "rawSha256": "4539ff28ae3ee512bf1f4be034c8d78d7fe7464aa45696c4e699309231dfb3aa"
+        }
+      ],
+      "identity": {
+        "url": "http://127.0.0.1:4389/",
+        "title": "骰狱：无尽深渊 · Dice Abyss",
+        "viewport": {
+          "width": 2560,
+          "height": 1440
+        },
+        "scale": 1,
+        "bodyText": "骰狱：无尽深渊\n— D I C E　 A B Y S S —\n以骰为火\n点燃永夜\n图鉴\n全屏\n设置\n深渊探索\nDUNGEON\n第 30 层 · 深渊之眼\n神话断层\n已解锁至 神话\n\n「死亡并非终点，\n　而是更深的开始。」\n\n奇偶哨站\n01\n镜像对手\n02\n商人\n03\n黄金盗匪\n04\n赤誓血井\n05\n首领\n06\n探索增益\nFATE\n本层命运\n2 + 4\n路线进度\n5 / 6\n累计胜利\n125\n最高伤"
+      },
+      "layouts": [
+        {
+          "label": "current-2560x1440",
+          "viewport": {
+            "width": 2560,
+            "height": 1440
+          },
+          "documentWidth": 2560,
+          "room": {
+            "left": 666.703125,
+            "right": 1906.15625,
+            "top": 69.28125,
+            "bottom": 1128.140625,
+            "clientWidth": 1229,
+            "scrollWidth": 1229,
+            "clientHeight": 1059,
+            "scrollHeight": 1059,
+            "overflowY": "auto"
+          },
+          "primary": {
+            "left": 1061.484375,
+            "right": 1511.359375,
+            "top": 1297.296875,
+            "bottom": 1382.515625
+          },
+          "footer": {
+            "top": 1297.296875,
+            "bottom": 1394.28125
+          },
+          "typography": [
+            {
+              "text": "余火，尚未熄灭。",
+              "font": "34px",
+              "lineHeight": "49.3px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "裂星守望暂时挡住了去路。成长与战利品仍在。",
+              "font": "14px",
+              "lineHeight": "25.2px",
+              "color": "rgb(194, 200, 206)"
+            },
+            {
+              "text": "本次战斗",
+              "font": "13px",
+              "lineHeight": "normal",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "18 掷",
+              "font": "14px",
+              "lineHeight": "normal",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "敌人剩余生命",
+              "font": "13px",
+              "lineHeight": "normal",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "172,884 / 582,011",
+              "font": "14px",
+              "lineHeight": "normal",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "最后一掷",
+              "font": "13px",
+              "lineHeight": "normal",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "对敌生命伤害 24,547 · 所受反击 212",
+              "font": "14px",
+              "lineHeight": "normal",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "重燃前，整理构筑",
+              "font": "17px",
+              "lineHeight": "25.5px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "背包中有 134 件未装备物品，其中防具 47 件。 当前没有未用天赋点。",
+              "font": "13px",
+              "lineHeight": "24.05px",
+              "color": "rgb(194, 200, 206)"
+            },
+            {
+              "text": "调整防具",
+              "font": "13px",
+              "lineHeight": "18.2px",
+              "color": "rgb(217, 229, 236)"
+            },
+            {
+              "text": "打开背包",
+              "font": "13px",
+              "lineHeight": "18.2px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "查看天赋",
+              "font": "13px",
+              "lineHeight": "18.2px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "在装备的「比较条件」中查看恢复与触发护盾。基础估值不能保证这一战的存活结果。",
+              "font": "12px",
+              "lineHeight": "21.6px",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "敌方机制回顾",
+              "font": "17px",
+              "lineHeight": "25.5px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "特性第 3 / 6 / 9… 次反击后重筑护盾，上限为初始护盾。",
+              "font": "13px",
+              "lineHeight": "24.05px",
+              "color": "rgb(194, 200, 206)"
+            },
+            {
+              "text": "换相存活且首次跨过半血时凝聚 12% 护盾；二阶段反击增强 15%，溢出伤害不会被强制阻断。",
+              "font": "13px",
+              "lineHeight": "24.05px",
+              "color": "rgb(194, 200, 206)"
+            },
+            {
+              "text": "应对护盾先吸伤；在重筑前形成共鸣可减少消耗。",
+              "font": "13px",
+              "lineHeight": "24.05px",
+              "color": "rgb(211, 200, 169)"
+            },
+            {
+              "text": "在当前房间重燃余火",
+              "font": "15px",
+              "lineHeight": "22.5px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "重燃不消耗金币，按重燃时的构筑恢复全部生命；敌人从头开始。装备、金币、天赋和已完成的房间全部保留。",
+              "font": "12px",
+              "lineHeight": "22.2px",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "现有护盾与下一掷临时幸运不继承；开战护盾按当前构筑重新计算。",
+              "font": "12px",
+              "lineHeight": "22.2px",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "购物、锻造、融合与洗点需要对应房间。当前可以换装、投入可用天赋，或重燃后继续挑战。",
+              "font": "12px",
+              "lineHeight": "22.2px",
+              "color": "rgb(194, 200, 206)"
+            }
+          ],
+          "horizontalOverflow": []
+        }
+      ],
+      "contrast": [
+        {
+          "text": "余火，尚未熄灭。",
+          "color": "rgb(232, 231, 226)",
+          "font": 34,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "裂星守望暂时挡住了去路。成长与战利品仍在。",
+          "color": "rgb(194, 200, 206)",
+          "font": 14,
+          "contrast": 9.52359487763639
+        },
+        {
+          "text": "本次战斗",
+          "color": "rgb(181, 189, 197)",
+          "font": 13,
+          "contrast": 8.454851099314283
+        },
+        {
+          "text": "18 掷",
+          "color": "rgb(232, 231, 226)",
+          "font": 14,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "敌人剩余生命",
+          "color": "rgb(181, 189, 197)",
+          "font": 13,
+          "contrast": 8.454851099314283
+        },
+        {
+          "text": "172,884 / 582,011",
+          "color": "rgb(232, 231, 226)",
+          "font": 14,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "最后一掷",
+          "color": "rgb(181, 189, 197)",
+          "font": 13,
+          "contrast": 8.454851099314283
+        },
+        {
+          "text": "对敌生命伤害 24,547 · 所受反击 212",
+          "color": "rgb(232, 231, 226)",
+          "font": 14,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "重燃前，整理构筑",
+          "color": "rgb(232, 231, 226)",
+          "font": 17,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "背包中有 134 件未装备物品，其中防具 47 件。 当前没有未用天赋点。",
+          "color": "rgb(194, 200, 206)",
+          "font": 13,
+          "contrast": 9.52359487763639
+        },
+        {
+          "text": "调整防具",
+          "color": "rgb(217, 229, 236)",
+          "font": 13,
+          "contrast": 12.524843254552662
+        },
+        {
+          "text": "打开背包",
+          "color": "rgb(232, 231, 226)",
+          "font": 13,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "查看天赋",
+          "color": "rgb(232, 231, 226)",
+          "font": 13,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "在装备的「比较条件」中查看恢复与触发护盾。基础估值不能保证这一战的存活结果。",
+          "color": "rgb(181, 189, 197)",
+          "font": 12,
+          "contrast": 8.454851099314283
+        },
+        {
+          "text": "敌方机制回顾",
+          "color": "rgb(232, 231, 226)",
+          "font": 17,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "特性第 3 / 6 / 9… 次反击后重筑护盾，上限为初始护盾。",
+          "color": "rgb(194, 200, 206)",
+          "font": 13,
+          "contrast": 9.52359487763639
+        },
+        {
+          "text": "换相存活且首次跨过半血时凝聚 12% 护盾；二阶段反击增强 15%，溢出伤害不会被强制阻断",
+          "color": "rgb(194, 200, 206)",
+          "font": 13,
+          "contrast": 9.52359487763639
+        },
+        {
+          "text": "应对护盾先吸伤；在重筑前形成共鸣可减少消耗。",
+          "color": "rgb(211, 200, 169)",
+          "font": 13,
+          "contrast": 9.64416471525514
+        },
+        {
+          "text": "在当前房间重燃余火",
+          "color": "rgb(232, 231, 226)",
+          "font": 15,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "重燃不消耗金币，按重燃时的构筑恢复全部生命；敌人从头开始。装备、金币、天赋和已完成的房间全",
+          "color": "rgb(181, 189, 197)",
+          "font": 12,
+          "contrast": 8.454851099314283
+        },
+        {
+          "text": "现有护盾与下一掷临时幸运不继承；开战护盾按当前构筑重新计算。",
+          "color": "rgb(181, 189, 197)",
+          "font": 12,
+          "contrast": 8.454851099314283
+        },
+        {
+          "text": "购物、锻造、融合与洗点需要对应房间。当前可以换装、投入可用天赋，或重燃后继续挑战。",
+          "color": "rgb(194, 200, 206)",
+          "font": 12,
+          "contrast": 9.52359487763639
+        }
+      ],
+      "controlStates": [
+        {
+          "hover": {
+            "text": "调整防具",
+            "color": "rgb(217, 229, 236)",
+            "background": "rgb(20, 32, 39)",
+            "border": "rgb(143, 165, 178)",
+            "height": 44
+          },
+          "focus": {
+            "action": "inventory",
+            "slot": "armor",
+            "id": "",
+            "pressed": null,
+            "text": "调整防具",
+            "visible": true,
+            "outline": {
+              "style": "solid",
+              "width": "2px",
+              "color": "rgb(54, 229, 244)"
+            }
+          }
+        },
+        {
+          "hover": {
+            "text": "打开背包",
+            "color": "rgb(255, 255, 255)",
+            "background": "rgb(20, 32, 39)",
+            "border": "rgb(54, 229, 244)",
+            "height": 44
+          },
+          "focus": {
+            "action": "inventory",
+            "slot": "",
+            "id": "",
+            "pressed": null,
+            "text": "打开背包",
+            "visible": true,
+            "outline": {
+              "style": "solid",
+              "width": "2px",
+              "color": "rgb(54, 229, 244)"
+            }
+          }
+        },
+        {
+          "hover": {
+            "text": "查看天赋",
+            "color": "rgb(255, 255, 255)",
+            "background": "rgb(20, 32, 39)",
+            "border": "rgb(54, 229, 244)",
+            "height": 44
+          },
+          "focus": {
+            "action": "talents",
+            "id": "",
+            "pressed": null,
+            "text": "查看天赋",
+            "visible": true,
+            "outline": {
+              "style": "solid",
+              "width": "2px",
+              "color": "rgb(54, 229, 244)"
+            }
+          }
+        }
+      ],
+      "error": "AssertionError [ERR_ASSERTION]: selected talent branch receives visible focus",
+      "stack": "AssertionError [ERR_ASSERTION]: selected talent branch receives visible focus\n    at check (file:///workspace/scratch/8db1c7454cb5/work/Dice-Abyss/scripts/qa-defeat-round14.mjs:33:112)\n    at navigationChecks (file:///workspace/scratch/8db1c7454cb5/work/Dice-Abyss/scripts/qa-defeat-round14.mjs:95:26)\n    at async file:///workspace/scratch/8db1c7454cb5/work/Dice-Abyss/scripts/qa-defeat-round14.mjs:119:297\n    at async run (file:///workspace/scratch/8db1c7454cb5/work/Dice-Abyss/scripts/qa-defeat-round14.mjs:114:157)\n    at async file:///workspace/scratch/8db1c7454cb5/work/Dice-Abyss/scripts/qa-defeat-round14.mjs:119:3"
+    },
+    {
+      "name": "current-3840x2160",
+      "status": "FAIL",
+      "checks": [
+        {
+          "label": "validator accepts the complete initial fixture",
+          "passed": true
+        },
+        {
+          "label": "correct page URL and title",
+          "passed": true
+        },
+        {
+          "label": "meaningful nonblank game",
+          "passed": true
+        },
+        {
+          "label": "no framework error overlay",
+          "passed": true
+        },
+        {
+          "label": "initial app load complete decoded state",
+          "passed": true
+        },
+        {
+          "label": "initial app load primary and mirror bytes",
+          "passed": true
+        },
+        {
+          "label": "natural 134 alternatives / 47 armor / zero-points copy",
+          "passed": true
+        },
+        {
+          "label": "current-3840x2160 has no document horizontal overflow",
+          "passed": true,
+          "detail": 3840
+        },
+        {
+          "label": "current-3840x2160 review stays inside horizontal viewport",
+          "passed": true
+        },
+        {
+          "label": "current-3840x2160 complete text and controls wrap without clipping",
+          "passed": true,
+          "detail": []
+        },
+        {
+          "label": "current-3840x2160 persistent retry remains visible",
+          "passed": true
+        },
+        {
+          "label": "current-3840x2160 desktop review does not cover action footer",
+          "passed": true
+        },
+        {
+          "label": "new review text passes 4.5:1 against conservative surface bound",
+          "passed": true,
+          "detail": 8.454851099314283
+        },
+        {
+          "label": "preparation control keeps a 44px target",
+          "passed": true
+        },
+        {
+          "label": "preparation control has a visible keyboard focus ring",
+          "passed": true
+        },
+        {
+          "label": "preparation control keeps a 44px target",
+          "passed": true
+        },
+        {
+          "label": "preparation control has a visible keyboard focus ring",
+          "passed": true
+        },
+        {
+          "label": "preparation control keeps a 44px target",
+          "passed": true
+        },
+        {
+          "label": "preparation control has a visible keyboard focus ring",
+          "passed": true
+        },
+        {
+          "label": "navigation to inventory preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "native weapon/eternal filters preserve both raw saves",
+          "passed": true
+        },
+        {
+          "label": "the real retained inventory has no rarity-seven candidates",
+          "passed": true
+        },
+        {
+          "label": "navigation to dead preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "navigation to inventory preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "defeat armor entry clears stale rarity",
+          "passed": true
+        },
+        {
+          "label": "defeat armor entry selects armor",
+          "passed": true
+        },
+        {
+          "label": "armor filter receives visible keyboard focus",
+          "passed": true,
+          "detail": {
+            "action": "filter",
+            "slot": "armor",
+            "id": "",
+            "pressed": null,
+            "text": "防具 48",
+            "visible": true,
+            "outline": {
+              "style": "none",
+              "width": "3px",
+              "color": "rgb(232, 231, 226)"
+            }
+          }
+        },
+        {
+          "label": "all 48 owned armor items appear, including the equipped piece",
+          "passed": true
+        },
+        {
+          "label": "navigation to dead preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "navigation to inventory preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "open bag entry clears stale rarity",
+          "passed": true
+        },
+        {
+          "label": "open bag entry selects all slots",
+          "passed": true
+        },
+        {
+          "label": "all-slots filter receives visible focus",
+          "passed": true,
+          "detail": {
+            "action": "filter",
+            "slot": "",
+            "id": "",
+            "pressed": null,
+            "text": "全部 139",
+            "visible": true,
+            "outline": {
+              "style": "none",
+              "width": "3px",
+              "color": "rgb(255, 255, 255)"
+            }
+          }
+        },
+        {
+          "label": "navigation to dead preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "navigation to talents preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "selected talent branch receives visible focus",
+          "passed": false,
+          "detail": {
+            "action": "talents",
+            "id": "",
+            "pressed": null,
+            "text": "天赋",
+            "visible": true,
+            "outline": {
+              "style": "none",
+              "width": "3px",
+              "color": "rgb(232, 231, 226)"
+            }
+          }
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "current-3840x2160.png",
+        "current-3840x2160-FAIL.png"
+      ],
+      "stateChecks": [
+        {
+          "label": "initial app load",
+          "revision": 1348,
+          "rng": 3380821009,
+          "phase": "dead",
+          "stateSha256": "731321a0a90ac853b03f191cf1847ff96e9a7fc12c76d23b4a4841e1e90c58f3",
+          "rawSha256": "4539ff28ae3ee512bf1f4be034c8d78d7fe7464aa45696c4e699309231dfb3aa"
+        }
+      ],
+      "identity": {
+        "url": "http://127.0.0.1:4389/",
+        "title": "骰狱：无尽深渊 · Dice Abyss",
+        "viewport": {
+          "width": 3840,
+          "height": 2160
+        },
+        "scale": 1,
+        "bodyText": "骰狱：无尽深渊\n— D I C E　 A B Y S S —\n以骰为火\n点燃永夜\n图鉴\n全屏\n设置\n深渊探索\nDUNGEON\n第 30 层 · 深渊之眼\n神话断层\n已解锁至 神话\n\n「死亡并非终点，\n　而是更深的开始。」\n\n奇偶哨站\n01\n镜像对手\n02\n商人\n03\n黄金盗匪\n04\n赤誓血井\n05\n首领\n06\n探索增益\nFATE\n本层命运\n2 + 4\n路线进度\n5 / 6\n累计胜利\n125\n最高伤"
+      },
+      "layouts": [
+        {
+          "label": "current-3840x2160",
+          "viewport": {
+            "width": 3840,
+            "height": 2160
+          },
+          "documentWidth": 3840,
+          "room": {
+            "left": 999.5625,
+            "right": 2859.71875,
+            "top": 103.4375,
+            "bottom": 1692.71875,
+            "clientWidth": 1850,
+            "scrollWidth": 1850,
+            "clientHeight": 1589,
+            "scrollHeight": 1589,
+            "overflowY": "auto"
+          },
+          "primary": {
+            "left": 1592.234375,
+            "right": 2267.03125,
+            "top": 1946.9375,
+            "bottom": 2072.78125
+          },
+          "footer": {
+            "top": 1946.9375,
+            "bottom": 2090.4375
+          },
+          "typography": [
+            {
+              "text": "余火，尚未熄灭。",
+              "font": "34px",
+              "lineHeight": "49.3px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "裂星守望暂时挡住了去路。成长与战利品仍在。",
+              "font": "14px",
+              "lineHeight": "25.2px",
+              "color": "rgb(194, 200, 206)"
+            },
+            {
+              "text": "本次战斗",
+              "font": "13px",
+              "lineHeight": "normal",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "18 掷",
+              "font": "14px",
+              "lineHeight": "normal",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "敌人剩余生命",
+              "font": "13px",
+              "lineHeight": "normal",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "172,884 / 582,011",
+              "font": "14px",
+              "lineHeight": "normal",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "最后一掷",
+              "font": "13px",
+              "lineHeight": "normal",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "对敌生命伤害 24,547 · 所受反击 212",
+              "font": "14px",
+              "lineHeight": "normal",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "重燃前，整理构筑",
+              "font": "17px",
+              "lineHeight": "25.5px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "背包中有 134 件未装备物品，其中防具 47 件。 当前没有未用天赋点。",
+              "font": "13px",
+              "lineHeight": "24.05px",
+              "color": "rgb(194, 200, 206)"
+            },
+            {
+              "text": "调整防具",
+              "font": "13px",
+              "lineHeight": "18.2px",
+              "color": "rgb(217, 229, 236)"
+            },
+            {
+              "text": "打开背包",
+              "font": "13px",
+              "lineHeight": "18.2px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "查看天赋",
+              "font": "13px",
+              "lineHeight": "18.2px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "在装备的「比较条件」中查看恢复与触发护盾。基础估值不能保证这一战的存活结果。",
+              "font": "12px",
+              "lineHeight": "21.6px",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "敌方机制回顾",
+              "font": "17px",
+              "lineHeight": "25.5px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "特性第 3 / 6 / 9… 次反击后重筑护盾，上限为初始护盾。",
+              "font": "13px",
+              "lineHeight": "24.05px",
+              "color": "rgb(194, 200, 206)"
+            },
+            {
+              "text": "换相存活且首次跨过半血时凝聚 12% 护盾；二阶段反击增强 15%，溢出伤害不会被强制阻断。",
+              "font": "13px",
+              "lineHeight": "24.05px",
+              "color": "rgb(194, 200, 206)"
+            },
+            {
+              "text": "应对护盾先吸伤；在重筑前形成共鸣可减少消耗。",
+              "font": "13px",
+              "lineHeight": "24.05px",
+              "color": "rgb(211, 200, 169)"
+            },
+            {
+              "text": "在当前房间重燃余火",
+              "font": "15px",
+              "lineHeight": "22.5px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "重燃不消耗金币，按重燃时的构筑恢复全部生命；敌人从头开始。装备、金币、天赋和已完成的房间全部保留。",
+              "font": "12px",
+              "lineHeight": "22.2px",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "现有护盾与下一掷临时幸运不继承；开战护盾按当前构筑重新计算。",
+              "font": "12px",
+              "lineHeight": "22.2px",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "购物、锻造、融合与洗点需要对应房间。当前可以换装、投入可用天赋，或重燃后继续挑战。",
+              "font": "12px",
+              "lineHeight": "22.2px",
+              "color": "rgb(194, 200, 206)"
+            }
+          ],
+          "horizontalOverflow": []
+        }
+      ],
+      "contrast": [
+        {
+          "text": "余火，尚未熄灭。",
+          "color": "rgb(232, 231, 226)",
+          "font": 34,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "裂星守望暂时挡住了去路。成长与战利品仍在。",
+          "color": "rgb(194, 200, 206)",
+          "font": 14,
+          "contrast": 9.52359487763639
+        },
+        {
+          "text": "本次战斗",
+          "color": "rgb(181, 189, 197)",
+          "font": 13,
+          "contrast": 8.454851099314283
+        },
+        {
+          "text": "18 掷",
+          "color": "rgb(232, 231, 226)",
+          "font": 14,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "敌人剩余生命",
+          "color": "rgb(181, 189, 197)",
+          "font": 13,
+          "contrast": 8.454851099314283
+        },
+        {
+          "text": "172,884 / 582,011",
+          "color": "rgb(232, 231, 226)",
+          "font": 14,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "最后一掷",
+          "color": "rgb(181, 189, 197)",
+          "font": 13,
+          "contrast": 8.454851099314283
+        },
+        {
+          "text": "对敌生命伤害 24,547 · 所受反击 212",
+          "color": "rgb(232, 231, 226)",
+          "font": 14,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "重燃前，整理构筑",
+          "color": "rgb(232, 231, 226)",
+          "font": 17,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "背包中有 134 件未装备物品，其中防具 47 件。 当前没有未用天赋点。",
+          "color": "rgb(194, 200, 206)",
+          "font": 13,
+          "contrast": 9.52359487763639
+        },
+        {
+          "text": "调整防具",
+          "color": "rgb(217, 229, 236)",
+          "font": 13,
+          "contrast": 12.524843254552662
+        },
+        {
+          "text": "打开背包",
+          "color": "rgb(232, 231, 226)",
+          "font": 13,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "查看天赋",
+          "color": "rgb(232, 231, 226)",
+          "font": 13,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "在装备的「比较条件」中查看恢复与触发护盾。基础估值不能保证这一战的存活结果。",
+          "color": "rgb(181, 189, 197)",
+          "font": 12,
+          "contrast": 8.454851099314283
+        },
+        {
+          "text": "敌方机制回顾",
+          "color": "rgb(232, 231, 226)",
+          "font": 17,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "特性第 3 / 6 / 9… 次反击后重筑护盾，上限为初始护盾。",
+          "color": "rgb(194, 200, 206)",
+          "font": 13,
+          "contrast": 9.52359487763639
+        },
+        {
+          "text": "换相存活且首次跨过半血时凝聚 12% 护盾；二阶段反击增强 15%，溢出伤害不会被强制阻断",
+          "color": "rgb(194, 200, 206)",
+          "font": 13,
+          "contrast": 9.52359487763639
+        },
+        {
+          "text": "应对护盾先吸伤；在重筑前形成共鸣可减少消耗。",
+          "color": "rgb(211, 200, 169)",
+          "font": 13,
+          "contrast": 9.64416471525514
+        },
+        {
+          "text": "在当前房间重燃余火",
+          "color": "rgb(232, 231, 226)",
+          "font": 15,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "重燃不消耗金币，按重燃时的构筑恢复全部生命；敌人从头开始。装备、金币、天赋和已完成的房间全",
+          "color": "rgb(181, 189, 197)",
+          "font": 12,
+          "contrast": 8.454851099314283
+        },
+        {
+          "text": "现有护盾与下一掷临时幸运不继承；开战护盾按当前构筑重新计算。",
+          "color": "rgb(181, 189, 197)",
+          "font": 12,
+          "contrast": 8.454851099314283
+        },
+        {
+          "text": "购物、锻造、融合与洗点需要对应房间。当前可以换装、投入可用天赋，或重燃后继续挑战。",
+          "color": "rgb(194, 200, 206)",
+          "font": 12,
+          "contrast": 9.52359487763639
+        }
+      ],
+      "controlStates": [
+        {
+          "hover": {
+            "text": "调整防具",
+            "color": "rgb(217, 229, 236)",
+            "background": "rgb(20, 32, 39)",
+            "border": "rgb(143, 165, 178)",
+            "height": 44
+          },
+          "focus": {
+            "action": "inventory",
+            "slot": "armor",
+            "id": "",
+            "pressed": null,
+            "text": "调整防具",
+            "visible": true,
+            "outline": {
+              "style": "solid",
+              "width": "2px",
+              "color": "rgb(54, 229, 244)"
+            }
+          }
+        },
+        {
+          "hover": {
+            "text": "打开背包",
+            "color": "rgb(255, 255, 255)",
+            "background": "rgb(20, 32, 39)",
+            "border": "rgb(54, 229, 244)",
+            "height": 44
+          },
+          "focus": {
+            "action": "inventory",
+            "slot": "",
+            "id": "",
+            "pressed": null,
+            "text": "打开背包",
+            "visible": true,
+            "outline": {
+              "style": "solid",
+              "width": "2px",
+              "color": "rgb(54, 229, 244)"
+            }
+          }
+        },
+        {
+          "hover": {
+            "text": "查看天赋",
+            "color": "rgb(255, 255, 255)",
+            "background": "rgb(20, 32, 39)",
+            "border": "rgb(54, 229, 244)",
+            "height": 44
+          },
+          "focus": {
+            "action": "talents",
+            "id": "",
+            "pressed": null,
+            "text": "查看天赋",
+            "visible": true,
+            "outline": {
+              "style": "solid",
+              "width": "2px",
+              "color": "rgb(54, 229, 244)"
+            }
+          }
+        }
+      ],
+      "error": "AssertionError [ERR_ASSERTION]: selected talent branch receives visible focus",
+      "stack": "AssertionError [ERR_ASSERTION]: selected talent branch receives visible focus\n    at check (file:///workspace/scratch/8db1c7454cb5/work/Dice-Abyss/scripts/qa-defeat-round14.mjs:33:112)\n    at navigationChecks (file:///workspace/scratch/8db1c7454cb5/work/Dice-Abyss/scripts/qa-defeat-round14.mjs:95:26)\n    at async file:///workspace/scratch/8db1c7454cb5/work/Dice-Abyss/scripts/qa-defeat-round14.mjs:119:297\n    at async run (file:///workspace/scratch/8db1c7454cb5/work/Dice-Abyss/scripts/qa-defeat-round14.mjs:114:157)\n    at async file:///workspace/scratch/8db1c7454cb5/work/Dice-Abyss/scripts/qa-defeat-round14.mjs:119:3"
+    },
+    {
+      "name": "current-390x844",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "validator accepts the complete initial fixture",
+          "passed": true
+        },
+        {
+          "label": "correct page URL and title",
+          "passed": true
+        },
+        {
+          "label": "meaningful nonblank game",
+          "passed": true
+        },
+        {
+          "label": "no framework error overlay",
+          "passed": true
+        },
+        {
+          "label": "initial app load complete decoded state",
+          "passed": true
+        },
+        {
+          "label": "initial app load primary and mirror bytes",
+          "passed": true
+        },
+        {
+          "label": "natural 134 alternatives / 47 armor / zero-points copy",
+          "passed": true
+        },
+        {
+          "label": "current-390x844 has no document horizontal overflow",
+          "passed": true,
+          "detail": 390
+        },
+        {
+          "label": "current-390x844 review stays inside horizontal viewport",
+          "passed": true
+        },
+        {
+          "label": "current-390x844 complete text and controls wrap without clipping",
+          "passed": true,
+          "detail": []
+        },
+        {
+          "label": "current-390x844 persistent retry remains visible",
+          "passed": true
+        },
+        {
+          "label": "new review text passes 4.5:1 against conservative surface bound",
+          "passed": true,
+          "detail": 8.454851099314283
+        },
+        {
+          "label": "preparation control keeps a 44px target",
+          "passed": true
+        },
+        {
+          "label": "preparation control has a visible keyboard focus ring",
+          "passed": true
+        },
+        {
+          "label": "preparation control keeps a 44px target",
+          "passed": true
+        },
+        {
+          "label": "preparation control has a visible keyboard focus ring",
+          "passed": true
+        },
+        {
+          "label": "preparation control keeps a 44px target",
+          "passed": true
+        },
+        {
+          "label": "preparation control has a visible keyboard focus ring",
+          "passed": true
+        },
+        {
+          "label": "navigation to inventory preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "native weapon/eternal filters preserve both raw saves",
+          "passed": true
+        },
+        {
+          "label": "the real retained inventory has no rarity-seven candidates",
+          "passed": true
+        },
+        {
+          "label": "navigation to dead preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "navigation to inventory preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "defeat armor entry clears stale rarity",
+          "passed": true
+        },
+        {
+          "label": "defeat armor entry selects armor",
+          "passed": true
+        },
+        {
+          "label": "armor filter receives visible keyboard focus",
+          "passed": true,
+          "detail": {
+            "action": "filter",
+            "slot": "armor",
+            "id": "",
+            "pressed": null,
+            "text": "防具 48",
+            "visible": true,
+            "outline": {
+              "style": "none",
+              "width": "3px",
+              "color": "rgb(232, 231, 226)"
+            }
+          }
+        },
+        {
+          "label": "all 48 owned armor items appear, including the equipped piece",
+          "passed": true
+        },
+        {
+          "label": "navigation to dead preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "navigation to inventory preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "open bag entry clears stale rarity",
+          "passed": true
+        },
+        {
+          "label": "open bag entry selects all slots",
+          "passed": true
+        },
+        {
+          "label": "all-slots filter receives visible focus",
+          "passed": true,
+          "detail": {
+            "action": "filter",
+            "slot": "",
+            "id": "",
+            "pressed": null,
+            "text": "全部 139",
+            "visible": true,
+            "outline": {
+              "style": "none",
+              "width": "3px",
+              "color": "rgb(232, 231, 226)"
+            }
+          }
+        },
+        {
+          "label": "navigation to dead preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "navigation to talents preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "selected talent branch receives visible focus",
+          "passed": true,
+          "detail": {
+            "action": "talent-group",
+            "id": "",
+            "pressed": "true",
+            "text": "高点裁决",
+            "visible": true,
+            "outline": {
+              "style": "none",
+              "width": "3px",
+              "color": "rgb(255, 70, 88)"
+            }
+          }
+        },
+        {
+          "label": "natural defeat reports zero unspent talents",
+          "passed": true
+        },
+        {
+          "label": "navigation to dead preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "after all read-only navigation complete decoded state",
+          "passed": true
+        },
+        {
+          "label": "after all read-only navigation primary and mirror bytes",
+          "passed": true
+        },
+        {
+          "label": "no relevant runtime or console errors",
+          "passed": true
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "current-390x844.png"
+      ],
+      "stateChecks": [
+        {
+          "label": "initial app load",
+          "revision": 1348,
+          "rng": 3380821009,
+          "phase": "dead",
+          "stateSha256": "731321a0a90ac853b03f191cf1847ff96e9a7fc12c76d23b4a4841e1e90c58f3",
+          "rawSha256": "4539ff28ae3ee512bf1f4be034c8d78d7fe7464aa45696c4e699309231dfb3aa"
+        },
+        {
+          "label": "after all read-only navigation",
+          "revision": 1348,
+          "rng": 3380821009,
+          "phase": "dead",
+          "stateSha256": "731321a0a90ac853b03f191cf1847ff96e9a7fc12c76d23b4a4841e1e90c58f3",
+          "rawSha256": "4539ff28ae3ee512bf1f4be034c8d78d7fe7464aa45696c4e699309231dfb3aa"
+        }
+      ],
+      "identity": {
+        "url": "http://127.0.0.1:4389/",
+        "title": "骰狱：无尽深渊 · Dice Abyss",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "scale": 1,
+        "bodyText": "骰狱\n— D I C E　 A B Y S S —\n第\n30\n层\n深渊之眼\n图鉴\n全屏\n设置\n深渊探索\nDUNGEON\n第 30 层 · 深渊之眼\n神话断层\n已解锁至 神话\n\n「死亡并非终点，\n　而是更深的开始。」\n\n奇偶哨站\n01\n镜像对手\n02\n商人\n03\n黄金盗匪\n04\n赤誓血井\n05\n首领\n06\n探索增益\nFATE\n本层命运\n2 + 4\n路线进度\n5 / 6\n累计胜利\n125\n最高伤害\n1"
+      },
+      "layouts": [
+        {
+          "label": "current-390x844",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "documentWidth": 390,
+          "room": {
+            "left": 25,
+            "right": 365,
+            "top": 121,
+            "bottom": 915.078125,
+            "clientWidth": 340,
+            "scrollWidth": 340,
+            "clientHeight": 794,
+            "scrollHeight": 794,
+            "overflowY": "visible"
+          },
+          "primary": {
+            "left": 112,
+            "right": 290,
+            "top": 753,
+            "bottom": 809.609375
+          },
+          "footer": {
+            "top": 744,
+            "bottom": 838
+          },
+          "typography": [
+            {
+              "text": "余火，尚未熄灭。",
+              "font": "24px",
+              "lineHeight": "34.8px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "裂星守望暂时挡住了去路。成长与战利品仍在。",
+              "font": "14px",
+              "lineHeight": "25.2px",
+              "color": "rgb(194, 200, 206)"
+            },
+            {
+              "text": "本次战斗",
+              "font": "13px",
+              "lineHeight": "normal",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "18 掷",
+              "font": "14px",
+              "lineHeight": "normal",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "敌人剩余生命",
+              "font": "13px",
+              "lineHeight": "normal",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "172,884 / 582,011",
+              "font": "14px",
+              "lineHeight": "normal",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "最后一掷",
+              "font": "13px",
+              "lineHeight": "normal",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "对敌生命伤害 24,547 · 所受反击 212",
+              "font": "14px",
+              "lineHeight": "normal",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "重燃前，整理构筑",
+              "font": "17px",
+              "lineHeight": "25.5px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "背包中有 134 件未装备物品，其中防具 47 件。 当前没有未用天赋点。",
+              "font": "13px",
+              "lineHeight": "24.05px",
+              "color": "rgb(194, 200, 206)"
+            },
+            {
+              "text": "调整防具",
+              "font": "13px",
+              "lineHeight": "18.2px",
+              "color": "rgb(217, 229, 236)"
+            },
+            {
+              "text": "打开背包",
+              "font": "13px",
+              "lineHeight": "18.2px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "查看天赋",
+              "font": "13px",
+              "lineHeight": "18.2px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "在装备的「比较条件」中查看恢复与触发护盾。基础估值不能保证这一战的存活结果。",
+              "font": "12px",
+              "lineHeight": "21.6px",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "敌方机制回顾",
+              "font": "17px",
+              "lineHeight": "25.5px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "特性第 3 / 6 / 9… 次反击后重筑护盾，上限为初始护盾。",
+              "font": "13px",
+              "lineHeight": "24.05px",
+              "color": "rgb(194, 200, 206)"
+            },
+            {
+              "text": "换相存活且首次跨过半血时凝聚 12% 护盾；二阶段反击增强 15%，溢出伤害不会被强制阻断。",
+              "font": "13px",
+              "lineHeight": "24.05px",
+              "color": "rgb(194, 200, 206)"
+            },
+            {
+              "text": "应对护盾先吸伤；在重筑前形成共鸣可减少消耗。",
+              "font": "13px",
+              "lineHeight": "24.05px",
+              "color": "rgb(211, 200, 169)"
+            },
+            {
+              "text": "在当前房间重燃余火",
+              "font": "15px",
+              "lineHeight": "22.5px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "重燃不消耗金币，按重燃时的构筑恢复全部生命；敌人从头开始。装备、金币、天赋和已完成的房间全部保留。",
+              "font": "12px",
+              "lineHeight": "22.2px",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "现有护盾与下一掷临时幸运不继承；开战护盾按当前构筑重新计算。",
+              "font": "12px",
+              "lineHeight": "22.2px",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "购物、锻造、融合与洗点需要对应房间。当前可以换装、投入可用天赋，或重燃后继续挑战。",
+              "font": "12px",
+              "lineHeight": "22.2px",
+              "color": "rgb(194, 200, 206)"
+            }
+          ],
+          "horizontalOverflow": []
+        }
+      ],
+      "contrast": [
+        {
+          "text": "余火，尚未熄灭。",
+          "color": "rgb(232, 231, 226)",
+          "font": 24,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "裂星守望暂时挡住了去路。成长与战利品仍在。",
+          "color": "rgb(194, 200, 206)",
+          "font": 14,
+          "contrast": 9.52359487763639
+        },
+        {
+          "text": "本次战斗",
+          "color": "rgb(181, 189, 197)",
+          "font": 13,
+          "contrast": 8.454851099314283
+        },
+        {
+          "text": "18 掷",
+          "color": "rgb(232, 231, 226)",
+          "font": 14,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "敌人剩余生命",
+          "color": "rgb(181, 189, 197)",
+          "font": 13,
+          "contrast": 8.454851099314283
+        },
+        {
+          "text": "172,884 / 582,011",
+          "color": "rgb(232, 231, 226)",
+          "font": 14,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "最后一掷",
+          "color": "rgb(181, 189, 197)",
+          "font": 13,
+          "contrast": 8.454851099314283
+        },
+        {
+          "text": "对敌生命伤害 24,547 · 所受反击 212",
+          "color": "rgb(232, 231, 226)",
+          "font": 14,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "重燃前，整理构筑",
+          "color": "rgb(232, 231, 226)",
+          "font": 17,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "背包中有 134 件未装备物品，其中防具 47 件。 当前没有未用天赋点。",
+          "color": "rgb(194, 200, 206)",
+          "font": 13,
+          "contrast": 9.52359487763639
+        },
+        {
+          "text": "调整防具",
+          "color": "rgb(217, 229, 236)",
+          "font": 13,
+          "contrast": 12.524843254552662
+        },
+        {
+          "text": "打开背包",
+          "color": "rgb(232, 231, 226)",
+          "font": 13,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "查看天赋",
+          "color": "rgb(232, 231, 226)",
+          "font": 13,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "在装备的「比较条件」中查看恢复与触发护盾。基础估值不能保证这一战的存活结果。",
+          "color": "rgb(181, 189, 197)",
+          "font": 12,
+          "contrast": 8.454851099314283
+        },
+        {
+          "text": "敌方机制回顾",
+          "color": "rgb(232, 231, 226)",
+          "font": 17,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "特性第 3 / 6 / 9… 次反击后重筑护盾，上限为初始护盾。",
+          "color": "rgb(194, 200, 206)",
+          "font": 13,
+          "contrast": 9.52359487763639
+        },
+        {
+          "text": "换相存活且首次跨过半血时凝聚 12% 护盾；二阶段反击增强 15%，溢出伤害不会被强制阻断",
+          "color": "rgb(194, 200, 206)",
+          "font": 13,
+          "contrast": 9.52359487763639
+        },
+        {
+          "text": "应对护盾先吸伤；在重筑前形成共鸣可减少消耗。",
+          "color": "rgb(211, 200, 169)",
+          "font": 13,
+          "contrast": 9.64416471525514
+        },
+        {
+          "text": "在当前房间重燃余火",
+          "color": "rgb(232, 231, 226)",
+          "font": 15,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "重燃不消耗金币，按重燃时的构筑恢复全部生命；敌人从头开始。装备、金币、天赋和已完成的房间全",
+          "color": "rgb(181, 189, 197)",
+          "font": 12,
+          "contrast": 8.454851099314283
+        },
+        {
+          "text": "现有护盾与下一掷临时幸运不继承；开战护盾按当前构筑重新计算。",
+          "color": "rgb(181, 189, 197)",
+          "font": 12,
+          "contrast": 8.454851099314283
+        },
+        {
+          "text": "购物、锻造、融合与洗点需要对应房间。当前可以换装、投入可用天赋，或重燃后继续挑战。",
+          "color": "rgb(194, 200, 206)",
+          "font": 12,
+          "contrast": 9.52359487763639
+        }
+      ],
+      "controlStates": [
+        {
+          "hover": {
+            "text": "调整防具",
+            "color": "rgb(217, 229, 236)",
+            "background": "rgb(20, 32, 39)",
+            "border": "rgb(143, 165, 178)",
+            "height": 44
+          },
+          "focus": {
+            "action": "inventory",
+            "slot": "armor",
+            "id": "",
+            "pressed": null,
+            "text": "调整防具",
+            "visible": true,
+            "outline": {
+              "style": "solid",
+              "width": "2px",
+              "color": "rgb(54, 229, 244)"
+            }
+          }
+        },
+        {
+          "hover": {
+            "text": "打开背包",
+            "color": "rgb(255, 255, 255)",
+            "background": "rgb(20, 32, 39)",
+            "border": "rgb(54, 229, 244)",
+            "height": 44
+          },
+          "focus": {
+            "action": "inventory",
+            "slot": "",
+            "id": "",
+            "pressed": null,
+            "text": "打开背包",
+            "visible": true,
+            "outline": {
+              "style": "solid",
+              "width": "2px",
+              "color": "rgb(54, 229, 244)"
+            }
+          }
+        },
+        {
+          "hover": {
+            "text": "查看天赋",
+            "color": "rgb(255, 255, 255)",
+            "background": "rgb(20, 32, 39)",
+            "border": "rgb(54, 229, 244)",
+            "height": 44
+          },
+          "focus": {
+            "action": "talents",
+            "id": "",
+            "pressed": null,
+            "text": "查看天赋",
+            "visible": true,
+            "outline": {
+              "style": "solid",
+              "width": "2px",
+              "color": "rgb(54, 229, 244)"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "current-320x740",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "validator accepts the complete initial fixture",
+          "passed": true
+        },
+        {
+          "label": "correct page URL and title",
+          "passed": true
+        },
+        {
+          "label": "meaningful nonblank game",
+          "passed": true
+        },
+        {
+          "label": "no framework error overlay",
+          "passed": true
+        },
+        {
+          "label": "initial app load complete decoded state",
+          "passed": true
+        },
+        {
+          "label": "initial app load primary and mirror bytes",
+          "passed": true
+        },
+        {
+          "label": "natural 134 alternatives / 47 armor / zero-points copy",
+          "passed": true
+        },
+        {
+          "label": "current-320x740 has no document horizontal overflow",
+          "passed": true,
+          "detail": 320
+        },
+        {
+          "label": "current-320x740 review stays inside horizontal viewport",
+          "passed": true
+        },
+        {
+          "label": "current-320x740 complete text and controls wrap without clipping",
+          "passed": true,
+          "detail": []
+        },
+        {
+          "label": "current-320x740 persistent retry remains visible",
+          "passed": true
+        },
+        {
+          "label": "new review text passes 4.5:1 against conservative surface bound",
+          "passed": true,
+          "detail": 8.454851099314283
+        },
+        {
+          "label": "preparation control keeps a 44px target",
+          "passed": true
+        },
+        {
+          "label": "preparation control has a visible keyboard focus ring",
+          "passed": true
+        },
+        {
+          "label": "preparation control keeps a 44px target",
+          "passed": true
+        },
+        {
+          "label": "preparation control has a visible keyboard focus ring",
+          "passed": true
+        },
+        {
+          "label": "preparation control keeps a 44px target",
+          "passed": true
+        },
+        {
+          "label": "preparation control has a visible keyboard focus ring",
+          "passed": true
+        },
+        {
+          "label": "navigation to inventory preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "native weapon/eternal filters preserve both raw saves",
+          "passed": true
+        },
+        {
+          "label": "the real retained inventory has no rarity-seven candidates",
+          "passed": true
+        },
+        {
+          "label": "navigation to dead preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "navigation to inventory preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "defeat armor entry clears stale rarity",
+          "passed": true
+        },
+        {
+          "label": "defeat armor entry selects armor",
+          "passed": true
+        },
+        {
+          "label": "armor filter receives visible keyboard focus",
+          "passed": true,
+          "detail": {
+            "action": "filter",
+            "slot": "armor",
+            "id": "",
+            "pressed": null,
+            "text": "防具 48",
+            "visible": true,
+            "outline": {
+              "style": "none",
+              "width": "3px",
+              "color": "rgb(232, 231, 226)"
+            }
+          }
+        },
+        {
+          "label": "all 48 owned armor items appear, including the equipped piece",
+          "passed": true
+        },
+        {
+          "label": "navigation to dead preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "navigation to inventory preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "open bag entry clears stale rarity",
+          "passed": true
+        },
+        {
+          "label": "open bag entry selects all slots",
+          "passed": true
+        },
+        {
+          "label": "all-slots filter receives visible focus",
+          "passed": true,
+          "detail": {
+            "action": "filter",
+            "slot": "",
+            "id": "",
+            "pressed": null,
+            "text": "全部 139",
+            "visible": true,
+            "outline": {
+              "style": "none",
+              "width": "3px",
+              "color": "rgb(232, 231, 226)"
+            }
+          }
+        },
+        {
+          "label": "navigation to dead preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "navigation to talents preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "selected talent branch receives visible focus",
+          "passed": true,
+          "detail": {
+            "action": "talent-group",
+            "id": "",
+            "pressed": "true",
+            "text": "高点裁决",
+            "visible": true,
+            "outline": {
+              "style": "none",
+              "width": "3px",
+              "color": "rgb(255, 70, 88)"
+            }
+          }
+        },
+        {
+          "label": "natural defeat reports zero unspent talents",
+          "passed": true
+        },
+        {
+          "label": "navigation to dead preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "after all read-only navigation complete decoded state",
+          "passed": true
+        },
+        {
+          "label": "after all read-only navigation primary and mirror bytes",
+          "passed": true
+        },
+        {
+          "label": "no relevant runtime or console errors",
+          "passed": true
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "current-320x740.png"
+      ],
+      "stateChecks": [
+        {
+          "label": "initial app load",
+          "revision": 1348,
+          "rng": 3380821009,
+          "phase": "dead",
+          "stateSha256": "731321a0a90ac853b03f191cf1847ff96e9a7fc12c76d23b4a4841e1e90c58f3",
+          "rawSha256": "4539ff28ae3ee512bf1f4be034c8d78d7fe7464aa45696c4e699309231dfb3aa"
+        },
+        {
+          "label": "after all read-only navigation",
+          "revision": 1348,
+          "rng": 3380821009,
+          "phase": "dead",
+          "stateSha256": "731321a0a90ac853b03f191cf1847ff96e9a7fc12c76d23b4a4841e1e90c58f3",
+          "rawSha256": "4539ff28ae3ee512bf1f4be034c8d78d7fe7464aa45696c4e699309231dfb3aa"
+        }
+      ],
+      "identity": {
+        "url": "http://127.0.0.1:4389/",
+        "title": "骰狱：无尽深渊 · Dice Abyss",
+        "viewport": {
+          "width": 320,
+          "height": 740
+        },
+        "scale": 1,
+        "bodyText": "骰狱\n— D I C E　 A B Y S S —\n第\n30\n层\n深渊之眼\n图鉴\n全屏\n设置\n深渊探索\nDUNGEON\n第 30 层 · 深渊之眼\n神话断层\n已解锁至 神话\n\n「死亡并非终点，\n　而是更深的开始。」\n\n奇偶哨站\n01\n镜像对手\n02\n商人\n03\n黄金盗匪\n04\n赤誓血井\n05\n首领\n06\n探索增益\nFATE\n本层命运\n2 + 4\n路线进度\n5 / 6\n累计胜利\n125\n最高伤害\n1"
+      },
+      "layouts": [
+        {
+          "label": "current-320x740",
+          "viewport": {
+            "width": 320,
+            "height": 740
+          },
+          "documentWidth": 320,
+          "room": {
+            "left": 21,
+            "right": 299,
+            "top": 121,
+            "bottom": 1084.546875,
+            "clientWidth": 278,
+            "scrollWidth": 278,
+            "clientHeight": 964,
+            "scrollHeight": 964,
+            "overflowY": "visible"
+          },
+          "primary": {
+            "left": 106,
+            "right": 238,
+            "top": 649,
+            "bottom": 705.609375
+          },
+          "footer": {
+            "top": 640,
+            "bottom": 734
+          },
+          "typography": [
+            {
+              "text": "余火，尚未熄灭。",
+              "font": "24px",
+              "lineHeight": "34.8px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "裂星守望暂时挡住了去路。成长与战利品仍在。",
+              "font": "14px",
+              "lineHeight": "25.2px",
+              "color": "rgb(194, 200, 206)"
+            },
+            {
+              "text": "本次战斗",
+              "font": "13px",
+              "lineHeight": "normal",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "18 掷",
+              "font": "14px",
+              "lineHeight": "normal",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "敌人剩余生命",
+              "font": "13px",
+              "lineHeight": "normal",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "172,884 / 582,011",
+              "font": "14px",
+              "lineHeight": "normal",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "最后一掷",
+              "font": "13px",
+              "lineHeight": "normal",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "对敌生命伤害 24,547 · 所受反击 212",
+              "font": "14px",
+              "lineHeight": "normal",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "重燃前，整理构筑",
+              "font": "17px",
+              "lineHeight": "25.5px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "背包中有 134 件未装备物品，其中防具 47 件。 当前没有未用天赋点。",
+              "font": "13px",
+              "lineHeight": "24.05px",
+              "color": "rgb(194, 200, 206)"
+            },
+            {
+              "text": "调整防具",
+              "font": "13px",
+              "lineHeight": "18.2px",
+              "color": "rgb(217, 229, 236)"
+            },
+            {
+              "text": "打开背包",
+              "font": "13px",
+              "lineHeight": "18.2px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "查看天赋",
+              "font": "13px",
+              "lineHeight": "18.2px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "在装备的「比较条件」中查看恢复与触发护盾。基础估值不能保证这一战的存活结果。",
+              "font": "12px",
+              "lineHeight": "21.6px",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "敌方机制回顾",
+              "font": "17px",
+              "lineHeight": "25.5px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "特性第 3 / 6 / 9… 次反击后重筑护盾，上限为初始护盾。",
+              "font": "13px",
+              "lineHeight": "24.05px",
+              "color": "rgb(194, 200, 206)"
+            },
+            {
+              "text": "换相存活且首次跨过半血时凝聚 12% 护盾；二阶段反击增强 15%，溢出伤害不会被强制阻断。",
+              "font": "13px",
+              "lineHeight": "24.05px",
+              "color": "rgb(194, 200, 206)"
+            },
+            {
+              "text": "应对护盾先吸伤；在重筑前形成共鸣可减少消耗。",
+              "font": "13px",
+              "lineHeight": "24.05px",
+              "color": "rgb(211, 200, 169)"
+            },
+            {
+              "text": "在当前房间重燃余火",
+              "font": "15px",
+              "lineHeight": "22.5px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "重燃不消耗金币，按重燃时的构筑恢复全部生命；敌人从头开始。装备、金币、天赋和已完成的房间全部保留。",
+              "font": "12px",
+              "lineHeight": "22.2px",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "现有护盾与下一掷临时幸运不继承；开战护盾按当前构筑重新计算。",
+              "font": "12px",
+              "lineHeight": "22.2px",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "购物、锻造、融合与洗点需要对应房间。当前可以换装、投入可用天赋，或重燃后继续挑战。",
+              "font": "12px",
+              "lineHeight": "22.2px",
+              "color": "rgb(194, 200, 206)"
+            }
+          ],
+          "horizontalOverflow": []
+        }
+      ],
+      "contrast": [
+        {
+          "text": "余火，尚未熄灭。",
+          "color": "rgb(232, 231, 226)",
+          "font": 24,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "裂星守望暂时挡住了去路。成长与战利品仍在。",
+          "color": "rgb(194, 200, 206)",
+          "font": 14,
+          "contrast": 9.52359487763639
+        },
+        {
+          "text": "本次战斗",
+          "color": "rgb(181, 189, 197)",
+          "font": 13,
+          "contrast": 8.454851099314283
+        },
+        {
+          "text": "18 掷",
+          "color": "rgb(232, 231, 226)",
+          "font": 14,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "敌人剩余生命",
+          "color": "rgb(181, 189, 197)",
+          "font": 13,
+          "contrast": 8.454851099314283
+        },
+        {
+          "text": "172,884 / 582,011",
+          "color": "rgb(232, 231, 226)",
+          "font": 14,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "最后一掷",
+          "color": "rgb(181, 189, 197)",
+          "font": 13,
+          "contrast": 8.454851099314283
+        },
+        {
+          "text": "对敌生命伤害 24,547 · 所受反击 212",
+          "color": "rgb(232, 231, 226)",
+          "font": 14,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "重燃前，整理构筑",
+          "color": "rgb(232, 231, 226)",
+          "font": 17,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "背包中有 134 件未装备物品，其中防具 47 件。 当前没有未用天赋点。",
+          "color": "rgb(194, 200, 206)",
+          "font": 13,
+          "contrast": 9.52359487763639
+        },
+        {
+          "text": "调整防具",
+          "color": "rgb(217, 229, 236)",
+          "font": 13,
+          "contrast": 12.524843254552662
+        },
+        {
+          "text": "打开背包",
+          "color": "rgb(232, 231, 226)",
+          "font": 13,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "查看天赋",
+          "color": "rgb(232, 231, 226)",
+          "font": 13,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "在装备的「比较条件」中查看恢复与触发护盾。基础估值不能保证这一战的存活结果。",
+          "color": "rgb(181, 189, 197)",
+          "font": 12,
+          "contrast": 8.454851099314283
+        },
+        {
+          "text": "敌方机制回顾",
+          "color": "rgb(232, 231, 226)",
+          "font": 17,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "特性第 3 / 6 / 9… 次反击后重筑护盾，上限为初始护盾。",
+          "color": "rgb(194, 200, 206)",
+          "font": 13,
+          "contrast": 9.52359487763639
+        },
+        {
+          "text": "换相存活且首次跨过半血时凝聚 12% 护盾；二阶段反击增强 15%，溢出伤害不会被强制阻断",
+          "color": "rgb(194, 200, 206)",
+          "font": 13,
+          "contrast": 9.52359487763639
+        },
+        {
+          "text": "应对护盾先吸伤；在重筑前形成共鸣可减少消耗。",
+          "color": "rgb(211, 200, 169)",
+          "font": 13,
+          "contrast": 9.64416471525514
+        },
+        {
+          "text": "在当前房间重燃余火",
+          "color": "rgb(232, 231, 226)",
+          "font": 15,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "重燃不消耗金币，按重燃时的构筑恢复全部生命；敌人从头开始。装备、金币、天赋和已完成的房间全",
+          "color": "rgb(181, 189, 197)",
+          "font": 12,
+          "contrast": 8.454851099314283
+        },
+        {
+          "text": "现有护盾与下一掷临时幸运不继承；开战护盾按当前构筑重新计算。",
+          "color": "rgb(181, 189, 197)",
+          "font": 12,
+          "contrast": 8.454851099314283
+        },
+        {
+          "text": "购物、锻造、融合与洗点需要对应房间。当前可以换装、投入可用天赋，或重燃后继续挑战。",
+          "color": "rgb(194, 200, 206)",
+          "font": 12,
+          "contrast": 9.52359487763639
+        }
+      ],
+      "controlStates": [
+        {
+          "hover": {
+            "text": "调整防具",
+            "color": "rgb(217, 229, 236)",
+            "background": "rgb(20, 32, 39)",
+            "border": "rgb(143, 165, 178)",
+            "height": 44
+          },
+          "focus": {
+            "action": "inventory",
+            "slot": "armor",
+            "id": "",
+            "pressed": null,
+            "text": "调整防具",
+            "visible": true,
+            "outline": {
+              "style": "solid",
+              "width": "2px",
+              "color": "rgb(54, 229, 244)"
+            }
+          }
+        },
+        {
+          "hover": {
+            "text": "打开背包",
+            "color": "rgb(255, 255, 255)",
+            "background": "rgb(20, 32, 39)",
+            "border": "rgb(54, 229, 244)",
+            "height": 44
+          },
+          "focus": {
+            "action": "inventory",
+            "slot": "",
+            "id": "",
+            "pressed": null,
+            "text": "打开背包",
+            "visible": true,
+            "outline": {
+              "style": "solid",
+              "width": "2px",
+              "color": "rgb(54, 229, 244)"
+            }
+          }
+        },
+        {
+          "hover": {
+            "text": "查看天赋",
+            "color": "rgb(255, 255, 255)",
+            "background": "rgb(20, 32, 39)",
+            "border": "rgb(54, 229, 244)",
+            "height": 44
+          },
+          "focus": {
+            "action": "talents",
+            "id": "",
+            "pressed": null,
+            "text": "查看天赋",
+            "visible": true,
+            "outline": {
+              "style": "solid",
+              "width": "2px",
+              "color": "rgb(54, 229, 244)"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "scale11-1920",
+      "status": "FAIL",
+      "checks": [
+        {
+          "label": "validator accepts the complete initial fixture",
+          "passed": true
+        },
+        {
+          "label": "correct page URL and title",
+          "passed": true
+        },
+        {
+          "label": "meaningful nonblank game",
+          "passed": true
+        },
+        {
+          "label": "no framework error overlay",
+          "passed": true
+        },
+        {
+          "label": "initial app load complete decoded state",
+          "passed": true
+        },
+        {
+          "label": "initial app load primary and mirror bytes",
+          "passed": true
+        },
+        {
+          "label": "real maximum UI scale is active",
+          "passed": true
+        },
+        {
+          "label": "scale 1.1 has no document horizontal overflow",
+          "passed": true,
+          "detail": 1920
+        },
+        {
+          "label": "scale 1.1 review stays inside horizontal viewport",
+          "passed": true
+        },
+        {
+          "label": "scale 1.1 complete text and controls wrap without clipping",
+          "passed": true,
+          "detail": []
+        },
+        {
+          "label": "scale 1.1 persistent retry remains visible",
+          "passed": true
+        },
+        {
+          "label": "scale 1.1 desktop review does not cover action footer",
+          "passed": true
+        },
+        {
+          "label": "new review text passes 4.5:1 against conservative surface bound",
+          "passed": true,
+          "detail": 8.454851099314283
+        },
+        {
+          "label": "preparation control keeps a 44px target",
+          "passed": true
+        },
+        {
+          "label": "preparation control has a visible keyboard focus ring",
+          "passed": true
+        },
+        {
+          "label": "preparation control keeps a 44px target",
+          "passed": true
+        },
+        {
+          "label": "preparation control has a visible keyboard focus ring",
+          "passed": true
+        },
+        {
+          "label": "preparation control keeps a 44px target",
+          "passed": true
+        },
+        {
+          "label": "preparation control has a visible keyboard focus ring",
+          "passed": true
+        },
+        {
+          "label": "navigation to inventory preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "native weapon/eternal filters preserve both raw saves",
+          "passed": true
+        },
+        {
+          "label": "the real retained inventory has no rarity-seven candidates",
+          "passed": true
+        },
+        {
+          "label": "navigation to dead preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "navigation to inventory preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "defeat armor entry clears stale rarity",
+          "passed": true
+        },
+        {
+          "label": "defeat armor entry selects armor",
+          "passed": true
+        },
+        {
+          "label": "armor filter receives visible keyboard focus",
+          "passed": true,
+          "detail": {
+            "action": "filter",
+            "slot": "armor",
+            "id": "",
+            "pressed": null,
+            "text": "防具 48",
+            "visible": true,
+            "outline": {
+              "style": "none",
+              "width": "3px",
+              "color": "rgb(232, 231, 226)"
+            }
+          }
+        },
+        {
+          "label": "all 48 owned armor items appear, including the equipped piece",
+          "passed": true
+        },
+        {
+          "label": "navigation to dead preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "navigation to inventory preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "open bag entry clears stale rarity",
+          "passed": true
+        },
+        {
+          "label": "open bag entry selects all slots",
+          "passed": true
+        },
+        {
+          "label": "all-slots filter receives visible focus",
+          "passed": true,
+          "detail": {
+            "action": "filter",
+            "slot": "",
+            "id": "",
+            "pressed": null,
+            "text": "全部 139",
+            "visible": true,
+            "outline": {
+              "style": "none",
+              "width": "3px",
+              "color": "rgb(232, 231, 226)"
+            }
+          }
+        },
+        {
+          "label": "navigation to dead preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "navigation to talents preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "selected talent branch receives visible focus",
+          "passed": false,
+          "detail": {
+            "action": "talents",
+            "id": "",
+            "pressed": null,
+            "text": "天赋",
+            "visible": true,
+            "outline": {
+              "style": "none",
+              "width": "3px",
+              "color": "rgb(232, 231, 226)"
+            }
+          }
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "scale11-1920.png",
+        "scale11-1920-FAIL.png"
+      ],
+      "stateChecks": [
+        {
+          "label": "initial app load",
+          "revision": 1348,
+          "rng": 3380821009,
+          "phase": "dead",
+          "stateSha256": "731321a0a90ac853b03f191cf1847ff96e9a7fc12c76d23b4a4841e1e90c58f3",
+          "rawSha256": "4539ff28ae3ee512bf1f4be034c8d78d7fe7464aa45696c4e699309231dfb3aa"
+        }
+      ],
+      "identity": {
+        "url": "http://127.0.0.1:4389/",
+        "title": "骰狱：无尽深渊 · Dice Abyss",
+        "viewport": {
+          "width": 1920,
+          "height": 1080
+        },
+        "scale": 1.1,
+        "bodyText": "骰狱：无尽深渊\n— D I C E　 A B Y S S —\n以骰为火\n点燃永夜\n图鉴\n全屏\n设置\n深渊探索\nDUNGEON\n第 30 层 · 深渊之眼\n神话断层\n已解锁至 神话\n\n「死亡并非终点，\n　而是更深的开始。」\n\n奇偶哨站\n01\n镜像对手\n02\n商人\n03\n黄金盗匪\n04\n赤誓血井\n05\n首领\n06\n探索增益\nFATE\n本层命运\n2 + 4\n路线进度\n5 / 6\n累计胜利\n125\n最高伤"
+      },
+      "layouts": [
+        {
+          "label": "scale 1.1",
+          "viewport": {
+            "width": 1920,
+            "height": 1080
+          },
+          "documentWidth": 1920,
+          "room": {
+            "left": 501.921875,
+            "right": 1427.703125,
+            "top": 54.859375,
+            "bottom": 833.828125,
+            "clientWidth": 916,
+            "scrollWidth": 916,
+            "clientHeight": 779,
+            "scrollHeight": 779,
+            "overflowY": "auto"
+          },
+          "primary": {
+            "left": 796.609375,
+            "right": 1133,
+            "top": 967,
+            "bottom": 1035.078125
+          },
+          "footer": {
+            "top": 967,
+            "bottom": 1044.359375
+          },
+          "typography": [
+            {
+              "text": "余火，尚未熄灭。",
+              "font": "34px",
+              "lineHeight": "49.3px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "裂星守望暂时挡住了去路。成长与战利品仍在。",
+              "font": "15.4px",
+              "lineHeight": "27.72px",
+              "color": "rgb(194, 200, 206)"
+            },
+            {
+              "text": "本次战斗",
+              "font": "14.3px",
+              "lineHeight": "normal",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "18 掷",
+              "font": "15.4px",
+              "lineHeight": "normal",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "敌人剩余生命",
+              "font": "14.3px",
+              "lineHeight": "normal",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "172,884 / 582,011",
+              "font": "15.4px",
+              "lineHeight": "normal",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "最后一掷",
+              "font": "14.3px",
+              "lineHeight": "normal",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "对敌生命伤害 24,547 · 所受反击 212",
+              "font": "15.4px",
+              "lineHeight": "normal",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "重燃前，整理构筑",
+              "font": "18.7px",
+              "lineHeight": "28.05px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "背包中有 134 件未装备物品，其中防具 47 件。 当前没有未用天赋点。",
+              "font": "14.3px",
+              "lineHeight": "26.455px",
+              "color": "rgb(194, 200, 206)"
+            },
+            {
+              "text": "调整防具",
+              "font": "14.3px",
+              "lineHeight": "20.02px",
+              "color": "rgb(217, 229, 236)"
+            },
+            {
+              "text": "打开背包",
+              "font": "14.3px",
+              "lineHeight": "20.02px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "查看天赋",
+              "font": "14.3px",
+              "lineHeight": "20.02px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "在装备的「比较条件」中查看恢复与触发护盾。基础估值不能保证这一战的存活结果。",
+              "font": "13.2px",
+              "lineHeight": "23.76px",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "敌方机制回顾",
+              "font": "18.7px",
+              "lineHeight": "28.05px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "特性第 3 / 6 / 9… 次反击后重筑护盾，上限为初始护盾。",
+              "font": "14.3px",
+              "lineHeight": "26.455px",
+              "color": "rgb(194, 200, 206)"
+            },
+            {
+              "text": "换相存活且首次跨过半血时凝聚 12% 护盾；二阶段反击增强 15%，溢出伤害不会被强制阻断。",
+              "font": "14.3px",
+              "lineHeight": "26.455px",
+              "color": "rgb(194, 200, 206)"
+            },
+            {
+              "text": "应对护盾先吸伤；在重筑前形成共鸣可减少消耗。",
+              "font": "14.3px",
+              "lineHeight": "26.455px",
+              "color": "rgb(211, 200, 169)"
+            },
+            {
+              "text": "在当前房间重燃余火",
+              "font": "16.5px",
+              "lineHeight": "24.75px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "重燃不消耗金币，按重燃时的构筑恢复全部生命；敌人从头开始。装备、金币、天赋和已完成的房间全部保留。",
+              "font": "13.2px",
+              "lineHeight": "24.42px",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "现有护盾与下一掷临时幸运不继承；开战护盾按当前构筑重新计算。",
+              "font": "13.2px",
+              "lineHeight": "24.42px",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "购物、锻造、融合与洗点需要对应房间。当前可以换装、投入可用天赋，或重燃后继续挑战。",
+              "font": "13.2px",
+              "lineHeight": "24.42px",
+              "color": "rgb(194, 200, 206)"
+            }
+          ],
+          "horizontalOverflow": []
+        }
+      ],
+      "contrast": [
+        {
+          "text": "余火，尚未熄灭。",
+          "color": "rgb(232, 231, 226)",
+          "font": 34,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "裂星守望暂时挡住了去路。成长与战利品仍在。",
+          "color": "rgb(194, 200, 206)",
+          "font": 15.4,
+          "contrast": 9.52359487763639
+        },
+        {
+          "text": "本次战斗",
+          "color": "rgb(181, 189, 197)",
+          "font": 14.3,
+          "contrast": 8.454851099314283
+        },
+        {
+          "text": "18 掷",
+          "color": "rgb(232, 231, 226)",
+          "font": 15.4,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "敌人剩余生命",
+          "color": "rgb(181, 189, 197)",
+          "font": 14.3,
+          "contrast": 8.454851099314283
+        },
+        {
+          "text": "172,884 / 582,011",
+          "color": "rgb(232, 231, 226)",
+          "font": 15.4,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "最后一掷",
+          "color": "rgb(181, 189, 197)",
+          "font": 14.3,
+          "contrast": 8.454851099314283
+        },
+        {
+          "text": "对敌生命伤害 24,547 · 所受反击 212",
+          "color": "rgb(232, 231, 226)",
+          "font": 15.4,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "重燃前，整理构筑",
+          "color": "rgb(232, 231, 226)",
+          "font": 18.7,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "背包中有 134 件未装备物品，其中防具 47 件。 当前没有未用天赋点。",
+          "color": "rgb(194, 200, 206)",
+          "font": 14.3,
+          "contrast": 9.52359487763639
+        },
+        {
+          "text": "调整防具",
+          "color": "rgb(217, 229, 236)",
+          "font": 14.3,
+          "contrast": 12.524843254552662
+        },
+        {
+          "text": "打开背包",
+          "color": "rgb(232, 231, 226)",
+          "font": 14.3,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "查看天赋",
+          "color": "rgb(232, 231, 226)",
+          "font": 14.3,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "在装备的「比较条件」中查看恢复与触发护盾。基础估值不能保证这一战的存活结果。",
+          "color": "rgb(181, 189, 197)",
+          "font": 13.2,
+          "contrast": 8.454851099314283
+        },
+        {
+          "text": "敌方机制回顾",
+          "color": "rgb(232, 231, 226)",
+          "font": 18.7,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "特性第 3 / 6 / 9… 次反击后重筑护盾，上限为初始护盾。",
+          "color": "rgb(194, 200, 206)",
+          "font": 14.3,
+          "contrast": 9.52359487763639
+        },
+        {
+          "text": "换相存活且首次跨过半血时凝聚 12% 护盾；二阶段反击增强 15%，溢出伤害不会被强制阻断",
+          "color": "rgb(194, 200, 206)",
+          "font": 14.3,
+          "contrast": 9.52359487763639
+        },
+        {
+          "text": "应对护盾先吸伤；在重筑前形成共鸣可减少消耗。",
+          "color": "rgb(211, 200, 169)",
+          "font": 14.3,
+          "contrast": 9.64416471525514
+        },
+        {
+          "text": "在当前房间重燃余火",
+          "color": "rgb(232, 231, 226)",
+          "font": 16.5,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "重燃不消耗金币，按重燃时的构筑恢复全部生命；敌人从头开始。装备、金币、天赋和已完成的房间全",
+          "color": "rgb(181, 189, 197)",
+          "font": 13.2,
+          "contrast": 8.454851099314283
+        },
+        {
+          "text": "现有护盾与下一掷临时幸运不继承；开战护盾按当前构筑重新计算。",
+          "color": "rgb(181, 189, 197)",
+          "font": 13.2,
+          "contrast": 8.454851099314283
+        },
+        {
+          "text": "购物、锻造、融合与洗点需要对应房间。当前可以换装、投入可用天赋，或重燃后继续挑战。",
+          "color": "rgb(194, 200, 206)",
+          "font": 13.2,
+          "contrast": 9.52359487763639
+        }
+      ],
+      "controlStates": [
+        {
+          "hover": {
+            "text": "调整防具",
+            "color": "rgb(217, 229, 236)",
+            "background": "rgb(20, 32, 39)",
+            "border": "rgb(143, 165, 178)",
+            "height": 44
+          },
+          "focus": {
+            "action": "inventory",
+            "slot": "armor",
+            "id": "",
+            "pressed": null,
+            "text": "调整防具",
+            "visible": true,
+            "outline": {
+              "style": "solid",
+              "width": "2px",
+              "color": "rgb(54, 229, 244)"
+            }
+          }
+        },
+        {
+          "hover": {
+            "text": "打开背包",
+            "color": "rgb(255, 255, 255)",
+            "background": "rgb(20, 32, 39)",
+            "border": "rgb(54, 229, 244)",
+            "height": 44
+          },
+          "focus": {
+            "action": "inventory",
+            "slot": "",
+            "id": "",
+            "pressed": null,
+            "text": "打开背包",
+            "visible": true,
+            "outline": {
+              "style": "solid",
+              "width": "2px",
+              "color": "rgb(54, 229, 244)"
+            }
+          }
+        },
+        {
+          "hover": {
+            "text": "查看天赋",
+            "color": "rgb(255, 255, 255)",
+            "background": "rgb(20, 32, 39)",
+            "border": "rgb(54, 229, 244)",
+            "height": 44
+          },
+          "focus": {
+            "action": "talents",
+            "id": "",
+            "pressed": null,
+            "text": "查看天赋",
+            "visible": true,
+            "outline": {
+              "style": "solid",
+              "width": "2px",
+              "color": "rgb(54, 229, 244)"
+            }
+          }
+        }
+      ],
+      "error": "AssertionError [ERR_ASSERTION]: selected talent branch receives visible focus",
+      "stack": "AssertionError [ERR_ASSERTION]: selected talent branch receives visible focus\n    at check (file:///workspace/scratch/8db1c7454cb5/work/Dice-Abyss/scripts/qa-defeat-round14.mjs:33:112)\n    at navigationChecks (file:///workspace/scratch/8db1c7454cb5/work/Dice-Abyss/scripts/qa-defeat-round14.mjs:95:26)\n    at async file:///workspace/scratch/8db1c7454cb5/work/Dice-Abyss/scripts/qa-defeat-round14.mjs:121:400\n    at async run (file:///workspace/scratch/8db1c7454cb5/work/Dice-Abyss/scripts/qa-defeat-round14.mjs:114:157)\n    at async file:///workspace/scratch/8db1c7454cb5/work/Dice-Abyss/scripts/qa-defeat-round14.mjs:121:74"
+    },
+    {
+      "name": "scale11-390",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "validator accepts the complete initial fixture",
+          "passed": true
+        },
+        {
+          "label": "correct page URL and title",
+          "passed": true
+        },
+        {
+          "label": "meaningful nonblank game",
+          "passed": true
+        },
+        {
+          "label": "no framework error overlay",
+          "passed": true
+        },
+        {
+          "label": "initial app load complete decoded state",
+          "passed": true
+        },
+        {
+          "label": "initial app load primary and mirror bytes",
+          "passed": true
+        },
+        {
+          "label": "real maximum UI scale is active",
+          "passed": true
+        },
+        {
+          "label": "scale 1.1 has no document horizontal overflow",
+          "passed": true,
+          "detail": 390
+        },
+        {
+          "label": "scale 1.1 review stays inside horizontal viewport",
+          "passed": true
+        },
+        {
+          "label": "scale 1.1 complete text and controls wrap without clipping",
+          "passed": true,
+          "detail": []
+        },
+        {
+          "label": "scale 1.1 persistent retry remains visible",
+          "passed": true
+        },
+        {
+          "label": "new review text passes 4.5:1 against conservative surface bound",
+          "passed": true,
+          "detail": 8.454851099314283
+        },
+        {
+          "label": "preparation control keeps a 44px target",
+          "passed": true
+        },
+        {
+          "label": "preparation control has a visible keyboard focus ring",
+          "passed": true
+        },
+        {
+          "label": "preparation control keeps a 44px target",
+          "passed": true
+        },
+        {
+          "label": "preparation control has a visible keyboard focus ring",
+          "passed": true
+        },
+        {
+          "label": "preparation control keeps a 44px target",
+          "passed": true
+        },
+        {
+          "label": "preparation control has a visible keyboard focus ring",
+          "passed": true
+        },
+        {
+          "label": "navigation to inventory preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "native weapon/eternal filters preserve both raw saves",
+          "passed": true
+        },
+        {
+          "label": "the real retained inventory has no rarity-seven candidates",
+          "passed": true
+        },
+        {
+          "label": "navigation to dead preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "navigation to inventory preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "defeat armor entry clears stale rarity",
+          "passed": true
+        },
+        {
+          "label": "defeat armor entry selects armor",
+          "passed": true
+        },
+        {
+          "label": "armor filter receives visible keyboard focus",
+          "passed": true,
+          "detail": {
+            "action": "filter",
+            "slot": "armor",
+            "id": "",
+            "pressed": null,
+            "text": "防具 48",
+            "visible": true,
+            "outline": {
+              "style": "none",
+              "width": "3px",
+              "color": "rgb(232, 231, 226)"
+            }
+          }
+        },
+        {
+          "label": "all 48 owned armor items appear, including the equipped piece",
+          "passed": true
+        },
+        {
+          "label": "navigation to dead preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "navigation to inventory preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "open bag entry clears stale rarity",
+          "passed": true
+        },
+        {
+          "label": "open bag entry selects all slots",
+          "passed": true
+        },
+        {
+          "label": "all-slots filter receives visible focus",
+          "passed": true,
+          "detail": {
+            "action": "filter",
+            "slot": "",
+            "id": "",
+            "pressed": null,
+            "text": "全部 139",
+            "visible": true,
+            "outline": {
+              "style": "none",
+              "width": "3px",
+              "color": "rgb(232, 231, 226)"
+            }
+          }
+        },
+        {
+          "label": "navigation to dead preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "navigation to talents preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "selected talent branch receives visible focus",
+          "passed": true,
+          "detail": {
+            "action": "talent-group",
+            "id": "",
+            "pressed": "true",
+            "text": "高点裁决",
+            "visible": true,
+            "outline": {
+              "style": "none",
+              "width": "3px",
+              "color": "rgb(255, 70, 88)"
+            }
+          }
+        },
+        {
+          "label": "natural defeat reports zero unspent talents",
+          "passed": true
+        },
+        {
+          "label": "navigation to dead preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "after all read-only navigation complete decoded state",
+          "passed": true
+        },
+        {
+          "label": "after all read-only navigation primary and mirror bytes",
+          "passed": true
+        },
+        {
+          "label": "no relevant runtime or console errors",
+          "passed": true
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "scale11-390.png"
+      ],
+      "stateChecks": [
+        {
+          "label": "initial app load",
+          "revision": 1348,
+          "rng": 3380821009,
+          "phase": "dead",
+          "stateSha256": "731321a0a90ac853b03f191cf1847ff96e9a7fc12c76d23b4a4841e1e90c58f3",
+          "rawSha256": "4539ff28ae3ee512bf1f4be034c8d78d7fe7464aa45696c4e699309231dfb3aa"
+        },
+        {
+          "label": "after all read-only navigation",
+          "revision": 1348,
+          "rng": 3380821009,
+          "phase": "dead",
+          "stateSha256": "731321a0a90ac853b03f191cf1847ff96e9a7fc12c76d23b4a4841e1e90c58f3",
+          "rawSha256": "4539ff28ae3ee512bf1f4be034c8d78d7fe7464aa45696c4e699309231dfb3aa"
+        }
+      ],
+      "identity": {
+        "url": "http://127.0.0.1:4389/",
+        "title": "骰狱：无尽深渊 · Dice Abyss",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "scale": 1.1,
+        "bodyText": "骰狱\n— D I C E　 A B Y S S —\n第\n30\n层\n深渊之眼\n图鉴\n全屏\n设置\n深渊探索\nDUNGEON\n第 30 层 · 深渊之眼\n神话断层\n已解锁至 神话\n\n「死亡并非终点，\n　而是更深的开始。」\n\n奇偶哨站\n01\n镜像对手\n02\n商人\n03\n黄金盗匪\n04\n赤誓血井\n05\n首领\n06\n探索增益\nFATE\n本层命运\n2 + 4\n路线进度\n5 / 6\n累计胜利\n125\n最高伤害\n1"
+      },
+      "layouts": [
+        {
+          "label": "scale 1.1",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "documentWidth": 390,
+          "room": {
+            "left": 25,
+            "right": 365,
+            "top": 123.1875,
+            "bottom": 995.15625,
+            "clientWidth": 340,
+            "scrollWidth": 340,
+            "clientHeight": 872,
+            "scrollHeight": 872,
+            "overflowY": "visible"
+          },
+          "primary": {
+            "left": 112,
+            "right": 290,
+            "top": 743.25,
+            "bottom": 808.078125
+          },
+          "footer": {
+            "top": 734.25,
+            "bottom": 838
+          },
+          "typography": [
+            {
+              "text": "余火，尚未熄灭。",
+              "font": "26.4px",
+              "lineHeight": "38.28px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "裂星守望暂时挡住了去路。成长与战利品仍在。",
+              "font": "15.4px",
+              "lineHeight": "27.72px",
+              "color": "rgb(194, 200, 206)"
+            },
+            {
+              "text": "本次战斗",
+              "font": "14.3px",
+              "lineHeight": "normal",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "18 掷",
+              "font": "15.4px",
+              "lineHeight": "normal",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "敌人剩余生命",
+              "font": "14.3px",
+              "lineHeight": "normal",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "172,884 / 582,011",
+              "font": "15.4px",
+              "lineHeight": "normal",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "最后一掷",
+              "font": "14.3px",
+              "lineHeight": "normal",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "对敌生命伤害 24,547 · 所受反击 212",
+              "font": "15.4px",
+              "lineHeight": "normal",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "重燃前，整理构筑",
+              "font": "18.7px",
+              "lineHeight": "28.05px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "背包中有 134 件未装备物品，其中防具 47 件。 当前没有未用天赋点。",
+              "font": "14.3px",
+              "lineHeight": "26.455px",
+              "color": "rgb(194, 200, 206)"
+            },
+            {
+              "text": "调整防具",
+              "font": "14.3px",
+              "lineHeight": "20.02px",
+              "color": "rgb(217, 229, 236)"
+            },
+            {
+              "text": "打开背包",
+              "font": "14.3px",
+              "lineHeight": "20.02px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "查看天赋",
+              "font": "14.3px",
+              "lineHeight": "20.02px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "在装备的「比较条件」中查看恢复与触发护盾。基础估值不能保证这一战的存活结果。",
+              "font": "13.2px",
+              "lineHeight": "23.76px",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "敌方机制回顾",
+              "font": "18.7px",
+              "lineHeight": "28.05px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "特性第 3 / 6 / 9… 次反击后重筑护盾，上限为初始护盾。",
+              "font": "14.3px",
+              "lineHeight": "26.455px",
+              "color": "rgb(194, 200, 206)"
+            },
+            {
+              "text": "换相存活且首次跨过半血时凝聚 12% 护盾；二阶段反击增强 15%，溢出伤害不会被强制阻断。",
+              "font": "14.3px",
+              "lineHeight": "26.455px",
+              "color": "rgb(194, 200, 206)"
+            },
+            {
+              "text": "应对护盾先吸伤；在重筑前形成共鸣可减少消耗。",
+              "font": "14.3px",
+              "lineHeight": "26.455px",
+              "color": "rgb(211, 200, 169)"
+            },
+            {
+              "text": "在当前房间重燃余火",
+              "font": "16.5px",
+              "lineHeight": "24.75px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "重燃不消耗金币，按重燃时的构筑恢复全部生命；敌人从头开始。装备、金币、天赋和已完成的房间全部保留。",
+              "font": "13.2px",
+              "lineHeight": "24.42px",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "现有护盾与下一掷临时幸运不继承；开战护盾按当前构筑重新计算。",
+              "font": "13.2px",
+              "lineHeight": "24.42px",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "购物、锻造、融合与洗点需要对应房间。当前可以换装、投入可用天赋，或重燃后继续挑战。",
+              "font": "13.2px",
+              "lineHeight": "24.42px",
+              "color": "rgb(194, 200, 206)"
+            }
+          ],
+          "horizontalOverflow": []
+        }
+      ],
+      "contrast": [
+        {
+          "text": "余火，尚未熄灭。",
+          "color": "rgb(232, 231, 226)",
+          "font": 26.4,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "裂星守望暂时挡住了去路。成长与战利品仍在。",
+          "color": "rgb(194, 200, 206)",
+          "font": 15.4,
+          "contrast": 9.52359487763639
+        },
+        {
+          "text": "本次战斗",
+          "color": "rgb(181, 189, 197)",
+          "font": 14.3,
+          "contrast": 8.454851099314283
+        },
+        {
+          "text": "18 掷",
+          "color": "rgb(232, 231, 226)",
+          "font": 15.4,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "敌人剩余生命",
+          "color": "rgb(181, 189, 197)",
+          "font": 14.3,
+          "contrast": 8.454851099314283
+        },
+        {
+          "text": "172,884 / 582,011",
+          "color": "rgb(232, 231, 226)",
+          "font": 15.4,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "最后一掷",
+          "color": "rgb(181, 189, 197)",
+          "font": 14.3,
+          "contrast": 8.454851099314283
+        },
+        {
+          "text": "对敌生命伤害 24,547 · 所受反击 212",
+          "color": "rgb(232, 231, 226)",
+          "font": 15.4,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "重燃前，整理构筑",
+          "color": "rgb(232, 231, 226)",
+          "font": 18.7,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "背包中有 134 件未装备物品，其中防具 47 件。 当前没有未用天赋点。",
+          "color": "rgb(194, 200, 206)",
+          "font": 14.3,
+          "contrast": 9.52359487763639
+        },
+        {
+          "text": "调整防具",
+          "color": "rgb(217, 229, 236)",
+          "font": 14.3,
+          "contrast": 12.524843254552662
+        },
+        {
+          "text": "打开背包",
+          "color": "rgb(232, 231, 226)",
+          "font": 14.3,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "查看天赋",
+          "color": "rgb(232, 231, 226)",
+          "font": 14.3,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "在装备的「比较条件」中查看恢复与触发护盾。基础估值不能保证这一战的存活结果。",
+          "color": "rgb(181, 189, 197)",
+          "font": 13.2,
+          "contrast": 8.454851099314283
+        },
+        {
+          "text": "敌方机制回顾",
+          "color": "rgb(232, 231, 226)",
+          "font": 18.7,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "特性第 3 / 6 / 9… 次反击后重筑护盾，上限为初始护盾。",
+          "color": "rgb(194, 200, 206)",
+          "font": 14.3,
+          "contrast": 9.52359487763639
+        },
+        {
+          "text": "换相存活且首次跨过半血时凝聚 12% 护盾；二阶段反击增强 15%，溢出伤害不会被强制阻断",
+          "color": "rgb(194, 200, 206)",
+          "font": 14.3,
+          "contrast": 9.52359487763639
+        },
+        {
+          "text": "应对护盾先吸伤；在重筑前形成共鸣可减少消耗。",
+          "color": "rgb(211, 200, 169)",
+          "font": 14.3,
+          "contrast": 9.64416471525514
+        },
+        {
+          "text": "在当前房间重燃余火",
+          "color": "rgb(232, 231, 226)",
+          "font": 16.5,
+          "contrast": 12.976607063415829
+        },
+        {
+          "text": "重燃不消耗金币，按重燃时的构筑恢复全部生命；敌人从头开始。装备、金币、天赋和已完成的房间全",
+          "color": "rgb(181, 189, 197)",
+          "font": 13.2,
+          "contrast": 8.454851099314283
+        },
+        {
+          "text": "现有护盾与下一掷临时幸运不继承；开战护盾按当前构筑重新计算。",
+          "color": "rgb(181, 189, 197)",
+          "font": 13.2,
+          "contrast": 8.454851099314283
+        },
+        {
+          "text": "购物、锻造、融合与洗点需要对应房间。当前可以换装、投入可用天赋，或重燃后继续挑战。",
+          "color": "rgb(194, 200, 206)",
+          "font": 13.2,
+          "contrast": 9.52359487763639
+        }
+      ],
+      "controlStates": [
+        {
+          "hover": {
+            "text": "调整防具",
+            "color": "rgb(217, 229, 236)",
+            "background": "rgb(20, 32, 39)",
+            "border": "rgb(143, 165, 178)",
+            "height": 44
+          },
+          "focus": {
+            "action": "inventory",
+            "slot": "armor",
+            "id": "",
+            "pressed": null,
+            "text": "调整防具",
+            "visible": true,
+            "outline": {
+              "style": "solid",
+              "width": "2px",
+              "color": "rgb(54, 229, 244)"
+            }
+          }
+        },
+        {
+          "hover": {
+            "text": "打开背包",
+            "color": "rgb(255, 255, 255)",
+            "background": "rgb(20, 32, 39)",
+            "border": "rgb(54, 229, 244)",
+            "height": 44
+          },
+          "focus": {
+            "action": "inventory",
+            "slot": "",
+            "id": "",
+            "pressed": null,
+            "text": "打开背包",
+            "visible": true,
+            "outline": {
+              "style": "solid",
+              "width": "2px",
+              "color": "rgb(54, 229, 244)"
+            }
+          }
+        },
+        {
+          "hover": {
+            "text": "查看天赋",
+            "color": "rgb(255, 255, 255)",
+            "background": "rgb(20, 32, 39)",
+            "border": "rgb(54, 229, 244)",
+            "height": 44
+          },
+          "focus": {
+            "action": "talents",
+            "id": "",
+            "pressed": null,
+            "text": "查看天赋",
+            "visible": true,
+            "outline": {
+              "style": "solid",
+              "width": "2px",
+              "color": "rgb(54, 229, 244)"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "synthetic-two-talent-points",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "validator accepts the complete initial fixture",
+          "passed": true
+        },
+        {
+          "label": "correct page URL and title",
+          "passed": true
+        },
+        {
+          "label": "meaningful nonblank game",
+          "passed": true
+        },
+        {
+          "label": "no framework error overlay",
+          "passed": true
+        },
+        {
+          "label": "initial app load complete decoded state",
+          "passed": true
+        },
+        {
+          "label": "initial app load primary and mirror bytes",
+          "passed": true
+        },
+        {
+          "label": "synthetic unspent points are displayed",
+          "passed": true
+        },
+        {
+          "label": "navigation to talents preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "{\"type\":\"talent\",\"id\":\"power\",\"count\":1} complete decoded state",
+          "passed": true
+        },
+        {
+          "label": "{\"type\":\"talent\",\"id\":\"power\",\"count\":1} primary and mirror bytes",
+          "passed": true
+        },
+        {
+          "label": "one native point investment preserves defeat and HP zero",
+          "passed": true
+        },
+        {
+          "label": "talent investment after refresh complete decoded state",
+          "passed": true
+        },
+        {
+          "label": "talent investment after refresh primary and mirror bytes",
+          "passed": true
+        },
+        {
+          "label": "no relevant runtime or console errors",
+          "passed": true
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "synthetic-one-point-remains.png"
+      ],
+      "stateChecks": [
+        {
+          "label": "initial app load",
+          "revision": 1348,
+          "rng": 3380821009,
+          "phase": "dead",
+          "stateSha256": "fd533f2095d3abaa65d59f024566c74e3aaa1fcd7fc1818a17b1350cd00ed8bd",
+          "rawSha256": "fc3cc04e4b8627a54640706fcd72f900bbc5409ff8fd1970a94803d89a95ab1b"
+        },
+        {
+          "label": "{\"type\":\"talent\",\"id\":\"power\",\"count\":1}",
+          "revision": 1349,
+          "rng": 3380821009,
+          "phase": "dead",
+          "stateSha256": "7d605f7495d51faa9ea04aa537f33e3730c9672388dede39b50b8d2e3a9824d2",
+          "rawSha256": "b10630f22c8830770eae7f9790f35518d5eb36876e987512feea90fd0f448915"
+        },
+        {
+          "label": "talent investment after refresh",
+          "revision": 1349,
+          "rng": 3380821009,
+          "phase": "dead",
+          "stateSha256": "7d605f7495d51faa9ea04aa537f33e3730c9672388dede39b50b8d2e3a9824d2",
+          "rawSha256": "b10630f22c8830770eae7f9790f35518d5eb36876e987512feea90fd0f448915"
+        }
+      ],
+      "identity": {
+        "url": "http://127.0.0.1:4389/",
+        "title": "骰狱：无尽深渊 · Dice Abyss",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "scale": 1,
+        "bodyText": "骰狱\n— D I C E　 A B Y S S —\n第\n30\n层\n深渊之眼\n图鉴\n全屏\n设置\n深渊探索\nDUNGEON\n第 30 层 · 深渊之眼\n神话断层\n已解锁至 神话\n\n「死亡并非终点，\n　而是更深的开始。」\n\n奇偶哨站\n01\n镜像对手\n02\n商人\n03\n黄金盗匪\n04\n赤誓血井\n05\n首领\n06\n探索增益\nFATE\n本层命运\n2 + 4\n路线进度\n5 / 6\n累计胜利\n125\n最高伤害\n1"
+      }
+    },
+    {
+      "name": "synthetic-no-alternatives-no-roll",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "validator accepts the complete initial fixture",
+          "passed": true
+        },
+        {
+          "label": "correct page URL and title",
+          "passed": true
+        },
+        {
+          "label": "meaningful nonblank game",
+          "passed": true
+        },
+        {
+          "label": "no framework error overlay",
+          "passed": true
+        },
+        {
+          "label": "initial app load complete decoded state",
+          "passed": true
+        },
+        {
+          "label": "initial app load primary and mirror bytes",
+          "passed": true
+        },
+        {
+          "label": "empty alternative message is truthful",
+          "passed": true
+        },
+        {
+          "label": "no unusable armor-specific entry",
+          "passed": true
+        },
+        {
+          "label": "legacy missing roll does not invent a last-turn number",
+          "passed": true
+        },
+        {
+          "label": "synthetic no alternatives has no document horizontal overflow",
+          "passed": true,
+          "detail": 320
+        },
+        {
+          "label": "synthetic no alternatives review stays inside horizontal viewport",
+          "passed": true
+        },
+        {
+          "label": "synthetic no alternatives complete text and controls wrap without clipping",
+          "passed": true,
+          "detail": []
+        },
+        {
+          "label": "synthetic no alternatives persistent retry remains visible",
+          "passed": true
+        },
+        {
+          "label": "navigation to inventory preserves both raw saves",
+          "passed": true
+        },
+        {
+          "label": "empty alternative navigation complete decoded state",
+          "passed": true
+        },
+        {
+          "label": "empty alternative navigation primary and mirror bytes",
+          "passed": true
+        },
+        {
+          "label": "no relevant runtime or console errors",
+          "passed": true
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "synthetic-no-alternatives.png"
+      ],
+      "stateChecks": [
+        {
+          "label": "initial app load",
+          "revision": 1348,
+          "rng": 3380821009,
+          "phase": "dead",
+          "stateSha256": "b1c972dabe8a07c7840d8555ed4771d15c3f139be6bb520fa13e71a0dc55009a",
+          "rawSha256": "2775fc4f1aed26ecf17533f070d3fd05c16234449f621d3f6064bde30b8540b4"
+        },
+        {
+          "label": "empty alternative navigation",
+          "revision": 1348,
+          "rng": 3380821009,
+          "phase": "dead",
+          "stateSha256": "b1c972dabe8a07c7840d8555ed4771d15c3f139be6bb520fa13e71a0dc55009a",
+          "rawSha256": "2775fc4f1aed26ecf17533f070d3fd05c16234449f621d3f6064bde30b8540b4"
+        }
+      ],
+      "identity": {
+        "url": "http://127.0.0.1:4389/",
+        "title": "骰狱：无尽深渊 · Dice Abyss",
+        "viewport": {
+          "width": 320,
+          "height": 740
+        },
+        "scale": 1,
+        "bodyText": "骰狱\n— D I C E　 A B Y S S —\n第\n30\n层\n深渊之眼\n图鉴\n全屏\n设置\n深渊探索\nDUNGEON\n第 30 层 · 深渊之眼\n神话断层\n已解锁至 神话\n\n「死亡并非终点，\n　而是更深的开始。」\n\n奇偶哨站\n01\n镜像对手\n02\n商人\n03\n黄金盗匪\n04\n赤誓血井\n05\n首领\n06\n探索增益\nFATE\n本层命运\n2 + 4\n路线进度\n5 / 6\n累计胜利\n125\n最高伤害\n1"
+      },
+      "layouts": [
+        {
+          "label": "synthetic no alternatives",
+          "viewport": {
+            "width": 320,
+            "height": 740
+          },
+          "documentWidth": 320,
+          "room": {
+            "left": 21,
+            "right": 299,
+            "top": 121,
+            "bottom": 929.359375,
+            "clientWidth": 278,
+            "scrollWidth": 278,
+            "clientHeight": 808,
+            "scrollHeight": 808,
+            "overflowY": "visible"
+          },
+          "primary": {
+            "left": 106,
+            "right": 238,
+            "top": 649,
+            "bottom": 705.609375
+          },
+          "footer": {
+            "top": 640,
+            "bottom": 734
+          },
+          "typography": [
+            {
+              "text": "余火，尚未熄灭。",
+              "font": "24px",
+              "lineHeight": "34.8px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "裂星守望暂时挡住了去路。成长与战利品仍在。",
+              "font": "14px",
+              "lineHeight": "25.2px",
+              "color": "rgb(194, 200, 206)"
+            },
+            {
+              "text": "本次战斗",
+              "font": "13px",
+              "lineHeight": "normal",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "18 掷",
+              "font": "14px",
+              "lineHeight": "normal",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "敌人剩余生命",
+              "font": "13px",
+              "lineHeight": "normal",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "172,884 / 582,011",
+              "font": "14px",
+              "lineHeight": "normal",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "重燃前，整理构筑",
+              "font": "17px",
+              "lineHeight": "25.5px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "背包中暂时没有未装备的物品。 当前没有未用天赋点。",
+              "font": "13px",
+              "lineHeight": "24.05px",
+              "color": "rgb(194, 200, 206)"
+            },
+            {
+              "text": "打开背包",
+              "font": "13px",
+              "lineHeight": "18.2px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "查看天赋",
+              "font": "13px",
+              "lineHeight": "18.2px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "敌方机制回顾",
+              "font": "17px",
+              "lineHeight": "25.5px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "特性第 3 / 6 / 9… 次反击后重筑护盾，上限为初始护盾。",
+              "font": "13px",
+              "lineHeight": "24.05px",
+              "color": "rgb(194, 200, 206)"
+            },
+            {
+              "text": "换相存活且首次跨过半血时凝聚 12% 护盾；二阶段反击增强 15%，溢出伤害不会被强制阻断。",
+              "font": "13px",
+              "lineHeight": "24.05px",
+              "color": "rgb(194, 200, 206)"
+            },
+            {
+              "text": "应对护盾先吸伤；在重筑前形成共鸣可减少消耗。",
+              "font": "13px",
+              "lineHeight": "24.05px",
+              "color": "rgb(211, 200, 169)"
+            },
+            {
+              "text": "在当前房间重燃余火",
+              "font": "15px",
+              "lineHeight": "22.5px",
+              "color": "rgb(232, 231, 226)"
+            },
+            {
+              "text": "重燃不消耗金币，按重燃时的构筑恢复全部生命；敌人从头开始。装备、金币、天赋和已完成的房间全部保留。",
+              "font": "12px",
+              "lineHeight": "22.2px",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "现有护盾与下一掷临时幸运不继承；开战护盾按当前构筑重新计算。",
+              "font": "12px",
+              "lineHeight": "22.2px",
+              "color": "rgb(181, 189, 197)"
+            },
+            {
+              "text": "购物、锻造、融合与洗点需要对应房间。当前可以换装、投入可用天赋，或重燃后继续挑战。",
+              "font": "12px",
+              "lineHeight": "22.2px",
+              "color": "rgb(194, 200, 206)"
+            }
+          ],
+          "horizontalOverflow": []
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "blockedRequests": [],
+  "limitations": [
+    "Browser extension and CUA both returned net::ERR_CONNECTION_REFUSED at the already-running loopback server; the task explicitly permits the isolated Playwright fallback. See the separate browser-environment record.",
+    "Chrome software rendering and logical viewports are used, not physical phones, hardware GPU timing, screen-reader listening or OS suspension.",
+    "The principal fixture is the exact retained natural seed-23757 failure. Only the two explicitly named boundary groups edit initial talent points or remove alternatives/lastRoll; they are not natural outcomes.",
+    "The shipped scale choices are 0.9/1/1.1. The largest real setting, 1.1, is tested without injecting an unsupported 1.2 value.",
+    "Contrast checks use the darkest-window palette and a conservative #202126 surface bound covering the existing faint frame wash; screenshot inspection remains separate from numeric geometry checks."
+  ],
+  "browser": "155.0.8059.84",
+  "sourceAfter": {
+    "index.html": "078012a5dba96182d938e065b8a6fae9ef6813b6c508a198a06bfb942faaeaed",
+    "package.json": "a5f7ad3321ab3f6027f5adbd4df005a43fa6bb831973ad327978e460bf3b2e9b",
+    "src/app.js": "141b481d0507aba11d18e515f70a747757aede7f3d57b84c98ec0c4219da5043",
+    "src/views.js": "926527525de6286a39cd868447857f93c16f7d4adfa7f7e150952b6301894e7e",
+    "src/engine.js": "32a60a0a5799eb5d515deaa65a3a7f07f4653c68d3c31ff3a61ce402b18f56cf",
+    "src/storage.js": "6bfcc60036c9f729c21b948ca98c7ac715e14049856fb9dded0baa2aeef2c561",
+    "src/defeat-review.js": "e34f1de6808bb2a6a4f8d5c0c768beead5946631f78cc16a8857a33938dbd396",
+    "src/defeat-review.css": "97cddec78f4f594596690d63c0ffe9ee2afca40a876be5bcc5ae91f9f43c9d06",
+    "src/release.js": "c9ded47c6c31089294fdb4ea6c442e730fa07062a721bb3d9438c2ce5171123b",
+    "src/responsive.css": "90bb585d66a88daa61a553112c66610b62b666aa07c28ad887b521534283cee8"
+  },
+  "baselineAfter": {
+    "index.html": "386aa0970911d4b9ae49b95d16ce755dd511139aaed89cc15ca9f8c2b084694c",
+    "package.json": "32e896ab1019ed66518766334366dc561751fd85448605298f10761432a7aa10",
+    "src/app.js": "6d965d35fb499b23948e9f2d4256616d05298dce7468c2bd350c4180562dad08",
+    "src/views.js": "e5d6a1a2d6c88ad59b62e2a96e229201e626363d8cdb98915c6fb7217b9188a6",
+    "src/engine.js": "32a60a0a5799eb5d515deaa65a3a7f07f4653c68d3c31ff3a61ce402b18f56cf",
+    "src/storage.js": "6bfcc60036c9f729c21b948ca98c7ac715e14049856fb9dded0baa2aeef2c561",
+    "src/responsive.css": "90bb585d66a88daa61a553112c66610b62b666aa07c28ad887b521534283cee8"
+  },
+  "sourceStable": true,
+  "baselineStable": true,
+  "finished": "2026-10-18T16:50:00.993Z",
+  "summary": {
+    "groups": 11,
+    "passed": 6,
+    "failed": 5,
+    "checks": 341,
+    "stateChecks": 17,
+    "errors": 0
+  }
+}

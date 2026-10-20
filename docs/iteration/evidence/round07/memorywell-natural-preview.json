@@ -1,0 +1,164 @@
+{
+  "result": "PASS",
+  "source": "Existing seed 7919 / balanced / conservative / 200-floor matrix member; snapshots at floors 159 and 173 were observed before the unchanged original policy action.",
+  "scope": "Natural states; exact read-only preview and full baseline/current transaction comparison. Later browser loading is explicitly a fixture replay.",
+  "newJourneys": 0,
+  "observations": [
+    {
+      "floor": 159,
+      "sourceFile": "/workspace/scratch/e7f8f5d38116/qa/agent-gameplay/memorywell-natural-baseline-7919-f159.save.json",
+      "currentCaptureFile": "/workspace/scratch/e7f8f5d38116/qa/agent-gameplay/memorywell-natural-current-7919-f159.save.json",
+      "naturalOpeningStateSha256": "89d3cd9a19bd8f2c178f152f4b2e797154164af643ac77965d8a6efe431cea53",
+      "rawSha256": "5e0476cb7b967463abea006d568b976fd11d3d2bd0de0fb3c91c0eebb534b25f",
+      "preview": {
+        "canReset": true,
+        "reason": "",
+        "costGold": 1870,
+        "goldShortfall": 0,
+        "refundPoints": 301,
+        "hpLost": 5846,
+        "before": {
+          "hp": 29231,
+          "maxHp": 29231,
+          "gold": 776334,
+          "talentPoints": 0
+        },
+        "after": {
+          "hp": 23385,
+          "maxHp": 23385,
+          "gold": 774464,
+          "talentPoints": 301
+        }
+      },
+      "exactFieldsMatched": [
+        "hp",
+        "maxHp",
+        "gold",
+        "talentPoints",
+        "hpLost",
+        "refundPoints",
+        "costGold"
+      ],
+      "readOnlyRenders": 4,
+      "actions": [
+        {
+          "action": {
+            "type": "event-choice",
+            "id": "reset"
+          },
+          "accepted": false,
+          "fullStateSha256": "792a28d7330ec39c4748ec30bb31c01ca13f7efdd12d00aa4344dca54b531333",
+          "saveRoundTrip": true,
+          "rng": 2860602485
+        },
+        {
+          "action": {
+            "type": "event-choice",
+            "id": "reset",
+            "confirmed": true
+          },
+          "accepted": true,
+          "fullStateSha256": "a18f73ab042da1abc10d892f38c201964c247dbbc814db05a8d63718c23f2025",
+          "saveRoundTrip": true,
+          "rng": 2860602485
+        },
+        {
+          "action": {
+            "type": "event-choice",
+            "id": "leave"
+          },
+          "accepted": true,
+          "fullStateSha256": "c8064652b20a8acac05e95736db52157bca63f28c3cc8b561e8242b84eedbffc",
+          "saveRoundTrip": true,
+          "rng": 2860602485
+        }
+      ],
+      "fullTransitionBaselineEqual": true,
+      "naturalStateCrossVersionEqualExceptRunId": true,
+      "reallocation": {
+        "maxHp": 29231,
+        "hp": 23385,
+        "healed": false
+      },
+      "fragment": "<section class=\"memorywell-preview\" aria-label=\"天赋重置数值预览\" data-memorywell-preview data-can-reset=\"true\"><h2>重置预览</h2><dl class=\"memorywell-values\"><div data-memorywell-row=\"hp\"><dt>当前生命</dt><dd><span class=\"memorywell-before\"><span class=\"sr-only\">重置前 </span>29,231</span><span class=\"memorywell-arrow\" aria-hidden=\"true\">→</span><strong class=\"memorywell-loss\"><span class=\"sr-only\">重置后 </span>23,385</strong><small>裁减 5,846 生命</small></dd></div><div data-memorywell-row=\"maxHp\"><dt>生命上限</dt><dd><span class=\"memorywell-before\"><span class=\"sr-only\">重置前 </span>29,231</span><span class=\"memorywell-arrow\" aria-hidden=\"true\">→</span><strong class=\"\"><span class=\"sr-only\">重置后 </span>23,385</strong><small>按清空天赋后的当前装备计算</small></dd></div><div data-memorywell-row=\"talentPoints\"><dt>可分配天赋点</dt><dd><span class=\"memorywell-before\"><span class=\"sr-only\">重置前 </span>0</span><span class=\"memorywell-arrow\" aria-hidden=\"true\">→</span><strong class=\"memorywell-refund\"><span class=\"sr-only\">重置后 </span>301</strong><small>返还 301 点</small></dd></div><div data-memorywell-row=\"gold\"><dt>金币余额</dt><dd><span class=\"memorywell-before\"><span class=\"sr-only\">重置前 </span>776,334</span><span class=\"memorywell-arrow\" aria-hidden=\"true\">→</span><strong class=\"\"><span class=\"sr-only\">重置后 </span>774,464</strong><small>支付 1,870 金币</small></dd></div></dl><p class=\"memorywell-note\">重新加点不会补回已裁减的生命。装备与已有护盾保留。</p></section>"
+    },
+    {
+      "floor": 173,
+      "sourceFile": "/workspace/scratch/e7f8f5d38116/qa/agent-gameplay/memorywell-natural-baseline-7919-f173.save.json",
+      "currentCaptureFile": "/workspace/scratch/e7f8f5d38116/qa/agent-gameplay/memorywell-natural-current-7919-f173.save.json",
+      "naturalOpeningStateSha256": "702535deea9ff0e4c14a5afa5458a7da4dda09766c342a9e8eb7a388dd77bd0c",
+      "rawSha256": "e257081af28f370c2580dac5239725d1026f10c836ff815f4ba9ced1faa9c35a",
+      "preview": {
+        "canReset": true,
+        "reason": "",
+        "costGold": 1978,
+        "goldShortfall": 0,
+        "refundPoints": 319,
+        "hpLost": 6131,
+        "before": {
+          "hp": 30653,
+          "maxHp": 30653,
+          "gold": 883573,
+          "talentPoints": 0
+        },
+        "after": {
+          "hp": 24522,
+          "maxHp": 24522,
+          "gold": 881595,
+          "talentPoints": 319
+        }
+      },
+      "exactFieldsMatched": [
+        "hp",
+        "maxHp",
+        "gold",
+        "talentPoints",
+        "hpLost",
+        "refundPoints",
+        "costGold"
+      ],
+      "readOnlyRenders": 4,
+      "actions": [
+        {
+          "action": {
+            "type": "event-choice",
+            "id": "reset"
+          },
+          "accepted": false,
+          "fullStateSha256": "ccf427f93819be22dc57cc798c6266a53a785730e93ac4d9873bce054795bd49",
+          "saveRoundTrip": true,
+          "rng": 1389469129
+        },
+        {
+          "action": {
+            "type": "event-choice",
+            "id": "reset",
+            "confirmed": true
+          },
+          "accepted": true,
+          "fullStateSha256": "454f36f2698c6e95057191a90ada238208f30a48cd8f58388eed86707abc5bdb",
+          "saveRoundTrip": true,
+          "rng": 1389469129
+        },
+        {
+          "action": {
+            "type": "event-choice",
+            "id": "leave"
+          },
+          "accepted": true,
+          "fullStateSha256": "684c82515c2375a3963e7cfe923e50a090d500cacfb0b33fb2d4e4c7bf128429",
+          "saveRoundTrip": true,
+          "rng": 1389469129
+        }
+      ],
+      "fullTransitionBaselineEqual": true,
+      "naturalStateCrossVersionEqualExceptRunId": true,
+      "reallocation": {
+        "maxHp": 30653,
+        "hp": 24522,
+        "healed": false
+      },
+      "fragment": "<section class=\"memorywell-preview\" aria-label=\"天赋重置数值预览\" data-memorywell-preview data-can-reset=\"true\"><h2>重置预览</h2><dl class=\"memorywell-values\"><div data-memorywell-row=\"hp\"><dt>当前生命</dt><dd><span class=\"memorywell-before\"><span class=\"sr-only\">重置前 </span>30,653</span><span class=\"memorywell-arrow\" aria-hidden=\"true\">→</span><strong class=\"memorywell-loss\"><span class=\"sr-only\">重置后 </span>24,522</strong><small>裁减 6,131 生命</small></dd></div><div data-memorywell-row=\"maxHp\"><dt>生命上限</dt><dd><span class=\"memorywell-before\"><span class=\"sr-only\">重置前 </span>30,653</span><span class=\"memorywell-arrow\" aria-hidden=\"true\">→</span><strong class=\"\"><span class=\"sr-only\">重置后 </span>24,522</strong><small>按清空天赋后的当前装备计算</small></dd></div><div data-memorywell-row=\"talentPoints\"><dt>可分配天赋点</dt><dd><span class=\"memorywell-before\"><span class=\"sr-only\">重置前 </span>0</span><span class=\"memorywell-arrow\" aria-hidden=\"true\">→</span><strong class=\"memorywell-refund\"><span class=\"sr-only\">重置后 </span>319</strong><small>返还 319 点</small></dd></div><div data-memorywell-row=\"gold\"><dt>金币余额</dt><dd><span class=\"memorywell-before\"><span class=\"sr-only\">重置前 </span>883,573</span><span class=\"memorywell-arrow\" aria-hidden=\"true\">→</span><strong class=\"\"><span class=\"sr-only\">重置后 </span>881,595</strong><small>支付 1,978 金币</small></dd></div></dl><p class=\"memorywell-note\">重新加点不会补回已裁减的生命。装备与已有护盾保留。</p></section>"
+    }
+  ]
+}

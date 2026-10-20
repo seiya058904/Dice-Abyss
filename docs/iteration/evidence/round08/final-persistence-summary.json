@@ -1,0 +1,155 @@
+{
+  "status": "PASS_WITH_STATED_SCOPE",
+  "productVersion": "5.8.0",
+  "saveSchema": 5,
+  "observedAtUtc": "2026-10-18T06:43:07.613610+00:00",
+  "sourceObservationWindowUtc": {
+    "before": "2026-10-18T06:41:04.435083+00:00",
+    "after": "2026-10-18T06:41:43.157474+00:00"
+  },
+  "fileHashesStable": true,
+  "filesCompared": 42,
+  "keySourceFiles": [
+    {
+      "path": "src/storage.js",
+      "bytes": 27831,
+      "sha256": "b8676eaee04c14de66c8bc1d8555b6927d41bf14a3dfc0598e8fbb37c1962c34"
+    },
+    {
+      "path": "src/engine.js",
+      "bytes": 39121,
+      "sha256": "d81ad2b7fd33ae6f55052a894460bb6e804f316c4488ff5faabaf4ed30473751"
+    },
+    {
+      "path": "src/views.js",
+      "bytes": 79338,
+      "sha256": "c80d9a3f16256435e613e18e850f8739c95a54123a1c56b246cd14af41ddc9da"
+    },
+    {
+      "path": "src/action-focus.js",
+      "bytes": 1672,
+      "sha256": "d5e383b4f8aeb138b6cdffc7f3dffe12cf0db7fcbac053df713dec60b3b95a98"
+    },
+    {
+      "path": "src/encounter-tactics.js",
+      "bytes": 6963,
+      "sha256": "02e0da7aa57de321319812503556d9e5925463644222305755e86de6c3fa355b"
+    },
+    {
+      "path": "src/app.js",
+      "bytes": 33998,
+      "sha256": "29039046f890eb767d2132500d4f1e05e6605a97e6ec6d038ff6a62527898a97"
+    },
+    {
+      "path": "scripts/audit-save-closure.mjs",
+      "bytes": 9277,
+      "sha256": "df68c184fdcecc28b84ff4091f2bb240f070414efbed3e271240a23347cae603"
+    },
+    {
+      "path": "scripts/audit-save-size.mjs",
+      "bytes": 6724,
+      "sha256": "64012d05351a208ca2856c999eae9fd14234ed530b759ce56b24b82005096714"
+    }
+  ],
+  "commands": [
+    "node scripts/audit-save-closure.mjs --source /workspace/scratch/5c3c2b08656a/work/Dice-Abyss --output /workspace/scratch/5c3c2b08656a/audit/persistence/final-save-closure.json",
+    "node scripts/audit-save-size.mjs --source /workspace/scratch/5c3c2b08656a/work/Dice-Abyss --output /workspace/scratch/5c3c2b08656a/audit/persistence/final-save-size.json"
+  ],
+  "executionExitCodes": {
+    "audit-save-closure": 0,
+    "audit-save-size": 0
+  },
+  "saveClosure": {
+    "status": "PASS",
+    "checks": 41452,
+    "stateSnapshots": 6476,
+    "committedTransactions": 1811,
+    "eventKeys": 22,
+    "eventChoices": 1608,
+    "pendingProtectionVariants": 820,
+    "shopPurchases": 48,
+    "legacyFixtures": 11,
+    "failures": [],
+    "fingerprints": {
+      "algorithm": "sha256",
+      "format": 1,
+      "stateSnapshots": 6476,
+      "committedTransactions": 1811,
+      "legacyWrites": 11,
+      "states": "676237f681c397af4dd58f195b49a9507e36a734163368db43cffcf8a8ede883",
+      "transactions": "bc4b0bb2d64c990f7b7b37a05295b9ac62354367e8fc14f3137917dc1b80c3fa",
+      "writes": "0ff1dab1e7f8d44f4a6e19de1cb99b0f249f02ed83dbfdbddbddf50de822f1ef"
+    }
+  },
+  "saveSize": {
+    "status": "PASS",
+    "cases": 4,
+    "passed": 4,
+    "casesSummary": [
+      {
+        "name": "near-limit accepted import followed by fate",
+        "pass": true,
+        "storageWrites": []
+      },
+      {
+        "name": "readable older multibyte rescue with oversized new write",
+        "pass": true,
+        "storageWrites": []
+      },
+      {
+        "name": "migration growth checked before immutable archive writes",
+        "pass": true,
+        "storageWrites": []
+      },
+      {
+        "name": "exact inclusive ASCII byte and character boundary",
+        "pass": true,
+        "storageWrites": "exact boundary writes allowed"
+      }
+    ]
+  },
+  "integrationReview": {
+    "storage": "Only the previously reviewed talents object/array type guard and optional finite nonnegative roll multiplier metadata checks differ from input. Main/mirror/archive/expected-snapshot order and keys remain untouched.",
+    "actionFocus": "The helper stores runId/generation in an ephemeral closure and reads/focuses DOM elements. It has no storage/RNG/asset interface. app integration remains after committed transactions, cancels on dialog/run/storage changes, and does not edit game snapshots.",
+    "encounterTactics": "A read-only public enemy/count projection; it calls the pure deepEnemyAttack helper for two attack multipliers. It has no saved RNG, storage API or transition call; it does not write to enemy.",
+    "combinedCompatibility": "No additional state or metadata is serialized by focus/tactics. The only intentional new saved fields remain lastRoll.criticalMultiplier and lastRoll.followMultiplier. Related branches keep old missing fields legal.",
+    "sameNameExtensionLimit": "External old files with these two previously unknown names holding nonnumeric values are now rejected; unrelated unknown fields remain preserved.",
+    "appOnlyFollowup": "These two audit scripts do not import src/app.js. A later app-only summary keyboard fix does not change the modules exercised by these gates; its native-browser input behavior needs separate verification."
+  },
+  "priorIndependentMultiplierReviewHashesStillCurrent": {
+    "engine": true,
+    "views": false,
+    "storage": true
+  },
+  "limits": [
+    "Closure is a synthetic room/event/shop state audit with in-memory fault injection, not a count of independent players or natural playthroughs.",
+    "The 41,452 checks, 6,476 snapshots and 1,811 transactions overlap; they are separate measures, not additive sample counts.",
+    "The size gate uses constructed extension-field fixtures and an in-memory store, not actual browser quota or file-picker evidence.",
+    "Closure does not roll through entire event-created combats; the optional multipliers have separate independently recorded battle coverage.",
+    "No physical power loss, actual OS suspension, native browser quota, real mobile device or Windows launcher was verified here.",
+    "This final execution is against current 5.8.0 only; no fresh baseline run or final ZIP extraction is claimed."
+  ],
+  "compactEvidenceFiles": [
+    "final-persistence-summary.json",
+    "final-save-closure.json",
+    "final-save-size.json",
+    "final-source-before.json",
+    "final-source-after.json",
+    "final-committed-multiplier-independent-review.json"
+  ],
+  "finalIndependentMultiplierRecheck": {
+    "status": "PASS",
+    "observedAtUtc": "2026-10-18T06:43:29.538163+00:00",
+    "naturalReplayActions": 65,
+    "postRollActions": 2,
+    "syntheticCases": 96,
+    "allOriginalStateFieldsEqual": true,
+    "allSavedMultipliersMatchActualFormula": true,
+    "sourceSha256": {
+      "engine": "d81ad2b7fd33ae6f55052a894460bb6e804f316c4488ff5faabaf4ed30473751",
+      "views": "c80d9a3f16256435e613e18e850f8739c95a54123a1c56b246cd14af41ddc9da",
+      "storage": "b8676eaee04c14de66c8bc1d8555b6927d41bf14a3dfc0598e8fbb37c1962c34"
+    },
+    "evidence": "final-committed-multiplier-independent-review.json"
+  }
+}

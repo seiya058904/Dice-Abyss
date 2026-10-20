@@ -1,0 +1,68 @@
+{
+  "synthetic": true,
+  "mode": "baseline",
+  "url": "http://127.0.0.1:4192",
+  "browser": "155.0.8059.84",
+  "started": "2026-10-17T17:01:07.198Z",
+  "cases": [
+    {
+      "name": "baseline-pending-escape-observation",
+      "status": "PASS",
+      "checks": 4,
+      "ms": 5828.00736,
+      "trace": [
+        {
+          "label": "Expected game title",
+          "passed": true
+        },
+        {
+          "label": "Workbench content is visible",
+          "passed": true
+        },
+        {
+          "label": "Actual native pointerover and Escape timestamps establish Escape before the 160ms show deadline",
+          "passed": true
+        },
+        {
+          "label": "The baseline Escape observation preserves complete saved state",
+          "passed": true
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "checks": 4,
+  "scope": "Functional synthetic-save desktop, narrow viewport, keyboard and emulated touch tests. No physical device, screen reader, GPU or performance claim.",
+  "sourceSha256": {
+    "fusion-controller.js": "ea6e1badae178aca56a21568a6126b4ece17526fd03d9059ccc0e29f44ade909",
+    "fusion-view.js": "6f5d3f5413eb6f396b78901c7d0361e860b41ab3d1f6d2dc549b782eee0ad06a",
+    "fusion.css": "5b6052d592d5c620b05c2d0339e7fc7c203821667466666f48f8669c75762368"
+  },
+  "pendingEscapeObservation": {
+    "events": [
+      {
+        "type": "pointerover",
+        "item": "i99",
+        "time": 3093.1999999955297,
+        "visible": false,
+        "tag": "SPAN",
+        "class": "fusion-card-level"
+      },
+      {
+        "type": "keydown",
+        "key": "Escape",
+        "item": "i99",
+        "time": 3101,
+        "visible": false,
+        "tag": "BUTTON",
+        "class": "fusion-card common is-target    "
+      }
+    ],
+    "delayMs": 7.800000004470348,
+    "pending": true,
+    "reopened": false,
+    "finding": "The pending timer was cancelled. Reopening after pending Escape was not reproduced."
+  },
+  "finished": "2026-10-17T17:01:13.044Z",
+  "scriptSha256": "507f9bc66ec99b75ad7c40dbc7c6f3e43a32c0403319e4506706c8102c52cdcd"
+}

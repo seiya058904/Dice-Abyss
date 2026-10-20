@@ -1,0 +1,2147 @@
+{
+  "source": "/workspace/scratch/16b883e72bb3/work/Dice-Abyss",
+  "baseline": "/workspace/scratch/16b883e72bb3/baseline/Dice-Abyss",
+  "baselineComparison": true,
+  "sourceHashes": {
+    "src/engine.js": "32a60a0a5799eb5d515deaa65a3a7f07f4653c68d3c31ff3a61ce402b18f56cf",
+    "src/storage.js": "a50ec7eac5c487b0a269e00272110e93563c6ce716287c2028f9860600418566",
+    "src/equipment.js": "8c20de433f21931318e315b862b457d37a03b9596ea5df8f7cc4025691aaccd6",
+    "src/encounters.js": "c3c6e2d24049305d73982cf5db3b1cf02eee68f4e8e1659fd7e3021f74de0791"
+  },
+  "baselineHashes": {
+    "src/engine.js": "a84e8823a4e6632ec12ad6f497c71e2a0b427a41fe8773eb7c9cfc041f78cd1b",
+    "src/storage.js": "2c5f648efe7df6a1c14710ea90fe2de83323141d5f5e285eec7fac8aa687a500",
+    "src/equipment.js": "8c20de433f21931318e315b862b457d37a03b9596ea5df8f7cc4025691aaccd6",
+    "src/encounters.js": "c3c6e2d24049305d73982cf5db3b1cf02eee68f4e8e1659fd7e3021f74de0791"
+  },
+  "scope": "Synthetic legal merchant, blackmarket, chest, vault and gambit routes plus the original naturally generated seed-2 route. Every committed action compares complete current state with a JSON-reloaded continuation. Optional cross-version comparison retains all differing leaves and permits only historical item locked/enhance leaves. No natural-player incidence or physical storage claim.",
+  "scenarios": [
+    {
+      "name": "merchant",
+      "actions": [
+        {
+          "type": "buy",
+          "id": "i4"
+        },
+        {
+          "type": "lock",
+          "id": "i4"
+        },
+        {
+          "type": "equip",
+          "id": "i4"
+        },
+        {
+          "type": "next"
+        },
+        {
+          "type": "forge",
+          "id": "i4"
+        },
+        {
+          "type": "next"
+        },
+        {
+          "type": "fuse",
+          "targets": [
+            "i4"
+          ],
+          "materials": [
+            "i1"
+          ]
+        },
+        {
+          "type": "lock",
+          "id": "i4"
+        }
+      ],
+      "commits": 8,
+      "historyDifferences": 11,
+      "finalPlayerSha256": "c055e490b3d47669092d4e5be4acaabb45321fab42beccb14e8abec64619fccf",
+      "finalRng": 2139964322,
+      "finalRevision": 9
+    },
+    {
+      "name": "blackmarket",
+      "actions": [
+        {
+          "type": "buy",
+          "id": "i4"
+        },
+        {
+          "type": "lock",
+          "id": "i4"
+        },
+        {
+          "type": "equip",
+          "id": "i4"
+        },
+        {
+          "type": "next"
+        },
+        {
+          "type": "forge",
+          "id": "i4"
+        },
+        {
+          "type": "next"
+        },
+        {
+          "type": "fuse",
+          "targets": [
+            "i4"
+          ],
+          "materials": [
+            "i1"
+          ]
+        },
+        {
+          "type": "lock",
+          "id": "i4"
+        }
+      ],
+      "commits": 8,
+      "historyDifferences": 11,
+      "finalPlayerSha256": "0b683d9d232e9d7f55aae86faecacd1e3f47a0bfa02c2ab16c8ebd4c249b465f",
+      "finalRng": 2139964322,
+      "finalRevision": 9
+    },
+    {
+      "name": "chest",
+      "actions": [
+        {
+          "type": "open"
+        },
+        {
+          "type": "lock",
+          "id": "i4"
+        },
+        {
+          "type": "equip",
+          "id": "i4"
+        },
+        {
+          "type": "lock",
+          "id": "i4"
+        },
+        {
+          "type": "open"
+        },
+        {
+          "type": "next"
+        }
+      ],
+      "commits": 5,
+      "historyDifferences": 2,
+      "finalPlayerSha256": "b092eb130f6013c7b0e627d22c62311780044e1bdfead20ab911b30da6fa55c8",
+      "finalRng": 2590418331,
+      "finalRevision": 6
+    },
+    {
+      "name": "vault",
+      "actions": [
+        {
+          "type": "open"
+        },
+        {
+          "type": "lock",
+          "id": "i4"
+        },
+        {
+          "type": "equip",
+          "id": "i4"
+        },
+        {
+          "type": "lock",
+          "id": "i4"
+        },
+        {
+          "type": "open"
+        },
+        {
+          "type": "next"
+        }
+      ],
+      "commits": 5,
+      "historyDifferences": 2,
+      "finalPlayerSha256": "91a8c87da879c632c1c9e404014a5925f6e6412901a107397c13460c4c52a857",
+      "finalRng": 2590418331,
+      "finalRevision": 6
+    },
+    {
+      "name": "gambit reward",
+      "actions": [
+        {
+          "type": "event-choice",
+          "id": "safe",
+          "confirmed": true
+        },
+        {
+          "type": "open"
+        },
+        {
+          "type": "lock",
+          "id": "i5"
+        },
+        {
+          "type": "equip",
+          "id": "i5"
+        }
+      ],
+      "commits": 4,
+      "historyDifferences": 2,
+      "finalPlayerSha256": "b7e3a9392e2b68d56fa0949e310f6f9e53a84c251bef1902a4b6806bc8d984a2",
+      "finalRng": 2171284879,
+      "finalRevision": 5
+    },
+    {
+      "name": "natural seed 2",
+      "actions": [
+        {
+          "type": "fate"
+        },
+        {
+          "type": "enter"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "open"
+        },
+        {
+          "type": "next"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "open"
+        },
+        {
+          "type": "next"
+        },
+        {
+          "type": "next"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "open"
+        },
+        {
+          "type": "next"
+        },
+        {
+          "type": "gold"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "open"
+        },
+        {
+          "type": "next"
+        },
+        {
+          "type": "descend"
+        },
+        {
+          "type": "fate"
+        },
+        {
+          "type": "enter"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "open"
+        },
+        {
+          "type": "next"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "open"
+        },
+        {
+          "type": "next"
+        },
+        {
+          "type": "next"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "open"
+        },
+        {
+          "type": "next"
+        },
+        {
+          "type": "gold"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "open"
+        },
+        {
+          "type": "next"
+        },
+        {
+          "type": "descend"
+        },
+        {
+          "type": "fate"
+        },
+        {
+          "type": "enter"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "open"
+        },
+        {
+          "type": "next"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "roll"
+        },
+        {
+          "type": "open"
+        },
+        {
+          "type": "next"
+        },
+        {
+          "type": "buy",
+          "id": "i14"
+        },
+        {
+          "type": "lock",
+          "id": "i14"
+        }
+      ],
+      "commits": 89,
+      "historyDifferences": 1,
+      "finalPlayerSha256": "168edcfdc55f932cdf11e7e63440dbbd8d5361030bdfaf1f4eb592701802901e",
+      "finalRng": 1957791745,
+      "finalRevision": 89,
+      "seed": 2,
+      "floor": 3,
+      "roomIndex": 2,
+      "price": 232,
+      "runIdNormalization": "Only runId is fixed; no route, HP, budget, inventory or RNG fields are patched."
+    }
+  ],
+  "snapshots": [
+    {
+      "scenario": "merchant",
+      "index": 0,
+      "action": {
+        "type": "buy",
+        "id": "i4"
+      },
+      "committed": true,
+      "baselineStateSha256": "1558b0758c6713d9f6158d98a8d2147e3e9cfa12460b0b30b796cffb3d140853",
+      "currentStateSha256": "1558b0758c6713d9f6158d98a8d2147e3e9cfa12460b0b30b796cffb3d140853",
+      "reloadedCurrentStateSha256": "1558b0758c6713d9f6158d98a8d2147e3e9cfa12460b0b30b796cffb3d140853",
+      "differences": []
+    },
+    {
+      "scenario": "merchant",
+      "index": 1,
+      "action": {
+        "type": "lock",
+        "id": "i4"
+      },
+      "committed": true,
+      "baselineStateSha256": "b1f8d5d206cd297f8c3d3475c76945def0525c4053ded3349bef14b8fb1fa908",
+      "currentStateSha256": "c3fd66f1cc77fab49fde5ecc12327a07c2e01771528acee07a996b5a61a4049d",
+      "reloadedCurrentStateSha256": "c3fd66f1cc77fab49fde5ecc12327a07c2e01771528acee07a996b5a61a4049d",
+      "differences": [
+        {
+          "path": "$.shop.0.item.locked",
+          "baseline": true,
+          "current": false
+        }
+      ]
+    },
+    {
+      "scenario": "merchant",
+      "index": 2,
+      "action": {
+        "type": "equip",
+        "id": "i4"
+      },
+      "committed": true,
+      "baselineStateSha256": "963c68679975a38974ce3b1b8e6939b054d9f6b906e1bd5a3c4701f3cc7c7ffe",
+      "currentStateSha256": "0a372b913a542264f25b0b7e6e004d9dec64830da05d43afe744695a5c039468",
+      "reloadedCurrentStateSha256": "0a372b913a542264f25b0b7e6e004d9dec64830da05d43afe744695a5c039468",
+      "differences": [
+        {
+          "path": "$.shop.0.item.locked",
+          "baseline": true,
+          "current": false
+        }
+      ]
+    },
+    {
+      "scenario": "merchant",
+      "index": 3,
+      "action": {
+        "type": "next"
+      },
+      "committed": true,
+      "baselineStateSha256": "abe809becaca45723cc4234443e43589e524ac2c557720711d9209937a71dd82",
+      "currentStateSha256": "98afb52913065aec115f351bc88e08534227f0d77bd788fd80007d728121f990",
+      "reloadedCurrentStateSha256": "98afb52913065aec115f351bc88e08534227f0d77bd788fd80007d728121f990",
+      "differences": [
+        {
+          "path": "$.shop.0.item.locked",
+          "baseline": true,
+          "current": false
+        }
+      ]
+    },
+    {
+      "scenario": "merchant",
+      "index": 4,
+      "action": {
+        "type": "forge",
+        "id": "i4"
+      },
+      "committed": true,
+      "baselineStateSha256": "91c0b4512e5943f250a4ad61d964bcc16307a3354eb5f10fd522d9e256417880",
+      "currentStateSha256": "fd7522f35fa55117e8e77c1aff911cfaf8ef144cde0af5a993c874180f4c7837",
+      "reloadedCurrentStateSha256": "fd7522f35fa55117e8e77c1aff911cfaf8ef144cde0af5a993c874180f4c7837",
+      "differences": [
+        {
+          "path": "$.shop.0.item.enhance",
+          "baseline": 2,
+          "current": 0
+        },
+        {
+          "path": "$.shop.0.item.locked",
+          "baseline": true,
+          "current": false
+        }
+      ]
+    },
+    {
+      "scenario": "merchant",
+      "index": 5,
+      "action": {
+        "type": "next"
+      },
+      "committed": true,
+      "baselineStateSha256": "5fa56477c4ac5f540802abc140d1ed0d1cdcc227cd1099d16e861d3bdb50bd3e",
+      "currentStateSha256": "4d8e43719918cfc6a5fe2c90e97fec3b5d02f4f26654d6b298f4a3432ada2035",
+      "reloadedCurrentStateSha256": "4d8e43719918cfc6a5fe2c90e97fec3b5d02f4f26654d6b298f4a3432ada2035",
+      "differences": [
+        {
+          "path": "$.shop.0.item.enhance",
+          "baseline": 2,
+          "current": 0
+        },
+        {
+          "path": "$.shop.0.item.locked",
+          "baseline": true,
+          "current": false
+        }
+      ]
+    },
+    {
+      "scenario": "merchant",
+      "index": 6,
+      "action": {
+        "type": "fuse",
+        "targets": [
+          "i4"
+        ],
+        "materials": [
+          "i1"
+        ]
+      },
+      "committed": true,
+      "baselineStateSha256": "9305dc7d62d397f590db085b94a80e3431b06b5e1dd3367468a3d8c9b9ff28f0",
+      "currentStateSha256": "a0360ac0ee117678e70684a6659ff0ec13ef4c80df419c5d035ecd8c90866340",
+      "reloadedCurrentStateSha256": "a0360ac0ee117678e70684a6659ff0ec13ef4c80df419c5d035ecd8c90866340",
+      "differences": [
+        {
+          "path": "$.shop.0.item.enhance",
+          "baseline": 2,
+          "current": 0
+        },
+        {
+          "path": "$.shop.0.item.locked",
+          "baseline": true,
+          "current": false
+        }
+      ]
+    },
+    {
+      "scenario": "merchant",
+      "index": 7,
+      "action": {
+        "type": "lock",
+        "id": "i4"
+      },
+      "committed": true,
+      "baselineStateSha256": "e4b179f8f57adf0c1be0148c1d1e0589d15a69c96fa5961975d5b147eed348ac",
+      "currentStateSha256": "1f498e2e4042f0721d279607bfced8169e651ac989ae579ad1f3a0719d1140a0",
+      "reloadedCurrentStateSha256": "1f498e2e4042f0721d279607bfced8169e651ac989ae579ad1f3a0719d1140a0",
+      "differences": [
+        {
+          "path": "$.shop.0.item.enhance",
+          "baseline": 2,
+          "current": 0
+        },
+        {
+          "path": "$.shop.0.item.locked",
+          "baseline": true,
+          "current": false
+        }
+      ]
+    },
+    {
+      "scenario": "blackmarket",
+      "index": 0,
+      "action": {
+        "type": "buy",
+        "id": "i4"
+      },
+      "committed": true,
+      "baselineStateSha256": "6dadc78e65fca41af083986d74f2ce99fe1c4b56cc0a98289046c3a9d3ab73aa",
+      "currentStateSha256": "6dadc78e65fca41af083986d74f2ce99fe1c4b56cc0a98289046c3a9d3ab73aa",
+      "reloadedCurrentStateSha256": "6dadc78e65fca41af083986d74f2ce99fe1c4b56cc0a98289046c3a9d3ab73aa",
+      "differences": []
+    },
+    {
+      "scenario": "blackmarket",
+      "index": 1,
+      "action": {
+        "type": "lock",
+        "id": "i4"
+      },
+      "committed": true,
+      "baselineStateSha256": "323bfd0ab83a544a05eceb675fff0c09c97736282897b07f1bb2e6ad1eb61371",
+      "currentStateSha256": "847616142f7709f4f4426c48b8747d34f4f947e858d0efccc3d3ac8c6433aee8",
+      "reloadedCurrentStateSha256": "847616142f7709f4f4426c48b8747d34f4f947e858d0efccc3d3ac8c6433aee8",
+      "differences": [
+        {
+          "path": "$.shop.0.item.locked",
+          "baseline": true,
+          "current": false
+        }
+      ]
+    },
+    {
+      "scenario": "blackmarket",
+      "index": 2,
+      "action": {
+        "type": "equip",
+        "id": "i4"
+      },
+      "committed": true,
+      "baselineStateSha256": "0cee07a7fa4fd8d6235e4692a5a78c0f545097133970bf64f161c060264f04b4",
+      "currentStateSha256": "03abf1f5a84ba2b17abb713f600db398bc0474a6a2bb05fb54d192fe077bae5a",
+      "reloadedCurrentStateSha256": "03abf1f5a84ba2b17abb713f600db398bc0474a6a2bb05fb54d192fe077bae5a",
+      "differences": [
+        {
+          "path": "$.shop.0.item.locked",
+          "baseline": true,
+          "current": false
+        }
+      ]
+    },
+    {
+      "scenario": "blackmarket",
+      "index": 3,
+      "action": {
+        "type": "next"
+      },
+      "committed": true,
+      "baselineStateSha256": "9826f139d3e4ea52f7fce22bd1fc6f2d9846492be7ce6369ba22961901e048b4",
+      "currentStateSha256": "2b3bd19c1b82e29233a377b164574352f8ea6089eb6864981ea5bd9ce7bde609",
+      "reloadedCurrentStateSha256": "2b3bd19c1b82e29233a377b164574352f8ea6089eb6864981ea5bd9ce7bde609",
+      "differences": [
+        {
+          "path": "$.shop.0.item.locked",
+          "baseline": true,
+          "current": false
+        }
+      ]
+    },
+    {
+      "scenario": "blackmarket",
+      "index": 4,
+      "action": {
+        "type": "forge",
+        "id": "i4"
+      },
+      "committed": true,
+      "baselineStateSha256": "fd632432d4996b1e858b246e6476b43479104deff62d3d0cc0468b13309ad4bc",
+      "currentStateSha256": "d12bf0d3df46ad9b7c5b81727d8b5924e9927b8d098be9eab61116d759f7f06e",
+      "reloadedCurrentStateSha256": "d12bf0d3df46ad9b7c5b81727d8b5924e9927b8d098be9eab61116d759f7f06e",
+      "differences": [
+        {
+          "path": "$.shop.0.item.enhance",
+          "baseline": 2,
+          "current": 0
+        },
+        {
+          "path": "$.shop.0.item.locked",
+          "baseline": true,
+          "current": false
+        }
+      ]
+    },
+    {
+      "scenario": "blackmarket",
+      "index": 5,
+      "action": {
+        "type": "next"
+      },
+      "committed": true,
+      "baselineStateSha256": "0995fd70760d397ffbc7db437d648756aa8eff2f6af3c3f7ae48ffce24636cd3",
+      "currentStateSha256": "32b2659385ebafcf3840f905e3780900c7377e103048bd5c8735429dd94773d7",
+      "reloadedCurrentStateSha256": "32b2659385ebafcf3840f905e3780900c7377e103048bd5c8735429dd94773d7",
+      "differences": [
+        {
+          "path": "$.shop.0.item.enhance",
+          "baseline": 2,
+          "current": 0
+        },
+        {
+          "path": "$.shop.0.item.locked",
+          "baseline": true,
+          "current": false
+        }
+      ]
+    },
+    {
+      "scenario": "blackmarket",
+      "index": 6,
+      "action": {
+        "type": "fuse",
+        "targets": [
+          "i4"
+        ],
+        "materials": [
+          "i1"
+        ]
+      },
+      "committed": true,
+      "baselineStateSha256": "2d1ab3ba8824d65bfbea3bc017b8683aace8d87f8ab0b469b0949a496fb2eba9",
+      "currentStateSha256": "2ded5931aa2edde63a53b6fd23c3a3693f368c42a461a6ddde976d9b09738d3d",
+      "reloadedCurrentStateSha256": "2ded5931aa2edde63a53b6fd23c3a3693f368c42a461a6ddde976d9b09738d3d",
+      "differences": [
+        {
+          "path": "$.shop.0.item.enhance",
+          "baseline": 2,
+          "current": 0
+        },
+        {
+          "path": "$.shop.0.item.locked",
+          "baseline": true,
+          "current": false
+        }
+      ]
+    },
+    {
+      "scenario": "blackmarket",
+      "index": 7,
+      "action": {
+        "type": "lock",
+        "id": "i4"
+      },
+      "committed": true,
+      "baselineStateSha256": "bfcaf1f656a4c48e463ebe891d8338daf44f2bb5961661cfd5c7e653fbc812fc",
+      "currentStateSha256": "93765da2839d99085fbc98443580bfaf441685d45efaefd9ba1f3d3bbc9a5421",
+      "reloadedCurrentStateSha256": "93765da2839d99085fbc98443580bfaf441685d45efaefd9ba1f3d3bbc9a5421",
+      "differences": [
+        {
+          "path": "$.shop.0.item.enhance",
+          "baseline": 2,
+          "current": 0
+        },
+        {
+          "path": "$.shop.0.item.locked",
+          "baseline": true,
+          "current": false
+        }
+      ]
+    },
+    {
+      "scenario": "chest",
+      "index": 0,
+      "action": {
+        "type": "open"
+      },
+      "committed": true,
+      "baselineStateSha256": "8775a847e35f9a4d0149f8c56b6c6300e8b52e933622728daf4e31c08a873fd5",
+      "currentStateSha256": "8775a847e35f9a4d0149f8c56b6c6300e8b52e933622728daf4e31c08a873fd5",
+      "reloadedCurrentStateSha256": "8775a847e35f9a4d0149f8c56b6c6300e8b52e933622728daf4e31c08a873fd5",
+      "differences": []
+    },
+    {
+      "scenario": "chest",
+      "index": 1,
+      "action": {
+        "type": "lock",
+        "id": "i4"
+      },
+      "committed": true,
+      "baselineStateSha256": "01b01712b61e327ad4785207f95ef864f92dd77e4580d53c976c5465c6f0d498",
+      "currentStateSha256": "273719ccc7dcc793dd7de5f84c453b2946fc0a8a9b04aa2d2955ac5834b5d269",
+      "reloadedCurrentStateSha256": "273719ccc7dcc793dd7de5f84c453b2946fc0a8a9b04aa2d2955ac5834b5d269",
+      "differences": [
+        {
+          "path": "$.loot.item.locked",
+          "baseline": true,
+          "current": false
+        }
+      ]
+    },
+    {
+      "scenario": "chest",
+      "index": 2,
+      "action": {
+        "type": "equip",
+        "id": "i4"
+      },
+      "committed": true,
+      "baselineStateSha256": "85d549e6972c75ae6d964ffec248b1917bb557e928beb0973b56bafb42de4f20",
+      "currentStateSha256": "1259d48e194c0db48d71baee261208372cbf1d015fd4a5c4db80eb90c715cfaf",
+      "reloadedCurrentStateSha256": "1259d48e194c0db48d71baee261208372cbf1d015fd4a5c4db80eb90c715cfaf",
+      "differences": [
+        {
+          "path": "$.loot.item.locked",
+          "baseline": true,
+          "current": false
+        }
+      ]
+    },
+    {
+      "scenario": "chest",
+      "index": 3,
+      "action": {
+        "type": "lock",
+        "id": "i4"
+      },
+      "committed": true,
+      "baselineStateSha256": "bcb36fd7f6365695b872cb5b0b998149fa66756acb881e053ca0ddd990ebadde",
+      "currentStateSha256": "bcb36fd7f6365695b872cb5b0b998149fa66756acb881e053ca0ddd990ebadde",
+      "reloadedCurrentStateSha256": "bcb36fd7f6365695b872cb5b0b998149fa66756acb881e053ca0ddd990ebadde",
+      "differences": []
+    },
+    {
+      "scenario": "chest",
+      "index": 4,
+      "action": {
+        "type": "open"
+      },
+      "committed": false,
+      "baselineStateSha256": "bcb36fd7f6365695b872cb5b0b998149fa66756acb881e053ca0ddd990ebadde",
+      "currentStateSha256": "bcb36fd7f6365695b872cb5b0b998149fa66756acb881e053ca0ddd990ebadde",
+      "reloadedCurrentStateSha256": "bcb36fd7f6365695b872cb5b0b998149fa66756acb881e053ca0ddd990ebadde",
+      "differences": []
+    },
+    {
+      "scenario": "chest",
+      "index": 5,
+      "action": {
+        "type": "next"
+      },
+      "committed": true,
+      "baselineStateSha256": "3b7ec14600880a8f34894c419f42009b0830e1b2fee4ea788dd4def1b03ff763",
+      "currentStateSha256": "3b7ec14600880a8f34894c419f42009b0830e1b2fee4ea788dd4def1b03ff763",
+      "reloadedCurrentStateSha256": "3b7ec14600880a8f34894c419f42009b0830e1b2fee4ea788dd4def1b03ff763",
+      "differences": []
+    },
+    {
+      "scenario": "vault",
+      "index": 0,
+      "action": {
+        "type": "open"
+      },
+      "committed": true,
+      "baselineStateSha256": "c36cde888bcaf27840cac4cac3d66ab1960b49ae69b6838b1d2128ed5d7cdac8",
+      "currentStateSha256": "c36cde888bcaf27840cac4cac3d66ab1960b49ae69b6838b1d2128ed5d7cdac8",
+      "reloadedCurrentStateSha256": "c36cde888bcaf27840cac4cac3d66ab1960b49ae69b6838b1d2128ed5d7cdac8",
+      "differences": []
+    },
+    {
+      "scenario": "vault",
+      "index": 1,
+      "action": {
+        "type": "lock",
+        "id": "i4"
+      },
+      "committed": true,
+      "baselineStateSha256": "3d6efb3b573150fc4357a735f762ada273a4cbfc75f8b9a7712d0c8c1d91439a",
+      "currentStateSha256": "863a1c761e296417fd7207cbdd261746ed8da87c963ccb7faa5f79189dc93074",
+      "reloadedCurrentStateSha256": "863a1c761e296417fd7207cbdd261746ed8da87c963ccb7faa5f79189dc93074",
+      "differences": [
+        {
+          "path": "$.loot.item.locked",
+          "baseline": true,
+          "current": false
+        }
+      ]
+    },
+    {
+      "scenario": "vault",
+      "index": 2,
+      "action": {
+        "type": "equip",
+        "id": "i4"
+      },
+      "committed": true,
+      "baselineStateSha256": "47fa83cad116de0a72709d9531f54df62e8f4a3b3fadfe8f366483bdcfbc38c9",
+      "currentStateSha256": "f5a630d055126f3aa487359f75dce9f0ed3d422c1ce4891e8106598887779e97",
+      "reloadedCurrentStateSha256": "f5a630d055126f3aa487359f75dce9f0ed3d422c1ce4891e8106598887779e97",
+      "differences": [
+        {
+          "path": "$.loot.item.locked",
+          "baseline": true,
+          "current": false
+        }
+      ]
+    },
+    {
+      "scenario": "vault",
+      "index": 3,
+      "action": {
+        "type": "lock",
+        "id": "i4"
+      },
+      "committed": true,
+      "baselineStateSha256": "46278a831454f090e8edafd4d365d66b243ec6220913b9853e59ddd9261e8be1",
+      "currentStateSha256": "46278a831454f090e8edafd4d365d66b243ec6220913b9853e59ddd9261e8be1",
+      "reloadedCurrentStateSha256": "46278a831454f090e8edafd4d365d66b243ec6220913b9853e59ddd9261e8be1",
+      "differences": []
+    },
+    {
+      "scenario": "vault",
+      "index": 4,
+      "action": {
+        "type": "open"
+      },
+      "committed": false,
+      "baselineStateSha256": "46278a831454f090e8edafd4d365d66b243ec6220913b9853e59ddd9261e8be1",
+      "currentStateSha256": "46278a831454f090e8edafd4d365d66b243ec6220913b9853e59ddd9261e8be1",
+      "reloadedCurrentStateSha256": "46278a831454f090e8edafd4d365d66b243ec6220913b9853e59ddd9261e8be1",
+      "differences": []
+    },
+    {
+      "scenario": "vault",
+      "index": 5,
+      "action": {
+        "type": "next"
+      },
+      "committed": true,
+      "baselineStateSha256": "2ece43460c545a2cbc588c24d022cda0894e25988d802bb15ddeeb932bf7ac4f",
+      "currentStateSha256": "2ece43460c545a2cbc588c24d022cda0894e25988d802bb15ddeeb932bf7ac4f",
+      "reloadedCurrentStateSha256": "2ece43460c545a2cbc588c24d022cda0894e25988d802bb15ddeeb932bf7ac4f",
+      "differences": []
+    },
+    {
+      "scenario": "gambit reward",
+      "index": 0,
+      "action": {
+        "type": "event-choice",
+        "id": "safe",
+        "confirmed": true
+      },
+      "committed": true,
+      "baselineStateSha256": "3d70d1841eb99aa4c887920d300ac2604756e9c1dc5ae6452f5b00667e49701c",
+      "currentStateSha256": "3d70d1841eb99aa4c887920d300ac2604756e9c1dc5ae6452f5b00667e49701c",
+      "reloadedCurrentStateSha256": "3d70d1841eb99aa4c887920d300ac2604756e9c1dc5ae6452f5b00667e49701c",
+      "differences": []
+    },
+    {
+      "scenario": "gambit reward",
+      "index": 1,
+      "action": {
+        "type": "open"
+      },
+      "committed": true,
+      "baselineStateSha256": "8b977c6470b409532e240aee7888ae1e1b5189a8ec40c4fe12ddf25c773b39a8",
+      "currentStateSha256": "8b977c6470b409532e240aee7888ae1e1b5189a8ec40c4fe12ddf25c773b39a8",
+      "reloadedCurrentStateSha256": "8b977c6470b409532e240aee7888ae1e1b5189a8ec40c4fe12ddf25c773b39a8",
+      "differences": []
+    },
+    {
+      "scenario": "gambit reward",
+      "index": 2,
+      "action": {
+        "type": "lock",
+        "id": "i5"
+      },
+      "committed": true,
+      "baselineStateSha256": "698cbf07b1318365f605ccc2fd158ab5eab3e7d2ba75134beac43a90ed1aeadb",
+      "currentStateSha256": "ff475cd261ea98ba315fefd90c079adb3d64c881c5f9cb4a7563e9baf7bd7d99",
+      "reloadedCurrentStateSha256": "ff475cd261ea98ba315fefd90c079adb3d64c881c5f9cb4a7563e9baf7bd7d99",
+      "differences": [
+        {
+          "path": "$.loot.item.locked",
+          "baseline": true,
+          "current": false
+        }
+      ]
+    },
+    {
+      "scenario": "gambit reward",
+      "index": 3,
+      "action": {
+        "type": "equip",
+        "id": "i5"
+      },
+      "committed": true,
+      "baselineStateSha256": "71e7ad001d50f70c734951a470add399cd035b702b4c029a704821b3a182af0f",
+      "currentStateSha256": "93ccbb084abc1b172a20f3fe52d399b634fb430ada305b51f06df065072122e0",
+      "reloadedCurrentStateSha256": "93ccbb084abc1b172a20f3fe52d399b634fb430ada305b51f06df065072122e0",
+      "differences": [
+        {
+          "path": "$.loot.item.locked",
+          "baseline": true,
+          "current": false
+        }
+      ]
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 0,
+      "action": {
+        "type": "fate"
+      },
+      "committed": true,
+      "baselineStateSha256": "138b66a6ef0aa4fffa77abcfd862f0ffdf87b15646236eec1d2889cd0da88ad6",
+      "currentStateSha256": "138b66a6ef0aa4fffa77abcfd862f0ffdf87b15646236eec1d2889cd0da88ad6",
+      "reloadedCurrentStateSha256": "138b66a6ef0aa4fffa77abcfd862f0ffdf87b15646236eec1d2889cd0da88ad6",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 1,
+      "action": {
+        "type": "enter"
+      },
+      "committed": true,
+      "baselineStateSha256": "33704012a35c58200eb6f6a5279b94b42a0fbdd7d41b63d12ef7f8df23e8d177",
+      "currentStateSha256": "33704012a35c58200eb6f6a5279b94b42a0fbdd7d41b63d12ef7f8df23e8d177",
+      "reloadedCurrentStateSha256": "33704012a35c58200eb6f6a5279b94b42a0fbdd7d41b63d12ef7f8df23e8d177",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 2,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "844b583af70ff220f97819b28a956330795d2eac487f61eed448c90c3e71c8de",
+      "currentStateSha256": "844b583af70ff220f97819b28a956330795d2eac487f61eed448c90c3e71c8de",
+      "reloadedCurrentStateSha256": "844b583af70ff220f97819b28a956330795d2eac487f61eed448c90c3e71c8de",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 3,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "60c99ed94adf7ee20daa0fd44f739524f99c04c5a445001399597136d682f8ae",
+      "currentStateSha256": "60c99ed94adf7ee20daa0fd44f739524f99c04c5a445001399597136d682f8ae",
+      "reloadedCurrentStateSha256": "60c99ed94adf7ee20daa0fd44f739524f99c04c5a445001399597136d682f8ae",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 4,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "2778fbb1f6d93416d8f6358a80c17e4a8e393b36c12b57a5e8388ed38f1dece4",
+      "currentStateSha256": "2778fbb1f6d93416d8f6358a80c17e4a8e393b36c12b57a5e8388ed38f1dece4",
+      "reloadedCurrentStateSha256": "2778fbb1f6d93416d8f6358a80c17e4a8e393b36c12b57a5e8388ed38f1dece4",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 5,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "889bfa64e9ddbb57eacbb2562d45948444f0a7e0c6711b340ee57ffa1e41ce83",
+      "currentStateSha256": "889bfa64e9ddbb57eacbb2562d45948444f0a7e0c6711b340ee57ffa1e41ce83",
+      "reloadedCurrentStateSha256": "889bfa64e9ddbb57eacbb2562d45948444f0a7e0c6711b340ee57ffa1e41ce83",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 6,
+      "action": {
+        "type": "open"
+      },
+      "committed": true,
+      "baselineStateSha256": "02617ce17e2f095fd64000e685f2d5c5721a531538714c2abed0786733453341",
+      "currentStateSha256": "02617ce17e2f095fd64000e685f2d5c5721a531538714c2abed0786733453341",
+      "reloadedCurrentStateSha256": "02617ce17e2f095fd64000e685f2d5c5721a531538714c2abed0786733453341",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 7,
+      "action": {
+        "type": "next"
+      },
+      "committed": true,
+      "baselineStateSha256": "cc3dfe4cc1a019360b524d9b525ca2e4430959a7616c293a84b6d8f81c5efc6a",
+      "currentStateSha256": "cc3dfe4cc1a019360b524d9b525ca2e4430959a7616c293a84b6d8f81c5efc6a",
+      "reloadedCurrentStateSha256": "cc3dfe4cc1a019360b524d9b525ca2e4430959a7616c293a84b6d8f81c5efc6a",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 8,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "71f3d9e07236b8104e735680e9cee4a55c85a8bb9a95429697b122d594d4b0d8",
+      "currentStateSha256": "71f3d9e07236b8104e735680e9cee4a55c85a8bb9a95429697b122d594d4b0d8",
+      "reloadedCurrentStateSha256": "71f3d9e07236b8104e735680e9cee4a55c85a8bb9a95429697b122d594d4b0d8",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 9,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "d23b805953997892045f1c2dc63fe7456a613dbf676011c24e3de25dd52d6855",
+      "currentStateSha256": "d23b805953997892045f1c2dc63fe7456a613dbf676011c24e3de25dd52d6855",
+      "reloadedCurrentStateSha256": "d23b805953997892045f1c2dc63fe7456a613dbf676011c24e3de25dd52d6855",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 10,
+      "action": {
+        "type": "open"
+      },
+      "committed": true,
+      "baselineStateSha256": "c7a2149687af503497c3d215077bf6bfef9ccba536f2ea00c8253b2c677d4b41",
+      "currentStateSha256": "c7a2149687af503497c3d215077bf6bfef9ccba536f2ea00c8253b2c677d4b41",
+      "reloadedCurrentStateSha256": "c7a2149687af503497c3d215077bf6bfef9ccba536f2ea00c8253b2c677d4b41",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 11,
+      "action": {
+        "type": "next"
+      },
+      "committed": true,
+      "baselineStateSha256": "48060bc1ad5b668a4e2eaf91d82131662366056d09344140bb578345f0591723",
+      "currentStateSha256": "48060bc1ad5b668a4e2eaf91d82131662366056d09344140bb578345f0591723",
+      "reloadedCurrentStateSha256": "48060bc1ad5b668a4e2eaf91d82131662366056d09344140bb578345f0591723",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 12,
+      "action": {
+        "type": "next"
+      },
+      "committed": true,
+      "baselineStateSha256": "311ccf99ed56db52cebb7b96ce4be5d5951aed3c12d699d5b8b0a663ae98fb43",
+      "currentStateSha256": "311ccf99ed56db52cebb7b96ce4be5d5951aed3c12d699d5b8b0a663ae98fb43",
+      "reloadedCurrentStateSha256": "311ccf99ed56db52cebb7b96ce4be5d5951aed3c12d699d5b8b0a663ae98fb43",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 13,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "d44e2349863e9f2a6c5fa85e8692bb0cd7542e315f06695fd33f9887d882374f",
+      "currentStateSha256": "d44e2349863e9f2a6c5fa85e8692bb0cd7542e315f06695fd33f9887d882374f",
+      "reloadedCurrentStateSha256": "d44e2349863e9f2a6c5fa85e8692bb0cd7542e315f06695fd33f9887d882374f",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 14,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "c2e2601e3c84458f8e3bdcec1298df307306db314277b3971b0b8728d2511b97",
+      "currentStateSha256": "c2e2601e3c84458f8e3bdcec1298df307306db314277b3971b0b8728d2511b97",
+      "reloadedCurrentStateSha256": "c2e2601e3c84458f8e3bdcec1298df307306db314277b3971b0b8728d2511b97",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 15,
+      "action": {
+        "type": "open"
+      },
+      "committed": true,
+      "baselineStateSha256": "57d8cfc1f50627d8e08a3a099dc2e20ab1e4a30535ac2f0b2fd87cf2f1e34489",
+      "currentStateSha256": "57d8cfc1f50627d8e08a3a099dc2e20ab1e4a30535ac2f0b2fd87cf2f1e34489",
+      "reloadedCurrentStateSha256": "57d8cfc1f50627d8e08a3a099dc2e20ab1e4a30535ac2f0b2fd87cf2f1e34489",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 16,
+      "action": {
+        "type": "next"
+      },
+      "committed": true,
+      "baselineStateSha256": "3eb9e64884b2905cf225259d8effaf3fe290ba31a202639555ccaaf8cb9005a5",
+      "currentStateSha256": "3eb9e64884b2905cf225259d8effaf3fe290ba31a202639555ccaaf8cb9005a5",
+      "reloadedCurrentStateSha256": "3eb9e64884b2905cf225259d8effaf3fe290ba31a202639555ccaaf8cb9005a5",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 17,
+      "action": {
+        "type": "gold"
+      },
+      "committed": true,
+      "baselineStateSha256": "4af9c7b18696e01f0ddbd14640e2f444f8799a2fb4c046e8c8476fb0dd173e25",
+      "currentStateSha256": "4af9c7b18696e01f0ddbd14640e2f444f8799a2fb4c046e8c8476fb0dd173e25",
+      "reloadedCurrentStateSha256": "4af9c7b18696e01f0ddbd14640e2f444f8799a2fb4c046e8c8476fb0dd173e25",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 18,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "9b2f18a095f6dbbb2d65e11415adbb62be6e299e910f57c341c85fb11691dfd4",
+      "currentStateSha256": "9b2f18a095f6dbbb2d65e11415adbb62be6e299e910f57c341c85fb11691dfd4",
+      "reloadedCurrentStateSha256": "9b2f18a095f6dbbb2d65e11415adbb62be6e299e910f57c341c85fb11691dfd4",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 19,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "f151e25d65ab8b119d2d3ac975559e371d5220473851accdea518fa6bd875d61",
+      "currentStateSha256": "f151e25d65ab8b119d2d3ac975559e371d5220473851accdea518fa6bd875d61",
+      "reloadedCurrentStateSha256": "f151e25d65ab8b119d2d3ac975559e371d5220473851accdea518fa6bd875d61",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 20,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "5c6eb06dcb3063175f772a139a94e13071e9f0d496c11636ca2be058b18ffeba",
+      "currentStateSha256": "5c6eb06dcb3063175f772a139a94e13071e9f0d496c11636ca2be058b18ffeba",
+      "reloadedCurrentStateSha256": "5c6eb06dcb3063175f772a139a94e13071e9f0d496c11636ca2be058b18ffeba",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 21,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "dc24ea760a00866eda49ffbb05ef457f0dd02a9857b886f8f6f01a41f46e0de9",
+      "currentStateSha256": "dc24ea760a00866eda49ffbb05ef457f0dd02a9857b886f8f6f01a41f46e0de9",
+      "reloadedCurrentStateSha256": "dc24ea760a00866eda49ffbb05ef457f0dd02a9857b886f8f6f01a41f46e0de9",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 22,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "6a7b4eeb3ed94f3e6f8ec112677d80fc1909c0a468dae7b38f4bfc70e7733415",
+      "currentStateSha256": "6a7b4eeb3ed94f3e6f8ec112677d80fc1909c0a468dae7b38f4bfc70e7733415",
+      "reloadedCurrentStateSha256": "6a7b4eeb3ed94f3e6f8ec112677d80fc1909c0a468dae7b38f4bfc70e7733415",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 23,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "b41a1fa0ed93a323cec8323da028af06cbaca93977d5df8abe8761baf617d557",
+      "currentStateSha256": "b41a1fa0ed93a323cec8323da028af06cbaca93977d5df8abe8761baf617d557",
+      "reloadedCurrentStateSha256": "b41a1fa0ed93a323cec8323da028af06cbaca93977d5df8abe8761baf617d557",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 24,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "98aac2852013e8ac0e690eb8cfe6d7a824bc4a2c6f4278f501df400b9a34e3bd",
+      "currentStateSha256": "98aac2852013e8ac0e690eb8cfe6d7a824bc4a2c6f4278f501df400b9a34e3bd",
+      "reloadedCurrentStateSha256": "98aac2852013e8ac0e690eb8cfe6d7a824bc4a2c6f4278f501df400b9a34e3bd",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 25,
+      "action": {
+        "type": "open"
+      },
+      "committed": true,
+      "baselineStateSha256": "594f649b32ee7fb6606b19d9ebc44d9d5a1ee70badc04f3c4c8a96e98ea2af50",
+      "currentStateSha256": "594f649b32ee7fb6606b19d9ebc44d9d5a1ee70badc04f3c4c8a96e98ea2af50",
+      "reloadedCurrentStateSha256": "594f649b32ee7fb6606b19d9ebc44d9d5a1ee70badc04f3c4c8a96e98ea2af50",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 26,
+      "action": {
+        "type": "next"
+      },
+      "committed": true,
+      "baselineStateSha256": "a5a924bb786983b789a2118399142a9208246455e8185a706ccad32c89b890e2",
+      "currentStateSha256": "a5a924bb786983b789a2118399142a9208246455e8185a706ccad32c89b890e2",
+      "reloadedCurrentStateSha256": "a5a924bb786983b789a2118399142a9208246455e8185a706ccad32c89b890e2",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 27,
+      "action": {
+        "type": "descend"
+      },
+      "committed": true,
+      "baselineStateSha256": "f6c40bf992ce5b4f0f75fe97f31d7b7c8257ed3d8225a1b51dceb50a17a2bba7",
+      "currentStateSha256": "f6c40bf992ce5b4f0f75fe97f31d7b7c8257ed3d8225a1b51dceb50a17a2bba7",
+      "reloadedCurrentStateSha256": "f6c40bf992ce5b4f0f75fe97f31d7b7c8257ed3d8225a1b51dceb50a17a2bba7",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 28,
+      "action": {
+        "type": "fate"
+      },
+      "committed": true,
+      "baselineStateSha256": "69f2ffaf4293b3fee908aad0a0a93beb1bfc0cb2c1c256e618a0aa8984ab42d1",
+      "currentStateSha256": "69f2ffaf4293b3fee908aad0a0a93beb1bfc0cb2c1c256e618a0aa8984ab42d1",
+      "reloadedCurrentStateSha256": "69f2ffaf4293b3fee908aad0a0a93beb1bfc0cb2c1c256e618a0aa8984ab42d1",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 29,
+      "action": {
+        "type": "enter"
+      },
+      "committed": true,
+      "baselineStateSha256": "b24b0e95f2bc016dca2993b8a073606f966e1f0f156acbe984d212ef91452737",
+      "currentStateSha256": "b24b0e95f2bc016dca2993b8a073606f966e1f0f156acbe984d212ef91452737",
+      "reloadedCurrentStateSha256": "b24b0e95f2bc016dca2993b8a073606f966e1f0f156acbe984d212ef91452737",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 30,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "6199c4a91336f23ed5492c86c009f5d7b1fc2e6a3b6587e0015d73a543c73a6c",
+      "currentStateSha256": "6199c4a91336f23ed5492c86c009f5d7b1fc2e6a3b6587e0015d73a543c73a6c",
+      "reloadedCurrentStateSha256": "6199c4a91336f23ed5492c86c009f5d7b1fc2e6a3b6587e0015d73a543c73a6c",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 31,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "18c386c65b4bc1fce82e2bdc589e5796018b94a9831a185378717070b3adf08a",
+      "currentStateSha256": "18c386c65b4bc1fce82e2bdc589e5796018b94a9831a185378717070b3adf08a",
+      "reloadedCurrentStateSha256": "18c386c65b4bc1fce82e2bdc589e5796018b94a9831a185378717070b3adf08a",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 32,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "b74481778f3ba14e86497f98d5141c98786ec78a1922c9be02f9f78ccad74793",
+      "currentStateSha256": "b74481778f3ba14e86497f98d5141c98786ec78a1922c9be02f9f78ccad74793",
+      "reloadedCurrentStateSha256": "b74481778f3ba14e86497f98d5141c98786ec78a1922c9be02f9f78ccad74793",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 33,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "40f5b396aa9cb87115875a65e46b90ea90286689930f9946d305f6f8ee5e3c32",
+      "currentStateSha256": "40f5b396aa9cb87115875a65e46b90ea90286689930f9946d305f6f8ee5e3c32",
+      "reloadedCurrentStateSha256": "40f5b396aa9cb87115875a65e46b90ea90286689930f9946d305f6f8ee5e3c32",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 34,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "21377a848fc358be65859fed66c6c8b755361838b0a670aa4ceebd3f4a473729",
+      "currentStateSha256": "21377a848fc358be65859fed66c6c8b755361838b0a670aa4ceebd3f4a473729",
+      "reloadedCurrentStateSha256": "21377a848fc358be65859fed66c6c8b755361838b0a670aa4ceebd3f4a473729",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 35,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "b0ac71718e54c4e4587e5bfb1d518db933bfa0f3fb9433f81c0ca614ca4906b0",
+      "currentStateSha256": "b0ac71718e54c4e4587e5bfb1d518db933bfa0f3fb9433f81c0ca614ca4906b0",
+      "reloadedCurrentStateSha256": "b0ac71718e54c4e4587e5bfb1d518db933bfa0f3fb9433f81c0ca614ca4906b0",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 36,
+      "action": {
+        "type": "open"
+      },
+      "committed": true,
+      "baselineStateSha256": "0bf833b01547ccf691b0a2b1b9f830e2bbf301b80b52e788514833b5f7927aa0",
+      "currentStateSha256": "0bf833b01547ccf691b0a2b1b9f830e2bbf301b80b52e788514833b5f7927aa0",
+      "reloadedCurrentStateSha256": "0bf833b01547ccf691b0a2b1b9f830e2bbf301b80b52e788514833b5f7927aa0",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 37,
+      "action": {
+        "type": "next"
+      },
+      "committed": true,
+      "baselineStateSha256": "b1df0757ad52e05a044baf04d4e311577592452c3138d52544eba5ea52e54f17",
+      "currentStateSha256": "b1df0757ad52e05a044baf04d4e311577592452c3138d52544eba5ea52e54f17",
+      "reloadedCurrentStateSha256": "b1df0757ad52e05a044baf04d4e311577592452c3138d52544eba5ea52e54f17",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 38,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "23c56a38dbb85ca7a966c8b6a9e9ebbb3933f20d4fa9415f02473fcbb8bb2c05",
+      "currentStateSha256": "23c56a38dbb85ca7a966c8b6a9e9ebbb3933f20d4fa9415f02473fcbb8bb2c05",
+      "reloadedCurrentStateSha256": "23c56a38dbb85ca7a966c8b6a9e9ebbb3933f20d4fa9415f02473fcbb8bb2c05",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 39,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "1578ad8cb9eb85784c4bea4b9525405dbd8ea3651e795aee6de609644da66992",
+      "currentStateSha256": "1578ad8cb9eb85784c4bea4b9525405dbd8ea3651e795aee6de609644da66992",
+      "reloadedCurrentStateSha256": "1578ad8cb9eb85784c4bea4b9525405dbd8ea3651e795aee6de609644da66992",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 40,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "95e0d1263e9402720ae7b42569592cfab1182f39a7e42b00bd6125f6d3016190",
+      "currentStateSha256": "95e0d1263e9402720ae7b42569592cfab1182f39a7e42b00bd6125f6d3016190",
+      "reloadedCurrentStateSha256": "95e0d1263e9402720ae7b42569592cfab1182f39a7e42b00bd6125f6d3016190",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 41,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "cdad2b2a2e2b39f78a60c59d30bce1a9a75882128ea1dfc8121853aed403f140",
+      "currentStateSha256": "cdad2b2a2e2b39f78a60c59d30bce1a9a75882128ea1dfc8121853aed403f140",
+      "reloadedCurrentStateSha256": "cdad2b2a2e2b39f78a60c59d30bce1a9a75882128ea1dfc8121853aed403f140",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 42,
+      "action": {
+        "type": "open"
+      },
+      "committed": true,
+      "baselineStateSha256": "a0b1854f0c7705b42b3f7d7f0d17ae48df28f7431fd36e90d3f8a04db309c4a1",
+      "currentStateSha256": "a0b1854f0c7705b42b3f7d7f0d17ae48df28f7431fd36e90d3f8a04db309c4a1",
+      "reloadedCurrentStateSha256": "a0b1854f0c7705b42b3f7d7f0d17ae48df28f7431fd36e90d3f8a04db309c4a1",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 43,
+      "action": {
+        "type": "next"
+      },
+      "committed": true,
+      "baselineStateSha256": "8645a64bfc70f7d4987f8b321559345d057e6d60d0bd14ebc83f4968dabd921a",
+      "currentStateSha256": "8645a64bfc70f7d4987f8b321559345d057e6d60d0bd14ebc83f4968dabd921a",
+      "reloadedCurrentStateSha256": "8645a64bfc70f7d4987f8b321559345d057e6d60d0bd14ebc83f4968dabd921a",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 44,
+      "action": {
+        "type": "next"
+      },
+      "committed": true,
+      "baselineStateSha256": "41696744582bed5059e6585c50b2c24b2be3c9b1b87fc61294d65511ead5bc1d",
+      "currentStateSha256": "41696744582bed5059e6585c50b2c24b2be3c9b1b87fc61294d65511ead5bc1d",
+      "reloadedCurrentStateSha256": "41696744582bed5059e6585c50b2c24b2be3c9b1b87fc61294d65511ead5bc1d",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 45,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "1e82f1b8cc12e88d184c93782a2f24637d8dcb36ece4080c22d36587bd091406",
+      "currentStateSha256": "1e82f1b8cc12e88d184c93782a2f24637d8dcb36ece4080c22d36587bd091406",
+      "reloadedCurrentStateSha256": "1e82f1b8cc12e88d184c93782a2f24637d8dcb36ece4080c22d36587bd091406",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 46,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "912793be91c37199e86a11da9698d6d414a39f058608d2173edcc5837fcfa957",
+      "currentStateSha256": "912793be91c37199e86a11da9698d6d414a39f058608d2173edcc5837fcfa957",
+      "reloadedCurrentStateSha256": "912793be91c37199e86a11da9698d6d414a39f058608d2173edcc5837fcfa957",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 47,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "30c8b0037a9cdaf1d457553ff615ce848d33a8d25ef98980cc6ea9b9214dfbca",
+      "currentStateSha256": "30c8b0037a9cdaf1d457553ff615ce848d33a8d25ef98980cc6ea9b9214dfbca",
+      "reloadedCurrentStateSha256": "30c8b0037a9cdaf1d457553ff615ce848d33a8d25ef98980cc6ea9b9214dfbca",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 48,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "e6ced973d68e82f1eea479dfdf8791db5aaa5390269034f29cfe298a9e6ecabd",
+      "currentStateSha256": "e6ced973d68e82f1eea479dfdf8791db5aaa5390269034f29cfe298a9e6ecabd",
+      "reloadedCurrentStateSha256": "e6ced973d68e82f1eea479dfdf8791db5aaa5390269034f29cfe298a9e6ecabd",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 49,
+      "action": {
+        "type": "open"
+      },
+      "committed": true,
+      "baselineStateSha256": "c7231992ffca2a5c56c176a359e008fb307acb17311cdacc56f225a06cbc99de",
+      "currentStateSha256": "c7231992ffca2a5c56c176a359e008fb307acb17311cdacc56f225a06cbc99de",
+      "reloadedCurrentStateSha256": "c7231992ffca2a5c56c176a359e008fb307acb17311cdacc56f225a06cbc99de",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 50,
+      "action": {
+        "type": "next"
+      },
+      "committed": true,
+      "baselineStateSha256": "525ba82a7a52eb2fb5817ca5f4b680a3759b62fb1b0e65c8ce69ef454793b408",
+      "currentStateSha256": "525ba82a7a52eb2fb5817ca5f4b680a3759b62fb1b0e65c8ce69ef454793b408",
+      "reloadedCurrentStateSha256": "525ba82a7a52eb2fb5817ca5f4b680a3759b62fb1b0e65c8ce69ef454793b408",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 51,
+      "action": {
+        "type": "gold"
+      },
+      "committed": true,
+      "baselineStateSha256": "fad63217465fdebcd48cce52983ce7ba9a11e63c45a5a8d14e0a5a705d3aa296",
+      "currentStateSha256": "fad63217465fdebcd48cce52983ce7ba9a11e63c45a5a8d14e0a5a705d3aa296",
+      "reloadedCurrentStateSha256": "fad63217465fdebcd48cce52983ce7ba9a11e63c45a5a8d14e0a5a705d3aa296",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 52,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "8ca53087fea6de9e724ada4cd42878b3806c59f78178e1dc528c954943fff162",
+      "currentStateSha256": "8ca53087fea6de9e724ada4cd42878b3806c59f78178e1dc528c954943fff162",
+      "reloadedCurrentStateSha256": "8ca53087fea6de9e724ada4cd42878b3806c59f78178e1dc528c954943fff162",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 53,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "53aab34d83438d6b906332a4c18c7f09493f8f2c8697f857fc58a9edb4622bf8",
+      "currentStateSha256": "53aab34d83438d6b906332a4c18c7f09493f8f2c8697f857fc58a9edb4622bf8",
+      "reloadedCurrentStateSha256": "53aab34d83438d6b906332a4c18c7f09493f8f2c8697f857fc58a9edb4622bf8",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 54,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "97dbf374dc11db89170e1e8ddeb0765dbb07c6d6cb3e3bf65c8858bb82ae83fe",
+      "currentStateSha256": "97dbf374dc11db89170e1e8ddeb0765dbb07c6d6cb3e3bf65c8858bb82ae83fe",
+      "reloadedCurrentStateSha256": "97dbf374dc11db89170e1e8ddeb0765dbb07c6d6cb3e3bf65c8858bb82ae83fe",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 55,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "abee97d087c5756582efd2d3ec0cc2f4a84f7bac246769477814951864332559",
+      "currentStateSha256": "abee97d087c5756582efd2d3ec0cc2f4a84f7bac246769477814951864332559",
+      "reloadedCurrentStateSha256": "abee97d087c5756582efd2d3ec0cc2f4a84f7bac246769477814951864332559",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 56,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "50f58d1ddba882af4034e41c86d9d0a1edc044aac46164d86fba22939d85b87d",
+      "currentStateSha256": "50f58d1ddba882af4034e41c86d9d0a1edc044aac46164d86fba22939d85b87d",
+      "reloadedCurrentStateSha256": "50f58d1ddba882af4034e41c86d9d0a1edc044aac46164d86fba22939d85b87d",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 57,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "e223ec449412752bfb0eadea0e97d6da40d80103690f0c6fe909f6ce6d7e23b8",
+      "currentStateSha256": "e223ec449412752bfb0eadea0e97d6da40d80103690f0c6fe909f6ce6d7e23b8",
+      "reloadedCurrentStateSha256": "e223ec449412752bfb0eadea0e97d6da40d80103690f0c6fe909f6ce6d7e23b8",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 58,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "bffac0cc1f6d2b0a59e56dc40d3cf4abcb5583c0fe8873b7e1ebce3a92df9311",
+      "currentStateSha256": "bffac0cc1f6d2b0a59e56dc40d3cf4abcb5583c0fe8873b7e1ebce3a92df9311",
+      "reloadedCurrentStateSha256": "bffac0cc1f6d2b0a59e56dc40d3cf4abcb5583c0fe8873b7e1ebce3a92df9311",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 59,
+      "action": {
+        "type": "open"
+      },
+      "committed": true,
+      "baselineStateSha256": "3a4b536c3423fa828a11dedbc89b2094ea0d9916c8be4f5c5a0c644bd2e2c99e",
+      "currentStateSha256": "3a4b536c3423fa828a11dedbc89b2094ea0d9916c8be4f5c5a0c644bd2e2c99e",
+      "reloadedCurrentStateSha256": "3a4b536c3423fa828a11dedbc89b2094ea0d9916c8be4f5c5a0c644bd2e2c99e",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 60,
+      "action": {
+        "type": "next"
+      },
+      "committed": true,
+      "baselineStateSha256": "3d220b97231bb36d0582fa997f14a38cb92947a7357f8c47afa2c61903f6de2c",
+      "currentStateSha256": "3d220b97231bb36d0582fa997f14a38cb92947a7357f8c47afa2c61903f6de2c",
+      "reloadedCurrentStateSha256": "3d220b97231bb36d0582fa997f14a38cb92947a7357f8c47afa2c61903f6de2c",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 61,
+      "action": {
+        "type": "descend"
+      },
+      "committed": true,
+      "baselineStateSha256": "6e82639f8d122ac96bade1a2d085d704e92995f2e63bd07d74bc42f9c8dc9a68",
+      "currentStateSha256": "6e82639f8d122ac96bade1a2d085d704e92995f2e63bd07d74bc42f9c8dc9a68",
+      "reloadedCurrentStateSha256": "6e82639f8d122ac96bade1a2d085d704e92995f2e63bd07d74bc42f9c8dc9a68",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 62,
+      "action": {
+        "type": "fate"
+      },
+      "committed": true,
+      "baselineStateSha256": "334243901f31d7e15c9ff76b1ce8ff6e09f938bf64bd2c4c3338d1275f26cdd5",
+      "currentStateSha256": "334243901f31d7e15c9ff76b1ce8ff6e09f938bf64bd2c4c3338d1275f26cdd5",
+      "reloadedCurrentStateSha256": "334243901f31d7e15c9ff76b1ce8ff6e09f938bf64bd2c4c3338d1275f26cdd5",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 63,
+      "action": {
+        "type": "enter"
+      },
+      "committed": true,
+      "baselineStateSha256": "4c7fc0a87f9ea7ea5a7c578ff27f0c65e3822c8b6187a83babb6aff1b54a598f",
+      "currentStateSha256": "4c7fc0a87f9ea7ea5a7c578ff27f0c65e3822c8b6187a83babb6aff1b54a598f",
+      "reloadedCurrentStateSha256": "4c7fc0a87f9ea7ea5a7c578ff27f0c65e3822c8b6187a83babb6aff1b54a598f",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 64,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "89812635de93cd78dd9da9f55f2fb814216bd6bb438a5aa0f94bad65fdbe3fe7",
+      "currentStateSha256": "89812635de93cd78dd9da9f55f2fb814216bd6bb438a5aa0f94bad65fdbe3fe7",
+      "reloadedCurrentStateSha256": "89812635de93cd78dd9da9f55f2fb814216bd6bb438a5aa0f94bad65fdbe3fe7",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 65,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "a62db21721179aa4e04d02cad513722414c9a6914994df84d06f8c684d6400ed",
+      "currentStateSha256": "a62db21721179aa4e04d02cad513722414c9a6914994df84d06f8c684d6400ed",
+      "reloadedCurrentStateSha256": "a62db21721179aa4e04d02cad513722414c9a6914994df84d06f8c684d6400ed",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 66,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "ff1bbc519d27bbc582f5ea250ee1c473f7e82bc9b3d72debed5071de46acdf58",
+      "currentStateSha256": "ff1bbc519d27bbc582f5ea250ee1c473f7e82bc9b3d72debed5071de46acdf58",
+      "reloadedCurrentStateSha256": "ff1bbc519d27bbc582f5ea250ee1c473f7e82bc9b3d72debed5071de46acdf58",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 67,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "c413289323012b6ca3b6ab2d3117b16cb44a4539b18b6a2b9f7f21c000f7b42b",
+      "currentStateSha256": "c413289323012b6ca3b6ab2d3117b16cb44a4539b18b6a2b9f7f21c000f7b42b",
+      "reloadedCurrentStateSha256": "c413289323012b6ca3b6ab2d3117b16cb44a4539b18b6a2b9f7f21c000f7b42b",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 68,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "6c6887fdb8a8f1802d371aa73cbda9d305acaabbf8181adb0c8fad44b0a3ada2",
+      "currentStateSha256": "6c6887fdb8a8f1802d371aa73cbda9d305acaabbf8181adb0c8fad44b0a3ada2",
+      "reloadedCurrentStateSha256": "6c6887fdb8a8f1802d371aa73cbda9d305acaabbf8181adb0c8fad44b0a3ada2",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 69,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "28f3397d71ce1e69c23aa09be1d65f9f863ed267eb978ee92cc6cb4d12f4c0b0",
+      "currentStateSha256": "28f3397d71ce1e69c23aa09be1d65f9f863ed267eb978ee92cc6cb4d12f4c0b0",
+      "reloadedCurrentStateSha256": "28f3397d71ce1e69c23aa09be1d65f9f863ed267eb978ee92cc6cb4d12f4c0b0",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 70,
+      "action": {
+        "type": "open"
+      },
+      "committed": true,
+      "baselineStateSha256": "6f72c485abe1d1410ab4e996bc7808bf5db7cdfe29a3ece567612b994d69034f",
+      "currentStateSha256": "6f72c485abe1d1410ab4e996bc7808bf5db7cdfe29a3ece567612b994d69034f",
+      "reloadedCurrentStateSha256": "6f72c485abe1d1410ab4e996bc7808bf5db7cdfe29a3ece567612b994d69034f",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 71,
+      "action": {
+        "type": "next"
+      },
+      "committed": true,
+      "baselineStateSha256": "b8423568f28d745a0e837b5fc7f2c1c3b32907053f3746214951a4332b8f6d96",
+      "currentStateSha256": "b8423568f28d745a0e837b5fc7f2c1c3b32907053f3746214951a4332b8f6d96",
+      "reloadedCurrentStateSha256": "b8423568f28d745a0e837b5fc7f2c1c3b32907053f3746214951a4332b8f6d96",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 72,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "f7438a7806b9d77145239db8954d0a63a7e14b763267adf4512e2ba7b1979ce9",
+      "currentStateSha256": "f7438a7806b9d77145239db8954d0a63a7e14b763267adf4512e2ba7b1979ce9",
+      "reloadedCurrentStateSha256": "f7438a7806b9d77145239db8954d0a63a7e14b763267adf4512e2ba7b1979ce9",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 73,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "20a6952a76d99ab04aa45641a39401f94d38ddb4226c4abd8b535e075c7374b2",
+      "currentStateSha256": "20a6952a76d99ab04aa45641a39401f94d38ddb4226c4abd8b535e075c7374b2",
+      "reloadedCurrentStateSha256": "20a6952a76d99ab04aa45641a39401f94d38ddb4226c4abd8b535e075c7374b2",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 74,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "bdf632fcefe3eaf3dd5d4ee8c768ae5da73d74fcee1309bbe7fcf69192e4a5ca",
+      "currentStateSha256": "bdf632fcefe3eaf3dd5d4ee8c768ae5da73d74fcee1309bbe7fcf69192e4a5ca",
+      "reloadedCurrentStateSha256": "bdf632fcefe3eaf3dd5d4ee8c768ae5da73d74fcee1309bbe7fcf69192e4a5ca",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 75,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "bf14fe7ecf81a3e7b6efb03b8501f6c421842c5bb0394b9132bfcc9669d1db16",
+      "currentStateSha256": "bf14fe7ecf81a3e7b6efb03b8501f6c421842c5bb0394b9132bfcc9669d1db16",
+      "reloadedCurrentStateSha256": "bf14fe7ecf81a3e7b6efb03b8501f6c421842c5bb0394b9132bfcc9669d1db16",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 76,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "f953525ff10c2bd0cd3750ee38edc6c54061e2f5b43cbe11b0bdb88b08e6ea99",
+      "currentStateSha256": "f953525ff10c2bd0cd3750ee38edc6c54061e2f5b43cbe11b0bdb88b08e6ea99",
+      "reloadedCurrentStateSha256": "f953525ff10c2bd0cd3750ee38edc6c54061e2f5b43cbe11b0bdb88b08e6ea99",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 77,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "7c3ab0fa6b2b6fed3671ad6fd34c953f396aacb1e3761799e5ce19a96f9758f7",
+      "currentStateSha256": "7c3ab0fa6b2b6fed3671ad6fd34c953f396aacb1e3761799e5ce19a96f9758f7",
+      "reloadedCurrentStateSha256": "7c3ab0fa6b2b6fed3671ad6fd34c953f396aacb1e3761799e5ce19a96f9758f7",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 78,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "d52886b78bf29636a3f18fb349470c26f291e984597de76b2508cdefc6ab8e24",
+      "currentStateSha256": "d52886b78bf29636a3f18fb349470c26f291e984597de76b2508cdefc6ab8e24",
+      "reloadedCurrentStateSha256": "d52886b78bf29636a3f18fb349470c26f291e984597de76b2508cdefc6ab8e24",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 79,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "523150ad252d57bedc5e75169c753d0975deea53510cce8abe0fc7b513a17dc1",
+      "currentStateSha256": "523150ad252d57bedc5e75169c753d0975deea53510cce8abe0fc7b513a17dc1",
+      "reloadedCurrentStateSha256": "523150ad252d57bedc5e75169c753d0975deea53510cce8abe0fc7b513a17dc1",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 80,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "aa394e007b0f91d383297ee17c7bf44bb6b3728e017c5102aff7e9e85556a54c",
+      "currentStateSha256": "aa394e007b0f91d383297ee17c7bf44bb6b3728e017c5102aff7e9e85556a54c",
+      "reloadedCurrentStateSha256": "aa394e007b0f91d383297ee17c7bf44bb6b3728e017c5102aff7e9e85556a54c",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 81,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "187707e428e0e0840465a6fcd97d40a81ca9df609b366b875cd9ba3ea9020f7b",
+      "currentStateSha256": "187707e428e0e0840465a6fcd97d40a81ca9df609b366b875cd9ba3ea9020f7b",
+      "reloadedCurrentStateSha256": "187707e428e0e0840465a6fcd97d40a81ca9df609b366b875cd9ba3ea9020f7b",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 82,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "d0b14bebd4f7bf3d313570b12e3550600e3876b62cd10c427135bd14c8f2971d",
+      "currentStateSha256": "d0b14bebd4f7bf3d313570b12e3550600e3876b62cd10c427135bd14c8f2971d",
+      "reloadedCurrentStateSha256": "d0b14bebd4f7bf3d313570b12e3550600e3876b62cd10c427135bd14c8f2971d",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 83,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "b51567dbea404221db858a4d253f97d74db9ab89241df47036b28eef38b00022",
+      "currentStateSha256": "b51567dbea404221db858a4d253f97d74db9ab89241df47036b28eef38b00022",
+      "reloadedCurrentStateSha256": "b51567dbea404221db858a4d253f97d74db9ab89241df47036b28eef38b00022",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 84,
+      "action": {
+        "type": "roll"
+      },
+      "committed": true,
+      "baselineStateSha256": "9f224a9ff8d3e70517bc0bd258b94745086b1823fd0c2fb8f0012f7702970191",
+      "currentStateSha256": "9f224a9ff8d3e70517bc0bd258b94745086b1823fd0c2fb8f0012f7702970191",
+      "reloadedCurrentStateSha256": "9f224a9ff8d3e70517bc0bd258b94745086b1823fd0c2fb8f0012f7702970191",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 85,
+      "action": {
+        "type": "open"
+      },
+      "committed": true,
+      "baselineStateSha256": "09f0b735ebcde46d0122bcd240f7ec1f30470ce135b8b75691091c60c41fab94",
+      "currentStateSha256": "09f0b735ebcde46d0122bcd240f7ec1f30470ce135b8b75691091c60c41fab94",
+      "reloadedCurrentStateSha256": "09f0b735ebcde46d0122bcd240f7ec1f30470ce135b8b75691091c60c41fab94",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 86,
+      "action": {
+        "type": "next"
+      },
+      "committed": true,
+      "baselineStateSha256": "7ebfe51774513984be639ac17c5e26b1124d443bf6fe221eaa221b1fb3cd57dc",
+      "currentStateSha256": "7ebfe51774513984be639ac17c5e26b1124d443bf6fe221eaa221b1fb3cd57dc",
+      "reloadedCurrentStateSha256": "7ebfe51774513984be639ac17c5e26b1124d443bf6fe221eaa221b1fb3cd57dc",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 87,
+      "action": {
+        "type": "buy",
+        "id": "i14"
+      },
+      "committed": true,
+      "baselineStateSha256": "22f6cafcaa0365d4299c86e88a7ac3c436277c0c10eb5415ab8e35379a6309a3",
+      "currentStateSha256": "22f6cafcaa0365d4299c86e88a7ac3c436277c0c10eb5415ab8e35379a6309a3",
+      "reloadedCurrentStateSha256": "22f6cafcaa0365d4299c86e88a7ac3c436277c0c10eb5415ab8e35379a6309a3",
+      "differences": []
+    },
+    {
+      "scenario": "natural seed 2",
+      "index": 88,
+      "action": {
+        "type": "lock",
+        "id": "i14"
+      },
+      "committed": true,
+      "baselineStateSha256": "33c9f5031d184357c8d8edb798f807f6595775b48a4cf762b1489ab602665a04",
+      "currentStateSha256": "e3d238988a011ce2e0ae9c08d5fed33952ffecca600658f89fd00cf737ca0aa7",
+      "reloadedCurrentStateSha256": "e3d238988a011ce2e0ae9c08d5fed33952ffecca600658f89fd00cf737ca0aa7",
+      "differences": [
+        {
+          "path": "$.shop.0.item.locked",
+          "baseline": true,
+          "current": false
+        }
+      ]
+    }
+  ],
+  "failures": [],
+  "summary": {
+    "scenarios": 6,
+    "actions": 121,
+    "committedActions": 119,
+    "completeCurrentReloadMatches": 121,
+    "completeBaselineMatches": 100,
+    "historyDifferenceLeaves": 29,
+    "failureCount": 0
+  },
+  "status": "PASS"
+}

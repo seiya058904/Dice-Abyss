@@ -1,0 +1,21 @@
+{
+  "command": [
+    "env",
+    "PLAYWRIGHT_MODULE=/opt/codex/runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.js",
+    "CHROMIUM_PATH=/tmp/dice-r15-browser/chrome-headless-shell-linux64/chrome-headless-shell",
+    "node",
+    "scripts/qa-core-browser.mjs",
+    "--source=/workspace/scratch/3b21be83b3da/work/Dice-Abyss",
+    "--url=http://127.0.0.1:4189/",
+    "--output=/workspace/scratch/3b21be83b3da/qa23/current/browser/core"
+  ],
+  "cwd": "/workspace/scratch/3b21be83b3da/work/Dice-Abyss",
+  "startedUTC": "2026-10-19T15:58:36.751077+00:00",
+  "finishedUTC": "2026-10-19T15:59:02.047163+00:00",
+  "seconds": 25.2955,
+  "exitCode": 0,
+  "stdoutSha256": "e0ef866fdeec403511fa32d45dfc2ff495c6a59657cc4b95aa2fa4f204dbc6b4",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "tail": "title-new-manual-fate-continue: PASS\nmanual-combat-chest-equip-refresh: PASS\ninventory-scroll-lock-and-settings: PASS\nprimary-save-failure-recovery: PASS\nmirror-write-warning-keeps-durable-result: PASS\ncross-tab-sync-cancels-stale-confirmation: PASS\n{\n  \"checks\": 43,\n  \"passes\": 6,\n  \"failures\": [],\n  \"errors\": []\n}\n",
+  "stderrTail": ""
+}

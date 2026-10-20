@@ -1,0 +1,29 @@
+{
+  "kind": "Round21 fixed three-way pure HTML generation protocol",
+  "at": "2026-10-19T12:40:47.777447+00:00",
+  "variants": [
+    "baseline round20",
+    "round21 pre-view-reuse preserved source",
+    "round21 local derived-value reuse"
+  ],
+  "cells": [
+    "exact prior32-item seed27017 combat first starter equipment, zero eventLuck/nextLuck/firstCritLuck",
+    "exact prior10000-item seed27017 combat late starter equipment, zero eventLuck/nextLuck/firstCritLuck"
+  ],
+  "measuredSamplesPerVariantPerCell": 24,
+  "warmupTriples": 6,
+  "order": "All six permutations repeated four times, after one warmup cycle.",
+  "timing": "Only complete gameView string generation; exact current/pre HTML equality and state/RNG assertions outside intervals.",
+  "concurrency": "Root and all other agents pause browser and heavy Node work. Outside shared-host load uncontrolled.",
+  "sourceHashes": {
+    "storage.js": "daa6eeffc7a38692213228d748c7819739392a5eeaedc91ec62350c53319591c",
+    "views.js": "75c2b6b0c36ee6d34a8066fc4867c6f223dd630633687a347b703afee674c263",
+    "boon-readout.js": "ea732d4fe897633b67e5349ad57c1bd52dd1506bc84f8db3748eb6aea36f0bfc"
+  },
+  "scriptSha256": "d46baa20f95e56dfe8a1ff634e7f152517064c0c947322ebb8510a463110d957",
+  "firstPrecheckCorrection": {
+    "evidence": "view-reuse-precheck01.json",
+    "type": "AUDIT_FIXTURE_ASSERTION_ONLY",
+    "reason": "Four successive render steps intentionally restore original equipment/talent at the end; expected three unique HTML strings, with last equal first. All128 pre/current cases and768 HTML comparisons before that assertion matched. No runtime correction required."
+  }
+}

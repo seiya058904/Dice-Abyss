@@ -1,0 +1,443 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-17T11:10:44.137074+00:00",
+  "purpose": "Compact visual QA contact sheets derived from actual browser screenshots.",
+  "method": "Only proportional Lanczos resizing, neutral padding, labels outside source frames, and lossy WebP compression. No source pixels were repainted, replaced, sharpened or generatively altered. Sources remain uncropped.",
+  "toolchain": {
+    "Pillow": "12.3.0",
+    "WebP": "1.6.0",
+    "labelFonts": [
+      {
+        "path": "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+        "sha256": "ae7b7855e115a5966d8b1b3f80f254ccc117ec86f9965e202ee2940453837280"
+      },
+      {
+        "path": "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+        "sha256": "5c1247acef7f2b8522a31742c76d6adcb5569bacc0be7ceaa4dc39dd252ce895"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "path": "qa/iteration-baseline/baseline-title-1920.png",
+      "sha256": "4e7b2c910d49973f3735d347c1eb4063dc722e61a360b83997f3eb79702613c4",
+      "bytes": 262137,
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "qa/iteration-after/after-title-1920.png",
+      "sha256": "e8ecec19bfb61d3b4ab8cd1246fc8c3a04b065e5a018e863f7c21c15db77aa94",
+      "bytes": 1489503,
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "qa/iteration-after/after-title-1366.png",
+      "sha256": "38111d5ff1561984e83c35d2d791ddb01cbd803a3185626da242cbe85db1004d",
+      "bytes": 762396,
+      "dimensions": [
+        1366,
+        768
+      ],
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "qa/iteration-after/after-title-2560.png",
+      "sha256": "da2031d67519bcbbeae2d2f449f9d97a078a0f8483b895bd5bed9ee1855f5a77",
+      "bytes": 2380587,
+      "dimensions": [
+        2560,
+        1440
+      ],
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "qa/iteration-after/after-title-3840.png",
+      "sha256": "ade1f253e4cb2d7ce93951f97c0be4f7e7f1d55e746bf4edd2aed41298a2890b",
+      "bytes": 4571147,
+      "dimensions": [
+        3840,
+        2160
+      ],
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "qa/iteration-baseline/baseline-context-lost-fallback.png",
+      "sha256": "b8d0d416a5dc8cf839a2402614c4317bfd28a6e4506337b6ba3086e03db233b0",
+      "bytes": 591363,
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "qa/iteration-final-context/after-context-lost-fallback.png",
+      "sha256": "d4105f556345147436e84ab49fc2221b008f91931fd1733b5ad57282d6cca721",
+      "bytes": 618409,
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "qa/iteration-final-context/after-context-restored.png",
+      "sha256": "db366841b7133ef3caf2e6a886565814f5539e2ddb45983b02dd71121760acd3",
+      "bytes": 616105,
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "mode": "RGB",
+      "format": "PNG"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "docs/iteration/evidence/visual/title-before-after-1920.webp",
+      "sha256": "8f068325d5a7466f61d5f1aeff8ad47efb322547d83add7a1372d770fa067c81",
+      "bytes": 112556,
+      "dimensions": [
+        1488,
+        1960
+      ],
+      "encoding": {
+        "format": "WEBP",
+        "lossless": false,
+        "quality": 80,
+        "method": 6
+      },
+      "resampling": "Pillow Image.Resampling.LANCZOS, aspect ratio preserved with integer pixel rounding",
+      "layout": {
+        "columns": 1,
+        "rows": 2,
+        "panelBox": [
+          1440,
+          810
+        ],
+        "margin": 24,
+        "gap": 24,
+        "header": 104,
+        "labelHeight": 68,
+        "footer": 76
+      },
+      "title": "DICE ABYSS  |  Title screen before / after",
+      "subtitle": "Identical 1920 x 1080 CSS viewport; complete source frames, shown at 75%.",
+      "footer": "Visual comparison only. Static art is part of the captured application; the 3D die remains live in the app.",
+      "panels": [
+        {
+          "label": "BEFORE  |  V5.1",
+          "source": "qa/iteration-baseline/baseline-title-1920.png",
+          "sourceSha256": "4e7b2c910d49973f3735d347c1eb4063dc722e61a360b83997f3eb79702613c4",
+          "sourceDimensions": [
+            1920,
+            1080
+          ],
+          "outputScreenshotRect": [
+            24,
+            172,
+            1440,
+            810
+          ],
+          "scaleWidth": 0.75,
+          "scaleHeight": 0.75,
+          "cropped": false
+        },
+        {
+          "label": "AFTER  |  V5.2",
+          "source": "qa/iteration-after/after-title-1920.png",
+          "sourceSha256": "e8ecec19bfb61d3b4ab8cd1246fc8c3a04b065e5a018e863f7c21c15db77aa94",
+          "sourceDimensions": [
+            1920,
+            1080
+          ],
+          "outputScreenshotRect": [
+            24,
+            1074,
+            1440,
+            810
+          ],
+          "scaleWidth": 0.75,
+          "scaleHeight": 0.75,
+          "cropped": false
+        }
+      ]
+    },
+    {
+      "path": "docs/iteration/evidence/visual/title-after-four-viewports.webp",
+      "sha256": "67f6cd817ea2038df40bfbe94a7ed92e6b54bfc87b8b2857d2120e3d66929e17",
+      "bytes": 155240,
+      "dimensions": [
+        2120,
+        1492
+      ],
+      "encoding": {
+        "format": "WEBP",
+        "lossless": false,
+        "quality": 74,
+        "method": 6
+      },
+      "resampling": "Pillow Image.Resampling.LANCZOS, aspect ratio preserved with integer pixel rounding",
+      "layout": {
+        "columns": 2,
+        "rows": 2,
+        "panelBox": [
+          1024,
+          576
+        ],
+        "margin": 24,
+        "gap": 24,
+        "header": 104,
+        "labelHeight": 68,
+        "footer": 76
+      },
+      "title": "DICE ABYSS  |  V5.2 desktop viewport review",
+      "subtitle": "Four actual browser viewports, arranged at a common display size; source dimensions are labeled.",
+      "footer": "The 3840 x 2160 (4K) frame is downscaled here. This contact sheet is NOT performance or physical-display evidence.",
+      "panels": [
+        {
+          "label": "01  |  1366 x 768",
+          "source": "qa/iteration-after/after-title-1366.png",
+          "sourceSha256": "38111d5ff1561984e83c35d2d791ddb01cbd803a3185626da242cbe85db1004d",
+          "sourceDimensions": [
+            1366,
+            768
+          ],
+          "outputScreenshotRect": [
+            24,
+            172,
+            1024,
+            576
+          ],
+          "scaleWidth": 0.7496339677891655,
+          "scaleHeight": 0.75,
+          "cropped": false
+        },
+        {
+          "label": "02  |  1920 x 1080",
+          "source": "qa/iteration-after/after-title-1920.png",
+          "sourceSha256": "e8ecec19bfb61d3b4ab8cd1246fc8c3a04b065e5a018e863f7c21c15db77aa94",
+          "sourceDimensions": [
+            1920,
+            1080
+          ],
+          "outputScreenshotRect": [
+            1072,
+            172,
+            1024,
+            576
+          ],
+          "scaleWidth": 0.5333333333333333,
+          "scaleHeight": 0.5333333333333333,
+          "cropped": false
+        },
+        {
+          "label": "03  |  2560 x 1440",
+          "source": "qa/iteration-after/after-title-2560.png",
+          "sourceSha256": "da2031d67519bcbbeae2d2f449f9d97a078a0f8483b895bd5bed9ee1855f5a77",
+          "sourceDimensions": [
+            2560,
+            1440
+          ],
+          "outputScreenshotRect": [
+            24,
+            840,
+            1024,
+            576
+          ],
+          "scaleWidth": 0.4,
+          "scaleHeight": 0.4,
+          "cropped": false
+        },
+        {
+          "label": "04  |  3840 x 2160  (4K CSS viewport)",
+          "source": "qa/iteration-after/after-title-3840.png",
+          "sourceSha256": "ade1f253e4cb2d7ce93951f97c0be4f7e7f1d55e746bf4edd2aed41298a2890b",
+          "sourceDimensions": [
+            3840,
+            2160
+          ],
+          "outputScreenshotRect": [
+            1072,
+            840,
+            1024,
+            576
+          ],
+          "scaleWidth": 0.26666666666666666,
+          "scaleHeight": 0.26666666666666666,
+          "cropped": false
+        }
+      ]
+    },
+    {
+      "path": "docs/iteration/evidence/visual/webgl-fallback-restored.webp",
+      "sha256": "7908f07283751870bc705c39bb41a69740c750b25a796ede9f57fdda9899e77a",
+      "bytes": 181276,
+      "dimensions": [
+        1248,
+        2529
+      ],
+      "encoding": {
+        "format": "WEBP",
+        "lossless": false,
+        "quality": 78,
+        "method": 6
+      },
+      "resampling": "Pillow Image.Resampling.LANCZOS, aspect ratio preserved with integer pixel rounding",
+      "layout": {
+        "columns": 1,
+        "rows": 3,
+        "panelBox": [
+          1200,
+          675
+        ],
+        "margin": 24,
+        "gap": 24,
+        "header": 104,
+        "labelHeight": 92,
+        "footer": 76
+      },
+      "title": "DICE ABYSS  |  WebGL loss and recovery",
+      "subtitle": "Baseline fault and final V5.2 captures. Isolated combat fixture; no roll between loss and restoration.",
+      "footer": "Software Chromium / SwiftShader. Explicit context loss; this is not a physical GPU-reset test.",
+      "panels": [
+        {
+          "label": "BASELINE V5.1  |  Lost: failed canvas obscures the die",
+          "source": "qa/iteration-baseline/baseline-context-lost-fallback.png",
+          "sourceSha256": "b8d0d416a5dc8cf839a2402614c4317bfd28a6e4506337b6ba3086e03db233b0",
+          "sourceDimensions": [
+            1920,
+            1080
+          ],
+          "outputScreenshotRect": [
+            24,
+            196,
+            1200,
+            675
+          ],
+          "scaleWidth": 0.625,
+          "scaleHeight": 0.625,
+          "cropped": false
+        },
+        {
+          "label": "FINAL V5.2  |  Lost: CSS 3D fallback visible",
+          "source": "qa/iteration-final-context/after-context-lost-fallback.png",
+          "sourceSha256": "d4105f556345147436e84ab49fc2221b008f91931fd1733b5ad57282d6cca721",
+          "sourceDimensions": [
+            1920,
+            1080
+          ],
+          "outputScreenshotRect": [
+            24,
+            987,
+            1200,
+            675
+          ],
+          "scaleWidth": 0.625,
+          "scaleHeight": 0.625,
+          "cropped": false
+        },
+        {
+          "label": "FINAL V5.2  |  Restored: WebGL 3D die visible",
+          "source": "qa/iteration-final-context/after-context-restored.png",
+          "sourceSha256": "db366841b7133ef3caf2e6a886565814f5539e2ddb45983b02dd71121760acd3",
+          "sourceDimensions": [
+            1920,
+            1080
+          ],
+          "outputScreenshotRect": [
+            24,
+            1778,
+            1200,
+            675
+          ],
+          "scaleWidth": 0.625,
+          "scaleHeight": 0.625,
+          "cropped": false
+        }
+      ]
+    }
+  ],
+  "totalImageBytes": 449072,
+  "imageByteBudget": 500000,
+  "limitations": [
+    "4K screenshots are downscaled in these contact sheets and do not measure frame rate, frame time, physical display output, or hardware GPU performance.",
+    "Smallest UI text should be inspected in the original PNGs; contact-sheet labels and principal interface elements are intended to remain readable.",
+    "WebGL loss/restoration sources use a software-rendered Chromium context and an explicit WEBGL_lose_context fault, not a physical GPU driver reset."
+  ],
+  "visualReview": {
+    "status": "REVIEWED",
+    "reviewedAt": "2026-10-17T11:12:18.164209+00:00",
+    "method": "Opened all eight unique source PNGs and all three final encoded WebP contact sheets.",
+    "observations": [
+      "All contact-sheet labels, source resolutions, and source group labels are readable and outside screenshot frames.",
+      "Before/after title copy, primary action, die, and footer are complete; four viewport panels retain the full source frame.",
+      "Baseline context-loss white failed-canvas rectangle is intentionally preserved and labeled as a fault.",
+      "Final context-loss source visibly shows the CSS cube; the final restored source visibly shows the WebGL cube. Neither final die region is blank.",
+      "Compression preserves the main title and gameplay visual distinctions; smallest interface text remains a source-PNG inspection task."
+    ],
+    "contentAlterations": false,
+    "performanceEvidence": false
+  },
+  "sourceReports": [
+    {
+      "path": "qa/iteration-baseline/baseline-iteration.json",
+      "sha256": "dc68dbdf112ad73f8b5a5fc1e20dd51beb1fe50236feff51291569131ea70c70",
+      "browser": "155.0.8059.84",
+      "sourceVersion": "5.1.0",
+      "environment": {
+        "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.8059.84 Safari/537.36",
+        "dpr": 1,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "webLocks": true
+      },
+      "started": "2026-10-17T10:32:51.829Z",
+      "finished": "2026-10-17T10:33:59.135Z"
+    },
+    {
+      "path": "qa/iteration-after/after-iteration.json",
+      "sha256": "7f547c1746c35d344554d4bc1c3885fa6fbc73a889f97c2a8567fa11a0675026",
+      "browser": "155.0.8059.84",
+      "sourceVersion": "5.2.0",
+      "environment": {
+        "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.8059.84 Safari/537.36",
+        "dpr": 1,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "webLocks": true
+      },
+      "started": "2026-10-17T10:31:12.585Z",
+      "finished": "2026-10-17T10:32:35.345Z"
+    },
+    {
+      "path": "qa/iteration-final-context/after-iteration.json",
+      "sha256": "a41ae0f6d336754648d99675fa6975ad69ada0ef5971b5caf2f162d3aececdc8",
+      "browser": "155.0.8059.84",
+      "sourceVersion": "5.2.0",
+      "environment": {
+        "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.8059.84 Safari/537.36",
+        "dpr": 1,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "webLocks": true
+      },
+      "started": "2026-10-17T11:07:02.753Z",
+      "finished": "2026-10-17T11:07:10.738Z"
+    }
+  ],
+  "budgetScope": "Three WebP files plus this manifest; builder and review notes stay outside the delivered visual folder.",
+  "totalDeliveryBytes": 463751
+}

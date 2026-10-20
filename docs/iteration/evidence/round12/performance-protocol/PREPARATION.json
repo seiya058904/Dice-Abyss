@@ -1,0 +1,29 @@
+{
+  "status": "PREPARED_NOT_EXECUTED",
+  "script": "scripts/qa-performance-round12.mjs",
+  "scriptSha256": "fcccb7de707c0f08711e9b80924692cf1c1a9e2db1ea88ef9d867525935b9396",
+  "originalScript": "scripts/qa-performance-round.mjs",
+  "originalSha256": "bb3205985884a20a88a27e289f9ec04f46bd751f3cd4568df60affce0e506981",
+  "originalMatchesReadOnlyInput": true,
+  "performanceExecutedByThisPreparation": false,
+  "syntaxChecks": [
+    "node --check scripts/qa-performance-round12.mjs",
+    "node --check docs/iteration/evidence/round12/independent-comparison/review.mjs"
+  ],
+  "syntaxChecksStatus": "PASS",
+  "changes": [
+    "Whole source union JS/CSS with explicit legitimate absence and HTTP request API checks",
+    "Own-source gameView plus native DOMParser full 60-card equality per version; complete within-version repeat stability",
+    "Cross-version IDs/order/full common control states/complete item state equality",
+    "Lossless before/after full HTML artifacts, all 60 per-card hashes, bytes and differences",
+    "Every raw RAF interval, every observed and overlapping long task, old summary fields intact",
+    "Alternating A/B then B/A order and per-run pair position",
+    "Existing complete legal transitions, mirrors, six-log checks, native time boundaries, fixed deadlines, warmup exclusion and slow-sample retention unchanged"
+  ],
+  "unchangedProtocolSpans": {
+    "fixtureBuildersAndManifest": true,
+    "fixedMeasuredPromiseDeadline": true,
+    "realStorageLoadAndExactUnchanged": true
+  },
+  "completeActionAndMirrorAssertionsRetained": true
+}

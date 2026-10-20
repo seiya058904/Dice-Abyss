@@ -1,0 +1,76 @@
+TAP version 13
+# Subtest: passive details never occupy the card pool, settlement, trigger or details access control
+ok 1 - passive details never occupy the card pool, settlement, trigger or details access control
+  ---
+  duration_ms: 3.058023
+  type: 'test'
+  ...
+# Subtest: a scrolled narrow pool without free reading space uses the explicit dialog path
+ok 2 - a scrolled narrow pool without free reading space uses the explicit dialog path
+  ---
+  duration_ms: 0.229019
+  type: 'test'
+  ...
+# Subtest: dense controls and repeated pool rectangles leave a safe preview without consuming input space
+ok 3 - dense controls and repeated pool rectangles leave a safe preview without consuming input space
+  ---
+  duration_ms: 42.404484
+  type: 'test'
+  ...
+# Subtest: transit corridors connect all four panel directions without capturing same-row browsing
+ok 4 - transit corridors connect all four panel directions without capturing same-row browsing
+  ---
+  duration_ms: 0.416406
+  type: 'test'
+  ...
+# Subtest: Escape cancels pending hover and same-anchor inner movements cannot resurrect it
+ok 5 - Escape cancels pending hover and same-anchor inner movements cannot resurrect it
+  ---
+  duration_ms: 5.465072
+  type: 'test'
+  ...
+# Subtest: pointer transit, internal scrolling and text reading retain the passive details
+ok 6 - pointer transit, internal scrolling and text reading retain the passive details
+  ---
+  duration_ms: 1.472128
+  type: 'test'
+  ...
+# Subtest: a paused trip across another card retains the inspected item and exiting the corridor resumes hover
+ok 7 - a paused trip across another card retains the inspected item and exiting the corridor resumes hover
+  ---
+  duration_ms: 1.464186
+  type: 'test'
+  ...
+# Subtest: a focus-only preview does not reserve intermediate cards before a pointer journey begins
+ok 8 - a focus-only preview does not reserve intermediate cards before a pointer journey begins
+  ---
+  duration_ms: 0.999138
+  type: 'test'
+  ...
+# Subtest: touch selection does not create a passive overlay; explicit details restore focus without actions
+ok 9 - touch selection does not create a passive overlay; explicit details restore focus without actions
+  ---
+  duration_ms: 2.89377
+  type: 'test'
+  ...
+# Subtest: touch dialog close ignores compatibility mouseover on a different exposed card
+ok 10 - touch dialog close ignores compatibility mouseover on a different exposed card
+  ---
+  duration_ms: 2.695046
+  type: 'test'
+  ...
+# Subtest: an inspection survives UI-only refresh but closes on state or target change
+ok 11 - an inspection survives UI-only refresh but closes on state or target change
+  ---
+  duration_ms: 2.048149
+  type: 'test'
+  ...
+1..11
+# tests 11
+# suites 0
+# pass 11
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 76.532629

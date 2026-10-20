@@ -1,0 +1,32 @@
+✔ V1, V2 and V3 migrate every owned and pending item without changing identity, investment, enemy or transaction state (55.114091ms)
+✔ legacy three-relic positions and all old talent ranks survive repeated load and migration (5.895182ms)
+✔ primary/mirror recovery and the first V4 commit retain the original raw archive for rollback (4.74761ms)
+✔ migration/archive failures leave original browser assets untouched and state corruption is rejected (7.486268ms)
+✔ V4 narrow new-schema fields reject bad waves, encounter mechanics, events and roll metadata (4.504716ms)
+✔ legacy aggregate HP crossing the V4 cap rejects migration without clipping assets or replacing raw (8.020796ms)
+✔ actual old V1, V2 and V3 equipment migrates while committed combat snapshots keep enemy, dice and RNG (8.996567ms)
+✔ new enemy and roll fields accept only their narrow optional types and numeric bounds (14.430446ms)
+✔ a saved phase transition continues identically and retry saves the reset stage (6.934189ms)
+✔ new rules4 allow a sufficiently strong killing blow without adding the old half-health hard gate (24.625204ms)
+✔ V5 retains all 648 V4 catalog identities, names, multipliers and attributes at four levels (10.388197ms)
+✔ V5 reproduces 2320 V4 floor 1–29 reward/shop fixtures and ending RNG exactly (863.619063ms)
+✔ V4→V5 preserves committed assets and RNG: Constructed V4 engine fixture / fate (12.86588ms)
+✔ V4→V5 preserves committed assets and RNG: Constructed V4 engine fixture / combat (3.661524ms)
+✔ V4→V5 preserves committed assets and RNG: Constructed V4 engine fixture / boss (1.86389ms)
+✔ V4→V5 preserves committed assets and RNG: Constructed V4 engine fixture / chest (1.839142ms)
+✔ V4→V5 preserves committed assets and RNG: Constructed V4 engine fixture / loot (1.965636ms)
+✔ V4→V5 preserves committed assets and RNG: Constructed V4 engine fixture / merchant (2.25013ms)
+✔ V4→V5 preserves committed assets and RNG: Constructed V4 engine fixture / blackmarket (2.059838ms)
+✔ V4→V5 preserves committed assets and RNG: Constructed V4 engine fixture / forge (1.537568ms)
+✔ V4→V5 preserves committed assets and RNG: Constructed V4 engine fixture / fusion (3.63981ms)
+✔ V4→V5 preserves committed assets and RNG: Constructed V4 engine fixture / prayer (1.746328ms)
+✔ V4→V5 preserves committed assets and RNG: Constructed V4 engine fixture / rest (1.177813ms)
+✔ V4 archive failure prevents overwriting either active save; a corrupt archive is not silently replaced (0.891464ms)
+ℹ tests 24
+ℹ suites 0
+ℹ pass 24
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1126.340594

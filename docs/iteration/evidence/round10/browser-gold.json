@@ -1,0 +1,4474 @@
+{
+  "started": "2026-10-18T09:27:03.036Z",
+  "source": "/workspace/scratch/cbf6f0daa163/work/Dice-Abyss",
+  "url": "http://127.0.0.1:4320/",
+  "expectation": "current",
+  "scriptSha256": "a81c411f75b31cb417d527d50f7801d351a3d8c5962b78f3ce9c2dfc352db6a2",
+  "sourceBefore": {
+    "src/app.js": "3f837f714a1197dc819e092bd0eebb2a837505c6d8a80ec39bf4e24ba8dbfb59",
+    "src/engine.js": "a84e8823a4e6632ec12ad6f497c71e2a0b427a41fe8773eb7c9cfc041f78cd1b",
+    "src/views.js": "0640e27b5bde046380370f68a1fbf87b1d2105ae3eef211d7f01df9bbb195882",
+    "src/storage.js": "2c5f648efe7df6a1c14710ea90fe2de83323141d5f5e285eec7fac8aa687a500",
+    "src/encounters.js": "c3c6e2d24049305d73982cf5db3b1cf02eee68f4e8e1659fd7e3021f74de0791",
+    "src/deep-rules.js": "c9bf6e3419308bdc1bb62836586cfb18f4b62aadea16aa5e0fc33fa6f4794485",
+    "src/equipment.js": "8c20de433f21931318e315b862b457d37a03b9596ea5df8f7cc4025691aaccd6",
+    "index.html": "062b883d45f8374e7ed4604a1e0f82f687498b4c6179ba486d25ce1bce6ca961",
+    "package.json": "7b3f8ad07a14a20eb3b70d845cce37ec4ed66103f4b439f2dfeb441a4f69353d",
+    "src/gold.js": "252aab60750432e1b5f1dc158c4a8f69e3dca5d72fa016b69c03c29ac651a244",
+    "src/gold.css": "bb1313da6f3a734567be73e23c606c56c1215bc976e166c9dc2b1fedb06c6393"
+  },
+  "cases": [
+    {
+      "name": "gold-native",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "src/app.js is served",
+          "passed": true
+        },
+        {
+          "label": "src/engine.js is served",
+          "passed": true
+        },
+        {
+          "label": "src/views.js is served",
+          "passed": true
+        },
+        {
+          "label": "src/storage.js is served",
+          "passed": true
+        },
+        {
+          "label": "src/encounters.js is served",
+          "passed": true
+        },
+        {
+          "label": "src/deep-rules.js is served",
+          "passed": true
+        },
+        {
+          "label": "src/equipment.js is served",
+          "passed": true
+        },
+        {
+          "label": "index.html is served",
+          "passed": true
+        },
+        {
+          "label": "src/gold.js is served",
+          "passed": true
+        },
+        {
+          "label": "src/gold.css is served",
+          "passed": true
+        },
+        {
+          "label": "HTTP source identity matches chosen engine and UI",
+          "passed": true,
+          "actualSha256": "e8114852a8c0e7f1ed2b1a9c869e7a07fca6174e51f987addfce5b4389dd5a1f",
+          "expectedSha256": "e8114852a8c0e7f1ed2b1a9c869e7a07fca6174e51f987addfce5b4389dd5a1f"
+        },
+        {
+          "label": "page identity is exact",
+          "passed": true
+        },
+        {
+          "label": "app is not a blank page",
+          "passed": true
+        },
+        {
+          "label": "native Web Locks available",
+          "passed": true
+        },
+        {
+          "label": "no framework error overlay",
+          "passed": true
+        },
+        {
+          "label": "gold near predicts exact credit",
+          "passed": true,
+          "actualSha256": "9f2da8ff6fe919951e475c1c5b4912ef254e93be96e536600f2e84cfe7b3b200",
+          "expectedSha256": "9f2da8ff6fe919951e475c1c5b4912ef254e93be96e536600f2e84cfe7b3b200"
+        },
+        {
+          "label": "gold near previews exact overflow",
+          "passed": true
+        },
+        {
+          "label": "gold near shows exact resulting balance",
+          "passed": true
+        },
+        {
+          "label": "gold preview is read-only",
+          "passed": true,
+          "actualSha256": "3cba5e82f68c3bf998447c12c8b089975af825916ec4bed2ad087d0c057a75df",
+          "expectedSha256": "3cba5e82f68c3bf998447c12c8b089975af825916ec4bed2ad087d0c057a75df"
+        },
+        {
+          "label": "gold near native one-click: complete selected-engine state",
+          "passed": true,
+          "actualSha256": "2c146e4b6b9e785016973187ab3694ce2ee5c71785bd67c283189472f8c5b165",
+          "expectedSha256": "2c146e4b6b9e785016973187ab3694ce2ee5c71785bd67c283189472f8c5b165"
+        },
+        {
+          "label": "gold near native one-click: exact primary bytes",
+          "passed": true,
+          "actualSha256": "e18d86f0f3d98c05afd81f11b5380eeb91e43cad4c2e4898ccb6d2b17572fc1e",
+          "expectedSha256": "e18d86f0f3d98c05afd81f11b5380eeb91e43cad4c2e4898ccb6d2b17572fc1e"
+        },
+        {
+          "label": "gold near native one-click: exact mirror bytes",
+          "passed": true,
+          "actualSha256": "e18d86f0f3d98c05afd81f11b5380eeb91e43cad4c2e4898ccb6d2b17572fc1e",
+          "expectedSha256": "e18d86f0f3d98c05afd81f11b5380eeb91e43cad4c2e4898ccb6d2b17572fc1e"
+        },
+        {
+          "label": "gold near native one-click: unrelated sentinel retained",
+          "passed": true,
+          "actualSha256": "c6d712b8988f7115a906db25634cf8f19f2234308517c744ef105cb696587d43",
+          "expectedSha256": "c6d712b8988f7115a906db25634cf8f19f2234308517c744ef105cb696587d43"
+        },
+        {
+          "label": "gold near actual delta",
+          "passed": true,
+          "actualSha256": "4a44dc15364204a80fe80e9039455cc1608281820fe2b24f1e5233ade6af1dd5",
+          "expectedSha256": "4a44dc15364204a80fe80e9039455cc1608281820fe2b24f1e5233ade6af1dd5"
+        },
+        {
+          "label": "gold near announces actual receipt",
+          "passed": true
+        },
+        {
+          "label": "gold full predicts exact credit",
+          "passed": true,
+          "actualSha256": "c2a0b3e484ed456576794d3914eadf66693ff8e068048f0fd24ce4f32ae40e90",
+          "expectedSha256": "c2a0b3e484ed456576794d3914eadf66693ff8e068048f0fd24ce4f32ae40e90"
+        },
+        {
+          "label": "gold full previews exact overflow",
+          "passed": true
+        },
+        {
+          "label": "gold full shows exact resulting balance",
+          "passed": true
+        },
+        {
+          "label": "gold preview is read-only",
+          "passed": true,
+          "actualSha256": "3877e4d66640516e9446337c0a794ca17bebad8b17df60dbb41476694456ab91",
+          "expectedSha256": "3877e4d66640516e9446337c0a794ca17bebad8b17df60dbb41476694456ab91"
+        },
+        {
+          "label": "gold full native one-click: complete selected-engine state",
+          "passed": true,
+          "actualSha256": "c5b6e7e424f5cace79d2ee3d91766fae85de449a0dce0b887e6520ce1bc474e3",
+          "expectedSha256": "c5b6e7e424f5cace79d2ee3d91766fae85de449a0dce0b887e6520ce1bc474e3"
+        },
+        {
+          "label": "gold full native one-click: exact primary bytes",
+          "passed": true,
+          "actualSha256": "e6aa24528cdf2b9e33fba213582117825a473d4eb20a874c043822bd488f2bb7",
+          "expectedSha256": "e6aa24528cdf2b9e33fba213582117825a473d4eb20a874c043822bd488f2bb7"
+        },
+        {
+          "label": "gold full native one-click: exact mirror bytes",
+          "passed": true,
+          "actualSha256": "e6aa24528cdf2b9e33fba213582117825a473d4eb20a874c043822bd488f2bb7",
+          "expectedSha256": "e6aa24528cdf2b9e33fba213582117825a473d4eb20a874c043822bd488f2bb7"
+        },
+        {
+          "label": "gold full native one-click: unrelated sentinel retained",
+          "passed": true,
+          "actualSha256": "c6d712b8988f7115a906db25634cf8f19f2234308517c744ef105cb696587d43",
+          "expectedSha256": "c6d712b8988f7115a906db25634cf8f19f2234308517c744ef105cb696587d43"
+        },
+        {
+          "label": "gold full actual delta",
+          "passed": true,
+          "actualSha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "expectedSha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        {
+          "label": "gold full announces actual receipt",
+          "passed": true
+        },
+        {
+          "label": "gold-native: no browser errors",
+          "passed": true,
+          "actualSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "expectedSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "knownDefects": [],
+      "screenshots": [
+        "gold-near-pending.png",
+        "gold-full-pending.png"
+      ],
+      "captures": [
+        {
+          "label": "installed fixture before native action",
+          "file": "capture-gold-native-001.json",
+          "sha256": "bdd2e706a2b276055efef218cecd5bfee9b316623ae4fcdd828de8a7d34cf29d",
+          "bytes": 37752
+        },
+        {
+          "label": "screenshot gold-near-pending",
+          "file": "capture-gold-native-002.json",
+          "sha256": "7c5522d2146c7e96530f69f7df5e9829a577c3455506d3cd8469283f60db7d51",
+          "bytes": 30228
+        },
+        {
+          "label": "gold near native one-click",
+          "file": "capture-gold-native-003.json",
+          "sha256": "b47a13f06ddc3ec2b7b09c8fc49d44ad905690a7140a80b24d8f28b9ccc1726d",
+          "bytes": 52451
+        },
+        {
+          "label": "installed fixture before native action",
+          "file": "capture-gold-native-004.json",
+          "sha256": "596e3dd4796f5bc2190dbf441c661c4dec2bdf1a9ef634794209029cc7d59fb8",
+          "bytes": 37825
+        },
+        {
+          "label": "screenshot gold-full-pending",
+          "file": "capture-gold-native-005.json",
+          "sha256": "8f3a29225e875ae74cd8bac34ccd15320e222866981422680e0136aad502b3d8",
+          "bytes": 30297
+        },
+        {
+          "label": "gold full native one-click",
+          "file": "capture-gold-native-006.json",
+          "sha256": "5da6c710b23a2a1787216732ddba350e14c5938e067eecaf9d5e23cbdf5216a2",
+          "bytes": 52442
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "chest-history",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "pending chest near quotes actual amount",
+          "passed": true
+        },
+        {
+          "label": "chest near opened once: complete selected-engine state",
+          "passed": true,
+          "actualSha256": "43d0659476ed049916c539c389aae87efe1c4b9eebaf44767e717c4c9062b444",
+          "expectedSha256": "43d0659476ed049916c539c389aae87efe1c4b9eebaf44767e717c4c9062b444"
+        },
+        {
+          "label": "chest near opened once: exact primary bytes",
+          "passed": true,
+          "actualSha256": "27391a30d24ba64488af974d9a5da41e38e6aba36738a6c5ad6fdcf9302b9178",
+          "expectedSha256": "27391a30d24ba64488af974d9a5da41e38e6aba36738a6c5ad6fdcf9302b9178"
+        },
+        {
+          "label": "chest near opened once: exact mirror bytes",
+          "passed": true,
+          "actualSha256": "27391a30d24ba64488af974d9a5da41e38e6aba36738a6c5ad6fdcf9302b9178",
+          "expectedSha256": "27391a30d24ba64488af974d9a5da41e38e6aba36738a6c5ad6fdcf9302b9178"
+        },
+        {
+          "label": "chest near opened once: unrelated sentinel retained",
+          "passed": true,
+          "actualSha256": "c6d712b8988f7115a906db25634cf8f19f2234308517c744ef105cb696587d43",
+          "expectedSha256": "c6d712b8988f7115a906db25634cf8f19f2234308517c744ef105cb696587d43"
+        },
+        {
+          "label": "chest near: recorded receipt tag",
+          "passed": true,
+          "actualSha256": "3d96a458120e68868ccca6bad66be3fc8df4627a6b7372d69b98d3ba7688774d",
+          "expectedSha256": "3d96a458120e68868ccca6bad66be3fc8df4627a6b7372d69b98d3ba7688774d"
+        },
+        {
+          "label": "chest near: exact actual credit visible",
+          "passed": true
+        },
+        {
+          "label": "chest near: exact discarded amount visible",
+          "passed": true
+        },
+        {
+          "label": "chest near reloaded without reroll: complete selected-engine state",
+          "passed": true,
+          "actualSha256": "43d0659476ed049916c539c389aae87efe1c4b9eebaf44767e717c4c9062b444",
+          "expectedSha256": "43d0659476ed049916c539c389aae87efe1c4b9eebaf44767e717c4c9062b444"
+        },
+        {
+          "label": "chest near reloaded without reroll: exact primary bytes",
+          "passed": true,
+          "actualSha256": "27391a30d24ba64488af974d9a5da41e38e6aba36738a6c5ad6fdcf9302b9178",
+          "expectedSha256": "27391a30d24ba64488af974d9a5da41e38e6aba36738a6c5ad6fdcf9302b9178"
+        },
+        {
+          "label": "chest near reloaded without reroll: exact mirror bytes",
+          "passed": true,
+          "actualSha256": "27391a30d24ba64488af974d9a5da41e38e6aba36738a6c5ad6fdcf9302b9178",
+          "expectedSha256": "27391a30d24ba64488af974d9a5da41e38e6aba36738a6c5ad6fdcf9302b9178"
+        },
+        {
+          "label": "chest near reloaded without reroll: unrelated sentinel retained",
+          "passed": true,
+          "actualSha256": "c6d712b8988f7115a906db25634cf8f19f2234308517c744ef105cb696587d43",
+          "expectedSha256": "c6d712b8988f7115a906db25634cf8f19f2234308517c744ef105cb696587d43"
+        },
+        {
+          "label": "reloaded near: recorded receipt tag",
+          "passed": true,
+          "actualSha256": "3d96a458120e68868ccca6bad66be3fc8df4627a6b7372d69b98d3ba7688774d",
+          "expectedSha256": "3d96a458120e68868ccca6bad66be3fc8df4627a6b7372d69b98d3ba7688774d"
+        },
+        {
+          "label": "reloaded near: exact actual credit visible",
+          "passed": true
+        },
+        {
+          "label": "reloaded near: exact discarded amount visible",
+          "passed": true
+        },
+        {
+          "label": "pending chest full quotes actual amount",
+          "passed": true
+        },
+        {
+          "label": "chest full opened once: complete selected-engine state",
+          "passed": true,
+          "actualSha256": "1e6ec36c41b91e7a63b75445a37ebf5df5ebc7b789ac51764e7f0c028e361093",
+          "expectedSha256": "1e6ec36c41b91e7a63b75445a37ebf5df5ebc7b789ac51764e7f0c028e361093"
+        },
+        {
+          "label": "chest full opened once: exact primary bytes",
+          "passed": true,
+          "actualSha256": "a00deaf6b3b30ecac0a39e272578baa177959591a005ee3767fc659c24455217",
+          "expectedSha256": "a00deaf6b3b30ecac0a39e272578baa177959591a005ee3767fc659c24455217"
+        },
+        {
+          "label": "chest full opened once: exact mirror bytes",
+          "passed": true,
+          "actualSha256": "a00deaf6b3b30ecac0a39e272578baa177959591a005ee3767fc659c24455217",
+          "expectedSha256": "a00deaf6b3b30ecac0a39e272578baa177959591a005ee3767fc659c24455217"
+        },
+        {
+          "label": "chest full opened once: unrelated sentinel retained",
+          "passed": true,
+          "actualSha256": "c6d712b8988f7115a906db25634cf8f19f2234308517c744ef105cb696587d43",
+          "expectedSha256": "c6d712b8988f7115a906db25634cf8f19f2234308517c744ef105cb696587d43"
+        },
+        {
+          "label": "chest full: recorded receipt tag",
+          "passed": true,
+          "actualSha256": "3d96a458120e68868ccca6bad66be3fc8df4627a6b7372d69b98d3ba7688774d",
+          "expectedSha256": "3d96a458120e68868ccca6bad66be3fc8df4627a6b7372d69b98d3ba7688774d"
+        },
+        {
+          "label": "chest full: exact actual credit visible",
+          "passed": true
+        },
+        {
+          "label": "chest full: exact discarded amount visible",
+          "passed": true
+        },
+        {
+          "label": "chest full reloaded without reroll: complete selected-engine state",
+          "passed": true,
+          "actualSha256": "1e6ec36c41b91e7a63b75445a37ebf5df5ebc7b789ac51764e7f0c028e361093",
+          "expectedSha256": "1e6ec36c41b91e7a63b75445a37ebf5df5ebc7b789ac51764e7f0c028e361093"
+        },
+        {
+          "label": "chest full reloaded without reroll: exact primary bytes",
+          "passed": true,
+          "actualSha256": "a00deaf6b3b30ecac0a39e272578baa177959591a005ee3767fc659c24455217",
+          "expectedSha256": "a00deaf6b3b30ecac0a39e272578baa177959591a005ee3767fc659c24455217"
+        },
+        {
+          "label": "chest full reloaded without reroll: exact mirror bytes",
+          "passed": true,
+          "actualSha256": "a00deaf6b3b30ecac0a39e272578baa177959591a005ee3767fc659c24455217",
+          "expectedSha256": "a00deaf6b3b30ecac0a39e272578baa177959591a005ee3767fc659c24455217"
+        },
+        {
+          "label": "chest full reloaded without reroll: unrelated sentinel retained",
+          "passed": true,
+          "actualSha256": "c6d712b8988f7115a906db25634cf8f19f2234308517c744ef105cb696587d43",
+          "expectedSha256": "c6d712b8988f7115a906db25634cf8f19f2234308517c744ef105cb696587d43"
+        },
+        {
+          "label": "reloaded full: recorded receipt tag",
+          "passed": true,
+          "actualSha256": "3d96a458120e68868ccca6bad66be3fc8df4627a6b7372d69b98d3ba7688774d",
+          "expectedSha256": "3d96a458120e68868ccca6bad66be3fc8df4627a6b7372d69b98d3ba7688774d"
+        },
+        {
+          "label": "reloaded full: exact actual credit visible",
+          "passed": true
+        },
+        {
+          "label": "reloaded full: exact discarded amount visible",
+          "passed": true
+        },
+        {
+          "label": "later legal salvage: complete selected-engine state",
+          "passed": true,
+          "actualSha256": "bc6c8e6c7aa8f29252c2b103ea9d6714dabe94b55ecf0a5ec319a4fdf9cda53a",
+          "expectedSha256": "bc6c8e6c7aa8f29252c2b103ea9d6714dabe94b55ecf0a5ec319a4fdf9cda53a"
+        },
+        {
+          "label": "later legal salvage: exact primary bytes",
+          "passed": true,
+          "actualSha256": "be9366554efe60cde08cad94f1eee468f1b49210c5ab993da4851c72abc139c8",
+          "expectedSha256": "be9366554efe60cde08cad94f1eee468f1b49210c5ab993da4851c72abc139c8"
+        },
+        {
+          "label": "later legal salvage: exact mirror bytes",
+          "passed": true,
+          "actualSha256": "be9366554efe60cde08cad94f1eee468f1b49210c5ab993da4851c72abc139c8",
+          "expectedSha256": "be9366554efe60cde08cad94f1eee468f1b49210c5ab993da4851c72abc139c8"
+        },
+        {
+          "label": "later legal salvage: unrelated sentinel retained",
+          "passed": true,
+          "actualSha256": "c6d712b8988f7115a906db25634cf8f19f2234308517c744ef105cb696587d43",
+          "expectedSha256": "c6d712b8988f7115a906db25634cf8f19f2234308517c744ef105cb696587d43"
+        },
+        {
+          "label": "later salvage really changes current balance",
+          "passed": true
+        },
+        {
+          "label": "later transaction leaves historical field exact",
+          "passed": true,
+          "actualSha256": "23e8b0175874e1bb3b4799e13a6634a8eddb456c1b8675b871e07ec09abc0c07",
+          "expectedSha256": "23e8b0175874e1bb3b4799e13a6634a8eddb456c1b8675b871e07ec09abc0c07"
+        },
+        {
+          "label": "history after later salvage: recorded receipt tag",
+          "passed": true,
+          "actualSha256": "3d96a458120e68868ccca6bad66be3fc8df4627a6b7372d69b98d3ba7688774d",
+          "expectedSha256": "3d96a458120e68868ccca6bad66be3fc8df4627a6b7372d69b98d3ba7688774d"
+        },
+        {
+          "label": "history after later salvage: exact actual credit visible",
+          "passed": true
+        },
+        {
+          "label": "legacy history remains byte-for-byte unchanged: complete selected-engine state",
+          "passed": true,
+          "actualSha256": "835f3b8eb4a58f5639b339939df66c1459b78d7b74785cdd65fb9763665fad1a",
+          "expectedSha256": "835f3b8eb4a58f5639b339939df66c1459b78d7b74785cdd65fb9763665fad1a"
+        },
+        {
+          "label": "legacy history remains byte-for-byte unchanged: exact primary bytes",
+          "passed": true,
+          "actualSha256": "4bb8331105f94b16584dd30f948e2329415311015ed7d685f23e3a0843254a7b",
+          "expectedSha256": "4bb8331105f94b16584dd30f948e2329415311015ed7d685f23e3a0843254a7b"
+        },
+        {
+          "label": "legacy history remains byte-for-byte unchanged: exact mirror bytes",
+          "passed": true,
+          "actualSha256": "4bb8331105f94b16584dd30f948e2329415311015ed7d685f23e3a0843254a7b",
+          "expectedSha256": "4bb8331105f94b16584dd30f948e2329415311015ed7d685f23e3a0843254a7b"
+        },
+        {
+          "label": "legacy history remains byte-for-byte unchanged: unrelated sentinel retained",
+          "passed": true,
+          "actualSha256": "c6d712b8988f7115a906db25634cf8f19f2234308517c744ef105cb696587d43",
+          "expectedSha256": "c6d712b8988f7115a906db25634cf8f19f2234308517c744ef105cb696587d43"
+        },
+        {
+          "label": "missing metadata gets legacy presentation",
+          "passed": true,
+          "actualSha256": "c49fea7425fa7f8699897a97c159c6690267d9003bb78c53fafa8fc15c325d84",
+          "expectedSha256": "c49fea7425fa7f8699897a97c159c6690267d9003bb78c53fafa8fc15c325d84"
+        },
+        {
+          "label": "legacy history states uncertainty and preserves nominal value",
+          "passed": true
+        },
+        {
+          "label": "chest-history: no browser errors",
+          "passed": true,
+          "actualSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "expectedSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "knownDefects": [],
+      "screenshots": [
+        "loot-near.png",
+        "loot-full.png"
+      ],
+      "captures": [
+        {
+          "label": "installed fixture before native action",
+          "file": "capture-chest-history-001.json",
+          "sha256": "a6d38bab676d253771c3a13b7d8e591c9e2ec463804cf51649d81a72314b4e02",
+          "bytes": 46951
+        },
+        {
+          "label": "chest near opened once",
+          "file": "capture-chest-history-002.json",
+          "sha256": "9ca635b4a319b4cf8299cdcb809ced9dbd31074607c917f9e152763ed5542c90",
+          "bytes": 50386
+        },
+        {
+          "label": "screenshot loot-near",
+          "file": "capture-chest-history-003.json",
+          "sha256": "b4d9a89370f9fda7ab02933d508006d89ec9eec4cddff13bb51285b69500908c",
+          "bytes": 40858
+        },
+        {
+          "label": "chest near reloaded without reroll",
+          "file": "capture-chest-history-004.json",
+          "sha256": "0ef9d1dbcd620a2969dd377aa0455612c35cffd4e2c573cadca45592c2a7aec6",
+          "bytes": 50174
+        },
+        {
+          "label": "installed fixture before native action",
+          "file": "capture-chest-history-005.json",
+          "sha256": "e9cdebc7fdb5df44d1af8ba5d1161cf76cadd91acf879dfa1936f33cc6ba8b8a",
+          "bytes": 47018
+        },
+        {
+          "label": "chest full opened once",
+          "file": "capture-chest-history-006.json",
+          "sha256": "27db3f449ae03895cacf8c948cc3f8f00b1028fc160aade71442d03c400d6934",
+          "bytes": 50375
+        },
+        {
+          "label": "screenshot loot-full",
+          "file": "capture-chest-history-007.json",
+          "sha256": "fafb95335ac7484796792fc1c742bfeb4ecb5668f767ef3230d340652b50d5a4",
+          "bytes": 40849
+        },
+        {
+          "label": "chest full reloaded without reroll",
+          "file": "capture-chest-history-008.json",
+          "sha256": "27d79201fdf31551fca02afb6592edf62575d55434ac6934544854c7e744e525",
+          "bytes": 50165
+        },
+        {
+          "label": "installed fixture before native action",
+          "file": "capture-chest-history-009.json",
+          "sha256": "922900b484f8337befec7757aa5a803285bc7a96e5d926df98a8c647fe24898c",
+          "bytes": 47920
+        },
+        {
+          "label": "later legal salvage",
+          "file": "capture-chest-history-010.json",
+          "sha256": "c7e3c24faff8194b17e35e9a1c742e35dc01adc938cbbfb70ad8c84505d5814c",
+          "bytes": 50438
+        },
+        {
+          "label": "installed fixture before native action",
+          "file": "capture-chest-history-011.json",
+          "sha256": "e3d7f4137a342da3d972324d4dff775731438738bd5d099b82eec90851a5b0c3",
+          "bytes": 49261
+        },
+        {
+          "label": "legacy history remains byte-for-byte unchanged",
+          "file": "capture-chest-history-012.json",
+          "sha256": "f87e51c21446d10558e95ab8df2c5c5e6d158494048529a2b1fcb48dca61c38a",
+          "bytes": 49269
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "exchange-native",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "exchange preview shows actual gold and valid XP",
+          "passed": true
+        },
+        {
+          "label": "confirmation names the exact reserved item",
+          "passed": true
+        },
+        {
+          "label": "confirmation repeats exact gold and XP",
+          "passed": true
+        },
+        {
+          "label": "cancel preserves every localStorage byte",
+          "passed": true,
+          "actualSha256": "10f37f8d9dd744897b8cdc2e74a46ff1d6748e0b89a80b250c7ee5f29dfe3be9",
+          "expectedSha256": "10f37f8d9dd744897b8cdc2e74a46ff1d6748e0b89a80b250c7ee5f29dfe3be9"
+        },
+        {
+          "label": "exchange 9999999990 accepted once: complete selected-engine state",
+          "passed": true,
+          "actualSha256": "2a9c6d1663d36add18c2a0241fe1f84bcb4012b4849d3d1f6a8f28759fa5c457",
+          "expectedSha256": "2a9c6d1663d36add18c2a0241fe1f84bcb4012b4849d3d1f6a8f28759fa5c457"
+        },
+        {
+          "label": "exchange 9999999990 accepted once: exact primary bytes",
+          "passed": true,
+          "actualSha256": "38fead99948b6408bcb585c7fe1c5007ebbd95c000c340974ada183c2bfe8782",
+          "expectedSha256": "38fead99948b6408bcb585c7fe1c5007ebbd95c000c340974ada183c2bfe8782"
+        },
+        {
+          "label": "exchange 9999999990 accepted once: exact mirror bytes",
+          "passed": true,
+          "actualSha256": "38fead99948b6408bcb585c7fe1c5007ebbd95c000c340974ada183c2bfe8782",
+          "expectedSha256": "38fead99948b6408bcb585c7fe1c5007ebbd95c000c340974ada183c2bfe8782"
+        },
+        {
+          "label": "exchange 9999999990 accepted once: unrelated sentinel retained",
+          "passed": true,
+          "actualSha256": "c6d712b8988f7115a906db25634cf8f19f2234308517c744ef105cb696587d43",
+          "expectedSha256": "c6d712b8988f7115a906db25634cf8f19f2234308517c744ef105cb696587d43"
+        },
+        {
+          "label": "exchange gold equals actual capacity",
+          "passed": true,
+          "actualSha256": "4a44dc15364204a80fe80e9039455cc1608281820fe2b24f1e5233ade6af1dd5",
+          "expectedSha256": "4a44dc15364204a80fe80e9039455cc1608281820fe2b24f1e5233ade6af1dd5"
+        },
+        {
+          "label": "exchange XP really enters",
+          "passed": true,
+          "actualSha256": "84f01dd97c687fb28a296bcc2ef1801446ea7405860595924eb2b5bb634718d1",
+          "expectedSha256": "84f01dd97c687fb28a296bcc2ef1801446ea7405860595924eb2b5bb634718d1"
+        },
+        {
+          "label": "only selected old item is consumed",
+          "passed": true
+        },
+        {
+          "label": "result reports actual gold",
+          "passed": true
+        },
+        {
+          "label": "exchange preview shows actual gold and valid XP",
+          "passed": true
+        },
+        {
+          "label": "confirmation names the exact reserved item",
+          "passed": true
+        },
+        {
+          "label": "confirmation repeats exact gold and XP",
+          "passed": true
+        },
+        {
+          "label": "cancel preserves every localStorage byte",
+          "passed": true,
+          "actualSha256": "2577c2cb687d129022028cc36f655df2050c68f39b257fbcfc72a9066701c11d",
+          "expectedSha256": "2577c2cb687d129022028cc36f655df2050c68f39b257fbcfc72a9066701c11d"
+        },
+        {
+          "label": "exchange 10000000000 accepted once: complete selected-engine state",
+          "passed": true,
+          "actualSha256": "039651deac9d361a0f699851d00f516d6b3098d23a8a9b6e600743b6c5c80a66",
+          "expectedSha256": "039651deac9d361a0f699851d00f516d6b3098d23a8a9b6e600743b6c5c80a66"
+        },
+        {
+          "label": "exchange 10000000000 accepted once: exact primary bytes",
+          "passed": true,
+          "actualSha256": "be81458a9eda82e83d6242fd2ae921886fa03d9f00ab638a2aa927db83a386c8",
+          "expectedSha256": "be81458a9eda82e83d6242fd2ae921886fa03d9f00ab638a2aa927db83a386c8"
+        },
+        {
+          "label": "exchange 10000000000 accepted once: exact mirror bytes",
+          "passed": true,
+          "actualSha256": "be81458a9eda82e83d6242fd2ae921886fa03d9f00ab638a2aa927db83a386c8",
+          "expectedSha256": "be81458a9eda82e83d6242fd2ae921886fa03d9f00ab638a2aa927db83a386c8"
+        },
+        {
+          "label": "exchange 10000000000 accepted once: unrelated sentinel retained",
+          "passed": true,
+          "actualSha256": "c6d712b8988f7115a906db25634cf8f19f2234308517c744ef105cb696587d43",
+          "expectedSha256": "c6d712b8988f7115a906db25634cf8f19f2234308517c744ef105cb696587d43"
+        },
+        {
+          "label": "exchange gold equals actual capacity",
+          "passed": true,
+          "actualSha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "expectedSha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        {
+          "label": "exchange XP really enters",
+          "passed": true,
+          "actualSha256": "84f01dd97c687fb28a296bcc2ef1801446ea7405860595924eb2b5bb634718d1",
+          "expectedSha256": "84f01dd97c687fb28a296bcc2ef1801446ea7405860595924eb2b5bb634718d1"
+        },
+        {
+          "label": "only selected old item is consumed",
+          "passed": true
+        },
+        {
+          "label": "result reports actual gold",
+          "passed": true
+        },
+        {
+          "label": "dual-cap confirmation is explicit",
+          "passed": true
+        },
+        {
+          "label": "dual-cap accepted once: complete selected-engine state",
+          "passed": true,
+          "actualSha256": "661e6cf23ce69e7f1fec5cb17ddffb0d6e5a675e56c5c108654b892f054e3699",
+          "expectedSha256": "661e6cf23ce69e7f1fec5cb17ddffb0d6e5a675e56c5c108654b892f054e3699"
+        },
+        {
+          "label": "dual-cap accepted once: exact primary bytes",
+          "passed": true,
+          "actualSha256": "e345c656fe68a6977ffcefdeed1802e73fe5dd98d1aff7d889d40ec11f523028",
+          "expectedSha256": "e345c656fe68a6977ffcefdeed1802e73fe5dd98d1aff7d889d40ec11f523028"
+        },
+        {
+          "label": "dual-cap accepted once: exact mirror bytes",
+          "passed": true,
+          "actualSha256": "e345c656fe68a6977ffcefdeed1802e73fe5dd98d1aff7d889d40ec11f523028",
+          "expectedSha256": "e345c656fe68a6977ffcefdeed1802e73fe5dd98d1aff7d889d40ec11f523028"
+        },
+        {
+          "label": "dual-cap accepted once: unrelated sentinel retained",
+          "passed": true,
+          "actualSha256": "c6d712b8988f7115a906db25634cf8f19f2234308517c744ef105cb696587d43",
+          "expectedSha256": "c6d712b8988f7115a906db25634cf8f19f2234308517c744ef105cb696587d43"
+        },
+        {
+          "label": "dual-cap XP does not increase",
+          "passed": true,
+          "actualSha256": "e59bbea6227c578f97fc467bc62dc3407d4885693d74e6e970f6cab44158fef4",
+          "expectedSha256": "e59bbea6227c578f97fc467bc62dc3407d4885693d74e6e970f6cab44158fef4"
+        },
+        {
+          "label": "dual-cap result describes admitted XP",
+          "passed": true
+        },
+        {
+          "label": "exchange-native: no browser errors",
+          "passed": true,
+          "actualSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "expectedSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "knownDefects": [],
+      "screenshots": [
+        "exchange-dual-cap-confirmation.png"
+      ],
+      "captures": [
+        {
+          "label": "installed fixture before native action",
+          "file": "capture-exchange-native-001.json",
+          "sha256": "d87d205610d6d4c1a9cf8bf76cf2c4173db1247f45d7caa82bc05f8ce9277245",
+          "bytes": 42566
+        },
+        {
+          "label": "exchange confirmation before cancel",
+          "file": "capture-exchange-native-002.json",
+          "sha256": "1cdd0ade3c1421aadcff3216d8c9fd062f90ca1eb288a82274ae9abaf693b263",
+          "bytes": 45124
+        },
+        {
+          "label": "exchange 9999999990 accepted once",
+          "file": "capture-exchange-native-003.json",
+          "sha256": "eed1de9f942e7c4b00e24d4562045311c0a8f0e29ba7f5b310149df54238d383",
+          "bytes": 43783
+        },
+        {
+          "label": "installed fixture before native action",
+          "file": "capture-exchange-native-004.json",
+          "sha256": "f2859f59f437ae1e7d3ae59b547b7a5c3086e851153d7d97f7cbea7f9b6d529d",
+          "bytes": 42633
+        },
+        {
+          "label": "exchange confirmation before cancel",
+          "file": "capture-exchange-native-005.json",
+          "sha256": "b38aad7452ab5d473e4d90000644063bbd206a136fa66737029262a4374e9602",
+          "bytes": 45187
+        },
+        {
+          "label": "exchange 10000000000 accepted once",
+          "file": "capture-exchange-native-006.json",
+          "sha256": "4161694cda10975244cf14803cee07aa5dd40886d36dd8ed7e1efba5e8f9243b",
+          "bytes": 43769
+        },
+        {
+          "label": "installed fixture before native action",
+          "file": "capture-exchange-native-007.json",
+          "sha256": "c637a449b0b7c4933ad14d12619b5e947a96aa50f30de5035ecd11a675230cf5",
+          "bytes": 43245
+        },
+        {
+          "label": "dual-cap exchange confirmation",
+          "file": "capture-exchange-native-008.json",
+          "sha256": "f25cb8168264ecb93c50c892f155afda96ff5c4ac1b5e65cbd2d69aeaab8252a",
+          "bytes": 46299
+        },
+        {
+          "label": "screenshot exchange-dual-cap-confirmation",
+          "file": "capture-exchange-native-009.json",
+          "sha256": "da8c17023953d0cd3e334829123ceecabf72b8fa106067863af6562744f9bb91",
+          "bytes": 37375
+        },
+        {
+          "label": "dual-cap accepted once",
+          "file": "capture-exchange-native-010.json",
+          "sha256": "654afa0b206f13704b44fb01e82ef3b92f29118bc22fcf2fd055efcf9eb64b82",
+          "bytes": 46139
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "typed-imports",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "malformed receipt is rejected before overwrite confirmation",
+          "passed": true
+        },
+        {
+          "label": "native import explains validation failure",
+          "passed": true
+        },
+        {
+          "label": "malformed import attempt changes no storage bytes",
+          "passed": true,
+          "actualSha256": "a5dfe04069daf501843732fd5c18add7b9c300760967b41933fc50d0b7990b6f",
+          "expectedSha256": "a5dfe04069daf501843732fd5c18add7b9c300760967b41933fc50d0b7990b6f"
+        },
+        {
+          "label": "malformed receipt is rejected before overwrite confirmation",
+          "passed": true
+        },
+        {
+          "label": "native import explains validation failure",
+          "passed": true
+        },
+        {
+          "label": "malformed import attempt changes no storage bytes",
+          "passed": true,
+          "actualSha256": "a5dfe04069daf501843732fd5c18add7b9c300760967b41933fc50d0b7990b6f",
+          "expectedSha256": "a5dfe04069daf501843732fd5c18add7b9c300760967b41933fc50d0b7990b6f"
+        },
+        {
+          "label": "malformed receipt is rejected before overwrite confirmation",
+          "passed": true
+        },
+        {
+          "label": "native import explains validation failure",
+          "passed": true
+        },
+        {
+          "label": "malformed import attempt changes no storage bytes",
+          "passed": true,
+          "actualSha256": "a5dfe04069daf501843732fd5c18add7b9c300760967b41933fc50d0b7990b6f",
+          "expectedSha256": "a5dfe04069daf501843732fd5c18add7b9c300760967b41933fc50d0b7990b6f"
+        },
+        {
+          "label": "typed-imports: no browser errors",
+          "passed": true,
+          "actualSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "expectedSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "knownDefects": [],
+      "screenshots": [],
+      "captures": [
+        {
+          "label": "installed fixture before native action",
+          "file": "capture-typed-imports-001.json",
+          "sha256": "8e38759d610cfd744505164c6d10b6a89bbe33155cad61fdd893c8dbc32dc5b6",
+          "bytes": 46951
+        },
+        {
+          "label": "typed import attempt leaves active save unchanged",
+          "file": "capture-typed-imports-002.json",
+          "sha256": "f09d41303bcfc636197c68869bb5d23de9d1a5afa6b57bafa9ba170aa82f1398",
+          "bytes": 49667
+        },
+        {
+          "label": "installed fixture before native action",
+          "file": "capture-typed-imports-003.json",
+          "sha256": "607212f95b6448ce675900bb031e7ce941939ff0d1eab1c1d77e313f420e0cb9",
+          "bytes": 46951
+        },
+        {
+          "label": "typed import attempt leaves active save unchanged",
+          "file": "capture-typed-imports-004.json",
+          "sha256": "e5b16a7e6f863525cffb54652e048a697f16aebf9f3b780b0dabfc16e997cf0d",
+          "bytes": 49667
+        },
+        {
+          "label": "installed fixture before native action",
+          "file": "capture-typed-imports-005.json",
+          "sha256": "1d64b80e455f62f63dc1979807110b408b2aa2b0d358d7a3fff427935e23f028",
+          "bytes": 46951
+        },
+        {
+          "label": "typed import attempt leaves active save unchanged",
+          "file": "capture-typed-imports-006.json",
+          "sha256": "027feb619cba04c90de50ad8db5a31d560b905249301186ab282f48769a1af33",
+          "bytes": 49667
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "primary-save-failure",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "failed open leaves every durable key unchanged",
+          "passed": true,
+          "actualSha256": "a5dfe04069daf501843732fd5c18add7b9c300760967b41933fc50d0b7990b6f",
+          "expectedSha256": "a5dfe04069daf501843732fd5c18add7b9c300760967b41933fc50d0b7990b6f"
+        },
+        {
+          "label": "failed open stays at its original chest",
+          "passed": true,
+          "actualSha256": "7ca0d7019158ccd92de4eb351a1e9eded193a1eb3e760b09b154595f0436f0b4",
+          "expectedSha256": "7ca0d7019158ccd92de4eb351a1e9eded193a1eb3e760b09b154595f0436f0b4"
+        },
+        {
+          "label": "failure does not reveal successful loot",
+          "passed": true,
+          "actualSha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "expectedSha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        {
+          "label": "failure never announces a successful receipt",
+          "passed": true
+        },
+        {
+          "label": "recovered write settles the original chest exactly once: complete selected-engine state",
+          "passed": true,
+          "actualSha256": "43d0659476ed049916c539c389aae87efe1c4b9eebaf44767e717c4c9062b444",
+          "expectedSha256": "43d0659476ed049916c539c389aae87efe1c4b9eebaf44767e717c4c9062b444"
+        },
+        {
+          "label": "recovered write settles the original chest exactly once: exact primary bytes",
+          "passed": true,
+          "actualSha256": "27391a30d24ba64488af974d9a5da41e38e6aba36738a6c5ad6fdcf9302b9178",
+          "expectedSha256": "27391a30d24ba64488af974d9a5da41e38e6aba36738a6c5ad6fdcf9302b9178"
+        },
+        {
+          "label": "recovered write settles the original chest exactly once: exact mirror bytes",
+          "passed": true,
+          "actualSha256": "27391a30d24ba64488af974d9a5da41e38e6aba36738a6c5ad6fdcf9302b9178",
+          "expectedSha256": "27391a30d24ba64488af974d9a5da41e38e6aba36738a6c5ad6fdcf9302b9178"
+        },
+        {
+          "label": "recovered write settles the original chest exactly once: unrelated sentinel retained",
+          "passed": true,
+          "actualSha256": "c6d712b8988f7115a906db25634cf8f19f2234308517c744ef105cb696587d43",
+          "expectedSha256": "c6d712b8988f7115a906db25634cf8f19f2234308517c744ef105cb696587d43"
+        },
+        {
+          "label": "primary-save-failure: no browser errors",
+          "passed": true,
+          "actualSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "expectedSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "knownDefects": [],
+      "screenshots": [],
+      "captures": [
+        {
+          "label": "installed fixture before native action",
+          "file": "capture-primary-save-failure-001.json",
+          "sha256": "b45f67438f8f4e96ab53a6e1d66d9cd6b91ba7513b8b6fbae0b4230c4ff3b802",
+          "bytes": 46958
+        },
+        {
+          "label": "failed main write before retry",
+          "file": "capture-primary-save-failure-002.json",
+          "sha256": "2dd13d198d555daac37ef2f509a9b62e12ed4d802d228ba04d4baaf7fb883b1c",
+          "bytes": 47478
+        },
+        {
+          "label": "recovered write settles the original chest exactly once",
+          "file": "capture-primary-save-failure-003.json",
+          "sha256": "71aa8b384af334d5efc318d76a35557ec080accf91a1270ea3366c372a4dd66c",
+          "bytes": 50622
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "fate-native",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "fate double 9999999990: complete selected-engine state",
+          "passed": true,
+          "actualSha256": "e18a1f9a6064b8ba6d8d36b4414516a77aefaa6209280c944d361f6f7c35dae9",
+          "expectedSha256": "e18a1f9a6064b8ba6d8d36b4414516a77aefaa6209280c944d361f6f7c35dae9"
+        },
+        {
+          "label": "fate double 9999999990: exact primary bytes",
+          "passed": true,
+          "actualSha256": "049e7dbc6f2e248d410bfce6e17d2eba5e463b5f9d371988b7e8a08c3b33fb3a",
+          "expectedSha256": "049e7dbc6f2e248d410bfce6e17d2eba5e463b5f9d371988b7e8a08c3b33fb3a"
+        },
+        {
+          "label": "fate double 9999999990: exact mirror bytes",
+          "passed": true,
+          "actualSha256": "049e7dbc6f2e248d410bfce6e17d2eba5e463b5f9d371988b7e8a08c3b33fb3a",
+          "expectedSha256": "049e7dbc6f2e248d410bfce6e17d2eba5e463b5f9d371988b7e8a08c3b33fb3a"
+        },
+        {
+          "label": "fate double 9999999990: unrelated sentinel retained",
+          "passed": true,
+          "actualSha256": "c6d712b8988f7115a906db25634cf8f19f2234308517c744ef105cb696587d43",
+          "expectedSha256": "c6d712b8988f7115a906db25634cf8f19f2234308517c744ef105cb696587d43"
+        },
+        {
+          "label": "fate announces exact clipped credit",
+          "passed": true
+        },
+        {
+          "label": "fate double 10000000000: complete selected-engine state",
+          "passed": true,
+          "actualSha256": "3aa5a02010167b7faeae3cc84784f74f010ccc4ceaadf077fa5d0adc9e041c72",
+          "expectedSha256": "3aa5a02010167b7faeae3cc84784f74f010ccc4ceaadf077fa5d0adc9e041c72"
+        },
+        {
+          "label": "fate double 10000000000: exact primary bytes",
+          "passed": true,
+          "actualSha256": "5b709238570c69cdda195b38f9b0712ab84d5cfab1b7909c940a35bedf5c6863",
+          "expectedSha256": "5b709238570c69cdda195b38f9b0712ab84d5cfab1b7909c940a35bedf5c6863"
+        },
+        {
+          "label": "fate double 10000000000: exact mirror bytes",
+          "passed": true,
+          "actualSha256": "5b709238570c69cdda195b38f9b0712ab84d5cfab1b7909c940a35bedf5c6863",
+          "expectedSha256": "5b709238570c69cdda195b38f9b0712ab84d5cfab1b7909c940a35bedf5c6863"
+        },
+        {
+          "label": "fate double 10000000000: unrelated sentinel retained",
+          "passed": true,
+          "actualSha256": "c6d712b8988f7115a906db25634cf8f19f2234308517c744ef105cb696587d43",
+          "expectedSha256": "c6d712b8988f7115a906db25634cf8f19f2234308517c744ef105cb696587d43"
+        },
+        {
+          "label": "fate announces exact clipped credit",
+          "passed": true
+        },
+        {
+          "label": "fate-native: no browser errors",
+          "passed": true,
+          "actualSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "expectedSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "knownDefects": [],
+      "screenshots": [],
+      "captures": [
+        {
+          "label": "installed fixture before native action",
+          "file": "capture-fate-native-001.json",
+          "sha256": "4753cb207444bc0368cd70d4717ab5cab7f5390c52ac5716bfafaba010cf1a44",
+          "bytes": 33170
+        },
+        {
+          "label": "fate double 9999999990",
+          "file": "capture-fate-native-002.json",
+          "sha256": "20d47d69ee5c0913a94eda38baee2b9ea32090ea8407ab8e615e4fbb12aa3544",
+          "bytes": 44165
+        },
+        {
+          "label": "installed fixture before native action",
+          "file": "capture-fate-native-003.json",
+          "sha256": "2cceb6c3595268e90ff2627c282e8e9dee8cc99b99e1736dafa157faa5d48dce",
+          "bytes": 33234
+        },
+        {
+          "label": "fate double 10000000000",
+          "file": "capture-fate-native-004.json",
+          "sha256": "3f30487392d887be3b848d91e202eb2f36c60e26894af39a64c9a20b1033a798",
+          "bytes": 44157
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "desktop-layouts",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "1366x768/gold: no whole-page horizontal overflow",
+          "passed": true
+        },
+        {
+          "label": "1366x768/gold: primary action remains in viewport",
+          "passed": true
+        },
+        {
+          "label": "1366x768/gold: room panel does not overlap action dock",
+          "passed": true
+        },
+        {
+          "label": "1366x768/gold: .gold-hoard has visible geometry",
+          "passed": true
+        },
+        {
+          "label": "1366x768/gold: .gold-hoard fits panel width",
+          "passed": true
+        },
+        {
+          "label": "1366x768/gold: .gold-hoard is readable with native scroll",
+          "passed": true
+        },
+        {
+          "label": "1366x768/gold: .gold-limit-detail>p has visible geometry",
+          "passed": true
+        },
+        {
+          "label": "1366x768/gold: .gold-limit-detail>p fits panel width",
+          "passed": true
+        },
+        {
+          "label": "1366x768/gold: .gold-limit-detail>p is readable with native scroll",
+          "passed": true
+        },
+        {
+          "label": "1366x768/gold: .gold-balance-preview has visible geometry",
+          "passed": true
+        },
+        {
+          "label": "1366x768/gold: .gold-balance-preview fits panel width",
+          "passed": true
+        },
+        {
+          "label": "1366x768/gold: .gold-balance-preview is readable with native scroll",
+          "passed": true
+        },
+        {
+          "label": "layout inspection and native scroll are read-only",
+          "passed": true,
+          "actualSha256": "3cba5e82f68c3bf998447c12c8b089975af825916ec4bed2ad087d0c057a75df",
+          "expectedSha256": "3cba5e82f68c3bf998447c12c8b089975af825916ec4bed2ad087d0c057a75df"
+        },
+        {
+          "label": "1366x768/chest: no whole-page horizontal overflow",
+          "passed": true
+        },
+        {
+          "label": "1366x768/chest: primary action remains in viewport",
+          "passed": true
+        },
+        {
+          "label": "1366x768/chest: room panel does not overlap action dock",
+          "passed": true
+        },
+        {
+          "label": "1366x768/chest: [data-gold-preview]>p has visible geometry",
+          "passed": true
+        },
+        {
+          "label": "1366x768/chest: [data-gold-preview]>p fits panel width",
+          "passed": true
+        },
+        {
+          "label": "1366x768/chest: [data-gold-preview]>p is readable with native scroll",
+          "passed": true
+        },
+        {
+          "label": "1366x768/chest: [data-gold-preview] .gold-limit-detail>p has visible geometry",
+          "passed": true
+        },
+        {
+          "label": "1366x768/chest: [data-gold-preview] .gold-limit-detail>p fits panel width",
+          "passed": true
+        },
+        {
+          "label": "1366x768/chest: [data-gold-preview] .gold-limit-detail>p is readable with native scroll",
+          "passed": true
+        },
+        {
+          "label": "layout inspection and native scroll are read-only",
+          "passed": true,
+          "actualSha256": "a5dfe04069daf501843732fd5c18add7b9c300760967b41933fc50d0b7990b6f",
+          "expectedSha256": "a5dfe04069daf501843732fd5c18add7b9c300760967b41933fc50d0b7990b6f"
+        },
+        {
+          "label": "1366x768/loot: no whole-page horizontal overflow",
+          "passed": true
+        },
+        {
+          "label": "1366x768/loot: primary action remains in viewport",
+          "passed": true
+        },
+        {
+          "label": "1366x768/loot: room panel does not overlap action dock",
+          "passed": true
+        },
+        {
+          "label": "1366x768/loot: .gold-reward>strong has visible geometry",
+          "passed": true
+        },
+        {
+          "label": "1366x768/loot: .gold-reward>strong fits panel width",
+          "passed": true
+        },
+        {
+          "label": "1366x768/loot: .gold-reward>strong is readable with native scroll",
+          "passed": true
+        },
+        {
+          "label": "1366x768/loot: .gold-reward .gold-limit-detail>p has visible geometry",
+          "passed": true
+        },
+        {
+          "label": "1366x768/loot: .gold-reward .gold-limit-detail>p fits panel width",
+          "passed": true
+        },
+        {
+          "label": "1366x768/loot: .gold-reward .gold-limit-detail>p is readable with native scroll",
+          "passed": true
+        },
+        {
+          "label": "layout inspection and native scroll are read-only",
+          "passed": true,
+          "actualSha256": "a9022fe327790ea7522d5a856acbbdf981ce9925cc9a5cab6474fce0ac17facb",
+          "expectedSha256": "a9022fe327790ea7522d5a856acbbdf981ce9925cc9a5cab6474fce0ac17facb"
+        },
+        {
+          "label": "1366x768/exchange: no whole-page horizontal overflow",
+          "passed": true
+        },
+        {
+          "label": "1366x768/exchange: primary action remains in viewport",
+          "passed": true
+        },
+        {
+          "label": "1366x768/exchange: room panel does not overlap action dock",
+          "passed": true
+        },
+        {
+          "label": "1366x768/exchange: [data-action=\"event-choice\"][data-id=\"salvage\"] .event-reward has visible geometry",
+          "passed": true
+        },
+        {
+          "label": "1366x768/exchange: [data-action=\"event-choice\"][data-id=\"salvage\"] .event-reward fits panel width",
+          "passed": true
+        },
+        {
+          "label": "1366x768/exchange: [data-action=\"event-choice\"][data-id=\"salvage\"] .event-reward is readable with native scroll",
+          "passed": true
+        },
+        {
+          "label": "1366x768/exchange: [data-action=\"event-choice\"][data-id=\"salvage\"] .event-option-choose has visible geometry",
+          "passed": true
+        },
+        {
+          "label": "1366x768/exchange: [data-action=\"event-choice\"][data-id=\"salvage\"] .event-option-choose fits panel width",
+          "passed": true
+        },
+        {
+          "label": "1366x768/exchange: [data-action=\"event-choice\"][data-id=\"salvage\"] .event-option-choose is readable with native scroll",
+          "passed": true
+        },
+        {
+          "label": "layout inspection and native scroll are read-only",
+          "passed": true,
+          "actualSha256": "10f37f8d9dd744897b8cdc2e74a46ff1d6748e0b89a80b250c7ee5f29dfe3be9",
+          "expectedSha256": "10f37f8d9dd744897b8cdc2e74a46ff1d6748e0b89a80b250c7ee5f29dfe3be9"
+        },
+        {
+          "label": "1920x1080/gold: no whole-page horizontal overflow",
+          "passed": true
+        },
+        {
+          "label": "1920x1080/gold: primary action remains in viewport",
+          "passed": true
+        },
+        {
+          "label": "1920x1080/gold: room panel does not overlap action dock",
+          "passed": true
+        },
+        {
+          "label": "1920x1080/gold: .gold-hoard has visible geometry",
+          "passed": true
+        },
+        {
+          "label": "1920x1080/gold: .gold-hoard fits panel width",
+          "passed": true
+        },
+        {
+          "label": "1920x1080/gold: .gold-hoard is readable with native scroll",
+          "passed": true
+        },
+        {
+          "label": "1920x1080/gold: .gold-limit-detail>p has visible geometry",
+          "passed": true
+        },
+        {
+          "label": "1920x1080/gold: .gold-limit-detail>p fits panel width",
+          "passed": true
+        },
+        {
+          "label": "1920x1080/gold: .gold-limit-detail>p is readable with native scroll",
+          "passed": true
+        },
+        {
+          "label": "1920x1080/gold: .gold-balance-preview has visible geometry",
+          "passed": true
+        },
+        {
+          "label": "1920x1080/gold: .gold-balance-preview fits panel width",
+          "passed": true
+        },
+        {
+          "label": "1920x1080/gold: .gold-balance-preview is readable with native scroll",
+          "passed": true
+        },
+        {
+          "label": "layout inspection and native scroll are read-only",
+          "passed": true,
+          "actualSha256": "3cba5e82f68c3bf998447c12c8b089975af825916ec4bed2ad087d0c057a75df",
+          "expectedSha256": "3cba5e82f68c3bf998447c12c8b089975af825916ec4bed2ad087d0c057a75df"
+        },
+        {
+          "label": "1920x1080/chest: no whole-page horizontal overflow",
+          "passed": true
+        },
+        {
+          "label": "1920x1080/chest: primary action remains in viewport",
+          "passed": true
+        },
+        {
+          "label": "1920x1080/chest: room panel does not overlap action dock",
+          "passed": true
+        },
+        {
+          "label": "1920x1080/chest: [data-gold-preview]>p has visible geometry",
+          "passed": true
+        },
+        {
+          "label": "1920x1080/chest: [data-gold-preview]>p fits panel width",
+          "passed": true
+        },
+        {
+          "label": "1920x1080/chest: [data-gold-preview]>p is readable with native scroll",
+          "passed": true
+        },
+        {
+          "label": "1920x1080/chest: [data-gold-preview] .gold-limit-detail>p has visible geometry",
+          "passed": true
+        },
+        {
+          "label": "1920x1080/chest: [data-gold-preview] .gold-limit-detail>p fits panel width",
+          "passed": true
+        },
+        {
+          "label": "1920x1080/chest: [data-gold-preview] .gold-limit-detail>p is readable with native scroll",
+          "passed": true
+        },
+        {
+          "label": "layout inspection and native scroll are read-only",
+          "passed": true,
+          "actualSha256": "a5dfe04069daf501843732fd5c18add7b9c300760967b41933fc50d0b7990b6f",
+          "expectedSha256": "a5dfe04069daf501843732fd5c18add7b9c300760967b41933fc50d0b7990b6f"
+        },
+        {
+          "label": "1920x1080/loot: no whole-page horizontal overflow",
+          "passed": true
+        },
+        {
+          "label": "1920x1080/loot: primary action remains in viewport",
+          "passed": true
+        },
+        {
+          "label": "1920x1080/loot: room panel does not overlap action dock",
+          "passed": true
+        },
+        {
+          "label": "1920x1080/loot: .gold-reward>strong has visible geometry",
+          "passed": true
+        },
+        {
+          "label": "1920x1080/loot: .gold-reward>strong fits panel width",
+          "passed": true
+        },
+        {
+          "label": "1920x1080/loot: .gold-reward>strong is readable with native scroll",
+          "passed": true
+        },
+        {
+          "label": "1920x1080/loot: .gold-reward .gold-limit-detail>p has visible geometry",
+          "passed": true
+        },
+        {
+          "label": "1920x1080/loot: .gold-reward .gold-limit-detail>p fits panel width",
+          "passed": true
+        },
+        {
+          "label": "1920x1080/loot: .gold-reward .gold-limit-detail>p is readable with native scroll",
+          "passed": true
+        },
+        {
+          "label": "layout inspection and native scroll are read-only",
+          "passed": true,
+          "actualSha256": "a9022fe327790ea7522d5a856acbbdf981ce9925cc9a5cab6474fce0ac17facb",
+          "expectedSha256": "a9022fe327790ea7522d5a856acbbdf981ce9925cc9a5cab6474fce0ac17facb"
+        },
+        {
+          "label": "1920x1080/exchange: no whole-page horizontal overflow",
+          "passed": true
+        },
+        {
+          "label": "1920x1080/exchange: primary action remains in viewport",
+          "passed": true
+        },
+        {
+          "label": "1920x1080/exchange: room panel does not overlap action dock",
+          "passed": true
+        },
+        {
+          "label": "1920x1080/exchange: [data-action=\"event-choice\"][data-id=\"salvage\"] .event-reward has visible geometry",
+          "passed": true
+        },
+        {
+          "label": "1920x1080/exchange: [data-action=\"event-choice\"][data-id=\"salvage\"] .event-reward fits panel width",
+          "passed": true
+        },
+        {
+          "label": "1920x1080/exchange: [data-action=\"event-choice\"][data-id=\"salvage\"] .event-reward is readable with native scroll",
+          "passed": true
+        },
+        {
+          "label": "1920x1080/exchange: [data-action=\"event-choice\"][data-id=\"salvage\"] .event-option-choose has visible geometry",
+          "passed": true
+        },
+        {
+          "label": "1920x1080/exchange: [data-action=\"event-choice\"][data-id=\"salvage\"] .event-option-choose fits panel width",
+          "passed": true
+        },
+        {
+          "label": "1920x1080/exchange: [data-action=\"event-choice\"][data-id=\"salvage\"] .event-option-choose is readable with native scroll",
+          "passed": true
+        },
+        {
+          "label": "layout inspection and native scroll are read-only",
+          "passed": true,
+          "actualSha256": "10f37f8d9dd744897b8cdc2e74a46ff1d6748e0b89a80b250c7ee5f29dfe3be9",
+          "expectedSha256": "10f37f8d9dd744897b8cdc2e74a46ff1d6748e0b89a80b250c7ee5f29dfe3be9"
+        },
+        {
+          "label": "2560x1440/gold: no whole-page horizontal overflow",
+          "passed": true
+        },
+        {
+          "label": "2560x1440/gold: primary action remains in viewport",
+          "passed": true
+        },
+        {
+          "label": "2560x1440/gold: room panel does not overlap action dock",
+          "passed": true
+        },
+        {
+          "label": "2560x1440/gold: .gold-hoard has visible geometry",
+          "passed": true
+        },
+        {
+          "label": "2560x1440/gold: .gold-hoard fits panel width",
+          "passed": true
+        },
+        {
+          "label": "2560x1440/gold: .gold-hoard is readable with native scroll",
+          "passed": true
+        },
+        {
+          "label": "2560x1440/gold: .gold-limit-detail>p has visible geometry",
+          "passed": true
+        },
+        {
+          "label": "2560x1440/gold: .gold-limit-detail>p fits panel width",
+          "passed": true
+        },
+        {
+          "label": "2560x1440/gold: .gold-limit-detail>p is readable with native scroll",
+          "passed": true
+        },
+        {
+          "label": "2560x1440/gold: .gold-balance-preview has visible geometry",
+          "passed": true
+        },
+        {
+          "label": "2560x1440/gold: .gold-balance-preview fits panel width",
+          "passed": true
+        },
+        {
+          "label": "2560x1440/gold: .gold-balance-preview is readable with native scroll",
+          "passed": true
+        },
+        {
+          "label": "layout inspection and native scroll are read-only",
+          "passed": true,
+          "actualSha256": "3cba5e82f68c3bf998447c12c8b089975af825916ec4bed2ad087d0c057a75df",
+          "expectedSha256": "3cba5e82f68c3bf998447c12c8b089975af825916ec4bed2ad087d0c057a75df"
+        },
+        {
+          "label": "2560x1440/chest: no whole-page horizontal overflow",
+          "passed": true
+        },
+        {
+          "label": "2560x1440/chest: primary action remains in viewport",
+          "passed": true
+        },
+        {
+          "label": "2560x1440/chest: room panel does not overlap action dock",
+          "passed": true
+        },
+        {
+          "label": "2560x1440/chest: [data-gold-preview]>p has visible geometry",
+          "passed": true
+        },
+        {
+          "label": "2560x1440/chest: [data-gold-preview]>p fits panel width",
+          "passed": true
+        },
+        {
+          "label": "2560x1440/chest: [data-gold-preview]>p is readable with native scroll",
+          "passed": true
+        },
+        {
+          "label": "2560x1440/chest: [data-gold-preview] .gold-limit-detail>p has visible geometry",
+          "passed": true
+        },
+        {
+          "label": "2560x1440/chest: [data-gold-preview] .gold-limit-detail>p fits panel width",
+          "passed": true
+        },
+        {
+          "label": "2560x1440/chest: [data-gold-preview] .gold-limit-detail>p is readable with native scroll",
+          "passed": true
+        },
+        {
+          "label": "layout inspection and native scroll are read-only",
+          "passed": true,
+          "actualSha256": "a5dfe04069daf501843732fd5c18add7b9c300760967b41933fc50d0b7990b6f",
+          "expectedSha256": "a5dfe04069daf501843732fd5c18add7b9c300760967b41933fc50d0b7990b6f"
+        },
+        {
+          "label": "2560x1440/loot: no whole-page horizontal overflow",
+          "passed": true
+        },
+        {
+          "label": "2560x1440/loot: primary action remains in viewport",
+          "passed": true
+        },
+        {
+          "label": "2560x1440/loot: room panel does not overlap action dock",
+          "passed": true
+        },
+        {
+          "label": "2560x1440/loot: .gold-reward>strong has visible geometry",
+          "passed": true
+        },
+        {
+          "label": "2560x1440/loot: .gold-reward>strong fits panel width",
+          "passed": true
+        },
+        {
+          "label": "2560x1440/loot: .gold-reward>strong is readable with native scroll",
+          "passed": true
+        },
+        {
+          "label": "2560x1440/loot: .gold-reward .gold-limit-detail>p has visible geometry",
+          "passed": true
+        },
+        {
+          "label": "2560x1440/loot: .gold-reward .gold-limit-detail>p fits panel width",
+          "passed": true
+        },
+        {
+          "label": "2560x1440/loot: .gold-reward .gold-limit-detail>p is readable with native scroll",
+          "passed": true
+        },
+        {
+          "label": "layout inspection and native scroll are read-only",
+          "passed": true,
+          "actualSha256": "a9022fe327790ea7522d5a856acbbdf981ce9925cc9a5cab6474fce0ac17facb",
+          "expectedSha256": "a9022fe327790ea7522d5a856acbbdf981ce9925cc9a5cab6474fce0ac17facb"
+        },
+        {
+          "label": "2560x1440/exchange: no whole-page horizontal overflow",
+          "passed": true
+        },
+        {
+          "label": "2560x1440/exchange: primary action remains in viewport",
+          "passed": true
+        },
+        {
+          "label": "2560x1440/exchange: room panel does not overlap action dock",
+          "passed": true
+        },
+        {
+          "label": "2560x1440/exchange: [data-action=\"event-choice\"][data-id=\"salvage\"] .event-reward has visible geometry",
+          "passed": true
+        },
+        {
+          "label": "2560x1440/exchange: [data-action=\"event-choice\"][data-id=\"salvage\"] .event-reward fits panel width",
+          "passed": true
+        },
+        {
+          "label": "2560x1440/exchange: [data-action=\"event-choice\"][data-id=\"salvage\"] .event-reward is readable with native scroll",
+          "passed": true
+        },
+        {
+          "label": "2560x1440/exchange: [data-action=\"event-choice\"][data-id=\"salvage\"] .event-option-choose has visible geometry",
+          "passed": true
+        },
+        {
+          "label": "2560x1440/exchange: [data-action=\"event-choice\"][data-id=\"salvage\"] .event-option-choose fits panel width",
+          "passed": true
+        },
+        {
+          "label": "2560x1440/exchange: [data-action=\"event-choice\"][data-id=\"salvage\"] .event-option-choose is readable with native scroll",
+          "passed": true
+        },
+        {
+          "label": "layout inspection and native scroll are read-only",
+          "passed": true,
+          "actualSha256": "10f37f8d9dd744897b8cdc2e74a46ff1d6748e0b89a80b250c7ee5f29dfe3be9",
+          "expectedSha256": "10f37f8d9dd744897b8cdc2e74a46ff1d6748e0b89a80b250c7ee5f29dfe3be9"
+        },
+        {
+          "label": "3840x2160/gold: no whole-page horizontal overflow",
+          "passed": true
+        },
+        {
+          "label": "3840x2160/gold: primary action remains in viewport",
+          "passed": true
+        },
+        {
+          "label": "3840x2160/gold: room panel does not overlap action dock",
+          "passed": true
+        },
+        {
+          "label": "3840x2160/gold: .gold-hoard has visible geometry",
+          "passed": true
+        },
+        {
+          "label": "3840x2160/gold: .gold-hoard fits panel width",
+          "passed": true
+        },
+        {
+          "label": "3840x2160/gold: .gold-hoard is readable with native scroll",
+          "passed": true
+        },
+        {
+          "label": "3840x2160/gold: .gold-limit-detail>p has visible geometry",
+          "passed": true
+        },
+        {
+          "label": "3840x2160/gold: .gold-limit-detail>p fits panel width",
+          "passed": true
+        },
+        {
+          "label": "3840x2160/gold: .gold-limit-detail>p is readable with native scroll",
+          "passed": true
+        },
+        {
+          "label": "3840x2160/gold: .gold-balance-preview has visible geometry",
+          "passed": true
+        },
+        {
+          "label": "3840x2160/gold: .gold-balance-preview fits panel width",
+          "passed": true
+        },
+        {
+          "label": "3840x2160/gold: .gold-balance-preview is readable with native scroll",
+          "passed": true
+        },
+        {
+          "label": "layout inspection and native scroll are read-only",
+          "passed": true,
+          "actualSha256": "3cba5e82f68c3bf998447c12c8b089975af825916ec4bed2ad087d0c057a75df",
+          "expectedSha256": "3cba5e82f68c3bf998447c12c8b089975af825916ec4bed2ad087d0c057a75df"
+        },
+        {
+          "label": "3840x2160/chest: no whole-page horizontal overflow",
+          "passed": true
+        },
+        {
+          "label": "3840x2160/chest: primary action remains in viewport",
+          "passed": true
+        },
+        {
+          "label": "3840x2160/chest: room panel does not overlap action dock",
+          "passed": true
+        },
+        {
+          "label": "3840x2160/chest: [data-gold-preview]>p has visible geometry",
+          "passed": true
+        },
+        {
+          "label": "3840x2160/chest: [data-gold-preview]>p fits panel width",
+          "passed": true
+        },
+        {
+          "label": "3840x2160/chest: [data-gold-preview]>p is readable with native scroll",
+          "passed": true
+        },
+        {
+          "label": "3840x2160/chest: [data-gold-preview] .gold-limit-detail>p has visible geometry",
+          "passed": true
+        },
+        {
+          "label": "3840x2160/chest: [data-gold-preview] .gold-limit-detail>p fits panel width",
+          "passed": true
+        },
+        {
+          "label": "3840x2160/chest: [data-gold-preview] .gold-limit-detail>p is readable with native scroll",
+          "passed": true
+        },
+        {
+          "label": "layout inspection and native scroll are read-only",
+          "passed": true,
+          "actualSha256": "a5dfe04069daf501843732fd5c18add7b9c300760967b41933fc50d0b7990b6f",
+          "expectedSha256": "a5dfe04069daf501843732fd5c18add7b9c300760967b41933fc50d0b7990b6f"
+        },
+        {
+          "label": "3840x2160/loot: no whole-page horizontal overflow",
+          "passed": true
+        },
+        {
+          "label": "3840x2160/loot: primary action remains in viewport",
+          "passed": true
+        },
+        {
+          "label": "3840x2160/loot: room panel does not overlap action dock",
+          "passed": true
+        },
+        {
+          "label": "3840x2160/loot: .gold-reward>strong has visible geometry",
+          "passed": true
+        },
+        {
+          "label": "3840x2160/loot: .gold-reward>strong fits panel width",
+          "passed": true
+        },
+        {
+          "label": "3840x2160/loot: .gold-reward>strong is readable with native scroll",
+          "passed": true
+        },
+        {
+          "label": "3840x2160/loot: .gold-reward .gold-limit-detail>p has visible geometry",
+          "passed": true
+        },
+        {
+          "label": "3840x2160/loot: .gold-reward .gold-limit-detail>p fits panel width",
+          "passed": true
+        },
+        {
+          "label": "3840x2160/loot: .gold-reward .gold-limit-detail>p is readable with native scroll",
+          "passed": true
+        },
+        {
+          "label": "layout inspection and native scroll are read-only",
+          "passed": true,
+          "actualSha256": "a9022fe327790ea7522d5a856acbbdf981ce9925cc9a5cab6474fce0ac17facb",
+          "expectedSha256": "a9022fe327790ea7522d5a856acbbdf981ce9925cc9a5cab6474fce0ac17facb"
+        },
+        {
+          "label": "3840x2160/exchange: no whole-page horizontal overflow",
+          "passed": true
+        },
+        {
+          "label": "3840x2160/exchange: primary action remains in viewport",
+          "passed": true
+        },
+        {
+          "label": "3840x2160/exchange: room panel does not overlap action dock",
+          "passed": true
+        },
+        {
+          "label": "3840x2160/exchange: [data-action=\"event-choice\"][data-id=\"salvage\"] .event-reward has visible geometry",
+          "passed": true
+        },
+        {
+          "label": "3840x2160/exchange: [data-action=\"event-choice\"][data-id=\"salvage\"] .event-reward fits panel width",
+          "passed": true
+        },
+        {
+          "label": "3840x2160/exchange: [data-action=\"event-choice\"][data-id=\"salvage\"] .event-reward is readable with native scroll",
+          "passed": true
+        },
+        {
+          "label": "3840x2160/exchange: [data-action=\"event-choice\"][data-id=\"salvage\"] .event-option-choose has visible geometry",
+          "passed": true
+        },
+        {
+          "label": "3840x2160/exchange: [data-action=\"event-choice\"][data-id=\"salvage\"] .event-option-choose fits panel width",
+          "passed": true
+        },
+        {
+          "label": "3840x2160/exchange: [data-action=\"event-choice\"][data-id=\"salvage\"] .event-option-choose is readable with native scroll",
+          "passed": true
+        },
+        {
+          "label": "layout inspection and native scroll are read-only",
+          "passed": true,
+          "actualSha256": "10f37f8d9dd744897b8cdc2e74a46ff1d6748e0b89a80b250c7ee5f29dfe3be9",
+          "expectedSha256": "10f37f8d9dd744897b8cdc2e74a46ff1d6748e0b89a80b250c7ee5f29dfe3be9"
+        },
+        {
+          "label": "desktop-layouts: no browser errors",
+          "passed": true,
+          "actualSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "expectedSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "knownDefects": [],
+      "screenshots": [
+        "layout-1366x768-gold.png",
+        "layout-1366x768-chest.png",
+        "layout-1366x768-loot.png",
+        "layout-1366x768-exchange.png",
+        "layout-1920x1080-gold.png",
+        "layout-1920x1080-chest.png",
+        "layout-1920x1080-loot.png",
+        "layout-1920x1080-exchange.png",
+        "layout-2560x1440-gold.png",
+        "layout-2560x1440-chest.png",
+        "layout-2560x1440-loot.png",
+        "layout-2560x1440-exchange.png",
+        "layout-3840x2160-gold.png",
+        "layout-3840x2160-chest.png",
+        "layout-3840x2160-loot.png",
+        "layout-3840x2160-exchange.png"
+      ],
+      "captures": [
+        {
+          "label": "installed fixture before native action",
+          "file": "capture-desktop-layouts-001.json",
+          "sha256": "ae6a601ba2664e984ee060ea9b09c2d59dee71dd22679c897f0a7bd6c9802059",
+          "bytes": 37756
+        },
+        {
+          "label": "screenshot layout-1366x768-gold",
+          "file": "capture-desktop-layouts-002.json",
+          "sha256": "1e41c49ae658ef5174e673399102ddfe99540bcfa5d96f3fbd7081e499f88921",
+          "bytes": 30235
+        },
+        {
+          "label": "installed fixture before native action",
+          "file": "capture-desktop-layouts-003.json",
+          "sha256": "734caeb2479fcd2bf5bb213bd2a3e9671fc6d7bafb32b002e83071e85e3ab4c0",
+          "bytes": 46953
+        },
+        {
+          "label": "screenshot layout-1366x768-chest",
+          "file": "capture-desktop-layouts-004.json",
+          "sha256": "19dd27e88139f52beb673a5336973d596c17b9b54177aa453f0953f0e429d2a7",
+          "bytes": 38643
+        },
+        {
+          "label": "installed fixture before native action",
+          "file": "capture-desktop-layouts-005.json",
+          "sha256": "3dc4a7fb2f345e4c17813787af8c7d1988c9883351c495d49001913c12007e82",
+          "bytes": 50180
+        },
+        {
+          "label": "screenshot layout-1366x768-loot",
+          "file": "capture-desktop-layouts-006.json",
+          "sha256": "2a7f5e66711161048cb53fbac8855a9ca6228c636d3fa1ccfbd18822bda05b10",
+          "bytes": 40647
+        },
+        {
+          "label": "installed fixture before native action",
+          "file": "capture-desktop-layouts-007.json",
+          "sha256": "ac0502221832025bf5a8467ec9ec4ac1bf24484f6956c7f0b32aa27122f55c23",
+          "bytes": 42566
+        },
+        {
+          "label": "screenshot layout-1366x768-exchange",
+          "file": "capture-desktop-layouts-008.json",
+          "sha256": "733d3da9b0a1a01358ffbec5374aede997ced983cfe6e8203fac0056f9c2d7d3",
+          "bytes": 33708
+        },
+        {
+          "label": "installed fixture before native action",
+          "file": "capture-desktop-layouts-009.json",
+          "sha256": "e633b0cca7e59fabf7cab85668fc26a0c338509beeed3b909452ab85116780e7",
+          "bytes": 37757
+        },
+        {
+          "label": "screenshot layout-1920x1080-gold",
+          "file": "capture-desktop-layouts-010.json",
+          "sha256": "e836d2a2366b130a954d96db551ee6dc4be46bddfa8b0a9db86a51bbb93b8c78",
+          "bytes": 30237
+        },
+        {
+          "label": "installed fixture before native action",
+          "file": "capture-desktop-layouts-011.json",
+          "sha256": "a0eaabc952f33dda478aa8a3916dbe66429782d3a3952e12efe3969cbb5472fd",
+          "bytes": 46954
+        },
+        {
+          "label": "screenshot layout-1920x1080-chest",
+          "file": "capture-desktop-layouts-012.json",
+          "sha256": "032755781c2c844d00ae9d6b82e3001fb8f46d6bb0fffbc408c813a407d1fef5",
+          "bytes": 38645
+        },
+        {
+          "label": "installed fixture before native action",
+          "file": "capture-desktop-layouts-013.json",
+          "sha256": "353c9d07612f9e447197c02c507209fbaf9b17747e7c0f81a5023d68bdcfbff8",
+          "bytes": 50181
+        },
+        {
+          "label": "screenshot layout-1920x1080-loot",
+          "file": "capture-desktop-layouts-014.json",
+          "sha256": "d14c82d327471d6dfccf04052e1c23955331202a63fa8f9bf62e2b4ffc1fcea8",
+          "bytes": 40649
+        },
+        {
+          "label": "installed fixture before native action",
+          "file": "capture-desktop-layouts-015.json",
+          "sha256": "18f4aaff2af1986984210506cce70084e0fde99ad886f7388e3fcaa488984a42",
+          "bytes": 42567
+        },
+        {
+          "label": "screenshot layout-1920x1080-exchange",
+          "file": "capture-desktop-layouts-016.json",
+          "sha256": "41b340212b9144108c4ae58cb65692a30c1b489884902bbf840e0e27e18a8b2d",
+          "bytes": 33710
+        },
+        {
+          "label": "installed fixture before native action",
+          "file": "capture-desktop-layouts-017.json",
+          "sha256": "8075a894c3c70a2bc617aba535e8fdee51b56964ffda851686c4f7338ba84678",
+          "bytes": 37757
+        },
+        {
+          "label": "screenshot layout-2560x1440-gold",
+          "file": "capture-desktop-layouts-018.json",
+          "sha256": "2e21ffa97a09008163e7b60429459cf93036f0e2d06518eaa016e9910f600d78",
+          "bytes": 30237
+        },
+        {
+          "label": "installed fixture before native action",
+          "file": "capture-desktop-layouts-019.json",
+          "sha256": "adeca04c517ea7f62313b2ed9c6faf8764177928d7f6218c03a11632bc3a350e",
+          "bytes": 46954
+        },
+        {
+          "label": "screenshot layout-2560x1440-chest",
+          "file": "capture-desktop-layouts-020.json",
+          "sha256": "7b777fc809c72216d40a8717caffe9e80a26c988f1d856374cbf82c4d026a5a8",
+          "bytes": 38645
+        },
+        {
+          "label": "installed fixture before native action",
+          "file": "capture-desktop-layouts-021.json",
+          "sha256": "5d6f95fb68350d246acf7e877e96638fb447ffac737ce37873255ad1d7d81580",
+          "bytes": 50181
+        },
+        {
+          "label": "screenshot layout-2560x1440-loot",
+          "file": "capture-desktop-layouts-022.json",
+          "sha256": "6e09b112c9528f2e4c3901f96b5d3712c57146afce19867f82f76014a2f6877a",
+          "bytes": 40649
+        },
+        {
+          "label": "installed fixture before native action",
+          "file": "capture-desktop-layouts-023.json",
+          "sha256": "ade84d39e067a08c40d41036ed82e884302687054f4572e9dc07310f2aa56ae5",
+          "bytes": 42567
+        },
+        {
+          "label": "screenshot layout-2560x1440-exchange",
+          "file": "capture-desktop-layouts-024.json",
+          "sha256": "f79bcdf3a1ee7c4c2ceb773b202e92037693c567d3601ca0e8f82ffe70062712",
+          "bytes": 33710
+        },
+        {
+          "label": "installed fixture before native action",
+          "file": "capture-desktop-layouts-025.json",
+          "sha256": "d15913416aa4149184a409bd3892f9ec2d94babd8deb81cd77afa172f4d4e26d",
+          "bytes": 37757
+        },
+        {
+          "label": "screenshot layout-3840x2160-gold",
+          "file": "capture-desktop-layouts-026.json",
+          "sha256": "04a7a6791ecae7826d76e3c189419ecd2d7aa2958d9c693d8285d788df3ad214",
+          "bytes": 30237
+        },
+        {
+          "label": "installed fixture before native action",
+          "file": "capture-desktop-layouts-027.json",
+          "sha256": "91c895104aecbb26b62cfd34dc0e4455948a0b35e3e05cbbe5a9d6de04975458",
+          "bytes": 46954
+        },
+        {
+          "label": "screenshot layout-3840x2160-chest",
+          "file": "capture-desktop-layouts-028.json",
+          "sha256": "194ccd709cffccc002af9e948d9497ebf3d13b662409dd05ae4a01d060798ba0",
+          "bytes": 38645
+        },
+        {
+          "label": "installed fixture before native action",
+          "file": "capture-desktop-layouts-029.json",
+          "sha256": "9973ccc02067a21a5a4cfa5bba3d9133958f9f274c6d79a000e941bc3087f39c",
+          "bytes": 50181
+        },
+        {
+          "label": "screenshot layout-3840x2160-loot",
+          "file": "capture-desktop-layouts-030.json",
+          "sha256": "951f71b6e3d620414c7d08b19ec6b8c59327e447894b59a79efefe96dd75976b",
+          "bytes": 40649
+        },
+        {
+          "label": "installed fixture before native action",
+          "file": "capture-desktop-layouts-031.json",
+          "sha256": "694c9db1b0f701d260d2f8bde3b422906a95de3a65d91393a2aeed378a0fd1b2",
+          "bytes": 42567
+        },
+        {
+          "label": "screenshot layout-3840x2160-exchange",
+          "file": "capture-desktop-layouts-032.json",
+          "sha256": "8b6b07c642167c47e78212bf27aeac0ad78768a567c4ba8c9be703e3ff4d93b8",
+          "bytes": 33710
+        }
+      ],
+      "errors": [],
+      "layouts": [
+        {
+          "width": 1366,
+          "height": 768,
+          "kind": "gold",
+          "measure": {
+            "initial": {
+              "viewport": {
+                "width": 1366,
+                "height": 768
+              },
+              "documentWidth": 1366,
+              "panel": {
+                "x": 343.265625,
+                "y": 25.140625,
+                "right": 1029.578125,
+                "bottom": 613.4375,
+                "width": 686.3125,
+                "height": 588.296875
+              },
+              "dock": {
+                "x": 343.265625,
+                "y": 620.96875,
+                "right": 1029.578125,
+                "bottom": 746.640625,
+                "width": 686.3125,
+                "height": 125.671875
+              },
+              "primary": {
+                "x": 566.390625,
+                "y": 690.90625,
+                "right": 806.4375,
+                "bottom": 738.234375,
+                "width": 240.046875,
+                "height": 47.328125
+              },
+              "targets": [
+                {
+                  "selector": ".gold-hoard",
+                  "box": {
+                    "x": 639.921875,
+                    "y": 176.640625,
+                    "right": 732.921875,
+                    "bottom": 352.796875,
+                    "width": 93,
+                    "height": 176.15625
+                  },
+                  "scrollWidth": 93,
+                  "clientWidth": 93,
+                  "text": "+10\n可收金币"
+                },
+                {
+                  "selector": ".gold-limit-detail>p",
+                  "box": {
+                    "x": 472.78125,
+                    "y": 386.453125,
+                    "right": 900.0625,
+                    "bottom": 408.046875,
+                    "width": 427.28125,
+                    "height": 21.59375
+                  },
+                  "scrollWidth": 427,
+                  "clientWidth": 427,
+                  "text": "原额 958\n将超出上限 948"
+                },
+                {
+                  "selector": ".gold-balance-preview",
+                  "box": {
+                    "x": 596.921875,
+                    "y": 438.203125,
+                    "right": 775.921875,
+                    "bottom": 459.796875,
+                    "width": 179,
+                    "height": 21.59375
+                  },
+                  "scrollWidth": 179,
+                  "clientWidth": 179,
+                  "text": "领取后余额 10,000,000,000 金币"
+                }
+              ]
+            },
+            "firstViewport": [
+              {
+                "selector": ".gold-hoard",
+                "visible": true
+              },
+              {
+                "selector": ".gold-limit-detail>p",
+                "visible": true
+              },
+              {
+                "selector": ".gold-balance-preview",
+                "visible": true
+              }
+            ],
+            "requiredNativeScroll": false,
+            "afterNativeScroll": {
+              "viewport": {
+                "width": 1366,
+                "height": 768
+              },
+              "documentWidth": 1366,
+              "panel": {
+                "x": 343.265625,
+                "y": 25.140625,
+                "right": 1029.578125,
+                "bottom": 613.4375,
+                "width": 686.3125,
+                "height": 588.296875
+              },
+              "dock": {
+                "x": 343.265625,
+                "y": 620.96875,
+                "right": 1029.578125,
+                "bottom": 746.640625,
+                "width": 686.3125,
+                "height": 125.671875
+              },
+              "primary": {
+                "x": 566.390625,
+                "y": 690.90625,
+                "right": 806.4375,
+                "bottom": 738.234375,
+                "width": 240.046875,
+                "height": 47.328125
+              },
+              "targets": [
+                {
+                  "selector": ".gold-hoard",
+                  "box": {
+                    "x": 639.921875,
+                    "y": 176.640625,
+                    "right": 732.921875,
+                    "bottom": 352.796875,
+                    "width": 93,
+                    "height": 176.15625
+                  },
+                  "scrollWidth": 93,
+                  "clientWidth": 93,
+                  "text": "+10\n可收金币"
+                },
+                {
+                  "selector": ".gold-limit-detail>p",
+                  "box": {
+                    "x": 472.78125,
+                    "y": 386.453125,
+                    "right": 900.0625,
+                    "bottom": 408.046875,
+                    "width": 427.28125,
+                    "height": 21.59375
+                  },
+                  "scrollWidth": 427,
+                  "clientWidth": 427,
+                  "text": "原额 958\n将超出上限 948"
+                },
+                {
+                  "selector": ".gold-balance-preview",
+                  "box": {
+                    "x": 596.921875,
+                    "y": 438.203125,
+                    "right": 775.921875,
+                    "bottom": 459.796875,
+                    "width": 179,
+                    "height": 21.59375
+                  },
+                  "scrollWidth": 179,
+                  "clientWidth": 179,
+                  "text": "领取后余额 10,000,000,000 金币"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "width": 1366,
+          "height": 768,
+          "kind": "chest",
+          "measure": {
+            "initial": {
+              "viewport": {
+                "width": 1366,
+                "height": 768
+              },
+              "documentWidth": 1366,
+              "panel": {
+                "x": 343.265625,
+                "y": 25.140625,
+                "right": 1029.578125,
+                "bottom": 613.4375,
+                "width": 686.3125,
+                "height": 588.296875
+              },
+              "dock": {
+                "x": 343.265625,
+                "y": 620.96875,
+                "right": 1029.578125,
+                "bottom": 746.640625,
+                "width": 686.3125,
+                "height": 125.671875
+              },
+              "primary": {
+                "x": 566.390625,
+                "y": 690.90625,
+                "right": 806.4375,
+                "bottom": 738.234375,
+                "width": 240.046875,
+                "height": 47.328125
+              },
+              "targets": [
+                {
+                  "selector": "[data-gold-preview]>p",
+                  "box": {
+                    "x": 479.6875,
+                    "y": 527.15625,
+                    "right": 893.15625,
+                    "bottom": 552.484375,
+                    "width": 413.46875,
+                    "height": 25.328125
+                  },
+                  "scrollWidth": 413,
+                  "clientWidth": 413,
+                  "text": "金币可收\n+10"
+                },
+                {
+                  "selector": "[data-gold-preview] .gold-limit-detail>p",
+                  "box": {
+                    "x": 479.6875,
+                    "y": 561.015625,
+                    "right": 893.15625,
+                    "bottom": 582.609375,
+                    "width": 413.46875,
+                    "height": 21.59375
+                  },
+                  "scrollWidth": 413,
+                  "clientWidth": 413,
+                  "text": "原额 492\n将超出上限 482"
+                }
+              ]
+            },
+            "firstViewport": [
+              {
+                "selector": "[data-gold-preview]>p",
+                "visible": true
+              },
+              {
+                "selector": "[data-gold-preview] .gold-limit-detail>p",
+                "visible": true
+              }
+            ],
+            "requiredNativeScroll": false,
+            "afterNativeScroll": {
+              "viewport": {
+                "width": 1366,
+                "height": 768
+              },
+              "documentWidth": 1366,
+              "panel": {
+                "x": 343.265625,
+                "y": 25.140625,
+                "right": 1029.578125,
+                "bottom": 613.4375,
+                "width": 686.3125,
+                "height": 588.296875
+              },
+              "dock": {
+                "x": 343.265625,
+                "y": 620.96875,
+                "right": 1029.578125,
+                "bottom": 746.640625,
+                "width": 686.3125,
+                "height": 125.671875
+              },
+              "primary": {
+                "x": 566.390625,
+                "y": 690.90625,
+                "right": 806.4375,
+                "bottom": 738.234375,
+                "width": 240.046875,
+                "height": 47.328125
+              },
+              "targets": [
+                {
+                  "selector": "[data-gold-preview]>p",
+                  "box": {
+                    "x": 479.6875,
+                    "y": 527.15625,
+                    "right": 893.15625,
+                    "bottom": 552.484375,
+                    "width": 413.46875,
+                    "height": 25.328125
+                  },
+                  "scrollWidth": 413,
+                  "clientWidth": 413,
+                  "text": "金币可收\n+10"
+                },
+                {
+                  "selector": "[data-gold-preview] .gold-limit-detail>p",
+                  "box": {
+                    "x": 479.6875,
+                    "y": 561.015625,
+                    "right": 893.15625,
+                    "bottom": 582.609375,
+                    "width": 413.46875,
+                    "height": 21.59375
+                  },
+                  "scrollWidth": 413,
+                  "clientWidth": 413,
+                  "text": "原额 492\n将超出上限 482"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "width": 1366,
+          "height": 768,
+          "kind": "loot",
+          "measure": {
+            "initial": {
+              "viewport": {
+                "width": 1366,
+                "height": 768
+              },
+              "documentWidth": 1366,
+              "panel": {
+                "x": 343.265625,
+                "y": 25.140625,
+                "right": 1029.578125,
+                "bottom": 613.4375,
+                "width": 686.3125,
+                "height": 588.296875
+              },
+              "dock": {
+                "x": 343.265625,
+                "y": 620.96875,
+                "right": 1029.578125,
+                "bottom": 746.640625,
+                "width": 686.3125,
+                "height": 125.671875
+              },
+              "primary": {
+                "x": 566.390625,
+                "y": 690.90625,
+                "right": 806.4375,
+                "bottom": 738.234375,
+                "width": 240.046875,
+                "height": 47.328125
+              },
+              "targets": [
+                {
+                  "selector": ".gold-reward>strong",
+                  "box": {
+                    "x": 854.140625,
+                    "y": 363.3125,
+                    "right": 898.140625,
+                    "bottom": 393.71875,
+                    "width": 44,
+                    "height": 30.40625
+                  },
+                  "scrollWidth": 44,
+                  "clientWidth": 44,
+                  "text": "+ 10"
+                },
+                {
+                  "selector": ".gold-reward .gold-limit-detail>p",
+                  "box": {
+                    "x": 774.125,
+                    "y": 404.75,
+                    "right": 978.171875,
+                    "bottom": 450.4375,
+                    "width": 204.046875,
+                    "height": 45.6875
+                  },
+                  "scrollWidth": 204,
+                  "clientWidth": 204,
+                  "text": "原额 492\n上限截去 482"
+                }
+              ]
+            },
+            "firstViewport": [
+              {
+                "selector": ".gold-reward>strong",
+                "visible": true
+              },
+              {
+                "selector": ".gold-reward .gold-limit-detail>p",
+                "visible": true
+              }
+            ],
+            "requiredNativeScroll": false,
+            "afterNativeScroll": {
+              "viewport": {
+                "width": 1366,
+                "height": 768
+              },
+              "documentWidth": 1366,
+              "panel": {
+                "x": 343.265625,
+                "y": 25.140625,
+                "right": 1029.578125,
+                "bottom": 613.4375,
+                "width": 686.3125,
+                "height": 588.296875
+              },
+              "dock": {
+                "x": 343.265625,
+                "y": 620.96875,
+                "right": 1029.578125,
+                "bottom": 746.640625,
+                "width": 686.3125,
+                "height": 125.671875
+              },
+              "primary": {
+                "x": 566.390625,
+                "y": 690.90625,
+                "right": 806.4375,
+                "bottom": 738.234375,
+                "width": 240.046875,
+                "height": 47.328125
+              },
+              "targets": [
+                {
+                  "selector": ".gold-reward>strong",
+                  "box": {
+                    "x": 854.140625,
+                    "y": 363.3125,
+                    "right": 898.140625,
+                    "bottom": 393.71875,
+                    "width": 44,
+                    "height": 30.40625
+                  },
+                  "scrollWidth": 44,
+                  "clientWidth": 44,
+                  "text": "+ 10"
+                },
+                {
+                  "selector": ".gold-reward .gold-limit-detail>p",
+                  "box": {
+                    "x": 774.125,
+                    "y": 404.75,
+                    "right": 978.171875,
+                    "bottom": 450.4375,
+                    "width": 204.046875,
+                    "height": 45.6875
+                  },
+                  "scrollWidth": 204,
+                  "clientWidth": 204,
+                  "text": "原额 492\n上限截去 482"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "width": 1366,
+          "height": 768,
+          "kind": "exchange",
+          "measure": {
+            "initial": {
+              "viewport": {
+                "width": 1366,
+                "height": 768
+              },
+              "documentWidth": 1366,
+              "panel": {
+                "x": 343.265625,
+                "y": 25.140625,
+                "right": 1029.578125,
+                "bottom": 613.4375,
+                "width": 686.3125,
+                "height": 588.296875
+              },
+              "dock": {
+                "x": 343.265625,
+                "y": 620.96875,
+                "right": 1029.578125,
+                "bottom": 746.640625,
+                "width": 686.3125,
+                "height": 125.671875
+              },
+              "primary": {
+                "x": 566.390625,
+                "y": 690.90625,
+                "right": 806.4375,
+                "bottom": 738.234375,
+                "width": 240.046875,
+                "height": 47.328125
+              },
+              "targets": [
+                {
+                  "selector": "[data-action=\"event-choice\"][data-id=\"salvage\"] .event-reward",
+                  "box": {
+                    "x": 372.90625,
+                    "y": 422.53125,
+                    "right": 666.578125,
+                    "bottom": 444.296875,
+                    "width": 293.671875,
+                    "height": 21.765625
+                  },
+                  "scrollWidth": 294,
+                  "clientWidth": 294,
+                  "text": "获得\n金币可收 10（原额 835，上限截去 825）；540 经验"
+                },
+                {
+                  "selector": "[data-action=\"event-choice\"][data-id=\"salvage\"] .event-option-choose",
+                  "box": {
+                    "x": 624.578125,
+                    "y": 452.453125,
+                    "right": 666.578125,
+                    "bottom": 466.140625,
+                    "width": 42,
+                    "height": 13.6875
+                  },
+                  "scrollWidth": 42,
+                  "clientWidth": 42,
+                  "text": "选择此项 →"
+                }
+              ]
+            },
+            "firstViewport": [
+              {
+                "selector": "[data-action=\"event-choice\"][data-id=\"salvage\"] .event-reward",
+                "visible": true
+              },
+              {
+                "selector": "[data-action=\"event-choice\"][data-id=\"salvage\"] .event-option-choose",
+                "visible": true
+              }
+            ],
+            "requiredNativeScroll": false,
+            "afterNativeScroll": {
+              "viewport": {
+                "width": 1366,
+                "height": 768
+              },
+              "documentWidth": 1366,
+              "panel": {
+                "x": 343.265625,
+                "y": 25.140625,
+                "right": 1029.578125,
+                "bottom": 613.4375,
+                "width": 686.3125,
+                "height": 588.296875
+              },
+              "dock": {
+                "x": 343.265625,
+                "y": 620.96875,
+                "right": 1029.578125,
+                "bottom": 746.640625,
+                "width": 686.3125,
+                "height": 125.671875
+              },
+              "primary": {
+                "x": 566.390625,
+                "y": 690.90625,
+                "right": 806.4375,
+                "bottom": 738.234375,
+                "width": 240.046875,
+                "height": 47.328125
+              },
+              "targets": [
+                {
+                  "selector": "[data-action=\"event-choice\"][data-id=\"salvage\"] .event-reward",
+                  "box": {
+                    "x": 372.90625,
+                    "y": 422.53125,
+                    "right": 666.578125,
+                    "bottom": 444.296875,
+                    "width": 293.671875,
+                    "height": 21.765625
+                  },
+                  "scrollWidth": 294,
+                  "clientWidth": 294,
+                  "text": "获得\n金币可收 10（原额 835，上限截去 825）；540 经验"
+                },
+                {
+                  "selector": "[data-action=\"event-choice\"][data-id=\"salvage\"] .event-option-choose",
+                  "box": {
+                    "x": 624.578125,
+                    "y": 452.453125,
+                    "right": 666.578125,
+                    "bottom": 466.140625,
+                    "width": 42,
+                    "height": 13.6875
+                  },
+                  "scrollWidth": 42,
+                  "clientWidth": 42,
+                  "text": "选择此项 →"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "width": 1920,
+          "height": 1080,
+          "kind": "gold",
+          "measure": {
+            "initial": {
+              "viewport": {
+                "width": 1920,
+                "height": 1080
+              },
+              "documentWidth": 1920,
+              "panel": {
+                "x": 482.5,
+                "y": 35.328125,
+                "right": 1447.140625,
+                "bottom": 862.765625,
+                "width": 964.640625,
+                "height": 827.4375
+              },
+              "dock": {
+                "x": 482.5,
+                "y": 873.359375,
+                "right": 1447.140625,
+                "bottom": 1049.984375,
+                "width": 964.640625,
+                "height": 176.625
+              },
+              "primary": {
+                "x": 796.109375,
+                "y": 972.484375,
+                "right": 1133.515625,
+                "bottom": 1037.40625,
+                "width": 337.40625,
+                "height": 64.921875
+              },
+              "targets": [
+                {
+                  "selector": ".gold-hoard",
+                  "box": {
+                    "x": 898.8125,
+                    "y": 247.859375,
+                    "right": 1030.8125,
+                    "bottom": 494.109375,
+                    "width": 132,
+                    "height": 246.25
+                  },
+                  "scrollWidth": 132,
+                  "clientWidth": 132,
+                  "text": "+10\n可收金币"
+                },
+                {
+                  "selector": ".gold-limit-detail>p",
+                  "box": {
+                    "x": 664.53125,
+                    "y": 548.078125,
+                    "right": 1265.09375,
+                    "bottom": 570.96875,
+                    "width": 600.5625,
+                    "height": 22.890625
+                  },
+                  "scrollWidth": 601,
+                  "clientWidth": 601,
+                  "text": "原额 958\n将超出上限 948"
+                },
+                {
+                  "selector": ".gold-balance-preview",
+                  "box": {
+                    "x": 866.3125,
+                    "y": 606.703125,
+                    "right": 1063.3125,
+                    "bottom": 630.546875,
+                    "width": 197,
+                    "height": 23.84375
+                  },
+                  "scrollWidth": 197,
+                  "clientWidth": 197,
+                  "text": "领取后余额 10,000,000,000 金币"
+                }
+              ]
+            },
+            "firstViewport": [
+              {
+                "selector": ".gold-hoard",
+                "visible": true
+              },
+              {
+                "selector": ".gold-limit-detail>p",
+                "visible": true
+              },
+              {
+                "selector": ".gold-balance-preview",
+                "visible": true
+              }
+            ],
+            "requiredNativeScroll": false,
+            "afterNativeScroll": {
+              "viewport": {
+                "width": 1920,
+                "height": 1080
+              },
+              "documentWidth": 1920,
+              "panel": {
+                "x": 482.5,
+                "y": 35.328125,
+                "right": 1447.140625,
+                "bottom": 862.765625,
+                "width": 964.640625,
+                "height": 827.4375
+              },
+              "dock": {
+                "x": 482.5,
+                "y": 873.359375,
+                "right": 1447.140625,
+                "bottom": 1049.984375,
+                "width": 964.640625,
+                "height": 176.625
+              },
+              "primary": {
+                "x": 796.109375,
+                "y": 972.484375,
+                "right": 1133.515625,
+                "bottom": 1037.40625,
+                "width": 337.40625,
+                "height": 64.921875
+              },
+              "targets": [
+                {
+                  "selector": ".gold-hoard",
+                  "box": {
+                    "x": 898.8125,
+                    "y": 247.859375,
+                    "right": 1030.8125,
+                    "bottom": 494.109375,
+                    "width": 132,
+                    "height": 246.25
+                  },
+                  "scrollWidth": 132,
+                  "clientWidth": 132,
+                  "text": "+10\n可收金币"
+                },
+                {
+                  "selector": ".gold-limit-detail>p",
+                  "box": {
+                    "x": 664.53125,
+                    "y": 548.078125,
+                    "right": 1265.09375,
+                    "bottom": 570.96875,
+                    "width": 600.5625,
+                    "height": 22.890625
+                  },
+                  "scrollWidth": 601,
+                  "clientWidth": 601,
+                  "text": "原额 958\n将超出上限 948"
+                },
+                {
+                  "selector": ".gold-balance-preview",
+                  "box": {
+                    "x": 866.3125,
+                    "y": 606.703125,
+                    "right": 1063.3125,
+                    "bottom": 630.546875,
+                    "width": 197,
+                    "height": 23.84375
+                  },
+                  "scrollWidth": 197,
+                  "clientWidth": 197,
+                  "text": "领取后余额 10,000,000,000 金币"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "width": 1920,
+          "height": 1080,
+          "kind": "chest",
+          "measure": {
+            "initial": {
+              "viewport": {
+                "width": 1920,
+                "height": 1080
+              },
+              "documentWidth": 1920,
+              "panel": {
+                "x": 482.5,
+                "y": 35.328125,
+                "right": 1447.140625,
+                "bottom": 862.765625,
+                "width": 964.640625,
+                "height": 827.4375
+              },
+              "dock": {
+                "x": 482.5,
+                "y": 873.359375,
+                "right": 1447.140625,
+                "bottom": 1049.984375,
+                "width": 964.640625,
+                "height": 176.625
+              },
+              "primary": {
+                "x": 796.109375,
+                "y": 972.484375,
+                "right": 1133.515625,
+                "bottom": 1037.40625,
+                "width": 337.40625,
+                "height": 64.921875
+              },
+              "targets": [
+                {
+                  "selector": "[data-gold-preview]>p",
+                  "box": {
+                    "x": 678.65625,
+                    "y": 752.265625,
+                    "right": 1250.96875,
+                    "bottom": 787.859375,
+                    "width": 572.3125,
+                    "height": 35.59375
+                  },
+                  "scrollWidth": 572,
+                  "clientWidth": 572,
+                  "text": "金币可收\n+10"
+                },
+                {
+                  "selector": "[data-gold-preview] .gold-limit-detail>p",
+                  "box": {
+                    "x": 678.65625,
+                    "y": 806.515625,
+                    "right": 1250.96875,
+                    "bottom": 829.40625,
+                    "width": 572.3125,
+                    "height": 22.890625
+                  },
+                  "scrollWidth": 572,
+                  "clientWidth": 572,
+                  "text": "原额 492\n将超出上限 482"
+                }
+              ]
+            },
+            "firstViewport": [
+              {
+                "selector": "[data-gold-preview]>p",
+                "visible": true
+              },
+              {
+                "selector": "[data-gold-preview] .gold-limit-detail>p",
+                "visible": true
+              }
+            ],
+            "requiredNativeScroll": false,
+            "afterNativeScroll": {
+              "viewport": {
+                "width": 1920,
+                "height": 1080
+              },
+              "documentWidth": 1920,
+              "panel": {
+                "x": 482.5,
+                "y": 35.328125,
+                "right": 1447.140625,
+                "bottom": 862.765625,
+                "width": 964.640625,
+                "height": 827.4375
+              },
+              "dock": {
+                "x": 482.5,
+                "y": 873.359375,
+                "right": 1447.140625,
+                "bottom": 1049.984375,
+                "width": 964.640625,
+                "height": 176.625
+              },
+              "primary": {
+                "x": 796.109375,
+                "y": 972.484375,
+                "right": 1133.515625,
+                "bottom": 1037.40625,
+                "width": 337.40625,
+                "height": 64.921875
+              },
+              "targets": [
+                {
+                  "selector": "[data-gold-preview]>p",
+                  "box": {
+                    "x": 678.65625,
+                    "y": 752.265625,
+                    "right": 1250.96875,
+                    "bottom": 787.859375,
+                    "width": 572.3125,
+                    "height": 35.59375
+                  },
+                  "scrollWidth": 572,
+                  "clientWidth": 572,
+                  "text": "金币可收\n+10"
+                },
+                {
+                  "selector": "[data-gold-preview] .gold-limit-detail>p",
+                  "box": {
+                    "x": 678.65625,
+                    "y": 806.515625,
+                    "right": 1250.96875,
+                    "bottom": 829.40625,
+                    "width": 572.3125,
+                    "height": 22.890625
+                  },
+                  "scrollWidth": 572,
+                  "clientWidth": 572,
+                  "text": "原额 492\n将超出上限 482"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "width": 1920,
+          "height": 1080,
+          "kind": "loot",
+          "measure": {
+            "initial": {
+              "viewport": {
+                "width": 1920,
+                "height": 1080
+              },
+              "documentWidth": 1920,
+              "panel": {
+                "x": 482.5,
+                "y": 35.328125,
+                "right": 1447.140625,
+                "bottom": 862.765625,
+                "width": 964.640625,
+                "height": 827.4375
+              },
+              "dock": {
+                "x": 482.5,
+                "y": 873.359375,
+                "right": 1447.140625,
+                "bottom": 1049.984375,
+                "width": 964.640625,
+                "height": 176.625
+              },
+              "primary": {
+                "x": 796.109375,
+                "y": 972.484375,
+                "right": 1133.515625,
+                "bottom": 1037.40625,
+                "width": 337.40625,
+                "height": 64.921875
+              },
+              "targets": [
+                {
+                  "selector": ".gold-reward>strong",
+                  "box": {
+                    "x": 1201.71875,
+                    "y": 534.359375,
+                    "right": 1261.71875,
+                    "bottom": 574.859375,
+                    "width": 60,
+                    "height": 40.5
+                  },
+                  "scrollWidth": 60,
+                  "clientWidth": 60,
+                  "text": "+ 10"
+                },
+                {
+                  "selector": ".gold-reward .gold-limit-detail>p",
+                  "box": {
+                    "x": 1090.4375,
+                    "y": 599.6875,
+                    "right": 1373.015625,
+                    "bottom": 649,
+                    "width": 282.578125,
+                    "height": 49.3125
+                  },
+                  "scrollWidth": 283,
+                  "clientWidth": 283,
+                  "text": "原额 492\n上限截去 482"
+                }
+              ]
+            },
+            "firstViewport": [
+              {
+                "selector": ".gold-reward>strong",
+                "visible": true
+              },
+              {
+                "selector": ".gold-reward .gold-limit-detail>p",
+                "visible": true
+              }
+            ],
+            "requiredNativeScroll": false,
+            "afterNativeScroll": {
+              "viewport": {
+                "width": 1920,
+                "height": 1080
+              },
+              "documentWidth": 1920,
+              "panel": {
+                "x": 482.5,
+                "y": 35.328125,
+                "right": 1447.140625,
+                "bottom": 862.765625,
+                "width": 964.640625,
+                "height": 827.4375
+              },
+              "dock": {
+                "x": 482.5,
+                "y": 873.359375,
+                "right": 1447.140625,
+                "bottom": 1049.984375,
+                "width": 964.640625,
+                "height": 176.625
+              },
+              "primary": {
+                "x": 796.109375,
+                "y": 972.484375,
+                "right": 1133.515625,
+                "bottom": 1037.40625,
+                "width": 337.40625,
+                "height": 64.921875
+              },
+              "targets": [
+                {
+                  "selector": ".gold-reward>strong",
+                  "box": {
+                    "x": 1201.71875,
+                    "y": 534.359375,
+                    "right": 1261.71875,
+                    "bottom": 574.859375,
+                    "width": 60,
+                    "height": 40.5
+                  },
+                  "scrollWidth": 60,
+                  "clientWidth": 60,
+                  "text": "+ 10"
+                },
+                {
+                  "selector": ".gold-reward .gold-limit-detail>p",
+                  "box": {
+                    "x": 1090.4375,
+                    "y": 599.6875,
+                    "right": 1373.015625,
+                    "bottom": 649,
+                    "width": 282.578125,
+                    "height": 49.3125
+                  },
+                  "scrollWidth": 283,
+                  "clientWidth": 283,
+                  "text": "原额 492\n上限截去 482"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "width": 1920,
+          "height": 1080,
+          "kind": "exchange",
+          "measure": {
+            "initial": {
+              "viewport": {
+                "width": 1920,
+                "height": 1080
+              },
+              "documentWidth": 1920,
+              "panel": {
+                "x": 482.5,
+                "y": 35.328125,
+                "right": 1447.140625,
+                "bottom": 862.765625,
+                "width": 964.640625,
+                "height": 827.4375
+              },
+              "dock": {
+                "x": 482.5,
+                "y": 873.359375,
+                "right": 1447.140625,
+                "bottom": 1049.984375,
+                "width": 964.640625,
+                "height": 176.625
+              },
+              "primary": {
+                "x": 796.109375,
+                "y": 972.484375,
+                "right": 1133.515625,
+                "bottom": 1037.40625,
+                "width": 337.40625,
+                "height": 64.921875
+              },
+              "targets": [
+                {
+                  "selector": "[data-action=\"event-choice\"][data-id=\"salvage\"] .event-reward",
+                  "box": {
+                    "x": 523.328125,
+                    "y": 593.453125,
+                    "right": 937.328125,
+                    "bottom": 623.65625,
+                    "width": 414,
+                    "height": 30.203125
+                  },
+                  "scrollWidth": 414,
+                  "clientWidth": 414,
+                  "text": "获得\n金币可收 10（原额 835，上限截去 825）；540 经验"
+                },
+                {
+                  "selector": "[data-action=\"event-choice\"][data-id=\"salvage\"] .event-option-choose",
+                  "box": {
+                    "x": 874.328125,
+                    "y": 635.125,
+                    "right": 937.328125,
+                    "bottom": 654.34375,
+                    "width": 63,
+                    "height": 19.21875
+                  },
+                  "scrollWidth": 63,
+                  "clientWidth": 63,
+                  "text": "选择此项 →"
+                }
+              ]
+            },
+            "firstViewport": [
+              {
+                "selector": "[data-action=\"event-choice\"][data-id=\"salvage\"] .event-reward",
+                "visible": true
+              },
+              {
+                "selector": "[data-action=\"event-choice\"][data-id=\"salvage\"] .event-option-choose",
+                "visible": true
+              }
+            ],
+            "requiredNativeScroll": false,
+            "afterNativeScroll": {
+              "viewport": {
+                "width": 1920,
+                "height": 1080
+              },
+              "documentWidth": 1920,
+              "panel": {
+                "x": 482.5,
+                "y": 35.328125,
+                "right": 1447.140625,
+                "bottom": 862.765625,
+                "width": 964.640625,
+                "height": 827.4375
+              },
+              "dock": {
+                "x": 482.5,
+                "y": 873.359375,
+                "right": 1447.140625,
+                "bottom": 1049.984375,
+                "width": 964.640625,
+                "height": 176.625
+              },
+              "primary": {
+                "x": 796.109375,
+                "y": 972.484375,
+                "right": 1133.515625,
+                "bottom": 1037.40625,
+                "width": 337.40625,
+                "height": 64.921875
+              },
+              "targets": [
+                {
+                  "selector": "[data-action=\"event-choice\"][data-id=\"salvage\"] .event-reward",
+                  "box": {
+                    "x": 523.328125,
+                    "y": 593.453125,
+                    "right": 937.328125,
+                    "bottom": 623.65625,
+                    "width": 414,
+                    "height": 30.203125
+                  },
+                  "scrollWidth": 414,
+                  "clientWidth": 414,
+                  "text": "获得\n金币可收 10（原额 835，上限截去 825）；540 经验"
+                },
+                {
+                  "selector": "[data-action=\"event-choice\"][data-id=\"salvage\"] .event-option-choose",
+                  "box": {
+                    "x": 874.328125,
+                    "y": 635.125,
+                    "right": 937.328125,
+                    "bottom": 654.34375,
+                    "width": 63,
+                    "height": 19.21875
+                  },
+                  "scrollWidth": 63,
+                  "clientWidth": 63,
+                  "text": "选择此项 →"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "width": 2560,
+          "height": 1440,
+          "kind": "gold",
+          "measure": {
+            "initial": {
+              "viewport": {
+                "width": 2560,
+                "height": 1440
+              },
+              "documentWidth": 2560,
+              "panel": {
+                "x": 643.34375,
+                "y": 47.09375,
+                "right": 1929.515625,
+                "bottom": 1150.328125,
+                "width": 1286.171875,
+                "height": 1103.234375
+              },
+              "dock": {
+                "x": 643.34375,
+                "y": 1164.453125,
+                "right": 1929.515625,
+                "bottom": 1399.96875,
+                "width": 1286.171875,
+                "height": 235.515625
+              },
+              "primary": {
+                "x": 1061.484375,
+                "y": 1297.296875,
+                "right": 1511.359375,
+                "bottom": 1382.515625,
+                "width": 449.875,
+                "height": 85.21875
+              },
+              "targets": [
+                {
+                  "selector": ".gold-hoard",
+                  "box": {
+                    "x": 1197.921875,
+                    "y": 330.15625,
+                    "right": 1374.921875,
+                    "bottom": 659.5,
+                    "width": 177,
+                    "height": 329.34375
+                  },
+                  "scrollWidth": 177,
+                  "clientWidth": 177,
+                  "text": "+10\n可收金币"
+                },
+                {
+                  "selector": ".gold-limit-detail>p",
+                  "box": {
+                    "x": 886.046875,
+                    "y": 731.125,
+                    "right": 1686.8125,
+                    "bottom": 761.640625,
+                    "width": 800.765625,
+                    "height": 30.515625
+                  },
+                  "scrollWidth": 801,
+                  "clientWidth": 801,
+                  "text": "原额 958\n将超出上限 948"
+                },
+                {
+                  "selector": ".gold-balance-preview",
+                  "box": {
+                    "x": 1155.421875,
+                    "y": 809.296875,
+                    "right": 1417.421875,
+                    "bottom": 841.078125,
+                    "width": 262,
+                    "height": 31.78125
+                  },
+                  "scrollWidth": 262,
+                  "clientWidth": 262,
+                  "text": "领取后余额 10,000,000,000 金币"
+                }
+              ]
+            },
+            "firstViewport": [
+              {
+                "selector": ".gold-hoard",
+                "visible": true
+              },
+              {
+                "selector": ".gold-limit-detail>p",
+                "visible": true
+              },
+              {
+                "selector": ".gold-balance-preview",
+                "visible": true
+              }
+            ],
+            "requiredNativeScroll": false,
+            "afterNativeScroll": {
+              "viewport": {
+                "width": 2560,
+                "height": 1440
+              },
+              "documentWidth": 2560,
+              "panel": {
+                "x": 643.34375,
+                "y": 47.09375,
+                "right": 1929.515625,
+                "bottom": 1150.328125,
+                "width": 1286.171875,
+                "height": 1103.234375
+              },
+              "dock": {
+                "x": 643.34375,
+                "y": 1164.453125,
+                "right": 1929.515625,
+                "bottom": 1399.96875,
+                "width": 1286.171875,
+                "height": 235.515625
+              },
+              "primary": {
+                "x": 1061.484375,
+                "y": 1297.296875,
+                "right": 1511.359375,
+                "bottom": 1382.515625,
+                "width": 449.875,
+                "height": 85.21875
+              },
+              "targets": [
+                {
+                  "selector": ".gold-hoard",
+                  "box": {
+                    "x": 1197.921875,
+                    "y": 330.15625,
+                    "right": 1374.921875,
+                    "bottom": 659.5,
+                    "width": 177,
+                    "height": 329.34375
+                  },
+                  "scrollWidth": 177,
+                  "clientWidth": 177,
+                  "text": "+10\n可收金币"
+                },
+                {
+                  "selector": ".gold-limit-detail>p",
+                  "box": {
+                    "x": 886.046875,
+                    "y": 731.125,
+                    "right": 1686.8125,
+                    "bottom": 761.640625,
+                    "width": 800.765625,
+                    "height": 30.515625
+                  },
+                  "scrollWidth": 801,
+                  "clientWidth": 801,
+                  "text": "原额 958\n将超出上限 948"
+                },
+                {
+                  "selector": ".gold-balance-preview",
+                  "box": {
+                    "x": 1155.421875,
+                    "y": 809.296875,
+                    "right": 1417.421875,
+                    "bottom": 841.078125,
+                    "width": 262,
+                    "height": 31.78125
+                  },
+                  "scrollWidth": 262,
+                  "clientWidth": 262,
+                  "text": "领取后余额 10,000,000,000 金币"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "width": 2560,
+          "height": 1440,
+          "kind": "chest",
+          "measure": {
+            "initial": {
+              "viewport": {
+                "width": 2560,
+                "height": 1440
+              },
+              "documentWidth": 2560,
+              "panel": {
+                "x": 643.34375,
+                "y": 47.09375,
+                "right": 1929.515625,
+                "bottom": 1150.328125,
+                "width": 1286.171875,
+                "height": 1103.234375
+              },
+              "dock": {
+                "x": 643.34375,
+                "y": 1164.453125,
+                "right": 1929.515625,
+                "bottom": 1399.96875,
+                "width": 1286.171875,
+                "height": 235.515625
+              },
+              "primary": {
+                "x": 1061.484375,
+                "y": 1297.296875,
+                "right": 1511.359375,
+                "bottom": 1382.515625,
+                "width": 449.875,
+                "height": 85.21875
+              },
+              "targets": [
+                {
+                  "selector": "[data-gold-preview]>p",
+                  "box": {
+                    "x": 904.875,
+                    "y": 1003.703125,
+                    "right": 1667.984375,
+                    "bottom": 1051.171875,
+                    "width": 763.109375,
+                    "height": 47.46875
+                  },
+                  "scrollWidth": 763,
+                  "clientWidth": 763,
+                  "text": "金币可收\n+10"
+                },
+                {
+                  "selector": "[data-gold-preview] .gold-limit-detail>p",
+                  "box": {
+                    "x": 904.875,
+                    "y": 1075.703125,
+                    "right": 1667.984375,
+                    "bottom": 1106.21875,
+                    "width": 763.109375,
+                    "height": 30.515625
+                  },
+                  "scrollWidth": 763,
+                  "clientWidth": 763,
+                  "text": "原额 492\n将超出上限 482"
+                }
+              ]
+            },
+            "firstViewport": [
+              {
+                "selector": "[data-gold-preview]>p",
+                "visible": true
+              },
+              {
+                "selector": "[data-gold-preview] .gold-limit-detail>p",
+                "visible": true
+              }
+            ],
+            "requiredNativeScroll": false,
+            "afterNativeScroll": {
+              "viewport": {
+                "width": 2560,
+                "height": 1440
+              },
+              "documentWidth": 2560,
+              "panel": {
+                "x": 643.34375,
+                "y": 47.09375,
+                "right": 1929.515625,
+                "bottom": 1150.328125,
+                "width": 1286.171875,
+                "height": 1103.234375
+              },
+              "dock": {
+                "x": 643.34375,
+                "y": 1164.453125,
+                "right": 1929.515625,
+                "bottom": 1399.96875,
+                "width": 1286.171875,
+                "height": 235.515625
+              },
+              "primary": {
+                "x": 1061.484375,
+                "y": 1297.296875,
+                "right": 1511.359375,
+                "bottom": 1382.515625,
+                "width": 449.875,
+                "height": 85.21875
+              },
+              "targets": [
+                {
+                  "selector": "[data-gold-preview]>p",
+                  "box": {
+                    "x": 904.875,
+                    "y": 1003.703125,
+                    "right": 1667.984375,
+                    "bottom": 1051.171875,
+                    "width": 763.109375,
+                    "height": 47.46875
+                  },
+                  "scrollWidth": 763,
+                  "clientWidth": 763,
+                  "text": "金币可收\n+10"
+                },
+                {
+                  "selector": "[data-gold-preview] .gold-limit-detail>p",
+                  "box": {
+                    "x": 904.875,
+                    "y": 1075.703125,
+                    "right": 1667.984375,
+                    "bottom": 1106.21875,
+                    "width": 763.109375,
+                    "height": 30.515625
+                  },
+                  "scrollWidth": 763,
+                  "clientWidth": 763,
+                  "text": "原额 492\n将超出上限 482"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "width": 2560,
+          "height": 1440,
+          "kind": "loot",
+          "measure": {
+            "initial": {
+              "viewport": {
+                "width": 2560,
+                "height": 1440
+              },
+              "documentWidth": 2560,
+              "panel": {
+                "x": 643.34375,
+                "y": 47.09375,
+                "right": 1929.515625,
+                "bottom": 1150.328125,
+                "width": 1286.171875,
+                "height": 1103.234375
+              },
+              "dock": {
+                "x": 643.34375,
+                "y": 1164.453125,
+                "right": 1929.515625,
+                "bottom": 1399.96875,
+                "width": 1286.171875,
+                "height": 235.515625
+              },
+              "primary": {
+                "x": 1061.484375,
+                "y": 1297.296875,
+                "right": 1511.359375,
+                "bottom": 1382.515625,
+                "width": 449.875,
+                "height": 85.21875
+              },
+              "targets": [
+                {
+                  "selector": ".gold-reward>strong",
+                  "box": {
+                    "x": 1612.5,
+                    "y": 720.1875,
+                    "right": 1672.5,
+                    "bottom": 760.6875,
+                    "width": 60,
+                    "height": 40.5
+                  },
+                  "scrollWidth": 60,
+                  "clientWidth": 60,
+                  "text": "+ 10"
+                },
+                {
+                  "selector": ".gold-reward .gold-limit-detail>p",
+                  "box": {
+                    "x": 1453.65625,
+                    "y": 793.453125,
+                    "right": 1831.34375,
+                    "bottom": 859.1875,
+                    "width": 377.6875,
+                    "height": 65.734375
+                  },
+                  "scrollWidth": 378,
+                  "clientWidth": 378,
+                  "text": "原额 492\n上限截去 482"
+                }
+              ]
+            },
+            "firstViewport": [
+              {
+                "selector": ".gold-reward>strong",
+                "visible": true
+              },
+              {
+                "selector": ".gold-reward .gold-limit-detail>p",
+                "visible": true
+              }
+            ],
+            "requiredNativeScroll": false,
+            "afterNativeScroll": {
+              "viewport": {
+                "width": 2560,
+                "height": 1440
+              },
+              "documentWidth": 2560,
+              "panel": {
+                "x": 643.34375,
+                "y": 47.09375,
+                "right": 1929.515625,
+                "bottom": 1150.328125,
+                "width": 1286.171875,
+                "height": 1103.234375
+              },
+              "dock": {
+                "x": 643.34375,
+                "y": 1164.453125,
+                "right": 1929.515625,
+                "bottom": 1399.96875,
+                "width": 1286.171875,
+                "height": 235.515625
+              },
+              "primary": {
+                "x": 1061.484375,
+                "y": 1297.296875,
+                "right": 1511.359375,
+                "bottom": 1382.515625,
+                "width": 449.875,
+                "height": 85.21875
+              },
+              "targets": [
+                {
+                  "selector": ".gold-reward>strong",
+                  "box": {
+                    "x": 1612.5,
+                    "y": 720.1875,
+                    "right": 1672.5,
+                    "bottom": 760.6875,
+                    "width": 60,
+                    "height": 40.5
+                  },
+                  "scrollWidth": 60,
+                  "clientWidth": 60,
+                  "text": "+ 10"
+                },
+                {
+                  "selector": ".gold-reward .gold-limit-detail>p",
+                  "box": {
+                    "x": 1453.65625,
+                    "y": 793.453125,
+                    "right": 1831.34375,
+                    "bottom": 859.1875,
+                    "width": 377.6875,
+                    "height": 65.734375
+                  },
+                  "scrollWidth": 378,
+                  "clientWidth": 378,
+                  "text": "原额 492\n上限截去 482"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "width": 2560,
+          "height": 1440,
+          "kind": "exchange",
+          "measure": {
+            "initial": {
+              "viewport": {
+                "width": 2560,
+                "height": 1440
+              },
+              "documentWidth": 2560,
+              "panel": {
+                "x": 643.34375,
+                "y": 47.09375,
+                "right": 1929.515625,
+                "bottom": 1150.328125,
+                "width": 1286.171875,
+                "height": 1103.234375
+              },
+              "dock": {
+                "x": 643.34375,
+                "y": 1164.453125,
+                "right": 1929.515625,
+                "bottom": 1399.96875,
+                "width": 1286.171875,
+                "height": 235.515625
+              },
+              "primary": {
+                "x": 1061.484375,
+                "y": 1297.296875,
+                "right": 1511.359375,
+                "bottom": 1382.515625,
+                "width": 449.875,
+                "height": 85.21875
+              },
+              "targets": [
+                {
+                  "selector": "[data-action=\"event-choice\"][data-id=\"salvage\"] .event-reward",
+                  "box": {
+                    "x": 697.125,
+                    "y": 789.3125,
+                    "right": 1250.109375,
+                    "bottom": 829.265625,
+                    "width": 552.984375,
+                    "height": 39.953125
+                  },
+                  "scrollWidth": 553,
+                  "clientWidth": 553,
+                  "text": "获得\n金币可收 10（原额 835，上限截去 825）；540 经验"
+                },
+                {
+                  "selector": "[data-action=\"event-choice\"][data-id=\"salvage\"] .event-option-choose",
+                  "box": {
+                    "x": 1167.109375,
+                    "y": 844.5625,
+                    "right": 1250.109375,
+                    "bottom": 870.203125,
+                    "width": 83,
+                    "height": 25.640625
+                  },
+                  "scrollWidth": 83,
+                  "clientWidth": 83,
+                  "text": "选择此项 →"
+                }
+              ]
+            },
+            "firstViewport": [
+              {
+                "selector": "[data-action=\"event-choice\"][data-id=\"salvage\"] .event-reward",
+                "visible": true
+              },
+              {
+                "selector": "[data-action=\"event-choice\"][data-id=\"salvage\"] .event-option-choose",
+                "visible": true
+              }
+            ],
+            "requiredNativeScroll": false,
+            "afterNativeScroll": {
+              "viewport": {
+                "width": 2560,
+                "height": 1440
+              },
+              "documentWidth": 2560,
+              "panel": {
+                "x": 643.34375,
+                "y": 47.09375,
+                "right": 1929.515625,
+                "bottom": 1150.328125,
+                "width": 1286.171875,
+                "height": 1103.234375
+              },
+              "dock": {
+                "x": 643.34375,
+                "y": 1164.453125,
+                "right": 1929.515625,
+                "bottom": 1399.96875,
+                "width": 1286.171875,
+                "height": 235.515625
+              },
+              "primary": {
+                "x": 1061.484375,
+                "y": 1297.296875,
+                "right": 1511.359375,
+                "bottom": 1382.515625,
+                "width": 449.875,
+                "height": 85.21875
+              },
+              "targets": [
+                {
+                  "selector": "[data-action=\"event-choice\"][data-id=\"salvage\"] .event-reward",
+                  "box": {
+                    "x": 697.125,
+                    "y": 789.3125,
+                    "right": 1250.109375,
+                    "bottom": 829.265625,
+                    "width": 552.984375,
+                    "height": 39.953125
+                  },
+                  "scrollWidth": 553,
+                  "clientWidth": 553,
+                  "text": "获得\n金币可收 10（原额 835，上限截去 825）；540 经验"
+                },
+                {
+                  "selector": "[data-action=\"event-choice\"][data-id=\"salvage\"] .event-option-choose",
+                  "box": {
+                    "x": 1167.109375,
+                    "y": 844.5625,
+                    "right": 1250.109375,
+                    "bottom": 870.203125,
+                    "width": 83,
+                    "height": 25.640625
+                  },
+                  "scrollWidth": 83,
+                  "clientWidth": 83,
+                  "text": "选择此项 →"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "width": 3840,
+          "height": 2160,
+          "kind": "gold",
+          "measure": {
+            "initial": {
+              "viewport": {
+                "width": 3840,
+                "height": 2160
+              },
+              "documentWidth": 3840,
+              "panel": {
+                "x": 965.015625,
+                "y": 70.65625,
+                "right": 2894.265625,
+                "bottom": 1725.5,
+                "width": 1929.25,
+                "height": 1654.84375
+              },
+              "dock": {
+                "x": 965.015625,
+                "y": 1746.6875,
+                "right": 2894.265625,
+                "bottom": 2099.953125,
+                "width": 1929.25,
+                "height": 353.265625
+              },
+              "primary": {
+                "x": 1592.234375,
+                "y": 1946.9375,
+                "right": 2267.03125,
+                "bottom": 2072.78125,
+                "width": 674.796875,
+                "height": 125.84375
+              },
+              "targets": [
+                {
+                  "selector": ".gold-hoard",
+                  "box": {
+                    "x": 1797.640625,
+                    "y": 494.796875,
+                    "right": 2061.640625,
+                    "bottom": 988.328125,
+                    "width": 264,
+                    "height": 493.53125
+                  },
+                  "scrollWidth": 264,
+                  "clientWidth": 264,
+                  "text": "+10\n可收金币"
+                },
+                {
+                  "selector": ".gold-limit-detail>p",
+                  "box": {
+                    "x": 1329.0625,
+                    "y": 1095.28125,
+                    "right": 2530.203125,
+                    "bottom": 1141.0625,
+                    "width": 1201.140625,
+                    "height": 45.78125
+                  },
+                  "scrollWidth": 1201,
+                  "clientWidth": 1201,
+                  "text": "原额 958\n将超出上限 948"
+                },
+                {
+                  "selector": ".gold-balance-preview",
+                  "box": {
+                    "x": 1731.140625,
+                    "y": 1212.546875,
+                    "right": 2128.140625,
+                    "bottom": 1260.234375,
+                    "width": 397,
+                    "height": 47.6875
+                  },
+                  "scrollWidth": 397,
+                  "clientWidth": 397,
+                  "text": "领取后余额 10,000,000,000 金币"
+                }
+              ]
+            },
+            "firstViewport": [
+              {
+                "selector": ".gold-hoard",
+                "visible": true
+              },
+              {
+                "selector": ".gold-limit-detail>p",
+                "visible": true
+              },
+              {
+                "selector": ".gold-balance-preview",
+                "visible": true
+              }
+            ],
+            "requiredNativeScroll": false,
+            "afterNativeScroll": {
+              "viewport": {
+                "width": 3840,
+                "height": 2160
+              },
+              "documentWidth": 3840,
+              "panel": {
+                "x": 965.015625,
+                "y": 70.65625,
+                "right": 2894.265625,
+                "bottom": 1725.5,
+                "width": 1929.25,
+                "height": 1654.84375
+              },
+              "dock": {
+                "x": 965.015625,
+                "y": 1746.6875,
+                "right": 2894.265625,
+                "bottom": 2099.953125,
+                "width": 1929.25,
+                "height": 353.265625
+              },
+              "primary": {
+                "x": 1592.234375,
+                "y": 1946.9375,
+                "right": 2267.03125,
+                "bottom": 2072.78125,
+                "width": 674.796875,
+                "height": 125.84375
+              },
+              "targets": [
+                {
+                  "selector": ".gold-hoard",
+                  "box": {
+                    "x": 1797.640625,
+                    "y": 494.796875,
+                    "right": 2061.640625,
+                    "bottom": 988.328125,
+                    "width": 264,
+                    "height": 493.53125
+                  },
+                  "scrollWidth": 264,
+                  "clientWidth": 264,
+                  "text": "+10\n可收金币"
+                },
+                {
+                  "selector": ".gold-limit-detail>p",
+                  "box": {
+                    "x": 1329.0625,
+                    "y": 1095.28125,
+                    "right": 2530.203125,
+                    "bottom": 1141.0625,
+                    "width": 1201.140625,
+                    "height": 45.78125
+                  },
+                  "scrollWidth": 1201,
+                  "clientWidth": 1201,
+                  "text": "原额 958\n将超出上限 948"
+                },
+                {
+                  "selector": ".gold-balance-preview",
+                  "box": {
+                    "x": 1731.140625,
+                    "y": 1212.546875,
+                    "right": 2128.140625,
+                    "bottom": 1260.234375,
+                    "width": 397,
+                    "height": 47.6875
+                  },
+                  "scrollWidth": 397,
+                  "clientWidth": 397,
+                  "text": "领取后余额 10,000,000,000 金币"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "width": 3840,
+          "height": 2160,
+          "kind": "chest",
+          "measure": {
+            "initial": {
+              "viewport": {
+                "width": 3840,
+                "height": 2160
+              },
+              "documentWidth": 3840,
+              "panel": {
+                "x": 965.015625,
+                "y": 70.65625,
+                "right": 2894.265625,
+                "bottom": 1725.5,
+                "width": 1929.25,
+                "height": 1654.84375
+              },
+              "dock": {
+                "x": 965.015625,
+                "y": 1746.6875,
+                "right": 2894.265625,
+                "bottom": 2099.953125,
+                "width": 1929.25,
+                "height": 353.265625
+              },
+              "primary": {
+                "x": 1592.234375,
+                "y": 1946.9375,
+                "right": 2267.03125,
+                "bottom": 2072.78125,
+                "width": 674.796875,
+                "height": 125.84375
+              },
+              "targets": [
+                {
+                  "selector": "[data-gold-preview]>p",
+                  "box": {
+                    "x": 1357.3125,
+                    "y": 1501.6875,
+                    "right": 2501.953125,
+                    "bottom": 1572.890625,
+                    "width": 1144.640625,
+                    "height": 71.203125
+                  },
+                  "scrollWidth": 1145,
+                  "clientWidth": 1145,
+                  "text": "金币可收\n+10"
+                },
+                {
+                  "selector": "[data-gold-preview] .gold-limit-detail>p",
+                  "box": {
+                    "x": 1357.3125,
+                    "y": 1609.203125,
+                    "right": 2501.953125,
+                    "bottom": 1654.984375,
+                    "width": 1144.640625,
+                    "height": 45.78125
+                  },
+                  "scrollWidth": 1145,
+                  "clientWidth": 1145,
+                  "text": "原额 492\n将超出上限 482"
+                }
+              ]
+            },
+            "firstViewport": [
+              {
+                "selector": "[data-gold-preview]>p",
+                "visible": true
+              },
+              {
+                "selector": "[data-gold-preview] .gold-limit-detail>p",
+                "visible": true
+              }
+            ],
+            "requiredNativeScroll": false,
+            "afterNativeScroll": {
+              "viewport": {
+                "width": 3840,
+                "height": 2160
+              },
+              "documentWidth": 3840,
+              "panel": {
+                "x": 965.015625,
+                "y": 70.65625,
+                "right": 2894.265625,
+                "bottom": 1725.5,
+                "width": 1929.25,
+                "height": 1654.84375
+              },
+              "dock": {
+                "x": 965.015625,
+                "y": 1746.6875,
+                "right": 2894.265625,
+                "bottom": 2099.953125,
+                "width": 1929.25,
+                "height": 353.265625
+              },
+              "primary": {
+                "x": 1592.234375,
+                "y": 1946.9375,
+                "right": 2267.03125,
+                "bottom": 2072.78125,
+                "width": 674.796875,
+                "height": 125.84375
+              },
+              "targets": [
+                {
+                  "selector": "[data-gold-preview]>p",
+                  "box": {
+                    "x": 1357.3125,
+                    "y": 1501.6875,
+                    "right": 2501.953125,
+                    "bottom": 1572.890625,
+                    "width": 1144.640625,
+                    "height": 71.203125
+                  },
+                  "scrollWidth": 1145,
+                  "clientWidth": 1145,
+                  "text": "金币可收\n+10"
+                },
+                {
+                  "selector": "[data-gold-preview] .gold-limit-detail>p",
+                  "box": {
+                    "x": 1357.3125,
+                    "y": 1609.203125,
+                    "right": 2501.953125,
+                    "bottom": 1654.984375,
+                    "width": 1144.640625,
+                    "height": 45.78125
+                  },
+                  "scrollWidth": 1145,
+                  "clientWidth": 1145,
+                  "text": "原额 492\n将超出上限 482"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "width": 3840,
+          "height": 2160,
+          "kind": "loot",
+          "measure": {
+            "initial": {
+              "viewport": {
+                "width": 3840,
+                "height": 2160
+              },
+              "documentWidth": 3840,
+              "panel": {
+                "x": 965.015625,
+                "y": 70.65625,
+                "right": 2894.265625,
+                "bottom": 1725.5,
+                "width": 1929.25,
+                "height": 1654.84375
+              },
+              "dock": {
+                "x": 965.015625,
+                "y": 1746.6875,
+                "right": 2894.265625,
+                "bottom": 2099.953125,
+                "width": 1929.25,
+                "height": 353.265625
+              },
+              "primary": {
+                "x": 1592.234375,
+                "y": 1946.9375,
+                "right": 2267.03125,
+                "bottom": 2072.78125,
+                "width": 674.796875,
+                "height": 125.84375
+              },
+              "targets": [
+                {
+                  "selector": ".gold-reward>strong",
+                  "box": {
+                    "x": 2434,
+                    "y": 1089.96875,
+                    "right": 2494,
+                    "bottom": 1130.46875,
+                    "width": 60,
+                    "height": 40.5
+                  },
+                  "scrollWidth": 60,
+                  "clientWidth": 60,
+                  "text": "+ 10"
+                },
+                {
+                  "selector": ".gold-reward .gold-limit-detail>p",
+                  "box": {
+                    "x": 2180.09375,
+                    "y": 1179.140625,
+                    "right": 2747.921875,
+                    "bottom": 1277.765625,
+                    "width": 567.828125,
+                    "height": 98.625
+                  },
+                  "scrollWidth": 568,
+                  "clientWidth": 568,
+                  "text": "原额 492\n上限截去 482"
+                }
+              ]
+            },
+            "firstViewport": [
+              {
+                "selector": ".gold-reward>strong",
+                "visible": true
+              },
+              {
+                "selector": ".gold-reward .gold-limit-detail>p",
+                "visible": true
+              }
+            ],
+            "requiredNativeScroll": false,
+            "afterNativeScroll": {
+              "viewport": {
+                "width": 3840,
+                "height": 2160
+              },
+              "documentWidth": 3840,
+              "panel": {
+                "x": 965.015625,
+                "y": 70.65625,
+                "right": 2894.265625,
+                "bottom": 1725.5,
+                "width": 1929.25,
+                "height": 1654.84375
+              },
+              "dock": {
+                "x": 965.015625,
+                "y": 1746.6875,
+                "right": 2894.265625,
+                "bottom": 2099.953125,
+                "width": 1929.25,
+                "height": 353.265625
+              },
+              "primary": {
+                "x": 1592.234375,
+                "y": 1946.9375,
+                "right": 2267.03125,
+                "bottom": 2072.78125,
+                "width": 674.796875,
+                "height": 125.84375
+              },
+              "targets": [
+                {
+                  "selector": ".gold-reward>strong",
+                  "box": {
+                    "x": 2434,
+                    "y": 1089.96875,
+                    "right": 2494,
+                    "bottom": 1130.46875,
+                    "width": 60,
+                    "height": 40.5
+                  },
+                  "scrollWidth": 60,
+                  "clientWidth": 60,
+                  "text": "+ 10"
+                },
+                {
+                  "selector": ".gold-reward .gold-limit-detail>p",
+                  "box": {
+                    "x": 2180.09375,
+                    "y": 1179.140625,
+                    "right": 2747.921875,
+                    "bottom": 1277.765625,
+                    "width": 567.828125,
+                    "height": 98.625
+                  },
+                  "scrollWidth": 568,
+                  "clientWidth": 568,
+                  "text": "原额 492\n上限截去 482"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "width": 3840,
+          "height": 2160,
+          "kind": "exchange",
+          "measure": {
+            "initial": {
+              "viewport": {
+                "width": 3840,
+                "height": 2160
+              },
+              "documentWidth": 3840,
+              "panel": {
+                "x": 965.015625,
+                "y": 70.65625,
+                "right": 2894.265625,
+                "bottom": 1725.5,
+                "width": 1929.25,
+                "height": 1654.84375
+              },
+              "dock": {
+                "x": 965.015625,
+                "y": 1746.6875,
+                "right": 2894.265625,
+                "bottom": 2099.953125,
+                "width": 1929.25,
+                "height": 353.265625
+              },
+              "primary": {
+                "x": 1592.234375,
+                "y": 1946.9375,
+                "right": 2267.03125,
+                "bottom": 2072.78125,
+                "width": 674.796875,
+                "height": 125.84375
+              },
+              "targets": [
+                {
+                  "selector": "[data-action=\"event-choice\"][data-id=\"salvage\"] .event-reward",
+                  "box": {
+                    "x": 1044.703125,
+                    "y": 1183.046875,
+                    "right": 1875.671875,
+                    "bottom": 1242.5,
+                    "width": 830.96875,
+                    "height": 59.453125
+                  },
+                  "scrollWidth": 831,
+                  "clientWidth": 831,
+                  "text": "获得\n金币可收 10（原额 835，上限截去 825）；540 经验"
+                },
+                {
+                  "selector": "[data-action=\"event-choice\"][data-id=\"salvage\"] .event-option-choose",
+                  "box": {
+                    "x": 1755.671875,
+                    "y": 1265.453125,
+                    "right": 1875.671875,
+                    "bottom": 1303.90625,
+                    "width": 120,
+                    "height": 38.453125
+                  },
+                  "scrollWidth": 120,
+                  "clientWidth": 120,
+                  "text": "选择此项 →"
+                }
+              ]
+            },
+            "firstViewport": [
+              {
+                "selector": "[data-action=\"event-choice\"][data-id=\"salvage\"] .event-reward",
+                "visible": true
+              },
+              {
+                "selector": "[data-action=\"event-choice\"][data-id=\"salvage\"] .event-option-choose",
+                "visible": true
+              }
+            ],
+            "requiredNativeScroll": false,
+            "afterNativeScroll": {
+              "viewport": {
+                "width": 3840,
+                "height": 2160
+              },
+              "documentWidth": 3840,
+              "panel": {
+                "x": 965.015625,
+                "y": 70.65625,
+                "right": 2894.265625,
+                "bottom": 1725.5,
+                "width": 1929.25,
+                "height": 1654.84375
+              },
+              "dock": {
+                "x": 965.015625,
+                "y": 1746.6875,
+                "right": 2894.265625,
+                "bottom": 2099.953125,
+                "width": 1929.25,
+                "height": 353.265625
+              },
+              "primary": {
+                "x": 1592.234375,
+                "y": 1946.9375,
+                "right": 2267.03125,
+                "bottom": 2072.78125,
+                "width": 674.796875,
+                "height": 125.84375
+              },
+              "targets": [
+                {
+                  "selector": "[data-action=\"event-choice\"][data-id=\"salvage\"] .event-reward",
+                  "box": {
+                    "x": 1044.703125,
+                    "y": 1183.046875,
+                    "right": 1875.671875,
+                    "bottom": 1242.5,
+                    "width": 830.96875,
+                    "height": 59.453125
+                  },
+                  "scrollWidth": 831,
+                  "clientWidth": 831,
+                  "text": "获得\n金币可收 10（原额 835，上限截去 825）；540 经验"
+                },
+                {
+                  "selector": "[data-action=\"event-choice\"][data-id=\"salvage\"] .event-option-choose",
+                  "box": {
+                    "x": 1755.671875,
+                    "y": 1265.453125,
+                    "right": 1875.671875,
+                    "bottom": 1303.90625,
+                    "width": 120,
+                    "height": 38.453125
+                  },
+                  "scrollWidth": 120,
+                  "clientWidth": 120,
+                  "text": "选择此项 →"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "screenshots": [
+    "gold-near-pending.png",
+    "gold-full-pending.png",
+    "loot-near.png",
+    "loot-full.png",
+    "exchange-dual-cap-confirmation.png",
+    "layout-1366x768-gold.png",
+    "layout-1366x768-chest.png",
+    "layout-1366x768-loot.png",
+    "layout-1366x768-exchange.png",
+    "layout-1920x1080-gold.png",
+    "layout-1920x1080-chest.png",
+    "layout-1920x1080-loot.png",
+    "layout-1920x1080-exchange.png",
+    "layout-2560x1440-gold.png",
+    "layout-2560x1440-chest.png",
+    "layout-2560x1440-loot.png",
+    "layout-2560x1440-exchange.png",
+    "layout-3840x2160-gold.png",
+    "layout-3840x2160-chest.png",
+    "layout-3840x2160-loot.png",
+    "layout-3840x2160-exchange.png"
+  ],
+  "notes": [
+    "The Browser connector and cloud CUA failed to reach loopback with ERR_CONNECTION_REFUSED in this round. The task explicitly permits Chromium/Playwright, so this is the recorded local fallback.",
+    "The flow is: exact synthetic pending reward -> native click/confirmation -> exact committed gold/XP/items -> native reload -> historical receipt. Initial fixtures edit gold/floor/level/route and are not naturally reached cap states.",
+    "Every committed state is compared in full to the selected version's own engine, with exact primary and mirror bytes. Capture JSON files retain full observed DOM, all localStorage strings, decoded main state, and the selected-engine expected state where available. No product state, RNG or DOM handlers are patched to manufacture successful settlements.",
+    "The primary-write failure is an explicitly injected Storage.prototype.setItem error. Typed imports use the real native file chooser and application validator.",
+    "Low effects, reduced motion and SwiftShader are functional/layout conditions. These checks do not measure FPS, GPU performance, physical 4K, phone, screen-reader output or OS power loss.",
+    "Baseline REPRODUCED means the known misleading behavior was observed while unrelated safety checks passed; it never means the new receipt UI was present."
+  ],
+  "browser": "155.0.8059.84",
+  "environment": {
+    "title": "骰狱：无尽深渊 · Dice Abyss",
+    "url": "http://127.0.0.1:4320/",
+    "release": "5.10.0",
+    "webLocks": true,
+    "body": "骰狱：无尽深渊\n— D I C E　 A B Y S S —\n以骰为火\n点燃永夜\n每一次掷骰，都更接近深渊。\n全屏\n设置\n每一次掷骰，\n都更接近深渊。\n\n让命运落定，让回响燃烧。\n踏入黑暗，带着战利品归来。\n\n踏入深渊\n手动掷骰 · 每战必"
+  },
+  "sourceAfter": {
+    "src/app.js": "3f837f714a1197dc819e092bd0eebb2a837505c6d8a80ec39bf4e24ba8dbfb59",
+    "src/engine.js": "a84e8823a4e6632ec12ad6f497c71e2a0b427a41fe8773eb7c9cfc041f78cd1b",
+    "src/views.js": "0640e27b5bde046380370f68a1fbf87b1d2105ae3eef211d7f01df9bbb195882",
+    "src/storage.js": "2c5f648efe7df6a1c14710ea90fe2de83323141d5f5e285eec7fac8aa687a500",
+    "src/encounters.js": "c3c6e2d24049305d73982cf5db3b1cf02eee68f4e8e1659fd7e3021f74de0791",
+    "src/deep-rules.js": "c9bf6e3419308bdc1bb62836586cfb18f4b62aadea16aa5e0fc33fa6f4794485",
+    "src/equipment.js": "8c20de433f21931318e315b862b457d37a03b9596ea5df8f7cc4025691aaccd6",
+    "index.html": "062b883d45f8374e7ed4604a1e0f82f687498b4c6179ba486d25ce1bce6ca961",
+    "package.json": "7b3f8ad07a14a20eb3b70d845cce37ec4ed66103f4b439f2dfeb441a4f69353d",
+    "src/gold.js": "252aab60750432e1b5f1dc158c4a8f69e3dca5d72fa016b69c03c29ac651a244",
+    "src/gold.css": "bb1313da6f3a734567be73e23c606c56c1215bc976e166c9dc2b1fedb06c6393"
+  },
+  "sourceStable": true,
+  "finished": "2026-10-18T09:28:13.132Z",
+  "summary": {
+    "groups": 7,
+    "passed": 7,
+    "reproduced": 0,
+    "failed": 0,
+    "checks": 316,
+    "knownDefects": 0,
+    "sourceStable": true,
+    "errors": 0
+  }
+}

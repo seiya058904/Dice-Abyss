@@ -1,6 +1,7 @@
 // Visual rigid bodies in die-width units. This never reads or advances game RNG.
 // A fixed step makes throws independent of frame rate; the final face is already
 // committed by the engine. Rotation settles onto that face after the last bounce.
+import {createVisualTimeline} from './visual-timeline.js';
 export const THROW_DURATION = 1280;
 export function restPose(index=0){const [rx,ry,rz]=[[-18,-24,-3],[-15,18,4],[-20,-16,-4],[-16,20,3],[-20,-20,-2],[-14,14,3]][index%6];return{x:0,y:0,z:0,rx,ry,rz};}
 
@@ -54,7 +55,7 @@ export function throwFrames(count, seed, spacing = 1.5, bound = 6) {
   return frames;
 }
 
-export function animateDice(seed, onImpact = () => {}, onFrame = () => {}) {
+export function animateDice(seed, onImpact = () => {}, onFrame = () => {}, presentation = null, onRest = () => {}) {
   const dice = [...document.querySelectorAll('.rolling .cube-die')];
   if (!dice.length) return () => {};
   const width = dice[0].getBoundingClientRect().width;
@@ -63,15 +64,22 @@ export function animateDice(seed, onImpact = () => {}, onFrame = () => {}) {
   const frames = throwFrames(dice.length, seed, spacing, Math.max(.8,row.width / width / 2 - .66));
   const gpu=()=>dice[0].parentElement.classList?.contains('gpu-dice');
   const nodes = dice.map(el => ({ flight:el.querySelector('.die-flight'), cube:el.querySelector('.die-cube'), shadow:el.querySelector('.die-shadow') }));
-  let frame, start = performance.now(), previous = -1, lastSound = -100;
-  const draw = now => {
-    // A callback queued during an active rendering cycle can receive that
-    // cycle's timestamp, slightly earlier than initialization's performance.now.
-    const elapsed = Math.max(0, now - start), index = Math.min(frames.length - 1, Math.floor(elapsed / THROW_DURATION * (frames.length - 1)));
-    const sample = frames[index];
-    onFrame(sample.dice);
+  const clear=()=>nodes.forEach(n=>{n.flight.style.transform='';n.cube.style.transform='';n.shadow.style.transform='';n.shadow.style.opacity='';});
+  const timeline=presentation||createVisualTimeline(clear);
+  let previous = -1, lastSound = -100, previousGPU;
+  const draw = elapsed => {
+    const index = Math.min(frames.length - 1, Math.floor(elapsed / THROW_DURATION * (frames.length - 1)));
+    const sample = frames[index], landed = elapsed >= THROW_DURATION;
+    // The throw already has fixed 120 Hz samples. Faster displays can request
+    // the same pose again; neither its pixels nor its shadows changed. A lost
+    // or restored context still needs that sample in its current fallback mode.
+    if(index===previous&&!landed&&!!gpu()===previousGPU)return;
+    // The renderer can submit the final pose directly at resting quality,
+    // without first drawing an immediately overwritten motion-sized buffer.
+    onFrame(sample.dice, landed);
+    const renderedOnGPU=!!gpu();
     sample.dice.forEach((d,i) => {
-      if(!gpu()){
+      if(!renderedOnGPU){
         nodes[i].flight.style.transform = `translate3d(${d.x * width}px,${d.y * width}px,${d.z * width}px)`;
         nodes[i].cube.style.transform = `rotateX(${d.rx}deg) rotateY(${d.ry}deg) rotateZ(${d.rz}deg)`;
       }
@@ -79,9 +87,9 @@ export function animateDice(seed, onImpact = () => {}, onFrame = () => {}) {
       nodes[i].shadow.style.opacity = String(Math.max(.15, 1 + d.y * .4));
     });
     for (let i = previous + 1; i <= index; i++) if (frames[i].impacts.length && elapsed - lastSound > 75) { onImpact('bounce'); lastSound = elapsed; }
-    previous = index;
-    if (elapsed < THROW_DURATION) frame = requestAnimationFrame(draw);
+    previous = index;previousGPU=renderedOnGPU;
+    if(landed)onRest();
   };
-  frame = requestAnimationFrame(draw);
-  return () => { cancelAnimationFrame(frame); nodes.forEach(n => { n.flight.style.transform = ''; n.cube.style.transform = ''; n.shadow.style.transform = ''; n.shadow.style.opacity = ''; }); };
+  const stopTrack=timeline.play(THROW_DURATION,draw);
+  return () => { stopTrack();if(!presentation)timeline.stop();clear(); };
 }

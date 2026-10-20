@@ -1,0 +1,72 @@
+{
+  "reviewedAt": "2026-10-19T04:33:36.657910+00:00",
+  "scope": "Static review before running input entrypoints; all tests inspected for imports and side-effect APIs, relevant local helper import/main guards examined. Not a comprehensive security audit of every line.",
+  "reviewedFiles": [
+    {
+      "path": "package.json",
+      "sha256": "a9ac3b003ba42aecec656e89027f8ced0601843191b8eaade9d5aff830eae5ab"
+    },
+    {
+      "path": "scripts/check.mjs",
+      "sha256": "0a0db38f3352b9f5bccdfb008f016970cb989aa401b44589119c0e4c49d1c306"
+    },
+    {
+      "path": "scripts/simulate.mjs",
+      "sha256": "3b0e2d6c5f8151714dd0d60596e6a2681fb79604592f3670f4bb93218bdf614f"
+    },
+    {
+      "path": "scripts/verify-test-cases.py",
+      "sha256": "99dc2a107b6ce8f8d648ce4bdad486d73b9196c71808fb59ada854a59bce0207"
+    },
+    {
+      "path": "scripts/smoke-http.mjs",
+      "sha256": "e884686e4df86723f51347c6b7290ed555a94a2f2dba9e4c39139d794c3f4ba1"
+    },
+    {
+      "path": "scripts/serve.mjs",
+      "sha256": "4595f951bac37d0ca8ed41ab5be7c047d2daa04b7e24d2c4ef4e57a3d6718642"
+    },
+    {
+      "path": "scripts/launch.mjs",
+      "sha256": "8ff362af353a15af06fd3dde86b16619918899dbbd4133554dd9bd96e6023572"
+    },
+    {
+      "path": "scripts/storage-recovery-harness.mjs",
+      "sha256": "809feeef6ca5407aa98675a3dbbb8c5e1390f56df62f44856ab8074d3233900b"
+    },
+    {
+      "path": "scripts/audit-effects-layout-round14.mjs",
+      "sha256": "d80cce3e644c0c9323eb41be2ada2e4524e046f12a4425999277ba68154c6b8b"
+    },
+    {
+      "path": "scripts/audit-event-context.mjs",
+      "sha256": "ef65ec3d6d977dc0d5295f65748b76854ebc93716fdd83d5ad1762123d6b1fe4"
+    },
+    {
+      "path": "scripts/audit-fixed-affix-truth.mjs",
+      "sha256": "eb8016f2af2e801b60e61a8b8ae028902e342f5de6ca78cf7923b477c62ec6f1"
+    },
+    {
+      "path": "scripts/qa-xp-round10-independent.mjs",
+      "sha256": "2edf5f75b3caed16630907da89f282242993ab32862ff31d002452f233f9b531"
+    }
+  ],
+  "moduleCounts": {
+    "testModules": 71,
+    "syntaxCheckedJsMjsModules": 141
+  },
+  "findings": [
+    "npm scripts have no install hooks, dependencies, or package mutations; no npm install required.",
+    "check only spawns current Node with --check for top-level src/scripts JavaScript.",
+    "simulate imports local game modules and performs in-memory states and serialized round trips; stdout is redirected to scratch.",
+    "verify-test-cases.py executes each existing test module in its own Node process; logs/summary use explicit scratch output.",
+    "Tests read local fixtures and sources; app integration uses in-memory Map storage and VM document stubs. There are no filesystem write operations in tests.",
+    "Imported helper CLI entrypoints are main-guarded; launcher import reads package version and does not launch a server or browser.",
+    "HTTP smoke starts one localhost server using a supplied dedicated port, verifies only shipping paths, writes to the explicit scratch path, kills its own child in finally.",
+    "Server binds 127.0.0.1 and serves only shipping allowlisted files. Default sandbox listen may fail with EPERM; an isolated localhost-only escalation is needed for actual HTTP verification."
+  ],
+  "baselineReadOnly": true,
+  "outputRoot": "/workspace/scratch/d0f98f221ae6/audit/baseline17",
+  "browserRun": false,
+  "externalNetworkRequired": false
+}

@@ -1,0 +1,21 @@
+{
+  "command": [
+    "env",
+    "PLAYWRIGHT_MODULE=/opt/codex/runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.mjs",
+    "CHROMIUM_PATH=/tmp/dice-r15-browser/chrome-headless-shell-linux64/chrome-headless-shell",
+    "node",
+    "scripts/qa-renderer-lifecycle.mjs",
+    "--url=http://127.0.0.1:4189/",
+    "--baseline-url=http://127.0.0.1:4188/",
+    "--output=/workspace/scratch/3b21be83b3da/qa23/current/browser/lifecycle"
+  ],
+  "cwd": "/workspace/scratch/3b21be83b3da/work/Dice-Abyss",
+  "startedUTC": "2026-10-19T16:03:21.653670+00:00",
+  "finishedUTC": "2026-10-19T16:04:32.277669+00:00",
+  "seconds": 70.6235,
+  "exitCode": 0,
+  "stdoutSha256": "0ab698d82d02b86830730cddca8f3b72ad2a01f68ea40077df2f50e754553051",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "tail": "baseline late-first-frame-combat: PASS 5943.3ms\ncurrent late-first-frame-combat: PASS 5765.6ms\nbaseline late-first-frame-loot: PASS 4681.1ms\ncurrent late-first-frame-loot: PASS 4707.9ms\nbaseline normal-full-combat: PASS 2917.5ms\ncurrent normal-full-combat: PASS 3017.6ms\ncurrent missing-raf-deadline: PASS 8132.1ms\ncurrent skip-before-first-frame: PASS 1247.4ms\ncurrent hidden-before-first-frame: PASS 125.5ms\ncurrent low-effects: PASS 1076.9ms\ncurrent reduced-motion: PASS 1402.1ms\n{\"cases\":11,\"passed\":11,\"baselineDefects\":0,\"failed\":0,\"runtimeErrors\":0}\n",
+  "stderrTail": ""
+}

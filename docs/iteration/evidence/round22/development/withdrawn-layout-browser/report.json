@@ -1,0 +1,915 @@
+{
+  "started": "2026-10-19T13:53:28.597Z",
+  "suite": "layout",
+  "expected": "current",
+  "url": "http://127.0.0.1:4222/",
+  "sourceBefore": {
+    "index.html": "f1001c485cb68386367b46b6bc40213c87a232da534dd80409d7a24f1fa34132",
+    "package.json": "fdc59fc4c5a28b0d6169253577bbbeab30341bc9830e16b362a3ba34c2ed2583",
+    "src/release.js": "7e33eda42706dfc8a32aef8975cc04c8be04ecf7cb75647eb7d4d3286d83ab72",
+    "src/app.js": "de8712715446bff65843d63167f0b2b5e3a9507fdbfde5d84a41475d926cd1be",
+    "src/views.js": "c13513cf87ea3a8c7366283c6adda61043acc028b5214aa73fea9270f8fddc7c",
+    "src/engine.js": "49ff3b5686c005c59cd51a4de71fc6397c3f84c91e12073bae888a295e043573",
+    "src/storage.js": "a66840968096723e10c27e2e0ca53402911caf771318b9f5a56bcdebbb753a47",
+    "src/inventory-dom.js": "fd202b44a427eb7ff2c5ea5ccaaff8014f5faa4b4f85c280ff1fa5078bfd641f",
+    "src/inventory-render.js": "f4ad0ef260fcfedc50796edc2d8cc956a364ffb7f5e1c109f82414e5a696d99a",
+    "src/deep-rules.js": "5e3a9b50d5b339a6290df58a5712aa1b1d1017b6a615c409dec86c5683b6dd74",
+    "src/deep-content.js": "d5d5479b263158841d9b4822a815520cc2f3dc2dde7de050a8bc9e31a94c0fde",
+    "src/encounter-tactics.js": "1502cc9371cb7506acb2542c2eb9f25690f9fe4e39513bc9151b747816e07cb9",
+    "src/deep.css": "d4b579f479f51e2bc15fddf02f1c5c7b443c233546e482a43bdfe00783b73621"
+  },
+  "scriptSha256": "19f2091f4dc0100c10379d2f011a3c52411932cbe83d82adf0a93f2f2ae00ddf",
+  "cases": [
+    {
+      "name": "layout-parity-1366x768",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "no horizontal page overflow",
+          "passed": true
+        },
+        {
+          "label": "tactic card has no clipped horizontal text",
+          "passed": true
+        },
+        {
+          "label": "variant badge stays in viewport",
+          "passed": true
+        },
+        {
+          "label": "variant badge is reachable by scrolling",
+          "passed": true
+        },
+        {
+          "label": "badge meets existing compact-text floor",
+          "passed": true
+        },
+        {
+          "label": "full rules remain keyboard operable",
+          "passed": true
+        },
+        {
+          "label": "manual roll control reachable and unobstructed",
+          "passed": true
+        },
+        {
+          "label": "layout and rules never modify save",
+          "passed": true,
+          "actualSha256": "8756af40579f51d48804b907f3d14a1bd17ee42423296058ffeb4cc083a45bf1",
+          "expectedSha256": "8756af40579f51d48804b907f3d14a1bd17ee42423296058ffeb4cc083a45bf1"
+        },
+        {
+          "label": "layout and rules never modify save mirror",
+          "passed": true,
+          "actualSha256": "94dc66258b1ae16245563c378e7d08d568d9767be45ff2b447bdc5738ec6a475",
+          "expectedSha256": "94dc66258b1ae16245563c378e7d08d568d9767be45ff2b447bdc5738ec6a475"
+        }
+      ],
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "measurements": {
+        "viewport": [
+          1366,
+          768
+        ],
+        "pageOverflow": false,
+        "rect": {
+          "left": 356.203125,
+          "right": 883.4375,
+          "top": 173.4375,
+          "bottom": 220.28125
+        },
+        "badge": {
+          "left": 417.75,
+          "right": 473.28125,
+          "top": 177.953125,
+          "bottom": 196.84375,
+          "fontSize": "11px"
+        },
+        "overflow": false
+      },
+      "screenshots": [
+        "layout-parity-1366.jpg"
+      ]
+    },
+    {
+      "name": "layout-sequence-1366x768",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "no horizontal page overflow",
+          "passed": true
+        },
+        {
+          "label": "tactic card has no clipped horizontal text",
+          "passed": true
+        },
+        {
+          "label": "variant badge stays in viewport",
+          "passed": true
+        },
+        {
+          "label": "variant badge is reachable by scrolling",
+          "passed": true
+        },
+        {
+          "label": "badge meets existing compact-text floor",
+          "passed": true
+        },
+        {
+          "label": "full rules remain keyboard operable",
+          "passed": true
+        },
+        {
+          "label": "manual roll control reachable and unobstructed",
+          "passed": true
+        },
+        {
+          "label": "layout and rules never modify save",
+          "passed": true,
+          "actualSha256": "9edb7e3c15157f1e2bc60b8c70b76345178d036900ed26835be53b095b5230b4",
+          "expectedSha256": "9edb7e3c15157f1e2bc60b8c70b76345178d036900ed26835be53b095b5230b4"
+        },
+        {
+          "label": "layout and rules never modify save mirror",
+          "passed": true,
+          "actualSha256": "01c2a9b3ba5c1ed74918c59ee47379ce45465fc90004b34623b5dd69d80920e5",
+          "expectedSha256": "01c2a9b3ba5c1ed74918c59ee47379ce45465fc90004b34623b5dd69d80920e5"
+        }
+      ],
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "measurements": {
+        "viewport": [
+          1366,
+          768
+        ],
+        "pageOverflow": false,
+        "rect": {
+          "left": 356.203125,
+          "right": 883.4375,
+          "top": 173.4375,
+          "bottom": 239.578125
+        },
+        "badge": {
+          "left": 417.75,
+          "right": 473.28125,
+          "top": 177.953125,
+          "bottom": 196.84375,
+          "fontSize": "11px"
+        },
+        "overflow": false
+      },
+      "screenshots": [
+        "layout-sequence-1366.jpg"
+      ]
+    },
+    {
+      "name": "layout-parity-1920x1080",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "no horizontal page overflow",
+          "passed": true
+        },
+        {
+          "label": "tactic card has no clipped horizontal text",
+          "passed": true
+        },
+        {
+          "label": "variant badge stays in viewport",
+          "passed": true
+        },
+        {
+          "label": "variant badge is reachable by scrolling",
+          "passed": true
+        },
+        {
+          "label": "badge meets existing compact-text floor",
+          "passed": true
+        },
+        {
+          "label": "full rules remain keyboard operable",
+          "passed": true
+        },
+        {
+          "label": "manual roll control reachable and unobstructed",
+          "passed": true
+        },
+        {
+          "label": "layout and rules never modify save",
+          "passed": true,
+          "actualSha256": "8756af40579f51d48804b907f3d14a1bd17ee42423296058ffeb4cc083a45bf1",
+          "expectedSha256": "8756af40579f51d48804b907f3d14a1bd17ee42423296058ffeb4cc083a45bf1"
+        },
+        {
+          "label": "layout and rules never modify save mirror",
+          "passed": true,
+          "actualSha256": "94dc66258b1ae16245563c378e7d08d568d9767be45ff2b447bdc5738ec6a475",
+          "expectedSha256": "94dc66258b1ae16245563c378e7d08d568d9767be45ff2b447bdc5738ec6a475"
+        }
+      ],
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "measurements": {
+        "viewport": [
+          1920,
+          1080
+        ],
+        "pageOverflow": false,
+        "rect": {
+          "left": 500.265625,
+          "right": 1242.15625,
+          "top": 243.4375,
+          "bottom": 300.96875
+        },
+        "badge": {
+          "left": 572.671875,
+          "right": 632.078125,
+          "top": 250.609375,
+          "bottom": 270.78125,
+          "fontSize": "11.4816px"
+        },
+        "overflow": false
+      }
+    },
+    {
+      "name": "layout-sequence-1920x1080",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "no horizontal page overflow",
+          "passed": true
+        },
+        {
+          "label": "tactic card has no clipped horizontal text",
+          "passed": true
+        },
+        {
+          "label": "variant badge stays in viewport",
+          "passed": true
+        },
+        {
+          "label": "variant badge is reachable by scrolling",
+          "passed": true
+        },
+        {
+          "label": "badge meets existing compact-text floor",
+          "passed": true
+        },
+        {
+          "label": "full rules remain keyboard operable",
+          "passed": true
+        },
+        {
+          "label": "manual roll control reachable and unobstructed",
+          "passed": true
+        },
+        {
+          "label": "layout and rules never modify save",
+          "passed": true,
+          "actualSha256": "9edb7e3c15157f1e2bc60b8c70b76345178d036900ed26835be53b095b5230b4",
+          "expectedSha256": "9edb7e3c15157f1e2bc60b8c70b76345178d036900ed26835be53b095b5230b4"
+        },
+        {
+          "label": "layout and rules never modify save mirror",
+          "passed": true,
+          "actualSha256": "01c2a9b3ba5c1ed74918c59ee47379ce45465fc90004b34623b5dd69d80920e5",
+          "expectedSha256": "01c2a9b3ba5c1ed74918c59ee47379ce45465fc90004b34623b5dd69d80920e5"
+        }
+      ],
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "measurements": {
+        "viewport": [
+          1920,
+          1080
+        ],
+        "pageOverflow": false,
+        "rect": {
+          "left": 500.265625,
+          "right": 1242.15625,
+          "top": 243.4375,
+          "bottom": 324.515625
+        },
+        "badge": {
+          "left": 572.671875,
+          "right": 632.078125,
+          "top": 250.609375,
+          "bottom": 270.78125,
+          "fontSize": "11.4816px"
+        },
+        "overflow": false
+      }
+    },
+    {
+      "name": "layout-parity-2560x1440",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "no horizontal page overflow",
+          "passed": true
+        },
+        {
+          "label": "tactic card has no clipped horizontal text",
+          "passed": true
+        },
+        {
+          "label": "variant badge stays in viewport",
+          "passed": true
+        },
+        {
+          "label": "variant badge is reachable by scrolling",
+          "passed": true
+        },
+        {
+          "label": "badge meets existing compact-text floor",
+          "passed": true
+        },
+        {
+          "label": "full rules remain keyboard operable",
+          "passed": true
+        },
+        {
+          "label": "manual roll control reachable and unobstructed",
+          "passed": true
+        },
+        {
+          "label": "layout and rules never modify save",
+          "passed": true,
+          "actualSha256": "8756af40579f51d48804b907f3d14a1bd17ee42423296058ffeb4cc083a45bf1",
+          "expectedSha256": "8756af40579f51d48804b907f3d14a1bd17ee42423296058ffeb4cc083a45bf1"
+        },
+        {
+          "label": "layout and rules never modify save mirror",
+          "passed": true,
+          "actualSha256": "94dc66258b1ae16245563c378e7d08d568d9767be45ff2b447bdc5738ec6a475",
+          "expectedSha256": "94dc66258b1ae16245563c378e7d08d568d9767be45ff2b447bdc5738ec6a475"
+        }
+      ],
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "measurements": {
+        "viewport": [
+          2560,
+          1440
+        ],
+        "pageOverflow": false,
+        "rect": {
+          "left": 666.703125,
+          "right": 1656.515625,
+          "top": 324.28125,
+          "bottom": 400.28125
+        },
+        "badge": {
+          "left": 765.609375,
+          "right": 845.484375,
+          "top": 334.109375,
+          "bottom": 360.359375,
+          "fontSize": "15.3088px"
+        },
+        "overflow": false
+      }
+    },
+    {
+      "name": "layout-sequence-2560x1440",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "no horizontal page overflow",
+          "passed": true
+        },
+        {
+          "label": "tactic card has no clipped horizontal text",
+          "passed": true
+        },
+        {
+          "label": "variant badge stays in viewport",
+          "passed": true
+        },
+        {
+          "label": "variant badge is reachable by scrolling",
+          "passed": true
+        },
+        {
+          "label": "badge meets existing compact-text floor",
+          "passed": true
+        },
+        {
+          "label": "full rules remain keyboard operable",
+          "passed": true
+        },
+        {
+          "label": "manual roll control reachable and unobstructed",
+          "passed": true
+        },
+        {
+          "label": "layout and rules never modify save",
+          "passed": true,
+          "actualSha256": "9edb7e3c15157f1e2bc60b8c70b76345178d036900ed26835be53b095b5230b4",
+          "expectedSha256": "9edb7e3c15157f1e2bc60b8c70b76345178d036900ed26835be53b095b5230b4"
+        },
+        {
+          "label": "layout and rules never modify save mirror",
+          "passed": true,
+          "actualSha256": "01c2a9b3ba5c1ed74918c59ee47379ce45465fc90004b34623b5dd69d80920e5",
+          "expectedSha256": "01c2a9b3ba5c1ed74918c59ee47379ce45465fc90004b34623b5dd69d80920e5"
+        }
+      ],
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "measurements": {
+        "viewport": [
+          2560,
+          1440
+        ],
+        "pageOverflow": false,
+        "rect": {
+          "left": 666.703125,
+          "right": 1656.515625,
+          "top": 324.28125,
+          "bottom": 431.6875
+        },
+        "badge": {
+          "left": 765.609375,
+          "right": 845.484375,
+          "top": 334.109375,
+          "bottom": 360.359375,
+          "fontSize": "15.3088px"
+        },
+        "overflow": false
+      }
+    },
+    {
+      "name": "layout-parity-3840x2160",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "no horizontal page overflow",
+          "passed": true
+        },
+        {
+          "label": "tactic card has no clipped horizontal text",
+          "passed": true
+        },
+        {
+          "label": "variant badge stays in viewport",
+          "passed": true
+        },
+        {
+          "label": "variant badge is reachable by scrolling",
+          "passed": true
+        },
+        {
+          "label": "badge meets existing compact-text floor",
+          "passed": true
+        },
+        {
+          "label": "full rules remain keyboard operable",
+          "passed": true
+        },
+        {
+          "label": "manual roll control reachable and unobstructed",
+          "passed": true
+        },
+        {
+          "label": "layout and rules never modify save",
+          "passed": true,
+          "actualSha256": "8756af40579f51d48804b907f3d14a1bd17ee42423296058ffeb4cc083a45bf1",
+          "expectedSha256": "8756af40579f51d48804b907f3d14a1bd17ee42423296058ffeb4cc083a45bf1"
+        },
+        {
+          "label": "layout and rules never modify save mirror",
+          "passed": true,
+          "actualSha256": "94dc66258b1ae16245563c378e7d08d568d9767be45ff2b447bdc5738ec6a475",
+          "expectedSha256": "94dc66258b1ae16245563c378e7d08d568d9767be45ff2b447bdc5738ec6a475"
+        }
+      ],
+      "viewport": {
+        "width": 3840,
+        "height": 2160
+      },
+      "measurements": {
+        "viewport": [
+          3840,
+          2160
+        ],
+        "pageOverflow": false,
+        "rect": {
+          "left": 999.5625,
+          "right": 2485.265625,
+          "top": 485.96875,
+          "bottom": 598
+        },
+        "badge": {
+          "left": 1147.40625,
+          "right": 1268.25,
+          "top": 500.21875,
+          "bottom": 538.59375,
+          "fontSize": "22.9632px"
+        },
+        "overflow": false
+      }
+    },
+    {
+      "name": "layout-sequence-3840x2160",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "no horizontal page overflow",
+          "passed": true
+        },
+        {
+          "label": "tactic card has no clipped horizontal text",
+          "passed": true
+        },
+        {
+          "label": "variant badge stays in viewport",
+          "passed": true
+        },
+        {
+          "label": "variant badge is reachable by scrolling",
+          "passed": true
+        },
+        {
+          "label": "badge meets existing compact-text floor",
+          "passed": true
+        },
+        {
+          "label": "full rules remain keyboard operable",
+          "passed": true
+        },
+        {
+          "label": "manual roll control reachable and unobstructed",
+          "passed": true
+        },
+        {
+          "label": "layout and rules never modify save",
+          "passed": true,
+          "actualSha256": "9edb7e3c15157f1e2bc60b8c70b76345178d036900ed26835be53b095b5230b4",
+          "expectedSha256": "9edb7e3c15157f1e2bc60b8c70b76345178d036900ed26835be53b095b5230b4"
+        },
+        {
+          "label": "layout and rules never modify save mirror",
+          "passed": true,
+          "actualSha256": "01c2a9b3ba5c1ed74918c59ee47379ce45465fc90004b34623b5dd69d80920e5",
+          "expectedSha256": "01c2a9b3ba5c1ed74918c59ee47379ce45465fc90004b34623b5dd69d80920e5"
+        }
+      ],
+      "viewport": {
+        "width": 3840,
+        "height": 2160
+      },
+      "measurements": {
+        "viewport": [
+          3840,
+          2160
+        ],
+        "pageOverflow": false,
+        "rect": {
+          "left": 999.5625,
+          "right": 2485.265625,
+          "top": 485.96875,
+          "bottom": 645.109375
+        },
+        "badge": {
+          "left": 1147.40625,
+          "right": 1268.25,
+          "top": 500.21875,
+          "bottom": 538.59375,
+          "fontSize": "22.9632px"
+        },
+        "overflow": false
+      }
+    },
+    {
+      "name": "layout-parity-1100x700",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "no horizontal page overflow",
+          "passed": true
+        },
+        {
+          "label": "tactic card has no clipped horizontal text",
+          "passed": true
+        },
+        {
+          "label": "variant badge stays in viewport",
+          "passed": true
+        },
+        {
+          "label": "variant badge is reachable by scrolling",
+          "passed": true
+        },
+        {
+          "label": "badge meets existing compact-text floor",
+          "passed": true
+        },
+        {
+          "label": "full rules remain keyboard operable",
+          "passed": true
+        },
+        {
+          "label": "manual roll control reachable and unobstructed",
+          "passed": true
+        },
+        {
+          "label": "layout and rules never modify save",
+          "passed": true,
+          "actualSha256": "8756af40579f51d48804b907f3d14a1bd17ee42423296058ffeb4cc083a45bf1",
+          "expectedSha256": "8756af40579f51d48804b907f3d14a1bd17ee42423296058ffeb4cc083a45bf1"
+        },
+        {
+          "label": "layout and rules never modify save mirror",
+          "passed": true,
+          "actualSha256": "94dc66258b1ae16245563c378e7d08d568d9767be45ff2b447bdc5738ec6a475",
+          "expectedSha256": "94dc66258b1ae16245563c378e7d08d568d9767be45ff2b447bdc5738ec6a475"
+        }
+      ],
+      "viewport": {
+        "width": 1100,
+        "height": 700
+      },
+      "measurements": {
+        "viewport": [
+          1100,
+          700
+        ],
+        "pageOverflow": false,
+        "rect": {
+          "left": 288.84375,
+          "right": 698.671875,
+          "top": 153.734375,
+          "bottom": 199.359375
+        },
+        "badge": {
+          "left": 348.953125,
+          "right": 403.390625,
+          "top": 157.84375,
+          "bottom": 176.546875,
+          "fontSize": "11px"
+        },
+        "overflow": false
+      }
+    },
+    {
+      "name": "layout-sequence-1100x700",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "no horizontal page overflow",
+          "passed": true
+        },
+        {
+          "label": "tactic card has no clipped horizontal text",
+          "passed": true
+        },
+        {
+          "label": "variant badge stays in viewport",
+          "passed": true
+        },
+        {
+          "label": "variant badge is reachable by scrolling",
+          "passed": true
+        },
+        {
+          "label": "badge meets existing compact-text floor",
+          "passed": true
+        },
+        {
+          "label": "full rules remain keyboard operable",
+          "passed": true
+        },
+        {
+          "label": "manual roll control reachable and unobstructed",
+          "passed": true
+        },
+        {
+          "label": "layout and rules never modify save",
+          "passed": true,
+          "actualSha256": "9edb7e3c15157f1e2bc60b8c70b76345178d036900ed26835be53b095b5230b4",
+          "expectedSha256": "9edb7e3c15157f1e2bc60b8c70b76345178d036900ed26835be53b095b5230b4"
+        },
+        {
+          "label": "layout and rules never modify save mirror",
+          "passed": true,
+          "actualSha256": "01c2a9b3ba5c1ed74918c59ee47379ce45465fc90004b34623b5dd69d80920e5",
+          "expectedSha256": "01c2a9b3ba5c1ed74918c59ee47379ce45465fc90004b34623b5dd69d80920e5"
+        }
+      ],
+      "viewport": {
+        "width": 1100,
+        "height": 700
+      },
+      "measurements": {
+        "viewport": [
+          1100,
+          700
+        ],
+        "pageOverflow": false,
+        "rect": {
+          "left": 288.84375,
+          "right": 698.671875,
+          "top": 153.734375,
+          "bottom": 218.40625
+        },
+        "badge": {
+          "left": 348.953125,
+          "right": 403.390625,
+          "top": 157.84375,
+          "bottom": 176.546875,
+          "fontSize": "11px"
+        },
+        "overflow": false
+      }
+    },
+    {
+      "name": "layout-parity-390x844",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "no horizontal page overflow",
+          "passed": true
+        },
+        {
+          "label": "tactic card has no clipped horizontal text",
+          "passed": true
+        },
+        {
+          "label": "variant badge stays in viewport",
+          "passed": true
+        },
+        {
+          "label": "variant badge is reachable by scrolling",
+          "passed": true
+        },
+        {
+          "label": "badge meets existing compact-text floor",
+          "passed": true
+        },
+        {
+          "label": "full rules remain keyboard operable",
+          "passed": true
+        },
+        {
+          "label": "manual roll control reachable and unobstructed",
+          "passed": true
+        },
+        {
+          "label": "layout and rules never modify save",
+          "passed": true,
+          "actualSha256": "8756af40579f51d48804b907f3d14a1bd17ee42423296058ffeb4cc083a45bf1",
+          "expectedSha256": "8756af40579f51d48804b907f3d14a1bd17ee42423296058ffeb4cc083a45bf1"
+        },
+        {
+          "label": "layout and rules never modify save mirror",
+          "passed": true,
+          "actualSha256": "94dc66258b1ae16245563c378e7d08d568d9767be45ff2b447bdc5738ec6a475",
+          "expectedSha256": "94dc66258b1ae16245563c378e7d08d568d9767be45ff2b447bdc5738ec6a475"
+        }
+      ],
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "measurements": {
+        "viewport": [
+          390,
+          844
+        ],
+        "pageOverflow": false,
+        "rect": {
+          "left": 25,
+          "right": 365,
+          "top": 326.609375,
+          "bottom": 377.984375
+        },
+        "badge": {
+          "left": 89.375,
+          "right": 146,
+          "top": 332.5,
+          "bottom": 351.546875,
+          "fontSize": "11px"
+        },
+        "overflow": false
+      },
+      "screenshots": [
+        "layout-parity-390.jpg"
+      ]
+    },
+    {
+      "name": "layout-sequence-390x844",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "no horizontal page overflow",
+          "passed": true
+        },
+        {
+          "label": "tactic card has no clipped horizontal text",
+          "passed": true
+        },
+        {
+          "label": "variant badge stays in viewport",
+          "passed": true
+        },
+        {
+          "label": "variant badge is reachable by scrolling",
+          "passed": true
+        },
+        {
+          "label": "badge meets existing compact-text floor",
+          "passed": true
+        },
+        {
+          "label": "full rules remain keyboard operable",
+          "passed": true
+        },
+        {
+          "label": "manual roll control reachable and unobstructed",
+          "passed": true
+        },
+        {
+          "label": "layout and rules never modify save",
+          "passed": true,
+          "actualSha256": "9edb7e3c15157f1e2bc60b8c70b76345178d036900ed26835be53b095b5230b4",
+          "expectedSha256": "9edb7e3c15157f1e2bc60b8c70b76345178d036900ed26835be53b095b5230b4"
+        },
+        {
+          "label": "layout and rules never modify save mirror",
+          "passed": true,
+          "actualSha256": "01c2a9b3ba5c1ed74918c59ee47379ce45465fc90004b34623b5dd69d80920e5",
+          "expectedSha256": "01c2a9b3ba5c1ed74918c59ee47379ce45465fc90004b34623b5dd69d80920e5"
+        }
+      ],
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "measurements": {
+        "viewport": [
+          390,
+          844
+        ],
+        "pageOverflow": false,
+        "rect": {
+          "left": 25,
+          "right": 365,
+          "top": 326.609375,
+          "bottom": 398.9375
+        },
+        "badge": {
+          "left": 89.375,
+          "right": 146,
+          "top": 332.5,
+          "bottom": 351.546875,
+          "fontSize": "11px"
+        },
+        "overflow": false
+      },
+      "screenshots": [
+        "layout-sequence-390.jpg"
+      ]
+    }
+  ],
+  "errors": [],
+  "notes": [
+    "All contexts and saves are disposable. Fixture preparation uses the real validator and codec. No private save or external server is touched.",
+    "Inputs use native pointer/keyboard/select controls and real localStorage/Web Locks. Only initial test fixtures are installed programmatically.",
+    "Synthetic fixtures are not natural gameplay evidence. Full save equality compares every field, including RNG, revision, unknown fields and pending rewards.",
+    "Functional checks use low effects and reduced motion. Separate performance scripts record their own protocols; none certify physical Windows or hardware GPU performance."
+  ],
+  "browser": "155.0.8059.84",
+  "finished": "2026-10-19T13:53:54.564Z",
+  "sourceAfter": {
+    "index.html": "f1001c485cb68386367b46b6bc40213c87a232da534dd80409d7a24f1fa34132",
+    "package.json": "fdc59fc4c5a28b0d6169253577bbbeab30341bc9830e16b362a3ba34c2ed2583",
+    "src/release.js": "7e33eda42706dfc8a32aef8975cc04c8be04ecf7cb75647eb7d4d3286d83ab72",
+    "src/app.js": "de8712715446bff65843d63167f0b2b5e3a9507fdbfde5d84a41475d926cd1be",
+    "src/views.js": "c13513cf87ea3a8c7366283c6adda61043acc028b5214aa73fea9270f8fddc7c",
+    "src/engine.js": "49ff3b5686c005c59cd51a4de71fc6397c3f84c91e12073bae888a295e043573",
+    "src/storage.js": "a66840968096723e10c27e2e0ca53402911caf771318b9f5a56bcdebbb753a47",
+    "src/inventory-dom.js": "fd202b44a427eb7ff2c5ea5ccaaff8014f5faa4b4f85c280ff1fa5078bfd641f",
+    "src/inventory-render.js": "f4ad0ef260fcfedc50796edc2d8cc956a364ffb7f5e1c109f82414e5a696d99a",
+    "src/deep-rules.js": "5e3a9b50d5b339a6290df58a5712aa1b1d1017b6a615c409dec86c5683b6dd74",
+    "src/deep-content.js": "d5d5479b263158841d9b4822a815520cc2f3dc2dde7de050a8bc9e31a94c0fde",
+    "src/encounter-tactics.js": "1502cc9371cb7506acb2542c2eb9f25690f9fe4e39513bc9151b747816e07cb9",
+    "src/deep.css": "d4b579f479f51e2bc15fddf02f1c5c7b443c233546e482a43bdfe00783b73621"
+  },
+  "sourceUnchanged": true,
+  "checks": 108,
+  "failed": 0
+}

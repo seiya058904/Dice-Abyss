@@ -1,0 +1,35 @@
+{
+  "step": "native-tests",
+  "command": [
+    "python3",
+    "scripts/verify-test-cases.py",
+    "--root",
+    "/workspace/scratch/85c02edcd5e2/work/Dice-Abyss",
+    "--output",
+    "/workspace/scratch/85c02edcd5e2/qa/current/native",
+    "--workers",
+    "4"
+  ],
+  "cwd": "/workspace/scratch/85c02edcd5e2/work/Dice-Abyss",
+  "started": "2026-10-19T12:56:52.961099+00:00",
+  "finished": "2026-10-19T12:58:39.577607+00:00",
+  "durationSeconds": 106.6165,
+  "exitCode": 0,
+  "stdoutBytes": 843,
+  "stdoutSha256": "94f403bda1655daca2d4ff45e2d0182553d96090ec5223340308fa5c16aa235e",
+  "stderrBytes": 0,
+  "frozenScopeSha256": "92c37eba88ea68dabcb845e9c82c7ea8c1f84e5116e0262a1400898e2cc501fe",
+  "executionMode": "sequential correctness commands; parent browser correctness may overlap",
+  "timingInterpretation": "Correctness wall time on a shared host; never a game performance A/B result.",
+  "counts": {
+    "tests": 811,
+    "suites": 0,
+    "pass": 811,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0
+  },
+  "modules": 86,
+  "nativeDurationSeconds": 106.5522
+}

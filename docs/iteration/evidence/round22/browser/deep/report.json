@@ -1,0 +1,1067 @@
+{
+  "started": "2026-10-19T14:15:06.183Z",
+  "suite": "deep",
+  "expected": "current",
+  "url": "http://127.0.0.1:4222/",
+  "sourceBefore": {
+    "index.html": "f1001c485cb68386367b46b6bc40213c87a232da534dd80409d7a24f1fa34132",
+    "package.json": "fdc59fc4c5a28b0d6169253577bbbeab30341bc9830e16b362a3ba34c2ed2583",
+    "src/release.js": "7e33eda42706dfc8a32aef8975cc04c8be04ecf7cb75647eb7d4d3286d83ab72",
+    "src/app.js": "de8712715446bff65843d63167f0b2b5e3a9507fdbfde5d84a41475d926cd1be",
+    "src/views.js": "1b278428479f9a9daee7973ede38b84b16113cf83cf665a6e9d2cbdec5d6fb22",
+    "src/engine.js": "340fa90ef963abfc874fa4932af80264a87a569f1d51030d9e9b29b3dbc2192e",
+    "src/storage.js": "2b505d6dab2c5f018eff3f1bd5d6d927a885a175f812bd620ae898b3fead7f05",
+    "src/inventory-dom.js": "fd202b44a427eb7ff2c5ea5ccaaff8014f5faa4b4f85c280ff1fa5078bfd641f",
+    "src/inventory-render.js": "f4ad0ef260fcfedc50796edc2d8cc956a364ffb7f5e1c109f82414e5a696d99a",
+    "src/deep-rules.js": "5e3a9b50d5b339a6290df58a5712aa1b1d1017b6a615c409dec86c5683b6dd74",
+    "src/deep-content.js": "a68b20c8af5740f3939965b10e624fa1f684e8050dd4f2426862c26bf1fe3840",
+    "src/encounter-tactics.js": "749ef952fcec8932d8ce51c75544d40b572ed9c3941f94df98c4ae2d74e25f82",
+    "src/deep.css": "d4b579f479f51e2bc15fddf02f1c5c7b443c233546e482a43bdfe00783b73621"
+  },
+  "scriptSha256": "65ceb1914feb3dd75f0b85c7b8e902430f4f7a4ead964aea7dfa77b717f39b7a",
+  "cases": [
+    {
+      "name": "parity-miss-manual-roll-refresh",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "new enemy contains committed known combat-rules version",
+          "passed": true
+        },
+        {
+          "label": "variant title visibly identifies new rules",
+          "passed": true,
+          "actualSha256": "475b55534475b37f56d85d9aae920f47c465158df17e7d53894b30d8c9fcba40",
+          "expectedSha256": "475b55534475b37f56d85d9aae920f47c465158df17e7d53894b30d8c9fcba40"
+        },
+        {
+          "label": "current guide states actual alternate trigger",
+          "passed": true
+        },
+        {
+          "label": "keyboard opens full rules",
+          "passed": true
+        },
+        {
+          "label": "saved label appears in complete rules",
+          "passed": true
+        },
+        {
+          "label": "manual roll 1 complete state",
+          "passed": true,
+          "actualSha256": "43464d0c681d162cc149a9e934873f436816fb0a1835c633d52f1b58c01592b7",
+          "expectedSha256": "43464d0c681d162cc149a9e934873f436816fb0a1835c633d52f1b58c01592b7"
+        },
+        {
+          "label": "manual roll 1 complete state mirror",
+          "passed": true,
+          "actualSha256": "cb8219099164430f0c297853c47b2bb0e2e1d9ad63f86dfbb8cc135f9944504c",
+          "expectedSha256": "cb8219099164430f0c297853c47b2bb0e2e1d9ad63f86dfbb8cc135f9944504c"
+        },
+        {
+          "label": "guide advances only after committed roll",
+          "passed": true,
+          "actualSha256": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35",
+          "expectedSha256": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35"
+        },
+        {
+          "label": "manual roll 2 complete state",
+          "passed": true,
+          "actualSha256": "ec4f9e3685fdf6293ec74fa8800abe1e804ad1e2a86cff8fbd59e65bf69cc857",
+          "expectedSha256": "ec4f9e3685fdf6293ec74fa8800abe1e804ad1e2a86cff8fbd59e65bf69cc857"
+        },
+        {
+          "label": "manual roll 2 complete state mirror",
+          "passed": true,
+          "actualSha256": "4acafc5784502ebc216fdf6b26ddbaa2ec1aabd5acf96c2767085b9f7a31dc87",
+          "expectedSha256": "4acafc5784502ebc216fdf6b26ddbaa2ec1aabd5acf96c2767085b9f7a31dc87"
+        },
+        {
+          "label": "guide advances only after committed roll",
+          "passed": true,
+          "actualSha256": "4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce",
+          "expectedSha256": "4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce"
+        },
+        {
+          "label": "manual roll 3 complete state",
+          "passed": true,
+          "actualSha256": "051cb59bca0855de854e38f776def7135e4345f7c5322fe90f19a3ec368d995a",
+          "expectedSha256": "051cb59bca0855de854e38f776def7135e4345f7c5322fe90f19a3ec368d995a"
+        },
+        {
+          "label": "manual roll 3 complete state mirror",
+          "passed": true,
+          "actualSha256": "8e0839733d97ca3acaf59b4f457137c8050ded17f9f256997d553a07c61e956e",
+          "expectedSha256": "8e0839733d97ca3acaf59b4f457137c8050ded17f9f256997d553a07c61e956e"
+        },
+        {
+          "label": "guide advances only after committed roll",
+          "passed": true,
+          "actualSha256": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a",
+          "expectedSha256": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a"
+        },
+        {
+          "label": "refresh preserves new pending fight",
+          "passed": true,
+          "actualSha256": "051cb59bca0855de854e38f776def7135e4345f7c5322fe90f19a3ec368d995a",
+          "expectedSha256": "051cb59bca0855de854e38f776def7135e4345f7c5322fe90f19a3ec368d995a"
+        },
+        {
+          "label": "refresh preserves new pending fight mirror",
+          "passed": true,
+          "actualSha256": "8e0839733d97ca3acaf59b4f457137c8050ded17f9f256997d553a07c61e956e",
+          "expectedSha256": "8e0839733d97ca3acaf59b4f457137c8050ded17f9f256997d553a07c61e956e"
+        },
+        {
+          "label": "refresh never rewrites envelope",
+          "passed": true,
+          "actualSha256": "8e0839733d97ca3acaf59b4f457137c8050ded17f9f256997d553a07c61e956e",
+          "expectedSha256": "8e0839733d97ca3acaf59b4f457137c8050ded17f9f256997d553a07c61e956e"
+        },
+        {
+          "label": "refresh keeps variant label",
+          "passed": true,
+          "actualSha256": "475b55534475b37f56d85d9aae920f47c465158df17e7d53894b30d8c9fcba40",
+          "expectedSha256": "475b55534475b37f56d85d9aae920f47c465158df17e7d53894b30d8c9fcba40"
+        }
+      ],
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "initialGuide": "当前一掷\n偶点先行\n第 1 掷 · 3 骰\n3 骰中至少 2 颗偶点（2 / 4 / 6）\n本击伤害 +35%",
+      "fixture": {
+        "seed": "round22-combat-parity-22104",
+        "source": "generated encounter, synthetic floor/level/HP/attack declared in script"
+      },
+      "firstRoll": {
+        "values": [
+          1,
+          3,
+          3
+        ],
+        "mechanics": [],
+        "shield": 0,
+        "total": 92
+      }
+    },
+    {
+      "name": "parity-hit-manual-roll-refresh",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "new enemy contains committed known combat-rules version",
+          "passed": true
+        },
+        {
+          "label": "variant title visibly identifies new rules",
+          "passed": true,
+          "actualSha256": "475b55534475b37f56d85d9aae920f47c465158df17e7d53894b30d8c9fcba40",
+          "expectedSha256": "475b55534475b37f56d85d9aae920f47c465158df17e7d53894b30d8c9fcba40"
+        },
+        {
+          "label": "current guide states actual alternate trigger",
+          "passed": true
+        },
+        {
+          "label": "keyboard opens full rules",
+          "passed": true
+        },
+        {
+          "label": "saved label appears in complete rules",
+          "passed": true
+        },
+        {
+          "label": "manual roll 1 complete state",
+          "passed": true,
+          "actualSha256": "dbeb7a9b06610bf2117316ebf38a7016cb2d6307c0728158eca931840e43d30b",
+          "expectedSha256": "dbeb7a9b06610bf2117316ebf38a7016cb2d6307c0728158eca931840e43d30b"
+        },
+        {
+          "label": "manual roll 1 complete state mirror",
+          "passed": true,
+          "actualSha256": "6fbec2da445d5ee814c7a0b533288e29141b803fd5b2c9fcbc80729e48a76278",
+          "expectedSha256": "6fbec2da445d5ee814c7a0b533288e29141b803fd5b2c9fcbc80729e48a76278"
+        },
+        {
+          "label": "guide advances only after committed roll",
+          "passed": true,
+          "actualSha256": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35",
+          "expectedSha256": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35"
+        },
+        {
+          "label": "manual roll 2 complete state",
+          "passed": true,
+          "actualSha256": "ce09ebdf649fa3376b8d235ee9f384bc77c762accda1699d6e0d206c223569be",
+          "expectedSha256": "ce09ebdf649fa3376b8d235ee9f384bc77c762accda1699d6e0d206c223569be"
+        },
+        {
+          "label": "manual roll 2 complete state mirror",
+          "passed": true,
+          "actualSha256": "9197136624056b0a94b1ecae2dbea59e045d6ede354d67df6e4ca372151245fe",
+          "expectedSha256": "9197136624056b0a94b1ecae2dbea59e045d6ede354d67df6e4ca372151245fe"
+        },
+        {
+          "label": "guide advances only after committed roll",
+          "passed": true,
+          "actualSha256": "4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce",
+          "expectedSha256": "4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce"
+        },
+        {
+          "label": "manual roll 3 complete state",
+          "passed": true,
+          "actualSha256": "6239c42d8142037031e54bc7c930fb74b3c34b0e5c8042175bfca553e76564e8",
+          "expectedSha256": "6239c42d8142037031e54bc7c930fb74b3c34b0e5c8042175bfca553e76564e8"
+        },
+        {
+          "label": "manual roll 3 complete state mirror",
+          "passed": true,
+          "actualSha256": "eee784b660c6fa0870a38728c7ab2209833d761c10dd3ae243f2df75867a072e",
+          "expectedSha256": "eee784b660c6fa0870a38728c7ab2209833d761c10dd3ae243f2df75867a072e"
+        },
+        {
+          "label": "guide advances only after committed roll",
+          "passed": true,
+          "actualSha256": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a",
+          "expectedSha256": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a"
+        },
+        {
+          "label": "refresh preserves new pending fight",
+          "passed": true,
+          "actualSha256": "6239c42d8142037031e54bc7c930fb74b3c34b0e5c8042175bfca553e76564e8",
+          "expectedSha256": "6239c42d8142037031e54bc7c930fb74b3c34b0e5c8042175bfca553e76564e8"
+        },
+        {
+          "label": "refresh preserves new pending fight mirror",
+          "passed": true,
+          "actualSha256": "eee784b660c6fa0870a38728c7ab2209833d761c10dd3ae243f2df75867a072e",
+          "expectedSha256": "eee784b660c6fa0870a38728c7ab2209833d761c10dd3ae243f2df75867a072e"
+        },
+        {
+          "label": "refresh never rewrites envelope",
+          "passed": true,
+          "actualSha256": "eee784b660c6fa0870a38728c7ab2209833d761c10dd3ae243f2df75867a072e",
+          "expectedSha256": "eee784b660c6fa0870a38728c7ab2209833d761c10dd3ae243f2df75867a072e"
+        },
+        {
+          "label": "refresh keeps variant label",
+          "passed": true,
+          "actualSha256": "475b55534475b37f56d85d9aae920f47c465158df17e7d53894b30d8c9fcba40",
+          "expectedSha256": "475b55534475b37f56d85d9aae920f47c465158df17e7d53894b30d8c9fcba40"
+        }
+      ],
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "initialGuide": "当前一掷\n偶点先行\n第 1 掷 · 3 骰\n3 骰中至少 2 颗偶点（2 / 4 / 6）\n本击伤害 +35%",
+      "fixture": {
+        "seed": "round22-combat-parity-22105",
+        "source": "generated encounter, synthetic floor/level/HP/attack declared in script"
+      },
+      "firstRoll": {
+        "values": [
+          6,
+          6,
+          4
+        ],
+        "mechanics": [
+          "奇偶刻点吻合 · 伤害 +35%"
+        ],
+        "shield": 0,
+        "total": 207
+      },
+      "screenshots": [
+        "new-parity.jpg"
+      ]
+    },
+    {
+      "name": "sequence-miss-manual-roll-refresh",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "new enemy contains committed known combat-rules version",
+          "passed": true
+        },
+        {
+          "label": "variant title visibly identifies new rules",
+          "passed": true,
+          "actualSha256": "a389b390a9da75bcf2d8ba9f6a400d08dbc3bf7d01c4128afbbdbe701c436082",
+          "expectedSha256": "a389b390a9da75bcf2d8ba9f6a400d08dbc3bf7d01c4128afbbdbe701c436082"
+        },
+        {
+          "label": "current guide states actual alternate trigger",
+          "passed": true
+        },
+        {
+          "label": "keyboard opens full rules",
+          "passed": true
+        },
+        {
+          "label": "saved label appears in complete rules",
+          "passed": true
+        },
+        {
+          "label": "manual roll 1 complete state",
+          "passed": true,
+          "actualSha256": "523ac7501e9554f667ee7d7e45f4cfc96b6fa1a71c92f3237373ae734b04f8d8",
+          "expectedSha256": "523ac7501e9554f667ee7d7e45f4cfc96b6fa1a71c92f3237373ae734b04f8d8"
+        },
+        {
+          "label": "manual roll 1 complete state mirror",
+          "passed": true,
+          "actualSha256": "52d625cfab4e610f191002b3d2f82c7bb5dcb6b61fe96b3262ee09316e8ea1c8",
+          "expectedSha256": "52d625cfab4e610f191002b3d2f82c7bb5dcb6b61fe96b3262ee09316e8ea1c8"
+        },
+        {
+          "label": "guide advances only after committed roll",
+          "passed": true,
+          "actualSha256": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35",
+          "expectedSha256": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35"
+        },
+        {
+          "label": "correct branch settles and is recorded",
+          "passed": true
+        },
+        {
+          "label": "manual roll 2 complete state",
+          "passed": true,
+          "actualSha256": "3a038324c8d0de99c2c5892d55866d5951a291b9bc40bff73beb59f01060ccd7",
+          "expectedSha256": "3a038324c8d0de99c2c5892d55866d5951a291b9bc40bff73beb59f01060ccd7"
+        },
+        {
+          "label": "manual roll 2 complete state mirror",
+          "passed": true,
+          "actualSha256": "b627b1db230bd93397b658d823fb139b7bcee0b7598ff4874e5306b89175c332",
+          "expectedSha256": "b627b1db230bd93397b658d823fb139b7bcee0b7598ff4874e5306b89175c332"
+        },
+        {
+          "label": "guide advances only after committed roll",
+          "passed": true,
+          "actualSha256": "4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce",
+          "expectedSha256": "4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce"
+        },
+        {
+          "label": "manual roll 3 complete state",
+          "passed": true,
+          "actualSha256": "e9c85f956b73ca45195679aa4944b938d99f88898e9702d9661a3813ba8c337a",
+          "expectedSha256": "e9c85f956b73ca45195679aa4944b938d99f88898e9702d9661a3813ba8c337a"
+        },
+        {
+          "label": "manual roll 3 complete state mirror",
+          "passed": true,
+          "actualSha256": "8b4ea65752246d6f0b7f1e5fbd34d634607597fdb2807f2a487bc24376a3d0f7",
+          "expectedSha256": "8b4ea65752246d6f0b7f1e5fbd34d634607597fdb2807f2a487bc24376a3d0f7"
+        },
+        {
+          "label": "guide advances only after committed roll",
+          "passed": true,
+          "actualSha256": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a",
+          "expectedSha256": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a"
+        },
+        {
+          "label": "refresh preserves new pending fight",
+          "passed": true,
+          "actualSha256": "e9c85f956b73ca45195679aa4944b938d99f88898e9702d9661a3813ba8c337a",
+          "expectedSha256": "e9c85f956b73ca45195679aa4944b938d99f88898e9702d9661a3813ba8c337a"
+        },
+        {
+          "label": "refresh preserves new pending fight mirror",
+          "passed": true,
+          "actualSha256": "8b4ea65752246d6f0b7f1e5fbd34d634607597fdb2807f2a487bc24376a3d0f7",
+          "expectedSha256": "8b4ea65752246d6f0b7f1e5fbd34d634607597fdb2807f2a487bc24376a3d0f7"
+        },
+        {
+          "label": "refresh never rewrites envelope",
+          "passed": true,
+          "actualSha256": "8b4ea65752246d6f0b7f1e5fbd34d634607597fdb2807f2a487bc24376a3d0f7",
+          "expectedSha256": "8b4ea65752246d6f0b7f1e5fbd34d634607597fdb2807f2a487bc24376a3d0f7"
+        },
+        {
+          "label": "refresh keeps variant label",
+          "passed": true,
+          "actualSha256": "a389b390a9da75bcf2d8ba9f6a400d08dbc3bf7d01c4128afbbdbe701c436082",
+          "expectedSha256": "a389b390a9da75bcf2d8ba9f6a400d08dbc3bf7d01c4128afbbdbe701c436082"
+        }
+      ],
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "initialGuide": "当前一掷\n共鸣破阵\n第 1 掷 · 3 骰\n双同或更高共鸣\n本击伤害 +40%，阻止本次重筑\n所有点数各不相同\n存活反击后，敌方重筑最大生命 3% 的护盾",
+      "fixture": {
+        "seed": "round22-combat-sequence-22108",
+        "source": "generated encounter, synthetic floor/level/HP/attack declared in script"
+      },
+      "firstRoll": {
+        "values": [
+          5,
+          2,
+          4
+        ],
+        "mechanics": [
+          "独声未破阵 · 重筑 3% 护盾"
+        ],
+        "shield": 3000,
+        "total": 115
+      }
+    },
+    {
+      "name": "sequence-hit-manual-roll-refresh",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "new enemy contains committed known combat-rules version",
+          "passed": true
+        },
+        {
+          "label": "variant title visibly identifies new rules",
+          "passed": true,
+          "actualSha256": "a389b390a9da75bcf2d8ba9f6a400d08dbc3bf7d01c4128afbbdbe701c436082",
+          "expectedSha256": "a389b390a9da75bcf2d8ba9f6a400d08dbc3bf7d01c4128afbbdbe701c436082"
+        },
+        {
+          "label": "current guide states actual alternate trigger",
+          "passed": true
+        },
+        {
+          "label": "keyboard opens full rules",
+          "passed": true
+        },
+        {
+          "label": "saved label appears in complete rules",
+          "passed": true
+        },
+        {
+          "label": "manual roll 1 complete state",
+          "passed": true,
+          "actualSha256": "86c12e6bb279cfc827496eff3aefdd50387c58512eff016cba38df3cbd2945a8",
+          "expectedSha256": "86c12e6bb279cfc827496eff3aefdd50387c58512eff016cba38df3cbd2945a8"
+        },
+        {
+          "label": "manual roll 1 complete state mirror",
+          "passed": true,
+          "actualSha256": "fb031446054b877959dc873d9f2069a521f0b69d929d09a55c29b864d06240e3",
+          "expectedSha256": "fb031446054b877959dc873d9f2069a521f0b69d929d09a55c29b864d06240e3"
+        },
+        {
+          "label": "guide advances only after committed roll",
+          "passed": true,
+          "actualSha256": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35",
+          "expectedSha256": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35"
+        },
+        {
+          "label": "correct branch settles and is recorded",
+          "passed": true
+        },
+        {
+          "label": "manual roll 2 complete state",
+          "passed": true,
+          "actualSha256": "c67f7a087c8fe941c00795dd2819cb7d3c2c48d10ef0f216b273bac2be9dee14",
+          "expectedSha256": "c67f7a087c8fe941c00795dd2819cb7d3c2c48d10ef0f216b273bac2be9dee14"
+        },
+        {
+          "label": "manual roll 2 complete state mirror",
+          "passed": true,
+          "actualSha256": "b2605c62f6be43d977cf466a1cf199aa3a58496d05cb85b960950e3fdaec0382",
+          "expectedSha256": "b2605c62f6be43d977cf466a1cf199aa3a58496d05cb85b960950e3fdaec0382"
+        },
+        {
+          "label": "guide advances only after committed roll",
+          "passed": true,
+          "actualSha256": "4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce",
+          "expectedSha256": "4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce"
+        },
+        {
+          "label": "manual roll 3 complete state",
+          "passed": true,
+          "actualSha256": "70c19d43ddf277f9cc9cf4745c37e4316715c84a47dc0ad1a7240e5ca9328c8f",
+          "expectedSha256": "70c19d43ddf277f9cc9cf4745c37e4316715c84a47dc0ad1a7240e5ca9328c8f"
+        },
+        {
+          "label": "manual roll 3 complete state mirror",
+          "passed": true,
+          "actualSha256": "cc109aa79144db8c73899f84f8155a91256c5f0f409d3a1df956738fb99a1e46",
+          "expectedSha256": "cc109aa79144db8c73899f84f8155a91256c5f0f409d3a1df956738fb99a1e46"
+        },
+        {
+          "label": "guide advances only after committed roll",
+          "passed": true,
+          "actualSha256": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a",
+          "expectedSha256": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a"
+        },
+        {
+          "label": "refresh preserves new pending fight",
+          "passed": true,
+          "actualSha256": "70c19d43ddf277f9cc9cf4745c37e4316715c84a47dc0ad1a7240e5ca9328c8f",
+          "expectedSha256": "70c19d43ddf277f9cc9cf4745c37e4316715c84a47dc0ad1a7240e5ca9328c8f"
+        },
+        {
+          "label": "refresh preserves new pending fight mirror",
+          "passed": true,
+          "actualSha256": "cc109aa79144db8c73899f84f8155a91256c5f0f409d3a1df956738fb99a1e46",
+          "expectedSha256": "cc109aa79144db8c73899f84f8155a91256c5f0f409d3a1df956738fb99a1e46"
+        },
+        {
+          "label": "refresh never rewrites envelope",
+          "passed": true,
+          "actualSha256": "cc109aa79144db8c73899f84f8155a91256c5f0f409d3a1df956738fb99a1e46",
+          "expectedSha256": "cc109aa79144db8c73899f84f8155a91256c5f0f409d3a1df956738fb99a1e46"
+        },
+        {
+          "label": "refresh keeps variant label",
+          "passed": true,
+          "actualSha256": "a389b390a9da75bcf2d8ba9f6a400d08dbc3bf7d01c4128afbbdbe701c436082",
+          "expectedSha256": "a389b390a9da75bcf2d8ba9f6a400d08dbc3bf7d01c4128afbbdbe701c436082"
+        }
+      ],
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "initialGuide": "当前一掷\n共鸣破阵\n第 1 掷 · 3 骰\n双同或更高共鸣\n本击伤害 +40%，阻止本次重筑\n所有点数各不相同\n存活反击后，敌方重筑最大生命 3% 的护盾",
+      "fixture": {
+        "seed": "round22-combat-sequence-22104",
+        "source": "generated encounter, synthetic floor/level/HP/attack declared in script"
+      },
+      "firstRoll": {
+        "values": [
+          1,
+          3,
+          3
+        ],
+        "mechanics": [
+          "合鸣破阵 · 伤害 +40%"
+        ],
+        "shield": 0,
+        "total": 128
+      },
+      "screenshots": [
+        "new-sequence.jpg"
+      ]
+    },
+    {
+      "name": "parity-legacy-absent-pending-roll-and-retry",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "input-generated fight has the original known rules version",
+          "passed": true
+        },
+        {
+          "label": "old pending never displays a new-rule badge",
+          "passed": true,
+          "actualSha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "expectedSha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        {
+          "label": "new engine preserves complete old pending transition",
+          "passed": true,
+          "actualSha256": "139ec4af6748bbd0eb07af56fbc419e7ad54bbeda318c69f045fabab45c4b0a8",
+          "expectedSha256": "139ec4af6748bbd0eb07af56fbc419e7ad54bbeda318c69f045fabab45c4b0a8"
+        },
+        {
+          "label": "browser old pending equals input engine",
+          "passed": true,
+          "actualSha256": "139ec4af6748bbd0eb07af56fbc419e7ad54bbeda318c69f045fabab45c4b0a8",
+          "expectedSha256": "139ec4af6748bbd0eb07af56fbc419e7ad54bbeda318c69f045fabab45c4b0a8"
+        },
+        {
+          "label": "browser old pending equals input engine mirror",
+          "passed": true,
+          "actualSha256": "dd98bd943d82899d317c8d1ecfe3737a041034690ca6915049abf4b0724eadc3",
+          "expectedSha256": "dd98bd943d82899d317c8d1ecfe3737a041034690ca6915049abf4b0724eadc3"
+        },
+        {
+          "label": "old retry equals input engine",
+          "passed": true,
+          "actualSha256": "4d2223bbb60ef831b548e53a1ba8d02088c96cd0e4a02234f3c9d9a899a8d19b",
+          "expectedSha256": "4d2223bbb60ef831b548e53a1ba8d02088c96cd0e4a02234f3c9d9a899a8d19b"
+        },
+        {
+          "label": "retry remains full original saved fight",
+          "passed": true,
+          "actualSha256": "4d2223bbb60ef831b548e53a1ba8d02088c96cd0e4a02234f3c9d9a899a8d19b",
+          "expectedSha256": "4d2223bbb60ef831b548e53a1ba8d02088c96cd0e4a02234f3c9d9a899a8d19b"
+        },
+        {
+          "label": "retry remains full original saved fight mirror",
+          "passed": true,
+          "actualSha256": "7a6a9c392d3390fe9cfae722a2ab657bc48a7123a56214318c03a72356ea152c",
+          "expectedSha256": "7a6a9c392d3390fe9cfae722a2ab657bc48a7123a56214318c03a72356ea152c"
+        },
+        {
+          "label": "old retry has no new-rule badge",
+          "passed": true,
+          "actualSha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "expectedSha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        }
+      ],
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      }
+    },
+    {
+      "name": "parity-legacy-number-pending-roll-and-retry",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "input-generated fight has the original known rules version",
+          "passed": true
+        },
+        {
+          "label": "old pending never displays a new-rule badge",
+          "passed": true,
+          "actualSha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "expectedSha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        {
+          "label": "new engine preserves complete old pending transition",
+          "passed": true,
+          "actualSha256": "dd91209092303763af5150b41624da5c64891b3feede94874f4d53d41e9c0f51",
+          "expectedSha256": "dd91209092303763af5150b41624da5c64891b3feede94874f4d53d41e9c0f51"
+        },
+        {
+          "label": "browser old pending equals input engine",
+          "passed": true,
+          "actualSha256": "dd91209092303763af5150b41624da5c64891b3feede94874f4d53d41e9c0f51",
+          "expectedSha256": "dd91209092303763af5150b41624da5c64891b3feede94874f4d53d41e9c0f51"
+        },
+        {
+          "label": "browser old pending equals input engine mirror",
+          "passed": true,
+          "actualSha256": "2daa3870e8b363f570623c176c6021ab3113c86f7cf581d13b525ca8edc38c12",
+          "expectedSha256": "2daa3870e8b363f570623c176c6021ab3113c86f7cf581d13b525ca8edc38c12"
+        },
+        {
+          "label": "old retry equals input engine",
+          "passed": true,
+          "actualSha256": "07960b1580d4204b43f68c25f3cf2687d9e51e1214f770b192c1841506630adf",
+          "expectedSha256": "07960b1580d4204b43f68c25f3cf2687d9e51e1214f770b192c1841506630adf"
+        },
+        {
+          "label": "retry remains full original saved fight",
+          "passed": true,
+          "actualSha256": "07960b1580d4204b43f68c25f3cf2687d9e51e1214f770b192c1841506630adf",
+          "expectedSha256": "07960b1580d4204b43f68c25f3cf2687d9e51e1214f770b192c1841506630adf"
+        },
+        {
+          "label": "retry remains full original saved fight mirror",
+          "passed": true,
+          "actualSha256": "c41beb044e1dab4ba914c2a77e8729e76acc701f5ed51689e786890385a5da6c",
+          "expectedSha256": "c41beb044e1dab4ba914c2a77e8729e76acc701f5ed51689e786890385a5da6c"
+        },
+        {
+          "label": "old retry has no new-rule badge",
+          "passed": true,
+          "actualSha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "expectedSha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        }
+      ],
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      }
+    },
+    {
+      "name": "parity-legacy-object-pending-roll-and-retry",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "input-generated fight has the original known rules version",
+          "passed": true
+        },
+        {
+          "label": "old pending never displays a new-rule badge",
+          "passed": true,
+          "actualSha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "expectedSha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        {
+          "label": "new engine preserves complete old pending transition",
+          "passed": true,
+          "actualSha256": "e9f966797c11bb5a3553c4948cafa4a0ed449fffe82c6417bff70e3dac4e2134",
+          "expectedSha256": "e9f966797c11bb5a3553c4948cafa4a0ed449fffe82c6417bff70e3dac4e2134"
+        },
+        {
+          "label": "browser old pending equals input engine",
+          "passed": true,
+          "actualSha256": "e9f966797c11bb5a3553c4948cafa4a0ed449fffe82c6417bff70e3dac4e2134",
+          "expectedSha256": "e9f966797c11bb5a3553c4948cafa4a0ed449fffe82c6417bff70e3dac4e2134"
+        },
+        {
+          "label": "browser old pending equals input engine mirror",
+          "passed": true,
+          "actualSha256": "07b724ddc49d19cbe32db7103de76d352af3d963cf8e7baeab2413dc419a732f",
+          "expectedSha256": "07b724ddc49d19cbe32db7103de76d352af3d963cf8e7baeab2413dc419a732f"
+        },
+        {
+          "label": "old retry equals input engine",
+          "passed": true,
+          "actualSha256": "cae2d987cb04eb5475d19c5cff14dbfe2d4d1ac420b48f98a2cf3bb7cb5eeea8",
+          "expectedSha256": "cae2d987cb04eb5475d19c5cff14dbfe2d4d1ac420b48f98a2cf3bb7cb5eeea8"
+        },
+        {
+          "label": "retry remains full original saved fight",
+          "passed": true,
+          "actualSha256": "cae2d987cb04eb5475d19c5cff14dbfe2d4d1ac420b48f98a2cf3bb7cb5eeea8",
+          "expectedSha256": "cae2d987cb04eb5475d19c5cff14dbfe2d4d1ac420b48f98a2cf3bb7cb5eeea8"
+        },
+        {
+          "label": "retry remains full original saved fight mirror",
+          "passed": true,
+          "actualSha256": "0e6ee04facb949b9c9dd02f8ad3aabdac748d2cc04b43162ae43c27e0e5eb509",
+          "expectedSha256": "0e6ee04facb949b9c9dd02f8ad3aabdac748d2cc04b43162ae43c27e0e5eb509"
+        },
+        {
+          "label": "old retry has no new-rule badge",
+          "passed": true,
+          "actualSha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "expectedSha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        }
+      ],
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      }
+    },
+    {
+      "name": "sequence-legacy-absent-pending-roll-and-retry",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "input-generated fight has the original known rules version",
+          "passed": true
+        },
+        {
+          "label": "old pending never displays a new-rule badge",
+          "passed": true,
+          "actualSha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "expectedSha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        {
+          "label": "new engine preserves complete old pending transition",
+          "passed": true,
+          "actualSha256": "1b412d63e2dc57c17aafff4bf9f3f7fdf5d5d9e19420c8b7b88529fa423ada2c",
+          "expectedSha256": "1b412d63e2dc57c17aafff4bf9f3f7fdf5d5d9e19420c8b7b88529fa423ada2c"
+        },
+        {
+          "label": "browser old pending equals input engine",
+          "passed": true,
+          "actualSha256": "1b412d63e2dc57c17aafff4bf9f3f7fdf5d5d9e19420c8b7b88529fa423ada2c",
+          "expectedSha256": "1b412d63e2dc57c17aafff4bf9f3f7fdf5d5d9e19420c8b7b88529fa423ada2c"
+        },
+        {
+          "label": "browser old pending equals input engine mirror",
+          "passed": true,
+          "actualSha256": "e297bc44771669852ca59b0f18100d71bca5452e1eaca3421dd522506c95402f",
+          "expectedSha256": "e297bc44771669852ca59b0f18100d71bca5452e1eaca3421dd522506c95402f"
+        },
+        {
+          "label": "old retry equals input engine",
+          "passed": true,
+          "actualSha256": "f94985fe50809aef5420736b4cf23c4b67fe1670726f7ecec348ee490c46cfdd",
+          "expectedSha256": "f94985fe50809aef5420736b4cf23c4b67fe1670726f7ecec348ee490c46cfdd"
+        },
+        {
+          "label": "retry remains full original saved fight",
+          "passed": true,
+          "actualSha256": "f94985fe50809aef5420736b4cf23c4b67fe1670726f7ecec348ee490c46cfdd",
+          "expectedSha256": "f94985fe50809aef5420736b4cf23c4b67fe1670726f7ecec348ee490c46cfdd"
+        },
+        {
+          "label": "retry remains full original saved fight mirror",
+          "passed": true,
+          "actualSha256": "01d71d9123b8b9b519eeea1e276bc01dc36c8e9639c05ada23455717074dabd4",
+          "expectedSha256": "01d71d9123b8b9b519eeea1e276bc01dc36c8e9639c05ada23455717074dabd4"
+        },
+        {
+          "label": "old retry has no new-rule badge",
+          "passed": true,
+          "actualSha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "expectedSha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        }
+      ],
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      }
+    },
+    {
+      "name": "sequence-legacy-number-pending-roll-and-retry",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "input-generated fight has the original known rules version",
+          "passed": true
+        },
+        {
+          "label": "old pending never displays a new-rule badge",
+          "passed": true,
+          "actualSha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "expectedSha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        {
+          "label": "new engine preserves complete old pending transition",
+          "passed": true,
+          "actualSha256": "e115b029c4260ac3440776a8a7a3bad0bbc8528611f8757123c1cc32b05b964f",
+          "expectedSha256": "e115b029c4260ac3440776a8a7a3bad0bbc8528611f8757123c1cc32b05b964f"
+        },
+        {
+          "label": "browser old pending equals input engine",
+          "passed": true,
+          "actualSha256": "e115b029c4260ac3440776a8a7a3bad0bbc8528611f8757123c1cc32b05b964f",
+          "expectedSha256": "e115b029c4260ac3440776a8a7a3bad0bbc8528611f8757123c1cc32b05b964f"
+        },
+        {
+          "label": "browser old pending equals input engine mirror",
+          "passed": true,
+          "actualSha256": "82cf5d714b6e5c11b791e4412378661f3577d92424d2ee659eb3f3c147e803fe",
+          "expectedSha256": "82cf5d714b6e5c11b791e4412378661f3577d92424d2ee659eb3f3c147e803fe"
+        },
+        {
+          "label": "old retry equals input engine",
+          "passed": true,
+          "actualSha256": "815c00d1ed571411fb836887ba062f04ede48c3e68cc567ecae832d8d8b7efec",
+          "expectedSha256": "815c00d1ed571411fb836887ba062f04ede48c3e68cc567ecae832d8d8b7efec"
+        },
+        {
+          "label": "retry remains full original saved fight",
+          "passed": true,
+          "actualSha256": "815c00d1ed571411fb836887ba062f04ede48c3e68cc567ecae832d8d8b7efec",
+          "expectedSha256": "815c00d1ed571411fb836887ba062f04ede48c3e68cc567ecae832d8d8b7efec"
+        },
+        {
+          "label": "retry remains full original saved fight mirror",
+          "passed": true,
+          "actualSha256": "2d5c8bfbb3c807f6ced96869d18c198eaae80e346ff7bb89803021d2e7a9bfb4",
+          "expectedSha256": "2d5c8bfbb3c807f6ced96869d18c198eaae80e346ff7bb89803021d2e7a9bfb4"
+        },
+        {
+          "label": "old retry has no new-rule badge",
+          "passed": true,
+          "actualSha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "expectedSha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        }
+      ],
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      }
+    },
+    {
+      "name": "sequence-legacy-object-pending-roll-and-retry",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "input-generated fight has the original known rules version",
+          "passed": true
+        },
+        {
+          "label": "old pending never displays a new-rule badge",
+          "passed": true,
+          "actualSha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "expectedSha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        {
+          "label": "new engine preserves complete old pending transition",
+          "passed": true,
+          "actualSha256": "9e8c097c97f9c8131f0c722b6c006549a408feb3cca8e3fbe7c09e5e29f32d09",
+          "expectedSha256": "9e8c097c97f9c8131f0c722b6c006549a408feb3cca8e3fbe7c09e5e29f32d09"
+        },
+        {
+          "label": "browser old pending equals input engine",
+          "passed": true,
+          "actualSha256": "9e8c097c97f9c8131f0c722b6c006549a408feb3cca8e3fbe7c09e5e29f32d09",
+          "expectedSha256": "9e8c097c97f9c8131f0c722b6c006549a408feb3cca8e3fbe7c09e5e29f32d09"
+        },
+        {
+          "label": "browser old pending equals input engine mirror",
+          "passed": true,
+          "actualSha256": "2502117f2cec03d52f02e1a645e1d4ddfc24079711a765ed39aac274f6ed59a0",
+          "expectedSha256": "2502117f2cec03d52f02e1a645e1d4ddfc24079711a765ed39aac274f6ed59a0"
+        },
+        {
+          "label": "old retry equals input engine",
+          "passed": true,
+          "actualSha256": "3eea5ae845cbd57c3cdf27e624f2b5242abebd0795b73f654af30783e9e90364",
+          "expectedSha256": "3eea5ae845cbd57c3cdf27e624f2b5242abebd0795b73f654af30783e9e90364"
+        },
+        {
+          "label": "retry remains full original saved fight",
+          "passed": true,
+          "actualSha256": "3eea5ae845cbd57c3cdf27e624f2b5242abebd0795b73f654af30783e9e90364",
+          "expectedSha256": "3eea5ae845cbd57c3cdf27e624f2b5242abebd0795b73f654af30783e9e90364"
+        },
+        {
+          "label": "retry remains full original saved fight mirror",
+          "passed": true,
+          "actualSha256": "c33cf29df1aa43983ea745c15be37e2b43ec4bc2fd12baa07992856c5990c0fd",
+          "expectedSha256": "c33cf29df1aa43983ea745c15be37e2b43ec4bc2fd12baa07992856c5990c0fd"
+        },
+        {
+          "label": "old retry has no new-rule badge",
+          "passed": true,
+          "actualSha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "expectedSha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        }
+      ],
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      }
+    },
+    {
+      "name": "parity-new-retry-chest-loot",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "new retry commits once",
+          "passed": true,
+          "actualSha256": "c20dcd06d4014a18d0016d8074132c62c1e9c34dcf33d7ef724a54d93cd6b5e4",
+          "expectedSha256": "c20dcd06d4014a18d0016d8074132c62c1e9c34dcf33d7ef724a54d93cd6b5e4"
+        },
+        {
+          "label": "new retry commits once mirror",
+          "passed": true,
+          "actualSha256": "7bbde7835de334801f5b7ec252a0a09a662cf38d2e4851dcbba7ab6b29d1579e",
+          "expectedSha256": "7bbde7835de334801f5b7ec252a0a09a662cf38d2e4851dcbba7ab6b29d1579e"
+        },
+        {
+          "label": "new retry keeps original combat-rules version",
+          "passed": true
+        },
+        {
+          "label": "new retry displays correct rule",
+          "passed": true
+        },
+        {
+          "label": "test fixture reaches real chest action",
+          "passed": true
+        },
+        {
+          "label": "new opponent yields one committed chest",
+          "passed": true,
+          "actualSha256": "6f592854ded234cd38da338f3a53fb74413cf0b9353056774e3f0bcd9b44a9a9",
+          "expectedSha256": "6f592854ded234cd38da338f3a53fb74413cf0b9353056774e3f0bcd9b44a9a9"
+        },
+        {
+          "label": "new opponent yields one committed chest mirror",
+          "passed": true,
+          "actualSha256": "869fe6b80a5a4a84b58b472716063268af8c34ff526d9e2acadc240010a7f94a",
+          "expectedSha256": "869fe6b80a5a4a84b58b472716063268af8c34ff526d9e2acadc240010a7f94a"
+        },
+        {
+          "label": "chest opens original reward once",
+          "passed": true,
+          "actualSha256": "12ba1870d022942d7396352dd26c549f9c6834b5dc5c04ca198e5eae75431aa0",
+          "expectedSha256": "12ba1870d022942d7396352dd26c549f9c6834b5dc5c04ca198e5eae75431aa0"
+        },
+        {
+          "label": "chest opens original reward once mirror",
+          "passed": true,
+          "actualSha256": "d4389529497e7444707d9fbae8ecdfb94d95bd339e66d13ef8e99b5bd9ba7c09",
+          "expectedSha256": "d4389529497e7444707d9fbae8ecdfb94d95bd339e66d13ef8e99b5bd9ba7c09"
+        },
+        {
+          "label": "reward is actually rendered",
+          "passed": true
+        }
+      ],
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      }
+    },
+    {
+      "name": "sequence-new-retry-chest-loot",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "new retry commits once",
+          "passed": true,
+          "actualSha256": "e4a1cadbc998f3ff8cf349289e4926b86f5410461acea6ad3c1a56074219808f",
+          "expectedSha256": "e4a1cadbc998f3ff8cf349289e4926b86f5410461acea6ad3c1a56074219808f"
+        },
+        {
+          "label": "new retry commits once mirror",
+          "passed": true,
+          "actualSha256": "291539a85cf39ac6cf65b0a3363dfb70920b56aec7ba544d01b2946babbbb898",
+          "expectedSha256": "291539a85cf39ac6cf65b0a3363dfb70920b56aec7ba544d01b2946babbbb898"
+        },
+        {
+          "label": "new retry keeps original combat-rules version",
+          "passed": true
+        },
+        {
+          "label": "new retry displays correct rule",
+          "passed": true
+        },
+        {
+          "label": "test fixture reaches real chest action",
+          "passed": true
+        },
+        {
+          "label": "new opponent yields one committed chest",
+          "passed": true,
+          "actualSha256": "2156b6307d537512102e0cee9c9ca44429c04c873ac183ad2b1d91e7e550431f",
+          "expectedSha256": "2156b6307d537512102e0cee9c9ca44429c04c873ac183ad2b1d91e7e550431f"
+        },
+        {
+          "label": "new opponent yields one committed chest mirror",
+          "passed": true,
+          "actualSha256": "95aae65663ec9bce2d8d953033045eccd5819fcf3a7a47ea4fc8579020ec4767",
+          "expectedSha256": "95aae65663ec9bce2d8d953033045eccd5819fcf3a7a47ea4fc8579020ec4767"
+        },
+        {
+          "label": "chest opens original reward once",
+          "passed": true,
+          "actualSha256": "b6ea4f5cf8ae104dd8b5b238b0c27025ba73a927df8753d000d8bc5c238d8f71",
+          "expectedSha256": "b6ea4f5cf8ae104dd8b5b238b0c27025ba73a927df8753d000d8bc5c238d8f71"
+        },
+        {
+          "label": "chest opens original reward once mirror",
+          "passed": true,
+          "actualSha256": "0ca12bc0db97ad070dc56ce24a8b167cd97ccd29e59d4f652e47f6a7e2bcfec1",
+          "expectedSha256": "0ca12bc0db97ad070dc56ce24a8b167cd97ccd29e59d4f652e47f6a7e2bcfec1"
+        },
+        {
+          "label": "reward is actually rendered",
+          "passed": true
+        }
+      ],
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      }
+    }
+  ],
+  "errors": [],
+  "notes": [
+    "All contexts and saves are disposable. Fixture preparation uses the real validator and codec. No private save or external server is touched.",
+    "Inputs use native pointer/keyboard/select controls and real localStorage/Web Locks. Only initial test fixtures are installed programmatically.",
+    "Synthetic fixtures are not natural gameplay evidence. Full save equality compares every field, including RNG, revision, unknown fields and pending rewards.",
+    "Functional checks use low effects and reduced motion. Separate performance scripts record their own protocols; none certify physical Windows or hardware GPU performance."
+  ],
+  "browser": "155.0.8059.84",
+  "finished": "2026-10-19T14:15:47.532Z",
+  "sourceAfter": {
+    "index.html": "f1001c485cb68386367b46b6bc40213c87a232da534dd80409d7a24f1fa34132",
+    "package.json": "fdc59fc4c5a28b0d6169253577bbbeab30341bc9830e16b362a3ba34c2ed2583",
+    "src/release.js": "7e33eda42706dfc8a32aef8975cc04c8be04ecf7cb75647eb7d4d3286d83ab72",
+    "src/app.js": "de8712715446bff65843d63167f0b2b5e3a9507fdbfde5d84a41475d926cd1be",
+    "src/views.js": "1b278428479f9a9daee7973ede38b84b16113cf83cf665a6e9d2cbdec5d6fb22",
+    "src/engine.js": "340fa90ef963abfc874fa4932af80264a87a569f1d51030d9e9b29b3dbc2192e",
+    "src/storage.js": "2b505d6dab2c5f018eff3f1bd5d6d927a885a175f812bd620ae898b3fead7f05",
+    "src/inventory-dom.js": "fd202b44a427eb7ff2c5ea5ccaaff8014f5faa4b4f85c280ff1fa5078bfd641f",
+    "src/inventory-render.js": "f4ad0ef260fcfedc50796edc2d8cc956a364ffb7f5e1c109f82414e5a696d99a",
+    "src/deep-rules.js": "5e3a9b50d5b339a6290df58a5712aa1b1d1017b6a615c409dec86c5683b6dd74",
+    "src/deep-content.js": "a68b20c8af5740f3939965b10e624fa1f684e8050dd4f2426862c26bf1fe3840",
+    "src/encounter-tactics.js": "749ef952fcec8932d8ce51c75544d40b572ed9c3941f94df98c4ae2d74e25f82",
+    "src/deep.css": "d4b579f479f51e2bc15fddf02f1c5c7b443c233546e482a43bdfe00783b73621"
+  },
+  "sourceUnchanged": true,
+  "checks": 148,
+  "failed": 0
+}

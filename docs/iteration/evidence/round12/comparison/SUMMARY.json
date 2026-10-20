@@ -1,0 +1,600 @@
+{
+  "scope": "Compact index derived without changing the complete formal A/B report. Constructed and natural samples remain separate. Cross-version state fingerprints normalize only runId; gameplay-object comparison projects constructed/natural and excludes the three documented diagnostic keys. This is not a claim of raw full-report or raw state byte equality.",
+  "rawReport": {
+    "file": "conditional-comparison.json",
+    "bytes": 365431,
+    "sha256": "536487140d2151003f0a49fd337bda9d0df867a4b8eeda2694660f3719e0288a"
+  },
+  "versions": {
+    "baseline": "5.11.0",
+    "current": "5.12.0"
+  },
+  "environment": {
+    "node": "v24.19.0",
+    "platform": "linux",
+    "arch": "x64"
+  },
+  "comparison": {
+    "equal": true,
+    "baselineSha256": "cb518d856ce5f54c2ab691a5c536f1f3e3ed339740ef0a646944e92aeafc13d1",
+    "currentSha256": "cb518d856ce5f54c2ab691a5c536f1f3e3ed339740ef0a646944e92aeafc13d1",
+    "completeConstructedStatesEqual": true,
+    "completeNaturalStatesEqual": true
+  },
+  "sourceFilesDifferingBetweenVersions": [
+    "src/engine.js",
+    "src/storage.js"
+  ],
+  "constructed": {
+    "scenarioGroups": 3,
+    "pairedSeedsPerFirstHitContext": 256,
+    "actualRolls": 1028,
+    "legalTransitions": 1543,
+    "completeCommittedStatesSha256": "3f62c639b2bc4fe46347f210d8b4a974ae6b9f028e1594d693c1df206f1b626d",
+    "cases": [
+      {
+        "id": "first-hit-score-omission",
+        "classification": "confirmed display scope problem; fixed synthetic loadout comparison",
+        "originalEstimate": 9,
+        "contexts": [
+          {
+            "turnsBeforeRoll": 0,
+            "samples": 256,
+            "meanBefore": 144820.78125,
+            "meanAfter": 127023.1015625,
+            "actualDeltaPercent": -12.28945150957056,
+            "traceSha256": "9854659921182046bc2589efabfb7ca2731e9c035af2a93a8a8cad2562a96d2a"
+          },
+          {
+            "turnsBeforeRoll": 1,
+            "samples": 256,
+            "meanBefore": 116790.99609375,
+            "meanAfter": 127023.1015625,
+            "actualDeltaPercent": 8.761039644303171,
+            "traceSha256": "66d2938048f7cbfd31fd80dbac08995553bd504660305ad9af903a37de3b5870"
+          }
+        ],
+        "cases": null,
+        "beforeGoldBonus": null,
+        "afterGoldBonus": null,
+        "generatedGold": null
+      },
+      {
+        "id": "conditional-penetration-tradeoff",
+        "classification": "base penetration alone does not cover a conditional loss",
+        "originalEstimate": 9,
+        "contexts": null,
+        "cases": [
+          {
+            "hasSix": false,
+            "rng": 63352,
+            "before": {
+              "values": [
+                5,
+                2,
+                2,
+                3,
+                4,
+                5
+              ],
+              "best": 2,
+              "critical": false,
+              "follow": false,
+              "criticalMultiplier": 1,
+              "followMultiplier": 0,
+              "main": 17947,
+              "extra": 0,
+              "echoDamage": 0,
+              "total": 17947,
+              "absorbed": 17319,
+              "hpDamage": 628,
+              "retaliation": 1,
+              "killed": false,
+              "phaseChanged": false,
+              "wardGain": 0
+            },
+            "after": {
+              "values": [
+                5,
+                2,
+                2,
+                3,
+                4,
+                5
+              ],
+              "best": 2,
+              "critical": false,
+              "follow": false,
+              "criticalMultiplier": 1,
+              "followMultiplier": 0,
+              "main": 19567,
+              "extra": 0,
+              "echoDamage": 0,
+              "total": 19567,
+              "absorbed": 17121,
+              "hpDamage": 2446,
+              "retaliation": 1,
+              "killed": false,
+              "phaseChanged": false,
+              "wardGain": 0
+            }
+          },
+          {
+            "hasSix": true,
+            "rng": 7919,
+            "before": {
+              "values": [
+                3,
+                4,
+                3,
+                4,
+                6,
+                1
+              ],
+              "best": 2,
+              "critical": false,
+              "follow": false,
+              "criticalMultiplier": 1,
+              "followMultiplier": 0,
+              "main": 17947,
+              "extra": 0,
+              "echoDamage": 0,
+              "total": 17947,
+              "absorbed": 15165,
+              "hpDamage": 2782,
+              "retaliation": 1,
+              "killed": false,
+              "phaseChanged": false,
+              "wardGain": 0
+            },
+            "after": {
+              "values": [
+                3,
+                4,
+                3,
+                4,
+                6,
+                1
+              ],
+              "best": 2,
+              "critical": false,
+              "follow": false,
+              "criticalMultiplier": 1,
+              "followMultiplier": 0,
+              "main": 19567,
+              "extra": 0,
+              "echoDamage": 0,
+              "total": 19567,
+              "absorbed": 17121,
+              "hpDamage": 2446,
+              "retaliation": 1,
+              "killed": false,
+              "phaseChanged": false,
+              "wardGain": 0
+            }
+          }
+        ],
+        "beforeGoldBonus": null,
+        "afterGoldBonus": null,
+        "generatedGold": null
+      },
+      {
+        "id": "actual-gold-cap",
+        "classification": "effective sixty-percent equipment gold cap, independent of unchanged fortune talent",
+        "originalEstimate": 60,
+        "contexts": null,
+        "cases": null,
+        "beforeGoldBonus": 0.6,
+        "afterGoldBonus": 0.6,
+        "generatedGold": 934
+      }
+    ]
+  },
+  "natural": {
+    "seed": 7919,
+    "floors": 400,
+    "completed": true,
+    "deaths": 0,
+    "rolls": 5422,
+    "level": 271,
+    "gold": 1533767,
+    "spending": {
+      "shop": 0,
+      "forge": 0,
+      "fusion": 0
+    },
+    "finalStateSha256": "98ca86295782c4ae0b3ce35b43f27092f360c43b0934a22664e6b2cb102f4b52",
+    "encounterTraceSha256": "89c3c80044e3e505429f08c3642e554686a75a6ceba3847112896b3d9db7620e",
+    "retaliatingBattles": 609,
+    "retaliatingBattlesAtLeast80": 600,
+    "totalRetaliation": 8002,
+    "capturedActiveStates": 3,
+    "allocationActions": 270,
+    "allocationPoints": 540,
+    "roundTrips": 14,
+    "readChecks": 6,
+    "branchTransactions": 679,
+    "completeCommittedStatesSha256": "08f482ca3ac10b6133231b8101a69685239b01ecce2d850eaf9577ed494aca82",
+    "windowBattles": 12
+  },
+  "branchTotals": {
+    "branches": 9,
+    "completedCombatAttempts": 108,
+    "actualRolls": 316,
+    "grossRetaliation": 143,
+    "allSurvived": true,
+    "allNoSpending": true,
+    "allSwapHpLossZero": true,
+    "roomCounts": {
+      "cursed": 9,
+      "elite": 24,
+      "combat": 22,
+      "leech": 3,
+      "bandit": 8,
+      "parity": 6,
+      "sequence": 3,
+      "duel": 6,
+      "berserker": 6,
+      "armored": 5,
+      "trial": 3,
+      "undertow": 1,
+      "disruptor": 1,
+      "abyssking": 3,
+      "boss": 3,
+      "hourward": 1,
+      "onslaught": 3,
+      "guardian": 1
+    }
+  },
+  "branches": [
+    {
+      "floor": 222,
+      "openingHp": 94033,
+      "maxHp": 94983,
+      "priorRetaliation": 950,
+      "turnsBeforeBranch": 2,
+      "alternatives": [
+        {
+          "id": "keep-loadout",
+          "spent": 0,
+          "swapHpLoss": 0,
+          "completedBattles": 12,
+          "survived": true,
+          "rolls": 24,
+          "damageTaken": 12,
+          "minimumHp": 94033,
+          "endingHp": 94998,
+          "endingGold": 716022,
+          "finalStateSha256": "08f43620aa4002afd78225274e6913d1d80f3f616bc11dccdc0dbb2609316920"
+        },
+        {
+          "id": "equip-weapon",
+          "item": {
+            "id": "i886",
+            "catalogId": "v4-weapon-5-3-7",
+            "level": 151,
+            "enhance": 0,
+            "rarity": 7
+          },
+          "candidateCount": 2,
+          "spent": 0,
+          "swapHpLoss": 0,
+          "completedBattles": 12,
+          "survived": true,
+          "rolls": 24,
+          "damageTaken": 12,
+          "minimumHp": 94033,
+          "endingHp": 94998,
+          "endingGold": 716022,
+          "finalStateSha256": "556d007d3883d1aabf9a3fd38e89ba0ea5240d486bb8010b95d35d087b03f21b",
+          "originalEstimate": -3
+        },
+        {
+          "id": "equip-relic3",
+          "item": {
+            "id": "i632",
+            "catalogId": "v5-relic-0-1-5",
+            "level": 123,
+            "enhance": 0,
+            "rarity": 5
+          },
+          "candidateCount": 341,
+          "spent": 0,
+          "swapHpLoss": 0,
+          "completedBattles": 12,
+          "survived": true,
+          "rolls": 27,
+          "damageTaken": 15,
+          "minimumHp": 94033,
+          "endingHp": 94998,
+          "endingGold": 715963,
+          "finalStateSha256": "d039231feb1d694d66f0173df9ca2daf43ecdc3fb0d8c9d3cac4c21e89a1a8f3",
+          "originalEstimate": -4
+        }
+      ]
+    },
+    {
+      "floor": 257,
+      "openingHp": 94300,
+      "maxHp": 95253,
+      "priorRetaliation": 953,
+      "turnsBeforeBranch": 1,
+      "alternatives": [
+        {
+          "id": "keep-loadout",
+          "spent": 0,
+          "swapHpLoss": 0,
+          "completedBattles": 12,
+          "survived": true,
+          "rolls": 30,
+          "damageTaken": 18,
+          "minimumHp": 94300,
+          "endingHp": 95268,
+          "endingGold": 863463,
+          "finalStateSha256": "a58e5d392e72fa5e4b5c1b79c8107d38905820eb24d73a227b72e3d55d82b81b"
+        },
+        {
+          "id": "equip-weapon",
+          "item": {
+            "id": "i886",
+            "catalogId": "v4-weapon-5-3-7",
+            "level": 151,
+            "enhance": 0,
+            "rarity": 7
+          },
+          "candidateCount": 3,
+          "spent": 0,
+          "swapHpLoss": 0,
+          "completedBattles": 12,
+          "survived": true,
+          "rolls": 31,
+          "damageTaken": 19,
+          "minimumHp": 94300,
+          "endingHp": 95283,
+          "endingGold": 862056,
+          "finalStateSha256": "727fddc63adc105464c699cc216585cf7acf16f160b5ed6d5bce5dcb6777dc89",
+          "originalEstimate": -3
+        },
+        {
+          "id": "equip-relic3",
+          "item": {
+            "id": "i1198",
+            "catalogId": "v5-relic-0-3-5",
+            "level": 188,
+            "enhance": 0,
+            "rarity": 5
+          },
+          "candidateCount": 397,
+          "spent": 0,
+          "swapHpLoss": 0,
+          "completedBattles": 12,
+          "survived": true,
+          "rolls": 35,
+          "damageTaken": 23,
+          "minimumHp": 94300,
+          "endingHp": 95283,
+          "endingGold": 862203,
+          "finalStateSha256": "5e08946547bfdbbf4eb9ed9185a32b3b5d2d342b8f6f09352f252245ff374373",
+          "originalEstimate": -3
+        }
+      ]
+    },
+    {
+      "floor": 329,
+      "openingHp": 102888,
+      "maxHp": 103928,
+      "priorRetaliation": 1040,
+      "turnsBeforeBranch": 1,
+      "alternatives": [
+        {
+          "id": "keep-loadout",
+          "spent": 0,
+          "swapHpLoss": 0,
+          "completedBattles": 12,
+          "survived": true,
+          "rolls": 45,
+          "damageTaken": 12,
+          "minimumHp": 102888,
+          "endingHp": 103943,
+          "endingGold": 1206387,
+          "finalStateSha256": "138e6e3ba5b7673696160f5cfc307602ca1722df1e7433f023a019c4625b48e7"
+        },
+        {
+          "id": "equip-weapon",
+          "item": {
+            "id": "i1552",
+            "catalogId": "v5-weapon-3-1-7",
+            "level": 218,
+            "enhance": 0,
+            "rarity": 7
+          },
+          "candidateCount": 3,
+          "spent": 0,
+          "swapHpLoss": 0,
+          "completedBattles": 12,
+          "survived": true,
+          "rolls": 52,
+          "damageTaken": 15,
+          "minimumHp": 102888,
+          "endingHp": 103943,
+          "endingGold": 1205672,
+          "finalStateSha256": "95a17341fd082db3249857c32ec11038b1d09414bce6007800beb54443ca526f",
+          "originalEstimate": -6
+        },
+        {
+          "id": "equip-relic3",
+          "item": {
+            "id": "i605",
+            "catalogId": "v4-relic-1-0-5",
+            "level": 117,
+            "enhance": 0,
+            "rarity": 5
+          },
+          "candidateCount": 499,
+          "spent": 0,
+          "swapHpLoss": 0,
+          "completedBattles": 12,
+          "survived": true,
+          "rolls": 48,
+          "damageTaken": 17,
+          "minimumHp": 102888,
+          "endingHp": 103958,
+          "endingGold": 1208220,
+          "finalStateSha256": "39f6b940d9daafa9b0d9da73b336d0e7064771b95fdc3b4b619a59213b1bc648",
+          "originalEstimate": 0
+        }
+      ]
+    }
+  ],
+  "singleNaturalRoll": {
+    "classification": "single-roll conditional outcome; NOT an estimator-error count",
+    "floor": 401,
+    "openingRng": 1077538707,
+    "originalEstimate": -9,
+    "actualDeltaPercent": 139.3630324870586,
+    "before": {
+      "values": [
+        5,
+        2,
+        5,
+        5,
+        5,
+        6
+      ],
+      "best": 4,
+      "critical": false,
+      "follow": false,
+      "criticalMultiplier": 1,
+      "followMultiplier": 0,
+      "main": 14516008,
+      "extra": 0,
+      "echoDamage": 6096723,
+      "total": 20612731,
+      "absorbed": 0,
+      "hpDamage": 20612731,
+      "retaliation": 0,
+      "killed": false,
+      "phaseChanged": false,
+      "wardGain": 0
+    },
+    "after": {
+      "values": [
+        5,
+        2,
+        5,
+        5,
+        5,
+        6
+      ],
+      "best": 4,
+      "critical": true,
+      "follow": true,
+      "criticalMultiplier": 1.8,
+      "followMultiplier": 0.7784,
+      "main": 25193657,
+      "extra": 19610743,
+      "echoDamage": 4534858,
+      "total": 49339258,
+      "absorbed": 0,
+      "hpDamage": 21083367,
+      "retaliation": 0,
+      "killed": true,
+      "phaseChanged": false,
+      "wardGain": 0
+    }
+  },
+  "costReadout": {
+    "compare60": {
+      "samples": 100,
+      "medianMs": 2.7257169999999746,
+      "p95Ms": 3.80003499999998,
+      "minMs": 2.439614000000006,
+      "maxMs": 8.929763000000008
+    },
+    "hint60": {
+      "samples": 100,
+      "medianMs": 0.2586520000000405,
+      "p95Ms": 0.423355000000015,
+      "minMs": 0.23967399999997951,
+      "maxMs": 0.5988249999999766
+    },
+    "details1": {
+      "samples": 100,
+      "medianMs": 0.052266999999972086,
+      "p95Ms": 0.12612699999999677,
+      "minMs": 0.04869199999995999,
+      "maxMs": 0.34514999999998963
+    }
+  },
+  "costScope": "One-off Node read-only diagnostic on five equipped items and sixty candidates. No source identity was recorded in the timing file, so it is not a frozen-source performance gate; it does not measure DOM, frame time, persistence, a physical device, or total product performance.",
+  "tests": {
+    "semanticCases": 9,
+    "passed": 9,
+    "failed": 0,
+    "catalogCandidatesExercised": 1536,
+    "tap": "unit-comparison-cases.tap",
+    "command": "node --test --test-isolation=none tests/equipment-comparison.test.mjs",
+    "defaultRunnerNote": "The default runner reported a single module-level test in this environment; explicit no-isolation run enumerates all nine cases."
+  },
+  "runtime": {
+    "file": "src/equipment-comparison.js",
+    "sha256": "2a2a819b22d0d1746893bb2222bfbeb7e6fcf20f10046fc7b64897c260be952d",
+    "frozen": true
+  },
+  "limitations": [
+    "Gross retaliation can be fully restored later in the same roll; it is not the same as net lost HP.",
+    "This fixed self-selected policy and its small losses still do not establish general survival pressure or human win rates.",
+    "Each branch is free; no conclusion about paid upgrade value follows. Lower max HP can clip current HP immediately; swapHpLoss is separate from battle damage.",
+    "Continuation retains the selected loadout, invests new points in power, claims rewards and uses free rest; it declines events and further paid services.",
+    "The first battle may already be partly played. A window counts twelve completed combat attempts, or the first death. Later RNG, loot, leveling and healing may diverge because of legal choices.",
+    "Raw report preserves full generated audit output. First-hit individual roll sequences are retained as trace hashes and are regenerated by the replay script, not individually embedded in this report.",
+    "A natural single-roll sign difference is not an estimator error rate.",
+    "No general optimal-equipment, human win-rate, or paid-upgrade-value conclusion follows.",
+    "Cross-version all-state fingerprint equality normalizes only runId to date-normalized, and gameplayOnly excludes detail/hint/adapter plus outer version metadata. It is not raw full-report or raw state byte equality; the fourteen per-version encode/decode deep-equality assertions use no normalization."
+  ],
+  "fingerprintNormalization": {
+    "scope": "All state fingerprints produced by fingerprint(s), including opening/final state fingerprints and the ordered committed-state aggregate. This does not redefine source hashes or separate combat trace hashes.",
+    "normalizedFields": [
+      "runId"
+    ],
+    "replacementValue": "date-normalized",
+    "formula": "SHA256(JSON.stringify({...s, runId: 'date-normalized'}))",
+    "allOtherStateFieldsRetained": true,
+    "constructedRunIdAlreadyFixed": true,
+    "constructedOriginalRunId": "constructed-round12-comparison",
+    "completeCommittedStatesSha256": "SHA256 over the successive hexadecimal fingerprint(next) strings in committed-action order; each component fingerprint uses the runId-only normalization above.",
+    "comparisonFieldInterpretation": {
+      "completeConstructedStatesEqual": "Equal aggregate all-state fingerprints after only runId normalization.",
+      "completeNaturalStatesEqual": "Equal aggregate all-state fingerprints after only runId normalization."
+    },
+    "claim": "仅 runId 规范化的全状态指纹相同；不声明完整原始状态逐字相同。"
+  },
+  "gameplayOnlyComparison": {
+    "includedVersionRoots": [
+      "constructed",
+      "natural"
+    ],
+    "recursivelyExcludedDiagnosticKeys": {
+      "detail": "New on-demand display details.",
+      "hint": "New lightweight display hints.",
+      "adapter": "Compact simulator diagnostic object and counters."
+    },
+    "outerVersionFieldsNotIncluded": [
+      "sourceVersion",
+      "sourceHashes",
+      "durationSeconds"
+    ],
+    "fingerprintValuesInsideProjection": "State fingerprint values retain the runId-only normalization documented in fingerprintNormalization.",
+    "comparisonMethod": "Deep strict equality of the projected gameplay objects; SHA256 of their JSON serializations also agrees.",
+    "rawReportRetainsAllGeneratedFields": true,
+    "expectedDisplayDifference": "The baseline has no new display module and therefore omits detail/hint that are present in the current report. Each version retains all fields it generated in the unchanged full raw report.",
+    "rawReportWasEditedForEquality": false
+  },
+  "saveRoundTripValidation": {
+    "countPerVersion": 14,
+    "assertion": "assert.deepEqual(decodeSave(encodeSave(s)), s), using node:assert/strict",
+    "normalizations": [],
+    "includesOriginalRunId": true,
+    "scope": "Fourteen within-state full encode/decode deep-equality assertions per version. These have no field normalization and are distinct from the cross-version runId-normalized state fingerprints."
+  }
+}

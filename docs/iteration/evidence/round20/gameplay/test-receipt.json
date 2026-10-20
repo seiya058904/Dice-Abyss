@@ -1,0 +1,39 @@
+{
+  "classification": "New capability requirements; baseline absence is not an existing product bug",
+  "runs": [
+    {
+      "version": "baseline",
+      "exitCode": 1,
+      "rawBytes": 22055,
+      "sha256": "dca3ecb71574ddfe7a4af1249036a137900c606a12401065786ca77161902802",
+      "counters": {
+        "tests": 25,
+        "suites": 0,
+        "pass": 1,
+        "fail": 24,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      }
+    },
+    {
+      "version": "current",
+      "exitCode": 0,
+      "rawBytes": 2539,
+      "sha256": "96efc1540ee81226e70d6f01bf3a18036c9c0b79cda0b3519d18159a0296f9bf",
+      "counters": {
+        "tests": 25,
+        "suites": 0,
+        "pass": 25,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      }
+    }
+  ],
+  "sourceSha256": {
+    "src/event-risk.js": "3b19c317ac1b88af45080b7655a50b82eb74a2a981050530e6a74c70bee4b8ed",
+    "tests/event-risk-round20.test.mjs": "11001e902cc1c022fc9a98924ad986863f2925166bd7c2f5f54ce18338473e08"
+  }
+}

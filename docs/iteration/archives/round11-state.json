@@ -1,0 +1,210 @@
+{
+  "project": "Dice Abyss",
+  "round": 11,
+  "date": "2026-10-18",
+  "timeZone": "UTC",
+  "inputVersion": "5.10.0",
+  "outputVersion": "5.11.0",
+  "saveSchemaVersion": 5,
+  "inputZipSha256": "b228ec0f5b678b4b0f0ea3146f33b03c45771e5827e8df66c543513cc205cabb",
+  "inputZipBytes": 18943827,
+  "baselineIdentity": {
+    "source": "Dice-Abyss-v5.10.0-cloud-round-10(1).zip; sole authoritative implementation",
+    "files": 953,
+    "expandedBytes": 35970890,
+    "manifestEntries": 952,
+    "integrity": "CRC, safe paths, complete manifest sizes and SHA-256 PASS",
+    "evidence": "docs/iteration/evidence/round11/input-integrity.json"
+  },
+  "previousRound": {
+    "round": 10,
+    "outputVersion": "5.10.0",
+    "state": "docs/iteration/archives/round10-state.json",
+    "report": "docs/iteration/archives/round10-report.md",
+    "manifest": "docs/iteration/archives/round10-manifest.json"
+  },
+  "releaseStatus": "VALIDATED_WITH_DOCUMENTED_LIMITATIONS",
+  "versionDecision": "Minor product release for complete narrow-window reflow, keyboard continuity and navigational behavior. No game formulas, content IDs, prices, probabilities, RNG, schema, persistent fields or storage keys changed.",
+  "mainChanges": [
+    "Main screens adapt below1100 CSS pixels; current room precedes supporting panels and primary controls remain reachable.",
+    "Sound Space preserves switch and scene identities; settings close restores the current opener without overriding deliberate new focus.",
+    "Narrow view navigation resets to its beginning; same-room fusion transactions retain workbench position.",
+    "New narrow text follows90/100/110 percent scale; title canvas is positioned before first measurement and first-roll layout is compact.",
+    "New reproducible deep-decision and save-alias audits preserve evidence and next-round priorities; no unproven balance changes."
+  ],
+  "changedRuntimeSourceFiles": [
+    "index.html",
+    "package.json",
+    "src/app.js",
+    "src/views.js"
+  ],
+  "newRuntimeSourceFiles": [
+    "src/responsive.css",
+    "src/settings-focus.js"
+  ],
+  "runtimeSourceGrowthBytes": 36368,
+  "updatedExistingQaScripts": [
+    "scripts/qa-inventory-navigation.mjs",
+    "scripts/qa-renderer-isolated-frames.mjs"
+  ],
+  "newQaScripts": [
+    "scripts/qa-round11-browser.mjs",
+    "scripts/qa-viewport-scales-round11.mjs",
+    "scripts/qa-layout-probe-round11.mjs",
+    "scripts/audit-deep-decisions-round11.mjs",
+    "scripts/audit-save-alias-round11.mjs"
+  ],
+  "regressionGuards": [
+    "Original55 test modules, two fixtures and8 font/license files byte-identical; one new8-case settings focus module.",
+    "Schema5, complete expected snapshots and unknown fields, Web Locks, primary/mirror/legacy ordering and5MB new-write limit preserved.",
+    "Original six-room loop, manual up-to-six dice, one currency, five equipment slots and all eight rarity gates unchanged.",
+    "dawnCrit cross-room luck, capped gold/XP receipts, protected fusion confirmation and historical migrations retain their existing tests.",
+    "New navigation excludes same-room fusion commits; user-selected focus wins over delayed settings restoration."
+  ],
+  "testSummary": {
+    "baselineUnitPassed": 491,
+    "unitPassed": 499,
+    "unitFailed": 0,
+    "unitSkipped": 0,
+    "unitCancelled": 0,
+    "testFiles": 56,
+    "newCases": 8,
+    "baselineUnitDurationMs": 111939.640744,
+    "unitDurationMs": 121895.544844,
+    "standardSeedsPerVersion": 1000,
+    "noShoppingSeedsPerVersion": 50,
+    "simulationBytesEqual": 9409,
+    "simulationSha256": "266fa5b56516410712395796f197a2e33ad1b1e16ede45de14b872f208007d77",
+    "deepDecisions": {
+      "journeysPerVersion": 2,
+      "floorsPerVersion": 800,
+      "rollsPerVersion": 4162,
+      "deathsPerVersion": 0,
+      "naturalStartingStates": 16,
+      "branchesPerVersion": 76,
+      "followupBattlesPerVersion": 456,
+      "transactionsPerVersion": 20512,
+      "roundTripsPerVersion": 307,
+      "comparedLeaves": 28229,
+      "equalCompleteStateHashes": 94,
+      "sampleBoundary": "Strong fixed strategies, six-battle branches, all retaliation damage zero. Common25-percent spend ceiling is an audit constraint; actual spend differs. Forge/fusion consume RNG.",
+      "versionBoundary": "Measured during product version5.10 marker; core rule files remained byte-identical through final5.11 marker."
+    },
+    "saveClosure": {
+      "checksPerVersion": 41452,
+      "snapshotsPerVersion": 6476,
+      "transactionsPerVersion": 1811,
+      "v4FixturesPerVersion": 11,
+      "allThreeFullFingerprintsEqual": true
+    },
+    "saveSizeCasesPerVersion": 4,
+    "browser": {
+      "functionalGroups": 39,
+      "functionalChecks": 730,
+      "reportedErrors": 0,
+      "baselineCoreGroups": 6,
+      "baselineCoreChecks": 43,
+      "newMainGroups": 8,
+      "newMainChecks": 351,
+      "desktopViewports": [
+        "1366x768",
+        "1920x1080",
+        "2560x1440",
+        "3840x2160"
+      ],
+      "narrowMatrixWidths": [
+        320,
+        390,
+        768,
+        900,
+        1099
+      ],
+      "viewportScaleCells": 9,
+      "scales": [
+        0.9,
+        1,
+        1.1
+      ],
+      "physicalDevices": "NOT_TESTED"
+    },
+    "httpResources": 47,
+    "baselineHttpResources": 45,
+    "fonts": {
+      "completeCmap": "PASS",
+      "sourceFiles": 42,
+      "uniqueHan": 1038,
+      "uniqueCjkPunctuation": 20,
+      "missingInEitherFont": 0
+    },
+    "lifecycle": {
+      "webglCyclesPerVersion": 3,
+      "postRecoveryNativeRollExact": true,
+      "faultCasesTotal": 11,
+      "baselineFaultCases": 3,
+      "currentFaultCases": 8,
+      "failures": 0,
+      "scope": "Software browser and explicit fault injection, not physical GPU reset or OS suspension"
+    },
+    "performance": {
+      "status": "MEASURED_WITH_LIMITATIONS",
+      "browser": "155.0.8059.84",
+      "renderer": "ANGLE Vulkan SwiftShader software",
+      "inventorySamplesPerVersion": 12,
+      "baselineInventoryMs": {
+        "p50": 118.3,
+        "p95": 294.4,
+        "p99": 294.4,
+        "max": 446.3
+      },
+      "currentInventoryMs": {
+        "p50": 75.5,
+        "p95": 412.1,
+        "p99": 412.1,
+        "max": 472.6
+      },
+      "mainFrameWindows": 32,
+      "rarityCoverageWindows": 14,
+      "repeatsPerMainCell": 1,
+      "baselineWorstMainFrameMs": 12272.2,
+      "currentWorstMainFrameMs": 9598.7,
+      "fullStagesObserved": "7/8 baseline;6/8 current",
+      "eightGrades1920Full": "8/8 both",
+      "isolatedEternalWindows": 6,
+      "isolatedEternalAllTargetStagesObserved": true,
+      "isolatedEternalWorstMs": "233.1 baseline;233.7 current",
+      "claim": "No performance improvement, equivalence or physical4K60 claim. Main regressions retained, diagnostic separate."
+    }
+  },
+  "artifactBudget": {
+    "newRuntimeBitmapBytes": 0,
+    "newRuntimeDependencies": 0,
+    "selectedRealScreenshots": 6,
+    "selectedScreenshotBytes": 154270,
+    "hardZipBytesExclusive": 50000000,
+    "archiveIdentity": "Exact final ZIP bytes, count and SHA-256 are supplied in the external delivery receipt; no self-reference inside this archive."
+  },
+  "openRisks": [
+    "P2 shared software-renderer long frames and10000-item response tails; main full-stage omissions at2560 Boss both versions and3840 Eternal current are not closed by the separate diagnostic.",
+    "P2 near5MB accepted saves may safely reject a subsequent growing write; capacity UX remains open.",
+    "P3 reproduced shop/loot object alias side-record differences after JSON reload; player assets/RNG/revision equal; not fixed.",
+    "P3 deep survival metric saturated in these76 branches; longer natural constrained samples and conditional item comparison remain needed.",
+    "Physical phones/pen/external screen readers/audio listening/OS background/power loss/private player saves/native Windows launcher/physical GPU are not validated."
+  ],
+  "nextRoundPriorities": [
+    "Separate real save/DOM/layout/compositor tails with controlled paired samples.",
+    "Collect naturally constrained deep builds and verify conditional-affix comparison decisions.",
+    "Resolve shop/loot versus inventory object ownership without changing rewards or full-save semantics.",
+    "Improve capacity and disabled/empty-choice explanations after native reproduction.",
+    "Test real input/assistive devices while keeping the completed narrow-window matrix."
+  ],
+  "authority": [
+    "docs/iteration/LATEST_REPORT.md",
+    "docs/iteration/VERIFY.md",
+    "docs/iteration/PERFORMANCE.md",
+    "docs/iteration/BUG_LEDGER.md",
+    "docs/iteration/NEXT_ROUND.md",
+    "docs/iteration/evidence/round11/"
+  ],
+  "finalPackageProtocol": "After assembly, run verify-package.py against the exact delivered ZIP into a new empty directory, rerun syntax/full tests/HTTP there, and report the immutable archive identity outside the ZIP. The embedded work-tree test evidence is distinct from that external final gate.",
+  "handoffValid": true
+}

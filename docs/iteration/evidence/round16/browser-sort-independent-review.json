@@ -1,0 +1,3256 @@
+{
+  "audit": "round16-independent-existing-browser-sort-statistics",
+  "status": "PASS_EVIDENCE_AND_STATISTICS_WITH_MIXED_OBSERVED_LATENCY",
+  "created": "2026-10-19T03:16:44.975497+00:00",
+  "input": {
+    "path": "/workspace/scratch/61dab2872cc5/audit/current/inventory-sort-formal.json",
+    "bytes": 485280,
+    "sha256": "390be8d98837aa3a03811258bb6d7e8435b1998ac7a6ad25240041614b38bc1c"
+  },
+  "reviewScript": {
+    "path": "/workspace/scratch/61dab2872cc5/audit/storage/review-browser-sort.py",
+    "sha256": "9406b06287f2161e7c3cf2c447464567a60ad3e3fee41275cce44a2ede5adc76"
+  },
+  "browserDriver": {
+    "path": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/scripts/qa-inventory-sort-round16.mjs",
+    "sha256": "e6dde920c54357835383a921d5a4077baa10bf9726309bfd655643eb149bac31"
+  },
+  "method": "Python statistics.median and sorted nearest-rank ceil(n*0.95), independently recomputed from all declared formal elapsedMs rows; absolute numeric comparison tolerance 1e-9 ms. No browser, simulation, fixture generation or benchmark ran.",
+  "sampling": {
+    "totalRows": 208,
+    "warmupRowsRetained": 16,
+    "formalRows": 192,
+    "aggregates": 16,
+    "samplesPerAggregate": 12,
+    "pairOrdersVerified": true
+  },
+  "checks": [
+    {
+      "label": "Final formal report, successful and without recorded errors",
+      "passed": true
+    },
+    {
+      "label": "Declared 12 formal AB/BA pairs and one separately retained warmup",
+      "passed": true
+    },
+    {
+      "label": "Actual browser driver matches the report SHA256",
+      "passed": true,
+      "evidence": "e6dde920c54357835383a921d5a4077baa10bf9726309bfd655643eb149bac31"
+    },
+    {
+      "label": "baseline: no duplicate recorded source paths",
+      "passed": true
+    },
+    {
+      "label": "after: no duplicate recorded source paths",
+      "passed": true
+    },
+    {
+      "label": "All current on-disk source identities and recorded HTTP identities match their complete declared inventories",
+      "passed": true,
+      "evidence": {
+        "onDisk": 106,
+        "recordedHTTP": 104
+      }
+    },
+    {
+      "label": "All 208 original rows follow the exact declared scenario/pair/action order",
+      "passed": true
+    },
+    {
+      "label": "Exactly 16 retained warmup rows and 192 formal rows",
+      "passed": true
+    },
+    {
+      "label": "Every warmup and formal row has trusted input, visible endpoint, exactly 60 correct cards and unchanged full saves",
+      "passed": true
+    },
+    {
+      "label": "Recorded complete-card and ID oracles match between versions for all six fixture/sort combinations",
+      "passed": true
+    },
+    {
+      "label": "Every reported long task overlaps its stated capture-to-second-rAF window",
+      "passed": true
+    },
+    {
+      "label": "All 16 aggregate n/p50/p95/max/min/mean/long-task counts independently match",
+      "passed": true
+    },
+    {
+      "label": "All p95 values are exactly max at n=12 using the declared nearest-rank definition",
+      "passed": true
+    },
+    {
+      "label": "Every scenario/action preserves all 12 exact formal pairs and both six-pair orders",
+      "passed": true
+    },
+    {
+      "label": "Original report and browser driver bytes remained unchanged throughout this read-only analysis",
+      "passed": true
+    }
+  ],
+  "sourceIdentityCount": 106,
+  "httpIdentityCount": 104,
+  "recomputedAggregates": [
+    {
+      "count": 243,
+      "label": "baseline",
+      "step": "open-power",
+      "n": 12,
+      "p50": 251.09999999962747,
+      "p95": 505.90000000037253,
+      "max": 505.90000000037253,
+      "min": 69.29999999888241,
+      "mean": 261.31666666657355,
+      "longTasks": 12,
+      "sampleRowIndices": [
+        8,
+        20,
+        24,
+        36,
+        40,
+        52,
+        56,
+        68,
+        72,
+        84,
+        88,
+        100
+      ],
+      "rawElapsedMs": [
+        73.20000000111759,
+        244.7999999988824,
+        466,
+        257.40000000037253,
+        233.5,
+        351.09999999962747,
+        356.59999999962747,
+        69.29999999888241,
+        505.90000000037253,
+        112.5,
+        131.19999999925494,
+        334.30000000074506
+      ],
+      "recordedStatisticsMatch": true
+    },
+    {
+      "count": 243,
+      "label": "baseline",
+      "step": "sort-rarity",
+      "n": 12,
+      "p50": 295.79999999981374,
+      "p95": 569.3000000007451,
+      "max": 569.3000000007451,
+      "min": 59,
+      "mean": 316.81666666672874,
+      "longTasks": 9,
+      "sampleRowIndices": [
+        9,
+        21,
+        25,
+        37,
+        41,
+        53,
+        57,
+        69,
+        73,
+        85,
+        89,
+        101
+      ],
+      "rawElapsedMs": [
+        59,
+        173.5,
+        274.40000000037253,
+        369.6000000014901,
+        386,
+        410.30000000074506,
+        216.2999999988824,
+        569.3000000007451,
+        301.7999999988824,
+        523.6999999992549,
+        289.80000000074506,
+        228.09999999962747
+      ],
+      "recordedStatisticsMatch": true
+    },
+    {
+      "count": 243,
+      "label": "baseline",
+      "step": "sort-level",
+      "n": 12,
+      "p50": 285.20000000018626,
+      "p95": 679.7999999988824,
+      "max": 679.7999999988824,
+      "min": 76.70000000111759,
+      "mean": 346.625,
+      "longTasks": 9,
+      "sampleRowIndices": [
+        10,
+        22,
+        26,
+        38,
+        42,
+        54,
+        58,
+        70,
+        74,
+        86,
+        90,
+        102
+      ],
+      "rawElapsedMs": [
+        76.70000000111759,
+        525.1999999992549,
+        265.30000000074506,
+        193.60000000149012,
+        305.09999999962747,
+        177.09999999962747,
+        512.5999999996275,
+        113.90000000037253,
+        225.59999999962747,
+        580.5,
+        679.7999999988824,
+        504.09999999962747
+      ],
+      "recordedStatisticsMatch": true
+    },
+    {
+      "count": 243,
+      "label": "baseline",
+      "step": "sort-power",
+      "n": 12,
+      "p50": 237.8999999994412,
+      "p95": 458.90000000037253,
+      "max": 458.90000000037253,
+      "min": 69.70000000111759,
+      "mean": 245.67499999996895,
+      "longTasks": 11,
+      "sampleRowIndices": [
+        11,
+        23,
+        27,
+        39,
+        43,
+        55,
+        59,
+        71,
+        75,
+        87,
+        91,
+        103
+      ],
+      "rawElapsedMs": [
+        69.70000000111759,
+        105.40000000037253,
+        262.90000000037253,
+        321.8999999985099,
+        212.89999999850988,
+        87.19999999925494,
+        325.19999999925494,
+        97.40000000037253,
+        458.90000000037253,
+        412.09999999962747,
+        421.1000000014901,
+        173.40000000037253
+      ],
+      "recordedStatisticsMatch": true
+    },
+    {
+      "count": 243,
+      "label": "after",
+      "step": "open-power",
+      "n": 12,
+      "p50": 175.90000000037253,
+      "p95": 521.1000000014901,
+      "max": 521.1000000014901,
+      "min": 67.30000000074506,
+      "mean": 201.2833333335196,
+      "longTasks": 12,
+      "sampleRowIndices": [
+        12,
+        16,
+        28,
+        32,
+        44,
+        48,
+        60,
+        64,
+        76,
+        80,
+        92,
+        96
+      ],
+      "rawElapsedMs": [
+        76.59999999962747,
+        67.30000000074506,
+        69.09999999962747,
+        228.39999999850988,
+        337.5,
+        354.5,
+        76.70000000111759,
+        180.19999999925494,
+        94.5,
+        171.60000000149012,
+        521.1000000014901,
+        237.90000000037253
+      ],
+      "recordedStatisticsMatch": true
+    },
+    {
+      "count": 243,
+      "label": "after",
+      "step": "sort-rarity",
+      "n": 12,
+      "p50": 288.3500000005588,
+      "p95": 653.5,
+      "max": 653.5,
+      "min": 69.29999999888241,
+      "mean": 283.70000000018626,
+      "longTasks": 11,
+      "sampleRowIndices": [
+        13,
+        17,
+        29,
+        33,
+        45,
+        49,
+        61,
+        65,
+        77,
+        81,
+        93,
+        97
+      ],
+      "rawElapsedMs": [
+        69.29999999888241,
+        106.80000000074506,
+        224.59999999962747,
+        201,
+        281,
+        325.2000000011176,
+        366.5,
+        209.60000000149012,
+        653.5,
+        295.7000000011176,
+        369.90000000037253,
+        301.2999999988824
+      ],
+      "recordedStatisticsMatch": true
+    },
+    {
+      "count": 243,
+      "label": "after",
+      "step": "sort-level",
+      "n": 12,
+      "p50": 296.5,
+      "p95": 512.7000000011176,
+      "max": 512.7000000011176,
+      "min": 64.10000000149012,
+      "mean": 293.62500000046566,
+      "longTasks": 10,
+      "sampleRowIndices": [
+        14,
+        18,
+        30,
+        34,
+        46,
+        50,
+        62,
+        66,
+        78,
+        82,
+        94,
+        98
+      ],
+      "rawElapsedMs": [
+        64.10000000149012,
+        65.5,
+        314.80000000074506,
+        203.40000000037253,
+        512.7000000011176,
+        278.19999999925494,
+        270,
+        185.30000000074506,
+        360.1000000014901,
+        438.09999999962747,
+        512.3000000007451,
+        319
+      ],
+      "recordedStatisticsMatch": true
+    },
+    {
+      "count": 243,
+      "label": "after",
+      "step": "sort-power",
+      "n": 12,
+      "p50": 224.45000000018626,
+      "p95": 598.4000000003725,
+      "max": 598.4000000003725,
+      "min": 69.5,
+      "mean": 260.57500000018626,
+      "longTasks": 7,
+      "sampleRowIndices": [
+        15,
+        19,
+        31,
+        35,
+        47,
+        51,
+        63,
+        67,
+        79,
+        83,
+        95,
+        99
+      ],
+      "rawElapsedMs": [
+        69.5,
+        235,
+        598.4000000003725,
+        213.90000000037253,
+        355.90000000037253,
+        107.90000000037253,
+        168.7000000011176,
+        321.5,
+        329.2999999988824,
+        429.80000000074506,
+        104.69999999925494,
+        192.30000000074506
+      ],
+      "recordedStatisticsMatch": true
+    },
+    {
+      "count": 10000,
+      "label": "baseline",
+      "step": "open-power",
+      "n": 12,
+      "p50": 268.84999999962747,
+      "p95": 559.3000000007451,
+      "max": 559.3000000007451,
+      "min": 64.5,
+      "mean": 285.30833333327126,
+      "longTasks": 12,
+      "sampleRowIndices": [
+        112,
+        124,
+        128,
+        140,
+        144,
+        156,
+        160,
+        172,
+        176,
+        188,
+        192,
+        204
+      ],
+      "rawElapsedMs": [
+        90.5,
+        64.5,
+        463.69999999925494,
+        224.69999999925494,
+        344,
+        313,
+        448.30000000074506,
+        110.30000000074506,
+        414.5,
+        218.89999999850988,
+        559.3000000007451,
+        172
+      ],
+      "recordedStatisticsMatch": true
+    },
+    {
+      "count": 10000,
+      "label": "baseline",
+      "step": "sort-rarity",
+      "n": 12,
+      "p50": 161.65000000037253,
+      "p95": 375.80000000074506,
+      "max": 375.80000000074506,
+      "min": 72.19999999925494,
+      "mean": 191.17499999981374,
+      "longTasks": 12,
+      "sampleRowIndices": [
+        113,
+        125,
+        129,
+        141,
+        145,
+        157,
+        161,
+        173,
+        177,
+        189,
+        193,
+        205
+      ],
+      "rawElapsedMs": [
+        72.19999999925494,
+        145.09999999962747,
+        107.19999999925494,
+        375.80000000074506,
+        290.69999999925494,
+        352.19999999925494,
+        182.59999999962747,
+        178.2000000011176,
+        94.80000000074506,
+        91.5,
+        94.29999999888241,
+        309.5
+      ],
+      "recordedStatisticsMatch": true
+    },
+    {
+      "count": 10000,
+      "label": "baseline",
+      "step": "sort-level",
+      "n": 12,
+      "p50": 315.4999999990687,
+      "p95": 549,
+      "max": 549,
+      "min": 71.90000000037253,
+      "mean": 289.79999999981374,
+      "longTasks": 12,
+      "sampleRowIndices": [
+        114,
+        126,
+        130,
+        142,
+        146,
+        158,
+        162,
+        174,
+        178,
+        190,
+        194,
+        206
+      ],
+      "rawElapsedMs": [
+        71.90000000037253,
+        305.2999999988824,
+        131.69999999925494,
+        205,
+        399.80000000074506,
+        95.79999999888241,
+        105.09999999962747,
+        549,
+        325.69999999925494,
+        335.40000000037253,
+        526,
+        426.90000000037253
+      ],
+      "recordedStatisticsMatch": true
+    },
+    {
+      "count": 10000,
+      "label": "baseline",
+      "step": "sort-power",
+      "n": 12,
+      "p50": 211.54999999981374,
+      "p95": 498.09999999962747,
+      "max": 498.09999999962747,
+      "min": 70,
+      "mean": 229.75833333314708,
+      "longTasks": 12,
+      "sampleRowIndices": [
+        115,
+        127,
+        131,
+        143,
+        147,
+        159,
+        163,
+        175,
+        179,
+        191,
+        195,
+        207
+      ],
+      "rawElapsedMs": [
+        71.70000000111759,
+        85.69999999925494,
+        477.2999999988824,
+        285.19999999925494,
+        85.59999999962747,
+        79.90000000037253,
+        498.09999999962747,
+        343.69999999925494,
+        300.19999999925494,
+        321.80000000074506,
+        70,
+        137.90000000037253
+      ],
+      "recordedStatisticsMatch": true
+    },
+    {
+      "count": 10000,
+      "label": "after",
+      "step": "open-power",
+      "n": 12,
+      "p50": 257.25,
+      "p95": 477.80000000074506,
+      "max": 477.80000000074506,
+      "min": 76,
+      "mean": 257.44166666672874,
+      "longTasks": 12,
+      "sampleRowIndices": [
+        116,
+        120,
+        132,
+        136,
+        148,
+        152,
+        164,
+        168,
+        180,
+        184,
+        196,
+        200
+      ],
+      "rawElapsedMs": [
+        76,
+        121,
+        304.5,
+        426.69999999925494,
+        130.09999999962747,
+        477.80000000074506,
+        336.40000000037253,
+        313.40000000037253,
+        210,
+        428,
+        160.90000000037253,
+        104.5
+      ],
+      "recordedStatisticsMatch": true
+    },
+    {
+      "count": 10000,
+      "label": "after",
+      "step": "sort-rarity",
+      "n": 12,
+      "p50": 274.59999999962747,
+      "p95": 717.5,
+      "max": 717.5,
+      "min": 62.40000000037253,
+      "mean": 301.7833333333644,
+      "longTasks": 10,
+      "sampleRowIndices": [
+        117,
+        121,
+        133,
+        137,
+        149,
+        153,
+        165,
+        169,
+        181,
+        185,
+        197,
+        201
+      ],
+      "rawElapsedMs": [
+        62.40000000037253,
+        566.4000000003725,
+        207.80000000074506,
+        152.89999999850988,
+        314,
+        485,
+        357.90000000037253,
+        323.5,
+        75.40000000037253,
+        123.40000000037253,
+        235.19999999925494,
+        717.5
+      ],
+      "recordedStatisticsMatch": true
+    },
+    {
+      "count": 10000,
+      "label": "after",
+      "step": "sort-level",
+      "n": 12,
+      "p50": 282.55000000074506,
+      "p95": 723.9000000003725,
+      "max": 723.9000000003725,
+      "min": 66.60000000149012,
+      "mean": 318.1750000002794,
+      "longTasks": 10,
+      "sampleRowIndices": [
+        118,
+        122,
+        134,
+        138,
+        150,
+        154,
+        166,
+        170,
+        182,
+        186,
+        198,
+        202
+      ],
+      "rawElapsedMs": [
+        66.60000000149012,
+        441.30000000074506,
+        286.2000000011176,
+        573.5,
+        150.09999999962747,
+        97.40000000037253,
+        179.69999999925494,
+        723.9000000003725,
+        635.1999999992549,
+        278.90000000037253,
+        76.40000000037253,
+        308.90000000037253
+      ],
+      "recordedStatisticsMatch": true
+    },
+    {
+      "count": 10000,
+      "label": "after",
+      "step": "sort-power",
+      "n": 12,
+      "p50": 286.09999999962747,
+      "p95": 446.30000000074506,
+      "max": 446.30000000074506,
+      "min": 147.5,
+      "mean": 284.3749999996896,
+      "longTasks": 10,
+      "sampleRowIndices": [
+        119,
+        123,
+        135,
+        139,
+        151,
+        155,
+        167,
+        171,
+        183,
+        187,
+        199,
+        203
+      ],
+      "rawElapsedMs": [
+        326.30000000074506,
+        176.59999999962747,
+        147.5,
+        326.2999999988824,
+        315.69999999925494,
+        446.30000000074506,
+        259.69999999925494,
+        312.5,
+        259.59999999962747,
+        223,
+        428.8999999985099,
+        190.09999999962747
+      ],
+      "recordedStatisticsMatch": true
+    }
+  ],
+  "comparisons": [
+    {
+      "count": 243,
+      "step": "open-power",
+      "nPerVersion": 12,
+      "changes": {
+        "p50": {
+          "count": 243,
+          "step": "open-power",
+          "metric": "p50",
+          "baseline": 251.09999999962747,
+          "after": 175.90000000037253,
+          "delta": -75.19999999925494,
+          "deltaPercent": -29.948227797437877,
+          "direction": "lower"
+        },
+        "p95": {
+          "count": 243,
+          "step": "open-power",
+          "metric": "p95",
+          "baseline": 505.90000000037253,
+          "after": 521.1000000014901,
+          "delta": 15.200000001117587,
+          "deltaPercent": 3.0045463532528904,
+          "direction": "higher"
+        },
+        "max": {
+          "count": 243,
+          "step": "open-power",
+          "metric": "max",
+          "baseline": 505.90000000037253,
+          "after": 521.1000000014901,
+          "delta": 15.200000001117587,
+          "deltaPercent": 3.0045463532528904,
+          "direction": "higher"
+        },
+        "min": {
+          "count": 243,
+          "step": "open-power",
+          "metric": "min",
+          "baseline": 69.29999999888241,
+          "after": 67.30000000074506,
+          "delta": -1.9999999981373549,
+          "deltaPercent": -2.886002883361627,
+          "direction": "lower"
+        },
+        "mean": {
+          "count": 243,
+          "step": "open-power",
+          "metric": "mean",
+          "baseline": 261.31666666657355,
+          "after": 201.2833333335196,
+          "delta": -60.033333333053946,
+          "deltaPercent": -22.97340391596735,
+          "direction": "lower"
+        },
+        "longTasks": {
+          "count": 243,
+          "step": "open-power",
+          "metric": "longTasks",
+          "baseline": 12,
+          "after": 12,
+          "delta": 0,
+          "deltaPercent": 0.0,
+          "direction": "equal"
+        }
+      }
+    },
+    {
+      "count": 243,
+      "step": "sort-rarity",
+      "nPerVersion": 12,
+      "changes": {
+        "p50": {
+          "count": 243,
+          "step": "sort-rarity",
+          "metric": "p50",
+          "baseline": 295.79999999981374,
+          "after": 288.3500000005588,
+          "delta": -7.449999999254942,
+          "deltaPercent": -2.5185936441040058,
+          "direction": "lower"
+        },
+        "p95": {
+          "count": 243,
+          "step": "sort-rarity",
+          "metric": "p95",
+          "baseline": 569.3000000007451,
+          "after": 653.5,
+          "delta": 84.19999999925494,
+          "deltaPercent": 14.790093096635303,
+          "direction": "higher"
+        },
+        "max": {
+          "count": 243,
+          "step": "sort-rarity",
+          "metric": "max",
+          "baseline": 569.3000000007451,
+          "after": 653.5,
+          "delta": 84.19999999925494,
+          "deltaPercent": 14.790093096635303,
+          "direction": "higher"
+        },
+        "min": {
+          "count": 243,
+          "step": "sort-rarity",
+          "metric": "min",
+          "baseline": 59,
+          "after": 69.29999999888241,
+          "delta": 10.299999998882413,
+          "deltaPercent": 17.45762711674985,
+          "direction": "higher"
+        },
+        "mean": {
+          "count": 243,
+          "step": "sort-rarity",
+          "metric": "mean",
+          "baseline": 316.81666666672874,
+          "after": 283.70000000018626,
+          "delta": -33.11666666654247,
+          "deltaPercent": -10.452943342585929,
+          "direction": "lower"
+        },
+        "longTasks": {
+          "count": 243,
+          "step": "sort-rarity",
+          "metric": "longTasks",
+          "baseline": 9,
+          "after": 11,
+          "delta": 2,
+          "deltaPercent": 22.222222222222232,
+          "direction": "higher"
+        }
+      }
+    },
+    {
+      "count": 243,
+      "step": "sort-level",
+      "nPerVersion": 12,
+      "changes": {
+        "p50": {
+          "count": 243,
+          "step": "sort-level",
+          "metric": "p50",
+          "baseline": 285.20000000018626,
+          "after": 296.5,
+          "delta": 11.299999999813735,
+          "deltaPercent": 3.9621318372392578,
+          "direction": "higher"
+        },
+        "p95": {
+          "count": 243,
+          "step": "sort-level",
+          "metric": "p95",
+          "baseline": 679.7999999988824,
+          "after": 512.7000000011176,
+          "delta": -167.09999999776483,
+          "deltaPercent": -24.580759046490076,
+          "direction": "lower"
+        },
+        "max": {
+          "count": 243,
+          "step": "sort-level",
+          "metric": "max",
+          "baseline": 679.7999999988824,
+          "after": 512.7000000011176,
+          "delta": -167.09999999776483,
+          "deltaPercent": -24.580759046490076,
+          "direction": "lower"
+        },
+        "min": {
+          "count": 243,
+          "step": "sort-level",
+          "metric": "min",
+          "baseline": 76.70000000111759,
+          "after": 64.10000000149012,
+          "delta": -12.599999999627471,
+          "deltaPercent": -16.42764015572865,
+          "direction": "lower"
+        },
+        "mean": {
+          "count": 243,
+          "step": "sort-level",
+          "metric": "mean",
+          "baseline": 346.625,
+          "after": 293.62500000046566,
+          "delta": -52.99999999953434,
+          "deltaPercent": -15.29029931468715,
+          "direction": "lower"
+        },
+        "longTasks": {
+          "count": 243,
+          "step": "sort-level",
+          "metric": "longTasks",
+          "baseline": 9,
+          "after": 10,
+          "delta": 1,
+          "deltaPercent": 11.111111111111116,
+          "direction": "higher"
+        }
+      }
+    },
+    {
+      "count": 243,
+      "step": "sort-power",
+      "nPerVersion": 12,
+      "changes": {
+        "p50": {
+          "count": 243,
+          "step": "sort-power",
+          "metric": "p50",
+          "baseline": 237.8999999994412,
+          "after": 224.45000000018626,
+          "delta": -13.449999999254942,
+          "deltaPercent": -5.65363598120493,
+          "direction": "lower"
+        },
+        "p95": {
+          "count": 243,
+          "step": "sort-power",
+          "metric": "p95",
+          "baseline": 458.90000000037253,
+          "after": 598.4000000003725,
+          "delta": 139.5,
+          "deltaPercent": 30.398779690539723,
+          "direction": "higher"
+        },
+        "max": {
+          "count": 243,
+          "step": "sort-power",
+          "metric": "max",
+          "baseline": 458.90000000037253,
+          "after": 598.4000000003725,
+          "delta": 139.5,
+          "deltaPercent": 30.398779690539723,
+          "direction": "higher"
+        },
+        "min": {
+          "count": 243,
+          "step": "sort-power",
+          "metric": "min",
+          "baseline": 69.70000000111759,
+          "after": 69.5,
+          "delta": -0.2000000011175871,
+          "deltaPercent": -0.2869440475098739,
+          "direction": "lower"
+        },
+        "mean": {
+          "count": 243,
+          "step": "sort-power",
+          "metric": "mean",
+          "baseline": 245.67499999996895,
+          "after": 260.57500000018626,
+          "delta": 14.900000000217318,
+          "deltaPercent": 6.064923170945025,
+          "direction": "higher"
+        },
+        "longTasks": {
+          "count": 243,
+          "step": "sort-power",
+          "metric": "longTasks",
+          "baseline": 11,
+          "after": 7,
+          "delta": -4,
+          "deltaPercent": -36.36363636363637,
+          "direction": "lower"
+        }
+      }
+    },
+    {
+      "count": 10000,
+      "step": "open-power",
+      "nPerVersion": 12,
+      "changes": {
+        "p50": {
+          "count": 10000,
+          "step": "open-power",
+          "metric": "p50",
+          "baseline": 268.84999999962747,
+          "after": 257.25,
+          "delta": -11.599999999627471,
+          "deltaPercent": -4.314673609687015,
+          "direction": "lower"
+        },
+        "p95": {
+          "count": 10000,
+          "step": "open-power",
+          "metric": "p95",
+          "baseline": 559.3000000007451,
+          "after": 477.80000000074506,
+          "delta": -81.5,
+          "deltaPercent": -14.571786161253609,
+          "direction": "lower"
+        },
+        "max": {
+          "count": 10000,
+          "step": "open-power",
+          "metric": "max",
+          "baseline": 559.3000000007451,
+          "after": 477.80000000074506,
+          "delta": -81.5,
+          "deltaPercent": -14.571786161253609,
+          "direction": "lower"
+        },
+        "min": {
+          "count": 10000,
+          "step": "open-power",
+          "metric": "min",
+          "baseline": 64.5,
+          "after": 76,
+          "delta": 11.5,
+          "deltaPercent": 17.829457364341096,
+          "direction": "higher"
+        },
+        "mean": {
+          "count": 10000,
+          "step": "open-power",
+          "metric": "mean",
+          "baseline": 285.30833333327126,
+          "after": 257.44166666672874,
+          "delta": -27.866666666542528,
+          "deltaPercent": -9.767210912129654,
+          "direction": "lower"
+        },
+        "longTasks": {
+          "count": 10000,
+          "step": "open-power",
+          "metric": "longTasks",
+          "baseline": 12,
+          "after": 12,
+          "delta": 0,
+          "deltaPercent": 0.0,
+          "direction": "equal"
+        }
+      }
+    },
+    {
+      "count": 10000,
+      "step": "sort-rarity",
+      "nPerVersion": 12,
+      "changes": {
+        "p50": {
+          "count": 10000,
+          "step": "sort-rarity",
+          "metric": "p50",
+          "baseline": 161.65000000037253,
+          "after": 274.59999999962747,
+          "delta": 112.94999999925494,
+          "deltaPercent": 69.87318280172883,
+          "direction": "higher"
+        },
+        "p95": {
+          "count": 10000,
+          "step": "sort-rarity",
+          "metric": "p95",
+          "baseline": 375.80000000074506,
+          "after": 717.5,
+          "delta": 341.69999999925494,
+          "deltaPercent": 90.92602448072844,
+          "direction": "higher"
+        },
+        "max": {
+          "count": 10000,
+          "step": "sort-rarity",
+          "metric": "max",
+          "baseline": 375.80000000074506,
+          "after": 717.5,
+          "delta": 341.69999999925494,
+          "deltaPercent": 90.92602448072844,
+          "direction": "higher"
+        },
+        "min": {
+          "count": 10000,
+          "step": "sort-rarity",
+          "metric": "min",
+          "baseline": 72.19999999925494,
+          "after": 62.40000000037253,
+          "delta": -9.799999998882413,
+          "deltaPercent": -13.57340720080823,
+          "direction": "lower"
+        },
+        "mean": {
+          "count": 10000,
+          "step": "sort-rarity",
+          "metric": "mean",
+          "baseline": 191.17499999981374,
+          "after": 301.7833333333644,
+          "delta": 110.60833333355066,
+          "deltaPercent": 57.85711172154227,
+          "direction": "higher"
+        },
+        "longTasks": {
+          "count": 10000,
+          "step": "sort-rarity",
+          "metric": "longTasks",
+          "baseline": 12,
+          "after": 10,
+          "delta": -2,
+          "deltaPercent": -16.666666666666664,
+          "direction": "lower"
+        }
+      }
+    },
+    {
+      "count": 10000,
+      "step": "sort-level",
+      "nPerVersion": 12,
+      "changes": {
+        "p50": {
+          "count": 10000,
+          "step": "sort-level",
+          "metric": "p50",
+          "baseline": 315.4999999990687,
+          "after": 282.55000000074506,
+          "delta": -32.94999999832362,
+          "deltaPercent": -10.443740094586651,
+          "direction": "lower"
+        },
+        "p95": {
+          "count": 10000,
+          "step": "sort-level",
+          "metric": "p95",
+          "baseline": 549,
+          "after": 723.9000000003725,
+          "delta": 174.90000000037253,
+          "deltaPercent": 31.857923497335605,
+          "direction": "higher"
+        },
+        "max": {
+          "count": 10000,
+          "step": "sort-level",
+          "metric": "max",
+          "baseline": 549,
+          "after": 723.9000000003725,
+          "delta": 174.90000000037253,
+          "deltaPercent": 31.857923497335605,
+          "direction": "higher"
+        },
+        "min": {
+          "count": 10000,
+          "step": "sort-level",
+          "metric": "min",
+          "baseline": 71.90000000037253,
+          "after": 66.60000000149012,
+          "delta": -5.299999998882413,
+          "deltaPercent": -7.371349094374069,
+          "direction": "lower"
+        },
+        "mean": {
+          "count": 10000,
+          "step": "sort-level",
+          "metric": "mean",
+          "baseline": 289.79999999981374,
+          "after": 318.1750000002794,
+          "delta": 28.37500000046566,
+          "deltaPercent": 9.791235334880577,
+          "direction": "higher"
+        },
+        "longTasks": {
+          "count": 10000,
+          "step": "sort-level",
+          "metric": "longTasks",
+          "baseline": 12,
+          "after": 10,
+          "delta": -2,
+          "deltaPercent": -16.666666666666664,
+          "direction": "lower"
+        }
+      }
+    },
+    {
+      "count": 10000,
+      "step": "sort-power",
+      "nPerVersion": 12,
+      "changes": {
+        "p50": {
+          "count": 10000,
+          "step": "sort-power",
+          "metric": "p50",
+          "baseline": 211.54999999981374,
+          "after": 286.09999999962747,
+          "delta": 74.54999999981374,
+          "deltaPercent": 35.23989600561539,
+          "direction": "higher"
+        },
+        "p95": {
+          "count": 10000,
+          "step": "sort-power",
+          "metric": "p95",
+          "baseline": 498.09999999962747,
+          "after": 446.30000000074506,
+          "delta": -51.79999999888241,
+          "deltaPercent": -10.399518168825772,
+          "direction": "lower"
+        },
+        "max": {
+          "count": 10000,
+          "step": "sort-power",
+          "metric": "max",
+          "baseline": 498.09999999962747,
+          "after": 446.30000000074506,
+          "delta": -51.79999999888241,
+          "deltaPercent": -10.399518168825772,
+          "direction": "lower"
+        },
+        "min": {
+          "count": 10000,
+          "step": "sort-power",
+          "metric": "min",
+          "baseline": 70,
+          "after": 147.5,
+          "delta": 77.5,
+          "deltaPercent": 110.71428571428572,
+          "direction": "higher"
+        },
+        "mean": {
+          "count": 10000,
+          "step": "sort-power",
+          "metric": "mean",
+          "baseline": 229.75833333314708,
+          "after": 284.3749999996896,
+          "delta": 54.6166666665425,
+          "deltaPercent": 23.77135395883505,
+          "direction": "higher"
+        },
+        "longTasks": {
+          "count": 10000,
+          "step": "sort-power",
+          "metric": "longTasks",
+          "baseline": 12,
+          "after": 10,
+          "delta": -2,
+          "deltaPercent": -16.666666666666664,
+          "direction": "lower"
+        }
+      }
+    }
+  ],
+  "pairedDifferences": [
+    {
+      "count": 243,
+      "step": "open-power",
+      "definition": "after elapsedMs minus baseline elapsedMs in the same declared formal round",
+      "pairs": [
+        {
+          "round": 1,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselinePosition": 1,
+          "afterPosition": 2,
+          "baselineMs": 73.20000000111759,
+          "afterMs": 76.59999999962747,
+          "deltaMs": 3.399999998509884,
+          "deltaPercent": 4.644808741062811,
+          "sign": "positive"
+        },
+        {
+          "round": 2,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselinePosition": 2,
+          "afterPosition": 1,
+          "baselineMs": 244.7999999988824,
+          "afterMs": 67.30000000074506,
+          "deltaMs": -177.49999999813735,
+          "deltaPercent": -72.50816993421066,
+          "sign": "negative"
+        },
+        {
+          "round": 3,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselinePosition": 1,
+          "afterPosition": 2,
+          "baselineMs": 466,
+          "afterMs": 69.09999999962747,
+          "deltaMs": -396.90000000037253,
+          "deltaPercent": -85.17167381982243,
+          "sign": "negative"
+        },
+        {
+          "round": 4,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselinePosition": 2,
+          "afterPosition": 1,
+          "baselineMs": 257.40000000037253,
+          "afterMs": 228.39999999850988,
+          "deltaMs": -29.000000001862645,
+          "deltaPercent": -11.266511267218604,
+          "sign": "negative"
+        },
+        {
+          "round": 5,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselinePosition": 1,
+          "afterPosition": 2,
+          "baselineMs": 233.5,
+          "afterMs": 337.5,
+          "deltaMs": 104.0,
+          "deltaPercent": 44.53961456102784,
+          "sign": "positive"
+        },
+        {
+          "round": 6,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselinePosition": 2,
+          "afterPosition": 1,
+          "baselineMs": 351.09999999962747,
+          "afterMs": 354.5,
+          "deltaMs": 3.400000000372529,
+          "deltaPercent": 0.9683850755842105,
+          "sign": "positive"
+        },
+        {
+          "round": 7,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselinePosition": 1,
+          "afterPosition": 2,
+          "baselineMs": 356.59999999962747,
+          "afterMs": 76.70000000111759,
+          "deltaMs": -279.8999999985099,
+          "deltaPercent": -78.49130678597933,
+          "sign": "negative"
+        },
+        {
+          "round": 8,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselinePosition": 2,
+          "afterPosition": 1,
+          "baselineMs": 69.29999999888241,
+          "afterMs": 180.19999999925494,
+          "deltaMs": 110.90000000037253,
+          "deltaPercent": 160.02886003197835,
+          "sign": "positive"
+        },
+        {
+          "round": 9,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselinePosition": 1,
+          "afterPosition": 2,
+          "baselineMs": 505.90000000037253,
+          "afterMs": 94.5,
+          "deltaMs": -411.40000000037253,
+          "deltaPercent": -81.320419055163,
+          "sign": "negative"
+        },
+        {
+          "round": 10,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselinePosition": 2,
+          "afterPosition": 1,
+          "baselineMs": 112.5,
+          "afterMs": 171.60000000149012,
+          "deltaMs": 59.100000001490116,
+          "deltaPercent": 52.53333333465788,
+          "sign": "positive"
+        },
+        {
+          "round": 11,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselinePosition": 1,
+          "afterPosition": 2,
+          "baselineMs": 131.19999999925494,
+          "afterMs": 521.1000000014901,
+          "deltaMs": 389.9000000022352,
+          "deltaPercent": 297.1798780521718,
+          "sign": "positive"
+        },
+        {
+          "round": 12,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselinePosition": 2,
+          "afterPosition": 1,
+          "baselineMs": 334.30000000074506,
+          "afterMs": 237.90000000037253,
+          "deltaMs": -96.40000000037253,
+          "deltaPercent": -28.83637451395683,
+          "sign": "negative"
+        }
+      ],
+      "summary": {
+        "n": 12,
+        "positiveAfterSlower": 6,
+        "negativeAfterFaster": 6,
+        "zero": 0,
+        "medianDeltaMs": -12.80000000167638,
+        "meanDeltaMs": -60.03333333305394,
+        "minDeltaMs": -411.40000000037253,
+        "maxDeltaMs": 389.9000000022352
+      },
+      "byOrder": [
+        {
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "n": 6,
+          "positiveAfterSlower": 3,
+          "negativeAfterFaster": 3,
+          "zero": 0,
+          "medianDeltaMs": -138.25,
+          "meanDeltaMs": -98.48333333308499,
+          "minDeltaMs": -411.40000000037253,
+          "maxDeltaMs": 389.9000000022352
+        },
+        {
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "n": 6,
+          "positiveAfterSlower": 3,
+          "negativeAfterFaster": 3,
+          "zero": 0,
+          "medianDeltaMs": -12.800000000745058,
+          "meanDeltaMs": -21.583333333022892,
+          "minDeltaMs": -177.49999999813735,
+          "maxDeltaMs": 110.90000000037253
+        }
+      ]
+    },
+    {
+      "count": 243,
+      "step": "sort-rarity",
+      "definition": "after elapsedMs minus baseline elapsedMs in the same declared formal round",
+      "pairs": [
+        {
+          "round": 1,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselinePosition": 1,
+          "afterPosition": 2,
+          "baselineMs": 59,
+          "afterMs": 69.29999999888241,
+          "deltaMs": 10.299999998882413,
+          "deltaPercent": 17.45762711674985,
+          "sign": "positive"
+        },
+        {
+          "round": 2,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselinePosition": 2,
+          "afterPosition": 1,
+          "baselineMs": 173.5,
+          "afterMs": 106.80000000074506,
+          "deltaMs": -66.69999999925494,
+          "deltaPercent": -38.443804034152706,
+          "sign": "negative"
+        },
+        {
+          "round": 3,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselinePosition": 1,
+          "afterPosition": 2,
+          "baselineMs": 274.40000000037253,
+          "afterMs": 224.59999999962747,
+          "deltaMs": -49.80000000074506,
+          "deltaPercent": -18.14868804689411,
+          "sign": "negative"
+        },
+        {
+          "round": 4,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselinePosition": 2,
+          "afterPosition": 1,
+          "baselineMs": 369.6000000014901,
+          "afterMs": 201,
+          "deltaMs": -168.60000000149012,
+          "deltaPercent": -45.61688311710237,
+          "sign": "negative"
+        },
+        {
+          "round": 5,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselinePosition": 1,
+          "afterPosition": 2,
+          "baselineMs": 386,
+          "afterMs": 281,
+          "deltaMs": -105,
+          "deltaPercent": -27.2020725388601,
+          "sign": "negative"
+        },
+        {
+          "round": 6,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselinePosition": 2,
+          "afterPosition": 1,
+          "baselineMs": 410.30000000074506,
+          "afterMs": 325.2000000011176,
+          "deltaMs": -85.09999999962747,
+          "deltaPercent": -20.740921276985848,
+          "sign": "negative"
+        },
+        {
+          "round": 7,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselinePosition": 1,
+          "afterPosition": 2,
+          "baselineMs": 216.2999999988824,
+          "afterMs": 366.5,
+          "deltaMs": 150.2000000011176,
+          "deltaPercent": 69.44059177156431,
+          "sign": "positive"
+        },
+        {
+          "round": 8,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselinePosition": 2,
+          "afterPosition": 1,
+          "baselineMs": 569.3000000007451,
+          "afterMs": 209.60000000149012,
+          "deltaMs": -359.69999999925494,
+          "deltaPercent": -63.182856138904654,
+          "sign": "negative"
+        },
+        {
+          "round": 9,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselinePosition": 1,
+          "afterPosition": 2,
+          "baselineMs": 301.7999999988824,
+          "afterMs": 653.5,
+          "deltaMs": 351.7000000011176,
+          "deltaPercent": 116.53412856276341,
+          "sign": "positive"
+        },
+        {
+          "round": 10,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselinePosition": 2,
+          "afterPosition": 1,
+          "baselineMs": 523.6999999992549,
+          "afterMs": 295.7000000011176,
+          "deltaMs": -227.99999999813735,
+          "deltaPercent": -43.536375787370964,
+          "sign": "negative"
+        },
+        {
+          "round": 11,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselinePosition": 1,
+          "afterPosition": 2,
+          "baselineMs": 289.80000000074506,
+          "afterMs": 369.90000000037253,
+          "deltaMs": 80.09999999962747,
+          "deltaPercent": 27.639751552595413,
+          "sign": "positive"
+        },
+        {
+          "round": 12,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselinePosition": 2,
+          "afterPosition": 1,
+          "baselineMs": 228.09999999962747,
+          "afterMs": 301.2999999988824,
+          "deltaMs": 73.19999999925494,
+          "deltaPercent": 32.09118807513129,
+          "sign": "positive"
+        }
+      ],
+      "summary": {
+        "n": 12,
+        "positiveAfterSlower": 5,
+        "negativeAfterFaster": 7,
+        "zero": 0,
+        "medianDeltaMs": -58.25,
+        "meanDeltaMs": -33.11666666654249,
+        "minDeltaMs": -359.69999999925494,
+        "maxDeltaMs": 351.7000000011176
+      },
+      "byOrder": [
+        {
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "n": 6,
+          "positiveAfterSlower": 4,
+          "negativeAfterFaster": 2,
+          "zero": 0,
+          "medianDeltaMs": 45.19999999925494,
+          "meanDeltaMs": 72.91666666666667,
+          "minDeltaMs": -105,
+          "maxDeltaMs": 351.7000000011176
+        },
+        {
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "n": 6,
+          "positiveAfterSlower": 1,
+          "negativeAfterFaster": 5,
+          "zero": 0,
+          "medianDeltaMs": -126.8500000005588,
+          "meanDeltaMs": -139.14999999975166,
+          "minDeltaMs": -359.69999999925494,
+          "maxDeltaMs": 73.19999999925494
+        }
+      ]
+    },
+    {
+      "count": 243,
+      "step": "sort-level",
+      "definition": "after elapsedMs minus baseline elapsedMs in the same declared formal round",
+      "pairs": [
+        {
+          "round": 1,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselinePosition": 1,
+          "afterPosition": 2,
+          "baselineMs": 76.70000000111759,
+          "afterMs": 64.10000000149012,
+          "deltaMs": -12.599999999627471,
+          "deltaPercent": -16.42764015572865,
+          "sign": "negative"
+        },
+        {
+          "round": 2,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselinePosition": 2,
+          "afterPosition": 1,
+          "baselineMs": 525.1999999992549,
+          "afterMs": 65.5,
+          "deltaMs": -459.69999999925494,
+          "deltaPercent": -87.52856054834484,
+          "sign": "negative"
+        },
+        {
+          "round": 3,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselinePosition": 1,
+          "afterPosition": 2,
+          "baselineMs": 265.30000000074506,
+          "afterMs": 314.80000000074506,
+          "deltaMs": 49.5,
+          "deltaPercent": 18.65812287970636,
+          "sign": "positive"
+        },
+        {
+          "round": 4,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselinePosition": 2,
+          "afterPosition": 1,
+          "baselineMs": 193.60000000149012,
+          "afterMs": 203.40000000037253,
+          "deltaMs": 9.799999998882413,
+          "deltaPercent": 5.061983470458142,
+          "sign": "positive"
+        },
+        {
+          "round": 5,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselinePosition": 1,
+          "afterPosition": 2,
+          "baselineMs": 305.09999999962747,
+          "afterMs": 512.7000000011176,
+          "deltaMs": 207.60000000149012,
+          "deltaPercent": 68.04326450401297,
+          "sign": "positive"
+        },
+        {
+          "round": 6,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselinePosition": 2,
+          "afterPosition": 1,
+          "baselineMs": 177.09999999962747,
+          "afterMs": 278.19999999925494,
+          "deltaMs": 101.09999999962747,
+          "deltaPercent": 57.08639186891029,
+          "sign": "positive"
+        },
+        {
+          "round": 7,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselinePosition": 1,
+          "afterPosition": 2,
+          "baselineMs": 512.5999999996275,
+          "afterMs": 270,
+          "deltaMs": -242.59999999962747,
+          "deltaPercent": -47.327350760788875,
+          "sign": "negative"
+        },
+        {
+          "round": 8,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselinePosition": 2,
+          "afterPosition": 1,
+          "baselineMs": 113.90000000037253,
+          "afterMs": 185.30000000074506,
+          "deltaMs": 71.40000000037253,
+          "deltaPercent": 62.686567164301145,
+          "sign": "positive"
+        },
+        {
+          "round": 9,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselinePosition": 1,
+          "afterPosition": 2,
+          "baselineMs": 225.59999999962747,
+          "afterMs": 360.1000000014901,
+          "deltaMs": 134.50000000186265,
+          "deltaPercent": 59.61879432716521,
+          "sign": "positive"
+        },
+        {
+          "round": 10,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselinePosition": 2,
+          "afterPosition": 1,
+          "baselineMs": 580.5,
+          "afterMs": 438.09999999962747,
+          "deltaMs": -142.40000000037253,
+          "deltaPercent": -24.530577088780802,
+          "sign": "negative"
+        },
+        {
+          "round": 11,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselinePosition": 1,
+          "afterPosition": 2,
+          "baselineMs": 679.7999999988824,
+          "afterMs": 512.3000000007451,
+          "deltaMs": -167.49999999813735,
+          "deltaPercent": -24.639599882084838,
+          "sign": "negative"
+        },
+        {
+          "round": 12,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselinePosition": 2,
+          "afterPosition": 1,
+          "baselineMs": 504.09999999962747,
+          "afterMs": 319,
+          "deltaMs": -185.09999999962747,
+          "deltaPercent": -36.718904979124034,
+          "sign": "negative"
+        }
+      ],
+      "summary": {
+        "n": 12,
+        "positiveAfterSlower": 6,
+        "negativeAfterFaster": 6,
+        "zero": 0,
+        "medianDeltaMs": -1.400000000372529,
+        "meanDeltaMs": -52.99999999953434,
+        "minDeltaMs": -459.69999999925494,
+        "maxDeltaMs": 207.60000000149012
+      },
+      "byOrder": [
+        {
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "n": 6,
+          "positiveAfterSlower": 3,
+          "negativeAfterFaster": 3,
+          "zero": 0,
+          "medianDeltaMs": 18.450000000186265,
+          "meanDeltaMs": -5.183333332339923,
+          "minDeltaMs": -242.59999999962747,
+          "maxDeltaMs": 207.60000000149012
+        },
+        {
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "n": 6,
+          "positiveAfterSlower": 3,
+          "negativeAfterFaster": 3,
+          "zero": 0,
+          "medianDeltaMs": -66.30000000074506,
+          "meanDeltaMs": -100.81666666672875,
+          "minDeltaMs": -459.69999999925494,
+          "maxDeltaMs": 101.09999999962747
+        }
+      ]
+    },
+    {
+      "count": 243,
+      "step": "sort-power",
+      "definition": "after elapsedMs minus baseline elapsedMs in the same declared formal round",
+      "pairs": [
+        {
+          "round": 1,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselinePosition": 1,
+          "afterPosition": 2,
+          "baselineMs": 69.70000000111759,
+          "afterMs": 69.5,
+          "deltaMs": -0.2000000011175871,
+          "deltaPercent": -0.2869440475098739,
+          "sign": "negative"
+        },
+        {
+          "round": 2,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselinePosition": 2,
+          "afterPosition": 1,
+          "baselineMs": 105.40000000037253,
+          "afterMs": 235,
+          "deltaMs": 129.59999999962747,
+          "deltaPercent": 122.9601518018685,
+          "sign": "positive"
+        },
+        {
+          "round": 3,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselinePosition": 1,
+          "afterPosition": 2,
+          "baselineMs": 262.90000000037253,
+          "afterMs": 598.4000000003725,
+          "deltaMs": 335.5,
+          "deltaPercent": 127.61506276132546,
+          "sign": "positive"
+        },
+        {
+          "round": 4,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselinePosition": 2,
+          "afterPosition": 1,
+          "baselineMs": 321.8999999985099,
+          "afterMs": 213.90000000037253,
+          "deltaMs": -107.99999999813735,
+          "deltaPercent": -33.5507921710585,
+          "sign": "negative"
+        },
+        {
+          "round": 5,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselinePosition": 1,
+          "afterPosition": 2,
+          "baselineMs": 212.89999999850988,
+          "afterMs": 355.90000000037253,
+          "deltaMs": 143.00000000186265,
+          "deltaPercent": 67.16768436019893,
+          "sign": "positive"
+        },
+        {
+          "round": 6,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselinePosition": 2,
+          "afterPosition": 1,
+          "baselineMs": 87.19999999925494,
+          "afterMs": 107.90000000037253,
+          "deltaMs": 20.700000001117587,
+          "deltaPercent": 23.738532111576216,
+          "sign": "positive"
+        },
+        {
+          "round": 7,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselinePosition": 1,
+          "afterPosition": 2,
+          "baselineMs": 325.19999999925494,
+          "afterMs": 168.7000000011176,
+          "deltaMs": -156.49999999813735,
+          "deltaPercent": -48.12423124184991,
+          "sign": "negative"
+        },
+        {
+          "round": 8,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselinePosition": 2,
+          "afterPosition": 1,
+          "baselineMs": 97.40000000037253,
+          "afterMs": 321.5,
+          "deltaMs": 224.09999999962747,
+          "deltaPercent": 230.0821355223515,
+          "sign": "positive"
+        },
+        {
+          "round": 9,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselinePosition": 1,
+          "afterPosition": 2,
+          "baselineMs": 458.90000000037253,
+          "afterMs": 329.2999999988824,
+          "deltaMs": -129.60000000149012,
+          "deltaPercent": -28.241446938632574,
+          "sign": "negative"
+        },
+        {
+          "round": 10,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselinePosition": 2,
+          "afterPosition": 1,
+          "baselineMs": 412.09999999962747,
+          "afterMs": 429.80000000074506,
+          "deltaMs": 17.700000001117587,
+          "deltaPercent": 4.295074011437405,
+          "sign": "positive"
+        },
+        {
+          "round": 11,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselinePosition": 1,
+          "afterPosition": 2,
+          "baselineMs": 421.1000000014901,
+          "afterMs": 104.69999999925494,
+          "deltaMs": -316.4000000022352,
+          "deltaPercent": -75.13654713871183,
+          "sign": "negative"
+        },
+        {
+          "round": 12,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselinePosition": 2,
+          "afterPosition": 1,
+          "baselineMs": 173.40000000037253,
+          "afterMs": 192.30000000074506,
+          "deltaMs": 18.90000000037253,
+          "deltaPercent": 10.89965397943018,
+          "sign": "positive"
+        }
+      ],
+      "summary": {
+        "n": 12,
+        "positiveAfterSlower": 7,
+        "negativeAfterFaster": 5,
+        "zero": 0,
+        "medianDeltaMs": 18.300000000745058,
+        "meanDeltaMs": 14.90000000021731,
+        "minDeltaMs": -316.4000000022352,
+        "maxDeltaMs": 335.5
+      },
+      "byOrder": [
+        {
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "n": 6,
+          "positiveAfterSlower": 2,
+          "negativeAfterFaster": 4,
+          "zero": 0,
+          "medianDeltaMs": -64.90000000130385,
+          "meanDeltaMs": -20.700000000186265,
+          "minDeltaMs": -316.4000000022352,
+          "maxDeltaMs": 335.5
+        },
+        {
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "n": 6,
+          "positiveAfterSlower": 5,
+          "negativeAfterFaster": 1,
+          "zero": 0,
+          "medianDeltaMs": 19.800000000745058,
+          "meanDeltaMs": 50.50000000062088,
+          "minDeltaMs": -107.99999999813735,
+          "maxDeltaMs": 224.09999999962747
+        }
+      ]
+    },
+    {
+      "count": 10000,
+      "step": "open-power",
+      "definition": "after elapsedMs minus baseline elapsedMs in the same declared formal round",
+      "pairs": [
+        {
+          "round": 1,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselinePosition": 1,
+          "afterPosition": 2,
+          "baselineMs": 90.5,
+          "afterMs": 76,
+          "deltaMs": -14.5,
+          "deltaPercent": -16.022099447513817,
+          "sign": "negative"
+        },
+        {
+          "round": 2,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselinePosition": 2,
+          "afterPosition": 1,
+          "baselineMs": 64.5,
+          "afterMs": 121,
+          "deltaMs": 56.5,
+          "deltaPercent": 87.59689922480621,
+          "sign": "positive"
+        },
+        {
+          "round": 3,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselinePosition": 1,
+          "afterPosition": 2,
+          "baselineMs": 463.69999999925494,
+          "afterMs": 304.5,
+          "deltaMs": -159.19999999925494,
+          "deltaPercent": -34.33254259208771,
+          "sign": "negative"
+        },
+        {
+          "round": 4,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselinePosition": 2,
+          "afterPosition": 1,
+          "baselineMs": 224.69999999925494,
+          "afterMs": 426.69999999925494,
+          "deltaMs": 202.0,
+          "deltaPercent": 89.89764129980856,
+          "sign": "positive"
+        },
+        {
+          "round": 5,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselinePosition": 1,
+          "afterPosition": 2,
+          "baselineMs": 344,
+          "afterMs": 130.09999999962747,
+          "deltaMs": -213.90000000037253,
+          "deltaPercent": -62.18023255824783,
+          "sign": "negative"
+        },
+        {
+          "round": 6,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselinePosition": 2,
+          "afterPosition": 1,
+          "baselineMs": 313,
+          "afterMs": 477.80000000074506,
+          "deltaMs": 164.80000000074506,
+          "deltaPercent": 52.65175718873645,
+          "sign": "positive"
+        },
+        {
+          "round": 7,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselinePosition": 1,
+          "afterPosition": 2,
+          "baselineMs": 448.30000000074506,
+          "afterMs": 336.40000000037253,
+          "deltaMs": -111.90000000037253,
+          "deltaPercent": -24.960963640460974,
+          "sign": "negative"
+        },
+        {
+          "round": 8,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselinePosition": 2,
+          "afterPosition": 1,
+          "baselineMs": 110.30000000074506,
+          "afterMs": 313.40000000037253,
+          "deltaMs": 203.09999999962747,
+          "deltaPercent": 184.13417950884457,
+          "sign": "positive"
+        },
+        {
+          "round": 9,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselinePosition": 1,
+          "afterPosition": 2,
+          "baselineMs": 414.5,
+          "afterMs": 210,
+          "deltaMs": -204.5,
+          "deltaPercent": -49.336550060313634,
+          "sign": "negative"
+        },
+        {
+          "round": 10,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselinePosition": 2,
+          "afterPosition": 1,
+          "baselineMs": 218.89999999850988,
+          "afterMs": 428,
+          "deltaMs": 209.10000000149012,
+          "deltaPercent": 95.52306989626018,
+          "sign": "positive"
+        },
+        {
+          "round": 11,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselinePosition": 1,
+          "afterPosition": 2,
+          "baselineMs": 559.3000000007451,
+          "afterMs": 160.90000000037253,
+          "deltaMs": -398.40000000037253,
+          "deltaPercent": -71.23189701409652,
+          "sign": "negative"
+        },
+        {
+          "round": 12,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselinePosition": 2,
+          "afterPosition": 1,
+          "baselineMs": 172,
+          "afterMs": 104.5,
+          "deltaMs": -67.5,
+          "deltaPercent": -39.24418604651163,
+          "sign": "negative"
+        }
+      ],
+      "summary": {
+        "n": 12,
+        "positiveAfterSlower": 5,
+        "negativeAfterFaster": 7,
+        "zero": 0,
+        "medianDeltaMs": -41.0,
+        "meanDeltaMs": -27.86666666654249,
+        "minDeltaMs": -398.40000000037253,
+        "maxDeltaMs": 209.10000000149012
+      },
+      "byOrder": [
+        {
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "n": 6,
+          "positiveAfterSlower": 0,
+          "negativeAfterFaster": 6,
+          "zero": 0,
+          "medianDeltaMs": -181.84999999962747,
+          "meanDeltaMs": -183.73333333339542,
+          "minDeltaMs": -398.40000000037253,
+          "maxDeltaMs": -14.5
+        },
+        {
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "n": 6,
+          "positiveAfterSlower": 5,
+          "negativeAfterFaster": 1,
+          "zero": 0,
+          "medianDeltaMs": 183.40000000037253,
+          "meanDeltaMs": 128.00000000031045,
+          "minDeltaMs": -67.5,
+          "maxDeltaMs": 209.10000000149012
+        }
+      ]
+    },
+    {
+      "count": 10000,
+      "step": "sort-rarity",
+      "definition": "after elapsedMs minus baseline elapsedMs in the same declared formal round",
+      "pairs": [
+        {
+          "round": 1,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselinePosition": 1,
+          "afterPosition": 2,
+          "baselineMs": 72.19999999925494,
+          "afterMs": 62.40000000037253,
+          "deltaMs": -9.799999998882413,
+          "deltaPercent": -13.57340720080823,
+          "sign": "negative"
+        },
+        {
+          "round": 2,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselinePosition": 2,
+          "afterPosition": 1,
+          "baselineMs": 145.09999999962747,
+          "afterMs": 566.4000000003725,
+          "deltaMs": 421.30000000074506,
+          "deltaPercent": 290.35148173799223,
+          "sign": "positive"
+        },
+        {
+          "round": 3,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselinePosition": 1,
+          "afterPosition": 2,
+          "baselineMs": 107.19999999925494,
+          "afterMs": 207.80000000074506,
+          "deltaMs": 100.60000000149012,
+          "deltaPercent": 93.84328358413181,
+          "sign": "positive"
+        },
+        {
+          "round": 4,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselinePosition": 2,
+          "afterPosition": 1,
+          "baselineMs": 375.80000000074506,
+          "afterMs": 152.89999999850988,
+          "deltaMs": -222.90000000223517,
+          "deltaPercent": -59.31346460931166,
+          "sign": "negative"
+        },
+        {
+          "round": 5,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselinePosition": 1,
+          "afterPosition": 2,
+          "baselineMs": 290.69999999925494,
+          "afterMs": 314,
+          "deltaMs": 23.300000000745058,
+          "deltaPercent": 8.015135879189806,
+          "sign": "positive"
+        },
+        {
+          "round": 6,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselinePosition": 2,
+          "afterPosition": 1,
+          "baselineMs": 352.19999999925494,
+          "afterMs": 485,
+          "deltaMs": 132.80000000074506,
+          "deltaPercent": 37.70584894975184,
+          "sign": "positive"
+        },
+        {
+          "round": 7,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselinePosition": 1,
+          "afterPosition": 2,
+          "baselineMs": 182.59999999962747,
+          "afterMs": 357.90000000037253,
+          "deltaMs": 175.30000000074506,
+          "deltaPercent": 96.00219058110773,
+          "sign": "positive"
+        },
+        {
+          "round": 8,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselinePosition": 2,
+          "afterPosition": 1,
+          "baselineMs": 178.2000000011176,
+          "afterMs": 323.5,
+          "deltaMs": 145.2999999988824,
+          "deltaPercent": 81.53759820312636,
+          "sign": "positive"
+        },
+        {
+          "round": 9,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselinePosition": 1,
+          "afterPosition": 2,
+          "baselineMs": 94.80000000074506,
+          "afterMs": 75.40000000037253,
+          "deltaMs": -19.40000000037253,
+          "deltaPercent": -20.464135021329177,
+          "sign": "negative"
+        },
+        {
+          "round": 10,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselinePosition": 2,
+          "afterPosition": 1,
+          "baselineMs": 91.5,
+          "afterMs": 123.40000000037253,
+          "deltaMs": 31.90000000037253,
+          "deltaPercent": 34.86338797854922,
+          "sign": "positive"
+        },
+        {
+          "round": 11,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselinePosition": 1,
+          "afterPosition": 2,
+          "baselineMs": 94.29999999888241,
+          "afterMs": 235.19999999925494,
+          "deltaMs": 140.90000000037253,
+          "deltaPercent": 149.41675503928144,
+          "sign": "positive"
+        },
+        {
+          "round": 12,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselinePosition": 2,
+          "afterPosition": 1,
+          "baselineMs": 309.5,
+          "afterMs": 717.5,
+          "deltaMs": 408.0,
+          "deltaPercent": 131.82552504038773,
+          "sign": "positive"
+        }
+      ],
+      "summary": {
+        "n": 12,
+        "positiveAfterSlower": 9,
+        "negativeAfterFaster": 3,
+        "zero": 0,
+        "medianDeltaMs": 116.70000000111759,
+        "meanDeltaMs": 110.60833333355065,
+        "minDeltaMs": -222.90000000223517,
+        "maxDeltaMs": 421.30000000074506
+      },
+      "byOrder": [
+        {
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "n": 6,
+          "positiveAfterSlower": 4,
+          "negativeAfterFaster": 2,
+          "zero": 0,
+          "medianDeltaMs": 61.95000000111759,
+          "meanDeltaMs": 68.48333333401631,
+          "minDeltaMs": -19.40000000037253,
+          "maxDeltaMs": 175.30000000074506
+        },
+        {
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "n": 6,
+          "positiveAfterSlower": 5,
+          "negativeAfterFaster": 1,
+          "zero": 0,
+          "medianDeltaMs": 139.04999999981374,
+          "meanDeltaMs": 152.73333333308497,
+          "minDeltaMs": -222.90000000223517,
+          "maxDeltaMs": 421.30000000074506
+        }
+      ]
+    },
+    {
+      "count": 10000,
+      "step": "sort-level",
+      "definition": "after elapsedMs minus baseline elapsedMs in the same declared formal round",
+      "pairs": [
+        {
+          "round": 1,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselinePosition": 1,
+          "afterPosition": 2,
+          "baselineMs": 71.90000000037253,
+          "afterMs": 66.60000000149012,
+          "deltaMs": -5.299999998882413,
+          "deltaPercent": -7.371349094374069,
+          "sign": "negative"
+        },
+        {
+          "round": 2,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselinePosition": 2,
+          "afterPosition": 1,
+          "baselineMs": 305.2999999988824,
+          "afterMs": 441.30000000074506,
+          "deltaMs": 136.00000000186265,
+          "deltaPercent": 44.54634785534244,
+          "sign": "positive"
+        },
+        {
+          "round": 3,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselinePosition": 1,
+          "afterPosition": 2,
+          "baselineMs": 131.69999999925494,
+          "afterMs": 286.2000000011176,
+          "deltaMs": 154.50000000186265,
+          "deltaPercent": 117.31207289501646,
+          "sign": "positive"
+        },
+        {
+          "round": 4,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselinePosition": 2,
+          "afterPosition": 1,
+          "baselineMs": 205,
+          "afterMs": 573.5,
+          "deltaMs": 368.5,
+          "deltaPercent": 179.7560975609756,
+          "sign": "positive"
+        },
+        {
+          "round": 5,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselinePosition": 1,
+          "afterPosition": 2,
+          "baselineMs": 399.80000000074506,
+          "afterMs": 150.09999999962747,
+          "deltaMs": -249.7000000011176,
+          "deltaPercent": -62.45622811422018,
+          "sign": "negative"
+        },
+        {
+          "round": 6,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselinePosition": 2,
+          "afterPosition": 1,
+          "baselineMs": 95.79999999888241,
+          "afterMs": 97.40000000037253,
+          "deltaMs": 1.6000000014901161,
+          "deltaPercent": 1.6701461393619832,
+          "sign": "positive"
+        },
+        {
+          "round": 7,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselinePosition": 1,
+          "afterPosition": 2,
+          "baselineMs": 105.09999999962747,
+          "afterMs": 179.69999999925494,
+          "deltaMs": 74.59999999962747,
+          "deltaPercent": 70.98001902939286,
+          "sign": "positive"
+        },
+        {
+          "round": 8,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselinePosition": 2,
+          "afterPosition": 1,
+          "baselineMs": 549,
+          "afterMs": 723.9000000003725,
+          "deltaMs": 174.90000000037253,
+          "deltaPercent": 31.857923497335605,
+          "sign": "positive"
+        },
+        {
+          "round": 9,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselinePosition": 1,
+          "afterPosition": 2,
+          "baselineMs": 325.69999999925494,
+          "afterMs": 635.1999999992549,
+          "deltaMs": 309.5,
+          "deltaPercent": 95.02609763607862,
+          "sign": "positive"
+        },
+        {
+          "round": 10,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselinePosition": 2,
+          "afterPosition": 1,
+          "baselineMs": 335.40000000037253,
+          "afterMs": 278.90000000037253,
+          "deltaMs": -56.5,
+          "deltaPercent": -16.845557543213253,
+          "sign": "negative"
+        },
+        {
+          "round": 11,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselinePosition": 1,
+          "afterPosition": 2,
+          "baselineMs": 526,
+          "afterMs": 76.40000000037253,
+          "deltaMs": -449.59999999962747,
+          "deltaPercent": -85.47528517103184,
+          "sign": "negative"
+        },
+        {
+          "round": 12,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselinePosition": 2,
+          "afterPosition": 1,
+          "baselineMs": 426.90000000037253,
+          "afterMs": 308.90000000037253,
+          "deltaMs": -118.0,
+          "deltaPercent": -27.64113375495363,
+          "sign": "negative"
+        }
+      ],
+      "summary": {
+        "n": 12,
+        "positiveAfterSlower": 7,
+        "negativeAfterFaster": 5,
+        "zero": 0,
+        "medianDeltaMs": 38.10000000055879,
+        "meanDeltaMs": 28.37500000046566,
+        "minDeltaMs": -449.59999999962747,
+        "maxDeltaMs": 368.5
+      },
+      "byOrder": [
+        {
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "n": 6,
+          "positiveAfterSlower": 3,
+          "negativeAfterFaster": 3,
+          "zero": 0,
+          "medianDeltaMs": 34.65000000037253,
+          "meanDeltaMs": -27.666666666356225,
+          "minDeltaMs": -449.59999999962747,
+          "maxDeltaMs": 309.5
+        },
+        {
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "n": 6,
+          "positiveAfterSlower": 4,
+          "negativeAfterFaster": 2,
+          "zero": 0,
+          "medianDeltaMs": 68.80000000167638,
+          "meanDeltaMs": 84.41666666728754,
+          "minDeltaMs": -118.0,
+          "maxDeltaMs": 368.5
+        }
+      ]
+    },
+    {
+      "count": 10000,
+      "step": "sort-power",
+      "definition": "after elapsedMs minus baseline elapsedMs in the same declared formal round",
+      "pairs": [
+        {
+          "round": 1,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselinePosition": 1,
+          "afterPosition": 2,
+          "baselineMs": 71.70000000111759,
+          "afterMs": 326.30000000074506,
+          "deltaMs": 254.59999999962747,
+          "deltaPercent": 355.0906555030112,
+          "sign": "positive"
+        },
+        {
+          "round": 2,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselinePosition": 2,
+          "afterPosition": 1,
+          "baselineMs": 85.69999999925494,
+          "afterMs": 176.59999999962747,
+          "deltaMs": 90.90000000037253,
+          "deltaPercent": 106.06767794768119,
+          "sign": "positive"
+        },
+        {
+          "round": 3,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselinePosition": 1,
+          "afterPosition": 2,
+          "baselineMs": 477.2999999988824,
+          "afterMs": 147.5,
+          "deltaMs": -329.7999999988824,
+          "deltaPercent": -69.09700398065254,
+          "sign": "negative"
+        },
+        {
+          "round": 4,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselinePosition": 2,
+          "afterPosition": 1,
+          "baselineMs": 285.19999999925494,
+          "afterMs": 326.2999999988824,
+          "deltaMs": 41.09999999962747,
+          "deltaPercent": 14.410939691351633,
+          "sign": "positive"
+        },
+        {
+          "round": 5,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselinePosition": 1,
+          "afterPosition": 2,
+          "baselineMs": 85.59999999962747,
+          "afterMs": 315.69999999925494,
+          "deltaMs": 230.09999999962747,
+          "deltaPercent": 268.8084112156879,
+          "sign": "positive"
+        },
+        {
+          "round": 6,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselinePosition": 2,
+          "afterPosition": 1,
+          "baselineMs": 79.90000000037253,
+          "afterMs": 446.30000000074506,
+          "deltaMs": 366.40000000037253,
+          "deltaPercent": 458.573216518979,
+          "sign": "positive"
+        },
+        {
+          "round": 7,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselinePosition": 1,
+          "afterPosition": 2,
+          "baselineMs": 498.09999999962747,
+          "afterMs": 259.69999999925494,
+          "deltaMs": -238.40000000037253,
+          "deltaPercent": -47.861875125587396,
+          "sign": "negative"
+        },
+        {
+          "round": 8,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselinePosition": 2,
+          "afterPosition": 1,
+          "baselineMs": 343.69999999925494,
+          "afterMs": 312.5,
+          "deltaMs": -31.199999999254942,
+          "deltaPercent": -9.07768402657043,
+          "sign": "negative"
+        },
+        {
+          "round": 9,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselinePosition": 1,
+          "afterPosition": 2,
+          "baselineMs": 300.19999999925494,
+          "afterMs": 259.59999999962747,
+          "deltaMs": -40.59999999962747,
+          "deltaPercent": -13.524317121828188,
+          "sign": "negative"
+        },
+        {
+          "round": 10,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselinePosition": 2,
+          "afterPosition": 1,
+          "baselineMs": 321.80000000074506,
+          "afterMs": 223,
+          "deltaMs": -98.80000000074506,
+          "deltaPercent": -30.702299565107616,
+          "sign": "negative"
+        },
+        {
+          "round": 11,
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "baselinePosition": 1,
+          "afterPosition": 2,
+          "baselineMs": 70,
+          "afterMs": 428.8999999985099,
+          "deltaMs": 358.8999999985099,
+          "deltaPercent": 512.7142857121569,
+          "sign": "positive"
+        },
+        {
+          "round": 12,
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "baselinePosition": 2,
+          "afterPosition": 1,
+          "baselineMs": 137.90000000037253,
+          "afterMs": 190.09999999962747,
+          "deltaMs": 52.19999999925494,
+          "deltaPercent": 37.853517040691756,
+          "sign": "positive"
+        }
+      ],
+      "summary": {
+        "n": 12,
+        "positiveAfterSlower": 7,
+        "negativeAfterFaster": 5,
+        "zero": 0,
+        "medianDeltaMs": 46.64999999944121,
+        "meanDeltaMs": 54.61666666654249,
+        "minDeltaMs": -329.7999999988824,
+        "maxDeltaMs": 366.40000000037253
+      },
+      "byOrder": [
+        {
+          "pairOrder": [
+            "baseline",
+            "after"
+          ],
+          "n": 6,
+          "positiveAfterSlower": 3,
+          "negativeAfterFaster": 3,
+          "zero": 0,
+          "medianDeltaMs": 94.75,
+          "meanDeltaMs": 39.13333333314707,
+          "minDeltaMs": -329.7999999988824,
+          "maxDeltaMs": 358.8999999985099
+        },
+        {
+          "pairOrder": [
+            "after",
+            "baseline"
+          ],
+          "n": 6,
+          "positiveAfterSlower": 4,
+          "negativeAfterFaster": 2,
+          "zero": 0,
+          "medianDeltaMs": 46.64999999944121,
+          "meanDeltaMs": 70.0999999999379,
+          "minDeltaMs": -98.80000000074506,
+          "maxDeltaMs": 366.40000000037253
+        }
+      ]
+    }
+  ],
+  "allHigherPrimaryCells": [
+    {
+      "count": 243,
+      "step": "open-power",
+      "metric": "p95",
+      "baseline": 505.90000000037253,
+      "after": 521.1000000014901,
+      "delta": 15.200000001117587,
+      "deltaPercent": 3.0045463532528904,
+      "direction": "higher"
+    },
+    {
+      "count": 243,
+      "step": "open-power",
+      "metric": "max",
+      "baseline": 505.90000000037253,
+      "after": 521.1000000014901,
+      "delta": 15.200000001117587,
+      "deltaPercent": 3.0045463532528904,
+      "direction": "higher"
+    },
+    {
+      "count": 243,
+      "step": "sort-rarity",
+      "metric": "p95",
+      "baseline": 569.3000000007451,
+      "after": 653.5,
+      "delta": 84.19999999925494,
+      "deltaPercent": 14.790093096635303,
+      "direction": "higher"
+    },
+    {
+      "count": 243,
+      "step": "sort-rarity",
+      "metric": "max",
+      "baseline": 569.3000000007451,
+      "after": 653.5,
+      "delta": 84.19999999925494,
+      "deltaPercent": 14.790093096635303,
+      "direction": "higher"
+    },
+    {
+      "count": 243,
+      "step": "sort-level",
+      "metric": "p50",
+      "baseline": 285.20000000018626,
+      "after": 296.5,
+      "delta": 11.299999999813735,
+      "deltaPercent": 3.9621318372392578,
+      "direction": "higher"
+    },
+    {
+      "count": 243,
+      "step": "sort-power",
+      "metric": "p95",
+      "baseline": 458.90000000037253,
+      "after": 598.4000000003725,
+      "delta": 139.5,
+      "deltaPercent": 30.398779690539723,
+      "direction": "higher"
+    },
+    {
+      "count": 243,
+      "step": "sort-power",
+      "metric": "max",
+      "baseline": 458.90000000037253,
+      "after": 598.4000000003725,
+      "delta": 139.5,
+      "deltaPercent": 30.398779690539723,
+      "direction": "higher"
+    },
+    {
+      "count": 10000,
+      "step": "sort-rarity",
+      "metric": "p50",
+      "baseline": 161.65000000037253,
+      "after": 274.59999999962747,
+      "delta": 112.94999999925494,
+      "deltaPercent": 69.87318280172883,
+      "direction": "higher"
+    },
+    {
+      "count": 10000,
+      "step": "sort-rarity",
+      "metric": "p95",
+      "baseline": 375.80000000074506,
+      "after": 717.5,
+      "delta": 341.69999999925494,
+      "deltaPercent": 90.92602448072844,
+      "direction": "higher"
+    },
+    {
+      "count": 10000,
+      "step": "sort-rarity",
+      "metric": "max",
+      "baseline": 375.80000000074506,
+      "after": 717.5,
+      "delta": 341.69999999925494,
+      "deltaPercent": 90.92602448072844,
+      "direction": "higher"
+    },
+    {
+      "count": 10000,
+      "step": "sort-level",
+      "metric": "p95",
+      "baseline": 549,
+      "after": 723.9000000003725,
+      "delta": 174.90000000037253,
+      "deltaPercent": 31.857923497335605,
+      "direction": "higher"
+    },
+    {
+      "count": 10000,
+      "step": "sort-level",
+      "metric": "max",
+      "baseline": 549,
+      "after": 723.9000000003725,
+      "delta": 174.90000000037253,
+      "deltaPercent": 31.857923497335605,
+      "direction": "higher"
+    },
+    {
+      "count": 10000,
+      "step": "sort-power",
+      "metric": "p50",
+      "baseline": 211.54999999981374,
+      "after": 286.09999999962747,
+      "delta": 74.54999999981374,
+      "deltaPercent": 35.23989600561539,
+      "direction": "higher"
+    }
+  ],
+  "allHigherSupplementalCells": [
+    {
+      "count": 243,
+      "step": "sort-rarity",
+      "metric": "min",
+      "baseline": 59,
+      "after": 69.29999999888241,
+      "delta": 10.299999998882413,
+      "deltaPercent": 17.45762711674985,
+      "direction": "higher"
+    },
+    {
+      "count": 243,
+      "step": "sort-rarity",
+      "metric": "longTasks",
+      "baseline": 9,
+      "after": 11,
+      "delta": 2,
+      "deltaPercent": 22.222222222222232,
+      "direction": "higher"
+    },
+    {
+      "count": 243,
+      "step": "sort-level",
+      "metric": "longTasks",
+      "baseline": 9,
+      "after": 10,
+      "delta": 1,
+      "deltaPercent": 11.111111111111116,
+      "direction": "higher"
+    },
+    {
+      "count": 243,
+      "step": "sort-power",
+      "metric": "mean",
+      "baseline": 245.67499999996895,
+      "after": 260.57500000018626,
+      "delta": 14.900000000217318,
+      "deltaPercent": 6.064923170945025,
+      "direction": "higher"
+    },
+    {
+      "count": 10000,
+      "step": "open-power",
+      "metric": "min",
+      "baseline": 64.5,
+      "after": 76,
+      "delta": 11.5,
+      "deltaPercent": 17.829457364341096,
+      "direction": "higher"
+    },
+    {
+      "count": 10000,
+      "step": "sort-rarity",
+      "metric": "mean",
+      "baseline": 191.17499999981374,
+      "after": 301.7833333333644,
+      "delta": 110.60833333355066,
+      "deltaPercent": 57.85711172154227,
+      "direction": "higher"
+    },
+    {
+      "count": 10000,
+      "step": "sort-level",
+      "metric": "mean",
+      "baseline": 289.79999999981374,
+      "after": 318.1750000002794,
+      "delta": 28.37500000046566,
+      "deltaPercent": 9.791235334880577,
+      "direction": "higher"
+    },
+    {
+      "count": 10000,
+      "step": "sort-power",
+      "metric": "min",
+      "baseline": 70,
+      "after": 147.5,
+      "delta": 77.5,
+      "deltaPercent": 110.71428571428572,
+      "direction": "higher"
+    },
+    {
+      "count": 10000,
+      "step": "sort-power",
+      "metric": "mean",
+      "baseline": 229.75833333314708,
+      "after": 284.3749999996896,
+      "delta": 54.6166666665425,
+      "deltaPercent": 23.77135395883505,
+      "direction": "higher"
+    }
+  ],
+  "interpretation": {
+    "higherP50Cells": 3,
+    "higherP95Cells": 5,
+    "higherMaxCells": 5,
+    "uniqueHigherP50OrTailCells": 8,
+    "tailMetricCaveat": "p95 and max represent the same observation here and are not independent adverse results.",
+    "outcome": "This formal software-rendered browser run has mixed callback-latency changes and does not establish a general browser speedup. All higher values are retained; no sample replacement or post-hoc exclusion occurred.",
+    "scope": "Trusted click/change capture to the second requestAnimationFrame callback at 1920x1080, low effects, SwiftShader. This is not render/paint completion, FPS, physical-device/GPU performance, or a storage benchmark.",
+    "generalization": "Twelve repeated pairs per synthetic fixture/action are descriptive observations. They do not establish statistical significance or representative real-user latency."
+  },
+  "sourceReview": [
+    "The capture listener starts before the product bubble handlers. The nested rAF endpoint is accurately named and intentionally excludes later card/save verification work.",
+    "Native Playwright click and keyboard actions are checked through event.isTrusted and final select value; the driver does not call the sorting function as the timed user input.",
+    "The 60-card requirement follows from exact full oracle-array equality for these unfiltered fixtures; every recorded row was additionally checked for explicit cardinality 60 here.",
+    "Both complete persisted strings are compared with the original schema5 fixture after every action, retaining unknown metadata. The fixture is explicitly synthetic.",
+    "Odd/even AB/BA orders, separate warmup rows, fixed deadlines, unchanged source/driver hashes, served-source verification and absence of retry loops agree with the report protocol.",
+    "No unresolved product or browser-harness correctness issue was identified in this limited source-and-existing-evidence review."
+  ]
+}

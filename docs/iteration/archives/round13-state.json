@@ -1,0 +1,283 @@
+{
+  "project": "Dice Abyss",
+  "round": 13,
+  "date": "2026-10-18",
+  "timeZone": "UTC",
+  "inputVersion": "5.12.0",
+  "outputVersion": "5.13.0",
+  "saveSchemaVersion": 5,
+  "inputZipSha256": "def43dbb18943495e3ef69c63c0b68b116bf7d9ff56aba7de5b3957a5fc1c64e",
+  "inputZipBytes": 20418260,
+  "baselineIdentity": {
+    "source": "Dice-Abyss-v5.12.0-cloud-round-12(1).zip; sole authoritative implementation",
+    "files": 1140,
+    "expandedBytes": 43725254,
+    "manifestEntries": 1139,
+    "integrity": "CRC, safe paths, all manifest sizes/SHA-256 PASS. All 1140 extracted baseline files rechecked against original ZIP before final assembly.",
+    "evidence": "docs/iteration/evidence/round13/input-archive.json",
+    "baselineRecheck": "docs/iteration/evidence/round13/source-diff.json"
+  },
+  "previousRound": {
+    "round": 12,
+    "outputVersion": "5.12.0",
+    "state": "docs/iteration/archives/round12-state.json",
+    "report": "docs/iteration/archives/round12-report.md",
+    "manifest": "docs/iteration/archives/round12-manifest.json"
+  },
+  "releaseStatus": "VALIDATED_WITH_DOCUMENTED_LIMITATIONS",
+  "versionDecision": "Minor release: explicit cross-tab memory protection/recovery and indexed dice geometry. Gameplay engine, probabilities, currency, IDs, keys and schema unchanged.",
+  "mainChanges": [
+    "Native clear/removal/unreadable browser records protect the complete last committed in-memory state, cancel old confirmation/import/effect continuations and provide immediate recovery guidance.",
+    "Export complete protected memory; explicitly restore only after both records remain exactly null/null inside the existing lock. Existing raw strings are never restoration permission.",
+    "Show any new browser candidate separately. Explicit read rechecks both complete original strings and writes nothing; unreadable original records have a clearly distinguished raw export.",
+    "Identical complete state notifications retain interaction. Deleted-then-recreated different state, including unknown-field differences at the same runId/revision, preserves old memory until explicit choice.",
+    "Static dice geometry shares 1014 complete vertices through 5184 Uint16 indices. Same 1728 triangles, full attribute bytes/order and verified pixels; 186624 to 46872 uploaded bytes."
+  ],
+  "changedRuntimeSourceFiles": [
+    "index.html",
+    "package.json",
+    "src/app.js",
+    "src/storage.js",
+    "src/dice-renderer.js"
+  ],
+  "newRuntimeSourceFiles": [
+    "src/save-recovery-view.js",
+    "src/save-recovery.css"
+  ],
+  "runtimeSourceGrowthBytes": 18143,
+  "updatedExistingQaFiles": [
+    "scripts/audit-gpu-lifecycle.mjs",
+    "tests/iteration-render.test.mjs"
+  ],
+  "newQaScripts": [
+    "scripts/audit-indexed-dice-round13.mjs",
+    "scripts/audit-natural-multiseed-round13.mjs",
+    "scripts/audit-natural-retry-round13.mjs",
+    "scripts/audit-save-recovery-round13.mjs",
+    "scripts/qa-indexed-dice-round13.mjs",
+    "scripts/qa-save-recovery-round13.mjs",
+    "scripts/restore-round13-evidence.mjs",
+    "scripts/review-performance-round13.mjs",
+    "scripts/storage-recovery-harness.mjs"
+  ],
+  "regressionGuards": [
+    "Original 60 test modules retained: 59 byte-identical, one explicit drawElements mock adaptation with original behavior assertions preserved; adapted test passes against both sources. Original 2 fixtures and all 8 fonts/licenses byte-identical. No input file removed.",
+    "Schema5, V1-V4 migrations, keys/IDs, full expected/unknown fields, Web Locks, archive ordering and 5000000-byte new-write boundary preserved.",
+    "Six rooms per floor, manual 1-6 dice, one currency, five equipment slots and eight rarity gates preserved. dawnCrit nextLuck survives until next actual combat roll; retry/floor leave semantics preserved.",
+    "All original src except app/storage/dice-renderer byte-identical. No new runtime dependency, bitmap, font, audio or animation loop."
+  ],
+  "testSummary": {
+    "baselineUnitModulesPassed": 60,
+    "unitModulesPassed": 63,
+    "baselineUnitModuleDurationMs": 73785.949714,
+    "unitModuleDurationMs": 79589.484338,
+    "baselineFineCasesPassed": 539,
+    "baselineFineDurationMs": 145322.547761,
+    "moduleFailures": 0,
+    "moduleSkipped": 0,
+    "moduleCancelled": 0,
+    "newModules": 3,
+    "newFineCases": 32,
+    "expectedFineCasesAtFinalExtraction": 571,
+    "finalFineRunReceipt": "External final-archive receipt; not prefilled in this source-validation state.",
+    "standardSeedsPerVersion": 1000,
+    "noShoppingSeedsPerVersion": 50,
+    "standardSimulationCompletedAll": true,
+    "standardSimulationDeathsPerVersion": 0,
+    "simulationBytesEqual": 9409,
+    "simulationSha256": "266fa5b56516410712395796f197a2e33ad1b1e16ede45de14b872f208007d77",
+    "simulationComparison": "Complete JSON bytes and all 377 scalar leaves equal; no normalization.",
+    "saveClosure": {
+      "checksPerVersion": 41452,
+      "snapshotsPerVersion": 6476,
+      "transactionsPerVersion": 1811,
+      "allThreeFullFingerprintsEqual": true
+    },
+    "recovery": {
+      "baselineEventPass": 3,
+      "baselineEventExpectedFailures": 9,
+      "candidateEventPass": 9,
+      "candidateEventFailures": 3,
+      "currentEventPass": 12,
+      "currentRestorePass": 17,
+      "independentRawPairs": 25,
+      "independentAdditionalGroups": 4,
+      "independentQueuedScenarios": 5
+    },
+    "browser": {
+      "originalSuiteGroups": 38,
+      "originalSuiteChecks": 724,
+      "newRecoveryGroups": 11,
+      "newRecoveryChecks": 97,
+      "finalFunctionalGroups": 49,
+      "finalFunctionalChecks": 821,
+      "errors": 0,
+      "baselineCoreGroups": 6,
+      "baselineCoreChecks": 43,
+      "baselineRecoveryObservationGroups": 11,
+      "baselineRecoveryObservationChecks": 53,
+      "counting": "Each final suite once; probes, development reruns and independent audits excluded. Not mutually independent features.",
+      "viewports": [
+        "1366x768",
+        "1920x1080",
+        "2560x1440",
+        "3840x2160",
+        "390x844",
+        "320x812"
+      ],
+      "physicalDevices": "NOT_TESTED"
+    },
+    "renderer": {
+      "finalPixelPairs": 7,
+      "nativeRecoveryCyclesBothVersions": 6,
+      "nativeErrors": 0,
+      "mockFaultKindsCurrent": 9,
+      "mockRestoreCyclesPerVersion": 25,
+      "independentMeshParameterPairs": 15,
+      "geometryBytesBefore": 186624,
+      "geometryBytesAfter": 46872,
+      "geometrySavingsPercent": 74.88425925925925,
+      "performanceClaim": "Static geometry bytes and Node preparation only; not GPU total memory or FPS."
+    },
+    "lifecycle": {
+      "casesBothVersions": 11,
+      "passed": 11,
+      "errors": 0,
+      "scope": "Actual app transitions with explicit RAF/visibility fault injection; not physical GPU/OS suspension."
+    },
+    "natural": {
+      "seeds": [
+        7919,
+        15838,
+        23757,
+        31676
+      ],
+      "targetFloors": 400,
+      "completedJourneysPerVersion": 3,
+      "totalJourneysPerVersion": 4,
+      "completedFloorsPerVersion": 1229,
+      "rollsPerVersion": 16805,
+      "deathsPerVersion": 21,
+      "exitCodePerVersion": 2,
+      "incomplete": {
+        "seed": 23757,
+        "completedFloors": 29,
+        "floor": 30,
+        "phase": "dead",
+        "deaths": 21,
+        "rolls": 821,
+        "reason": "DEATH_RETRY_LIMIT"
+      },
+      "comparison": "Full journeys equal after removing only external incompleteSavePath; full summary/validation/rules/parameters equal. State fingerprints normalize only runId; codec round trips do not normalize.",
+      "retryDiagnosis": "One posthoc legal retry and existing balanced policy still died after 18 rolls; excluded from four-seed completion statistics.",
+      "injuredCaptures": 3,
+      "freeBranches": 9,
+      "freeFollowupBattles": 108,
+      "armorCandidatesAvailable": 0
+    },
+    "paidWindows": {
+      "seeds": [
+        23757,
+        31676
+      ],
+      "completedNaturalFloorsPerVersion": 800,
+      "naturalRollsPerVersion": 4268,
+      "naturalDeathsPerVersion": 0,
+      "serviceCapturesPerVersion": 16,
+      "branchesPerVersion": 76,
+      "followupBattlesPerVersion": 912,
+      "followupRetaliationDamagePerVersion": 10,
+      "completeJourneysAndValidationEqual": true,
+      "scope": "Separate new-game policy; not rescue of constrained power terminal state or general survival proof."
+    },
+    "httpResources": 52,
+    "baselineHttpResources": 50,
+    "fonts": {
+      "sourceFiles": 47,
+      "uniqueHan": 1045,
+      "uniqueCjkPunctuation": 20,
+      "missingInEitherFont": 0,
+      "originalAssetsAndLicensesByteIdentical": 8,
+      "historicalRepairRecords": "NOT_AVAILABLE in input"
+    },
+    "performance": {
+      "status": "MEASURED_WITH_LIMITATIONS",
+      "finalSourceIdentity": "DIFFERENT_DECLARED",
+      "browser": "155.0.8059.84",
+      "renderer": "ANGLE Vulkan SwiftShader software",
+      "formalInventorySamples": 24,
+      "warmupsRetainedButExcluded": 2,
+      "mainFrameWindows": 32,
+      "mainRepeatsPerCell": 2,
+      "rarityCoverageWindows": 14,
+      "rafIntervals": 5422,
+      "rafOver50ms": 55,
+      "longTaskEntries": 2,
+      "missingExpectedFullWindows": 6,
+      "fullMainStagesObserved": {
+        "input": "5/8",
+        "candidate": "5/8"
+      },
+      "eightGrades1920Full": "8/8 both",
+      "fourKEternalFullMaxMs": {
+        "input": [
+          3000.3,
+          6015.9
+        ],
+        "candidate": [
+          9660.2,
+          8673.4
+        ]
+      },
+      "candidateFourKEternalFullLoot7Observed": [
+        false,
+        false
+      ],
+      "reviewChecksPassed": 57,
+      "strictReviewPassed": 56,
+      "strictReviewFailed": 1,
+      "knownFinalDifferencePaths": [
+        "src/app.js",
+        "src/save-recovery.css"
+      ],
+      "candidateFileBodies": "NOT_INDEPENDENTLY_RETAINED",
+      "claim": "No physical 4K60, stable backpack improvement, no-regression or all-full-effects PASS claim. Timing is measured candidate, not byte-identical final source."
+    }
+  },
+  "artifactBudget": {
+    "newRuntimeBitmapBytes": 0,
+    "newRuntimeDependencies": 0,
+    "selectedRealScreenshots": 8,
+    "selectedScreenshotBytes": 583186,
+    "paidReportsOriginalBytes": 3970316,
+    "losslessPaidEvidenceBytes": 793511,
+    "originalPaidReportShaReconstruction": "PASS both exact original files",
+    "hardZipBytesExclusive": 50000000,
+    "preferredZipBytesExclusive": 40000000,
+    "archiveIdentity": "Final exact ZIP bytes/MB/file count/SHA and fresh-extraction receipts stay outside the archive; manifest excludes itself."
+  },
+  "openRisks": [
+    "P2 severe software-renderer long frames and six missing full-effect windows; 4K Eternal full candidate remains 9660.2/8673.4ms.",
+    "P2 5MB accepted saves can reject a later growing write; recovery does not remove synchronous save/expected cost or enlarge limits.",
+    "P3 constrained power/no-spend seed23757 fails repeatedly at floor30. Final state is preserved and retryable; no broad impossibility or rescue claim.",
+    "P3 natural injured and paid-window survival evidence remains narrow, with no qualifying armor candidate in three injured captures.",
+    "Physical devices, pen, external screen readers, audio listening, OS background/power loss, Windows native launcher and private player saves NOT_TESTED."
+  ],
+  "nextRoundPriorities": [
+    "Separate software save/DOM/layout/compositor/effect tails with matched stages and retain worst windows.",
+    "Investigate lossless capacity handling while preserving unknown fields and complete write contracts.",
+    "Study reachable build adjustments and Boss counterplay from the retained constrained dead state.",
+    "Extend natural multi-build conditional and spending windows without artificial difficulty changes.",
+    "Validate real devices, assistive input, listening and operating-system lifecycle."
+  ],
+  "authority": [
+    "docs/iteration/LATEST_REPORT.md",
+    "docs/iteration/VERIFY.md",
+    "docs/iteration/PERFORMANCE.md",
+    "docs/iteration/BUG_LEDGER.md",
+    "docs/iteration/NEXT_ROUND.md",
+    "docs/iteration/evidence/round13/README.md"
+  ],
+  "finalPackageProtocol": "Assemble all files/manifest; verify the exact delivered ZIP into a new empty directory including CRC/paths/full hashes/extracted bytes. Run syntax, all fine-grained tests and real HTTP there. Deliver only after these gates pass. Exact archive identity and final receipts are external to avoid self-reference.",
+  "handoffValid": true
+}

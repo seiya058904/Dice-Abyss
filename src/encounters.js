@@ -2,6 +2,10 @@ import {DEEP_ROOMS,DEEP_BOSSES} from './deep-content.js';
 import {weightedRoute} from './route-weights.js';
 import {deepCombatModifiers,deepEnemyAttack,deepPostRetaliation,createDeepEvent,deepEventChoices,applyDeepEvent} from './deep-rules.js';
 import {MAX_ITEM_LEVEL,ENHANCE_CAP} from './equipment.js';
+import {RARITIES} from './equipment-content.js';
+import {goldPreview,goldSummary} from './gold.js';
+import {LEVEL_CAP,xpPreview,xpSummary} from './experience.js';
+import {eventReferenceIssue} from './event-references.js';
 // Pure encounter rules and transaction helpers. This module never imports the engine.
 export const ROOM_ADDITIONS = {
  armored:'重甲守卫',berserker:'狂怒猎手',leech:'汲光异兽',disruptor:'扰骰巡卫',mirror:'镜像对手',bandit:'黄金盗匪',gauntlet:'连续围猎',duel:'双重决斗',storm:'雷暴裂隙',cursed:'诅咒战场',guardian:'古代守门者',hiddenboss:'隐秘首领',
@@ -21,11 +25,11 @@ export const ROOM_ADDITION_DETAILS = {
  storm:{purpose:'引雷者每两回合雷击，导电体每三回合爆雷。',reward:'出现 6 可减轻本次反击；雷击节奏始终可见。'},
  cursed:{purpose:'低点诱发短暂蚀命，指定高点可解除当次诅咒。',reward:'当前敌人标签说明对应点数；击杀不触发流失。'},
  guardian:{purpose:'反击后重筑少量护盾，指定高点阻止本次重筑。',reward:'首领级战利品；护盾重筑有上限，不会无限膨胀。'},
- hiddenboss:{purpose:'罕见首领：高点齐聚打出弱点，1 点使反击 +15%。',reward:'必得传说宝箱；弱点条件明确，不强制拖延回合。'},
+ hiddenboss:{purpose:'罕见首领：高点齐聚打出弱点，1 点使反击 +15%。',reward:'传说保底，高阶按深度解锁；弱点条件明确，不强制拖延回合。'},
  spring:{purpose:'选择治疗或储备护盾，也可以不取泉水。',reward:'本房只可选择一次，治疗与护盾有明确区别。'},
  prayer:{purpose:'用金币换本层幸运，或用生命换本层伤害。',reward:'收益直到下一层清除，选项始终允许拒绝。'},
- gambit:{purpose:'选择明确保底交易，或支付金币投一颗奖励骰。',reward:'1–2 点返还一半金币，3–4 点稀有箱，5–6 点史诗箱。'},
- exchange:{purpose:'自愿消耗一件未装备、未锁定的旧装备。',reward:'换取金币经验，或用旧遗物换高品质遗物箱。'},
+ gambit:{purpose:'选择明确保底交易，或支付金币投一颗奖励骰。',reward:'1–2点返还半价；3–4点稀有保底，5–6点史诗保底，高阶按深度解锁。'},
+ exchange:{purpose:'自愿消耗一件未装备、未锁定的旧装备。',reward:'换取金币经验，或用旧遗物换史诗保底遗物箱；高阶按深度解锁。'},
  mystery:{purpose:'按深度、生命和背包状态出现的八种原创事件。',reward:'代价先展示；可以安全离开，稀有永久祝福有严格上限。'},
 };
 
@@ -51,13 +55,22 @@ export function initEncounterEnemy(enemy,room){
  return {...enemy,encounterKey:room.type,wave:room.wave||1,shield:Math.max(enemy.shield||0,shield),maxShield:Math.max(encounterShieldCapacity(enemy),shield)};
 }
 
+const banditTwoRollNote='趁旅者停顿清点财物，前两击是夺回它的机会。';
+const banditLegacyThreeRollNote='趁旅者停顿清点财物，前三击是夺回它的机会。';
+// Correct the one inherited authored sentence only in presentation. Pending
+// saves retain their original text, and custom notes are never rewritten.
+export function encounterNarrative(enemy){
+ if(enemy?.mechanic==='bandit'&&enemy.variant===1&&enemy.note===banditLegacyThreeRollNote)return banditTwoRollNote;
+ return enemy?.note||'';
+}
+
 const authored = [
  ['armored',1,'断铆卫士','石门负甲者','把遗迹大门当作盾牌，守住最后一道门缝。','盔甲的铆钉早已断裂，旧命令仍支撑着重量。'],
  ['berserker',3,'赤痕追猎者','余火搏命者','生命的余火越暗，最后的扑击越急。','不顾伤口逼近，等待一次濒危的反扑。'],
  ['leech',4,'噬辉幼兽','饮烬潜伏者','循着护符的微光靠近，把敌人的迟疑当成食物。','藏在暖灰里，只有反击时才显出汲取的痕迹。'],
  ['disruptor',5,'错刻巡卫','偏针司骰者','刻度错开一格，每个低点都让它重新绷紧。','追逐偏离的点数，唯独不敢靠近完整的六点。'],
  ['mirror',7,'碎镜行者','反照监守','模仿同一个动作，却会被不同的骰声扰乱。','镜面捕捉整齐的共鸣，杂乱的回声却能穿过去。'],
- ['bandit',2,'拾金掠夺者','截路金匪','腰间金币还未系紧，迅速击败便能全部追回。','趁旅者停顿清点财物，前三击是夺回它的机会。'],
+ ['bandit',2,'拾金掠夺者','截路金匪','腰间金币还未系紧，迅速击败便能全部追回。',banditTwoRollNote],
  ['gauntlet',6,'窄道围猎者','连哨追兵','前一队倒下，后一队才从窄道另一端出现。','哨声逐渐逼近，每一波都要亲手夺回战利品。'],
  ['duel',8,'无旗决斗者','空誓副手','约好依次交锋，每次登场都暴露一瞬破绽。','等第一位倒下才拔剑，绝不分享同一个战利品。'],
  ['storm',6,'引雷游骑','裂隙导电体','雷纹每两轮聚满，六点却能将电光引向地面。','碎裂的躯壳传导暴雷，也留下了可见的间歇。'],
@@ -157,9 +170,16 @@ const mysteryTemplates = [
 ];
 const eventPick=(s,list,api)=>api.pick?api.pick(s,list):choose(s,list,api.random);
 const safeItems=s=>s.player.items.filter(i=>!Object.values(s.player.equipped).includes(i.id)&&!i.locked&&i.rarity<3&&i.id!==s.loot?.item?.id);
-const itemName=(s,id)=>s.player.items.find(i=>i.id===id)?.name||'已不存在的装备';
+const itemName=(s,id)=>{const item=s.player.items.find(i=>i.id===id);return item?(item.name?.trim()?item.name:`未命名装备（${item.id}）`):'已不存在的装备';};
 const itemById=(s,id)=>s.player.items.find(i=>i.id===id);
 const eventXpReward=s=>Math.min(1000000,40+s.player.level*5);
+function exchangeQuote(s){
+ const gold=goldPreview(s.player.gold,s.event.costGold),experience=xpPreview(s.player.xp,eventXpReward(s));
+ // gainXp clips the incoming balance before converting stored XP into levels.
+ // A later XP counter decrease is level conversion, not a negative receipt.
+ return {gold,...experience,experience,limited:gold.overflow>0||experience.limited,bothZero:gold.credited===0&&experience.creditedXp===0};
+}
+const exchangeXpText=(quote,pending)=>quote.overflowXp?xpSummary(quote,String,pending?'经验可计入':'经验计入'):`${quote.rawXp} 经验`;
 const spendGold=(s,amount)=>{s.player.gold-=amount;};
 export function eventStatBonuses(s){return {luck:Math.min(20,s.eventLuck||0)+Math.min(5,s.player.fateBlessings||0),damageMultiplier:1+Math.min(30,s.eventPower||0)/100,maxHpMultiplier:1-Math.min(5,s.player.pactScars||0)*.02};}
 export function createEvent(s,roomType,api){
@@ -175,29 +195,79 @@ export function createEvent(s,roomType,api){
 }
   function option(id,label,detail,cost,reward,disabled=false,reason='',confirm=null){return {id,label,detail,cost,reward,disabled,reason,confirm,destructive:!!confirm};}
   const temporaryGain=(s,key,amount,cap)=>Math.max(0,Math.min(amount,cap-(s[key]||0)));
+const eventRewardName=(s,rarity,kind='宝箱')=>(s.floor>=30?'至少':'')+RARITIES[rarity].name+kind;
+const resolvedRewardName=s=>RARITIES[s.chest.item.rarity].name;
+function contextualDeepChoices(s){
+ const choices=deepEventChoices(s),e=s.event;
+ // The original deep rules remain authoritative for availability, confirmation
+ // and settlement. Describe the reserved object even when it is now protected;
+ // never replace the saved offer with another currently safe inventory item.
+ if(e.key==='bloodwell')return choices.map(o=>o.id==='accept'?{...o,detail:'代价按入井时生命上限记录；换装不重算，只扣当前生命，不减少最大生命。'}:o);
+ if(e.key==='memorywell')return choices.map(o=>o.id==='reset'?{...o,detail:'全部投入返还，武器、防具与遗物不变；生命不会被免费填满。重置时，超出新生命上限的当前生命会被裁减；重新加点不会补回。'}:o);
+ if(!['offering','relicloom'].includes(e.key))return choices;
+ const offered=itemById(s,e.offerId),noun=e.key==='relicloom'?'旧遗物':'旧物',reasons=[];
+ if(!e.offerId)reasons.push(`入场时未登记可用的${noun}`);
+ else if(!offered)reasons.push(`本次登记的${noun}已不存在`);
+ else{
+  if(offered.locked)reasons.push(`本次登记的${noun}已锁定`);
+  if(Object.values(s.player.equipped).includes(offered.id))reasons.push(`本次登记的${noun}已装备`);
+  if(offered.rarity>=3)reasons.push(`本次登记的${noun}为传说及以上品质，受保护`);
+  if(offered.id===s.loot?.item?.id)reasons.push(`本次登记的${noun}仍是当前战利品，受保护`);
+  if(e.key==='relicloom'&&offered.slot!=='relic')reasons.push('本次登记的物品不是遗物');
+ }
+ if(e.key==='offering'){
+  if((s.player.deepOfferings||0)>=20)reasons.push('与星海书库共用的永久馈赠已达 20 次上限');
+  if(s.player.talentPoints>=2e6)reasons.push('未分配天赋点已达 2,000,000 点安全上限');
+ }
+ return choices.map(o=>o.id==='accept'?{...o,detail:o.detail+` 本次只接受入场时登记的${noun}，不会自动改交其他装备。`,cost:offered?(offered.name?.trim()?offered.name:`未命名旧物（${offered.id}）`):(e.offerId?`本次登记的${noun}（已不存在）`:`入场时未登记${noun}`),reason:o.disabled?(reasons.join('；')||o.reason):''}:o);
+}
+function referenceCheckedChoices(s,choices){
+ const issue=eventReferenceIssue(s);
+ return issue?choices.map(choice=>choice.id==='leave'?choice:{...choice,disabled:true,reason:issue.message}):choices;
+}
 export function eventChoices(s){
- const e=s.event;if(!e||e.status!=='pending')return [];if(DEEP_ROOMS[e.key]?.kind==='event')return deepEventChoices(s);
+ const e=s.event;if(!e||e.status!=='pending')return [];if(DEEP_ROOMS[e.key]?.kind==='event')return referenceCheckedChoices(s,contextualDeepChoices(s));
  const offered=itemById(s,e.offerId),target=itemById(s,e.targetId),safe=offered&&safeItems(s).some(i=>i.id===offered.id),gold=s.player.gold>=e.costGold,hp=s.player.hp>e.costHp;
    const pay=()=>!gold?'金币不足':'',confirm=text=>`${text}；此项提交后不可撤销。`;
    const luckGain=temporaryGain(s,'eventLuck',8,20),powerGain=temporaryGain(s,'eventPower',15,30);
  let options=[];
  switch(e.key){
-  case 'spring':options=[option('heal','饮下清泉','充分恢复，护盾较少。','无','恢复全部生命，获得最大生命 10% 护盾'),option('ward','凝结护幕','少量治疗，储备更多护盾。','无','恢复最大生命 35%，获得 35% 护盾')];break;
+  case 'spring':options=[option('heal','饮下清泉','充分恢复生命；已有更高护盾会保留，不额外增加。','无','恢复全部生命，护盾补足至至少最大生命 10%'),option('ward','凝结护幕','少量治疗；已有更高护盾会保留，不额外增加。','无','恢复最大生命 35%，护盾补足至至少最大生命 35%')];break;
     case 'prayer':options=[option('luck','点亮幸运','幸运只在本层生效。',`${e.costGold} 金币`,`本层幸运 +${luckGain}（本层上限 20）`,!gold||!luckGain,!luckGain?'本层临时幸运已达上限 20':pay(),confirm(`消耗 ${e.costGold} 金币`)),option('power','燃起战意','代价为当前生命，不损失生命上限。',`${e.costHp} 生命`,`本层伤害 +${powerGain}%（本层上限 30%）`,!hp||!powerGain,!powerGain?'本层临时伤害增幅已达上限 30%':!hp?'当前生命不足以安全支付':'',confirm(`失去 ${e.costHp} 当前生命`))];break;
-  case 'gambit':options=[option('roll','投下命运骰','1–2 返一半金币；3–4 稀有箱；5–6 史诗箱。幸运偏向高点。',`${e.costGold} 金币`,'随机报酬，结果立即保存',!gold,pay(),confirm(`支付 ${e.costGold} 金币，低点可能只返还一半`)),option('safe','选择保底','确定的稀有装备宝箱。',`${e.costGold*2} 金币`,'稀有宝箱',s.player.gold<e.costGold*2,'金币不足',confirm(`支付 ${e.costGold*2} 金币`))];break;
-  case 'exchange':options=[option('salvage','交出旧装','装备彻底消耗，不影响任何已装备物品。',itemName(s,e.offerId),`${e.costGold} 金币与 ${eventXpReward(s)} 经验`,!safe,'没有可安全置换的旧装备',confirm(`永久消耗「${itemName(s,e.offerId)}」`))];if(offered?.slot==='relic')options.push(option('relic','交换遗物','换得史诗遗物箱，旧遗物不可恢复。',itemName(s,e.offerId),'史诗遗物宝箱',!safe,'旧遗物已不存在或已受保护',confirm(`永久消耗「${itemName(s,e.offerId)}」`)));break;
+  case 'gambit':options=[option('roll','投下命运骰',`1–2返还半价；3–4${eventRewardName(s,1)}；5–6${eventRewardName(s,2)}。幸运偏向高点。`,`${e.costGold} 金币`,'随机报酬，结果立即保存',!gold,pay(),confirm(`支付 ${e.costGold} 金币，低点可能只返还一半`)),option('safe','选择保底',s.floor>=30?'稀有保底，高阶品质按当前深度抽取。':'确定的稀有装备宝箱。',`${e.costGold*2} 金币`,eventRewardName(s,1),s.player.gold<e.costGold*2,'金币不足',confirm(`支付 ${e.costGold*2} 金币`))];break;
+  case 'exchange': {
+   const quote=exchangeQuote(s),quoted=goldSummary(quote.gold,String,'金币可收'),xpText=exchangeXpText(quote,true);
+   options=[option('salvage','交出旧装','装备彻底消耗，不影响任何已装备物品。',itemName(s,e.offerId),quote.limited?`${quoted}；${xpText}`:`${e.costGold} 金币与 ${quote.rawXp} 经验`,!safe,'没有可安全置换的旧装备',confirm(`永久消耗「${itemName(s,e.offerId)}」${quote.limited?`；${quoted}，${quote.overflowXp?xpText:`仍获得 ${quote.rawXp} 经验`}`:''}${quote.bothZero?'；两项入账均为 0，装备仍会永久消耗':''}`))];
+   options[0].experience=quote.experience;
+   if(offered?.slot==='relic')options.push(option('relic','交换遗物',`换得${eventRewardName(s,2,'遗物箱')}，旧遗物不可恢复。`,itemName(s,e.offerId),eventRewardName(s,2,'遗物宝箱'),!safe,'旧遗物已不存在或已受保护',confirm(`永久消耗「${itemName(s,e.offerId)}」`)));break;
+  }
   case 'hollow_scale':options=[option('accept','签下空衡','永久代价有五次上限，目标是当前记录的这一件武器。','永久最大生命 -2%',`${itemName(s,e.targetId)} Lv. +${Math.min(3,MAX_ITEM_LEVEL-(target?.level||s.player.level))}`,!target||(s.player.pactScars||0)>=5||target.level>=MAX_ITEM_LEVEL,'目标不存在或已达生命/等级上限',confirm('永久减少最大生命 2%'))];break;
-  case 'relic_exchange':options=[option('accept','交出旧遗物','只消耗这一件，不触及已装备、锁定或传说遗物。',itemName(s,e.offerId),'史诗遗物宝箱',!safe||offered.slot!=='relic','没有可安全交换的旧遗物',confirm(`永久消耗「${itemName(s,e.offerId)}」`))];break;
+  case 'relic_exchange':options=[option('accept','交出旧遗物','只消耗这一件，不触及已装备、锁定或传说遗物。',itemName(s,e.offerId),eventRewardName(s,2,'遗物宝箱'),!safe||offered.slot!=='relic','没有可安全交换的旧遗物',confirm(`永久消耗「${itemName(s,e.offerId)}」`))];break;
     case 'traveler_lantern':options=[option('accept','借走灯火','下楼后灯火熄灭。',`${e.costGold} 金币`,`本层幸运 +${luckGain}（上限 20）`,!gold||!luckGain,!luckGain?'本层临时幸运已达上限 20':pay(),confirm(`支付 ${e.costGold} 金币`))];break;
   case 'silent_anvil':options=[option('accept','留下旧锻品','消耗旧物，武器增加最多 +2，不继承旧 +N。',itemName(s,e.offerId),`${itemName(s,e.targetId)} 强化 +${Math.min(2,Math.max(0,ENHANCE_CAP-(target?.enhance||0)))}`,!safe||!target||offered.enhance<5||target.enhance>=ENHANCE_CAP,`需要未受保护 +5 旧装，且目标尚未 +${ENHANCE_CAP}`,confirm(`永久消耗「${itemName(s,e.offerId)}」`))];break;
   case 'pursuer_contract':options=[option('accept','迎接双哨','连续两名精英；每次击杀先开箱再进入下一波。','两场精英战斗','两个真实击杀宝箱',false,'',confirm('立即开始连续两场精英战斗'))];break;
-  case 'star_seal':options=[option('accept','推开封匣','支付生命后立即开始隐秘首领战。',`${e.costHp} 当前生命`,'击败首领后必得传说宝箱',!hp,'当前生命不足以安全支付',confirm(`失去 ${e.costHp} 生命并立即挑战隐秘首领`))];break;
-  case 'memory_archive':options=[option('accept','研读学录','经验即时结算，可能触发升级。',`${e.costGold} 金币`,`${eventXpReward(s)} 经验`,!gold,pay(),confirm(`支付 ${e.costGold} 金币`))];break;
+  case 'star_seal':options=[option('accept','推开封匣','支付生命后立即开始隐秘首领战。',`${e.costHp} 当前生命`,s.floor>=30?'击败首领后传说保底；高阶按深度抽取':'击败首领后必得传说宝箱',!hp,'当前生命不足以安全支付',confirm(`失去 ${e.costHp} 生命并立即挑战隐秘首领`))];break;
+  case 'memory_archive':{
+   const quote=xpPreview(s.player.xp,eventXpReward(s)),quoted=xpSummary(quote,String,'经验可计入');
+   options=[option('accept','研读学录',s.player.level===LEVEL_CAP?'已达角色等级上限；计入的经验会保留，不再升级。':'经验即时结算，可能触发升级。',`${e.costGold} 金币`,quote.limited?quoted:`${quote.rawXp} 经验`,!gold,pay(),confirm(`支付 ${e.costGold} 金币${quote.limited?`；${quoted}${quote.creditedXp===0?'；经验计入为 0，金币仍会支付':''}`:''}`))];
+   options[0].experience=quote;break;
+  }
   case 'thread_of_dawn':options=[option('accept','系住黎明','永久幸运最多获得 5 点。',`${e.costGold*3} 金币`,'永久幸运 +1',s.player.gold<e.costGold*3||(s.player.fateBlessings||0)>=5,'金币不足或已达永久上限',confirm(`支付 ${e.costGold*3} 金币`))];break;
  }
- options.push(option('leave','安全离开','不支付代价，不改变已有资产。','无','保留当前进度'));return options;
+ options.push(option('leave','安全离开','不支付代价，不改变已有资产。','无','保留当前进度'));return referenceCheckedChoices(s,options);
 }
-export function eventPresentation(s){return s.event?{title:s.event.title,body:s.event.text,status:s.event.status,outcome:s.event.outcome,options:eventChoices(s)}:null;}
+export function eventPresentation(s){
+ if(!s.event)return null;
+ // Existing pending V5 events keep their saved assets and identity. Correct only
+ // their inherited guarantee wording at presentation time; never reroll them.
+ let body=s.event.text;
+ if(s.event.status==='pending'&&s.event.key==='bloodwell')body=`以入井时最大生命的 20% 记录代价，换一只至少传说的深层宝箱。本次需 ${s.event.costHp} 当前生命；换装不重算，支付后必须存活。`;
+ if(s.floor>=30){
+  if(s.event.key==='relic_exchange')body=body.replace('归还一只史诗遗物宝箱。','归还一只至少史诗的遗物宝箱。');
+  if(s.event.key==='star_seal')body=body.replace('击败后必得传说宝箱。','击败后传说保底，高阶按深度抽取。');
+ }
+ return {title:s.event.title,body,status:s.event.status,outcome:s.event.outcome,options:eventChoices(s)};
+}
 function rewardChest(s,api,rarity,slot){
  const chest=api.createChest(s,rarity>=2?'vault':'chest',s.event.title);
  // Event items use the shared event level band, regardless of the base chest roll.
@@ -206,8 +276,10 @@ function rewardChest(s,api,rarity,slot){
 }
 export function applyEvent(s,choice,api){
  if(s.phase!=='event')return false;
+ const id=typeof choice==='string'?choice:choice?.id;
+ if(id!=='leave'&&eventReferenceIssue(s))return false;
  if(DEEP_ROOMS[s.event?.key]?.kind==='event')return applyDeepEvent(s,choice,api);
- const id=typeof choice==='string'?choice:choice?.id,selected=eventChoices(s).find(o=>o.id===id);
+ const selected=eventChoices(s).find(o=>o.id===id);
  if(!selected||selected.disabled||(selected.confirm&&choice?.confirmed!==true))return false;
  const e=s.event,target=itemById(s,e.targetId),st=api.stats(s),remove=()=>{s.player.items=s.player.items.filter(i=>i.id!==e.offerId);};
  e.status='resolved';e.choice=id;e.outcome='你保留了当前的一切，离开了遭遇。';
@@ -215,17 +287,20 @@ export function applyEvent(s,choice,api){
   const luck=()=>{const gain=temporaryGain(s,'eventLuck',8,20);s.eventLuck=(s.eventLuck||0)+gain;e.outcome=`灯火相伴 · 本层幸运 +${gain}，当前临时幸运 ${s.eventLuck}`;};
  const xp=()=>api.gainXp(s,eventXpReward(s));
  switch(e.key){
-  case 'spring':if(id==='heal'){s.player.hp=st.maxHp;s.ward=Math.max(s.ward||0,Math.floor(st.maxHp*.1));e.outcome='生命已恢复，获得最大生命 10% 护盾。';}else{s.player.hp=Math.min(st.maxHp,s.player.hp+Math.floor(st.maxHp*.35));s.ward=Math.max(s.ward||0,Math.floor(st.maxHp*.35));e.outcome='恢复 35% 最大生命，获得 35% 护盾。';}break;
+  case 'spring':if(id==='heal'){s.player.hp=st.maxHp;s.ward=Math.max(s.ward||0,Math.floor(st.maxHp*.1));e.outcome='生命已恢复，护盾补足至至少最大生命 10%；原有更高护盾保留。';}else{s.player.hp=Math.min(st.maxHp,s.player.hp+Math.floor(st.maxHp*.35));s.ward=Math.max(s.ward||0,Math.floor(st.maxHp*.35));e.outcome='恢复 35% 最大生命，护盾补足至至少最大生命 35%；原有更高护盾保留。';}break;
     case 'prayer':if(id==='luck'){spendGold(s,e.costGold);luck();}else{const gain=temporaryGain(s,'eventPower',15,30);s.player.hp-=e.costHp;s.eventPower=(s.eventPower||0)+gain;e.outcome=`本层伤害 +${gain}%，当前临时增幅 ${s.eventPower}%。`;}break;
-  case 'gambit':if(id==='safe'){spendGold(s,e.costGold*2);rewardChest(s,api,1);e.outcome='保底交易完成 · 稀有宝箱等待开启。';}else{spendGold(s,e.costGold);e.roll=api.die?api.die(s):1+Math.min(5,Math.floor(api.random(s)*6));if(e.roll<=2){api.gainGold(s,Math.floor(e.costGold/2));e.outcome=`命运 ${e.roll} 点 · 返还一半金币。`;}else{rewardChest(s,api,e.roll>=5?2:1);e.outcome=`命运 ${e.roll} 点 · ${e.roll>=5?'史诗':'稀有'}宝箱等待开启。`;}}break;
-  case 'exchange':remove();if(id==='relic'){rewardChest(s,api,2,'relic');e.outcome='旧遗物已置换，史诗遗物箱等待开启。';}else{api.gainGold(s,e.costGold);xp();e.outcome='旧装已置换为金币与经验。';}break;
+  case 'gambit':if(id==='safe'){spendGold(s,e.costGold*2);rewardChest(s,api,1);e.outcome=`保底交易完成 · ${resolvedRewardName(s)}宝箱等待开启。`;}else{spendGold(s,e.costGold);e.roll=api.die?api.die(s):1+Math.min(5,Math.floor(api.random(s)*6));if(e.roll<=2){api.gainGold(s,Math.floor(e.costGold/2));e.outcome=`命运 ${e.roll} 点 · 返还一半金币。`;}else{rewardChest(s,api,e.roll>=5?2:1);e.outcome=`命运 ${e.roll} 点 · ${resolvedRewardName(s)}宝箱等待开启。`;}}break;
+  case 'exchange':remove();if(id==='relic'){rewardChest(s,api,2,'relic');e.outcome=`旧遗物已置换，${resolvedRewardName(s)}遗物箱等待开启。`;}else{const quote=exchangeQuote(s);api.gainGold(s,e.costGold);xp();e.outcome=quote.limited?`旧装已置换 · ${goldSummary(quote.gold)}；${quote.overflowXp?exchangeXpText(quote,false):`获得 ${quote.rawXp} 经验`}。${quote.bothZero?'两项入账均为 0，旧装已永久消耗。':''}`:'旧装已置换为金币与经验。';}break;
   case 'hollow_scale':{const before=target.level||s.player.level;s.player.pactScars=(s.player.pactScars||0)+1;target.level=Math.min(MAX_ITEM_LEVEL,before+3);if(target.level===MAX_ITEM_LEVEL)target.levelXp=0;s.player.hp=Math.min(s.player.hp,api.stats(s).maxHp);e.outcome=`武器等级 +${target.level-before}，永久最大生命减少 2%。`;break;}
-  case 'relic_exchange':remove();rewardChest(s,api,2,'relic');e.outcome='旧遗物已消耗，史诗遗物箱等待开启。';break;
+  case 'relic_exchange':remove();rewardChest(s,api,2,'relic');e.outcome=`旧遗物已消耗，${resolvedRewardName(s)}遗物箱等待开启。`;break;
   case 'traveler_lantern':spendGold(s,e.costGold);luck();break;
   case 'silent_anvil':{const before=target.enhance;remove();target.enhance=Math.min(ENHANCE_CAP,before+2);e.outcome=`旧锻品已消耗，目标获得新的强化 +${target.enhance-before}。`;break;}
   case 'pursuer_contract':{const room=s.route[s.roomIndex];room.wave=1;room.waves=2;room.waveType='elite';s.enemy=api.createEnemy(s,'elite');s.enemy.encounterKey='mystery';s.enemy.wave=1;s.phase='combat';e.outcome='双哨已近 · 每击败一名精英先领取宝箱。';break;}
   case 'star_seal':s.routeMemory??={services:[],last:{},hiddenFloor:0};s.routeMemory.hiddenFloor=s.floor;s.player.hp-=e.costHp;s.enemy=api.createEnemy(s,'hiddenboss');s.phase='combat';e.outcome='封匣打开，隐秘首领现身。';break;
-  case 'memory_archive':spendGold(s,e.costGold);xp();e.outcome='学录已研读，经验已计入。';break;
+  case 'memory_archive':{
+   const quote=xpPreview(s.player.xp,eventXpReward(s));spendGold(s,e.costGold);xp();
+   e.outcome=quote.limited?`学录已研读 · ${xpSummary(quote)}。${quote.creditedXp===0?`已支付 ${e.costGold} 金币，本次没有新增经验。`:''}`:'学录已研读，经验已计入。';break;
+  }
   case 'thread_of_dawn':spendGold(s,e.costGold*3);s.player.fateBlessings=(s.player.fateBlessings||0)+1;e.outcome=`永久幸运 +1，已接受 ${s.player.fateBlessings} / 5 次馈赠。`;break;
  }
  api.log(s,e.outcome,'gold');return true;

@@ -1,0 +1,35 @@
+{
+  "timestamp": "2026-10-17T15:10:40.154359+00:00",
+  "runs": [
+    {
+      "label": "baseline-red",
+      "exitCode": 1,
+      "command": [
+        "node",
+        "--test",
+        "--test-isolation=none",
+        "tests/renderer-delay.test.mjs"
+      ],
+      "sourceRoot": "/workspace/scratch/49a55c8e3a8f/baseline/Dice-Abyss",
+      "log": "/workspace/scratch/49a55c8e3a8f/qa-renderer/baseline-red.txt",
+      "logSha256": "8972cb73df9e42c2e99b768551800a1542170665b94270cf1aec47ca0adb74b1"
+    },
+    {
+      "label": "current-targeted",
+      "exitCode": 0,
+      "command": [
+        "node",
+        "--test",
+        "--test-isolation=none",
+        "tests/renderer-delay.test.mjs",
+        "tests/visual-timeline.test.mjs",
+        "tests/dice-motion.test.mjs",
+        "tests/dice-renderer.test.mjs",
+        "tests/effects.test.mjs"
+      ],
+      "sourceRoot": "/workspace/scratch/49a55c8e3a8f/work/Dice-Abyss",
+      "log": "/workspace/scratch/49a55c8e3a8f/qa-renderer/current-targeted.txt",
+      "logSha256": "1a49b662782b49897012105af4c90afebbfdce7e83e840c155e39a137e15adfd"
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "source": "/workspace/scratch/f0146b2cbcc6/baseline/Dice-Abyss",
+  "url": "http://127.0.0.1:4188/",
+  "beforeMode": true,
+  "browser": "155.0.8059.84",
+  "synthetic": true,
+  "started": "2026-10-19T07:30:11.238Z",
+  "cases": [
+    {
+      "name": "input-equipment-same-fixture",
+      "status": "PASS",
+      "checks": 4,
+      "trace": [
+        {
+          "label": "fixture loads without changes",
+          "actualSha256": "fb29630bef6ee0929f9f1479c9c3c3bda0762fa5626586428d4002a88c17d882",
+          "expectedSha256": "fb29630bef6ee0929f9f1479c9c3c3bda0762fa5626586428d4002a88c17d882",
+          "passed": true
+        },
+        {
+          "label": "input has decorative event emblem",
+          "passed": true
+        },
+        {
+          "label": "input has no explicit material/target area",
+          "passed": true
+        },
+        {
+          "label": "opening old review spends nothing",
+          "actualSha256": "fb29630bef6ee0929f9f1479c9c3c3bda0762fa5626586428d4002a88c17d882",
+          "expectedSha256": "fb29630bef6ee0929f9f1479c9c3c3bda0762fa5626586428d4002a88c17d882",
+          "passed": true
+        }
+      ],
+      "ms": 3792.3084400000002
+    }
+  ],
+  "errors": [],
+  "checks": 4,
+  "notes": [
+    "Constructed valid entry states, actual UI actions and exact complete-state assertions.",
+    "Logical viewports and software rendering; not physical devices, screen-reader or GPU certification.",
+    "Failed file reads are delayed only inside isolated QA contexts to test ordering."
+  ],
+  "sourceHashes": [
+    {
+      "file": "src/app.js",
+      "sha256": "c9439b8719640c9ae5ebe7c9d939901fdc4a3c3bfaea0ef24c28492ff91951b1"
+    },
+    {
+      "file": "src/views.js",
+      "sha256": "2b8edcbe13fb3d8fb9a69eb51a1b2bc98e3819633d18f7d60675a73ebdf1b2e6"
+    },
+    {
+      "file": "src/storage.js",
+      "sha256": "6bfcc60036c9f729c21b948ca98c7ac715e14049856fb9dded0baa2aeef2c561"
+    },
+    {
+      "file": "src/encounters.js",
+      "sha256": "c3c6e2d24049305d73982cf5db3b1cf02eee68f4e8e1659fd7e3021f74de0791"
+    },
+    {
+      "file": "src/event-references.js",
+      "missing": true
+    },
+    {
+      "file": "src/event-equipment.css",
+      "missing": true
+    }
+  ],
+  "finished": "2026-10-19T07:30:15.120Z",
+  "passed": true
+}

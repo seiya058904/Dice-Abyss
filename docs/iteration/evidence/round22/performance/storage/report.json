@@ -1,0 +1,4042 @@
+{
+  "status": "PASS",
+  "startedAtUtc": "2026-10-19T14:07:48.431Z",
+  "protocol": {
+    "status": "PREPARED",
+    "createdAtUtc": "2026-10-19T14:07:48.158Z",
+    "scriptSha256": "246605c25f466779e4aee7136f668bf9ffe3b60e3ac9c8829502672021de4058",
+    "nodeVersion": "v24.19.0",
+    "sourceRoots": [
+      {
+        "label": "baseline",
+        "root": "/workspace/scratch/a3dd46c18162/baseline/Dice-Abyss",
+        "url": "http://127.0.0.1:4221/",
+        "version": "5.21.0"
+      },
+      {
+        "label": "current",
+        "root": "/workspace/scratch/a3dd46c18162/work/Dice-Abyss",
+        "url": "http://127.0.0.1:4222/",
+        "version": "5.22.0"
+      }
+    ],
+    "sourceHashes": {
+      "baseline": {
+        "index.html": {
+          "bytes": 2305,
+          "sha256": "1e50476c2d56aea670b54d0adcb2bd38790d695b4a310844826adf985deea2f5"
+        },
+        "package.json": {
+          "bytes": 428,
+          "sha256": "902e80d0c7bb202bf5db0ebaa74c79e5e9881f18f91623072e5fa500932d297f"
+        },
+        "src/app.js": {
+          "bytes": 50808,
+          "sha256": "baf8e04656b34df73feb324e5e0518bb050743683bd68c0316e83b73f545f24f"
+        },
+        "src/engine.js": {
+          "bytes": 41128,
+          "sha256": "75c6d9fcc48c0cf49ee02e53ffb7b143a09a2c79738d3bb2eb5d0ae80b30872b"
+        },
+        "src/storage.js": {
+          "bytes": 32441,
+          "sha256": "daa6eeffc7a38692213228d748c7819739392a5eeaedc91ec62350c53319591c"
+        },
+        "src/views.js": {
+          "bytes": 107882,
+          "sha256": "75c2b6b0c36ee6d34a8066fc4867c6f223dd630633687a347b703afee674c263"
+        },
+        "src/encounters.js": {
+          "bytes": 36777,
+          "sha256": "e485b531d6ed59954cdc8c7b50ab5dd84c1a64449852b7b56fce667489369d76"
+        },
+        "src/equipment.js": {
+          "bytes": 13951,
+          "sha256": "8c20de433f21931318e315b862b457d37a03b9596ea5df8f7cc4025691aaccd6"
+        },
+        "src/content.js": {
+          "bytes": 13097,
+          "sha256": "4c0c2e4656c5a3482a5448a069ae2fa28367ba05d61c7d0c2c9866315f5c5526"
+        },
+        "src/effects.js": {
+          "bytes": 28007,
+          "sha256": "5f95f77e882a690f95215babda3cdedc0d398bbcfaabfecd3d486141200dc6f9"
+        },
+        "src/dice-renderer.js": {
+          "bytes": 14522,
+          "sha256": "b40e1e1c808b00d319b70ce7546403c588cdcc8397bba684fe19b2f4c0bca6d8"
+        },
+        "src/deep.css": {
+          "bytes": 10667,
+          "sha256": "24f0ed8bf2969232c660a595cd5e19b206066bc4a19a983e4bd3a277b82700cc"
+        },
+        "src/inventory-dom.js": {
+          "bytes": 4792,
+          "sha256": "7f3b18a6b3dbcc3a0a100c94bab35d9e81a14d7a6c74e8eabfdff3d151d35bf0"
+        }
+      },
+      "current": {
+        "index.html": {
+          "bytes": 2305,
+          "sha256": "f1001c485cb68386367b46b6bc40213c87a232da534dd80409d7a24f1fa34132"
+        },
+        "package.json": {
+          "bytes": 428,
+          "sha256": "fdc59fc4c5a28b0d6169253577bbbeab30341bc9830e16b362a3ba34c2ed2583"
+        },
+        "src/app.js": {
+          "bytes": 51792,
+          "sha256": "de8712715446bff65843d63167f0b2b5e3a9507fdbfde5d84a41475d926cd1be"
+        },
+        "src/engine.js": {
+          "bytes": 41371,
+          "sha256": "340fa90ef963abfc874fa4932af80264a87a569f1d51030d9e9b29b3dbc2192e"
+        },
+        "src/storage.js": {
+          "bytes": 32685,
+          "sha256": "2b505d6dab2c5f018eff3f1bd5d6d927a885a175f812bd620ae898b3fead7f05"
+        },
+        "src/views.js": {
+          "bytes": 107965,
+          "sha256": "1b278428479f9a9daee7973ede38b84b16113cf83cf665a6e9d2cbdec5d6fb22"
+        },
+        "src/encounters.js": {
+          "bytes": 36777,
+          "sha256": "e485b531d6ed59954cdc8c7b50ab5dd84c1a64449852b7b56fce667489369d76"
+        },
+        "src/equipment.js": {
+          "bytes": 13951,
+          "sha256": "8c20de433f21931318e315b862b457d37a03b9596ea5df8f7cc4025691aaccd6"
+        },
+        "src/content.js": {
+          "bytes": 13097,
+          "sha256": "4c0c2e4656c5a3482a5448a069ae2fa28367ba05d61c7d0c2c9866315f5c5526"
+        },
+        "src/effects.js": {
+          "bytes": 28007,
+          "sha256": "5f95f77e882a690f95215babda3cdedc0d398bbcfaabfecd3d486141200dc6f9"
+        },
+        "src/dice-renderer.js": {
+          "bytes": 14522,
+          "sha256": "b40e1e1c808b00d319b70ce7546403c588cdcc8397bba684fe19b2f4c0bca6d8"
+        },
+        "src/deep.css": {
+          "bytes": 10979,
+          "sha256": "d4b579f479f51e2bc15fddf02f1c5c7b443c233546e482a43bdfe00783b73621"
+        },
+        "src/inventory-dom.js": {
+          "bytes": 5774,
+          "sha256": "fd202b44a427eb7ff2c5ea5ccaaff8014f5faa4b4f85c280ff1fa5078bfd641f"
+        }
+      }
+    },
+    "servedSourcePaths": [
+      "index.html",
+      "src/app.js",
+      "src/engine.js",
+      "src/storage.js",
+      "src/views.js",
+      "src/encounters.js",
+      "src/equipment.js",
+      "src/content.js",
+      "src/effects.js",
+      "src/dice-renderer.js",
+      "src/deep.css",
+      "src/inventory-dom.js"
+    ],
+    "packageMetadataCheck": "Package SHA remains in the disk snapshot; page release must equal package.version and the HTTP package.json path must remain 404.",
+    "flow": "Load the same native main/mirror save, Continue, open Inventory, center-scroll the same lock button before timing, trust-click it, verify the exact committed state.",
+    "fixture": {
+      "synthetic": true,
+      "method": "Seeded existing newGame/makeItem APIs; explicit floor 200, level 100 and gold 1000000. No removed fields or shortened equipment records.",
+      "seed": 27017,
+      "runId": "qa-round06-native-storage-10000-27017",
+      "inventoryCount": 10000,
+      "targetId": "i7",
+      "action": {
+        "type": "lock",
+        "id": "i7"
+      },
+      "beforeStateSha256": "887b97d4dd72aa091e1b901c9217c8fbfb4cee382bf0119060d03ab5eb9c5ebd",
+      "afterStateSha256": "77536383143182ee345dd02effa469a3e2438e4b5ca9f62ba15eeedf2d5dde91",
+      "rawCharacters": 2039245,
+      "rawUtf8Bytes": 2190143,
+      "rawSha256": "c4390fd5079e909fbf54e01471647ca68f609c375c302415ac7bbf673dae5ab5",
+      "afterRawCharacters": 2039245,
+      "afterRawUtf8Bytes": 2190143,
+      "afterRawSha256": "a9c284fb121f67c99313d2a9426279f30c070776b1cb160367626293b0cd4c11",
+      "guardUtf8BranchReachedByLength": true
+    },
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "deviceScaleFactor": 1,
+    "reducedMotion": "reduce",
+    "settings": {
+      "effects": "low",
+      "sound": false,
+      "scale": 1
+    },
+    "measuredPairs": 12,
+    "measuredSamplesPerVersion": 12,
+    "warmupsPerVersion": 1,
+    "balancedOrder": true,
+    "schedule": [
+      {
+        "phase": "warmup",
+        "pair": 0,
+        "label": "baseline"
+      },
+      {
+        "phase": "warmup",
+        "pair": 0,
+        "label": "current"
+      },
+      {
+        "phase": "measured",
+        "pair": 1,
+        "label": "baseline"
+      },
+      {
+        "phase": "measured",
+        "pair": 1,
+        "label": "current"
+      },
+      {
+        "phase": "measured",
+        "pair": 2,
+        "label": "current"
+      },
+      {
+        "phase": "measured",
+        "pair": 2,
+        "label": "baseline"
+      },
+      {
+        "phase": "measured",
+        "pair": 3,
+        "label": "baseline"
+      },
+      {
+        "phase": "measured",
+        "pair": 3,
+        "label": "current"
+      },
+      {
+        "phase": "measured",
+        "pair": 4,
+        "label": "current"
+      },
+      {
+        "phase": "measured",
+        "pair": 4,
+        "label": "baseline"
+      },
+      {
+        "phase": "measured",
+        "pair": 5,
+        "label": "baseline"
+      },
+      {
+        "phase": "measured",
+        "pair": 5,
+        "label": "current"
+      },
+      {
+        "phase": "measured",
+        "pair": 6,
+        "label": "current"
+      },
+      {
+        "phase": "measured",
+        "pair": 6,
+        "label": "baseline"
+      },
+      {
+        "phase": "measured",
+        "pair": 7,
+        "label": "baseline"
+      },
+      {
+        "phase": "measured",
+        "pair": 7,
+        "label": "current"
+      },
+      {
+        "phase": "measured",
+        "pair": 8,
+        "label": "current"
+      },
+      {
+        "phase": "measured",
+        "pair": 8,
+        "label": "baseline"
+      },
+      {
+        "phase": "measured",
+        "pair": 9,
+        "label": "baseline"
+      },
+      {
+        "phase": "measured",
+        "pair": 9,
+        "label": "current"
+      },
+      {
+        "phase": "measured",
+        "pair": 10,
+        "label": "current"
+      },
+      {
+        "phase": "measured",
+        "pair": 10,
+        "label": "baseline"
+      },
+      {
+        "phase": "measured",
+        "pair": 11,
+        "label": "baseline"
+      },
+      {
+        "phase": "measured",
+        "pair": 11,
+        "label": "current"
+      },
+      {
+        "phase": "measured",
+        "pair": 12,
+        "label": "current"
+      },
+      {
+        "phase": "measured",
+        "pair": 12,
+        "label": "baseline"
+      }
+    ],
+    "exclusionRule": "Only the one declared warmup per version is excluded. No slow-sample removal, adaptive sample count, rerun selection, or partial-success statistics.",
+    "lifecycle": "One Chrome process, one isolated native context at a time, fresh context and reload for every scheduled sample. Warmups exercise this same lifecycle; they do not claim to warm the next document JavaScript realm.",
+    "clocks": {
+      "start": "performance.now() in the capture listener for the trusted target click, before the unmodified app click handler.",
+      "lastWrite": "Return or throw from the final original native Storage.prototype.setItem call during this action.",
+      "twoRaf": "performance.now() in the second requestAnimationFrame callback scheduled after the most recent write returns.",
+      "nativeSetItem": "Sum of time immediately around original setItem calls, with exact original receiver/arguments and return/exception behavior.",
+      "longTasks": "Native PerformanceObserver longtask entries overlapping trusted-click start through second RAF; raw duration and interval overlap are both recorded."
+    },
+    "browserPath": "Taskbook-authorized tester-provided Playwright/official Chrome. In round 07 the extension and cloud browser both returned ERR_CONNECTION_REFUSED for the executor loopback origin; no user browser session is used.",
+    "limits": [
+      "These are API submission and UI-frame latency measurements, not physical-disk durability, FPS, GPU or natural-player distribution measurements.",
+      "The operation includes engine transition, exact-snapshot checking, encoding, native storage and inventory rendering; it does not isolate TextEncoder cost.",
+      "The setItem wrapper records timing/counts and calls the original native method unchanged. getItem, engine, quota and Web Locks are not replaced.",
+      "Default Chromium quota is identical in configuration for both origins. Native failure to hold both real copies is BLOCKED, never bypassed.",
+      "navigator.storage.estimate is origin-wide information, not a measurement of the separate localStorage size ceiling.",
+      "One fixed seed and twelve pairs are finite scenario evidence. Keep all samples and do not infer a general speedup from small/noisy differences."
+    ]
+  },
+  "rows": [
+    {
+      "phase": "warmup",
+      "pair": 0,
+      "label": "baseline",
+      "status": "PASS",
+      "startedAtUtc": "2026-10-19T14:07:48.472Z",
+      "nativeSeeding": {
+        "successfulWrites": [
+          {
+            "key": "dice-abyss:settings:v1",
+            "characters": 41
+          },
+          {
+            "key": "dice-abyss:save:v1",
+            "characters": 2039245
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "characters": 2039245
+          }
+        ],
+        "error": null
+      },
+      "environment": {
+        "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.8059.84 Safari/537.36",
+        "hardwareConcurrency": 9,
+        "deviceMemory": 8,
+        "webLocks": true,
+        "longTasksSupported": true,
+        "originalSetItemIsNative": true,
+        "visibility": "visible",
+        "quotaEstimate": {
+          "quota": 10737418240,
+          "usage": 0,
+          "usageDetails": {}
+        },
+        "release": "5.21.0"
+      },
+      "visibleTarget": {
+        "id": "i7",
+        "pressed": "false",
+        "disabled": false,
+        "rect": {
+          "x": 660.9375,
+          "y": 612.296875,
+          "right": 710.875,
+          "bottom": 647.609375,
+          "width": 49.9375,
+          "height": 35.3125
+        },
+        "listRect": {
+          "x": 504.671875,
+          "y": 492.4375,
+          "right": 1424.96875,
+          "bottom": 766.921875
+        },
+        "centerHitsButton": true,
+        "fullyVisible": true
+      },
+      "beforeSnapshotSha256": "a8b399aea5c98336943a72fb8e984d5edb18fd254a1933577eedad1052ba6a7a",
+      "timing": {
+        "targetId": "i7",
+        "startedAt": 2548.60000000149,
+        "eventTimeStamp": 2545.89999999851,
+        "isTrusted": true,
+        "visibilityAtClick": "visible",
+        "lastWriteAt": 2667.2999999970198,
+        "firstRafAt": 2752.7999999970198,
+        "twoRafAt": 2770.6999999955297,
+        "clickToLastWriteMs": 118.69999999552965,
+        "clickToTwoRafMs": 222.09999999403954,
+        "lastWriteToTwoRafMs": 103.39999999850988,
+        "nativeSetItemMs": 21.5,
+        "writes": [
+          {
+            "key": "dice-abyss:save:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 2645.5,
+            "endedAt": 2654.5,
+            "durationMs": 9,
+            "ok": true,
+            "errorName": null
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 2654.7999999970198,
+            "endedAt": 2667.2999999970198,
+            "durationMs": 12.5,
+            "ok": true,
+            "errorName": null
+          }
+        ],
+        "longTasksSupported": true,
+        "longTasks": [
+          {
+            "name": "self",
+            "startTime": 2559.39999999851,
+            "duration": 188,
+            "attribution": [
+              {
+                "name": "unknown",
+                "containerType": "window"
+              }
+            ],
+            "overlapMs": 188
+          }
+        ],
+        "error": null
+      },
+      "afterSnapshotSha256": "d1fcb6585e0eecb06bca91099ba4b4b2a1b6c1a5f914e94ac589b5b23d034be0",
+      "afterStateSha256": "77536383143182ee345dd02effa469a3e2438e4b5ca9f62ba15eeedf2d5dde91",
+      "exactTransition": true,
+      "mirrorExact": true,
+      "metrics": {
+        "clickToLastWriteMs": 118.69999999552965,
+        "clickToTwoRafMs": 222.09999999403954,
+        "lastWriteToTwoRafMs": 103.39999999850988,
+        "nativeSetItemMs": 21.5,
+        "longTaskCount": 1,
+        "longTaskTotalMs": 188,
+        "longTaskMaxMs": 188
+      },
+      "finishedAtUtc": "2026-10-19T14:07:52.135Z"
+    },
+    {
+      "phase": "warmup",
+      "pair": 0,
+      "label": "current",
+      "status": "PASS",
+      "startedAtUtc": "2026-10-19T14:07:52.147Z",
+      "nativeSeeding": {
+        "successfulWrites": [
+          {
+            "key": "dice-abyss:settings:v1",
+            "characters": 41
+          },
+          {
+            "key": "dice-abyss:save:v1",
+            "characters": 2039245
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "characters": 2039245
+          }
+        ],
+        "error": null
+      },
+      "environment": {
+        "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.8059.84 Safari/537.36",
+        "hardwareConcurrency": 9,
+        "deviceMemory": 8,
+        "webLocks": true,
+        "longTasksSupported": true,
+        "originalSetItemIsNative": true,
+        "visibility": "visible",
+        "quotaEstimate": {
+          "quota": 10737418240,
+          "usage": 0,
+          "usageDetails": {}
+        },
+        "release": "5.22.0"
+      },
+      "visibleTarget": {
+        "id": "i7",
+        "pressed": "false",
+        "disabled": false,
+        "rect": {
+          "x": 660.9375,
+          "y": 612.296875,
+          "right": 710.875,
+          "bottom": 647.609375,
+          "width": 49.9375,
+          "height": 35.3125
+        },
+        "listRect": {
+          "x": 504.671875,
+          "y": 492.4375,
+          "right": 1424.96875,
+          "bottom": 766.921875
+        },
+        "centerHitsButton": true,
+        "fullyVisible": true
+      },
+      "beforeSnapshotSha256": "a8b399aea5c98336943a72fb8e984d5edb18fd254a1933577eedad1052ba6a7a",
+      "timing": {
+        "targetId": "i7",
+        "startedAt": 2070.1999999955297,
+        "eventTimeStamp": 2067.39999999851,
+        "isTrusted": true,
+        "visibilityAtClick": "visible",
+        "lastWriteAt": 2205.1999999955297,
+        "firstRafAt": 2294.7999999970198,
+        "twoRafAt": 2308.6999999955297,
+        "clickToLastWriteMs": 135,
+        "clickToTwoRafMs": 238.5,
+        "lastWriteToTwoRafMs": 103.5,
+        "nativeSetItemMs": 23.899999998509884,
+        "writes": [
+          {
+            "key": "dice-abyss:save:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 2181.10000000149,
+            "endedAt": 2194,
+            "durationMs": 12.899999998509884,
+            "ok": true,
+            "errorName": null
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 2194.1999999955297,
+            "endedAt": 2205.1999999955297,
+            "durationMs": 11,
+            "ok": true,
+            "errorName": null
+          }
+        ],
+        "longTasksSupported": true,
+        "longTasks": [
+          {
+            "name": "self",
+            "startTime": 2081.7999999970198,
+            "duration": 206,
+            "attribution": [
+              {
+                "name": "unknown",
+                "containerType": "window"
+              }
+            ],
+            "overlapMs": 206
+          }
+        ],
+        "error": null
+      },
+      "afterSnapshotSha256": "d1fcb6585e0eecb06bca91099ba4b4b2a1b6c1a5f914e94ac589b5b23d034be0",
+      "afterStateSha256": "77536383143182ee345dd02effa469a3e2438e4b5ca9f62ba15eeedf2d5dde91",
+      "exactTransition": true,
+      "mirrorExact": true,
+      "metrics": {
+        "clickToLastWriteMs": 135,
+        "clickToTwoRafMs": 238.5,
+        "lastWriteToTwoRafMs": 103.5,
+        "nativeSetItemMs": 23.899999998509884,
+        "longTaskCount": 1,
+        "longTaskTotalMs": 206,
+        "longTaskMaxMs": 206
+      },
+      "finishedAtUtc": "2026-10-19T14:07:55.530Z"
+    },
+    {
+      "phase": "measured",
+      "pair": 1,
+      "label": "baseline",
+      "status": "PASS",
+      "startedAtUtc": "2026-10-19T14:07:55.537Z",
+      "nativeSeeding": {
+        "successfulWrites": [
+          {
+            "key": "dice-abyss:settings:v1",
+            "characters": 41
+          },
+          {
+            "key": "dice-abyss:save:v1",
+            "characters": 2039245
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "characters": 2039245
+          }
+        ],
+        "error": null
+      },
+      "environment": {
+        "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.8059.84 Safari/537.36",
+        "hardwareConcurrency": 9,
+        "deviceMemory": 8,
+        "webLocks": true,
+        "longTasksSupported": true,
+        "originalSetItemIsNative": true,
+        "visibility": "visible",
+        "quotaEstimate": {
+          "quota": 10737418240,
+          "usage": 0,
+          "usageDetails": {}
+        },
+        "release": "5.21.0"
+      },
+      "visibleTarget": {
+        "id": "i7",
+        "pressed": "false",
+        "disabled": false,
+        "rect": {
+          "x": 660.9375,
+          "y": 612.296875,
+          "right": 710.875,
+          "bottom": 647.609375,
+          "width": 49.9375,
+          "height": 35.3125
+        },
+        "listRect": {
+          "x": 504.671875,
+          "y": 492.4375,
+          "right": 1424.96875,
+          "bottom": 766.921875
+        },
+        "centerHitsButton": true,
+        "fullyVisible": true
+      },
+      "beforeSnapshotSha256": "a8b399aea5c98336943a72fb8e984d5edb18fd254a1933577eedad1052ba6a7a",
+      "timing": {
+        "targetId": "i7",
+        "startedAt": 1341.7000000029802,
+        "eventTimeStamp": 1339.6000000014901,
+        "isTrusted": true,
+        "visibilityAtClick": "visible",
+        "lastWriteAt": 1458.8999999985099,
+        "firstRafAt": 1562.6000000014901,
+        "twoRafAt": 1580,
+        "clickToLastWriteMs": 117.19999999552965,
+        "clickToTwoRafMs": 238.29999999701977,
+        "lastWriteToTwoRafMs": 121.10000000149012,
+        "nativeSetItemMs": 19.399999998509884,
+        "writes": [
+          {
+            "key": "dice-abyss:save:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 1439.3000000044703,
+            "endedAt": 1448.7000000029802,
+            "durationMs": 9.399999998509884,
+            "ok": true,
+            "errorName": null
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 1448.8999999985099,
+            "endedAt": 1458.8999999985099,
+            "durationMs": 10,
+            "ok": true,
+            "errorName": null
+          }
+        ],
+        "longTasksSupported": true,
+        "longTasks": [
+          {
+            "name": "self",
+            "startTime": 1353.7000000029802,
+            "duration": 202,
+            "attribution": [
+              {
+                "name": "unknown",
+                "containerType": "window"
+              }
+            ],
+            "overlapMs": 202
+          }
+        ],
+        "error": null
+      },
+      "afterSnapshotSha256": "d1fcb6585e0eecb06bca91099ba4b4b2a1b6c1a5f914e94ac589b5b23d034be0",
+      "afterStateSha256": "77536383143182ee345dd02effa469a3e2438e4b5ca9f62ba15eeedf2d5dde91",
+      "exactTransition": true,
+      "mirrorExact": true,
+      "metrics": {
+        "clickToLastWriteMs": 117.19999999552965,
+        "clickToTwoRafMs": 238.29999999701977,
+        "lastWriteToTwoRafMs": 121.10000000149012,
+        "nativeSetItemMs": 19.399999998509884,
+        "longTaskCount": 1,
+        "longTaskTotalMs": 202,
+        "longTaskMaxMs": 202
+      },
+      "finishedAtUtc": "2026-10-19T14:07:58.093Z"
+    },
+    {
+      "phase": "measured",
+      "pair": 1,
+      "label": "current",
+      "status": "PASS",
+      "startedAtUtc": "2026-10-19T14:07:58.101Z",
+      "nativeSeeding": {
+        "successfulWrites": [
+          {
+            "key": "dice-abyss:settings:v1",
+            "characters": 41
+          },
+          {
+            "key": "dice-abyss:save:v1",
+            "characters": 2039245
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "characters": 2039245
+          }
+        ],
+        "error": null
+      },
+      "environment": {
+        "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.8059.84 Safari/537.36",
+        "hardwareConcurrency": 9,
+        "deviceMemory": 8,
+        "webLocks": true,
+        "longTasksSupported": true,
+        "originalSetItemIsNative": true,
+        "visibility": "visible",
+        "quotaEstimate": {
+          "quota": 10737418240,
+          "usage": 0,
+          "usageDetails": {}
+        },
+        "release": "5.22.0"
+      },
+      "visibleTarget": {
+        "id": "i7",
+        "pressed": "false",
+        "disabled": false,
+        "rect": {
+          "x": 660.9375,
+          "y": 612.296875,
+          "right": 710.875,
+          "bottom": 647.609375,
+          "width": 49.9375,
+          "height": 35.3125
+        },
+        "listRect": {
+          "x": 504.671875,
+          "y": 492.4375,
+          "right": 1424.96875,
+          "bottom": 766.921875
+        },
+        "centerHitsButton": true,
+        "fullyVisible": true
+      },
+      "beforeSnapshotSha256": "a8b399aea5c98336943a72fb8e984d5edb18fd254a1933577eedad1052ba6a7a",
+      "timing": {
+        "targetId": "i7",
+        "startedAt": 1292,
+        "eventTimeStamp": 1290,
+        "isTrusted": true,
+        "visibilityAtClick": "visible",
+        "lastWriteAt": 1402.3999999985099,
+        "firstRafAt": 1482.1999999955297,
+        "twoRafAt": 1504,
+        "clickToLastWriteMs": 110.39999999850988,
+        "clickToTwoRafMs": 212,
+        "lastWriteToTwoRafMs": 101.60000000149012,
+        "nativeSetItemMs": 17.899999998509884,
+        "writes": [
+          {
+            "key": "dice-abyss:save:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 1384.2999999970198,
+            "endedAt": 1392.6999999955297,
+            "durationMs": 8.399999998509884,
+            "ok": true,
+            "errorName": null
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 1392.8999999985099,
+            "endedAt": 1402.3999999985099,
+            "durationMs": 9.5,
+            "ok": true,
+            "errorName": null
+          }
+        ],
+        "longTasksSupported": true,
+        "longTasks": [
+          {
+            "name": "self",
+            "startTime": 1304.5999999940395,
+            "duration": 173,
+            "attribution": [
+              {
+                "name": "unknown",
+                "containerType": "window"
+              }
+            ],
+            "overlapMs": 173
+          }
+        ],
+        "error": null
+      },
+      "afterSnapshotSha256": "d1fcb6585e0eecb06bca91099ba4b4b2a1b6c1a5f914e94ac589b5b23d034be0",
+      "afterStateSha256": "77536383143182ee345dd02effa469a3e2438e4b5ca9f62ba15eeedf2d5dde91",
+      "exactTransition": true,
+      "mirrorExact": true,
+      "metrics": {
+        "clickToLastWriteMs": 110.39999999850988,
+        "clickToTwoRafMs": 212,
+        "lastWriteToTwoRafMs": 101.60000000149012,
+        "nativeSetItemMs": 17.899999998509884,
+        "longTaskCount": 1,
+        "longTaskTotalMs": 173,
+        "longTaskMaxMs": 173
+      },
+      "finishedAtUtc": "2026-10-19T14:08:00.633Z"
+    },
+    {
+      "phase": "measured",
+      "pair": 2,
+      "label": "current",
+      "status": "PASS",
+      "startedAtUtc": "2026-10-19T14:08:00.643Z",
+      "nativeSeeding": {
+        "successfulWrites": [
+          {
+            "key": "dice-abyss:settings:v1",
+            "characters": 41
+          },
+          {
+            "key": "dice-abyss:save:v1",
+            "characters": 2039245
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "characters": 2039245
+          }
+        ],
+        "error": null
+      },
+      "environment": {
+        "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.8059.84 Safari/537.36",
+        "hardwareConcurrency": 9,
+        "deviceMemory": 8,
+        "webLocks": true,
+        "longTasksSupported": true,
+        "originalSetItemIsNative": true,
+        "visibility": "visible",
+        "quotaEstimate": {
+          "quota": 10737418240,
+          "usage": 0,
+          "usageDetails": {}
+        },
+        "release": "5.22.0"
+      },
+      "visibleTarget": {
+        "id": "i7",
+        "pressed": "false",
+        "disabled": false,
+        "rect": {
+          "x": 660.9375,
+          "y": 612.296875,
+          "right": 710.875,
+          "bottom": 647.609375,
+          "width": 49.9375,
+          "height": 35.3125
+        },
+        "listRect": {
+          "x": 504.671875,
+          "y": 492.4375,
+          "right": 1424.96875,
+          "bottom": 766.921875
+        },
+        "centerHitsButton": true,
+        "fullyVisible": true
+      },
+      "beforeSnapshotSha256": "a8b399aea5c98336943a72fb8e984d5edb18fd254a1933577eedad1052ba6a7a",
+      "timing": {
+        "targetId": "i7",
+        "startedAt": 1277.5,
+        "eventTimeStamp": 1275.5,
+        "isTrusted": true,
+        "visibilityAtClick": "visible",
+        "lastWriteAt": 1396.1999999955297,
+        "firstRafAt": 1476.6999999955297,
+        "twoRafAt": 1489.5,
+        "clickToLastWriteMs": 118.69999999552965,
+        "clickToTwoRafMs": 212,
+        "lastWriteToTwoRafMs": 93.30000000447035,
+        "nativeSetItemMs": 21.700000002980232,
+        "writes": [
+          {
+            "key": "dice-abyss:save:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 1374.2999999970198,
+            "endedAt": 1384.8999999985099,
+            "durationMs": 10.600000001490116,
+            "ok": true,
+            "errorName": null
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 1385.0999999940395,
+            "endedAt": 1396.1999999955297,
+            "durationMs": 11.100000001490116,
+            "ok": true,
+            "errorName": null
+          }
+        ],
+        "longTasksSupported": true,
+        "longTasks": [
+          {
+            "name": "self",
+            "startTime": 1290.2999999970198,
+            "duration": 182,
+            "attribution": [
+              {
+                "name": "unknown",
+                "containerType": "window"
+              }
+            ],
+            "overlapMs": 182
+          }
+        ],
+        "error": null
+      },
+      "afterSnapshotSha256": "d1fcb6585e0eecb06bca91099ba4b4b2a1b6c1a5f914e94ac589b5b23d034be0",
+      "afterStateSha256": "77536383143182ee345dd02effa469a3e2438e4b5ca9f62ba15eeedf2d5dde91",
+      "exactTransition": true,
+      "mirrorExact": true,
+      "metrics": {
+        "clickToLastWriteMs": 118.69999999552965,
+        "clickToTwoRafMs": 212,
+        "lastWriteToTwoRafMs": 93.30000000447035,
+        "nativeSetItemMs": 21.700000002980232,
+        "longTaskCount": 1,
+        "longTaskTotalMs": 182,
+        "longTaskMaxMs": 182
+      },
+      "finishedAtUtc": "2026-10-19T14:08:03.012Z"
+    },
+    {
+      "phase": "measured",
+      "pair": 2,
+      "label": "baseline",
+      "status": "PASS",
+      "startedAtUtc": "2026-10-19T14:08:03.020Z",
+      "nativeSeeding": {
+        "successfulWrites": [
+          {
+            "key": "dice-abyss:settings:v1",
+            "characters": 41
+          },
+          {
+            "key": "dice-abyss:save:v1",
+            "characters": 2039245
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "characters": 2039245
+          }
+        ],
+        "error": null
+      },
+      "environment": {
+        "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.8059.84 Safari/537.36",
+        "hardwareConcurrency": 9,
+        "deviceMemory": 8,
+        "webLocks": true,
+        "longTasksSupported": true,
+        "originalSetItemIsNative": true,
+        "visibility": "visible",
+        "quotaEstimate": {
+          "quota": 10737418240,
+          "usage": 0,
+          "usageDetails": {}
+        },
+        "release": "5.21.0"
+      },
+      "visibleTarget": {
+        "id": "i7",
+        "pressed": "false",
+        "disabled": false,
+        "rect": {
+          "x": 660.9375,
+          "y": 612.296875,
+          "right": 710.875,
+          "bottom": 647.609375,
+          "width": 49.9375,
+          "height": 35.3125
+        },
+        "listRect": {
+          "x": 504.671875,
+          "y": 492.4375,
+          "right": 1424.96875,
+          "bottom": 766.921875
+        },
+        "centerHitsButton": true,
+        "fullyVisible": true
+      },
+      "beforeSnapshotSha256": "a8b399aea5c98336943a72fb8e984d5edb18fd254a1933577eedad1052ba6a7a",
+      "timing": {
+        "targetId": "i7",
+        "startedAt": 1445.8999999985099,
+        "eventTimeStamp": 1443.7999999970198,
+        "isTrusted": true,
+        "visibilityAtClick": "visible",
+        "lastWriteAt": 1565.7999999970198,
+        "firstRafAt": 1655.2999999970198,
+        "twoRafAt": 1669.1000000014901,
+        "clickToLastWriteMs": 119.89999999850988,
+        "clickToTwoRafMs": 223.20000000298023,
+        "lastWriteToTwoRafMs": 103.30000000447035,
+        "nativeSetItemMs": 19.69999999552965,
+        "writes": [
+          {
+            "key": "dice-abyss:save:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 1545.7999999970198,
+            "endedAt": 1555.7999999970198,
+            "durationMs": 10,
+            "ok": true,
+            "errorName": null
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 1556.1000000014901,
+            "endedAt": 1565.7999999970198,
+            "durationMs": 9.699999995529652,
+            "ok": true,
+            "errorName": null
+          }
+        ],
+        "longTasksSupported": true,
+        "longTasks": [
+          {
+            "name": "self",
+            "startTime": 1458.1000000014901,
+            "duration": 192,
+            "attribution": [
+              {
+                "name": "unknown",
+                "containerType": "window"
+              }
+            ],
+            "overlapMs": 192
+          }
+        ],
+        "error": null
+      },
+      "afterSnapshotSha256": "d1fcb6585e0eecb06bca91099ba4b4b2a1b6c1a5f914e94ac589b5b23d034be0",
+      "afterStateSha256": "77536383143182ee345dd02effa469a3e2438e4b5ca9f62ba15eeedf2d5dde91",
+      "exactTransition": true,
+      "mirrorExact": true,
+      "metrics": {
+        "clickToLastWriteMs": 119.89999999850988,
+        "clickToTwoRafMs": 223.20000000298023,
+        "lastWriteToTwoRafMs": 103.30000000447035,
+        "nativeSetItemMs": 19.69999999552965,
+        "longTaskCount": 1,
+        "longTaskTotalMs": 192,
+        "longTaskMaxMs": 192
+      },
+      "finishedAtUtc": "2026-10-19T14:08:05.682Z"
+    },
+    {
+      "phase": "measured",
+      "pair": 3,
+      "label": "baseline",
+      "status": "PASS",
+      "startedAtUtc": "2026-10-19T14:08:05.692Z",
+      "nativeSeeding": {
+        "successfulWrites": [
+          {
+            "key": "dice-abyss:settings:v1",
+            "characters": 41
+          },
+          {
+            "key": "dice-abyss:save:v1",
+            "characters": 2039245
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "characters": 2039245
+          }
+        ],
+        "error": null
+      },
+      "environment": {
+        "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.8059.84 Safari/537.36",
+        "hardwareConcurrency": 9,
+        "deviceMemory": 8,
+        "webLocks": true,
+        "longTasksSupported": true,
+        "originalSetItemIsNative": true,
+        "visibility": "visible",
+        "quotaEstimate": {
+          "quota": 10737418240,
+          "usage": 0,
+          "usageDetails": {}
+        },
+        "release": "5.21.0"
+      },
+      "visibleTarget": {
+        "id": "i7",
+        "pressed": "false",
+        "disabled": false,
+        "rect": {
+          "x": 660.9375,
+          "y": 612.296875,
+          "right": 710.875,
+          "bottom": 647.609375,
+          "width": 49.9375,
+          "height": 35.3125
+        },
+        "listRect": {
+          "x": 504.671875,
+          "y": 492.4375,
+          "right": 1424.96875,
+          "bottom": 766.921875
+        },
+        "centerHitsButton": true,
+        "fullyVisible": true
+      },
+      "beforeSnapshotSha256": "a8b399aea5c98336943a72fb8e984d5edb18fd254a1933577eedad1052ba6a7a",
+      "timing": {
+        "targetId": "i7",
+        "startedAt": 1367,
+        "eventTimeStamp": 1365.1000000014901,
+        "isTrusted": true,
+        "visibilityAtClick": "visible",
+        "lastWriteAt": 1512.8999999985099,
+        "firstRafAt": 1604.6000000014901,
+        "twoRafAt": 1619.1000000014901,
+        "clickToLastWriteMs": 145.89999999850988,
+        "clickToTwoRafMs": 252.10000000149012,
+        "lastWriteToTwoRafMs": 106.20000000298023,
+        "nativeSetItemMs": 24.099999994039536,
+        "writes": [
+          {
+            "key": "dice-abyss:save:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 1488.6000000014901,
+            "endedAt": 1500.5,
+            "durationMs": 11.899999998509884,
+            "ok": true,
+            "errorName": null
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 1500.7000000029802,
+            "endedAt": 1512.8999999985099,
+            "durationMs": 12.199999995529652,
+            "ok": true,
+            "errorName": null
+          }
+        ],
+        "longTasksSupported": true,
+        "longTasks": [
+          {
+            "name": "self",
+            "startTime": 1378.5,
+            "duration": 220,
+            "attribution": [
+              {
+                "name": "unknown",
+                "containerType": "window"
+              }
+            ],
+            "overlapMs": 220
+          }
+        ],
+        "error": null
+      },
+      "afterSnapshotSha256": "d1fcb6585e0eecb06bca91099ba4b4b2a1b6c1a5f914e94ac589b5b23d034be0",
+      "afterStateSha256": "77536383143182ee345dd02effa469a3e2438e4b5ca9f62ba15eeedf2d5dde91",
+      "exactTransition": true,
+      "mirrorExact": true,
+      "metrics": {
+        "clickToLastWriteMs": 145.89999999850988,
+        "clickToTwoRafMs": 252.10000000149012,
+        "lastWriteToTwoRafMs": 106.20000000298023,
+        "nativeSetItemMs": 24.099999994039536,
+        "longTaskCount": 1,
+        "longTaskTotalMs": 220,
+        "longTaskMaxMs": 220
+      },
+      "finishedAtUtc": "2026-10-19T14:08:08.320Z"
+    },
+    {
+      "phase": "measured",
+      "pair": 3,
+      "label": "current",
+      "status": "PASS",
+      "startedAtUtc": "2026-10-19T14:08:08.330Z",
+      "nativeSeeding": {
+        "successfulWrites": [
+          {
+            "key": "dice-abyss:settings:v1",
+            "characters": 41
+          },
+          {
+            "key": "dice-abyss:save:v1",
+            "characters": 2039245
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "characters": 2039245
+          }
+        ],
+        "error": null
+      },
+      "environment": {
+        "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.8059.84 Safari/537.36",
+        "hardwareConcurrency": 9,
+        "deviceMemory": 8,
+        "webLocks": true,
+        "longTasksSupported": true,
+        "originalSetItemIsNative": true,
+        "visibility": "visible",
+        "quotaEstimate": {
+          "quota": 10737418240,
+          "usage": 0,
+          "usageDetails": {}
+        },
+        "release": "5.22.0"
+      },
+      "visibleTarget": {
+        "id": "i7",
+        "pressed": "false",
+        "disabled": false,
+        "rect": {
+          "x": 660.9375,
+          "y": 612.296875,
+          "right": 710.875,
+          "bottom": 647.609375,
+          "width": 49.9375,
+          "height": 35.3125
+        },
+        "listRect": {
+          "x": 504.671875,
+          "y": 492.4375,
+          "right": 1424.96875,
+          "bottom": 766.921875
+        },
+        "centerHitsButton": true,
+        "fullyVisible": true
+      },
+      "beforeSnapshotSha256": "a8b399aea5c98336943a72fb8e984d5edb18fd254a1933577eedad1052ba6a7a",
+      "timing": {
+        "targetId": "i7",
+        "startedAt": 1505.2999999970198,
+        "eventTimeStamp": 1503.5,
+        "isTrusted": true,
+        "visibilityAtClick": "visible",
+        "lastWriteAt": 1647,
+        "firstRafAt": 1743.6999999955297,
+        "twoRafAt": 1769.6000000014901,
+        "clickToLastWriteMs": 141.70000000298023,
+        "clickToTwoRafMs": 264.30000000447035,
+        "lastWriteToTwoRafMs": 122.60000000149012,
+        "nativeSetItemMs": 24.799999997019768,
+        "writes": [
+          {
+            "key": "dice-abyss:save:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 1622,
+            "endedAt": 1635.6999999955297,
+            "durationMs": 13.699999995529652,
+            "ok": true,
+            "errorName": null
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 1635.8999999985099,
+            "endedAt": 1647,
+            "durationMs": 11.100000001490116,
+            "ok": true,
+            "errorName": null
+          }
+        ],
+        "longTasksSupported": true,
+        "longTasks": [
+          {
+            "name": "self",
+            "startTime": 1517.6999999955297,
+            "duration": 220,
+            "attribution": [
+              {
+                "name": "unknown",
+                "containerType": "window"
+              }
+            ],
+            "overlapMs": 220
+          }
+        ],
+        "error": null
+      },
+      "afterSnapshotSha256": "d1fcb6585e0eecb06bca91099ba4b4b2a1b6c1a5f914e94ac589b5b23d034be0",
+      "afterStateSha256": "77536383143182ee345dd02effa469a3e2438e4b5ca9f62ba15eeedf2d5dde91",
+      "exactTransition": true,
+      "mirrorExact": true,
+      "metrics": {
+        "clickToLastWriteMs": 141.70000000298023,
+        "clickToTwoRafMs": 264.30000000447035,
+        "lastWriteToTwoRafMs": 122.60000000149012,
+        "nativeSetItemMs": 24.799999997019768,
+        "longTaskCount": 1,
+        "longTaskTotalMs": 220,
+        "longTaskMaxMs": 220
+      },
+      "finishedAtUtc": "2026-10-19T14:08:10.998Z"
+    },
+    {
+      "phase": "measured",
+      "pair": 4,
+      "label": "current",
+      "status": "PASS",
+      "startedAtUtc": "2026-10-19T14:08:11.006Z",
+      "nativeSeeding": {
+        "successfulWrites": [
+          {
+            "key": "dice-abyss:settings:v1",
+            "characters": 41
+          },
+          {
+            "key": "dice-abyss:save:v1",
+            "characters": 2039245
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "characters": 2039245
+          }
+        ],
+        "error": null
+      },
+      "environment": {
+        "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.8059.84 Safari/537.36",
+        "hardwareConcurrency": 9,
+        "deviceMemory": 8,
+        "webLocks": true,
+        "longTasksSupported": true,
+        "originalSetItemIsNative": true,
+        "visibility": "visible",
+        "quotaEstimate": {
+          "quota": 10737418240,
+          "usage": 0,
+          "usageDetails": {}
+        },
+        "release": "5.22.0"
+      },
+      "visibleTarget": {
+        "id": "i7",
+        "pressed": "false",
+        "disabled": false,
+        "rect": {
+          "x": 660.9375,
+          "y": 612.296875,
+          "right": 710.875,
+          "bottom": 647.609375,
+          "width": 49.9375,
+          "height": 35.3125
+        },
+        "listRect": {
+          "x": 504.671875,
+          "y": 492.4375,
+          "right": 1424.96875,
+          "bottom": 766.921875
+        },
+        "centerHitsButton": true,
+        "fullyVisible": true
+      },
+      "beforeSnapshotSha256": "a8b399aea5c98336943a72fb8e984d5edb18fd254a1933577eedad1052ba6a7a",
+      "timing": {
+        "targetId": "i7",
+        "startedAt": 1263.4000000059605,
+        "eventTimeStamp": 1260.5,
+        "isTrusted": true,
+        "visibilityAtClick": "visible",
+        "lastWriteAt": 1398.2000000029802,
+        "firstRafAt": 1475.4000000059605,
+        "twoRafAt": 1489.4000000059605,
+        "clickToLastWriteMs": 134.79999999701977,
+        "clickToTwoRafMs": 226,
+        "lastWriteToTwoRafMs": 91.20000000298023,
+        "nativeSetItemMs": 36.5,
+        "writes": [
+          {
+            "key": "dice-abyss:save:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 1361.5,
+            "endedAt": 1384.5,
+            "durationMs": 23,
+            "ok": true,
+            "errorName": null
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 1384.7000000029802,
+            "endedAt": 1398.2000000029802,
+            "durationMs": 13.5,
+            "ok": true,
+            "errorName": null
+          }
+        ],
+        "longTasksSupported": true,
+        "longTasks": [
+          {
+            "name": "self",
+            "startTime": 1276.2000000029802,
+            "duration": 195,
+            "attribution": [
+              {
+                "name": "unknown",
+                "containerType": "window"
+              }
+            ],
+            "overlapMs": 195
+          }
+        ],
+        "error": null
+      },
+      "afterSnapshotSha256": "d1fcb6585e0eecb06bca91099ba4b4b2a1b6c1a5f914e94ac589b5b23d034be0",
+      "afterStateSha256": "77536383143182ee345dd02effa469a3e2438e4b5ca9f62ba15eeedf2d5dde91",
+      "exactTransition": true,
+      "mirrorExact": true,
+      "metrics": {
+        "clickToLastWriteMs": 134.79999999701977,
+        "clickToTwoRafMs": 226,
+        "lastWriteToTwoRafMs": 91.20000000298023,
+        "nativeSetItemMs": 36.5,
+        "longTaskCount": 1,
+        "longTaskTotalMs": 195,
+        "longTaskMaxMs": 195
+      },
+      "finishedAtUtc": "2026-10-19T14:08:13.444Z"
+    },
+    {
+      "phase": "measured",
+      "pair": 4,
+      "label": "baseline",
+      "status": "PASS",
+      "startedAtUtc": "2026-10-19T14:08:13.454Z",
+      "nativeSeeding": {
+        "successfulWrites": [
+          {
+            "key": "dice-abyss:settings:v1",
+            "characters": 41
+          },
+          {
+            "key": "dice-abyss:save:v1",
+            "characters": 2039245
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "characters": 2039245
+          }
+        ],
+        "error": null
+      },
+      "environment": {
+        "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.8059.84 Safari/537.36",
+        "hardwareConcurrency": 9,
+        "deviceMemory": 8,
+        "webLocks": true,
+        "longTasksSupported": true,
+        "originalSetItemIsNative": true,
+        "visibility": "visible",
+        "quotaEstimate": {
+          "quota": 10737418240,
+          "usage": 0,
+          "usageDetails": {}
+        },
+        "release": "5.21.0"
+      },
+      "visibleTarget": {
+        "id": "i7",
+        "pressed": "false",
+        "disabled": false,
+        "rect": {
+          "x": 660.9375,
+          "y": 612.296875,
+          "right": 710.875,
+          "bottom": 647.609375,
+          "width": 49.9375,
+          "height": 35.3125
+        },
+        "listRect": {
+          "x": 504.671875,
+          "y": 492.4375,
+          "right": 1424.96875,
+          "bottom": 766.921875
+        },
+        "centerHitsButton": true,
+        "fullyVisible": true
+      },
+      "beforeSnapshotSha256": "a8b399aea5c98336943a72fb8e984d5edb18fd254a1933577eedad1052ba6a7a",
+      "timing": {
+        "targetId": "i7",
+        "startedAt": 1356.8000000044703,
+        "eventTimeStamp": 1354.4000000059605,
+        "isTrusted": true,
+        "visibilityAtClick": "visible",
+        "lastWriteAt": 1477.4000000059605,
+        "firstRafAt": 1562.5,
+        "twoRafAt": 1576,
+        "clickToLastWriteMs": 120.60000000149012,
+        "clickToTwoRafMs": 219.19999999552965,
+        "lastWriteToTwoRafMs": 98.59999999403954,
+        "nativeSetItemMs": 24.100000001490116,
+        "writes": [
+          {
+            "key": "dice-abyss:save:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 1453.2000000029802,
+            "endedAt": 1463.2000000029802,
+            "durationMs": 10,
+            "ok": true,
+            "errorName": null
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 1463.3000000044703,
+            "endedAt": 1477.4000000059605,
+            "durationMs": 14.100000001490116,
+            "ok": true,
+            "errorName": null
+          }
+        ],
+        "longTasksSupported": true,
+        "longTasks": [
+          {
+            "name": "self",
+            "startTime": 1368.5,
+            "duration": 189,
+            "attribution": [
+              {
+                "name": "unknown",
+                "containerType": "window"
+              }
+            ],
+            "overlapMs": 189
+          }
+        ],
+        "error": null
+      },
+      "afterSnapshotSha256": "d1fcb6585e0eecb06bca91099ba4b4b2a1b6c1a5f914e94ac589b5b23d034be0",
+      "afterStateSha256": "77536383143182ee345dd02effa469a3e2438e4b5ca9f62ba15eeedf2d5dde91",
+      "exactTransition": true,
+      "mirrorExact": true,
+      "metrics": {
+        "clickToLastWriteMs": 120.60000000149012,
+        "clickToTwoRafMs": 219.19999999552965,
+        "lastWriteToTwoRafMs": 98.59999999403954,
+        "nativeSetItemMs": 24.100000001490116,
+        "longTaskCount": 1,
+        "longTaskTotalMs": 189,
+        "longTaskMaxMs": 189
+      },
+      "finishedAtUtc": "2026-10-19T14:08:15.995Z"
+    },
+    {
+      "phase": "measured",
+      "pair": 5,
+      "label": "baseline",
+      "status": "PASS",
+      "startedAtUtc": "2026-10-19T14:08:16.018Z",
+      "nativeSeeding": {
+        "successfulWrites": [
+          {
+            "key": "dice-abyss:settings:v1",
+            "characters": 41
+          },
+          {
+            "key": "dice-abyss:save:v1",
+            "characters": 2039245
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "characters": 2039245
+          }
+        ],
+        "error": null
+      },
+      "environment": {
+        "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.8059.84 Safari/537.36",
+        "hardwareConcurrency": 9,
+        "deviceMemory": 8,
+        "webLocks": true,
+        "longTasksSupported": true,
+        "originalSetItemIsNative": true,
+        "visibility": "visible",
+        "quotaEstimate": {
+          "quota": 10737418240,
+          "usage": 0,
+          "usageDetails": {}
+        },
+        "release": "5.21.0"
+      },
+      "visibleTarget": {
+        "id": "i7",
+        "pressed": "false",
+        "disabled": false,
+        "rect": {
+          "x": 660.9375,
+          "y": 612.296875,
+          "right": 710.875,
+          "bottom": 647.609375,
+          "width": 49.9375,
+          "height": 35.3125
+        },
+        "listRect": {
+          "x": 504.671875,
+          "y": 492.4375,
+          "right": 1424.96875,
+          "bottom": 766.921875
+        },
+        "centerHitsButton": true,
+        "fullyVisible": true
+      },
+      "beforeSnapshotSha256": "a8b399aea5c98336943a72fb8e984d5edb18fd254a1933577eedad1052ba6a7a",
+      "timing": {
+        "targetId": "i7",
+        "startedAt": 1550.6000000014901,
+        "eventTimeStamp": 1548.2000000029802,
+        "isTrusted": true,
+        "visibilityAtClick": "visible",
+        "lastWriteAt": 1708.7999999970198,
+        "firstRafAt": 1792.2000000029802,
+        "twoRafAt": 1852.2999999970198,
+        "clickToLastWriteMs": 158.19999999552965,
+        "clickToTwoRafMs": 301.69999999552965,
+        "lastWriteToTwoRafMs": 143.5,
+        "nativeSetItemMs": 49.70000000298023,
+        "writes": [
+          {
+            "key": "dice-abyss:save:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 1659,
+            "endedAt": 1668.7000000029802,
+            "durationMs": 9.700000002980232,
+            "ok": true,
+            "errorName": null
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 1668.7999999970198,
+            "endedAt": 1708.7999999970198,
+            "durationMs": 40,
+            "ok": true,
+            "errorName": null
+          }
+        ],
+        "longTasksSupported": true,
+        "longTasks": [
+          {
+            "name": "self",
+            "startTime": 1563.3999999985099,
+            "duration": 222,
+            "attribution": [
+              {
+                "name": "unknown",
+                "containerType": "window"
+              }
+            ],
+            "overlapMs": 222
+          }
+        ],
+        "error": null
+      },
+      "afterSnapshotSha256": "d1fcb6585e0eecb06bca91099ba4b4b2a1b6c1a5f914e94ac589b5b23d034be0",
+      "afterStateSha256": "77536383143182ee345dd02effa469a3e2438e4b5ca9f62ba15eeedf2d5dde91",
+      "exactTransition": true,
+      "mirrorExact": true,
+      "metrics": {
+        "clickToLastWriteMs": 158.19999999552965,
+        "clickToTwoRafMs": 301.69999999552965,
+        "lastWriteToTwoRafMs": 143.5,
+        "nativeSetItemMs": 49.70000000298023,
+        "longTaskCount": 1,
+        "longTaskTotalMs": 222,
+        "longTaskMaxMs": 222
+      },
+      "finishedAtUtc": "2026-10-19T14:08:18.692Z"
+    },
+    {
+      "phase": "measured",
+      "pair": 5,
+      "label": "current",
+      "status": "PASS",
+      "startedAtUtc": "2026-10-19T14:08:18.701Z",
+      "nativeSeeding": {
+        "successfulWrites": [
+          {
+            "key": "dice-abyss:settings:v1",
+            "characters": 41
+          },
+          {
+            "key": "dice-abyss:save:v1",
+            "characters": 2039245
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "characters": 2039245
+          }
+        ],
+        "error": null
+      },
+      "environment": {
+        "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.8059.84 Safari/537.36",
+        "hardwareConcurrency": 9,
+        "deviceMemory": 8,
+        "webLocks": true,
+        "longTasksSupported": true,
+        "originalSetItemIsNative": true,
+        "visibility": "visible",
+        "quotaEstimate": {
+          "quota": 10737418240,
+          "usage": 0,
+          "usageDetails": {}
+        },
+        "release": "5.22.0"
+      },
+      "visibleTarget": {
+        "id": "i7",
+        "pressed": "false",
+        "disabled": false,
+        "rect": {
+          "x": 660.9375,
+          "y": 612.296875,
+          "right": 710.875,
+          "bottom": 647.609375,
+          "width": 49.9375,
+          "height": 35.3125
+        },
+        "listRect": {
+          "x": 504.671875,
+          "y": 492.4375,
+          "right": 1424.96875,
+          "bottom": 766.921875
+        },
+        "centerHitsButton": true,
+        "fullyVisible": true
+      },
+      "beforeSnapshotSha256": "a8b399aea5c98336943a72fb8e984d5edb18fd254a1933577eedad1052ba6a7a",
+      "timing": {
+        "targetId": "i7",
+        "startedAt": 1278.2000000029802,
+        "eventTimeStamp": 1273.3999999985099,
+        "isTrusted": true,
+        "visibilityAtClick": "visible",
+        "lastWriteAt": 1393.1000000014901,
+        "firstRafAt": 1478.7000000029802,
+        "twoRafAt": 1491.7000000029802,
+        "clickToLastWriteMs": 114.89999999850988,
+        "clickToTwoRafMs": 213.5,
+        "lastWriteToTwoRafMs": 98.60000000149012,
+        "nativeSetItemMs": 18.19999999552965,
+        "writes": [
+          {
+            "key": "dice-abyss:save:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 1374.8000000044703,
+            "endedAt": 1384,
+            "durationMs": 9.199999995529652,
+            "ok": true,
+            "errorName": null
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 1384.1000000014901,
+            "endedAt": 1393.1000000014901,
+            "durationMs": 9,
+            "ok": true,
+            "errorName": null
+          }
+        ],
+        "longTasksSupported": true,
+        "longTasks": [
+          {
+            "name": "self",
+            "startTime": 1288.2000000029802,
+            "duration": 185,
+            "attribution": [
+              {
+                "name": "unknown",
+                "containerType": "window"
+              }
+            ],
+            "overlapMs": 185
+          }
+        ],
+        "error": null
+      },
+      "afterSnapshotSha256": "d1fcb6585e0eecb06bca91099ba4b4b2a1b6c1a5f914e94ac589b5b23d034be0",
+      "afterStateSha256": "77536383143182ee345dd02effa469a3e2438e4b5ca9f62ba15eeedf2d5dde91",
+      "exactTransition": true,
+      "mirrorExact": true,
+      "metrics": {
+        "clickToLastWriteMs": 114.89999999850988,
+        "clickToTwoRafMs": 213.5,
+        "lastWriteToTwoRafMs": 98.60000000149012,
+        "nativeSetItemMs": 18.19999999552965,
+        "longTaskCount": 1,
+        "longTaskTotalMs": 185,
+        "longTaskMaxMs": 185
+      },
+      "finishedAtUtc": "2026-10-19T14:08:21.021Z"
+    },
+    {
+      "phase": "measured",
+      "pair": 6,
+      "label": "current",
+      "status": "PASS",
+      "startedAtUtc": "2026-10-19T14:08:21.028Z",
+      "nativeSeeding": {
+        "successfulWrites": [
+          {
+            "key": "dice-abyss:settings:v1",
+            "characters": 41
+          },
+          {
+            "key": "dice-abyss:save:v1",
+            "characters": 2039245
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "characters": 2039245
+          }
+        ],
+        "error": null
+      },
+      "environment": {
+        "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.8059.84 Safari/537.36",
+        "hardwareConcurrency": 9,
+        "deviceMemory": 8,
+        "webLocks": true,
+        "longTasksSupported": true,
+        "originalSetItemIsNative": true,
+        "visibility": "visible",
+        "quotaEstimate": {
+          "quota": 10737418240,
+          "usage": 0,
+          "usageDetails": {}
+        },
+        "release": "5.22.0"
+      },
+      "visibleTarget": {
+        "id": "i7",
+        "pressed": "false",
+        "disabled": false,
+        "rect": {
+          "x": 660.9375,
+          "y": 612.296875,
+          "right": 710.875,
+          "bottom": 647.609375,
+          "width": 49.9375,
+          "height": 35.3125
+        },
+        "listRect": {
+          "x": 504.671875,
+          "y": 492.4375,
+          "right": 1424.96875,
+          "bottom": 766.921875
+        },
+        "centerHitsButton": true,
+        "fullyVisible": true
+      },
+      "beforeSnapshotSha256": "a8b399aea5c98336943a72fb8e984d5edb18fd254a1933577eedad1052ba6a7a",
+      "timing": {
+        "targetId": "i7",
+        "startedAt": 1551.5,
+        "eventTimeStamp": 1549.6000000014901,
+        "isTrusted": true,
+        "visibilityAtClick": "visible",
+        "lastWriteAt": 1678.5,
+        "firstRafAt": 1757.7000000029802,
+        "twoRafAt": 1770,
+        "clickToLastWriteMs": 127,
+        "clickToTwoRafMs": 218.5,
+        "lastWriteToTwoRafMs": 91.5,
+        "nativeSetItemMs": 23.399999998509884,
+        "writes": [
+          {
+            "key": "dice-abyss:save:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 1654.8999999985099,
+            "endedAt": 1666.1000000014901,
+            "durationMs": 11.200000002980232,
+            "ok": true,
+            "errorName": null
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 1666.3000000044703,
+            "endedAt": 1678.5,
+            "durationMs": 12.199999995529652,
+            "ok": true,
+            "errorName": null
+          }
+        ],
+        "longTasksSupported": true,
+        "longTasks": [
+          {
+            "name": "self",
+            "startTime": 1556.8000000044703,
+            "duration": 197,
+            "attribution": [
+              {
+                "name": "unknown",
+                "containerType": "window"
+              }
+            ],
+            "overlapMs": 197
+          }
+        ],
+        "error": null
+      },
+      "afterSnapshotSha256": "d1fcb6585e0eecb06bca91099ba4b4b2a1b6c1a5f914e94ac589b5b23d034be0",
+      "afterStateSha256": "77536383143182ee345dd02effa469a3e2438e4b5ca9f62ba15eeedf2d5dde91",
+      "exactTransition": true,
+      "mirrorExact": true,
+      "metrics": {
+        "clickToLastWriteMs": 127,
+        "clickToTwoRafMs": 218.5,
+        "lastWriteToTwoRafMs": 91.5,
+        "nativeSetItemMs": 23.399999998509884,
+        "longTaskCount": 1,
+        "longTaskTotalMs": 197,
+        "longTaskMaxMs": 197
+      },
+      "finishedAtUtc": "2026-10-19T14:08:23.762Z"
+    },
+    {
+      "phase": "measured",
+      "pair": 6,
+      "label": "baseline",
+      "status": "PASS",
+      "startedAtUtc": "2026-10-19T14:08:23.771Z",
+      "nativeSeeding": {
+        "successfulWrites": [
+          {
+            "key": "dice-abyss:settings:v1",
+            "characters": 41
+          },
+          {
+            "key": "dice-abyss:save:v1",
+            "characters": 2039245
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "characters": 2039245
+          }
+        ],
+        "error": null
+      },
+      "environment": {
+        "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.8059.84 Safari/537.36",
+        "hardwareConcurrency": 9,
+        "deviceMemory": 8,
+        "webLocks": true,
+        "longTasksSupported": true,
+        "originalSetItemIsNative": true,
+        "visibility": "visible",
+        "quotaEstimate": {
+          "quota": 10737418240,
+          "usage": 0,
+          "usageDetails": {}
+        },
+        "release": "5.21.0"
+      },
+      "visibleTarget": {
+        "id": "i7",
+        "pressed": "false",
+        "disabled": false,
+        "rect": {
+          "x": 660.9375,
+          "y": 612.296875,
+          "right": 710.875,
+          "bottom": 647.609375,
+          "width": 49.9375,
+          "height": 35.3125
+        },
+        "listRect": {
+          "x": 504.671875,
+          "y": 492.4375,
+          "right": 1424.96875,
+          "bottom": 766.921875
+        },
+        "centerHitsButton": true,
+        "fullyVisible": true
+      },
+      "beforeSnapshotSha256": "a8b399aea5c98336943a72fb8e984d5edb18fd254a1933577eedad1052ba6a7a",
+      "timing": {
+        "targetId": "i7",
+        "startedAt": 1422.6999999955297,
+        "eventTimeStamp": 1420.6000000014901,
+        "isTrusted": true,
+        "visibilityAtClick": "visible",
+        "lastWriteAt": 1545.5,
+        "firstRafAt": 1639,
+        "twoRafAt": 1657,
+        "clickToLastWriteMs": 122.80000000447035,
+        "clickToTwoRafMs": 234.30000000447035,
+        "lastWriteToTwoRafMs": 111.5,
+        "nativeSetItemMs": 27.19999999552965,
+        "writes": [
+          {
+            "key": "dice-abyss:save:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 1518.1000000014901,
+            "endedAt": 1530.7999999970198,
+            "durationMs": 12.699999995529652,
+            "ok": true,
+            "errorName": null
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 1531,
+            "endedAt": 1545.5,
+            "durationMs": 14.5,
+            "ok": true,
+            "errorName": null
+          }
+        ],
+        "longTasksSupported": true,
+        "longTasks": [
+          {
+            "name": "self",
+            "startTime": 1435.5,
+            "duration": 197,
+            "attribution": [
+              {
+                "name": "unknown",
+                "containerType": "window"
+              }
+            ],
+            "overlapMs": 197
+          }
+        ],
+        "error": null
+      },
+      "afterSnapshotSha256": "d1fcb6585e0eecb06bca91099ba4b4b2a1b6c1a5f914e94ac589b5b23d034be0",
+      "afterStateSha256": "77536383143182ee345dd02effa469a3e2438e4b5ca9f62ba15eeedf2d5dde91",
+      "exactTransition": true,
+      "mirrorExact": true,
+      "metrics": {
+        "clickToLastWriteMs": 122.80000000447035,
+        "clickToTwoRafMs": 234.30000000447035,
+        "lastWriteToTwoRafMs": 111.5,
+        "nativeSetItemMs": 27.19999999552965,
+        "longTaskCount": 1,
+        "longTaskTotalMs": 197,
+        "longTaskMaxMs": 197
+      },
+      "finishedAtUtc": "2026-10-19T14:08:26.324Z"
+    },
+    {
+      "phase": "measured",
+      "pair": 7,
+      "label": "baseline",
+      "status": "PASS",
+      "startedAtUtc": "2026-10-19T14:08:26.338Z",
+      "nativeSeeding": {
+        "successfulWrites": [
+          {
+            "key": "dice-abyss:settings:v1",
+            "characters": 41
+          },
+          {
+            "key": "dice-abyss:save:v1",
+            "characters": 2039245
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "characters": 2039245
+          }
+        ],
+        "error": null
+      },
+      "environment": {
+        "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.8059.84 Safari/537.36",
+        "hardwareConcurrency": 9,
+        "deviceMemory": 8,
+        "webLocks": true,
+        "longTasksSupported": true,
+        "originalSetItemIsNative": true,
+        "visibility": "visible",
+        "quotaEstimate": {
+          "quota": 10737418240,
+          "usage": 0,
+          "usageDetails": {}
+        },
+        "release": "5.21.0"
+      },
+      "visibleTarget": {
+        "id": "i7",
+        "pressed": "false",
+        "disabled": false,
+        "rect": {
+          "x": 660.9375,
+          "y": 612.296875,
+          "right": 710.875,
+          "bottom": 647.609375,
+          "width": 49.9375,
+          "height": 35.3125
+        },
+        "listRect": {
+          "x": 504.671875,
+          "y": 492.4375,
+          "right": 1424.96875,
+          "bottom": 766.921875
+        },
+        "centerHitsButton": true,
+        "fullyVisible": true
+      },
+      "beforeSnapshotSha256": "a8b399aea5c98336943a72fb8e984d5edb18fd254a1933577eedad1052ba6a7a",
+      "timing": {
+        "targetId": "i7",
+        "startedAt": 1358.5999999940395,
+        "eventTimeStamp": 1356.3999999985099,
+        "isTrusted": true,
+        "visibilityAtClick": "visible",
+        "lastWriteAt": 1495.3999999985099,
+        "firstRafAt": 1578.1999999955297,
+        "twoRafAt": 1591.5,
+        "clickToLastWriteMs": 136.80000000447035,
+        "clickToTwoRafMs": 232.90000000596046,
+        "lastWriteToTwoRafMs": 96.10000000149012,
+        "nativeSetItemMs": 23.599999994039536,
+        "writes": [
+          {
+            "key": "dice-abyss:save:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 1471.5,
+            "endedAt": 1482.6999999955297,
+            "durationMs": 11.199999995529652,
+            "ok": true,
+            "errorName": null
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 1483,
+            "endedAt": 1495.3999999985099,
+            "durationMs": 12.399999998509884,
+            "ok": true,
+            "errorName": null
+          }
+        ],
+        "longTasksSupported": true,
+        "longTasks": [
+          {
+            "name": "self",
+            "startTime": 1370.5999999940395,
+            "duration": 203,
+            "attribution": [
+              {
+                "name": "unknown",
+                "containerType": "window"
+              }
+            ],
+            "overlapMs": 203
+          }
+        ],
+        "error": null
+      },
+      "afterSnapshotSha256": "d1fcb6585e0eecb06bca91099ba4b4b2a1b6c1a5f914e94ac589b5b23d034be0",
+      "afterStateSha256": "77536383143182ee345dd02effa469a3e2438e4b5ca9f62ba15eeedf2d5dde91",
+      "exactTransition": true,
+      "mirrorExact": true,
+      "metrics": {
+        "clickToLastWriteMs": 136.80000000447035,
+        "clickToTwoRafMs": 232.90000000596046,
+        "lastWriteToTwoRafMs": 96.10000000149012,
+        "nativeSetItemMs": 23.599999994039536,
+        "longTaskCount": 1,
+        "longTaskTotalMs": 203,
+        "longTaskMaxMs": 203
+      },
+      "finishedAtUtc": "2026-10-19T14:08:29.004Z"
+    },
+    {
+      "phase": "measured",
+      "pair": 7,
+      "label": "current",
+      "status": "PASS",
+      "startedAtUtc": "2026-10-19T14:08:29.023Z",
+      "nativeSeeding": {
+        "successfulWrites": [
+          {
+            "key": "dice-abyss:settings:v1",
+            "characters": 41
+          },
+          {
+            "key": "dice-abyss:save:v1",
+            "characters": 2039245
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "characters": 2039245
+          }
+        ],
+        "error": null
+      },
+      "environment": {
+        "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.8059.84 Safari/537.36",
+        "hardwareConcurrency": 9,
+        "deviceMemory": 8,
+        "webLocks": true,
+        "longTasksSupported": true,
+        "originalSetItemIsNative": true,
+        "visibility": "visible",
+        "quotaEstimate": {
+          "quota": 10737418240,
+          "usage": 0,
+          "usageDetails": {}
+        },
+        "release": "5.22.0"
+      },
+      "visibleTarget": {
+        "id": "i7",
+        "pressed": "false",
+        "disabled": false,
+        "rect": {
+          "x": 660.9375,
+          "y": 612.296875,
+          "right": 710.875,
+          "bottom": 647.609375,
+          "width": 49.9375,
+          "height": 35.3125
+        },
+        "listRect": {
+          "x": 504.671875,
+          "y": 492.4375,
+          "right": 1424.96875,
+          "bottom": 766.921875
+        },
+        "centerHitsButton": true,
+        "fullyVisible": true
+      },
+      "beforeSnapshotSha256": "a8b399aea5c98336943a72fb8e984d5edb18fd254a1933577eedad1052ba6a7a",
+      "timing": {
+        "targetId": "i7",
+        "startedAt": 1356.6999999955297,
+        "eventTimeStamp": 1354.5,
+        "isTrusted": true,
+        "visibilityAtClick": "visible",
+        "lastWriteAt": 1481.6999999955297,
+        "firstRafAt": 1559,
+        "twoRafAt": 1575.1999999955297,
+        "clickToLastWriteMs": 125,
+        "clickToTwoRafMs": 218.5,
+        "lastWriteToTwoRafMs": 93.5,
+        "nativeSetItemMs": 20.799999997019768,
+        "writes": [
+          {
+            "key": "dice-abyss:save:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 1460.7999999970198,
+            "endedAt": 1471.1999999955297,
+            "durationMs": 10.399999998509884,
+            "ok": true,
+            "errorName": null
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 1471.2999999970198,
+            "endedAt": 1481.6999999955297,
+            "durationMs": 10.399999998509884,
+            "ok": true,
+            "errorName": null
+          }
+        ],
+        "longTasksSupported": true,
+        "longTasks": [
+          {
+            "name": "self",
+            "startTime": 1370.1000000014901,
+            "duration": 182,
+            "attribution": [
+              {
+                "name": "unknown",
+                "containerType": "window"
+              }
+            ],
+            "overlapMs": 182
+          }
+        ],
+        "error": null
+      },
+      "afterSnapshotSha256": "d1fcb6585e0eecb06bca91099ba4b4b2a1b6c1a5f914e94ac589b5b23d034be0",
+      "afterStateSha256": "77536383143182ee345dd02effa469a3e2438e4b5ca9f62ba15eeedf2d5dde91",
+      "exactTransition": true,
+      "mirrorExact": true,
+      "metrics": {
+        "clickToLastWriteMs": 125,
+        "clickToTwoRafMs": 218.5,
+        "lastWriteToTwoRafMs": 93.5,
+        "nativeSetItemMs": 20.799999997019768,
+        "longTaskCount": 1,
+        "longTaskTotalMs": 182,
+        "longTaskMaxMs": 182
+      },
+      "finishedAtUtc": "2026-10-19T14:08:31.526Z"
+    },
+    {
+      "phase": "measured",
+      "pair": 8,
+      "label": "current",
+      "status": "PASS",
+      "startedAtUtc": "2026-10-19T14:08:31.543Z",
+      "nativeSeeding": {
+        "successfulWrites": [
+          {
+            "key": "dice-abyss:settings:v1",
+            "characters": 41
+          },
+          {
+            "key": "dice-abyss:save:v1",
+            "characters": 2039245
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "characters": 2039245
+          }
+        ],
+        "error": null
+      },
+      "environment": {
+        "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.8059.84 Safari/537.36",
+        "hardwareConcurrency": 9,
+        "deviceMemory": 8,
+        "webLocks": true,
+        "longTasksSupported": true,
+        "originalSetItemIsNative": true,
+        "visibility": "visible",
+        "quotaEstimate": {
+          "quota": 10737418240,
+          "usage": 0,
+          "usageDetails": {}
+        },
+        "release": "5.22.0"
+      },
+      "visibleTarget": {
+        "id": "i7",
+        "pressed": "false",
+        "disabled": false,
+        "rect": {
+          "x": 660.9375,
+          "y": 612.296875,
+          "right": 710.875,
+          "bottom": 647.609375,
+          "width": 49.9375,
+          "height": 35.3125
+        },
+        "listRect": {
+          "x": 504.671875,
+          "y": 492.4375,
+          "right": 1424.96875,
+          "bottom": 766.921875
+        },
+        "centerHitsButton": true,
+        "fullyVisible": true
+      },
+      "beforeSnapshotSha256": "a8b399aea5c98336943a72fb8e984d5edb18fd254a1933577eedad1052ba6a7a",
+      "timing": {
+        "targetId": "i7",
+        "startedAt": 1302.2999999970198,
+        "eventTimeStamp": 1299.7000000029802,
+        "isTrusted": true,
+        "visibilityAtClick": "visible",
+        "lastWriteAt": 1420.2000000029802,
+        "firstRafAt": 1492.2000000029802,
+        "twoRafAt": 1504.7000000029802,
+        "clickToLastWriteMs": 117.90000000596046,
+        "clickToTwoRafMs": 202.40000000596046,
+        "lastWriteToTwoRafMs": 84.5,
+        "nativeSetItemMs": 19.00000000745058,
+        "writes": [
+          {
+            "key": "dice-abyss:save:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 1400.8999999985099,
+            "endedAt": 1410.1000000014901,
+            "durationMs": 9.200000002980232,
+            "ok": true,
+            "errorName": null
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 1410.3999999985099,
+            "endedAt": 1420.2000000029802,
+            "durationMs": 9.800000004470348,
+            "ok": true,
+            "errorName": null
+          }
+        ],
+        "longTasksSupported": true,
+        "longTasks": [
+          {
+            "name": "self",
+            "startTime": 1312.8999999985099,
+            "duration": 175,
+            "attribution": [
+              {
+                "name": "unknown",
+                "containerType": "window"
+              }
+            ],
+            "overlapMs": 175
+          }
+        ],
+        "error": null
+      },
+      "afterSnapshotSha256": "d1fcb6585e0eecb06bca91099ba4b4b2a1b6c1a5f914e94ac589b5b23d034be0",
+      "afterStateSha256": "77536383143182ee345dd02effa469a3e2438e4b5ca9f62ba15eeedf2d5dde91",
+      "exactTransition": true,
+      "mirrorExact": true,
+      "metrics": {
+        "clickToLastWriteMs": 117.90000000596046,
+        "clickToTwoRafMs": 202.40000000596046,
+        "lastWriteToTwoRafMs": 84.5,
+        "nativeSetItemMs": 19.00000000745058,
+        "longTaskCount": 1,
+        "longTaskTotalMs": 175,
+        "longTaskMaxMs": 175
+      },
+      "finishedAtUtc": "2026-10-19T14:08:33.960Z"
+    },
+    {
+      "phase": "measured",
+      "pair": 8,
+      "label": "baseline",
+      "status": "PASS",
+      "startedAtUtc": "2026-10-19T14:08:33.970Z",
+      "nativeSeeding": {
+        "successfulWrites": [
+          {
+            "key": "dice-abyss:settings:v1",
+            "characters": 41
+          },
+          {
+            "key": "dice-abyss:save:v1",
+            "characters": 2039245
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "characters": 2039245
+          }
+        ],
+        "error": null
+      },
+      "environment": {
+        "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.8059.84 Safari/537.36",
+        "hardwareConcurrency": 9,
+        "deviceMemory": 8,
+        "webLocks": true,
+        "longTasksSupported": true,
+        "originalSetItemIsNative": true,
+        "visibility": "visible",
+        "quotaEstimate": {
+          "quota": 10737418240,
+          "usage": 0,
+          "usageDetails": {}
+        },
+        "release": "5.21.0"
+      },
+      "visibleTarget": {
+        "id": "i7",
+        "pressed": "false",
+        "disabled": false,
+        "rect": {
+          "x": 660.9375,
+          "y": 612.296875,
+          "right": 710.875,
+          "bottom": 647.609375,
+          "width": 49.9375,
+          "height": 35.3125
+        },
+        "listRect": {
+          "x": 504.671875,
+          "y": 492.4375,
+          "right": 1424.96875,
+          "bottom": 766.921875
+        },
+        "centerHitsButton": true,
+        "fullyVisible": true
+      },
+      "beforeSnapshotSha256": "a8b399aea5c98336943a72fb8e984d5edb18fd254a1933577eedad1052ba6a7a",
+      "timing": {
+        "targetId": "i7",
+        "startedAt": 1331.6999999955297,
+        "eventTimeStamp": 1328.8999999985099,
+        "isTrusted": true,
+        "visibilityAtClick": "visible",
+        "lastWriteAt": 1464.1999999955297,
+        "firstRafAt": 1564.2999999970198,
+        "twoRafAt": 1582.1999999955297,
+        "clickToLastWriteMs": 132.5,
+        "clickToTwoRafMs": 250.5,
+        "lastWriteToTwoRafMs": 118,
+        "nativeSetItemMs": 27.19999999552965,
+        "writes": [
+          {
+            "key": "dice-abyss:save:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 1436.8999999985099,
+            "endedAt": 1448.2999999970198,
+            "durationMs": 11.399999998509884,
+            "ok": true,
+            "errorName": null
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 1448.3999999985099,
+            "endedAt": 1464.1999999955297,
+            "durationMs": 15.799999997019768,
+            "ok": true,
+            "errorName": null
+          }
+        ],
+        "longTasksSupported": true,
+        "longTasks": [
+          {
+            "name": "self",
+            "startTime": 1341.8999999985099,
+            "duration": 216,
+            "attribution": [
+              {
+                "name": "unknown",
+                "containerType": "window"
+              }
+            ],
+            "overlapMs": 216
+          }
+        ],
+        "error": null
+      },
+      "afterSnapshotSha256": "d1fcb6585e0eecb06bca91099ba4b4b2a1b6c1a5f914e94ac589b5b23d034be0",
+      "afterStateSha256": "77536383143182ee345dd02effa469a3e2438e4b5ca9f62ba15eeedf2d5dde91",
+      "exactTransition": true,
+      "mirrorExact": true,
+      "metrics": {
+        "clickToLastWriteMs": 132.5,
+        "clickToTwoRafMs": 250.5,
+        "lastWriteToTwoRafMs": 118,
+        "nativeSetItemMs": 27.19999999552965,
+        "longTaskCount": 1,
+        "longTaskTotalMs": 216,
+        "longTaskMaxMs": 216
+      },
+      "finishedAtUtc": "2026-10-19T14:08:36.600Z"
+    },
+    {
+      "phase": "measured",
+      "pair": 9,
+      "label": "baseline",
+      "status": "PASS",
+      "startedAtUtc": "2026-10-19T14:08:36.611Z",
+      "nativeSeeding": {
+        "successfulWrites": [
+          {
+            "key": "dice-abyss:settings:v1",
+            "characters": 41
+          },
+          {
+            "key": "dice-abyss:save:v1",
+            "characters": 2039245
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "characters": 2039245
+          }
+        ],
+        "error": null
+      },
+      "environment": {
+        "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.8059.84 Safari/537.36",
+        "hardwareConcurrency": 9,
+        "deviceMemory": 8,
+        "webLocks": true,
+        "longTasksSupported": true,
+        "originalSetItemIsNative": true,
+        "visibility": "visible",
+        "quotaEstimate": {
+          "quota": 10737418240,
+          "usage": 0,
+          "usageDetails": {}
+        },
+        "release": "5.21.0"
+      },
+      "visibleTarget": {
+        "id": "i7",
+        "pressed": "false",
+        "disabled": false,
+        "rect": {
+          "x": 660.9375,
+          "y": 612.296875,
+          "right": 710.875,
+          "bottom": 647.609375,
+          "width": 49.9375,
+          "height": 35.3125
+        },
+        "listRect": {
+          "x": 504.671875,
+          "y": 492.4375,
+          "right": 1424.96875,
+          "bottom": 766.921875
+        },
+        "centerHitsButton": true,
+        "fullyVisible": true
+      },
+      "beforeSnapshotSha256": "a8b399aea5c98336943a72fb8e984d5edb18fd254a1933577eedad1052ba6a7a",
+      "timing": {
+        "targetId": "i7",
+        "startedAt": 1306.9000000059605,
+        "eventTimeStamp": 1304.8000000044703,
+        "isTrusted": true,
+        "visibilityAtClick": "visible",
+        "lastWriteAt": 1427.1000000014901,
+        "firstRafAt": 1512.3000000044703,
+        "twoRafAt": 1528.1000000014901,
+        "clickToLastWriteMs": 120.19999999552965,
+        "clickToTwoRafMs": 221.19999999552965,
+        "lastWriteToTwoRafMs": 101,
+        "nativeSetItemMs": 19.69999999552965,
+        "writes": [
+          {
+            "key": "dice-abyss:save:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 1407.2000000029802,
+            "endedAt": 1417.6000000014901,
+            "durationMs": 10.399999998509884,
+            "ok": true,
+            "errorName": null
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 1417.8000000044703,
+            "endedAt": 1427.1000000014901,
+            "durationMs": 9.299999997019768,
+            "ok": true,
+            "errorName": null
+          }
+        ],
+        "longTasksSupported": true,
+        "longTasks": [
+          {
+            "name": "self",
+            "startTime": 1318.8000000044703,
+            "duration": 188,
+            "attribution": [
+              {
+                "name": "unknown",
+                "containerType": "window"
+              }
+            ],
+            "overlapMs": 188
+          }
+        ],
+        "error": null
+      },
+      "afterSnapshotSha256": "d1fcb6585e0eecb06bca91099ba4b4b2a1b6c1a5f914e94ac589b5b23d034be0",
+      "afterStateSha256": "77536383143182ee345dd02effa469a3e2438e4b5ca9f62ba15eeedf2d5dde91",
+      "exactTransition": true,
+      "mirrorExact": true,
+      "metrics": {
+        "clickToLastWriteMs": 120.19999999552965,
+        "clickToTwoRafMs": 221.19999999552965,
+        "lastWriteToTwoRafMs": 101,
+        "nativeSetItemMs": 19.69999999552965,
+        "longTaskCount": 1,
+        "longTaskTotalMs": 188,
+        "longTaskMaxMs": 188
+      },
+      "finishedAtUtc": "2026-10-19T14:08:39.078Z"
+    },
+    {
+      "phase": "measured",
+      "pair": 9,
+      "label": "current",
+      "status": "PASS",
+      "startedAtUtc": "2026-10-19T14:08:39.082Z",
+      "nativeSeeding": {
+        "successfulWrites": [
+          {
+            "key": "dice-abyss:settings:v1",
+            "characters": 41
+          },
+          {
+            "key": "dice-abyss:save:v1",
+            "characters": 2039245
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "characters": 2039245
+          }
+        ],
+        "error": null
+      },
+      "environment": {
+        "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.8059.84 Safari/537.36",
+        "hardwareConcurrency": 9,
+        "deviceMemory": 8,
+        "webLocks": true,
+        "longTasksSupported": true,
+        "originalSetItemIsNative": true,
+        "visibility": "visible",
+        "quotaEstimate": {
+          "quota": 10737418240,
+          "usage": 0,
+          "usageDetails": {}
+        },
+        "release": "5.22.0"
+      },
+      "visibleTarget": {
+        "id": "i7",
+        "pressed": "false",
+        "disabled": false,
+        "rect": {
+          "x": 660.9375,
+          "y": 612.296875,
+          "right": 710.875,
+          "bottom": 647.609375,
+          "width": 49.9375,
+          "height": 35.3125
+        },
+        "listRect": {
+          "x": 504.671875,
+          "y": 492.4375,
+          "right": 1424.96875,
+          "bottom": 766.921875
+        },
+        "centerHitsButton": true,
+        "fullyVisible": true
+      },
+      "beforeSnapshotSha256": "a8b399aea5c98336943a72fb8e984d5edb18fd254a1933577eedad1052ba6a7a",
+      "timing": {
+        "targetId": "i7",
+        "startedAt": 1196.6000000014901,
+        "eventTimeStamp": 1194.6000000014901,
+        "isTrusted": true,
+        "visibilityAtClick": "visible",
+        "lastWriteAt": 1312.2000000029802,
+        "firstRafAt": 1393.3999999985099,
+        "twoRafAt": 1406.1000000014901,
+        "clickToLastWriteMs": 115.60000000149012,
+        "clickToTwoRafMs": 209.5,
+        "lastWriteToTwoRafMs": 93.89999999850988,
+        "nativeSetItemMs": 19.00000000745058,
+        "writes": [
+          {
+            "key": "dice-abyss:save:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 1292.8999999985099,
+            "endedAt": 1302.2000000029802,
+            "durationMs": 9.300000004470348,
+            "ok": true,
+            "errorName": null
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 1302.5,
+            "endedAt": 1312.2000000029802,
+            "durationMs": 9.700000002980232,
+            "ok": true,
+            "errorName": null
+          }
+        ],
+        "longTasksSupported": true,
+        "longTasks": [
+          {
+            "name": "self",
+            "startTime": 1209.7000000029802,
+            "duration": 180,
+            "attribution": [
+              {
+                "name": "unknown",
+                "containerType": "window"
+              }
+            ],
+            "overlapMs": 180
+          }
+        ],
+        "error": null
+      },
+      "afterSnapshotSha256": "d1fcb6585e0eecb06bca91099ba4b4b2a1b6c1a5f914e94ac589b5b23d034be0",
+      "afterStateSha256": "77536383143182ee345dd02effa469a3e2438e4b5ca9f62ba15eeedf2d5dde91",
+      "exactTransition": true,
+      "mirrorExact": true,
+      "metrics": {
+        "clickToLastWriteMs": 115.60000000149012,
+        "clickToTwoRafMs": 209.5,
+        "lastWriteToTwoRafMs": 93.89999999850988,
+        "nativeSetItemMs": 19.00000000745058,
+        "longTaskCount": 1,
+        "longTaskTotalMs": 180,
+        "longTaskMaxMs": 180
+      },
+      "finishedAtUtc": "2026-10-19T14:08:41.460Z"
+    },
+    {
+      "phase": "measured",
+      "pair": 10,
+      "label": "current",
+      "status": "PASS",
+      "startedAtUtc": "2026-10-19T14:08:41.476Z",
+      "nativeSeeding": {
+        "successfulWrites": [
+          {
+            "key": "dice-abyss:settings:v1",
+            "characters": 41
+          },
+          {
+            "key": "dice-abyss:save:v1",
+            "characters": 2039245
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "characters": 2039245
+          }
+        ],
+        "error": null
+      },
+      "environment": {
+        "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.8059.84 Safari/537.36",
+        "hardwareConcurrency": 9,
+        "deviceMemory": 8,
+        "webLocks": true,
+        "longTasksSupported": true,
+        "originalSetItemIsNative": true,
+        "visibility": "visible",
+        "quotaEstimate": {
+          "quota": 10737418240,
+          "usage": 0,
+          "usageDetails": {}
+        },
+        "release": "5.22.0"
+      },
+      "visibleTarget": {
+        "id": "i7",
+        "pressed": "false",
+        "disabled": false,
+        "rect": {
+          "x": 660.9375,
+          "y": 612.296875,
+          "right": 710.875,
+          "bottom": 647.609375,
+          "width": 49.9375,
+          "height": 35.3125
+        },
+        "listRect": {
+          "x": 504.671875,
+          "y": 492.4375,
+          "right": 1424.96875,
+          "bottom": 766.921875
+        },
+        "centerHitsButton": true,
+        "fullyVisible": true
+      },
+      "beforeSnapshotSha256": "a8b399aea5c98336943a72fb8e984d5edb18fd254a1933577eedad1052ba6a7a",
+      "timing": {
+        "targetId": "i7",
+        "startedAt": 1288.1999999955297,
+        "eventTimeStamp": 1287.1999999955297,
+        "isTrusted": true,
+        "visibilityAtClick": "visible",
+        "lastWriteAt": 1402.8999999985099,
+        "firstRafAt": 1485.1000000014901,
+        "twoRafAt": 1498.2999999970198,
+        "clickToLastWriteMs": 114.70000000298023,
+        "clickToTwoRafMs": 210.10000000149012,
+        "lastWriteToTwoRafMs": 95.39999999850988,
+        "nativeSetItemMs": 21,
+        "writes": [
+          {
+            "key": "dice-abyss:save:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 1381.7999999970198,
+            "endedAt": 1392.3999999985099,
+            "durationMs": 10.600000001490116,
+            "ok": true,
+            "errorName": null
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 1392.5,
+            "endedAt": 1402.8999999985099,
+            "durationMs": 10.399999998509884,
+            "ok": true,
+            "errorName": null
+          }
+        ],
+        "longTasksSupported": true,
+        "longTasks": [
+          {
+            "name": "self",
+            "startTime": 1300.1000000014901,
+            "duration": 181,
+            "attribution": [
+              {
+                "name": "unknown",
+                "containerType": "window"
+              }
+            ],
+            "overlapMs": 181
+          }
+        ],
+        "error": null
+      },
+      "afterSnapshotSha256": "d1fcb6585e0eecb06bca91099ba4b4b2a1b6c1a5f914e94ac589b5b23d034be0",
+      "afterStateSha256": "77536383143182ee345dd02effa469a3e2438e4b5ca9f62ba15eeedf2d5dde91",
+      "exactTransition": true,
+      "mirrorExact": true,
+      "metrics": {
+        "clickToLastWriteMs": 114.70000000298023,
+        "clickToTwoRafMs": 210.10000000149012,
+        "lastWriteToTwoRafMs": 95.39999999850988,
+        "nativeSetItemMs": 21,
+        "longTaskCount": 1,
+        "longTaskTotalMs": 181,
+        "longTaskMaxMs": 181
+      },
+      "finishedAtUtc": "2026-10-19T14:08:43.885Z"
+    },
+    {
+      "phase": "measured",
+      "pair": 10,
+      "label": "baseline",
+      "status": "PASS",
+      "startedAtUtc": "2026-10-19T14:08:43.896Z",
+      "nativeSeeding": {
+        "successfulWrites": [
+          {
+            "key": "dice-abyss:settings:v1",
+            "characters": 41
+          },
+          {
+            "key": "dice-abyss:save:v1",
+            "characters": 2039245
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "characters": 2039245
+          }
+        ],
+        "error": null
+      },
+      "environment": {
+        "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.8059.84 Safari/537.36",
+        "hardwareConcurrency": 9,
+        "deviceMemory": 8,
+        "webLocks": true,
+        "longTasksSupported": true,
+        "originalSetItemIsNative": true,
+        "visibility": "visible",
+        "quotaEstimate": {
+          "quota": 10737418240,
+          "usage": 0,
+          "usageDetails": {}
+        },
+        "release": "5.21.0"
+      },
+      "visibleTarget": {
+        "id": "i7",
+        "pressed": "false",
+        "disabled": false,
+        "rect": {
+          "x": 660.9375,
+          "y": 612.296875,
+          "right": 710.875,
+          "bottom": 647.609375,
+          "width": 49.9375,
+          "height": 35.3125
+        },
+        "listRect": {
+          "x": 504.671875,
+          "y": 492.4375,
+          "right": 1424.96875,
+          "bottom": 766.921875
+        },
+        "centerHitsButton": true,
+        "fullyVisible": true
+      },
+      "beforeSnapshotSha256": "a8b399aea5c98336943a72fb8e984d5edb18fd254a1933577eedad1052ba6a7a",
+      "timing": {
+        "targetId": "i7",
+        "startedAt": 1380.3999999985099,
+        "eventTimeStamp": 1378.1000000014901,
+        "isTrusted": true,
+        "visibilityAtClick": "visible",
+        "lastWriteAt": 1495,
+        "firstRafAt": 1570.8999999985099,
+        "twoRafAt": 1582.7999999970198,
+        "clickToLastWriteMs": 114.60000000149012,
+        "clickToTwoRafMs": 202.39999999850988,
+        "lastWriteToTwoRafMs": 87.79999999701977,
+        "nativeSetItemMs": 16.899999998509884,
+        "writes": [
+          {
+            "key": "dice-abyss:save:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 1477.8999999985099,
+            "endedAt": 1486.2999999970198,
+            "durationMs": 8.399999998509884,
+            "ok": true,
+            "errorName": null
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 1486.5,
+            "endedAt": 1495,
+            "durationMs": 8.5,
+            "ok": true,
+            "errorName": null
+          }
+        ],
+        "longTasksSupported": true,
+        "longTasks": [
+          {
+            "name": "self",
+            "startTime": 1392.2999999970198,
+            "duration": 174,
+            "attribution": [
+              {
+                "name": "unknown",
+                "containerType": "window"
+              }
+            ],
+            "overlapMs": 174
+          }
+        ],
+        "error": null
+      },
+      "afterSnapshotSha256": "d1fcb6585e0eecb06bca91099ba4b4b2a1b6c1a5f914e94ac589b5b23d034be0",
+      "afterStateSha256": "77536383143182ee345dd02effa469a3e2438e4b5ca9f62ba15eeedf2d5dde91",
+      "exactTransition": true,
+      "mirrorExact": true,
+      "metrics": {
+        "clickToLastWriteMs": 114.60000000149012,
+        "clickToTwoRafMs": 202.39999999850988,
+        "lastWriteToTwoRafMs": 87.79999999701977,
+        "nativeSetItemMs": 16.899999998509884,
+        "longTaskCount": 1,
+        "longTaskTotalMs": 174,
+        "longTaskMaxMs": 174
+      },
+      "finishedAtUtc": "2026-10-19T14:08:46.386Z"
+    },
+    {
+      "phase": "measured",
+      "pair": 11,
+      "label": "baseline",
+      "status": "PASS",
+      "startedAtUtc": "2026-10-19T14:08:46.412Z",
+      "nativeSeeding": {
+        "successfulWrites": [
+          {
+            "key": "dice-abyss:settings:v1",
+            "characters": 41
+          },
+          {
+            "key": "dice-abyss:save:v1",
+            "characters": 2039245
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "characters": 2039245
+          }
+        ],
+        "error": null
+      },
+      "environment": {
+        "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.8059.84 Safari/537.36",
+        "hardwareConcurrency": 9,
+        "deviceMemory": 8,
+        "webLocks": true,
+        "longTasksSupported": true,
+        "originalSetItemIsNative": true,
+        "visibility": "visible",
+        "quotaEstimate": {
+          "quota": 10737418240,
+          "usage": 0,
+          "usageDetails": {}
+        },
+        "release": "5.21.0"
+      },
+      "visibleTarget": {
+        "id": "i7",
+        "pressed": "false",
+        "disabled": false,
+        "rect": {
+          "x": 660.9375,
+          "y": 612.296875,
+          "right": 710.875,
+          "bottom": 647.609375,
+          "width": 49.9375,
+          "height": 35.3125
+        },
+        "listRect": {
+          "x": 504.671875,
+          "y": 492.4375,
+          "right": 1424.96875,
+          "bottom": 766.921875
+        },
+        "centerHitsButton": true,
+        "fullyVisible": true
+      },
+      "beforeSnapshotSha256": "a8b399aea5c98336943a72fb8e984d5edb18fd254a1933577eedad1052ba6a7a",
+      "timing": {
+        "targetId": "i7",
+        "startedAt": 1239.8000000044703,
+        "eventTimeStamp": 1237.9000000059605,
+        "isTrusted": true,
+        "visibilityAtClick": "visible",
+        "lastWriteAt": 1365.5,
+        "firstRafAt": 1455.9000000059605,
+        "twoRafAt": 1469.6000000014901,
+        "clickToLastWriteMs": 125.69999999552965,
+        "clickToTwoRafMs": 229.79999999701977,
+        "lastWriteToTwoRafMs": 104.10000000149012,
+        "nativeSetItemMs": 19.99999999254942,
+        "writes": [
+          {
+            "key": "dice-abyss:save:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 1345.3000000044703,
+            "endedAt": 1355.1000000014901,
+            "durationMs": 9.799999997019768,
+            "ok": true,
+            "errorName": null
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 1355.3000000044703,
+            "endedAt": 1365.5,
+            "durationMs": 10.199999995529652,
+            "ok": true,
+            "errorName": null
+          }
+        ],
+        "longTasksSupported": true,
+        "longTasks": [
+          {
+            "name": "self",
+            "startTime": 1252.9000000059605,
+            "duration": 198,
+            "attribution": [
+              {
+                "name": "unknown",
+                "containerType": "window"
+              }
+            ],
+            "overlapMs": 198
+          }
+        ],
+        "error": null
+      },
+      "afterSnapshotSha256": "d1fcb6585e0eecb06bca91099ba4b4b2a1b6c1a5f914e94ac589b5b23d034be0",
+      "afterStateSha256": "77536383143182ee345dd02effa469a3e2438e4b5ca9f62ba15eeedf2d5dde91",
+      "exactTransition": true,
+      "mirrorExact": true,
+      "metrics": {
+        "clickToLastWriteMs": 125.69999999552965,
+        "clickToTwoRafMs": 229.79999999701977,
+        "lastWriteToTwoRafMs": 104.10000000149012,
+        "nativeSetItemMs": 19.99999999254942,
+        "longTaskCount": 1,
+        "longTaskTotalMs": 198,
+        "longTaskMaxMs": 198
+      },
+      "finishedAtUtc": "2026-10-19T14:08:48.844Z"
+    },
+    {
+      "phase": "measured",
+      "pair": 11,
+      "label": "current",
+      "status": "PASS",
+      "startedAtUtc": "2026-10-19T14:08:48.850Z",
+      "nativeSeeding": {
+        "successfulWrites": [
+          {
+            "key": "dice-abyss:settings:v1",
+            "characters": 41
+          },
+          {
+            "key": "dice-abyss:save:v1",
+            "characters": 2039245
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "characters": 2039245
+          }
+        ],
+        "error": null
+      },
+      "environment": {
+        "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.8059.84 Safari/537.36",
+        "hardwareConcurrency": 9,
+        "deviceMemory": 8,
+        "webLocks": true,
+        "longTasksSupported": true,
+        "originalSetItemIsNative": true,
+        "visibility": "visible",
+        "quotaEstimate": {
+          "quota": 10737418240,
+          "usage": 0,
+          "usageDetails": {}
+        },
+        "release": "5.22.0"
+      },
+      "visibleTarget": {
+        "id": "i7",
+        "pressed": "false",
+        "disabled": false,
+        "rect": {
+          "x": 660.9375,
+          "y": 612.296875,
+          "right": 710.875,
+          "bottom": 647.609375,
+          "width": 49.9375,
+          "height": 35.3125
+        },
+        "listRect": {
+          "x": 504.671875,
+          "y": 492.4375,
+          "right": 1424.96875,
+          "bottom": 766.921875
+        },
+        "centerHitsButton": true,
+        "fullyVisible": true
+      },
+      "beforeSnapshotSha256": "a8b399aea5c98336943a72fb8e984d5edb18fd254a1933577eedad1052ba6a7a",
+      "timing": {
+        "targetId": "i7",
+        "startedAt": 1642.7000000029802,
+        "eventTimeStamp": 1640.8000000044703,
+        "isTrusted": true,
+        "visibilityAtClick": "visible",
+        "lastWriteAt": 1767.8000000044703,
+        "firstRafAt": 1854,
+        "twoRafAt": 1870.8000000044703,
+        "clickToLastWriteMs": 125.10000000149012,
+        "clickToTwoRafMs": 228.10000000149012,
+        "lastWriteToTwoRafMs": 103,
+        "nativeSetItemMs": 23.399999998509884,
+        "writes": [
+          {
+            "key": "dice-abyss:save:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 1744.3000000044703,
+            "endedAt": 1757.2000000029802,
+            "durationMs": 12.899999998509884,
+            "ok": true,
+            "errorName": null
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 1757.3000000044703,
+            "endedAt": 1767.8000000044703,
+            "durationMs": 10.5,
+            "ok": true,
+            "errorName": null
+          }
+        ],
+        "longTasksSupported": true,
+        "longTasks": [
+          {
+            "name": "self",
+            "startTime": 1655.3000000044703,
+            "duration": 193,
+            "attribution": [
+              {
+                "name": "unknown",
+                "containerType": "window"
+              }
+            ],
+            "overlapMs": 193
+          }
+        ],
+        "error": null
+      },
+      "afterSnapshotSha256": "d1fcb6585e0eecb06bca91099ba4b4b2a1b6c1a5f914e94ac589b5b23d034be0",
+      "afterStateSha256": "77536383143182ee345dd02effa469a3e2438e4b5ca9f62ba15eeedf2d5dde91",
+      "exactTransition": true,
+      "mirrorExact": true,
+      "metrics": {
+        "clickToLastWriteMs": 125.10000000149012,
+        "clickToTwoRafMs": 228.10000000149012,
+        "lastWriteToTwoRafMs": 103,
+        "nativeSetItemMs": 23.399999998509884,
+        "longTaskCount": 1,
+        "longTaskTotalMs": 193,
+        "longTaskMaxMs": 193
+      },
+      "finishedAtUtc": "2026-10-19T14:08:51.648Z"
+    },
+    {
+      "phase": "measured",
+      "pair": 12,
+      "label": "current",
+      "status": "PASS",
+      "startedAtUtc": "2026-10-19T14:08:51.657Z",
+      "nativeSeeding": {
+        "successfulWrites": [
+          {
+            "key": "dice-abyss:settings:v1",
+            "characters": 41
+          },
+          {
+            "key": "dice-abyss:save:v1",
+            "characters": 2039245
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "characters": 2039245
+          }
+        ],
+        "error": null
+      },
+      "environment": {
+        "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.8059.84 Safari/537.36",
+        "hardwareConcurrency": 9,
+        "deviceMemory": 8,
+        "webLocks": true,
+        "longTasksSupported": true,
+        "originalSetItemIsNative": true,
+        "visibility": "visible",
+        "quotaEstimate": {
+          "quota": 10737418240,
+          "usage": 0,
+          "usageDetails": {}
+        },
+        "release": "5.22.0"
+      },
+      "visibleTarget": {
+        "id": "i7",
+        "pressed": "false",
+        "disabled": false,
+        "rect": {
+          "x": 660.9375,
+          "y": 612.296875,
+          "right": 710.875,
+          "bottom": 647.609375,
+          "width": 49.9375,
+          "height": 35.3125
+        },
+        "listRect": {
+          "x": 504.671875,
+          "y": 492.4375,
+          "right": 1424.96875,
+          "bottom": 766.921875
+        },
+        "centerHitsButton": true,
+        "fullyVisible": true
+      },
+      "beforeSnapshotSha256": "a8b399aea5c98336943a72fb8e984d5edb18fd254a1933577eedad1052ba6a7a",
+      "timing": {
+        "targetId": "i7",
+        "startedAt": 1431.7999999970198,
+        "eventTimeStamp": 1429.6999999955297,
+        "isTrusted": true,
+        "visibilityAtClick": "visible",
+        "lastWriteAt": 1570.1999999955297,
+        "firstRafAt": 1658.1999999955297,
+        "twoRafAt": 1671.0999999940395,
+        "clickToLastWriteMs": 138.39999999850988,
+        "clickToTwoRafMs": 239.29999999701977,
+        "lastWriteToTwoRafMs": 100.89999999850988,
+        "nativeSetItemMs": 23.19999999552965,
+        "writes": [
+          {
+            "key": "dice-abyss:save:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 1546.7999999970198,
+            "endedAt": 1558.5999999940395,
+            "durationMs": 11.799999997019768,
+            "ok": true,
+            "errorName": null
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 1558.7999999970198,
+            "endedAt": 1570.1999999955297,
+            "durationMs": 11.399999998509884,
+            "ok": true,
+            "errorName": null
+          }
+        ],
+        "longTasksSupported": true,
+        "longTasks": [
+          {
+            "name": "self",
+            "startTime": 1441.2999999970198,
+            "duration": 212,
+            "attribution": [
+              {
+                "name": "unknown",
+                "containerType": "window"
+              }
+            ],
+            "overlapMs": 212
+          }
+        ],
+        "error": null
+      },
+      "afterSnapshotSha256": "d1fcb6585e0eecb06bca91099ba4b4b2a1b6c1a5f914e94ac589b5b23d034be0",
+      "afterStateSha256": "77536383143182ee345dd02effa469a3e2438e4b5ca9f62ba15eeedf2d5dde91",
+      "exactTransition": true,
+      "mirrorExact": true,
+      "metrics": {
+        "clickToLastWriteMs": 138.39999999850988,
+        "clickToTwoRafMs": 239.29999999701977,
+        "lastWriteToTwoRafMs": 100.89999999850988,
+        "nativeSetItemMs": 23.19999999552965,
+        "longTaskCount": 1,
+        "longTaskTotalMs": 212,
+        "longTaskMaxMs": 212
+      },
+      "finalRefreshExact": true,
+      "finishedAtUtc": "2026-10-19T14:08:55.454Z"
+    },
+    {
+      "phase": "measured",
+      "pair": 12,
+      "label": "baseline",
+      "status": "PASS",
+      "startedAtUtc": "2026-10-19T14:08:55.464Z",
+      "nativeSeeding": {
+        "successfulWrites": [
+          {
+            "key": "dice-abyss:settings:v1",
+            "characters": 41
+          },
+          {
+            "key": "dice-abyss:save:v1",
+            "characters": 2039245
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "characters": 2039245
+          }
+        ],
+        "error": null
+      },
+      "environment": {
+        "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.8059.84 Safari/537.36",
+        "hardwareConcurrency": 9,
+        "deviceMemory": 8,
+        "webLocks": true,
+        "longTasksSupported": true,
+        "originalSetItemIsNative": true,
+        "visibility": "visible",
+        "quotaEstimate": {
+          "quota": 10737418240,
+          "usage": 0,
+          "usageDetails": {}
+        },
+        "release": "5.21.0"
+      },
+      "visibleTarget": {
+        "id": "i7",
+        "pressed": "false",
+        "disabled": false,
+        "rect": {
+          "x": 660.9375,
+          "y": 612.296875,
+          "right": 710.875,
+          "bottom": 647.609375,
+          "width": 49.9375,
+          "height": 35.3125
+        },
+        "listRect": {
+          "x": 504.671875,
+          "y": 492.4375,
+          "right": 1424.96875,
+          "bottom": 766.921875
+        },
+        "centerHitsButton": true,
+        "fullyVisible": true
+      },
+      "beforeSnapshotSha256": "a8b399aea5c98336943a72fb8e984d5edb18fd254a1933577eedad1052ba6a7a",
+      "timing": {
+        "targetId": "i7",
+        "startedAt": 1360.7999999970198,
+        "eventTimeStamp": 1358.5,
+        "isTrusted": true,
+        "visibilityAtClick": "visible",
+        "lastWriteAt": 1482.7999999970198,
+        "firstRafAt": 1567.8999999985099,
+        "twoRafAt": 1580.7999999970198,
+        "clickToLastWriteMs": 122,
+        "clickToTwoRafMs": 220,
+        "lastWriteToTwoRafMs": 98,
+        "nativeSetItemMs": 19.19999999552965,
+        "writes": [
+          {
+            "key": "dice-abyss:save:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 1463.3999999985099,
+            "endedAt": 1473.0999999940395,
+            "durationMs": 9.699999995529652,
+            "ok": true,
+            "errorName": null
+          },
+          {
+            "key": "dice-abyss:mirror:v1",
+            "valueCharacters": 2039245,
+            "startedAt": 1473.2999999970198,
+            "endedAt": 1482.7999999970198,
+            "durationMs": 9.5,
+            "ok": true,
+            "errorName": null
+          }
+        ],
+        "longTasksSupported": true,
+        "longTasks": [
+          {
+            "name": "self",
+            "startTime": 1373,
+            "duration": 190,
+            "attribution": [
+              {
+                "name": "unknown",
+                "containerType": "window"
+              }
+            ],
+            "overlapMs": 190
+          }
+        ],
+        "error": null
+      },
+      "afterSnapshotSha256": "d1fcb6585e0eecb06bca91099ba4b4b2a1b6c1a5f914e94ac589b5b23d034be0",
+      "afterStateSha256": "77536383143182ee345dd02effa469a3e2438e4b5ca9f62ba15eeedf2d5dde91",
+      "exactTransition": true,
+      "mirrorExact": true,
+      "metrics": {
+        "clickToLastWriteMs": 122,
+        "clickToTwoRafMs": 220,
+        "lastWriteToTwoRafMs": 98,
+        "nativeSetItemMs": 19.19999999552965,
+        "longTaskCount": 1,
+        "longTaskTotalMs": 190,
+        "longTaskMaxMs": 190
+      },
+      "finalRefreshExact": true,
+      "finishedAtUtc": "2026-10-19T14:08:59.932Z"
+    }
+  ],
+  "errors": [],
+  "environments": {
+    "baseline": {
+      "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.8059.84 Safari/537.36",
+      "hardwareConcurrency": 9,
+      "deviceMemory": 8,
+      "webLocks": true,
+      "longTasksSupported": true,
+      "originalSetItemIsNative": true,
+      "visibility": "visible",
+      "quotaEstimate": {
+        "quota": 10737418240,
+        "usage": 0,
+        "usageDetails": {}
+      },
+      "release": "5.21.0",
+      "servedHashes": {
+        "index.html": {
+          "bytes": 2305,
+          "sha256": "1e50476c2d56aea670b54d0adcb2bd38790d695b4a310844826adf985deea2f5"
+        },
+        "src/app.js": {
+          "bytes": 50808,
+          "sha256": "baf8e04656b34df73feb324e5e0518bb050743683bd68c0316e83b73f545f24f"
+        },
+        "src/engine.js": {
+          "bytes": 41128,
+          "sha256": "75c6d9fcc48c0cf49ee02e53ffb7b143a09a2c79738d3bb2eb5d0ae80b30872b"
+        },
+        "src/storage.js": {
+          "bytes": 32441,
+          "sha256": "daa6eeffc7a38692213228d748c7819739392a5eeaedc91ec62350c53319591c"
+        },
+        "src/views.js": {
+          "bytes": 107882,
+          "sha256": "75c2b6b0c36ee6d34a8066fc4867c6f223dd630633687a347b703afee674c263"
+        },
+        "src/encounters.js": {
+          "bytes": 36777,
+          "sha256": "e485b531d6ed59954cdc8c7b50ab5dd84c1a64449852b7b56fce667489369d76"
+        },
+        "src/equipment.js": {
+          "bytes": 13951,
+          "sha256": "8c20de433f21931318e315b862b457d37a03b9596ea5df8f7cc4025691aaccd6"
+        },
+        "src/content.js": {
+          "bytes": 13097,
+          "sha256": "4c0c2e4656c5a3482a5448a069ae2fa28367ba05d61c7d0c2c9866315f5c5526"
+        },
+        "src/effects.js": {
+          "bytes": 28007,
+          "sha256": "5f95f77e882a690f95215babda3cdedc0d398bbcfaabfecd3d486141200dc6f9"
+        },
+        "src/dice-renderer.js": {
+          "bytes": 14522,
+          "sha256": "b40e1e1c808b00d319b70ce7546403c588cdcc8397bba684fe19b2f4c0bca6d8"
+        },
+        "src/deep.css": {
+          "bytes": 10667,
+          "sha256": "24f0ed8bf2969232c660a595cd5e19b206066bc4a19a983e4bd3a277b82700cc"
+        },
+        "src/inventory-dom.js": {
+          "bytes": 4792,
+          "sha256": "7f3b18a6b3dbcc3a0a100c94bab35d9e81a14d7a6c74e8eabfdff3d151d35bf0"
+        }
+      },
+      "httpPackagePathStatus": 404
+    },
+    "current": {
+      "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.8059.84 Safari/537.36",
+      "hardwareConcurrency": 9,
+      "deviceMemory": 8,
+      "webLocks": true,
+      "longTasksSupported": true,
+      "originalSetItemIsNative": true,
+      "visibility": "visible",
+      "quotaEstimate": {
+        "quota": 10737418240,
+        "usage": 0,
+        "usageDetails": {}
+      },
+      "release": "5.22.0",
+      "servedHashes": {
+        "index.html": {
+          "bytes": 2305,
+          "sha256": "f1001c485cb68386367b46b6bc40213c87a232da534dd80409d7a24f1fa34132"
+        },
+        "src/app.js": {
+          "bytes": 51792,
+          "sha256": "de8712715446bff65843d63167f0b2b5e3a9507fdbfde5d84a41475d926cd1be"
+        },
+        "src/engine.js": {
+          "bytes": 41371,
+          "sha256": "340fa90ef963abfc874fa4932af80264a87a569f1d51030d9e9b29b3dbc2192e"
+        },
+        "src/storage.js": {
+          "bytes": 32685,
+          "sha256": "2b505d6dab2c5f018eff3f1bd5d6d927a885a175f812bd620ae898b3fead7f05"
+        },
+        "src/views.js": {
+          "bytes": 107965,
+          "sha256": "1b278428479f9a9daee7973ede38b84b16113cf83cf665a6e9d2cbdec5d6fb22"
+        },
+        "src/encounters.js": {
+          "bytes": 36777,
+          "sha256": "e485b531d6ed59954cdc8c7b50ab5dd84c1a64449852b7b56fce667489369d76"
+        },
+        "src/equipment.js": {
+          "bytes": 13951,
+          "sha256": "8c20de433f21931318e315b862b457d37a03b9596ea5df8f7cc4025691aaccd6"
+        },
+        "src/content.js": {
+          "bytes": 13097,
+          "sha256": "4c0c2e4656c5a3482a5448a069ae2fa28367ba05d61c7d0c2c9866315f5c5526"
+        },
+        "src/effects.js": {
+          "bytes": 28007,
+          "sha256": "5f95f77e882a690f95215babda3cdedc0d398bbcfaabfecd3d486141200dc6f9"
+        },
+        "src/dice-renderer.js": {
+          "bytes": 14522,
+          "sha256": "b40e1e1c808b00d319b70ce7546403c588cdcc8397bba684fe19b2f4c0bca6d8"
+        },
+        "src/deep.css": {
+          "bytes": 10979,
+          "sha256": "d4b579f479f51e2bc15fddf02f1c5c7b443c233546e482a43bdfe00783b73621"
+        },
+        "src/inventory-dom.js": {
+          "bytes": 5774,
+          "sha256": "fd202b44a427eb7ff2c5ea5ccaaff8014f5faa4b4f85c280ff1fa5078bfd641f"
+        }
+      },
+      "httpPackagePathStatus": 404
+    }
+  },
+  "browserVersion": "155.0.8059.84",
+  "browserExecutable": "/tmp/dice-r15-browser/chrome-headless-shell-linux64/chrome-headless-shell",
+  "playwrightModule": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright",
+  "statistics": {
+    "byVersion": {
+      "baseline": {
+        "clickToLastWriteMs": {
+          "n": 12,
+          "min": 114.60000000149012,
+          "median": 122.40000000223517,
+          "p90": 144.98999999910592,
+          "p95": 151.43499999716877,
+          "max": 158.19999999552965,
+          "mean": 128.03333333258828
+        },
+        "clickToTwoRafMs": {
+          "n": 12,
+          "min": 202.39999999850988,
+          "median": 231.35000000149012,
+          "p90": 251.9400000013411,
+          "p95": 274.4199999988079,
+          "max": 301.69999999552965,
+          "mean": 235.46666666616997
+        },
+        "lastWriteToTwoRafMs": {
+          "n": 12,
+          "min": 87.79999999701977,
+          "median": 103.70000000298023,
+          "p90": 120.7900000013411,
+          "p95": 131.18000000081955,
+          "max": 143.5,
+          "mean": 107.43333333358169
+        },
+        "nativeSetItemMs": {
+          "n": 12,
+          "min": 16.899999998509884,
+          "median": 21.799999993294477,
+          "p90": 27.19999999552965,
+          "p95": 37.3249999988824,
+          "max": 49.70000000298023,
+          "mean": 24.23333332998057
+        },
+        "longTaskCount": {
+          "n": 12,
+          "min": 1,
+          "median": 1,
+          "p90": 1,
+          "p95": 1,
+          "max": 1,
+          "mean": 1
+        },
+        "longTaskTotalMs": {
+          "n": 12,
+          "min": 174,
+          "median": 197.5,
+          "p90": 219.6,
+          "p95": 220.9,
+          "max": 222,
+          "mean": 199.25
+        },
+        "longTaskMaxMs": {
+          "n": 12,
+          "min": 174,
+          "median": 197.5,
+          "p90": 219.6,
+          "p95": 220.9,
+          "max": 222,
+          "mean": 199.25
+        }
+      },
+      "current": {
+        "clickToLastWriteMs": {
+          "n": 12,
+          "min": 110.39999999850988,
+          "median": 121.84999999776483,
+          "p90": 138.03999999836088,
+          "p95": 139.88500000052153,
+          "max": 141.70000000298023,
+          "mean": 123.68333333358169
+        },
+        "clickToTwoRafMs": {
+          "n": 12,
+          "min": 202.40000000596046,
+          "median": 216,
+          "p90": 238.1799999974668,
+          "p95": 250.5500000003725,
+          "max": 264.30000000447035,
+          "mean": 221.18333333420256
+        },
+        "lastWriteToTwoRafMs": {
+          "n": 12,
+          "min": 84.5,
+          "median": 94.64999999850988,
+          "p90": 102.86000000014901,
+          "p95": 111.82000000067053,
+          "max": 122.60000000149012,
+          "mean": 97.50000000062089
+        },
+        "nativeSetItemMs": {
+          "n": 12,
+          "min": 17.899999998509884,
+          "median": 21.350000001490116,
+          "p90": 24.65999999716878,
+          "p95": 30.064999998360864,
+          "max": 36.5,
+          "mean": 22.408333333209157
+        },
+        "longTaskCount": {
+          "n": 12,
+          "min": 1,
+          "median": 1,
+          "p90": 1,
+          "p95": 1,
+          "max": 1,
+          "mean": 1
+        },
+        "longTaskTotalMs": {
+          "n": 12,
+          "min": 173,
+          "median": 183.5,
+          "p90": 210.5,
+          "p95": 215.6,
+          "max": 220,
+          "mean": 189.58333333333334
+        },
+        "longTaskMaxMs": {
+          "n": 12,
+          "min": 173,
+          "median": 183.5,
+          "p90": 210.5,
+          "p95": 215.6,
+          "max": 220,
+          "mean": 189.58333333333334
+        }
+      }
+    },
+    "pairedDifferencesCurrentMinusBaseline": {
+      "clickToLastWriteMs": {
+        "n": 12,
+        "min": -43.29999999701977,
+        "median": -2.699999999254942,
+        "p90": 13.199999995529655,
+        "p95": 15.189999996870755,
+        "max": 16.399999998509884,
+        "mean": -4.349999999006589
+      },
+      "clickToTwoRafMs": {
+        "n": 12,
+        "min": -88.19999999552965,
+        "median": -11.449999999254942,
+        "p90": 11.750000002980233,
+        "p95": 15.395000000298019,
+        "max": 19.299999997019768,
+        "mean": -14.283333331967393
+      },
+      "lastWriteToTwoRafMs": {
+        "n": 12,
+        "min": -44.899999998509884,
+        "median": -7.24999999627471,
+        "p90": 7.130000001192094,
+        "p95": 11.560000000149005,
+        "max": 16.399999998509884,
+        "mean": -9.933333332960805
+      },
+      "nativeSetItemMs": {
+        "n": 12,
+        "min": -31.50000000745058,
+        "median": 7.450580596923828e-9,
+        "p90": 4.090000001341105,
+        "p95": 7.835000000149005,
+        "max": 12.399999998509884,
+        "mean": -1.824999996771415
+      },
+      "longTaskCount": {
+        "n": 12,
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "p95": 0,
+        "max": 0,
+        "mean": 0
+      },
+      "longTaskTotalMs": {
+        "n": 12,
+        "min": -41,
+        "median": -6.5,
+        "p90": 6.9,
+        "p95": 13.74999999999999,
+        "max": 22,
+        "mean": -9.666666666666666
+      },
+      "longTaskMaxMs": {
+        "n": 12,
+        "min": -41,
+        "median": -6.5,
+        "p90": 6.9,
+        "p95": 13.74999999999999,
+        "max": 22,
+        "mean": -9.666666666666666
+      }
+    },
+    "percentileMethod": "Linear interpolation at (n - 1) * p; all twelve measured values per version retained."
+  },
+  "browserClosed": true,
+  "finishedAtUtc": "2026-10-19T14:09:00.833Z",
+  "sourcesAfter": {
+    "baseline": {
+      "index.html": {
+        "bytes": 2305,
+        "sha256": "1e50476c2d56aea670b54d0adcb2bd38790d695b4a310844826adf985deea2f5"
+      },
+      "package.json": {
+        "bytes": 428,
+        "sha256": "902e80d0c7bb202bf5db0ebaa74c79e5e9881f18f91623072e5fa500932d297f"
+      },
+      "src/app.js": {
+        "bytes": 50808,
+        "sha256": "baf8e04656b34df73feb324e5e0518bb050743683bd68c0316e83b73f545f24f"
+      },
+      "src/engine.js": {
+        "bytes": 41128,
+        "sha256": "75c6d9fcc48c0cf49ee02e53ffb7b143a09a2c79738d3bb2eb5d0ae80b30872b"
+      },
+      "src/storage.js": {
+        "bytes": 32441,
+        "sha256": "daa6eeffc7a38692213228d748c7819739392a5eeaedc91ec62350c53319591c"
+      },
+      "src/views.js": {
+        "bytes": 107882,
+        "sha256": "75c2b6b0c36ee6d34a8066fc4867c6f223dd630633687a347b703afee674c263"
+      },
+      "src/encounters.js": {
+        "bytes": 36777,
+        "sha256": "e485b531d6ed59954cdc8c7b50ab5dd84c1a64449852b7b56fce667489369d76"
+      },
+      "src/equipment.js": {
+        "bytes": 13951,
+        "sha256": "8c20de433f21931318e315b862b457d37a03b9596ea5df8f7cc4025691aaccd6"
+      },
+      "src/content.js": {
+        "bytes": 13097,
+        "sha256": "4c0c2e4656c5a3482a5448a069ae2fa28367ba05d61c7d0c2c9866315f5c5526"
+      },
+      "src/effects.js": {
+        "bytes": 28007,
+        "sha256": "5f95f77e882a690f95215babda3cdedc0d398bbcfaabfecd3d486141200dc6f9"
+      },
+      "src/dice-renderer.js": {
+        "bytes": 14522,
+        "sha256": "b40e1e1c808b00d319b70ce7546403c588cdcc8397bba684fe19b2f4c0bca6d8"
+      },
+      "src/deep.css": {
+        "bytes": 10667,
+        "sha256": "24f0ed8bf2969232c660a595cd5e19b206066bc4a19a983e4bd3a277b82700cc"
+      },
+      "src/inventory-dom.js": {
+        "bytes": 4792,
+        "sha256": "7f3b18a6b3dbcc3a0a100c94bab35d9e81a14d7a6c74e8eabfdff3d151d35bf0"
+      }
+    },
+    "current": {
+      "index.html": {
+        "bytes": 2305,
+        "sha256": "f1001c485cb68386367b46b6bc40213c87a232da534dd80409d7a24f1fa34132"
+      },
+      "package.json": {
+        "bytes": 428,
+        "sha256": "fdc59fc4c5a28b0d6169253577bbbeab30341bc9830e16b362a3ba34c2ed2583"
+      },
+      "src/app.js": {
+        "bytes": 51792,
+        "sha256": "de8712715446bff65843d63167f0b2b5e3a9507fdbfde5d84a41475d926cd1be"
+      },
+      "src/engine.js": {
+        "bytes": 41371,
+        "sha256": "340fa90ef963abfc874fa4932af80264a87a569f1d51030d9e9b29b3dbc2192e"
+      },
+      "src/storage.js": {
+        "bytes": 32685,
+        "sha256": "2b505d6dab2c5f018eff3f1bd5d6d927a885a175f812bd620ae898b3fead7f05"
+      },
+      "src/views.js": {
+        "bytes": 107965,
+        "sha256": "1b278428479f9a9daee7973ede38b84b16113cf83cf665a6e9d2cbdec5d6fb22"
+      },
+      "src/encounters.js": {
+        "bytes": 36777,
+        "sha256": "e485b531d6ed59954cdc8c7b50ab5dd84c1a64449852b7b56fce667489369d76"
+      },
+      "src/equipment.js": {
+        "bytes": 13951,
+        "sha256": "8c20de433f21931318e315b862b457d37a03b9596ea5df8f7cc4025691aaccd6"
+      },
+      "src/content.js": {
+        "bytes": 13097,
+        "sha256": "4c0c2e4656c5a3482a5448a069ae2fa28367ba05d61c7d0c2c9866315f5c5526"
+      },
+      "src/effects.js": {
+        "bytes": 28007,
+        "sha256": "5f95f77e882a690f95215babda3cdedc0d398bbcfaabfecd3d486141200dc6f9"
+      },
+      "src/dice-renderer.js": {
+        "bytes": 14522,
+        "sha256": "b40e1e1c808b00d319b70ce7546403c588cdcc8397bba684fe19b2f4c0bca6d8"
+      },
+      "src/deep.css": {
+        "bytes": 10979,
+        "sha256": "d4b579f479f51e2bc15fddf02f1c5c7b443c233546e482a43bdfe00783b73621"
+      },
+      "src/inventory-dom.js": {
+        "bytes": 5774,
+        "sha256": "fd202b44a427eb7ff2c5ea5ccaaff8014f5faa4b4f85c280ff1fa5078bfd641f"
+      }
+    }
+  },
+  "sourceStable": true,
+  "scriptStable": true
+}

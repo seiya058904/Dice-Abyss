@@ -1,0 +1,4867 @@
+{
+  "audit": "round15-survival-gated-healing-records",
+  "status": "PASS",
+  "method": "Identical explicitly synthetic valid starting states; complete roll transitions compared recursively. Every property remains identical except a declared recovery-note string in a fatal roll. No numeric, RNG, item, player, enemy, counter, reward, or other log difference is normalized away.",
+  "baseline": "/workspace/scratch/2e03d78caae4/baseline/Dice-Abyss",
+  "source": "/workspace/scratch/2e03d78caae4/work/Dice-Abyss",
+  "sourceHashes": {
+    "engine.js": "75c6d9fcc48c0cf49ee02e53ffb7b143a09a2c79738d3bb2eb5d0ae80b30872b",
+    "deep-rules.js": "6f6c096e37c9f18a6ca97625330a6ab8ce55b25852e677455d3a200c8200dbe1",
+    "encounters.js": "c3c6e2d24049305d73982cf5db3b1cf02eee68f4e8e1659fd7e3021f74de0791",
+    "equipment.js": "8c20de433f21931318e315b862b457d37a03b9596ea5df8f7cc4025691aaccd6",
+    "equipment-content.js": "d95b5e7c11d14eb764ea3cefb7eee73f35b2f9d48a8b640513eda9aefd1cc030",
+    "storage.js": "6bfcc60036c9f729c21b948ca98c7ac715e14049856fb9dded0baa2aeef2c561"
+  },
+  "baselineHashes": {
+    "engine.js": "32a60a0a5799eb5d515deaa65a3a7f07f4653c68d3c31ff3a61ce402b18f56cf",
+    "deep-rules.js": "c9bf6e3419308bdc1bb62836586cfb18f4b62aadea16aa5e0fc33fa6f4794485",
+    "encounters.js": "c3c6e2d24049305d73982cf5db3b1cf02eee68f4e8e1659fd7e3021f74de0791",
+    "equipment.js": "8c20de433f21931318e315b862b457d37a03b9596ea5df8f7cc4025691aaccd6",
+    "equipment-content.js": "d95b5e7c11d14eb764ea3cefb7eee73f35b2f9d48a8b640513eda9aefd1cc030",
+    "storage.js": "6bfcc60036c9f729c21b948ca98c7ac715e14049856fb9dded0baa2aeef2c561"
+  },
+  "sourceStable": true,
+  "scenarios": [
+    "surviving-injured",
+    "fatal-primary-retaliation",
+    "exact-lethal-primary",
+    "one-hp-before-recovery",
+    "fatal-curse-variant-zero",
+    "fatal-curse-variant-one",
+    "full-health",
+    "killing-blow",
+    "killing-blow-full-health",
+    "absent-abilities",
+    "guard-opening-echo-note-order",
+    "capped-healing",
+    "legacy-combat-rules-two",
+    "life-drain-before-regen-and-critical-mend"
+  ],
+  "seeds": [
+    7919,
+    63352,
+    197975,
+    506816,
+    657277,
+    791900,
+    1528367,
+    2027264,
+    3967419,
+    6153063,
+    7911081,
+    7919000,
+    9922507,
+    16218112,
+    32428305,
+    64872448
+  ],
+  "summary": {
+    "cases": 224,
+    "correctedRecords": 50,
+    "correctedNotes": 53,
+    "unchangedStates": 174,
+    "fullCodecRoundTrips": 896
+  },
+  "rows": [
+    {
+      "scenario": "surviving-injured",
+      "seed": 7919,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 243,
+      "values": [
+        3,
+        2,
+        4,
+        6,
+        3,
+        6
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "db61ae7e6f6f20d7d04789a140b4ad65b3ffa71ddc391bf4a8e2c7f1ea62e5c0",
+      "currentStateSha256": "db61ae7e6f6f20d7d04789a140b4ad65b3ffa71ddc391bf4a8e2c7f1ea62e5c0"
+    },
+    {
+      "scenario": "surviving-injured",
+      "seed": 63352,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 100,
+      "values": [
+        5,
+        3,
+        2,
+        1,
+        2,
+        5
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "466091cc54cdb4f8e54f16fdf2ac6096c1744631af19d2c8e67975f927957b68",
+      "currentStateSha256": "466091cc54cdb4f8e54f16fdf2ac6096c1744631af19d2c8e67975f927957b68"
+    },
+    {
+      "scenario": "surviving-injured",
+      "seed": 197975,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 483,
+      "values": [
+        3,
+        3,
+        3,
+        6,
+        3,
+        3
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "1e2bdcfbe089b8e6d72583333df38e2a8688925e11ffa8d62bb23b09f72b0c10",
+      "currentStateSha256": "1e2bdcfbe089b8e6d72583333df38e2a8688925e11ffa8d62bb23b09f72b0c10"
+    },
+    {
+      "scenario": "surviving-injured",
+      "seed": 506816,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 339,
+      "values": [
+        1,
+        5,
+        1,
+        1,
+        2,
+        1
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "8dede45ec9f786843e7a9c4a8b0b9d86e0e60e51f87d0acce4d5a0b13262517e",
+      "currentStateSha256": "8dede45ec9f786843e7a9c4a8b0b9d86e0e60e51f87d0acce4d5a0b13262517e"
+    },
+    {
+      "scenario": "surviving-injured",
+      "seed": 657277,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 243,
+      "values": [
+        3,
+        6,
+        4,
+        5,
+        2,
+        4
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "d2a2d84a2a6c3f40b376b457b9ae32d29922373ac59892e967648cfac55bbf02",
+      "currentStateSha256": "d2a2d84a2a6c3f40b376b457b9ae32d29922373ac59892e967648cfac55bbf02"
+    },
+    {
+      "scenario": "surviving-injured",
+      "seed": 791900,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 243,
+      "values": [
+        6,
+        6,
+        1,
+        1,
+        5,
+        5
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "8a412cdd811a5fe0cae7d5f2b5e59415e18bcaf4f8bfa0b8c9924ef97496510e",
+      "currentStateSha256": "8a412cdd811a5fe0cae7d5f2b5e59415e18bcaf4f8bfa0b8c9924ef97496510e"
+    },
+    {
+      "scenario": "surviving-injured",
+      "seed": 1528367,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 243,
+      "values": [
+        4,
+        3,
+        4,
+        2,
+        3,
+        6
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "865bf3a8fc9c896d80fa9969ca9627599eaa00b1b38c6d77b00cd73c638c0471",
+      "currentStateSha256": "865bf3a8fc9c896d80fa9969ca9627599eaa00b1b38c6d77b00cd73c638c0471"
+    },
+    {
+      "scenario": "surviving-injured",
+      "seed": 2027264,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 243,
+      "values": [
+        3,
+        1,
+        6,
+        5,
+        1,
+        2
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "3fc481d72075500d6fc2955d61d7a026333da2e00df3a35a013f81e3288d093a",
+      "currentStateSha256": "3fc481d72075500d6fc2955d61d7a026333da2e00df3a35a013f81e3288d093a"
+    },
+    {
+      "scenario": "surviving-injured",
+      "seed": 3967419,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 242,
+      "values": [
+        5,
+        2,
+        4,
+        6,
+        1,
+        3
+      ],
+      "retaliation": 1,
+      "changes": [],
+      "baselineStateSha256": "267d2a39651194845150f8b53b960b32f5aae40a51d12505a872b03444d4d7a5",
+      "currentStateSha256": "267d2a39651194845150f8b53b960b32f5aae40a51d12505a872b03444d4d7a5"
+    },
+    {
+      "scenario": "surviving-injured",
+      "seed": 6153063,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 243,
+      "values": [
+        2,
+        6,
+        2,
+        5,
+        5,
+        1
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "3a4a9696bad5727c6b3840470c2be2dcfe2bd41aefd2fd31d4a0300639cbc230",
+      "currentStateSha256": "3a4a9696bad5727c6b3840470c2be2dcfe2bd41aefd2fd31d4a0300639cbc230"
+    },
+    {
+      "scenario": "surviving-injured",
+      "seed": 7911081,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 243,
+      "values": [
+        5,
+        6,
+        1,
+        5,
+        4,
+        4
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "729adb4969968769b024114b149170629cb6129497044aa4cceb392a58821112",
+      "currentStateSha256": "729adb4969968769b024114b149170629cb6129497044aa4cceb392a58821112"
+    },
+    {
+      "scenario": "surviving-injured",
+      "seed": 7919000,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 100,
+      "values": [
+        2,
+        2,
+        1,
+        4,
+        1,
+        3
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "dc8e0898f36b9f557307dc9e81c06d142dd434e8df63a4559ba13a9c6cdd4eab",
+      "currentStateSha256": "dc8e0898f36b9f557307dc9e81c06d142dd434e8df63a4559ba13a9c6cdd4eab"
+    },
+    {
+      "scenario": "surviving-injured",
+      "seed": 9922507,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 100,
+      "values": [
+        3,
+        3,
+        1,
+        3,
+        2,
+        5
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "6485424fda8b36b54194ef965dec3587e552dd5c2b0f8596e1d2de1a34339d60",
+      "currentStateSha256": "6485424fda8b36b54194ef965dec3587e552dd5c2b0f8596e1d2de1a34339d60"
+    },
+    {
+      "scenario": "surviving-injured",
+      "seed": 16218112,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 243,
+      "values": [
+        1,
+        2,
+        6,
+        3,
+        4,
+        6
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "2db6e3432092ed3af6254adb9d5c8733d3efaa5ac613b6935d77862a0f3c3452",
+      "currentStateSha256": "2db6e3432092ed3af6254adb9d5c8733d3efaa5ac613b6935d77862a0f3c3452"
+    },
+    {
+      "scenario": "surviving-injured",
+      "seed": 32428305,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 339,
+      "values": [
+        4,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "eff925454283af7a89b5b99de9564ea3940a3bd80ff84c879a89328d2dd4e273",
+      "currentStateSha256": "eff925454283af7a89b5b99de9564ea3940a3bd80ff84c879a89328d2dd4e273"
+    },
+    {
+      "scenario": "surviving-injured",
+      "seed": 64872448,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 242,
+      "values": [
+        2,
+        4,
+        3,
+        6,
+        5,
+        1
+      ],
+      "retaliation": 1,
+      "changes": [],
+      "baselineStateSha256": "f84b797b30f5a8762baa76cbebec511e58e01aa64a6d7dce617377fce145968b",
+      "currentStateSha256": "f84b797b30f5a8762baa76cbebec511e58e01aa64a6d7dce617377fce145968b"
+    },
+    {
+      "scenario": "fatal-primary-retaliation",
+      "seed": 7919,
+      "openingHp": 100,
+      "openingAttack": 1000000,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        3,
+        2,
+        4,
+        6,
+        3,
+        6
+      ],
+      "retaliation": 999229,
+      "changes": [
+        {
+          "path": "lastRoll.mechanics[0]",
+          "before": "六点回生 · 已触发",
+          "after": "六点回生 · 未生效（本掷未存活）"
+        }
+      ],
+      "baselineStateSha256": "4eaa439339622f4ce47c86b452cc220a1469f930e84d1146388243392f5301cf",
+      "currentStateSha256": "c64f487e8338c17988c1bc585040028fa29ec1a45a33fdfabaaa26e15e061caf"
+    },
+    {
+      "scenario": "fatal-primary-retaliation",
+      "seed": 63352,
+      "openingHp": 100,
+      "openingAttack": 1000000,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        5,
+        3,
+        2,
+        1,
+        2,
+        5
+      ],
+      "retaliation": 999229,
+      "changes": [],
+      "baselineStateSha256": "98edfe3b91b12e374a138430b77b9bb8762fde1252886e2b3000e4ad78aaa227",
+      "currentStateSha256": "98edfe3b91b12e374a138430b77b9bb8762fde1252886e2b3000e4ad78aaa227"
+    },
+    {
+      "scenario": "fatal-primary-retaliation",
+      "seed": 197975,
+      "openingHp": 100,
+      "openingAttack": 1000000,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        3,
+        3,
+        3,
+        6,
+        3,
+        3
+      ],
+      "retaliation": 999229,
+      "changes": [
+        {
+          "path": "lastRoll.mechanics[0]",
+          "before": "六点回生 · 已触发",
+          "after": "六点回生 · 未生效（本掷未存活）"
+        },
+        {
+          "path": "lastRoll.mechanics[1]",
+          "before": "合鸣归息 · 已触发",
+          "after": "合鸣归息 · 未生效（本掷未存活）"
+        }
+      ],
+      "baselineStateSha256": "3f4bc7ca3c907687bdd41f2757c02b68a68cdb9f61b776a4ecd6a7e68003ace1",
+      "currentStateSha256": "df96853d0e4e4eed228c772c478f0f1f8444c2809f9d480fad23f06f518aa622"
+    },
+    {
+      "scenario": "fatal-primary-retaliation",
+      "seed": 506816,
+      "openingHp": 100,
+      "openingAttack": 1000000,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        1,
+        5,
+        1,
+        1,
+        2,
+        1
+      ],
+      "retaliation": 999229,
+      "changes": [
+        {
+          "path": "lastRoll.mechanics[0]",
+          "before": "合鸣归息 · 已触发",
+          "after": "合鸣归息 · 未生效（本掷未存活）"
+        }
+      ],
+      "baselineStateSha256": "c6f37c915a42bed1d0728f995be78d9b94cebb6cd48b9abaf573d151033276fb",
+      "currentStateSha256": "f64b8ebac8b4e7b051299b69453576e229375fc0ee74892e1e4d5ef89eeb5eab"
+    },
+    {
+      "scenario": "fatal-primary-retaliation",
+      "seed": 657277,
+      "openingHp": 100,
+      "openingAttack": 1000000,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        3,
+        6,
+        4,
+        5,
+        2,
+        4
+      ],
+      "retaliation": 999229,
+      "changes": [
+        {
+          "path": "lastRoll.mechanics[0]",
+          "before": "六点回生 · 已触发",
+          "after": "六点回生 · 未生效（本掷未存活）"
+        }
+      ],
+      "baselineStateSha256": "56526ef9aef4aca22497217ea68c62958715db39ddb32de9f57f6a0546dff8a8",
+      "currentStateSha256": "5fa9d5f43f19941ff635a4a8bdec2b253af618f2439a2b307ac89e862b446dc4"
+    },
+    {
+      "scenario": "fatal-primary-retaliation",
+      "seed": 791900,
+      "openingHp": 100,
+      "openingAttack": 1000000,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        6,
+        6,
+        1,
+        1,
+        5,
+        5
+      ],
+      "retaliation": 999229,
+      "changes": [
+        {
+          "path": "lastRoll.mechanics[0]",
+          "before": "六点回生 · 已触发",
+          "after": "六点回生 · 未生效（本掷未存活）"
+        }
+      ],
+      "baselineStateSha256": "b49d1f090f5ca7da898f532e9c5f78809f51fac71a35c14d95ff2f3dfa7e511f",
+      "currentStateSha256": "427c442dcd435e9307339044c4c5c851809977577183c24c9441a8588271db8b"
+    },
+    {
+      "scenario": "fatal-primary-retaliation",
+      "seed": 1528367,
+      "openingHp": 100,
+      "openingAttack": 1000000,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        4,
+        3,
+        4,
+        2,
+        3,
+        6
+      ],
+      "retaliation": 999229,
+      "changes": [
+        {
+          "path": "lastRoll.mechanics[0]",
+          "before": "六点回生 · 已触发",
+          "after": "六点回生 · 未生效（本掷未存活）"
+        }
+      ],
+      "baselineStateSha256": "91af5ef663fa4da011fb07d3429a03fc8291c9e4929a97c3147136cec7f0d1a8",
+      "currentStateSha256": "f9c99790f4cef8d82571cfa427840b33f367bc61d0dadcf528bd16be3f3fb25b"
+    },
+    {
+      "scenario": "fatal-primary-retaliation",
+      "seed": 2027264,
+      "openingHp": 100,
+      "openingAttack": 1000000,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        3,
+        1,
+        6,
+        5,
+        1,
+        2
+      ],
+      "retaliation": 999229,
+      "changes": [
+        {
+          "path": "lastRoll.mechanics[0]",
+          "before": "六点回生 · 已触发",
+          "after": "六点回生 · 未生效（本掷未存活）"
+        }
+      ],
+      "baselineStateSha256": "463c458d571b28d6bd0ee16b6eb77482b1dc4cbd7882cb245bb11d045f19d1af",
+      "currentStateSha256": "b32dddb2c06b7a82b99ac8a4d6f573142ff2f45440921327e62519f4235cda67"
+    },
+    {
+      "scenario": "fatal-primary-retaliation",
+      "seed": 3967419,
+      "openingHp": 100,
+      "openingAttack": 1000000,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        5,
+        2,
+        4,
+        6,
+        1,
+        3
+      ],
+      "retaliation": 999469,
+      "changes": [
+        {
+          "path": "lastRoll.mechanics[0]",
+          "before": "六点回生 · 已触发",
+          "after": "六点回生 · 未生效（本掷未存活）"
+        }
+      ],
+      "baselineStateSha256": "8db198eca63a64d967df5c5038a54e314fac35def787b9ef4480f0ae8fed9d47",
+      "currentStateSha256": "bb5d12c783fea33bcc931deb20fbc0c239b1a0a48654c9200457019a22f3f168"
+    },
+    {
+      "scenario": "fatal-primary-retaliation",
+      "seed": 6153063,
+      "openingHp": 100,
+      "openingAttack": 1000000,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        2,
+        6,
+        2,
+        5,
+        5,
+        1
+      ],
+      "retaliation": 999229,
+      "changes": [
+        {
+          "path": "lastRoll.mechanics[0]",
+          "before": "六点回生 · 已触发",
+          "after": "六点回生 · 未生效（本掷未存活）"
+        }
+      ],
+      "baselineStateSha256": "55230650a6c5012598a49605b0988804cb23d5ecb5cc70e67372a009cdbeda1f",
+      "currentStateSha256": "0af543ef7488f77858f511db8b9cc16f0bb9f1fcf200128675e84cd466dc5b66"
+    },
+    {
+      "scenario": "fatal-primary-retaliation",
+      "seed": 7911081,
+      "openingHp": 100,
+      "openingAttack": 1000000,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        5,
+        6,
+        1,
+        5,
+        4,
+        4
+      ],
+      "retaliation": 999229,
+      "changes": [
+        {
+          "path": "lastRoll.mechanics[0]",
+          "before": "六点回生 · 已触发",
+          "after": "六点回生 · 未生效（本掷未存活）"
+        }
+      ],
+      "baselineStateSha256": "21a6195625e533355d423aed6fb1b9debfcd85ceb2cf7b3e6f346ffb5a09a563",
+      "currentStateSha256": "1b1bd60e11d2008670d21b692537b48eb5ea4f549f2e8f21caa999dbb9b318c1"
+    },
+    {
+      "scenario": "fatal-primary-retaliation",
+      "seed": 7919000,
+      "openingHp": 100,
+      "openingAttack": 1000000,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        2,
+        2,
+        1,
+        4,
+        1,
+        3
+      ],
+      "retaliation": 999229,
+      "changes": [],
+      "baselineStateSha256": "1235c0ee2c1817d1688a0321b200a7a29dd47a6a37c5e1aca97b9863a675de03",
+      "currentStateSha256": "1235c0ee2c1817d1688a0321b200a7a29dd47a6a37c5e1aca97b9863a675de03"
+    },
+    {
+      "scenario": "fatal-primary-retaliation",
+      "seed": 9922507,
+      "openingHp": 100,
+      "openingAttack": 1000000,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        3,
+        3,
+        1,
+        3,
+        2,
+        5
+      ],
+      "retaliation": 999229,
+      "changes": [],
+      "baselineStateSha256": "9f7c858bcc6a31d249444193db0d97d20d7baf120e06288c63edb5cbd212a973",
+      "currentStateSha256": "9f7c858bcc6a31d249444193db0d97d20d7baf120e06288c63edb5cbd212a973"
+    },
+    {
+      "scenario": "fatal-primary-retaliation",
+      "seed": 16218112,
+      "openingHp": 100,
+      "openingAttack": 1000000,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        1,
+        2,
+        6,
+        3,
+        4,
+        6
+      ],
+      "retaliation": 999229,
+      "changes": [
+        {
+          "path": "lastRoll.mechanics[0]",
+          "before": "六点回生 · 已触发",
+          "after": "六点回生 · 未生效（本掷未存活）"
+        }
+      ],
+      "baselineStateSha256": "c347042d5c86619160f1cd8051aaa3afda0659f0050f7c9033bf9f7ffc4b2f9b",
+      "currentStateSha256": "d923aee5cc5493f795149cef7f58d9e90b08d1c7d005fffffa492ea7220cbeaf"
+    },
+    {
+      "scenario": "fatal-primary-retaliation",
+      "seed": 32428305,
+      "openingHp": 100,
+      "openingAttack": 1000000,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        4,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "retaliation": 999229,
+      "changes": [
+        {
+          "path": "lastRoll.mechanics[0]",
+          "before": "合鸣归息 · 已触发",
+          "after": "合鸣归息 · 未生效（本掷未存活）"
+        }
+      ],
+      "baselineStateSha256": "79622c4f942c91368bc564b7515e04610e0dc471fa8f32aa588c549cb7028fbb",
+      "currentStateSha256": "502b63b6a9268976d5f43622a1d681a9fc47a9ddb8222fc8759fce7aa32a9811"
+    },
+    {
+      "scenario": "fatal-primary-retaliation",
+      "seed": 64872448,
+      "openingHp": 100,
+      "openingAttack": 1000000,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        2,
+        4,
+        3,
+        6,
+        5,
+        1
+      ],
+      "retaliation": 999469,
+      "changes": [
+        {
+          "path": "lastRoll.mechanics[0]",
+          "before": "六点回生 · 已触发",
+          "after": "六点回生 · 未生效（本掷未存活）"
+        }
+      ],
+      "baselineStateSha256": "e930c242dcfed3c63b0c5d0ba5e2e0edf1bed8894cce3b56d606b09d0a4a5cdd",
+      "currentStateSha256": "ae956f8acf0d0aeb11c6356ddcd79e1dba651aa44267eb8776e01c66c449caf2"
+    },
+    {
+      "scenario": "exact-lethal-primary",
+      "seed": 7919,
+      "openingHp": 100,
+      "openingAttack": 871,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        3,
+        2,
+        4,
+        6,
+        3,
+        6
+      ],
+      "retaliation": 100,
+      "changes": [
+        {
+          "path": "lastRoll.mechanics[0]",
+          "before": "六点回生 · 已触发",
+          "after": "六点回生 · 未生效（本掷未存活）"
+        }
+      ],
+      "baselineStateSha256": "c4eb9d919ad65e770b4e7af3fc89996de358d7cfdb714e384102e3cc2b475f60",
+      "currentStateSha256": "55d9446175e2876108c665845a099d6aa2cbf8b58a4ef5ef4d5b413546ee9b80"
+    },
+    {
+      "scenario": "exact-lethal-primary",
+      "seed": 63352,
+      "openingHp": 100,
+      "openingAttack": 871,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        5,
+        3,
+        2,
+        1,
+        2,
+        5
+      ],
+      "retaliation": 100,
+      "changes": [],
+      "baselineStateSha256": "8863f4c14deeb71b3e0833dc7b783ab7ab47f5987f6295fecf161f3d08612b05",
+      "currentStateSha256": "8863f4c14deeb71b3e0833dc7b783ab7ab47f5987f6295fecf161f3d08612b05"
+    },
+    {
+      "scenario": "exact-lethal-primary",
+      "seed": 197975,
+      "openingHp": 100,
+      "openingAttack": 871,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        3,
+        3,
+        3,
+        6,
+        3,
+        3
+      ],
+      "retaliation": 100,
+      "changes": [
+        {
+          "path": "lastRoll.mechanics[0]",
+          "before": "六点回生 · 已触发",
+          "after": "六点回生 · 未生效（本掷未存活）"
+        },
+        {
+          "path": "lastRoll.mechanics[1]",
+          "before": "合鸣归息 · 已触发",
+          "after": "合鸣归息 · 未生效（本掷未存活）"
+        }
+      ],
+      "baselineStateSha256": "f10fe33677cbe7772dddfccf636a15d9f4eb3438027ed46ad9ca45a7fa801d76",
+      "currentStateSha256": "987823b10a283d569a67813608a6623a3869d5722c024481532c1d74f9d5c6a3"
+    },
+    {
+      "scenario": "exact-lethal-primary",
+      "seed": 506816,
+      "openingHp": 100,
+      "openingAttack": 871,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        1,
+        5,
+        1,
+        1,
+        2,
+        1
+      ],
+      "retaliation": 100,
+      "changes": [
+        {
+          "path": "lastRoll.mechanics[0]",
+          "before": "合鸣归息 · 已触发",
+          "after": "合鸣归息 · 未生效（本掷未存活）"
+        }
+      ],
+      "baselineStateSha256": "f4408497d514a6685a079143a69a1baaa3120c12ca355e7bd03cb17ba122770b",
+      "currentStateSha256": "cf562111ca64781d975bffa2f40c1ef3c19f65a97277660e1db0ebbd32b37895"
+    },
+    {
+      "scenario": "exact-lethal-primary",
+      "seed": 657277,
+      "openingHp": 100,
+      "openingAttack": 871,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        3,
+        6,
+        4,
+        5,
+        2,
+        4
+      ],
+      "retaliation": 100,
+      "changes": [
+        {
+          "path": "lastRoll.mechanics[0]",
+          "before": "六点回生 · 已触发",
+          "after": "六点回生 · 未生效（本掷未存活）"
+        }
+      ],
+      "baselineStateSha256": "e05cad432d52109f41c1245bf05f10f7ee61dddc09044d85524f51e9dcfa060f",
+      "currentStateSha256": "1e0364b8814f63ccc6bc15a11dea40607e8b85573905bafcfd2c1d67681f46e4"
+    },
+    {
+      "scenario": "exact-lethal-primary",
+      "seed": 791900,
+      "openingHp": 100,
+      "openingAttack": 871,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        6,
+        6,
+        1,
+        1,
+        5,
+        5
+      ],
+      "retaliation": 100,
+      "changes": [
+        {
+          "path": "lastRoll.mechanics[0]",
+          "before": "六点回生 · 已触发",
+          "after": "六点回生 · 未生效（本掷未存活）"
+        }
+      ],
+      "baselineStateSha256": "4933a8134f8e1c07084f9b79a2b3806389dcad01a1bb8d15fa4d98de46f978c0",
+      "currentStateSha256": "d0f414337948438167ae1d71bd909af9c86d314c5c8f5f97a47f63b6cea682a3"
+    },
+    {
+      "scenario": "exact-lethal-primary",
+      "seed": 1528367,
+      "openingHp": 100,
+      "openingAttack": 871,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        4,
+        3,
+        4,
+        2,
+        3,
+        6
+      ],
+      "retaliation": 100,
+      "changes": [
+        {
+          "path": "lastRoll.mechanics[0]",
+          "before": "六点回生 · 已触发",
+          "after": "六点回生 · 未生效（本掷未存活）"
+        }
+      ],
+      "baselineStateSha256": "3eb481fc5602dcce064ffa4d6d01fa7358f4a285401b7ffb828ad638b430d425",
+      "currentStateSha256": "e2e438d7ccec9a9a23a3dd8f431e09eee21adfbe31c9d144f0df2cc6b9a385a3"
+    },
+    {
+      "scenario": "exact-lethal-primary",
+      "seed": 2027264,
+      "openingHp": 100,
+      "openingAttack": 871,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        3,
+        1,
+        6,
+        5,
+        1,
+        2
+      ],
+      "retaliation": 100,
+      "changes": [
+        {
+          "path": "lastRoll.mechanics[0]",
+          "before": "六点回生 · 已触发",
+          "after": "六点回生 · 未生效（本掷未存活）"
+        }
+      ],
+      "baselineStateSha256": "bdd788e4eefbb8c755c7d4d9c82f67e9a5abbd61df5b9d480c82167bfd8f6f55",
+      "currentStateSha256": "79657e2c37a1f2d8c96de956370d276271477c144f577fb3302b12a12a1136e4"
+    },
+    {
+      "scenario": "exact-lethal-primary",
+      "seed": 3967419,
+      "openingHp": 100,
+      "openingAttack": 871,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        5,
+        2,
+        4,
+        6,
+        1,
+        3
+      ],
+      "retaliation": 340,
+      "changes": [
+        {
+          "path": "lastRoll.mechanics[0]",
+          "before": "六点回生 · 已触发",
+          "after": "六点回生 · 未生效（本掷未存活）"
+        }
+      ],
+      "baselineStateSha256": "093fdd4151e3fd39f56b2e9045c52bbd26668a88baf745eb73efb80cd53762e1",
+      "currentStateSha256": "359d3fadb06f1bb7daffdd5578246f9b0cd9f11fe3c43fbb72adb9b05c03c634"
+    },
+    {
+      "scenario": "exact-lethal-primary",
+      "seed": 6153063,
+      "openingHp": 100,
+      "openingAttack": 871,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        2,
+        6,
+        2,
+        5,
+        5,
+        1
+      ],
+      "retaliation": 100,
+      "changes": [
+        {
+          "path": "lastRoll.mechanics[0]",
+          "before": "六点回生 · 已触发",
+          "after": "六点回生 · 未生效（本掷未存活）"
+        }
+      ],
+      "baselineStateSha256": "a035f42e616130811e39ca5c5c77527d8c69d42f262a6210b4e8d734fb8edb50",
+      "currentStateSha256": "5c02e902c65893f6191b1e00a62a62d7a2c81cc91811dc59b0c7798b827cac2b"
+    },
+    {
+      "scenario": "exact-lethal-primary",
+      "seed": 7911081,
+      "openingHp": 100,
+      "openingAttack": 871,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        5,
+        6,
+        1,
+        5,
+        4,
+        4
+      ],
+      "retaliation": 100,
+      "changes": [
+        {
+          "path": "lastRoll.mechanics[0]",
+          "before": "六点回生 · 已触发",
+          "after": "六点回生 · 未生效（本掷未存活）"
+        }
+      ],
+      "baselineStateSha256": "153a19b112547f4b8ef209117b3c402b559dd19e02f6d1f00f6f79f8287fa8d9",
+      "currentStateSha256": "8d15f784085e5afbe5442c695eb9e16466388a2a8da719bd818f60fb50f4f597"
+    },
+    {
+      "scenario": "exact-lethal-primary",
+      "seed": 7919000,
+      "openingHp": 100,
+      "openingAttack": 871,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        2,
+        2,
+        1,
+        4,
+        1,
+        3
+      ],
+      "retaliation": 100,
+      "changes": [],
+      "baselineStateSha256": "b59621c282b1c7d4c9d4dde8df5963b6035a3b7a9f771d3ea96f52422ac7f032",
+      "currentStateSha256": "b59621c282b1c7d4c9d4dde8df5963b6035a3b7a9f771d3ea96f52422ac7f032"
+    },
+    {
+      "scenario": "exact-lethal-primary",
+      "seed": 9922507,
+      "openingHp": 100,
+      "openingAttack": 871,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        3,
+        3,
+        1,
+        3,
+        2,
+        5
+      ],
+      "retaliation": 100,
+      "changes": [],
+      "baselineStateSha256": "81cb90109b10b1c799ababbf602669138fd29232c3401df574af5e89b5d0d728",
+      "currentStateSha256": "81cb90109b10b1c799ababbf602669138fd29232c3401df574af5e89b5d0d728"
+    },
+    {
+      "scenario": "exact-lethal-primary",
+      "seed": 16218112,
+      "openingHp": 100,
+      "openingAttack": 871,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        1,
+        2,
+        6,
+        3,
+        4,
+        6
+      ],
+      "retaliation": 100,
+      "changes": [
+        {
+          "path": "lastRoll.mechanics[0]",
+          "before": "六点回生 · 已触发",
+          "after": "六点回生 · 未生效（本掷未存活）"
+        }
+      ],
+      "baselineStateSha256": "62edca5c78e571987b4056404e1264cc38ae23fdf62cd08eca950921dc473c80",
+      "currentStateSha256": "db5834ed981079a602392f183c4a91528069a4047da745c64a152454fad70065"
+    },
+    {
+      "scenario": "exact-lethal-primary",
+      "seed": 32428305,
+      "openingHp": 100,
+      "openingAttack": 871,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        4,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "retaliation": 100,
+      "changes": [
+        {
+          "path": "lastRoll.mechanics[0]",
+          "before": "合鸣归息 · 已触发",
+          "after": "合鸣归息 · 未生效（本掷未存活）"
+        }
+      ],
+      "baselineStateSha256": "54c0fa8ed6fc35d03886ed5442441bc3e97b42bd7243e1abea922bbf79a9354f",
+      "currentStateSha256": "da1b56dbd2bf00cb38388fb160c1d163dfd70dc8239d784cedf92e4aabc7f6cd"
+    },
+    {
+      "scenario": "exact-lethal-primary",
+      "seed": 64872448,
+      "openingHp": 100,
+      "openingAttack": 871,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        2,
+        4,
+        3,
+        6,
+        5,
+        1
+      ],
+      "retaliation": 340,
+      "changes": [
+        {
+          "path": "lastRoll.mechanics[0]",
+          "before": "六点回生 · 已触发",
+          "after": "六点回生 · 未生效（本掷未存活）"
+        }
+      ],
+      "baselineStateSha256": "21d1a62bf3fa2b31d3d9734ed39c000407ca3d8c22a0e9f4fd0b924c62f26f1c",
+      "currentStateSha256": "ee1c2970f2969f610aad2a9163fc9040d7666ad78c56fa6947d5600212fedf46"
+    },
+    {
+      "scenario": "one-hp-before-recovery",
+      "seed": 7919,
+      "openingHp": 100,
+      "openingAttack": 870,
+      "phase": "combat",
+      "hp": 144,
+      "values": [
+        3,
+        2,
+        4,
+        6,
+        3,
+        6
+      ],
+      "retaliation": 99,
+      "changes": [],
+      "baselineStateSha256": "4cb816112ab61c1b2c517487e128c7a77163755128bdcda9063cd1f22a6ddf8e",
+      "currentStateSha256": "4cb816112ab61c1b2c517487e128c7a77163755128bdcda9063cd1f22a6ddf8e"
+    },
+    {
+      "scenario": "one-hp-before-recovery",
+      "seed": 63352,
+      "openingHp": 100,
+      "openingAttack": 870,
+      "phase": "combat",
+      "hp": 1,
+      "values": [
+        5,
+        3,
+        2,
+        1,
+        2,
+        5
+      ],
+      "retaliation": 99,
+      "changes": [],
+      "baselineStateSha256": "95c8dd33d62578ea2aa2435f662e1346913719ee735930f134644344c5decfd3",
+      "currentStateSha256": "95c8dd33d62578ea2aa2435f662e1346913719ee735930f134644344c5decfd3"
+    },
+    {
+      "scenario": "one-hp-before-recovery",
+      "seed": 197975,
+      "openingHp": 100,
+      "openingAttack": 870,
+      "phase": "combat",
+      "hp": 384,
+      "values": [
+        3,
+        3,
+        3,
+        6,
+        3,
+        3
+      ],
+      "retaliation": 99,
+      "changes": [],
+      "baselineStateSha256": "a6ff62ce6062850b86b684c4cd34584c67f0f5307c3ded499f40235f26b64c78",
+      "currentStateSha256": "a6ff62ce6062850b86b684c4cd34584c67f0f5307c3ded499f40235f26b64c78"
+    },
+    {
+      "scenario": "one-hp-before-recovery",
+      "seed": 506816,
+      "openingHp": 100,
+      "openingAttack": 870,
+      "phase": "combat",
+      "hp": 240,
+      "values": [
+        1,
+        5,
+        1,
+        1,
+        2,
+        1
+      ],
+      "retaliation": 99,
+      "changes": [],
+      "baselineStateSha256": "3eba5c38785ca8d464a86ad6f16f270a1d4daf069c8de04d6fde820360ca8076",
+      "currentStateSha256": "3eba5c38785ca8d464a86ad6f16f270a1d4daf069c8de04d6fde820360ca8076"
+    },
+    {
+      "scenario": "one-hp-before-recovery",
+      "seed": 657277,
+      "openingHp": 100,
+      "openingAttack": 870,
+      "phase": "combat",
+      "hp": 144,
+      "values": [
+        3,
+        6,
+        4,
+        5,
+        2,
+        4
+      ],
+      "retaliation": 99,
+      "changes": [],
+      "baselineStateSha256": "c1e3b5595061cc9f2cb8f93a29be15bcbac1cc40130358bf1881f2749983213f",
+      "currentStateSha256": "c1e3b5595061cc9f2cb8f93a29be15bcbac1cc40130358bf1881f2749983213f"
+    },
+    {
+      "scenario": "one-hp-before-recovery",
+      "seed": 791900,
+      "openingHp": 100,
+      "openingAttack": 870,
+      "phase": "combat",
+      "hp": 144,
+      "values": [
+        6,
+        6,
+        1,
+        1,
+        5,
+        5
+      ],
+      "retaliation": 99,
+      "changes": [],
+      "baselineStateSha256": "97b137a6101555135c97b5bd87a2dbde71d329a772459706388e5c346e4f1c6d",
+      "currentStateSha256": "97b137a6101555135c97b5bd87a2dbde71d329a772459706388e5c346e4f1c6d"
+    },
+    {
+      "scenario": "one-hp-before-recovery",
+      "seed": 1528367,
+      "openingHp": 100,
+      "openingAttack": 870,
+      "phase": "combat",
+      "hp": 144,
+      "values": [
+        4,
+        3,
+        4,
+        2,
+        3,
+        6
+      ],
+      "retaliation": 99,
+      "changes": [],
+      "baselineStateSha256": "6f147dcba270cfc13ddfe57bdd0cfb84e0718458b45467dfaedf6acebb238544",
+      "currentStateSha256": "6f147dcba270cfc13ddfe57bdd0cfb84e0718458b45467dfaedf6acebb238544"
+    },
+    {
+      "scenario": "one-hp-before-recovery",
+      "seed": 2027264,
+      "openingHp": 100,
+      "openingAttack": 870,
+      "phase": "combat",
+      "hp": 144,
+      "values": [
+        3,
+        1,
+        6,
+        5,
+        1,
+        2
+      ],
+      "retaliation": 99,
+      "changes": [],
+      "baselineStateSha256": "e3e4b6b5f0b6037924ddb403178dff3320b08bfd1f6107f12497dc2efbee9114",
+      "currentStateSha256": "e3e4b6b5f0b6037924ddb403178dff3320b08bfd1f6107f12497dc2efbee9114"
+    },
+    {
+      "scenario": "one-hp-before-recovery",
+      "seed": 3967419,
+      "openingHp": 100,
+      "openingAttack": 870,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        5,
+        2,
+        4,
+        6,
+        1,
+        3
+      ],
+      "retaliation": 339,
+      "changes": [
+        {
+          "path": "lastRoll.mechanics[0]",
+          "before": "六点回生 · 已触发",
+          "after": "六点回生 · 未生效（本掷未存活）"
+        }
+      ],
+      "baselineStateSha256": "a7e3bdb726feb5a9419067e988f3e15bc575caf0a7500c5a0c9aefb448a53d53",
+      "currentStateSha256": "2f654712ba8d352e1de5e1fda8c7e5525baa173152a274fc6ee4e5772a2b1e57"
+    },
+    {
+      "scenario": "one-hp-before-recovery",
+      "seed": 6153063,
+      "openingHp": 100,
+      "openingAttack": 870,
+      "phase": "combat",
+      "hp": 144,
+      "values": [
+        2,
+        6,
+        2,
+        5,
+        5,
+        1
+      ],
+      "retaliation": 99,
+      "changes": [],
+      "baselineStateSha256": "7ad31b5068af6b989dede299956f622a638de7d1dec5f33938f3fd176e23391f",
+      "currentStateSha256": "7ad31b5068af6b989dede299956f622a638de7d1dec5f33938f3fd176e23391f"
+    },
+    {
+      "scenario": "one-hp-before-recovery",
+      "seed": 7911081,
+      "openingHp": 100,
+      "openingAttack": 870,
+      "phase": "combat",
+      "hp": 144,
+      "values": [
+        5,
+        6,
+        1,
+        5,
+        4,
+        4
+      ],
+      "retaliation": 99,
+      "changes": [],
+      "baselineStateSha256": "f3a548e8cb1a4759e581d2a6d690cf72883eb80fb42cdf78e1692e1b37b4a64f",
+      "currentStateSha256": "f3a548e8cb1a4759e581d2a6d690cf72883eb80fb42cdf78e1692e1b37b4a64f"
+    },
+    {
+      "scenario": "one-hp-before-recovery",
+      "seed": 7919000,
+      "openingHp": 100,
+      "openingAttack": 870,
+      "phase": "combat",
+      "hp": 1,
+      "values": [
+        2,
+        2,
+        1,
+        4,
+        1,
+        3
+      ],
+      "retaliation": 99,
+      "changes": [],
+      "baselineStateSha256": "27d0b4bc0ac200f804ddaa4ad0567a3f1cd1b3a3558c2b1bbc922252d7f83020",
+      "currentStateSha256": "27d0b4bc0ac200f804ddaa4ad0567a3f1cd1b3a3558c2b1bbc922252d7f83020"
+    },
+    {
+      "scenario": "one-hp-before-recovery",
+      "seed": 9922507,
+      "openingHp": 100,
+      "openingAttack": 870,
+      "phase": "combat",
+      "hp": 1,
+      "values": [
+        3,
+        3,
+        1,
+        3,
+        2,
+        5
+      ],
+      "retaliation": 99,
+      "changes": [],
+      "baselineStateSha256": "44c9d13014e67b9876a2c5c0fb90dda9ec77057237b192b38311f70eb8fdf6ba",
+      "currentStateSha256": "44c9d13014e67b9876a2c5c0fb90dda9ec77057237b192b38311f70eb8fdf6ba"
+    },
+    {
+      "scenario": "one-hp-before-recovery",
+      "seed": 16218112,
+      "openingHp": 100,
+      "openingAttack": 870,
+      "phase": "combat",
+      "hp": 144,
+      "values": [
+        1,
+        2,
+        6,
+        3,
+        4,
+        6
+      ],
+      "retaliation": 99,
+      "changes": [],
+      "baselineStateSha256": "befae9518ebad8edf4e062b7bf3448643c89f4ac41f00ed397009ffd2bc9d232",
+      "currentStateSha256": "befae9518ebad8edf4e062b7bf3448643c89f4ac41f00ed397009ffd2bc9d232"
+    },
+    {
+      "scenario": "one-hp-before-recovery",
+      "seed": 32428305,
+      "openingHp": 100,
+      "openingAttack": 870,
+      "phase": "combat",
+      "hp": 240,
+      "values": [
+        4,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "retaliation": 99,
+      "changes": [],
+      "baselineStateSha256": "b07288751b8fbde9b9588ef6fe1bbbe5952f1bbb1536edcd41062c1fde6a7cb4",
+      "currentStateSha256": "b07288751b8fbde9b9588ef6fe1bbbe5952f1bbb1536edcd41062c1fde6a7cb4"
+    },
+    {
+      "scenario": "one-hp-before-recovery",
+      "seed": 64872448,
+      "openingHp": 100,
+      "openingAttack": 870,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        2,
+        4,
+        3,
+        6,
+        5,
+        1
+      ],
+      "retaliation": 339,
+      "changes": [
+        {
+          "path": "lastRoll.mechanics[0]",
+          "before": "六点回生 · 已触发",
+          "after": "六点回生 · 未生效（本掷未存活）"
+        }
+      ],
+      "baselineStateSha256": "b4b36b97a4dd9e38c7e22cd6484ba9d74b4888f30670edbfe4ac658986b8abc2",
+      "currentStateSha256": "e9c38290a40d7ecfdf1627402d3542f002eac574ebfc6ec05db6ff21f2c39037"
+    },
+    {
+      "scenario": "fatal-curse-variant-zero",
+      "seed": 7919,
+      "openingHp": 90,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 233,
+      "values": [
+        3,
+        2,
+        4,
+        6,
+        3,
+        6
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "a79c60567aa8c9bd52655aee6fcc1ac0a2e0e1e9885508f718b781c16a5f1475",
+      "currentStateSha256": "a79c60567aa8c9bd52655aee6fcc1ac0a2e0e1e9885508f718b781c16a5f1475"
+    },
+    {
+      "scenario": "fatal-curse-variant-zero",
+      "seed": 63352,
+      "openingHp": 90,
+      "openingAttack": 1,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        5,
+        3,
+        2,
+        1,
+        2,
+        5
+      ],
+      "retaliation": 90,
+      "changes": [],
+      "baselineStateSha256": "ede8a58f8949ae54482214f7bda6d072c544bd99a716520ef4a641b35cefa140",
+      "currentStateSha256": "ede8a58f8949ae54482214f7bda6d072c544bd99a716520ef4a641b35cefa140"
+    },
+    {
+      "scenario": "fatal-curse-variant-zero",
+      "seed": 197975,
+      "openingHp": 90,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 473,
+      "values": [
+        3,
+        3,
+        3,
+        6,
+        3,
+        3
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "d53e27a66460574d48b7c3c62b3215db891e75f64b79563c369c9651f766daea",
+      "currentStateSha256": "d53e27a66460574d48b7c3c62b3215db891e75f64b79563c369c9651f766daea"
+    },
+    {
+      "scenario": "fatal-curse-variant-zero",
+      "seed": 506816,
+      "openingHp": 90,
+      "openingAttack": 1,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        1,
+        5,
+        1,
+        1,
+        2,
+        1
+      ],
+      "retaliation": 90,
+      "changes": [
+        {
+          "path": "lastRoll.mechanics[0]",
+          "before": "合鸣归息 · 已触发",
+          "after": "合鸣归息 · 未生效（本掷未存活）"
+        }
+      ],
+      "baselineStateSha256": "a50cb3b45eb3b6061f4a29faae817cf7c1f94a41f8f144b336b4ed3354217d52",
+      "currentStateSha256": "4b8708167b4d4a57e085ec5354cd0b1add4d2f282822adb981bf25588177180e"
+    },
+    {
+      "scenario": "fatal-curse-variant-zero",
+      "seed": 657277,
+      "openingHp": 90,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 233,
+      "values": [
+        3,
+        6,
+        4,
+        5,
+        2,
+        4
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "3bc0368aace49121911e585e8fe6685dadf02a8eb076941b5c5be0c17ade3a54",
+      "currentStateSha256": "3bc0368aace49121911e585e8fe6685dadf02a8eb076941b5c5be0c17ade3a54"
+    },
+    {
+      "scenario": "fatal-curse-variant-zero",
+      "seed": 791900,
+      "openingHp": 90,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 233,
+      "values": [
+        6,
+        6,
+        1,
+        1,
+        5,
+        5
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "8dcfc0e1984ff76607475334cce144b673764d4cc08546dd7e45e6d6ba5ad26f",
+      "currentStateSha256": "8dcfc0e1984ff76607475334cce144b673764d4cc08546dd7e45e6d6ba5ad26f"
+    },
+    {
+      "scenario": "fatal-curse-variant-zero",
+      "seed": 1528367,
+      "openingHp": 90,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 233,
+      "values": [
+        4,
+        3,
+        4,
+        2,
+        3,
+        6
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "dbd9c6a4549aa18b86c6eeeab9626453a7d2f50c7be96fcc1b56022dec92f222",
+      "currentStateSha256": "dbd9c6a4549aa18b86c6eeeab9626453a7d2f50c7be96fcc1b56022dec92f222"
+    },
+    {
+      "scenario": "fatal-curse-variant-zero",
+      "seed": 2027264,
+      "openingHp": 90,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 233,
+      "values": [
+        3,
+        1,
+        6,
+        5,
+        1,
+        2
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "2d0201ad3751e2b4c2d36b20964b0324bc22b7cbc8aaaaf86866d4a836e631fe",
+      "currentStateSha256": "2d0201ad3751e2b4c2d36b20964b0324bc22b7cbc8aaaaf86866d4a836e631fe"
+    },
+    {
+      "scenario": "fatal-curse-variant-zero",
+      "seed": 3967419,
+      "openingHp": 90,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 232,
+      "values": [
+        5,
+        2,
+        4,
+        6,
+        1,
+        3
+      ],
+      "retaliation": 1,
+      "changes": [],
+      "baselineStateSha256": "957b9e85ab774a1006872cf11249b4a22026f6142b433942d8a0111cc449aae0",
+      "currentStateSha256": "957b9e85ab774a1006872cf11249b4a22026f6142b433942d8a0111cc449aae0"
+    },
+    {
+      "scenario": "fatal-curse-variant-zero",
+      "seed": 6153063,
+      "openingHp": 90,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 233,
+      "values": [
+        2,
+        6,
+        2,
+        5,
+        5,
+        1
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "e843f48bf60501345108de8dc8cf7c9122d805b4a3be25464bdff3d2f2385fd7",
+      "currentStateSha256": "e843f48bf60501345108de8dc8cf7c9122d805b4a3be25464bdff3d2f2385fd7"
+    },
+    {
+      "scenario": "fatal-curse-variant-zero",
+      "seed": 7911081,
+      "openingHp": 90,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 233,
+      "values": [
+        5,
+        6,
+        1,
+        5,
+        4,
+        4
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "c20c0d3483940856dea0e221e5128bbc3a6fcdde4b9e2947b33a6112f2af40e6",
+      "currentStateSha256": "c20c0d3483940856dea0e221e5128bbc3a6fcdde4b9e2947b33a6112f2af40e6"
+    },
+    {
+      "scenario": "fatal-curse-variant-zero",
+      "seed": 7919000,
+      "openingHp": 90,
+      "openingAttack": 1,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        2,
+        2,
+        1,
+        4,
+        1,
+        3
+      ],
+      "retaliation": 90,
+      "changes": [],
+      "baselineStateSha256": "c6a18c672b47418bb223fb92d39e0c962e3bf3a1ba4ba958b6a0cff0b796a129",
+      "currentStateSha256": "c6a18c672b47418bb223fb92d39e0c962e3bf3a1ba4ba958b6a0cff0b796a129"
+    },
+    {
+      "scenario": "fatal-curse-variant-zero",
+      "seed": 9922507,
+      "openingHp": 90,
+      "openingAttack": 1,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        3,
+        3,
+        1,
+        3,
+        2,
+        5
+      ],
+      "retaliation": 90,
+      "changes": [],
+      "baselineStateSha256": "83c563d1d615bf9ffa4a454bed7a6b60edd4912ff17284b5e9cc095db6112fde",
+      "currentStateSha256": "83c563d1d615bf9ffa4a454bed7a6b60edd4912ff17284b5e9cc095db6112fde"
+    },
+    {
+      "scenario": "fatal-curse-variant-zero",
+      "seed": 16218112,
+      "openingHp": 90,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 233,
+      "values": [
+        1,
+        2,
+        6,
+        3,
+        4,
+        6
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "8eebe22e5a158eb3b18ba08c931d6e4f58dc7f99cc06c3eb8516b9827e06a539",
+      "currentStateSha256": "8eebe22e5a158eb3b18ba08c931d6e4f58dc7f99cc06c3eb8516b9827e06a539"
+    },
+    {
+      "scenario": "fatal-curse-variant-zero",
+      "seed": 32428305,
+      "openingHp": 90,
+      "openingAttack": 1,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        4,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "retaliation": 90,
+      "changes": [
+        {
+          "path": "lastRoll.mechanics[0]",
+          "before": "合鸣归息 · 已触发",
+          "after": "合鸣归息 · 未生效（本掷未存活）"
+        }
+      ],
+      "baselineStateSha256": "62128904e586b95a892c0fc2fe5a663075b16fd62d6140f38a7d68fdaac7c9e8",
+      "currentStateSha256": "cc9de48f818e54e3ecc87a5cff7c6a2c5eea9708918787288d8cf5f27091292f"
+    },
+    {
+      "scenario": "fatal-curse-variant-zero",
+      "seed": 64872448,
+      "openingHp": 90,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 232,
+      "values": [
+        2,
+        4,
+        3,
+        6,
+        5,
+        1
+      ],
+      "retaliation": 1,
+      "changes": [],
+      "baselineStateSha256": "b68179d4ce3dc006569f7d603ceff6a949471a7ab5392f38b80930a26ac9d3c1",
+      "currentStateSha256": "b68179d4ce3dc006569f7d603ceff6a949471a7ab5392f38b80930a26ac9d3c1"
+    },
+    {
+      "scenario": "fatal-curse-variant-one",
+      "seed": 7919,
+      "openingHp": 90,
+      "openingAttack": 1,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        3,
+        2,
+        4,
+        6,
+        3,
+        6
+      ],
+      "retaliation": 90,
+      "changes": [
+        {
+          "path": "lastRoll.mechanics[0]",
+          "before": "六点回生 · 已触发",
+          "after": "六点回生 · 未生效（本掷未存活）"
+        }
+      ],
+      "baselineStateSha256": "aa542fae497317afa907b486fa91cf70ab17eb2629270a420387e597368bcc7b",
+      "currentStateSha256": "4a4ad6141b002e7a869c56ce9af547e1e45cfbb7e645ee46d661980f39aaec8b"
+    },
+    {
+      "scenario": "fatal-curse-variant-one",
+      "seed": 63352,
+      "openingHp": 90,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 90,
+      "values": [
+        5,
+        3,
+        2,
+        1,
+        2,
+        5
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "9f6afa89bcb34105998b0da5c2d9003d916870821fd5aaee0d46cf77b3e0af4a",
+      "currentStateSha256": "9f6afa89bcb34105998b0da5c2d9003d916870821fd5aaee0d46cf77b3e0af4a"
+    },
+    {
+      "scenario": "fatal-curse-variant-one",
+      "seed": 197975,
+      "openingHp": 90,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 473,
+      "values": [
+        3,
+        3,
+        3,
+        6,
+        3,
+        3
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "dcb57816407088e5c547cd2dee18b08c8336567d25fd19b4738a3e92b2618cf7",
+      "currentStateSha256": "dcb57816407088e5c547cd2dee18b08c8336567d25fd19b4738a3e92b2618cf7"
+    },
+    {
+      "scenario": "fatal-curse-variant-one",
+      "seed": 506816,
+      "openingHp": 90,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 329,
+      "values": [
+        1,
+        5,
+        1,
+        1,
+        2,
+        1
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "b22cb5ead4103cb8a7052bd5677942b68c350556a767dcbd38e5121eaf8fd3b5",
+      "currentStateSha256": "b22cb5ead4103cb8a7052bd5677942b68c350556a767dcbd38e5121eaf8fd3b5"
+    },
+    {
+      "scenario": "fatal-curse-variant-one",
+      "seed": 657277,
+      "openingHp": 90,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 233,
+      "values": [
+        3,
+        6,
+        4,
+        5,
+        2,
+        4
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "bda7da2ed915f9af73646d074492850e7adf015203f4132197aa75544069eba7",
+      "currentStateSha256": "bda7da2ed915f9af73646d074492850e7adf015203f4132197aa75544069eba7"
+    },
+    {
+      "scenario": "fatal-curse-variant-one",
+      "seed": 791900,
+      "openingHp": 90,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 233,
+      "values": [
+        6,
+        6,
+        1,
+        1,
+        5,
+        5
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "de362dbd3a6a10f4e66c6761421f5f49fd3f0cfc1e0b84f63bb6c6f27b6e123f",
+      "currentStateSha256": "de362dbd3a6a10f4e66c6761421f5f49fd3f0cfc1e0b84f63bb6c6f27b6e123f"
+    },
+    {
+      "scenario": "fatal-curse-variant-one",
+      "seed": 1528367,
+      "openingHp": 90,
+      "openingAttack": 1,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        4,
+        3,
+        4,
+        2,
+        3,
+        6
+      ],
+      "retaliation": 90,
+      "changes": [
+        {
+          "path": "lastRoll.mechanics[0]",
+          "before": "六点回生 · 已触发",
+          "after": "六点回生 · 未生效（本掷未存活）"
+        }
+      ],
+      "baselineStateSha256": "d846688dce782150ef6793975680be4ebb7eeaa43b72cb033bfcc7532257895f",
+      "currentStateSha256": "d05f9ca55ff48940e8a33cb62fa07654ce695eb4b9f9f749039893d8576b4ca5"
+    },
+    {
+      "scenario": "fatal-curse-variant-one",
+      "seed": 2027264,
+      "openingHp": 90,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 233,
+      "values": [
+        3,
+        1,
+        6,
+        5,
+        1,
+        2
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "4e2c06bfd3adf99b8352fd2c2aa2b40e00c8306a0d7ac7eb4b07a279ed79754c",
+      "currentStateSha256": "4e2c06bfd3adf99b8352fd2c2aa2b40e00c8306a0d7ac7eb4b07a279ed79754c"
+    },
+    {
+      "scenario": "fatal-curse-variant-one",
+      "seed": 3967419,
+      "openingHp": 90,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 232,
+      "values": [
+        5,
+        2,
+        4,
+        6,
+        1,
+        3
+      ],
+      "retaliation": 1,
+      "changes": [],
+      "baselineStateSha256": "a2d6d079889f61b64f79fa946ba561b254dc041cfc2be4df47129a30c141f2d1",
+      "currentStateSha256": "a2d6d079889f61b64f79fa946ba561b254dc041cfc2be4df47129a30c141f2d1"
+    },
+    {
+      "scenario": "fatal-curse-variant-one",
+      "seed": 6153063,
+      "openingHp": 90,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 233,
+      "values": [
+        2,
+        6,
+        2,
+        5,
+        5,
+        1
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "1ce7aa971f0fbcd57518c6df4426c45809677a0a5e78ceba96c6d2aca4625518",
+      "currentStateSha256": "1ce7aa971f0fbcd57518c6df4426c45809677a0a5e78ceba96c6d2aca4625518"
+    },
+    {
+      "scenario": "fatal-curse-variant-one",
+      "seed": 7911081,
+      "openingHp": 90,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 233,
+      "values": [
+        5,
+        6,
+        1,
+        5,
+        4,
+        4
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "585008756af305761c75876e3270b0f5b095f2a95ddfcccd5d2b15bdd3966922",
+      "currentStateSha256": "585008756af305761c75876e3270b0f5b095f2a95ddfcccd5d2b15bdd3966922"
+    },
+    {
+      "scenario": "fatal-curse-variant-one",
+      "seed": 7919000,
+      "openingHp": 90,
+      "openingAttack": 1,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        2,
+        2,
+        1,
+        4,
+        1,
+        3
+      ],
+      "retaliation": 90,
+      "changes": [],
+      "baselineStateSha256": "85481c73efa2900065c76478de00dbc5007325dd0afcc1a3742d714e85cbe02e",
+      "currentStateSha256": "85481c73efa2900065c76478de00dbc5007325dd0afcc1a3742d714e85cbe02e"
+    },
+    {
+      "scenario": "fatal-curse-variant-one",
+      "seed": 9922507,
+      "openingHp": 90,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 90,
+      "values": [
+        3,
+        3,
+        1,
+        3,
+        2,
+        5
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "6c06c2e1606daa0c2d021a719717662cb8b19bbb0fb9efc531b7875a14233d71",
+      "currentStateSha256": "6c06c2e1606daa0c2d021a719717662cb8b19bbb0fb9efc531b7875a14233d71"
+    },
+    {
+      "scenario": "fatal-curse-variant-one",
+      "seed": 16218112,
+      "openingHp": 90,
+      "openingAttack": 1,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        1,
+        2,
+        6,
+        3,
+        4,
+        6
+      ],
+      "retaliation": 90,
+      "changes": [
+        {
+          "path": "lastRoll.mechanics[0]",
+          "before": "六点回生 · 已触发",
+          "after": "六点回生 · 未生效（本掷未存活）"
+        }
+      ],
+      "baselineStateSha256": "41286966ae82c83fc1b077e4d4ffdfc7be4a464fd8ad54b2ed085719cd91df8c",
+      "currentStateSha256": "4a0ed9acf52cbc81a7c50418ba53181cad1654ff7f6c81d1e7cf395caf4c4859"
+    },
+    {
+      "scenario": "fatal-curse-variant-one",
+      "seed": 32428305,
+      "openingHp": 90,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 329,
+      "values": [
+        4,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "da01f457b7b3c6fdc9bac061c6ed6b7630a128f802a2835069c65e6e88aea959",
+      "currentStateSha256": "da01f457b7b3c6fdc9bac061c6ed6b7630a128f802a2835069c65e6e88aea959"
+    },
+    {
+      "scenario": "fatal-curse-variant-one",
+      "seed": 64872448,
+      "openingHp": 90,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 232,
+      "values": [
+        2,
+        4,
+        3,
+        6,
+        5,
+        1
+      ],
+      "retaliation": 1,
+      "changes": [],
+      "baselineStateSha256": "85adbba9a11ce9c43f9221f052d43a96036c80cac02cbbc5cab88a1e524fc7b2",
+      "currentStateSha256": "85adbba9a11ce9c43f9221f052d43a96036c80cac02cbbc5cab88a1e524fc7b2"
+    },
+    {
+      "scenario": "full-health",
+      "seed": 7919,
+      "openingHp": 9585,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 9585,
+      "values": [
+        3,
+        2,
+        4,
+        6,
+        3,
+        6
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "40aa0945e448d250ae48cb6d97245090fac72ab8f1dc148ab949d906c6f7d8ee",
+      "currentStateSha256": "40aa0945e448d250ae48cb6d97245090fac72ab8f1dc148ab949d906c6f7d8ee"
+    },
+    {
+      "scenario": "full-health",
+      "seed": 63352,
+      "openingHp": 9585,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 9585,
+      "values": [
+        5,
+        3,
+        2,
+        1,
+        2,
+        5
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "adb824af0117769d35a3c1413764f317919b649c6afe511d952e0bbe5694bc7f",
+      "currentStateSha256": "adb824af0117769d35a3c1413764f317919b649c6afe511d952e0bbe5694bc7f"
+    },
+    {
+      "scenario": "full-health",
+      "seed": 197975,
+      "openingHp": 9585,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 9585,
+      "values": [
+        3,
+        3,
+        3,
+        6,
+        3,
+        3
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "4a889ff23fe770ed95794655995df53690a542e6e3f8d305231baa53600d7207",
+      "currentStateSha256": "4a889ff23fe770ed95794655995df53690a542e6e3f8d305231baa53600d7207"
+    },
+    {
+      "scenario": "full-health",
+      "seed": 506816,
+      "openingHp": 9585,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 9585,
+      "values": [
+        1,
+        5,
+        1,
+        1,
+        2,
+        1
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "2226fbaa51a7e4d9a3479ed4de8625877202048258acd7500949c30e5b4bf2e6",
+      "currentStateSha256": "2226fbaa51a7e4d9a3479ed4de8625877202048258acd7500949c30e5b4bf2e6"
+    },
+    {
+      "scenario": "full-health",
+      "seed": 657277,
+      "openingHp": 9585,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 9585,
+      "values": [
+        3,
+        6,
+        4,
+        5,
+        2,
+        4
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "3cf9a8d3d212839e5c2af651447b40af1a243283affb3c278eda658829f1bf23",
+      "currentStateSha256": "3cf9a8d3d212839e5c2af651447b40af1a243283affb3c278eda658829f1bf23"
+    },
+    {
+      "scenario": "full-health",
+      "seed": 791900,
+      "openingHp": 9585,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 9585,
+      "values": [
+        6,
+        6,
+        1,
+        1,
+        5,
+        5
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "96eaaae9c33df65770c7bf6d1e932ca95306f129ab0ce6d33d782a54e69ab326",
+      "currentStateSha256": "96eaaae9c33df65770c7bf6d1e932ca95306f129ab0ce6d33d782a54e69ab326"
+    },
+    {
+      "scenario": "full-health",
+      "seed": 1528367,
+      "openingHp": 9585,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 9585,
+      "values": [
+        4,
+        3,
+        4,
+        2,
+        3,
+        6
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "32c50dc9e53e632d2512526f43da871601fdd7a4ccc80248a9ef8b57fc59f9e1",
+      "currentStateSha256": "32c50dc9e53e632d2512526f43da871601fdd7a4ccc80248a9ef8b57fc59f9e1"
+    },
+    {
+      "scenario": "full-health",
+      "seed": 2027264,
+      "openingHp": 9585,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 9585,
+      "values": [
+        3,
+        1,
+        6,
+        5,
+        1,
+        2
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "cd2ca24d3266d4baaa95ff6b6bdea5893ae403c66dac626e3936c626d1be708d",
+      "currentStateSha256": "cd2ca24d3266d4baaa95ff6b6bdea5893ae403c66dac626e3936c626d1be708d"
+    },
+    {
+      "scenario": "full-health",
+      "seed": 3967419,
+      "openingHp": 9585,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 9585,
+      "values": [
+        5,
+        2,
+        4,
+        6,
+        1,
+        3
+      ],
+      "retaliation": 1,
+      "changes": [],
+      "baselineStateSha256": "53df17ea2fa1000a781e314a7bd19104b840bf138e574cab681125dc40293268",
+      "currentStateSha256": "53df17ea2fa1000a781e314a7bd19104b840bf138e574cab681125dc40293268"
+    },
+    {
+      "scenario": "full-health",
+      "seed": 6153063,
+      "openingHp": 9585,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 9585,
+      "values": [
+        2,
+        6,
+        2,
+        5,
+        5,
+        1
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "d6cf3482370e6a3d447ee9ee5f14ddf2e63751f6bc4becde2bcd1e1ea51741a0",
+      "currentStateSha256": "d6cf3482370e6a3d447ee9ee5f14ddf2e63751f6bc4becde2bcd1e1ea51741a0"
+    },
+    {
+      "scenario": "full-health",
+      "seed": 7911081,
+      "openingHp": 9585,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 9585,
+      "values": [
+        5,
+        6,
+        1,
+        5,
+        4,
+        4
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "fc84407f284f626a6007e36181ed4674b72e91410b8500441f8330eae9f4b803",
+      "currentStateSha256": "fc84407f284f626a6007e36181ed4674b72e91410b8500441f8330eae9f4b803"
+    },
+    {
+      "scenario": "full-health",
+      "seed": 7919000,
+      "openingHp": 9585,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 9585,
+      "values": [
+        2,
+        2,
+        1,
+        4,
+        1,
+        3
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "963a1dbf711eac3321ce74cbb8555c4986eff3197920bc64376aaf923eb94c85",
+      "currentStateSha256": "963a1dbf711eac3321ce74cbb8555c4986eff3197920bc64376aaf923eb94c85"
+    },
+    {
+      "scenario": "full-health",
+      "seed": 9922507,
+      "openingHp": 9585,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 9585,
+      "values": [
+        3,
+        3,
+        1,
+        3,
+        2,
+        5
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "e061a4e2b36dba51107144f329d7a6b6cc45c331d32f9fe2604db3c879c10f0d",
+      "currentStateSha256": "e061a4e2b36dba51107144f329d7a6b6cc45c331d32f9fe2604db3c879c10f0d"
+    },
+    {
+      "scenario": "full-health",
+      "seed": 16218112,
+      "openingHp": 9585,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 9585,
+      "values": [
+        1,
+        2,
+        6,
+        3,
+        4,
+        6
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "9422d0e3121856fda12493a98e58d84a0e05cd7c545d67a950ff33c648c09f59",
+      "currentStateSha256": "9422d0e3121856fda12493a98e58d84a0e05cd7c545d67a950ff33c648c09f59"
+    },
+    {
+      "scenario": "full-health",
+      "seed": 32428305,
+      "openingHp": 9585,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 9585,
+      "values": [
+        4,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "fc33b5042729ab5b244f3a821962d669229590034c667c0c5e31261b92259f88",
+      "currentStateSha256": "fc33b5042729ab5b244f3a821962d669229590034c667c0c5e31261b92259f88"
+    },
+    {
+      "scenario": "full-health",
+      "seed": 64872448,
+      "openingHp": 9585,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 9585,
+      "values": [
+        2,
+        4,
+        3,
+        6,
+        5,
+        1
+      ],
+      "retaliation": 1,
+      "changes": [],
+      "baselineStateSha256": "b58eb74dc0f54ae522d4341821a1f725683f49aae0227ccbf0d106bd7c85fb59",
+      "currentStateSha256": "b58eb74dc0f54ae522d4341821a1f725683f49aae0227ccbf0d106bd7c85fb59"
+    },
+    {
+      "scenario": "killing-blow",
+      "seed": 7919,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "chest",
+      "hp": 1777,
+      "values": [
+        3,
+        2,
+        4,
+        6,
+        3,
+        6
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "1771ad49f3c3c981a08542f3555647754860657fbea61bc2f9d7cd11c37758e5",
+      "currentStateSha256": "1771ad49f3c3c981a08542f3555647754860657fbea61bc2f9d7cd11c37758e5"
+    },
+    {
+      "scenario": "killing-blow",
+      "seed": 63352,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "chest",
+      "hp": 1634,
+      "values": [
+        5,
+        3,
+        2,
+        1,
+        2,
+        5
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "fd1cb2c8b9b6411123245a573a79807bf1ad7fcdaed09f9106b18c33bc1dca35",
+      "currentStateSha256": "fd1cb2c8b9b6411123245a573a79807bf1ad7fcdaed09f9106b18c33bc1dca35"
+    },
+    {
+      "scenario": "killing-blow",
+      "seed": 197975,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "chest",
+      "hp": 2017,
+      "values": [
+        3,
+        3,
+        3,
+        6,
+        3,
+        3
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "987453b902d8d7ddf292b1798726b9b9e653f68cbe860f313636d1ea9efc464c",
+      "currentStateSha256": "987453b902d8d7ddf292b1798726b9b9e653f68cbe860f313636d1ea9efc464c"
+    },
+    {
+      "scenario": "killing-blow",
+      "seed": 506816,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "chest",
+      "hp": 1873,
+      "values": [
+        1,
+        5,
+        1,
+        1,
+        2,
+        1
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "9ea2ff10f0782c3d024a028a46600c6889297701fb958099e726f50e9d189950",
+      "currentStateSha256": "9ea2ff10f0782c3d024a028a46600c6889297701fb958099e726f50e9d189950"
+    },
+    {
+      "scenario": "killing-blow",
+      "seed": 657277,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "chest",
+      "hp": 1777,
+      "values": [
+        3,
+        6,
+        4,
+        5,
+        2,
+        4
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "39c54febe1fb9a771bc873ccacbd80c8251a102a432d6375a0ffba85297e2899",
+      "currentStateSha256": "39c54febe1fb9a771bc873ccacbd80c8251a102a432d6375a0ffba85297e2899"
+    },
+    {
+      "scenario": "killing-blow",
+      "seed": 791900,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "chest",
+      "hp": 1777,
+      "values": [
+        6,
+        6,
+        1,
+        1,
+        5,
+        5
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "d2f83865db466cd284b9f4206898b93f5519ab69510cd2a1e434d04126ad3bbc",
+      "currentStateSha256": "d2f83865db466cd284b9f4206898b93f5519ab69510cd2a1e434d04126ad3bbc"
+    },
+    {
+      "scenario": "killing-blow",
+      "seed": 1528367,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "chest",
+      "hp": 1777,
+      "values": [
+        4,
+        3,
+        4,
+        2,
+        3,
+        6
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "70dda7c5d9f435211c4710fdb945452de1803f3a9832b19b433d1e49b7e0b345",
+      "currentStateSha256": "70dda7c5d9f435211c4710fdb945452de1803f3a9832b19b433d1e49b7e0b345"
+    },
+    {
+      "scenario": "killing-blow",
+      "seed": 2027264,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "chest",
+      "hp": 1777,
+      "values": [
+        3,
+        1,
+        6,
+        5,
+        1,
+        2
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "214d542473bd38f720fbc357c200574106733970339bc25ce20808fe0a8b2d60",
+      "currentStateSha256": "214d542473bd38f720fbc357c200574106733970339bc25ce20808fe0a8b2d60"
+    },
+    {
+      "scenario": "killing-blow",
+      "seed": 3967419,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "chest",
+      "hp": 1777,
+      "values": [
+        5,
+        2,
+        4,
+        6,
+        1,
+        3
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "2d39890d507dd6b0aca526f3bf32332133fe9a2df42cf7feed06ab39a1fa1b17",
+      "currentStateSha256": "2d39890d507dd6b0aca526f3bf32332133fe9a2df42cf7feed06ab39a1fa1b17"
+    },
+    {
+      "scenario": "killing-blow",
+      "seed": 6153063,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "chest",
+      "hp": 1777,
+      "values": [
+        2,
+        6,
+        2,
+        5,
+        5,
+        1
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "dc9b81a1f1c3888de9b4074942414de91e10652d8c6d4407633054f6af3d72b7",
+      "currentStateSha256": "dc9b81a1f1c3888de9b4074942414de91e10652d8c6d4407633054f6af3d72b7"
+    },
+    {
+      "scenario": "killing-blow",
+      "seed": 7911081,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "chest",
+      "hp": 1777,
+      "values": [
+        5,
+        6,
+        1,
+        5,
+        4,
+        4
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "007cb7cd038100cef714080619b41c3c3bc75907c051879b4f20e18042e55549",
+      "currentStateSha256": "007cb7cd038100cef714080619b41c3c3bc75907c051879b4f20e18042e55549"
+    },
+    {
+      "scenario": "killing-blow",
+      "seed": 7919000,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "chest",
+      "hp": 1634,
+      "values": [
+        2,
+        2,
+        1,
+        4,
+        1,
+        3
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "2cdfd85640b9c99fe9b746ee36d0d77054f4b0997f19b22cd1e87a6c5d0aff92",
+      "currentStateSha256": "2cdfd85640b9c99fe9b746ee36d0d77054f4b0997f19b22cd1e87a6c5d0aff92"
+    },
+    {
+      "scenario": "killing-blow",
+      "seed": 9922507,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "chest",
+      "hp": 1634,
+      "values": [
+        3,
+        3,
+        1,
+        3,
+        2,
+        5
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "8e80fb2bd4addee82fad282d52ad2483f1fb0ac448dc4c9b1ea09cf0eaa9f0b5",
+      "currentStateSha256": "8e80fb2bd4addee82fad282d52ad2483f1fb0ac448dc4c9b1ea09cf0eaa9f0b5"
+    },
+    {
+      "scenario": "killing-blow",
+      "seed": 16218112,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "chest",
+      "hp": 1777,
+      "values": [
+        1,
+        2,
+        6,
+        3,
+        4,
+        6
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "65ddc3f89651d742d4a3e50b8ef083c6e858a97c904c0aaa707e95d02d2900f1",
+      "currentStateSha256": "65ddc3f89651d742d4a3e50b8ef083c6e858a97c904c0aaa707e95d02d2900f1"
+    },
+    {
+      "scenario": "killing-blow",
+      "seed": 32428305,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "chest",
+      "hp": 1873,
+      "values": [
+        4,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "43011883523119440f2bc1d93456e18f71355c733d0eeb445a9982b071b8e54e",
+      "currentStateSha256": "43011883523119440f2bc1d93456e18f71355c733d0eeb445a9982b071b8e54e"
+    },
+    {
+      "scenario": "killing-blow",
+      "seed": 64872448,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "chest",
+      "hp": 1777,
+      "values": [
+        2,
+        4,
+        3,
+        6,
+        5,
+        1
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "e42fa006ff1d2819904a000a23e6a49e093bf852e92588bfe43766e8503fb526",
+      "currentStateSha256": "e42fa006ff1d2819904a000a23e6a49e093bf852e92588bfe43766e8503fb526"
+    },
+    {
+      "scenario": "killing-blow-full-health",
+      "seed": 7919,
+      "openingHp": 9585,
+      "openingAttack": 1,
+      "phase": "chest",
+      "hp": 9585,
+      "values": [
+        3,
+        2,
+        4,
+        6,
+        3,
+        6
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "85001d8e32685d928f1d131ae307a5d6638925dbcc83bc6c2d1439087821415c",
+      "currentStateSha256": "85001d8e32685d928f1d131ae307a5d6638925dbcc83bc6c2d1439087821415c"
+    },
+    {
+      "scenario": "killing-blow-full-health",
+      "seed": 63352,
+      "openingHp": 9585,
+      "openingAttack": 1,
+      "phase": "chest",
+      "hp": 9585,
+      "values": [
+        5,
+        3,
+        2,
+        1,
+        2,
+        5
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "b1c5fdc2dae75504ff6ab7425002aa8b72ad468ce3500481a438147aea5925b4",
+      "currentStateSha256": "b1c5fdc2dae75504ff6ab7425002aa8b72ad468ce3500481a438147aea5925b4"
+    },
+    {
+      "scenario": "killing-blow-full-health",
+      "seed": 197975,
+      "openingHp": 9585,
+      "openingAttack": 1,
+      "phase": "chest",
+      "hp": 9585,
+      "values": [
+        3,
+        3,
+        3,
+        6,
+        3,
+        3
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "d4b16a06f4dad4f41075368f5593a9603e8b64ac2211987e896fb7fdc095f111",
+      "currentStateSha256": "d4b16a06f4dad4f41075368f5593a9603e8b64ac2211987e896fb7fdc095f111"
+    },
+    {
+      "scenario": "killing-blow-full-health",
+      "seed": 506816,
+      "openingHp": 9585,
+      "openingAttack": 1,
+      "phase": "chest",
+      "hp": 9585,
+      "values": [
+        1,
+        5,
+        1,
+        1,
+        2,
+        1
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "5161f872e5b2566839d4515ab83dfaa2abda85afe3f7f41bf758c6ddd12e0280",
+      "currentStateSha256": "5161f872e5b2566839d4515ab83dfaa2abda85afe3f7f41bf758c6ddd12e0280"
+    },
+    {
+      "scenario": "killing-blow-full-health",
+      "seed": 657277,
+      "openingHp": 9585,
+      "openingAttack": 1,
+      "phase": "chest",
+      "hp": 9585,
+      "values": [
+        3,
+        6,
+        4,
+        5,
+        2,
+        4
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "f68fe393c563541d9385bb1f935a60f2a1305d577fbf0f33342432ecdcd60e13",
+      "currentStateSha256": "f68fe393c563541d9385bb1f935a60f2a1305d577fbf0f33342432ecdcd60e13"
+    },
+    {
+      "scenario": "killing-blow-full-health",
+      "seed": 791900,
+      "openingHp": 9585,
+      "openingAttack": 1,
+      "phase": "chest",
+      "hp": 9585,
+      "values": [
+        6,
+        6,
+        1,
+        1,
+        5,
+        5
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "83c3d7584c9e0132d01523ab26137fc3c75a6b0a96c691fc9be720dcb0b280e2",
+      "currentStateSha256": "83c3d7584c9e0132d01523ab26137fc3c75a6b0a96c691fc9be720dcb0b280e2"
+    },
+    {
+      "scenario": "killing-blow-full-health",
+      "seed": 1528367,
+      "openingHp": 9585,
+      "openingAttack": 1,
+      "phase": "chest",
+      "hp": 9585,
+      "values": [
+        4,
+        3,
+        4,
+        2,
+        3,
+        6
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "0403e56581dbf9ca22449b35dc7e3c799906f5ee05bd30b847d0715743648154",
+      "currentStateSha256": "0403e56581dbf9ca22449b35dc7e3c799906f5ee05bd30b847d0715743648154"
+    },
+    {
+      "scenario": "killing-blow-full-health",
+      "seed": 2027264,
+      "openingHp": 9585,
+      "openingAttack": 1,
+      "phase": "chest",
+      "hp": 9585,
+      "values": [
+        3,
+        1,
+        6,
+        5,
+        1,
+        2
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "76ed54c7d0fcce56097def4cfcd5d8fc2343bb4c51357846d29769c5a0641e53",
+      "currentStateSha256": "76ed54c7d0fcce56097def4cfcd5d8fc2343bb4c51357846d29769c5a0641e53"
+    },
+    {
+      "scenario": "killing-blow-full-health",
+      "seed": 3967419,
+      "openingHp": 9585,
+      "openingAttack": 1,
+      "phase": "chest",
+      "hp": 9585,
+      "values": [
+        5,
+        2,
+        4,
+        6,
+        1,
+        3
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "b603ff8867bab37a25ec3334082611397d231b14d02a4dc95067edf934cd77b8",
+      "currentStateSha256": "b603ff8867bab37a25ec3334082611397d231b14d02a4dc95067edf934cd77b8"
+    },
+    {
+      "scenario": "killing-blow-full-health",
+      "seed": 6153063,
+      "openingHp": 9585,
+      "openingAttack": 1,
+      "phase": "chest",
+      "hp": 9585,
+      "values": [
+        2,
+        6,
+        2,
+        5,
+        5,
+        1
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "d626a057f522bad1b6bc7adc885320ffdec8e303f39fd866d45c57c0e2eb115b",
+      "currentStateSha256": "d626a057f522bad1b6bc7adc885320ffdec8e303f39fd866d45c57c0e2eb115b"
+    },
+    {
+      "scenario": "killing-blow-full-health",
+      "seed": 7911081,
+      "openingHp": 9585,
+      "openingAttack": 1,
+      "phase": "chest",
+      "hp": 9585,
+      "values": [
+        5,
+        6,
+        1,
+        5,
+        4,
+        4
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "3875b79d404ee62a97f4d7357bddced18cadb6d93f680ee15adc1fac56bd7a32",
+      "currentStateSha256": "3875b79d404ee62a97f4d7357bddced18cadb6d93f680ee15adc1fac56bd7a32"
+    },
+    {
+      "scenario": "killing-blow-full-health",
+      "seed": 7919000,
+      "openingHp": 9585,
+      "openingAttack": 1,
+      "phase": "chest",
+      "hp": 9585,
+      "values": [
+        2,
+        2,
+        1,
+        4,
+        1,
+        3
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "85c95bc8fdbba9e78aa437b734783d73321f6e8fbf74ac2f91b7b9394f667a75",
+      "currentStateSha256": "85c95bc8fdbba9e78aa437b734783d73321f6e8fbf74ac2f91b7b9394f667a75"
+    },
+    {
+      "scenario": "killing-blow-full-health",
+      "seed": 9922507,
+      "openingHp": 9585,
+      "openingAttack": 1,
+      "phase": "chest",
+      "hp": 9585,
+      "values": [
+        3,
+        3,
+        1,
+        3,
+        2,
+        5
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "e7bacd03e2f65f838acc26561b6284ad839adfaeec2e099df06deb7939716d70",
+      "currentStateSha256": "e7bacd03e2f65f838acc26561b6284ad839adfaeec2e099df06deb7939716d70"
+    },
+    {
+      "scenario": "killing-blow-full-health",
+      "seed": 16218112,
+      "openingHp": 9585,
+      "openingAttack": 1,
+      "phase": "chest",
+      "hp": 9585,
+      "values": [
+        1,
+        2,
+        6,
+        3,
+        4,
+        6
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "f4856eb9e56703fb85ecc2cea6a476a880fc2a6141f4d2076856a58ad8523d4a",
+      "currentStateSha256": "f4856eb9e56703fb85ecc2cea6a476a880fc2a6141f4d2076856a58ad8523d4a"
+    },
+    {
+      "scenario": "killing-blow-full-health",
+      "seed": 32428305,
+      "openingHp": 9585,
+      "openingAttack": 1,
+      "phase": "chest",
+      "hp": 9585,
+      "values": [
+        4,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "c0afacdeba718d0f2180a42d027592ee8f560db56895c5f6b4d9d3666c7c935b",
+      "currentStateSha256": "c0afacdeba718d0f2180a42d027592ee8f560db56895c5f6b4d9d3666c7c935b"
+    },
+    {
+      "scenario": "killing-blow-full-health",
+      "seed": 64872448,
+      "openingHp": 9585,
+      "openingAttack": 1,
+      "phase": "chest",
+      "hp": 9585,
+      "values": [
+        2,
+        4,
+        3,
+        6,
+        5,
+        1
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "5abd07f834124c209e4ba2ac5b1ad910613f992e60ad27597e544e2563cd3469",
+      "currentStateSha256": "5abd07f834124c209e4ba2ac5b1ad910613f992e60ad27597e544e2563cd3469"
+    },
+    {
+      "scenario": "absent-abilities",
+      "seed": 7919,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 99,
+      "values": [
+        3,
+        4,
+        3,
+        4,
+        6,
+        1
+      ],
+      "retaliation": 1,
+      "changes": [],
+      "baselineStateSha256": "9d45f7c31a476fa20f80bf47f1ac8212d6cf0a6dc26bbffbb743478e8dd168bc",
+      "currentStateSha256": "9d45f7c31a476fa20f80bf47f1ac8212d6cf0a6dc26bbffbb743478e8dd168bc"
+    },
+    {
+      "scenario": "absent-abilities",
+      "seed": 63352,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 99,
+      "values": [
+        5,
+        2,
+        2,
+        3,
+        4,
+        5
+      ],
+      "retaliation": 1,
+      "changes": [],
+      "baselineStateSha256": "bcd3b72f89e1d9ac3800004c71c580920dee5efc30fa2952e128fbf80516d529",
+      "currentStateSha256": "bcd3b72f89e1d9ac3800004c71c580920dee5efc30fa2952e128fbf80516d529"
+    },
+    {
+      "scenario": "absent-abilities",
+      "seed": 197975,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 99,
+      "values": [
+        3,
+        3,
+        3,
+        5,
+        1,
+        5
+      ],
+      "retaliation": 1,
+      "changes": [],
+      "baselineStateSha256": "2a154f04db943a6e9eb825bb9d0be2fd47132ff3a20358886f21f37b8aaaa602",
+      "currentStateSha256": "2a154f04db943a6e9eb825bb9d0be2fd47132ff3a20358886f21f37b8aaaa602"
+    },
+    {
+      "scenario": "absent-abilities",
+      "seed": 506816,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 99,
+      "values": [
+        1,
+        2,
+        2,
+        2,
+        1,
+        4
+      ],
+      "retaliation": 1,
+      "changes": [],
+      "baselineStateSha256": "60c48637da8d18e1a781c699453888e152a1226c56dfd8db11328c5d64aed5e1",
+      "currentStateSha256": "60c48637da8d18e1a781c699453888e152a1226c56dfd8db11328c5d64aed5e1"
+    },
+    {
+      "scenario": "absent-abilities",
+      "seed": 657277,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 99,
+      "values": [
+        3,
+        4,
+        2,
+        5,
+        6,
+        3
+      ],
+      "retaliation": 1,
+      "changes": [],
+      "baselineStateSha256": "2814000b40d3b81f6fb7f214616f4b78f4cd6bbb0c5a733bf829b49428e53bf2",
+      "currentStateSha256": "2814000b40d3b81f6fb7f214616f4b78f4cd6bbb0c5a733bf829b49428e53bf2"
+    },
+    {
+      "scenario": "absent-abilities",
+      "seed": 791900,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 99,
+      "values": [
+        6,
+        1,
+        6,
+        3,
+        4,
+        6
+      ],
+      "retaliation": 1,
+      "changes": [],
+      "baselineStateSha256": "3c7593f9d6dd947ced3ecae8db310bd7f19ddb3dd5fbf58d7c3224d73531adb7",
+      "currentStateSha256": "3c7593f9d6dd947ced3ecae8db310bd7f19ddb3dd5fbf58d7c3224d73531adb7"
+    },
+    {
+      "scenario": "absent-abilities",
+      "seed": 1528367,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 99,
+      "values": [
+        4,
+        4,
+        4,
+        5,
+        6,
+        6
+      ],
+      "retaliation": 1,
+      "changes": [],
+      "baselineStateSha256": "c8c96cd8cab7b823db410dbf56cfaa553064db277648eb932d86234d0b203fc0",
+      "currentStateSha256": "c8c96cd8cab7b823db410dbf56cfaa553064db277648eb932d86234d0b203fc0"
+    },
+    {
+      "scenario": "absent-abilities",
+      "seed": 2027264,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 99,
+      "values": [
+        3,
+        6,
+        1,
+        2,
+        1,
+        4
+      ],
+      "retaliation": 1,
+      "changes": [],
+      "baselineStateSha256": "2a0d590a26101761ab87244fa7d635d5d53c46a67037c334580d99df0ff0f77d",
+      "currentStateSha256": "2a0d590a26101761ab87244fa7d635d5d53c46a67037c334580d99df0ff0f77d"
+    },
+    {
+      "scenario": "absent-abilities",
+      "seed": 3967419,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 99,
+      "values": [
+        5,
+        4,
+        1,
+        2,
+        5,
+        6
+      ],
+      "retaliation": 1,
+      "changes": [],
+      "baselineStateSha256": "d7e8d32e11ffbf6b0c047b32d863a6e9d3ef97b68f906df5aa3f355addb37d6d",
+      "currentStateSha256": "d7e8d32e11ffbf6b0c047b32d863a6e9d3ef97b68f906df5aa3f355addb37d6d"
+    },
+    {
+      "scenario": "absent-abilities",
+      "seed": 6153063,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 99,
+      "values": [
+        2,
+        2,
+        5,
+        4,
+        2,
+        2
+      ],
+      "retaliation": 1,
+      "changes": [],
+      "baselineStateSha256": "5482f61a73e32940ac379612e540aef386adb767727004bd674dcd5d2fa38111",
+      "currentStateSha256": "5482f61a73e32940ac379612e540aef386adb767727004bd674dcd5d2fa38111"
+    },
+    {
+      "scenario": "absent-abilities",
+      "seed": 7911081,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 99,
+      "values": [
+        5,
+        1,
+        4,
+        6,
+        4,
+        6
+      ],
+      "retaliation": 1,
+      "changes": [],
+      "baselineStateSha256": "7e82f5e0c970ba5624647c0a50a0a13ed473e90ad61690d696bbd7c14e842cbc",
+      "currentStateSha256": "7e82f5e0c970ba5624647c0a50a0a13ed473e90ad61690d696bbd7c14e842cbc"
+    },
+    {
+      "scenario": "absent-abilities",
+      "seed": 7919000,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 99,
+      "values": [
+        2,
+        1,
+        1,
+        1,
+        5,
+        3
+      ],
+      "retaliation": 1,
+      "changes": [],
+      "baselineStateSha256": "ae5ee7765f4b59f3425d66f6be88279aab8a3d4a8f8884888d00787fb011c62e",
+      "currentStateSha256": "ae5ee7765f4b59f3425d66f6be88279aab8a3d4a8f8884888d00787fb011c62e"
+    },
+    {
+      "scenario": "absent-abilities",
+      "seed": 9922507,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 99,
+      "values": [
+        3,
+        1,
+        2,
+        6,
+        4,
+        1
+      ],
+      "retaliation": 1,
+      "changes": [],
+      "baselineStateSha256": "21421bf876751a7742dfaf4b29e875955dd28c86e6823891bf9c87ae1d450eef",
+      "currentStateSha256": "21421bf876751a7742dfaf4b29e875955dd28c86e6823891bf9c87ae1d450eef"
+    },
+    {
+      "scenario": "absent-abilities",
+      "seed": 16218112,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 99,
+      "values": [
+        1,
+        6,
+        4,
+        6,
+        4,
+        2
+      ],
+      "retaliation": 1,
+      "changes": [],
+      "baselineStateSha256": "55f07ce5720513f619bb7a4162dd4d5f127238327bc5e8c8eaaf82dcc834cd44",
+      "currentStateSha256": "55f07ce5720513f619bb7a4162dd4d5f127238327bc5e8c8eaaf82dcc834cd44"
+    },
+    {
+      "scenario": "absent-abilities",
+      "seed": 32428305,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 99,
+      "values": [
+        4,
+        1,
+        1,
+        2,
+        1,
+        6
+      ],
+      "retaliation": 1,
+      "changes": [],
+      "baselineStateSha256": "084922696d753dcaf4d5860eddd513b0a8ee9f4fdbe6575eca460177ded46d42",
+      "currentStateSha256": "084922696d753dcaf4d5860eddd513b0a8ee9f4fdbe6575eca460177ded46d42"
+    },
+    {
+      "scenario": "absent-abilities",
+      "seed": 64872448,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 99,
+      "values": [
+        2,
+        3,
+        5,
+        5,
+        5,
+        4
+      ],
+      "retaliation": 1,
+      "changes": [],
+      "baselineStateSha256": "7248abb935a90d0bc95531c37ac56bacaf44cf9f5bcf3a1665ed060dd1508cc8",
+      "currentStateSha256": "7248abb935a90d0bc95531c37ac56bacaf44cf9f5bcf3a1665ed060dd1508cc8"
+    },
+    {
+      "scenario": "guard-opening-echo-note-order",
+      "seed": 7919,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 243,
+      "values": [
+        3,
+        2,
+        4,
+        6,
+        3,
+        6
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "b81f0d813564877aae204d350b3b1bac28b2f64d4211f34883226a831b1b075a",
+      "currentStateSha256": "b81f0d813564877aae204d350b3b1bac28b2f64d4211f34883226a831b1b075a"
+    },
+    {
+      "scenario": "guard-opening-echo-note-order",
+      "seed": 63352,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 100,
+      "values": [
+        5,
+        3,
+        2,
+        1,
+        2,
+        5
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "8cbb8f9b5de6af0248960f1a1ca2bdd6fbf06f5a249369a8ecbfd8f6a869b602",
+      "currentStateSha256": "8cbb8f9b5de6af0248960f1a1ca2bdd6fbf06f5a249369a8ecbfd8f6a869b602"
+    },
+    {
+      "scenario": "guard-opening-echo-note-order",
+      "seed": 197975,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 483,
+      "values": [
+        3,
+        3,
+        3,
+        6,
+        3,
+        3
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "073db4dc08e0022652f2c127851331acf5829877687b5507545b17456582897b",
+      "currentStateSha256": "073db4dc08e0022652f2c127851331acf5829877687b5507545b17456582897b"
+    },
+    {
+      "scenario": "guard-opening-echo-note-order",
+      "seed": 506816,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 339,
+      "values": [
+        1,
+        5,
+        1,
+        1,
+        2,
+        1
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "bfccacb8e44527006e80b62d1164d9f0f4883ce5cdc9fe20571bab00bb3918a4",
+      "currentStateSha256": "bfccacb8e44527006e80b62d1164d9f0f4883ce5cdc9fe20571bab00bb3918a4"
+    },
+    {
+      "scenario": "guard-opening-echo-note-order",
+      "seed": 657277,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 243,
+      "values": [
+        3,
+        6,
+        4,
+        5,
+        2,
+        4
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "7731a2dd984adb86e43ddf86295778cc56822cb6f8a88c0c865fe49c9b1574bf",
+      "currentStateSha256": "7731a2dd984adb86e43ddf86295778cc56822cb6f8a88c0c865fe49c9b1574bf"
+    },
+    {
+      "scenario": "guard-opening-echo-note-order",
+      "seed": 791900,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 243,
+      "values": [
+        6,
+        6,
+        1,
+        1,
+        5,
+        5
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "c059a0b8af5b32b132d65e6de6e08ebbf938cdd199120958c68b0b73c1a3ff40",
+      "currentStateSha256": "c059a0b8af5b32b132d65e6de6e08ebbf938cdd199120958c68b0b73c1a3ff40"
+    },
+    {
+      "scenario": "guard-opening-echo-note-order",
+      "seed": 1528367,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 243,
+      "values": [
+        4,
+        3,
+        4,
+        2,
+        3,
+        6
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "1899189fb26e28ab21e877c2cbdaad4864f832b663dc542698d1a5a1b4525789",
+      "currentStateSha256": "1899189fb26e28ab21e877c2cbdaad4864f832b663dc542698d1a5a1b4525789"
+    },
+    {
+      "scenario": "guard-opening-echo-note-order",
+      "seed": 2027264,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 243,
+      "values": [
+        3,
+        1,
+        6,
+        5,
+        1,
+        2
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "d29e7990ec2086984fbfd18e747555628bb62c32a5a4bedda7925be6f3788ab0",
+      "currentStateSha256": "d29e7990ec2086984fbfd18e747555628bb62c32a5a4bedda7925be6f3788ab0"
+    },
+    {
+      "scenario": "guard-opening-echo-note-order",
+      "seed": 3967419,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 242,
+      "values": [
+        5,
+        2,
+        4,
+        6,
+        1,
+        3
+      ],
+      "retaliation": 1,
+      "changes": [],
+      "baselineStateSha256": "2e6e62f5b95de0ea8b1afdad84546d421ad86d0b667658050f6819618cf3f4cf",
+      "currentStateSha256": "2e6e62f5b95de0ea8b1afdad84546d421ad86d0b667658050f6819618cf3f4cf"
+    },
+    {
+      "scenario": "guard-opening-echo-note-order",
+      "seed": 6153063,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 243,
+      "values": [
+        2,
+        6,
+        2,
+        5,
+        5,
+        1
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "3c17bd9bca7c7ecc73fceceae6bef8efa8d8997dde6afcf3aa814612e401a916",
+      "currentStateSha256": "3c17bd9bca7c7ecc73fceceae6bef8efa8d8997dde6afcf3aa814612e401a916"
+    },
+    {
+      "scenario": "guard-opening-echo-note-order",
+      "seed": 7911081,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 243,
+      "values": [
+        5,
+        6,
+        1,
+        5,
+        4,
+        4
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "e024aadca23c9834532dd992134baf3ecfeb006953b127fb6354b4c05455651b",
+      "currentStateSha256": "e024aadca23c9834532dd992134baf3ecfeb006953b127fb6354b4c05455651b"
+    },
+    {
+      "scenario": "guard-opening-echo-note-order",
+      "seed": 7919000,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 100,
+      "values": [
+        2,
+        2,
+        1,
+        4,
+        1,
+        3
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "18a29cf83e7eaf94c7f954c401d47e94ccbf5f71d8bacb4f214baa0f4aa0d32f",
+      "currentStateSha256": "18a29cf83e7eaf94c7f954c401d47e94ccbf5f71d8bacb4f214baa0f4aa0d32f"
+    },
+    {
+      "scenario": "guard-opening-echo-note-order",
+      "seed": 9922507,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 100,
+      "values": [
+        3,
+        3,
+        1,
+        3,
+        2,
+        5
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "71d15a26839e1e53e33c3f368f0460954f224630bbbd540550cdbb0056a0302c",
+      "currentStateSha256": "71d15a26839e1e53e33c3f368f0460954f224630bbbd540550cdbb0056a0302c"
+    },
+    {
+      "scenario": "guard-opening-echo-note-order",
+      "seed": 16218112,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 243,
+      "values": [
+        1,
+        2,
+        6,
+        3,
+        4,
+        6
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "b03047738f20ee1b613b40857823eacc70317680b82c65ca077d51e28df35579",
+      "currentStateSha256": "b03047738f20ee1b613b40857823eacc70317680b82c65ca077d51e28df35579"
+    },
+    {
+      "scenario": "guard-opening-echo-note-order",
+      "seed": 32428305,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 339,
+      "values": [
+        4,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "dde9512eb854c228da5b9605b69df1b05b54ae161999f5995875150e413f714f",
+      "currentStateSha256": "dde9512eb854c228da5b9605b69df1b05b54ae161999f5995875150e413f714f"
+    },
+    {
+      "scenario": "guard-opening-echo-note-order",
+      "seed": 64872448,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 242,
+      "values": [
+        2,
+        4,
+        3,
+        6,
+        5,
+        1
+      ],
+      "retaliation": 1,
+      "changes": [],
+      "baselineStateSha256": "2b0ddfb068090cd8aeebcfafeec9f5362106b4719611d8de41cc19cc00ff006c",
+      "currentStateSha256": "2b0ddfb068090cd8aeebcfafeec9f5362106b4719611d8de41cc19cc00ff006c"
+    },
+    {
+      "scenario": "capped-healing",
+      "seed": 7919,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 2369,
+      "values": [
+        3,
+        2,
+        4,
+        6,
+        3,
+        6
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "cc4e143b72912cbcd7244a41193011b36a8dea8f97042174916eba18c26c7f09",
+      "currentStateSha256": "cc4e143b72912cbcd7244a41193011b36a8dea8f97042174916eba18c26c7f09"
+    },
+    {
+      "scenario": "capped-healing",
+      "seed": 63352,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 100,
+      "values": [
+        5,
+        3,
+        2,
+        1,
+        2,
+        5
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "8fc14268f5298f601e63bd7ec09a6577cdc07e098ba85c5a98e131581fc90f8b",
+      "currentStateSha256": "8fc14268f5298f601e63bd7ec09a6577cdc07e098ba85c5a98e131581fc90f8b"
+    },
+    {
+      "scenario": "capped-healing",
+      "seed": 197975,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 5732,
+      "values": [
+        3,
+        3,
+        3,
+        6,
+        3,
+        3
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "87d3682b73bb66694e01f43879c9c525687c5faf6a02aad20921a304c2fd2599",
+      "currentStateSha256": "87d3682b73bb66694e01f43879c9c525687c5faf6a02aad20921a304c2fd2599"
+    },
+    {
+      "scenario": "capped-healing",
+      "seed": 506816,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 3462,
+      "values": [
+        1,
+        5,
+        1,
+        1,
+        2,
+        1
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "cec27804144a8515631f82849585eaad4397c2c656e424e519a676e74905c0a8",
+      "currentStateSha256": "cec27804144a8515631f82849585eaad4397c2c656e424e519a676e74905c0a8"
+    },
+    {
+      "scenario": "capped-healing",
+      "seed": 657277,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 2369,
+      "values": [
+        3,
+        6,
+        4,
+        5,
+        2,
+        4
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "41d52b5498c8e9d4c7cb36b47a2f5b8a4c5984f17595423fbd5d43216fd7b78b",
+      "currentStateSha256": "41d52b5498c8e9d4c7cb36b47a2f5b8a4c5984f17595423fbd5d43216fd7b78b"
+    },
+    {
+      "scenario": "capped-healing",
+      "seed": 791900,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 2369,
+      "values": [
+        6,
+        6,
+        1,
+        1,
+        5,
+        5
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "cc005f2539436bf46be38d3566353091be4f3b2b7143b6862c4acf8b7d5740d6",
+      "currentStateSha256": "cc005f2539436bf46be38d3566353091be4f3b2b7143b6862c4acf8b7d5740d6"
+    },
+    {
+      "scenario": "capped-healing",
+      "seed": 1528367,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 2369,
+      "values": [
+        4,
+        3,
+        4,
+        2,
+        3,
+        6
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "812af270ea6d17e66c79f693e684582b29b53bcea8598d5139dc4e21ff4fed34",
+      "currentStateSha256": "812af270ea6d17e66c79f693e684582b29b53bcea8598d5139dc4e21ff4fed34"
+    },
+    {
+      "scenario": "capped-healing",
+      "seed": 2027264,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 2369,
+      "values": [
+        3,
+        1,
+        6,
+        5,
+        1,
+        2
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "481716067d2928094f5a20ea26f390772d034396fbe4cb6f5f14038b7263363a",
+      "currentStateSha256": "481716067d2928094f5a20ea26f390772d034396fbe4cb6f5f14038b7263363a"
+    },
+    {
+      "scenario": "capped-healing",
+      "seed": 3967419,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 2368,
+      "values": [
+        5,
+        2,
+        4,
+        6,
+        1,
+        3
+      ],
+      "retaliation": 1,
+      "changes": [],
+      "baselineStateSha256": "569df3aa6319d0d76674467742d75b0ab2be3155b72c3f1522bc5590cbbd4736",
+      "currentStateSha256": "569df3aa6319d0d76674467742d75b0ab2be3155b72c3f1522bc5590cbbd4736"
+    },
+    {
+      "scenario": "capped-healing",
+      "seed": 6153063,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 2369,
+      "values": [
+        2,
+        6,
+        2,
+        5,
+        5,
+        1
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "ba27edf6b95f37c9305b6aee55b1536aebc9587ac6e2afe40a379b55d2a89453",
+      "currentStateSha256": "ba27edf6b95f37c9305b6aee55b1536aebc9587ac6e2afe40a379b55d2a89453"
+    },
+    {
+      "scenario": "capped-healing",
+      "seed": 7911081,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 2369,
+      "values": [
+        5,
+        6,
+        1,
+        5,
+        4,
+        4
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "b271628720161033175bb4284e08eadee750c1cb6eaffe7360a576039dbc0a8e",
+      "currentStateSha256": "b271628720161033175bb4284e08eadee750c1cb6eaffe7360a576039dbc0a8e"
+    },
+    {
+      "scenario": "capped-healing",
+      "seed": 7919000,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 100,
+      "values": [
+        2,
+        2,
+        1,
+        4,
+        1,
+        3
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "aa3c65f838b70d0f40ac2441092319ff2ac529f04f2d65ab9335ed961f2ea74f",
+      "currentStateSha256": "aa3c65f838b70d0f40ac2441092319ff2ac529f04f2d65ab9335ed961f2ea74f"
+    },
+    {
+      "scenario": "capped-healing",
+      "seed": 9922507,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 100,
+      "values": [
+        3,
+        3,
+        1,
+        3,
+        2,
+        5
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "8eedaaaf0bda44b0fa2bf170c290063728ffa7819c3ab06c646e7c4e8c22283b",
+      "currentStateSha256": "8eedaaaf0bda44b0fa2bf170c290063728ffa7819c3ab06c646e7c4e8c22283b"
+    },
+    {
+      "scenario": "capped-healing",
+      "seed": 16218112,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 2369,
+      "values": [
+        1,
+        2,
+        6,
+        3,
+        4,
+        6
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "8d3afa296950652694d914e27412fae9999a955cc17b4a0dc8edfd884a7f7089",
+      "currentStateSha256": "8d3afa296950652694d914e27412fae9999a955cc17b4a0dc8edfd884a7f7089"
+    },
+    {
+      "scenario": "capped-healing",
+      "seed": 32428305,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 3462,
+      "values": [
+        4,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "3a3bfe6b739a8ad18600e1a4e148f66d4d9160b5ae32c28bac2875b44514d043",
+      "currentStateSha256": "3a3bfe6b739a8ad18600e1a4e148f66d4d9160b5ae32c28bac2875b44514d043"
+    },
+    {
+      "scenario": "capped-healing",
+      "seed": 64872448,
+      "openingHp": 100,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 2368,
+      "values": [
+        2,
+        4,
+        3,
+        6,
+        5,
+        1
+      ],
+      "retaliation": 1,
+      "changes": [],
+      "baselineStateSha256": "6533ae9b8cb40d7bdc00ec2c9ef0e9bc68337ea390de0c1f025e04d2b6e98363",
+      "currentStateSha256": "6533ae9b8cb40d7bdc00ec2c9ef0e9bc68337ea390de0c1f025e04d2b6e98363"
+    },
+    {
+      "scenario": "legacy-combat-rules-two",
+      "seed": 7919,
+      "openingHp": 100,
+      "openingAttack": 1000000,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        3,
+        2,
+        4,
+        6,
+        3,
+        6
+      ],
+      "retaliation": 999229,
+      "changes": [
+        {
+          "path": "lastRoll.mechanics[0]",
+          "before": "六点回生 · 已触发",
+          "after": "六点回生 · 未生效（本掷未存活）"
+        }
+      ],
+      "baselineStateSha256": "999027cb183bb39780f5ffc62538179c2b43da92da7e40254c1da8d5660b72b1",
+      "currentStateSha256": "18c34eec98079028e801f6fed5f8f849bdb71bd3b766675c049ea4de113699b9"
+    },
+    {
+      "scenario": "legacy-combat-rules-two",
+      "seed": 63352,
+      "openingHp": 100,
+      "openingAttack": 1000000,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        5,
+        3,
+        2,
+        1,
+        2,
+        5
+      ],
+      "retaliation": 999229,
+      "changes": [],
+      "baselineStateSha256": "295d02db3e585b4237e9a1b26b7089d536873a24403b581f46217c9c5195a9c6",
+      "currentStateSha256": "295d02db3e585b4237e9a1b26b7089d536873a24403b581f46217c9c5195a9c6"
+    },
+    {
+      "scenario": "legacy-combat-rules-two",
+      "seed": 197975,
+      "openingHp": 100,
+      "openingAttack": 1000000,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        3,
+        3,
+        3,
+        6,
+        3,
+        3
+      ],
+      "retaliation": 999229,
+      "changes": [
+        {
+          "path": "lastRoll.mechanics[0]",
+          "before": "六点回生 · 已触发",
+          "after": "六点回生 · 未生效（本掷未存活）"
+        },
+        {
+          "path": "lastRoll.mechanics[1]",
+          "before": "合鸣归息 · 已触发",
+          "after": "合鸣归息 · 未生效（本掷未存活）"
+        }
+      ],
+      "baselineStateSha256": "dc71c410a432e44c7d754f49928181cbe7e86263570bfe86943fab398ee02cd0",
+      "currentStateSha256": "bf88cc619ef7f07f6ff2879a7c9f3c7227a41cf0ff37cd74cacc56d7c19d8e38"
+    },
+    {
+      "scenario": "legacy-combat-rules-two",
+      "seed": 506816,
+      "openingHp": 100,
+      "openingAttack": 1000000,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        1,
+        5,
+        1,
+        1,
+        2,
+        1
+      ],
+      "retaliation": 999229,
+      "changes": [
+        {
+          "path": "lastRoll.mechanics[0]",
+          "before": "合鸣归息 · 已触发",
+          "after": "合鸣归息 · 未生效（本掷未存活）"
+        }
+      ],
+      "baselineStateSha256": "780e2c0601e5a0c679b48e80200d329c82be7fabe3616a8df807b45dd5f2b69b",
+      "currentStateSha256": "052527db9c04bcb21c8a79e3914654cd455b42206d29e9f8b390f13a5258761a"
+    },
+    {
+      "scenario": "legacy-combat-rules-two",
+      "seed": 657277,
+      "openingHp": 100,
+      "openingAttack": 1000000,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        3,
+        6,
+        4,
+        5,
+        2,
+        4
+      ],
+      "retaliation": 999229,
+      "changes": [
+        {
+          "path": "lastRoll.mechanics[0]",
+          "before": "六点回生 · 已触发",
+          "after": "六点回生 · 未生效（本掷未存活）"
+        }
+      ],
+      "baselineStateSha256": "ab4164b0b4f0d2e7879c2b438606ba2695df68daf9e1ee6ad7b982efff98bc8a",
+      "currentStateSha256": "abea32650f9411d41628a1ca0c3f818d0b55e940776e5caa640e5db14d21512e"
+    },
+    {
+      "scenario": "legacy-combat-rules-two",
+      "seed": 791900,
+      "openingHp": 100,
+      "openingAttack": 1000000,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        6,
+        6,
+        1,
+        1,
+        5,
+        5
+      ],
+      "retaliation": 999229,
+      "changes": [
+        {
+          "path": "lastRoll.mechanics[0]",
+          "before": "六点回生 · 已触发",
+          "after": "六点回生 · 未生效（本掷未存活）"
+        }
+      ],
+      "baselineStateSha256": "1dcb08cbee5272a922c1180454b29bf7f594386890cb9ae00b192fe4b6ed021a",
+      "currentStateSha256": "ee0ad53c355413bc8cecf60a6dacb8e38ac2a5e262b6fa0241cb07c68c18769e"
+    },
+    {
+      "scenario": "legacy-combat-rules-two",
+      "seed": 1528367,
+      "openingHp": 100,
+      "openingAttack": 1000000,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        4,
+        3,
+        4,
+        2,
+        3,
+        6
+      ],
+      "retaliation": 999229,
+      "changes": [
+        {
+          "path": "lastRoll.mechanics[0]",
+          "before": "六点回生 · 已触发",
+          "after": "六点回生 · 未生效（本掷未存活）"
+        }
+      ],
+      "baselineStateSha256": "cf8d50fdd205fe23c3ef557d36d541e4357bc6fe33588f229ad58bdf31a6f7ea",
+      "currentStateSha256": "a3afdf45a0f5143429311dc56273e6a19124675315f5a84d5b0050669873d272"
+    },
+    {
+      "scenario": "legacy-combat-rules-two",
+      "seed": 2027264,
+      "openingHp": 100,
+      "openingAttack": 1000000,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        3,
+        1,
+        6,
+        5,
+        1,
+        2
+      ],
+      "retaliation": 999229,
+      "changes": [
+        {
+          "path": "lastRoll.mechanics[0]",
+          "before": "六点回生 · 已触发",
+          "after": "六点回生 · 未生效（本掷未存活）"
+        }
+      ],
+      "baselineStateSha256": "2e1d2858b387cb97774ae8ef9a5394a60e8fbbad6e7b619439aa9daf5029079b",
+      "currentStateSha256": "66dbdb104d752bfbf75e03a5cc951b0e7f9f41ae2ac4c2c84e447830109cd3ba"
+    },
+    {
+      "scenario": "legacy-combat-rules-two",
+      "seed": 3967419,
+      "openingHp": 100,
+      "openingAttack": 1000000,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        5,
+        2,
+        4,
+        6,
+        1,
+        3
+      ],
+      "retaliation": 999469,
+      "changes": [
+        {
+          "path": "lastRoll.mechanics[0]",
+          "before": "六点回生 · 已触发",
+          "after": "六点回生 · 未生效（本掷未存活）"
+        }
+      ],
+      "baselineStateSha256": "89708458755cd10b3d9faaf266b6511729d11f3fbd944e9197b95e71909bd593",
+      "currentStateSha256": "8c696afc2945780690d68331effb48aa35f49f777a22b3042d170f08c2571cf4"
+    },
+    {
+      "scenario": "legacy-combat-rules-two",
+      "seed": 6153063,
+      "openingHp": 100,
+      "openingAttack": 1000000,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        2,
+        6,
+        2,
+        5,
+        5,
+        1
+      ],
+      "retaliation": 999229,
+      "changes": [
+        {
+          "path": "lastRoll.mechanics[0]",
+          "before": "六点回生 · 已触发",
+          "after": "六点回生 · 未生效（本掷未存活）"
+        }
+      ],
+      "baselineStateSha256": "378cf5511e1cdf52fa461457c2f6fe3c4c0213e5ab8e022a01ce3cff3c9df24b",
+      "currentStateSha256": "4587f2aafd10432c43363ea41b33957d87ea8f66239e5f9220a8eed242fc8933"
+    },
+    {
+      "scenario": "legacy-combat-rules-two",
+      "seed": 7911081,
+      "openingHp": 100,
+      "openingAttack": 1000000,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        5,
+        6,
+        1,
+        5,
+        4,
+        4
+      ],
+      "retaliation": 999229,
+      "changes": [
+        {
+          "path": "lastRoll.mechanics[0]",
+          "before": "六点回生 · 已触发",
+          "after": "六点回生 · 未生效（本掷未存活）"
+        }
+      ],
+      "baselineStateSha256": "d0fbaad2ed1e2c8c967f6e26d1c9b8edbfd24036c6468d4db3978886b7296722",
+      "currentStateSha256": "996cc499d3995ced3c8995b23a88488aeca5d1b9c874e30a634ce7fc2f4f791f"
+    },
+    {
+      "scenario": "legacy-combat-rules-two",
+      "seed": 7919000,
+      "openingHp": 100,
+      "openingAttack": 1000000,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        2,
+        2,
+        1,
+        4,
+        1,
+        3
+      ],
+      "retaliation": 999229,
+      "changes": [],
+      "baselineStateSha256": "26f9d6ba401cc5e09c6e8a2b9536b6fa7cee7bf700e998b28cf979b5058e89ad",
+      "currentStateSha256": "26f9d6ba401cc5e09c6e8a2b9536b6fa7cee7bf700e998b28cf979b5058e89ad"
+    },
+    {
+      "scenario": "legacy-combat-rules-two",
+      "seed": 9922507,
+      "openingHp": 100,
+      "openingAttack": 1000000,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        3,
+        3,
+        1,
+        3,
+        2,
+        5
+      ],
+      "retaliation": 999229,
+      "changes": [],
+      "baselineStateSha256": "5bf75cc8d04e5417561ff804f45b87af582f8dc22298da8ecf7680a9aeb696c6",
+      "currentStateSha256": "5bf75cc8d04e5417561ff804f45b87af582f8dc22298da8ecf7680a9aeb696c6"
+    },
+    {
+      "scenario": "legacy-combat-rules-two",
+      "seed": 16218112,
+      "openingHp": 100,
+      "openingAttack": 1000000,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        1,
+        2,
+        6,
+        3,
+        4,
+        6
+      ],
+      "retaliation": 999229,
+      "changes": [
+        {
+          "path": "lastRoll.mechanics[0]",
+          "before": "六点回生 · 已触发",
+          "after": "六点回生 · 未生效（本掷未存活）"
+        }
+      ],
+      "baselineStateSha256": "0d7f6f50592c431c887341c599820b1a019e3af5cb42d31b1d0b3d4fca76aa1c",
+      "currentStateSha256": "47913ebc21f64912c685e5ed4e9d601355b1e47eb74756ed97967cfb774f608a"
+    },
+    {
+      "scenario": "legacy-combat-rules-two",
+      "seed": 32428305,
+      "openingHp": 100,
+      "openingAttack": 1000000,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        4,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "retaliation": 999229,
+      "changes": [
+        {
+          "path": "lastRoll.mechanics[0]",
+          "before": "合鸣归息 · 已触发",
+          "after": "合鸣归息 · 未生效（本掷未存活）"
+        }
+      ],
+      "baselineStateSha256": "9264f63c50e6d7a45c38bea39b7dfd38051a838d6f1f0086200ea726c1ff10ac",
+      "currentStateSha256": "961e8165ae37c652f91e62b662ef2ed16e7082d8059f824cd3d314fc9a9e9e1c"
+    },
+    {
+      "scenario": "legacy-combat-rules-two",
+      "seed": 64872448,
+      "openingHp": 100,
+      "openingAttack": 1000000,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        2,
+        4,
+        3,
+        6,
+        5,
+        1
+      ],
+      "retaliation": 999469,
+      "changes": [
+        {
+          "path": "lastRoll.mechanics[0]",
+          "before": "六点回生 · 已触发",
+          "after": "六点回生 · 未生效（本掷未存活）"
+        }
+      ],
+      "baselineStateSha256": "76cb278da0c4344a39748e166d43678d68db8b07e1a70e817f568ca8c29db4c6",
+      "currentStateSha256": "8f6535db205dec7539d4c584ea5feb5c5fbc1743f55bd17dd4afc51935041a5e"
+    },
+    {
+      "scenario": "life-drain-before-regen-and-critical-mend",
+      "seed": 7919,
+      "openingHp": 1,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 91,
+      "values": [
+        3,
+        2,
+        4,
+        6,
+        3,
+        6
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "5e14711247153616a50087c07f26889ca19e8d377091d82398223df5312fd940",
+      "currentStateSha256": "5e14711247153616a50087c07f26889ca19e8d377091d82398223df5312fd940"
+    },
+    {
+      "scenario": "life-drain-before-regen-and-critical-mend",
+      "seed": 63352,
+      "openingHp": 1,
+      "openingAttack": 1,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        5,
+        3,
+        2,
+        1,
+        2,
+        5
+      ],
+      "retaliation": 1,
+      "changes": [],
+      "baselineStateSha256": "70fdbe4cf3a5eac72ce979403848539a56dd41090fe7f142235f886cee4e301a",
+      "currentStateSha256": "70fdbe4cf3a5eac72ce979403848539a56dd41090fe7f142235f886cee4e301a"
+    },
+    {
+      "scenario": "life-drain-before-regen-and-critical-mend",
+      "seed": 197975,
+      "openingHp": 1,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 216,
+      "values": [
+        3,
+        3,
+        3,
+        6,
+        3,
+        3
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "d8ea8ef37afca119a77ff86af0a1d1a61e8263b16e81bfd31dd95170f6562ecd",
+      "currentStateSha256": "d8ea8ef37afca119a77ff86af0a1d1a61e8263b16e81bfd31dd95170f6562ecd"
+    },
+    {
+      "scenario": "life-drain-before-regen-and-critical-mend",
+      "seed": 506816,
+      "openingHp": 1,
+      "openingAttack": 1,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        1,
+        5,
+        1,
+        1,
+        2,
+        1
+      ],
+      "retaliation": 1,
+      "changes": [
+        {
+          "path": "lastRoll.mechanics[0]",
+          "before": "合鸣归息 · 已触发",
+          "after": "合鸣归息 · 未生效（本掷未存活）"
+        }
+      ],
+      "baselineStateSha256": "1cdde1017234b8c38cbab1460689e71e127317a0ed1d5e6299475688e44951de",
+      "currentStateSha256": "882c1e0608b98e67bb3934d33c9fcde181eb6ca0ad46e4c2b55f3d4e0486433f"
+    },
+    {
+      "scenario": "life-drain-before-regen-and-critical-mend",
+      "seed": 657277,
+      "openingHp": 1,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 91,
+      "values": [
+        3,
+        6,
+        4,
+        5,
+        2,
+        4
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "db2a374aac32629b534890ad66ce90e8e3e194b80940804697e61c49d6280612",
+      "currentStateSha256": "db2a374aac32629b534890ad66ce90e8e3e194b80940804697e61c49d6280612"
+    },
+    {
+      "scenario": "life-drain-before-regen-and-critical-mend",
+      "seed": 791900,
+      "openingHp": 1,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 91,
+      "values": [
+        6,
+        6,
+        1,
+        1,
+        5,
+        5
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "f7fbbf4a99e7bf614a37b7010abbcd56a762f08f8a22b69ede8e24a579773264",
+      "currentStateSha256": "f7fbbf4a99e7bf614a37b7010abbcd56a762f08f8a22b69ede8e24a579773264"
+    },
+    {
+      "scenario": "life-drain-before-regen-and-critical-mend",
+      "seed": 1528367,
+      "openingHp": 1,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 91,
+      "values": [
+        4,
+        3,
+        4,
+        2,
+        3,
+        6
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "cf2bf926f2881c1bb00df1bbdd17fdf8e8694c4d8cb299276b90db69ce8c4163",
+      "currentStateSha256": "cf2bf926f2881c1bb00df1bbdd17fdf8e8694c4d8cb299276b90db69ce8c4163"
+    },
+    {
+      "scenario": "life-drain-before-regen-and-critical-mend",
+      "seed": 2027264,
+      "openingHp": 1,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 204,
+      "values": [
+        3,
+        1,
+        6,
+        5,
+        1,
+        2
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "f046a084a22fab52905c9544befa4f6edf1366df0f2374427b3b8b4ee45fb9da",
+      "currentStateSha256": "f046a084a22fab52905c9544befa4f6edf1366df0f2374427b3b8b4ee45fb9da"
+    },
+    {
+      "scenario": "life-drain-before-regen-and-critical-mend",
+      "seed": 3967419,
+      "openingHp": 1,
+      "openingAttack": 1,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        5,
+        2,
+        4,
+        6,
+        1,
+        3
+      ],
+      "retaliation": 1,
+      "changes": [
+        {
+          "path": "lastRoll.mechanics[0]",
+          "before": "六点回生 · 已触发",
+          "after": "六点回生 · 未生效（本掷未存活）"
+        }
+      ],
+      "baselineStateSha256": "0e8dd1a286365595a276bef3e05e6702841cb057a5b424c09c173eab5ab92963",
+      "currentStateSha256": "b50efaf079901b32310c89455bbc25db0a5e146cefd8125631fddc5b0e433898"
+    },
+    {
+      "scenario": "life-drain-before-regen-and-critical-mend",
+      "seed": 6153063,
+      "openingHp": 1,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 91,
+      "values": [
+        2,
+        6,
+        2,
+        5,
+        5,
+        1
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "b0833a18cd9844594c637b68d9dce0c2a891a681dc796a03c356cf7abeb5dcf6",
+      "currentStateSha256": "b0833a18cd9844594c637b68d9dce0c2a891a681dc796a03c356cf7abeb5dcf6"
+    },
+    {
+      "scenario": "life-drain-before-regen-and-critical-mend",
+      "seed": 7911081,
+      "openingHp": 1,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 91,
+      "values": [
+        5,
+        6,
+        1,
+        5,
+        4,
+        4
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "19dfa0cea10857429208c229c41b405d41c5c783b0e55a392e068d2605f8e6ee",
+      "currentStateSha256": "19dfa0cea10857429208c229c41b405d41c5c783b0e55a392e068d2605f8e6ee"
+    },
+    {
+      "scenario": "life-drain-before-regen-and-critical-mend",
+      "seed": 7919000,
+      "openingHp": 1,
+      "openingAttack": 1,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        2,
+        2,
+        1,
+        4,
+        1,
+        3
+      ],
+      "retaliation": 1,
+      "changes": [],
+      "baselineStateSha256": "b5e0435c7d6864c8e6eafe567b2bd7ba1e10e29b3f6526ffc6164f1dc57414c7",
+      "currentStateSha256": "b5e0435c7d6864c8e6eafe567b2bd7ba1e10e29b3f6526ffc6164f1dc57414c7"
+    },
+    {
+      "scenario": "life-drain-before-regen-and-critical-mend",
+      "seed": 9922507,
+      "openingHp": 1,
+      "openingAttack": 1,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        3,
+        3,
+        1,
+        3,
+        2,
+        5
+      ],
+      "retaliation": 1,
+      "changes": [],
+      "baselineStateSha256": "9e44084873ef45ac655349a04a6470ee17f1a6d07331e61334d364c1ab25dde9",
+      "currentStateSha256": "9e44084873ef45ac655349a04a6470ee17f1a6d07331e61334d364c1ab25dde9"
+    },
+    {
+      "scenario": "life-drain-before-regen-and-critical-mend",
+      "seed": 16218112,
+      "openingHp": 1,
+      "openingAttack": 1,
+      "phase": "combat",
+      "hp": 91,
+      "values": [
+        1,
+        2,
+        6,
+        3,
+        4,
+        6
+      ],
+      "retaliation": 0,
+      "changes": [],
+      "baselineStateSha256": "ad7ef266a69c12ec24c60d3e639d96ce718b0570e4b51ad3076a15b75ceae56a",
+      "currentStateSha256": "ad7ef266a69c12ec24c60d3e639d96ce718b0570e4b51ad3076a15b75ceae56a"
+    },
+    {
+      "scenario": "life-drain-before-regen-and-critical-mend",
+      "seed": 32428305,
+      "openingHp": 1,
+      "openingAttack": 1,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        4,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "retaliation": 1,
+      "changes": [
+        {
+          "path": "lastRoll.mechanics[0]",
+          "before": "合鸣归息 · 已触发",
+          "after": "合鸣归息 · 未生效（本掷未存活）"
+        }
+      ],
+      "baselineStateSha256": "1ab58fbd2356b8621eca6dd4abbcc415b4bab7f435451e69fad21b0dd91783d9",
+      "currentStateSha256": "446a1e4691f1ce850f2dac1e3ce4d9d51454c9c79fbd810f6c561e9e98254d35"
+    },
+    {
+      "scenario": "life-drain-before-regen-and-critical-mend",
+      "seed": 64872448,
+      "openingHp": 1,
+      "openingAttack": 1,
+      "phase": "dead",
+      "hp": 0,
+      "values": [
+        2,
+        4,
+        3,
+        6,
+        5,
+        1
+      ],
+      "retaliation": 1,
+      "changes": [
+        {
+          "path": "lastRoll.mechanics[0]",
+          "before": "六点回生 · 已触发",
+          "after": "六点回生 · 未生效（本掷未存活）"
+        }
+      ],
+      "baselineStateSha256": "57fa3ca8b6994dba766146768ca036741441e2aedd79b992ff187cac449f289f",
+      "currentStateSha256": "829fbd480e29bbbcf845fd6b06dbdd8d50223eb62ce0f3832608ec813ba5e711"
+    }
+  ],
+  "limitations": [
+    "Synthetic causal and boundary tests do not establish natural occurrence frequency, player win rate, or long-term balance.",
+    "Existing historical lastRoll records are preserved by unrelated actions; only newly committed rolls use revised descriptions.",
+    "Successful activation at full health remains an activation, not a promise of positive realized healing."
+  ]
+}

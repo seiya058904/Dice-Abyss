@@ -1,0 +1,68 @@
+{
+  "scope": "Actual source-extracted app.js storage/capacity/export branches with real storage codec and capacity/view functions; memory Storage and DOM counter stubs. No browser was started and native modal/focus semantics are outside this probe.",
+  "sourceRoot": "/workspace/scratch/16b883e72bb3/work/Dice-Abyss",
+  "sourceSha256": "ac4f138fc46d19efac8f782ed97c5a8d873903cc5c43a067ccac94fe2267f515",
+  "cases": [
+    {
+      "name": "explicit-check-is-local-read-only",
+      "status": "PASS",
+      "storeReads": 0,
+      "storeWrites": 0,
+      "sceneRenders": 0,
+      "inputUnchanged": true,
+      "controlIdentityPreserved": true
+    },
+    {
+      "name": "valid-other-tab-commit-invalidates-old-dialog",
+      "status": "PASS",
+      "oldBytes": 2302,
+      "newBytes": 3202,
+      "closed": true,
+      "fullStateEqual": true,
+      "exportMatchesNewState": true,
+      "reopenStartsUnmeasured": true,
+      "storeWrites": 0
+    },
+    {
+      "name": "same-revision-unknown-field-branch-is-not-stale",
+      "status": "PASS",
+      "sameRevision": true,
+      "fullUnknownFieldUpdate": true,
+      "closed": true,
+      "exportMatchesNewState": true
+    },
+    {
+      "name": "same-state-mirror-completion-keeps-valid-result",
+      "status": "PASS",
+      "sameStateReference": true,
+      "capacityUnchanged": true,
+      "warningCleared": true,
+      "dialogPreserved": true,
+      "storeWrites": 0
+    },
+    {
+      "name": "unreadable-other-tab-data-preserves-current-memory-export",
+      "status": "PASS",
+      "visibleLoadFailure": true,
+      "capacityStillMeasuresRetainedMemory": true,
+      "exportMatchesLastValidState": true,
+      "conflictingWriteRejected": true,
+      "storeWrites": 0
+    },
+    {
+      "name": "all-copies-removed-existing-behavior",
+      "status": "PASS",
+      "observed": "The pre-existing storage listener ignores key=null and has no missing-both-copies branch. In-memory progress/capacity/export remain available; expected-snapshot guard rejects a later write.",
+      "currentMemoryPreserved": true,
+      "exportMatchesLastValidState": true,
+      "conflictingWriteRejected": true,
+      "storeWrites": 0
+    }
+  ],
+  "limitations": [
+    "Removing all save keys (including localStorage.clear) does not immediately close settings or warn; this listener is unchanged from V5.11. The result still describes retained in-memory progress and export, while a later write is rejected by full expected validation."
+  ],
+  "sourceUnchanged": true,
+  "status": "PASS",
+  "finished": "2026-10-18T11:55:18.583Z"
+}

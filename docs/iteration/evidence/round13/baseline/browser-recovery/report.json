@@ -1,0 +1,586 @@
+{
+  "source": "/workspace/scratch/5a5998079a95/baseline/Dice-Abyss",
+  "url": "http://127.0.0.1:4188/",
+  "expected": "baseline",
+  "started": "2026-10-18T15:19:00.939Z",
+  "sourceBefore": {
+    "src/app.js": "ac4f138fc46d19efac8f782ed97c5a8d873903cc5c43a067ccac94fe2267f515",
+    "src/storage.js": "a50ec7eac5c487b0a269e00272110e93563c6ce716287c2028f9860600418566"
+  },
+  "cases": [
+    {
+      "name": "clear-memory-export-restore",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "Complete fixture loads into both browser records",
+          "passed": true
+        },
+        {
+          "label": "clear delivers a real trusted localStorage event with a null key",
+          "passed": true
+        },
+        {
+          "label": "Loss handling performs no automatic save",
+          "passed": true
+        },
+        {
+          "label": "Baseline ignores the clear notification",
+          "passed": true
+        },
+        {
+          "label": "Baseline memory can still be rescued through settings",
+          "passed": true
+        }
+      ],
+      "screenshots": [],
+      "downloads": [
+        {
+          "file": "clear-memory-export-restore-memory.json",
+          "suggestedFilename": "Dice-Abyss-F1-Lv1.json",
+          "bytes": 2333,
+          "sha256": "6096e1420ba90296c13bf1a110eba76e5dfa79628a9ab9ad05fe7a6e6c924ac8"
+        }
+      ],
+      "events": [
+        {
+          "key": null,
+          "area": "local",
+          "trusted": true,
+          "oldLength": null,
+          "newLength": null
+        }
+      ],
+      "durationMs": 3885.6092420000004
+    },
+    {
+      "name": "remove-pair-and-new-run-read",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "Complete fixture loads into both browser records",
+          "passed": true
+        },
+        {
+          "label": "Removing only primary still exposes the existing mirror warning",
+          "passed": true
+        },
+        {
+          "label": "A readable remaining mirror does not enter missing-save recovery",
+          "passed": true
+        },
+        {
+          "label": "Baseline gives no protection screen after both remove events",
+          "passed": true
+        },
+        {
+          "label": "Baseline automatically replaces the previous memory with the new run",
+          "passed": true
+        }
+      ],
+      "screenshots": [],
+      "downloads": [
+        {
+          "file": "remove-pair-and-new-run-read-memory.json",
+          "suggestedFilename": "Dice-Abyss-F1-Lv1.json",
+          "bytes": 2259,
+          "sha256": "89ef1197b57f68f4f998498f2b170ab920ca34616f2c7a2999c25006c9eadf7e"
+        }
+      ],
+      "events": [
+        {
+          "key": "dice-abyss:save:v1",
+          "area": "local",
+          "trusted": true,
+          "oldLength": 2250,
+          "newLength": null
+        },
+        {
+          "key": "dice-abyss:mirror:v1",
+          "area": "local",
+          "trusted": true,
+          "oldLength": 2250,
+          "newLength": null
+        },
+        {
+          "key": "dice-abyss:save:v1",
+          "area": "local",
+          "trusted": true,
+          "oldLength": null,
+          "newLength": 2194
+        },
+        {
+          "key": "dice-abyss:mirror:v1",
+          "area": "local",
+          "trusted": true,
+          "oldLength": null,
+          "newLength": 2194
+        }
+      ],
+      "durationMs": 1955.788603
+    },
+    {
+      "name": "restore-lock-conflict",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "Complete fixture loads into both browser records",
+          "passed": true
+        },
+        {
+          "label": "clear delivers a real trusted localStorage event with a null key",
+          "passed": true
+        },
+        {
+          "label": "Baseline has no explicit protected recovery action",
+          "passed": true
+        }
+      ],
+      "screenshots": [],
+      "downloads": [],
+      "events": [
+        {
+          "key": null,
+          "area": "local",
+          "trusted": true,
+          "oldLength": null,
+          "newLength": null
+        }
+      ],
+      "durationMs": 1639.4838289999989
+    },
+    {
+      "name": "unreadable-original-records",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "Complete fixture loads into both browser records",
+          "passed": true
+        },
+        {
+          "label": "The original malformed and empty strings remain unchanged",
+          "passed": true
+        },
+        {
+          "label": "Baseline displays an error while leaving the game surface active",
+          "passed": true
+        },
+        {
+          "label": "Baseline still has its memory copy before a new valid save arrives",
+          "passed": true
+        }
+      ],
+      "screenshots": [],
+      "downloads": [
+        {
+          "file": "unreadable-original-records-memory.json",
+          "suggestedFilename": "Dice-Abyss-F1-Lv1.json",
+          "bytes": 2333,
+          "sha256": "6096e1420ba90296c13bf1a110eba76e5dfa79628a9ab9ad05fe7a6e6c924ac8"
+        }
+      ],
+      "events": [
+        {
+          "key": "dice-abyss:save:v1",
+          "area": "local",
+          "trusted": true,
+          "oldLength": 2250,
+          "newLength": 8
+        },
+        {
+          "key": "dice-abyss:mirror:v1",
+          "area": "local",
+          "trusted": true,
+          "oldLength": 2250,
+          "newLength": 0
+        }
+      ],
+      "durationMs": 1715.1377570000004
+    },
+    {
+      "name": "pending-confirm-cancel",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "Complete fixture loads into both browser records",
+          "passed": true
+        },
+        {
+          "label": "An ordinary replace-game confirmation is genuinely open",
+          "passed": true
+        },
+        {
+          "label": "clear delivers a real trusted localStorage event with a null key",
+          "passed": true
+        },
+        {
+          "label": "Loss cancels the obsolete confirmation only in the fixed version",
+          "passed": true
+        }
+      ],
+      "screenshots": [],
+      "downloads": [],
+      "events": [
+        {
+          "key": null,
+          "area": "local",
+          "trusted": true,
+          "oldLength": null,
+          "newLength": null
+        }
+      ],
+      "durationMs": 1463.4890539999997
+    },
+    {
+      "name": "committed-animation-preserved",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "Complete fixture loads into both browser records",
+          "passed": true
+        },
+        {
+          "label": "The animated result was durably committed before storage loss",
+          "passed": true
+        },
+        {
+          "label": "clear delivers a real trusted localStorage event with a null key",
+          "passed": true
+        },
+        {
+          "label": "Baseline receives no clear recovery feedback during presentation",
+          "passed": true
+        },
+        {
+          "label": "Export contains the complete committed result, not the pre-animation display snapshot",
+          "passed": true
+        }
+      ],
+      "screenshots": [],
+      "downloads": [
+        {
+          "file": "committed-animation-preserved-memory.json",
+          "suggestedFilename": "Dice-Abyss-F1-Lv1.json",
+          "bytes": 3236,
+          "sha256": "71f16ef435752f36ad5364fd0a9c953ddbdc28ce14f12c907d8db2d318ad954f"
+        }
+      ],
+      "events": [
+        {
+          "key": null,
+          "area": "local",
+          "trusted": true,
+          "oldLength": null,
+          "newLength": null
+        }
+      ],
+      "durationMs": 1849.8333549999988
+    },
+    {
+      "name": "native-session-storage-filter",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "Complete fixture loads into both browser records",
+          "passed": true
+        },
+        {
+          "label": "Settings is open before the unrelated sessionStorage event",
+          "passed": true
+        },
+        {
+          "label": "The iframe emits an actual trusted sessionStorage event",
+          "passed": true
+        },
+        {
+          "label": "Matching sessionStorage keys cannot close the fixed application dialog",
+          "passed": true
+        },
+        {
+          "label": "The unrelated session event never changes localStorage records",
+          "passed": true
+        }
+      ],
+      "screenshots": [],
+      "downloads": [],
+      "events": [
+        {
+          "key": "dice-abyss:save:v1",
+          "area": "session",
+          "trusted": true,
+          "oldLength": null,
+          "newLength": 28
+        }
+      ],
+      "durationMs": 1828.034297000002
+    },
+    {
+      "name": "recovery-viewports-keyboard",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "Complete fixture loads into both browser records",
+          "passed": true
+        },
+        {
+          "label": "clear delivers a real trusted localStorage event with a null key",
+          "passed": true
+        },
+        {
+          "label": "Baseline recovery layout is absent",
+          "passed": true
+        }
+      ],
+      "screenshots": [],
+      "downloads": [],
+      "events": [
+        {
+          "key": null,
+          "area": "local",
+          "trusted": true,
+          "oldLength": null,
+          "newLength": null
+        }
+      ],
+      "durationMs": 1593.4001529999987
+    },
+    {
+      "name": "queued-clear-recreate",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "Complete fixture loads into both browser records",
+          "passed": true
+        },
+        {
+          "label": "The queued sequence includes a real trusted deletion notification",
+          "passed": true
+        },
+        {
+          "label": "The fully recreated browser run remains byte-identical",
+          "passed": true
+        },
+        {
+          "label": "Baseline synchronizes immediately after queued deletion and recreation",
+          "passed": true
+        },
+        {
+          "label": "Baseline no longer exports the previously surviving memory",
+          "passed": true
+        }
+      ],
+      "screenshots": [],
+      "downloads": [
+        {
+          "file": "queued-clear-recreate-memory.json",
+          "suggestedFilename": "Dice-Abyss-F1-Lv1.json",
+          "bytes": 2218,
+          "sha256": "c09b57c68010e9f5f5af30df099d9720dacb5d0ec8fc116164f18eb9aff35705"
+        }
+      ],
+      "events": [
+        {
+          "key": null,
+          "area": "local",
+          "trusted": true,
+          "oldLength": null,
+          "newLength": null
+        },
+        {
+          "key": "dice-abyss:save:v1",
+          "area": "local",
+          "trusted": true,
+          "oldLength": null,
+          "newLength": 2157
+        },
+        {
+          "key": "dice-abyss:mirror:v1",
+          "area": "local",
+          "trusted": true,
+          "oldLength": null,
+          "newLength": 2157
+        }
+      ],
+      "durationMs": 2134.6556859999982
+    },
+    {
+      "name": "queued-remove-recreate",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "Complete fixture loads into both browser records",
+          "passed": true
+        },
+        {
+          "label": "The queued sequence includes a real trusted deletion notification",
+          "passed": true
+        },
+        {
+          "label": "The fully recreated browser run remains byte-identical",
+          "passed": true
+        },
+        {
+          "label": "Baseline synchronizes immediately after queued deletion and recreation",
+          "passed": true
+        },
+        {
+          "label": "Baseline no longer exports the previously surviving memory",
+          "passed": true
+        }
+      ],
+      "screenshots": [],
+      "downloads": [
+        {
+          "file": "queued-remove-recreate-memory.json",
+          "suggestedFilename": "Dice-Abyss-F1-Lv1.json",
+          "bytes": 2414,
+          "sha256": "23fc5b03c63a7b1972d69ddcfec542c06bb0f2d702c19d09680ea7cf0b4aa757"
+        }
+      ],
+      "events": [
+        {
+          "key": "dice-abyss:save:v1",
+          "area": "local",
+          "trusted": true,
+          "oldLength": 2250,
+          "newLength": null
+        },
+        {
+          "key": "dice-abyss:mirror:v1",
+          "area": "local",
+          "trusted": true,
+          "oldLength": 2250,
+          "newLength": null
+        },
+        {
+          "key": "dice-abyss:save:v1",
+          "area": "local",
+          "trusted": true,
+          "oldLength": null,
+          "newLength": 2331
+        },
+        {
+          "key": "dice-abyss:mirror:v1",
+          "area": "local",
+          "trusted": true,
+          "oldLength": null,
+          "newLength": 2331
+        }
+      ],
+      "durationMs": 1570.9144860000015
+    },
+    {
+      "name": "queued-identical-recreate",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "Complete fixture loads into both browser records",
+          "passed": true
+        },
+        {
+          "label": "clear and identical recreation do not falsely report lost memory",
+          "passed": true
+        },
+        {
+          "label": "clear: identical queued notifications preserve the fixed settings dialog",
+          "passed": true
+        },
+        {
+          "label": "clear: identical queued notifications preserve the fixed scene node",
+          "passed": true
+        },
+        {
+          "label": "clear: all original save bytes remain intact",
+          "passed": true
+        },
+        {
+          "label": "remove and identical recreation do not falsely report lost memory",
+          "passed": true
+        },
+        {
+          "label": "remove: identical queued notifications preserve the fixed settings dialog",
+          "passed": true
+        },
+        {
+          "label": "remove: identical queued notifications preserve the fixed scene node",
+          "passed": true
+        },
+        {
+          "label": "remove: all original save bytes remain intact",
+          "passed": true
+        }
+      ],
+      "screenshots": [],
+      "downloads": [],
+      "events": [
+        {
+          "key": null,
+          "area": "local",
+          "trusted": true,
+          "oldLength": null,
+          "newLength": null
+        },
+        {
+          "key": "dice-abyss:save:v1",
+          "area": "local",
+          "trusted": true,
+          "oldLength": null,
+          "newLength": 2250
+        },
+        {
+          "key": "dice-abyss:mirror:v1",
+          "area": "local",
+          "trusted": true,
+          "oldLength": null,
+          "newLength": 2250
+        },
+        {
+          "key": "dice-abyss:save:v1",
+          "area": "local",
+          "trusted": true,
+          "oldLength": 2250,
+          "newLength": null
+        },
+        {
+          "key": "dice-abyss:mirror:v1",
+          "area": "local",
+          "trusted": true,
+          "oldLength": 2250,
+          "newLength": null
+        },
+        {
+          "key": "dice-abyss:save:v1",
+          "area": "local",
+          "trusted": true,
+          "oldLength": null,
+          "newLength": 2250
+        },
+        {
+          "key": "dice-abyss:mirror:v1",
+          "area": "local",
+          "trusted": true,
+          "oldLength": null,
+          "newLength": 2250
+        }
+      ],
+      "durationMs": 2254.5896600000015
+    }
+  ],
+  "checks": 53,
+  "errors": [],
+  "browser": "155.0.8059.84",
+  "scope": "Fresh isolated contexts with complete constructed valid saves; native storage.clear/removeItem/setItem, native sessionStorage iframe events, actual downloads and existing Web Locks.",
+  "limitations": [
+    "Logical browser viewports, not physical devices or external screen readers.",
+    "Explicit storage-write fault injection remains in node tests; this driver does not override browser quota.",
+    "No claim that localStorage offers atomic compare-and-set when Web Locks are unavailable or noncooperating writers bypass the lock."
+  ],
+  "sourceAfter": {
+    "src/app.js": "ac4f138fc46d19efac8f782ed97c5a8d873903cc5c43a067ccac94fe2267f515",
+    "src/storage.js": "a50ec7eac5c487b0a269e00272110e93563c6ce716287c2028f9860600418566"
+  },
+  "sourceUnchanged": true,
+  "finished": "2026-10-18T15:19:30.216Z",
+  "passed": 11,
+  "failed": 0
+}

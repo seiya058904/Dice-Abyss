@@ -1,0 +1,300 @@
+{
+  "status": "RECOVERY_DEMONSTRATED_FROM_BOTH_ORIGINAL_TERMINALS",
+  "classification": "Original bounded natural-policy failures; both exact saved terminals recover by one legal owned armor change. No irreversible softlock or local rules-4 execution mismatch demonstrated.",
+  "naturalCohortUnchanged": {
+    "naturalJourneys": 4,
+    "completedJourneys": 2,
+    "incompleteJourneys": [
+      {
+        "seed": 7919,
+        "lastFloor": 40,
+        "endingPhase": "dead",
+        "finishReason": "DEATH_RETRY_LIMIT"
+      },
+      {
+        "seed": 31676,
+        "lastFloor": 85,
+        "endingPhase": "dead",
+        "finishReason": "DEATH_RETRY_LIMIT"
+      }
+    ],
+    "completedNaturalFloors": 923,
+    "naturalRolls": 13294,
+    "naturalDeaths": 44,
+    "defenseDecisions": 42,
+    "defenseSwaps": 4
+  },
+  "scope": "Two exact failed natural terminal states; bounded legal counterfactual continuations, never replacement 400-floor samples.",
+  "plan": "plan.json",
+  "fullReport": "report.json.xz",
+  "archiveReceipt": "archive-receipt.json",
+  "runtimeSourcesStable": true,
+  "originalNaturalEvidenceUnchanged": true,
+  "sourceHashes": {
+    "src/engine.js": "340fa90ef963abfc874fa4932af80264a87a569f1d51030d9e9b29b3dbc2192e",
+    "src/storage.js": "2b505d6dab2c5f018eff3f1bd5d6d927a885a175f812bd620ae898b3fead7f05",
+    "src/deep-content.js": "a68b20c8af5740f3939965b10e624fa1f684e8050dd4f2426862c26bf1fe3840",
+    "src/deep-rules.js": "5e3a9b50d5b339a6290df58a5712aa1b1d1017b6a615c409dec86c5683b6dd74",
+    "src/encounters.js": "e485b531d6ed59954cdc8c7b50ab5dd84c1a64449852b7b56fce667489369d76",
+    "src/equipment.js": "8c20de433f21931318e315b862b457d37a03b9596ea5df8f7cc4025691aaccd6",
+    "src/equipment-content.js": "d95b5e7c11d14eb764ea3cefb7eee73f35b2f9d48a8b640513eda9aefd1cc030",
+    "src/content.js": "4c0c2e4656c5a3482a5448a069ae2fa28367ba05d61c7d0c2c9866315f5c5526",
+    "src/rarity.js": "871356df147d027e1845f98c5574a1d9a71c0d17bd8717f457c9007d7c73b735",
+    "src/route-weights.js": "b21499b8c44a17ad09caab5e17f312073b269981b6ac7eb916b5f656912237dd",
+    "scripts/simulate.mjs": "3b0e2d6c5f8151714dd0d60596e6a2681fb79604592f3670f4bb93218bdf614f",
+    "scripts/strategy-round18.mjs": "3f1dcc1c3307953bdeaed3650139a582256764142c20630eacc7b756d4e2163b"
+  },
+  "validation": {
+    "transitions": 182,
+    "fullBaselineComparisons": 182,
+    "exactCodecs": 182
+  },
+  "experimentsStopped": true,
+  "fallbackExecuted": false,
+  "branches": [
+    {
+      "seed": 7919,
+      "name": "original-retry-control",
+      "preActions": [],
+      "won": false,
+      "attempts": 6,
+      "additionalDeaths": 6,
+      "additionalRolls": 66,
+      "goldSpent": 0,
+      "preparedStats": {
+        "attack": 1513,
+        "maxHp": 2753,
+        "defense": 119,
+        "crit": 0.305,
+        "follow": 0.36,
+        "reduction": 0,
+        "dodge": 0,
+        "regen": 0.0408,
+        "barrier": 0.1428,
+        "pairWard": 0,
+        "criticalWard": 0,
+        "lowWard": 0,
+        "resolveGuard": 0,
+        "luck": 19,
+        "echoChance": 0
+      },
+      "ending": {
+        "phase": "dead",
+        "floor": 40,
+        "roomIndex": 3,
+        "rolls": 1004,
+        "deaths": 27,
+        "hp": 0,
+        "ward": 0,
+        "enemyHp": 450110,
+        "enemyShield": 0,
+        "enemyTurns": 11,
+        "combatRules": 4,
+        "rng": 940660921,
+        "gold": 68225,
+        "equipped": {
+          "weapon": "i190",
+          "armor": "i179",
+          "relic": "i143",
+          "relic2": "i194",
+          "relic3": "i192"
+        }
+      },
+      "canOpenEarnedChest": false,
+      "initialStateSha256": "177d84801f71facb5774b8a6bc0b33f218fa52c1bae72e51d23c68068a5b5e81",
+      "terminalStateSha256": "72a22ec0c096f385608b28b1a46c3b75d5605eaca189067da00734ae3ab4dba1",
+      "trace": "seed-7919-original-retry-control.trace.jsonl.xz",
+      "traceExpandedSha256": "d435ec8177edbc5d6e84ca33a552927ef1c450253109aa77d4fa17b1241d7d53",
+      "terminalSave": "seed-7919-original-retry-control.terminal.save.json.gz",
+      "minimumSurvivingPostRollHp": 186
+    },
+    {
+      "seed": 7919,
+      "name": "owned-pair-armor",
+      "preActions": [
+        {
+          "type": "equip",
+          "id": "i182",
+          "slot": "armor"
+        }
+      ],
+      "won": true,
+      "attempts": 1,
+      "additionalDeaths": 0,
+      "additionalRolls": 20,
+      "goldSpent": 0,
+      "preparedStats": {
+        "attack": 1513,
+        "maxHp": 2465,
+        "defense": 161,
+        "crit": 0.305,
+        "follow": 0.36,
+        "reduction": 0,
+        "dodge": 0,
+        "regen": 0,
+        "barrier": 0.084,
+        "pairWard": 0.1344,
+        "criticalWard": 0,
+        "lowWard": 0,
+        "resolveGuard": 0,
+        "luck": 19,
+        "echoChance": 0
+      },
+      "ending": {
+        "phase": "chest",
+        "floor": 40,
+        "roomIndex": 3,
+        "rolls": 958,
+        "deaths": 21,
+        "hp": 2480,
+        "ward": 331,
+        "enemyHp": 0,
+        "enemyShield": 0,
+        "enemyTurns": 20,
+        "combatRules": 4,
+        "rng": 468202672,
+        "gold": 68225,
+        "equipped": {
+          "weapon": "i190",
+          "armor": "i182",
+          "relic": "i143",
+          "relic2": "i194",
+          "relic3": "i192"
+        }
+      },
+      "canOpenEarnedChest": true,
+      "initialStateSha256": "177d84801f71facb5774b8a6bc0b33f218fa52c1bae72e51d23c68068a5b5e81",
+      "terminalStateSha256": "55f30b54e14f51905711994784cf7f00d2fdbd2f0d083df45e1627bf03667af7",
+      "trace": "seed-7919-owned-pair-armor.trace.jsonl.xz",
+      "traceExpandedSha256": "85a15c749584bf3e119e37c4e572060d141990cbbd7da9e60f52aa2aeed582f8",
+      "terminalSave": "seed-7919-owned-pair-armor.terminal.save.json.gz",
+      "minimumSurvivingPostRollHp": 1798
+    },
+    {
+      "seed": 31676,
+      "name": "original-retry-control",
+      "preActions": [],
+      "won": false,
+      "attempts": 6,
+      "additionalDeaths": 6,
+      "additionalRolls": 59,
+      "goldSpent": 0,
+      "preparedStats": {
+        "attack": 3930,
+        "maxHp": 6290,
+        "defense": 495,
+        "crit": 0.365,
+        "follow": 0.42000000000000004,
+        "reduction": 0.08,
+        "dodge": 0,
+        "regen": 0,
+        "barrier": 0,
+        "pairWard": 0,
+        "criticalWard": 0,
+        "lowWard": 0,
+        "resolveGuard": 0,
+        "luck": 0,
+        "echoChance": 0
+      },
+      "ending": {
+        "phase": "dead",
+        "floor": 85,
+        "roomIndex": 5,
+        "rolls": 1725,
+        "deaths": 27,
+        "hp": 0,
+        "ward": 0,
+        "enemyHp": 3378978,
+        "enemyShield": 0,
+        "enemyTurns": 10,
+        "combatRules": 4,
+        "rng": 3997184052,
+        "gold": 181338,
+        "equipped": {
+          "weapon": "i330",
+          "armor": "i402",
+          "relic": "i406",
+          "relic2": "i312",
+          "relic3": "i440"
+        }
+      },
+      "canOpenEarnedChest": false,
+      "initialStateSha256": "059a8af71b7194c3ade69a84f7bd7967aaf30d1c4f7b454857630649a57f22e8",
+      "terminalStateSha256": "f1817319dd7064275187200181b97df48c5b597eb7016ebea70bc76a531e831a",
+      "trace": "seed-31676-original-retry-control.trace.jsonl.xz",
+      "traceExpandedSha256": "ac9398f777e29638ca8679acbb47d635db91b38ec42cfa4232b2e6efcdd68161",
+      "terminalSave": "seed-31676-original-retry-control.terminal.save.json.gz",
+      "minimumSurvivingPostRollHp": 370
+    },
+    {
+      "seed": 31676,
+      "name": "owned-pair-armor",
+      "preActions": [
+        {
+          "type": "equip",
+          "id": "i428",
+          "slot": "armor"
+        }
+      ],
+      "won": true,
+      "attempts": 1,
+      "additionalDeaths": 0,
+      "additionalRolls": 21,
+      "goldSpent": 0,
+      "preparedStats": {
+        "attack": 3930,
+        "maxHp": 6204,
+        "defense": 394,
+        "crit": 0.39,
+        "follow": 0.42000000000000004,
+        "reduction": 0,
+        "dodge": 0,
+        "regen": 0,
+        "barrier": 0.124,
+        "pairWard": 0.1984,
+        "criticalWard": 0,
+        "lowWard": 0,
+        "resolveGuard": 0,
+        "luck": 0,
+        "echoChance": 0
+      },
+      "ending": {
+        "phase": "chest",
+        "floor": 85,
+        "roomIndex": 5,
+        "rolls": 1687,
+        "deaths": 21,
+        "hp": 6204,
+        "ward": 3244,
+        "enemyHp": 0,
+        "enemyShield": 0,
+        "enemyTurns": 21,
+        "combatRules": 4,
+        "rng": 2306000562,
+        "gold": 181338,
+        "equipped": {
+          "weapon": "i330",
+          "armor": "i428",
+          "relic": "i406",
+          "relic2": "i312",
+          "relic3": "i440"
+        }
+      },
+      "canOpenEarnedChest": true,
+      "initialStateSha256": "059a8af71b7194c3ade69a84f7bd7967aaf30d1c4f7b454857630649a57f22e8",
+      "terminalStateSha256": "0c093dcba1ddac91b9bc6d2c36fbfe18a5829f077d947151bed4db63a5e2fae3",
+      "trace": "seed-31676-owned-pair-armor.trace.jsonl.xz",
+      "traceExpandedSha256": "97a9b83bbab1b67f4ec87e8fe8b425b5ca4c1af7c9f82b90c84e27fe02772179",
+      "terminalSave": "seed-31676-owned-pair-armor.terminal.save.json.gz",
+      "minimumSurvivingPostRollHp": 6204
+    }
+  ],
+  "limits": [
+    "Original 2/4 natural completion and both 21-death failures remain unchanged. Recovery branches do not replace their cohort outcomes.",
+    "An observed winning legal path disproves an irreversible softlock for that exact saved state; it does not establish human win rate or all-seed balance.",
+    "A failed bounded retry branch is not a proof that continued retries can never win.",
+    "All original inventory, unknown data, RNG and counters remain in every real transition; only lawful gameplay actions change state.",
+    "Services are checked at the terminal phase; prior missed shop/forge opportunities are not retroactively inserted.",
+    "No continuation past the current enemy or new 400-floor simulation is claimed."
+  ]
+}

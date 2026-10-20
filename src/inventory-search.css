@@ -1,0 +1,37 @@
+/* One compact search row, in the existing inventory's visual language. */
+.inventory-search { margin: .45rem 0 .55rem; }
+.inventory-search-row { display: flex; align-items: center; gap: .5rem; }
+.inventory-search-row > label { flex: 0 0 auto; color: #becbd4; font-size: max(12px, .78rem); }
+.inventory-search-row > input {
+  flex: 1 1 10rem; min-width: 0; width: 100%; min-height: 2.4rem;
+  border: 1px solid #61717d; border-radius: 0; background: #080d10;
+  color: #e8eef2; padding: .5rem .65rem; font: inherit; font-size: max(12px, .8rem);
+  caret-color: var(--gold);
+}
+.inventory-search-row > input::placeholder { color: #abb9c4; opacity: 1; }
+.inventory-search-row > input:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.inventory-search-row > button { flex: 0 0 auto; min-height: 2.4rem; font-size: max(12px, .78rem); }
+.inventory-search-result { margin: .35rem 0 0; color: #bbc8d0; font-size: max(11px, .72rem); line-height: 1.65; overflow-wrap: anywhere; }
+.inventory-search-result b { color: var(--gold); font-weight: 500; }
+@media (max-width: 1099px) {
+  .inventory-search-row { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 8px; }
+  .inventory-search-row > label { grid-column: 1 / -1; width: 100%; font-size: calc(13px * var(--user-scale)); }
+  .inventory-search-row > input { min-height: 44px; font-size: calc(14px * var(--user-scale)); }
+  .inventory-search-row > button { min-height: 44px; font-size: calc(13px * var(--user-scale)); }
+  .inventory-search-result { font-size: calc(12px * var(--user-scale)); }
+}
+
+/* The effect selector shares the existing filter row and native keyboard UI. */
+.inventory-screen .v5-inventory-filters { font-size: max(12px, .75rem); column-gap: .75rem; }
+.inventory-screen .v5-inventory-filters > label { min-width: 0; }
+.inventory-screen .v5-inventory-filters select { max-width: 100%; }
+.inventory-screen .v5-inventory-filters select:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.inventory-screen .inventory-guidance > .inventory-defense-help { color: #becbd4; font-size: max(12px, .72rem); line-height: 1.65; overflow-wrap: anywhere; }
+@media (max-width: 1099px) {
+  .game-shell:not(.fusion-mode) .v5-inventory-filters { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .game-shell:not(.fusion-mode) .inventory-guidance > .inventory-defense-help { font-size: calc(12px * var(--user-scale)); }
+}
+@media (max-width: 479px) {
+  .game-shell:not(.fusion-mode) .v5-inventory-filters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .game-shell:not(.fusion-mode) .v5-inventory-filters > .inventory-defense-filter { grid-column: 1 / -1; grid-row: 2; }
+}

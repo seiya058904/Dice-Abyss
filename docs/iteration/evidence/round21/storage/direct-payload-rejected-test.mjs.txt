@@ -1,0 +1,133 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import * as E from '../src/engine.js';
+import * as S from '../src/storage.js';
+
+function fixture(){
+ const state=E.newGame(27017);state.runId='snapshot-payload-27017';
+ while(state.player.items.length<32)state.player.items.push(E.makeItem(state,undefined,state.nextId%8));
+ state.auditMetadata={keep:'未知扩展 😀 界',nested:[{value:7}],decoy:'{"version":2,"payload":"not the source"}'};
+ return state;
+}
+function memory(primary,mirror=primary){
+ const map=new Map(),writes=[];
+ if(primary!==undefined)map.set(S.SAVE_KEY,primary);if(mirror!==undefined)map.set(S.BACKUP_KEY,mirror);
+ return {map,writes,getItem:key=>map.get(key)??null,setItem:(key,value)=>{writes.push([key,value]);map.set(key,value);}};
+}
+function payloadEnvelope(payload){
+ let h=2166136261;for(let i=0;i<payload.length;i++)h=Math.imul(h^payload.charCodeAt(i),16777619);
+ return JSON.stringify({format:'dice-abyss',version:5,checksum:(h>>>0).toString(16),payload});
+}
+function profileSave(state,expected,store){
+ const parse=JSON.parse,stringify=JSON.stringify;let parses=0,serializations=0,result;
+ try{
+  JSON.parse=function(...args){parses++;return Reflect.apply(parse,this,args);};
+  JSON.stringify=function(...args){serializations++;return Reflect.apply(stringify,this,args);};
+  result=S.saveGame(state,expected,store);
+ }finally{JSON.parse=parse;JSON.stringify=stringify;}
+ return {result,parses,serializations};
+}
+function assertCommitted(store,next){
+ assert.deepEqual(store.writes,[[S.SAVE_KEY,S.encodeSave(next)],[S.BACKUP_KEY,S.encodeSave(next)]]);
+ // Retain the existing JSON number contract: an imported -0 becomes 0 on
+ // serialization. Compare the entire native JSON value, without a whitelist.
+ assert.deepEqual(S.loadSave(store),{state:JSON.parse(JSON.stringify(next)),recovered:false,warning:''});
+ assert.deepEqual(Object.keys(S.loadSave(store)),['state','recovered','warning']);
+}
+
+test('ordinary current-schema commit retains the full snapshot with one fewer full serialization',()=>{
+ const before=fixture(),next=E.transition(before,{type:'lock',id:'i7'}),raw=S.encodeSave(before),store=memory(raw),input=structuredClone({before,next});
+ assert.deepEqual(profileSave(next,before,store),{result:{mirrored:true,warning:''},parses:2,serializations:3});
+ assertCommitted(store,next);assert.deepEqual({before,next},input);
+ assert.equal(S.loadSave(store).state.auditMetadata.nested[0].value,7);
+});
+
+test('identical expected-null rewrites use the complete payload and still reject an unknown-field branch',()=>{
+ const state=fixture(),raw=S.encodeSave(state),store=memory(raw);
+ assert.deepEqual(profileSave(state,null,store),{result:{mirrored:true,warning:''},parses:2,serializations:3});
+ assertCommitted(store,state);store.writes.length=0;
+ const branch=structuredClone(state);branch.auditMetadata.nested[0].value++;
+ assert.throws(()=>S.saveGame(branch,null,store),/另一窗口已创建或更新进度/);
+ assert.deepEqual(store.writes,[]);assert.equal(store.getItem(S.SAVE_KEY),raw);assert.equal(store.getItem(S.BACKUP_KEY),raw);
+});
+
+test('a recovered mirror uses its own validated full payload and exposes no private metadata',()=>{
+ const state=fixture(),raw=S.encodeSave(state),store=memory('corrupt primary',raw),loaded=S.loadSave(store);
+ assert.equal(loaded.recovered,true);assert.match(loaded.warning,/从镜像恢复/);assert.deepEqual(Object.keys(loaded),['state','recovered','warning']);
+ const next=E.transition(loaded.state,{type:'lock',id:'i7'});
+ assert.deepEqual(profileSave(next,loaded.state,store),{result:{mirrored:true,warning:''},parses:3,serializations:3});
+ assertCommitted(store,next);
+});
+
+test('outer-envelope formatting does not prevent exact complete-payload reuse',()=>{
+ const state=fixture(),envelope=JSON.parse(S.encodeSave(state));
+ const raw=JSON.stringify({payload:envelope.payload,ignored:'version 2',checksum:envelope.checksum,version:5,format:'dice-abyss'},null,2),store=memory(raw),next=E.transition(state,{type:'lock',id:'i7'});
+ assert.deepEqual(profileSave(next,state,store),{result:{mirrored:true,warning:''},parses:2,serializations:3});
+ assertCommitted(store,next);
+});
+
+const noncanonicalPayloads=state=>{
+ const payload=JSON.stringify(state);
+ return [
+  ['whitespace',JSON.stringify(state,null,2)],
+  ['escaped Unicode',payload.replaceAll('界','\\u754c').replaceAll('😀','\\ud83d\\ude00')],
+  ['number spelling',payload.replace('"revision":0','"revision":0.0')],
+  ['duplicate unknown key',payload.slice(0,-1)+',"auditDuplicate":1,"auditDuplicate":2}'],
+  ['integer-like key order',payload.slice(0,-1)+',"auditNumbers":{"10":"ten","2":"two","01":"one"}}'],
+  ['negative zero',payload.slice(0,-1)+',"auditNegativeZero":-0}'],
+  ['escaped slash and key',payload.slice(0,-1)+',"auditSlash":"a\\/b","audit\\u0055nicodeKey":true}'],
+  ['ordinary proto/toJSON strings',payload.slice(0,-1)+',"auditPrototype":{"__proto__":{"x":7},"toJSON":"ordinary text","constructor":"ordinary text"}}']
+ ];
+};
+test('accepted noncanonical payloads keep full decoded-state comparison for normal and null expected snapshots',()=>{
+ for(const [name,payload]of noncanonicalPayloads(fixture())){
+  const raw=payloadEnvelope(payload),expected=S.decodeSave(raw),next=E.transition(expected,{type:'lock',id:'i7'});
+  for(const nullExpected of [false,true]){
+   const store=memory(raw),candidate=nullExpected?expected:next;
+   assert.deepEqual(S.saveGame(candidate,nullExpected?null:expected,store),{mirrored:true,warning:''},name);
+   assertCommitted(store,candidate);
+  }
+ }
+});
+
+test('noncanonical payload imports preserve all unknown fields through the ordinary archive and commit path',()=>{
+ const active=E.newGame(410),activeRaw=S.encodeSave(active);
+ for(const [name,payload]of noncanonicalPayloads(fixture())){
+  const raw=payloadEnvelope(payload),imported=S.decodeSave(raw),store=memory(activeRaw);
+  assert.deepEqual(S.saveImportedGame(imported,raw,active,store),{mirrored:true,warning:''},name);
+  assertCommitted(store,imported);
+ }
+});
+
+test('same-revision branches in nested unknown metadata still fail before any active write',()=>{
+ const state=fixture();
+ for(const [name,payload]of [['canonical',JSON.stringify(state)],...noncanonicalPayloads(state)]){
+  const raw=payloadEnvelope(payload),expected=S.decodeSave(raw),branch=structuredClone(expected),store=memory(raw);
+  branch.auditMetadata.nested[0].value++;
+  assert.equal(branch.runId,expected.runId);assert.equal(branch.revision,expected.revision);
+  assert.throws(()=>S.saveGame(E.transition(expected,{type:'lock',id:'i7'}),branch,store),/另一窗口已更新进度/,name);
+  assert.deepEqual(store.writes,[]);assert.equal(store.getItem(S.SAVE_KEY),raw);assert.equal(store.getItem(S.BACKUP_KEY),raw);
+ }
+});
+
+test('the optimization keeps no payload cache across returned objects or subsequent transactions',()=>{
+ const state=fixture(),raw=S.encodeSave(state),store=memory(raw),first=S.loadSave(store).state,second=S.loadSave(store).state;
+ first.auditMetadata.nested[0].value=90;assert.equal(second.auditMetadata.nested[0].value,7);
+ const next=E.transition(second,{type:'lock',id:'i7'});S.saveGame(next,second,store);store.writes.length=0;
+ assert.throws(()=>S.saveGame(next,first,store),/另一窗口已更新进度/);
+ assert.throws(()=>S.saveGame(next,second,store),/另一窗口已更新进度/);
+ const loaded=S.loadSave(store).state,branch=structuredClone(loaded);branch.auditMetadata.nested[0].value=91;
+ store.map.set(S.SAVE_KEY,S.encodeSave(branch));store.map.set(S.BACKUP_KEY,S.encodeSave(branch));
+ assert.throws(()=>S.saveGame(E.transition(loaded,{type:'lock',id:'i8'}),loaded,store),/另一窗口已更新进度/);
+ assert.deepEqual(store.writes,[]);assert.deepEqual(S.loadSave(store).state,branch);
+});
+
+test('a migrated V4 source still archives its complete original before canonical V5 commit',()=>{
+ const golden=JSON.parse(readFileSync(new URL('./fixtures/v4-baseline.json',import.meta.url),'utf8'));
+ const raw=golden.saves[0].raw,store=memory(raw),state=S.loadSave(store).state,next=E.transition(state,{type:'lock',id:state.player.equipped.weapon});
+ assert.equal(state.version,5);assert.equal(JSON.parse(raw).version,4);
+ assert.deepEqual(S.saveGame(next,state,store),{mirrored:true,warning:''});
+ assert.deepEqual(store.writes.map(([key])=>key),[S.V4_BACKUP_KEY,S.SAVE_KEY,S.BACKUP_KEY]);
+ assert.equal(store.getItem(S.V4_BACKUP_KEY),raw);assert.deepEqual(S.loadSave(store).state,next);
+});

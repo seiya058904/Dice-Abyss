@@ -1,0 +1,52 @@
+TAP version 13
+# Subtest: fatal retaliation records qualified healing as ineffective and leaves the hero dead
+ok 1 - fatal retaliation records qualified healing as ineffective and leaves the hero dead
+  ---
+  duration_ms: 9.119848
+  type: 'test'
+  ...
+# Subtest: surviving recovery keeps its original order and floors the combined amount only once
+ok 2 - surviving recovery keeps its original order and floors the combined amount only once
+  ---
+  duration_ms: 2.97927
+  type: 'test'
+  ...
+# Subtest: life drain after a shielded retaliation also blocks the survival-gated recovery
+ok 3 - life drain after a shielded retaliation also blocks the survival-gated recovery
+  ---
+  duration_ms: 1.453006
+  type: 'test'
+  ...
+# Subtest: full health and a killing blow still satisfy survival without inventing extra healing
+ok 4 - full health and a killing blow still satisfy survival without inventing extra healing
+  ---
+  duration_ms: 6.166616
+  type: 'test'
+  ...
+# Subtest: unmatched faces create no recovery record and each matching ability remains independent
+ok 5 - unmatched faces create no recovery record and each matching ability remains independent
+  ---
+  duration_ms: 3.245483
+  type: 'test'
+  ...
+# Subtest: delayed notes stay between existing attack and guard notes, without leaking transient fields
+ok 6 - delayed notes stay between existing attack and guard notes, without leaking transient fields
+  ---
+  duration_ms: 2.497088
+  type: 'test'
+  ...
+# Subtest: an existing saved death record is retained until a new battle roll is committed
+ok 7 - an existing saved death record is retained until a new battle roll is committed
+  ---
+  duration_ms: 3.239454
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 38.874479

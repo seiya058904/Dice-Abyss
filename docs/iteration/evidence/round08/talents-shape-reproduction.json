@@ -1,0 +1,42 @@
+{
+  "source": "sole input baseline 5.7.0, schema 5",
+  "fixtureType": "synthetic malformed import accepted by the shipped decoder",
+  "results": [
+    {
+      "name": "empty-array",
+      "validatorAccepted": true,
+      "importReplacedActive": true,
+      "talentBefore": 0,
+      "pointsBefore": 3,
+      "talentAfterTransition": 1,
+      "pointsAfterTransition": 2,
+      "transitionValidatorAccepted": true,
+      "saveResult": {
+        "mirrored": true,
+        "warning": ""
+      },
+      "talentAfterRefresh": 0,
+      "pointsAfterRefresh": 2,
+      "persistedTalents": [],
+      "lostPaidTalentPoint": true
+    },
+    {
+      "name": "boolean-true",
+      "validatorAccepted": true,
+      "importReplacedActive": true,
+      "talentBefore": 0,
+      "pointsBefore": 3,
+      "error": "Cannot create property 'high' on boolean 'true'",
+      "stack": "TypeError: Cannot create property 'high' on boolean 'true'\n    at Module.transition (file:///workspace/scratch/5c3c2b08656a/baseline/Dice-Abyss/src/engine.js:399:80)\n    at file:///workspace/scratch/5c3c2b08656a/audit/persistence/reproduce-talents-shape.mjs:25:18\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\n    at async node:internal/modules/esm/loader:643:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)"
+    },
+    {
+      "name": "number-one",
+      "validatorAccepted": true,
+      "importReplacedActive": true,
+      "talentBefore": 0,
+      "pointsBefore": 3,
+      "error": "Cannot create property 'high' on number '1'",
+      "stack": "TypeError: Cannot create property 'high' on number '1'\n    at Module.transition (file:///workspace/scratch/5c3c2b08656a/baseline/Dice-Abyss/src/engine.js:399:80)\n    at file:///workspace/scratch/5c3c2b08656a/audit/persistence/reproduce-talents-shape.mjs:25:18\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\n    at async node:internal/modules/esm/loader:643:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)"
+    }
+  ]
+}

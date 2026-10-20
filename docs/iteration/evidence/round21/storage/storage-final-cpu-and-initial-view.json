@@ -1,0 +1,4150 @@
+{
+  "kind": "Round21 decoder-only parsed V5 inventory ID Set reuse differential and paired Node CPU timing",
+  "createdAt": "2026-10-19T12:30:41.918Z",
+  "node": "v24.19.0",
+  "cpu": "AMD EPYC 9V74 80-Core Processor",
+  "baselineRoot": "/workspace/scratch/85c02edcd5e2/baseline/Dice-Abyss",
+  "currentRoot": "/workspace/scratch/85c02edcd5e2/work/Dice-Abyss",
+  "sourceHashes": {
+    "baseline": {
+      "src/storage.js": "f5a990793a90ff59a57f38e4be8fcb9deaf54997dff9d9acec2cded73d2c8145",
+      "src/engine.js": "75c6d9fcc48c0cf49ee02e53ffb7b143a09a2c79738d3bb2eb5d0ae80b30872b",
+      "src/views.js": "ae2fede007d7ed0b5a9b660add0ff7df89a76c93c3cabc3539741c9d2345bf07",
+      "src/boon-readout.js": "a791db47ce4c910c67cfe9ece95ea54520e79f39a126a2c82a46d9ba2c4bc38a",
+      "src/release.js": "d95506cb9ad535f7771f0f81055a49e510db003edff3d697ce91bde506be640b"
+    },
+    "current": {
+      "src/storage.js": "daa6eeffc7a38692213228d748c7819739392a5eeaedc91ec62350c53319591c",
+      "src/engine.js": "75c6d9fcc48c0cf49ee02e53ffb7b143a09a2c79738d3bb2eb5d0ae80b30872b",
+      "src/views.js": "da176e50311a2ffea3674d6445bf0c363ea5073bd02a898ba8a507c77dc84926",
+      "src/boon-readout.js": "d44d2a22f1ab6d48f3e768ab59474aa4a9d3e741c1bf085d7614a4b187f76aac",
+      "src/release.js": "60fccdf0c566f0a9650c5d2bc18218c082f04454299d9f868a53f4008b5c0118"
+    }
+  },
+  "scriptSha256": "d186e9f78586f75de0e450f5043e60f2aa56df6961f3997cfe8f8dec8db4c025",
+  "verifyOnly": false,
+  "status": "PASS",
+  "differential": [
+    {
+      "name": "ordinary V5 primary",
+      "exactlyEqual": true,
+      "resultSha256": "ef850e591465a41e35cb58ac030d46ca03fabae59f0acf89dffbc57af94e70cc",
+      "writeKeys": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "noncanonical V5 primary",
+      "exactlyEqual": true,
+      "resultSha256": "7b595bfcfa381e4deda1ab0fe45cbabd464c7ba4238121b538cb25225105acd6",
+      "writeKeys": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "recovered V5 mirror",
+      "exactlyEqual": true,
+      "resultSha256": "ac5d230ba7b7dcd6aaef0c7d730b7e0d932e7d1b9706fd0943ea1e618b7508f8",
+      "writeKeys": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "recovered V5 mirror behind invalid V4 primary",
+      "exactlyEqual": true,
+      "resultSha256": "008f1b33c139ee6059c928509899b06d6aa59c40604907550392ae67a9e6ec05",
+      "writeKeys": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "mismatched mirror warning",
+      "exactlyEqual": true,
+      "resultSha256": "e2a2e029486e63e0f1a7d626e87cc96ad3a3132bf6791983b61b12f2052edbf4",
+      "writeKeys": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "new run with no active save",
+      "exactlyEqual": true,
+      "resultSha256": "d44936814c1bf2cfd77ed9484419d05d5bb9bf29761350a25b2014af5b0ca180",
+      "writeKeys": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "null identical snapshot",
+      "exactlyEqual": true,
+      "resultSha256": "6abac918c3a6ce028bbc3c1de162380a1c2224c64dee800b0aeb2004b7990afc",
+      "writeKeys": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "null branch conflict",
+      "exactlyEqual": true,
+      "resultSha256": "1386313f8099d2c7792e594ed5e0b8bc74ec9ac873aebae87f14a9b1e0260d9f",
+      "writeKeys": [],
+      "outcome": {
+        "error": {
+          "name": "Error",
+          "message": "另一窗口已创建或更新进度。请重新读取后继续，避免覆盖存档。"
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "explicit replacement",
+      "exactlyEqual": true,
+      "resultSha256": "c1be1c135c91bddabaaab0815757183471ff89c817ee58fb6345bc68d8f5d0ac",
+      "writeKeys": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "unknown-field conflict",
+      "exactlyEqual": true,
+      "resultSha256": "862a37fe830c39540bc6ffc605d35b7ab6e2491818c7c651eeeaaf4a2632d0a2",
+      "writeKeys": [],
+      "outcome": {
+        "error": {
+          "name": "Error",
+          "message": "另一窗口已更新进度。请刷新后继续，避免覆盖存档。"
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "invalid candidate validation",
+      "exactlyEqual": true,
+      "resultSha256": "29cf30fdf8517713c7b9f39572bf3b9a89d083e8bf44b74504f1b4f00f1abd6a",
+      "writeKeys": [],
+      "outcome": {
+        "error": {
+          "name": "Error",
+          "message": "存档状态不完整，操作未保存。"
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "corrupt immutable legacy archive",
+      "exactlyEqual": true,
+      "resultSha256": "b0c9b4999aacbd9f6c7d3cbeb9cec447ca2288b64253c404d732637273a02d9e",
+      "writeKeys": [],
+      "outcome": {
+        "error": {
+          "name": "Error",
+          "message": "升级前归档校验未通过，现有主档未覆盖。请先导出原始存档并检查归档。"
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "unused corrupt V4 archive is unchanged",
+      "exactlyEqual": true,
+      "resultSha256": "9209a6f8e8acb3c6b98d23278c5686d612004c0c438745e541e5bd5eeb537f46",
+      "writeKeys": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "existing originals remain immutable",
+      "exactlyEqual": true,
+      "resultSha256": "6e7e4f907f92121c12633b419474b524043365ca337fb8dab2842bf6b9868fa8",
+      "writeKeys": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "main read throws and mirror recovers",
+      "exactlyEqual": true,
+      "resultSha256": "68d4795a190ceb005f43ec0055f1940687d06d05cc71fb26873bf6690f0532f6",
+      "writeKeys": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "mirror health read throws",
+      "exactlyEqual": true,
+      "resultSha256": "8f63fb5183eb3a829957969e53b2ff70c0f5682265872e357330dea18ea3f392",
+      "writeKeys": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "first source reread throws",
+      "exactlyEqual": true,
+      "resultSha256": "dea208810197bc22fbda42d7631af1d07869438efd8f004744622119d374951c",
+      "writeKeys": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "second source reread throws",
+      "exactlyEqual": true,
+      "resultSha256": "06b542756f91265cc1f2055094e78619f5f0b6bc244c009cb247bf504b2c7ab0",
+      "writeKeys": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "legacy archive read throws",
+      "exactlyEqual": true,
+      "resultSha256": "334c9bbd91b4fff56aa1532c01debc40a1d5a9c7409780753961fe6e5bcdee83",
+      "writeKeys": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "source changes before pre-V5 probe",
+      "exactlyEqual": true,
+      "resultSha256": "e4d2ffc413abf14355e35485c88a1324856d8fd9ce2fbe36108b6bbe716bc5a2",
+      "writeKeys": [
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "source changes before legacy probe",
+      "exactlyEqual": true,
+      "resultSha256": "a5a900dfa96888b2fd9ed8c0581c6cf97659a2d2c12ac7f155d087f9d43b216e",
+      "writeKeys": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "main write fails",
+      "exactlyEqual": true,
+      "resultSha256": "f8357f8210474f81f1bf6a52c83df6eed97720c99d5059b8003b90390568ea9e",
+      "writeKeys": [
+        "dice-abyss:save:v1"
+      ],
+      "outcome": {
+        "error": {
+          "name": "Error",
+          "message": "浏览器无法保存进度，本次操作未生效。请先导出完整备份，再检查浏览器存储空间与权限；存档文件未满也可能受浏览器配额限制。"
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "mirror write fails",
+      "exactlyEqual": true,
+      "resultSha256": "2dd4fe1a4a7a75a1daae4373b25639f01e60677b425f2dbf4d907ee6968259a4",
+      "writeKeys": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": false,
+          "warning": "进度已保存到主存档，但镜像更新失败。请立即导出当前备份并检查浏览器存储空间；旧镜像可能不含本次操作。"
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "unreadable legacy rescue",
+      "exactlyEqual": true,
+      "resultSha256": "504de0babb02bc38553a8434b018ef2715a09e7a83c7f308e666ea021c969a6f",
+      "writeKeys": [
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "current-schema import",
+      "exactlyEqual": true,
+      "resultSha256": "a476587429f75e7b53f747e97b06cae629ca024dc48c397607db0e8c3dfe67f5",
+      "writeKeys": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "mismatched imported raw",
+      "exactlyEqual": true,
+      "resultSha256": "ff3b8bde36dd9fe66675ab9e93578ba04e3ea01772d06f94d4073e7d3edb0151",
+      "writeKeys": [],
+      "outcome": {
+        "error": {
+          "name": "Error",
+          "message": "导入内容与已核对的原始存档不一致，当前进度未改动。"
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "stale import expected",
+      "exactlyEqual": true,
+      "resultSha256": "862a37fe830c39540bc6ffc605d35b7ab6e2491818c7c651eeeaaf4a2632d0a2",
+      "writeKeys": [],
+      "outcome": {
+        "error": {
+          "name": "Error",
+          "message": "另一窗口已更新进度。请刷新后继续，避免覆盖存档。"
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "V1 migration primary",
+      "exactlyEqual": true,
+      "resultSha256": "467204a77ab639f98df9466366d1e6ffe74e7aeab44cb8eadd42dd3980e13093",
+      "writeKeys": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "V1 migration mirror",
+      "exactlyEqual": true,
+      "resultSha256": "a778f1dafb1c4192afa2c85b496723e53a5fc799195a6c32cf8a9e87eaa9f45e",
+      "writeKeys": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "V1 import replaces V5",
+      "exactlyEqual": true,
+      "resultSha256": "68ee7889e9d1a1ef4c9b8e9f02495cecad9b0a2cebb289426fa3a11828526037",
+      "writeKeys": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "V2 migration primary",
+      "exactlyEqual": true,
+      "resultSha256": "a20de5ae6d7ea09f8f0835a7a3406e5a0d6bb46dc4e68b979737de0d77585ccc",
+      "writeKeys": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "V2 migration mirror",
+      "exactlyEqual": true,
+      "resultSha256": "3c47876777fd78e8244d329889586a217541c7bad5da9cbc6fdc32f7359f270f",
+      "writeKeys": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "V2 import replaces V5",
+      "exactlyEqual": true,
+      "resultSha256": "1d7501373f83d5c2cf3e38fdf7e1ef97d61c1a92584f8da111c622ec35c12a26",
+      "writeKeys": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "V3 migration primary",
+      "exactlyEqual": true,
+      "resultSha256": "b4d8e86933869c2e12e89bcf5f2d9d21cf53958817e562526c48651824214339",
+      "writeKeys": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "V3 migration mirror",
+      "exactlyEqual": true,
+      "resultSha256": "a3f6d2947dec9de2247e9973de2bf231b93ade09f9ecb842ca666345cc8d7643",
+      "writeKeys": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "V3 import replaces V5",
+      "exactlyEqual": true,
+      "resultSha256": "912a1278f3ed060af156d98b77941dd31bc5c15bb55f4cbbd818c2f354b3a189",
+      "writeKeys": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "V4 migration primary",
+      "exactlyEqual": true,
+      "resultSha256": "ba91ff1ed9a32cab22bbab6d86370011b5688a1bdd0cf458b649ba7181ceea2b",
+      "writeKeys": [
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "V4 migration mirror",
+      "exactlyEqual": true,
+      "resultSha256": "610da93c6db13bbe4d0590c1e0c7db1a0fc77a287e6faaf264ce7516f68e49c4",
+      "writeKeys": [
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "V4 import replaces V5",
+      "exactlyEqual": true,
+      "resultSha256": "3bb95673406376dfb099eefbad41ab805940447b0b99a7dc2a4a7387998502bb",
+      "writeKeys": [
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "legacy failure at dice-abyss:pre-levels:v1",
+      "exactlyEqual": true,
+      "resultSha256": "9aa1c3b8b852ffa383b4fbb22c29052886c38b36000b7c46a348c8d912ff62db",
+      "writeKeys": [
+        "dice-abyss:pre-levels:v1"
+      ],
+      "outcome": {
+        "error": {
+          "name": "Error",
+          "message": "无法保留升级前原始存档，主档未覆盖。"
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "legacy failure at dice-abyss:pre-v5:v1",
+      "exactlyEqual": true,
+      "resultSha256": "c4816ed1600c696bafeb8d2ee066f74c46b5ae24e15428f46af6eec35917455e",
+      "writeKeys": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1"
+      ],
+      "outcome": {
+        "error": {
+          "name": "Error",
+          "message": "无法保留V5升级前原始存档，主档未覆盖。"
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "legacy failure at dice-abyss:save:v1",
+      "exactlyEqual": true,
+      "resultSha256": "5e984f68f6ed58c321bf4d8fec395ef40f443525c5ff6d603874428f83306718",
+      "writeKeys": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1"
+      ],
+      "outcome": {
+        "error": {
+          "name": "Error",
+          "message": "浏览器无法保存进度，本次操作未生效。请先导出完整备份，再检查浏览器存储空间与权限；存档文件未满也可能受浏览器配额限制。"
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "legacy failure at dice-abyss:mirror:v1",
+      "exactlyEqual": true,
+      "resultSha256": "a371d1790e8cfde86a37eeaa3f647bc2c922e06102e44d5120276aafca71c285",
+      "writeKeys": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": false,
+          "warning": "进度已保存到主存档，但镜像更新失败。请立即导出当前备份并检查浏览器存储空间；旧镜像可能不含本次操作。"
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "whitespace payload",
+      "exactlyEqual": true,
+      "resultSha256": "f4fa498d6f5ae3036b88430389ee7d4d46abbfbedd7064e519e81549e475d520",
+      "writeKeys": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "whitespace payload identical-null",
+      "exactlyEqual": true,
+      "resultSha256": "d0a32e4824e1be359018495c45b4436623c2b11fb6ded8d348e7bbc551fe3224",
+      "writeKeys": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "whitespace payload import",
+      "exactlyEqual": true,
+      "resultSha256": "e6c245fa9be4ad072a3c23b860868f71a667de13f4a2905e2d68239c7a1bfa95",
+      "writeKeys": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "whitespace payload unknown-field conflict",
+      "exactlyEqual": true,
+      "resultSha256": "393ff88383ef1382989978ef759b2ca5ee2516c7d43aaab19244509a0448b76f",
+      "writeKeys": [],
+      "outcome": {
+        "error": {
+          "name": "Error",
+          "message": "另一窗口已更新进度。请刷新后继续，避免覆盖存档。"
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "escaped Unicode payload",
+      "exactlyEqual": true,
+      "resultSha256": "95d7caa5befb3929fc7ac43ce96eb9445be12880611984488fc6e03ada007520",
+      "writeKeys": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "escaped Unicode payload identical-null",
+      "exactlyEqual": true,
+      "resultSha256": "2bffc6844320c34887806e539a6d8b29f7703d5f56c91cf71d5bfeabd7c95d79",
+      "writeKeys": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "escaped Unicode payload import",
+      "exactlyEqual": true,
+      "resultSha256": "e6c245fa9be4ad072a3c23b860868f71a667de13f4a2905e2d68239c7a1bfa95",
+      "writeKeys": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "escaped Unicode payload unknown-field conflict",
+      "exactlyEqual": true,
+      "resultSha256": "ff87d40d79913445a8f0e61a7239aa2cbf1679206fd3f008c8bd1415db87090b",
+      "writeKeys": [],
+      "outcome": {
+        "error": {
+          "name": "Error",
+          "message": "另一窗口已更新进度。请刷新后继续，避免覆盖存档。"
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "noncanonical integer spellings",
+      "exactlyEqual": true,
+      "resultSha256": "f16b495145d0c9e0f2dc03652163a4daa2d0ee13fb48c3cccb2b3d4ee83889d0",
+      "writeKeys": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "noncanonical integer spellings identical-null",
+      "exactlyEqual": true,
+      "resultSha256": "b86288ca2263c543c4822d82c2bb75e096a977355c519c76aa0f759015c9545d",
+      "writeKeys": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "noncanonical integer spellings import",
+      "exactlyEqual": true,
+      "resultSha256": "e6c245fa9be4ad072a3c23b860868f71a667de13f4a2905e2d68239c7a1bfa95",
+      "writeKeys": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "noncanonical integer spellings unknown-field conflict",
+      "exactlyEqual": true,
+      "resultSha256": "0a044640287bab72ac4b922df23359e2e8914d1f3c221dbe80a9e19238622fdf",
+      "writeKeys": [],
+      "outcome": {
+        "error": {
+          "name": "Error",
+          "message": "另一窗口已更新进度。请刷新后继续，避免覆盖存档。"
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "duplicate top-level unknown keys",
+      "exactlyEqual": true,
+      "resultSha256": "9c07f5344bd93bf895e6a00e0035826e8f35912c527d9f501c0e51aa796f22cc",
+      "writeKeys": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "duplicate top-level unknown keys identical-null",
+      "exactlyEqual": true,
+      "resultSha256": "e6f2de6b412016b12229eb59497740d303e7d2cbe802309c8366dca4fdaa9ed2",
+      "writeKeys": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "duplicate top-level unknown keys import",
+      "exactlyEqual": true,
+      "resultSha256": "9e244e547d12faaf8b42f83ee16ac7c00236b24d018eadb69ba39cb71455d927",
+      "writeKeys": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "duplicate top-level unknown keys unknown-field conflict",
+      "exactlyEqual": true,
+      "resultSha256": "0cae99987a9b31a6e2af1a267fdb1c05c2b57edf46db6149e3d3ca78dcd519ce",
+      "writeKeys": [],
+      "outcome": {
+        "error": {
+          "name": "Error",
+          "message": "另一窗口已更新进度。请刷新后继续，避免覆盖存档。"
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "integer-like keys in noncanonical order",
+      "exactlyEqual": true,
+      "resultSha256": "b719c716b61b6a661732c8794a6c6b115fa7eb61da1c33659c1090c880996e84",
+      "writeKeys": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "integer-like keys in noncanonical order identical-null",
+      "exactlyEqual": true,
+      "resultSha256": "5fa82ff8eca1db8a51798e9c67112221f691462b155c08f3af05b69fefd2ab14",
+      "writeKeys": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "integer-like keys in noncanonical order import",
+      "exactlyEqual": true,
+      "resultSha256": "e17a45f66614309a892a70eeb793ea707a662067871e65825a3123458e9996f3",
+      "writeKeys": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "integer-like keys in noncanonical order unknown-field conflict",
+      "exactlyEqual": true,
+      "resultSha256": "60c8bab078646d114c1063dca97cd35eae5ccd677b93baf940622fde2f044f40",
+      "writeKeys": [],
+      "outcome": {
+        "error": {
+          "name": "Error",
+          "message": "另一窗口已更新进度。请刷新后继续，避免覆盖存档。"
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "unknown negative zero",
+      "exactlyEqual": true,
+      "resultSha256": "743dd4320fea0100f9e3aeb7dd078eab1cfbf7d700a5dc4d49b6111a5b997bf3",
+      "writeKeys": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "unknown negative zero identical-null",
+      "exactlyEqual": true,
+      "resultSha256": "d378f953e511504242c4ffe9e5848ff177b30912e0adaf5dc8eee0db6dce1daa",
+      "writeKeys": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "unknown negative zero import",
+      "exactlyEqual": true,
+      "resultSha256": "967e28b391784c3edfc13a8844b42eeedefbae30bfb4d02026cd1f688f41f3ae",
+      "writeKeys": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "unknown negative zero unknown-field conflict",
+      "exactlyEqual": true,
+      "resultSha256": "e3a0feccbf9eb6815b24ccfae9128bc44aa6f77d88e3966f6ece4477bac60414",
+      "writeKeys": [],
+      "outcome": {
+        "error": {
+          "name": "Error",
+          "message": "另一窗口已更新进度。请刷新后继续，避免覆盖存档。"
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "escaped slash and key",
+      "exactlyEqual": true,
+      "resultSha256": "7b02c0f281a033b8ae4887909cdb2b5e731b781f266c23860f8b528572d6052f",
+      "writeKeys": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "escaped slash and key identical-null",
+      "exactlyEqual": true,
+      "resultSha256": "3f0187cd3f46780cda3bc35a3901069015989bc030f98699a20ea9098612681c",
+      "writeKeys": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "escaped slash and key import",
+      "exactlyEqual": true,
+      "resultSha256": "10d731968a90494154db3708c59eeda762cd0a6d1ccdb6399e91ab0aa8e2a53d",
+      "writeKeys": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "escaped slash and key unknown-field conflict",
+      "exactlyEqual": true,
+      "resultSha256": "3c28987a7e4887942834a1158f37edbc4882cc9c1a29d7d5300f2e37c27fb3c7",
+      "writeKeys": [],
+      "outcome": {
+        "error": {
+          "name": "Error",
+          "message": "另一窗口已更新进度。请刷新后继续，避免覆盖存档。"
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "unknown nested proto/toJSON strings",
+      "exactlyEqual": true,
+      "resultSha256": "46041ed6f12d37def74fb04ab7e8d3771d86ac0390453a71de6756e2c779df71",
+      "writeKeys": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "unknown nested proto/toJSON strings identical-null",
+      "exactlyEqual": true,
+      "resultSha256": "0b2f7f467198dbdebed5ea3e678655b3e4851e30d73da2b5789d0613d8f08593",
+      "writeKeys": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "unknown nested proto/toJSON strings import",
+      "exactlyEqual": true,
+      "resultSha256": "2e8a91580b04864b3929ed9179dbab44b2d5288e0ee702cdb705424345f4d6ec",
+      "writeKeys": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ],
+      "outcome": {
+        "result": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "callerUnchanged": true
+    },
+    {
+      "name": "unknown nested proto/toJSON strings unknown-field conflict",
+      "exactlyEqual": true,
+      "resultSha256": "cbb30cb2532c934fd471bb467db6607839f2f7e453c48b89e2c511e223725098",
+      "writeKeys": [],
+      "outcome": {
+        "error": {
+          "name": "Error",
+          "message": "另一窗口已更新进度。请刷新后继续，避免覆盖存档。"
+        }
+      },
+      "callerUnchanged": true
+    }
+  ],
+  "parseProfiles": [
+    {
+      "name": "32 items, equipped first",
+      "items": 32,
+      "rawCharacters": 8180,
+      "rawUtf8Bytes": 8706,
+      "rawSha256": "c803781cfe4030cd9d786777500aeeb4c1b7c1fe1def426946ae8b9a83554172",
+      "afterSha256": "98903df3b0d0e4bde1ebca9a62bc639a18b20d5d5ad074ce22c9abf9a6d7f9ca",
+      "baseline": {
+        "activeEnvelopeParses": 1,
+        "totalParses": 2,
+        "fullSerializations": 4,
+        "utf8Encodes": 0,
+        "inventorySets": 4,
+        "writeKeys": [
+          "dice-abyss:save:v1",
+          "dice-abyss:mirror:v1"
+        ]
+      },
+      "current": {
+        "activeEnvelopeParses": 1,
+        "totalParses": 2,
+        "fullSerializations": 4,
+        "utf8Encodes": 0,
+        "inventorySets": 3,
+        "writeKeys": [
+          "dice-abyss:save:v1",
+          "dice-abyss:mirror:v1"
+        ]
+      }
+    },
+    {
+      "name": "32 items, equipped last",
+      "items": 32,
+      "rawCharacters": 8185,
+      "rawUtf8Bytes": 8711,
+      "rawSha256": "346dc94de1de7fd8ca31cc968bcf6281621dc26a48ece09719c632e774a9b0ce",
+      "afterSha256": "10a779a10ff3399a9f5e9182450b36e8556f95a054cb0120f8221bba183c1a6f",
+      "baseline": {
+        "activeEnvelopeParses": 1,
+        "totalParses": 2,
+        "fullSerializations": 4,
+        "utf8Encodes": 0,
+        "inventorySets": 4,
+        "writeKeys": [
+          "dice-abyss:save:v1",
+          "dice-abyss:mirror:v1"
+        ]
+      },
+      "current": {
+        "activeEnvelopeParses": 1,
+        "totalParses": 2,
+        "fullSerializations": 4,
+        "utf8Encodes": 0,
+        "inventorySets": 3,
+        "writeKeys": [
+          "dice-abyss:save:v1",
+          "dice-abyss:mirror:v1"
+        ]
+      }
+    },
+    {
+      "name": "1000 items, equipped first",
+      "items": 1000,
+      "rawCharacters": 204399,
+      "rawUtf8Bytes": 219453,
+      "rawSha256": "9450927c37c42d6024e49f94e372a3062017442f6caf62a82728131b65f08931",
+      "afterSha256": "34f08c09101eede182bae83120c5610a3a2f3cf8beacf19437fc096f7fcb3e74",
+      "baseline": {
+        "activeEnvelopeParses": 1,
+        "totalParses": 2,
+        "fullSerializations": 4,
+        "utf8Encodes": 0,
+        "inventorySets": 4,
+        "writeKeys": [
+          "dice-abyss:save:v1",
+          "dice-abyss:mirror:v1"
+        ]
+      },
+      "current": {
+        "activeEnvelopeParses": 1,
+        "totalParses": 2,
+        "fullSerializations": 4,
+        "utf8Encodes": 0,
+        "inventorySets": 3,
+        "writeKeys": [
+          "dice-abyss:save:v1",
+          "dice-abyss:mirror:v1"
+        ]
+      }
+    },
+    {
+      "name": "1000 items, equipped last",
+      "items": 1000,
+      "rawCharacters": 204409,
+      "rawUtf8Bytes": 219463,
+      "rawSha256": "4f48fcf42fb443a3e078370dddf0088642051463f8d6acddffca76aa3ef7105e",
+      "afterSha256": "d8aa3e2be1eb7eaaad90df15910e38b892617af88eaf83159c5c586fedcb76a3",
+      "baseline": {
+        "activeEnvelopeParses": 1,
+        "totalParses": 2,
+        "fullSerializations": 4,
+        "utf8Encodes": 0,
+        "inventorySets": 4,
+        "writeKeys": [
+          "dice-abyss:save:v1",
+          "dice-abyss:mirror:v1"
+        ]
+      },
+      "current": {
+        "activeEnvelopeParses": 1,
+        "totalParses": 2,
+        "fullSerializations": 4,
+        "utf8Encodes": 0,
+        "inventorySets": 3,
+        "writeKeys": [
+          "dice-abyss:save:v1",
+          "dice-abyss:mirror:v1"
+        ]
+      }
+    },
+    {
+      "name": "10000 items, equipped first",
+      "items": 10000,
+      "rawCharacters": 2039373,
+      "rawUtf8Bytes": 2190287,
+      "rawSha256": "f8a515898ae1406db4e37005d3b9e3a16aac0016e7aedd13154dde7d9940c209",
+      "afterSha256": "1bdaab890c81c4e3002c7da29cab5a43b12abcb43c0c0f363c901a192d52c85e",
+      "baseline": {
+        "activeEnvelopeParses": 1,
+        "totalParses": 2,
+        "fullSerializations": 4,
+        "utf8Encodes": 1,
+        "inventorySets": 4,
+        "writeKeys": [
+          "dice-abyss:save:v1",
+          "dice-abyss:mirror:v1"
+        ]
+      },
+      "current": {
+        "activeEnvelopeParses": 1,
+        "totalParses": 2,
+        "fullSerializations": 4,
+        "utf8Encodes": 1,
+        "inventorySets": 3,
+        "writeKeys": [
+          "dice-abyss:save:v1",
+          "dice-abyss:mirror:v1"
+        ]
+      }
+    },
+    {
+      "name": "10000 items, equipped last",
+      "items": 10000,
+      "rawCharacters": 2039389,
+      "rawUtf8Bytes": 2190303,
+      "rawSha256": "40666c821e5a0a1e915e1556c2b80e1757776878f666a49eeb83fb3b30bbc258",
+      "afterSha256": "7d61572374b5435c52898f89f14ff1e18a9ed5b0d96bc40dd24fbc6ca378819b",
+      "baseline": {
+        "activeEnvelopeParses": 1,
+        "totalParses": 2,
+        "fullSerializations": 4,
+        "utf8Encodes": 1,
+        "inventorySets": 4,
+        "writeKeys": [
+          "dice-abyss:save:v1",
+          "dice-abyss:mirror:v1"
+        ]
+      },
+      "current": {
+        "activeEnvelopeParses": 1,
+        "totalParses": 2,
+        "fullSerializations": 4,
+        "utf8Encodes": 1,
+        "inventorySets": 3,
+        "writeKeys": [
+          "dice-abyss:save:v1",
+          "dice-abyss:mirror:v1"
+        ]
+      }
+    },
+    {
+      "name": "4.95MB ASCII unknown metadata",
+      "items": 32,
+      "rawCharacters": 4949474,
+      "rawUtf8Bytes": 4950000,
+      "rawSha256": "aba10cc6e784ce6a17b0ff6bb833d1b0e1c8e14fea26d1040071c7334254a85a",
+      "afterSha256": "d61204806467a3839ce7b7d8502a0a6f21ca157e46dc9b98a8b75fd60e34797d",
+      "baseline": {
+        "activeEnvelopeParses": 1,
+        "totalParses": 2,
+        "fullSerializations": 4,
+        "utf8Encodes": 1,
+        "inventorySets": 4,
+        "writeKeys": [
+          "dice-abyss:save:v1",
+          "dice-abyss:mirror:v1"
+        ]
+      },
+      "current": {
+        "activeEnvelopeParses": 1,
+        "totalParses": 2,
+        "fullSerializations": 4,
+        "utf8Encodes": 1,
+        "inventorySets": 3,
+        "writeKeys": [
+          "dice-abyss:save:v1",
+          "dice-abyss:mirror:v1"
+        ]
+      }
+    },
+    {
+      "name": "4.95MB Chinese unknown metadata",
+      "items": 32,
+      "rawCharacters": 1655314,
+      "rawUtf8Bytes": 4950000,
+      "rawSha256": "1afe3a4d8489d7da8f3dc08e27689b46e547d2702639ffe89d0c4406235b37d1",
+      "afterSha256": "b527bcd39442f24e7f70c57ab549ff9391ff0038c358e0248be7d5d2ee4d9fe8",
+      "baseline": {
+        "activeEnvelopeParses": 1,
+        "totalParses": 2,
+        "fullSerializations": 4,
+        "utf8Encodes": 0,
+        "inventorySets": 4,
+        "writeKeys": [
+          "dice-abyss:save:v1",
+          "dice-abyss:mirror:v1"
+        ]
+      },
+      "current": {
+        "activeEnvelopeParses": 1,
+        "totalParses": 2,
+        "fullSerializations": 4,
+        "utf8Encodes": 0,
+        "inventorySets": 3,
+        "writeKeys": [
+          "dice-abyss:save:v1",
+          "dice-abyss:mirror:v1"
+        ]
+      }
+    }
+  ],
+  "timing": {
+    "status": "MEASURED_WITH_LIMITATIONS",
+    "pairsPerCell": 24,
+    "warmupPairsPerCell": 4,
+    "method": "Alternating baseline→current and current→baseline pairs; identical base-engine seed 27017 and complete unknown metadata. Time only synchronous saveGame with plain Map storage. Setup, transition and exact postcondition assertions are outside the interval. Every formal sample retained. No JSON instrumentation runs inside timing. Parent coordinated no competing agent browser or heavy Node jobs during this fixed run; outside shared-host load remains uncontrolled. This is not native browser, click latency or physical disk measurement.",
+    "cells": [
+      {
+        "name": "32 items, equipped first",
+        "items": 32,
+        "position": "first",
+        "order": [
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ]
+        ],
+        "decodeSamplesMs": {
+          "baseline": [
+            0.13896499999998468,
+            0.12803900000000112,
+            0.11321700000002011,
+            0.1530859999999734,
+            0.11275700000004463,
+            0.11632200000002513,
+            0.10535499999997455,
+            0.11287700000002587,
+            0.10167999999998756,
+            0.12399299999998448,
+            0.10552600000005441,
+            0.10455399999995052,
+            0.0988760000000184,
+            0.10803999999995995,
+            0.09851600000001781,
+            0.0999479999999835,
+            0.09480000000002065,
+            0.10307199999999739,
+            0.09414899999995896,
+            0.10139999999995553,
+            0.09881599999999935,
+            0.13711299999999937,
+            0.10186000000004469,
+            0.13717300000001842
+          ],
+          "current": [
+            0.11455899999998564,
+            0.11171500000000378,
+            0.11450900000005504,
+            0.13485900000000584,
+            0.12419299999999112,
+            0.11236599999995178,
+            0.16517399999997906,
+            0.12491499999998723,
+            0.1164529999999786,
+            0.15097399999996242,
+            0.11018300000000636,
+            0.09440899999998464,
+            0.09873599999997396,
+            0.11968699999999899,
+            0.09730400000000827,
+            0.09532100000001265,
+            0.09730400000000827,
+            0.11603200000001834,
+            0.0987859999999614,
+            0.0935280000000489,
+            0.09715399999998908,
+            0.1149899999999775,
+            0.10525599999999713,
+            0.09759399999995821
+          ]
+        },
+        "decodeSummaryMs": {
+          "baseline": {
+            "n": 24,
+            "min": 0.09414899999995896,
+            "median": 0.10544050000001448,
+            "p90": 0.13717300000001842,
+            "p95": 0.13896499999998468,
+            "max": 0.1530859999999734,
+            "mean": 0.11208891666666669
+          },
+          "current": {
+            "n": 24,
+            "min": 0.0935280000000489,
+            "median": 0.11204049999997778,
+            "p90": 0.13485900000000584,
+            "p95": 0.15097399999996242,
+            "max": 0.16517399999997906,
+            "mean": 0.11275004166666018
+          }
+        },
+        "samplesMs": {
+          "baseline": [
+            0.45100700000000415,
+            0.38397800000001325,
+            0.31389399999994794,
+            0.6582830000000399,
+            0.6631510000000276,
+            1.285129999999981,
+            0.3556459999999788,
+            0.336998000000051,
+            0.3042499999999677,
+            0.5985249999999951,
+            0.38768299999998135,
+            0.32762400000001435,
+            0.2924719999999752,
+            0.4495850000000132,
+            0.3417259999999942,
+            0.37383299999999053,
+            0.6630099999999857,
+            0.33177999999998065,
+            0.3481949999999756,
+            0.31068900000002486,
+            0.40968599999996513,
+            0.3751139999999964,
+            0.2976000000000454,
+            0.3005539999999769
+          ],
+          "current": [
+            0.32174500000002126,
+            0.5022219999999606,
+            0.3538130000000024,
+            0.3076539999999568,
+            0.37387300000000323,
+            0.31247200000001385,
+            0.3364569999999958,
+            0.2976600000000076,
+            0.35553600000002916,
+            0.3655899999999974,
+            0.3267930000000092,
+            0.2930029999999988,
+            0.43704600000000937,
+            0.4506269999999972,
+            0.32334800000000996,
+            0.33534600000001547,
+            0.5987660000000119,
+            0.4206219999999803,
+            0.37982200000004696,
+            0.2991519999999923,
+            0.3160270000000196,
+            0.5189670000000319,
+            0.3576590000000124,
+            0.29292300000003024
+          ]
+        },
+        "baselineMs": {
+          "n": 24,
+          "min": 0.2924719999999752,
+          "median": 0.3647394999999847,
+          "p90": 0.6630099999999857,
+          "p95": 0.6631510000000276,
+          "max": 1.285129999999981,
+          "mean": 0.44001720833333025
+        },
+        "currentMs": {
+          "n": 24,
+          "min": 0.29292300000003024,
+          "median": 0.3451349999999991,
+          "p90": 0.5022219999999606,
+          "p95": 0.5189670000000319,
+          "max": 0.5987660000000119,
+          "mean": 0.3698801250000064
+        },
+        "pairedCurrentMinusBaselineMs": [
+          -0.1292619999999829,
+          0.11824399999994739,
+          0.03991900000005444,
+          -0.3506290000000831,
+          -0.28927800000002435,
+          -0.9726579999999672,
+          -0.019188999999983025,
+          -0.039338000000043394,
+          0.05128600000006145,
+          -0.23293499999999767,
+          -0.06088999999997213,
+          -0.034621000000015556,
+          0.14457400000003418,
+          0.0010419999999840002,
+          -0.01837799999998424,
+          -0.03848699999997507,
+          -0.06424399999997377,
+          0.08884199999999964,
+          0.03162700000007135,
+          -0.011537000000032549,
+          -0.09365899999994554,
+          0.14385300000003554,
+          0.060058999999967,
+          -0.007630999999946653
+        ],
+        "pairedDifferenceSummaryMs": {
+          "n": 24,
+          "min": -0.9726579999999672,
+          "median": -0.018783499999983633,
+          "p90": 0.11824399999994739,
+          "p95": 0.14385300000003554,
+          "max": 0.14457400000003418,
+          "mean": -0.07013708333332384
+        }
+      },
+      {
+        "name": "32 items, equipped last",
+        "items": 32,
+        "position": "last",
+        "order": [
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ]
+        ],
+        "decodeSamplesMs": {
+          "baseline": [
+            0.17147299999999177,
+            0.1185649999999896,
+            0.10780899999997473,
+            0.11137500000000955,
+            0.10193099999997912,
+            0.1040039999999749,
+            0.12780900000001338,
+            0.10818999999997914,
+            0.10063800000000356,
+            0.1271080000000211,
+            0.10217099999999846,
+            0.15608099999997194,
+            0.11069399999996676,
+            0.38844499999999016,
+            0.15094299999998384,
+            0.12315200000000459,
+            0.10379299999999603,
+            0.1109739999999988,
+            0.10126900000000205,
+            0.11014299999999366,
+            0.1049160000000029,
+            0.155399999999986,
+            0.1468269999999734,
+            0.1419700000000148
+          ],
+          "current": [
+            0.15451799999999594,
+            0.11348700000002054,
+            0.11313799999999219,
+            0.10935100000000375,
+            0.1078499999999849,
+            0.10012800000004063,
+            0.14004799999997886,
+            0.10459500000001754,
+            0.10193000000003849,
+            0.10021900000003825,
+            0.10598600000002989,
+            0.09888599999999315,
+            0.13642199999998184,
+            0.1298320000000217,
+            0.14085899999997764,
+            0.16639599999996335,
+            0.10948199999995722,
+            0.10828999999995403,
+            0.11077399999999216,
+            0.11029300000001285,
+            0.16196999999999662,
+            0.12364300000001549,
+            0.1356609999999705,
+            0.15290599999997312
+          ]
+        },
+        "decodeSummaryMs": {
+          "baseline": {
+            "n": 24,
+            "min": 0.10063800000000356,
+            "median": 0.11117450000000417,
+            "p90": 0.15608099999997194,
+            "p95": 0.17147299999999177,
+            "max": 0.38844499999999016,
+            "mean": 0.13273666666665918
+          },
+          "current": {
+            "n": 24,
+            "min": 0.09888599999999315,
+            "median": 0.11195599999999217,
+            "p90": 0.15451799999999594,
+            "p95": 0.16196999999999662,
+            "max": 0.16639599999996335,
+            "mean": 0.12236099999999794
+          }
+        },
+        "samplesMs": {
+          "baseline": [
+            0.400812999999971,
+            0.4183889999999906,
+            0.5204499999999825,
+            0.5504139999999893,
+            0.3990999999999758,
+            0.40084200000001147,
+            0.40363700000000335,
+            0.43424199999998336,
+            0.37289099999998143,
+            0.6419989999999984,
+            0.3866909999999848,
+            0.481332000000009,
+            0.3919499999999516,
+            0.5051369999999906,
+            0.39716800000002195,
+            0.5270090000000209,
+            0.3912279999999555,
+            0.44981500000000096,
+            0.3507890000000202,
+            0.4038779999999633,
+            0.35329199999995353,
+            0.4230150000000208,
+            0.30367899999998826,
+            0.31119999999998527
+          ],
+          "current": [
+            0.43236899999999423,
+            0.3906470000000013,
+            0.44285500000000866,
+            0.3689359999999624,
+            0.4889930000000504,
+            0.4326199999999858,
+            0.3809830000000147,
+            0.38080300000001444,
+            0.4376270000000204,
+            0.3878630000000385,
+            0.5072400000000243,
+            0.4524589999999762,
+            0.7176310000000399,
+            0.3981689999999958,
+            0.4813120000000026,
+            0.3724500000000148,
+            0.4124800000000164,
+            0.981570999999974,
+            0.38436799999999494,
+            0.3888650000000098,
+            0.3143339999999739,
+            0.2948759999999879,
+            0.3404830000000061,
+            0.33566600000000335
+          ]
+        },
+        "baselineMs": {
+          "n": 24,
+          "min": 0.30367899999998826,
+          "median": 0.4022395000000074,
+          "p90": 0.5270090000000209,
+          "p95": 0.5504139999999893,
+          "max": 0.6419989999999984,
+          "mean": 0.42578999999998973
+        },
+        "currentMs": {
+          "n": 24,
+          "min": 0.2948759999999879,
+          "median": 0.39440799999999854,
+          "p90": 0.5072400000000243,
+          "p95": 0.7176310000000399,
+          "max": 0.981570999999974,
+          "mean": 0.43856666666667127
+        },
+        "pairedCurrentMinusBaselineMs": [
+          0.03155600000002323,
+          -0.027741999999989275,
+          -0.07759499999997388,
+          -0.1814780000000269,
+          0.08989300000007461,
+          0.03177799999997433,
+          -0.022653999999988628,
+          -0.05343899999996893,
+          0.06473600000003898,
+          -0.25413599999995995,
+          0.12054900000003954,
+          -0.02887300000003279,
+          0.32568100000008826,
+          -0.10696799999999484,
+          0.08414399999998068,
+          -0.1545590000000061,
+          0.02125200000006089,
+          0.531755999999973,
+          0.03357899999997471,
+          -0.015012999999953536,
+          -0.03895799999997962,
+          -0.12813900000003287,
+          0.03680400000001782,
+          0.024466000000018084
+        ],
+        "pairedDifferenceSummaryMs": {
+          "n": 24,
+          "min": -0.25413599999995995,
+          "median": 0.0031195000000536766,
+          "p90": 0.12054900000003954,
+          "p95": 0.32568100000008826,
+          "max": 0.531755999999973,
+          "mean": 0.012776666666681535
+        }
+      },
+      {
+        "name": "1000 items, equipped first",
+        "items": 1000,
+        "position": "first",
+        "order": [
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ]
+        ],
+        "decodeSamplesMs": {
+          "baseline": [
+            1.9241250000000036,
+            2.0630800000000136,
+            1.9635529999999335,
+            1.7530919999999242,
+            2.173422999999957,
+            1.8509559999999965,
+            2.052383999999961,
+            2.084131999999954,
+            2.987365999999952,
+            2.6383509999999433,
+            2.966821999999979,
+            2.8606900000000905,
+            2.067527000000041,
+            1.9752210000000332,
+            2.109589000000028,
+            1.7930810000000292,
+            2.929049999999961,
+            1.931075000000078,
+            1.7797519999999167,
+            1.94021900000007,
+            1.8628840000000082,
+            1.9163240000000314,
+            1.8011529999999993,
+            2.0663350000000946
+          ],
+          "current": [
+            2.021178000000077,
+            2.7116289999999026,
+            1.864426000000094,
+            1.9931760000000622,
+            1.9529870000000074,
+            1.9113049999999703,
+            2.084051000000045,
+            1.9082809999999881,
+            2.041678999999931,
+            2.0070779999999786,
+            2.1268350000000282,
+            2.8433029999999917,
+            3.858826000000022,
+            1.7973279999999932,
+            2.0454140000000507,
+            1.8011129999999866,
+            1.9366730000000416,
+            2.3521580000000313,
+            2.1007359999999835,
+            1.9469990000000053,
+            2.027037000000064,
+            1.9723060000000032,
+            2.0859140000000025,
+            2.316895000000045
+          ]
+        },
+        "decodeSummaryMs": {
+          "baseline": {
+            "n": 24,
+            "min": 1.7530919999999242,
+            "median": 2.013802499999997,
+            "p90": 2.929049999999961,
+            "p95": 2.966821999999979,
+            "max": 2.987365999999952,
+            "mean": 2.145424333333333
+          },
+          "current": {
+            "n": 24,
+            "min": 1.7973279999999932,
+            "median": 2.0241075000000706,
+            "p90": 2.7116289999999026,
+            "p95": 2.8433029999999917,
+            "max": 3.858826000000022,
+            "mean": 2.154471958333346
+          }
+        },
+        "samplesMs": {
+          "baseline": [
+            6.0525180000000205,
+            7.140326999999957,
+            6.734967999999981,
+            7.306061999999997,
+            5.711643999999978,
+            6.260336000000052,
+            5.865451000000007,
+            6.266515000000027,
+            6.132506999999919,
+            5.9663209999999935,
+            7.151699000000008,
+            6.794125000000008,
+            6.084394999999972,
+            8.428861999999981,
+            6.353092999999944,
+            5.969155999999998,
+            7.202137999999991,
+            6.410147000000052,
+            6.295427999999902,
+            6.348596999999927,
+            6.097675999999979,
+            5.7626900000000205,
+            6.081682000000001,
+            11.49993799999993
+          ],
+          "current": [
+            9.427767999999958,
+            6.96625999999992,
+            6.717551999999955,
+            6.009135000000015,
+            6.165616,
+            7.294755000000009,
+            5.7451939999999695,
+            6.864608999999973,
+            6.016736000000037,
+            5.330830999999989,
+            6.661358000000064,
+            6.113199000000009,
+            6.296239000000014,
+            6.635960999999952,
+            7.58306099999993,
+            7.259623000000033,
+            6.097735000000057,
+            6.932209000000057,
+            6.464386999999988,
+            6.85001699999998,
+            5.896547999999939,
+            6.7646009999999706,
+            5.922126000000048,
+            6.374864000000002
+          ]
+        },
+        "baselineMs": {
+          "n": 24,
+          "min": 5.711643999999978,
+          "median": 6.280971499999964,
+          "p90": 7.306061999999997,
+          "p95": 8.428861999999981,
+          "max": 11.49993799999993,
+          "mean": 6.663178124999985
+        },
+        "currentMs": {
+          "n": 24,
+          "min": 5.330830999999989,
+          "median": 6.55017399999997,
+          "p90": 7.294755000000009,
+          "p95": 7.58306099999993,
+          "max": 9.427767999999958,
+          "mean": 6.599599333333328
+        },
+        "pairedCurrentMinusBaselineMs": [
+          3.3752499999999372,
+          -0.1740670000000364,
+          -0.017416000000025633,
+          -1.2969269999999824,
+          0.4539720000000216,
+          1.0344189999999571,
+          -0.1202570000000378,
+          0.5980939999999464,
+          -0.1157709999998815,
+          -0.6354900000000043,
+          -0.49034099999994396,
+          -0.6809259999999995,
+          0.2118440000000419,
+          -1.792901000000029,
+          1.2299679999999853,
+          1.2904670000000351,
+          -1.1044029999999339,
+          0.5220620000000054,
+          0.16895900000008623,
+          0.5014200000000528,
+          -0.20112800000003972,
+          1.00191099999995,
+          -0.1595559999999523,
+          -5.125073999999927
+        ],
+        "pairedDifferenceSummaryMs": {
+          "n": 24,
+          "min": -5.125073999999927,
+          "median": -0.06659349999995356,
+          "p90": 1.2299679999999853,
+          "p95": 1.2904670000000351,
+          "max": 3.3752499999999372,
+          "mean": -0.06357879166665725
+        }
+      },
+      {
+        "name": "1000 items, equipped last",
+        "items": 1000,
+        "position": "last",
+        "order": [
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ]
+        ],
+        "decodeSamplesMs": {
+          "baseline": [
+            1.8985270000000583,
+            2.14955800000007,
+            2.0441819999998643,
+            1.8906349999999748,
+            2.09537800000021,
+            1.9779650000000402,
+            2.0623789999999644,
+            1.9925660000001244,
+            2.177158999999847,
+            2.291407000000163,
+            3.8671580000000176,
+            1.785910000000058,
+            1.9766819999999825,
+            1.8152540000000954,
+            1.9351420000000417,
+            2.1204650000001948,
+            2.091042000000016,
+            2.220833999999968,
+            1.87102700000014,
+            1.799701000000141,
+            1.906789000000117,
+            2.0000170000000708,
+            2.04118799999992,
+            3.9178079999999227
+          ],
+          "current": [
+            2.2031970000000456,
+            1.9660670000000664,
+            2.0951380000001336,
+            1.9819899999999961,
+            1.9331389999999828,
+            1.9490820000000895,
+            1.9379449999998997,
+            2.121355999999878,
+            1.930313999999953,
+            1.9375750000001517,
+            1.8033270000000812,
+            1.7904770000000099,
+            1.7550240000000485,
+            1.998694999999998,
+            2.313609999999926,
+            2.019175000000132,
+            1.831768000000011,
+            2.0389439999999013,
+            1.937024000000065,
+            1.9574740000000475,
+            2.408541000000014,
+            2.0934649999999237,
+            1.9603380000000925,
+            2.026356000000078
+          ]
+        },
+        "decodeSummaryMs": {
+          "baseline": {
+            "n": 24,
+            "min": 1.785910000000058,
+            "median": 2.0206024999999954,
+            "p90": 2.291407000000163,
+            "p95": 3.8671580000000176,
+            "max": 3.9178079999999227,
+            "mean": 2.163698875000042
+          },
+          "current": {
+            "n": 24,
+            "min": 1.7550240000000485,
+            "median": 1.9632025000000795,
+            "p90": 2.2031970000000456,
+            "p95": 2.313609999999926,
+            "max": 2.408541000000014,
+            "mean": 1.9995842083333553
+          }
+        },
+        "samplesMs": {
+          "baseline": [
+            6.389977999999928,
+            7.274544999999989,
+            6.997256000000107,
+            6.264331999999968,
+            6.7832089999999425,
+            6.651333999999906,
+            6.060069000000112,
+            6.354825000000119,
+            10.36745800000017,
+            6.46011099999987,
+            11.40970900000002,
+            5.539551000000074,
+            7.810396999999966,
+            5.804170999999997,
+            5.964418000000023,
+            5.987382999999909,
+            6.574399999999969,
+            6.346011999999973,
+            5.894835000000057,
+            5.650824999999941,
+            5.5095360000000255,
+            5.500422999999955,
+            5.936277000000018,
+            6.1969420000000355
+          ],
+          "current": [
+            8.554969000000028,
+            7.022170999999844,
+            6.392069999999876,
+            9.56472100000019,
+            5.693258000000014,
+            5.575673000000052,
+            5.970156999999972,
+            6.48866299999986,
+            8.352117999999791,
+            7.167627999999922,
+            5.77226399999995,
+            5.473191999999926,
+            7.65558800000008,
+            6.159335999999939,
+            5.9876829999998336,
+            6.373493000000053,
+            6.008824000000004,
+            8.243376999999782,
+            5.8036010000000715,
+            6.091415999999981,
+            5.636152999999922,
+            5.855367000000115,
+            5.829107999999906,
+            6.140088999999989
+          ]
+        },
+        "baselineMs": {
+          "n": 24,
+          "min": 5.500422999999955,
+          "median": 6.3051719999999705,
+          "p90": 7.810396999999966,
+          "p95": 10.36745800000017,
+          "max": 11.40970900000002,
+          "mean": 6.6553331666666695
+        },
+        "currentMs": {
+          "n": 24,
+          "min": 5.473191999999926,
+          "median": 6.115752499999985,
+          "p90": 8.352117999999791,
+          "p95": 8.554969000000028,
+          "max": 9.56472100000019,
+          "mean": 6.575454958333296
+        },
+        "pairedCurrentMinusBaselineMs": [
+          2.1649910000001,
+          -0.2523740000001453,
+          -0.6051860000002307,
+          3.300389000000223,
+          -1.0899509999999282,
+          -1.0756609999998545,
+          -0.08991200000014032,
+          0.13383799999974144,
+          -2.0153400000003785,
+          0.7075170000000526,
+          -5.637445000000071,
+          -0.06635900000014772,
+          -0.1548089999998865,
+          0.35516499999994267,
+          0.023264999999810243,
+          0.3861100000001443,
+          -0.5655759999999646,
+          1.8973649999998088,
+          -0.09123399999998583,
+          0.44059100000004037,
+          0.1266169999998965,
+          0.3549440000001596,
+          -0.10716900000011265,
+          -0.05685300000004645
+        ],
+        "pairedDifferenceSummaryMs": {
+          "n": 24,
+          "min": -5.637445000000071,
+          "median": -0.06160600000009708,
+          "p90": 1.8973649999998088,
+          "p95": 2.1649910000001,
+          "max": 3.300389000000223,
+          "mean": -0.07987820833337385
+        }
+      },
+      {
+        "name": "10000 items, equipped first",
+        "items": 10000,
+        "position": "first",
+        "order": [
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ]
+        ],
+        "decodeSamplesMs": {
+          "baseline": [
+            17.146351000000323,
+            15.742024000000129,
+            16.084209999999985,
+            16.85255600000073,
+            17.26316400000087,
+            16.02951899999971,
+            15.733261000000311,
+            15.544292000000496,
+            15.687965000000077,
+            15.481088999999884,
+            16.027396000000408,
+            16.660953000000518,
+            15.91994700000032,
+            16.535799000000225,
+            15.54823800000031,
+            16.69894000000022,
+            16.816483000000517,
+            16.250866999999744,
+            16.865625999999793,
+            16.35605200000009,
+            16.069798999999875,
+            15.533605999999963,
+            15.721354000000247,
+            16.195935000000645
+          ],
+          "current": [
+            16.832446999999775,
+            14.857065999999577,
+            15.136819999999716,
+            16.391325000000506,
+            16.387579000000187,
+            16.3406300000006,
+            15.67232100000001,
+            15.73632600000019,
+            15.61088000000018,
+            15.395763000000443,
+            15.285049000000072,
+            14.995370000000548,
+            15.305317999999716,
+            15.734513999999763,
+            14.91875699999946,
+            15.881921000000148,
+            15.156958999999915,
+            15.218850999999631,
+            16.099181999999928,
+            15.447439000000486,
+            15.36260399999992,
+            16.54680400000052,
+            15.482602000000043,
+            16.232069000000592
+          ]
+        },
+        "decodeSummaryMs": {
+          "baseline": {
+            "n": 24,
+            "min": 15.481088999999884,
+            "median": 16.07700449999993,
+            "p90": 16.865625999999793,
+            "p95": 17.146351000000323,
+            "max": 17.26316400000087,
+            "mean": 16.198559416666892
+          },
+          "current": {
+            "n": 24,
+            "min": 14.857065999999577,
+            "median": 15.546741000000111,
+            "p90": 16.391325000000506,
+            "p95": 16.54680400000052,
+            "max": 16.832446999999775,
+            "mean": 15.667858166666747
+          }
+        },
+        "samplesMs": {
+          "baseline": [
+            60.57413799999995,
+            52.140338999999585,
+            71.13298399999985,
+            58.4259519999996,
+            56.721747999999934,
+            58.600054,
+            65.328442,
+            54.066155999999864,
+            53.05913699999974,
+            51.46789399999989,
+            53.36995700000034,
+            52.05152799999996,
+            54.85742600000003,
+            56.09811099999979,
+            52.044732000000295,
+            57.000183999999535,
+            54.85507299999972,
+            52.94498299999941,
+            57.29256699999951,
+            50.76400400000057,
+            50.13857999999982,
+            50.999432000000525,
+            53.07384899999943,
+            50.49311300000045
+          ],
+          "current": [
+            53.17922499999986,
+            51.81805200000008,
+            61.43591099999958,
+            59.66576499999974,
+            58.49409300000025,
+            59.441383000000314,
+            63.848513999999795,
+            57.36053700000002,
+            54.3610620000004,
+            52.558266,
+            52.656011000000035,
+            50.87379599999986,
+            51.668821999999636,
+            52.81419499999993,
+            50.037079000000176,
+            51.51804899999934,
+            67.14389099999971,
+            84.42479100000037,
+            49.930921999999555,
+            51.98847399999977,
+            52.666487999999845,
+            49.76720000000023,
+            50.29734400000052,
+            50.04170599999998
+          ]
+        },
+        "baselineMs": {
+          "n": 24,
+          "min": 50.13857999999982,
+          "median": 53.7180565000001,
+          "p90": 60.57413799999995,
+          "p95": 65.328442,
+          "max": 71.13298399999985,
+          "mean": 55.31251595833324
+        },
+        "currentMs": {
+          "n": 24,
+          "min": 49.76720000000023,
+          "median": 52.66124949999994,
+          "p90": 63.848513999999795,
+          "p95": 67.14389099999971,
+          "max": 84.42479100000037,
+          "mean": 55.749648999999955
+        },
+        "pairedCurrentMinusBaselineMs": [
+          -7.394913000000088,
+          -0.3222869999995055,
+          -9.697073000000273,
+          1.2398130000001402,
+          1.772345000000314,
+          0.8413290000003144,
+          -1.4799280000002,
+          3.2943810000001577,
+          1.301925000000665,
+          1.0903720000001158,
+          -0.7139460000003055,
+          -1.1777320000001055,
+          -3.188604000000396,
+          -3.283915999999863,
+          -2.0076530000001185,
+          -5.4821350000001985,
+          12.288817999999992,
+          31.479808000000958,
+          -7.361644999999953,
+          1.2244699999992008,
+          2.527908000000025,
+          -1.2322320000002946,
+          -2.776504999998906,
+          -0.4514070000004722
+        ],
+        "pairedDifferenceSummaryMs": {
+          "n": 24,
+          "min": -9.697073000000273,
+          "median": -0.5826765000003888,
+          "p90": 3.2943810000001577,
+          "p95": 12.288817999999992,
+          "max": 31.479808000000958,
+          "mean": 0.4371330416667168
+        }
+      },
+      {
+        "name": "10000 items, equipped last",
+        "items": 10000,
+        "position": "last",
+        "order": [
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ]
+        ],
+        "decodeSamplesMs": {
+          "baseline": [
+            23.176869999999326,
+            23.266571999998632,
+            24.677929000001313,
+            23.19432500000039,
+            24.828191000000515,
+            24.15550699999949,
+            24.32997500000056,
+            23.469853000000512,
+            25.048085999998875,
+            24.145332000000053,
+            23.963482999999542,
+            25.23200899999938,
+            25.093693999999232,
+            25.275222000000213,
+            25.144749000000957,
+            25.068647000000055,
+            25.46230900000046,
+            26.87728100000095,
+            26.12093300000015,
+            24.330935999998474,
+            26.593462000000727,
+            23.880530999998882,
+            28.305121999999756,
+            24.707492999999886
+          ],
+          "current": [
+            17.375820999999632,
+            17.340750999999727,
+            18.21238799999992,
+            18.22970499999974,
+            17.090731000000233,
+            17.78096100000039,
+            18.414647999999943,
+            17.549379000000044,
+            17.70837399999982,
+            17.45336700000007,
+            20.035926000000472,
+            20.634609999999157,
+            19.37345600000117,
+            19.60613999999987,
+            20.19045399999959,
+            18.799627000000328,
+            18.436931000000186,
+            19.848658999999316,
+            19.32847899999979,
+            19.93645800000013,
+            19.3680889999996,
+            19.590186000001268,
+            19.352485000001252,
+            18.140072000000146
+          ]
+        },
+        "decodeSummaryMs": {
+          "baseline": {
+            "n": 24,
+            "min": 23.176869999999326,
+            "median": 24.7678420000002,
+            "p90": 26.593462000000727,
+            "p95": 26.87728100000095,
+            "max": 28.305121999999756,
+            "mean": 24.84785462499993
+          },
+          "current": {
+            "n": 24,
+            "min": 17.090731000000233,
+            "median": 18.618279000000257,
+            "p90": 20.035926000000472,
+            "p95": 20.19045399999959,
+            "max": 20.634609999999157,
+            "mean": 18.74157070833341
+          }
+        },
+        "samplesMs": {
+          "baseline": [
+            65.1011010000002,
+            60.63461699999971,
+            56.34309300000041,
+            58.26037699999961,
+            57.324453999999605,
+            56.283472000000074,
+            57.16784899999948,
+            54.212359999999535,
+            54.46338999999898,
+            57.850798000001305,
+            61.180051999999705,
+            59.65792099999999,
+            63.56258500000149,
+            60.204540000000634,
+            59.15576900000087,
+            62.267008999999234,
+            57.80352999999923,
+            56.32465199999933,
+            56.90835599999991,
+            115.2417379999988,
+            54.683076000001165,
+            54.42444299999988,
+            63.296291000000565,
+            63.274859000001015
+          ],
+          "current": [
+            56.96807600000011,
+            60.846621000000596,
+            57.15381100000013,
+            55.48166900000069,
+            54.419378999999935,
+            59.4794409999995,
+            58.61098399999992,
+            57.59306800000013,
+            60.96679600000061,
+            56.634110000000874,
+            55.33427800000027,
+            56.87728900000002,
+            59.75001799999882,
+            61.05175099999906,
+            57.87275199999931,
+            60.50530400000025,
+            56.57548399999905,
+            61.47209399999883,
+            59.067879000000175,
+            55.281380000000354,
+            56.44569099999899,
+            54.92627399999947,
+            54.49022999999943,
+            54.713159999999334
+          ]
+        },
+        "baselineMs": {
+          "n": 24,
+          "min": 54.212359999999535,
+          "median": 58.055587500000456,
+          "p90": 63.56258500000149,
+          "p95": 65.1011010000002,
+          "max": 115.2417379999988,
+          "mean": 61.067763833333366
+        },
+        "currentMs": {
+          "n": 24,
+          "min": 54.419378999999935,
+          "median": 57.06094350000012,
+          "p90": 60.96679600000061,
+          "p95": 61.05175099999906,
+          "max": 61.47209399999883,
+          "mean": 57.60489745833316
+        },
+        "pairedCurrentMinusBaselineMs": [
+          -8.133025000000089,
+          0.21200400000088848,
+          0.8107179999997243,
+          -2.7787079999989146,
+          -2.9050749999996697,
+          3.1959689999994225,
+          1.4431350000004386,
+          3.3807080000005953,
+          6.5034060000016325,
+          -1.2166880000004312,
+          -5.845773999999437,
+          -2.7806319999999687,
+          -3.812567000002673,
+          0.8472109999984241,
+          -1.2830170000015642,
+          -1.7617049999989831,
+          -1.2280460000001767,
+          5.147441999999501,
+          2.159523000000263,
+          -59.96035799999845,
+          1.7626149999978225,
+          0.5018309999995836,
+          -8.806061000001137,
+          -8.561699000001681
+        ],
+        "pairedDifferenceSummaryMs": {
+          "n": 24,
+          "min": -59.96035799999845,
+          "median": -1.222367000000304,
+          "p90": 3.3807080000005953,
+          "p95": 5.147441999999501,
+          "max": 6.5034060000016325,
+          "mean": -3.4628663750002033
+        }
+      },
+      {
+        "name": "4.95MB ASCII unknown metadata",
+        "items": 32,
+        "position": "first",
+        "order": [
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ]
+        ],
+        "decodeSamplesMs": {
+          "baseline": [
+            33.23015099999975,
+            32.805193000000145,
+            31.960934999999154,
+            33.98739999999816,
+            31.726237999999285,
+            32.79643899999792,
+            33.002935000000434,
+            32.20975199999884,
+            33.306603999997606,
+            36.774742000001424,
+            34.497153999996954,
+            35.216488000001846,
+            33.42670100000032,
+            34.35521399999925,
+            35.67671800000244,
+            30.307189999999537,
+            30.583779000000504,
+            32.25906000000032,
+            34.931917999998404,
+            36.69506399999955,
+            34.305130999997345,
+            34.430506000000605,
+            33.92214400000012,
+            46.87375299999985
+          ],
+          "current": [
+            18.515455000000657,
+            16.82428499999878,
+            18.212056000000302,
+            15.58933899999829,
+            18.44351900000038,
+            17.57307199999923,
+            19.660287999999127,
+            18.12522899999749,
+            19.534041999999317,
+            19.322578999999678,
+            20.93240899999728,
+            19.558187000002363,
+            20.884226999998646,
+            19.37490600000092,
+            24.233589999999822,
+            21.712432000000263,
+            16.67020699999921,
+            15.093745999998646,
+            21.52245099999709,
+            17.643607000001793,
+            19.94589000000269,
+            17.2504540000009,
+            20.233564999998634,
+            19.00201399999787
+          ]
+        },
+        "decodeSummaryMs": {
+          "baseline": {
+            "n": 24,
+            "min": 30.307189999999537,
+            "median": 33.67442250000022,
+            "p90": 36.69506399999955,
+            "p95": 36.774742000001424,
+            "max": 46.87375299999985,
+            "mean": 34.13671704166624
+          },
+          "current": {
+            "n": 24,
+            "min": 15.093745999998646,
+            "median": 19.162296499998774,
+            "p90": 21.52245099999709,
+            "p95": 21.712432000000263,
+            "max": 24.233589999999822,
+            "mean": 18.994064541666223
+          }
+        },
+        "samplesMs": {
+          "baseline": [
+            93.50837599999977,
+            84.72922800000015,
+            89.86705100000108,
+            100.62841399999888,
+            85.22878099999798,
+            86.68427400000292,
+            88.06921200000215,
+            94.60420599999998,
+            91.78667000000132,
+            90.75147799999831,
+            88.17516800000158,
+            87.89049799999702,
+            110.6362939999999,
+            95.22684699999809,
+            95.63338699999804,
+            96.04291400000147,
+            95.28747699999803,
+            91.79250799999863,
+            87.73063000000184,
+            89.10484299999735,
+            93.606581,
+            90.74190400000225,
+            88.4457390000025,
+            83.16743199999837
+          ],
+          "current": [
+            74.20058199999949,
+            70.70724599999994,
+            73.82693899999867,
+            78.26188700000057,
+            73.51523799999995,
+            72.7609029999985,
+            78.06826100000035,
+            72.77014600000257,
+            76.44063399999868,
+            72.2800120000029,
+            68.57057599999825,
+            79.82012200000099,
+            72.186103,
+            77.33042000000205,
+            79.8407729999999,
+            80.81026600000041,
+            74.26685999999972,
+            77.20902000000206,
+            70.84727199999907,
+            71.93766500000129,
+            78.38498900000195,
+            72.60336499999903,
+            71.30699199999799,
+            69.50448699999833
+          ]
+        },
+        "baselineMs": {
+          "n": 24,
+          "min": 83.16743199999837,
+          "median": 90.74669100000028,
+          "p90": 96.04291400000147,
+          "p95": 100.62841399999888,
+          "max": 110.6362939999999,
+          "mean": 91.6391629999999
+        },
+        "currentMs": {
+          "n": 24,
+          "min": 68.57057599999825,
+          "median": 73.67108849999931,
+          "p90": 79.82012200000099,
+          "p95": 79.8407729999999,
+          "max": 80.81026600000041,
+          "mean": 74.47711491666678
+        },
+        "pairedCurrentMinusBaselineMs": [
+          -19.307794000000285,
+          -14.021982000000207,
+          -16.04011200000241,
+          -22.366526999998314,
+          -11.713542999998026,
+          -13.923371000004408,
+          -10.000951000001805,
+          -21.834059999997407,
+          -15.346036000002641,
+          -18.471465999995416,
+          -19.604592000003322,
+          -8.070375999996031,
+          -38.450190999999904,
+          -17.896426999996038,
+          -15.792613999998139,
+          -15.232648000001063,
+          -21.02061699999831,
+          -14.583487999996578,
+          -16.883358000002772,
+          -17.167177999996056,
+          -15.221591999998054,
+          -18.13853900000322,
+          -17.138747000004514,
+          -13.662945000000036
+        ],
+        "pairedDifferenceSummaryMs": {
+          "n": 24,
+          "min": -38.450190999999904,
+          "median": -16.46173500000259,
+          "p90": -11.713542999998026,
+          "p95": -10.000951000001805,
+          "max": -8.070375999996031,
+          "mean": -17.162048083333122
+        }
+      },
+      {
+        "name": "4.95MB Chinese unknown metadata",
+        "items": 32,
+        "position": "first",
+        "order": [
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ]
+        ],
+        "decodeSamplesMs": {
+          "baseline": [
+            10.354932000002009,
+            11.95542800000112,
+            10.568537999999535,
+            11.277816999998322,
+            11.294901000001119,
+            11.563389000002644,
+            11.046393999997235,
+            12.774309000000358,
+            10.824735999998666,
+            13.926883000000089,
+            11.278246999998373,
+            11.497890999999072,
+            12.620942000001378,
+            11.133131999999023,
+            11.212339999998221,
+            11.350404000000708,
+            10.869472000002133,
+            15.746333999999479,
+            11.135675999998057,
+            10.524671999999555,
+            11.1875629999995,
+            10.732280000000173,
+            11.13328299999921,
+            10.358817000000272
+          ],
+          "current": [
+            5.486112000002322,
+            8.19014099999913,
+            12.249779000001581,
+            6.144947000000684,
+            5.672758000000613,
+            5.69189600000027,
+            6.798092000000906,
+            10.670608000000357,
+            11.031071000001248,
+            18.908039999998437,
+            11.460927000000083,
+            11.214853000001312,
+            13.738455000002432,
+            10.958023999999568,
+            10.991893999998865,
+            11.044560999998794,
+            10.92312099999981,
+            12.303764000000228,
+            10.543610000000626,
+            10.966425999999046,
+            10.961949000000459,
+            10.997722000000067,
+            12.961866999998165,
+            10.387579999998707
+          ]
+        },
+        "decodeSummaryMs": {
+          "baseline": {
+            "n": 24,
+            "min": 10.354932000002009,
+            "median": 11.19995149999886,
+            "p90": 12.774309000000358,
+            "p95": 13.926883000000089,
+            "max": 15.746333999999479,
+            "mean": 11.51534916666651
+          },
+          "current": {
+            "n": 24,
+            "min": 5.486112000002322,
+            "median": 10.964187499999753,
+            "p90": 12.961866999998165,
+            "p95": 13.738455000002432,
+            "max": 18.908039999998437,
+            "mean": 10.429091541666821
+          }
+        },
+        "samplesMs": {
+          "baseline": [
+            32.820035000000644,
+            33.45854899999904,
+            39.60106500000256,
+            30.6771570000019,
+            36.232059000001755,
+            33.345000999997865,
+            31.12572899999941,
+            30.234136999999464,
+            32.16882699999769,
+            30.97604400000273,
+            31.50086899999951,
+            60.32594799999788,
+            66.4068240000015,
+            40.026395999997476,
+            54.072180000002845,
+            36.427394999998796,
+            38.037075000000186,
+            34.0560430000005,
+            36.59631399999853,
+            42.79449999999997,
+            34.448128,
+            31.10391299999901,
+            34.60134499999913,
+            32.04549499999848
+          ],
+          "current": [
+            19.153127999998105,
+            22.152132999999594,
+            20.354654000002483,
+            20.8655800000015,
+            20.26010000000315,
+            20.356306999998196,
+            18.936917999999423,
+            21.621617999997397,
+            19.733057999997982,
+            22.898369999998977,
+            21.73364700000093,
+            21.034112999997888,
+            24.13215399999899,
+            32.63102099999742,
+            27.010440000001836,
+            24.128178000002663,
+            20.514954999998736,
+            27.539416999999958,
+            24.318239000000176,
+            25.900759000000107,
+            22.38891599999988,
+            21.4176899999984,
+            19.13130900000033,
+            21.14518699999826
+          ]
+        },
+        "baselineMs": {
+          "n": 24,
+          "min": 30.234136999999464,
+          "median": 34.25208550000025,
+          "p90": 54.072180000002845,
+          "p95": 60.32594799999788,
+          "max": 66.4068240000015,
+          "mean": 37.628376166666534
+        },
+        "currentMs": {
+          "n": 24,
+          "min": 18.936917999999423,
+          "median": 21.5196539999979,
+          "p90": 27.010440000001836,
+          "p95": 27.539416999999958,
+          "max": 32.63102099999742,
+          "mean": 22.473245458333015
+        },
+        "pairedCurrentMinusBaselineMs": [
+          -13.666907000002539,
+          -11.306415999999444,
+          -19.24641100000008,
+          -9.811577000000398,
+          -15.971958999998606,
+          -12.988693999999668,
+          -12.188810999999987,
+          -8.612519000002067,
+          -12.43576899999971,
+          -8.077674000003753,
+          -9.767221999998583,
+          -39.29183499999999,
+          -42.274670000002516,
+          -7.395375000000058,
+          -27.06174000000101,
+          -12.299216999996133,
+          -17.52212000000145,
+          -6.516626000000542,
+          -12.278074999998353,
+          -16.893740999999864,
+          -12.059212000000116,
+          -9.68622300000061,
+          -15.4700359999988,
+          -10.900308000000223
+        ],
+        "pairedDifferenceSummaryMs": {
+          "n": 24,
+          "min": -42.274670000002516,
+          "median": -12.288645999997243,
+          "p90": -8.077674000003753,
+          "p95": -7.395375000000058,
+          "max": -6.516626000000542,
+          "mean": -15.155130708333521
+        }
+      }
+    ]
+  },
+  "render": {
+    "status": "MEASURED_WITH_LIMITATIONS",
+    "pairsPerCell": 24,
+    "warmupPairsPerCell": 4,
+    "method": "Alternating AB/BA pure gameView string generation; same live-combat state with zero nextLuck, eventLuck and firstCritLuck. Setup, validation, state immutability, output hash checks and timing summaries are outside the interval. This excludes DOM insertion, layout, paint, input, browser and GPU cost.",
+    "cells": [
+      {
+        "name": "normal combat, 32 items, equipped first",
+        "items": 32,
+        "equippedIndices": [
+          0,
+          1,
+          2
+        ],
+        "rawSha256": "f55ffb51c784d4acb936e27f37cddbdf89cc5e2404659ebc17e22697d845a897",
+        "firstCritLuck": 0,
+        "nextLuck": 0,
+        "eventLuck": 0,
+        "order": [
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ]
+        ],
+        "html": {
+          "baseline": {
+            "characters": 21192,
+            "sha256": "2c6f55ef76101d1d855dc1773f7177e44c04c134418ee82209c5cad89df01f93"
+          },
+          "current": {
+            "characters": 21192,
+            "sha256": "ee2ee4b0a5c9da53b55830d1dfeb634d86dd49f464abf25d84ba1f11bbb1ac76"
+          }
+        },
+        "samplesMs": {
+          "baseline": [
+            2.6788919999999052,
+            2.38583799999833,
+            1.3533409999981814,
+            1.391728000002331,
+            1.2884550000017043,
+            1.272461000000476,
+            1.8629449999971257,
+            1.3749830000015208,
+            0.8489859999972396,
+            0.9162150000011025,
+            0.7910289999999804,
+            0.6597159999982978,
+            0.7045719999987341,
+            0.6557890000003681,
+            0.6139580000017304,
+            0.6262260000003153,
+            0.7070050000002084,
+            0.775246999997762,
+            0.6790340000006836,
+            0.6977420000002894,
+            0.6976819999981672,
+            0.7344559999983176,
+            0.6237629999995988,
+            0.6688590000012482
+          ],
+          "current": [
+            3.020035999998072,
+            2.37045500000022,
+            1.333122000000003,
+            1.5807869999989634,
+            1.4482810000008612,
+            2.5759590000016033,
+            2.595388000001549,
+            2.3055290000011155,
+            1.0128069999991567,
+            0.7965780000013183,
+            0.8517190000020491,
+            0.764179999998305,
+            0.7422179999994114,
+            0.7097190000022238,
+            0.7796630000011646,
+            0.7143059999980323,
+            0.8554349999976694,
+            1.5789949999998498,
+            0.7693680000011227,
+            0.9838249999993423,
+            0.6579129999990982,
+            0.66629599999942,
+            0.6543369999999413,
+            0.6391349999976228
+          ]
+        },
+        "baselineMs": {
+          "n": 24,
+          "min": 0.6139580000017304,
+          "median": 0.7548514999980398,
+          "p90": 1.8629449999971257,
+          "p95": 2.38583799999833,
+          "max": 2.6788919999999052,
+          "mean": 1.0420384166664007
+        },
+        "currentMs": {
+          "n": 24,
+          "min": 0.6391349999976228,
+          "median": 0.8535769999998593,
+          "p90": 2.5759590000016033,
+          "p95": 2.595388000001549,
+          "max": 3.020035999998072,
+          "mean": 1.266918791666588
+        },
+        "pairedDifferenceSummaryMs": {
+          "n": 24,
+          "min": -0.11963699999978417,
+          "median": 0.09739900000022317,
+          "p90": 0.8037480000020878,
+          "p95": 0.9305459999995946,
+          "max": 1.3034980000011274,
+          "mean": 0.2248803750001874
+        },
+        "stateUnchanged": true
+      },
+      {
+        "name": "normal combat, 10000 items, equipped last",
+        "items": 10000,
+        "equippedIndices": [
+          9997,
+          9998,
+          9999
+        ],
+        "rawSha256": "60ffcf20bbbb1fd7807dcf8e34e32a7c9e584924c1d4231588f2f1b507e26b14",
+        "firstCritLuck": 0,
+        "nextLuck": 0,
+        "eventLuck": 0,
+        "order": [
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ]
+        ],
+        "html": {
+          "baseline": {
+            "characters": 21626,
+            "sha256": "a6e9a2c708f91ab35e4e1394306715d5f4f87729d4e39c2d500e0ee281830f29"
+          },
+          "current": {
+            "characters": 21626,
+            "sha256": "62e0f8664d2d72466d4bab6c3e430b82330d4da2637ba5a451a87e8bd9dd52ba"
+          }
+        },
+        "samplesMs": {
+          "baseline": [
+            5.540251999998873,
+            6.112247999997635,
+            5.849459000000934,
+            5.742661000000226,
+            5.400535999997373,
+            5.516718000002584,
+            6.247527999999875,
+            5.034394000002067,
+            4.807938999998441,
+            4.832977000001847,
+            4.590266999999585,
+            4.55325300000186,
+            5.10526899999968,
+            5.244013999999879,
+            4.766969000000245,
+            4.806086000000505,
+            5.248930999998265,
+            4.624318000001949,
+            4.7410409999974945,
+            5.347316999999748,
+            4.573071999999229,
+            4.905073000001721,
+            4.592570999997406,
+            4.922589000001608
+          ],
+          "current": [
+            6.827414999999746,
+            6.240537999998196,
+            7.812692999999854,
+            6.858352000002924,
+            7.442054999999527,
+            6.713126999999076,
+            7.831400000002759,
+            7.4948330000006536,
+            8.688948999999411,
+            6.595602999997936,
+            6.385342000001401,
+            6.326515000000654,
+            6.801507000000129,
+            7.166197000002285,
+            6.510035999999673,
+            6.369359000000259,
+            7.806915000001027,
+            6.404018999997788,
+            6.865361000000121,
+            6.134791000000405,
+            7.006038999999873,
+            6.145286999999371,
+            5.867365999998583,
+            5.954434999999648
+          ]
+        },
+        "baselineMs": {
+          "n": 24,
+          "min": 4.55325300000186,
+          "median": 4.978491500001837,
+          "p90": 5.849459000000934,
+          "p95": 6.112247999997635,
+          "max": 6.247527999999875,
+          "mean": 5.129395083333293
+        },
+        "currentMs": {
+          "n": 24,
+          "min": 5.867365999998583,
+          "median": 6.757316999999603,
+          "p90": 7.812692999999854,
+          "p95": 7.831400000002759,
+          "max": 8.688948999999411,
+          "mean": 6.843672250000054
+        },
+        "pairedDifferenceSummaryMs": {
+          "n": 24,
+          "min": 0.12829000000056112,
+          "median": 1.7528464999977587,
+          "p90": 2.460438999998587,
+          "p95": 2.5579840000027616,
+          "max": 3.8810100000009697,
+          "mean": 1.7142771666667613
+        },
+        "stateUnchanged": true
+      }
+    ]
+  },
+  "sourceAndScriptStable": true,
+  "completedAt": "2026-10-19T12:31:08.273Z"
+}

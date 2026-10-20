@@ -1,0 +1,364 @@
+TAP version 13
+# Subtest: fifty room types are reachable; service deck completes each four-floor block and gaps never exceed seven
+ok 1 - fifty room types are reachable; service deck completes each four-floor block and gaps never exceed seven
+  ---
+  duration_ms: 890.125183
+  type: 'test'
+  ...
+# Subtest: twenty-four new enemies and six bosses carry actual mechanics, profiles and visible intent
+ok 2 - twenty-four new enemies and six bosses carry actual mechanics, profiles and visible intent
+  ---
+  duration_ms: 0.591485
+  type: 'test'
+  ...
+# Subtest: six new boss rules change damage, retaliation, recovery or player shield under their named conditions
+ok 3 - six new boss rules change damage, retaliation, recovery or player shield under their named conditions
+  ---
+  duration_ms: 0.596131
+  type: 'test'
+  ...
+# Subtest: special encounters have real triggers without mutating dice or hidden invulnerability
+ok 4 - special encounters have real triggers without mutating dice or hidden invulnerability
+  ---
+  duration_ms: 0.579056
+  type: 'test'
+  ...
+# Subtest: each authored enemy pair has a mechanically different second variant, not only a different name
+ok 5 - each authored enemy pair has a mechanically different second variant, not only a different name
+  ---
+  duration_ms: 6.103353
+  type: 'test'
+  ...
+# Subtest: all eight mystery templates are conditional, serializable, executable and safely rejectable
+ok 6 - all eight mystery templates are conditional, serializable, executable and safely rejectable
+  ---
+  duration_ms: 3.033475
+  type: 'test'
+  ...
+# Subtest: events apply concrete costs and bounded benefits; protected/missing materials disable offers
+ok 7 - events apply concrete costs and bounded benefits; protected/missing materials disable offers
+  ---
+  duration_ms: 0.624754
+  type: 'test'
+  ...
+# Subtest: gambit commits all six faces once, stage pools stay eligible, and item level caps normalize progress
+ok 8 - gambit commits all six faces once, stage pools stay eligible, and item level caps normalize progress
+  ---
+  duration_ms: 0.885028
+  type: 'test'
+  ...
+# Subtest: temporary buff offers reject saturation atomically and disclose the actual remaining gain
+ok 9 - temporary buff offers reject saturation atomically and disclose the actual remaining gain
+  ---
+  duration_ms: 0.634448
+  type: 'test'
+  ...
+# Subtest: every route has six linear rooms, mandatory encounters and two fixed boss milestones
+ok 10 - every route has six linear rooms, mandatory encounters and two fixed boss milestones
+  ---
+  duration_ms: 247.050004
+  type: 'test'
+  ...
+# Subtest: committed fate, rolls, unopened chests and loot survive round trips without rerolls or double grants
+ok 11 - committed fate, rolls, unopened chests and loot survive round trips without rerolls or double grants
+  ---
+  duration_ms: 12.349296
+  type: 'test'
+  ...
+# Subtest: all kills award one pending chest and dead enemies never retaliate
+ok 12 - all kills award one pending chest and dead enemies never retaliate
+  ---
+  duration_ms: 110.313942
+  type: 'test'
+  ...
+# Subtest: rarity makes a substantial same-level increase; modest enhancement never eclipses a fresh next-tier item
+ok 13 - rarity makes a substantial same-level increase; modest enhancement never eclipses a fresh next-tier item
+  ---
+  duration_ms: 0.599667
+  type: 'test'
+  ...
+# Subtest: upgrade labels compare character damage expectation including critical and follow-up passives
+ok 14 - upgrade labels compare character damage expectation including critical and follow-up passives
+  ---
+  duration_ms: 1.960678
+  type: 'test'
+  ...
+# Subtest: forge is item-bound, costs gold once and every dice outcome gives positive capped growth
+ok 15 - forge is item-bound, costs gold once and every dice outcome gives positive capped growth
+  ---
+  duration_ms: 131.578728
+  type: 'test'
+  ...
+# Subtest: fusion consumes selected materials once, raises levels and never transfers reinforcement
+ok 16 - fusion consumes selected materials once, raises levels and never transfers reinforcement
+  ---
+  duration_ms: 1.859699
+  type: 'test'
+  ...
+# Subtest: gold cannot go negative and rejected transactions do not mutate state or RNG
+ok 17 - gold cannot go negative and rejected transactions do not mutate state or RNG
+  ---
+  duration_ms: 0.711932
+  type: 'test'
+  ...
+# Subtest: death retries current enemy with long-term progress intact; armor swaps cannot heal
+ok 18 - death retries current enemy with long-term progress intact; armor swaps cannot heal
+  ---
+  duration_ms: 4.901916
+  type: 'test'
+  ...
+# Subtest: mirror recovery, corruption rejection, optimistic concurrency and quota failure are explicit
+ok 19 - mirror recovery, corruption rejection, optimistic concurrency and quota failure are explicit
+  ---
+  duration_ms: 3.136156
+  type: 'test'
+  ...
+# Subtest: 100 seeded full adventures complete ten floors with valid saves, six dice and both bosses
+ok 20 - 100 seeded full adventures complete ten floors with valid saves, six dice and both bosses
+  ---
+  duration_ms: 24735.092532
+  type: 'test'
+  ...
+# Subtest: merchant: locking a purchased item preserves the sold snapshot and full reload continuation
+ok 21 - merchant: locking a purchased item preserves the sold snapshot and full reload continuation
+  ---
+  duration_ms: 3.989356
+  type: 'test'
+  ...
+# Subtest: blackmarket: locking a purchased item preserves the sold snapshot and full reload continuation
+ok 22 - blackmarket: locking a purchased item preserves the sold snapshot and full reload continuation
+  ---
+  duration_ms: 2.632991
+  type: 'test'
+  ...
+# Subtest: a bought and equipped weapon can be forged after leaving the shop without rewriting its purchase record
+ok 23 - a bought and equipped weapon can be forged after leaving the shop without rewriting its purchase record
+  ---
+  duration_ms: 1.888301
+  type: 'test'
+  ...
+# Subtest: chest: claim history stays unchanged after locking and equipping its inventory item
+ok 24 - chest: claim history stays unchanged after locking and equipping its inventory item
+  ---
+  duration_ms: 2.247923
+  type: 'test'
+  ...
+# Subtest: vault: claim history stays unchanged after locking and equipping its inventory item
+ok 25 - vault: claim history stays unchanged after locking and equipping its inventory item
+  ---
+  duration_ms: 2.536489
+  type: 'test'
+  ...
+# Subtest: an event-generated pending reward uses the same detached claim ownership
+ok 26 - an event-generated pending reward uses the same detached claim ownership
+  ---
+  duration_ms: 1.364156
+  type: 'test'
+  ...
+# Subtest: purchase copies every unknown item field deeply while retaining unrelated complete save data
+ok 27 - purchase copies every unknown item field deeply while retaining unrelated complete save data
+  ---
+  duration_ms: 1.241364
+  type: 'test'
+  ...
+# Subtest: claim keeps unknown reward metadata and copies every nested item extension without rerolling
+ok 28 - claim keeps unknown reward metadata and copies every nested item extension without rerolling
+  ---
+  duration_ms: 0.932238
+  type: 'test'
+  ...
+# Subtest: an unrelated inventory action does not change a committed but unopened reward
+ok 29 - an unrelated inventory action does not change a committed but unopened reward
+  ---
+  duration_ms: 1.209138
+  type: 'test'
+  ...
+# Subtest: inventory-cap rejections retain the exact pending chest and unsold offer without spending or revision changes
+ok 30 - inventory-cap rejections retain the exact pending chest and unsold offer without spending or revision changes
+  ---
+  duration_ms: 232.637963
+  type: 'test'
+  ...
+# Subtest: already-saved distinct item history stays byte-exact rather than being reconciled from inventory
+ok 31 - already-saved distinct item history stays byte-exact rather than being reconciled from inventory
+  ---
+  duration_ms: 1.745229
+  type: 'test'
+  ...
+# Subtest: full expected-save conflicts still include unknown historical item fields
+ok 32 - full expected-save conflicts still include unknown historical item fields
+  ---
+  duration_ms: 1.728195
+  type: 'test'
+  ...
+# Subtest: the packaged V4 snapshots retain their complete historical records when migrated and acted on
+ok 33 - the packaged V4 snapshots retain their complete historical records when migrated and acted on
+  ---
+  duration_ms: 22.262174
+  type: 'test'
+  ...
+# Subtest: the natural seed-2 floor-3 purchase continues exactly after reload without any gameplay fixture patch
+ok 34 - the natural seed-2 floor-3 purchase continues exactly after reload without any gameplay fixture patch
+  ---
+  duration_ms: 14.400574
+  type: 'test'
+  ...
+# Subtest: a normal commit archives the readable V4 mirror instead of a checksummed but invalid primary
+ok 35 - a normal commit archives the readable V4 mirror instead of a checksummed but invalid primary
+  ---
+  duration_ms: 1.726952
+  type: 'test'
+  ...
+# Subtest: recovery from V1–V3 mirrors preserves both immutable original archives across later saves
+ok 36 - recovery from V1–V3 mirrors preserves both immutable original archives across later saves
+  ---
+  duration_ms: 9.594662
+  type: 'test'
+  ...
+# Subtest: archive-write failure after mirror recovery leaves both active disk copies intact
+ok 37 - archive-write failure after mirror recovery leaves both active disk copies intact
+  ---
+  duration_ms: 4.045039
+  type: 'test'
+  ...
+# Subtest: a pending auction without its committed reward is rejected before importing or claiming archive slots
+ok 38 - a pending auction without its committed reward is rejected before importing or claiming archive slots
+  ---
+  duration_ms: 2.268783
+  type: 'test'
+  ...
+# Subtest: event-triggered combat or death without an enemy cannot replace valid progress
+ok 39 - event-triggered combat or death without an enemy cannot replace valid progress
+  ---
+  duration_ms: 6.608848
+  type: 'test'
+  ...
+# Subtest: pending auction reward collisions with owned equipment are rejected before any import writes
+ok 40 - pending auction reward collisions with owned equipment are rejected before any import writes
+  ---
+  duration_ms: 3.063628
+  type: 'test'
+  ...
+# Subtest: resolved auction history can retain its owned reward through a later import
+ok 41 - resolved auction history can retain its owned reward through a later import
+  ---
+  duration_ms: 3.654822
+  type: 'test'
+  ...
+# Subtest: a valid auction remains deterministic through import, purchase, chest, loot and a rejected second claim
+ok 42 - a valid auction remains deterministic through import, purchase, chest, loot and a rejected second claim
+  ---
+  duration_ms: 15.89374
+  type: 'test'
+  ...
+# Subtest: ordinary events and direct chests keep their legal null enemy; resolved history does not require an optional auction preview
+ok 43 - ordinary events and direct chests keep their legal null enemy; resolved history does not require an optional auction preview
+  ---
+  duration_ms: 3.832004
+  type: 'test'
+  ...
+# Subtest: event combat retains valid multi-wave, death and retry transitions without regenerating committed rewards on load
+ok 44 - event combat retains valid multi-wave, death and retry transitions without regenerating committed rewards on load
+  ---
+  duration_ms: 3.24762
+  type: 'test'
+  ...
+# Subtest: 10,000 generated items still round-trip and primary-write failure leaves the current transaction intact
+ok 45 - 10,000 generated items still round-trip and primary-write failure leaves the current transaction intact
+  ---
+  duration_ms: 305.080509
+  type: 'test'
+  ...
+# Subtest: actual old V1, V2 and V3 equipment migrates while committed combat snapshots keep enemy, dice and RNG
+ok 46 - actual old V1, V2 and V3 equipment migrates while committed combat snapshots keep enemy, dice and RNG
+  ---
+  duration_ms: 6.552264
+  type: 'test'
+  ...
+# Subtest: new enemy and roll fields accept only their narrow optional types and numeric bounds
+ok 47 - new enemy and roll fields accept only their narrow optional types and numeric bounds
+  ---
+  duration_ms: 9.676752
+  type: 'test'
+  ...
+# Subtest: a saved phase transition continues identically and retry saves the reset stage
+ok 48 - a saved phase transition continues identically and retry saves the reset stage
+  ---
+  duration_ms: 2.497832
+  type: 'test'
+  ...
+# Subtest: new rules4 allow a sufficiently strong killing blow without adding the old half-health hard gate
+ok 49 - new rules4 allow a sufficiently strong killing blow without adding the old half-health hard gate
+  ---
+  duration_ms: 1.227654
+  type: 'test'
+  ...
+# Subtest: a 10,000-item current-schema save parses its active envelope only once
+ok 50 - a 10,000-item current-schema save parses its active envelope only once
+  ---
+  duration_ms: 266.540617
+  type: 'test'
+  ...
+# Subtest: current-schema source detection accepts whitespace and reordered envelope keys
+ok 51 - current-schema source detection accepts whitespace and reordered envelope keys
+  ---
+  duration_ms: 2.266059
+  type: 'test'
+  ...
+# Subtest: a verified V5 mirror avoids redundant parsing while an invalid primary remains unarchived
+ok 52 - a verified V5 mirror avoids redundant parsing while an invalid primary remains unarchived
+  ---
+  duration_ms: 2.35412
+  type: 'test'
+  ...
+# Subtest: public decode and load APIs keep their shapes and return fresh detached states
+ok 53 - public decode and load APIs keep their shapes and return fresh detached states
+  ---
+  duration_ms: 1.398566
+  type: 'test'
+  ...
+# Subtest: the source schema stays distinct from the migrated V5 state for all V1–V4 originals
+ok 54 - the source schema stays distinct from the migrated V5 state for all V1–V4 originals
+  ---
+  duration_ms: 15.072227
+  type: 'test'
+  ...
+# Subtest: full expected comparison still rejects same-revision unknown-field branches and mutated callers
+ok 55 - full expected comparison still rejects same-revision unknown-field branches and mutated callers
+  ---
+  duration_ms: 2.938513
+  type: 'test'
+  ...
+# Subtest: corrupt legacy archives still block a verified V5 commit before either active write
+ok 56 - corrupt legacy archives still block a verified V5 commit before either active write
+  ---
+  duration_ms: 1.564222
+  type: 'test'
+  ...
+# Subtest: later source reads that changed to an older raw string still take the complete archive path
+ok 57 - later source reads that changed to an older raw string still take the complete archive path
+  ---
+  duration_ms: 3.258316
+  type: 'test'
+  ...
+# Subtest: unreadable legacy envelopes remain available for explicit new-run rescue archives
+ok 58 - unreadable legacy envelopes remain available for explicit new-run rescue archives
+  ---
+  duration_ms: 1.117402
+  type: 'test'
+  ...
+# Subtest: archive failures keep active copies intact and current-schema primary or mirror failures keep their original outcomes
+ok 59 - archive failures keep active copies intact and current-schema primary or mirror failures keep their original outcomes
+  ---
+  duration_ms: 5.821144
+  type: 'test'
+  ...
+1..59
+# tests 59
+# suites 0
+# pass 59
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 27229.623089

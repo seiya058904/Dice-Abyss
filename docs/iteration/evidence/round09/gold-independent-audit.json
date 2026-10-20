@@ -1,0 +1,201 @@
+{
+  "audit": "round09-gold-independent",
+  "protocolVersion": 3,
+  "status": "PASS",
+  "scope": "Independent synthetic accepted-state boundary review against the untouched input. No browser, full-suite or natural-incidence claim.",
+  "scriptSha256": "137eaf98c6b55c5215da811cd8c249e653b705cf88c040b324aa26000c99043d",
+  "environment": {
+    "node": "v24.19.0",
+    "platform": "linux",
+    "arch": "x64",
+    "release": "6.18.55",
+    "logicalCPUs": 9
+  },
+  "checks": {
+    "matrixRows": 1890,
+    "acceptedInputs": 1890,
+    "legalTransactions": 1918,
+    "refusedActions": 165,
+    "roundtrips": 3836,
+    "renderReads": 1890,
+    "nullPreviewInputs": 0,
+    "storageFaults": 12,
+    "fusionCases": 4,
+    "xpCapacityCases": 32,
+    "protectionCases": 4,
+    "highValueSalvageCases": 6,
+    "receiptHelperCases": 15,
+    "receiptLifecycleCases": 8,
+    "fullInventoryCases": 1
+  },
+  "textDifferences": 494,
+  "newReceiptDifferences": 455,
+  "receiptCleanupDifferences": 8,
+  "maxLogCharacters": 108,
+  "maxOutcomeCharacters": 94,
+  "refundPaths": {
+    "gambit": 168,
+    "wishingvault": 168
+  },
+  "sourceStable": true,
+  "sourceHashes": {
+    "src/gold.js": "252aab60750432e1b5f1dc158c4a8f69e3dca5d72fa016b69c03c29ac651a244",
+    "src/engine.js": "85d459d93a037e194423a39a7d2c6265884bbdfa45796784c60f111d1653b009",
+    "src/encounters.js": "fd7fbd8f651eaa0fe0d05611320edd715f7e7649d5992a495df0c0b4bab4d4ae",
+    "src/storage.js": "2c5f648efe7df6a1c14710ea90fe2de83323141d5f5e285eec7fac8aa687a500",
+    "src/views.js": "63b0c861517a66721a8a1daa8ff0dfd0089b5e0a124e2398a54e6b64a4e3e3bc",
+    "src/app.js": "43d5e1cf594a30e302ff38f8444354f6c5848d98e03f46e422c436ee935e003f",
+    "src/gold.css": "bb1313da6f3a734567be73e23c606c56c1215bc976e166c9dc2b1fedb06c6393",
+    "src/fusion-view.js": "e77542f7de4c6f39ac57098ffb7a277caab988cd4bcc9ea5f50080b0f08e96c1",
+    "src/fusion-controller.js": "5a4a0c6a11c7a347ffcdaa0340d3c905d65aa5ba6b50e36e7135a9276537dd1a"
+  },
+  "durationMs": 4611.649474,
+  "maximumFloorReward": {
+    "floor": 9007199254740991,
+    "depthPower": 421.0227270386692,
+    "fate": 2125,
+    "goldRoom": 9363
+  },
+  "receiptLocation": "state.lootCreditedGold; reward objects remain unchanged",
+  "helper": "goldReceipt(reward, creditedGold): explicit second parameter only; legacy nested metadata is never interpreted as a receipt",
+  "compatibility": {
+    "legacyNestedFields": {
+      "paths": [
+        "chest.creditedGold",
+        "loot.creditedGold",
+        "event.reward.creditedGold"
+      ],
+      "cases": 24,
+      "passed": 24,
+      "allValuesPreserved": true
+    },
+    "newReservedRootField": {
+      "path": "state.lootCreditedGold",
+      "cases": 16,
+      "baselineAccepted": 16,
+      "currentAccepted": 2,
+      "contract": "Optional; if present, requires an existing valid loot object and an integer from zero through loot.gold. A prior unknown extension occupying this exact new root name is now subject to this contract."
+    },
+    "exactChestToLootObjects": true,
+    "legacyReceiptIsNotInvented": true
+  },
+  "boundaryMethods": {
+    "mainMatrix": {
+      "floors": [
+        1,
+        10,
+        30,
+        140,
+        400,
+        1000000,
+        9007199254740991
+      ],
+      "levels": [
+        1,
+        100,
+        1000000
+      ],
+      "heldGold": [
+        0,
+        80,
+        9900000000,
+        9999999999,
+        10000000000
+      ],
+      "rngStates": [
+        1,
+        7919,
+        4294967295
+      ],
+      "actions": [
+        "fate",
+        "gold",
+        "chest",
+        "exchange",
+        "gambit",
+        "wishingvault"
+      ]
+    },
+    "xpCapacity": {
+      "levels": [
+        1,
+        1000000
+      ],
+      "xp": [
+        0,
+        99000000,
+        99999999,
+        100000000
+      ],
+      "heldGold": [
+        9999999999,
+        10000000000
+      ],
+      "rawGold": [
+        0,
+        100000000
+      ]
+    },
+    "highValueSalvage": [
+      {
+        "count": 1,
+        "rawGold": 418950000000095,
+        "safeInteger": true,
+        "credited": 1
+      },
+      {
+        "count": 2,
+        "rawGold": 837900000000190,
+        "safeInteger": true,
+        "credited": 1
+      },
+      {
+        "count": 16,
+        "rawGold": 6703200000001520,
+        "safeInteger": true,
+        "credited": 1
+      },
+      {
+        "count": 64,
+        "rawGold": 26812800000006120,
+        "safeInteger": false,
+        "credited": null
+      },
+      {
+        "count": 128,
+        "rawGold": 53625600000012264,
+        "safeInteger": false,
+        "credited": null
+      },
+      {
+        "count": 512,
+        "rawGold": 214502400000049120,
+        "safeInteger": false,
+        "credited": null
+      }
+    ],
+    "lifetime": [
+      "inventory retains receipt",
+      "ordinary next room clears receipt",
+      "multi-wave next clears receipt",
+      "cleared floor retains receipt until descend",
+      "gambit paid reward clears history",
+      "abyss auction paid reward clears history",
+      "bloodwell paid reward clears history",
+      "relicloom sacrifice clears history",
+      "mystery relic exchange clears history"
+    ]
+  },
+  "priorEvidence": {
+    "originalDraft": "../../independent-original-receipt.json",
+    "supersededNestedDesign": "../../superseded-candidate-summary.json",
+    "reviewerFixtureCorrection": "../fixture-error-attempt/classification.json"
+  },
+  "limitations": [
+    "Synthetic validator-accepted states establish boundary behavior, not natural player incidence.",
+    "Full-state A/B allows only the new root receipt, its deletion when loot is cleared, and gold/XP clipped transaction text. Player assets, prices, probabilities, RNG, revision, chest/loot and unknown metadata remain compared.",
+    "Refused unsafe salvage totals are rejected before the gold helper and are not counted as legal null previews.",
+    "No browser, hardware, natural gold-cap incidence or full-suite pass is claimed by this matrix receipt.",
+    "Prior scripts and failed executions are retained and cannot be represented as byte-identical to this protocol-3 CLI script."
+  ]
+}

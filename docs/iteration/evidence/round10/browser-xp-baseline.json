@@ -1,0 +1,906 @@
+{
+  "started": "2026-10-18T09:17:38.310Z",
+  "source": "/workspace/scratch/cbf6f0daa163/baseline/Dice-Abyss",
+  "url": "http://127.0.0.1:4319/",
+  "expectation": "baseline",
+  "sourceBefore": {
+    "index.html": "c7c1f17957753a3b0dd35981742ad5ab8c31491c452dc3cbc41a0a8f0b5ac035",
+    "package.json": "6e2d50aca00fb1cf4e113ed8462bc9370fedd039ed345a9bcdb851f55cba12f7",
+    "src/action-focus.js": "d5e383b4f8aeb138b6cdffc7f3dffe12cf0db7fcbac053df713dec60b3b95a98",
+    "src/app.js": "43d5e1cf594a30e302ff38f8444354f6c5848d98e03f46e422c436ee935e003f",
+    "src/content.js": "4c0c2e4656c5a3482a5448a069ae2fa28367ba05d61c7d0c2c9866315f5c5526",
+    "src/deep-content.js": "040a5668b687cf9d7b7c8b31a67cee35660ebb0539af74c7d572614f138fef33",
+    "src/deep-rules.js": "6919b66ec8fbadea293ab4c4e3aa0b8c7a943e2ec44224b119287709d484581f",
+    "src/deep.css": "24f0ed8bf2969232c660a595cd5e19b206066bc4a19a983e4bd3a277b82700cc",
+    "src/dice-motion.js": "3b088b9efa03552912bd92b18dc66d6122f45e2f12dc420305bb877deae5139a",
+    "src/dice-renderer.js": "a317cbe20fb1a0518a69eff10e3aa9b7dce5180a2b90543439fb830c86d66770",
+    "src/effects.js": "959c7d346427a5854f509c8b11205d8c34d82392ed1340eedd9aa66e7b75c9c5",
+    "src/encounter-tactics.js": "02e0da7aa57de321319812503556d9e5925463644222305755e86de6c3fa355b",
+    "src/encounters.js": "fd7fbd8f651eaa0fe0d05611320edd715f7e7649d5992a495df0c0b4bab4d4ae",
+    "src/engine.js": "85d459d93a037e194423a39a7d2c6265884bbdfa45796784c60f111d1653b009",
+    "src/equipment-content.js": "d95b5e7c11d14eb764ea3cefb7eee73f35b2f9d48a8b640513eda9aefd1cc030",
+    "src/equipment.js": "8c20de433f21931318e315b862b457d37a03b9596ea5df8f7cc4025691aaccd6",
+    "src/expansion.css": "d5c01857bf02a4566270f23ef389aad76e033e50bd5440ecb13665ce81818424",
+    "src/forge.css": "9a7ee960f3494e39ac102abf7b9476cacffdd89eea1803e52469b441e124823f",
+    "src/fusion-controller.js": "5a4a0c6a11c7a347ffcdaa0340d3c905d65aa5ba6b50e36e7135a9276537dd1a",
+    "src/fusion-dom.js": "fb78398073fdccaea6680146c34ac18de75d926439c7044ed45da39f625e4023",
+    "src/fusion-view.js": "e77542f7de4c6f39ac57098ffb7a277caab988cd4bcc9ea5f50080b0f08e96c1",
+    "src/fusion-workbench.js": "06f206dc578534c641f0fe327c48a4ec70ccffeed79fe8076ccd83cfb56263bf",
+    "src/fusion.css": "9b6fe3edaa023ae1c7702e60e3110d9450a6ca03a737f74dd984baf0fb083bc5",
+    "src/gold.css": "bb1313da6f3a734567be73e23c606c56c1215bc976e166c9dc2b1fedb06c6393",
+    "src/gold.js": "252aab60750432e1b5f1dc158c4a8f69e3dca5d72fa016b69c03c29ac651a244",
+    "src/inventory-dom.js": "7f3b18a6b3dbcc3a0a100c94bab35d9e81a14d7a6c74e8eabfdff3d151d35bf0",
+    "src/polish.css": "84af5e0bfc563c830287d96103faff4b1673c7d363a9cfbc26995a5074265df8",
+    "src/progression.css": "31125ec19b19b527f9d0499d9b045874b0d37e2d6eb8fdcc729e58bf783368ec",
+    "src/quality.css": "3785daf1b16c66942383c8285376a66fee42c2a21c0b1450c251870333919bb8",
+    "src/rarity.js": "871356df147d027e1845f98c5574a1d9a71c0d17bd8717f457c9007d7c73b735",
+    "src/refinement.css": "79a8599ca5415c933de1161575edb25601f4efdbf57be4c45dc82033abb1fffd",
+    "src/rooms.css": "a426209cd05ccb3125a88713ea8693b04b47b65e179c605538b5053fe616c606",
+    "src/route-weights.js": "b21499b8c44a17ad09caab5e17f312073b269981b6ac7eb916b5f656912237dd",
+    "src/storage.js": "2c5f648efe7df6a1c14710ea90fe2de83323141d5f5e285eec7fac8aa687a500",
+    "src/styles.css": "dc835715e16e8698214d25202a39df6162c865287e6ac605c111486066764044",
+    "src/talent.css": "350f583103186b0b44fc50317d92c20417fed82fe4e8667bf1776390b2425334",
+    "src/views.js": "63b0c861517a66721a8a1daa8ff0dfd0089b5e0a124e2398a54e6b64a4e3e3bc",
+    "src/visual-timeline.js": "f518084da44c2ea852bf902ba6ffc7f8f5a94ee815dac31bcc4726cc8cd44369",
+    "src/visual.css": "35ec8f94b238d355f6fad93855d4b20794157e3d9c592dcf777cf25dcb2e05bd"
+  },
+  "scriptSha256": "a15c48e3ff5e74e02f44c045d2d7ee0d45ea57d84eb171adf4087f28fd5ec7da",
+  "cases": [
+    {
+      "name": "page-identity",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "exact title and URL",
+          "passed": true
+        },
+        {
+          "label": "not blank",
+          "passed": true
+        },
+        {
+          "label": "no framework overlay",
+          "passed": true,
+          "actualSha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "expectedSha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        {
+          "label": "index.html served",
+          "passed": true
+        },
+        {
+          "label": "src/action-focus.js served",
+          "passed": true
+        },
+        {
+          "label": "src/app.js served",
+          "passed": true
+        },
+        {
+          "label": "src/content.js served",
+          "passed": true
+        },
+        {
+          "label": "src/deep-content.js served",
+          "passed": true
+        },
+        {
+          "label": "src/deep-rules.js served",
+          "passed": true
+        },
+        {
+          "label": "src/deep.css served",
+          "passed": true
+        },
+        {
+          "label": "src/dice-motion.js served",
+          "passed": true
+        },
+        {
+          "label": "src/dice-renderer.js served",
+          "passed": true
+        },
+        {
+          "label": "src/effects.js served",
+          "passed": true
+        },
+        {
+          "label": "src/encounter-tactics.js served",
+          "passed": true
+        },
+        {
+          "label": "src/encounters.js served",
+          "passed": true
+        },
+        {
+          "label": "src/engine.js served",
+          "passed": true
+        },
+        {
+          "label": "src/equipment-content.js served",
+          "passed": true
+        },
+        {
+          "label": "src/equipment.js served",
+          "passed": true
+        },
+        {
+          "label": "src/expansion.css served",
+          "passed": true
+        },
+        {
+          "label": "src/forge.css served",
+          "passed": true
+        },
+        {
+          "label": "src/fusion-controller.js served",
+          "passed": true
+        },
+        {
+          "label": "src/fusion-dom.js served",
+          "passed": true
+        },
+        {
+          "label": "src/fusion-view.js served",
+          "passed": true
+        },
+        {
+          "label": "src/fusion-workbench.js served",
+          "passed": true
+        },
+        {
+          "label": "src/fusion.css served",
+          "passed": true
+        },
+        {
+          "label": "src/gold.css served",
+          "passed": true
+        },
+        {
+          "label": "src/gold.js served",
+          "passed": true
+        },
+        {
+          "label": "src/inventory-dom.js served",
+          "passed": true
+        },
+        {
+          "label": "src/polish.css served",
+          "passed": true
+        },
+        {
+          "label": "src/progression.css served",
+          "passed": true
+        },
+        {
+          "label": "src/quality.css served",
+          "passed": true
+        },
+        {
+          "label": "src/rarity.js served",
+          "passed": true
+        },
+        {
+          "label": "src/refinement.css served",
+          "passed": true
+        },
+        {
+          "label": "src/rooms.css served",
+          "passed": true
+        },
+        {
+          "label": "src/route-weights.js served",
+          "passed": true
+        },
+        {
+          "label": "src/storage.js served",
+          "passed": true
+        },
+        {
+          "label": "src/styles.css served",
+          "passed": true
+        },
+        {
+          "label": "src/talent.css served",
+          "passed": true
+        },
+        {
+          "label": "src/views.js served",
+          "passed": true
+        },
+        {
+          "label": "src/visual-timeline.js served",
+          "passed": true
+        },
+        {
+          "label": "src/visual.css served",
+          "passed": true
+        },
+        {
+          "label": "served source exact",
+          "passed": true,
+          "actualSha256": "226bacf30c2f346e860161d8d57fe30852225e7d0c5321df0eb476d4e48bdeb8",
+          "expectedSha256": "226bacf30c2f346e860161d8d57fe30852225e7d0c5321df0eb476d4e48bdeb8"
+        },
+        {
+          "label": "native Web Locks",
+          "passed": true
+        },
+        {
+          "label": "font readiness signal",
+          "passed": true
+        }
+      ],
+      "knownDefects": [],
+      "screenshots": []
+    },
+    {
+      "name": "memory_archive-credit-and-confirm",
+      "status": "REPRODUCED",
+      "checks": [
+        {
+          "label": "Escape cancels without writes",
+          "passed": true,
+          "actualSha256": "009e60ca6a265b504859608a9e535427aa90ba7dc7ff232842b4e4f552f8ecda",
+          "expectedSha256": "009e60ca6a265b504859608a9e535427aa90ba7dc7ff232842b4e4f552f8ecda"
+        },
+        {
+          "label": "cancel button leaves all saved bytes unchanged",
+          "passed": true,
+          "actualSha256": "009e60ca6a265b504859608a9e535427aa90ba7dc7ff232842b4e4f552f8ecda",
+          "expectedSha256": "009e60ca6a265b504859608a9e535427aa90ba7dc7ff232842b4e4f552f8ecda"
+        },
+        {
+          "label": "native payment: full state",
+          "passed": true,
+          "actualSha256": "9f93c7bd71d6a3413a98bd7db81e98d997e04bd6afd904e07195763014c5a3f0",
+          "expectedSha256": "9f93c7bd71d6a3413a98bd7db81e98d997e04bd6afd904e07195763014c5a3f0"
+        },
+        {
+          "label": "native payment: primary bytes",
+          "passed": true,
+          "actualSha256": "86d78b110f3d59dcae5175f3c5948ad140dc93538a3bf9574870ef6a8688ccf1",
+          "expectedSha256": "86d78b110f3d59dcae5175f3c5948ad140dc93538a3bf9574870ef6a8688ccf1"
+        },
+        {
+          "label": "native payment: mirror bytes",
+          "passed": true,
+          "actualSha256": "86d78b110f3d59dcae5175f3c5948ad140dc93538a3bf9574870ef6a8688ccf1",
+          "expectedSha256": "86d78b110f3d59dcae5175f3c5948ad140dc93538a3bf9574870ef6a8688ccf1"
+        },
+        {
+          "label": "native payment: unrelated data",
+          "passed": true,
+          "actualSha256": "11e1ffbeb99b4e1cf31776fecad4ecb7117ee68aac73082c4ca0345929cba3dd",
+          "expectedSha256": "11e1ffbeb99b4e1cf31776fecad4ecb7117ee68aac73082c4ca0345929cba3dd"
+        },
+        {
+          "label": "committed outcome visible",
+          "passed": true
+        },
+        {
+          "label": "registered fee still charged",
+          "passed": true
+        },
+        {
+          "label": "normal payment upgrades",
+          "passed": true
+        },
+        {
+          "label": "XP is spent on upgrade, not mistaken for negative credit",
+          "passed": true
+        },
+        {
+          "label": "reload result: full state",
+          "passed": true,
+          "actualSha256": "9f93c7bd71d6a3413a98bd7db81e98d997e04bd6afd904e07195763014c5a3f0",
+          "expectedSha256": "9f93c7bd71d6a3413a98bd7db81e98d997e04bd6afd904e07195763014c5a3f0"
+        },
+        {
+          "label": "reload result: primary bytes",
+          "passed": true,
+          "actualSha256": "86d78b110f3d59dcae5175f3c5948ad140dc93538a3bf9574870ef6a8688ccf1",
+          "expectedSha256": "86d78b110f3d59dcae5175f3c5948ad140dc93538a3bf9574870ef6a8688ccf1"
+        },
+        {
+          "label": "reload result: mirror bytes",
+          "passed": true,
+          "actualSha256": "86d78b110f3d59dcae5175f3c5948ad140dc93538a3bf9574870ef6a8688ccf1",
+          "expectedSha256": "86d78b110f3d59dcae5175f3c5948ad140dc93538a3bf9574870ef6a8688ccf1"
+        },
+        {
+          "label": "reload result: unrelated data",
+          "passed": true,
+          "actualSha256": "11e1ffbeb99b4e1cf31776fecad4ecb7117ee68aac73082c4ca0345929cba3dd",
+          "expectedSha256": "11e1ffbeb99b4e1cf31776fecad4ecb7117ee68aac73082c4ca0345929cba3dd"
+        },
+        {
+          "label": "result survives refresh",
+          "passed": true
+        },
+        {
+          "label": "old review omits capacity loss",
+          "passed": true
+        },
+        {
+          "label": "Escape cancels without writes",
+          "passed": true,
+          "actualSha256": "98ea2e70e1f9e42f0bc9954606420e6bb1f73a0bf33c59485bb9e8769b1e3639",
+          "expectedSha256": "98ea2e70e1f9e42f0bc9954606420e6bb1f73a0bf33c59485bb9e8769b1e3639"
+        },
+        {
+          "label": "cancel button leaves all saved bytes unchanged",
+          "passed": true,
+          "actualSha256": "98ea2e70e1f9e42f0bc9954606420e6bb1f73a0bf33c59485bb9e8769b1e3639",
+          "expectedSha256": "98ea2e70e1f9e42f0bc9954606420e6bb1f73a0bf33c59485bb9e8769b1e3639"
+        },
+        {
+          "label": "native payment: full state",
+          "passed": true,
+          "actualSha256": "0d7ac1808327513a69c09a4288f09d8290968c2b3205d8451e15f2bf671f9d30",
+          "expectedSha256": "0d7ac1808327513a69c09a4288f09d8290968c2b3205d8451e15f2bf671f9d30"
+        },
+        {
+          "label": "native payment: primary bytes",
+          "passed": true,
+          "actualSha256": "a29a5db704da9eddb4d9c5b52547ea3189986b83b911856b43d6c9f3953dbc2e",
+          "expectedSha256": "a29a5db704da9eddb4d9c5b52547ea3189986b83b911856b43d6c9f3953dbc2e"
+        },
+        {
+          "label": "native payment: mirror bytes",
+          "passed": true,
+          "actualSha256": "a29a5db704da9eddb4d9c5b52547ea3189986b83b911856b43d6c9f3953dbc2e",
+          "expectedSha256": "a29a5db704da9eddb4d9c5b52547ea3189986b83b911856b43d6c9f3953dbc2e"
+        },
+        {
+          "label": "native payment: unrelated data",
+          "passed": true,
+          "actualSha256": "11e1ffbeb99b4e1cf31776fecad4ecb7117ee68aac73082c4ca0345929cba3dd",
+          "expectedSha256": "11e1ffbeb99b4e1cf31776fecad4ecb7117ee68aac73082c4ca0345929cba3dd"
+        },
+        {
+          "label": "committed outcome visible",
+          "passed": true
+        },
+        {
+          "label": "registered fee still charged",
+          "passed": true
+        },
+        {
+          "label": "reload result: full state",
+          "passed": true,
+          "actualSha256": "0d7ac1808327513a69c09a4288f09d8290968c2b3205d8451e15f2bf671f9d30",
+          "expectedSha256": "0d7ac1808327513a69c09a4288f09d8290968c2b3205d8451e15f2bf671f9d30"
+        },
+        {
+          "label": "reload result: primary bytes",
+          "passed": true,
+          "actualSha256": "a29a5db704da9eddb4d9c5b52547ea3189986b83b911856b43d6c9f3953dbc2e",
+          "expectedSha256": "a29a5db704da9eddb4d9c5b52547ea3189986b83b911856b43d6c9f3953dbc2e"
+        },
+        {
+          "label": "reload result: mirror bytes",
+          "passed": true,
+          "actualSha256": "a29a5db704da9eddb4d9c5b52547ea3189986b83b911856b43d6c9f3953dbc2e",
+          "expectedSha256": "a29a5db704da9eddb4d9c5b52547ea3189986b83b911856b43d6c9f3953dbc2e"
+        },
+        {
+          "label": "reload result: unrelated data",
+          "passed": true,
+          "actualSha256": "11e1ffbeb99b4e1cf31776fecad4ecb7117ee68aac73082c4ca0345929cba3dd",
+          "expectedSha256": "11e1ffbeb99b4e1cf31776fecad4ecb7117ee68aac73082c4ca0345929cba3dd"
+        },
+        {
+          "label": "result survives refresh",
+          "passed": true
+        },
+        {
+          "label": "old review omits capacity loss",
+          "passed": true
+        },
+        {
+          "label": "Escape cancels without writes",
+          "passed": true,
+          "actualSha256": "35c39aa3347a5b0dc1f6e9a22895b2e2b7f70a4cc7bb16f29f8e130c25b52723",
+          "expectedSha256": "35c39aa3347a5b0dc1f6e9a22895b2e2b7f70a4cc7bb16f29f8e130c25b52723"
+        },
+        {
+          "label": "cancel button leaves all saved bytes unchanged",
+          "passed": true,
+          "actualSha256": "35c39aa3347a5b0dc1f6e9a22895b2e2b7f70a4cc7bb16f29f8e130c25b52723",
+          "expectedSha256": "35c39aa3347a5b0dc1f6e9a22895b2e2b7f70a4cc7bb16f29f8e130c25b52723"
+        },
+        {
+          "label": "native payment: full state",
+          "passed": true,
+          "actualSha256": "83054c8c668d2e2a7745df358cec706974989e99099bee10f829e4c8d8919d25",
+          "expectedSha256": "83054c8c668d2e2a7745df358cec706974989e99099bee10f829e4c8d8919d25"
+        },
+        {
+          "label": "native payment: primary bytes",
+          "passed": true,
+          "actualSha256": "d018ade571e200a6409cc8bb411001c89e605af7c8cb003fef26bcb4acb1a42e",
+          "expectedSha256": "d018ade571e200a6409cc8bb411001c89e605af7c8cb003fef26bcb4acb1a42e"
+        },
+        {
+          "label": "native payment: mirror bytes",
+          "passed": true,
+          "actualSha256": "d018ade571e200a6409cc8bb411001c89e605af7c8cb003fef26bcb4acb1a42e",
+          "expectedSha256": "d018ade571e200a6409cc8bb411001c89e605af7c8cb003fef26bcb4acb1a42e"
+        },
+        {
+          "label": "native payment: unrelated data",
+          "passed": true,
+          "actualSha256": "11e1ffbeb99b4e1cf31776fecad4ecb7117ee68aac73082c4ca0345929cba3dd",
+          "expectedSha256": "11e1ffbeb99b4e1cf31776fecad4ecb7117ee68aac73082c4ca0345929cba3dd"
+        },
+        {
+          "label": "committed outcome visible",
+          "passed": true
+        },
+        {
+          "label": "registered fee still charged",
+          "passed": true
+        },
+        {
+          "label": "reload result: full state",
+          "passed": true,
+          "actualSha256": "83054c8c668d2e2a7745df358cec706974989e99099bee10f829e4c8d8919d25",
+          "expectedSha256": "83054c8c668d2e2a7745df358cec706974989e99099bee10f829e4c8d8919d25"
+        },
+        {
+          "label": "reload result: primary bytes",
+          "passed": true,
+          "actualSha256": "d018ade571e200a6409cc8bb411001c89e605af7c8cb003fef26bcb4acb1a42e",
+          "expectedSha256": "d018ade571e200a6409cc8bb411001c89e605af7c8cb003fef26bcb4acb1a42e"
+        },
+        {
+          "label": "reload result: mirror bytes",
+          "passed": true,
+          "actualSha256": "d018ade571e200a6409cc8bb411001c89e605af7c8cb003fef26bcb4acb1a42e",
+          "expectedSha256": "d018ade571e200a6409cc8bb411001c89e605af7c8cb003fef26bcb4acb1a42e"
+        },
+        {
+          "label": "reload result: unrelated data",
+          "passed": true,
+          "actualSha256": "11e1ffbeb99b4e1cf31776fecad4ecb7117ee68aac73082c4ca0345929cba3dd",
+          "expectedSha256": "11e1ffbeb99b4e1cf31776fecad4ecb7117ee68aac73082c4ca0345929cba3dd"
+        },
+        {
+          "label": "result survives refresh",
+          "passed": true
+        }
+      ],
+      "knownDefects": [
+        {
+          "kind": "partial",
+          "key": "memory_archive",
+          "raw": 1000000,
+          "actualCredit": 10,
+          "confirmation": "确认这次命运抉择？\n\n经验即时结算，可能触发升级。\n\n代价\n50000 金币\n获得\n1000000 经验\n\n支付 50000 金币；此项提交后不可撤销。\n\n取消\n确认接受"
+        },
+        {
+          "kind": "zero",
+          "key": "memory_archive",
+          "raw": 1000000,
+          "actualCredit": 0,
+          "confirmation": "确认这次命运抉择？\n\n经验即时结算，可能触发升级。\n\n代价\n50000 金币\n获得\n1000000 经验\n\n支付 50000 金币；此项提交后不可撤销。\n\n取消\n确认接受"
+        }
+      ],
+      "screenshots": [
+        "memory_archive-partial-result.png"
+      ]
+    },
+    {
+      "name": "starlibrary-credit-and-confirm",
+      "status": "REPRODUCED",
+      "checks": [
+        {
+          "label": "Escape cancels without writes",
+          "passed": true,
+          "actualSha256": "e12349eeddc42dfd28d09993a32198ab56099b9fdec3ebe16adfd4c3b207904e",
+          "expectedSha256": "e12349eeddc42dfd28d09993a32198ab56099b9fdec3ebe16adfd4c3b207904e"
+        },
+        {
+          "label": "cancel button leaves all saved bytes unchanged",
+          "passed": true,
+          "actualSha256": "e12349eeddc42dfd28d09993a32198ab56099b9fdec3ebe16adfd4c3b207904e",
+          "expectedSha256": "e12349eeddc42dfd28d09993a32198ab56099b9fdec3ebe16adfd4c3b207904e"
+        },
+        {
+          "label": "native payment: full state",
+          "passed": true,
+          "actualSha256": "0e431c312e112ef38ca11a008da3e2b9f9799a71164e9b7221db38cb969199e7",
+          "expectedSha256": "0e431c312e112ef38ca11a008da3e2b9f9799a71164e9b7221db38cb969199e7"
+        },
+        {
+          "label": "native payment: primary bytes",
+          "passed": true,
+          "actualSha256": "b85863c241668d5d458deb98ba213444b0aa522f766d37e45cddf74c2c5dfbc4",
+          "expectedSha256": "b85863c241668d5d458deb98ba213444b0aa522f766d37e45cddf74c2c5dfbc4"
+        },
+        {
+          "label": "native payment: mirror bytes",
+          "passed": true,
+          "actualSha256": "b85863c241668d5d458deb98ba213444b0aa522f766d37e45cddf74c2c5dfbc4",
+          "expectedSha256": "b85863c241668d5d458deb98ba213444b0aa522f766d37e45cddf74c2c5dfbc4"
+        },
+        {
+          "label": "native payment: unrelated data",
+          "passed": true,
+          "actualSha256": "11e1ffbeb99b4e1cf31776fecad4ecb7117ee68aac73082c4ca0345929cba3dd",
+          "expectedSha256": "11e1ffbeb99b4e1cf31776fecad4ecb7117ee68aac73082c4ca0345929cba3dd"
+        },
+        {
+          "label": "committed outcome visible",
+          "passed": true
+        },
+        {
+          "label": "registered fee still charged",
+          "passed": true
+        },
+        {
+          "label": "normal payment upgrades",
+          "passed": true
+        },
+        {
+          "label": "XP is spent on upgrade, not mistaken for negative credit",
+          "passed": true
+        },
+        {
+          "label": "reload result: full state",
+          "passed": true,
+          "actualSha256": "0e431c312e112ef38ca11a008da3e2b9f9799a71164e9b7221db38cb969199e7",
+          "expectedSha256": "0e431c312e112ef38ca11a008da3e2b9f9799a71164e9b7221db38cb969199e7"
+        },
+        {
+          "label": "reload result: primary bytes",
+          "passed": true,
+          "actualSha256": "b85863c241668d5d458deb98ba213444b0aa522f766d37e45cddf74c2c5dfbc4",
+          "expectedSha256": "b85863c241668d5d458deb98ba213444b0aa522f766d37e45cddf74c2c5dfbc4"
+        },
+        {
+          "label": "reload result: mirror bytes",
+          "passed": true,
+          "actualSha256": "b85863c241668d5d458deb98ba213444b0aa522f766d37e45cddf74c2c5dfbc4",
+          "expectedSha256": "b85863c241668d5d458deb98ba213444b0aa522f766d37e45cddf74c2c5dfbc4"
+        },
+        {
+          "label": "reload result: unrelated data",
+          "passed": true,
+          "actualSha256": "11e1ffbeb99b4e1cf31776fecad4ecb7117ee68aac73082c4ca0345929cba3dd",
+          "expectedSha256": "11e1ffbeb99b4e1cf31776fecad4ecb7117ee68aac73082c4ca0345929cba3dd"
+        },
+        {
+          "label": "result survives refresh",
+          "passed": true
+        },
+        {
+          "label": "old review omits capacity loss",
+          "passed": true
+        },
+        {
+          "label": "Escape cancels without writes",
+          "passed": true,
+          "actualSha256": "0d0157964ba75e6b62494b60b3fdf9d18d3a4d4f0ba22c5b7fff728876eb1dc8",
+          "expectedSha256": "0d0157964ba75e6b62494b60b3fdf9d18d3a4d4f0ba22c5b7fff728876eb1dc8"
+        },
+        {
+          "label": "cancel button leaves all saved bytes unchanged",
+          "passed": true,
+          "actualSha256": "0d0157964ba75e6b62494b60b3fdf9d18d3a4d4f0ba22c5b7fff728876eb1dc8",
+          "expectedSha256": "0d0157964ba75e6b62494b60b3fdf9d18d3a4d4f0ba22c5b7fff728876eb1dc8"
+        },
+        {
+          "label": "native payment: full state",
+          "passed": true,
+          "actualSha256": "4f51f622c8a278304edb6a5280d1545b99ac00730f334b6a02151c0f45ed4501",
+          "expectedSha256": "4f51f622c8a278304edb6a5280d1545b99ac00730f334b6a02151c0f45ed4501"
+        },
+        {
+          "label": "native payment: primary bytes",
+          "passed": true,
+          "actualSha256": "9d29aa0c9d7807fadb2309bba4560222d1d0b6e1c9d96e1153095257be11c0d8",
+          "expectedSha256": "9d29aa0c9d7807fadb2309bba4560222d1d0b6e1c9d96e1153095257be11c0d8"
+        },
+        {
+          "label": "native payment: mirror bytes",
+          "passed": true,
+          "actualSha256": "9d29aa0c9d7807fadb2309bba4560222d1d0b6e1c9d96e1153095257be11c0d8",
+          "expectedSha256": "9d29aa0c9d7807fadb2309bba4560222d1d0b6e1c9d96e1153095257be11c0d8"
+        },
+        {
+          "label": "native payment: unrelated data",
+          "passed": true,
+          "actualSha256": "11e1ffbeb99b4e1cf31776fecad4ecb7117ee68aac73082c4ca0345929cba3dd",
+          "expectedSha256": "11e1ffbeb99b4e1cf31776fecad4ecb7117ee68aac73082c4ca0345929cba3dd"
+        },
+        {
+          "label": "committed outcome visible",
+          "passed": true
+        },
+        {
+          "label": "registered fee still charged",
+          "passed": true
+        },
+        {
+          "label": "reload result: full state",
+          "passed": true,
+          "actualSha256": "4f51f622c8a278304edb6a5280d1545b99ac00730f334b6a02151c0f45ed4501",
+          "expectedSha256": "4f51f622c8a278304edb6a5280d1545b99ac00730f334b6a02151c0f45ed4501"
+        },
+        {
+          "label": "reload result: primary bytes",
+          "passed": true,
+          "actualSha256": "9d29aa0c9d7807fadb2309bba4560222d1d0b6e1c9d96e1153095257be11c0d8",
+          "expectedSha256": "9d29aa0c9d7807fadb2309bba4560222d1d0b6e1c9d96e1153095257be11c0d8"
+        },
+        {
+          "label": "reload result: mirror bytes",
+          "passed": true,
+          "actualSha256": "9d29aa0c9d7807fadb2309bba4560222d1d0b6e1c9d96e1153095257be11c0d8",
+          "expectedSha256": "9d29aa0c9d7807fadb2309bba4560222d1d0b6e1c9d96e1153095257be11c0d8"
+        },
+        {
+          "label": "reload result: unrelated data",
+          "passed": true,
+          "actualSha256": "11e1ffbeb99b4e1cf31776fecad4ecb7117ee68aac73082c4ca0345929cba3dd",
+          "expectedSha256": "11e1ffbeb99b4e1cf31776fecad4ecb7117ee68aac73082c4ca0345929cba3dd"
+        },
+        {
+          "label": "result survives refresh",
+          "passed": true
+        },
+        {
+          "label": "old review omits capacity loss",
+          "passed": true
+        },
+        {
+          "label": "Escape cancels without writes",
+          "passed": true,
+          "actualSha256": "241143f3972f67683b14d885ba8014638d882879bc2ccb076fd6fb97eee07153",
+          "expectedSha256": "241143f3972f67683b14d885ba8014638d882879bc2ccb076fd6fb97eee07153"
+        },
+        {
+          "label": "cancel button leaves all saved bytes unchanged",
+          "passed": true,
+          "actualSha256": "241143f3972f67683b14d885ba8014638d882879bc2ccb076fd6fb97eee07153",
+          "expectedSha256": "241143f3972f67683b14d885ba8014638d882879bc2ccb076fd6fb97eee07153"
+        },
+        {
+          "label": "native payment: full state",
+          "passed": true,
+          "actualSha256": "7518bbb39e3baa061e0a023ebbb02a9730d158ecdda7154851d0cb5db806fb03",
+          "expectedSha256": "7518bbb39e3baa061e0a023ebbb02a9730d158ecdda7154851d0cb5db806fb03"
+        },
+        {
+          "label": "native payment: primary bytes",
+          "passed": true,
+          "actualSha256": "037ae7c4a429e78184423187469626e007d51466773827c1bf192c1a6f0dd042",
+          "expectedSha256": "037ae7c4a429e78184423187469626e007d51466773827c1bf192c1a6f0dd042"
+        },
+        {
+          "label": "native payment: mirror bytes",
+          "passed": true,
+          "actualSha256": "037ae7c4a429e78184423187469626e007d51466773827c1bf192c1a6f0dd042",
+          "expectedSha256": "037ae7c4a429e78184423187469626e007d51466773827c1bf192c1a6f0dd042"
+        },
+        {
+          "label": "native payment: unrelated data",
+          "passed": true,
+          "actualSha256": "11e1ffbeb99b4e1cf31776fecad4ecb7117ee68aac73082c4ca0345929cba3dd",
+          "expectedSha256": "11e1ffbeb99b4e1cf31776fecad4ecb7117ee68aac73082c4ca0345929cba3dd"
+        },
+        {
+          "label": "committed outcome visible",
+          "passed": true
+        },
+        {
+          "label": "registered fee still charged",
+          "passed": true
+        },
+        {
+          "label": "reload result: full state",
+          "passed": true,
+          "actualSha256": "7518bbb39e3baa061e0a023ebbb02a9730d158ecdda7154851d0cb5db806fb03",
+          "expectedSha256": "7518bbb39e3baa061e0a023ebbb02a9730d158ecdda7154851d0cb5db806fb03"
+        },
+        {
+          "label": "reload result: primary bytes",
+          "passed": true,
+          "actualSha256": "037ae7c4a429e78184423187469626e007d51466773827c1bf192c1a6f0dd042",
+          "expectedSha256": "037ae7c4a429e78184423187469626e007d51466773827c1bf192c1a6f0dd042"
+        },
+        {
+          "label": "reload result: mirror bytes",
+          "passed": true,
+          "actualSha256": "037ae7c4a429e78184423187469626e007d51466773827c1bf192c1a6f0dd042",
+          "expectedSha256": "037ae7c4a429e78184423187469626e007d51466773827c1bf192c1a6f0dd042"
+        },
+        {
+          "label": "reload result: unrelated data",
+          "passed": true,
+          "actualSha256": "11e1ffbeb99b4e1cf31776fecad4ecb7117ee68aac73082c4ca0345929cba3dd",
+          "expectedSha256": "11e1ffbeb99b4e1cf31776fecad4ecb7117ee68aac73082c4ca0345929cba3dd"
+        },
+        {
+          "label": "result survives refresh",
+          "passed": true
+        }
+      ],
+      "knownDefects": [
+        {
+          "kind": "partial",
+          "key": "starlibrary",
+          "raw": 1000000,
+          "actualCredit": 10,
+          "confirmation": "确认这次命运抉择？\n\n经验立即结算，升级可获得天赋点。\n\n代价\n12000070 金币\n获得\n1000000 经验\n\n支付 12000070 金币，提交后不可撤销。\n\n取消\n确认接受"
+        },
+        {
+          "kind": "zero",
+          "key": "starlibrary",
+          "raw": 1000000,
+          "actualCredit": 0,
+          "confirmation": "确认这次命运抉择？\n\n经验立即结算，升级可获得天赋点。\n\n代价\n12000070 金币\n获得\n1000000 经验\n\n支付 12000070 金币，提交后不可撤销。\n\n取消\n确认接受"
+        }
+      ],
+      "screenshots": [
+        "starlibrary-partial-result.png"
+      ]
+    },
+    {
+      "name": "hud-boundaries",
+      "status": "REPRODUCED",
+      "checks": [
+        {
+          "label": "HUD rendering never mutates/import-normalizes save",
+          "passed": true,
+          "actualSha256": "307ee43388d49e0a2b0787089a3eb64da2a001fe5c51d831c4ab75973a753802",
+          "expectedSha256": "307ee43388d49e0a2b0787089a3eb64da2a001fe5c51d831c4ab75973a753802"
+        },
+        {
+          "label": "old legal imported XP exceeds 100% width",
+          "passed": true
+        },
+        {
+          "label": "HUD rendering never mutates/import-normalizes save",
+          "passed": true,
+          "actualSha256": "2c6c3bcce9957cf431eb588329511b29da1d780f3cf4d459191cfc157bd9e13a",
+          "expectedSha256": "2c6c3bcce9957cf431eb588329511b29da1d780f3cf4d459191cfc157bd9e13a"
+        },
+        {
+          "label": "HUD rendering never mutates/import-normalizes save",
+          "passed": true,
+          "actualSha256": "1a02de5a67123fe504f2405f7dda461116c87ef52874700ff2489c4cd5bc791a",
+          "expectedSha256": "1a02de5a67123fe504f2405f7dda461116c87ef52874700ff2489c4cd5bc791a"
+        },
+        {
+          "label": "old legal imported XP exceeds 100% width",
+          "passed": true
+        },
+        {
+          "label": "HUD rendering never mutates/import-normalizes save",
+          "passed": true,
+          "actualSha256": "35c39aa3347a5b0dc1f6e9a22895b2e2b7f70a4cc7bb16f29f8e130c25b52723",
+          "expectedSha256": "35c39aa3347a5b0dc1f6e9a22895b2e2b7f70a4cc7bb16f29f8e130c25b52723"
+        }
+      ],
+      "knownDefects": [
+        {
+          "label": "pending",
+          "width": 9823180,
+          "text": "Lv.100\n旅途之人\n100000000 / 1018 EXP"
+        },
+        {
+          "label": "capped-full",
+          "width": 999.998,
+          "text": "Lv.1000000\n旅途之人\n100000000 / 10000018 EXP"
+        }
+      ],
+      "screenshots": [],
+      "hud": [
+        {
+          "label": null,
+          "text": "Lv.100\n旅途之人\n400 / 1018 EXP",
+          "title": "",
+          "width": 39.2927,
+          "value": null,
+          "maximum": null,
+          "detail": null
+        },
+        {
+          "label": null,
+          "text": "Lv.100\n旅途之人\n100000000 / 1018 EXP",
+          "title": "",
+          "width": 9823180,
+          "value": null,
+          "maximum": null,
+          "detail": null
+        },
+        {
+          "label": null,
+          "text": "Lv.1000000\n旅途之人\n123 / 10000018 EXP",
+          "title": "",
+          "width": 0.00123,
+          "value": null,
+          "maximum": null,
+          "detail": null
+        },
+        {
+          "label": null,
+          "text": "Lv.1000000\n旅途之人\n100000000 / 10000018 EXP",
+          "title": "",
+          "width": 999.998,
+          "value": null,
+          "maximum": null,
+          "detail": null
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "screenshots": [
+    "memory_archive-partial-result.png",
+    "starlibrary-partial-result.png"
+  ],
+  "notes": [
+    "Chrome extension and CUA could not reach the isolated loopback server. The user taskbook permits this local Chromium/Playwright fallback.",
+    "Legal synthetic boundary saves; room entry and all tested actions use each selected version's own engine. Not natural reached level/XP caps or human play.",
+    "Native click/keyboard/confirmation/reload with exact full-state and primary/mirror comparisons. Storage failures are labeled injections; no gameplay or DOM handlers are replaced.",
+    "Low effects and reduced motion for functionality/layout. Four simulated desktop viewports, not physical 4K/GPU or a screen-reader certification.",
+    "Counters are individual assertions and scenario groups, not independent players. Baseline observations are not repaired-behavior passes."
+  ],
+  "browser": "155.0.8059.84",
+  "sourceAfter": {
+    "index.html": "c7c1f17957753a3b0dd35981742ad5ab8c31491c452dc3cbc41a0a8f0b5ac035",
+    "package.json": "6e2d50aca00fb1cf4e113ed8462bc9370fedd039ed345a9bcdb851f55cba12f7",
+    "src/action-focus.js": "d5e383b4f8aeb138b6cdffc7f3dffe12cf0db7fcbac053df713dec60b3b95a98",
+    "src/app.js": "43d5e1cf594a30e302ff38f8444354f6c5848d98e03f46e422c436ee935e003f",
+    "src/content.js": "4c0c2e4656c5a3482a5448a069ae2fa28367ba05d61c7d0c2c9866315f5c5526",
+    "src/deep-content.js": "040a5668b687cf9d7b7c8b31a67cee35660ebb0539af74c7d572614f138fef33",
+    "src/deep-rules.js": "6919b66ec8fbadea293ab4c4e3aa0b8c7a943e2ec44224b119287709d484581f",
+    "src/deep.css": "24f0ed8bf2969232c660a595cd5e19b206066bc4a19a983e4bd3a277b82700cc",
+    "src/dice-motion.js": "3b088b9efa03552912bd92b18dc66d6122f45e2f12dc420305bb877deae5139a",
+    "src/dice-renderer.js": "a317cbe20fb1a0518a69eff10e3aa9b7dce5180a2b90543439fb830c86d66770",
+    "src/effects.js": "959c7d346427a5854f509c8b11205d8c34d82392ed1340eedd9aa66e7b75c9c5",
+    "src/encounter-tactics.js": "02e0da7aa57de321319812503556d9e5925463644222305755e86de6c3fa355b",
+    "src/encounters.js": "fd7fbd8f651eaa0fe0d05611320edd715f7e7649d5992a495df0c0b4bab4d4ae",
+    "src/engine.js": "85d459d93a037e194423a39a7d2c6265884bbdfa45796784c60f111d1653b009",
+    "src/equipment-content.js": "d95b5e7c11d14eb764ea3cefb7eee73f35b2f9d48a8b640513eda9aefd1cc030",
+    "src/equipment.js": "8c20de433f21931318e315b862b457d37a03b9596ea5df8f7cc4025691aaccd6",
+    "src/expansion.css": "d5c01857bf02a4566270f23ef389aad76e033e50bd5440ecb13665ce81818424",
+    "src/forge.css": "9a7ee960f3494e39ac102abf7b9476cacffdd89eea1803e52469b441e124823f",
+    "src/fusion-controller.js": "5a4a0c6a11c7a347ffcdaa0340d3c905d65aa5ba6b50e36e7135a9276537dd1a",
+    "src/fusion-dom.js": "fb78398073fdccaea6680146c34ac18de75d926439c7044ed45da39f625e4023",
+    "src/fusion-view.js": "e77542f7de4c6f39ac57098ffb7a277caab988cd4bcc9ea5f50080b0f08e96c1",
+    "src/fusion-workbench.js": "06f206dc578534c641f0fe327c48a4ec70ccffeed79fe8076ccd83cfb56263bf",
+    "src/fusion.css": "9b6fe3edaa023ae1c7702e60e3110d9450a6ca03a737f74dd984baf0fb083bc5",
+    "src/gold.css": "bb1313da6f3a734567be73e23c606c56c1215bc976e166c9dc2b1fedb06c6393",
+    "src/gold.js": "252aab60750432e1b5f1dc158c4a8f69e3dca5d72fa016b69c03c29ac651a244",
+    "src/inventory-dom.js": "7f3b18a6b3dbcc3a0a100c94bab35d9e81a14d7a6c74e8eabfdff3d151d35bf0",
+    "src/polish.css": "84af5e0bfc563c830287d96103faff4b1673c7d363a9cfbc26995a5074265df8",
+    "src/progression.css": "31125ec19b19b527f9d0499d9b045874b0d37e2d6eb8fdcc729e58bf783368ec",
+    "src/quality.css": "3785daf1b16c66942383c8285376a66fee42c2a21c0b1450c251870333919bb8",
+    "src/rarity.js": "871356df147d027e1845f98c5574a1d9a71c0d17bd8717f457c9007d7c73b735",
+    "src/refinement.css": "79a8599ca5415c933de1161575edb25601f4efdbf57be4c45dc82033abb1fffd",
+    "src/rooms.css": "a426209cd05ccb3125a88713ea8693b04b47b65e179c605538b5053fe616c606",
+    "src/route-weights.js": "b21499b8c44a17ad09caab5e17f312073b269981b6ac7eb916b5f656912237dd",
+    "src/storage.js": "2c5f648efe7df6a1c14710ea90fe2de83323141d5f5e285eec7fac8aa687a500",
+    "src/styles.css": "dc835715e16e8698214d25202a39df6162c865287e6ac605c111486066764044",
+    "src/talent.css": "350f583103186b0b44fc50317d92c20417fed82fe4e8667bf1776390b2425334",
+    "src/views.js": "63b0c861517a66721a8a1daa8ff0dfd0089b5e0a124e2398a54e6b64a4e3e3bc",
+    "src/visual-timeline.js": "f518084da44c2ea852bf902ba6ffc7f8f5a94ee815dac31bcc4726cc8cd44369",
+    "src/visual.css": "35ec8f94b238d355f6fad93855d4b20794157e3d9c592dcf777cf25dcb2e05bd"
+  },
+  "sourceStable": true,
+  "finished": "2026-10-18T09:17:59.205Z",
+  "summary": {
+    "groups": 4,
+    "passed": 1,
+    "reproduced": 3,
+    "failed": 0,
+    "checks": 136,
+    "errors": 0
+  }
+}

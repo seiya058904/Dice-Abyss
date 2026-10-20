@@ -83,7 +83,32 @@ export function advanceEquipment(input,xp){
  if(!validEquipment(item))throw Error('装备经验结算未通过安全校验。');return item;
 }
 export const forgeCost=(s,item)=>Math.min(GOLD_CAP+1,Math.round((35+item.level*8+item.enhance*item.enhance*6)*(1+item.rarity*.25)*(1-(s.player.talents.smith||0)*.05)*(s.route[s.roomIndex]?.quality ? .8 : 1)));
-const fusionMaterialXp=item=>(80+18*Math.sqrt(effectiveLevel(item)))*[1,1.6,2.6,4.2,6.8,11,17.8,28.8][item.rarity]*(1+item.enhance*.0125);
+// Read only: show the six possible item panels before spending. These are
+// single-item attributes, not promised combat damage or changes to fixed traits.
+// The actual forge transaction still rechecks ownership, price and the rolled face.
+export function forgePreview(s,id){
+ const item=s.player.items.find(item=>item.id===id);
+ if(!validEquipment(item))return null;
+ const cost=forgeCost(s,item),remaining=ENHANCE_CAP-item.enhance,before={enhance:item.enhance,level:item.level,levelXp:item.levelXp,stats:itemStats(item)};
+ const outcomes=Array.from({length:6},(_,index)=>{
+  const value=index+1,gain=Math.min(remaining,value>=5?3:value>=3?2:1),after={...before,enhance:item.enhance+gain,stats:itemStats({...item,enhance:item.enhance+gain})};
+  const changes=Object.keys(after.stats).filter(key=>after.stats[key]!==before.stats[key]).map(key=>({key,before:before.stats[key]||0,after:after.stats[key],delta:after.stats[key]-(before.stats[key]||0)}));
+  return {value,gain,after,changes};
+ });
+ const affordable=s.player.gold>=cost,capped=remaining===0,equipped=equippedIds(s).includes(id);
+ const unchanged=Object.keys(before.stats).filter(key=>outcomes.every(outcome=>outcome.after.stats[key]===before.stats[key])).map(key=>({key,value:before.stats[key]}));
+ return {id,slot:item.slot,cost,costExceedsGoldCap:cost>GOLD_CAP,remaining,affordable,capped,equipped,canForge:s.phase==='forge'&&equipped&&!capped&&affordable,before,outcomes,unchanged};
+}
+export const fusionMaterialXp=item=>(80+18*Math.sqrt(effectiveLevel(item)))*[1,1.6,2.6,4.2,6.8,11,17.8,28.8][item.rarity]*(1+item.enhance*.0125);
+// Share the exact quote with bulk selection. Rounding before and after the
+// multipliers matters: a rounded single-item quote cannot be multiplied by N.
+export function fusionCostSummary(s,targets,materialCount){
+ if(!targets.length)return {cost:0,baseCost:0,averageLevel:0,qualityMultiplier:1,levelMultiplier:1};
+ const averageLevel=targets.reduce((n,t)=>n+t.level,0)/targets.length,qualityMultiplier=1+targets.reduce((n,t)=>n+t.rarity,0)/targets.length*.25;
+ const baseCost=Math.round((18+averageLevel*2.4)*materialCount),levelMultiplier=1+Math.max(0,averageLevel-s.player.level)/Math.max(10,s.player.level);
+ const cost=Math.min(GOLD_CAP+1,Math.round(baseCost*qualityMultiplier*levelMultiplier));
+ return {cost,baseCost,averageLevel,qualityMultiplier,levelMultiplier};
+}
 // Selecting a full inventory must not construct a 10,000-entry lookup and six
 // detailed outcome tables for every individual material. Keep the same per-item
 // safety rules, including the highest-roll level cap, in one bounded pass.
@@ -107,8 +132,10 @@ export function fusionPreview(s,targetIds,materialIds,allowProtected=false){
  if(!ts.length||ts.length>3||!ms.length||new Set([...ts,...ms]).size!==ts.length+ms.length)return null;
  const inventory=new Map(s.player.items.map(i=>[i.id,i]));
  const targets=ts.map(id=>inventory.get(id)),materials=ms.map(id=>inventory.get(id));
- if([...targets,...materials].some(i=>!validEquipment(i))||targets.some(i=>i.slot!==targets[0].slot||i.level===MAX_ITEM_LEVEL)||(targets.length>1&&targets[0].slot!=='relic')||materials.some(i=>i.slot!==targets[0].slot||equippedIds(s).includes(i.id)||i.id===s.loot?.item?.id))return null;
- const protectedItems=materials.filter(i=>i.locked||i.rarity>=3||i.rarity>Math.min(...targets.map(t=>t.rarity)));
+ const equipped=new Set(equippedIds(s)),lootId=s.loot?.item?.id;
+ if(targets.some(i=>!validEquipment(i))||targets.some(i=>i.slot!==targets[0].slot||i.level===MAX_ITEM_LEVEL)||(targets.length>1&&targets[0].slot!=='relic')||materials.some(i=>!validEquipment(i)||i.slot!==targets[0].slot||equipped.has(i.id)||i.id===lootId))return null;
+ const lowestTargetRarity=Math.min(...targets.map(t=>t.rarity));
+ const protectedItems=materials.filter(i=>i.locked||i.rarity>=3||i.rarity>lowestTargetRarity);
  if(protectedItems.length&&allowProtected!==true)return null;
  const base=Math.max(targets.length,Math.floor(materials.reduce((n,item)=>n+fusionMaterialXp(item),0)));
  if(base>MAX_ITEM_XP/2.5)return null;
@@ -117,9 +144,7 @@ export function fusionPreview(s,targetIds,materialIds,allowProtected=false){
   const upgrades=targets.map((before,j)=>{const after=advanceEquipment(before,gains[j]);return {id:before.id,xp:gains[j],before:{level:before.level,levelXp:before.levelXp,stats:itemStats(before)},after:{level:after.level,levelXp:after.levelXp,stats:itemStats(after)},levels:after.level-before.level};});
   return {value,boost,total,gains,upgrades};
  });}catch{return null;}
- const averageLevel=targets.reduce((n,t)=>n+t.level,0)/targets.length,qualityMultiplier=1+targets.reduce((n,t)=>n+t.rarity,0)/targets.length*.25;
- const baseCost=Math.round((18+averageLevel*2.4)*materials.length),levelMultiplier=1+Math.max(0,averageLevel-s.player.level)/Math.max(10,s.player.level);
- const cost=Math.min(GOLD_CAP+1,Math.round(baseCost*qualityMultiplier*levelMultiplier));
+ const {cost,baseCost,averageLevel,qualityMultiplier,levelMultiplier}=fusionCostSummary(s,targets,materials.length);
  return {targets,materials,protectedItems,base,min:outcomes[0].gains,max:outcomes[5].gains,cost,baseCost,averageLevel,qualityMultiplier,levelMultiplier,outcomes,target:targets[0],material:materials[0],gain:base,unit:'xp',allowProtected:allowProtected===true};
 }
 // The engine passes its already-cloned transaction and an actual committed dice face.

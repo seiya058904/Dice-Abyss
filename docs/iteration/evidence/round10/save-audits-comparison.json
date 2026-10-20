@@ -1,0 +1,134 @@
+{
+  "status": "PASS",
+  "method": "Ran the unchanged audit-save-closure.mjs and audit-save-size.mjs sequentially against each actual source directory. Compared every report field except the expected source-directory metadata root; no snapshot, log, XP, receipt, checksum, encoded write or fingerprint was normalized or removed.",
+  "ignoredReportMetadata": [
+    "root"
+  ],
+  "closure": {
+    "baselineStatus": "PASS",
+    "currentStatus": "PASS",
+    "allReportFieldsExceptRootEqual": true,
+    "checksPerVersion": 41452,
+    "eventKeysPerVersion": 22,
+    "eventChoicesPerVersion": 1608,
+    "pendingProtectionVariantsPerVersion": 820,
+    "shopPurchasesPerVersion": 48,
+    "legacyV4FixturesPerVersion": 11,
+    "baselineFingerprints": {
+      "algorithm": "sha256",
+      "format": 1,
+      "stateSnapshots": 6476,
+      "committedTransactions": 1811,
+      "legacyWrites": 11,
+      "states": "61aa2ff72b9e3d19c102be290f4e7828bcf1be79d860c978d76bdf573f8b9903",
+      "transactions": "ca26fb8ac2526df42c993a5b544969c539b4e90e470f523ae52d85d38129ac42",
+      "writes": "c5405762892ed55d89c27e42a89fe9a774a7376b4973db89acbd01715c966524"
+    },
+    "currentFingerprints": {
+      "algorithm": "sha256",
+      "format": 1,
+      "stateSnapshots": 6476,
+      "committedTransactions": 1811,
+      "legacyWrites": 11,
+      "states": "61aa2ff72b9e3d19c102be290f4e7828bcf1be79d860c978d76bdf573f8b9903",
+      "transactions": "ca26fb8ac2526df42c993a5b544969c539b4e90e470f523ae52d85d38129ac42",
+      "writes": "c5405762892ed55d89c27e42a89fe9a774a7376b4973db89acbd01715c966524"
+    },
+    "allThreeFullFingerprintsEqual": true,
+    "failuresBaseline": [],
+    "failuresCurrent": []
+  },
+  "size": {
+    "baselineStatus": "PASS",
+    "currentStatus": "PASS",
+    "allReportFieldsExceptRootEqual": true,
+    "casesPerVersion": 4,
+    "inclusiveNewWriteLimitBytes": 5000000,
+    "checks": [
+      {
+        "name": "near-limit accepted import followed by fate",
+        "inputBytes": 4999900,
+        "inputSha256": "56372be1f918aca02eaae9e7205479e91a920eb75ef4b44d7617b699021b64f6",
+        "nextBytes": 5000724,
+        "nextSha256": "f653dae4efd9abda70803e76fb04cdcf2f082e512a8e0c7769aefe60e34f1cb7",
+        "bothCopiesPreserved": true,
+        "rngPreserved": true,
+        "revisionPreserved": true,
+        "pass": true
+      },
+      {
+        "name": "readable older multibyte rescue with oversized new write",
+        "utf8Bytes": 5012220,
+        "rescueRoundtrip": true,
+        "bothCopiesPreserved": true,
+        "pass": true
+      },
+      {
+        "name": "migration growth checked before immutable archive writes",
+        "inputBytes": 5000000,
+        "migratedBytes": 5000337,
+        "allStoragePreserved": true,
+        "pass": true
+      },
+      {
+        "name": "exact inclusive ASCII byte and character boundary",
+        "utf8Bytes": 5000000,
+        "reloadRoundtrip": true,
+        "pass": true
+      }
+    ]
+  },
+  "runs": [
+    {
+      "name": "save-closure-baseline",
+      "observedExitCode": 0,
+      "report": "save-closure-baseline.json",
+      "reportSha256": "a8136726a22461c0e1d5d1c2b66d848778d611978a867c02a892bf1ca702873a",
+      "stdout": "save-closure-baseline.stdout",
+      "stderr": "save-closure-baseline.stderr",
+      "stderrBytes": 0
+    },
+    {
+      "name": "save-closure-current",
+      "observedExitCode": 0,
+      "report": "save-closure-current.json",
+      "reportSha256": "b2417b9841f9f5c76e5f3725ad7dcb4cf0f93705adf8600b3c4490039e1dab17",
+      "stdout": "save-closure-current.stdout",
+      "stderr": "save-closure-current.stderr",
+      "stderrBytes": 0
+    },
+    {
+      "name": "save-size-baseline",
+      "observedExitCode": 0,
+      "report": "save-size-baseline.json",
+      "reportSha256": "4d265fe3946642b46913532be2f07124d2def3a8360d31eabca00cb8b04e36c2",
+      "stdout": "save-size-baseline.stdout",
+      "stderr": "save-size-baseline.stderr",
+      "stderrBytes": 0
+    },
+    {
+      "name": "save-size-current",
+      "observedExitCode": 0,
+      "report": "save-size-current.json",
+      "reportSha256": "4fcf98046fddbe7f8124a7b4017a9adf88387c01f04247273e728e634b0f0b38",
+      "stdout": "save-size-current.stdout",
+      "stderr": "save-size-current.stderr",
+      "stderrBytes": 0
+    }
+  ],
+  "scriptsUnchanged": {
+    "scripts/audit-save-closure.mjs": {
+      "sameBytes": true,
+      "sha256": "df68c184fdcecc28b84ff4091f2bb240f070414efbed3e271240a23347cae603"
+    },
+    "scripts/audit-save-size.mjs": {
+      "sameBytes": true,
+      "sha256": "64012d05351a208ca2856c999eae9fd14234ed530b759ce56b24b82005096714"
+    }
+  },
+  "limitations": [
+    "These are newly executed deterministic synthetic accepted-state and in-memory-storage audits, not actual browser quotas, physical power loss, Windows launcher or human-play evidence.",
+    "The closure legacy fixture count is eleven V4 fixtures; it must not be described as eleven V1–V4 versions.",
+    "The four size cases are separate cases, not an extra four full closure transactions or natural saves."
+  ]
+}

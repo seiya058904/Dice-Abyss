@@ -1,0 +1,200 @@
+{
+  "scope": "Synthetic valid-save fixtures. Gameplay rules unchanged; deterministic text/condition audit, not natural journey or human evaluation.",
+  "developmentFailures": [
+    {
+      "attempt": 1,
+      "reason": "First fixture scaffold omitted mandatory equipped armor/relic and minimum nextId=4; validator correctly rejected before any roll. Corrected scaffold preserves three original required slots; validation remains mandatory."
+    }
+  ],
+  "criticalFollow": [
+    {
+      "seed": 6,
+      "category": "critical:false,pair:true",
+      "values": [
+        1,
+        1,
+        3
+      ],
+      "criticalDraw": 0.6432158374227583,
+      "followDraw": 0.14380599139258265,
+      "followBase": 0.09,
+      "fixedAffix": 0.1,
+      "activeFollow": false,
+      "controlFollow": false,
+      "main": 667,
+      "activeTotal": 667,
+      "controlTotal": 667,
+      "activeText": "攻击 +437 · 暴击率 +4.5% · 暴击追击率 +10%",
+      "controlText": "攻击 +437 · 暴击率 +4.5% · 首击伤害 +12%"
+    },
+    {
+      "seed": 14,
+      "category": "critical:false,pair:false",
+      "values": [
+        1,
+        2,
+        6
+      ],
+      "criticalDraw": 0.16520759090781212,
+      "followDraw": 0.18556133704259992,
+      "followBase": 0.09,
+      "fixedAffix": 0.1,
+      "activeFollow": false,
+      "controlFollow": false,
+      "main": 828,
+      "activeTotal": 828,
+      "controlTotal": 828,
+      "activeText": "攻击 +437 · 暴击率 +4.5% · 暴击追击率 +10%",
+      "controlText": "攻击 +437 · 暴击率 +4.5% · 首击伤害 +12%"
+    },
+    {
+      "seed": 17,
+      "category": "critical:true,pair:true",
+      "values": [
+        1,
+        2,
+        2
+      ],
+      "criticalDraw": 0.005126987816765904,
+      "followDraw": 0.16050187963992357,
+      "followBase": 0.09,
+      "fixedAffix": 0.1,
+      "activeFollow": true,
+      "controlFollow": false,
+      "main": 1201,
+      "activeTotal": 1621,
+      "controlTotal": 1201,
+      "activeText": "攻击 +437 · 暴击率 +4.5% · 暴击追击率 +10%",
+      "controlText": "攻击 +437 · 暴击率 +4.5% · 首击伤害 +12%"
+    },
+    {
+      "seed": 46,
+      "category": "critical:true,pair:false",
+      "values": [
+        1,
+        5,
+        2
+      ],
+      "criticalDraw": 0.11818991880863905,
+      "followDraw": 0.15424513444304466,
+      "followBase": 0.09,
+      "fixedAffix": 0.1,
+      "activeFollow": false,
+      "controlFollow": false,
+      "main": 1325,
+      "activeTotal": 1325,
+      "controlTotal": 1325,
+      "activeText": "攻击 +437 · 暴击率 +4.5% · 暴击追击率 +10%",
+      "controlText": "攻击 +437 · 暴击率 +4.5% · 首击伤害 +12%"
+    }
+  ],
+  "pierce": [
+    {
+      "seed": 9123,
+      "enemyOpeningShield": 0,
+      "values": [
+        4,
+        4,
+        5
+      ],
+      "pierce": 0.1,
+      "activeText": "攻击 +437 · 暴击率 +4.5% · 破甲 +10%",
+      "active": {
+        "total": 1734,
+        "absorbed": 0,
+        "hpDamage": 1734
+      },
+      "control": {
+        "total": 1734,
+        "absorbed": 0,
+        "hpDamage": 1734
+      }
+    },
+    {
+      "seed": 9123,
+      "enemyOpeningShield": 100000000,
+      "values": [
+        4,
+        4,
+        5
+      ],
+      "pierce": 0.1,
+      "activeText": "攻击 +437 · 暴击率 +4.5% · 破甲 +10%",
+      "active": {
+        "total": 1734,
+        "absorbed": 1561,
+        "hpDamage": 173
+      },
+      "control": {
+        "total": 1734,
+        "absorbed": 1734,
+        "hpDamage": 0
+      }
+    }
+  ],
+  "passiveLabels": {
+    "armor-0-0-3": {
+      "text": "生命 +1,310 · 防御 +84 · 开战护盾 +16%",
+      "stats": {
+        "hp": 1310,
+        "defense": 84,
+        "crit": 0,
+        "barrier": 0.16
+      }
+    },
+    "armor-3-0-3": {
+      "text": "生命 +1,310 · 防御 +84 · 回合恢复 +4%",
+      "stats": {
+        "hp": 1310,
+        "defense": 84,
+        "crit": 0,
+        "regen": 0.04
+      }
+    },
+    "armor-4-0-3": {
+      "text": "生命 +1,310 · 防御 +84 · 共鸣护盾 +10%",
+      "stats": {
+        "hp": 1310,
+        "defense": 84,
+        "crit": 0,
+        "pairWard": 0.1
+      }
+    },
+    "armor-5-0-3": {
+      "text": "生命 +1,310 · 防御 +84 · 击杀恢复 +10%",
+      "stats": {
+        "hp": 1310,
+        "defense": 84,
+        "crit": 0,
+        "healBonus": 0.1
+      }
+    },
+    "weapon-5-0-3": {
+      "text": "攻击 +437 · 暴击率 +4.5% · 追击追加 +24%",
+      "stats": {
+        "attack": 437,
+        "crit": 0.045,
+        "follow": 0,
+        "followDamage": 0.24
+      }
+    },
+    "weapon-6-0-3": {
+      "text": "攻击 +437 · 暴击率 +4.5% · 首击伤害 +12%",
+      "stats": {
+        "attack": 437,
+        "crit": 0.045,
+        "follow": 0,
+        "firstBonus": 0.12
+      }
+    },
+    "relic-5-0-3": {
+      "text": "攻击 +51 · 暴击率 +5.5% · 追击率 +11% · 金币收益 +20%",
+      "stats": {
+        "attack": 51,
+        "crit": 0.055,
+        "follow": 0.11,
+        "goldBonus": 0.2
+      }
+    }
+  }
+}

@@ -5,13 +5,13 @@ import path from 'node:path';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const port = Number(process.env.PORT || 4188);
-const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.svg': 'image/svg+xml', '.woff2':'font/woff2' };
+const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.svg': 'image/svg+xml', '.webp': 'image/webp', '.woff2':'font/woff2' };
 http.createServer(async (req, res) => {
   try {
     const name = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
     const relative = name === '/' ? 'index.html' : name.slice(1);
     // Serve only shipping files, never documents, tests or local project metadata.
-    if (!['index.html', 'favicon.svg'].includes(relative) && !/^src\/[a-z0-9-]+\.(js|css|svg)$/.test(relative) && !/^src\/fonts\/[a-zA-Z0-9_.-]+\.woff2$/.test(relative)) {
+    if (!['index.html', 'favicon.svg'].includes(relative) && !/^src\/[a-z0-9-]+\.(js|css|svg|webp)$/.test(relative) && !/^src\/fonts\/[a-zA-Z0-9_.-]+\.woff2$/.test(relative)) {
       res.writeHead(404).end('Not found'); return;
     }
     const file = path.resolve(root, relative);

@@ -1,0 +1,90 @@
+{
+  "status": "MEASURED_WITH_LIMITATIONS",
+  "browser": "155.0.8059.84",
+  "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+  "formalMainStarted": "2026-10-18T09:33:48.737Z",
+  "formalMainCompleted": "2026-10-18T09:37:17.337Z",
+  "formalMainWallMs": 208600,
+  "inventoryBatches": [
+    {
+      "order": "5.9 then 5.10 in each pair",
+      "samplesPerVersion": 12,
+      "baseline": {
+        "samples": 12,
+        "p50": 73.30000000074506,
+        "p95": 476.3999999985099,
+        "p99": 476.3999999985099,
+        "max": 582.8000000007451,
+        "min": 61.69999999925494
+      },
+      "current": {
+        "samples": 12,
+        "p50": 216,
+        "p95": 580,
+        "p99": 580,
+        "max": 594.4000000022352,
+        "min": 55.69999999925494
+      },
+      "file": "performance-main.json"
+    },
+    {
+      "order": "5.10 then 5.9 in each pair",
+      "samplesPerVersion": 12,
+      "baseline": {
+        "samples": 12,
+        "p50": 128.19999999925494,
+        "p95": 478.70000000298023,
+        "p99": 478.70000000298023,
+        "max": 483.19999999925494,
+        "min": 63.19999999925494
+      },
+      "current": {
+        "samples": 12,
+        "p50": 133.5,
+        "p95": 385.69999999925494,
+        "p99": 385.69999999925494,
+        "max": 420.1000000014901,
+        "min": 58.79999999701977
+      },
+      "file": "performance-inventory-reversed.json",
+      "mapping": "In this raw report baseline is HTTP5.10 and after is HTTP5.9; metrics here mapped by actual release."
+    }
+  ],
+  "mainWindows": 16,
+  "coverageWindows": 14,
+  "repeatsPerCell": 1,
+  "mainWorstRafMs": {
+    "5.9.0": 11199.800000000745,
+    "5.10.0": 9401.39999999851
+  },
+  "mainFullStagesObserved": {
+    "5.9.0": {
+      "observed": 3,
+      "total": 4
+    },
+    "5.10.0": {
+      "observed": 2,
+      "total": 4
+    }
+  },
+  "eightRarity1920FullStagesObserved": {
+    "5.9.0": {
+      "observed": 8,
+      "total": 8
+    },
+    "5.10.0": {
+      "observed": 8,
+      "total": 8
+    }
+  },
+  "exactTransactions": 30,
+  "sourceStable": true,
+  "errors": 0,
+  "performanceGainClaimed": false,
+  "limits": [
+    "First batch shows a +142.7ms p50 and +103.6ms p95 regression for current. Reversing order yields +5.3ms p50 with lower p95/max for current. The large median difference is not stable across these batches; shared software timing cannot establish its cause.",
+    "Both batches and every slow sample remain. They are separately reported, not selected, replaced, pooled as one homogeneous latency claim, or described as balanced random order.",
+    "One window per frame cell; callback timings and stage metadata are not physical GPU FPS or an all-frame visual certification.",
+    "P2 software stalls and large-inventory latency remain open; this release contains no claimed performance optimization."
+  ]
+}

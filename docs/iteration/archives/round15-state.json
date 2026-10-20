@@ -1,0 +1,191 @@
+{
+  "project": "Dice Abyss",
+  "round": 15,
+  "date": "2026-10-19",
+  "timeZone": "UTC",
+  "inputVersion": "5.14.0",
+  "outputVersion": "5.15.0",
+  "saveSchemaVersion": 5,
+  "inputZipSha256": "42cc563080951446f6f5ed122e7acea253411a20269db26ec3c9486c8572ec04",
+  "inputZipBytes": 23854506,
+  "baselineIdentity": {
+    "files": 1449,
+    "expandedBytes": 56019321,
+    "manifestEntries": 1448,
+    "integrity": "Actual ZIP safety/CRC and every complete manifest entry verified; isolated read-only baseline freshly executed."
+  },
+  "previousRound": {
+    "round": 14,
+    "outputVersion": "5.14.0",
+    "state": "docs/iteration/archives/round14-state.json",
+    "report": "docs/iteration/archives/round14-report.md",
+    "manifest": "docs/iteration/archives/round14-manifest.json"
+  },
+  "releaseStatus": "SOURCE_VALIDATED_WITH_DOCUMENTED_LIMITATIONS",
+  "mainChanges": [
+    "Literal case-insensitive full-inventory name search combines with existing filters before stable sorting and pagination; draft input does not rerender or save.",
+    "Safe recycle explicitly states whole-inventory scope; name/filter display never narrows the captured complete batch. Dedicated defeat preparation clears query and draft; ordinary navigation retains them.",
+    "Multi-ID salvage preview builds one temporary first-object index; request order, original references and single-ID find semantics stay intact.",
+    "Two recovery-effect notes are settled after actual survival and inserted at original positions before truncation; lethal rolls state not applied. Values, RNG and old histories stay intact."
+  ],
+  "changedRuntimeFiles": [
+    "index.html",
+    "package.json",
+    "src/app.js",
+    "src/deep-rules.js",
+    "src/engine.js",
+    "src/release.js",
+    "src/views.js"
+  ],
+  "newRuntimeFiles": [
+    "src/inventory-query.js",
+    "src/inventory-search.css"
+  ],
+  "runtimeDirectoryGrowthBytes": 5503,
+  "runtimeScopeGrowthBytes": 5565,
+  "regressionGuards": [
+    "All original 67 test modules, 2 fixtures, 8 font/license/notice files and 3 other runtime assets are byte-identical; zero original file removals.",
+    "Schema5, V1-V4 migrations, original keys/IDs, unknown fields, complete expected comparisons, Web Locks, validate-before-archive and save-before-presentation preserved.",
+    "Manual dice, six-room floor structure, one currency, five equipment slots, eight rarity gates, item ownership, Lv/XP/+N separation and nextLuck rules preserved.",
+    "Renderer/effects/storage, content, economy, damage/recovery amounts, drop probabilities and RNG consumption unchanged."
+  ],
+  "testSummary": {
+    "baselineModules": 67,
+    "baselineFineCases": 588,
+    "currentModules": 70,
+    "currentFineCases": 608,
+    "newModules": 3,
+    "newFineCases": 20,
+    "failed": 0,
+    "skipped": 0,
+    "cancelled": 0,
+    "todo": 0,
+    "standardSeedsPerVersion": 1000,
+    "noShoppingSeedsPerVersion": 50,
+    "standardAndNoShoppingComplete": true,
+    "standardDeathsPerVersion": 0,
+    "simulationBytesEqual": 9409,
+    "simulationSha256": "266fa5b56516410712395796f197a2e33ad1b1e16ede45de14b872f208007d77",
+    "baselineHttp": 55,
+    "currentHttp": 57,
+    "fontHan": 1047,
+    "fontCjkPunctuation": 20,
+    "missingGlyphs": 0,
+    "searchBrowser": {
+      "groups": 10,
+      "checks": 171,
+      "errors": 0
+    },
+    "browserSuites": {
+      "fusion": "12 groups / 125 checks",
+      "talents": "5 / 118",
+      "saveRecovery": "11 / 97",
+      "decisions": "7 / 91",
+      "defeatPreparation": "11 / 629; includes 1 baseline group; 56 full-state comparisons; 29 native rescue rolls",
+      "core": "Original 5/6; remaining path verified by native visible-target 1/12 rerun, retaining original failed fixed-offset probe",
+      "lifecycle": "11/11 after correcting Playwright ESM environment; original configuration failed before any browser case"
+    },
+    "healingRecordPairs": {
+      "pairs": 224,
+      "deathStates": 50,
+      "correctedNotes": 53,
+      "otherFullStatesIdentical": 174,
+      "codecRoundtrips": 896
+    },
+    "natural": {
+      "currentNewJourneys": 4,
+      "seeds": [
+        7919,
+        15838,
+        23757,
+        31676
+      ],
+      "targetFloors": 400,
+      "completedJourneys": 3,
+      "completedFloors": 1229,
+      "rolls": 16805,
+      "naturalBattles": 5272,
+      "deaths": 21,
+      "exitCode": 2,
+      "incompleteSeed": 23757,
+      "incompleteFloor": 30,
+      "reason": "DEATH_RETRY_LIMIT",
+      "baselineScope": "Retained input Round14 historical report, not a newly run baseline; 13 core files and audit script match the read-only input.",
+      "declaredComparisonChecks": 20,
+      "rngFields": 225,
+      "unknownDifferences": 0,
+      "terminalSaveLeafValues": 1943,
+      "branchScope": "3 reachable states / 9 free choices / 108 battles are branches of these journeys, not additional independent journeys.",
+      "comparedNodes": 5215,
+      "behaviorNumericValues": 3336,
+      "declaredMetadataDifferences": 5
+    },
+    "performance": {
+      "browser": "155.0.8059.84",
+      "renderer": "ANGLE SwiftShader software",
+      "salvageRows": 40,
+      "salvageFormalRows": 32,
+      "salvageWarmupRows": 8,
+      "salvagePairsPerScene": 8,
+      "salvageIndependentChecks": 2564,
+      "mixedClickToPrimaryP50Ms": [
+        319.55,
+        112.85
+      ],
+      "lowClickToPrimaryP50Ms": [
+        914.4,
+        80.05
+      ],
+      "ordinaryInventoryFormalSamples": 24,
+      "ordinaryInventoryP50Ms": [
+        118.8,
+        113.2
+      ],
+      "ordinaryInventoryP95Ms": [
+        306.1,
+        426.3
+      ],
+      "mainFrameWindows": 32,
+      "rarityCoverageWindows": 14,
+      "rafIntervals": 5724,
+      "rafOver50ms": 62,
+      "longTasks": 10,
+      "missingFullWindows": 6,
+      "generalIndependentChecks": 948,
+      "status": "MEASURED_WITH_LIMITATIONS; bounded batch-path improvement only; ordinary p95 slower, native storage and software 4K risks open."
+    }
+  },
+  "artifactBudget": {
+    "newRuntimeBitmapBytes": 0,
+    "newRuntimeDependencies": 0,
+    "selectedScreenshots": 7,
+    "selectedScreenshotBytes": 767252,
+    "hardZipBytesExclusive": 50000000,
+    "preferredZipBytesExclusive": 40000000,
+    "archiveIdentity": "Exact final ZIP bytes/count/SHA and fresh-extraction receipt remain outside archive; FILE_MANIFEST excludes itself."
+  },
+  "openRisks": [
+    "P2: Ordinary inventory p95 is slower. No universal speed improvement or absence-of-regression claim.",
+    "P2: Software logical-4K seconds-long rAF gaps and six incomplete full-effects windows persist.",
+    "P2: Native setItem mean/tails have negative observations; 5MB capacity and synchronous full-save work remain.",
+    "P3: Original natural power/no-spending policy remains 3/4 complete. Post-hoc equipment rescue is not a natural win-rate improvement.",
+    "NOT_TESTED: physical GPU/4K/mobile, OS Chinese IME, external screen readers, audio listening, Windows launcher and OS power/background behavior."
+  ],
+  "nextRoundPriorities": [
+    "Attribute ordinary inventory and effects tails.",
+    "Study lossless capacity and complete-save response.",
+    "Predeclare a non-clairvoyant natural preparation policy.",
+    "Extend reachable conditional-choice and real IME evidence.",
+    "Validate physical devices and accessibility."
+  ],
+  "authority": [
+    "docs/iteration/LATEST_REPORT.md",
+    "docs/iteration/VERIFY.md",
+    "docs/iteration/PERFORMANCE.md",
+    "docs/iteration/GAMEPLAY_REVIEW.md",
+    "docs/iteration/NEXT_ROUND.md",
+    "docs/iteration/evidence/round15/README.md"
+  ],
+  "finalPackageProtocol": "Before delivery, verify exact final ZIP size/CRC/safe paths/complete manifest in a new empty directory; run syntax, all 70 modules and actual 608 TAP cases plus real HTTP there. This source record does not prefill a future external receipt.",
+  "handoffValid": true
+}

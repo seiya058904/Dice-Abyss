@@ -1,0 +1,1165 @@
+{
+  "audit": "round09-gold-receipts",
+  "sourceVersion": "5.9.0",
+  "baselineVersion": "5.8.0",
+  "sourceHashes": {
+    "src/engine.js": "85d459d93a037e194423a39a7d2c6265884bbdfa45796784c60f111d1653b009",
+    "src/gold.js": "252aab60750432e1b5f1dc158c4a8f69e3dca5d72fa016b69c03c29ac651a244",
+    "src/encounters.js": "fd7fbd8f651eaa0fe0d05611320edd715f7e7649d5992a495df0c0b4bab4d4ae",
+    "src/deep-rules.js": "6919b66ec8fbadea293ab4c4e3aa0b8c7a943e2ec44224b119287709d484581f",
+    "src/equipment.js": "8c20de433f21931318e315b862b457d37a03b9596ea5df8f7cc4025691aaccd6",
+    "src/equipment-content.js": "d95b5e7c11d14eb764ea3cefb7eee73f35b2f9d48a8b640513eda9aefd1cc030",
+    "src/deep-content.js": "040a5668b687cf9d7b7c8b31a67cee35660ebb0539af74c7d572614f138fef33",
+    "src/rarity.js": "871356df147d027e1845f98c5574a1d9a71c0d17bd8717f457c9007d7c73b735",
+    "src/route-weights.js": "b21499b8c44a17ad09caab5e17f312073b269981b6ac7eb916b5f656912237dd",
+    "src/content.js": "4c0c2e4656c5a3482a5448a069ae2fa28367ba05d61c7d0c2c9866315f5c5526",
+    "src/storage.js": "2c5f648efe7df6a1c14710ea90fe2de83323141d5f5e285eec7fac8aa687a500"
+  },
+  "sourceStable": true,
+  "scriptSha256": "81750b34bb85c58c0afe9048be270a7018cf0571fd1636400153bedb1c2ff642",
+  "counters": {
+    "legalActions": 1063,
+    "fullStateComparisons": 1161,
+    "saveRoundTrips": 2322,
+    "readOnlyChoices": 24,
+    "receipts": 361,
+    "overflowReceipts": 102
+  },
+  "sourceCounts": {
+    "gold-room": 35,
+    "chest": 266,
+    "exchange": 36,
+    "fate-doubles": 15,
+    "inventory-salvage": 3,
+    "gambit-refund": 3,
+    "wishingvault-refund": 3
+  },
+  "synthetic": {
+    "actions": 172,
+    "floors": [
+      1,
+      29,
+      30,
+      50,
+      80,
+      140,
+      200,
+      400
+    ],
+    "balanceContexts": [
+      0,
+      9999999990,
+      10000000000
+    ],
+    "allCombatRewardTypes": [
+      "combat",
+      "elite",
+      "boss",
+      "trial",
+      "armored",
+      "berserker",
+      "leech",
+      "disruptor",
+      "mirror",
+      "bandit",
+      "gauntlet",
+      "duel",
+      "storm",
+      "cursed",
+      "guardian",
+      "hiddenboss",
+      "parity",
+      "sequence",
+      "laststand",
+      "undertow",
+      "hush",
+      "hourward",
+      "onslaught",
+      "bounty",
+      "abyssking",
+      "archiveguard"
+    ],
+    "method": "Validator-accepted constructed states. Combat HP is deliberately one and shield zero; floor/level/gold/route edits are synthetic, not natural progression. Refund dice use the unforced seed outcome."
+  },
+  "naturalReplay": {
+    "seed": 7919,
+    "actions": 65,
+    "endFloor": 3,
+    "goldMax": 820,
+    "capObserved": false,
+    "method": "Re-execution of an existing 65-action naturally generated path; this does not add an independent player sample."
+  },
+  "deepContinuation": {
+    "sourceFile": "docs/iteration/evidence/round07/memorywell-natural-7919-f159.save.json",
+    "rawSha256": "5e0476cb7b967463abea006d568b976fd11d3d2bd0de0fb3c91c0eebb534b25f",
+    "startFloor": 159,
+    "endFloor": 201,
+    "actions": 826,
+    "rolls": 216,
+    "extraDeaths": 0,
+    "goldStart": 776334,
+    "goldEnd": 1235354,
+    "goldMax": 1235354,
+    "capObserved": false,
+    "method": "No asset, RNG, equipment or talent edits. Legal roll/open/next, free rest/altar and descend; optional events/services declined. Continues the existing natural snapshot, not a new floor-one sample."
+  },
+  "fullStatePolicy": {
+    "optionalPath": "state.lootCreditedGold only, matched against the observed open delta every time it survives; reward objects stay identical",
+    "text": "Only exact, independently constructed old/new pairs for capped receipts; log slots, tone and unrelated text remain compared",
+    "allOtherFieldsCompared": true,
+    "unknownMetadataRetained": true
+  },
+  "fullSemanticTraceSha256": "0d4a9aace15b88e4074610acc45bb8323eae714ce517c7a995d41040e5c3246d",
+  "examples": [
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 1,
+      "roomIndex": 0,
+      "action": {
+        "type": "gold"
+      },
+      "kind": "gold-room",
+      "rawGold": 108,
+      "credited": 108,
+      "overflow": 0,
+      "paid": 0,
+      "before": 0,
+      "after": 108,
+      "rngBefore": 4232195629,
+      "rngAfter": 2306707246
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 1,
+      "roomIndex": 0,
+      "action": {
+        "type": "open"
+      },
+      "kind": "chest",
+      "rawGold": 38,
+      "credited": 38,
+      "overflow": 0,
+      "paid": 0,
+      "before": 0,
+      "after": 38,
+      "rngBefore": 4042388837,
+      "rngAfter": 4042388837
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 1,
+      "roomIndex": 0,
+      "action": {
+        "type": "event-choice",
+        "id": "salvage",
+        "confirmed": true
+      },
+      "kind": "exchange",
+      "rawGold": 835,
+      "credited": 835,
+      "overflow": 0,
+      "paid": 0,
+      "before": 0,
+      "after": 835,
+      "rngBefore": 731004706,
+      "rngAfter": 731004706
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 1,
+      "roomIndex": 0,
+      "action": {
+        "type": "gold"
+      },
+      "kind": "gold-room",
+      "rawGold": 108,
+      "credited": 10,
+      "overflow": 98,
+      "paid": 0,
+      "before": 9999999990,
+      "after": 10000000000,
+      "rngBefore": 4232195629,
+      "rngAfter": 2306707246
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 1,
+      "roomIndex": 0,
+      "action": {
+        "type": "open"
+      },
+      "kind": "chest",
+      "rawGold": 38,
+      "credited": 10,
+      "overflow": 28,
+      "paid": 0,
+      "before": 9999999990,
+      "after": 10000000000,
+      "rngBefore": 4042388837,
+      "rngAfter": 4042388837
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 1,
+      "roomIndex": 0,
+      "action": {
+        "type": "open"
+      },
+      "kind": "chest",
+      "rawGold": 38,
+      "credited": 10,
+      "overflow": 28,
+      "paid": 0,
+      "before": 9999999990,
+      "after": 10000000000,
+      "rngBefore": 4042388837,
+      "rngAfter": 4042388837
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 1,
+      "roomIndex": 0,
+      "action": {
+        "type": "event-choice",
+        "id": "salvage",
+        "confirmed": true
+      },
+      "kind": "exchange",
+      "rawGold": 835,
+      "credited": 10,
+      "overflow": 825,
+      "paid": 0,
+      "before": 9999999990,
+      "after": 10000000000,
+      "rngBefore": 731004706,
+      "rngAfter": 731004706
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 1,
+      "roomIndex": 0,
+      "action": {
+        "type": "gold"
+      },
+      "kind": "gold-room",
+      "rawGold": 108,
+      "credited": 0,
+      "overflow": 108,
+      "paid": 0,
+      "before": 10000000000,
+      "after": 10000000000,
+      "rngBefore": 4232195629,
+      "rngAfter": 2306707246
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 1,
+      "roomIndex": 0,
+      "action": {
+        "type": "open"
+      },
+      "kind": "chest",
+      "rawGold": 38,
+      "credited": 0,
+      "overflow": 38,
+      "paid": 0,
+      "before": 10000000000,
+      "after": 10000000000,
+      "rngBefore": 4042388837,
+      "rngAfter": 4042388837
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 1,
+      "roomIndex": 0,
+      "action": {
+        "type": "open"
+      },
+      "kind": "chest",
+      "rawGold": 38,
+      "credited": 0,
+      "overflow": 38,
+      "paid": 0,
+      "before": 10000000000,
+      "after": 10000000000,
+      "rngBefore": 4042388837,
+      "rngAfter": 4042388837
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 1,
+      "roomIndex": 0,
+      "action": {
+        "type": "event-choice",
+        "id": "salvage",
+        "confirmed": true
+      },
+      "kind": "exchange",
+      "rawGold": 835,
+      "credited": 0,
+      "overflow": 835,
+      "paid": 0,
+      "before": 10000000000,
+      "after": 10000000000,
+      "rngBefore": 731004706,
+      "rngAfter": 731004706
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 29,
+      "roomIndex": 0,
+      "action": {
+        "type": "gold"
+      },
+      "kind": "gold-room",
+      "rawGold": 557,
+      "credited": 557,
+      "overflow": 0,
+      "paid": 0,
+      "before": 0,
+      "after": 557,
+      "rngBefore": 4232195629,
+      "rngAfter": 2306707246
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 29,
+      "roomIndex": 0,
+      "action": {
+        "type": "open"
+      },
+      "kind": "chest",
+      "rawGold": 277,
+      "credited": 277,
+      "overflow": 0,
+      "paid": 0,
+      "before": 0,
+      "after": 277,
+      "rngBefore": 4042388837,
+      "rngAfter": 4042388837
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 29,
+      "roomIndex": 0,
+      "action": {
+        "type": "gold"
+      },
+      "kind": "gold-room",
+      "rawGold": 557,
+      "credited": 10,
+      "overflow": 547,
+      "paid": 0,
+      "before": 9999999990,
+      "after": 10000000000,
+      "rngBefore": 4232195629,
+      "rngAfter": 2306707246
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 29,
+      "roomIndex": 0,
+      "action": {
+        "type": "open"
+      },
+      "kind": "chest",
+      "rawGold": 277,
+      "credited": 10,
+      "overflow": 267,
+      "paid": 0,
+      "before": 9999999990,
+      "after": 10000000000,
+      "rngBefore": 4042388837,
+      "rngAfter": 4042388837
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 29,
+      "roomIndex": 0,
+      "action": {
+        "type": "open"
+      },
+      "kind": "chest",
+      "rawGold": 277,
+      "credited": 10,
+      "overflow": 267,
+      "paid": 0,
+      "before": 9999999990,
+      "after": 10000000000,
+      "rngBefore": 4042388837,
+      "rngAfter": 4042388837
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 29,
+      "roomIndex": 0,
+      "action": {
+        "type": "event-choice",
+        "id": "salvage",
+        "confirmed": true
+      },
+      "kind": "exchange",
+      "rawGold": 835,
+      "credited": 10,
+      "overflow": 825,
+      "paid": 0,
+      "before": 9999999990,
+      "after": 10000000000,
+      "rngBefore": 731004706,
+      "rngAfter": 731004706
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 29,
+      "roomIndex": 0,
+      "action": {
+        "type": "gold"
+      },
+      "kind": "gold-room",
+      "rawGold": 557,
+      "credited": 0,
+      "overflow": 557,
+      "paid": 0,
+      "before": 10000000000,
+      "after": 10000000000,
+      "rngBefore": 4232195629,
+      "rngAfter": 2306707246
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 29,
+      "roomIndex": 0,
+      "action": {
+        "type": "open"
+      },
+      "kind": "chest",
+      "rawGold": 277,
+      "credited": 0,
+      "overflow": 277,
+      "paid": 0,
+      "before": 10000000000,
+      "after": 10000000000,
+      "rngBefore": 4042388837,
+      "rngAfter": 4042388837
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 29,
+      "roomIndex": 0,
+      "action": {
+        "type": "open"
+      },
+      "kind": "chest",
+      "rawGold": 277,
+      "credited": 0,
+      "overflow": 277,
+      "paid": 0,
+      "before": 10000000000,
+      "after": 10000000000,
+      "rngBefore": 4042388837,
+      "rngAfter": 4042388837
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 29,
+      "roomIndex": 0,
+      "action": {
+        "type": "event-choice",
+        "id": "salvage",
+        "confirmed": true
+      },
+      "kind": "exchange",
+      "rawGold": 835,
+      "credited": 0,
+      "overflow": 835,
+      "paid": 0,
+      "before": 10000000000,
+      "after": 10000000000,
+      "rngBefore": 731004706,
+      "rngAfter": 731004706
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 30,
+      "roomIndex": 0,
+      "action": {
+        "type": "gold"
+      },
+      "kind": "gold-room",
+      "rawGold": 565,
+      "credited": 565,
+      "overflow": 0,
+      "paid": 0,
+      "before": 0,
+      "after": 565,
+      "rngBefore": 4232195629,
+      "rngAfter": 731004706
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 30,
+      "roomIndex": 0,
+      "action": {
+        "type": "open"
+      },
+      "kind": "chest",
+      "rawGold": 282,
+      "credited": 282,
+      "overflow": 0,
+      "paid": 0,
+      "before": 0,
+      "after": 282,
+      "rngBefore": 4042388837,
+      "rngAfter": 4042388837
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 30,
+      "roomIndex": 0,
+      "action": {
+        "type": "gold"
+      },
+      "kind": "gold-room",
+      "rawGold": 565,
+      "credited": 10,
+      "overflow": 555,
+      "paid": 0,
+      "before": 9999999990,
+      "after": 10000000000,
+      "rngBefore": 4232195629,
+      "rngAfter": 731004706
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 30,
+      "roomIndex": 0,
+      "action": {
+        "type": "open"
+      },
+      "kind": "chest",
+      "rawGold": 282,
+      "credited": 10,
+      "overflow": 272,
+      "paid": 0,
+      "before": 9999999990,
+      "after": 10000000000,
+      "rngBefore": 4042388837,
+      "rngAfter": 4042388837
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 30,
+      "roomIndex": 0,
+      "action": {
+        "type": "open"
+      },
+      "kind": "chest",
+      "rawGold": 282,
+      "credited": 10,
+      "overflow": 272,
+      "paid": 0,
+      "before": 9999999990,
+      "after": 10000000000,
+      "rngBefore": 4042388837,
+      "rngAfter": 4042388837
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 30,
+      "roomIndex": 0,
+      "action": {
+        "type": "event-choice",
+        "id": "salvage",
+        "confirmed": true
+      },
+      "kind": "exchange",
+      "rawGold": 835,
+      "credited": 10,
+      "overflow": 825,
+      "paid": 0,
+      "before": 9999999990,
+      "after": 10000000000,
+      "rngBefore": 731004706,
+      "rngAfter": 731004706
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 30,
+      "roomIndex": 0,
+      "action": {
+        "type": "gold"
+      },
+      "kind": "gold-room",
+      "rawGold": 565,
+      "credited": 0,
+      "overflow": 565,
+      "paid": 0,
+      "before": 10000000000,
+      "after": 10000000000,
+      "rngBefore": 4232195629,
+      "rngAfter": 731004706
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 30,
+      "roomIndex": 0,
+      "action": {
+        "type": "open"
+      },
+      "kind": "chest",
+      "rawGold": 282,
+      "credited": 0,
+      "overflow": 282,
+      "paid": 0,
+      "before": 10000000000,
+      "after": 10000000000,
+      "rngBefore": 4042388837,
+      "rngAfter": 4042388837
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 30,
+      "roomIndex": 0,
+      "action": {
+        "type": "open"
+      },
+      "kind": "chest",
+      "rawGold": 282,
+      "credited": 0,
+      "overflow": 282,
+      "paid": 0,
+      "before": 10000000000,
+      "after": 10000000000,
+      "rngBefore": 4042388837,
+      "rngAfter": 4042388837
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 30,
+      "roomIndex": 0,
+      "action": {
+        "type": "event-choice",
+        "id": "salvage",
+        "confirmed": true
+      },
+      "kind": "exchange",
+      "rawGold": 835,
+      "credited": 0,
+      "overflow": 835,
+      "paid": 0,
+      "before": 10000000000,
+      "after": 10000000000,
+      "rngBefore": 731004706,
+      "rngAfter": 731004706
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 50,
+      "roomIndex": 0,
+      "action": {
+        "type": "gold"
+      },
+      "kind": "gold-room",
+      "rawGold": 693,
+      "credited": 693,
+      "overflow": 0,
+      "paid": 0,
+      "before": 0,
+      "after": 693,
+      "rngBefore": 4232195629,
+      "rngAfter": 731004706
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 50,
+      "roomIndex": 0,
+      "action": {
+        "type": "open"
+      },
+      "kind": "chest",
+      "rawGold": 350,
+      "credited": 350,
+      "overflow": 0,
+      "paid": 0,
+      "before": 0,
+      "after": 350,
+      "rngBefore": 4042388837,
+      "rngAfter": 4042388837
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 50,
+      "roomIndex": 0,
+      "action": {
+        "type": "gold"
+      },
+      "kind": "gold-room",
+      "rawGold": 693,
+      "credited": 10,
+      "overflow": 683,
+      "paid": 0,
+      "before": 9999999990,
+      "after": 10000000000,
+      "rngBefore": 4232195629,
+      "rngAfter": 731004706
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 50,
+      "roomIndex": 0,
+      "action": {
+        "type": "open"
+      },
+      "kind": "chest",
+      "rawGold": 350,
+      "credited": 10,
+      "overflow": 340,
+      "paid": 0,
+      "before": 9999999990,
+      "after": 10000000000,
+      "rngBefore": 4042388837,
+      "rngAfter": 4042388837
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 50,
+      "roomIndex": 0,
+      "action": {
+        "type": "open"
+      },
+      "kind": "chest",
+      "rawGold": 350,
+      "credited": 10,
+      "overflow": 340,
+      "paid": 0,
+      "before": 9999999990,
+      "after": 10000000000,
+      "rngBefore": 4042388837,
+      "rngAfter": 4042388837
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 50,
+      "roomIndex": 0,
+      "action": {
+        "type": "event-choice",
+        "id": "salvage",
+        "confirmed": true
+      },
+      "kind": "exchange",
+      "rawGold": 835,
+      "credited": 10,
+      "overflow": 825,
+      "paid": 0,
+      "before": 9999999990,
+      "after": 10000000000,
+      "rngBefore": 731004706,
+      "rngAfter": 731004706
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 50,
+      "roomIndex": 0,
+      "action": {
+        "type": "gold"
+      },
+      "kind": "gold-room",
+      "rawGold": 693,
+      "credited": 0,
+      "overflow": 693,
+      "paid": 0,
+      "before": 10000000000,
+      "after": 10000000000,
+      "rngBefore": 4232195629,
+      "rngAfter": 731004706
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 50,
+      "roomIndex": 0,
+      "action": {
+        "type": "open"
+      },
+      "kind": "chest",
+      "rawGold": 350,
+      "credited": 0,
+      "overflow": 350,
+      "paid": 0,
+      "before": 10000000000,
+      "after": 10000000000,
+      "rngBefore": 4042388837,
+      "rngAfter": 4042388837
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 50,
+      "roomIndex": 0,
+      "action": {
+        "type": "open"
+      },
+      "kind": "chest",
+      "rawGold": 350,
+      "credited": 0,
+      "overflow": 350,
+      "paid": 0,
+      "before": 10000000000,
+      "after": 10000000000,
+      "rngBefore": 4042388837,
+      "rngAfter": 4042388837
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 50,
+      "roomIndex": 0,
+      "action": {
+        "type": "event-choice",
+        "id": "salvage",
+        "confirmed": true
+      },
+      "kind": "exchange",
+      "rawGold": 835,
+      "credited": 0,
+      "overflow": 835,
+      "paid": 0,
+      "before": 10000000000,
+      "after": 10000000000,
+      "rngBefore": 731004706,
+      "rngAfter": 731004706
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 80,
+      "roomIndex": 0,
+      "action": {
+        "type": "gold"
+      },
+      "kind": "gold-room",
+      "rawGold": 813,
+      "credited": 813,
+      "overflow": 0,
+      "paid": 0,
+      "before": 0,
+      "after": 813,
+      "rngBefore": 4232195629,
+      "rngAfter": 731004706
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 80,
+      "roomIndex": 0,
+      "action": {
+        "type": "open"
+      },
+      "kind": "chest",
+      "rawGold": 414,
+      "credited": 414,
+      "overflow": 0,
+      "paid": 0,
+      "before": 0,
+      "after": 414,
+      "rngBefore": 4042388837,
+      "rngAfter": 4042388837
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 80,
+      "roomIndex": 0,
+      "action": {
+        "type": "gold"
+      },
+      "kind": "gold-room",
+      "rawGold": 813,
+      "credited": 10,
+      "overflow": 803,
+      "paid": 0,
+      "before": 9999999990,
+      "after": 10000000000,
+      "rngBefore": 4232195629,
+      "rngAfter": 731004706
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 80,
+      "roomIndex": 0,
+      "action": {
+        "type": "open"
+      },
+      "kind": "chest",
+      "rawGold": 414,
+      "credited": 10,
+      "overflow": 404,
+      "paid": 0,
+      "before": 9999999990,
+      "after": 10000000000,
+      "rngBefore": 4042388837,
+      "rngAfter": 4042388837
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 80,
+      "roomIndex": 0,
+      "action": {
+        "type": "open"
+      },
+      "kind": "chest",
+      "rawGold": 414,
+      "credited": 10,
+      "overflow": 404,
+      "paid": 0,
+      "before": 9999999990,
+      "after": 10000000000,
+      "rngBefore": 4042388837,
+      "rngAfter": 4042388837
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 80,
+      "roomIndex": 0,
+      "action": {
+        "type": "event-choice",
+        "id": "salvage",
+        "confirmed": true
+      },
+      "kind": "exchange",
+      "rawGold": 835,
+      "credited": 10,
+      "overflow": 825,
+      "paid": 0,
+      "before": 9999999990,
+      "after": 10000000000,
+      "rngBefore": 731004706,
+      "rngAfter": 731004706
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 80,
+      "roomIndex": 0,
+      "action": {
+        "type": "gold"
+      },
+      "kind": "gold-room",
+      "rawGold": 813,
+      "credited": 0,
+      "overflow": 813,
+      "paid": 0,
+      "before": 10000000000,
+      "after": 10000000000,
+      "rngBefore": 4232195629,
+      "rngAfter": 731004706
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 80,
+      "roomIndex": 0,
+      "action": {
+        "type": "open"
+      },
+      "kind": "chest",
+      "rawGold": 414,
+      "credited": 0,
+      "overflow": 414,
+      "paid": 0,
+      "before": 10000000000,
+      "after": 10000000000,
+      "rngBefore": 4042388837,
+      "rngAfter": 4042388837
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 80,
+      "roomIndex": 0,
+      "action": {
+        "type": "open"
+      },
+      "kind": "chest",
+      "rawGold": 414,
+      "credited": 0,
+      "overflow": 414,
+      "paid": 0,
+      "before": 10000000000,
+      "after": 10000000000,
+      "rngBefore": 4042388837,
+      "rngAfter": 4042388837
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 80,
+      "roomIndex": 0,
+      "action": {
+        "type": "event-choice",
+        "id": "salvage",
+        "confirmed": true
+      },
+      "kind": "exchange",
+      "rawGold": 835,
+      "credited": 0,
+      "overflow": 835,
+      "paid": 0,
+      "before": 10000000000,
+      "after": 10000000000,
+      "rngBefore": 731004706,
+      "rngAfter": 731004706
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 140,
+      "roomIndex": 0,
+      "action": {
+        "type": "gold"
+      },
+      "kind": "gold-room",
+      "rawGold": 958,
+      "credited": 958,
+      "overflow": 0,
+      "paid": 0,
+      "before": 0,
+      "after": 958,
+      "rngBefore": 4232195629,
+      "rngAfter": 731004706
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 140,
+      "roomIndex": 0,
+      "action": {
+        "type": "open"
+      },
+      "kind": "chest",
+      "rawGold": 492,
+      "credited": 492,
+      "overflow": 0,
+      "paid": 0,
+      "before": 0,
+      "after": 492,
+      "rngBefore": 4042388837,
+      "rngAfter": 4042388837
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 140,
+      "roomIndex": 0,
+      "action": {
+        "type": "gold"
+      },
+      "kind": "gold-room",
+      "rawGold": 958,
+      "credited": 10,
+      "overflow": 948,
+      "paid": 0,
+      "before": 9999999990,
+      "after": 10000000000,
+      "rngBefore": 4232195629,
+      "rngAfter": 731004706
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 140,
+      "roomIndex": 0,
+      "action": {
+        "type": "open"
+      },
+      "kind": "chest",
+      "rawGold": 492,
+      "credited": 10,
+      "overflow": 482,
+      "paid": 0,
+      "before": 9999999990,
+      "after": 10000000000,
+      "rngBefore": 4042388837,
+      "rngAfter": 4042388837
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 140,
+      "roomIndex": 0,
+      "action": {
+        "type": "open"
+      },
+      "kind": "chest",
+      "rawGold": 492,
+      "credited": 10,
+      "overflow": 482,
+      "paid": 0,
+      "before": 9999999990,
+      "after": 10000000000,
+      "rngBefore": 4042388837,
+      "rngAfter": 4042388837
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 140,
+      "roomIndex": 0,
+      "action": {
+        "type": "event-choice",
+        "id": "salvage",
+        "confirmed": true
+      },
+      "kind": "exchange",
+      "rawGold": 835,
+      "credited": 10,
+      "overflow": 825,
+      "paid": 0,
+      "before": 9999999990,
+      "after": 10000000000,
+      "rngBefore": 731004706,
+      "rngAfter": 731004706
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 140,
+      "roomIndex": 0,
+      "action": {
+        "type": "gold"
+      },
+      "kind": "gold-room",
+      "rawGold": 958,
+      "credited": 0,
+      "overflow": 958,
+      "paid": 0,
+      "before": 10000000000,
+      "after": 10000000000,
+      "rngBefore": 4232195629,
+      "rngAfter": 731004706
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 140,
+      "roomIndex": 0,
+      "action": {
+        "type": "open"
+      },
+      "kind": "chest",
+      "rawGold": 492,
+      "credited": 0,
+      "overflow": 492,
+      "paid": 0,
+      "before": 10000000000,
+      "after": 10000000000,
+      "rngBefore": 4042388837,
+      "rngAfter": 4042388837
+    },
+    {
+      "origin": "synthetic validated cap boundary",
+      "floor": 140,
+      "roomIndex": 0,
+      "action": {
+        "type": "open"
+      },
+      "kind": "chest",
+      "rawGold": 492,
+      "credited": 0,
+      "overflow": 492,
+      "paid": 0,
+      "before": 10000000000,
+      "after": 10000000000,
+      "rngBefore": 4042388837,
+      "rngAfter": 4042388837
+    }
+  ],
+  "limitations": [
+    "No naturally reached gold cap was observed. Synthetic cap actions prove the feedback defect and fix, not its incidence in ordinary play.",
+    "The natural path and deep snapshot are replays of prior evidence; they do not count as independent new player journeys.",
+    "No balance, probability, price, RNG or gold cap changes are permitted by the full-state comparisons.",
+    "Node evidence establishes exact settlement and history consistency; browser rendering, actual accessibility and hardware performance require separate tests."
+  ]
+}

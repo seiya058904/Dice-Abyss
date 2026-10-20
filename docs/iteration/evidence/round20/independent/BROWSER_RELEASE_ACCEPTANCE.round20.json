@@ -1,0 +1,56 @@
+{
+  "at": "2026-10-19T10:30:58.604527+00:00",
+  "status": "RELEASE_RECORD_REVIEW_PASSED",
+  "nativeExecutionOwner": "root",
+  "independentExecution": "Parsed and re-counted raw native report and verified final source identities. No additional browser or CPU test run.",
+  "nativeStarted": "2026-10-19T10:22:34.101Z",
+  "nativeFinished": "2026-10-19T10:24:34.674Z",
+  "reportSha256": "5d156b535eb1658e1aa33a50870ccce03abdf0226d807a832a1de5ace0dc2eaa",
+  "scriptSha256": "abe58e484218c20a3cd23a2ea6b7e442278c2194e16dc99ec42ea1c6d1e3392b",
+  "browser": "155.0.8059.84",
+  "checks": 665,
+  "caseChecks": {
+    "preview-keyboard-and-affordability": 42,
+    "all-outcomes-confirm-refresh-open-once": 165,
+    "quota-failure-and-cross-tab-review": 50,
+    "responsive-layout-and-cap-balances": 408
+  },
+  "traceChecks": 665,
+  "layoutRecords": 48,
+  "layoutFixtureCount": 12,
+  "nativeFinalConfirmationTrialChecks": 12,
+  "errors": [],
+  "warnings": [],
+  "sourceStable": true,
+  "sourceMatchesCurrentFiles": true,
+  "sourceHashes": {
+    "index.html": "3313e6de771d2aac8b4edecc2108803b9f83159faa89006a3216742abba03b27",
+    "package.json": "a331917ebce37e328874d8dcc7331332d3cec4b6c162e2e5e09bf626621de53d",
+    "src/release.js": "d95506cb9ad535f7771f0f81055a49e510db003edff3d697ce91bde506be640b",
+    "src/app.js": "baf8e04656b34df73feb324e5e0518bb050743683bd68c0316e83b73f545f24f",
+    "src/views.js": "ae2fede007d7ed0b5a9b660add0ff7df89a76c93c3cabc3539741c9d2345bf07",
+    "src/event-risk.js": "3b19c317ac1b88af45080b7655a50b82eb74a2a981050530e6a74c70bee4b8ed",
+    "src/event-risk.css": "272a90f79a544280a6a86184002249723beef3883a0f61d05a174960d8f374be",
+    "src/engine.js": "75c6d9fcc48c0cf49ee02e53ffb7b143a09a2c79738d3bb2eb5d0ae80b30872b",
+    "src/storage.js": "f5a990793a90ff59a57f38e4be8fcb9deaf54997dff9d9acec2cded73d2c8145",
+    "src/encounters.js": "18e1a672849552d779b9763d3f990e953290b32911f123b9884e930166c42cec",
+    "src/deep-rules.js": "6f6c096e37c9f18a6ca97625330a6ab8ce55b25852e677455d3a200c8200dbe1"
+  },
+  "images": [
+    {
+      "file": "gambit-1920.jpg",
+      "bytes": 241900,
+      "sha256": "8f08221062220a859bd3fe4d6c1743e5b010cf8a4293998b0e1449f79fbd36f5"
+    },
+    {
+      "file": "wishingvault-390.jpg",
+      "bytes": 63142,
+      "sha256": "5da6bdff2913bd0973777478eeb669debe64eb17e03cf0edcb10f0333c6b0666"
+    }
+  ],
+  "limits": [
+    "No external screen reader or physical GPU/display/mobile certification.",
+    "Game equip→return navigation is covered by real engine/view output, with native cross-tab luck updates; this 665 driver does not itself perform in-page equip.",
+    "Source SHA and counts are rechecked independently; root owns the native browser execution."
+  ]
+}

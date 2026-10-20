@@ -1,0 +1,481 @@
+{
+  "stage": "Final current correctness gates",
+  "generatedAt": "2026-10-19T14:24:20.045497+00:00",
+  "version": "5.22.0",
+  "project": "/workspace/scratch/a3dd46c18162/work/Dice-Abyss",
+  "allRequestedChecksExecuted": true,
+  "timingScope": "Default and native tests ran concurrently, then the short and long simulations ran concurrently. Functional outcomes use identical scripts and protocols and can be compared. These wall-clock durations cannot support a speed claim against the baseline.",
+  "receipts": {
+    "syntax": {
+      "job": "syntax",
+      "command": [
+        "npm",
+        "run",
+        "check"
+      ],
+      "cwd": "/workspace/scratch/a3dd46c18162/work/Dice-Abyss",
+      "startedAt": "2026-10-19T14:15:10.620974+00:00",
+      "finishedAt": "2026-10-19T14:15:16.654228+00:00",
+      "durationSeconds": 6.0333,
+      "exitCode": 0,
+      "stdout": "syntax.stdout",
+      "stdoutBytes": 98,
+      "stdoutSha256": "2b32acc34fbecf88589ecdf1a82d5ea90bcba9cc508e412c4bd67973198cc3b6",
+      "stderr": "syntax.stderr",
+      "stderrBytes": 99,
+      "stderrSha256": "7125f194612fcff2f454c05d848e7cb71facc1967b4d5017e25b34fdee3ba74f",
+      "timingScope": "Correctness workload; may overlap independent correctness jobs; not a speed comparison."
+    },
+    "default-tests": {
+      "job": "default-tests",
+      "command": [
+        "npm",
+        "test"
+      ],
+      "cwd": "/workspace/scratch/a3dd46c18162/work/Dice-Abyss",
+      "startedAt": "2026-10-19T14:17:18.868921+00:00",
+      "finishedAt": "2026-10-19T14:18:55.950187+00:00",
+      "durationSeconds": 97.0813,
+      "exitCode": 0,
+      "stdout": "default-tests.stdout",
+      "stdoutBytes": 4745,
+      "stdoutSha256": "782f27abc9b279f99c0230751d45c515768c8c31f7819aa67e26550e1b80ce31",
+      "stderr": "default-tests.stderr",
+      "stderrBytes": 99,
+      "stderrSha256": "7125f194612fcff2f454c05d848e7cb71facc1967b4d5017e25b34fdee3ba74f",
+      "timingScope": "Correctness workload; may overlap independent correctness jobs; not a speed comparison."
+    },
+    "native-tests": {
+      "job": "native-tests",
+      "command": [
+        "python",
+        "scripts/verify-test-cases.py",
+        "--output",
+        "/workspace/scratch/a3dd46c18162/qa/current-gates/native",
+        "--workers",
+        "4"
+      ],
+      "cwd": "/workspace/scratch/a3dd46c18162/work/Dice-Abyss",
+      "startedAt": "2026-10-19T14:17:18.875401+00:00",
+      "finishedAt": "2026-10-19T14:18:57.224625+00:00",
+      "durationSeconds": 98.3492,
+      "exitCode": 0,
+      "stdout": "native-tests.stdout",
+      "stdoutBytes": 852,
+      "stdoutSha256": "d5d34770afea2c0052978026bc095f0cc5981f2e36bbcfd2dfab26d5b83cf330",
+      "stderr": "native-tests.stderr",
+      "stderrBytes": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "timingScope": "Correctness workload; may overlap independent correctness jobs; not a speed comparison."
+    },
+    "standard-1000": {
+      "job": "standard-1000",
+      "command": [
+        "node",
+        "scripts/simulate.mjs",
+        "1000"
+      ],
+      "cwd": "/workspace/scratch/a3dd46c18162/work/Dice-Abyss",
+      "startedAt": "2026-10-19T14:19:17.327611+00:00",
+      "finishedAt": "2026-10-19T14:23:34.871153+00:00",
+      "durationSeconds": 257.5436,
+      "exitCode": 0,
+      "stdout": "standard-1000.stdout",
+      "stdoutBytes": 9408,
+      "stdoutSha256": "04c1b942a92882602686c9faa0cedcb011ca621a486147e0eb9278916c578721",
+      "stderr": "standard-1000.stderr",
+      "stderrBytes": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "timingScope": "Correctness workload; may overlap independent correctness jobs; not a speed comparison."
+    },
+    "deep-armor-v2": {
+      "job": "deep-armor-v2",
+      "command": [
+        "node",
+        "scripts/strategy-round18.mjs",
+        "--source",
+        "/workspace/scratch/a3dd46c18162/work/Dice-Abyss",
+        "--output",
+        "/workspace/scratch/a3dd46c18162/qa/current-gates/natural-armor-v2/report.json"
+      ],
+      "cwd": "/workspace/scratch/a3dd46c18162/work/Dice-Abyss",
+      "startedAt": "2026-10-19T14:19:17.326351+00:00",
+      "finishedAt": "2026-10-19T14:24:02.668092+00:00",
+      "durationSeconds": 285.3417,
+      "exitCode": 2,
+      "stdout": "deep-armor-v2.stdout",
+      "stdoutBytes": 1734,
+      "stdoutSha256": "8c9472d918f0480011e292b41d70280cbe95a9968c2cce66be523d4111e6a387",
+      "stderr": "deep-armor-v2.stderr",
+      "stderrBytes": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "timingScope": "Correctness workload; may overlap independent correctness jobs; not a speed comparison."
+    }
+  },
+  "syntax": {
+    "modules": 163,
+    "passed": true
+  },
+  "defaultTests": {
+    "moduleWrappers": {
+      "tests": 90,
+      "suites": 0,
+      "pass": 90,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0
+    },
+    "passed": true
+  },
+  "nativeTests": {
+    "modules": 90,
+    "modulesPassed": 90,
+    "counts": {
+      "tests": 840,
+      "suites": 0,
+      "pass": 840,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0
+    },
+    "passed": true,
+    "comparison": {
+      "baselineModules": 86,
+      "baselineCounts": {
+        "tests": 811,
+        "suites": 0,
+        "pass": 811,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "currentModules": 90,
+      "currentModulesPassed": 90,
+      "currentCounts": {
+        "tests": 840,
+        "suites": 0,
+        "pass": 840,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "allInheritedModulesKeepSourceAndNativeCounts": true,
+      "changes": [],
+      "addedModules": [
+        {
+          "file": "tests/deep-variants-round22.test.mjs",
+          "counts": {
+            "tests": 15,
+            "suites": 0,
+            "pass": 15,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "sourceSha256": "4686378f2e98025846c1dca33d10d006f67b86b48cdbeae33dcef7cba88a53f3",
+          "exitCode": 0,
+          "passed": true
+        },
+        {
+          "file": "tests/inventory-render-scope.test.mjs",
+          "counts": {
+            "tests": 2,
+            "suites": 0,
+            "pass": 2,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "sourceSha256": "42e8e7b9da71b263c1b48dbb035ee7df2d9d665a262c6eb746c1509e67ec8ddf",
+          "exitCode": 0,
+          "passed": true
+        },
+        {
+          "file": "tests/inventory-render.test.mjs",
+          "counts": {
+            "tests": 5,
+            "suites": 0,
+            "pass": 5,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "sourceSha256": "97df9506ccdf51275f4044b1f7b971098eda96c4d6cab7466aafbb853c7aff73",
+          "exitCode": 0,
+          "passed": true
+        },
+        {
+          "file": "tests/inventory-selection.test.mjs",
+          "counts": {
+            "tests": 7,
+            "suites": 0,
+            "pass": 7,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "sourceSha256": "0c9d06e682e0d4604f82cbec08a3911a4139c63df7edd8477ab94a2e769ddb33",
+          "exitCode": 0,
+          "passed": true
+        }
+      ],
+      "passed": true
+    }
+  },
+  "shortSimulation": {
+    "seeds": 1000,
+    "completed": 1000,
+    "failures": [],
+    "deaths": {
+      "min": 0,
+      "median": 0,
+      "p95": 0,
+      "max": 0,
+      "mean": 0
+    },
+    "noShoppingSeeds": 50,
+    "noShoppingCompleted": 50,
+    "noShoppingDeaths": 0,
+    "stdoutBytesEqualToBaseline": false,
+    "comparisonMeasuredNotAssumed": true,
+    "baselineDifferences": [
+      {
+        "path": "$.bossPhases",
+        "baseline": 1809,
+        "current": 1807
+      },
+      {
+        "path": "$.byFloor.10.boss.mean",
+        "baseline": 4.07,
+        "current": 4.06
+      },
+      {
+        "path": "$.byFloor.10.elite.mean",
+        "baseline": 2.34,
+        "current": 2.33
+      },
+      {
+        "path": "$.economy.gold.mean",
+        "baseline": 5797.78,
+        "current": 5797.2
+      },
+      {
+        "path": "$.economy.spent.mean",
+        "baseline": 1578.11,
+        "current": 1578.56
+      },
+      {
+        "path": "$.heavyAttacks",
+        "baseline": 1505,
+        "current": 1504
+      },
+      {
+        "path": "$.rarities[0]",
+        "baseline": 12834,
+        "current": 12835
+      },
+      {
+        "path": "$.rarities[1]",
+        "baseline": 17325,
+        "current": 17326
+      },
+      {
+        "path": "$.rarities[3]",
+        "baseline": 3624,
+        "current": 3622
+      }
+    ],
+    "passed": true
+  },
+  "longSimulation": {
+    "policy": "death-recovery-armor-v2",
+    "status": "MEASURED_WITH_INCOMPLETE_POLICY_SAMPLES",
+    "parameters": {
+      "seeds": [
+        7919,
+        15838,
+        23757,
+        31676
+      ],
+      "floors": 400,
+      "maxDecisions": 160000,
+      "retryStopAboveDeaths": 20,
+      "spendingBudget": 0,
+      "horizon": 12,
+      "minimumFractionGain": 0.05
+    },
+    "sameScriptAndFrozenPolicyAsBaseline": true,
+    "sourceHashesMatchFinalFreeze": true,
+    "sourceStable": true,
+    "summary": {
+      "naturalJourneys": 4,
+      "completedJourneys": 2,
+      "incompleteJourneys": [
+        {
+          "seed": 7919,
+          "lastFloor": 40,
+          "endingPhase": "dead",
+          "finishReason": "DEATH_RETRY_LIMIT"
+        },
+        {
+          "seed": 31676,
+          "lastFloor": 85,
+          "endingPhase": "dead",
+          "finishReason": "DEATH_RETRY_LIMIT"
+        }
+      ],
+      "completedNaturalFloors": 923,
+      "naturalRolls": 13294,
+      "naturalDeaths": 44,
+      "defenseDecisions": 42,
+      "defenseSwaps": 4
+    },
+    "validation": {
+      "codecRoundTrips": 19,
+      "extraEquipActions": 4,
+      "allocationActions": 686,
+      "projectionChecks": 64,
+      "publicRetaliationReads": 13294,
+      "adapter": {
+        "sourceSha256": "3b0e2d6c5f8151714dd0d60596e6a2681fb79604592f3670f4bb93218bdf614f",
+        "comparisonSites": 3,
+        "calls": 3758658,
+        "verified": 256,
+        "viewBuilds": 5086
+      }
+    },
+    "baselineComparison": [
+      {
+        "seed": 7919,
+        "baseline": {
+          "completed": true,
+          "lastFloor": 400,
+          "completedFloors": 400,
+          "finishReason": "COMPLETED",
+          "rolls": 5422,
+          "deaths": 0,
+          "defenseDecisions": 0,
+          "defenseSwaps": 0,
+          "spent": 0
+        },
+        "current": {
+          "completed": false,
+          "lastFloor": 40,
+          "completedFloors": 39,
+          "finishReason": "DEATH_RETRY_LIMIT",
+          "rolls": 938,
+          "deaths": 21,
+          "defenseDecisions": 20,
+          "defenseSwaps": 1,
+          "spent": 0
+        }
+      },
+      {
+        "seed": 15838,
+        "baseline": {
+          "completed": true,
+          "lastFloor": 400,
+          "completedFloors": 400,
+          "finishReason": "COMPLETED",
+          "rolls": 5034,
+          "deaths": 0,
+          "defenseDecisions": 0,
+          "defenseSwaps": 0,
+          "spent": 0
+        },
+        "current": {
+          "completed": true,
+          "lastFloor": 400,
+          "completedFloors": 400,
+          "finishReason": "COMPLETED",
+          "rolls": 4994,
+          "deaths": 0,
+          "defenseDecisions": 0,
+          "defenseSwaps": 0,
+          "spent": 0
+        }
+      },
+      {
+        "seed": 23757,
+        "baseline": {
+          "completed": true,
+          "lastFloor": 400,
+          "completedFloors": 400,
+          "finishReason": "COMPLETED",
+          "rolls": 5612,
+          "deaths": 2,
+          "defenseDecisions": 2,
+          "defenseSwaps": 2,
+          "spent": 0
+        },
+        "current": {
+          "completed": true,
+          "lastFloor": 400,
+          "completedFloors": 400,
+          "finishReason": "COMPLETED",
+          "rolls": 5696,
+          "deaths": 2,
+          "defenseDecisions": 2,
+          "defenseSwaps": 2,
+          "spent": 0
+        }
+      },
+      {
+        "seed": 31676,
+        "baseline": {
+          "completed": true,
+          "lastFloor": 400,
+          "completedFloors": 400,
+          "finishReason": "COMPLETED",
+          "rolls": 5528,
+          "deaths": 0,
+          "defenseDecisions": 0,
+          "defenseSwaps": 0,
+          "spent": 0
+        },
+        "current": {
+          "completed": false,
+          "lastFloor": 85,
+          "completedFloors": 84,
+          "finishReason": "DEATH_RETRY_LIMIT",
+          "rolls": 1666,
+          "deaths": 21,
+          "defenseDecisions": 20,
+          "defenseSwaps": 1,
+          "spent": 0
+        }
+      }
+    ],
+    "passed": false
+  },
+  "sourceStable": true,
+  "inheritedTestModules": 86,
+  "allInheritedTestsAndFixturesUnchanged": true,
+  "allInheritedNativeCountsUnchanged": true,
+  "immutableInputFilesUnchanged": 2945,
+  "nativeTranscriptIntegrity": {
+    "checkedAt": "2026-10-19T14:23:14.996408+00:00",
+    "modules": 90,
+    "gzipBytes": 40862,
+    "gzipSha256": "aa2e1a8c69b3e15447a61f9c402c3abd5738aa176620c47a96e58434ed96517e",
+    "expandedTranscriptBytes": 221669,
+    "expandedTranscriptSha256": "48d596deabb98731e1a9b296fbad1c51043a3f6174f8c29c894517d36c24b2ba",
+    "allModuleStdoutHashesMatch": true,
+    "allModuleSourceHashesMatchFreeze": true,
+    "allModuleStderrEmpty": true,
+    "mismatches": [],
+    "passed": true
+  },
+  "logIntegrityVerified": true,
+  "evidenceHandling": "Complete stdout/stderr, native TAP, source hashes, partial reports and every generated save are retained. No source, test, seed, policy or stopping rule was changed by this QA run.",
+  "allRequestedGatesPassed": false,
+  "status": "COMPLETED_WITH_RETAINED_FAILURES"
+}

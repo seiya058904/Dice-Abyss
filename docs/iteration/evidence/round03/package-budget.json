@@ -1,0 +1,113 @@
+{
+  "capturedUtc": "2026-10-17T14:39:58.684095+00:00",
+  "stage": "final staging after release docs, before final manifest",
+  "limits": {
+    "strictDecimalBytesLessThan": 50000000,
+    "targetAtMostBytes": 40000000,
+    "warningAtBytes": 45000000,
+    "maxExpandedBytes": 100000000
+  },
+  "inputArchive": {
+    "bytes": 12427981,
+    "sha256": "6e6ffd2a2bd8f8dbaa4370712025e91f3b5b152722fe3f90086bf7ce7136dace",
+    "files": 263,
+    "expandedBytes": 16371593
+  },
+  "inputDirectory": {
+    "files": 263,
+    "bytes": 16371593,
+    "categories": {
+      "other_project_docs_and_configuration": {
+        "files": 53,
+        "bytes": 2433491
+      },
+      "handoff_documents_and_small_archives": {
+        "files": 13,
+        "bytes": 143088
+      },
+      "historical_evidence_and_index": {
+        "files": 92,
+        "bytes": 2353457
+      },
+      "runtime_art": {
+        "files": 3,
+        "bytes": 172721
+      },
+      "runtime_code_and_launcher": {
+        "files": 33,
+        "bytes": 584987
+      },
+      "development_qa_scripts": {
+        "files": 35,
+        "bytes": 348652
+      },
+      "offline_fonts_and_licenses": {
+        "files": 8,
+        "bytes": 8680958
+      },
+      "tests_and_migration_fixtures": {
+        "files": 26,
+        "bytes": 1654239
+      }
+    },
+    "excludedPaths": []
+  },
+  "outputStaging": {
+    "files": 339,
+    "bytes": 18049096,
+    "categories": {
+      "other_project_docs_and_configuration": {
+        "files": 53,
+        "bytes": 2433860
+      },
+      "handoff_documents_and_small_archives": {
+        "files": 17,
+        "bytes": 159281
+      },
+      "historical_evidence_and_index": {
+        "files": 92,
+        "bytes": 2356335
+      },
+      "current_round_evidence": {
+        "files": 62,
+        "bytes": 1540320
+      },
+      "runtime_art": {
+        "files": 3,
+        "bytes": 172721
+      },
+      "runtime_code_and_launcher": {
+        "files": 34,
+        "bytes": 612932
+      },
+      "development_qa_scripts": {
+        "files": 40,
+        "bytes": 412307
+      },
+      "offline_fonts_and_licenses": {
+        "files": 8,
+        "bytes": 8680958
+      },
+      "tests_and_migration_fixtures": {
+        "files": 30,
+        "bytes": 1680382
+      }
+    },
+    "excludedPaths": [
+      "docs/iteration/FILE_MANIFEST.json",
+      "docs/iteration/evidence/round03/package-budget.json"
+    ]
+  },
+  "method": "Exact filesystem file counts and byte sums. Current staging excludes this budget file and the final manifest to avoid recursive size dependence. Final complete file count/expanded bytes come from the actual archive receipt; per-file values come from the final manifest. Final ZIP bytes/SHA remain external.",
+  "assets": {
+    "runtimeBitmapAdditions": 0,
+    "newFontFiles": 0,
+    "retainedFontAndLicenseFiles": 8,
+    "retainedFontAndLicenseBytes": 8680958,
+    "selectedCurrentScreenshots": 10,
+    "selectedScreenshotBytes": 885008,
+    "unselectedImageGenDraftIncluded": false
+  },
+  "excluded": "input/old ZIPs, extracted baselines, browser binaries/user data, node_modules, caches, pyc, unselected concept image, source PNGs, video, raw frame traces",
+  "delivery": "One complete self-contained game ZIP; no second required package and no remote runtime downloads."
+}

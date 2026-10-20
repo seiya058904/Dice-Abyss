@@ -1,0 +1,31 @@
+{
+  "created": "2026-10-19T04:47:43.224810+00:00",
+  "issue": "Independent review found that ceil(maxHp * .03) can exceed a strict 3% fraction: maxHp=1001 gives a 31-point cap. The previous maximum-percentage wording was imprecise.",
+  "change": "Only new tide current/next/note text now says percentage rounded upward and capped by missing HP; no gameplay, requirement, or numeric effects changed. Added the 1001-to-31 boundary to the existing test.",
+  "previousEvidence": [
+    "targeted-tests.json",
+    "natural-before-after.json"
+  ],
+  "previousTacticsSha256": "db1a13315cdfe6ff5eb00a117793ea6d192a360a31a48847f41f587d486d1385",
+  "currentTacticsSha256": "bf988d9f44915df1869cd53dee7c1b720e569b652d8ca45bf88209e9170ed8f1",
+  "currentTestSha256": "d6ef61736010ad4bc232221c3ddb38805a619d99580228b08be37ad44010ec47",
+  "command": [
+    "node",
+    "--test-reporter=tap",
+    "tests/base-boss-tactics.test.mjs"
+  ],
+  "started": "2026-10-19T04:47:42.431143+00:00",
+  "durationSeconds": 0.7938,
+  "exitCode": 0,
+  "counts": {
+    "tests": 8,
+    "suites": 0,
+    "pass": 8,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0
+  },
+  "stdoutSha256": "fc558b160a1e168584ffe3cd6e1fd5eddbff025840978043be7355e93691a618",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

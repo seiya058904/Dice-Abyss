@@ -1,0 +1,398 @@
+--- a/index.html
++++ b/index.html
+@@ -3,7 +3,7 @@
+   <head>
+     <meta charset="UTF-8">
+     <meta name="dice-abyss-build" content="5">
+-    <meta name="dice-abyss-release" content="5.17.0">
++    <meta name="dice-abyss-release" content="5.18.0">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta name="theme-color" content="#08090b">
+     <meta name="description" content="A desktop-first, single-player dice dungeon RPG. Roll manually, explore the dungeon, and earn loot after every kill.">
+@@ -32,6 +32,7 @@
+     <link rel="stylesheet" href="./src/defeat-review.css">
+     <link rel="stylesheet" href="./src/inventory-search.css">
+     <link rel="stylesheet" href="./src/boons.css">
++    <link rel="stylesheet" href="./src/event-equipment.css">
+ </head>
+   <body>
+     <div id="app"></div>
+--- a/package.json
++++ b/package.json
+@@ -1,6 +1,6 @@
+ {
+   "name": "dice-abyss",
+-  "version": "5.17.0",
++  "version": "5.18.0",
+   "private": true,
+   "type": "module",
+   "description": "A desktop-first, single-player dice dungeon RPG.",
+--- a/src/app.js
++++ b/src/app.js
+@@ -1,7 +1,7 @@
+ import {RARITIES,TALENTS} from './content.js';
+ import { newGame, transition, fusionPreview, salvagePreview, diceCount, talentPreview } from './engine.js';
+ import { saveImportedGame, loadSave, saveGame, encodeSave, decodeSave, measureSaveCapacity, inspectSaveRecovery, sameSaveRecords, restoreMissingSave, loadSettings, readLegacyBackup, LEGACY_BACKUP_KEY, SAVE_KEY, BACKUP_KEY, SETTINGS_KEY } from './storage.js';
+-import { titleView, gameView, settingsView, itemEffects, itemSummary, itemProgress, migrationSummary, comparison, equipmentComparisonView, fusionView, fusionItemTooltip, talentInspectorView, talentInvestmentCount, memorywellPreviewView, experiencePreviewView, eventChoicePreviewView, num, goldNum, esc, icon } from './views.js';
++import { titleView, gameView, settingsView, itemEffects, itemSummary, itemProgress, migrationSummary, comparison, equipmentComparisonView, fusionView, fusionItemTooltip, talentInspectorView, talentInvestmentCount, memorywellPreviewView, experiencePreviewView, eventChoicePreviewView, eventItemsView, eventChoiceCost, num, goldNum, esc, icon } from './views.js';
+ import { eventChoices } from './encounters.js';
+ import { mountEffects } from './effects.js';
+ import { THROW_DURATION } from './dice-motion.js';
+@@ -34,6 +34,7 @@
+ let inventoryRenderedRunId = null;
+ let boonRenderedRunId = null;
+ let recoveryDialogAction = null;
++let importReadGeneration = 0;
+ // Serialize the read/transition/write critical section across same-origin tabs.
+ // Older browsers still retain the exact-snapshot conflict check in saveGame.
+ const withSaveLock = task => navigator.locks?.request
+@@ -504,7 +505,17 @@
+     const raw=readLegacyBackup();if(!raw){notify('未找到可导出的升级前原始存档。');return;}
+     const url=URL.createObjectURL(new Blob([raw],{type:'application/json'}));const link=document.createElement('a');link.href=url;link.download='Dice-Abyss-before-levels-original.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);notify('升级前原始存档已导出。');return;
+   }
+-  if (action === 'import') { dialog.querySelector('#save-file').click(); return; }
++  if (action === 'import') {
++    const input=dialog.querySelector('#save-file');if(!input)return;
++    // Opening another chooser supersedes the previous asynchronous read,
++    // even if the player has not picked the replacement file yet.
++    importReadGeneration++;
++    const result=dialog.querySelector('#save-import-result');
++    if(result?.dataset.state==='reading'){
++      result.dataset.state='cancelled';result.textContent='已取消上次检查，请选择要导入的文件。';
++    }
++    input.value='';input.click();return;
++  }
+   if(action==='skip' && !committing){const outcome=ui.event==='event-roll'?state.event?.outcome:null;settlePresentation();if(outcome)notify(outcome);return;}
+   if (ui.busy || committing) { notify('本次结果正在揭晓，请稍候。'); return; }
+   if (action === 'compare-details') { openComparison(control.dataset.id,control.dataset.slot);return; }
+@@ -562,10 +573,9 @@
+   if(action==='event-choice'){
+     const choice=eventChoices(state).find(o=>o.id===control.dataset.id);
+     if(!choice||choice.disabled){if(choice?.reason)notify(choice.reason);return;}
+-    const offer=state.player.items.find(i=>i.id===state.event?.offerId),target=state.player.items.find(i=>i.id===state.event?.targetId);
+-    const itemCost=offer&&choice.cost===offer.name?`<p class="danger">永久消耗：${esc(itemSummary(offer))} · 等级进度 ${itemProgress(offer)}</p>`:'';
++    const equipmentReview=eventItemsView(state,choice.id,{review:true});
+     const resetPreview=choice.id==='reset'?memorywellPreviewView(state):'',experiencePreview=experiencePreviewView(state,choice),paidStudy=!!experiencePreview&&['memory_archive','starlibrary'].includes(state.event?.key);
+-    const description=resetPreview?`<p>${esc(choice.detail)}</p>${resetPreview}`:`<p>${esc(choice.detail)}</p><dl class="event-confirm-terms"><div><dt>代价</dt><dd>${esc(choice.cost)}</dd></div>${paidStudy?'':`<div><dt>获得</dt><dd>${esc(choice.reward)}</dd></div>`}</dl>${experiencePreview}${eventChoicePreviewView(state,choice.id)}${itemCost}${target&&choice.reward.includes(target.name)?`<p>目标保留：${esc(itemSummary(target))}</p>`:''}`;
++    const description=resetPreview?`<p>${esc(choice.detail)}</p>${resetPreview}`:`<p>${esc(choice.detail)}</p><dl class="event-confirm-terms"><div><dt>代价</dt><dd>${esc(eventChoiceCost(state,choice))}</dd></div>${paidStudy?'':`<div><dt>获得</dt><dd>${esc(choice.reward)}</dd></div>`}</dl>${experiencePreview}${eventChoicePreviewView(state,choice.id)}${equipmentReview}`;
+     if(choice.confirm||choice.destructive)confirmDialog(paidStudy?`确认${choice.label}？`:'确认这次命运抉择？',`${description}<p class="danger">${esc(choice.confirm||'这项选择提交后不可撤销。')}</p>`,paidStudy?(choice.experience.creditedXp?'支付并研读':'仍支付并研读'):'确认接受',()=>act({type:'event-choice',id:choice.id,confirmed:true}));
+     else await act({type:'event-choice',id:choice.id});
+     return;
+@@ -623,11 +633,18 @@
+   if (event.target.id === 'ui-scale') { settings.scale = Number(event.target.value); saveSettings(); }
+   if (event.target.id === 'save-file') {
+     if(recoveryBlocked())return;
+-    const file = event.target.files?.[0]; if (!file) return;
++    const input=event.target,file=input.files?.[0];if(!file)return;
++    // Allow the same corrected file to be selected again. The File object is
++    // retained locally; clearing this input never changes its bytes.
++    input.value='';
++    const readGeneration=++importReadGeneration;
++    const activeRead=()=>readGeneration===importReadGeneration&&dialog.open&&dialog.contains(input);
++    const importResult=dialog.querySelector('#save-import-result');
++    if(importResult){importResult.hidden=false;importResult.dataset.state='reading';importResult.innerHTML=`<p>正在检查 <b>${esc(file.name)}</b>…</p>`;}
+     try {
+       if (file.size > 5e6) throw new Error('存档文件过大，无法导入。');
+       const importedRaw=await file.text();
+-      if(recoveryBlocked())return;
++      if(!activeRead()||recoveryBlocked())return;
+       const imported = decodeSave(importedRaw);
+       const expected = state;
+       confirmDialog('导入这段旅途？', `<p>第 ${imported.floor} 层 · Lv.${imported.player.level} · ${imported.player.items.length} 件装备</p>${imported.migration||imported.v5Migration?`<p class="migration-notice">${esc(migrationSummary(imported))}</p>`:''}<p>确认后将替换当前浏览器中的进度。</p>`, '确认导入', async () => {
+@@ -642,7 +659,16 @@
+         } catch (error) { notify(error.message); }
+         finally { committing = false; }
+       });
+-    } catch (error) { notify(error instanceof SyntaxError ? '存档不是有效的 JSON 文件，当前进度未改动。' : error.message || '无法读取存档文件。'); }
++    } catch (error) {
++      if(!activeRead())return;
++      const message=error instanceof SyntaxError?'存档不是有效的 JSON 文件。':error.message||'无法读取存档文件。';
++      if(importResult){
++        importResult.dataset.state='error';
++        importResult.innerHTML=`<h4>未能导入这份存档</h4><p class="save-import-filename">${esc(file.name)}</p><p>${esc(message)}</p><p>原文件和当前进度均未改动。请保留原文件，重新选择一份完整备份。</p><button data-action="import">重新选择文件</button>`;
++        importResult.focus();
++      }
++      notify(message);
++    }
+   }
+ });
+ document.addEventListener('keydown', event => {
+--- a/src/encounters.js
++++ b/src/encounters.js
+@@ -5,6 +5,7 @@
+ import {RARITIES} from './equipment-content.js';
+ import {goldPreview,goldSummary} from './gold.js';
+ import {LEVEL_CAP,xpPreview,xpSummary} from './experience.js';
++import {eventReferenceIssue} from './event-references.js';
+ // Pure encounter rules and transaction helpers. This module never imports the engine.
+ export const ROOM_ADDITIONS = {
+  armored:'重甲守卫',berserker:'狂怒猎手',leech:'汲光异兽',disruptor:'扰骰巡卫',mirror:'镜像对手',bandit:'黄金盗匪',gauntlet:'连续围猎',duel:'双重决斗',storm:'雷暴裂隙',cursed:'诅咒战场',guardian:'古代守门者',hiddenboss:'隐秘首领',
+@@ -160,7 +161,7 @@
+ ];
+ const eventPick=(s,list,api)=>api.pick?api.pick(s,list):choose(s,list,api.random);
+ const safeItems=s=>s.player.items.filter(i=>!Object.values(s.player.equipped).includes(i.id)&&!i.locked&&i.rarity<3&&i.id!==s.loot?.item?.id);
+-const itemName=(s,id)=>s.player.items.find(i=>i.id===id)?.name||'已不存在的装备';
++const itemName=(s,id)=>{const item=s.player.items.find(i=>i.id===id);return item?(item.name?.trim()?item.name:`未命名装备（${item.id}）`):'已不存在的装备';};
+ const itemById=(s,id)=>s.player.items.find(i=>i.id===id);
+ const eventXpReward=s=>Math.min(1000000,40+s.player.level*5);
+ function exchangeQuote(s){
+@@ -209,10 +210,14 @@
+   if((s.player.deepOfferings||0)>=20)reasons.push('与星海书库共用的永久馈赠已达 20 次上限');
+   if(s.player.talentPoints>=2e6)reasons.push('未分配天赋点已达 2,000,000 点安全上限');
+  }
+- return choices.map(o=>o.id==='accept'?{...o,detail:o.detail+` 本次只接受入场时登记的${noun}，不会自动改交其他装备。`,cost:offered?(offered.name||`未命名旧物（${offered.id}）`):(e.offerId?`本次登记的${noun}（已不存在）`:`入场时未登记${noun}`),reason:o.disabled?(reasons.join('；')||o.reason):''}:o);
++ return choices.map(o=>o.id==='accept'?{...o,detail:o.detail+` 本次只接受入场时登记的${noun}，不会自动改交其他装备。`,cost:offered?(offered.name?.trim()?offered.name:`未命名旧物（${offered.id}）`):(e.offerId?`本次登记的${noun}（已不存在）`:`入场时未登记${noun}`),reason:o.disabled?(reasons.join('；')||o.reason):''}:o);
++}
++function referenceCheckedChoices(s,choices){
++ const issue=eventReferenceIssue(s);
++ return issue?choices.map(choice=>choice.id==='leave'?choice:{...choice,disabled:true,reason:issue.message}):choices;
+ }
+ export function eventChoices(s){
+- const e=s.event;if(!e||e.status!=='pending')return [];if(DEEP_ROOMS[e.key]?.kind==='event')return contextualDeepChoices(s);
++ const e=s.event;if(!e||e.status!=='pending')return [];if(DEEP_ROOMS[e.key]?.kind==='event')return referenceCheckedChoices(s,contextualDeepChoices(s));
+  const offered=itemById(s,e.offerId),target=itemById(s,e.targetId),safe=offered&&safeItems(s).some(i=>i.id===offered.id),gold=s.player.gold>=e.costGold,hp=s.player.hp>e.costHp;
+    const pay=()=>!gold?'金币不足':'',confirm=text=>`${text}；此项提交后不可撤销。`;
+    const luckGain=temporaryGain(s,'eventLuck',8,20),powerGain=temporaryGain(s,'eventPower',15,30);
+@@ -240,7 +245,7 @@
+   }
+   case 'thread_of_dawn':options=[option('accept','系住黎明','永久幸运最多获得 5 点。',`${e.costGold*3} 金币`,'永久幸运 +1',s.player.gold<e.costGold*3||(s.player.fateBlessings||0)>=5,'金币不足或已达永久上限',confirm(`支付 ${e.costGold*3} 金币`))];break;
+  }
+- options.push(option('leave','安全离开','不支付代价，不改变已有资产。','无','保留当前进度'));return options;
++ options.push(option('leave','安全离开','不支付代价，不改变已有资产。','无','保留当前进度'));return referenceCheckedChoices(s,options);
+ }
+ export function eventPresentation(s){
+  if(!s.event)return null;
+@@ -262,8 +267,10 @@
+ }
+ export function applyEvent(s,choice,api){
+  if(s.phase!=='event')return false;
++ const id=typeof choice==='string'?choice:choice?.id;
++ if(id!=='leave'&&eventReferenceIssue(s))return false;
+  if(DEEP_ROOMS[s.event?.key]?.kind==='event')return applyDeepEvent(s,choice,api);
+- const id=typeof choice==='string'?choice:choice?.id,selected=eventChoices(s).find(o=>o.id===id);
++ const selected=eventChoices(s).find(o=>o.id===id);
+  if(!selected||selected.disabled||(selected.confirm&&choice?.confirmed!==true))return false;
+  const e=s.event,target=itemById(s,e.targetId),st=api.stats(s),remove=()=>{s.player.items=s.player.items.filter(i=>i.id!==e.offerId);};
+  e.status='resolved';e.choice=id;e.outcome='你保留了当前的一切，离开了遭遇。';
+--- /dev/null
++++ b/src/event-equipment.css
+@@ -0,0 +1,47 @@
++/* Concrete equipment replaces the decorative unknown-event emblem here.
++   One shared frame, two explicit roles, no extra animation or bitmap. */
++.event-equipment {
++  width: 100%; margin: 1.2rem 0; padding: .95rem 0;
++  border-block: 1px solid #53565e; text-align: left;
++  font-family: 'Abyss Text', sans-serif; font-size: max(13px, .87rem);
++  line-height: 1.65; min-width: 0;
++}
++.event-equipment-heading {
++  display: flex; align-items: baseline; justify-content: space-between;
++  gap: .5rem 1rem; flex-wrap: wrap; margin-bottom: .8rem;
++}
++.event-equipment-heading h2 { font-size: max(16px, 1.07rem); font-weight: 600; color: #eee3c6; }
++.event-equipment-heading > p { color: #c1c8ce; font-size: inherit; }
++.event-equipment-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; }
++.event-equipment-grid[data-items="2"] { grid-template-columns: repeat(2, minmax(0, 1fr)); }
++.event-equipment-item { min-width: 0; display: flex; flex-direction: column; align-items: flex-start; }
++.event-equipment-item h3 { display: flex; align-items: center; gap: .4rem; color: #f1b6b2; font-size: inherit; font-weight: 500; }
++.event-equipment-item[data-event-item-role="retain"] h3 { color: #d9c38e; }
++.event-equipment-item .icon { width: 1rem; height: 1rem; flex-shrink: 0; }
++.event-equipment-name { margin: .35rem 0 .55rem; color: #f0ece6; overflow-wrap: anywhere; }
++.event-equipment-item dl { margin: 0 0 .55rem; width: 100%; font-size: inherit; }
++.event-equipment-item dl > div { display: flex; gap: .5rem; flex-wrap: wrap; justify-content: space-between; }
++.event-equipment-item dt { color: #bcc7cd; }
++.event-equipment-item dd { margin: 0; color: #e6dfce; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
++.event-equipment-note { color: #c1c8ce; font-size: inherit; overflow-wrap: anywhere; }
++.event-equipment-protection { display: flex; gap: .35rem; align-items: flex-start; color: #efc884; margin: .1rem 0 .5rem; overflow-wrap: anywhere; }
++.event-equipment-protection .icon { margin-top: .3em; }
++.event-equipment-item button { font-size: inherit; padding: .45rem .65rem; margin-top: .8rem; min-height: 36px; }
++.event-equipment-item.is-unavailable > p { color: #edb7af; margin-top: .35rem; }
++.event-equipment-item.is-unavailable > small { font-size: inherit; color: #c1c8ce; }
++.game-dialog .event-equipment { margin: .9rem 0; font-size: max(13px, .87rem); }
++.game-dialog .event-confirm-terms dd { min-width: 0; overflow-wrap: anywhere; }
++.game-dialog .confirmation-copy:has(.event-equipment) > p { overflow-wrap: anywhere; }
++.save-import-result { margin-top: 1rem; padding: 1rem; border: 1px solid #a16865; color: #f0dfd7; font-size: max(14px, .92rem); line-height: 1.75; }
++.save-import-result[hidden] { display: none; }
++.save-import-result h4 { font-size: inherit; font-weight: 600; margin: 0 0 .55rem; color: #f6bcb5; }
++.save-import-result p + p { margin-top: .55rem; }
++.save-import-result .save-import-filename { color: #ddd6c8; overflow-wrap: anywhere; }
++.save-import-result button { margin-top: .8rem; font-size: inherit; }
++.save-import-result:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
++@media (max-width: 699px) {
++  .event-equipment-grid[data-items="2"] { grid-template-columns: minmax(0, 1fr); }
++  .event-equipment-grid[data-items="2"] .event-equipment-item + .event-equipment-item { border-top: 1px solid #3e4148; padding-top: .9rem; }
++  .event-equipment, .game-dialog .event-equipment { font-size: max(14px, calc(14px * var(--user-scale))); }
++  .game-dialog .event-equipment-grid[data-items="2"] { grid-template-columns: minmax(0, 1fr); }
++}
+--- /dev/null
++++ b/src/event-references.js
+@@ -0,0 +1,41 @@
++// Entry reserves exact equipment IDs. A later swap, lock or salvage may make
++// the recorded payment unavailable; none is permission to pick a replacement.
++// Keep those recoverable states readable. Only contradictions which normal
++// inventory actions cannot create invalidate a pending event's references.
++// 1 = consumed material; 2 = retained upgrade target. Choice and display code
++// share this exact authority table instead of inferring roles from prose.
++const eventRoles={exchange:{salvage:1,relic:1},relic_exchange:{accept:1},silent_anvil:{accept:3},offering:{accept:1},relicloom:{accept:1},hollow_scale:{accept:2}};
++const issued=(id,nextId)=>Number.isSafeInteger(nextId)&&typeof id==='string'&&/^i\d+$/.test(id)&&Number.isSafeInteger(Number(id.slice(1)))&&Number(id.slice(1))>=0&&Number(id.slice(1))<nextId;
++
++export function eventReferenceRoles(s,choiceId) {
++ const e=s?.event,choices=e?.status==='pending'&&typeof e.key==='string'&&Object.hasOwn(eventRoles,e.key)?eventRoles[e.key]:null;
++ const roles=!choices?0:choiceId===undefined?Object.values(choices).reduce((mask,role)=>mask|role,0):typeof choiceId==='string'&&Object.hasOwn(choices,choiceId)?choices[choiceId]:0;
++ return {usesOffer:!!(roles&1),usesTarget:!!(roles&2)};
++}
++
++export function eventReferenceIssue(s) {
++ const e=s?.event;
++ if(!e||e.status!=='pending')return null;
++ const {usesOffer:material,usesTarget:weapon}=eventReferenceRoles(s);
++ if(!material&&!weapon)return null;
++ if(e.key==='silent_anvil'&&e.offerId!=null&&e.offerId===e.targetId)return {code:'offer-target-collision',message:'登记的升级目标与待消耗旧物指向同一件装备，不能安全结算。'};
++ for(const [needed,id,role,label]of [[material,e.offerId,'offer','旧物'],[weapon,e.targetId,'target','武器目标']]){
++  // Null records that entry did not reserve an item. Previously issued but
++  // missing IDs may have been legally salvaged; availability handles both.
++  if(needed&&id!=null&&!issued(id,s.nextId))return {code:`invalid-${role}-id`,message:`登记的${label} ID 不属于本局已分配的物品，不能猜测替代装备。`};
++ }
++ if(!Array.isArray(s?.player?.items))return null;
++ let offeredCount=0,targetCount=0,target;
++ for(const item of s.player.items){
++  if(!item)continue;
++  if(material&&e.offerId!=null&&item.id===e.offerId)offeredCount++;
++  if(weapon&&e.targetId!=null&&item.id===e.targetId){targetCount++;target=item;}
++ }
++ if(offeredCount>1)return {code:'duplicate-offer-id',message:'登记的旧物 ID 对应多件库存装备，不能确定应消耗哪一件。'};
++ if(targetCount>1)return {code:'duplicate-target-id',message:'登记的武器目标 ID 对应多件库存装备，不能确定应升级哪一件。'};
++ // The registered weapon remains the target after swapping or locking it.
++ // Locks protect consumption, not upgrades; current equipment is not a proxy
++ // for the entry record, and a missing target must not be retargeted.
++ if(target&&target.slot!=='weapon')return {code:'target-not-weapon',message:'登记的升级目标不是武器，与本次事件的武器升级不一致。'};
++ return null;
++}
+--- a/src/release.js
++++ b/src/release.js
+@@ -1,4 +1,4 @@
+ // Browser-visible product version. The save schema and storage keys are separate.
+ // tests/release-identity.test.mjs checks this against package.json and index.html.
+-export const RELEASE_VERSION = '5.17.0';
++export const RELEASE_VERSION = '5.18.0';
+ export const RELEASE_STAMP = RELEASE_VERSION.split('.').map((part, index) => index === 0 ? part.padStart(2, '0') : part).join('.');
+--- a/src/storage.js
++++ b/src/storage.js
+@@ -3,6 +3,7 @@
+ import { VERSION, stats } from './engine.js';
+ import {validEquipment,migrateEquipment,legacyItemValue,itemValue,itemStats,levelXpNeeded,MAX_ITEM_LEVEL,MAX_ITEM_XP} from './equipment.js';
+ import {ENCOUNTER_MECHANICS,EVENT_KEYS,COMBAT_ROOMS,EVENT_ROOMS} from './encounters.js';
++import {eventReferenceIssue} from './event-references.js';
+ 
+ export const SAVE_KEY = 'dice-abyss:save:v1';
+ export const BACKUP_KEY = 'dice-abyss:mirror:v1';
+@@ -57,6 +58,7 @@
+     if(s.v5Migration!==undefined){const m=s.v5Migration;if(!m||!integer(m.fromVersion,1,4)||m.toVersion!==5||m.preservedRng!==true||!integer(m.inventory,3,10000))return false;}
+     if(s.encounterHistory!==undefined&&(!Array.isArray(s.encounterHistory)||s.encounterHistory.length>8||!s.encounterHistory.every(type=>roomTypes.includes(type))))return false;
+     if(s.event!==undefined&&s.event!==null&&!validEvent(s.event))return false;
++    if(eventReferenceIssue(s))return false;
+     if(s.phase==='event'&&(!validEvent(s.event)||!eventRooms.includes(s.route[s.roomIndex]?.type)))return false;
+     if (p.hp > stats(s).maxHp || (s.phase === 'dead' ? p.hp !== 0 : p.hp <= 0)) return false;
+     if (!Array.isArray(s.route) || (s.phase === 'fate' ? s.route.length !== 0 : s.route.length !== 6)) return false;
+@@ -153,8 +155,12 @@
+   for (let i = 0; i < value.length; i++) { h ^= value.charCodeAt(i); h = Math.imul(h, 16777619); }
+   return (h >>> 0).toString(16);
+ }
++function invalidSaveError(state,message){
++ const issue=eventReferenceIssue(state);
++ return new Error(issue?`${message} ${issue.message}原始记录与现有进度未改动。`:message);
++}
+ export function encodeSave(state) {
+-  if (!validateSave(state)) throw new Error('存档状态不完整，操作未保存。');
++  if (!validateSave(state)) throw invalidSaveError(state,'存档状态不完整，操作未保存。');
+   const payload = JSON.stringify(state);
+   return JSON.stringify({ format: 'dice-abyss', version: VERSION, checksum: checksum(payload), payload });
+ }
+@@ -195,7 +201,7 @@
+   // no migration copy; keep migrateSave's detached-copy contract for callers
+   // and its legacy path, then validate the freshly parsed snapshot in full.
+   const state = payload.version === VERSION ? payload : migrateSave(payload);
+-  if (!validateSave(state)) throw new Error('存档内容不完整或版本不兼容。');
++  if (!validateSave(state)) throw invalidSaveError(state,'存档内容不完整或版本不兼容。');
+   return {state,sourceVersion:envelope.version};
+ }
+ export function decodeSave(raw) { return decodeStoredSave(raw).state; }
+@@ -284,7 +290,7 @@
+ export function saveImportedGame(imported, importedRaw, expected = undefined, storage = localStorage) {
+   // Check both the import and the disk snapshot before claiming the immutable
+   // archive slots. A rejected import must not archive a file that never ran.
+-  if(!validateSave(imported))throw new Error('存档内容不完整或版本不兼容。');
++  if(!validateSave(imported))throw invalidSaveError(imported,'存档内容不完整或版本不兼容。');
+   const decoded=decodeSave(importedRaw);
+   if(JSON.stringify(decoded)!==JSON.stringify(imported))throw new Error('导入内容与已核对的原始存档不一致，当前进度未改动。');
+   assertSaveSnapshot(imported,expected,storage);
+--- a/src/views.js
++++ b/src/views.js
+@@ -14,6 +14,7 @@
+ import { inventoryQuery, selectInventoryItems } from './inventory-query.js';
+ import { boonReadout } from './boon-readout.js';
+ import { eventChoicePreview } from './event-preview.js';
++import { eventReferenceRoles } from './event-references.js';
+ import { stats, diceCount, itemValue, itemStats, compareEquipment, xpNeeded, XP_CAP, LEVEL_CAP, forgePreview, fusionPreview, canAct, ENHANCE_CAP, equippedIds, equipSlot, talent, talentPreview, memorywellPreview, depthPower, enemyIntent, salvagePreview, diceOdds, dropOdds } from './engine.js';
+ 
+ export const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+@@ -86,6 +87,40 @@
+ function badge(rarity) { return `<span class="rarity ${RARITIES[rarity].key}">${RARITIES[rarity].name}</span>`; }
+ export const itemSummary = item => `${RARITIES[item.rarity].name} ${item.name} · Lv.${num(item.level)} · +${item.enhance}`;
+ export const itemProgress = item => `${num(item.levelXp)} / ${num(levelXpNeeded(item.level))}`;
++// Payment and upgrade roles come from the same event table as validation.
++// Names are display data: blank or equal names never establish item identity.
++function eventItemName(s, item) {
++ return item.name?.trim() ? item.name : `未命名${['offering','relicloom'].includes(s.event?.key)?'旧物':'装备'}（${item.id}）`;
++}
++function eventItemSummary(s, item) { return itemSummary({...item,name:eventItemName(s,item)}); }
++export function eventChoiceCost(s, choice) {
++ const roles=eventReferenceRoles(s,choice.id);
++ const offered=roles.usesOffer?s.player.items.filter(item=>item.id===s.event?.offerId):[];
++ return offered.length===1 ? eventItemSummary(s,offered[0]) : choice.cost;
++}
++export function eventItemsView(s, choiceId, {review=false} = {}) {
++ if(s?.phase!=='event')return '';
++ const roles=eventReferenceRoles(s,choiceId),entries=[];
++ for(const [used,role,id,label] of [[roles.usesOffer,'consume',s.event?.offerId,'选用后永久消耗'],[roles.usesTarget,'retain',s.event?.targetId,'保留并升级的武器']]){
++  if(!used)continue;
++  const matches=s.player.items.filter(item=>item.id===id),item=matches.length===1?matches[0]:null;
++  if(!item){
++   const reason=!id?'入场时未登记装备':matches.length>1?'同一编号对应多件装备，无法确认':'登记的装备已不在背包';
++   entries.push(`<div class="event-equipment-item is-unavailable" data-event-item-role="${role}"><h3>${label}</h3><p>${esc(reason)}</p><small>本次选择不可用，不会改用其他装备。</small></div>`);continue;
++  }
++  const equipped=equippedIds(s).includes(item.id),notes=[];
++  if(item.locked)notes.push('已锁定');
++  if(equipped)notes.push('装备中');
++  if(role==='consume'){
++   if(item.rarity>=3)notes.push('传说及以上，受保护');
++   if(item.id===s.loot?.item?.id)notes.push('当前战利品，受保护');
++  }
++  const note=role==='retain'?'沿用入场登记目标；换装不会转移这次升级。':'Lv.、等级经验与 +N 随材料一并消耗。';
++  entries.push(`<div class="event-equipment-item" data-event-item-role="${role}" data-event-item-id="${esc(item.id)}"><h3>${icon(role==='consume'?'inventory':'forge')}${label}</h3><p class="event-equipment-name">${esc(eventItemSummary(s,item))}</p><dl><div><dt>等级进度</dt><dd>${itemProgress(item)}</dd></div><div><dt>物品编号</dt><dd>${esc(item.id)}</dd></div></dl>${notes.length?`<p class="event-equipment-protection">${icon(item.locked?'lock':'shield')}${esc(notes.join(' · '))}${role==='retain'?' · 升级后仍保留':' · 不可作为消耗材料'}</p>`:''}<p class="event-equipment-note">${note}</p>${review?'':button('查看属性与比较','compare-details','small',`data-id="${esc(item.id)}"`)}</div>`);
++ }
++ if(!entries.length)return '';
++ return `<section class="event-equipment" aria-label="本次抉择的装备"><div class="event-equipment-heading"><h2>本次抉择的装备</h2><p>以入场登记为准</p></div><div class="event-equipment-grid" data-items="${entries.length}">${entries.join('')}</div></section>`;
++}
+ export function migrationSummary(s) {
+  if(s?.v5Migration&&!s.migration)return `V${s.v5Migration.fromVersion} 存档已接入 V5：${num(s.v5Migration.inventory)} 件背包装备、旧宝箱、商店与随机状态原样保留。`;
+  const report=s?.migration;if(!report)return '';
+@@ -369,8 +404,8 @@
+ }
+ function eventView(s,ui) {
+  const event=eventPresentation(s);if(!event)return '<section class="room-screen"><h1>遭遇尚未揭晓</h1><p>请重新读取已保存的旅途。</p></section>';
+- const options=event.options.filter(o=>o.id!=='leave'),offered=s.player.items.find(i=>i.id===s.event.offerId),odds=diceOdds(s),memoryPreview=memorywellPreviewView(s),experienceChoice=['memory_archive','starlibrary'].includes(s.event.key)?options.find(o=>o.experience):null,experiencePreview=experiencePreviewView(s,experienceChoice);
+- return `<section class="room-screen room-refined event-screen ${event.status==='resolved'?'event-resolved':''} ${ui.rolling?'event-rolling':''}${memoryPreview?' memorywell-screen':''}${experiencePreview?' experience-screen':''}"><div class="room-heading"><div><h1>${ui.rolling?'命运正在落定':esc(event.title)}</h1><p>${esc(event.body)}</p></div><div class="event-luck"><span>当前幸运</span><b>${num(odds.luck)}</b><small>5 / 6 点 ${(odds.highChance*100).toFixed(1)}%</small></div></div>${event.status==='resolved'?`<div class="event-outcome" role="status">${!ui.rolling?`<span class="event-sigil" aria-hidden="true">${icon('check')}</span>`:''}<h2>${ui.rolling?'投下这一颗命运骰':'抉择已落定'}</h2><p>${ui.rolling?'骰子停下后，揭晓本次已保存的结果。':esc(event.outcome)}</p>${s.event.roll||s.event.rolls?`<div class="event-result-die">${dice(s.event.rolls||[s.event.roll],{rolling:ui.rolling})}</div>`:''}</div>`:`${memoryPreview||experiencePreview||`<div class="event-atmosphere" aria-hidden="true"><svg viewBox="0 0 500 180" fill="none"><ellipse cx="250" cy="90" rx="135" ry="75"/><ellipse cx="250" cy="90" rx="108" ry="58"/><path d="M82 90h55M363 90h55M250 6v30M250 144v30M148 36l25 18M327 126l25 18M352 36l-25 18M173 126l-25 18"/><path d="m250 30 48 60-48 60-48-60Z"/></svg><span>?</span></div>`}${s.event.reward?.item?`<div class="auction-preview ${RARITIES[s.event.reward.item.rarity].key}"><strong>${esc(itemSummary(s.event.reward.item))}</strong><p>${esc(itemEffects(s.event.reward.item))}</p><small>真实奖品 · 已保存 · 刷新不重抽</small></div>`:''}<div class="event-options" data-options="${options.length}">${options.map(option=>button(`<span class="event-option-title"><strong>${esc(option.label)}</strong><small>${option.confirm?'提交前再次确认':option.cost==='无'?'无需代价':'代价见下方'}</small></span><span class="event-option-detail">${esc(option.detail)}</span><span class="event-terms event-cost"><small>代价</small><b>${esc(offered&&option.cost===offered.name?itemSummary(offered):option.cost)}</b></span><span class="event-terms event-reward"><small>获得</small><b>${esc(option.reward)}</b></span>${eventChoicePreviewView(s,option.id)}${option.disabled?`<span class="event-option-reason">${esc(option.reason)}</span>`:'<span class="event-option-choose">选择此项 →</span>'}`,'event-choice',`event-option ${option.destructive?'requires-confirmation':''}`,`data-id="${option.id}" ${option.disabled||ui.busy?'disabled':''}`)).join('')}</div><p class="room-hint">代价先明示，选择由你决定。也可以使用下方「拒绝并离开」，保留已有资产。</p>`}</section>`;
++ const options=event.options.filter(o=>o.id!=='leave'),odds=diceOdds(s),memoryPreview=memorywellPreviewView(s),experienceChoice=['memory_archive','starlibrary'].includes(s.event.key)?options.find(o=>o.experience):null,experiencePreview=experiencePreviewView(s,experienceChoice);
++ return `<section class="room-screen room-refined event-screen ${event.status==='resolved'?'event-resolved':''} ${ui.rolling?'event-rolling':''}${memoryPreview?' memorywell-screen':''}${experiencePreview?' experience-screen':''}"><div class="room-heading"><div><h1>${ui.rolling?'命运正在落定':esc(event.title)}</h1><p>${esc(event.body)}</p></div><div class="event-luck"><span>当前幸运</span><b>${num(odds.luck)}</b><small>5 / 6 点 ${(odds.highChance*100).toFixed(1)}%</small></div></div>${event.status==='resolved'?`<div class="event-outcome" role="status">${!ui.rolling?`<span class="event-sigil" aria-hidden="true">${icon('check')}</span>`:''}<h2>${ui.rolling?'投下这一颗命运骰':'抉择已落定'}</h2><p>${ui.rolling?'骰子停下后，揭晓本次已保存的结果。':esc(event.outcome)}</p>${s.event.roll||s.event.rolls?`<div class="event-result-die">${dice(s.event.rolls||[s.event.roll],{rolling:ui.rolling})}</div>`:''}</div>`:`${memoryPreview||experiencePreview||eventItemsView(s)||`<div class="event-atmosphere" aria-hidden="true"><svg viewBox="0 0 500 180" fill="none"><ellipse cx="250" cy="90" rx="135" ry="75"/><ellipse cx="250" cy="90" rx="108" ry="58"/><path d="M82 90h55M363 90h55M250 6v30M250 144v30M148 36l25 18M327 126l25 18M352 36l-25 18M173 126l-25 18"/><path d="m250 30 48 60-48 60-48-60Z"/></svg><span>?</span></div>`}${s.event.reward?.item?`<div class="auction-preview ${RARITIES[s.event.reward.item.rarity].key}"><strong>${esc(itemSummary(s.event.reward.item))}</strong><p>${esc(itemEffects(s.event.reward.item))}</p><small>真实奖品 · 已保存 · 刷新不重抽</small></div>`:''}<div class="event-options" data-options="${options.length}">${options.map(option=>button(`<span class="event-option-title"><strong>${esc(option.label)}</strong><small>${option.confirm?'提交前再次确认':option.cost==='无'?'无需代价':'代价见下方'}</small></span><span class="event-option-detail">${esc(option.detail)}</span><span class="event-terms event-cost"><small>代价</small><b>${esc(eventChoiceCost(s,option))}</b></span><span class="event-terms event-reward"><small>获得</small><b>${esc(option.reward)}</b></span>${eventChoicePreviewView(s,option.id)}${option.disabled?`<span class="event-option-reason">${esc(option.reason)}</span>`:'<span class="event-option-choose">选择此项 →</span>'}`,'event-choice',`event-option ${option.destructive?'requires-confirmation':''}`,`data-id="${option.id}" ${option.disabled||ui.busy?'disabled':''}`)).join('')}</div><p class="room-hint">代价先明示，选择由你决定。也可以使用下方「拒绝并离开」，保留已有资产。</p>`}</section>`;
+ }
+ function codexView(s,ui){
+  const source=ui.codexSource||'combat',legacy=['boss','hiddenboss'].includes(source)?'boss':source==='blackmarket'?'combat':source;
+@@ -422,5 +457,5 @@
+  return `<div class="game-shell${workbench?' fusion-mode':''}" data-scene="${ui.view==='game'?s.phase:ui.view}">${header(s)}<main class="game-layout${workbench?' fusion-layout':''}">${workbench?'':ui.view === 'talents' ? buildRail(s) : routeRail(s,ui)}<div class="center-panel frame ${ui.busy?'busy':''}" id="current-room"><canvas class="scene-fx" aria-hidden="true"></canvas>${center(s,ui)}</div>${workbench?'':ui.view === 'talents' ? buildDetails(s,ui) : ui.view === 'game' && s.phase === 'loot' ? rewardRail(s) : equipmentRail(s)}${footer(s,ui)}</main><div class="bottomline"><span>VER ${RELEASE_STAMP}　 INFINITE ABYSS</span><span>${ui.saveError?esc(ui.saveError):'进度已自动保存'}</span><span>骰下的不是数字，而是另一个世界。</span></div></div>`;
+ }
+ export function settingsView(settings, hasSave, hasLegacy=false, rawOnly=false) {
+-  return `<div class="dialog-heading"><h2 id="dialog-title">旅途设置</h2>${button(icon('close'), 'close-dialog', 'icon-button', 'aria-label="关闭设置"')}</div><p class="settings-note">设置即时生效 · 保存在当前浏览器</p><div class="setting-row"><div><b>掷骰声音</b><p>简洁的骰声与奖励音。</p></div><button role="switch" aria-label="掷骰声音" aria-checked="${settings.sound}" data-action="sound" class="switch"><span></span></button></div><div class="setting-row"><div><b>特效强度</b><p>低特效减少翻滚与粒子，保留点数和结算。</p></div><select id="effects" aria-label="特效强度"><option value="full" ${settings.effects === 'full' ? 'selected' : ''}>标准</option><option value="low" ${settings.effects === 'low' ? 'selected' : ''}>低特效</option></select></div><div class="setting-row"><div><b>界面比例</b><p>按当前窗口同步缩放文字与布局。</p></div><select id="ui-scale" aria-label="界面比例">${[0.9, 1, 1.1].map(v => `<option value="${v}" ${settings.scale === v ? 'selected' : ''}>${Math.round(v * 100)}%</option>`).join('')}</select></div><div class="save-management"><h3>存档管理</h3>${rawOnly?'<p class="danger">当前存档无法安全读取。导出会保留原始字节，供备份或人工转换；不会改写浏览器记录。</p>':''}<p>进度自动保存在当前浏览器。导出 JSON 可备份或迁移；导入前会再次确认。</p><div>${button(rawOnly?'导出不可读取的原始存档':'导出存档', 'export', '', hasSave ? '' : 'disabled')}${button('导入存档', 'import', '')}${button('返回标题', 'home', '')}</div>${hasLegacy?`<div class="legacy-backup"><p>保留升级前的原始格式，可用于回退到旧版。</p>${button('导出升级前原始存档','export-legacy','')}</div>`:''}<section class="save-capacity" aria-labelledby="save-capacity-heading"><div class="save-capacity-header"><h4 id="save-capacity-heading">存档文件大小</h4>${button('检查容量','save-capacity','small',`aria-controls="save-capacity-result" ${hasSave&&!rawOnly?'':'disabled'}`)}</div><div id="save-capacity-result" class="save-capacity-result" role="status" aria-live="polite" aria-atomic="true"><p>${hasSave&&!rawOnly?'按需检查当前进度的文件大小和增长余量。':'读取到有效进度后可检查容量。'}</p></div></section><input type="file" id="save-file" accept="application/json,.json" hidden></div><div class="danger-zone"><span>重新开始会替换当前进度</span>${button('重新开始', 'new', 'danger quiet')}</div>`;
+-}
++  return `<div class="dialog-heading"><h2 id="dialog-title">旅途设置</h2>${button(icon('close'), 'close-dialog', 'icon-button', 'aria-label="关闭设置"')}</div><p class="settings-note">设置即时生效 · 保存在当前浏览器</p><div class="setting-row"><div><b>掷骰声音</b><p>简洁的骰声与奖励音。</p></div><button role="switch" aria-label="掷骰声音" aria-checked="${settings.sound}" data-action="sound" class="switch"><span></span></button></div><div class="setting-row"><div><b>特效强度</b><p>低特效减少翻滚与粒子，保留点数和结算。</p></div><select id="effects" aria-label="特效强度"><option value="full" ${settings.effects === 'full' ? 'selected' : ''}>标准</option><option value="low" ${settings.effects === 'low' ? 'selected' : ''}>低特效</option></select></div><div class="setting-row"><div><b>界面比例</b><p>按当前窗口同步缩放文字与布局。</p></div><select id="ui-scale" aria-label="界面比例">${[0.9, 1, 1.1].map(v => `<option value="${v}" ${settings.scale === v ? 'selected' : ''}>${Math.round(v * 100)}%</option>`).join('')}</select></div><div class="save-management"><h3>存档管理</h3>${rawOnly?'<p class="danger">当前存档无法安全读取。导出会保留原始字节，供备份或人工转换；不会改写浏览器记录。</p>':''}<p>进度自动保存在当前浏览器。导出 JSON 可备份或迁移；导入前会再次确认。</p><div>${button(rawOnly?'导出不可读取的原始存档':'导出存档', 'export', '', hasSave ? '' : 'disabled')}${button('导入存档', 'import', '')}${button('返回标题', 'home', '')}</div>${hasLegacy?`<div class="legacy-backup"><p>保留升级前的原始格式，可用于回退到旧版。</p>${button('导出升级前原始存档','export-legacy','')}</div>`:''}<section class="save-capacity" aria-labelledby="save-capacity-heading"><div class="save-capacity-header"><h4 id="save-capacity-heading">存档文件大小</h4>${button('检查容量','save-capacity','small',`aria-controls="save-capacity-result" ${hasSave&&!rawOnly?'':'disabled'}`)}</div><div id="save-capacity-result" class="save-capacity-result" role="status" aria-live="polite" aria-atomic="true"><p>${hasSave&&!rawOnly?'按需检查当前进度的文件大小和增长余量。':'读取到有效进度后可检查容量。'}</p></div></section><section id="save-import-result" class="save-import-result" tabindex="-1" aria-live="polite" aria-atomic="true" hidden></section><input type="file" id="save-file" accept="application/json,.json" aria-describedby="save-import-result" hidden></div><div class="danger-zone"><span>重新开始会替换当前进度</span>${button('重新开始', 'new', 'danger quiet')}</div>`;
++}

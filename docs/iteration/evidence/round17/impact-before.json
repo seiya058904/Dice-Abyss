@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-19T04:49:55.864Z",
+  "issue": "Newly granted nextLuck is labeled as active on the roll currently being revealed",
+  "scope": "Exact existing app.js impact stage input: visualState={...after,phase:combat}, ui.busy=true, ui.rolling=false. Constructed validator-accepted one-hit enemy; real original transition grants first-crit nextLuck.",
+  "before": {
+    "rng": 7,
+    "nextLuck": 0,
+    "luck": 0
+  },
+  "after": {
+    "phase": "chest",
+    "nextLuck": 15,
+    "lastRollLuck": 0,
+    "critical": true,
+    "killed": true
+  },
+  "newMarker": "<p data-ready-boon=\"nextLuck\"><svg class=\"icon \" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"4\" y=\"4\" width=\"16\" height=\"16\" rx=\"2\"/><path d=\"M8 8h.01M16 8h.01M12 12h.01M8 16h.01M16 16h.01\" stroke-width=\"3\"/></svg><span>启明星余辉</span><strong>原始幸运 +15</strong><small>本掷生效</small></p>",
+  "suggested": "Pass ui to combatBoonView; hide or label prospective-next-roll entries during ui.busy && !ui.rolling impact reveal. Prefer 下一掷生效 for idle-ready state, 本掷生效 only while rolling before snapshot is shown."
+}

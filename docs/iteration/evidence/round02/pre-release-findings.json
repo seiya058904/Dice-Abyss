@@ -1,0 +1,155 @@
+{
+  "round": 2,
+  "method": "Compact record of actual failures and fixes; source-log hashes identify temporary originals, not dependencies needed to run the game. Final gates retained separately.",
+  "findings": [
+    {
+      "id": "F04",
+      "status": "FIXED_VERIFIED",
+      "kind": "product defect in development",
+      "finding": "Low-effects global 50ms transition interpolated floating tooltip left/top between mousedown and mouseup; some clicks landed on tooltip/BODY.",
+      "change": "Explicit no-transition for tooltip/menu; pointer-down suppresses focus tooltip; bounded floating placement.",
+      "evidence": "fusion-browser.json; fusion-browser-range.json; replay scripts/qa-fusion-browser.mjs",
+      "sourceLogs": [
+        {
+          "source": "controller-click-probe-before.json",
+          "bytes": 150768,
+          "sha256": "c967129811423b9b67168bcbc11515fdbd8e7b513c42a5616158b41851d98df1"
+        },
+        {
+          "source": "controller-click-probe.json",
+          "bytes": 150768,
+          "sha256": "c967129811423b9b67168bcbc11515fdbd8e7b513c42a5616158b41851d98df1"
+        }
+      ]
+    },
+    {
+      "id": "F05",
+      "status": "FIXED_VERIFIED",
+      "kind": "product defect in development",
+      "finding": "Shift range shrank incorrectly; clear followed by Shift could revive earlier outside-range selections.",
+      "change": "Stable anchor/base/direction; clear/undo/target-remove reset selection range; focus updates roving tabindex.",
+      "evidence": "fusion-browser-range.json: keyboard group 11 checks, plus final frozen replay",
+      "sourceLogs": [
+        {
+          "source": "controller-review-probe-before.json",
+          "bytes": 3056,
+          "sha256": "6819525d287272d6ff840b18155cebc5c7900abdde3cff58e3060a8c681d7291"
+        },
+        {
+          "source": "controller-review-probe.json",
+          "bytes": 3887,
+          "sha256": "571d308738935653030b6ab22789515de4b7f76acf9851ef7bb3a23949b09513"
+        }
+      ]
+    },
+    {
+      "id": "F06",
+      "status": "FIXED_VERIFIED",
+      "kind": "product layout defect in development",
+      "finding": "Initial 1440 pool showed only 18 complete cards; narrow footer initially omitted six faces.",
+      "change": "Recovered vertical space; single responsive fixed dock contains six outcomes and XP; 3 relics show 18 exact levels.",
+      "evidence": "fusion-browser.json + PAGE_REVIEW.md; same visual markup after controller-only optimization"
+    },
+    {
+      "id": "TEST-UI-CONTRACT",
+      "status": "CORRECTED_AND_RETESTED",
+      "kind": "obsolete test expectations after explicitly requested UI replacement",
+      "finding": "First full run: 241/246 pass, five old double-list/disabled-budget contracts failed.",
+      "change": "Keep all cases; migrate to one 24-card pool, exact 18 levels, protection count and enabled recovery semantics.",
+      "sourceLogs": [
+        {
+          "source": "work-unit-first.log",
+          "bytes": 30114,
+          "sha256": "ebe15f05af31fc92d122a6d52ebbee66e6d932747cef00e01aac1127973da7a1"
+        }
+      ]
+    },
+    {
+      "id": "TEST-MIDRUN-VERSION",
+      "status": "CORRECTED_AND_RETESTED",
+      "kind": "test execution timing",
+      "finding": "Second full run: 245/246 pass. Cached package 5.2.0 and later-read index 5.3.0 differed because release files changed during run.",
+      "change": "Freeze source/version before final whole-suite run; independent launcher 5/5 recheck already passed.",
+      "sourceLogs": [
+        {
+          "source": "work-unit-second.log",
+          "bytes": 26350,
+          "sha256": "f9fdd21d474dddca9dc9eedc30ad95cd8263bdbcb98a6e7f82c5db4e27ec8653"
+        },
+        {
+          "source": "work-launcher-release-recheck.log",
+          "bytes": 600,
+          "sha256": "a566d80f3fc6fd53fd4742066a85efe1c3e06b4d833445e36ffa40d9b7c374e6"
+        }
+      ],
+      "finalEvidence": "unit-summary.json"
+    },
+    {
+      "id": "TEST-10000-FIXTURE",
+      "status": "CORRECTED_AND_RETESTED",
+      "kind": "browser fixture assumption",
+      "finding": "Search i1 matched other IDs; later 500000-gold fixture legitimately truncated bulk to 7575 instead of expected9997.",
+      "change": "Explicit unique latest ID, validated 10000-item save, sufficient 100000000 gold. No business-rule relaxation.",
+      "sourceLogs": [
+        {
+          "source": "browser-10000/browser-report.json",
+          "bytes": 1017,
+          "sha256": "d89a344e51dfaf441845dc21d2104aabc9db6f1c78e57cc73f2a9f32fc1e8994"
+        },
+        {
+          "source": "browser-second/browser-report.json",
+          "bytes": 5521,
+          "sha256": "3d466941f7cdc10397e63f4017b97e72f3d4567d0f28687db606a98716c8ba4c"
+        }
+      ],
+      "finalEvidence": "fusion-browser.json"
+    },
+    {
+      "id": "TEST-LOCK-SNAPSHOT",
+      "status": "CORRECTED_AND_RETESTED",
+      "kind": "async test read before save",
+      "finding": "Immediate post-click read preceded Web Locks/save completion.",
+      "change": "Wait on actual revision/locked state, no fixed-delay assertion substitution.",
+      "finalEvidence": "fusion-browser.json"
+    },
+    {
+      "id": "TEST-CORE-CROSSTAB",
+      "status": "CORRECTED_AND_RETESTED",
+      "kind": "overly narrow inherited toast expectation",
+      "finding": "Expected only another-window text, but primary-before-mirror storage event produced inherited mirror-sync warning.",
+      "change": "Accept exactly the two legitimate messages; still assert equal saves, stale dialog close and no consumption.",
+      "finalEvidence": "core-browser.json",
+      "sourceLogs": [
+        {
+          "source": "core-browser/report.json",
+          "bytes": 1656,
+          "sha256": "b96889a1e103fa11ba93382c86bd2d28994fd60826af0db4c27a38c04848b295"
+        }
+      ]
+    },
+    {
+      "id": "PERF-BENCHMARK-INITIAL-STATE",
+      "status": "CORRECTED_AND_RETESTED",
+      "kind": "measurement setup",
+      "finding": "Optional tooltip left over after tab switching covered the next material click during warmup.",
+      "change": "Native Escape dismisses optional details before arming each timing on both versions; action/setup time excluded. No force-click or production change.",
+      "sourceLogs": [
+        {
+          "source": "browser-performance/fusion-browser-performance.json",
+          "bytes": 3425,
+          "sha256": "5b42eb8e75254dfa70cee0e56e5fdd3aadb6b1e057274be830d5283b4f3a9409"
+        }
+      ],
+      "finalEvidence": "fusion-browser-performance.json"
+    },
+    {
+      "id": "PERF-FULL-SELECTION",
+      "status": "OPEN_RISK_AFTER_OPTIMIZATION",
+      "kind": "measured UI CPU/latency cost",
+      "finding": "Initial16-sample all-selected p50: old56.7/new92.1ms.",
+      "change": "Remove unused controller preview and five duplicate normalization sites; full preview once per click; add no-mutation/non-stale equivalence test.",
+      "finalEvidence": "fusion-browser-performance.json: final paired24 all-selected old48.2/new56.3ms p50, old61.6/new290.3ms p95. No global speedup claim.",
+      "priorEvidence": "fusion-browser-performance-before-optimization.json"
+    }
+  ]
+}

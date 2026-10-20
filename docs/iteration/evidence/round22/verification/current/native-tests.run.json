@@ -1,0 +1,23 @@
+{
+  "job": "native-tests",
+  "command": [
+    "python",
+    "scripts/verify-test-cases.py",
+    "--output",
+    "/workspace/scratch/a3dd46c18162/qa/current-gates/native",
+    "--workers",
+    "4"
+  ],
+  "cwd": "/workspace/scratch/a3dd46c18162/work/Dice-Abyss",
+  "startedAt": "2026-10-19T14:17:18.875401+00:00",
+  "finishedAt": "2026-10-19T14:18:57.224625+00:00",
+  "durationSeconds": 98.3492,
+  "exitCode": 0,
+  "stdout": "native-tests.stdout",
+  "stdoutBytes": 852,
+  "stdoutSha256": "d5d34770afea2c0052978026bc095f0cc5981f2e36bbcfd2dfab26d5b83cf330",
+  "stderr": "native-tests.stderr",
+  "stderrBytes": 0,
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "timingScope": "Correctness workload; may overlap independent correctness jobs; not a speed comparison."
+}

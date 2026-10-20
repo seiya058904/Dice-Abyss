@@ -1,0 +1,163 @@
+{
+  "audit": "independent-queued-deletion-order-round13",
+  "environment": {
+    "node": "v24.19.0"
+  },
+  "method": "The real app module executes in the existing VM harness. A donor task finishes clear/remove plus both replacement writes before the victim receives deletion then write notifications. Identical restored progress is a control; differing full state with identical run/revision is a separate case. Rendering/focus/effects are stubbed; native browser event ordering is independently covered by root.",
+  "results": {
+    "baseline": {
+      "appSha256": "ac4f138fc46d19efac8f782ed97c5a8d873903cc5c43a067ccac94fe2267f515",
+      "cases": [
+        {
+          "kind": "clear-new-run",
+          "afterDeletion": {
+            "oldMemoryPreserved": true,
+            "protectedMode": false
+          },
+          "oldMemoryPreserved": false,
+          "completeExportPreserved": false,
+          "protectedMode": false,
+          "newDiskUntouched": true,
+          "appWrites": 0,
+          "presentationPreserved": false,
+          "presentationCancelled": true
+        },
+        {
+          "kind": "remove-new-run",
+          "afterDeletion": {
+            "oldMemoryPreserved": false,
+            "protectedMode": false
+          },
+          "oldMemoryPreserved": false,
+          "completeExportPreserved": false,
+          "protectedMode": false,
+          "newDiskUntouched": true,
+          "appWrites": 0,
+          "presentationPreserved": false,
+          "presentationCancelled": true
+        },
+        {
+          "kind": "remove-same-id-revision-unknown-branch",
+          "afterDeletion": {
+            "oldMemoryPreserved": false,
+            "protectedMode": false
+          },
+          "oldMemoryPreserved": false,
+          "completeExportPreserved": false,
+          "protectedMode": false,
+          "newDiskUntouched": true,
+          "appWrites": 0,
+          "presentationPreserved": false,
+          "presentationCancelled": true
+        },
+        {
+          "kind": "identical-clear-sequence",
+          "afterDeletion": {
+            "oldMemoryPreserved": true,
+            "protectedMode": false
+          },
+          "oldMemoryPreserved": false,
+          "completeExportPreserved": true,
+          "protectedMode": false,
+          "newDiskUntouched": true,
+          "appWrites": 0,
+          "presentationPreserved": false,
+          "presentationCancelled": true
+        },
+        {
+          "kind": "identical-remove-sequence",
+          "afterDeletion": {
+            "oldMemoryPreserved": false,
+            "protectedMode": false
+          },
+          "oldMemoryPreserved": false,
+          "completeExportPreserved": true,
+          "protectedMode": false,
+          "newDiskUntouched": true,
+          "appWrites": 0,
+          "presentationPreserved": false,
+          "presentationCancelled": true
+        }
+      ]
+    },
+    "current": {
+      "appSha256": "6d965d35fb499b23948e9f2d4256616d05298dce7468c2bd350c4180562dad08",
+      "cases": [
+        {
+          "kind": "clear-new-run",
+          "afterDeletion": {
+            "oldMemoryPreserved": true,
+            "protectedMode": true
+          },
+          "oldMemoryPreserved": true,
+          "completeExportPreserved": true,
+          "protectedMode": true,
+          "newDiskUntouched": true,
+          "appWrites": 0,
+          "presentationPreserved": false,
+          "presentationCancelled": true
+        },
+        {
+          "kind": "remove-new-run",
+          "afterDeletion": {
+            "oldMemoryPreserved": true,
+            "protectedMode": true
+          },
+          "oldMemoryPreserved": true,
+          "completeExportPreserved": true,
+          "protectedMode": true,
+          "newDiskUntouched": true,
+          "appWrites": 0,
+          "presentationPreserved": false,
+          "presentationCancelled": true
+        },
+        {
+          "kind": "remove-same-id-revision-unknown-branch",
+          "afterDeletion": {
+            "oldMemoryPreserved": true,
+            "protectedMode": true
+          },
+          "oldMemoryPreserved": true,
+          "completeExportPreserved": true,
+          "protectedMode": true,
+          "newDiskUntouched": true,
+          "appWrites": 0,
+          "presentationPreserved": false,
+          "presentationCancelled": true
+        },
+        {
+          "kind": "identical-clear-sequence",
+          "afterDeletion": {
+            "oldMemoryPreserved": true,
+            "protectedMode": false
+          },
+          "oldMemoryPreserved": true,
+          "completeExportPreserved": true,
+          "protectedMode": false,
+          "newDiskUntouched": true,
+          "appWrites": 0,
+          "presentationPreserved": true,
+          "presentationCancelled": false
+        },
+        {
+          "kind": "identical-remove-sequence",
+          "afterDeletion": {
+            "oldMemoryPreserved": true,
+            "protectedMode": false
+          },
+          "oldMemoryPreserved": true,
+          "completeExportPreserved": true,
+          "protectedMode": false,
+          "newDiskUntouched": true,
+          "appWrites": 0,
+          "presentationPreserved": true,
+          "presentationCancelled": false
+        }
+      ]
+    }
+  },
+  "status": "CURRENT_PASS_5_SCENARIOS",
+  "limits": [
+    "No browser timing or native focus conclusion is inferred. Baseline observations are retained as observations, not asserted as failures to run the script. New disk strings remain untouched in every observed version and scenario."
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "at": "2026-10-19T12:09:54.887232+00:00",
+  "kind": "Preliminary validation-cost comparison only",
+  "candidates": [
+    "baseline",
+    "set-reuse",
+    "inventory-index"
+  ],
+  "fixtures": {
+    "seed": 27017,
+    "items": [
+      32,
+      1000,
+      10000
+    ],
+    "equippedPositions": [
+      "first",
+      "last"
+    ]
+  },
+  "order": "rotating ABC / BCA / CAB",
+  "warmupTriples": 6,
+  "formalTriples": 30,
+  "unit": "performance.now() around validateSave only",
+  "concurrentLoad": "Root baseline deep replay running; this is exploratory, not formal performance acceptance",
+  "full-save": "not timed in this preliminary run"
+}

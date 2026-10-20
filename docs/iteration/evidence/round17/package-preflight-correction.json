@@ -1,0 +1,9 @@
+{
+  "recordedAt": "2026-10-19T05:29:21.591668+00:00",
+  "stage": "Pre-build source-identity validation; before manifest rewrite or ZIP creation",
+  "error": "TypeError: object of type int has no len()",
+  "cause": "Local packaging one-shot used snapshot.files (numeric count262) as if it were snapshot.rows (the file array).",
+  "correction": "Read the recorded rows array explicitly. No product source, test expectation, evidence measurement or archive bytes were changed by the failed attempt.",
+  "zipExistedAfterFailure": false,
+  "status": "CORRECTED_BUILD_SCRIPT_INPUT_SHAPE"
+}

@@ -1,0 +1,131 @@
+{
+  "resolution": "round19-documentation-consistency-corrections",
+  "completedAt": "2026-10-19T09:29:10.433681+00:00",
+  "status": "RESOLVED_DOCUMENTATION_ONLY",
+  "originalReview": {
+    "retainedPath": "docs/iteration/evidence/round19/independent/document-consistency-review.json",
+    "sha256": "d5250f1484981d2311e961eb397774dc113988a86222680fccbdccb759552d47",
+    "bytes": 18404,
+    "copiedByteIdentical": true,
+    "originalQaReviewUnchanged": true
+  },
+  "completedCorrections": [
+    {
+      "id": "DOC-HTTP-SCOPE",
+      "completedBy": "root before this bounded edit",
+      "paths": [
+        "docs/iteration/LATEST_REPORT.md"
+      ],
+      "exactWording": "最终新UI8个本地源码前后身份一致，3个实际服务关键模块hash匹配"
+    },
+    {
+      "id": "DOC-INVENTORY-TIMING-SCOPE",
+      "paths": [
+        "docs/iteration/PERFORMANCE.md",
+        "docs/iteration/LATEST_REPORT.md",
+        "docs/iteration/NEXT_ROUND.md",
+        "docs/iteration/STATE.json",
+        "docs/iteration/INDEPENDENT_REVIEW.md"
+      ],
+      "exactBoundary": "The 24 formal samples measure default inventory opening from the main navigation with no defense filter selected. Submitting regen/barrier/reduction against 10000 items has correctness coverage but no formal latency measurement.",
+      "stateFieldsAdded": [
+        "verification.performance.inventoryMeasuredAction",
+        "verification.performance.defenseFilterSubmissionTiming"
+      ]
+    },
+    {
+      "id": "DOC-EFFECT-MARKER-SCOPE",
+      "paths": [
+        "docs/iteration/PERFORMANCE.md",
+        "docs/iteration/LATEST_REPORT.md",
+        "docs/iteration/NEXT_ROUND.md",
+        "docs/iteration/STATE.json",
+        "docs/iteration/BUG_LEDGER.md",
+        "docs/iteration/INDEPENDENT_REVIEW.md"
+      ],
+      "exactBoundary": "In full mode, effectObserved requires at least one rAF sample of combat or the relevant loot-<rarity> marker. It does not verify every animation stage or continuous complete playback. Low mode does not require those markers.",
+      "tableHeader": "预期效果标记 输入/当前",
+      "tableValues": [
+        "观察到 / 观察到",
+        "观察到 / 未观察到",
+        "不要求该标记"
+      ],
+      "stateKeysRenamedWithoutNumericChange": {
+        "missingFullWindows": "fullWindowsWithoutExpectedEffectMarker",
+        "missingByVersion": "unobservedExpectedEffectMarkerByVersion"
+      },
+      "stateFieldsAdded": [
+        "verification.performance.effectObservationDefinition",
+        "verification.performance.lowEffectObservationMeaning"
+      ],
+      "negativeResultsPreserved": "Current 4K Boss/full and eternal/full did not observe the expected marker; baseline had zero such misses. All timings and sample counts remain unchanged."
+    },
+    {
+      "id": "DOC-NATIVE-REVIEW-SENTENCE",
+      "authorization": "Explicit parent follow-up approved this documentation accuracy correction.",
+      "paths": [
+        "docs/iteration/INDEPENDENT_REVIEW.md"
+      ],
+      "before": "没有额外重跑套件，却声称“又测了745次”。",
+      "after": "未额外重跑套件，也不声称‘又测了745次’。"
+    }
+  ],
+  "modifiedDocuments": [
+    {
+      "path": "docs/iteration/PERFORMANCE.md",
+      "beforeSha256": "6e1e71709a7c67e9a2682b99de6f7372bcb0af0d59501799e5afc2d5908dbb8a",
+      "afterSha256": "9a2df25e5c7a529fd457e1aad16fc541b09212e7e2e5e5aec7834031b3a5561b",
+      "beforeBytes": 5861,
+      "afterBytes": 6358
+    },
+    {
+      "path": "docs/iteration/LATEST_REPORT.md",
+      "beforeSha256": "5e97eeb774f5a165a8e4b53ad22b3adae6bdca9831d9966d6d21cc5859d8ad63",
+      "afterSha256": "951cecb8c68274d110dc358391c9436a489993b2875339969b12bb9bea11cbe9",
+      "beforeBytes": 8683,
+      "afterBytes": 8901
+    },
+    {
+      "path": "docs/iteration/NEXT_ROUND.md",
+      "beforeSha256": "99673a2af5798f6d874b7e5eb8555545e7c4741c73fddcd00f521904b3c358ea",
+      "afterSha256": "b8efd3be59704eaa80446f67ce4f7cc97e2ffc497dc9c4066a067482b8758bc5",
+      "beforeBytes": 4355,
+      "afterBytes": 4565
+    },
+    {
+      "path": "docs/iteration/STATE.json",
+      "beforeSha256": "67b581545e228568f7934596e8d35e515fd5c9d3ce7119ac52f86983f27314ac",
+      "afterSha256": "455360834f6735e4484c9f65cbf12eac3f97ad9f17f01a24f76255c527d732cf",
+      "beforeBytes": 9894,
+      "afterBytes": 10598
+    },
+    {
+      "path": "docs/iteration/BUG_LEDGER.md",
+      "beforeSha256": "b4a90c97e06ea9fc892bdf5775e0c138fb9463d7d06e12fcfeccdf29fdb72cef",
+      "afterSha256": "5ba446c34c40f51166684a464153df1266cccf8007cd4b84007be7fc78664633",
+      "beforeBytes": 3882,
+      "afterBytes": 3948
+    },
+    {
+      "path": "docs/iteration/INDEPENDENT_REVIEW.md",
+      "beforeSha256": "2d3105d6aa4393573dd7f056dc4f07ec75c68d9d14a07d502e58043c374ff601",
+      "afterSha256": "7b41a9b4be513a768381cdb7bc11e3bcc5f5e522d07cc896fc87567ade53c16a",
+      "beforeBytes": 5339,
+      "afterBytes": 5674
+    }
+  ],
+  "verification": {
+    "stateJsonParses": true,
+    "allOriginalPerformanceValuesPreservedAfterKeyRename": true,
+    "allPerformanceTableNumbersPreservedInOrder": true,
+    "oldOverbroadEffectTermsRemovedFromEditedCurrentDocs": true,
+    "frozenSourceScriptTestFiles": 269,
+    "allFrozenFilesMatch": true,
+    "freezeSha256": "972a93e88eaf02080321f6739f81ffd86c7ea0733796912846240e32db9aafca",
+    "sourceScriptsTestsEdited": false,
+    "browserLaunched": false,
+    "testsOrPerformanceRerun": false
+  },
+  "scope": "Only the six listed current documentation files, the byte-identical retained review copy and this receipt were written inside the project. Evidence README and PACKAGE_REVIEW remain parent-owned.",
+  "handoff": "No further edits by this agent after this receipt; ready for packaging freeze."
+}

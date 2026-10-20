@@ -1,0 +1,40 @@
+TAP version 13
+# Subtest: result reorder and removal retain identical full item cards and the surrounding page
+ok 1 - result reorder and removal retain identical full item cards and the surrounding page
+  ---
+  duration_ms: 5.059972
+  type: 'test'
+  ...
+# Subtest: changed full card markup replaces the card instead of preserving stale text or controls
+ok 2 - changed full card markup replaces the card instead of preserving stale text or controls
+  ---
+  duration_ms: 0.580519
+  type: 'test'
+  ...
+# Subtest: dirty live input and select values are corrected even when their markup already matches
+ok 3 - dirty live input and select values are corrected even when their markup already matches
+  ---
+  duration_ms: 2.352658
+  type: 'test'
+  ...
+# Subtest: empty results remove all old card actions and later results replace the empty state completely
+ok 4 - empty results remove all old card actions and later results replace the empty state completely
+  ---
+  duration_ms: 0.770099
+  type: 'test'
+  ...
+# Subtest: unexpected inventory structure returns to full rendering before changing current nodes
+ok 5 - unexpected inventory structure returns to full rendering before changing current nodes
+  ---
+  duration_ms: 0.71018
+  type: 'test'
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 5
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 22.710584

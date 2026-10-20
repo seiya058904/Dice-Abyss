@@ -1,0 +1,220 @@
+TAP version 13
+# Subtest: experience limits match the existing validated character limits, not level 100 or 10000
+ok 1 - experience limits match the existing validated character limits, not level 100 or 10000
+  ---
+  duration_ms: 15.455674
+  type: 'test'
+  ...
+# Subtest: read-only XP quotes cover no reward, full, exact-fit, partial, zero and safe maximum rewards
+ok 2 - read-only XP quotes cover no reward, full, exact-fit, partial, zero and safe maximum rewards
+  ---
+  duration_ms: 24.155001
+  type: 'test'
+  ...
+# Subtest: XP quotes reject malformed values without coercion, clamping the input or changing any state
+ok 3 - XP quotes reject malformed values without coercion, clamping the input or changing any state
+  ---
+  duration_ms: 0.30432
+  type: 'test'
+  ...
+# Subtest: memory_archive full XP admission preserves the charge or item cost and validates after settlement
+ok 4 - memory_archive full XP admission preserves the charge or item cost and validates after settlement
+  ---
+  duration_ms: 10.939446
+  type: 'test'
+  ...
+# Subtest: memory_archive partial XP admission preserves the charge or item cost and validates after settlement
+ok 5 - memory_archive partial XP admission preserves the charge or item cost and validates after settlement
+  ---
+  duration_ms: 2.364342
+  type: 'test'
+  ...
+# Subtest: memory_archive zero XP admission preserves the charge or item cost and validates after settlement
+ok 6 - memory_archive zero XP admission preserves the charge or item cost and validates after settlement
+  ---
+  duration_ms: 2.813965
+  type: 'test'
+  ...
+# Subtest: starlibrary full XP admission preserves the charge or item cost and validates after settlement
+ok 7 - starlibrary full XP admission preserves the charge or item cost and validates after settlement
+  ---
+  duration_ms: 2.212187
+  type: 'test'
+  ...
+# Subtest: starlibrary partial XP admission preserves the charge or item cost and validates after settlement
+ok 8 - starlibrary partial XP admission preserves the charge or item cost and validates after settlement
+  ---
+  duration_ms: 1.903931
+  type: 'test'
+  ...
+# Subtest: starlibrary zero XP admission preserves the charge or item cost and validates after settlement
+ok 9 - starlibrary zero XP admission preserves the charge or item cost and validates after settlement
+  ---
+  duration_ms: 1.288683
+  type: 'test'
+  ...
+# Subtest: exchange full XP admission preserves the charge or item cost and validates after settlement
+ok 10 - exchange full XP admission preserves the charge or item cost and validates after settlement
+  ---
+  duration_ms: 2.346525
+  type: 'test'
+  ...
+# Subtest: exchange partial XP admission preserves the charge or item cost and validates after settlement
+ok 11 - exchange partial XP admission preserves the charge or item cost and validates after settlement
+  ---
+  duration_ms: 2.361708
+  type: 'test'
+  ...
+# Subtest: exchange zero XP admission preserves the charge or item cost and validates after settlement
+ok 12 - exchange zero XP admission preserves the charge or item cost and validates after settlement
+  ---
+  duration_ms: 2.012663
+  type: 'test'
+  ...
+# Subtest: combat full XP admission preserves the charge or item cost and validates after settlement
+ok 13 - combat full XP admission preserves the charge or item cost and validates after settlement
+  ---
+  duration_ms: 4.221865
+  type: 'test'
+  ...
+# Subtest: combat partial XP admission preserves the charge or item cost and validates after settlement
+ok 14 - combat partial XP admission preserves the charge or item cost and validates after settlement
+  ---
+  duration_ms: 3.359892
+  type: 'test'
+  ...
+# Subtest: combat zero XP admission preserves the charge or item cost and validates after settlement
+ok 15 - combat zero XP admission preserves the charge or item cost and validates after settlement
+  ---
+  duration_ms: 3.79892
+  type: 'test'
+  ...
+# Subtest: memory_archive at level 100 reports admitted XP before level conversion, including large stored balances
+ok 16 - memory_archive at level 100 reports admitted XP before level conversion, including large stored balances
+  ---
+  duration_ms: 270.020855
+  type: 'test'
+  ...
+# Subtest: memory_archive at level 10000 reports admitted XP before level conversion, including large stored balances
+ok 17 - memory_archive at level 10000 reports admitted XP before level conversion, including large stored balances
+  ---
+  duration_ms: 48.395288
+  type: 'test'
+  ...
+# Subtest: starlibrary at level 100 reports admitted XP before level conversion, including large stored balances
+ok 18 - starlibrary at level 100 reports admitted XP before level conversion, including large stored balances
+  ---
+  duration_ms: 155.990671
+  type: 'test'
+  ...
+# Subtest: starlibrary at level 10000 reports admitted XP before level conversion, including large stored balances
+ok 19 - starlibrary at level 10000 reports admitted XP before level conversion, including large stored balances
+  ---
+  duration_ms: 34.891146
+  type: 'test'
+  ...
+# Subtest: exchange at level 100 reports admitted XP before level conversion, including large stored balances
+ok 20 - exchange at level 100 reports admitted XP before level conversion, including large stored balances
+  ---
+  duration_ms: 152.447538
+  type: 'test'
+  ...
+# Subtest: exchange at level 10000 reports admitted XP before level conversion, including large stored balances
+ok 21 - exchange at level 10000 reports admitted XP before level conversion, including large stored balances
+  ---
+  duration_ms: 34.891772
+  type: 'test'
+  ...
+# Subtest: combat at level 100 reports admitted XP before level conversion, including large stored balances
+ok 22 - combat at level 100 reports admitted XP before level conversion, including large stored balances
+  ---
+  duration_ms: 170.504789
+  type: 'test'
+  ...
+# Subtest: combat at level 10000 reports admitted XP before level conversion, including large stored balances
+ok 23 - combat at level 10000 reports admitted XP before level conversion, including large stored balances
+  ---
+  duration_ms: 37.531705
+  type: 'test'
+  ...
+# Subtest: combat, trial, elite and boss use their existing distinct XP reward formulas at the cap
+ok 24 - combat, trial, elite and boss use their existing distinct XP reward formulas at the cap
+  ---
+  duration_ms: 4.201264
+  type: 'test'
+  ...
+# Subtest: the final level-up reaches 1000000 once and retains accepted XP without granting further levels
+ok 25 - the final level-up reaches 1000000 once and retains accepted XP without granting further levels
+  ---
+  duration_ms: 8.296872
+  type: 'test'
+  ...
+# Subtest: memory_archive upgrade logs credit exactly 0, 1 or 2 talent points when point capacity is limited
+ok 26 - memory_archive upgrade logs credit exactly 0, 1 or 2 talent points when point capacity is limited
+  ---
+  duration_ms: 4.847789
+  type: 'test'
+  ...
+# Subtest: starlibrary upgrade logs credit exactly 0, 1 or 2 talent points when point capacity is limited
+ok 27 - starlibrary upgrade logs credit exactly 0, 1 or 2 talent points when point capacity is limited
+  ---
+  duration_ms: 1.371135
+  type: 'test'
+  ...
+# Subtest: exchange upgrade logs credit exactly 0, 1 or 2 talent points when point capacity is limited
+ok 28 - exchange upgrade logs credit exactly 0, 1 or 2 talent points when point capacity is limited
+  ---
+  duration_ms: 1.383203
+  type: 'test'
+  ...
+# Subtest: combat upgrade logs credit exactly 0, 1 or 2 talent points when point capacity is limited
+ok 29 - combat upgrade logs credit exactly 0, 1 or 2 talent points when point capacity is limited
+  ---
+  duration_ms: 2.642202
+  type: 'test'
+  ...
+# Subtest: memory_archive keeps confirmation, funds, leave, saved prices and one-time settlement rules
+ok 30 - memory_archive keeps confirmation, funds, leave, saved prices and one-time settlement rules
+  ---
+  duration_ms: 3.013971
+  type: 'test'
+  ...
+# Subtest: starlibrary keeps confirmation, funds, leave, saved prices and one-time settlement rules
+ok 31 - starlibrary keeps confirmation, funds, leave, saved prices and one-time settlement rules
+  ---
+  duration_ms: 1.059435
+  type: 'test'
+  ...
+# Subtest: exchange capacity metadata cannot bypass protected equipment or a missing confirmation
+ok 32 - exchange capacity metadata cannot bypass protected equipment or a missing confirmation
+  ---
+  duration_ms: 1.468087
+  type: 'test'
+  ...
+# Subtest: XP metadata is recreated read-only and preserves unrelated known-shape and unknown saved fields
+ok 33 - XP metadata is recreated read-only and preserves unrelated known-shape and unknown saved fields
+  ---
+  duration_ms: 400.366535
+  type: 'test'
+  ...
+# Subtest: the separate starlibrary insight choice keeps its original reward, shared cap and XP balance
+ok 34 - the separate starlibrary insight choice keeps its original reward, shared cap and XP balance
+  ---
+  duration_ms: 0.959758
+  type: 'test'
+  ...
+# Subtest: starlibrary discloses a full talent-point balance before study without disabling valid XP purchase
+ok 35 - starlibrary discloses a full talent-point balance before study without disabling valid XP purchase
+  ---
+  duration_ms: 1.013667
+  type: 'test'
+  ...
+1..35
+# tests 35
+# suites 0
+# pass 35
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1444.075641

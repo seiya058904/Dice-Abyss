@@ -1,0 +1,238 @@
+{
+  "kind": "LOSSLESS_ARCHIVE_RESTORATION_CHECK_NOT_GAMEPLAY",
+  "scriptSha256": "b51c0919bd9c893c253ff532ebe9fbf891246a1abbf60f95a73012b8dcd7e6cd",
+  "checks": [
+    {
+      "case": "nonempty output",
+      "exitCode": 1,
+      "preserved": true,
+      "stderr": "Refused: Output must be absent or an empty directory; overwriting is forbidden"
+    },
+    {
+      "case": "symlink output",
+      "exitCode": 1,
+      "preserved": true,
+      "stderr": "Refused: Symbolic links are not accepted: /tmp/dice-abyss-round23-policy-9bfnbbk0/linked"
+    },
+    {
+      "case": "inside project output",
+      "exitCode": 1,
+      "noCreation": true,
+      "stderr": "Refused: Restoration must be outside the project and evidence archive"
+    }
+  ],
+  "restoredFiles": [
+    {
+      "file": "baseline/execution.run.json",
+      "bytes": 2580,
+      "sha256": "2c29ec4d3c0b62c6d287ba7decca08f6974256624e0a5e949c8146c7d92b07ed"
+    },
+    {
+      "file": "baseline/execution.stderr.log.gz",
+      "bytes": 20,
+      "sha256": "f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec"
+    },
+    {
+      "file": "baseline/execution.stdout.log.gz",
+      "bytes": 805,
+      "sha256": "c29fad039cbe213d3dabdbb4c78c989a19f76245142cd6ccc45feb0300570ac0"
+    },
+    {
+      "file": "baseline/report.json",
+      "bytes": 9717680,
+      "sha256": "49518308d03f32f9b646ca208b4d36c00d4cee78fc6b78dd937b24c1306e33c4"
+    },
+    {
+      "file": "baseline/report.json.partial.json",
+      "bytes": 9712730,
+      "sha256": "1a0763f1c31d844653c1a9c28e78733567a1472004ccbfdbddc472008fb5f1bd"
+    },
+    {
+      "file": "baseline/seed-15838-first-30-combat.save.json",
+      "bytes": 33471,
+      "sha256": "81be44d8215acdb5aca84d2c8f9b8ea283afcdcf1c3511e27035b7c4f19c3a6f"
+    },
+    {
+      "file": "baseline/seed-23757-first-30-combat.save.json",
+      "bytes": 33640,
+      "sha256": "87584a83acb0dbbcb44598b6276b847dad4f2a53c7bc5b2a59db31cadea7a576"
+    },
+    {
+      "file": "baseline/seed-23757-first-death.save.json",
+      "bytes": 35123,
+      "sha256": "419fb7b1d7d037fd1cb0769217258ae267aaeab5e560d76df12bd9f2ef98b164"
+    },
+    {
+      "file": "baseline/seed-23757-first-swap-after.save.json",
+      "bytes": 35094,
+      "sha256": "241c0a727cc828b90698553cee364a36d39dc6c6ebd0e707d88b05f3ba42899e"
+    },
+    {
+      "file": "baseline/seed-23757-first-swap-before.save.json",
+      "bytes": 35123,
+      "sha256": "419fb7b1d7d037fd1cb0769217258ae267aaeab5e560d76df12bd9f2ef98b164"
+    },
+    {
+      "file": "baseline/seed-31676-first-30-combat.save.json",
+      "bytes": 32466,
+      "sha256": "144c33eb43f84f82dfb36826fb63944194a9116a0688d6dbf22399cb8436c1b2"
+    },
+    {
+      "file": "baseline/seed-31676-first-death.save.json",
+      "bytes": 83702,
+      "sha256": "ef71af188b9d9492712a8c0ed21df6a046c295e1a1f6807206336d5e303521a0"
+    },
+    {
+      "file": "baseline/seed-31676-first-swap-after.save.json",
+      "bytes": 83672,
+      "sha256": "a8bdca47eb08c9f7736066c59d3448d97715243f2a6c7d6d96350ca2f4c6d80e"
+    },
+    {
+      "file": "baseline/seed-31676-first-swap-before.save.json",
+      "bytes": 83702,
+      "sha256": "ef71af188b9d9492712a8c0ed21df6a046c295e1a1f6807206336d5e303521a0"
+    },
+    {
+      "file": "baseline/seed-31676-incomplete-terminal.save.json",
+      "bytes": 88473,
+      "sha256": "7cfc3be44e8aae28657db82a77b19016d091d07d0b4c7a5b93cfe9cc9750a46f"
+    },
+    {
+      "file": "baseline/seed-7919-first-30-combat.save.json",
+      "bytes": 33350,
+      "sha256": "19d52e468e8eb0f66253c6b62b101e673efa0435bfabece3aede048ed944c452"
+    },
+    {
+      "file": "baseline/seed-7919-first-death.save.json",
+      "bytes": 43439,
+      "sha256": "f6f9e9d1292cbace58b7557ef46f1322c24e56b4e8e0486292f9bce19890ccf3"
+    },
+    {
+      "file": "baseline/seed-7919-first-swap-after.save.json",
+      "bytes": 43402,
+      "sha256": "d0323f1dc56ef22f1a5a0307febcc6031fc48df4c8f63b65bf02216d1a9dd05f"
+    },
+    {
+      "file": "baseline/seed-7919-first-swap-before.save.json",
+      "bytes": 43439,
+      "sha256": "f6f9e9d1292cbace58b7557ef46f1322c24e56b4e8e0486292f9bce19890ccf3"
+    },
+    {
+      "file": "baseline/seed-7919-incomplete-terminal.save.json",
+      "bytes": 43479,
+      "sha256": "5e10d14cbc8e4c4515c43cee5c012a0bc1d542002579ebb73451da4a7118b748"
+    },
+    {
+      "file": "current/execution.run.json",
+      "bytes": 2568,
+      "sha256": "a4ada984b0ce1e48a707a8d611bdb73fae8d14001e876fbd86494a03db1c8fe7"
+    },
+    {
+      "file": "current/execution.stderr.log.gz",
+      "bytes": 20,
+      "sha256": "f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec"
+    },
+    {
+      "file": "current/execution.stdout.log.gz",
+      "bytes": 800,
+      "sha256": "15af5a65300628bda72c357d98d344f6c15c1ddbf0a9c765611bea540d18282b"
+    },
+    {
+      "file": "current/report.json",
+      "bytes": 9717676,
+      "sha256": "047bcaf904905644d40946d3234d6ea6827f9ac04b6d84e6e60ec6e0fd3d0dd1"
+    },
+    {
+      "file": "current/report.json.partial.json",
+      "bytes": 9712730,
+      "sha256": "f6be9d6183c87795b31ec3cae6db434e811852fd69cf777082d8aae7a50c697f"
+    },
+    {
+      "file": "current/seed-15838-first-30-combat.save.json",
+      "bytes": 33470,
+      "sha256": "567cc72dde18df0094d9551523c8ac9c06ec9d899e6efc0e2e716fab9930849e"
+    },
+    {
+      "file": "current/seed-23757-first-30-combat.save.json",
+      "bytes": 33638,
+      "sha256": "61dfc4a791ef8f88839e169fe2b6d2147fc51d12e70c069f166278eb00e93334"
+    },
+    {
+      "file": "current/seed-23757-first-death.save.json",
+      "bytes": 35123,
+      "sha256": "3ec59d08eee20abb40b3046c494ee89f34795fc9d5b1ef8ab4cafcf8f0dd4a8f"
+    },
+    {
+      "file": "current/seed-23757-first-swap-after.save.json",
+      "bytes": 35093,
+      "sha256": "273dc467ff967fc63ed500e11156adc223ae126820563800c4b53f5aeb6e4235"
+    },
+    {
+      "file": "current/seed-23757-first-swap-before.save.json",
+      "bytes": 35123,
+      "sha256": "3ec59d08eee20abb40b3046c494ee89f34795fc9d5b1ef8ab4cafcf8f0dd4a8f"
+    },
+    {
+      "file": "current/seed-31676-first-30-combat.save.json",
+      "bytes": 32466,
+      "sha256": "94e19cac85e9c68b8964463805ebdec1f1a0fdb08b3a58f580e48efbab4f8b06"
+    },
+    {
+      "file": "current/seed-31676-first-death.save.json",
+      "bytes": 83702,
+      "sha256": "115112095ef84bb703ffe936d5c714e0d8642cde8372f263b2be67ca5c1d5c4f"
+    },
+    {
+      "file": "current/seed-31676-first-swap-after.save.json",
+      "bytes": 83672,
+      "sha256": "1b169bffdf29e187a7e66ad5934af7e09eaf96cd07f4a0d74fddf3f3b3af6192"
+    },
+    {
+      "file": "current/seed-31676-first-swap-before.save.json",
+      "bytes": 83702,
+      "sha256": "115112095ef84bb703ffe936d5c714e0d8642cde8372f263b2be67ca5c1d5c4f"
+    },
+    {
+      "file": "current/seed-31676-incomplete-terminal.save.json",
+      "bytes": 88473,
+      "sha256": "fd8e74efd3c27a9b57d654d844d799bfa9281a5a1b8883c9036f03f5fa49c03a"
+    },
+    {
+      "file": "current/seed-7919-first-30-combat.save.json",
+      "bytes": 33350,
+      "sha256": "c7bf4544df19935a35f5449f5c8527ee2cdd368a33d951b8916b186c15d5bd09"
+    },
+    {
+      "file": "current/seed-7919-first-death.save.json",
+      "bytes": 43439,
+      "sha256": "66c79f69b5a2c28568f5c09f8152826112fb77c1f9ab0b5a80718c503b2932a2"
+    },
+    {
+      "file": "current/seed-7919-first-swap-after.save.json",
+      "bytes": 43402,
+      "sha256": "f1574d42076e91b30d7d0b289b40b04044d1a3f1f401dd652e2854a36b4db9cd"
+    },
+    {
+      "file": "current/seed-7919-first-swap-before.save.json",
+      "bytes": 43439,
+      "sha256": "66c79f69b5a2c28568f5c09f8152826112fb77c1f9ab0b5a80718c503b2932a2"
+    },
+    {
+      "file": "current/seed-7919-incomplete-terminal.save.json",
+      "bytes": 43478,
+      "sha256": "3d124d88edf76a2835290a89914d2093d68300c46c7c08a0089ba58f2f6cabb9"
+    }
+  ],
+  "restoreStdout": {
+    "status": "PASS",
+    "mode": "restore",
+    "originalFiles": 40,
+    "originalBytes": 40370754,
+    "archivedPayloadBytes": 1475068,
+    "mappingSha256": "f0321d3e4840cd9bde51667bcc5b5c0f3790b3263dde4c32182e85a7972cb89d",
+    "output": "/tmp/dice-abyss-round23-policy-9bfnbbk0/restored"
+  },
+  "status": "PASS",
+  "allOriginalFilesRestoredByteForByte": true,
+  "originalBytes": 40370754
+}

@@ -1,0 +1,1371 @@
+{
+  "kind": "ROUND23_COMPACT_FINAL_FUNCTIONAL_BROWSER_ARCHIVE_NOT_PERFORMANCE",
+  "createdUTC": "2026-10-19T16:16:12.674527+00:00",
+  "scratchRoot": "/workspace/scratch/3b21be83b3da/qa23/current/browser",
+  "packageRoot": "docs/iteration/evidence/round23/browser",
+  "jobs": [
+    {
+      "job": "core",
+      "resultUnits": 6,
+      "unitKind": "case",
+      "countedChecks": 43,
+      "exitCode": 0,
+      "browser": "155.0.8059.84",
+      "errors": [],
+      "warnings": [],
+      "outcomes": [
+        {
+          "name": "title-new-manual-fate-continue",
+          "kind": "case",
+          "variant": "current",
+          "status": "PASS"
+        },
+        {
+          "name": "manual-combat-chest-equip-refresh",
+          "kind": "case",
+          "variant": "current",
+          "status": "PASS"
+        },
+        {
+          "name": "inventory-scroll-lock-and-settings",
+          "kind": "case",
+          "variant": "current",
+          "status": "PASS"
+        },
+        {
+          "name": "primary-save-failure-recovery",
+          "kind": "case",
+          "variant": "current",
+          "status": "PASS"
+        },
+        {
+          "name": "mirror-write-warning-keeps-durable-result",
+          "kind": "case",
+          "variant": "current",
+          "status": "PASS"
+        },
+        {
+          "name": "cross-tab-sync-cancels-stale-confirmation",
+          "kind": "case",
+          "variant": "current",
+          "status": "PASS"
+        }
+      ],
+      "failed": [],
+      "skipped": [],
+      "otherStatuses": [],
+      "command": [
+        "env",
+        "PLAYWRIGHT_MODULE=/opt/codex/runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.js",
+        "CHROMIUM_PATH=/tmp/dice-r15-browser/chrome-headless-shell-linux64/chrome-headless-shell",
+        "node",
+        "scripts/qa-core-browser.mjs",
+        "--source=/workspace/scratch/3b21be83b3da/work/Dice-Abyss",
+        "--url=http://127.0.0.1:4189/",
+        "--output=/workspace/scratch/3b21be83b3da/qa23/current/browser/core"
+      ],
+      "reportOriginal": "core/report.json",
+      "reportArchived": "core/report.json.gz",
+      "runRecord": "core/core.run.json",
+      "startUTC": "2026-10-19T15:58:36.751077+00:00",
+      "finishUTC": "2026-10-19T15:59:02.047163+00:00"
+    },
+    {
+      "job": "inventory",
+      "resultUnits": 2,
+      "unitKind": "case",
+      "countedChecks": 13,
+      "exitCode": 0,
+      "browser": "155.0.8059.84",
+      "errors": [],
+      "warnings": [],
+      "outcomes": [
+        {
+          "name": "same-run-native-storage-preserves-draft-selection",
+          "kind": "case",
+          "variant": "current",
+          "status": "PASS"
+        },
+        {
+          "name": "pure-inventory-actions-keep-state-and-correct-results",
+          "kind": "case",
+          "variant": "current",
+          "status": "PASS"
+        }
+      ],
+      "failed": [],
+      "skipped": [],
+      "otherStatuses": [],
+      "command": [
+        "env",
+        "PLAYWRIGHT_MODULE=/opt/codex/runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.js",
+        "CHROMIUM_PATH=/tmp/dice-r15-browser/chrome-headless-shell-linux64/chrome-headless-shell",
+        "node",
+        "scripts/qa-round22-browser.mjs",
+        "--source=/workspace/scratch/3b21be83b3da/work/Dice-Abyss",
+        "--url=http://127.0.0.1:4189/",
+        "--output=/workspace/scratch/3b21be83b3da/qa23/current/browser/inventory",
+        "--suite=inventory",
+        "--expect=current"
+      ],
+      "reportOriginal": "inventory/report.json",
+      "reportArchived": "inventory/report.json.gz",
+      "runRecord": "inventory/inventory.run.json",
+      "startUTC": "2026-10-19T15:59:36.458830+00:00",
+      "finishUTC": "2026-10-19T15:59:46.125487+00:00"
+    },
+    {
+      "job": "services",
+      "resultUnits": 2,
+      "unitKind": "case",
+      "countedChecks": 21,
+      "exitCode": 0,
+      "browser": "155.0.8059.84",
+      "errors": [],
+      "warnings": [],
+      "outcomes": [
+        {
+          "name": "merchant-buy-equip-and-reload",
+          "kind": "case",
+          "variant": "current",
+          "status": "PASS"
+        },
+        {
+          "name": "paid-event-cancel-confirm-next-fight",
+          "kind": "case",
+          "variant": "current",
+          "status": "PASS"
+        }
+      ],
+      "failed": [],
+      "skipped": [],
+      "otherStatuses": [],
+      "command": [
+        "env",
+        "PLAYWRIGHT_MODULE=/opt/codex/runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.js",
+        "CHROMIUM_PATH=/tmp/dice-r15-browser/chrome-headless-shell-linux64/chrome-headless-shell",
+        "node",
+        "scripts/qa-round22-browser.mjs",
+        "--source=/workspace/scratch/3b21be83b3da/work/Dice-Abyss",
+        "--url=http://127.0.0.1:4189/",
+        "--output=/workspace/scratch/3b21be83b3da/qa23/current/browser/services",
+        "--suite=services",
+        "--expect=current"
+      ],
+      "reportOriginal": "services/report.json",
+      "reportArchived": "services/report.json.gz",
+      "runRecord": "services/services.run.json",
+      "startUTC": "2026-10-19T16:00:12.942606+00:00",
+      "finishUTC": "2026-10-19T16:00:21.735089+00:00"
+    },
+    {
+      "job": "layout",
+      "resultUnits": 12,
+      "unitKind": "case",
+      "countedChecks": 108,
+      "exitCode": 0,
+      "browser": "155.0.8059.84",
+      "errors": [],
+      "warnings": [],
+      "outcomes": [
+        {
+          "name": "layout-parity-1366x768",
+          "kind": "case",
+          "variant": "current",
+          "status": "PASS"
+        },
+        {
+          "name": "layout-sequence-1366x768",
+          "kind": "case",
+          "variant": "current",
+          "status": "PASS"
+        },
+        {
+          "name": "layout-parity-1920x1080",
+          "kind": "case",
+          "variant": "current",
+          "status": "PASS"
+        },
+        {
+          "name": "layout-sequence-1920x1080",
+          "kind": "case",
+          "variant": "current",
+          "status": "PASS"
+        },
+        {
+          "name": "layout-parity-2560x1440",
+          "kind": "case",
+          "variant": "current",
+          "status": "PASS"
+        },
+        {
+          "name": "layout-sequence-2560x1440",
+          "kind": "case",
+          "variant": "current",
+          "status": "PASS"
+        },
+        {
+          "name": "layout-parity-3840x2160",
+          "kind": "case",
+          "variant": "current",
+          "status": "PASS"
+        },
+        {
+          "name": "layout-sequence-3840x2160",
+          "kind": "case",
+          "variant": "current",
+          "status": "PASS"
+        },
+        {
+          "name": "layout-parity-1100x700",
+          "kind": "case",
+          "variant": "current",
+          "status": "PASS"
+        },
+        {
+          "name": "layout-sequence-1100x700",
+          "kind": "case",
+          "variant": "current",
+          "status": "PASS"
+        },
+        {
+          "name": "layout-parity-390x844",
+          "kind": "case",
+          "variant": "current",
+          "status": "PASS"
+        },
+        {
+          "name": "layout-sequence-390x844",
+          "kind": "case",
+          "variant": "current",
+          "status": "PASS"
+        }
+      ],
+      "failed": [],
+      "skipped": [],
+      "otherStatuses": [],
+      "command": [
+        "env",
+        "PLAYWRIGHT_MODULE=/opt/codex/runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.js",
+        "CHROMIUM_PATH=/tmp/dice-r15-browser/chrome-headless-shell-linux64/chrome-headless-shell",
+        "node",
+        "scripts/qa-round22-browser.mjs",
+        "--source=/workspace/scratch/3b21be83b3da/work/Dice-Abyss",
+        "--url=http://127.0.0.1:4189/",
+        "--output=/workspace/scratch/3b21be83b3da/qa23/current/browser/layout",
+        "--suite=layout",
+        "--expect=current"
+      ],
+      "reportOriginal": "layout/report.json",
+      "reportArchived": "layout/report.json.gz",
+      "runRecord": "layout/layout.run.json",
+      "startUTC": "2026-10-19T16:00:44.146979+00:00",
+      "finishUTC": "2026-10-19T16:01:16.356692+00:00"
+    },
+    {
+      "job": "iteration",
+      "resultUnits": 6,
+      "unitKind": "case",
+      "countedChecks": null,
+      "exitCode": 0,
+      "browser": "155.0.8059.84",
+      "errors": [],
+      "warnings": [],
+      "outcomes": [
+        {
+          "name": "title-four-desktop-viewports",
+          "kind": "case",
+          "variant": "current",
+          "status": "passed"
+        },
+        {
+          "name": "static-webgl-loss-and-restoration",
+          "kind": "case",
+          "variant": "current",
+          "status": "passed"
+        },
+        {
+          "name": "reject-invalid-import-abyssauction",
+          "kind": "case",
+          "variant": "current",
+          "status": "passed"
+        },
+        {
+          "name": "reject-invalid-import-oathgate",
+          "kind": "case",
+          "variant": "current",
+          "status": "passed"
+        },
+        {
+          "name": "archive-the-recovered-v4-mirror",
+          "kind": "case",
+          "variant": "current",
+          "status": "passed"
+        },
+        {
+          "name": "inventory-sort-instructions-match-controls",
+          "kind": "case",
+          "variant": "current",
+          "status": "passed"
+        }
+      ],
+      "failed": [],
+      "skipped": [],
+      "otherStatuses": [],
+      "command": [
+        "env",
+        "PLAYWRIGHT_MODULE=/opt/codex/runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.js",
+        "CHROMIUM_PATH=/tmp/dice-r15-browser/chrome-headless-shell-linux64/chrome-headless-shell",
+        "node",
+        "scripts/qa-iteration.mjs",
+        "--source=/workspace/scratch/3b21be83b3da/work/Dice-Abyss",
+        "--url=http://127.0.0.1:4189/",
+        "--label=current",
+        "--output=/workspace/scratch/3b21be83b3da/qa23/current/browser/iteration"
+      ],
+      "reportOriginal": "iteration/current-iteration.json",
+      "reportArchived": "iteration/current-iteration.json.gz",
+      "runRecord": "iteration/iteration.run.json",
+      "startUTC": "2026-10-19T16:01:31.420073+00:00",
+      "finishUTC": "2026-10-19T16:02:03.267597+00:00"
+    },
+    {
+      "job": "environment",
+      "resultUnits": 3,
+      "unitKind": "case",
+      "countedChecks": null,
+      "exitCode": 0,
+      "browser": "155.0.8059.84",
+      "errors": [],
+      "warnings": [],
+      "outcomes": [
+        {
+          "name": "navigation-back-continue",
+          "kind": "case",
+          "variant": "current",
+          "status": "passed"
+        },
+        {
+          "name": "os-reduced-motion-roll-reward",
+          "kind": "case",
+          "variant": "current",
+          "status": "passed"
+        },
+        {
+          "name": "offline-actions-online-local-reload",
+          "kind": "case",
+          "variant": "current",
+          "status": "passed"
+        }
+      ],
+      "failed": [],
+      "skipped": [],
+      "otherStatuses": [],
+      "command": [
+        "env",
+        "PLAYWRIGHT_MODULE=/opt/codex/runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.js",
+        "CHROMIUM_PATH=/tmp/dice-r15-browser/chrome-headless-shell-linux64/chrome-headless-shell",
+        "node",
+        "scripts/qa-environment.mjs",
+        "--source=/workspace/scratch/3b21be83b3da/work/Dice-Abyss",
+        "--url=http://127.0.0.1:4189/",
+        "--output=/workspace/scratch/3b21be83b3da/qa23/current/browser/environment",
+        "--label=current"
+      ],
+      "reportOriginal": "environment/current-environment.json",
+      "reportArchived": "environment/current-environment.json.gz",
+      "runRecord": "environment/environment.run.json",
+      "startUTC": "2026-10-19T16:02:22.469054+00:00",
+      "finishUTC": "2026-10-19T16:02:37.637022+00:00"
+    },
+    {
+      "job": "lifecycle",
+      "resultUnits": 11,
+      "unitKind": "case",
+      "countedChecks": null,
+      "exitCode": 0,
+      "browser": "155.0.8059.84",
+      "errors": [],
+      "warnings": [],
+      "outcomes": [
+        {
+          "name": "late-first-frame-combat",
+          "kind": "case",
+          "variant": "baseline",
+          "status": "PASS"
+        },
+        {
+          "name": "late-first-frame-combat",
+          "kind": "case",
+          "variant": "current",
+          "status": "PASS"
+        },
+        {
+          "name": "late-first-frame-loot",
+          "kind": "case",
+          "variant": "baseline",
+          "status": "PASS"
+        },
+        {
+          "name": "late-first-frame-loot",
+          "kind": "case",
+          "variant": "current",
+          "status": "PASS"
+        },
+        {
+          "name": "normal-full-combat",
+          "kind": "case",
+          "variant": "baseline",
+          "status": "PASS"
+        },
+        {
+          "name": "normal-full-combat",
+          "kind": "case",
+          "variant": "current",
+          "status": "PASS"
+        },
+        {
+          "name": "missing-raf-deadline",
+          "kind": "case",
+          "variant": "current",
+          "status": "PASS"
+        },
+        {
+          "name": "skip-before-first-frame",
+          "kind": "case",
+          "variant": "current",
+          "status": "PASS"
+        },
+        {
+          "name": "hidden-before-first-frame",
+          "kind": "case",
+          "variant": "current",
+          "status": "PASS"
+        },
+        {
+          "name": "low-effects",
+          "kind": "case",
+          "variant": "current",
+          "status": "PASS"
+        },
+        {
+          "name": "reduced-motion",
+          "kind": "case",
+          "variant": "current",
+          "status": "PASS"
+        }
+      ],
+      "failed": [],
+      "skipped": [],
+      "otherStatuses": [],
+      "command": [
+        "env",
+        "PLAYWRIGHT_MODULE=/opt/codex/runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.mjs",
+        "CHROMIUM_PATH=/tmp/dice-r15-browser/chrome-headless-shell-linux64/chrome-headless-shell",
+        "node",
+        "scripts/qa-renderer-lifecycle.mjs",
+        "--url=http://127.0.0.1:4189/",
+        "--baseline-url=http://127.0.0.1:4188/",
+        "--output=/workspace/scratch/3b21be83b3da/qa23/current/browser/lifecycle"
+      ],
+      "reportOriginal": "lifecycle/renderer-lifecycle-browser.json",
+      "reportArchived": "lifecycle/renderer-lifecycle-browser.json.gz",
+      "runRecord": "lifecycle/lifecycle.run.json",
+      "startUTC": "2026-10-19T16:03:21.653670+00:00",
+      "finishUTC": "2026-10-19T16:04:32.277669+00:00"
+    },
+    {
+      "job": "forge",
+      "resultUnits": 1,
+      "unitKind": "group",
+      "countedChecks": 101,
+      "exitCode": 0,
+      "browser": "155.0.8059.84",
+      "errors": [],
+      "warnings": [],
+      "outcomes": [
+        {
+          "name": "five-slots-exact-transactions",
+          "kind": "group",
+          "variant": "current",
+          "status": "PASS"
+        }
+      ],
+      "failed": [],
+      "skipped": [],
+      "otherStatuses": [],
+      "command": [
+        "node",
+        "scripts/qa-forge-preview-browser.mjs",
+        "--url=http://127.0.0.1:4189/",
+        "--output=/workspace/scratch/3b21be83b3da/qa23/current/browser/forge",
+        "--case=five-slots-exact-transactions"
+      ],
+      "reportOriginal": "forge/forge-preview-browser.json",
+      "reportArchived": "forge/forge-preview-browser.json.gz",
+      "runRecord": "forge/execution.run.json",
+      "startUTC": "2026-10-19T15:58:07.407525+00:00",
+      "finishUTC": "2026-10-19T15:58:25.367054+00:00"
+    },
+    {
+      "job": "fusion",
+      "resultUnits": 1,
+      "unitKind": "case",
+      "countedChecks": 30,
+      "exitCode": 0,
+      "browser": "155.0.8059.84",
+      "errors": [],
+      "warnings": [],
+      "outcomes": [
+        {
+          "name": "fusion-selection-confirmation",
+          "kind": "case",
+          "variant": "current",
+          "status": "PASS"
+        }
+      ],
+      "failed": [],
+      "skipped": [],
+      "otherStatuses": [],
+      "command": [
+        "node",
+        "scripts/qa-round11-browser.mjs",
+        "--source=/workspace/scratch/3b21be83b3da/work/Dice-Abyss",
+        "--url=http://127.0.0.1:4189/",
+        "--output=/workspace/scratch/3b21be83b3da/qa23/current/browser/fusion",
+        "--case=fusion-selection-confirmation"
+      ],
+      "reportOriginal": "fusion/report.json",
+      "reportArchived": "fusion/report.json.gz",
+      "runRecord": "fusion/execution.run.json",
+      "startUTC": "2026-10-19T15:59:31.548431+00:00",
+      "finishUTC": "2026-10-19T15:59:37.465269+00:00"
+    },
+    {
+      "job": "talents",
+      "resultUnits": 1,
+      "unitKind": "case",
+      "countedChecks": 20,
+      "exitCode": 0,
+      "browser": "155.0.8059.84",
+      "errors": [],
+      "warnings": [],
+      "outcomes": [
+        {
+          "name": "quantity-preview-and-exact-commit",
+          "kind": "case",
+          "variant": "current",
+          "status": "PASS"
+        }
+      ],
+      "failed": [],
+      "skipped": [],
+      "otherStatuses": [],
+      "command": [
+        "node",
+        "scripts/qa-talents-browser.mjs",
+        "--url=http://127.0.0.1:4189/",
+        "--output=/workspace/scratch/3b21be83b3da/qa23/current/browser/talents",
+        "--cases=quantity-preview-and-exact-commit"
+      ],
+      "reportOriginal": "talents/talents-browser.json",
+      "reportArchived": "talents/talents-browser.json.gz",
+      "runRecord": "talents/execution.run.json",
+      "startUTC": "2026-10-19T15:59:30.499839+00:00",
+      "finishUTC": "2026-10-19T15:59:41.570032+00:00"
+    }
+  ],
+  "totals": {
+    "jobs": 10,
+    "resultUnits": 45,
+    "cases": 44,
+    "groups": 1,
+    "currentResultUnits": 42,
+    "baselineResultUnits": 3,
+    "countedChecks": 336,
+    "countedChecksDrivers": [
+      "core",
+      "inventory",
+      "services",
+      "layout",
+      "forge",
+      "fusion",
+      "talents"
+    ],
+    "driversWithoutComparableAssertionCounter": [
+      "iteration",
+      "environment",
+      "lifecycle"
+    ],
+    "failedResultUnits": 0,
+    "skippedResultUnits": 0,
+    "recordedRuntimeErrors": 0,
+    "allExitZero": true,
+    "selectedPngs": 2,
+    "selectedPngBytes": 502265,
+    "omittedCurrentImages": 24,
+    "archivedEvidenceFiles": 45,
+    "archivedEvidenceBytes": 594555
+  },
+  "files": [
+    {
+      "role": "original-browser-report",
+      "scratchSource": "qa23/current/browser/core/report.json",
+      "packagePath": "docs/iteration/evidence/round23/browser/core/report.json.gz",
+      "archiveRelative": "core/report.json.gz",
+      "sourceBytes": 17900,
+      "sourceSha256": "d050f28ae6c0f3b39502888bcbb3b640b082defe1111c73e944b9de0c1692c0e",
+      "storedBytes": 2824,
+      "storedSha256": "241e99a9862da48dccd8b4401646b1b91c192e20c01828a67d0f0d58b21a7374",
+      "encoding": "lossless-gzip-of-original-bytes",
+      "sourceBytesRecoveredExactly": true
+    },
+    {
+      "role": "original-run-record",
+      "scratchSource": "qa23/current/browser/core/core.run.json",
+      "packagePath": "docs/iteration/evidence/round23/browser/core/core.run.json",
+      "archiveRelative": "core/core.run.json",
+      "sourceBytes": 1215,
+      "sourceSha256": "a63f5161c60d048a4d7a281d3c96d5aee6959365f409ffa7c820c930ab95d973",
+      "storedBytes": 1215,
+      "storedSha256": "a63f5161c60d048a4d7a281d3c96d5aee6959365f409ffa7c820c930ab95d973",
+      "encoding": "original-byte-copy",
+      "sourceBytesRecoveredExactly": true
+    },
+    {
+      "role": "original-stdout-gzip",
+      "scratchSource": "qa23/current/browser/core/core.stdout.log.gz",
+      "packagePath": "docs/iteration/evidence/round23/browser/core/core.stdout.log.gz",
+      "archiveRelative": "core/core.stdout.log.gz",
+      "sourceBytes": 224,
+      "sourceSha256": "3a4213bf0f18af52ad0e35db781043dff0e39875ce8c0069ca2577c336a6fe3d",
+      "storedBytes": 224,
+      "storedSha256": "3a4213bf0f18af52ad0e35db781043dff0e39875ce8c0069ca2577c336a6fe3d",
+      "encoding": "original-byte-copy",
+      "sourceBytesRecoveredExactly": true,
+      "uncompressedLogBytes": 318,
+      "uncompressedLogSha256": "e0ef866fdeec403511fa32d45dfc2ff495c6a59657cc4b95aa2fa4f204dbc6b4",
+      "matchesRunRecordRawLogSha256": true
+    },
+    {
+      "role": "original-stderr-gzip",
+      "scratchSource": "qa23/current/browser/core/core.stderr.log.gz",
+      "packagePath": "docs/iteration/evidence/round23/browser/core/core.stderr.log.gz",
+      "archiveRelative": "core/core.stderr.log.gz",
+      "sourceBytes": 20,
+      "sourceSha256": "f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec",
+      "storedBytes": 20,
+      "storedSha256": "f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec",
+      "encoding": "original-byte-copy",
+      "sourceBytesRecoveredExactly": true,
+      "uncompressedLogBytes": 0,
+      "uncompressedLogSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "matchesRunRecordRawLogSha256": true
+    },
+    {
+      "role": "original-browser-report",
+      "scratchSource": "qa23/current/browser/inventory/report.json",
+      "packagePath": "docs/iteration/evidence/round23/browser/inventory/report.json.gz",
+      "archiveRelative": "inventory/report.json.gz",
+      "sourceBytes": 8773,
+      "sourceSha256": "5d1fd62507ee973b8d65d74be9c7389972daef9bf1d9adee31abb85e5e480899",
+      "storedBytes": 2642,
+      "storedSha256": "41e53e28aa1f5d01c5f4c9f8a93aab49b89fa46dfa4f97a86a557a9ea406ea15",
+      "encoding": "lossless-gzip-of-original-bytes",
+      "sourceBytesRecoveredExactly": true
+    },
+    {
+      "role": "original-run-record",
+      "scratchSource": "qa23/current/browser/inventory/inventory.run.json",
+      "packagePath": "docs/iteration/evidence/round23/browser/inventory/inventory.run.json",
+      "archiveRelative": "inventory/inventory.run.json",
+      "sourceBytes": 1132,
+      "sourceSha256": "2d6c27dc8b5231aa852b930e6c55619fea913e05b6f253ceb618bb566554e7db",
+      "storedBytes": 1132,
+      "storedSha256": "2d6c27dc8b5231aa852b930e6c55619fea913e05b6f253ceb618bb566554e7db",
+      "encoding": "original-byte-copy",
+      "sourceBytesRecoveredExactly": true
+    },
+    {
+      "role": "original-stdout-gzip",
+      "scratchSource": "qa23/current/browser/inventory/inventory.stdout.log.gz",
+      "packagePath": "docs/iteration/evidence/round23/browser/inventory/inventory.stdout.log.gz",
+      "archiveRelative": "inventory/inventory.stdout.log.gz",
+      "sourceBytes": 164,
+      "sourceSha256": "b13df1c209befd278916fd129815d40950f1408e02454d3316096d5bc8f89941",
+      "storedBytes": 164,
+      "storedSha256": "b13df1c209befd278916fd129815d40950f1408e02454d3316096d5bc8f89941",
+      "encoding": "original-byte-copy",
+      "sourceBytesRecoveredExactly": true,
+      "uncompressedLogBytes": 186,
+      "uncompressedLogSha256": "02a632290c3228c1121128ec319fef2ba57c037c5f528ae8b7d43e56a0be29a6",
+      "matchesRunRecordRawLogSha256": true
+    },
+    {
+      "role": "original-stderr-gzip",
+      "scratchSource": "qa23/current/browser/inventory/inventory.stderr.log.gz",
+      "packagePath": "docs/iteration/evidence/round23/browser/inventory/inventory.stderr.log.gz",
+      "archiveRelative": "inventory/inventory.stderr.log.gz",
+      "sourceBytes": 20,
+      "sourceSha256": "f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec",
+      "storedBytes": 20,
+      "storedSha256": "f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec",
+      "encoding": "original-byte-copy",
+      "sourceBytesRecoveredExactly": true,
+      "uncompressedLogBytes": 0,
+      "uncompressedLogSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "matchesRunRecordRawLogSha256": true
+    },
+    {
+      "role": "original-browser-report",
+      "scratchSource": "qa23/current/browser/services/report.json",
+      "packagePath": "docs/iteration/evidence/round23/browser/services/report.json.gz",
+      "archiveRelative": "services/report.json.gz",
+      "sourceBytes": 9371,
+      "sourceSha256": "92646d92eb664d10148e14ea703f05a278bd6d9ac2486b38590bcdb0d517701b",
+      "storedBytes": 2447,
+      "storedSha256": "f72b44be3577a895a580f886206c9a729189b91b7d3eabe1633beb9860bfcd34",
+      "encoding": "lossless-gzip-of-original-bytes",
+      "sourceBytesRecoveredExactly": true
+    },
+    {
+      "role": "original-run-record",
+      "scratchSource": "qa23/current/browser/services/services.run.json",
+      "packagePath": "docs/iteration/evidence/round23/browser/services/services.run.json",
+      "archiveRelative": "services/services.run.json",
+      "sourceBytes": 1093,
+      "sourceSha256": "54410b1c691c8eddae76677c43218a32671c1a21cbecfa6836193f66f8be299a",
+      "storedBytes": 1093,
+      "storedSha256": "54410b1c691c8eddae76677c43218a32671c1a21cbecfa6836193f66f8be299a",
+      "encoding": "original-byte-copy",
+      "sourceBytesRecoveredExactly": true
+    },
+    {
+      "role": "original-stdout-gzip",
+      "scratchSource": "qa23/current/browser/services/services.stdout.log.gz",
+      "packagePath": "docs/iteration/evidence/round23/browser/services/services.stdout.log.gz",
+      "archiveRelative": "services/services.stdout.log.gz",
+      "sourceBytes": 146,
+      "sourceSha256": "9782648f04756dc1ba8dcf91d12f4bad5e10ec306288253615453eb6b4fe2d80",
+      "storedBytes": 146,
+      "storedSha256": "9782648f04756dc1ba8dcf91d12f4bad5e10ec306288253615453eb6b4fe2d80",
+      "encoding": "original-byte-copy",
+      "sourceBytesRecoveredExactly": true,
+      "uncompressedLogBytes": 149,
+      "uncompressedLogSha256": "99136cf9ef69038ed0f36a0b16b9956b4b9476fb6656a254b439b98ba28ebaa8",
+      "matchesRunRecordRawLogSha256": true
+    },
+    {
+      "role": "original-stderr-gzip",
+      "scratchSource": "qa23/current/browser/services/services.stderr.log.gz",
+      "packagePath": "docs/iteration/evidence/round23/browser/services/services.stderr.log.gz",
+      "archiveRelative": "services/services.stderr.log.gz",
+      "sourceBytes": 20,
+      "sourceSha256": "f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec",
+      "storedBytes": 20,
+      "storedSha256": "f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec",
+      "encoding": "original-byte-copy",
+      "sourceBytesRecoveredExactly": true,
+      "uncompressedLogBytes": 0,
+      "uncompressedLogSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "matchesRunRecordRawLogSha256": true
+    },
+    {
+      "role": "original-browser-report",
+      "scratchSource": "qa23/current/browser/layout/report.json",
+      "packagePath": "docs/iteration/evidence/round23/browser/layout/report.json.gz",
+      "archiveRelative": "layout/report.json.gz",
+      "sourceBytes": 27587,
+      "sourceSha256": "168a10caca1a50b95140e58cd4fe1a9231eca5d1f40a288e34cbb64b400d17a1",
+      "storedBytes": 2710,
+      "storedSha256": "572387556b5780c4648c61e05bda65549cbfa50ae8f98c3dcec30547915f203a",
+      "encoding": "lossless-gzip-of-original-bytes",
+      "sourceBytesRecoveredExactly": true
+    },
+    {
+      "role": "original-run-record",
+      "scratchSource": "qa23/current/browser/layout/layout.run.json",
+      "packagePath": "docs/iteration/evidence/round23/browser/layout/layout.run.json",
+      "archiveRelative": "layout/layout.run.json",
+      "sourceBytes": 1387,
+      "sourceSha256": "0e57eb2870b91436f3e71cdc3da770f02a6aaa6f6c45258cd9750e8379a6b372",
+      "storedBytes": 1387,
+      "storedSha256": "0e57eb2870b91436f3e71cdc3da770f02a6aaa6f6c45258cd9750e8379a6b372",
+      "encoding": "original-byte-copy",
+      "sourceBytesRecoveredExactly": true
+    },
+    {
+      "role": "original-stdout-gzip",
+      "scratchSource": "qa23/current/browser/layout/layout.stdout.log.gz",
+      "packagePath": "docs/iteration/evidence/round23/browser/layout/layout.stdout.log.gz",
+      "archiveRelative": "layout/layout.stdout.log.gz",
+      "sourceBytes": 185,
+      "sourceSha256": "06a2dd228dc008cad108496ca84d751e1fd7c6da2fc46b96361684d4cb897ac3",
+      "storedBytes": 185,
+      "storedSha256": "06a2dd228dc008cad108496ca84d751e1fd7c6da2fc46b96361684d4cb897ac3",
+      "encoding": "original-byte-copy",
+      "sourceBytesRecoveredExactly": true,
+      "uncompressedLogBytes": 436,
+      "uncompressedLogSha256": "0d386a18325987a2be7558b65b5d2a45ec219c1b1a14a1aa86fec4d395b0237a",
+      "matchesRunRecordRawLogSha256": true
+    },
+    {
+      "role": "original-stderr-gzip",
+      "scratchSource": "qa23/current/browser/layout/layout.stderr.log.gz",
+      "packagePath": "docs/iteration/evidence/round23/browser/layout/layout.stderr.log.gz",
+      "archiveRelative": "layout/layout.stderr.log.gz",
+      "sourceBytes": 20,
+      "sourceSha256": "f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec",
+      "storedBytes": 20,
+      "storedSha256": "f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec",
+      "encoding": "original-byte-copy",
+      "sourceBytesRecoveredExactly": true,
+      "uncompressedLogBytes": 0,
+      "uncompressedLogSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "matchesRunRecordRawLogSha256": true
+    },
+    {
+      "role": "original-browser-report",
+      "scratchSource": "qa23/current/browser/iteration/current-iteration.json",
+      "packagePath": "docs/iteration/evidence/round23/browser/iteration/current-iteration.json.gz",
+      "archiveRelative": "iteration/current-iteration.json.gz",
+      "sourceBytes": 11529,
+      "sourceSha256": "4052f2b5eaf81c03c44b06031675839e5e46bec0441e183d1c3aff467c777d34",
+      "storedBytes": 2893,
+      "storedSha256": "e22815b352b44a0feb6a30ff5585ba8e29e86d0874c34df8712ec57fc3b366e8",
+      "encoding": "lossless-gzip-of-original-bytes",
+      "sourceBytesRecoveredExactly": true
+    },
+    {
+      "role": "original-run-record",
+      "scratchSource": "qa23/current/browser/iteration/iteration.run.json",
+      "packagePath": "docs/iteration/evidence/round23/browser/iteration/iteration.run.json",
+      "archiveRelative": "iteration/iteration.run.json",
+      "sourceBytes": 1213,
+      "sourceSha256": "0c67fa76b5035bab3359dc014e2db344477169c0b7fffc3787c4d9c1ce43f7a6",
+      "storedBytes": 1213,
+      "storedSha256": "0c67fa76b5035bab3359dc014e2db344477169c0b7fffc3787c4d9c1ce43f7a6",
+      "encoding": "original-byte-copy",
+      "sourceBytesRecoveredExactly": true
+    },
+    {
+      "role": "original-stdout-gzip",
+      "scratchSource": "qa23/current/browser/iteration/iteration.stdout.log.gz",
+      "packagePath": "docs/iteration/evidence/round23/browser/iteration/iteration.stdout.log.gz",
+      "archiveRelative": "iteration/iteration.stdout.log.gz",
+      "sourceBytes": 200,
+      "sourceSha256": "64652219a04a41792a8e50f623a6a56b9281345e92468bf0ee622995da9d2b69",
+      "storedBytes": 200,
+      "storedSha256": "64652219a04a41792a8e50f623a6a56b9281345e92468bf0ee622995da9d2b69",
+      "encoding": "original-byte-copy",
+      "sourceBytesRecoveredExactly": true,
+      "uncompressedLogBytes": 296,
+      "uncompressedLogSha256": "02c48414dccbba36f3c7046830a2f8813f9883249a8c5da8bef3561b79605630",
+      "matchesRunRecordRawLogSha256": true
+    },
+    {
+      "role": "original-stderr-gzip",
+      "scratchSource": "qa23/current/browser/iteration/iteration.stderr.log.gz",
+      "packagePath": "docs/iteration/evidence/round23/browser/iteration/iteration.stderr.log.gz",
+      "archiveRelative": "iteration/iteration.stderr.log.gz",
+      "sourceBytes": 20,
+      "sourceSha256": "f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec",
+      "storedBytes": 20,
+      "storedSha256": "f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec",
+      "encoding": "original-byte-copy",
+      "sourceBytesRecoveredExactly": true,
+      "uncompressedLogBytes": 0,
+      "uncompressedLogSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "matchesRunRecordRawLogSha256": true
+    },
+    {
+      "role": "original-browser-report",
+      "scratchSource": "qa23/current/browser/environment/current-environment.json",
+      "packagePath": "docs/iteration/evidence/round23/browser/environment/current-environment.json.gz",
+      "archiveRelative": "environment/current-environment.json.gz",
+      "sourceBytes": 73480,
+      "sourceSha256": "21b2180873496369f24f8f2063f925756087092384d6bec26a40b138922d04c6",
+      "storedBytes": 7495,
+      "storedSha256": "6f0759ef0656974148dce528f2a848089abde629bde74fd8e277aa69b2f7c161",
+      "encoding": "lossless-gzip-of-original-bytes",
+      "sourceBytesRecoveredExactly": true
+    },
+    {
+      "role": "original-run-record",
+      "scratchSource": "qa23/current/browser/environment/environment.run.json",
+      "packagePath": "docs/iteration/evidence/round23/browser/environment/environment.run.json",
+      "archiveRelative": "environment/environment.run.json",
+      "sourceBytes": 1015,
+      "sourceSha256": "0e0b4625b91ce02284224716fa88942562edda56ff8298aca78e1c8323110069",
+      "storedBytes": 1015,
+      "storedSha256": "0e0b4625b91ce02284224716fa88942562edda56ff8298aca78e1c8323110069",
+      "encoding": "original-byte-copy",
+      "sourceBytesRecoveredExactly": true
+    },
+    {
+      "role": "original-stdout-gzip",
+      "scratchSource": "qa23/current/browser/environment/environment.stdout.log.gz",
+      "packagePath": "docs/iteration/evidence/round23/browser/environment/environment.stdout.log.gz",
+      "archiveRelative": "environment/environment.stdout.log.gz",
+      "sourceBytes": 102,
+      "sourceSha256": "0feaa6287cb710f338128ff046635abcbe1a411f103a4eacea4390e71e08a85b",
+      "storedBytes": 102,
+      "storedSha256": "0feaa6287cb710f338128ff046635abcbe1a411f103a4eacea4390e71e08a85b",
+      "encoding": "original-byte-copy",
+      "sourceBytesRecoveredExactly": true,
+      "uncompressedLogBytes": 106,
+      "uncompressedLogSha256": "cdd8859a543e2cf3002489c8ab04cbca00a885fe5d765812a5cbc6f695666c9f",
+      "matchesRunRecordRawLogSha256": true
+    },
+    {
+      "role": "original-stderr-gzip",
+      "scratchSource": "qa23/current/browser/environment/environment.stderr.log.gz",
+      "packagePath": "docs/iteration/evidence/round23/browser/environment/environment.stderr.log.gz",
+      "archiveRelative": "environment/environment.stderr.log.gz",
+      "sourceBytes": 20,
+      "sourceSha256": "f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec",
+      "storedBytes": 20,
+      "storedSha256": "f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec",
+      "encoding": "original-byte-copy",
+      "sourceBytesRecoveredExactly": true,
+      "uncompressedLogBytes": 0,
+      "uncompressedLogSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "matchesRunRecordRawLogSha256": true
+    },
+    {
+      "role": "original-browser-report",
+      "scratchSource": "qa23/current/browser/lifecycle/renderer-lifecycle-browser.json",
+      "packagePath": "docs/iteration/evidence/round23/browser/lifecycle/renderer-lifecycle-browser.json.gz",
+      "archiveRelative": "lifecycle/renderer-lifecycle-browser.json.gz",
+      "sourceBytes": 334241,
+      "sourceSha256": "6499d3f2c34d42ae513b7a5f1731aaaf32eb616c4f155a2c9fb6192b38cc5bcb",
+      "storedBytes": 17155,
+      "storedSha256": "ed5786ebf74b49cb48a0eb6e9cd41da7b9e4cbb4b19a2df96de8be2cf9747529",
+      "encoding": "lossless-gzip-of-original-bytes",
+      "sourceBytesRecoveredExactly": true
+    },
+    {
+      "role": "original-run-record",
+      "scratchSource": "qa23/current/browser/lifecycle/lifecycle.run.json",
+      "packagePath": "docs/iteration/evidence/round23/browser/lifecycle/lifecycle.run.json",
+      "archiveRelative": "lifecycle/lifecycle.run.json",
+      "sourceBytes": 1449,
+      "sourceSha256": "6768744c637760ac7eb1f7c7e0679281ff2e49aa4439171fab808d8874760a15",
+      "storedBytes": 1449,
+      "storedSha256": "6768744c637760ac7eb1f7c7e0679281ff2e49aa4439171fab808d8874760a15",
+      "encoding": "original-byte-copy",
+      "sourceBytesRecoveredExactly": true
+    },
+    {
+      "role": "original-stdout-gzip",
+      "scratchSource": "qa23/current/browser/lifecycle/lifecycle.stdout.log.gz",
+      "packagePath": "docs/iteration/evidence/round23/browser/lifecycle/lifecycle.stdout.log.gz",
+      "archiveRelative": "lifecycle/lifecycle.stdout.log.gz",
+      "sourceBytes": 263,
+      "sourceSha256": "4a4413c90dce1a4a301873394eab8a06ef06883ff897044d71e3052f12238873",
+      "storedBytes": 263,
+      "storedSha256": "4a4413c90dce1a4a301873394eab8a06ef06883ff897044d71e3052f12238873",
+      "encoding": "original-byte-copy",
+      "sourceBytesRecoveredExactly": true,
+      "uncompressedLogBytes": 557,
+      "uncompressedLogSha256": "0ab698d82d02b86830730cddca8f3b72ad2a01f68ea40077df2f50e754553051",
+      "matchesRunRecordRawLogSha256": true
+    },
+    {
+      "role": "original-stderr-gzip",
+      "scratchSource": "qa23/current/browser/lifecycle/lifecycle.stderr.log.gz",
+      "packagePath": "docs/iteration/evidence/round23/browser/lifecycle/lifecycle.stderr.log.gz",
+      "archiveRelative": "lifecycle/lifecycle.stderr.log.gz",
+      "sourceBytes": 20,
+      "sourceSha256": "f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec",
+      "storedBytes": 20,
+      "storedSha256": "f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec",
+      "encoding": "original-byte-copy",
+      "sourceBytesRecoveredExactly": true,
+      "uncompressedLogBytes": 0,
+      "uncompressedLogSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "matchesRunRecordRawLogSha256": true
+    },
+    {
+      "role": "original-browser-report",
+      "scratchSource": "qa23/current/browser/forge/forge-preview-browser.json",
+      "packagePath": "docs/iteration/evidence/round23/browser/forge/forge-preview-browser.json.gz",
+      "archiveRelative": "forge/forge-preview-browser.json.gz",
+      "sourceBytes": 17191,
+      "sourceSha256": "4f3eb041f6ebf26ccee41eaf9d1f73b7dcb994f0244e4ad28dfb261a51a36d18",
+      "storedBytes": 1325,
+      "storedSha256": "1c0fac53d34fc3b0466e40eb7f35f78c26ff1563e1ccdde4a27cee45326a24cd",
+      "encoding": "lossless-gzip-of-original-bytes",
+      "sourceBytesRecoveredExactly": true
+    },
+    {
+      "role": "original-run-record",
+      "scratchSource": "qa23/current/browser/forge/execution.run.json",
+      "packagePath": "docs/iteration/evidence/round23/browser/forge/execution.run.json",
+      "archiveRelative": "forge/execution.run.json",
+      "sourceBytes": 738,
+      "sourceSha256": "e07774b9d57857a60d02f9f4580bf7078880e85a900be534fb826651a2453391",
+      "storedBytes": 738,
+      "storedSha256": "e07774b9d57857a60d02f9f4580bf7078880e85a900be534fb826651a2453391",
+      "encoding": "original-byte-copy",
+      "sourceBytesRecoveredExactly": true
+    },
+    {
+      "role": "original-stdout-gzip",
+      "scratchSource": "qa23/current/browser/forge/execution.stdout.log.gz",
+      "packagePath": "docs/iteration/evidence/round23/browser/forge/execution.stdout.log.gz",
+      "archiveRelative": "forge/execution.stdout.log.gz",
+      "sourceBytes": 99,
+      "sourceSha256": "fd22ee796c2a45da38735758f38e97dde733b77f6ac9071adf0a104d51ab044a",
+      "storedBytes": 99,
+      "storedSha256": "fd22ee796c2a45da38735758f38e97dde733b77f6ac9071adf0a104d51ab044a",
+      "encoding": "original-byte-copy",
+      "sourceBytesRecoveredExactly": true,
+      "uncompressedLogBytes": 86,
+      "uncompressedLogSha256": "49121e2319a9059626c8ea7fc3b061bff0d029fa5dbe595be85f51204bf49162",
+      "matchesRunRecordRawLogSha256": true
+    },
+    {
+      "role": "original-stderr-gzip",
+      "scratchSource": "qa23/current/browser/forge/execution.stderr.log.gz",
+      "packagePath": "docs/iteration/evidence/round23/browser/forge/execution.stderr.log.gz",
+      "archiveRelative": "forge/execution.stderr.log.gz",
+      "sourceBytes": 20,
+      "sourceSha256": "f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec",
+      "storedBytes": 20,
+      "storedSha256": "f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec",
+      "encoding": "original-byte-copy",
+      "sourceBytesRecoveredExactly": true,
+      "uncompressedLogBytes": 0,
+      "uncompressedLogSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "matchesRunRecordRawLogSha256": true
+    },
+    {
+      "role": "original-browser-report",
+      "scratchSource": "qa23/current/browser/fusion/report.json",
+      "packagePath": "docs/iteration/evidence/round23/browser/fusion/report.json.gz",
+      "archiveRelative": "fusion/report.json.gz",
+      "sourceBytes": 7985,
+      "sourceSha256": "8124cb664857f5014f9775c6e0935876c33b2f75db170eb3ec9427d95e80d9dd",
+      "storedBytes": 1721,
+      "storedSha256": "d0889c1cdcdd2b915fe60ad220f7f19444b35f3b6152ebd520f9ca4dc18ad557",
+      "encoding": "lossless-gzip-of-original-bytes",
+      "sourceBytesRecoveredExactly": true
+    },
+    {
+      "role": "original-run-record",
+      "scratchSource": "qa23/current/browser/fusion/execution.run.json",
+      "packagePath": "docs/iteration/evidence/round23/browser/fusion/execution.run.json",
+      "archiveRelative": "fusion/execution.run.json",
+      "sourceBytes": 820,
+      "sourceSha256": "bbf0363dfac9e9939be860b1fe260c6dfb853dcaf12db1bdac2b2d40e55877c5",
+      "storedBytes": 820,
+      "storedSha256": "bbf0363dfac9e9939be860b1fe260c6dfb853dcaf12db1bdac2b2d40e55877c5",
+      "encoding": "original-byte-copy",
+      "sourceBytesRecoveredExactly": true
+    },
+    {
+      "role": "original-stdout-gzip",
+      "scratchSource": "qa23/current/browser/fusion/execution.stdout.log.gz",
+      "packagePath": "docs/iteration/evidence/round23/browser/fusion/execution.stdout.log.gz",
+      "archiveRelative": "fusion/execution.stdout.log.gz",
+      "sourceBytes": 101,
+      "sourceSha256": "f53989c9961c3d788d62a1518c7995475c94e0a0b476d5bcf7e1dc0075e5a64d",
+      "storedBytes": 101,
+      "storedSha256": "f53989c9961c3d788d62a1518c7995475c94e0a0b476d5bcf7e1dc0075e5a64d",
+      "encoding": "original-byte-copy",
+      "sourceBytesRecoveredExactly": true,
+      "uncompressedLogBytes": 104,
+      "uncompressedLogSha256": "67a82d6b94cd56e3c715d81fd6a241f8f7c7d77a1d248a5dbef053b3b274f880",
+      "matchesRunRecordRawLogSha256": true
+    },
+    {
+      "role": "original-stderr-gzip",
+      "scratchSource": "qa23/current/browser/fusion/execution.stderr.log.gz",
+      "packagePath": "docs/iteration/evidence/round23/browser/fusion/execution.stderr.log.gz",
+      "archiveRelative": "fusion/execution.stderr.log.gz",
+      "sourceBytes": 20,
+      "sourceSha256": "f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec",
+      "storedBytes": 20,
+      "storedSha256": "f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec",
+      "encoding": "original-byte-copy",
+      "sourceBytesRecoveredExactly": true,
+      "uncompressedLogBytes": 0,
+      "uncompressedLogSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "matchesRunRecordRawLogSha256": true
+    },
+    {
+      "role": "original-browser-report",
+      "scratchSource": "qa23/current/browser/talents/talents-browser.json",
+      "packagePath": "docs/iteration/evidence/round23/browser/talents/talents-browser.json.gz",
+      "archiveRelative": "talents/talents-browser.json.gz",
+      "sourceBytes": 4705,
+      "sourceSha256": "b7ad272a6aa43036d0ed5ba6fe73ea096b85f7c3f98cccff94ce240872f7b718",
+      "storedBytes": 1648,
+      "storedSha256": "2befcaa7ff2bd06a8884f1614f3c2b11fc283649a2e227b7a6837c6909ea43eb",
+      "encoding": "lossless-gzip-of-original-bytes",
+      "sourceBytesRecoveredExactly": true
+    },
+    {
+      "role": "original-run-record",
+      "scratchSource": "qa23/current/browser/talents/execution.run.json",
+      "packagePath": "docs/iteration/evidence/round23/browser/talents/execution.run.json",
+      "archiveRelative": "talents/execution.run.json",
+      "sourceBytes": 764,
+      "sourceSha256": "ebe12daaa76065e18100eb81f6690301db73781931d48c6ad669c7c1d9c3f4de",
+      "storedBytes": 764,
+      "storedSha256": "ebe12daaa76065e18100eb81f6690301db73781931d48c6ad669c7c1d9c3f4de",
+      "encoding": "original-byte-copy",
+      "sourceBytesRecoveredExactly": true
+    },
+    {
+      "role": "original-stdout-gzip",
+      "scratchSource": "qa23/current/browser/talents/execution.stdout.log.gz",
+      "packagePath": "docs/iteration/evidence/round23/browser/talents/execution.stdout.log.gz",
+      "archiveRelative": "talents/execution.stdout.log.gz",
+      "sourceBytes": 108,
+      "sourceSha256": "fe8df0acb0117693811afafbbff3ad3f4e1e9c7f4f51d45cf5024690019fcc6f",
+      "storedBytes": 108,
+      "storedSha256": "fe8df0acb0117693811afafbbff3ad3f4e1e9c7f4f51d45cf5024690019fcc6f",
+      "encoding": "original-byte-copy",
+      "sourceBytesRecoveredExactly": true,
+      "uncompressedLogBytes": 105,
+      "uncompressedLogSha256": "0cb39ef3d406579e191e98ec272191cbdbd23b6e23d7dc5321f36f9eda08abac",
+      "matchesRunRecordRawLogSha256": true
+    },
+    {
+      "role": "original-stderr-gzip",
+      "scratchSource": "qa23/current/browser/talents/execution.stderr.log.gz",
+      "packagePath": "docs/iteration/evidence/round23/browser/talents/execution.stderr.log.gz",
+      "archiveRelative": "talents/execution.stderr.log.gz",
+      "sourceBytes": 20,
+      "sourceSha256": "f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec",
+      "storedBytes": 20,
+      "storedSha256": "f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec",
+      "encoding": "original-byte-copy",
+      "sourceBytesRecoveredExactly": true,
+      "uncompressedLogBytes": 0,
+      "uncompressedLogSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "matchesRunRecordRawLogSha256": true
+    },
+    {
+      "role": "original-seven-job-supporting-json",
+      "scratchSource": "qa23/current/browser/functional-summary.json",
+      "packagePath": "docs/iteration/evidence/round23/browser/identity/functional-summary.json.gz",
+      "archiveRelative": "identity/functional-summary.json.gz",
+      "sourceBytes": 24528,
+      "sourceSha256": "0e634d1ddc231e03497f9e2da7f78f23bea948388959e2ef6bfaaba8c05d17dc",
+      "storedBytes": 4436,
+      "storedSha256": "cb27a7056c2e8ed65d4a120ff657bd28e72d9f01e918c1093f5ff98d36fff142",
+      "encoding": "lossless-gzip-of-original-bytes",
+      "sourceBytesRecoveredExactly": true
+    },
+    {
+      "role": "original-seven-job-supporting-json",
+      "scratchSource": "qa23/current/browser/functional-source-before.json",
+      "packagePath": "docs/iteration/evidence/round23/browser/identity/functional-source-before.json.gz",
+      "archiveRelative": "identity/functional-source-before.json.gz",
+      "sourceBytes": 45502,
+      "sourceSha256": "84614d77f88d63c76166d2fded519c3d4b3ff29bd903cd4b2162a8c739453aa9",
+      "storedBytes": 16173,
+      "storedSha256": "cc0440b434bd9d89f66cf241ae674d7c2abcd9e12fa45a8dd0043ccd26d5eb6f",
+      "encoding": "lossless-gzip-of-original-bytes",
+      "sourceBytesRecoveredExactly": true
+    },
+    {
+      "role": "original-seven-job-supporting-json",
+      "scratchSource": "qa23/current/browser/functional-source-after.json",
+      "packagePath": "docs/iteration/evidence/round23/browser/identity/functional-source-after.json.gz",
+      "archiveRelative": "identity/functional-source-after.json.gz",
+      "sourceBytes": 45545,
+      "sourceSha256": "11c5b06d1dac437b5e9096b0f382746be0d4d159dfce3af8db463800faa95ab2",
+      "storedBytes": 16203,
+      "storedSha256": "c214d2003c63e0ed6d5cfa0000ba14ea31270a373a3d624dbfc37cb7ef9ebd57",
+      "encoding": "lossless-gzip-of-original-bytes",
+      "sourceBytesRecoveredExactly": true
+    },
+    {
+      "role": "selected-original-png",
+      "scratchSource": "qa23/current/browser/lifecycle/combat-result-1280.png",
+      "packagePath": "docs/iteration/evidence/round23/browser/lifecycle/combat-result-1280.png",
+      "archiveRelative": "lifecycle/combat-result-1280.png",
+      "sourceBytes": 408218,
+      "sourceSha256": "2c4ca8e41194f6306de1580d8f728082657d53c3e983ed3a3162d7f5d5283981",
+      "storedBytes": 408218,
+      "storedSha256": "2c4ca8e41194f6306de1580d8f728082657d53c3e983ed3a3162d7f5d5283981",
+      "encoding": "original-byte-copy",
+      "sourceBytesRecoveredExactly": true
+    },
+    {
+      "role": "selected-original-png",
+      "scratchSource": "qa23/current/browser/fusion/fusion-390.png",
+      "packagePath": "docs/iteration/evidence/round23/browser/fusion/fusion-390.png",
+      "archiveRelative": "fusion/fusion-390.png",
+      "sourceBytes": 94047,
+      "sourceSha256": "c7ddf3ebb4e6d442997ac31ed7758a66e49b09bbe060ed9e6527274ecaac93fe",
+      "storedBytes": 94047,
+      "storedSha256": "c7ddf3ebb4e6d442997ac31ed7758a66e49b09bbe060ed9e6527274ecaac93fe",
+      "encoding": "original-byte-copy",
+      "sourceBytesRecoveredExactly": true
+    }
+  ],
+  "selectedPngObservations": {
+    "lifecycle/combat-result-1280.png": "1280×900、full 效果战斗结算后的宝箱与手动开箱按钮；已直接查看原图。",
+    "fusion/fusion-390.png": "390×844、滚动后的受保护材料融合预览与确认入口；已直接查看原图。"
+  },
+  "omittedCurrentImages": [
+    {
+      "scratchSource": "qa23/current/browser/core/inventory.png",
+      "bytes": 459495,
+      "sha256": "80fd38901df9872194aa64f51c4c5b2654d9c1a9e8821a8c3598e80c101e87da",
+      "reason": "Current screenshot omitted from package for size budget; original retained in scratch and named by the original reports where recorded."
+    },
+    {
+      "scratchSource": "qa23/current/browser/core/loot.png",
+      "bytes": 451034,
+      "sha256": "a5b996fabe19623b60a715d43c93ab1a2ac84b257675bc7bc39c1b7084b6b7be",
+      "reason": "Current screenshot omitted from package for size budget; original retained in scratch and named by the original reports where recorded."
+    },
+    {
+      "scratchSource": "qa23/current/browser/core/title.png",
+      "bytes": 1059681,
+      "sha256": "25ec47f76ea9f29af4fa13d9e4ecc0c992eb3aa0d1a952a32b2fcdcc4cb0b699",
+      "reason": "Current screenshot omitted from package for size budget; original retained in scratch and named by the original reports where recorded."
+    },
+    {
+      "scratchSource": "qa23/current/browser/environment/current-environment-history-back.png",
+      "bytes": 616467,
+      "sha256": "c5b779b5dab2892e2e7c523ac486a6a50f842b8cafc4d58ed82125873bfbbb03",
+      "reason": "Current screenshot omitted from package for size budget; original retained in scratch and named by the original reports where recorded."
+    },
+    {
+      "scratchSource": "qa23/current/browser/environment/current-environment-offline-saved-action.png",
+      "bytes": 680036,
+      "sha256": "32e17c3ad57debc73d8f5719ba17a2eafa36e0cb6aa327e22a533d2d9b93d22a",
+      "reason": "Current screenshot omitted from package for size budget; original retained in scratch and named by the original reports where recorded."
+    },
+    {
+      "scratchSource": "qa23/current/browser/environment/current-environment-online-reloaded.png",
+      "bytes": 674389,
+      "sha256": "960d3cd13bb4cc9a884de679cbadce9ee15418307383b0e00f83c9f00ab7e698",
+      "reason": "Current screenshot omitted from package for size budget; original retained in scratch and named by the original reports where recorded."
+    },
+    {
+      "scratchSource": "qa23/current/browser/environment/current-environment-reduced-motion-reward.png",
+      "bytes": 623227,
+      "sha256": "397886b5dbf08f50d7a941b0cb5bfe52a7d1443168eb648931e7e0f4197149f4",
+      "reason": "Current screenshot omitted from package for size budget; original retained in scratch and named by the original reports where recorded."
+    },
+    {
+      "scratchSource": "qa23/current/browser/inventory/inventory-results.jpg",
+      "bytes": 130986,
+      "sha256": "82ffb11f9315a78fb6d36631b7df0bf2ef3d979dcb5bc134a81833f0d34eb8da",
+      "reason": "Current screenshot omitted from package for size budget; original retained in scratch and named by the original reports where recorded."
+    },
+    {
+      "scratchSource": "qa23/current/browser/inventory/same-run-caret.jpg",
+      "bytes": 133833,
+      "sha256": "e1a15713a6a50323233192bcf227759162fca8bc04e0b63ae975b5a30f38e69d",
+      "reason": "Current screenshot omitted from package for size budget; original retained in scratch and named by the original reports where recorded."
+    },
+    {
+      "scratchSource": "qa23/current/browser/iteration/current-context-lost-fallback.png",
+      "bytes": 619123,
+      "sha256": "5afde43c7a0fdeb510b706a3633c7b4643ff1289dbea5320bcd00543f368c46d",
+      "reason": "Current screenshot omitted from package for size budget; original retained in scratch and named by the original reports where recorded."
+    },
+    {
+      "scratchSource": "qa23/current/browser/iteration/current-context-restored.png",
+      "bytes": 616836,
+      "sha256": "fee4d79df5eaf2e4dadae196c7de3fac8c14faf5fe7925d51e045fd9ecad2a50",
+      "reason": "Current screenshot omitted from package for size budget; original retained in scratch and named by the original reports where recorded."
+    },
+    {
+      "scratchSource": "qa23/current/browser/iteration/current-invalid-import-abyssauction.png",
+      "bytes": 334736,
+      "sha256": "899a6ccb9d12e1a1e4b88432dc54a352f4619c404688e4910ebe7b46b5fc42b9",
+      "reason": "Current screenshot omitted from package for size budget; original retained in scratch and named by the original reports where recorded."
+    },
+    {
+      "scratchSource": "qa23/current/browser/iteration/current-invalid-import-oathgate.png",
+      "bytes": 334736,
+      "sha256": "899a6ccb9d12e1a1e4b88432dc54a352f4619c404688e4910ebe7b46b5fc42b9",
+      "reason": "Current screenshot omitted from package for size budget; original retained in scratch and named by the original reports where recorded."
+    },
+    {
+      "scratchSource": "qa23/current/browser/iteration/current-inventory-sorting.png",
+      "bytes": 639714,
+      "sha256": "26f9163ba6a06aa4d71b357cb23895c1bfa2691cf43fbc87dddeb9280a4f96c4",
+      "reason": "Current screenshot omitted from package for size budget; original retained in scratch and named by the original reports where recorded."
+    },
+    {
+      "scratchSource": "qa23/current/browser/iteration/current-recovered-archive.png",
+      "bytes": 647003,
+      "sha256": "64ba477ae366937b00bd2cdc5dd26be153ad0aff82171e7564f932a940a6157e",
+      "reason": "Current screenshot omitted from package for size budget; original retained in scratch and named by the original reports where recorded."
+    },
+    {
+      "scratchSource": "qa23/current/browser/iteration/current-title-1366.png",
+      "bytes": 762567,
+      "sha256": "1e70a81e4bfdf22221250ba9bb65172a276517d7e2021ea6de54fb1306e02ccf",
+      "reason": "Current screenshot omitted from package for size budget; original retained in scratch and named by the original reports where recorded."
+    },
+    {
+      "scratchSource": "qa23/current/browser/iteration/current-title-1920.png",
+      "bytes": 1489846,
+      "sha256": "90d855a21c31d2270f3eabdc0d65e3834ed5079404f2e65be2c7df2d89203b40",
+      "reason": "Current screenshot omitted from package for size budget; original retained in scratch and named by the original reports where recorded."
+    },
+    {
+      "scratchSource": "qa23/current/browser/iteration/current-title-2560.png",
+      "bytes": 2381118,
+      "sha256": "7e40396983fd483abc823fa20b01c22c1d175289fb4dc18d22e44c94f045f5bc",
+      "reason": "Current screenshot omitted from package for size budget; original retained in scratch and named by the original reports where recorded."
+    },
+    {
+      "scratchSource": "qa23/current/browser/iteration/current-title-3840.png",
+      "bytes": 4571881,
+      "sha256": "07473f8e5a0b47d0261ef8ca9bae94da5ae4cf51323d31ecaca7a54cce1f0cd7",
+      "reason": "Current screenshot omitted from package for size budget; original retained in scratch and named by the original reports where recorded."
+    },
+    {
+      "scratchSource": "qa23/current/browser/layout/layout-parity-1366.jpg",
+      "bytes": 138212,
+      "sha256": "11c207b0aa5e127c76b5e71bc2b238b095df6e10c97873f958fd06aaffb50062",
+      "reason": "Current screenshot omitted from package for size budget; original retained in scratch and named by the original reports where recorded."
+    },
+    {
+      "scratchSource": "qa23/current/browser/layout/layout-parity-390.jpg",
+      "bytes": 51922,
+      "sha256": "8dcd7d36b9dcc659b5e035b21ab0af49fbf44e86d9da9727470bbf8fc3aed961",
+      "reason": "Current screenshot omitted from package for size budget; original retained in scratch and named by the original reports where recorded."
+    },
+    {
+      "scratchSource": "qa23/current/browser/layout/layout-sequence-1366.jpg",
+      "bytes": 141636,
+      "sha256": "b2df3dccf3ce5f3221eaaa8287de0765ae4dbf9e02a0b0bb63948d2c0589d5cc",
+      "reason": "Current screenshot omitted from package for size budget; original retained in scratch and named by the original reports where recorded."
+    },
+    {
+      "scratchSource": "qa23/current/browser/layout/layout-sequence-390.jpg",
+      "bytes": 55415,
+      "sha256": "566525b3489e882470c79a98116e23d4222b8ee1b778a3e74015191e1bd6a102",
+      "reason": "Current screenshot omitted from package for size budget; original retained in scratch and named by the original reports where recorded."
+    },
+    {
+      "scratchSource": "qa23/current/browser/talents/talents-preview-1440.png",
+      "bytes": 570838,
+      "sha256": "9640ab9b26754bfffc5c88427a55cc64786940f6d9308652ff4552e8de0ca6c8",
+      "reason": "Current screenshot omitted from package for size budget; original retained in scratch and named by the original reports where recorded."
+    }
+  ],
+  "verification": {
+    "allArchivedSourceBytesRecoveredExactly": true,
+    "gzipReportAndSupportingJsonCount": 13,
+    "preexistingGzipLogCount": 20,
+    "allLogRawSha256MatchRunRecords": true,
+    "manifestAndReadmeExcludedFromSourceMapping": "Generated archive metadata; they are not original browser records."
+  },
+  "strictRGBA": "Earlier renderer strict zero-difference gate remains FAILED; these functional passes do not replace that gate. Shader candidate remains withdrawn.",
+  "performance": "Every time field in archived functional reports/run records remains raw evidence of execution and lifecycle deadlines, not FPS or performance benefit."
+}

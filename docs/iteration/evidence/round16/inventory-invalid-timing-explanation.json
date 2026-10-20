@@ -1,0 +1,9 @@
+{
+  "status": "INVALID_FOR_TIMING",
+  "reason": "Getter counters were restored before native timings, but object property descriptor changes can change V8 shapes and inline-cache optimization. No native performance conclusion is drawn from this attempt. Equality and call-count results remain observations. Corrected protocol runs every native case before any getter instrumentation.",
+  "files": [
+    "initial-instrumentation-before-timing.mjs",
+    "initial-instrumentation-before-timing.json",
+    "initial-instrumentation-before-timing.stdout.json"
+  ]
+}

@@ -1,0 +1,230 @@
+TAP version 13
+# Subtest: offering keeps the reserved name after locking and never substitutes another safe item
+not ok 1 - offering keeps the reserved name after locking and never substitutes another safe item
+  ---
+  duration_ms: 2.258077
+  type: 'test'
+  location: '/workspace/scratch/5f6ca1e00aa7/work/Dice-Abyss/tests/event-context.test.mjs:14:65'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + '无安全旧装备'
+    - '铭刻·破晓回环'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: '铭刻·破晓回环'
+  actual: '无安全旧装备'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///workspace/scratch/5f6ca1e00aa7/work/Dice-Abyss/tests/event-context.test.mjs:22:10)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.start (node:internal/test_runner/test:1242:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+  ...
+# Subtest: relicloom keeps the reserved name after locking and never substitutes another safe item
+not ok 2 - relicloom keeps the reserved name after locking and never substitutes another safe item
+  ---
+  duration_ms: 0.577413
+  type: 'test'
+  location: '/workspace/scratch/5f6ca1e00aa7/work/Dice-Abyss/tests/event-context.test.mjs:14:65'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + '无安全旧遗物'
+    - '铭刻·破晓回环'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: '铭刻·破晓回环'
+  actual: '无安全旧遗物'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///workspace/scratch/5f6ca1e00aa7/work/Dice-Abyss/tests/event-context.test.mjs:22:10)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+    Test.postRun (node:internal/test_runner/test:1522:19)
+    Test.run (node:internal/test_runner/test:1447:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+  ...
+# Subtest: reserved material reasons distinguish missing, absent, equipped, loot and rarity protection
+not ok 3 - reserved material reasons distinguish missing, absent, equipped, loot and rarity protection
+  ---
+  duration_ms: 2.161104
+  type: 'test'
+  location: '/workspace/scratch/5f6ca1e00aa7/work/Dice-Abyss/tests/event-context.test.mjs:27:1'
+  failureType: 'testCodeFailure'
+  error: 'offering/removed'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: '无安全旧物或已达永久馈赠上限'
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///workspace/scratch/5f6ca1e00aa7/work/Dice-Abyss/tests/event-context.test.mjs:30:120)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+    Test.postRun (node:internal/test_runner/test:1522:19)
+    Test.run (node:internal/test_runner/test:1447:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+  ...
+# Subtest: an existing unnamed reserved item keeps an explicit ID instead of being called missing
+not ok 4 - an existing unnamed reserved item keeps an explicit ID instead of being called missing
+  ---
+  duration_ms: 1.70542
+  type: 'test'
+  location: '/workspace/scratch/5f6ca1e00aa7/work/Dice-Abyss/tests/event-context.test.mjs:34:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + '无安全旧装备'
+    - '未命名旧物（i4）'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: '未命名旧物（i4）'
+  actual: '无安全旧装备'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///workspace/scratch/5f6ca1e00aa7/work/Dice-Abyss/tests/event-context.test.mjs:42:43)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+    Test.postRun (node:internal/test_runner/test:1522:19)
+    Test.run (node:internal/test_runner/test:1447:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+  ...
+# Subtest: offering separates the shared gift count from the unallocated-point safety cap
+not ok 5 - offering separates the shared gift count from the unallocated-point safety cap
+  ---
+  duration_ms: 0.505347
+  type: 'test'
+  location: '/workspace/scratch/5f6ca1e00aa7/work/Dice-Abyss/tests/event-context.test.mjs:47:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The input did not match the regular expression /与星海书库共用.*20 次/. Input:
+    
+    '无安全旧物或已达永久馈赠上限'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: '无安全旧物或已达永久馈赠上限'
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///workspace/scratch/5f6ca1e00aa7/work/Dice-Abyss/tests/event-context.test.mjs:50:10)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+    Test.postRun (node:internal/test_runner/test:1522:19)
+    Test.run (node:internal/test_runner/test:1447:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+  ...
+# Subtest: bloodwell displays its entry snapshot charge through larger and smaller armor swaps
+not ok 6 - bloodwell displays its entry snapshot charge through larger and smaller armor swaps
+  ---
+  duration_ms: 1.410484
+  type: 'test'
+  location: '/workspace/scratch/5f6ca1e00aa7/work/Dice-Abyss/tests/event-context.test.mjs:56:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The input did not match the regular expression /入井时最大生命/. Input:
+    
+    '以最大生命 20% 的当前生命，换一只至少传说的深层宝箱。不能致死。'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: '以最大生命 20% 的当前生命，换一只至少传说的深层宝箱。不能致死。'
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///workspace/scratch/5f6ca1e00aa7/work/Dice-Abyss/tests/event-context.test.mjs:64:12)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+    Test.postRun (node:internal/test_runner/test:1522:19)
+    Test.run (node:internal/test_runner/test:1447:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+  ...
+# Subtest: bloodwell keeps exact saved charges, refuses lethal payment and can safely leave at the boundary
+not ok 7 - bloodwell keeps exact saved charges, refuses lethal payment and can safely leave at the boundary
+  ---
+  duration_ms: 2.597128
+  type: 'test'
+  location: '/workspace/scratch/5f6ca1e00aa7/work/Dice-Abyss/tests/event-context.test.mjs:68:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The input did not match the regular expression /本次需 17 当前生命/. Input:
+    
+    '以最大生命 20% 的当前生命，换一只至少传说的深层宝箱。不能致死。'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: '以最大生命 20% 的当前生命，换一只至少传说的深层宝箱。不能致死。'
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///workspace/scratch/5f6ca1e00aa7/work/Dice-Abyss/tests/event-context.test.mjs:78:127)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+    Test.postRun (node:internal/test_runner/test:1522:19)
+    Test.run (node:internal/test_runner/test:1447:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+  ...
+# Subtest: resolved offering and bloodwell text, outcomes and save bytes remain historical records
+ok 8 - resolved offering and bloodwell text, outcomes and save bytes remain historical records
+  ---
+  duration_ms: 2.992872
+  type: 'test'
+  ...
+# Subtest: memorywell explains HP clipping at reset and restoring vitality never heals the lost HP
+not ok 9 - memorywell explains HP clipping at reset and restoring vitality never heals the lost HP
+  ---
+  duration_ms: 1.895411
+  type: 'test'
+  location: '/workspace/scratch/5f6ca1e00aa7/work/Dice-Abyss/tests/event-context.test.mjs:89:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The input did not match the regular expression /超出新生命上限的当前生命会被裁减/. Input:
+    
+    '全部投入返还，武器、防具与遗物不变；生命不会被免费填满。'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: '全部投入返还，武器、防具与遗物不变；生命不会被免费填满。'
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///workspace/scratch/5f6ca1e00aa7/work/Dice-Abyss/tests/event-context.test.mjs:98:12)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+    Test.postRun (node:internal/test_runner/test:1522:19)
+    Test.run (node:internal/test_runner/test:1447:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+  ...
+# Subtest: all 22 existing event keys retain legal choices, explicit payment, once-only claims and save closure
+ok 10 - all 22 existing event keys retain legal choices, explicit payment, once-only claims and save closure
+  ---
+  duration_ms: 215.019667
+  type: 'test'
+  ...
+1..10
+# tests 10
+# suites 0
+# pass 2
+# fail 8
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 296.756184

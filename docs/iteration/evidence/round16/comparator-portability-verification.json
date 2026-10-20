@@ -1,0 +1,72 @@
+{
+  "status": "PASS",
+  "script": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss/scripts/compare-natural-round16.mjs",
+  "scriptSha256": "f336b6e1932efa009aaeeefd3772e9ffba1ccf2a099e7db4d0087922c1bf49c8",
+  "method": "The actual baseline/current JSON reports were copied under renamed report filenames. Both original-basename companion resolution and explicit renamed save overrides were executed without re-running any simulation. Original recorded source paths remain visible in each terminal record. All 19 validation checks and recursive report evidence stayed equal.",
+  "defaultAdjacentReport": "/workspace/scratch/61dab2872cc5/audit/current/comparator-portability-adjacent.json",
+  "explicitOverrideReport": "/workspace/scratch/61dab2872cc5/audit/current/comparator-portability-explicit.json",
+  "receipts": [
+    {
+      "step": "comparator-portability-adjacent",
+      "command": [
+        "node",
+        "scripts/compare-natural-round16.mjs",
+        "--baseline-source",
+        "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss",
+        "--current-source",
+        "/workspace/scratch/61dab2872cc5/work/Dice-Abyss",
+        "--baseline",
+        "/workspace/scratch/61dab2872cc5/audit/current/comparator-portability-fixture/baseline/renamed-report.json",
+        "--current",
+        "/workspace/scratch/61dab2872cc5/audit/current/comparator-portability-fixture/current/renamed-report.json",
+        "--output",
+        "/workspace/scratch/61dab2872cc5/audit/current/comparator-portability-adjacent.json"
+      ],
+      "cwd": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss",
+      "started": "2026-10-19T03:10:21.032069+00:00",
+      "finished": "2026-10-19T03:10:21.128683+00:00",
+      "durationSeconds": 0.096624,
+      "exitCode": 0,
+      "scriptSha256": "f336b6e1932efa009aaeeefd3772e9ffba1ccf2a099e7db4d0087922c1bf49c8",
+      "stdoutFile": "/workspace/scratch/61dab2872cc5/audit/current/comparator-portability-adjacent.log",
+      "stderrFile": "/workspace/scratch/61dab2872cc5/audit/current/comparator-portability-adjacent.stderr.log",
+      "stdoutBytes": 349,
+      "stderrBytes": 0,
+      "stdoutSha256": "b4e64c85b2f2854bd810f1121f352f81a32d65e62ffbf01550f82376bc8b2945",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "step": "comparator-portability-explicit",
+      "command": [
+        "node",
+        "scripts/compare-natural-round16.mjs",
+        "--baseline-source",
+        "/workspace/scratch/61dab2872cc5/baseline/Dice-Abyss",
+        "--current-source",
+        "/workspace/scratch/61dab2872cc5/work/Dice-Abyss",
+        "--baseline",
+        "/workspace/scratch/61dab2872cc5/audit/current/comparator-portability-fixture/baseline/renamed-report.json",
+        "--current",
+        "/workspace/scratch/61dab2872cc5/audit/current/comparator-portability-fixture/current/renamed-report.json",
+        "--output",
+        "/workspace/scratch/61dab2872cc5/audit/current/comparator-portability-explicit.json",
+        "--baseline-save",
+        "/workspace/scratch/61dab2872cc5/audit/current/comparator-portability-fixture/explicit-saves/baseline-failure.txt",
+        "--current-save",
+        "/workspace/scratch/61dab2872cc5/audit/current/comparator-portability-fixture/explicit-saves/current-failure.txt"
+      ],
+      "cwd": "/workspace/scratch/61dab2872cc5/work/Dice-Abyss",
+      "started": "2026-10-19T03:10:21.129133+00:00",
+      "finished": "2026-10-19T03:10:21.215095+00:00",
+      "durationSeconds": 0.085971,
+      "exitCode": 0,
+      "scriptSha256": "f336b6e1932efa009aaeeefd3772e9ffba1ccf2a099e7db4d0087922c1bf49c8",
+      "stdoutFile": "/workspace/scratch/61dab2872cc5/audit/current/comparator-portability-explicit.log",
+      "stderrFile": "/workspace/scratch/61dab2872cc5/audit/current/comparator-portability-explicit.stderr.log",
+      "stdoutBytes": 349,
+      "stderrBytes": 0,
+      "stdoutSha256": "e5f35697df71d852458d011c533afa73b72e8e89d0dc0f55b667b90f6030a026",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

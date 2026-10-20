@@ -1,0 +1,756 @@
+{
+  "title": "Round03 gameplay, respec policy and reward truth audit",
+  "baselineVersion": "5.3.0",
+  "inputRound": 2,
+  "method": "Two fresh full floor-1 to floor-400 baseline adventures using the unchanged simulator with balanced priority, expected upgrades, fusion, adventurous events and one talent point per decision. The compact read-only comparison adapter verifies 512 calls against the full inventory implementation. Recorded long-fight states are replayed locally first with the exact same original policy, then with legally applied alternative talent/equipment decisions. No player level, HP, gear, dice or RNG is granted or rerolled.",
+  "baselineSourceHashes": {
+    "src/engine.js": "7921b6f65957809f640db828c2614158a85de31ddc99a192ad03880d8dfad91f",
+    "src/encounters.js": "1424b1388c8cb8847079dc200a9d5b39db0f29a6adda97a5fa40d0b3fe137fa8",
+    "src/deep-rules.js": "6919b66ec8fbadea293ab4c4e3aa0b8c7a943e2ec44224b119287709d484581f",
+    "src/equipment.js": "783f8a049022e7ebb9a9c55c889dd36bf340c36b5ecffb904a1f64a261f26b72",
+    "scripts/simulate.mjs": "3b0e2d6c5f8151714dd0d60596e6a2681fb79604592f3670f4bb93218bdf614f"
+  },
+  "baselineRows": [
+    {
+      "seed": 7919,
+      "floors": 400,
+      "completed": true,
+      "deaths": 0,
+      "rolls": 2701,
+      "level": 279,
+      "gold": 1712209,
+      "spending": {
+        "shop": 19364,
+        "forge": 32345,
+        "fusion": 1177989
+      },
+      "spent": 1389332,
+      "buys": 10,
+      "forges": 21,
+      "fusions": 288,
+      "rounds": {
+        "combat": {
+          "n": 1169,
+          "min": 1,
+          "median": 1,
+          "p95": 3,
+          "max": 8,
+          "mean": 1.282
+        },
+        "elite": {
+          "n": 402,
+          "min": 1,
+          "median": 1,
+          "p95": 5,
+          "max": 24,
+          "mean": 1.938
+        },
+        "boss": {
+          "n": 117,
+          "min": 1,
+          "median": 2,
+          "p95": 9,
+          "max": 41,
+          "mean": 3.376
+        },
+        "trial": {
+          "n": 18,
+          "min": 1,
+          "median": 1,
+          "p95": 2,
+          "max": 6,
+          "mean": 1.556
+        }
+      },
+      "lateBosses": {
+        "n": 14,
+        "min": 1,
+        "median": 1,
+        "p95": 4,
+        "max": 4,
+        "mean": 1.714
+      },
+      "respecs": [
+        {
+          "id": "53/4/1",
+          "floor": 53,
+          "points": 134,
+          "hp": 4621,
+          "maxHp": 4621
+        },
+        {
+          "id": "158/4/1",
+          "floor": 158,
+          "points": 296,
+          "hp": 44349,
+          "maxHp": 44349
+        },
+        {
+          "id": "166/4/1",
+          "floor": 166,
+          "points": 307,
+          "hp": 44614,
+          "maxHp": 44614
+        },
+        {
+          "id": "187/4/1",
+          "floor": 187,
+          "points": 336,
+          "hp": 42472,
+          "maxHp": 42472
+        },
+        {
+          "id": "196/4/1",
+          "floor": 196,
+          "points": 346,
+          "hp": 43168,
+          "maxHp": 43168
+        },
+        {
+          "id": "215/4/1",
+          "floor": 215,
+          "points": 370,
+          "hp": 46886,
+          "maxHp": 46886
+        },
+        {
+          "id": "268/4/1",
+          "floor": 268,
+          "points": 429,
+          "hp": 53264,
+          "maxHp": 53264
+        },
+        {
+          "id": "278/4/1",
+          "floor": 278,
+          "points": 441,
+          "hp": 54173,
+          "maxHp": 54173
+        },
+        {
+          "id": "291/4/1",
+          "floor": 291,
+          "points": 455,
+          "hp": 55277,
+          "maxHp": 55277
+        },
+        {
+          "id": "334/4/1",
+          "floor": 334,
+          "points": 497,
+          "hp": 117900,
+          "maxHp": 117900
+        }
+      ],
+      "finalTalents": {
+        "high": 5,
+        "four": 5,
+        "five": 5,
+        "six": 5,
+        "sum": 5,
+        "power": 374,
+        "resonance": 5,
+        "pair": 5,
+        "triple": 5,
+        "quartet": 5,
+        "choir": 5,
+        "echo": 5,
+        "critical": 5,
+        "keen": 5,
+        "crush": 5,
+        "pursuit": 5,
+        "opener": 5,
+        "slayer": 5,
+        "vitality": 5,
+        "guard": 5,
+        "leech": 5,
+        "recovery": 5,
+        "fortune": 5,
+        "smith": 5,
+        "luck": 5,
+        "attune": 5,
+        "omen": 5,
+        "mercy": 5,
+        "jackpot": 5,
+        "spark": 5,
+        "shatter": 3,
+        "diversity": 3,
+        "finality": 3,
+        "deepEcho": 3,
+        "chorusMend": 3,
+        "tripleBlade": 3,
+        "firstFire": 3,
+        "critAegis": 3,
+        "dawnCrit": 3,
+        "emberGuard": 3,
+        "phaseShelter": 3,
+        "lastResolve": 3,
+        "hunterStar": 3,
+        "gildedFaces": 3,
+        "sixRebirth": 3
+      },
+      "finalUnspent": 0,
+      "inventoryItems": 553,
+      "sparesByRarity": [
+        1,
+        6,
+        1,
+        302,
+        114,
+        82,
+        33,
+        9
+      ],
+      "equipped": [
+        {
+          "id": "i1411",
+          "name": "溯源·星海天启心核",
+          "slot": "relic",
+          "rarity": 6,
+          "level": 226,
+          "levelXp": 508,
+          "enhance": 0
+        },
+        {
+          "id": "i1491",
+          "name": "无终·白骨刺剑",
+          "slot": "weapon",
+          "rarity": 7,
+          "level": 267,
+          "levelXp": 613,
+          "enhance": 9
+        },
+        {
+          "id": "i1741",
+          "name": "无终·余音流光棱镜",
+          "slot": "relic",
+          "rarity": 7,
+          "level": 246,
+          "levelXp": 2666,
+          "enhance": 0
+        },
+        {
+          "id": "i2032",
+          "name": "无终·星海流光棱镜",
+          "slot": "relic",
+          "rarity": 7,
+          "level": 268,
+          "levelXp": 1745,
+          "enhance": 0
+        },
+        {
+          "id": "i2180",
+          "name": "无终·余烬壁垒",
+          "slot": "armor",
+          "rarity": 7,
+          "level": 280,
+          "levelXp": 0,
+          "enhance": 0
+        }
+      ],
+      "saveRoundTrip": true,
+      "normalizedFinalStateSha256": "2c695e44c094aa25b00e929a4fa8a6391f3d10b61c6b0da323d3e412d46d561f",
+      "encounterTraceSha256": "bd9941cfa33c250d20377c1e5d4f88a13c2ecac62b10a4998364ca6cb039801b"
+    },
+    {
+      "seed": 15838,
+      "floors": 400,
+      "completed": true,
+      "deaths": 0,
+      "rolls": 2374,
+      "level": 279,
+      "gold": 2235204,
+      "spending": {
+        "shop": 13902,
+        "forge": 36274,
+        "fusion": 1155934
+      },
+      "spent": 1438930,
+      "buys": 5,
+      "forges": 19,
+      "fusions": 289,
+      "rounds": {
+        "combat": {
+          "n": 1156,
+          "min": 1,
+          "median": 1,
+          "p95": 2,
+          "max": 8,
+          "mean": 1.201
+        },
+        "elite": {
+          "n": 413,
+          "min": 1,
+          "median": 1,
+          "p95": 3,
+          "max": 24,
+          "mean": 1.545
+        },
+        "boss": {
+          "n": 121,
+          "min": 1,
+          "median": 2,
+          "p95": 5,
+          "max": 50,
+          "mean": 2.545
+        },
+        "trial": {
+          "n": 28,
+          "min": 1,
+          "median": 1,
+          "p95": 3,
+          "max": 5,
+          "mean": 1.429
+        }
+      },
+      "lateBosses": {
+        "n": 16,
+        "min": 1,
+        "median": 1,
+        "p95": 2,
+        "max": 2,
+        "mean": 1.125
+      },
+      "respecs": [
+        {
+          "id": "78/4/1",
+          "floor": 78,
+          "points": 180,
+          "hp": 10900,
+          "maxHp": 10900
+        },
+        {
+          "id": "167/4/1",
+          "floor": 167,
+          "points": 309,
+          "hp": 45173,
+          "maxHp": 45173
+        },
+        {
+          "id": "171/4/1",
+          "floor": 171,
+          "points": 313,
+          "hp": 46335,
+          "maxHp": 46335
+        },
+        {
+          "id": "305/4/1",
+          "floor": 305,
+          "points": 471,
+          "hp": 89504,
+          "maxHp": 89504
+        },
+        {
+          "id": "312/4/1",
+          "floor": 312,
+          "points": 477,
+          "hp": 91157,
+          "maxHp": 91157
+        }
+      ],
+      "finalTalents": {
+        "high": 5,
+        "four": 5,
+        "five": 5,
+        "six": 5,
+        "sum": 5,
+        "power": 370,
+        "resonance": 5,
+        "pair": 5,
+        "triple": 5,
+        "quartet": 5,
+        "choir": 5,
+        "echo": 5,
+        "critical": 5,
+        "keen": 5,
+        "crush": 5,
+        "pursuit": 5,
+        "opener": 5,
+        "slayer": 5,
+        "vitality": 5,
+        "guard": 5,
+        "leech": 5,
+        "recovery": 5,
+        "fortune": 5,
+        "smith": 5,
+        "luck": 5,
+        "attune": 5,
+        "omen": 5,
+        "mercy": 5,
+        "jackpot": 5,
+        "spark": 5,
+        "shatter": 3,
+        "diversity": 3,
+        "finality": 3,
+        "deepEcho": 3,
+        "chorusMend": 3,
+        "tripleBlade": 3,
+        "firstFire": 3,
+        "critAegis": 3,
+        "dawnCrit": 3,
+        "emberGuard": 3,
+        "phaseShelter": 3,
+        "lastResolve": 3,
+        "hunterStar": 3,
+        "gildedFaces": 3,
+        "sixRebirth": 3
+      },
+      "finalUnspent": 0,
+      "inventoryItems": 595,
+      "sparesByRarity": [
+        4,
+        7,
+        1,
+        309,
+        142,
+        83,
+        36,
+        8
+      ],
+      "equipped": [
+        {
+          "id": "i1363",
+          "name": "无终·荆棘棱镜",
+          "slot": "relic",
+          "rarity": 7,
+          "level": 218,
+          "levelXp": 772,
+          "enhance": 0
+        },
+        {
+          "id": "i1439",
+          "name": "溯源·余音流光棱镜",
+          "slot": "relic",
+          "rarity": 6,
+          "level": 221,
+          "levelXp": 2145,
+          "enhance": 0
+        },
+        {
+          "id": "i1491",
+          "name": "太初·余音天启心核",
+          "slot": "relic",
+          "rarity": 5,
+          "level": 225,
+          "levelXp": 2606,
+          "enhance": 0
+        },
+        {
+          "id": "i1741",
+          "name": "无终·裂甲守誓重刃",
+          "slot": "weapon",
+          "rarity": 7,
+          "level": 269,
+          "levelXp": 282,
+          "enhance": 9
+        },
+        {
+          "id": "i1856",
+          "name": "无终·归息天启壁垒",
+          "slot": "armor",
+          "rarity": 7,
+          "level": 270,
+          "levelXp": 565,
+          "enhance": 0
+        }
+      ],
+      "saveRoundTrip": true,
+      "normalizedFinalStateSha256": "e6e10bf3e5f1077f9be6ab56148eaef6a0896ac787fc6e4e8e82cea3e76af250",
+      "encounterTraceSha256": "6a886276b49a06a814f2baf520352902f5e857800cce8874305eb7229e194b13"
+    }
+  ],
+  "counterfactuals": [
+    {
+      "seed": 7919,
+      "floor": 215,
+      "name": "六封掌印者",
+      "openingUnspent": 369,
+      "openingRankSum": 1,
+      "hp": 49027653,
+      "shield": 0,
+      "openingRng": 2569222388,
+      "variants": [
+        {
+          "policy": "single",
+          "turns": 41,
+          "killed": true,
+          "phase": "chest",
+          "allocations": 41,
+          "damage": 56060743,
+          "absorbed": 5883319,
+          "healed": 0,
+          "finalRng": 2577184312
+        },
+        {
+          "policy": "ready",
+          "turns": 2,
+          "killed": true,
+          "phase": "chest",
+          "allocations": 369,
+          "damage": 103987813,
+          "absorbed": 5883319,
+          "healed": 0,
+          "finalRng": 922735506
+        },
+        {
+          "policy": "power",
+          "turns": 7,
+          "killed": true,
+          "phase": "chest",
+          "allocations": 369,
+          "damage": 58738872,
+          "absorbed": 5883319,
+          "healed": 0,
+          "finalRng": 1820822800
+        }
+      ]
+    },
+    {
+      "seed": 7919,
+      "floor": 269,
+      "name": "旧城扉主",
+      "openingUnspent": 396,
+      "openingRankSum": 35,
+      "hp": 44808836,
+      "shield": 8065590,
+      "openingRng": 1835759045,
+      "variants": [
+        {
+          "policy": "single",
+          "turns": 22,
+          "killed": true,
+          "phase": "chest",
+          "allocations": 22,
+          "damage": 63638791,
+          "absorbed": 15235005,
+          "healed": 0,
+          "finalRng": 1959324790
+        },
+        {
+          "policy": "ready",
+          "turns": 3,
+          "killed": true,
+          "phase": "chest",
+          "allocations": 396,
+          "damage": 175217790,
+          "absorbed": 14338828,
+          "healed": 0,
+          "finalRng": 2432732767
+        },
+        {
+          "policy": "power",
+          "turns": 6,
+          "killed": true,
+          "phase": "chest",
+          "allocations": 396,
+          "damage": 100802294,
+          "absorbed": 14338828,
+          "healed": 0,
+          "finalRng": 2389651574
+        }
+      ]
+    },
+    {
+      "seed": 15838,
+      "floor": 305,
+      "name": "骸骨君王",
+      "openingUnspent": 470,
+      "openingRankSum": 1,
+      "hp": 108322465,
+      "shield": 21664493,
+      "openingRng": 2005391362,
+      "variants": [
+        {
+          "policy": "single",
+          "turns": 50,
+          "killed": true,
+          "phase": "chest",
+          "allocations": 50,
+          "damage": 149844828,
+          "absorbed": 34663189,
+          "healed": 0,
+          "finalRng": 77771831
+        },
+        {
+          "policy": "ready",
+          "turns": 1,
+          "killed": true,
+          "phase": "chest",
+          "allocations": 470,
+          "damage": 170164227,
+          "absorbed": 21664493,
+          "healed": 0,
+          "finalRng": 3235737050
+        },
+        {
+          "policy": "power",
+          "turns": 11,
+          "killed": true,
+          "phase": "chest",
+          "allocations": 470,
+          "damage": 147805319,
+          "absorbed": 34663189,
+          "healed": 0,
+          "finalRng": 4143588103
+        }
+      ]
+    }
+  ],
+  "candidateEvidence": {
+    "balanced400": "gameplay-balanced-400.json",
+    "luck200": "gameplay-luck-200.json",
+    "rewardTruth": "reward-truth.json",
+    "standardSummary": "simulation-summary.json",
+    "standardDifferential": "simulation-differential.json",
+    "talentBrowser": "talents-browser.json"
+  },
+  "tests": {
+    "talentAllocationCases": 5,
+    "rewardCopyCases": 5,
+    "failed": 0,
+    "rewardRandomRollFixtures": 560,
+    "rewardDifferenceTransactions": 6160,
+    "changedOutcomeMessages": 536,
+    "observedHighTierRewards": 503,
+    "rewardBrowserCases": 4,
+    "rewardBrowserChecks": 108,
+    "talentBrowserCases": 5,
+    "talentBrowserChecks": 118
+  },
+  "findings": [
+    {
+      "id": "TALENT-QUANTITY",
+      "priority": "P3",
+      "status": "VERIFIED",
+      "evidence": "369 / 470 unspent points at original longest Boss openings; old UI exposes +1 only. New quantity preview and transaction settle 1, positive integer or current-node max with exact bounded costs, existing caps and no RNG/HP changes. Root final real-browser talent suite passed 5 cases / 118 checks with 0 errors, including exact primary/mirror state, bounded max, death, keyboard, retry, cross-tab and 390px branch investment.",
+      "files": [
+        "src/engine.js",
+        "tests/talent-allocation.test.mjs",
+        "src/views.js",
+        "src/app.js"
+      ]
+    },
+    {
+      "id": "REWARD-TRUTH",
+      "priority": "P2",
+      "status": "FIXED_VERIFIED",
+      "evidence": "Deep gambit and relic exchanges promised and reported a lower fixed rarity than the actual generated chest. The current display uses minimum guarantees before paying and real committed rarity afterwards. Existing saved pending mystery descriptions are corrected only during read-only presentation.",
+      "files": [
+        "src/content.js",
+        "src/encounters.js",
+        "tests/reward-copy.test.mjs",
+        "scripts/audit-reward-truth.mjs"
+      ]
+    },
+    {
+      "id": "BOSS-TAIL-POLICY",
+      "priority": "P2",
+      "status": "NOT_AN_ESTABLISHED_ENGINE_DEFECT",
+      "evidence": "Original 215-floor 41-roll tail opens with 1 invested / 369 unspent points; original 305-floor 50-roll tail with 1 invested / 470 unspent. Same snapshots with original-priority full investments end in 2 / 1 rolls. Pure power investments end in 7 / 11 rolls. No balance numbers changed."
+    },
+    {
+      "id": "ECONOMY-POLICY",
+      "priority": "P2",
+      "status": "OPEN_RISK_WITH_POLICY_LIMITS",
+      "evidence": "The inherited policy stops weapon forging around +9, never forges armor/relics, and never fuses legendary+ spares. It leaves 540 / 578 such spare items and 1.71M / 2.24M gold. This is evidence of policy-limited spending, not sufficient proof to change economy or prices."
+    },
+    {
+      "id": "EVENT-LEVEL-BAND",
+      "priority": "P3",
+      "status": "DESIGN_PENDING",
+      "evidence": "Inherited event/vault equipment-level-band convention was not changed; reward wording fix does not claim to settle it."
+    }
+  ],
+  "limitations": [
+    "All journeys are automated decision policies, not human/browser play or population win-rate estimates.",
+    "Counterfactuals share only the initial exact state and RNG; luck/crit/kill timing can fork subsequent random consumption.",
+    "No Boss health, attack, shield, healing, enemy pool, rarity, reward quantity, forge/fusion prices, save schema or stored equipment ID was changed.",
+    "Latest UI validation and transaction failure injection belong to the integrating browser/storage audits.",
+    "Full raw natural snapshots and logs remain temporary; shipped scripts regenerate witnesses from seeds without prior conversation or private saves."
+  ],
+  "browserVerification": {
+    "reward": {
+      "executedBy": "root",
+      "script": "scripts/qa-reward-browser.mjs",
+      "workspaceReport": "audit/browser-reward/report.json",
+      "rawReportSha256": "e8a7376ca7e3a85fc6743f18b84d8c5ba6f802f999f0ae4dcc340235b2ab8106",
+      "passed": true,
+      "sourceStable": true,
+      "cases": [
+        {
+          "name": "gambit-safe",
+          "status": "PASS",
+          "checks": 29
+        },
+        {
+          "name": "exchange-relic",
+          "status": "PASS",
+          "checks": 27
+        },
+        {
+          "name": "legacy-pending-import",
+          "status": "PASS",
+          "checks": 22
+        },
+        {
+          "name": "auction-collision-import",
+          "status": "PASS",
+          "checks": 30
+        }
+      ],
+      "checks": 108,
+      "pageErrors": 0,
+      "consoleMessages": 0
+    },
+    "talents": {
+      "executedBy": "root",
+      "workspaceReport": "audit/browser-talents-final/talents-browser.json",
+      "packagedReport": "talents-browser.json",
+      "rawReportSha256": "c8995f318ae0d2aaedfc5fe7b8dab4d2cbdb1a853b793ea5a240302aafda66fb",
+      "passed": true,
+      "cases": [
+        {
+          "name": "quantity-preview-and-exact-commit",
+          "status": "PASS",
+          "checks": 20
+        },
+        {
+          "name": "unlock-cap-and-dead-state",
+          "status": "PASS",
+          "checks": 16
+        },
+        {
+          "name": "scroll-and-keyboard-retention",
+          "status": "PASS",
+          "checks": 6
+        },
+        {
+          "name": "save-failure-and-cross-tab",
+          "status": "PASS",
+          "checks": 10
+        },
+        {
+          "name": "four-desktop-and-narrow-layouts",
+          "status": "PASS",
+          "checks": 66
+        }
+      ],
+      "checks": 118,
+      "errors": 0,
+      "status": "VERIFIED"
+    }
+  },
+  "standardSimulationVerification": {
+    "command": "npm run simulate -- 1000",
+    "seeds": 1000,
+    "completed": 1000,
+    "noShoppingSeeds": 50,
+    "noShoppingCompleted": 50,
+    "comparedSummaryLeaves": 378,
+    "ignoredSummaryFields": [],
+    "differences": [],
+    "sourceStable": true,
+    "gameplayFiles": 11,
+    "rawCliTextDifference": "The npm package banner changes from 5.3.0 to 5.4.0. Concatenating separately captured stderr then stdout and replacing only that banner exactly reproduces the fresh original command log. The summary has no journey log prose; changed reward text is verified separately."
+  }
+}

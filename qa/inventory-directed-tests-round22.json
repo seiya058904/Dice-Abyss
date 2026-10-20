@@ -1,0 +1,29 @@
+{
+  "scope": "Directed correctness only; no browser/performance claim",
+  "modules": [
+    {
+      "module": "tests/inventory-selection.test.mjs",
+      "exitCode": 0,
+      "output": "qa/inventory-selection-round22.tap",
+      "wallMs": 63.519
+    },
+    {
+      "module": "tests/inventory-render.test.mjs",
+      "exitCode": 0,
+      "output": "qa/inventory-render-round22.tap",
+      "wallMs": 62.063
+    },
+    {
+      "module": "tests/inventory-render-scope.test.mjs",
+      "exitCode": 0,
+      "output": "qa/inventory-render-scope-round22.tap",
+      "wallMs": 172.652
+    }
+  ],
+  "newTestCases": 14,
+  "sourceSha256": {
+    "src/app.js": "de8712715446bff65843d63167f0b2b5e3a9507fdbfde5d84a41475d926cd1be",
+    "src/inventory-dom.js": "fd202b44a427eb7ff2c5ea5ccaaff8014f5faa4b4f85c280ff1fa5078bfd641f",
+    "src/inventory-render.js": "f4ad0ef260fcfedc50796edc2d8cc956a364ffb7f5e1c109f82414e5a696d99a"
+  }
+}

@@ -1,0 +1,697 @@
+{
+  "kind": "Independent read-only performance evidence audit",
+  "started": "2026-10-19T05:14:53.462355+00:00",
+  "completed": "2026-10-19T05:14:53.464637+00:00",
+  "inputs": [
+    {
+      "path": "/workspace/scratch/d0f98f221ae6/audit/performance17/performance-round.json",
+      "bytes": 81273,
+      "sha256": "e1ce6c41c27720d2883bc99cddf9f4e871d0b864fda27148f1b155121a6a1ea3"
+    },
+    {
+      "path": "/workspace/scratch/d0f98f221ae6/audit/performance17/fixture-manifest.json",
+      "bytes": 6695,
+      "sha256": "2ebdf54503704d286d779dc650188a8b2f588b68f801ea2fa5ae5efe89e541e4"
+    }
+  ],
+  "measurementScript": {
+    "path": "/workspace/scratch/d0f98f221ae6/work/Dice-Abyss/scripts/qa-performance-round.mjs",
+    "sha256": "bb3205985884a20a88a27e289f9ec04f46bd751f3cd4568df60affce0e506981",
+    "recordedSha256": "bb3205985884a20a88a27e289f9ec04f46bd751f3cd4568df60affce0e506981"
+  },
+  "status": "CONSISTENT_WITH_RECORDED_LIMITATIONS",
+  "sourceRecordStatus": "MEASURED_WITH_LIMITATIONS",
+  "sourceMeasurementStart": "2026-10-19T05:03:15.447Z",
+  "sourceMeasurementEnd": "2026-10-19T05:06:46.293Z",
+  "elapsedWallMs": 210846,
+  "sampleCounts": {
+    "fixtures": 10,
+    "inventoryTimed": 24,
+    "inventoryWarmups": 2,
+    "mainWindows": 16,
+    "coverageWindows": 14,
+    "totalTimedObservations": 54
+  },
+  "quantileProtocol": {
+    "formula": "sorted[floor((n-1)*p)]",
+    "indexing": "zero-based",
+    "interpolation": false,
+    "inventorySampleSizePerVariant": 12,
+    "inventoryP50OrderStatistic": 6,
+    "inventoryP95OrderStatistic": 11,
+    "conventionalMedianProvidedSeparately": true
+  },
+  "inventory": {
+    "statistics": {
+      "baseline": {
+        "samples": 12,
+        "p50": 137.19999999925494,
+        "p95": 252.80000000074506,
+        "p99": 252.80000000074506,
+        "min": 63.5,
+        "max": 326.80000000074506,
+        "conventionalMedian": 139.59999999962747,
+        "chronologicalSamples": [
+          66.69999999925494,
+          63.5,
+          67.5,
+          68.09999999962747,
+          251.5,
+          115.80000000074506,
+          252.80000000074506,
+          137.19999999925494,
+          142,
+          223.09999999962747,
+          237.90000000037253,
+          326.80000000074506
+        ],
+        "sortedSamples": [
+          63.5,
+          66.69999999925494,
+          67.5,
+          68.09999999962747,
+          115.80000000074506,
+          137.19999999925494,
+          142,
+          223.09999999962747,
+          237.90000000037253,
+          251.5,
+          252.80000000074506,
+          326.80000000074506
+        ]
+      },
+      "after": {
+        "samples": 12,
+        "p50": 89.09999999962747,
+        "p95": 222.19999999925494,
+        "p99": 222.19999999925494,
+        "min": 57.29999999888241,
+        "max": 382.5,
+        "conventionalMedian": 98.84999999962747,
+        "chronologicalSamples": [
+          57.29999999888241,
+          57.80000000074506,
+          67,
+          108.59999999962747,
+          89.09999999962747,
+          64.80000000074506,
+          87.5,
+          222.19999999925494,
+          382.5,
+          136.39999999850988,
+          202.80000000074506,
+          136
+        ],
+        "sortedSamples": [
+          57.29999999888241,
+          57.80000000074506,
+          64.80000000074506,
+          67,
+          87.5,
+          89.09999999962747,
+          108.59999999962747,
+          136,
+          136.39999999850988,
+          202.80000000074506,
+          222.19999999925494,
+          382.5
+        ]
+      }
+    },
+    "comparison": {
+      "medianDeltaMs": -48.09999999962747,
+      "medianPercentChange": -35.05830903781973,
+      "p95DeltaMs": -30.600000001490116,
+      "maxDeltaMs": 55.69999999925494
+    },
+    "storage": [
+      {
+        "label": "baseline",
+        "ok": true,
+        "writes": {
+          "main": {
+            "ok": true
+          },
+          "mirror": {
+            "ok": true
+          },
+          "settings": {
+            "ok": true
+          }
+        },
+        "mainCharacters": 2060957,
+        "mirrorCharacters": 2060957,
+        "keyCount": 3,
+        "warmupMs": 74.79999999888241
+      },
+      {
+        "label": "after",
+        "ok": true,
+        "writes": {
+          "main": {
+            "ok": true
+          },
+          "mirror": {
+            "ok": true
+          },
+          "settings": {
+            "ok": true
+          }
+        },
+        "mainCharacters": 2060957,
+        "mirrorCharacters": 2060957,
+        "keyCount": 3,
+        "warmupMs": 98.29999999888241
+      }
+    ],
+    "cardHtmlSha256": "fa743bb23f2d25b5218823677790a7797801cddaf924fa8a0484f778d0007422",
+    "cardHtmlUtf8Bytes": 92909
+  },
+  "transactions": {
+    "inventoryBothStoredCopiesUnchanged": 24,
+    "exactPostActions": 30,
+    "mirroredPostActions": 30,
+    "fixtureHashMatches": 30,
+    "legalRenderedLogs": 30,
+    "distinctPostActionScenes": 9
+  },
+  "sourceIdentity": {
+    "recordedFilesPerVariant": 10,
+    "allRecordedPathsStillMatch": true,
+    "rows": [
+      {
+        "label": "baseline",
+        "file": "index.html",
+        "recordedSha256": "d90d170fec59c847b3d8e63605044255af240698fc21ac65901e0fe5c441439e",
+        "actualSha256": "d90d170fec59c847b3d8e63605044255af240698fc21ac65901e0fe5c441439e",
+        "matches": true
+      },
+      {
+        "label": "baseline",
+        "file": "package.json",
+        "recordedSha256": "a9ac3b003ba42aecec656e89027f8ced0601843191b8eaade9d5aff830eae5ab",
+        "actualSha256": "a9ac3b003ba42aecec656e89027f8ced0601843191b8eaade9d5aff830eae5ab",
+        "matches": true
+      },
+      {
+        "label": "baseline",
+        "file": "src/app.js",
+        "recordedSha256": "1708721304f1874507b3e592fa2f7ffa3e15eb4eee516df6a34a68c7316e2753",
+        "actualSha256": "1708721304f1874507b3e592fa2f7ffa3e15eb4eee516df6a34a68c7316e2753",
+        "matches": true
+      },
+      {
+        "label": "baseline",
+        "file": "src/engine.js",
+        "recordedSha256": "75c6d9fcc48c0cf49ee02e53ffb7b143a09a2c79738d3bb2eb5d0ae80b30872b",
+        "actualSha256": "75c6d9fcc48c0cf49ee02e53ffb7b143a09a2c79738d3bb2eb5d0ae80b30872b",
+        "matches": true
+      },
+      {
+        "label": "baseline",
+        "file": "src/views.js",
+        "recordedSha256": "1aed7caac52894bd35b03307f08ebf45382b9f6418050b47e2f09dc48f71971c",
+        "actualSha256": "1aed7caac52894bd35b03307f08ebf45382b9f6418050b47e2f09dc48f71971c",
+        "matches": true
+      },
+      {
+        "label": "baseline",
+        "file": "src/storage.js",
+        "recordedSha256": "6bfcc60036c9f729c21b948ca98c7ac715e14049856fb9dded0baa2aeef2c561",
+        "actualSha256": "6bfcc60036c9f729c21b948ca98c7ac715e14049856fb9dded0baa2aeef2c561",
+        "matches": true
+      },
+      {
+        "label": "baseline",
+        "file": "src/dice-renderer.js",
+        "recordedSha256": "b40e1e1c808b00d319b70ce7546403c588cdcc8397bba684fe19b2f4c0bca6d8",
+        "actualSha256": "b40e1e1c808b00d319b70ce7546403c588cdcc8397bba684fe19b2f4c0bca6d8",
+        "matches": true
+      },
+      {
+        "label": "baseline",
+        "file": "src/effects.js",
+        "recordedSha256": "5f95f77e882a690f95215babda3cdedc0d398bbcfaabfecd3d486141200dc6f9",
+        "actualSha256": "5f95f77e882a690f95215babda3cdedc0d398bbcfaabfecd3d486141200dc6f9",
+        "matches": true
+      },
+      {
+        "label": "baseline",
+        "file": "src/dice-motion.js",
+        "recordedSha256": "3b088b9efa03552912bd92b18dc66d6122f45e2f12dc420305bb877deae5139a",
+        "actualSha256": "3b088b9efa03552912bd92b18dc66d6122f45e2f12dc420305bb877deae5139a",
+        "matches": true
+      },
+      {
+        "label": "baseline",
+        "file": "src/visual-timeline.js",
+        "recordedSha256": "f518084da44c2ea852bf902ba6ffc7f8f5a94ee815dac31bcc4726cc8cd44369",
+        "actualSha256": "f518084da44c2ea852bf902ba6ffc7f8f5a94ee815dac31bcc4726cc8cd44369",
+        "matches": true
+      },
+      {
+        "label": "after",
+        "file": "index.html",
+        "recordedSha256": "eabefea931b66d9a55918feed7d4019624983e411d10e0acf3b31690972aa21f",
+        "actualSha256": "eabefea931b66d9a55918feed7d4019624983e411d10e0acf3b31690972aa21f",
+        "matches": true
+      },
+      {
+        "label": "after",
+        "file": "package.json",
+        "recordedSha256": "ddeaf64e6c5f3e2b8280ad6610410f10a149f0661b6f2009e760f7aa46da4a6a",
+        "actualSha256": "ddeaf64e6c5f3e2b8280ad6610410f10a149f0661b6f2009e760f7aa46da4a6a",
+        "matches": true
+      },
+      {
+        "label": "after",
+        "file": "src/app.js",
+        "recordedSha256": "c9439b8719640c9ae5ebe7c9d939901fdc4a3c3bfaea0ef24c28492ff91951b1",
+        "actualSha256": "c9439b8719640c9ae5ebe7c9d939901fdc4a3c3bfaea0ef24c28492ff91951b1",
+        "matches": true
+      },
+      {
+        "label": "after",
+        "file": "src/engine.js",
+        "recordedSha256": "75c6d9fcc48c0cf49ee02e53ffb7b143a09a2c79738d3bb2eb5d0ae80b30872b",
+        "actualSha256": "75c6d9fcc48c0cf49ee02e53ffb7b143a09a2c79738d3bb2eb5d0ae80b30872b",
+        "matches": true
+      },
+      {
+        "label": "after",
+        "file": "src/views.js",
+        "recordedSha256": "2b8edcbe13fb3d8fb9a69eb51a1b2bc98e3819633d18f7d60675a73ebdf1b2e6",
+        "actualSha256": "2b8edcbe13fb3d8fb9a69eb51a1b2bc98e3819633d18f7d60675a73ebdf1b2e6",
+        "matches": true
+      },
+      {
+        "label": "after",
+        "file": "src/storage.js",
+        "recordedSha256": "6bfcc60036c9f729c21b948ca98c7ac715e14049856fb9dded0baa2aeef2c561",
+        "actualSha256": "6bfcc60036c9f729c21b948ca98c7ac715e14049856fb9dded0baa2aeef2c561",
+        "matches": true
+      },
+      {
+        "label": "after",
+        "file": "src/dice-renderer.js",
+        "recordedSha256": "b40e1e1c808b00d319b70ce7546403c588cdcc8397bba684fe19b2f4c0bca6d8",
+        "actualSha256": "b40e1e1c808b00d319b70ce7546403c588cdcc8397bba684fe19b2f4c0bca6d8",
+        "matches": true
+      },
+      {
+        "label": "after",
+        "file": "src/effects.js",
+        "recordedSha256": "5f95f77e882a690f95215babda3cdedc0d398bbcfaabfecd3d486141200dc6f9",
+        "actualSha256": "5f95f77e882a690f95215babda3cdedc0d398bbcfaabfecd3d486141200dc6f9",
+        "matches": true
+      },
+      {
+        "label": "after",
+        "file": "src/dice-motion.js",
+        "recordedSha256": "3b088b9efa03552912bd92b18dc66d6122f45e2f12dc420305bb877deae5139a",
+        "actualSha256": "3b088b9efa03552912bd92b18dc66d6122f45e2f12dc420305bb877deae5139a",
+        "matches": true
+      },
+      {
+        "label": "after",
+        "file": "src/visual-timeline.js",
+        "recordedSha256": "f518084da44c2ea852bf902ba6ffc7f8f5a94ee815dac31bcc4726cc8cd44369",
+        "actualSha256": "f518084da44c2ea852bf902ba6ffc7f8f5a94ee815dac31bcc4726cc8cd44369",
+        "matches": true
+      }
+    ]
+  },
+  "sections": {
+    "frames": {
+      "windows": 16,
+      "perLabel": {
+        "baseline": {
+          "windows": 8,
+          "callbackIntervals": 606,
+          "intervalsOver50ms": 15,
+          "intervalsOver100ms": 11,
+          "worstIntervalMs": 11110.799999998882,
+          "actualWindowMsTotal": 51087.90000000037,
+          "minWindowMs": 4202,
+          "maxWindowMs": 11669.699999999255,
+          "windowsOverrunMoreThan100ms": 4,
+          "longTasks": 2,
+          "longTaskOverlapMs": 465
+        },
+        "after": {
+          "windows": 8,
+          "callbackIntervals": 707,
+          "intervalsOver50ms": 11,
+          "intervalsOver100ms": 10,
+          "worstIntervalMs": 9624.299999998882,
+          "actualWindowMsTotal": 42923.599999997765,
+          "minWindowMs": 4202.0999999996275,
+          "maxWindowMs": 10118,
+          "windowsOverrunMoreThan100ms": 4,
+          "longTasks": 1,
+          "longTaskOverlapMs": 555
+        }
+      }
+    },
+    "coverage": {
+      "windows": 14,
+      "perLabel": {
+        "baseline": {
+          "windows": 7,
+          "callbackIntervals": 1270,
+          "intervalsOver50ms": 8,
+          "intervalsOver100ms": 8,
+          "worstIntervalMs": 2876.5,
+          "actualWindowMsTotal": 29466.0,
+          "minWindowMs": 4207.4000000003725,
+          "maxWindowMs": 4212.4000000003725,
+          "windowsOverrunMoreThan100ms": 0,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0
+        },
+        "after": {
+          "windows": 7,
+          "callbackIntervals": 1269,
+          "intervalsOver50ms": 7,
+          "intervalsOver100ms": 7,
+          "worstIntervalMs": 1944.199999999255,
+          "actualWindowMsTotal": 29444.900000004098,
+          "minWindowMs": 4200.199999999255,
+          "maxWindowMs": 4212.300000000745,
+          "windowsOverrunMoreThan100ms": 0,
+          "longTasks": 0,
+          "longTaskOverlapMs": 0
+        }
+      }
+    }
+  },
+  "fx": {
+    "mainFullWindows": 8,
+    "mainFullObserved": 5,
+    "mainFullMissing": 3,
+    "lowModeExemptWindows": 8,
+    "coverageObserved": 14,
+    "missingWindows": [
+      {
+        "label": "baseline",
+        "scene": "boss-burst",
+        "width": 3840,
+        "height": 2160,
+        "effects": "full",
+        "frames": 11,
+        "effectKinds": [
+          "idle",
+          "dice-only"
+        ],
+        "actualWindowMs": 9190,
+        "windowOverrunMs": 4990,
+        "p95": 40.79999999888241,
+        "max": 9017.5
+      },
+      {
+        "label": "after",
+        "scene": "boss-burst",
+        "width": 3840,
+        "height": 2160,
+        "effects": "full",
+        "frames": 14,
+        "effectKinds": [
+          "idle",
+          "dice-only"
+        ],
+        "actualWindowMs": 5533.199999999255,
+        "windowOverrunMs": 1333.199999999255,
+        "p95": 79.19999999925494,
+        "max": 5252.4000000003725
+      },
+      {
+        "label": "after",
+        "scene": "eternal-open",
+        "width": 3840,
+        "height": 2160,
+        "effects": "full",
+        "frames": 31,
+        "effectKinds": [
+          "idle",
+          "chest-charge"
+        ],
+        "actualWindowMs": 10118,
+        "windowOverrunMs": 5918,
+        "p95": 25.799999998882413,
+        "max": 9624.299999998882
+      }
+    ]
+  },
+  "timeout": {
+    "measuredPromiseDeadlineMs": 30000,
+    "recordedErrors": [],
+    "recordedFailure": null,
+    "maximumActualWindowMs": 11669.699999999255,
+    "longWindowOverrunIsNotDeadlineFailure": true
+  },
+  "environment": [
+    {
+      "label": "baseline",
+      "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.8059.84 Safari/537.36",
+      "platform": "Linux x86_64",
+      "dpr": 1,
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "vendor": "Google Inc. (Google)",
+      "fonts": [
+        true,
+        true
+      ],
+      "longTaskObserver": true,
+      "webLocks": true,
+      "http": {
+        "release": "5.16.0",
+        "build": "5",
+        "documentUrl": "http://127.0.0.1:4188/",
+        "assets": [
+          {
+            "file": "src/views.js",
+            "url": "http://127.0.0.1:4188/src/views.js",
+            "status": 200,
+            "bytes": 94570,
+            "sha256": "1aed7caac52894bd35b03307f08ebf45382b9f6418050b47e2f09dc48f71971c"
+          },
+          {
+            "file": "src/dice-renderer.js",
+            "url": "http://127.0.0.1:4188/src/dice-renderer.js",
+            "status": 200,
+            "bytes": 14522,
+            "sha256": "b40e1e1c808b00d319b70ce7546403c588cdcc8397bba684fe19b2f4c0bca6d8"
+          },
+          {
+            "file": "src/storage.js",
+            "url": "http://127.0.0.1:4188/src/storage.js",
+            "status": 200,
+            "bytes": 31698,
+            "sha256": "6bfcc60036c9f729c21b948ca98c7ac715e14049856fb9dded0baa2aeef2c561"
+          }
+        ],
+        "documentStatus": 200
+      }
+    },
+    {
+      "label": "after",
+      "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.8059.84 Safari/537.36",
+      "platform": "Linux x86_64",
+      "dpr": 1,
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "vendor": "Google Inc. (Google)",
+      "fonts": [
+        true,
+        true
+      ],
+      "longTaskObserver": true,
+      "webLocks": true,
+      "http": {
+        "release": "5.17.0",
+        "build": "5",
+        "documentUrl": "http://127.0.0.1:4189/",
+        "assets": [
+          {
+            "file": "src/views.js",
+            "url": "http://127.0.0.1:4189/src/views.js",
+            "status": 200,
+            "bytes": 97677,
+            "sha256": "2b8edcbe13fb3d8fb9a69eb51a1b2bc98e3819633d18f7d60675a73ebdf1b2e6"
+          },
+          {
+            "file": "src/dice-renderer.js",
+            "url": "http://127.0.0.1:4189/src/dice-renderer.js",
+            "status": 200,
+            "bytes": 14522,
+            "sha256": "b40e1e1c808b00d319b70ce7546403c588cdcc8397bba684fe19b2f4c0bca6d8"
+          },
+          {
+            "file": "src/storage.js",
+            "url": "http://127.0.0.1:4189/src/storage.js",
+            "status": 200,
+            "bytes": 31698,
+            "sha256": "6bfcc60036c9f729c21b948ca98c7ac715e14049856fb9dded0baa2aeef2c561"
+          }
+        ],
+        "documentStatus": 200
+      }
+    }
+  ],
+  "checks": [
+    {
+      "name": "external fixture manifest exactly matches embedded manifest",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fixture manifest identifies synthetic work source",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "measurement script hash matches recorded script",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recorded source snapshots are identical",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "all 20 recorded source paths still match on disk",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "served asset identity baseline",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "served asset identity after",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "inventory aggregate recomputes baseline",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "inventory repeats complete baseline",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "inventory aggregate recomputes after",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "inventory repeats complete after",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "all inventory samples alternate baseline then after",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "all 24 inventory rows are trusted, have 60 cards and unchanged storage",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "all 24 complete card HTML hashes and card ID hashes agree",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "two inventories persist main, mirror and settings successfully",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "one declared warmup per side is separate from timed samples",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "16 complete unique main matrix cells",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "14 complete unique rarity 0-6 coverage cells",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "30 trusted visible windows preserve exact transaction and mirror",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "30 pre-action fixture hashes match manifest",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "30 pre/post rendered logs retain legal six-entry cap",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "persisted state hash agrees for both origins and modes per scene",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "frames aggregates agree with stored per-window summaries",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "frames window and counter invariants",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "coverage aggregates agree with stored per-window summaries",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "coverage window and counter invariants",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "full FX flags match observed kind",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "no recorded failure, timeout or active interrupted sample",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "limitations": [
+    "This audit re-reads the existing measurements and script. It does not rerun fixtures, transactions, rendering or performance workloads.",
+    "All ten fixtures are synthetic and deterministic. They are controlled loads, not natural progression or user saves.",
+    "The declared p50/p95/p99 rule is sorted[floor((n-1)*p)], without interpolation. At n=12 p50 is the sixth order statistic and p95/p99 the eleventh; conventional median averages the sixth and seventh values.",
+    "All 24 inventory samples are retained. Exactly one warmup per variant is excluded. There is no failed-sample replacement or post-hoc removal.",
+    "Each main matrix cell has one repeat. The fourteen rarity windows are coverage checks only and are not pooled with the main matrix or used to establish improvement.",
+    "Full frame interval traces were not retained. Inventory quantiles were recomputed from raw elapsed samples, but frame quantiles can only be checked for summary consistency and the source algorithm, not independently reconstructed.",
+    "The eight low-mode windows satisfy effectObserved by mode exemption. They do not certify full combat or loot effects. Three full 4K windows did not sample the expected effect kind.",
+    "A requestAnimationFrame interval is a browser callback interval including the initial input-to-frame delay. Over-50/100ms counts report observed stalls, not a count of physically dropped GPU frames.",
+    "The 4200ms target window can end late after a stall. This is distinct from the fixed 30-second measured-promise deadline; no deadline failure or retry is recorded.",
+    "Both contexts use DPR 1 and explicitly requested ANGLE SwiftShader software rendering in headless Chromium 155.0.8059.84. Neither physical GPU FPS nor physical 4K60 is validated.",
+    "Source stability in the performance file covers ten named files per source tree, plus three fetched JavaScript assets per origin. It is not a whole-repository temporal checksum.",
+    "The after inventory rank-p50 and p95 are lower in this sample, while its maximum is higher. Single-session values and one-repeat frame cells do not establish a general performance gain or a reliable ranking."
+  ],
+  "auditDurationSeconds": 0.0024
+}

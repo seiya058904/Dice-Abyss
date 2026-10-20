@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="https://seiya058904.github.io/Dice-Abyss/"><strong>▶ PLAY IN BROWSER</strong></a>
+  <a href="https://seiya058904.github.io/Dice-Abyss/"><strong>▶ PUBLISHED SITE</strong></a>
   &nbsp;·&nbsp;
   <a href="#the-descent">🎮 The Descent</a>
   &nbsp;·&nbsp;
@@ -22,7 +22,7 @@
 </p>
 
 <p align="center">
-  <sub>VERSION 5.1.0 &nbsp;·&nbsp; DESKTOP WEB &nbsp;·&nbsp; MANUAL DICE COMBAT &nbsp;·&nbsp; LOCAL SAVES</sub>
+  <sub>VERSION 5.26.0 &nbsp;·&nbsp; DESKTOP WEB &nbsp;·&nbsp; MANUAL DICE COMBAT &nbsp;·&nbsp; LOCAL SAVES</sub>
 </p>
 
 <p align="center">
@@ -37,7 +37,26 @@
 >
 > In **Dice Abyss**, a roll is an attack, a chest is a promise, and every new floor is another test of the equipment and talents you have assembled. The dungeon keeps going. So does your progression.
 
-<a id="the-descent"></a>
+## V5.26.0 · Less Work for the Same Descent
+
+This complete archive is **cloud iteration 26 (Round26)**, based only on the supplied **V5.25.0** archive. Extract it and follow [Run Locally](#run-locally) to play this version. The linked public website is a separate historical deployment; this archive has not been deployed there.
+
+**Sort a large inventory with fewer repeated calculations.** Each matching item is valued at most once per sort; rarity and level sorts only calculate strength when their primary values tie. Strength, rarity and level ordering retain their original tie rules, filters and complete sixty-card pages. Search and filter actions calculate fresh results; consecutive paging still uses the existing selection reuse.
+
+**Reuse a proven dice envelope.** Moving dice first use a conservative containment check. When the existing canvas already encloses the complete projected motion, it keeps the same bounds and skips the detailed corner calculations. A pose that might extend beyond it takes the original exact path. Resting detail, dice geometry and the shaders remain intact.
+
+**Keep the previous presentation safeguards.** Offscreen rendering, repeated motion sampling, on-demand recycling, and resize settlement remain protected. A resized presentation reveals its saved result once and restores the available controls. Primary and mirror saves still use the complete transaction checks.
+
+**Continue from one complete archive.** Game assets, offline fonts and licenses, regression tests, reconstruction inputs and important earlier failure evidence remain included. The current report provides the actual size, validation scope, comparable measurements and remaining risks.
+
+The inventory retains its existing stable layout. Earlier `content-visibility` experiments caused scroll-position jumps and remain excluded. Large inventory layout costs and software-renderer frame tails are still tracked as open risks.
+
+Complete snapshot conflict checks, primary and mirror saves, Web Locks, V1–V4 migration, equipment IDs, unknown save fields, manual combat, six-room routes and eight rarity gates remain supported. The save format is still version 5.
+
+See [the current iteration report](docs/iteration/LATEST_REPORT.md) for comparable measurements, complete regression results and remaining limits. Supplied high-frequency callback counts and software-rendered browser timings do not establish physical GPU FPS or universal performance gains.
+
+[STATE.json](docs/iteration/STATE.json) and [FILE_MANIFEST.json](docs/iteration/FILE_MANIFEST.json) identify the handoff. Upload this complete ZIP with the same iteration taskbook to continue; no patch chain or local development agent is required.
+
 ## 🎮 The Descent
 
 <p align="center">
@@ -101,13 +120,15 @@ Late-game equipment, room weights, enemy mechanics, talent gates, saves, and the
 <a id="gameplay"></a>
 ## 📷 Gameplay
 
+These are **historical V4/V5 screenshots**, retained as compressed WebP browsing copies with a maximum edge of 1600 pixels. Captions and filenames describe the original capture viewport; these are not captures from the current iteration. See the [historical screenshot notes](output/playwright/README.md).
+
 <p align="center">
-  <a href="docs/screenshots/gameplay-desktop.png"><img width="900" src="docs/screenshots/gameplay-desktop.png" alt="Dice Abyss desktop gameplay screenshot from the V4 baseline" /></a>
+  <a href="docs/screenshots/gameplay-desktop.webp"><img width="900" src="docs/screenshots/gameplay-desktop.webp" alt="Compressed historical Dice Abyss desktop gameplay screenshot from the V4 baseline" /></a>
 </p>
 <p align="center"><sub>V4 BASELINE · DESKTOP BROWSER · 1920 × 1080</sub></p>
 
 <p align="center">
-  <a href="output/playwright/v5-first-combat-1920.png"><img width="900" src="output/playwright/v5-first-combat-1920.png" alt="V5 first-floor combat in a 1920 by 1080 desktop browser" /></a>
+  <a href="output/playwright/v5-first-combat-1920.webp"><img width="900" src="output/playwright/v5-first-combat-1920.webp" alt="Compressed historical V5 first-floor combat, originally captured in a 1920 by 1080 desktop browser" /></a>
 </p>
 <p align="center"><sub>V5 LOCAL ACCEPTANCE · DESKTOP BROWSER · 1920 × 1080</sub></p>
 
@@ -124,7 +145,7 @@ Late-game equipment, room weights, enemy mechanics, talent gates, saves, and the
 | **Fullscreen button** | Toggle the game display between windowed and fullscreen modes. |
 | **Settings** | Adjust sound, effects, and interface scale; export or import your save. |
 
-The current game interface is in **Simplified Chinese**. It is designed for a **landscape desktop browser** with mouse and keyboard; mobile touch gameplay is not a supported target for this release.
+The current game interface is in **Simplified Chinese**. The game remains desktop-first and now adapts its main screens and controls to narrow browser windows. Long content is available through vertical scrolling. The current iteration report lists the tested viewport and interaction matrix. Physical phones, pens, external screen readers and device-specific touch behavior have not been validated.
 
 <a id="play-now"></a>
 ## 🚀 Enter the Abyss
@@ -140,7 +161,7 @@ The current game interface is in **Simplified Chinese**. It is designed for a **
     <td width="50%" valign="top">
       <h3>🖥️ Run from Source</h3>
       <p><sub>WINDOWS / NODE.JS 20+ · LOCAL WEB SERVER</sub></p>
-      <p>Clone the repository, launch the small local server, and play on your own machine. An optional <a href="%E5%90%AF%E5%8A%A8%E6%B8%B8%E6%88%8F.cmd">Windows launcher</a> is also included.</p>
+      <p>Extract the complete archive, launch the small local server, and play on your own machine. A Windows <code>启动游戏.cmd</code> launcher is also included.</p>
       <p><strong><a href="#run-locally">⚙️ Local setup →</a></strong></p>
     </td>
   </tr>
@@ -151,6 +172,8 @@ The current game interface is in **Simplified Chinese**. It is designed for a **
 
 Progress is saved automatically in **your browser's local storage**. You can export or import a JSON save from Settings; supported **V1–V4** saves migrate to V5 while preserving a pre-migration archive.
 
+Use **Settings → 检查容量** to inspect the current export's exact file size. A save at the file limit has no growth allowance; recycling or fusion must still produce a result within that limit before it can commit. Export preserves the complete current progress, including supported extra data. The game does not automatically delete items or unknown fields to make a save fit.
+
 > [!IMPORTANT]
 > **Local saves are not cloud saves.** GitHub Pages and `http://127.0.0.1:4188` use separate browser origins, so their saves do not sync. Export your save before clearing site data, switching browsers or profiles, or starting over. Importing a save replaces the active local progress after confirmation.
 
@@ -159,15 +182,14 @@ The game has **no account system, analytics, or remote runtime dependency**. All
 <a id="run-locally"></a>
 ## 🛠️ Run Locally
 
-Requires **Node.js 20 or newer**. There are no npm runtime packages to install and no build step.
+Requires **Node.js 20 or newer**. There are no npm runtime packages to install and no build step. Extract the ZIP, then open a terminal in its parent folder:
 
 ```bash
-git clone https://github.com/seiya058904/Dice-Abyss.git
 cd Dice-Abyss
 npm start
 ```
 
-Open **http://127.0.0.1:4188** in a desktop browser. On Windows, you can alternatively double-click the [Windows launcher](%E5%90%AF%E5%8A%A8%E6%B8%B8%E6%88%8F.cmd) after installing Node.js.
+Open **http://127.0.0.1:4188** in a desktop browser. On Windows, you can alternatively double-click [`启动游戏.cmd`](启动游戏.cmd) after installing Node.js.
 
 <details>
 <summary><strong>Change the port / understand local hosting</strong></summary>
@@ -200,6 +222,7 @@ Dice Abyss is built with **vanilla JavaScript modules, HTML, and CSS**, with loc
 | [`src/encounters.js`](src/encounters.js) | Special enemy mechanics, event choices, and room generation. |
 | [`src/storage.js`](src/storage.js) | Validated local saves, backup behavior, and legacy migration. |
 | [`src/app.js`](src/app.js), [`src/views.js`](src/views.js) | Player interaction, menus, screens, and rendering. |
+| [`src/event-risk.js`](src/event-risk.js) | Read-only paid-event probabilities and immediate gold budgets. |
 | [`src/dice-renderer.js`](src/dice-renderer.js), [`src/dice-motion.js`](src/dice-motion.js), [`src/effects.js`](src/effects.js) | Dice visuals, motion, and feedback. |
 | [`src/`](src/) CSS files | Layout, presentation, responsiveness, and visual refinements. |
 | [`scripts/`](scripts/), [`tests/`](tests/) | Local server, simulation, audits, and automated test coverage. |
@@ -215,11 +238,13 @@ npm run simulate -- 1000
 
 These commands perform JavaScript syntax checks, Node.js tests, and a 1,000-run simulation. The workflow runs them for pull requests; it assembles and deploys the Pages site only after a push to `main`.
 
-### V5 acceptance and verification limits
+### Historical V5 acceptance and verification limits
 
-The recorded local Chrome acceptance covers the first-floor flow, four deep rarity rewards, five talent paths, forging and relic fusion, ten new deep events, a synthetic V4 save import, and full-inventory save recovery. Deep-floor checks used isolated debug saves. See the [V5 integration and browser acceptance report](docs/v5/%E9%9B%86%E6%88%90%E4%B8%8E%E5%AE%9E%E6%9C%BA%E9%AA%8C%E6%94%B6.md) and its linked screenshots for the environment and evidence.
+The following paragraphs describe evidence inherited from earlier V5 work. For this archive's actual reruns and results, use [the current iteration report](docs/iteration/LATEST_REPORT.md).
 
-The PR #2 review rerun also used isolated browser saves to verify first-crit luck across a chest, room transition, and refresh; import and claim of a synthetic V4 pending chest; and an Eternal reward opening that remained claimed after refresh. See the [cross-room luck screenshot](output/playwright/v5-p2-01-cross-room-luck.png) and [Eternal reward screenshot](output/playwright/v5-p2-high-rarity-open.png).
+The recorded local Chrome acceptance covers the first-floor flow, four deep rarity rewards, five talent paths, forging and relic fusion, ten new deep events, a synthetic V4 save import, and full-inventory save recovery. Deep-floor checks used isolated debug saves. See the [V5 integration and browser acceptance report](docs/v5/集成与实机验收.md) and its linked screenshots for the environment and evidence.
+
+The PR #2 review rerun also used isolated browser saves to verify first-crit luck across a chest, room transition, and refresh; import and claim of a synthetic V4 pending chest; and an Eternal reward opening that remained claimed after refresh. See the [cross-room luck screenshot](output/playwright/v5-p2-01-cross-room-luck.webp) and [Eternal reward screenshot](output/playwright/v5-p2-high-rarity-open.webp).
 
 Automated checks and isolated browser scenarios do not establish natural long-run progression, every Boss and room combination, migration of a player's private save, or full balance. The Windows launcher, audio listening, and performance on a physical 4K display also remain unverified. Simulated 4K viewport screenshots are layout checks, not hardware performance results.
 
@@ -229,9 +254,9 @@ The deployment assembles a static site from `index.html`, `favicon.svg`, and `sr
 
 ## 📌 Scope & Known Limits
 
-- **Desktop first:** landscape desktop browsers are the intended experience; mobile touch is not a release target.
+- **Desktop first:** narrow-window layouts are available and have simulated-viewport interaction checks; physical phones, pens and device-specific touch behavior remain unverified.
 - **Performance:** stable native 4K at 60 FPS is not claimed. Simulated 4K long-frame performance remains an open limitation.
-- **Playtesting:** natural progression into deep floors, every Boss/room combination, varied player builds, and extended human balance testing remain open.
+- **Playtesting:** reproducible automated journeys reach deep floors, but every Boss/room combination, varied human builds and extended human balance testing remain open.
 - **Compatibility:** private player saves and the native Windows `.cmd` launcher have not been validated as part of the recorded V5 acceptance.
 - **Audio and display performance:** audio has not received a listening review; simulated 4K viewport checks do not verify physical 4K frame rate or long-session performance.
 - **Endless descent:** there is no designed final floor, but browser storage, memory, and numeric limits still apply.

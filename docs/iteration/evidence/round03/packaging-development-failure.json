@@ -1,0 +1,85 @@
+{
+  "kind": "packaging-development-failure",
+  "stage": "first private candidate only; never delivered",
+  "failedArchive": {
+    "stage": "candidate",
+    "path": "/workspace/scratch/1e15b1b53871/audit/package-candidate/Dice-Abyss-v5.4.0-cloud-round-03-candidate.zip",
+    "bytes": 13522443,
+    "decimalMB": 13.522443,
+    "growthOverInputPercent": 8.806434448201994,
+    "sha256": "e62f0fe1e18937b0a2d70aaa8150d5f856070e1da5314b021c931fa0b5d3b4b4",
+    "files": 335,
+    "manifestEntries": 334,
+    "expandedBytes": 18073281,
+    "frozenSourceFiles": 114,
+    "readOnlyBaseline263Unchanged": true,
+    "hardLimitPass": true
+  },
+  "actualFailure": "verify-package.py rejected Manifest must have unique, sorted paths; no extraction or game test began",
+  "rootCause": "Python Path object ordering compares path components; the required manifest order compares the full project-relative POSIX path string. src/fonts/fusion-pixel/... versus src/fonts/fusion-pixel-12px... exposed the difference.",
+  "outOfOrderPairs": [
+    {
+      "actualEarlier": "src/fonts/fusion-pixel/LICENSES/galmuri/LICENSE.txt",
+      "actualLater": "src/fonts/fusion-pixel-12px-proportional-zh_hans.otf.woff2"
+    }
+  ],
+  "commandCapture": [
+    {
+      "argv": [
+        "python3",
+        "/workspace/scratch/1e15b1b53871/work/Dice-Abyss/scripts/verify-package.py",
+        "/workspace/scratch/1e15b1b53871/audit/package-candidate/Dice-Abyss-v5.4.0-cloud-round-03-candidate.zip",
+        "--extract",
+        "/workspace/scratch/1e15b1b53871/audit/package-candidate/fresh-extracted",
+        "--output",
+        "/workspace/scratch/1e15b1b53871/audit/package-candidate/archive-verification.json"
+      ],
+      "cwd": "/workspace/scratch/1e15b1b53871/work/Dice-Abyss",
+      "startedUtc": "2026-10-17T14:35:15.044659+00:00",
+      "finishedUtc": "2026-10-17T14:35:15.260524+00:00",
+      "durationSeconds": 0.2158832760032965,
+      "exitCode": 1,
+      "log": {
+        "name": "archive-verification.log",
+        "bytes": 704,
+        "sha256": "0d005a5cec77060ff271dc281a3709aff5351639ab5c7fcab80116b4d21c3f1d",
+        "verifiedCopy": "archive-verification.verified.log"
+      }
+    }
+  ],
+  "fix": "Packaging helper now sorts explicitly by project-relative POSIX string and asserts the complete manifest order. Production verifier and game/test source unchanged.",
+  "status": "FIXED_VERIFIED",
+  "followupEvidence": "fresh-code-verification.json",
+  "wrapperFollowup": {
+    "archiveValidation": "PASS after manifest ordering fix",
+    "archive": {
+      "zip": "Dice-Abyss-v5.4.0-cloud-round-03-candidate.zip",
+      "bytes": 13523837,
+      "decimalMB": 13.523837,
+      "sha256": "d6d5051b3f23888c0cc90a469b6caa61f0de08cd3b06ad07133b484662466b7d",
+      "files": 336,
+      "manifestEntries": 335,
+      "version": "5.4.0",
+      "round": 3,
+      "crcVerified": true,
+      "allManifestHashesVerified": true,
+      "extractedFilesVerified": true,
+      "expandedBytes": 18075890,
+      "entries": 336,
+      "pathSafetyVerified": true,
+      "expandedBudgetVerified": true
+    },
+    "wrapperFailure": "The temporary fresh-run wrapper looked for favicon.svg directly under the extraction destination, while the existing verifier correctly extracts inside Dice-Abyss/. No core tests had begun.",
+    "fix": "Use extraction destination / Dice-Abyss as the project root, then rerun from another fresh empty destination. No production script or frozen source changed."
+  },
+  "followup": {
+    "archiveCRCManifestPathChecks": "PASS",
+    "candidateBytes": 13523837,
+    "candidateSha256": "d6d5051b3f23888c0cc90a469b6caa61f0de08cd3b06ad07133b484662466b7d",
+    "freshCorePassed": 99,
+    "freshCoreFailed": 0,
+    "freshHttpResources": 36,
+    "frozenSourceFilesMatched": 114,
+    "evidence": "fresh-code-verification.json"
+  }
+}

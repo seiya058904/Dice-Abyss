@@ -9,7 +9,7 @@ const root = fileURLToPath(new URL('../', import.meta.url));
 export const CURRENT_RELEASE = JSON.parse(await readFile(new URL('../package.json', import.meta.url), 'utf8')).version;
 
 // The save/build major stays at 5. A detached V5.0 server must not be mistaken
-// for a newly extracted V5.1 release that happens to use the same title and port.
+// for a newly extracted release that happens to use the same title and port.
 export function classifyServerHtml(html, release = CURRENT_RELEASE) {
   if (typeof release !== 'string' || !release) return 'other';
   const source = String(html).replace(/<!--[\s\S]*?-->/g, '');

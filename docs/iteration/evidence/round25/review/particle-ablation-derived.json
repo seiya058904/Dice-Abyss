@@ -1,0 +1,355 @@
+{
+  "report": "qa-round25/particle-ablation/performance-round.json",
+  "sourceStable": true,
+  "status": "MEASURED",
+  "errors": [],
+  "mainRuns": 24,
+  "coverageRuns": 14,
+  "aggregate": [
+    {
+      "label": "baseline",
+      "scene": "boss-burst",
+      "width": 1920,
+      "height": 1080,
+      "effects": "full",
+      "repeats": 3,
+      "medianRunP50": 16.699999999254942,
+      "medianRunP95": 22,
+      "worstFrameMs": 590.0999999996275,
+      "longTasks": 2,
+      "longTaskOverlapMs": 184,
+      "observedAllExpectedEffects": true
+    },
+    {
+      "label": "after",
+      "scene": "boss-burst",
+      "width": 1920,
+      "height": 1080,
+      "effects": "full",
+      "repeats": 3,
+      "medianRunP50": 16.699999999254942,
+      "medianRunP95": 22.59999999962747,
+      "worstFrameMs": 355.5,
+      "longTasks": 1,
+      "longTaskOverlapMs": 76,
+      "observedAllExpectedEffects": true
+    },
+    {
+      "label": "after",
+      "scene": "boss-burst",
+      "width": 1920,
+      "height": 1080,
+      "effects": "low",
+      "repeats": 3,
+      "medianRunP50": 16.699999999254942,
+      "medianRunP95": 18,
+      "worstFrameMs": 250.30000000074506,
+      "longTasks": 0,
+      "longTaskOverlapMs": 0,
+      "observedAllExpectedEffects": true
+    },
+    {
+      "label": "baseline",
+      "scene": "boss-burst",
+      "width": 1920,
+      "height": 1080,
+      "effects": "low",
+      "repeats": 3,
+      "medianRunP50": 16.699999999254942,
+      "medianRunP95": 18.800000000745058,
+      "worstFrameMs": 1427.4000000003725,
+      "longTasks": 0,
+      "longTaskOverlapMs": 0,
+      "observedAllExpectedEffects": true
+    },
+    {
+      "label": "baseline",
+      "scene": "eternal-open",
+      "width": 1920,
+      "height": 1080,
+      "effects": "full",
+      "repeats": 3,
+      "medianRunP50": 16.699999999254942,
+      "medianRunP95": 19.5,
+      "worstFrameMs": 915.4000000003725,
+      "longTasks": 0,
+      "longTaskOverlapMs": 0,
+      "observedAllExpectedEffects": true
+    },
+    {
+      "label": "after",
+      "scene": "eternal-open",
+      "width": 1920,
+      "height": 1080,
+      "effects": "full",
+      "repeats": 3,
+      "medianRunP50": 16.699999999254942,
+      "medianRunP95": 20.40000000037253,
+      "worstFrameMs": 800.2000000011176,
+      "longTasks": 0,
+      "longTaskOverlapMs": 0,
+      "observedAllExpectedEffects": true
+    },
+    {
+      "label": "after",
+      "scene": "eternal-open",
+      "width": 1920,
+      "height": 1080,
+      "effects": "low",
+      "repeats": 3,
+      "medianRunP50": 16.699999999254942,
+      "medianRunP95": 17.100000001490116,
+      "worstFrameMs": 782,
+      "longTasks": 0,
+      "longTaskOverlapMs": 0,
+      "observedAllExpectedEffects": true
+    },
+    {
+      "label": "baseline",
+      "scene": "eternal-open",
+      "width": 1920,
+      "height": 1080,
+      "effects": "low",
+      "repeats": 3,
+      "medianRunP50": 16.699999999254942,
+      "medianRunP95": 17.199999999254942,
+      "worstFrameMs": 662.8000000007451,
+      "longTasks": 0,
+      "longTaskOverlapMs": 0,
+      "observedAllExpectedEffects": true
+    }
+  ],
+  "pairs": [
+    {
+      "scene": "boss-burst",
+      "effects": "full",
+      "repeat": 1,
+      "pair": 1,
+      "order": [
+        "baseline",
+        "after"
+      ],
+      "controlP95": 21.5,
+      "candidateP95": 20.399999998509884,
+      "deltaP95": -1.1000000014901161,
+      "controlMax": 197.40000000037253,
+      "candidateMax": 355.5,
+      "deltaMax": 158.09999999962747,
+      "baselineLT": 2,
+      "candidateLT": 0
+    },
+    {
+      "scene": "boss-burst",
+      "effects": "full",
+      "repeat": 2,
+      "pair": 2,
+      "order": [
+        "after",
+        "baseline"
+      ],
+      "controlP95": 24.5,
+      "candidateP95": 24.199999999254942,
+      "deltaP95": -0.30000000074505806,
+      "controlMax": 590.0999999996275,
+      "candidateMax": 61.5,
+      "deltaMax": -528.5999999996275,
+      "baselineLT": 0,
+      "candidateLT": 0
+    },
+    {
+      "scene": "boss-burst",
+      "effects": "full",
+      "repeat": 3,
+      "pair": 3,
+      "order": [
+        "baseline",
+        "after"
+      ],
+      "controlP95": 22,
+      "candidateP95": 22.59999999962747,
+      "deltaP95": 0.599999999627471,
+      "controlMax": 504.69999999925494,
+      "candidateMax": 76.70000000111759,
+      "deltaMax": -427.99999999813735,
+      "baselineLT": 0,
+      "candidateLT": 1
+    },
+    {
+      "scene": "boss-burst",
+      "effects": "low",
+      "repeat": 1,
+      "pair": 4,
+      "order": [
+        "after",
+        "baseline"
+      ],
+      "controlP95": 17.100000001490116,
+      "candidateP95": 17.300000000745058,
+      "deltaP95": 0.19999999925494194,
+      "controlMax": 1427.4000000003725,
+      "candidateMax": 219.30000000074506,
+      "deltaMax": -1208.0999999996275,
+      "baselineLT": 0,
+      "candidateLT": 0
+    },
+    {
+      "scene": "boss-burst",
+      "effects": "low",
+      "repeat": 2,
+      "pair": 5,
+      "order": [
+        "baseline",
+        "after"
+      ],
+      "controlP95": 18.90000000037253,
+      "candidateP95": 18,
+      "deltaP95": -0.900000000372529,
+      "controlMax": 281.7999999988824,
+      "candidateMax": 250.30000000074506,
+      "deltaMax": -31.499999998137355,
+      "baselineLT": 0,
+      "candidateLT": 0
+    },
+    {
+      "scene": "boss-burst",
+      "effects": "low",
+      "repeat": 3,
+      "pair": 6,
+      "order": [
+        "after",
+        "baseline"
+      ],
+      "controlP95": 18.800000000745058,
+      "candidateP95": 19.90000000037253,
+      "deltaP95": 1.099999999627471,
+      "controlMax": 274.3999999985099,
+      "candidateMax": 210,
+      "deltaMax": -64.39999999850988,
+      "baselineLT": 0,
+      "candidateLT": 0
+    },
+    {
+      "scene": "eternal-open",
+      "effects": "full",
+      "repeat": 1,
+      "pair": 7,
+      "order": [
+        "baseline",
+        "after"
+      ],
+      "controlP95": 21.90000000037253,
+      "candidateP95": 20.40000000037253,
+      "deltaP95": -1.5,
+      "controlMax": 915.4000000003725,
+      "candidateMax": 800.2000000011176,
+      "deltaMax": -115.19999999925494,
+      "baselineLT": 0,
+      "candidateLT": 0
+    },
+    {
+      "scene": "eternal-open",
+      "effects": "full",
+      "repeat": 2,
+      "pair": 8,
+      "order": [
+        "after",
+        "baseline"
+      ],
+      "controlP95": 19.5,
+      "candidateP95": 21.40000000037253,
+      "deltaP95": 1.900000000372529,
+      "controlMax": 717.1999999992549,
+      "candidateMax": 742.7000000011176,
+      "deltaMax": 25.500000001862645,
+      "baselineLT": 0,
+      "candidateLT": 0
+    },
+    {
+      "scene": "eternal-open",
+      "effects": "full",
+      "repeat": 3,
+      "pair": 9,
+      "order": [
+        "baseline",
+        "after"
+      ],
+      "controlP95": 19.09999999962747,
+      "candidateP95": 19,
+      "deltaP95": -0.09999999962747097,
+      "controlMax": 712.0999999996275,
+      "candidateMax": 659.0999999996275,
+      "deltaMax": -53.0,
+      "baselineLT": 0,
+      "candidateLT": 0
+    },
+    {
+      "scene": "eternal-open",
+      "effects": "low",
+      "repeat": 1,
+      "pair": 10,
+      "order": [
+        "after",
+        "baseline"
+      ],
+      "controlP95": 17.199999999254942,
+      "candidateP95": 17.100000001490116,
+      "deltaP95": -0.09999999776482582,
+      "controlMax": 640.0999999996275,
+      "candidateMax": 782,
+      "deltaMax": 141.90000000037253,
+      "baselineLT": 0,
+      "candidateLT": 0
+    },
+    {
+      "scene": "eternal-open",
+      "effects": "low",
+      "repeat": 2,
+      "pair": 11,
+      "order": [
+        "baseline",
+        "after"
+      ],
+      "controlP95": 18.199999999254942,
+      "candidateP95": 17.699999999254942,
+      "deltaP95": -0.5,
+      "controlMax": 656.5,
+      "candidateMax": 648,
+      "deltaMax": -8.5,
+      "baselineLT": 0,
+      "candidateLT": 0
+    },
+    {
+      "scene": "eternal-open",
+      "effects": "low",
+      "repeat": 3,
+      "pair": 12,
+      "order": [
+        "after",
+        "baseline"
+      ],
+      "controlP95": 17.09999999962747,
+      "candidateP95": 16.90000000037253,
+      "deltaP95": -0.19999999925494194,
+      "controlMax": 662.8000000007451,
+      "candidateMax": 531.4000000003725,
+      "deltaMax": -131.40000000037253,
+      "baselineLT": 0,
+      "candidateLT": 0
+    }
+  ],
+  "scope": "Read-only arithmetic; isolated current code with baseline effects module versus current particle candidate. Separate diagnostic batch, not pooled with main A/B.",
+  "full": {
+    "pairedMedianP95Delta": -0.20000000018626451,
+    "pairedMeanP95Delta": -0.0833333336437742,
+    "faster": 4,
+    "slower": 2,
+    "equal": 0
+  },
+  "low": {
+    "pairedMedianP95Delta": -0.14999999850988388,
+    "pairedMeanP95Delta": -0.06666666641831398,
+    "faster": 4,
+    "slower": 2,
+    "equal": 0
+  }
+}

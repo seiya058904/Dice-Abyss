@@ -1,0 +1,37 @@
+{
+  "status": "DOCUMENTED_QA_CORRECTIONS",
+  "productCandidateFailures": [],
+  "independentHarness": [
+    {
+      "evidence": "xp-baseline-harness-failure-01.json",
+      "observedExitCode": 1,
+      "classification": "reviewer QA harness API-shape error, not product failure",
+      "failures": 6,
+      "cause": "First draft compared loadSave(storage) itself with a game state, overlooking its stable {state,recovered,warning} result envelope.",
+      "fix": "Changed the assertion to loadSave(storage).state; preserved the complete original failure report. Reran the baseline and candidate with all six fault cases passing. No production code or original test assertion was changed for this correction."
+    }
+  ],
+  "httpInvocation": {
+    "event": "HTTP verifier supports separated --output only; equals-form briefly created a new default QA output inside baseline. It was copied to QA and removed; all872 input files remained byte-identical. Reran with correct supported syntax, all43 resources passed.",
+    "correction": "Only newly generated non-input report removed; original files untouched. Read-only directory mode restored.",
+    "fullBaselineFilesEqual": 872,
+    "sourceRuntimeChanged": false
+  },
+  "fontProbe": "The initial XP browser draft used a font-check name that could pass without proving the actual font face. The final eight-case run explicitly loads Abyss Pixel/Abyss Text and verifies loaded FontFace entries. The original browser report and its script hash remain baseline evidence, not complete font-coverage proof.",
+  "otherEnvironmentCorrection": "The first browser-archive checksum probe assumed an official MD5 header. Official storage supplied CRC32C instead; the independently computed CRC32C matched and every extracted browser file matched the archive.",
+  "screenshotReview": {
+    "status": "RESOLVED_FALSE_ALARM",
+    "evidence": "exchange-capture-review.json",
+    "explanation": "The two screenshots initially described differently are byte-for-byte and pixel-for-pixel identical; separate viewing shows the complete dialog. No actual missing-dialog capture or product defect was established; additional rerun cancelled."
+  },
+  "performanceRecompute": {
+    "evidence": "performance-recompute-attempt-01.json",
+    "classification": "independent summary assertion too strong; not a product failure",
+    "correction": "Only13/16 main windows and14/14 coverage windows observed target effects; all30 transactions were exact. Raw reports unchanged."
+  },
+  "packageGateDriver": {
+    "evidence": "package-gate-driver-correction.json",
+    "classification": "packaging QA driver wrong working directory, not package/runtime failure",
+    "productSourceChanged": false
+  }
+}

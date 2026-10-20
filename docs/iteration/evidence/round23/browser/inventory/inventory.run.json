@@ -1,0 +1,23 @@
+{
+  "command": [
+    "env",
+    "PLAYWRIGHT_MODULE=/opt/codex/runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.js",
+    "CHROMIUM_PATH=/tmp/dice-r15-browser/chrome-headless-shell-linux64/chrome-headless-shell",
+    "node",
+    "scripts/qa-round22-browser.mjs",
+    "--source=/workspace/scratch/3b21be83b3da/work/Dice-Abyss",
+    "--url=http://127.0.0.1:4189/",
+    "--output=/workspace/scratch/3b21be83b3da/qa23/current/browser/inventory",
+    "--suite=inventory",
+    "--expect=current"
+  ],
+  "cwd": "/workspace/scratch/3b21be83b3da/work/Dice-Abyss",
+  "startedUTC": "2026-10-19T15:59:36.458830+00:00",
+  "finishedUTC": "2026-10-19T15:59:46.125487+00:00",
+  "seconds": 9.6662,
+  "exitCode": 0,
+  "stdoutSha256": "02a632290c3228c1121128ec319fef2ba57c037c5f528ae8b7d43e56a0be29a6",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "tail": "same-run-native-storage-preserves-draft-selection: PASS\npure-inventory-actions-keep-state-and-correct-results: PASS\n{\"cases\":2,\"checks\":13,\"failed\":0,\"errors\":[],\"sourceUnchanged\":true}\n",
+  "stderrTail": ""
+}

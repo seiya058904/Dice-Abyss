@@ -1,0 +1,154 @@
+{
+  "date": "2026-10-17",
+  "method": "Fresh commands executed against the unchanged extracted 5.2.0 input; all logs and JSON outputs are outside the baseline directory. Historical report counts are not reused as fresh results.",
+  "environment": {
+    "node": "v24.19.0",
+    "platform": "linux",
+    "arch": "x64"
+  },
+  "syntax": {
+    "command": "npm run check",
+    "passed": true,
+    "log": "baseline-check.log"
+  },
+  "tests": {
+    "command": "npm test",
+    "fileSuitesPassed": 23,
+    "fileSuitesFailed": 0,
+    "durationMs": 148033.190268,
+    "log": "baseline-test.log",
+    "expandedCommand": "node --test --test-isolation=none tests/*.test.mjs",
+    "expandedPassed": 228,
+    "expandedFailed": 0,
+    "expandedSkipped": 0,
+    "expandedDurationMs": 166017.72113,
+    "expandedLog": "baseline-test-cases.log",
+    "reporterNote": "Default isolated Node 24 runner reports file counts; no-isolation run exposes actual cases. A deliberately unmet new view integration case was separately confirmed to fail, so default-runner PASS is still a valid file-level gate."
+  },
+  "simulation": {
+    "command": "npm run simulate -- 1000",
+    "seeds": 1000,
+    "completed": 1000,
+    "failures": [],
+    "noShopping": 50,
+    "noShoppingCompleted": 50,
+    "deaths": {
+      "min": 0,
+      "median": 0,
+      "p95": 0,
+      "max": 0,
+      "mean": 0
+    },
+    "combatRounds": {
+      "combat": {
+        "min": 1,
+        "median": 2,
+        "p95": 4,
+        "max": 9,
+        "mean": 1.8
+      },
+      "elite": {
+        "min": 1,
+        "median": 2,
+        "p95": 4,
+        "max": 9,
+        "mean": 2.48
+      },
+      "boss": {
+        "min": 1,
+        "median": 4,
+        "p95": 7,
+        "max": 10,
+        "mean": 4.27
+      },
+      "trial": {
+        "min": 1,
+        "median": 2,
+        "p95": 4,
+        "max": 7,
+        "mean": 2.04
+      }
+    },
+    "totalRolls": {
+      "min": 64,
+      "median": 86,
+      "p95": 101,
+      "max": 115,
+      "mean": 86.5
+    },
+    "approximateLogWriteSpanSeconds": 320.547,
+    "timingNote": "Approximate file creation-to-final-write interval; simulator has no internal timer.",
+    "log": "baseline-simulate-1000.log"
+  },
+  "combat": {
+    "command": "node scripts/qa-combat.mjs --mode checks --route-seeds 32 --output <external path>",
+    "content": {
+      "rooms": 50,
+      "enemies": 100,
+      "bosses": 18,
+      "items": 1536,
+      "talents": 45
+    },
+    "reachability": {
+      "rooms": 50,
+      "enemies": 100,
+      "bosses": 18,
+      "eventKeys": 22
+    },
+    "forecastCases": 5664,
+    "durationSeconds": 28.568,
+    "evidence": "baseline-combat-checks.json"
+  },
+  "deep": {
+    "command": "node scripts/qa-combat.mjs --mode balance --seeds 2 --floors 400 --output <external path>",
+    "seeds": 2,
+    "floors": 400,
+    "durationSeconds": 221.478,
+    "rows": [
+      {
+        "seed": 7919,
+        "completed": true,
+        "deaths": 0,
+        "rolls": 2701,
+        "level": 279,
+        "bossMaximumTurns": 41,
+        "lastFloor": {
+          "floor": 400,
+          "gold": 1712209,
+          "level": 279,
+          "hp": 172466,
+          "maxHp": 172466,
+          "attack": 66406
+        }
+      },
+      {
+        "seed": 15838,
+        "completed": true,
+        "deaths": 0,
+        "rolls": 2374,
+        "level": 279,
+        "bossMaximumTurns": 50,
+        "lastFloor": {
+          "floor": 400,
+          "gold": 2235204,
+          "level": 279,
+          "hp": 163168,
+          "maxHp": 163168,
+          "attack": 70753
+        }
+      }
+    ],
+    "evidence": "baseline-deep-400.json",
+    "limits": "Two automated policies with inherited single-point respec allocation; 41/50-turn long tails and late gold accumulation remain known risks. This run is not human play or a claimed balance fix."
+  },
+  "fusionRulesDifferential": {
+    "previewCases": 3680,
+    "transactionCases": 2688,
+    "planTransactions": 128,
+    "rejectionCases": 2304,
+    "fixtureStates": 160,
+    "durationSeconds": 3.846,
+    "allPassed": true,
+    "evidence": "fusion-rules-ab.json"
+  }
+}

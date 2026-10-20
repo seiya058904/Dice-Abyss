@@ -1,0 +1,291 @@
+{
+  "scope": "Round09 newly executed input-baseline review. No production or formal project documentation edits, no browser or remote operations.",
+  "completedAtUTC": "2026-10-18T07:52:29.283387+00:00",
+  "source": "/workspace/scratch/6a49cf7a9f47/baseline/Dice-Abyss",
+  "inputIdentity": {
+    "verifiedAtUTC": "2026-10-18T07:49:35.174308+00:00",
+    "inputZipBytes": 17330363,
+    "inputZipSha256": "7d5ad83300a8253897dac676b192dc4655b445b1e568b819d4d1ed4ce9106788",
+    "packageVersion": "5.8.0",
+    "releaseHtml": "5.8.0",
+    "readmeHeroVersion": "5.8.0",
+    "readmeRound": "08",
+    "titleFooterVersion": "5.8.0",
+    "gameFooterVersion": "05.8.0",
+    "engineSchema": 5,
+    "stateRound": 8,
+    "stateOutputVersion": "5.8.0",
+    "stateSchema": 5,
+    "manifestVersion": "5.8.0",
+    "saveKeys": {
+      "SAVE_KEY": "dice-abyss:save:v1",
+      "BACKUP_KEY": "dice-abyss:mirror:v1",
+      "LEGACY_BACKUP_KEY": "dice-abyss:pre-levels:v1",
+      "V4_BACKUP_KEY": "dice-abyss:pre-v5:v1",
+      "SETTINGS_KEY": "dice-abyss:settings:v1"
+    },
+    "launcherVersionSource": "CURRENT_RELEASE reads ../package.json.version dynamically",
+    "fontLicenseMarkers": {
+      "src/fonts/fusion-pixel/LICENSES/ark-pixel/OFL.txt": {
+        "bytes": 4412,
+        "hasOFLCopyrightText": true
+      },
+      "src/fonts/fusion-pixel/LICENSES/cubic-11/OFL.txt": {
+        "bytes": 5364,
+        "hasOFLCopyrightText": true
+      },
+      "src/fonts/fusion-pixel/LICENSES/galmuri/LICENSE.txt": {
+        "bytes": 4360,
+        "hasOFLCopyrightText": true
+      },
+      "src/fonts/fusion-pixel-OFL.txt": {
+        "bytes": 4418,
+        "hasOFLCopyrightText": true
+      },
+      "src/fonts/source-han-sans-OFL.txt": {
+        "bytes": 4463,
+        "hasOFLCopyrightText": true
+      }
+    }
+  },
+  "manifestAfterAllTests": {
+    "files": 794,
+    "entries": 793,
+    "mismatches": [],
+    "extraFiles": [],
+    "allOriginalBytesStillExact": true
+  },
+  "unit": {
+    "tests": 393.0,
+    "pass": 393.0,
+    "fail": 0.0,
+    "cancelled": 0.0,
+    "skipped": 0.0,
+    "todo": 0.0,
+    "duration_ms": 109588.537194
+  },
+  "defaultNpmTest": {
+    "exitCode": 0,
+    "reportedFileTests": 46,
+    "caseCountCommand": "node --test --test-isolation=none --test-reporter=tap tests/*.test.mjs",
+    "reason": "Default isolation reports files only in this environment. Default command passed; there was no OOM or failure fallback."
+  },
+  "standardSimulation": {
+    "seeds": 1000,
+    "completed": 1000,
+    "failures": [],
+    "floorsEach": 10,
+    "noShoppingSeeds": 50,
+    "noShoppingCompleted": 50,
+    "bytes": 9409,
+    "sha256": "266fa5b56516410712395796f197a2e33ad1b1e16ede45de14b872f208007d77"
+  },
+  "deep": {
+    "journeys": 8,
+    "completed": 8,
+    "floors": 2400,
+    "deaths": 0,
+    "rolls": 13664,
+    "bossTurnsMaximum": 14,
+    "finalGoldRange": [
+      602861,
+      2113074
+    ],
+    "sourceStable": true,
+    "protocol": [
+      {
+        "floors": 200,
+        "seeds": [
+          7919
+        ],
+        "builds": [
+          "resonance",
+          "bulwark"
+        ],
+        "policies": [
+          "conservative",
+          "duplicate-materials"
+        ],
+        "durationSeconds": 34.621046448
+      },
+      {
+        "floors": 400,
+        "seeds": [
+          31676
+        ],
+        "builds": [
+          "resonance",
+          "bulwark"
+        ],
+        "policies": [
+          "conservative",
+          "duplicate-materials"
+        ],
+        "durationSeconds": 123.734067952
+      }
+    ],
+    "limitations": [
+      "These are offline fixed-policy natural journeys, not human gameplay or population estimates.",
+      "They did not reach the 1e10 gold cap.",
+      "Build/policy differences can consume different RNG; differences are not isolated treatment effects."
+    ]
+  },
+  "storageClosure": {
+    "status": "PASS",
+    "checks": 41452,
+    "eventKeys": [
+      "abyssauction",
+      "bloodwell",
+      "echochamber",
+      "exchange",
+      "gambit",
+      "hollow_scale",
+      "memory_archive",
+      "memorywell",
+      "oathgate",
+      "offering",
+      "prayer",
+      "pursuer_contract",
+      "relic_exchange",
+      "relicloom",
+      "silent_anvil",
+      "spring",
+      "star_seal",
+      "starlibrary",
+      "thread_of_dawn",
+      "traveler_lantern",
+      "wardbank",
+      "wishingvault"
+    ],
+    "eventChoices": 1608,
+    "pendingProtectionVariants": 820,
+    "shopPurchases": 48,
+    "legacyFixtures": 11,
+    "failures": [],
+    "fingerprints": {
+      "algorithm": "sha256",
+      "format": 1,
+      "stateSnapshots": 6476,
+      "committedTransactions": 1811,
+      "legacyWrites": 11,
+      "states": "676237f681c397af4dd58f195b49a9507e36a734163368db43cffcf8a8ede883",
+      "transactions": "bc4b0bb2d64c990f7b7b37a05295b9ac62354367e8fc14f3137917dc1b80c3fa",
+      "writes": "0ff1dab1e7f8d44f4a6e19de1cb99b0f249f02ed83dbfdbddbddf50de822f1ef"
+    }
+  },
+  "sizeBoundary": {
+    "status": "PASS",
+    "cases": 4,
+    "passed": 4
+  },
+  "commandReceipts": [
+    {
+      "name": "baseline-check",
+      "command": [
+        "npm",
+        "run",
+        "check"
+      ],
+      "cwd": "/workspace/scratch/6a49cf7a9f47/baseline/Dice-Abyss",
+      "startedUTC": "2026-10-18T07:44:51.293478+00:00",
+      "durationSeconds": 2.431,
+      "exitCode": 0,
+      "logBytes": 196,
+      "logSha256": "3217c4c63ee8032fcd307fc8887f14539c46d28752e2ccb574816119a0e0a1fe"
+    },
+    {
+      "name": "baseline-npm-test",
+      "command": [
+        "npm",
+        "test"
+      ],
+      "cwd": "/workspace/scratch/6a49cf7a9f47/baseline/Dice-Abyss",
+      "startedUTC": "2026-10-18T07:44:53.724684+00:00",
+      "durationSeconds": 66.586,
+      "exitCode": 0,
+      "logBytes": 2541,
+      "logSha256": "0eda898aa499705ac539152c2f737e680ebd306ae2e08e5d72c69c986c5789d2"
+    },
+    {
+      "name": "baseline-simulate-1000",
+      "command": [
+        "node",
+        "scripts/simulate.mjs",
+        "1000"
+      ],
+      "cwd": "/workspace/scratch/6a49cf7a9f47/baseline/Dice-Abyss",
+      "startedUTC": "2026-10-18T07:46:00.310511+00:00",
+      "durationSeconds": 186.559,
+      "exitCode": 0,
+      "logBytes": 9409,
+      "logSha256": "266fa5b56516410712395796f197a2e33ad1b1e16ede45de14b872f208007d77"
+    },
+    {
+      "name": "baseline-deep-200",
+      "command": [
+        "node",
+        "scripts/audit-economy-round06.mjs",
+        "--floors",
+        "200",
+        "--seeds",
+        "7919",
+        "--builds",
+        "resonance,bulwark",
+        "--policies",
+        "conservative,duplicate-materials",
+        "--output",
+        "/workspace/scratch/6a49cf7a9f47/review-baseline/baseline-deep-200.json"
+      ],
+      "cwd": "/workspace/scratch/6a49cf7a9f47/baseline/Dice-Abyss",
+      "startedUTC": "2026-10-18T07:49:06.869410+00:00",
+      "durationSeconds": 34.686,
+      "exitCode": 0,
+      "logBytes": 1044,
+      "logSha256": "f3bbb6aa3f6661674df9445f4b1934d5e20a31a384519a570c9d70a152f5c34f"
+    },
+    {
+      "name": "baseline-deep-400",
+      "command": [
+        "node",
+        "scripts/audit-economy-round06.mjs",
+        "--floors",
+        "400",
+        "--seeds",
+        "31676",
+        "--builds",
+        "resonance,bulwark",
+        "--policies",
+        "conservative,duplicate-materials",
+        "--output",
+        "/workspace/scratch/6a49cf7a9f47/review-baseline/baseline-deep-400.json"
+      ],
+      "cwd": "/workspace/scratch/6a49cf7a9f47/baseline/Dice-Abyss",
+      "startedUTC": "2026-10-18T07:49:41.555860+00:00",
+      "durationSeconds": 123.813,
+      "exitCode": 0,
+      "logBytes": 1074,
+      "logSha256": "a7d177161f8ca71bb03ab8fb407cbb76eb7cb4c312e08495cef959efa0a103d2"
+    }
+  ],
+  "reviewFindings": {
+    "newConfirmedNonGoldP0P1": [],
+    "retainedContracts": [
+      "Full expected snapshot equality including unknown fields",
+      "Primary then mirror save ordering and truthful partial mirror failure",
+      "V1-V4 migration and immutable raw archives",
+      "5,000,000 character and UTF-8 byte limits before archive or active writes",
+      "Exact source raw rereads before same-operation schema reuse",
+      "Original input font binaries and five license notices retained"
+    ],
+    "notElevatedToBug": [
+      "v5Boons accepts some non-object JSON containers, but actual event writes rebuild via object spread and encounter entry resets it; no paid-loss or runtime failure was reproduced."
+    ]
+  },
+  "notTestedByThisReviewer": [
+    "browser interactions",
+    "browser quota or actual Web Locks",
+    "physical power loss",
+    "hardware GPU",
+    "Windows launcher execution"
+  ]
+}

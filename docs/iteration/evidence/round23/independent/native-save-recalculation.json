@@ -1,0 +1,401 @@
+{
+  "status": "PASS",
+  "kind": "INDEPENDENT_RECALCULATION_OF_RECORDED_NATIVE_SAVE_DATA_NOT_A_NEW_RUN",
+  "reviewedAtUtc": "2026-10-19T15:53:40.799793+00:00",
+  "input": "/workspace/scratch/3b21be83b3da/qa23/performance/native-save/report.json",
+  "inputSha256": "2433a33150e66fe0abf1662cea32da3aeb1b805e5b365031a881aa09a7c2695f",
+  "recordedStart": "2026-10-19T15:47:55.818Z",
+  "recordedFinish": "2026-10-19T15:49:11.735Z",
+  "sourceAndScriptRecordedStable": true,
+  "recordedServedHashCoveragePerVersion": 12,
+  "sourceCoverageLimitation": "Checks the exact source subset recorded by the original driver, not a final full application tree audit.",
+  "rawRecords": 26,
+  "warmupRecords": 2,
+  "measuredRecords": 24,
+  "balancedPairs": 12,
+  "baselineFirstPairs": 6,
+  "currentFirstPairs": 6,
+  "allRecordedStateTransitionsAndMirrorsExact": true,
+  "allNativeWrites": {
+    "callsPerAction": 2,
+    "mainAndMirror": true,
+    "allSucceeded": true
+  },
+  "browser": "155.0.8059.84",
+  "fixture": {
+    "synthetic": true,
+    "method": "Seeded existing newGame/makeItem APIs; explicit floor 200, level 100 and gold 1000000. No removed fields or shortened equipment records.",
+    "seed": 27017,
+    "runId": "qa-round06-native-storage-10000-27017",
+    "inventoryCount": 10000,
+    "targetId": "i7",
+    "action": {
+      "type": "lock",
+      "id": "i7"
+    },
+    "beforeStateSha256": "887b97d4dd72aa091e1b901c9217c8fbfb4cee382bf0119060d03ab5eb9c5ebd",
+    "afterStateSha256": "77536383143182ee345dd02effa469a3e2438e4b5ca9f62ba15eeedf2d5dde91",
+    "rawCharacters": 2039245,
+    "rawUtf8Bytes": 2190143,
+    "rawSha256": "c4390fd5079e909fbf54e01471647ca68f609c375c302415ac7bbf673dae5ab5",
+    "afterRawCharacters": 2039245,
+    "afterRawUtf8Bytes": 2190143,
+    "afterRawSha256": "a9c284fb121f67c99313d2a9426279f30c070776b1cb160367626293b0cd4c11",
+    "guardUtf8BranchReachedByLength": true
+  },
+  "percentileMethod": "Linear interpolation at (n - 1) * p; all twelve measured values per version retained.",
+  "clocks": {
+    "start": "performance.now() in the capture listener for the trusted target click, before the unmodified app click handler.",
+    "lastWrite": "Return or throw from the final original native Storage.prototype.setItem call during this action.",
+    "twoRaf": "performance.now() in the second requestAnimationFrame callback scheduled after the most recent write returns.",
+    "nativeSetItem": "Sum of time immediately around original setItem calls, with exact original receiver/arguments and return/exception behavior.",
+    "longTasks": "Native PerformanceObserver longtask entries overlapping trusted-click start through second RAF; raw duration and interval overlap are both recorded."
+  },
+  "limits": [
+    "These are API submission and UI-frame latency measurements, not physical-disk durability, FPS, GPU or natural-player distribution measurements.",
+    "The operation includes engine transition, exact-snapshot checking, encoding, native storage and inventory rendering; it does not isolate TextEncoder cost.",
+    "The setItem wrapper records timing/counts and calls the original native method unchanged. getItem, engine, quota and Web Locks are not replaced.",
+    "Default Chromium quota is identical in configuration for both origins. Native failure to hold both real copies is BLOCKED, never bypassed.",
+    "navigator.storage.estimate is origin-wide information, not a measurement of the separate localStorage size ceiling.",
+    "One fixed seed and twelve pairs are finite scenario evidence. Keep all samples and do not infer a general speedup from small/noisy differences."
+  ],
+  "metrics": [
+    {
+      "metric": "clickToLastWriteMs",
+      "baseline": {
+        "n": 12,
+        "min": 106.10000000149012,
+        "median": 122.14999999850988,
+        "p90": 142.53999999985098,
+        "p95": 158.5300000026822,
+        "max": 176.90000000596046,
+        "mean": 127.09166666679084
+      },
+      "current": {
+        "n": 12,
+        "min": 107.59999999403954,
+        "median": 121.44999999552965,
+        "p90": 135.2699999973178,
+        "p95": 138.98999999836087,
+        "max": 143.5,
+        "mean": 123.27499999913077
+      },
+      "pairedCurrentMinusBaseline": {
+        "n": 12,
+        "min": -69.30000001192093,
+        "median": -0.14999999850988388,
+        "p90": 10.25,
+        "p95": 12.83999999798834,
+        "max": 15.699999995529652,
+        "mean": -3.8166666676600776,
+        "values": [
+          4.499999992549419,
+          0.0,
+          -4.399999998509884,
+          -6.399999998509884,
+          7.0,
+          -69.30000001192093,
+          8,
+          10.5,
+          15.699999995529652,
+          -8.399999998509884,
+          -2.6999999955296516,
+          -0.29999999701976776
+        ],
+        "smallerPairs": 6,
+        "largerPairs": 5,
+        "equalPairs": 1
+      },
+      "allRecordedStatisticsExact": true
+    },
+    {
+      "metric": "clickToTwoRafMs",
+      "baseline": {
+        "n": 12,
+        "min": 202.70000000298023,
+        "median": 216.69999999925494,
+        "p90": 250.7800000011921,
+        "p95": 273.08000000081955,
+        "max": 297.5,
+        "mean": 224.94166666579744
+      },
+      "current": {
+        "n": 12,
+        "min": 203.80000000447035,
+        "median": 217.34999999776483,
+        "p90": 262.3000000037253,
+        "p95": 268.67000000178814,
+        "max": 273.3999999985099,
+        "mean": 226.89999999913076
+      },
+      "pairedCurrentMinusBaseline": {
+        "n": 12,
+        "min": -85.20000000298023,
+        "median": 4.00000000372529,
+        "p90": 44.07000000551344,
+        "p95": 54.15000000260769,
+        "max": 62.399999998509884,
+        "mean": 1.9583333333333333,
+        "values": [
+          62.399999998509884,
+          -13.600000001490116,
+          -16.900000005960464,
+          -1.8999999985098839,
+          14.100000001490116,
+          -85.20000000298023,
+          47.400000005960464,
+          7.899999998509884,
+          8.099999994039536,
+          -9.100000001490116,
+          0.10000000894069672,
+          10.200000002980232
+        ],
+        "smallerPairs": 5,
+        "largerPairs": 7,
+        "equalPairs": 0
+      },
+      "allRecordedStatisticsExact": true
+    },
+    {
+      "metric": "lastWriteToTwoRafMs",
+      "baseline": {
+        "n": 12,
+        "min": 85.29999999701977,
+        "median": 95.69999999925494,
+        "p90": 108.96000000163913,
+        "p95": 114.54999999813735,
+        "max": 120.59999999403954,
+        "mean": 97.84999999900658
+      },
+      "current": {
+        "n": 12,
+        "min": 88.10000000149012,
+        "median": 97.94999999925494,
+        "p90": 127.29000000432134,
+        "p95": 139.92500000447032,
+        "max": 152.30000000447035,
+        "mean": 103.625
+      },
+      "pairedCurrentMinusBaseline": {
+        "n": 12,
+        "min": -15.899999991059303,
+        "median": 1.050000000745058,
+        "p90": 36.51000000536443,
+        "p95": 47.72500000596045,
+        "max": 57.900000005960464,
+        "mean": 5.775000000993411,
+        "values": [
+          57.900000005960464,
+          -13.600000001490116,
+          -12.50000000745058,
+          4.5,
+          7.100000001490116,
+          -15.899999991059303,
+          39.400000005960464,
+          -2.600000001490116,
+          -7.600000001490116,
+          -0.7000000029802322,
+          2.8000000044703484,
+          10.5
+        ],
+        "smallerPairs": 6,
+        "largerPairs": 6,
+        "equalPairs": 0
+      },
+      "allRecordedStatisticsExact": true
+    },
+    {
+      "metric": "nativeSetItemMs",
+      "baseline": {
+        "n": 12,
+        "min": 17.600000001490116,
+        "median": 22.49999999627471,
+        "p90": 24.58999999538064,
+        "p95": 26.174999997392295,
+        "max": 28.100000001490116,
+        "mean": 22.091666666790843
+      },
+      "current": {
+        "n": 12,
+        "min": 18.899999998509884,
+        "median": 21.649999994784594,
+        "p90": 25.02000000178814,
+        "p95": 25.23500000014901,
+        "max": 25.399999998509884,
+        "mean": 21.82499999801318
+      },
+      "pairedCurrentMinusBaseline": {
+        "n": 12,
+        "min": -5.000000007450581,
+        "median": 0.3999999947845936,
+        "p90": 2.9699999935925008,
+        "p95": 2.9999999959021806,
+        "max": 3.0,
+        "mean": -0.2666666687776645,
+        "values": [
+          2.399999998509884,
+          -0.29999998956918716,
+          -5.000000007450581,
+          2.7000000029802322,
+          2.9999999925494194,
+          -4.900000013411045,
+          0.8999999910593033,
+          -2.8999999910593033,
+          -0.10000000149011612,
+          -3.7000000029802322,
+          1.6999999955296516,
+          3.0
+        ],
+        "smallerPairs": 6,
+        "largerPairs": 6,
+        "equalPairs": 0
+      },
+      "allRecordedStatisticsExact": true
+    },
+    {
+      "metric": "longTaskCount",
+      "baseline": {
+        "n": 12,
+        "min": 1,
+        "median": 1.0,
+        "p90": 1.0,
+        "p95": 1.0,
+        "max": 1,
+        "mean": 1.0
+      },
+      "current": {
+        "n": 12,
+        "min": 1,
+        "median": 1.0,
+        "p90": 1.0,
+        "p95": 1.0,
+        "max": 1,
+        "mean": 1.0
+      },
+      "pairedCurrentMinusBaseline": {
+        "n": 12,
+        "min": 0,
+        "median": 0.0,
+        "p90": 0.0,
+        "p95": 0.0,
+        "max": 0,
+        "mean": 0.0,
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "smallerPairs": 0,
+        "largerPairs": 0,
+        "equalPairs": 12
+      },
+      "allRecordedStatisticsExact": true
+    },
+    {
+      "metric": "longTaskTotalMs",
+      "baseline": {
+        "n": 12,
+        "min": 170,
+        "median": 187.0,
+        "p90": 218.0,
+        "p95": 237.09999999999997,
+        "max": 258,
+        "mean": 193.75
+      },
+      "current": {
+        "n": 12,
+        "min": 171,
+        "median": 185.0,
+        "p90": 204.8,
+        "p95": 213.1,
+        "max": 223,
+        "mean": 189.33333333333334
+      },
+      "pairedCurrentMinusBaseline": {
+        "n": 12,
+        "min": -77,
+        "median": 2.5,
+        "p90": 15.300000000000002,
+        "p95": 24.549999999999986,
+        "max": 35,
+        "mean": -4.416666666666667,
+        "values": [
+          16,
+          -17,
+          -22,
+          -7,
+          9,
+          -77,
+          35,
+          7,
+          9,
+          -11,
+          0,
+          5
+        ],
+        "smallerPairs": 5,
+        "largerPairs": 6,
+        "equalPairs": 1
+      },
+      "allRecordedStatisticsExact": true
+    },
+    {
+      "metric": "longTaskMaxMs",
+      "baseline": {
+        "n": 12,
+        "min": 170,
+        "median": 187.0,
+        "p90": 218.0,
+        "p95": 237.09999999999997,
+        "max": 258,
+        "mean": 193.75
+      },
+      "current": {
+        "n": 12,
+        "min": 171,
+        "median": 185.0,
+        "p90": 204.8,
+        "p95": 213.1,
+        "max": 223,
+        "mean": 189.33333333333334
+      },
+      "pairedCurrentMinusBaseline": {
+        "n": 12,
+        "min": -77,
+        "median": 2.5,
+        "p90": 15.300000000000002,
+        "p95": 24.549999999999986,
+        "max": 35,
+        "mean": -4.416666666666667,
+        "values": [
+          16,
+          -17,
+          -22,
+          -7,
+          9,
+          -77,
+          35,
+          7,
+          9,
+          -11,
+          0,
+          5
+        ],
+        "smallerPairs": 5,
+        "largerPairs": 6,
+        "equalPairs": 1
+      },
+      "allRecordedStatisticsExact": true
+    }
+  ],
+  "reviewScriptSha256": "5db49d0023e1806037f9cebc51c9c75ced66536b212ccd31cea3b0ed0ed0a968"
+}

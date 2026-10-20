@@ -1,0 +1,70 @@
+TAP version 13
+# Subtest: a 10,000-item current-schema save parses its active envelope only once
+ok 1 - a 10,000-item current-schema save parses its active envelope only once
+  ---
+  duration_ms: 240.339567
+  type: 'test'
+  ...
+# Subtest: current-schema source detection accepts whitespace and reordered envelope keys
+ok 2 - current-schema source detection accepts whitespace and reordered envelope keys
+  ---
+  duration_ms: 2.769183
+  type: 'test'
+  ...
+# Subtest: a verified V5 mirror avoids redundant parsing while an invalid primary remains unarchived
+ok 3 - a verified V5 mirror avoids redundant parsing while an invalid primary remains unarchived
+  ---
+  duration_ms: 3.281841
+  type: 'test'
+  ...
+# Subtest: public decode and load APIs keep their shapes and return fresh detached states
+ok 4 - public decode and load APIs keep their shapes and return fresh detached states
+  ---
+  duration_ms: 2.163007
+  type: 'test'
+  ...
+# Subtest: the source schema stays distinct from the migrated V5 state for all V1–V4 originals
+ok 5 - the source schema stays distinct from the migrated V5 state for all V1–V4 originals
+  ---
+  duration_ms: 19.750387
+  type: 'test'
+  ...
+# Subtest: full expected comparison still rejects same-revision unknown-field branches and mutated callers
+ok 6 - full expected comparison still rejects same-revision unknown-field branches and mutated callers
+  ---
+  duration_ms: 4.005472
+  type: 'test'
+  ...
+# Subtest: corrupt legacy archives still block a verified V5 commit before either active write
+ok 7 - corrupt legacy archives still block a verified V5 commit before either active write
+  ---
+  duration_ms: 1.360771
+  type: 'test'
+  ...
+# Subtest: later source reads that changed to an older raw string still take the complete archive path
+ok 8 - later source reads that changed to an older raw string still take the complete archive path
+  ---
+  duration_ms: 5.601861
+  type: 'test'
+  ...
+# Subtest: unreadable legacy envelopes remain available for explicit new-run rescue archives
+ok 9 - unreadable legacy envelopes remain available for explicit new-run rescue archives
+  ---
+  duration_ms: 2.016671
+  type: 'test'
+  ...
+# Subtest: archive failures keep active copies intact and current-schema primary or mirror failures keep their original outcomes
+ok 10 - archive failures keep active copies intact and current-schema primary or mirror failures keep their original outcomes
+  ---
+  duration_ms: 9.099301
+  type: 'test'
+  ...
+1..10
+# tests 10
+# suites 0
+# pass 10
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 302.934502

@@ -1,0 +1,1032 @@
+{
+  "kind": "Round21 storage audit handoff",
+  "createdAt": "2026-10-19T12:34:25.567185+00:00",
+  "status": "NARROW_CANDIDATE_IMPLEMENTED_AND_FROZEN; final native-browser adoption belongs to parent",
+  "baselineStorageSha256": "f5a990793a90ff59a57f38e4be8fcb9deaf54997dff9d9acec2cded73d2c8145",
+  "candidateStorageSha256": "daa6eeffc7a38692213228d748c7819739392a5eeaedc91ec62350c53319591c",
+  "runtimeScope": {
+    "change": "One invocation-local inventory ID Set is reused only for the private validator called immediately on JSON.parse-produced V5 data. Public validateSave, encodeSave and legacy validation keep original repeated ID reads and Set builds.",
+    "unchanged": [
+      "full expected JSON.stringify comparison including unknown metadata",
+      "JSON parsing/stringification counts",
+      "all duplicate IDs, reward/reference collisions, equipment slots and issued-ID checks",
+      "Web Locks and app transaction logic",
+      "migration, immutable archives, mirrors, warnings and rollback semantics"
+    ],
+    "measuredCost": {
+      "publicValidationInventorySets": {
+        "baseline": 2,
+        "candidate": 2
+      },
+      "currentSchemaDecodeInventorySets": {
+        "baseline": 2,
+        "candidate": 1
+      },
+      "ordinarySaveInventorySets": {
+        "baseline": 4,
+        "candidate": 3
+      },
+      "ordinarySaveJSONParses": {
+        "baseline": 2,
+        "candidate": 2
+      },
+      "ordinarySaveJSONSerializations": {
+        "baseline": 4,
+        "candidate": 4
+      }
+    }
+  },
+  "integrationFiles": [
+    {
+      "path": "src/storage.js",
+      "sha256": "daa6eeffc7a38692213228d748c7819739392a5eeaedc91ec62350c53319591c"
+    },
+    {
+      "path": "tests/storage-parsed-validation.test.mjs",
+      "sha256": "6cc5685187287a63d17b80c520ca629f99bf59b9124d67aad139811ec7144b1b"
+    },
+    {
+      "path": "scripts/benchmark-storage-inventory-round21.mjs",
+      "sha256": "d186e9f78586f75de0e450f5043e60f2aa56df6961f3997cfe8f8dec8db4c025"
+    },
+    {
+      "path": "scripts/audit-storage-parsed-round21.mjs",
+      "sha256": "e81477c32c42745e7c1c4f1641df2ffdfe994d436b0b708a9b7c4f8631b0088d"
+    }
+  ],
+  "verification": {
+    "newFocusedRegression": {
+      "current": {
+        "passed": 8,
+        "failed": 0
+      },
+      "baseline": {
+        "passed": 6,
+        "failed": 2,
+        "expectedFailures": "Only cost assertions: baseline decode builds2 expectedcandidate1, baseline commit builds4 expectedcandidate3. These are intended cost differences, not baseline correctness bugs."
+      }
+    },
+    "publicValidationAndEncoding": {
+      "exactCases": 68,
+      "propertyVisitationCases": 20,
+      "failureCausesAndSuccessfulExportValuesCompared": true
+    },
+    "fullExpectedCounterexamplesPreserved": 3,
+    "transactionDifferentialRows": 75,
+    "successfulNormalizedSnapshotsFailureOutcomesReadWriteEventsPersistedBytesAndCallerImmutabilityCompared": true,
+    "ordinarySaveProfiles": 8,
+    "sourceAndScriptStableDuringTiming": true
+  },
+  "rejectedCandidates": [
+    {
+      "name": "Direct source-payload equality shortcut",
+      "status": "ROLLED_BACK",
+      "classification": "SAFETY_CONTRACT_RISK_IN_UNSHIPPED_CANDIDATE",
+      "baselineBug": false,
+      "reproductions": [
+        "JSON.rawJSON(1.0 spelling)",
+        "JSON.rawJSON(9007199254740993 spelling)",
+        "Proxy numeric ownKeys order 2,1"
+      ],
+      "divergence": "Baseline full decoded-current vs expected JSON stringification rejects with zero writes; raw payload shortcut accepts both writes.",
+      "evidence": "candidate-counterexamples.json",
+      "exactSourceAndNewTestsAndScript": "rejected-direct-payload/"
+    },
+    {
+      "name": "Guarded repeated-ID array comparison in public validator",
+      "status": "ROLLED_BACK",
+      "classification": "SAFETY_CONTRACT_RISK_IN_UNSHIPPED_CANDIDATE",
+      "baselineBug": false,
+      "reproductions": [
+        "custom p.items.map result iterable",
+        "p.items.map result Proxy",
+        "Array Symbol.species Proxy"
+      ],
+      "divergence": "Extra length/index reads can change an observed result; original pending-auction reward collision rejects, guarded candidate accepts. Decoder-only candidate exactly preserves original public result and property visitation.",
+      "evidence": "guarded-validator-counterexamples.json",
+      "exactSource": "guarded-set-native-storage.js.txt"
+    }
+  ],
+  "timing": {
+    "report": "parsed-validator-final.json",
+    "pairsPerCell": 24,
+    "warmupPairsPerCell": 4,
+    "controlledAgentCPUWindow": true,
+    "externalSharedHostLoadUncontrolled": true,
+    "interpretation": "Structural reduction is certain. Small large-inventory full-save median differences and mixed tails require native-browser evidence before any user-facing speed claim. Near-limit32-item metadata timing gaps are disproportionately larger than a one32-ID-Set reduction and must not be causally attributed to it.",
+    "cells": [
+      {
+        "name": "32 items, equipped first",
+        "baselineMs": {
+          "n": 24,
+          "min": 0.2924719999999752,
+          "median": 0.3647394999999847,
+          "p90": 0.6630099999999857,
+          "p95": 0.6631510000000276,
+          "max": 1.285129999999981,
+          "mean": 0.44001720833333025
+        },
+        "currentMs": {
+          "n": 24,
+          "min": 0.29292300000003024,
+          "median": 0.3451349999999991,
+          "p90": 0.5022219999999606,
+          "p95": 0.5189670000000319,
+          "max": 0.5987660000000119,
+          "mean": 0.3698801250000064
+        },
+        "decodeSummaryMs": {
+          "baseline": {
+            "n": 24,
+            "min": 0.09414899999995896,
+            "median": 0.10544050000001448,
+            "p90": 0.13717300000001842,
+            "p95": 0.13896499999998468,
+            "max": 0.1530859999999734,
+            "mean": 0.11208891666666669
+          },
+          "current": {
+            "n": 24,
+            "min": 0.0935280000000489,
+            "median": 0.11204049999997778,
+            "p90": 0.13485900000000584,
+            "p95": 0.15097399999996242,
+            "max": 0.16517399999997906,
+            "mean": 0.11275004166666018
+          }
+        }
+      },
+      {
+        "name": "32 items, equipped last",
+        "baselineMs": {
+          "n": 24,
+          "min": 0.30367899999998826,
+          "median": 0.4022395000000074,
+          "p90": 0.5270090000000209,
+          "p95": 0.5504139999999893,
+          "max": 0.6419989999999984,
+          "mean": 0.42578999999998973
+        },
+        "currentMs": {
+          "n": 24,
+          "min": 0.2948759999999879,
+          "median": 0.39440799999999854,
+          "p90": 0.5072400000000243,
+          "p95": 0.7176310000000399,
+          "max": 0.981570999999974,
+          "mean": 0.43856666666667127
+        },
+        "decodeSummaryMs": {
+          "baseline": {
+            "n": 24,
+            "min": 0.10063800000000356,
+            "median": 0.11117450000000417,
+            "p90": 0.15608099999997194,
+            "p95": 0.17147299999999177,
+            "max": 0.38844499999999016,
+            "mean": 0.13273666666665918
+          },
+          "current": {
+            "n": 24,
+            "min": 0.09888599999999315,
+            "median": 0.11195599999999217,
+            "p90": 0.15451799999999594,
+            "p95": 0.16196999999999662,
+            "max": 0.16639599999996335,
+            "mean": 0.12236099999999794
+          }
+        }
+      },
+      {
+        "name": "1000 items, equipped first",
+        "baselineMs": {
+          "n": 24,
+          "min": 5.711643999999978,
+          "median": 6.280971499999964,
+          "p90": 7.306061999999997,
+          "p95": 8.428861999999981,
+          "max": 11.49993799999993,
+          "mean": 6.663178124999985
+        },
+        "currentMs": {
+          "n": 24,
+          "min": 5.330830999999989,
+          "median": 6.55017399999997,
+          "p90": 7.294755000000009,
+          "p95": 7.58306099999993,
+          "max": 9.427767999999958,
+          "mean": 6.599599333333328
+        },
+        "decodeSummaryMs": {
+          "baseline": {
+            "n": 24,
+            "min": 1.7530919999999242,
+            "median": 2.013802499999997,
+            "p90": 2.929049999999961,
+            "p95": 2.966821999999979,
+            "max": 2.987365999999952,
+            "mean": 2.145424333333333
+          },
+          "current": {
+            "n": 24,
+            "min": 1.7973279999999932,
+            "median": 2.0241075000000706,
+            "p90": 2.7116289999999026,
+            "p95": 2.8433029999999917,
+            "max": 3.858826000000022,
+            "mean": 2.154471958333346
+          }
+        }
+      },
+      {
+        "name": "1000 items, equipped last",
+        "baselineMs": {
+          "n": 24,
+          "min": 5.500422999999955,
+          "median": 6.3051719999999705,
+          "p90": 7.810396999999966,
+          "p95": 10.36745800000017,
+          "max": 11.40970900000002,
+          "mean": 6.6553331666666695
+        },
+        "currentMs": {
+          "n": 24,
+          "min": 5.473191999999926,
+          "median": 6.115752499999985,
+          "p90": 8.352117999999791,
+          "p95": 8.554969000000028,
+          "max": 9.56472100000019,
+          "mean": 6.575454958333296
+        },
+        "decodeSummaryMs": {
+          "baseline": {
+            "n": 24,
+            "min": 1.785910000000058,
+            "median": 2.0206024999999954,
+            "p90": 2.291407000000163,
+            "p95": 3.8671580000000176,
+            "max": 3.9178079999999227,
+            "mean": 2.163698875000042
+          },
+          "current": {
+            "n": 24,
+            "min": 1.7550240000000485,
+            "median": 1.9632025000000795,
+            "p90": 2.2031970000000456,
+            "p95": 2.313609999999926,
+            "max": 2.408541000000014,
+            "mean": 1.9995842083333553
+          }
+        }
+      },
+      {
+        "name": "10000 items, equipped first",
+        "baselineMs": {
+          "n": 24,
+          "min": 50.13857999999982,
+          "median": 53.7180565000001,
+          "p90": 60.57413799999995,
+          "p95": 65.328442,
+          "max": 71.13298399999985,
+          "mean": 55.31251595833324
+        },
+        "currentMs": {
+          "n": 24,
+          "min": 49.76720000000023,
+          "median": 52.66124949999994,
+          "p90": 63.848513999999795,
+          "p95": 67.14389099999971,
+          "max": 84.42479100000037,
+          "mean": 55.749648999999955
+        },
+        "decodeSummaryMs": {
+          "baseline": {
+            "n": 24,
+            "min": 15.481088999999884,
+            "median": 16.07700449999993,
+            "p90": 16.865625999999793,
+            "p95": 17.146351000000323,
+            "max": 17.26316400000087,
+            "mean": 16.198559416666892
+          },
+          "current": {
+            "n": 24,
+            "min": 14.857065999999577,
+            "median": 15.546741000000111,
+            "p90": 16.391325000000506,
+            "p95": 16.54680400000052,
+            "max": 16.832446999999775,
+            "mean": 15.667858166666747
+          }
+        }
+      },
+      {
+        "name": "10000 items, equipped last",
+        "baselineMs": {
+          "n": 24,
+          "min": 54.212359999999535,
+          "median": 58.055587500000456,
+          "p90": 63.56258500000149,
+          "p95": 65.1011010000002,
+          "max": 115.2417379999988,
+          "mean": 61.067763833333366
+        },
+        "currentMs": {
+          "n": 24,
+          "min": 54.419378999999935,
+          "median": 57.06094350000012,
+          "p90": 60.96679600000061,
+          "p95": 61.05175099999906,
+          "max": 61.47209399999883,
+          "mean": 57.60489745833316
+        },
+        "decodeSummaryMs": {
+          "baseline": {
+            "n": 24,
+            "min": 23.176869999999326,
+            "median": 24.7678420000002,
+            "p90": 26.593462000000727,
+            "p95": 26.87728100000095,
+            "max": 28.305121999999756,
+            "mean": 24.84785462499993
+          },
+          "current": {
+            "n": 24,
+            "min": 17.090731000000233,
+            "median": 18.618279000000257,
+            "p90": 20.035926000000472,
+            "p95": 20.19045399999959,
+            "max": 20.634609999999157,
+            "mean": 18.74157070833341
+          }
+        }
+      },
+      {
+        "name": "4.95MB ASCII unknown metadata",
+        "baselineMs": {
+          "n": 24,
+          "min": 83.16743199999837,
+          "median": 90.74669100000028,
+          "p90": 96.04291400000147,
+          "p95": 100.62841399999888,
+          "max": 110.6362939999999,
+          "mean": 91.6391629999999
+        },
+        "currentMs": {
+          "n": 24,
+          "min": 68.57057599999825,
+          "median": 73.67108849999931,
+          "p90": 79.82012200000099,
+          "p95": 79.8407729999999,
+          "max": 80.81026600000041,
+          "mean": 74.47711491666678
+        },
+        "decodeSummaryMs": {
+          "baseline": {
+            "n": 24,
+            "min": 30.307189999999537,
+            "median": 33.67442250000022,
+            "p90": 36.69506399999955,
+            "p95": 36.774742000001424,
+            "max": 46.87375299999985,
+            "mean": 34.13671704166624
+          },
+          "current": {
+            "n": 24,
+            "min": 15.093745999998646,
+            "median": 19.162296499998774,
+            "p90": 21.52245099999709,
+            "p95": 21.712432000000263,
+            "max": 24.233589999999822,
+            "mean": 18.994064541666223
+          }
+        }
+      },
+      {
+        "name": "4.95MB Chinese unknown metadata",
+        "baselineMs": {
+          "n": 24,
+          "min": 30.234136999999464,
+          "median": 34.25208550000025,
+          "p90": 54.072180000002845,
+          "p95": 60.32594799999788,
+          "max": 66.4068240000015,
+          "mean": 37.628376166666534
+        },
+        "currentMs": {
+          "n": 24,
+          "min": 18.936917999999423,
+          "median": 21.5196539999979,
+          "p90": 27.010440000001836,
+          "p95": 27.539416999999958,
+          "max": 32.63102099999742,
+          "mean": 22.473245458333015
+        },
+        "decodeSummaryMs": {
+          "baseline": {
+            "n": 24,
+            "min": 10.354932000002009,
+            "median": 11.19995149999886,
+            "p90": 12.774309000000358,
+            "p95": 13.926883000000089,
+            "max": 15.746333999999479,
+            "mean": 11.51534916666651
+          },
+          "current": {
+            "n": 24,
+            "min": 5.486112000002322,
+            "median": 10.964187499999753,
+            "p90": 12.961866999998165,
+            "p95": 13.738455000002432,
+            "max": 18.908039999998437,
+            "mean": 10.429091541666821
+          }
+        }
+      }
+    ]
+  },
+  "renderCPUReview": {
+    "status": "FOLLOWUP_LOCAL_RENDER_REUSE_IMPLEMENTED_AND_VERIFIED",
+    "evidenceSourceHashes": {
+      "baseline": {
+        "src/storage.js": "f5a990793a90ff59a57f38e4be8fcb9deaf54997dff9d9acec2cded73d2c8145",
+        "src/engine.js": "75c6d9fcc48c0cf49ee02e53ffb7b143a09a2c79738d3bb2eb5d0ae80b30872b",
+        "src/views.js": "ae2fede007d7ed0b5a9b660add0ff7df89a76c93c3cabc3539741c9d2345bf07",
+        "src/boon-readout.js": "a791db47ce4c910c67cfe9ece95ea54520e79f39a126a2c82a46d9ba2c4bc38a",
+        "src/release.js": "d95506cb9ad535f7771f0f81055a49e510db003edff3d697ce91bde506be640b"
+      },
+      "current": {
+        "src/storage.js": "daa6eeffc7a38692213228d748c7819739392a5eeaedc91ec62350c53319591c",
+        "src/engine.js": "75c6d9fcc48c0cf49ee02e53ffb7b143a09a2c79738d3bb2eb5d0ae80b30872b",
+        "src/views.js": "da176e50311a2ffea3674d6445bf0c363ea5073bd02a898ba8a507c77dc84926",
+        "src/boon-readout.js": "d44d2a22f1ab6d48f3e768ab59474aa4a9d3e741c1bf085d7614a4b187f76aac",
+        "src/release.js": "60fccdf0c566f0a9650c5d2bc18218c082f04454299d9f868a53f4008b5c0118"
+      }
+    },
+    "method": "Alternating AB/BA pure gameView string generation; same live-combat state with zero nextLuck, eventLuck and firstCritLuck. Setup, validation, state immutability, output hash checks and timing summaries are outside the interval. This excludes DOM insertion, layout, paint, input, browser and GPU cost.",
+    "cells": [
+      {
+        "name": "normal combat, 32 items, equipped first",
+        "items": 32,
+        "equippedIndices": [
+          0,
+          1,
+          2
+        ],
+        "rawSha256": "f55ffb51c784d4acb936e27f37cddbdf89cc5e2404659ebc17e22697d845a897",
+        "firstCritLuck": 0,
+        "nextLuck": 0,
+        "eventLuck": 0,
+        "order": [
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ]
+        ],
+        "html": {
+          "baseline": {
+            "characters": 21192,
+            "sha256": "2c6f55ef76101d1d855dc1773f7177e44c04c134418ee82209c5cad89df01f93"
+          },
+          "current": {
+            "characters": 21192,
+            "sha256": "ee2ee4b0a5c9da53b55830d1dfeb634d86dd49f464abf25d84ba1f11bbb1ac76"
+          }
+        },
+        "samplesMs": {
+          "baseline": [
+            2.6788919999999052,
+            2.38583799999833,
+            1.3533409999981814,
+            1.391728000002331,
+            1.2884550000017043,
+            1.272461000000476,
+            1.8629449999971257,
+            1.3749830000015208,
+            0.8489859999972396,
+            0.9162150000011025,
+            0.7910289999999804,
+            0.6597159999982978,
+            0.7045719999987341,
+            0.6557890000003681,
+            0.6139580000017304,
+            0.6262260000003153,
+            0.7070050000002084,
+            0.775246999997762,
+            0.6790340000006836,
+            0.6977420000002894,
+            0.6976819999981672,
+            0.7344559999983176,
+            0.6237629999995988,
+            0.6688590000012482
+          ],
+          "current": [
+            3.020035999998072,
+            2.37045500000022,
+            1.333122000000003,
+            1.5807869999989634,
+            1.4482810000008612,
+            2.5759590000016033,
+            2.595388000001549,
+            2.3055290000011155,
+            1.0128069999991567,
+            0.7965780000013183,
+            0.8517190000020491,
+            0.764179999998305,
+            0.7422179999994114,
+            0.7097190000022238,
+            0.7796630000011646,
+            0.7143059999980323,
+            0.8554349999976694,
+            1.5789949999998498,
+            0.7693680000011227,
+            0.9838249999993423,
+            0.6579129999990982,
+            0.66629599999942,
+            0.6543369999999413,
+            0.6391349999976228
+          ]
+        },
+        "baselineMs": {
+          "n": 24,
+          "min": 0.6139580000017304,
+          "median": 0.7548514999980398,
+          "p90": 1.8629449999971257,
+          "p95": 2.38583799999833,
+          "max": 2.6788919999999052,
+          "mean": 1.0420384166664007
+        },
+        "currentMs": {
+          "n": 24,
+          "min": 0.6391349999976228,
+          "median": 0.8535769999998593,
+          "p90": 2.5759590000016033,
+          "p95": 2.595388000001549,
+          "max": 3.020035999998072,
+          "mean": 1.266918791666588
+        },
+        "pairedDifferenceSummaryMs": {
+          "n": 24,
+          "min": -0.11963699999978417,
+          "median": 0.09739900000022317,
+          "p90": 0.8037480000020878,
+          "p95": 0.9305459999995946,
+          "max": 1.3034980000011274,
+          "mean": 0.2248803750001874
+        },
+        "stateUnchanged": true
+      },
+      {
+        "name": "normal combat, 10000 items, equipped last",
+        "items": 10000,
+        "equippedIndices": [
+          9997,
+          9998,
+          9999
+        ],
+        "rawSha256": "60ffcf20bbbb1fd7807dcf8e34e32a7c9e584924c1d4231588f2f1b507e26b14",
+        "firstCritLuck": 0,
+        "nextLuck": 0,
+        "eventLuck": 0,
+        "order": [
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ],
+          [
+            "baseline",
+            "current"
+          ],
+          [
+            "current",
+            "baseline"
+          ]
+        ],
+        "html": {
+          "baseline": {
+            "characters": 21626,
+            "sha256": "a6e9a2c708f91ab35e4e1394306715d5f4f87729d4e39c2d500e0ee281830f29"
+          },
+          "current": {
+            "characters": 21626,
+            "sha256": "62e0f8664d2d72466d4bab6c3e430b82330d4da2637ba5a451a87e8bd9dd52ba"
+          }
+        },
+        "samplesMs": {
+          "baseline": [
+            5.540251999998873,
+            6.112247999997635,
+            5.849459000000934,
+            5.742661000000226,
+            5.400535999997373,
+            5.516718000002584,
+            6.247527999999875,
+            5.034394000002067,
+            4.807938999998441,
+            4.832977000001847,
+            4.590266999999585,
+            4.55325300000186,
+            5.10526899999968,
+            5.244013999999879,
+            4.766969000000245,
+            4.806086000000505,
+            5.248930999998265,
+            4.624318000001949,
+            4.7410409999974945,
+            5.347316999999748,
+            4.573071999999229,
+            4.905073000001721,
+            4.592570999997406,
+            4.922589000001608
+          ],
+          "current": [
+            6.827414999999746,
+            6.240537999998196,
+            7.812692999999854,
+            6.858352000002924,
+            7.442054999999527,
+            6.713126999999076,
+            7.831400000002759,
+            7.4948330000006536,
+            8.688948999999411,
+            6.595602999997936,
+            6.385342000001401,
+            6.326515000000654,
+            6.801507000000129,
+            7.166197000002285,
+            6.510035999999673,
+            6.369359000000259,
+            7.806915000001027,
+            6.404018999997788,
+            6.865361000000121,
+            6.134791000000405,
+            7.006038999999873,
+            6.145286999999371,
+            5.867365999998583,
+            5.954434999999648
+          ]
+        },
+        "baselineMs": {
+          "n": 24,
+          "min": 4.55325300000186,
+          "median": 4.978491500001837,
+          "p90": 5.849459000000934,
+          "p95": 6.112247999997635,
+          "max": 6.247527999999875,
+          "mean": 5.129395083333293
+        },
+        "currentMs": {
+          "n": 24,
+          "min": 5.867365999998583,
+          "median": 6.757316999999603,
+          "p90": 7.812692999999854,
+          "p95": 7.831400000002759,
+          "max": 8.688948999999411,
+          "mean": 6.843672250000054
+        },
+        "pairedDifferenceSummaryMs": {
+          "n": 24,
+          "min": 0.12829000000056112,
+          "median": 1.7528464999977587,
+          "p90": 2.460438999998587,
+          "p95": 2.5579840000027616,
+          "max": 3.8810100000009697,
+          "mean": 1.7142771666667613
+        },
+        "stateUnchanged": true
+      }
+    ],
+    "interpretation": "Initial regression prompted bounded per-invocation stats/boon reuse implemented by this subagent after parent authorization. Full pre-reuse/final HTML matched and fixed three-way timing is retained separately.",
+    "followup": "FINAL_VIEW_REUSE_AUDIT.json"
+  },
+  "evidenceRoot": "/workspace/scratch/85c02edcd5e2/save-audit",
+  "evidenceFiles": [
+    {
+      "path": "parsed-validator-final-protocol.json",
+      "bytes": 1991,
+      "sha256": "320a5c40e72b8508e6317e0d3f6569c29d3e7ddccb7f7d8ecd7ba7ea69c5c485"
+    },
+    {
+      "path": "parsed-validator-final.json",
+      "bytes": 110824,
+      "sha256": "c9acfe1404df3a782b63fbb4084d20042578af8581c53d7af5fac53000ccfe56"
+    },
+    {
+      "path": "parsed-validator-final-compatibility.json",
+      "bytes": 58897,
+      "sha256": "eb5515459fc16b12d496d078a7d6651ad8447a6d4f477ca65c5e7a21257b6c6f"
+    },
+    {
+      "path": "candidate-counterexamples.json",
+      "bytes": 1637,
+      "sha256": "d19826b68b35adc2d97ad1c270c02cfc878149ba329ba564a5357738d2280b3d"
+    },
+    {
+      "path": "guarded-validator-counterexamples.json",
+      "bytes": 19476,
+      "sha256": "72dc51927f94d8d7daa1361f46d4128204669ff6f76c98d54a94ba8dea4d4ac6"
+    },
+    {
+      "path": "harness-corrections.json",
+      "bytes": 687,
+      "sha256": "d7ae6e4440b36f0f0e638fe9c3a8cf47126e2f51d4401474d9cdca9fc683e9db"
+    },
+    {
+      "path": "paired-attempt01-fixture-boundary-fail.json",
+      "bytes": 60213,
+      "sha256": "80f712934ea09475386b976e0b69866beed40e74842b9341d6cb6ca13014d3de"
+    },
+    {
+      "path": "protocol.json",
+      "bytes": 1569,
+      "sha256": "caf05d732fc7068888118f3cfd3e4af5de68cb5a5cf1adb7028219c056b44dd4"
+    },
+    {
+      "path": "validator-protocol-preliminary.json",
+      "bytes": 644,
+      "sha256": "d6ee92d579a25bd251122bb312330b942b7548c064be3fe81ce351b4bfb70429"
+    },
+    {
+      "path": "validator-preliminary.json",
+      "bytes": 41201,
+      "sha256": "a811a8f7bbf7ede049c87d8bf760206a895097a6051fcb85fe79e20a27b52597"
+    },
+    {
+      "path": "validator-guarded-preliminary.json",
+      "bytes": 55786,
+      "sha256": "d7d398a9f2046f33049ea4d5e68407d7130c1e1a9cc5dc932faf90298a10fb92"
+    },
+    {
+      "path": "validator-formal-protocol.json",
+      "bytes": 1620,
+      "sha256": "66c40d458445d8ad271b963430a7e445f2fc56a5a448a17431db5184a52987af"
+    },
+    {
+      "path": "validator-formal.json",
+      "bytes": 99644,
+      "sha256": "c269ee64fb4754ce3292aba94c8fae82bdff12e4de7d978adb06dd6910c537c2"
+    },
+    {
+      "path": "validator-compatibility.json",
+      "bytes": 21387,
+      "sha256": "d2819f9b439f4fd450ebdfc2d9a81c1e7b792463bd2d4869cab2b937e428ee45"
+    },
+    {
+      "path": "parsed-validator-compatibility.json",
+      "bytes": 23325,
+      "sha256": "ae03ec9fd2726ac3bed94315ddc1fbfa37e482b6aa2372b8b413abb609a49620"
+    },
+    {
+      "path": "guarded-set-native-storage.js.txt",
+      "bytes": 32536,
+      "sha256": "2cea5daf244741351d737282efb84eb1e501d7248cc14fb53973a703db859e04"
+    },
+    {
+      "path": "inventory-index-native-storage.js.txt",
+      "bytes": 32056,
+      "sha256": "62127700c6a2460ce08dead26642b60e672261c28f8750003d853c2c82ee290a"
+    },
+    {
+      "path": "set-reuse-native-storage.js.txt",
+      "bytes": 32012,
+      "sha256": "674f7f35267a75d207a6b741e4c3d48ad973fc76b27278b4298168e43c133fb4"
+    },
+    {
+      "path": "parsed-native-storage.js.txt",
+      "bytes": 32441,
+      "sha256": "daa6eeffc7a38692213228d748c7819739392a5eeaedc91ec62350c53319591c"
+    },
+    {
+      "path": "audit-parsed-validator-compatibility.mjs",
+      "bytes": 8794,
+      "sha256": "036117a8f2e6eb07986dc0b377415f6cff407539ff0b3d1f6f81f02962d2b85a"
+    },
+    {
+      "path": "audit-validator-compatibility.mjs",
+      "bytes": 6937,
+      "sha256": "90f0823ea8df86c5ea865500f181d3f65a5efc15ae71e47aad99dc511651c902"
+    },
+    {
+      "path": "benchmark-validators.mjs",
+      "bytes": 3235,
+      "sha256": "cf4b9a6296282ef667048b72b4eb0276aa03e89950997177cb7e6c843191917b"
+    },
+    {
+      "path": "benchmark-validators-guarded.mjs",
+      "bytes": 3353,
+      "sha256": "b4f4fc2d1d2dcb894bcaedf0c05689b7090509e9f9bc079503e0b407a19db9f3"
+    },
+    {
+      "path": "benchmark-storage-inventory-round21.mjs",
+      "bytes": 17860,
+      "sha256": "b0cda72008135b7b989eadfe52f052e0dc4ee7bdce1b4f0e88aaa424abf564b2"
+    },
+    {
+      "path": "benchmark-snapshot-audit.mjs",
+      "bytes": 16815,
+      "sha256": "664434ac8b32efee5bc0cf6e278d8a75fae4040e02e94e2caa2d30191637d58a"
+    },
+    {
+      "path": "rejected-direct-payload/benchmark-storage-snapshot-round21.mjs.txt",
+      "bytes": 16897,
+      "sha256": "27d3a1b57908d7cb90aa16488a7aa126986d786cbd7021308f059611b650ed15"
+    },
+    {
+      "path": "rejected-direct-payload/rejection.json",
+      "bytes": 631,
+      "sha256": "cd6e928da0457ae19a0c0b2a96e0d4728626a41b9d2539f85d93b67070fde062"
+    },
+    {
+      "path": "rejected-direct-payload/storage-snapshot-payload.test.mjs.txt",
+      "bytes": 8519,
+      "sha256": "0d22f8f93806bca87fbdbb73edddbc9ada3c896c4f621848f86d1bbdce1b3b03"
+    },
+    {
+      "path": "rejected-direct-payload/storage.js.txt",
+      "bytes": 32561,
+      "sha256": "cec3c481c432a830473c7f8f1a35d2dd7f68bcf6f9aee2da9b97b8d5b972623f"
+    }
+  ],
+  "notes": [
+    "The focused baseline failures describe intentional operation counts, not product bugs.",
+    "Earlier guarded timings and failed fixture-size attempt are retained candidate-only evidence, not shipped performance results.",
+    "Audit compatibility sourceHashes use the original audit helper SHA256(JSON.stringify(text)); frozen source file SHA256 above and benchmark sourceHashes use raw file UTF8.",
+    "No browser, remote service write or git operation performed by this storage subagent."
+  ]
+}

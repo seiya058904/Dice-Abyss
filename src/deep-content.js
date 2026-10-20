@@ -20,7 +20,7 @@ export const ABILITY_DEFS = {
  sixthMend:{name:'六点回生',text:'出现 6 且存活：恢复最大生命',kind:'heal',cap:.06},
  resolveGuard:{name:'临界守望',text:'掷骰前生命 <35%：反击伤害降低',kind:'guard',cap:.35},
  echoRelic:{name:'星海回响',text:'三同：追加一次主击伤害',kind:'echo',cap:.5},
- firstCritLuck:{name:'启明星',text:'每场首次暴击：幸运增加，持续至同层下一次战斗掷骰结算',kind:'luck',cap:24},
+ firstCritLuck:{name:'启明星',text:'持有效果时首次暴击（每场一次；至同层下一次战斗掷骰结算）：幸运',kind:'luck',cap:24},
  eliteLuck:{name:'追星',text:'击败精英或首领：本层幸运增加（总上限20）',kind:'luck',cap:4},
  gildedSix:{name:'六点拾光',text:'击杀且至少 2 颗 6：本箱金币',kind:'gold',cap:.5},
  resonanceMend:{name:'合鸣归息',text:'四同且存活：恢复最大生命',kind:'heal',cap:.08},
@@ -34,7 +34,7 @@ export const DEEP_TALENTS = {
  tripleBlade:{name:'共鸣刻痕',description:'三同：追加主击 8% 的伤害',group:'resonance',floor:80,effect:'tripleStrike',amount:.08,cap:3},
  firstFire:{name:'初焰引燃',description:'每场首次掷骰：伤害 +10%',group:'critical',floor:30,effect:'openingStrike',amount:.1,cap:3},
  critAegis:{name:'暴击护幕',description:'暴击：获得生命上限 2% 的护盾',group:'critical',floor:50,effect:'criticalWard',amount:.02,cap:3},
- dawnCrit:{name:'启明星痕',description:'首次暴击后幸运 +5；至同层下一次战斗掷骰结算，离层或重试清除',group:'critical',floor:80,effect:'firstCritLuck',amount:5,cap:3},
+ dawnCrit:{name:'启明星痕',description:'持有效果时首次暴击：幸运 +5，每场一次；至同层下一次战斗掷骰结算，离层或重燃清除',group:'critical',floor:80,effect:'firstCritLuck',amount:5,cap:3},
  emberGuard:{name:'低谷护心',description:'至少 2 颗 1 / 2：获得生命上限 2% 护盾',group:'vitality',floor:30,effect:'lowWard',amount:.02,cap:3},
  phaseShelter:{name:'换相庇护',description:'首领进入二阶段：获得生命上限 5% 护盾',group:'vitality',floor:50,effect:'phaseWard',amount:.05,cap:3},
  lastResolve:{name:'不退之誓',description:'掷骰前生命 <35%：反击伤害 -6%',group:'vitality',floor:80,effect:'resolveGuard',amount:.06,cap:3},
@@ -75,6 +75,21 @@ const events = [
 ];
 export const DEEP_ROOMS = Object.fromEntries([...battles.map(([key,floor,name,a,b,purpose,hp,attack,shield,waves=1])=>[key,{key,floor,name,kind:'combat',purpose,reward:['abyssking','archiveguard'].includes(key)?'首领级深层宝箱；传说保底，高阶按当前深度抽取。':key==='bounty'?'三回合内金币 ×3；史诗保底。':waves>1?'每波都有独立真实宝箱。':'击杀必得真实装备箱；高阶品质按深度解锁。',hp,attack,shield,waves}]),...events.map(([key,floor,name,purpose])=>[key,{key,floor,name,kind:'event',purpose,reward:'代价先展示、提交前确认，可无损拒绝。'}])]);
 export const DEEP_ENEMIES = battles.flatMap(([mechanic,minFloor,room,a,b,label])=>[a,b].map((name,variant)=>({name,variant,roomType:mechanic,mechanic,minFloor,trait:'steady',label,note:variant?'回声沿着裂隙归来，刻点上的规则清楚可见。':'门后的守卫没有隐藏条件，危险写在每一条刻线上。'})));
+// Saved enemies keep their committed rule and label. These profiles are assigned
+// only when the engine creates a new authored encounter; a retry is not a new one.
+export const DEEP_VARIANT_PROFILES = Object.freeze({
+ parity:Object.freeze({title:'偶点先行',label:'奇数回合：偶点占多数伤害 +35%；偶数回合改为奇点占多数。'}),
+ sequence:Object.freeze({title:'共鸣破阵',label:'双同或更高共鸣：伤害 +40% 并阻止重筑；全异点时，存活反击后重筑最大生命 3% 的护盾。'}),
+});
+export function freshDeepVariantProfile(template){
+ return template?.variant===1&&template.roomType===template.mechanic&&Object.hasOwn(DEEP_VARIANT_PROFILES,template.mechanic)?DEEP_VARIANT_PROFILES[template.mechanic]:null;
+}
+export function deepVariantProfile(enemy){
+ // combatRules is an existing validated enum: prior saves could not legally
+ // contain 5. Unknown metadata, including an old deepVariantRules property,
+ // never activates a rule or becomes newly invalid because of this feature.
+ return enemy?.combatRules===5?freshDeepVariantProfile(enemy):null;
+}
 const regionalNames=[
  [30,'赤曜拾火人','断层探灯者','神话刻铭者','空衡遗民'],
  [50,'太古渡星人','沉海缚舟者','遗世观潮人','逆星拾骨者'],
@@ -83,11 +98,15 @@ const regionalNames=[
  [200,'界外寻声者','末星骑行者','余响归人','无终记年者'],
 ];
 DEEP_ENEMIES.push(...regionalNames.flatMap(([minFloor,...names])=>names.map((name,i)=>({name,minFloor,trait:'steady',mechanic:['parity','sequence','hourward','hush'][i],variant:0,label:DEEP_ROOMS[['parity','sequence','hourward','hush'][i]].purpose,note:'来自'+eraFor(minFloor).name+'，循着独有的刻点规律行动。'}))));
+// The codex describes both possible new opponents. Legacy and regional template
+// labels remain independent of this room overview and retain their exact rules.
+DEEP_ROOMS.parity.purpose='奇刻巡官：奇数回合追求奇点多数；偶刻监军：奇数回合追求偶点多数。每掷交换目标，命中目标伤害 +35%；奇偶各半不触发。';
+DEEP_ROOMS.sequence.purpose='散星守卫：至少 3 种点数破阵；离序执灯者：双同或更高共鸣破阵。成功时伤害 +40% 并阻止重筑；未破阵且反击后双方存活时，重筑最大生命 3% 的护盾。';
 export const DEEP_BOSSES = [
  ['折光天君','boss_prism',30,'至少 3 种骰面破棱：伤害 +40%；否则反击 +15%。'],
  ['蚀日无冕者','boss_eclipse',50,'奇数回合无 6 则反击 +25%；偶数回合三同伤害 +50%。'],
- ['始火见证者','boss_witness',80,'首掷伤害 +50%；此后至少 3 颗高点使反击 -25%。'],
+ ['始火见证者','boss_witness',80,'首掷伤害 +50%；此后至少 3 颗 5 / 6 点使反击 -25%。'],
  ['命线织王','boss_thread',100,'双同切线：穿盾 45%；否则反击后重织 2% 护盾。'],
  ['第一刻守门人','boss_origin',140,'总点 ≥24：伤害 +40%；总点 ≤14：反击 +25%。'],
- ['无终回声','boss_infinite',200,'一阶段异点破绽 +40%；二阶段三同破绽 +60%。'],
+ ['无终回声','boss_infinite',200,'一阶段至少 4 种骰面：伤害 +40%；二阶段三同：伤害 +60%。'],
 ].map(([name,mechanic,minFloor,label])=>({name,mechanic,minFloor,trait:'steady',identity:eraFor(minFloor).name+'的守门者',label,warning:label,counterplay:'构筑真正足够强时可以速杀；没有强制锁血。',note:'「带着你的刻点，越过这条界线。」',phaseLabel:'界线重铸',phaseNote:'半血且存活：凝聚 12% 阶段护盾，二阶段反击 +15%。'}));

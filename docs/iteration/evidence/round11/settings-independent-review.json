@@ -1,0 +1,91 @@
+{
+  "status": "REVIEWED_NO_CONFIRMED_PRODUCT_BLOCKER",
+  "reviewer": "save_audit independent agent",
+  "reviewedAtUtc": "2026-10-18T10:41:18.604964+00:00",
+  "scope": "Independent source review and earlier independent Node tests; inspected the root-run native Chromium release report. No additional browser or heavy simulation was run by this reviewer in the final pass.",
+  "previousReviewSha256": "328f5f6e6f6ec1977987e9969f9425c935895ad804cbee5d7275e65a8d75bad9",
+  "sourceHashes": {
+    "src/app.js": "5967ce857870085c15843978e2d9e1aedfec5d06e43af5c2563a78b271485218",
+    "src/settings-focus.js": "7c4b93a9c8830598319e2a3d8d2750cb33f5c0a1cc5b89dbd6154b985db3366f",
+    "src/action-focus.js": "d5e383b4f8aeb138b6cdffc7f3dffe12cf0db7fcbac053df713dec60b3b95a98",
+    "src/fusion-dom.js": "fb78398073fdccaea6680146c34ac18de75d926439c7044ed45da39f625e4023",
+    "src/inventory-dom.js": "7f3b18a6b3dbcc3a0a100c94bab35d9e81a14d7a6c74e8eabfdff3d151d35bf0",
+    "src/engine.js": "a84e8823a4e6632ec12ad6f497c71e2a0b427a41fe8773eb7c9cfc041f78cd1b",
+    "src/storage.js": "2c5f648efe7df6a1c14710ea90fe2de83323141d5f5e285eec7fac8aa687a500",
+    "scripts/qa-round11-browser.mjs": "1976904765882f49125925a57d7d99669afebb44e34a48d17087df2a445e0c00",
+    "tests/settings-focus.test.mjs": "e7d9ecda0a9ca908eee050b119104a3fbbec369c6a065852dc5c4111c951a9ea"
+  },
+  "byteIdenticalToBaseline": [
+    "src/action-focus.js",
+    "src/fusion-dom.js",
+    "src/inventory-dom.js",
+    "src/engine.js",
+    "src/storage.js"
+  ],
+  "independentTests": {
+    "command": "node --test --test-isolation=none tests/settings-focus.test.mjs tests/action-focus.test.mjs tests/inventory-position.test.mjs tests/fusion-controller.test.mjs",
+    "passed": 32,
+    "failed": 0,
+    "skipped": 0,
+    "cancelled": 0,
+    "log": "audit/settings-independent-final-tests.log",
+    "logSha256": "5bfcb37abad4985978c09e9e18ca000e6b459a4c9d433a12cc1ce15c4eb6e4c0"
+  },
+  "browserReportReview": {
+    "path": "audit/browser-round11-release/report.json",
+    "sha256": "f7eec0264b5bca55ff79f65f7ec55cff9976d629a0afd45c1306ce132c1da6a2",
+    "casesPassed": 8,
+    "assertions": 351,
+    "traceEntries": 351,
+    "falseTraceEntries": 0,
+    "browserErrors": 0,
+    "sourceStable": true,
+    "recordedSourcesMatchCurrent": true,
+    "browser": "155.0.8059.84",
+    "renderer": "Chromium headless ANGLE SwiftShader",
+    "note": "Native new-game combat consumes a variable number of rolls; this release report supersedes the earlier 343-assertion report."
+  },
+  "findings": [
+    {
+      "area": "dialog ownership",
+      "status": "PASS",
+      "result": "openDialog cancels settingsFocus by default. Only the settingsPanel:true caller retains it, closing the previously suggested cross-dialog stale-request boundary. That old edge was theoretical, not a native reproduced defect."
+    },
+    {
+      "area": "asynchronous settings close",
+      "status": "PASS",
+      "result": "An open dialog prevents restoration. A consumed one-shot request requires unchanged screen/view/runId and a visible enabled settings control. A new unrelated active control wins; focus uses preventScroll."
+    },
+    {
+      "area": "sound and failed persistence",
+      "status": "PASS",
+      "result": "Sound updates the existing aria-checked switch without remounting the scene or dialog. SETTINGS_KEY write failure retains the modal notice and session preference. Native readback, reload and failure cases passed; game save stays equal."
+    },
+    {
+      "area": "transaction and scroll boundaries",
+      "status": "PASS",
+      "result": "Return-to-top runs after successful committed state changes, only in the compact game view. No-op and failed writes return earlier. before.phase and after.phase both fusion bypass it, preserving in-room lock/fuse/salvage scrolling. Native scrolled fusion lock passed."
+    },
+    {
+      "area": "existing focus and inventory positions",
+      "status": "PASS",
+      "result": "ActionFocus, fusion DOM and inventory DOM helpers remain baseline-identical. Explicit compact navigation resets page/current-room position; ordinary redraws, filters and inventory transactions retain their established policies. Desktop and open-dialog navigation skip the new reset."
+    },
+    {
+      "area": "QA failure gates",
+      "status": "PASS",
+      "result": "Case exceptions record FAIL; browser errors, source changes, failed cases and an empty --case selection set failure exit status. Only failure-screenshot capture is ignored after the case is already failed. eq now uses isDeepStrictEqual consistently with its assertion."
+    },
+    {
+      "area": "QA protected transactions",
+      "status": "PASS",
+      "result": "Protected fusion material now truly triggers review. Native cancellation preserves exact state; confirmation matches one engine transaction and consumes the material once. Prior unprotected-fixture and trace key-order issues are corrected in the authoritative rerun."
+    }
+  ],
+  "boundaries": [
+    "This report does not certify physical phones, physical GPUs, browser zoom or screen readers.",
+    "Source hashes and served release metadata are checked by the driver; full HTTP/package byte identity is a separate packaging gate.",
+    "The previously reproduced historical-item alias divergence remains OPEN_P3_REPRODUCED_NOT_FIXED. See docs/iteration/evidence/round11/save-alias-summary.json; this round does not claim to fix it.",
+    "Core save and rules source remains unchanged. Earlier save closure, 5MB boundaries and three baseline/current fingerprints remain documented in audit/save-audits-comparison.json."
+  ]
+}

@@ -1,0 +1,245 @@
+{
+  "project": "Dice Abyss",
+  "round": 5,
+  "date": "2026-10-17",
+  "timeZone": "UTC",
+  "inputVersion": "5.5.0",
+  "outputVersion": "5.6.0",
+  "saveSchemaVersion": 5,
+  "inputZipSha256": "7ff24f1ff42bdb226e41bff0bdcb1e723c77021f41bb1d91fb80c8cc402c4ff1",
+  "inputZipBytes": 14377395,
+  "baselineIdentity": {
+    "source": "Dice-Abyss-v5.5.0-cloud-round-04(1).zip; sole authoritative input",
+    "files": 446,
+    "expandedBytes": 20987166,
+    "manifestEntries": 445,
+    "crcAndPathChecks": "PASS",
+    "readOnlyAllFilesStillByteIdentical": true,
+    "evidence": "docs/iteration/evidence/round05/final-invariant-review.json"
+  },
+  "previousRound": {
+    "round": 4,
+    "inputVersion": "5.4.0",
+    "outputVersion": "5.5.0",
+    "state": "docs/iteration/archives/round04-state.json",
+    "report": "docs/iteration/archives/round04-report.md",
+    "manifest": "docs/iteration/archives/round04-manifest.json"
+  },
+  "releaseStatus": "COMPLETED_WITH_DOCUMENTED_LIMITATIONS",
+  "mainChanges": [
+    "Fusion hover details avoid the whole material pool, settlement area and visible controls; direct adjacent and bulk selection pass at five desktop widths.",
+    "Visible equipment-details entry, F2 and context menu open a scrollable, selectable native dialog with keyboard containment and focus return.",
+    "Reading survives hover transit and UI-only undo expiry. Same-anchor dismissal suppression, real re-entry and emulated touch close behavior have distinct regression coverage.",
+    "Eight fixed-affix descriptions clarify trigger, damage or maximum-HP basis, shield bypass and chest-only gold. 736 catalog descriptions clarified with all 1536 stats, values and numeric text sequences unchanged."
+  ],
+  "changedRuntimeSourceFiles": [
+    "src/fusion-controller.js",
+    "src/fusion-view.js",
+    "src/fusion.css",
+    "src/views.js"
+  ],
+  "regressionGuards": [
+    "Save schema 5, persistent keys, V1–V4 migrations, original V4 item IDs and pending/resolved results remain.",
+    "Engine, storage, transaction coordinator, RNG, catalog, probability, rarity gates, prices, equipment math, talents, renderer, effects, audio and all 34 original test files are byte-identical to input.",
+    "All 35 original test/fixture files and all 11 artwork/font/license files are byte-identical; 8 of the latter are offline fonts and font documentation/licenses.",
+    "Six-room floors, manual dice up to six, one weapon/armor/three relics, one currency and eight rarities remain. No runtime dependencies, raster resources or remote services added."
+  ],
+  "testSummary": {
+    "baselineUnitPassed": 289,
+    "unitPassed": 306,
+    "unitFailed": 0,
+    "unitSkipped": 0,
+    "unitCancelled": 0,
+    "testFiles": 36,
+    "newTestFiles": 2,
+    "newCases": 17,
+    "fullGateCommand": "node --test --test-isolation=none --test-reporter=tap tests/*.test.mjs",
+    "unitDurationMs": 196302.032857,
+    "syntax": "PASS",
+    "finalGateSourceFilesUnchanged": 81,
+    "standardSeedsPerVersion": 1000,
+    "standardFloors": 10,
+    "noShoppingSeedsPerVersion": 50,
+    "simulationRawBytesEqual": 9409,
+    "simulationSha256": "266fa5b56516410712395796f197a2e33ad1b1e16ede45de14b872f208007d77",
+    "simulationDifferences": 0,
+    "deepJourneysPerVersion": 2,
+    "deepFloorsPerVersion": 600,
+    "deepPolicies": [
+      {
+        "policy": "balanced",
+        "floors": 400,
+        "seed": 7919
+      },
+      {
+        "policy": "luck",
+        "floors": 200,
+        "seed": 15838
+      }
+    ],
+    "deepRowsEqual": true,
+    "affixSemanticScenarios": 19,
+    "affixCompleteTransactionPairs": 42,
+    "catalogItemsCompared": 1536,
+    "catalogDescriptionsClarified": 736,
+    "catalogNumericTextChanges": 0,
+    "saveClosure": {
+      "eventIdentities": 22,
+      "pendingProtectionVariants": 820,
+      "availableChoices": 1608,
+      "shopPurchases": 48,
+      "legacyFixtures": 11,
+      "fullStateSnapshots": 6476,
+      "committedTransactions": 1811,
+      "legacyWrites": 11,
+      "allDataFingerprintsEqual": true,
+      "htmlExcludedFromDataFingerprints": true
+    },
+    "browser": {
+      "core": {
+        "groups": 6,
+        "checks": 43
+      },
+      "forge": {
+        "groups": 3,
+        "checks": 286
+      },
+      "talents": {
+        "groups": 5,
+        "checks": 118
+      },
+      "fusion": {
+        "status": "PASS",
+        "groups": 12,
+        "checks": 125
+      },
+      "fusionDetails": {
+        "status": "PASS",
+        "groups": 5,
+        "checks": 109,
+        "desktopWidths": [
+          1366,
+          1440,
+          1920,
+          2560,
+          3840
+        ],
+        "emulatedTouchWidth": 390
+      },
+      "affixCurrent": {
+        "groups": 1,
+        "checks": 21,
+        "desktopWidths": [
+          1366,
+          1920,
+          2560,
+          3840
+        ]
+      },
+      "affixBaseline": {
+        "groups": 1,
+        "checks": 16
+      },
+      "titleWebGL": {
+        "groups": 2,
+        "checkRecords": 9
+      },
+      "paidEvents": {
+        "groups": 1,
+        "checks": 6
+      },
+      "unexpectedPageOrConsoleErrors": 0
+    },
+    "packageVerifierCases": 30,
+    "baselineHttpResources": 38,
+    "fontCoverage": {
+      "sourceFiles": 33,
+      "han": 1031,
+      "cjkPunctuation": 20,
+      "fontDeclarations": 177,
+      "missingGlyphs": 0,
+      "stackBypasses": 0
+    },
+    "performance": {
+      "status": "MEASURED_WITH_LIMITATIONS",
+      "backend": "Chrome 155 / ANGLE Vulkan SwiftShader software",
+      "repeatsPerCell": 1,
+      "mainWindows": 16,
+      "rarityCoverageWindows": 14,
+      "exactCommittedResults": 30,
+      "inventorySamples": 0,
+      "storagePerformanceSamples": 0,
+      "baselineWorstRafMs": 16000.3,
+      "currentWorstRafMs": 14934.2,
+      "fullMainStageObserved": {
+        "baseline": 2,
+        "current": 0,
+        "totalPerVersion": 4
+      },
+      "eightRarity1920FullStageObserved": {
+        "baseline": 4,
+        "current": 3,
+        "totalPerVersion": 8
+      },
+      "stageObservation": "data-fx-kind metadata, not positive-alpha drawing or GPU completion",
+      "hardwareGpuValidated": false,
+      "fpsGainClaimed": false
+    },
+    "currentHttpResources": 38
+  },
+  "packaging": {
+    "status": "CODE_IDENTICAL_CANDIDATE_VERIFIED",
+    "strictZipBytesLessThan": 50000000,
+    "manifest": "docs/iteration/FILE_MANIFEST.json",
+    "selfReferenceRule": "Manifest excludes itself; final ZIP bytes/SHA/count are external, never embedded as its own hash.",
+    "finalArchiveRule": "After the code-identical candidate receipt is added, build the unique final ZIP and verify/extract again with syntax, core tests and an owned HTTP resource server.",
+    "candidate": {
+      "zip": "Dice-Abyss-v5.6.0-cloud-round-05-candidate.zip",
+      "bytes": 14967004,
+      "decimalMB": 14.967004,
+      "sha256": "e4d81699f2ee6c19919da524f7364b2e72f7c2391c7c1a234460554da4ebbf1a",
+      "files": 525,
+      "manifestEntries": 524,
+      "version": "5.6.0",
+      "round": 5,
+      "crcVerified": true,
+      "allManifestHashesVerified": true,
+      "extractedFilesVerified": true,
+      "expandedBytes": 22256716,
+      "entries": 525,
+      "pathSafetyVerified": true,
+      "expandedBudgetVerified": true
+    },
+    "freshCoreCases": 137,
+    "freshCoreFailed": 0,
+    "freshHttpResources": 38,
+    "sourceIdentityFiles": 136,
+    "fullGateFiles": 81,
+    "evidence": "docs/iteration/evidence/round05/fresh-code-verification.json"
+  },
+  "openRisks": [
+    "P2 rendering: 30-window software diagnostic still has multi-second RAF gaps and missed target-stage metadata; no FPS or complete eight-rarity visual certification.",
+    "P2 economy: two automatic policies finish 400/200 floors with substantial gold; this is not population balance or a basis to change prices.",
+    "P2 storage latency: complete snapshots remain synchronous; data safety equivalence is not physical browser quota/disk-tail verification.",
+    "P3 offering: reserved-item lock reason is generic although protection correctly blocks that exact item; do not silently choose another victim.",
+    "P3 bloodwell: recorded cost is correct but text should clarify maximum HP at room entry, preserving pending cost and resolved history.",
+    "NOT_TESTED: physical GPU/4K, real phone/pen, external screen reader, Windows double-click, audio listening, actual OS suspension and physical power loss."
+  ],
+  "nextRoundPriorities": [
+    "Controlled real GPU/software rendering diagnosis",
+    "Deep economy and complete-build opportunity costs",
+    "Full browser large-save latency with safety guarantees",
+    "Precise pending offering/bloodwell reasons",
+    "Physical-device accessibility and input checks"
+  ],
+  "evidenceNotes": [
+    "All round05 results are fresh executions; historical round04 evidence is retained under its own path and not counted again.",
+    "Original input already clears the pending hover timer on Escape. A fresh 7.8 ms early-Escape probe excludes that proposed bug; do not misreport it as fixed.",
+    "Current deep runs began before the release label bump; raw sourceVersion 5.5.0 is retained, with engine/simulator hashes matching final 5.6.0.",
+    "The original 34 test files are unchanged. The existing fusion QA driver retains all original assertions while using native re-entry or explicit F2 for the new interaction behavior; the new affix browser driver corrected one stale draft phrase; failed candidates are preserved.",
+    "Native text selection moved focus to BODY in this Chrome run; the retained-card Enter/Space selection guard has deterministic unit coverage, not native observation of that branch.",
+    "Generated original art was actually explored and rejected as an unnecessary permanent panel/raster asset; no generated draft is in the runtime ZIP.",
+    "Browser results use isolated synthetic saves. Full, targeted, independent repeats and overlapping assertion counts must not be added as unique tests."
+  ],
+  "handoffValid": true
+}

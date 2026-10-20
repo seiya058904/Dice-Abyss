@@ -1,0 +1,3085 @@
+{
+  "result": "PASS",
+  "cases": 232,
+  "comparison": "Complete public outcome, every storage get/set and full raw value, all persisted keys, fully loaded state; caller arguments remain unchanged.",
+  "sourceHashes": {
+    "/workspace/scratch/e7f8f5d38116/baseline/Dice-Abyss": "c22bd7a161505c37e7a1926309ef6751ad7e9662b97dc22d786ead832d93ba42",
+    "/workspace/scratch/e7f8f5d38116/work/Dice-Abyss": "b0abe97c6389f94d052d4247860b7c0ab5e67824b03e6571e4ab3d2bf40968d2"
+  },
+  "sourceStable": true,
+  "boundaryBytes": [
+    5000000,
+    5000001
+  ],
+  "naturalStorage": false,
+  "limitations": [
+    "Local Map storage and fault injection verify rule equivalence, not browser durability or multi-tab lock scheduling.",
+    "No timing samples collected."
+  ],
+  "casesEvidence": [
+    {
+      "label": "current pair",
+      "completeOperationSha256": "ce6a9e7914d2b3b7a48db2188bafc158f57e964d69875a045fb3d178a6cf9e9b",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "current pair: read 1 throws",
+      "completeOperationSha256": "2165b1809262119c389ba6636ce027f5c6ce11cc5924ff32038166c4defdce16",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "current pair: read 2 throws",
+      "completeOperationSha256": "15f95310e2b346b7e6686c468a4fbcaa778ae6fcb0ddff6adad758959bccfb57",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "current pair: read 3 throws",
+      "completeOperationSha256": "6816ed2ff12ee89e657b902372457f320ec0bdd108a81aa851a24ce9080ef48a",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "current pair: read 4 throws",
+      "completeOperationSha256": "6f2342bcd7ed48b048179bface9ef6117871e3e275b2e52eb3e0ac1f74d1dc13",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "current pair: read 5 throws",
+      "completeOperationSha256": "ee8aa3000aa1d1e7a5c603d6ebd43d84558ceaae1520d4dbfd868893aba07c0a",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "current pair: read 6 throws",
+      "completeOperationSha256": "0811e714316a588526bef37b92d1fe01269b421570e9acf4afbc0ebb24af9eec",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "current pair: deny write dice-abyss:save:v1",
+      "completeOperationSha256": "e13922ff342ac52d37d1fce677e8d7ac59b9b46d31da056ed72a59858c7db0a8",
+      "outcome": {
+        "error": "浏览器无法保存进度，本次操作未生效。请导出备份并检查存储权限。"
+      },
+      "writes": [
+        "dice-abyss:save:v1"
+      ]
+    },
+    {
+      "label": "current pair: deny write dice-abyss:mirror:v1",
+      "completeOperationSha256": "fd4252e5f172adcee70c2d5b417357a37fe417ec6907eba312c175118ffd04c0",
+      "outcome": {
+        "ok": {
+          "mirrored": false,
+          "warning": "进度已保存到主存档，但镜像更新失败。请立即导出当前备份并检查浏览器存储空间；旧镜像可能不含本次操作。"
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "current pair: deny write dice-abyss:pre-levels:v1",
+      "completeOperationSha256": "ce6a9e7914d2b3b7a48db2188bafc158f57e964d69875a045fb3d178a6cf9e9b",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "current pair: deny write dice-abyss:pre-v5:v1",
+      "completeOperationSha256": "ce6a9e7914d2b3b7a48db2188bafc158f57e964d69875a045fb3d178a6cf9e9b",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "missing mirror",
+      "completeOperationSha256": "9bc93669414f4d1e8dd22daa3617e846cd4cc33240f071aafe98eabd57881aad",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "missing mirror: read 1 throws",
+      "completeOperationSha256": "27550cdb99c322d469636d2b7521cd77f883ca5eb6d466e3ee7c052be96ea949",
+      "outcome": {
+        "error": "另一窗口已更新进度。请刷新后继续，避免覆盖存档。"
+      },
+      "writes": []
+    },
+    {
+      "label": "missing mirror: read 2 throws",
+      "completeOperationSha256": "15f95310e2b346b7e6686c468a4fbcaa778ae6fcb0ddff6adad758959bccfb57",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "missing mirror: read 3 throws",
+      "completeOperationSha256": "feb092a6d5546ae36425aa6bb610d82ff1ddac22fae883e64ecc77e29f775995",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "missing mirror: read 4 throws",
+      "completeOperationSha256": "36ecdd0231be5edfb372eba58e2be254a88005f4d15de07966384a991a359ad6",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "missing mirror: read 5 throws",
+      "completeOperationSha256": "e70954d5d27114b63f6e6520ac8c139d790e5bfb94a8cef3198c63d141a3aa16",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "missing mirror: read 6 throws",
+      "completeOperationSha256": "f423fba869f608dde8958e035958ec23aa0276fdece16ddfd599c2729a54d4fe",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "missing mirror: deny write dice-abyss:save:v1",
+      "completeOperationSha256": "ac7186e8ceb50f67df62976daeba2d54adb85f0be194e453d25b3604efd03c39",
+      "outcome": {
+        "error": "浏览器无法保存进度，本次操作未生效。请导出备份并检查存储权限。"
+      },
+      "writes": [
+        "dice-abyss:save:v1"
+      ]
+    },
+    {
+      "label": "missing mirror: deny write dice-abyss:mirror:v1",
+      "completeOperationSha256": "8f5c95135e99ddc3310be03b456c0d5b51f315f2bf4d471aceb0f3288120c60e",
+      "outcome": {
+        "ok": {
+          "mirrored": false,
+          "warning": "进度已保存到主存档，但镜像更新失败。请立即导出当前备份并检查浏览器存储空间；旧镜像可能不含本次操作。"
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "missing mirror: deny write dice-abyss:pre-levels:v1",
+      "completeOperationSha256": "9bc93669414f4d1e8dd22daa3617e846cd4cc33240f071aafe98eabd57881aad",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "missing mirror: deny write dice-abyss:pre-v5:v1",
+      "completeOperationSha256": "9bc93669414f4d1e8dd22daa3617e846cd4cc33240f071aafe98eabd57881aad",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "damaged mirror",
+      "completeOperationSha256": "0f679fe33cdfe0a960b65c15673f322043fdadb8fde4260d9518982eea39d744",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "damaged mirror: read 1 throws",
+      "completeOperationSha256": "9713eb8060339752122503082926923c748ea4a1d50aed2cceb976247946cec2",
+      "outcome": {
+        "error": "另一窗口已更新进度。请刷新后继续，避免覆盖存档。"
+      },
+      "writes": []
+    },
+    {
+      "label": "damaged mirror: read 2 throws",
+      "completeOperationSha256": "15f95310e2b346b7e6686c468a4fbcaa778ae6fcb0ddff6adad758959bccfb57",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "damaged mirror: read 3 throws",
+      "completeOperationSha256": "0c5786675eddb24334c65a4e5db4819dd2160fc2fbb6b2b8b238df7166ca0c38",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "damaged mirror: read 4 throws",
+      "completeOperationSha256": "3fb6352c759d261cae18c2d485d81ea5385f8833752bb4a44247a6ad29f92b71",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "damaged mirror: read 5 throws",
+      "completeOperationSha256": "497470e39f394b9f1375bbfe57c4a1f5cfbbd8317f60bd723731305e485e00e5",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "damaged mirror: read 6 throws",
+      "completeOperationSha256": "578a2afecb2f780499d1f82ae796a2aff0f6191f04184b0d6f45a4abeab093b1",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "damaged mirror: deny write dice-abyss:save:v1",
+      "completeOperationSha256": "c4d96a458f26c1275017569fbe5abe8c66d5051cd3dfcd6427469faacc813eea",
+      "outcome": {
+        "error": "浏览器无法保存进度，本次操作未生效。请导出备份并检查存储权限。"
+      },
+      "writes": [
+        "dice-abyss:save:v1"
+      ]
+    },
+    {
+      "label": "damaged mirror: deny write dice-abyss:mirror:v1",
+      "completeOperationSha256": "8877a1a198b5aaf6d194cc0e259afee9cc52413226e4d7028713a6219253ae8c",
+      "outcome": {
+        "ok": {
+          "mirrored": false,
+          "warning": "进度已保存到主存档，但镜像更新失败。请立即导出当前备份并检查浏览器存储空间；旧镜像可能不含本次操作。"
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "damaged mirror: deny write dice-abyss:pre-levels:v1",
+      "completeOperationSha256": "0f679fe33cdfe0a960b65c15673f322043fdadb8fde4260d9518982eea39d744",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "damaged mirror: deny write dice-abyss:pre-v5:v1",
+      "completeOperationSha256": "0f679fe33cdfe0a960b65c15673f322043fdadb8fde4260d9518982eea39d744",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "recovered current",
+      "completeOperationSha256": "aa42d80e90757f812cc7c687f7ad1a7f9d46e749cd43a2023e0304f1673febb9",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "recovered current: read 1 throws",
+      "completeOperationSha256": "2165b1809262119c389ba6636ce027f5c6ce11cc5924ff32038166c4defdce16",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "recovered current: read 2 throws",
+      "completeOperationSha256": "838e13082fa633ed2472a704bb55be84f8373c3e52deb053353e7e77d7cdbb48",
+      "outcome": {
+        "error": "另一窗口已更新进度。请刷新后继续，避免覆盖存档。"
+      },
+      "writes": []
+    },
+    {
+      "label": "recovered current: read 3 throws",
+      "completeOperationSha256": "46667346ce7095755161cce4c3cabacf73008384b818251c3c78fb65513d72d6",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "recovered current: read 4 throws",
+      "completeOperationSha256": "d50ed946ba182605238ee501a5a1194e1d057eef490e5d6e58d2a26f00da30ac",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "recovered current: read 5 throws",
+      "completeOperationSha256": "1f3333f93743f3ba3348b592c0b9bcee778e53895c7300a5454eedb59042bfe1",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "recovered current: read 6 throws",
+      "completeOperationSha256": "5a6cbc8d0a8c728a87266cbc83b54f11193ac2c44833eb50f9dcef515dade9ce",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "recovered current: deny write dice-abyss:save:v1",
+      "completeOperationSha256": "0b40c88b722b7a26d5f75ded45ae2bf280cbb4931624939b5fb755afb91a0349",
+      "outcome": {
+        "error": "浏览器无法保存进度，本次操作未生效。请导出备份并检查存储权限。"
+      },
+      "writes": [
+        "dice-abyss:save:v1"
+      ]
+    },
+    {
+      "label": "recovered current: deny write dice-abyss:mirror:v1",
+      "completeOperationSha256": "53d93368d4c33203a074e35a3c88a15ba9e848fa39e45de39f6ec87ac4d43800",
+      "outcome": {
+        "ok": {
+          "mirrored": false,
+          "warning": "进度已保存到主存档，但镜像更新失败。请立即导出当前备份并检查浏览器存储空间；旧镜像可能不含本次操作。"
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "recovered current: deny write dice-abyss:pre-levels:v1",
+      "completeOperationSha256": "aa42d80e90757f812cc7c687f7ad1a7f9d46e749cd43a2023e0304f1673febb9",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "recovered current: deny write dice-abyss:pre-v5:v1",
+      "completeOperationSha256": "aa42d80e90757f812cc7c687f7ad1a7f9d46e749cd43a2023e0304f1673febb9",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "recovered after checksummed invalid primary",
+      "completeOperationSha256": "8027e5a4183c092ae89ad85868a8793eb6b6ba0bcc9b786c60d4169f71f6d179",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "recovered after checksummed invalid primary: read 1 throws",
+      "completeOperationSha256": "2165b1809262119c389ba6636ce027f5c6ce11cc5924ff32038166c4defdce16",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "recovered after checksummed invalid primary: read 2 throws",
+      "completeOperationSha256": "72c866b14e1c45a3df0409da8915b188b670c2f270476d271487e75d0bb917ab",
+      "outcome": {
+        "error": "另一窗口已更新进度。请刷新后继续，避免覆盖存档。"
+      },
+      "writes": []
+    },
+    {
+      "label": "recovered after checksummed invalid primary: read 3 throws",
+      "completeOperationSha256": "95d2ff824c3ae70693ed27f186c769b2033a5a08e2f9207fa1422c838a0e45f2",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "recovered after checksummed invalid primary: read 4 throws",
+      "completeOperationSha256": "c2c7b6db5850570e335569f091ebf33e99710464527d575aadce4db26cc334e5",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "recovered after checksummed invalid primary: read 5 throws",
+      "completeOperationSha256": "ebe90beeaae0f0a394163bc20093102586e9ebd765d903a293ec4201d7c1b65f",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "recovered after checksummed invalid primary: read 6 throws",
+      "completeOperationSha256": "5b00815514da65f501c8227ec2dd5e5078a50826a4a2b3872a8221da18a4226b",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "recovered after checksummed invalid primary: deny write dice-abyss:save:v1",
+      "completeOperationSha256": "478bc74c0ede4e4ccc45d3d12bcebb30dbe9ebca423b536528090772936cce06",
+      "outcome": {
+        "error": "浏览器无法保存进度，本次操作未生效。请导出备份并检查存储权限。"
+      },
+      "writes": [
+        "dice-abyss:save:v1"
+      ]
+    },
+    {
+      "label": "recovered after checksummed invalid primary: deny write dice-abyss:mirror:v1",
+      "completeOperationSha256": "c4206f5c8987388b94ecbf9fab0729471402100003300aea4afc0fbf83b2e8ca",
+      "outcome": {
+        "ok": {
+          "mirrored": false,
+          "warning": "进度已保存到主存档，但镜像更新失败。请立即导出当前备份并检查浏览器存储空间；旧镜像可能不含本次操作。"
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "recovered after checksummed invalid primary: deny write dice-abyss:pre-levels:v1",
+      "completeOperationSha256": "8027e5a4183c092ae89ad85868a8793eb6b6ba0bcc9b786c60d4169f71f6d179",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "recovered after checksummed invalid primary: deny write dice-abyss:pre-v5:v1",
+      "completeOperationSha256": "8027e5a4183c092ae89ad85868a8793eb6b6ba0bcc9b786c60d4169f71f6d179",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "noncanonical current",
+      "completeOperationSha256": "71c6635d5d316dc6c566016570c0bf58c12d7016433ed4348ca8512462c477a2",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "noncanonical current: read 1 throws",
+      "completeOperationSha256": "41f9e3d968c1f9af15e03173ff88fe3b7b153ceda6a4bdcd18b3624ae82b62bd",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "noncanonical current: read 2 throws",
+      "completeOperationSha256": "c95f0978ebc7c78de7f2de5a1cbe7ae16b2f87984dccc249207ac77558c0d2e4",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "noncanonical current: read 3 throws",
+      "completeOperationSha256": "376bec95121215545688d509912144d71643686233d3ea13dbe79f483b5f5299",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "noncanonical current: read 4 throws",
+      "completeOperationSha256": "8a4a28de3239412f31b41d9ff6bf99489fec8b406917e4290365f68e86fedd44",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "noncanonical current: read 5 throws",
+      "completeOperationSha256": "c202e52c4a36232da82c390d1e341dc0f6220087a00f2b30d74234dffcab03c7",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "noncanonical current: read 6 throws",
+      "completeOperationSha256": "100fd985cf6e9ba4299c911145c4570f950aa517f8a976207ee9878a79615949",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "noncanonical current: deny write dice-abyss:save:v1",
+      "completeOperationSha256": "86149071b71f50ba2d74d07f061d2b420918c4c0f08278b56bfe155a5a91f60d",
+      "outcome": {
+        "error": "浏览器无法保存进度，本次操作未生效。请导出备份并检查存储权限。"
+      },
+      "writes": [
+        "dice-abyss:save:v1"
+      ]
+    },
+    {
+      "label": "noncanonical current: deny write dice-abyss:mirror:v1",
+      "completeOperationSha256": "696721960f2f53dd8e9c4c5fedc936bfc1f1d880f6077a37db9075a56d88d2d6",
+      "outcome": {
+        "ok": {
+          "mirrored": false,
+          "warning": "进度已保存到主存档，但镜像更新失败。请立即导出当前备份并检查浏览器存储空间；旧镜像可能不含本次操作。"
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "noncanonical current: deny write dice-abyss:pre-levels:v1",
+      "completeOperationSha256": "71c6635d5d316dc6c566016570c0bf58c12d7016433ed4348ca8512462c477a2",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "noncanonical current: deny write dice-abyss:pre-v5:v1",
+      "completeOperationSha256": "71c6635d5d316dc6c566016570c0bf58c12d7016433ed4348ca8512462c477a2",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "current with stale legacy mirror",
+      "completeOperationSha256": "ce2bb536bc7e48e188b5d908cd558310333d5e37d100bd6e9741581348280d95",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "current with stale legacy mirror: read 1 throws",
+      "completeOperationSha256": "b4763bd1520398caaddc933033364686b048438cd0de534af8e0738e0d2e1864",
+      "outcome": {
+        "error": "另一窗口已更新进度。请刷新后继续，避免覆盖存档。"
+      },
+      "writes": []
+    },
+    {
+      "label": "current with stale legacy mirror: read 2 throws",
+      "completeOperationSha256": "15f95310e2b346b7e6686c468a4fbcaa778ae6fcb0ddff6adad758959bccfb57",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "current with stale legacy mirror: read 3 throws",
+      "completeOperationSha256": "7e138d0a4e4b4722ca114629d3b108f05a664a47b5863f7e3a18d354961c4ff8",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "current with stale legacy mirror: read 4 throws",
+      "completeOperationSha256": "82444c0d058b95e4dd8989d4369129c821ba3e2f2a1b5d60f2547a31577b0727",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "current with stale legacy mirror: read 5 throws",
+      "completeOperationSha256": "e691a29992627316332fb0ee9213e9a8d1145b36276ee4d720a929201a2cfc73",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "current with stale legacy mirror: read 6 throws",
+      "completeOperationSha256": "ffad5045060065528cbdcd3409c8ef48e3868f020da2d64015659db788b0e1b2",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "current with stale legacy mirror: deny write dice-abyss:save:v1",
+      "completeOperationSha256": "c20fa9d8feb33854a41ba78af6c4d8111645aa0af29fa8de5c5c8c10d8fcfb17",
+      "outcome": {
+        "error": "浏览器无法保存进度，本次操作未生效。请导出备份并检查存储权限。"
+      },
+      "writes": [
+        "dice-abyss:save:v1"
+      ]
+    },
+    {
+      "label": "current with stale legacy mirror: deny write dice-abyss:mirror:v1",
+      "completeOperationSha256": "a5ef3f7c0565a61d2395d923ae1ef596ba56a545aeb5c3190406ace575204c81",
+      "outcome": {
+        "ok": {
+          "mirrored": false,
+          "warning": "进度已保存到主存档，但镜像更新失败。请立即导出当前备份并检查浏览器存储空间；旧镜像可能不含本次操作。"
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "current with stale legacy mirror: deny write dice-abyss:pre-levels:v1",
+      "completeOperationSha256": "ce2bb536bc7e48e188b5d908cd558310333d5e37d100bd6e9741581348280d95",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "current with stale legacy mirror: deny write dice-abyss:pre-v5:v1",
+      "completeOperationSha256": "ce2bb536bc7e48e188b5d908cd558310333d5e37d100bd6e9741581348280d95",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 1 primary",
+      "completeOperationSha256": "3675f179ae73d8aaa08fefacf0bfa0bd6865791a0cd5334f7fd2655e95cf6c82",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 1 primary: read 1 throws",
+      "completeOperationSha256": "c3e3e18a6ba634ec10b4a853027a79ab8a4fbd536c975b01eba0e9e4889f6716",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 1 primary: read 2 throws",
+      "completeOperationSha256": "e18bc8e6cf50a278a0909aa4820bf476f6870c97e1fa01970928e50c69cbe31b",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 1 primary: read 3 throws",
+      "completeOperationSha256": "13610e185600d9fc621567eb904a77690a9965df8ec78607d54304ad6cc7d7ed",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 1 primary: read 4 throws",
+      "completeOperationSha256": "ac72dbbd7c33c38736353d82895129a427c3e7f698299a17162bfddcf06a385a",
+      "outcome": {
+        "error": "independent read denial"
+      },
+      "writes": []
+    },
+    {
+      "label": "legacy 1 primary: read 5 throws",
+      "completeOperationSha256": "2d5cb6c67d9e0a2688f10ef11a1e41e0cd8db572d4adeb7d022bb3e28b17b636",
+      "outcome": {
+        "error": "independent read denial"
+      },
+      "writes": []
+    },
+    {
+      "label": "legacy 1 primary: read 6 throws",
+      "completeOperationSha256": "c0b675db688843aa1fbd69637aa7993ac2425f439579480c559dff9514630d7d",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 1 primary: read 7 throws",
+      "completeOperationSha256": "3794437f6d514a6f399a43c94a26616a684eed82e56658790147252ee15a7490",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 1 primary: deny write dice-abyss:save:v1",
+      "completeOperationSha256": "7826b2528efd358ed6cde1459e96dcdf4210a026f633d37afdc675799b12eae4",
+      "outcome": {
+        "error": "浏览器无法保存进度，本次操作未生效。请导出备份并检查存储权限。"
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1"
+      ]
+    },
+    {
+      "label": "legacy 1 primary: deny write dice-abyss:mirror:v1",
+      "completeOperationSha256": "b190e967bd4de3166d3e2143d929957f3d7b7d033f6f47189b2b36c7e5f4ffb7",
+      "outcome": {
+        "ok": {
+          "mirrored": false,
+          "warning": "进度已保存到主存档，但镜像更新失败。请立即导出当前备份并检查浏览器存储空间；旧镜像可能不含本次操作。"
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 1 primary: deny write dice-abyss:pre-levels:v1",
+      "completeOperationSha256": "33d0a10bc48dcec378c43004fd24a00cdc89795f07f072368e994aabfe61281b",
+      "outcome": {
+        "error": "无法保留升级前原始存档，主档未覆盖。"
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1"
+      ]
+    },
+    {
+      "label": "legacy 1 primary: deny write dice-abyss:pre-v5:v1",
+      "completeOperationSha256": "b86e6cb0728ef7c704eda9a6465e8184a7f4bcebc81f8b5c98d859640a97d260",
+      "outcome": {
+        "error": "无法保留V5升级前原始存档，主档未覆盖。"
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1"
+      ]
+    },
+    {
+      "label": "legacy 1 mirror",
+      "completeOperationSha256": "fa2f9edab29e1aebe30099a61ccb67951b9ff1703397b7f38ca2c64dbb466bd5",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 1 mirror: read 1 throws",
+      "completeOperationSha256": "c3e3e18a6ba634ec10b4a853027a79ab8a4fbd536c975b01eba0e9e4889f6716",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 1 mirror: read 2 throws",
+      "completeOperationSha256": "9c1c3b94941e61aa9d10ee61298a261ca42c4a21cbe03d8e7007c8503259c5d6",
+      "outcome": {
+        "error": "另一窗口已更新进度。请刷新后继续，避免覆盖存档。"
+      },
+      "writes": []
+    },
+    {
+      "label": "legacy 1 mirror: read 3 throws",
+      "completeOperationSha256": "e6f660bfc0c8b5d2cfdad67484c1300fa005e50ff8e13ff3fc32003d7129dd5e",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 1 mirror: read 4 throws",
+      "completeOperationSha256": "d7b568547fdce4bc905ca591bfd70d49f9ea5c67e6cdd542d430e306099e0fe6",
+      "outcome": {
+        "error": "independent read denial"
+      },
+      "writes": []
+    },
+    {
+      "label": "legacy 1 mirror: read 5 throws",
+      "completeOperationSha256": "e1b4a09d01071242fb1bae7b2475634a737fca52df8feef97d0d0dbbdc493b13",
+      "outcome": {
+        "error": "independent read denial"
+      },
+      "writes": []
+    },
+    {
+      "label": "legacy 1 mirror: read 6 throws",
+      "completeOperationSha256": "b4b898dde4c41070451246cde0b414341822fbac640dfaecdda06e21d8744426",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 1 mirror: read 7 throws",
+      "completeOperationSha256": "ef779380e0e60a0b3f504f75fdeb95486e469c709841ac680f61957aed7838ee",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 1 mirror: deny write dice-abyss:save:v1",
+      "completeOperationSha256": "a5450b695769b082c15e53404776ea0a58523032d1c35f591ee718a2049c1d2d",
+      "outcome": {
+        "error": "浏览器无法保存进度，本次操作未生效。请导出备份并检查存储权限。"
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1"
+      ]
+    },
+    {
+      "label": "legacy 1 mirror: deny write dice-abyss:mirror:v1",
+      "completeOperationSha256": "5bfdf4594cd63a826e1a1adbbee3296d57a0972800763a50adcf18df3b91c7bc",
+      "outcome": {
+        "ok": {
+          "mirrored": false,
+          "warning": "进度已保存到主存档，但镜像更新失败。请立即导出当前备份并检查浏览器存储空间；旧镜像可能不含本次操作。"
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 1 mirror: deny write dice-abyss:pre-levels:v1",
+      "completeOperationSha256": "490f3204c56090e5373acedf9452e1cb583013d752cfe76d9284cb09cb9dc07f",
+      "outcome": {
+        "error": "无法保留升级前原始存档，主档未覆盖。"
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1"
+      ]
+    },
+    {
+      "label": "legacy 1 mirror: deny write dice-abyss:pre-v5:v1",
+      "completeOperationSha256": "336cebae133a8539a813760729e964d637c7e4a2415dd56fdfe5ab21b273f895",
+      "outcome": {
+        "error": "无法保留V5升级前原始存档，主档未覆盖。"
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1"
+      ]
+    },
+    {
+      "label": "legacy 2 primary",
+      "completeOperationSha256": "162425f1fccc860d72976c270f810e6e71d27e9e1b9abf8918d1fc1cae43adb1",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 2 primary: read 1 throws",
+      "completeOperationSha256": "2776512f0ca3ae7ecb3e7b6be509723c0dfd233de80352b25e58e3c66b00fd26",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 2 primary: read 2 throws",
+      "completeOperationSha256": "907a9da29dd1f3c61310f8d4aa5d67dd592bafcb6dad8e17083721e1610053e4",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 2 primary: read 3 throws",
+      "completeOperationSha256": "6efec427261696c9ed14a0737637f6e0151a5d660623ca5e04cbc04ed8f57c2f",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 2 primary: read 4 throws",
+      "completeOperationSha256": "f99f63c80d1a171bef47e53dce3553bd9d025469e4e63a27e4f1eb8939936d8c",
+      "outcome": {
+        "error": "independent read denial"
+      },
+      "writes": []
+    },
+    {
+      "label": "legacy 2 primary: read 5 throws",
+      "completeOperationSha256": "975083d72f8be0b0a01b6fed834ab92386b8d1edf2809d199d2881e2765e74e7",
+      "outcome": {
+        "error": "independent read denial"
+      },
+      "writes": []
+    },
+    {
+      "label": "legacy 2 primary: read 6 throws",
+      "completeOperationSha256": "5f085f21c36a1ee5f85d68ff6ff7fc3380675ec16cef726075deea255b9d4880",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 2 primary: read 7 throws",
+      "completeOperationSha256": "1938f5883ccf9f84393fc2ee422bac24d8da6439db9d5e6aa920e9c00fd57986",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 2 primary: deny write dice-abyss:save:v1",
+      "completeOperationSha256": "c393569039affa38ee251f0275ec81d58a197d5c02c6de00f9150b7238c3c49d",
+      "outcome": {
+        "error": "浏览器无法保存进度，本次操作未生效。请导出备份并检查存储权限。"
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1"
+      ]
+    },
+    {
+      "label": "legacy 2 primary: deny write dice-abyss:mirror:v1",
+      "completeOperationSha256": "069b6b3c4b09de8bddfc40e10043deee845d3e778bb7f32fbfcb91c2a56d55b8",
+      "outcome": {
+        "ok": {
+          "mirrored": false,
+          "warning": "进度已保存到主存档，但镜像更新失败。请立即导出当前备份并检查浏览器存储空间；旧镜像可能不含本次操作。"
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 2 primary: deny write dice-abyss:pre-levels:v1",
+      "completeOperationSha256": "d623faacde46bbe6881179b7abe7e216f4abcece19624e5cdaafd0093cd9fb26",
+      "outcome": {
+        "error": "无法保留升级前原始存档，主档未覆盖。"
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1"
+      ]
+    },
+    {
+      "label": "legacy 2 primary: deny write dice-abyss:pre-v5:v1",
+      "completeOperationSha256": "c224a1f7a5b224eaa75e77abe4d703e98140a8d27c755ce074b92c765fe77003",
+      "outcome": {
+        "error": "无法保留V5升级前原始存档，主档未覆盖。"
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1"
+      ]
+    },
+    {
+      "label": "legacy 2 mirror",
+      "completeOperationSha256": "56f793a89072c358eb937f93f8745d062b711c90e6cbe0068455d4968221bdba",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 2 mirror: read 1 throws",
+      "completeOperationSha256": "2776512f0ca3ae7ecb3e7b6be509723c0dfd233de80352b25e58e3c66b00fd26",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 2 mirror: read 2 throws",
+      "completeOperationSha256": "a774a3ad5411952bb977da8dcf750adf7f134c9e52d8f49919faa498f02014e1",
+      "outcome": {
+        "error": "另一窗口已更新进度。请刷新后继续，避免覆盖存档。"
+      },
+      "writes": []
+    },
+    {
+      "label": "legacy 2 mirror: read 3 throws",
+      "completeOperationSha256": "55af320551962feb855e0d5ecd9dc4670d074eb1713ce5de344b600a30593530",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 2 mirror: read 4 throws",
+      "completeOperationSha256": "5fbacc5bdc8ca7e44e240749d22f1b724c480402cbc926114541101ce1112bcb",
+      "outcome": {
+        "error": "independent read denial"
+      },
+      "writes": []
+    },
+    {
+      "label": "legacy 2 mirror: read 5 throws",
+      "completeOperationSha256": "dcd838a919785951d159b0cd2d8363d51cbdbbdf76d1e3e1c037cdf112a40784",
+      "outcome": {
+        "error": "independent read denial"
+      },
+      "writes": []
+    },
+    {
+      "label": "legacy 2 mirror: read 6 throws",
+      "completeOperationSha256": "42bdf0690b54da93afcc7f60a7bdee70897c40cf3c7608e4f2daadf570b154c3",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 2 mirror: read 7 throws",
+      "completeOperationSha256": "4b698fbbf56af68b307c762e5ab6abe86f85f9c4a7c88aa3a33e33697fbdd4ca",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 2 mirror: deny write dice-abyss:save:v1",
+      "completeOperationSha256": "1465efaeac9a160c72517f9afbc3c91f8df7064b0462d38450d113e67232fa78",
+      "outcome": {
+        "error": "浏览器无法保存进度，本次操作未生效。请导出备份并检查存储权限。"
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1"
+      ]
+    },
+    {
+      "label": "legacy 2 mirror: deny write dice-abyss:mirror:v1",
+      "completeOperationSha256": "be63374aa183243efb6bb4d238dfe9384d5cca0054d8b4161962260815472b23",
+      "outcome": {
+        "ok": {
+          "mirrored": false,
+          "warning": "进度已保存到主存档，但镜像更新失败。请立即导出当前备份并检查浏览器存储空间；旧镜像可能不含本次操作。"
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 2 mirror: deny write dice-abyss:pre-levels:v1",
+      "completeOperationSha256": "8e93692b885e5339b8b7289985967adcd3f7fb90313ab61df23ade199d33cbcc",
+      "outcome": {
+        "error": "无法保留升级前原始存档，主档未覆盖。"
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1"
+      ]
+    },
+    {
+      "label": "legacy 2 mirror: deny write dice-abyss:pre-v5:v1",
+      "completeOperationSha256": "29d9942ce1bff98c202258e121ffacc1917dd9b18430231507a53fda5f2f206e",
+      "outcome": {
+        "error": "无法保留V5升级前原始存档，主档未覆盖。"
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1"
+      ]
+    },
+    {
+      "label": "legacy 3 primary",
+      "completeOperationSha256": "e4ff2f1981e65897be0c5da8624ac8a07b7e91d954f9fd5ed868db48723afb78",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 3 primary: read 1 throws",
+      "completeOperationSha256": "ed4c51fe8570828e6c5b3a30d322b946ea3799e56e6bbd0d0f63ffc319bfa856",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 3 primary: read 2 throws",
+      "completeOperationSha256": "9e0baaf7a6e03bc4cedcca9560d4a7cb6b845ad1c30cfc4dc157819c97545d28",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 3 primary: read 3 throws",
+      "completeOperationSha256": "054440c39d3b9ca0ceb7fb169153c7efdd5f45b5f3595b45a4710a30ebedc44f",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 3 primary: read 4 throws",
+      "completeOperationSha256": "1886d4cd0fd8632fa435835b98e93496eede1b74543c33d1397c5cb39c874162",
+      "outcome": {
+        "error": "independent read denial"
+      },
+      "writes": []
+    },
+    {
+      "label": "legacy 3 primary: read 5 throws",
+      "completeOperationSha256": "ad09688df1fef30dcaa4991062b10b2dee9cc90239bd89c360eec2d1e3fae57b",
+      "outcome": {
+        "error": "independent read denial"
+      },
+      "writes": []
+    },
+    {
+      "label": "legacy 3 primary: read 6 throws",
+      "completeOperationSha256": "96f9e2e1936216dfab246734c11ffea416c9d26888f50a7130b875aaf03d1dd8",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 3 primary: read 7 throws",
+      "completeOperationSha256": "0508fc46b6e5c6e85f42a8d7b084d192ff80a3d548e00b3809f032fa447eee66",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 3 primary: deny write dice-abyss:save:v1",
+      "completeOperationSha256": "b8d6b2d0fc755cb00f4c0cfe7f767abe9a1343e5b2d6260da748e80f52d70b6a",
+      "outcome": {
+        "error": "浏览器无法保存进度，本次操作未生效。请导出备份并检查存储权限。"
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1"
+      ]
+    },
+    {
+      "label": "legacy 3 primary: deny write dice-abyss:mirror:v1",
+      "completeOperationSha256": "9075049b01ccb8ed7e7ffb194e3008501315e699fce69febadf3ac119b7db0bf",
+      "outcome": {
+        "ok": {
+          "mirrored": false,
+          "warning": "进度已保存到主存档，但镜像更新失败。请立即导出当前备份并检查浏览器存储空间；旧镜像可能不含本次操作。"
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 3 primary: deny write dice-abyss:pre-levels:v1",
+      "completeOperationSha256": "b25f0ee925dcb3e1ebdffbac111ca6f90636cadcafd9cf08cdc20eb28e62bd7a",
+      "outcome": {
+        "error": "无法保留升级前原始存档，主档未覆盖。"
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1"
+      ]
+    },
+    {
+      "label": "legacy 3 primary: deny write dice-abyss:pre-v5:v1",
+      "completeOperationSha256": "c946c4df6634f050a91ea7bc6f3cff404f488effa0aa877b56b182f6ddbb1581",
+      "outcome": {
+        "error": "无法保留V5升级前原始存档，主档未覆盖。"
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1"
+      ]
+    },
+    {
+      "label": "legacy 3 mirror",
+      "completeOperationSha256": "cc93811028a05f94d7849b61fd6c20bb263fff784945528a87cdaf4c3e019a3b",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 3 mirror: read 1 throws",
+      "completeOperationSha256": "ed4c51fe8570828e6c5b3a30d322b946ea3799e56e6bbd0d0f63ffc319bfa856",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 3 mirror: read 2 throws",
+      "completeOperationSha256": "61e9110a834ebbac64384fb8f17b6e99bebaa592b9185ec377b79c29b6c103f7",
+      "outcome": {
+        "error": "另一窗口已更新进度。请刷新后继续，避免覆盖存档。"
+      },
+      "writes": []
+    },
+    {
+      "label": "legacy 3 mirror: read 3 throws",
+      "completeOperationSha256": "9366ecf001bb60c91fb0b1cd7e004c2612fd011700d6f2e476bf868bbbddee9b",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 3 mirror: read 4 throws",
+      "completeOperationSha256": "44eb777ec353b22af1f1eec0a0decddbe2a8488020cc6581907fb14a44ac303f",
+      "outcome": {
+        "error": "independent read denial"
+      },
+      "writes": []
+    },
+    {
+      "label": "legacy 3 mirror: read 5 throws",
+      "completeOperationSha256": "72b3f25050f15c9de4ea0ee2ccaec35ba9ebe5acd581e30b3de73426698eb25f",
+      "outcome": {
+        "error": "independent read denial"
+      },
+      "writes": []
+    },
+    {
+      "label": "legacy 3 mirror: read 6 throws",
+      "completeOperationSha256": "1f7a8d9e954efb7937c6ded822b8581401085fbf71c43b0eaa8952143c9c1581",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 3 mirror: read 7 throws",
+      "completeOperationSha256": "78e4bc6c19398e7efb214203ecc19d57cf7219988af9da4cb1dd2cd067197b1f",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 3 mirror: deny write dice-abyss:save:v1",
+      "completeOperationSha256": "7321984a166298595edd7b1ce6015550c7229ab03929d7f792744bc774b78317",
+      "outcome": {
+        "error": "浏览器无法保存进度，本次操作未生效。请导出备份并检查存储权限。"
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1"
+      ]
+    },
+    {
+      "label": "legacy 3 mirror: deny write dice-abyss:mirror:v1",
+      "completeOperationSha256": "d3d594191c32727f641495435a5b9d7e36726631bbfbc1bf56268cd421bee30e",
+      "outcome": {
+        "ok": {
+          "mirrored": false,
+          "warning": "进度已保存到主存档，但镜像更新失败。请立即导出当前备份并检查浏览器存储空间；旧镜像可能不含本次操作。"
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 3 mirror: deny write dice-abyss:pre-levels:v1",
+      "completeOperationSha256": "801f1b0d0aeb91ebde589d3a27724941d186bae72abfe361e8add7d14533c03d",
+      "outcome": {
+        "error": "无法保留升级前原始存档，主档未覆盖。"
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1"
+      ]
+    },
+    {
+      "label": "legacy 3 mirror: deny write dice-abyss:pre-v5:v1",
+      "completeOperationSha256": "8d1282dcfc3fa1c7d1ddfd1a02c2a96e1ef3b1060e0345613166120277e22588",
+      "outcome": {
+        "error": "无法保留V5升级前原始存档，主档未覆盖。"
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1"
+      ]
+    },
+    {
+      "label": "legacy 4 primary",
+      "completeOperationSha256": "4f2c8c0480754787ad4356fda87abb39e8df3a72ed8872ecc8a17a045fd6e9fe",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 4 primary: read 1 throws",
+      "completeOperationSha256": "54bd74041dc2eeddd03c5bc496650e3ce9eef5c1ebb83959dc4ce0fe96782e3c",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 4 primary: read 2 throws",
+      "completeOperationSha256": "ac2da31f33bb22c34a14d259a108b8d3d969092d1d54f8d755193766b671de6d",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 4 primary: read 3 throws",
+      "completeOperationSha256": "13004a3bbde8ef2402564d72eb219d3faa2088b8840fcbbbc430cab91e145964",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 4 primary: read 4 throws",
+      "completeOperationSha256": "03935535c38dba6f250275c10cd89b8ed30c96beb899fb4681962fbfadf0263d",
+      "outcome": {
+        "error": "independent read denial"
+      },
+      "writes": []
+    },
+    {
+      "label": "legacy 4 primary: read 5 throws",
+      "completeOperationSha256": "8df63c53a22a6eea18e59602eb7f8f2faad1ac8981fff61ca5aad090b5433561",
+      "outcome": {
+        "error": "independent read denial"
+      },
+      "writes": []
+    },
+    {
+      "label": "legacy 4 primary: read 6 throws",
+      "completeOperationSha256": "556711d3423c6d60520af54dc4c3c1033e40959e67083edeeccd7b5a6c758444",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 4 primary: read 7 throws",
+      "completeOperationSha256": "26ec310f607c54afb0b6f9000025252807fd99ef6934271801940fc51e868d06",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 4 primary: read 8 throws",
+      "completeOperationSha256": "8f6e8d538a5b771ca1d4fec29aa041945c7317fbb078ae7ef94d06551640490b",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 4 primary: deny write dice-abyss:save:v1",
+      "completeOperationSha256": "45dc63f1825ac98d3e109e00fccbb459d241415ebc7a01be5f32ed33e0285bb6",
+      "outcome": {
+        "error": "浏览器无法保存进度，本次操作未生效。请导出备份并检查存储权限。"
+      },
+      "writes": [
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1"
+      ]
+    },
+    {
+      "label": "legacy 4 primary: deny write dice-abyss:mirror:v1",
+      "completeOperationSha256": "88ab5e20e260a3b740f1dc1f4eee5031dd2e32e6a03c5a01bc20897d5b92968f",
+      "outcome": {
+        "ok": {
+          "mirrored": false,
+          "warning": "进度已保存到主存档，但镜像更新失败。请立即导出当前备份并检查浏览器存储空间；旧镜像可能不含本次操作。"
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 4 primary: deny write dice-abyss:pre-levels:v1",
+      "completeOperationSha256": "4f2c8c0480754787ad4356fda87abb39e8df3a72ed8872ecc8a17a045fd6e9fe",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 4 primary: deny write dice-abyss:pre-v5:v1",
+      "completeOperationSha256": "1dc98412039b6060ec492f5a78519fc13aecd9851ca7783ac42f24d8a7252fb4",
+      "outcome": {
+        "error": "无法保留V5升级前原始存档，主档未覆盖。"
+      },
+      "writes": [
+        "dice-abyss:pre-v5:v1"
+      ]
+    },
+    {
+      "label": "legacy 4 mirror",
+      "completeOperationSha256": "a1fdb1f3ed7130ef6213cbb4efd81388d5cf8ae3fec48a3f110c820b39718c35",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 4 mirror: read 1 throws",
+      "completeOperationSha256": "54bd74041dc2eeddd03c5bc496650e3ce9eef5c1ebb83959dc4ce0fe96782e3c",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 4 mirror: read 2 throws",
+      "completeOperationSha256": "c9c0cc3d48e0cfab752c8abbd318e2854484c55e6ab46506df2a9bb3ba5b47ca",
+      "outcome": {
+        "error": "另一窗口已更新进度。请刷新后继续，避免覆盖存档。"
+      },
+      "writes": []
+    },
+    {
+      "label": "legacy 4 mirror: read 3 throws",
+      "completeOperationSha256": "b9ffefb2e6dc61b7621e56e52c89a3e6ff48d84491fef13157c97402c624316e",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 4 mirror: read 4 throws",
+      "completeOperationSha256": "701e82bf05ac1782c6c5b639edfec3d286ad5c87b26fa85851a4168839bab879",
+      "outcome": {
+        "error": "independent read denial"
+      },
+      "writes": []
+    },
+    {
+      "label": "legacy 4 mirror: read 5 throws",
+      "completeOperationSha256": "6e6ee1283d76ba830a2f51596b9b791c8cbdc791265f58c46a614337f5e98e95",
+      "outcome": {
+        "error": "independent read denial"
+      },
+      "writes": []
+    },
+    {
+      "label": "legacy 4 mirror: read 6 throws",
+      "completeOperationSha256": "b34d6985721d23087a6710d30633df76ebd2186068ec680f9d123dbec24c78bc",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 4 mirror: read 7 throws",
+      "completeOperationSha256": "1b05d222fd8a3eee8666d979bac4b0002d06ba914a20a6fa99877b0a5b279ea2",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 4 mirror: read 8 throws",
+      "completeOperationSha256": "92a5f7b638881ed70a16b28432ef3fda9a778788ec17d9d2869bf93706d76f60",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 4 mirror: deny write dice-abyss:save:v1",
+      "completeOperationSha256": "5ae3d3e7006004a56d397eff0b2323c870cae3704dda80e7594d071ea0b14550",
+      "outcome": {
+        "error": "浏览器无法保存进度，本次操作未生效。请导出备份并检查存储权限。"
+      },
+      "writes": [
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1"
+      ]
+    },
+    {
+      "label": "legacy 4 mirror: deny write dice-abyss:mirror:v1",
+      "completeOperationSha256": "abc5be8b0df39142cc220c5ca856ae4b0f7036227b8c29270de6d645edfdb02a",
+      "outcome": {
+        "ok": {
+          "mirrored": false,
+          "warning": "进度已保存到主存档，但镜像更新失败。请立即导出当前备份并检查浏览器存储空间；旧镜像可能不含本次操作。"
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 4 mirror: deny write dice-abyss:pre-levels:v1",
+      "completeOperationSha256": "a1fdb1f3ed7130ef6213cbb4efd81388d5cf8ae3fec48a3f110c820b39718c35",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "legacy 4 mirror: deny write dice-abyss:pre-v5:v1",
+      "completeOperationSha256": "384e28544a613238d350b6a5de3411ffe4dfafca3be701b20b69a7065532bd66",
+      "outcome": {
+        "error": "无法保留V5升级前原始存档，主档未覆盖。"
+      },
+      "writes": [
+        "dice-abyss:pre-v5:v1"
+      ]
+    },
+    {
+      "label": "main changes on source read 2: unchanged",
+      "completeOperationSha256": "ce6a9e7914d2b3b7a48db2188bafc158f57e964d69875a045fb3d178a6cf9e9b",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "main changes on source read 2: noncanonical",
+      "completeOperationSha256": "a278878399cee5b452a75d8c7a692720b62276981a30a8ce2098d346f08b399a",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "main changes on source read 2: anotherV5",
+      "completeOperationSha256": "30e0ea846099996bd30474a366b9b86f5e7ad8370f9c957109040c7ac99be087",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "main changes on source read 2: legacy1",
+      "completeOperationSha256": "0903b32a1a60efd06b98419146a64e10e573e2f8215083112692699e52350e35",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "main changes on source read 2: legacy2",
+      "completeOperationSha256": "b292b715acfed47745f43fe0d7de6eb2567414270950dfa70189c470f3787dca",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "main changes on source read 2: legacy3",
+      "completeOperationSha256": "90e9aaa466f224a5127660e05eed144ea5f6e9a476727ee7e4f0358322573f65",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "main changes on source read 2: legacy4",
+      "completeOperationSha256": "8e85e5694ccdfdb235adeebaa7e00ec706b3fa3e535da0d206f1279f85e3d98e",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "main changes on source read 2: badV4",
+      "completeOperationSha256": "eade97ee1a610b325ebab615cecb81952327651efc7c8030f4f3ae76d0e076a8",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "main changes on source read 2: broken",
+      "completeOperationSha256": "d84683161eff037c281281c720e1a12b9c3fdb12cf1ea8330027f47429d01498",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "main changes on source read 2: missing",
+      "completeOperationSha256": "c29cde01aaa24450e63b3f6a0c0aa215c2186d5d048257fe5d4137553f34b383",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "main changes on source read 3: unchanged",
+      "completeOperationSha256": "ce6a9e7914d2b3b7a48db2188bafc158f57e964d69875a045fb3d178a6cf9e9b",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "main changes on source read 3: noncanonical",
+      "completeOperationSha256": "315289edf0bb9bcea9d0a0e108f6031724bf3ea3477616c139b706d2a8a57c9a",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "main changes on source read 3: anotherV5",
+      "completeOperationSha256": "e3b425fded6f283094225fdbfa48cfead1094affc3e4408c28715b5f46ac47d4",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "main changes on source read 3: legacy1",
+      "completeOperationSha256": "b5cfffedbacb19d211b8f4ac9f57ea7693ab6bab3c61ab4f72647b84964ea65d",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "main changes on source read 3: legacy2",
+      "completeOperationSha256": "3bd749e89714eccbb16733de6b850da06dcd5b310cc2bda4a6e66b098feb0b90",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "main changes on source read 3: legacy3",
+      "completeOperationSha256": "ef68f9865a47d5f4397c50db0762258c8bd7c396f270c19f9815a0a60f14e5c9",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "main changes on source read 3: legacy4",
+      "completeOperationSha256": "20d7e80edffcf9a1511bdc08363e9df254efaa07976a07113ef077164fd46e83",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "main changes on source read 3: badV4",
+      "completeOperationSha256": "3d5c39b11b046a61111a44f79862f9c9b5728d7b13ed82fbcfdda91cadb3cb9b",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "main changes on source read 3: broken",
+      "completeOperationSha256": "9c2e918a5386c741ac138bd56f0be96e363cdfcabd5d8fe4d0eb2b22941d2f9f",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "main changes on source read 3: missing",
+      "completeOperationSha256": "4ba0329a986119787590b035367ef054c5fd89e3dbafb2bf3c5e3d9ce0fbed66",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "mirror changes on source read 2: unchanged",
+      "completeOperationSha256": "8027e5a4183c092ae89ad85868a8793eb6b6ba0bcc9b786c60d4169f71f6d179",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "mirror changes on source read 2: noncanonical",
+      "completeOperationSha256": "a518307844017e5f6387782bea6cdec36cb032e6396cbd41d9f9b65ccac312f6",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "mirror changes on source read 2: anotherV5",
+      "completeOperationSha256": "d8098b319575502ac5c7923e5ee37b3e648d9dee5f19ff19c416f5c439220f2f",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "mirror changes on source read 2: legacy1",
+      "completeOperationSha256": "2df9b7f535dfd17599aaa1da06bb72c165979b665422a294b58fc61078e8b4a1",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "mirror changes on source read 2: legacy2",
+      "completeOperationSha256": "cb9926d2f72e5d5b8b21beb596cb315cb44ad7914d97215968d0639b9f812eb9",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "mirror changes on source read 2: legacy3",
+      "completeOperationSha256": "b209d90a11179dcbfe24596b03542e599c029a8bee2e597486df44fde715dbcc",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "mirror changes on source read 2: legacy4",
+      "completeOperationSha256": "9e6599492afa3aede8b7d0dd2d5e19423dca6f8bf2fbdb1a625baaad018f0efd",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "mirror changes on source read 2: badV4",
+      "completeOperationSha256": "6ee846d07241feb8c1afc23b0c5c0eb2cbf97d97c917918e6ad118bdc49b51ff",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "mirror changes on source read 2: broken",
+      "completeOperationSha256": "db03457a253c143a43aa3488a86cf80afaf35cb1921443b85067e0b53f110ae4",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "mirror changes on source read 2: missing",
+      "completeOperationSha256": "bdae74b9c7fe58c2c82bb18910d0fc353ea5b4d5222b1afa02a716e15acddff8",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "mirror changes on source read 3: unchanged",
+      "completeOperationSha256": "8027e5a4183c092ae89ad85868a8793eb6b6ba0bcc9b786c60d4169f71f6d179",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "mirror changes on source read 3: noncanonical",
+      "completeOperationSha256": "c61a6b2373a15edc3d1829295105fe554ea5846b53eac715d29652d147990dc0",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "mirror changes on source read 3: anotherV5",
+      "completeOperationSha256": "990b3e6a9de0e1a541895d04495be1c9fae6d0dd8f2a07d733673f82392e14a7",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "mirror changes on source read 3: legacy1",
+      "completeOperationSha256": "ff3a097e5b618ca44a03316449a87ebf0339da272b0d8c511189cc44fce858dd",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "mirror changes on source read 3: legacy2",
+      "completeOperationSha256": "a93d860763dd8456ac797f92620ab7cecf220cd3a2fd17ee32f6a28480e47cae",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "mirror changes on source read 3: legacy3",
+      "completeOperationSha256": "7f1858297d3a695c62ffaa3d345cdce3f52f865c6fdc3f20d40819f672e7a81f",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-levels:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "mirror changes on source read 3: legacy4",
+      "completeOperationSha256": "b48822f0fcec65de03c11a4a108e690b409f19c2b8dac9f72b0a6c875fe881a3",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "mirror changes on source read 3: badV4",
+      "completeOperationSha256": "0cb95c83ccd0ac11739edd789025b09c88a81aea4a3ec100c0b18c443f3629a6",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "mirror changes on source read 3: broken",
+      "completeOperationSha256": "4074e855d31aea2bb0ad95a0e86ec90a85909baf837ce0ff814c5d66fc4703d5",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "mirror changes on source read 3: missing",
+      "completeOperationSha256": "da96d06172a90b2375e163497e21b0e919494995ce9bdfc39b04038019958b5b",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "expected rejects nested unknown branch",
+      "completeOperationSha256": "febcbb4f9d74946b8ef96849b613dc78e578035be8a5455457f9f3f312e123ca",
+      "outcome": {
+        "error": "另一窗口已更新进度。请刷新后继续，避免覆盖存档。"
+      },
+      "writes": []
+    },
+    {
+      "label": "expected rejects unknown addition",
+      "completeOperationSha256": "febcbb4f9d74946b8ef96849b613dc78e578035be8a5455457f9f3f312e123ca",
+      "outcome": {
+        "error": "另一窗口已更新进度。请刷新后继续，避免覆盖存档。"
+      },
+      "writes": []
+    },
+    {
+      "label": "expected rejects unknown deletion",
+      "completeOperationSha256": "febcbb4f9d74946b8ef96849b613dc78e578035be8a5455457f9f3f312e123ca",
+      "outcome": {
+        "error": "另一窗口已更新进度。请刷新后继续，避免覆盖存档。"
+      },
+      "writes": []
+    },
+    {
+      "label": "expected rejects same id and revision point branch",
+      "completeOperationSha256": "febcbb4f9d74946b8ef96849b613dc78e578035be8a5455457f9f3f312e123ca",
+      "outcome": {
+        "error": "另一窗口已更新进度。请刷新后继续，避免覆盖存档。"
+      },
+      "writes": []
+    },
+    {
+      "label": "null expected rejects updated assets",
+      "completeOperationSha256": "f3a0b98e5b676280f3e48b200fb71c378b075a47e4adbd77126b8a5d22c288a3",
+      "outcome": {
+        "error": "另一窗口已创建或更新进度。请重新读取后继续，避免覆盖存档。"
+      },
+      "writes": []
+    },
+    {
+      "label": "null expected accepts exact rewrite",
+      "completeOperationSha256": "ae2ad689dbe867fc69cacfc198ebad8108fa13f099d6f45f99f62fcc1ad0ba0e",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "undefined expected retains explicit replacement",
+      "completeOperationSha256": "c954668c53816ab7ebe0201390a13ddfdda4a45fa79bb68360aa82c122997126",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "unreadable legacy is archived for explicit new run",
+      "completeOperationSha256": "dcd3d6ff1f982bde94c679389d70c35dd38477e03c3fd489a7bb5e9b598d8ca4",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:pre-v5:v1",
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "current save with legacy invalid archive",
+      "completeOperationSha256": "fe0234883d281d66bcb07628843eedc721f0eff286dec3fcabcf6e0a9df9ab03",
+      "outcome": {
+        "error": "升级前归档校验未通过，现有主档未覆盖。请先导出原始存档并检查归档。"
+      },
+      "writes": []
+    },
+    {
+      "label": "current save with legacy valid archive",
+      "completeOperationSha256": "e5ac2b1ebbec364661f3c572f23869f97d54c8f4ac154f110632919cf9e6fcae",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "current save with preV5 invalid archive",
+      "completeOperationSha256": "5b6eed1c3e0d32f83b4f6ed73af53af65ed992c4aab4f41f887acf5696733d56",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "current save with preV5 valid archive",
+      "completeOperationSha256": "1d22464f25fbe19107ed343a34c3864485f4c0ac096f6422ae00fcb7a3fc3e36",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "ASCII candidate 5000000 bytes",
+      "completeOperationSha256": "e778b49f911d3b845456756f560deb6f53287920b7d78f04df9366b12aaf11bd",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "ASCII candidate 5000001 bytes",
+      "completeOperationSha256": "45b751285e20d19618faa7b87bb081a0c44961de71428d62a867a2bb09c59692",
+      "outcome": {
+        "error": "存档将超过 5 MB 文件上限，本次操作未保存，现有主档与镜像未改动。请先导出备份，再减少背包物品或检查导入文件的额外数据。"
+      },
+      "writes": []
+    },
+    {
+      "label": "CJK candidate 5000000 bytes",
+      "completeOperationSha256": "6c376d0298e793326eeadbfe97e82aca17a3d9258baaae4d433bb9252d6c6f24",
+      "outcome": {
+        "ok": {
+          "mirrored": true,
+          "warning": ""
+        }
+      },
+      "writes": [
+        "dice-abyss:save:v1",
+        "dice-abyss:mirror:v1"
+      ]
+    },
+    {
+      "label": "CJK candidate 5000001 bytes",
+      "completeOperationSha256": "45b751285e20d19618faa7b87bb081a0c44961de71428d62a867a2bb09c59692",
+      "outcome": {
+        "error": "存档将超过 5 MB 文件上限，本次操作未保存，现有主档与镜像未改动。请先导出备份，再减少背包物品或检查导入文件的额外数据。"
+      },
+      "writes": []
+    },
+    {
+      "label": "readable oversized historical CJK preserved on rejected rewrite",
+      "completeOperationSha256": "99e9945bf76940de93c62ad93761860517b65c241ea71a6b471ab848d80ee4a5",
+      "outcome": {
+        "error": "存档将超过 5 MB 文件上限，本次操作未保存，现有主档与镜像未改动。请先导出备份，再减少背包物品或检查导入文件的额外数据。"
+      },
+      "writes": []
+    }
+  ]
+}

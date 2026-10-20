@@ -1,0 +1,161 @@
+{
+  "reviewedAt": "2026-10-19T09:06:47.227907+00:00",
+  "version": "5.19.0",
+  "defaultNpmModuleCounters": {
+    "tests": 80,
+    "suites": 0,
+    "pass": 80,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0
+  },
+  "nativeCases": {
+    "tests": 745,
+    "suites": 0,
+    "pass": 745,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0
+  },
+  "nativeModules": 80,
+  "nativeHelperSeconds": 83.6066,
+  "runs": {
+    "npm-test": {
+      "name": "final-npm-test",
+      "command": [
+        "npm",
+        "test"
+      ],
+      "cwd": "/workspace/scratch/793424e1640c/work/Dice-Abyss",
+      "started": "2026-10-19T09:01:24.948738+00:00",
+      "finished": "2026-10-19T09:03:01.313128+00:00",
+      "elapsedSeconds": 96.3644,
+      "exitCode": 0,
+      "stdout": "/workspace/scratch/793424e1640c/qa-current/final-npm-test.stdout",
+      "stderr": "/workspace/scratch/793424e1640c/qa-current/final-npm-test.stderr"
+    },
+    "native-test": {
+      "name": "final-native-test",
+      "command": [
+        "python3",
+        "scripts/verify-test-cases.py",
+        "--output",
+        "/workspace/scratch/793424e1640c/qa-current/native-cases-final"
+      ],
+      "cwd": "/workspace/scratch/793424e1640c/work/Dice-Abyss",
+      "started": "2026-10-19T09:04:21.691271+00:00",
+      "finished": "2026-10-19T09:05:45.348962+00:00",
+      "elapsedSeconds": 83.6577,
+      "exitCode": 0,
+      "stdout": "/workspace/scratch/793424e1640c/qa-current/final-native-test.stdout",
+      "stderr": "/workspace/scratch/793424e1640c/qa-current/final-native-test.stderr"
+    },
+    "http-smoke": {
+      "name": "final-http-smoke",
+      "command": [
+        "node",
+        "scripts/smoke-http.mjs",
+        "--output",
+        "/workspace/scratch/793424e1640c/qa-current/final-http-smoke.json"
+      ],
+      "cwd": "/workspace/scratch/793424e1640c/work/Dice-Abyss",
+      "started": "2026-10-19T09:01:30.052687+00:00",
+      "finished": "2026-10-19T09:01:32.218079+00:00",
+      "elapsedSeconds": 2.1654,
+      "exitCode": 0,
+      "stdout": "/workspace/scratch/793424e1640c/qa-current/final-http-smoke.stdout",
+      "stderr": "/workspace/scratch/793424e1640c/qa-current/final-http-smoke.stderr"
+    },
+    "syntax": {
+      "name": "final-syntax",
+      "command": [
+        "npm",
+        "run",
+        "check"
+      ],
+      "cwd": "/workspace/scratch/793424e1640c/work/Dice-Abyss",
+      "started": "2026-10-19T09:06:23.061816+00:00",
+      "finished": "2026-10-19T09:06:27.502117+00:00",
+      "elapsedSeconds": 4.4404,
+      "exitCode": 0,
+      "stdout": "/workspace/scratch/793424e1640c/qa-current/final-syntax.stdout",
+      "stderr": "/workspace/scratch/793424e1640c/qa-current/final-syntax.stderr"
+    }
+  },
+  "nativeIndependentAudit": {
+    "method": "Independently split original gzip TAP per module, rehash the original stdout, reparse all final counters, and compare initial/final test source SHA.",
+    "modules": 80,
+    "transcriptCount": 80,
+    "counts": {
+      "tests": 745,
+      "suites": 0,
+      "pass": 745,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0
+    },
+    "countersEqualDeclared": true,
+    "allStdoutShasMatch": true,
+    "allCountersMatch": true,
+    "allFinalSourceShasMatch": true,
+    "allInitialSourceShasMatch": true,
+    "allPassed": true,
+    "failures": []
+  },
+  "http": {
+    "resources": 62,
+    "release": "5.19.0",
+    "allPassed": true,
+    "report": "final-http-smoke.json"
+  },
+  "fontReference": {
+    "file": "offline-fonts.json",
+    "sha256": "d8c0e4c99464763eaa6089cafeee1097aac430f4b9f42f26fa4acb6d1743bd15",
+    "passRecorded": true,
+    "uniqueHan": 1055,
+    "uniqueCjkPunctuation": 21,
+    "sourceScope": "index.html and src/*.js, src/*.css; includes comments, excludes tests/docs and arbitrary imported names",
+    "provenance": "Existing report produced by root and explicitly authorized for reuse. This agent read it; did not rerun font extraction."
+  },
+  "sourceIdentity": {
+    "runtimeAndTestFiles": 154,
+    "totalSnapshottedFiles": 271,
+    "runtimeAndTestsUnchanged": true,
+    "gateDriversUnchanged": true,
+    "allSnapshottedFilesUnchanged": true,
+    "changedFiles": [],
+    "before": "final-gates-before.json",
+    "after": "final-gates-after.json"
+  },
+  "originalTestFixtureFontPreservation": {
+    "files": 87,
+    "baselineTestModules": 77,
+    "baselineFixtures": 2,
+    "fontAndLicenseFiles": 8,
+    "allByteIdentical": true,
+    "failures": []
+  },
+  "rootFreezeReview": {
+    "file": "docs/iteration/evidence/round19/source-freeze.json",
+    "scope": "index.html, package.json, complete src/scripts/tests trees; excludes documentation and evidence",
+    "declaredFiles": 269,
+    "declaredAggregateSha256": "972a93e88eaf02080321f6739f81ffd86c7ea0733796912846240e32db9aafca",
+    "rowFiles": 269,
+    "allRowsMatchFinalFiles": true,
+    "extraFilesInAgentSnapshot": [
+      "favicon.svg",
+      "\u542f\u52a8\u6e38\u620f.cmd"
+    ],
+    "exactScopeDifference": true,
+    "failures": []
+  },
+  "executionScope": "npm test first, then native test helper, then syntax last. HTTP ran alongside default tests. Native browser work by root was concurrent; elapsed durations are not performance measurements.",
+  "noBrowserOperations": true,
+  "noPerformanceOperations": true,
+  "noSimulationReruns": true,
+  "noSourceOrDocsEdits": true,
+  "passed": true
+}

@@ -1,0 +1,65 @@
+[
+  {
+    "name": "core",
+    "command": [
+      "node",
+      "scripts/qa-core-browser.mjs",
+      "--url=http://127.0.0.1:4189/",
+      "--output=/workspace/scratch/5a5998079a95/audit/current/browser/core"
+    ],
+    "exitCode": 0,
+    "seconds": 24.614,
+    "log": "core.log"
+  },
+  {
+    "name": "decisions",
+    "command": [
+      "node",
+      "scripts/qa-decisions-round12.mjs",
+      "--url=http://127.0.0.1:4189/",
+      "--output=/workspace/scratch/5a5998079a95/audit/current/browser/decisions",
+      "--source=/workspace/scratch/5a5998079a95/work/Dice-Abyss",
+      "--expect=fixed"
+    ],
+    "exitCode": 0,
+    "seconds": 33.499,
+    "log": "decisions.log"
+  },
+  {
+    "name": "round11",
+    "command": [
+      "node",
+      "scripts/qa-round11-browser.mjs",
+      "--url=http://127.0.0.1:4189/",
+      "--output=/workspace/scratch/5a5998079a95/audit/current/browser/round11",
+      "--source=/workspace/scratch/5a5998079a95/work/Dice-Abyss"
+    ],
+    "exitCode": 0,
+    "seconds": 48.92,
+    "log": "round11.log"
+  },
+  {
+    "name": "talents",
+    "command": [
+      "node",
+      "scripts/qa-talents-browser.mjs",
+      "--url=http://127.0.0.1:4189/",
+      "--output=/workspace/scratch/5a5998079a95/audit/current/browser/talents"
+    ],
+    "exitCode": 0,
+    "seconds": 48.837,
+    "log": "talents.log"
+  },
+  {
+    "name": "fusion",
+    "command": [
+      "node",
+      "scripts/qa-fusion-browser.mjs",
+      "--url=http://127.0.0.1:4189/",
+      "--output=/workspace/scratch/5a5998079a95/audit/current/browser/fusion"
+    ],
+    "exitCode": 0,
+    "seconds": 75.228,
+    "log": "fusion.log"
+  }
+]

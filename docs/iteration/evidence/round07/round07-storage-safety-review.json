@@ -1,0 +1,260 @@
+{
+  "status": "PASS",
+  "createdAt": "2026-10-18T05:19:05.099829+00:00",
+  "reviewerRole": "Storage reuse author performing safety regression; independent reviewer of another author's memorywell preview.",
+  "scope": "Local, read-only runtime audit using complete validator-accepted synthetic snapshots and the real engine/storage functions with Map-backed storage.",
+  "runtimeOrExistingTestsEditedInThisReview": false,
+  "sourceHashes": {
+    "baselineStorage": "c22bd7a161505c37e7a1926309ef6751ad7e9662b97dc22d786ead832d93ba42",
+    "currentStorage": "b0abe97c6389f94d052d4247860b7c0ab5e67824b03e6571e4ab3d2bf40968d2"
+  },
+  "closure": {
+    "baselineStatus": "PASS",
+    "currentStatus": "PASS",
+    "allReportFieldsExceptRootExactlyEqual": true,
+    "checksPerSource": 41452,
+    "eventKeys": 22,
+    "pendingProtectionVariants": 820,
+    "eventChoices": 1608,
+    "shopPurchases": 48,
+    "legacyFixtures": 11,
+    "failuresPerSource": 0,
+    "completeTranscriptFingerprintsEqual": true,
+    "fingerprints": {
+      "algorithm": "sha256",
+      "format": 1,
+      "stateSnapshots": 6476,
+      "committedTransactions": 1811,
+      "legacyWrites": 11,
+      "states": "676237f681c397af4dd58f195b49a9507e36a734163368db43cffcf8a8ede883",
+      "transactions": "bc4b0bb2d64c990f7b7b37a05295b9ac62354367e8fc14f3137917dc1b80c3fa",
+      "writes": "0ff1dab1e7f8d44f4a6e19de1cb99b0f249f02ed83dbfdbddbddf50de822f1ef"
+    },
+    "fingerprintScope": "Every complete decoded state, complete before/action/after transaction, primary/mirror raw envelope and archived V4 original; no selected-field substitution. Complete transcripts are hashed by the unchanged audit script, rather than copied into its small JSON report."
+  },
+  "sizeBoundary": {
+    "status": "PASS",
+    "cases": 4,
+    "limitBytes": 5000000,
+    "fixtureMethod": "Actual engine-generated states and golden V4 originals are padded through permitted unknown extension fields; complete envelopes pass the actual validator/checksum/encoder. These are synthetic full save states, not naturally observed player save sizes.",
+    "checks": [
+      {
+        "name": "near-limit accepted import followed by fate",
+        "inputCharacters": 4999835,
+        "inputBytes": 4999900,
+        "inputSha256": "56372be1f918aca02eaae9e7205479e91a920eb75ef4b44d7617b699021b64f6",
+        "inputValid": true,
+        "initialImport": {
+          "result": {
+            "mirrored": true,
+            "warning": ""
+          },
+          "error": null
+        },
+        "action": "fate",
+        "nextCharacters": 5000642,
+        "nextBytes": 5000724,
+        "nextSha256": "f653dae4efd9abda70803e76fb04cdcf2f082e512a8e0c7769aefe60e34f1cb7",
+        "nextValid": true,
+        "commit": {
+          "result": null,
+          "error": "存档将超过 5 MB 文件上限，本次操作未保存，现有主档与镜像未改动。请先导出备份，再减少背包物品或检查导入文件的额外数据。"
+        },
+        "writes": [],
+        "bothCopiesPreserved": true,
+        "reloadPresent": true,
+        "reloadError": null,
+        "rngPreserved": true,
+        "revisionPreserved": true,
+        "pass": true
+      },
+      {
+        "name": "readable older multibyte rescue with oversized new write",
+        "characters": 1672163,
+        "utf8Bytes": 5012220,
+        "rescueRoundtrip": true,
+        "commit": {
+          "result": null,
+          "error": "存档将超过 5 MB 文件上限，本次操作未保存，现有主档与镜像未改动。请先导出备份，再减少背包物品或检查导入文件的额外数据。"
+        },
+        "writes": [],
+        "bothCopiesPreserved": true,
+        "pass": true
+      },
+      {
+        "name": "migration growth checked before immutable archive writes",
+        "inputBytes": 5000000,
+        "migratedBytes": 5000337,
+        "commit": {
+          "result": null,
+          "error": "存档将超过 5 MB 文件上限，本次操作未保存，现有主档与镜像未改动。请先导出备份，再减少背包物品或检查导入文件的额外数据。"
+        },
+        "writes": [],
+        "allStoragePreserved": true,
+        "pass": true
+      },
+      {
+        "name": "exact inclusive ASCII byte and character boundary",
+        "characters": 5000000,
+        "utf8Bytes": 5000000,
+        "commit": {
+          "result": {
+            "mirrored": true,
+            "warning": ""
+          },
+          "error": null
+        },
+        "reloadRoundtrip": true,
+        "pass": true
+      }
+    ]
+  },
+  "safetyReview": {
+    "unchangedSourceSections": [
+      {
+        "name": "formatValidationMigrationAndEncoding",
+        "byteIdentical": true,
+        "sha256": "96cac5b720a0a314e094d8e7aeac27173502bea73dc48bf91e8fef5036c0966c"
+      },
+      {
+        "name": "fullDecodeValidation",
+        "byteIdentical": true,
+        "sha256": "d03a8f28468ba8418f77dd7e16aa8943f72900a72004e2290b19518b7a5229bf"
+      },
+      {
+        "name": "legacyArchiveValidationSelectionAndRescue",
+        "byteIdentical": true,
+        "sha256": "1b0980213429a860edc71fbc7fd48183bd5816481da43a0b94799aa6ee8cf14d"
+      },
+      {
+        "name": "fullExpectedSnapshotConditions",
+        "byteIdentical": true,
+        "sha256": "4184e27353681e84810570cdacfae479671c10f546cdb304c1a2deb8c69b8605"
+      },
+      {
+        "name": "importPreflightAndArchiveOrder",
+        "byteIdentical": true,
+        "sha256": "4372904439dfd2d8432c655bc56581eeb8cbe66ca9e4c70222a22b07518dc9b9"
+      },
+      {
+        "name": "primaryMirrorWritesAndFailureResults",
+        "byteIdentical": true,
+        "sha256": "16753545bc9118ec7477a139c51c7f7e78bbed4b5c679304bc43080a4ae53583"
+      }
+    ],
+    "sourceReuseCondition": "Only a fully decoded and validated V5 source with exactly equal raw text from each original storage reread skips the two obsolete-version probes. A changed raw value or V1–V4 source takes the original path.",
+    "fullExpectedComparison": "Both null-snapshot and expected-snapshot JSON.stringify comparisons remain byte-identical to baseline. Same runId/revision with changed unknown metadata still rejects with zero writes.",
+    "unknownFields": "Whole state payload is still serialized; no projection, field trimming, schema-only comparison, or cross-operation cache was introduced.",
+    "migrationAndArchives": "Source version comes from the original envelope, not migrated state.version. V1–V3 pre-levels archive precedes pre-V5 archive, then primary and mirror; V4 skips only the inapplicable pre-levels slot. Original raw bytes and baseline damage/refusal/rescue outcomes are retained.",
+    "mirrorFailure": "A primary failure leaves active copies unchanged. A mirror failure reports committed primary plus warning and retains the previous mirror; it is not reported as a rolled-back action.",
+    "writeLimit": "The complete final envelope must fit both 5,000,000 UTF-16 code units and 5,000,000 UTF-8 bytes. Actual large-save TextEncoder byte checking is unchanged and runs before any new archive or active writes in the tested oversize cases.",
+    "earlierExactDifferential": {
+      "evidence": "read-reuse-differential.json",
+      "cases": 43,
+      "allOutcomesReadsWritesFullStorageAndLoadedStatesExactlyEqual": true,
+      "allCallersUnchanged": true,
+      "storageSourcesStillMatch": true,
+      "timingStatus": "NOT_RUN"
+    }
+  },
+  "memorywellIndependentFinalReview": {
+    "evidence": "independent-memorywell-final.json",
+    "matrixCases": 443,
+    "authorTestsRerun": {
+      "pass": 12,
+      "fail": 0,
+      "durationMilliseconds": 124.600189,
+      "evidence": "independent-memorywell-author-tests-final.tap"
+    },
+    "allAuthoritativeTransitionsEqualBaseline": true,
+    "allAcceptedPreviewsEqualActualReset": true,
+    "allDisabledResetsAtomic": true,
+    "fixedP3": {
+      "canReset": false,
+      "renderedHypotheticalRefundTotal": 2000008,
+      "pointCap": 2000000,
+      "showsGreenAfterRefund": false,
+      "afterLabelStillSaysResetAfter": false,
+      "goldAfterNull": true,
+      "explicitUnavailableNotice": true,
+      "status": "FIXED_VERIFIED",
+      "allDisabledRowsExplicitlyTheoreticalAndNeutral": true,
+      "note": "The original P3 presentation ambiguity is fixed: disabled offers retain hypothetical comparison numbers with neutral styling, explicit theoretical labels and an unavailable notice. No disabled action commits."
+    },
+    "originalObservationPreserved": "independent-memorywell-review.json"
+  },
+  "execution": {
+    "closureBaseline": {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "/workspace/scratch/e7f8f5d38116/work/Dice-Abyss/scripts/audit-save-closure.mjs",
+        "--source",
+        "/workspace/scratch/e7f8f5d38116/baseline/Dice-Abyss",
+        "--output",
+        "/workspace/scratch/e7f8f5d38116/qa/agent-storage/save-closure-baseline.json"
+      ],
+      "node": "v24.19.0",
+      "startedAt": "2026-10-18T05:15:34.325Z",
+      "endedAt": "2026-10-18T05:15:39.333Z",
+      "elapsedMilliseconds": 4994.260551,
+      "exitCode": 0,
+      "resultStatus": "PASS",
+      "sourceStable": true,
+      "scriptStable": true
+    },
+    "closureCurrent": {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "/workspace/scratch/e7f8f5d38116/work/Dice-Abyss/scripts/audit-save-closure.mjs",
+        "--source",
+        "/workspace/scratch/e7f8f5d38116/work/Dice-Abyss",
+        "--output",
+        "/workspace/scratch/e7f8f5d38116/qa/agent-storage/save-closure-current.json"
+      ],
+      "node": "v24.19.0",
+      "startedAt": "2026-10-18T05:15:34.302Z",
+      "endedAt": "2026-10-18T05:15:39.207Z",
+      "elapsedMilliseconds": 4889.207203,
+      "exitCode": 0,
+      "resultStatus": "PASS",
+      "sourceStable": true,
+      "scriptStable": true
+    },
+    "sizeCurrent": {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "/workspace/scratch/e7f8f5d38116/work/Dice-Abyss/scripts/audit-save-size.mjs",
+        "--source",
+        "/workspace/scratch/e7f8f5d38116/work/Dice-Abyss",
+        "--output",
+        "/workspace/scratch/e7f8f5d38116/qa/agent-storage/save-size-current.json"
+      ],
+      "node": "v24.19.0",
+      "startedAt": "2026-10-18T05:15:34.299Z",
+      "endedAt": "2026-10-18T05:15:35.101Z",
+      "elapsedMilliseconds": 785.593515,
+      "exitCode": 0,
+      "resultStatus": "PASS",
+      "sourceStable": true,
+      "scriptStable": true
+    }
+  },
+  "timingMeaning": "These concurrent correctness-audit wall times describe execution only. They are not paired performance samples, native localStorage timing, browser input latency, or a speedup claim.",
+  "limits": [
+    "No physical power-loss test.",
+    "No browser localStorage quota, browser geometry, real focus or native input test in this review.",
+    "No natural-player incidence claim from the synthetic fixtures.",
+    "Existing transaction semantics are compared against the supplied baseline; this is not an exhaustive proof for every storage implementation."
+  ],
+  "evidenceSha256": {
+    "save-closure-baseline.json": "11cba2590750d5f8c30672b5ce00bd125c330eba9e6c19370e88fbbdf0bb8037",
+    "save-closure-current.json": "37e4778697888232788e29633f946a94a92a0c98f057d9f165755f74dcbbf0e3",
+    "save-size-current.json": "810965e8a9aceea6f6ed85422cc9ee5ad9e3607562e44f86564d0e5f367d1fbb",
+    "save-closure-baseline.execution.json": "07e6d50410b48f8ec32cc45a77b3285765692226e7cb60bd86d2b1d960729b81",
+    "save-closure-current.execution.json": "a56cdd8f4b247cc1e3dab7e1fc8bb3c27d87dd9387596396b472bfb730e5afa7",
+    "save-size-current.execution.json": "da9e010c25e83fe46637abaf154d7ffae7fbff0aa31b288262a27b69d8af08b6",
+    "read-reuse-differential.json": "5d77cca9e817ed2fd8f6539b9ac653c7ccdb5c37e75ece7d31ac947fd8a8bead",
+    "independent-memorywell-final.json": "ca64a18d10e5b4d61934a910b1688789e5668e6d5407fe0bc0d95292b28c2d71",
+    "independent-memorywell-author-tests-final.tap": "7e4eda5c162db6ccd425410806e05692baac59c0bc60c1fd825a2235995aed72"
+  }
+}

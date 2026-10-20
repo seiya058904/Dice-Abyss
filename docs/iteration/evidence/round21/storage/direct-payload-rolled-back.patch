@@ -1,0 +1,47 @@
+--- baseline/src/storage.js
++++ ROLLED_BACK/direct-payload/src/storage.js
+@@ -202,7 +202,7 @@
+   // and its legacy path, then validate the freshly parsed snapshot in full.
+   const state = payload.version === VERSION ? payload : migrateSave(payload);
+   if (!validateSave(state)) throw invalidSaveError(state,'存档内容不完整或版本不兼容。');
+-  return {state,sourceVersion:envelope.version};
++  return {state,sourceVersion:envelope.version,sourcePayload:envelope.payload};
+ }
+ export function decodeSave(raw) { return decodeStoredSave(raw).state; }
+ function loadStoredSave(storage) {
+@@ -215,7 +215,7 @@
+         let warning='';
+         if(recovered)warning='主存档无法读取，已从镜像恢复。若此前镜像保存失败，最后一次进度可能不在此备份中；请先导出核对。';
+         else try{if(storage.getItem(BACKUP_KEY)!==raw)warning='主存档可用，但镜像尚未同步。请导出当前进度备份，后续成功保存会重建镜像。';}catch{warning='主存档可用，但无法检查镜像。请导出当前进度备份。';}
+-        return {loaded:{state,recovered,warning},sourceRaw:raw,sourceVersion:decoded.sourceVersion};
++        return {loaded:{state,recovered,warning},sourceRaw:raw,sourceVersion:decoded.sourceVersion,sourcePayload:decoded.sourcePayload};
+       }
+     } catch(error) { existed = true;if(/^(旧装备|装备等级|旧角色)/.test(error.message))reason=error.message; }
+   }
+@@ -274,16 +274,24 @@
+  for(const key of [SAVE_KEY,BACKUP_KEY])try{const raw=storage.getItem(key);if(validLegacyRaw(raw))return raw;}catch{ /* Try the other original copy. */ }
+  return null;
+ }
++// Reuse only the complete payload from this exact validated synchronous read.
++// Noncanonical payloads and migrated originals retain the original complete
++// JSON comparison; this never uses revisions or a cross-operation cache alone.
++function sameStoredSnapshot(snapshot,expected) {
++  const expectedPayload=JSON.stringify(expected);
++  return (snapshot.sourceVersion===VERSION&&snapshot.sourcePayload===expectedPayload)
++    || JSON.stringify(snapshot.loaded.state)===expectedPayload;
++}
+ function assertSaveSnapshot(state,expected,storage) {
+   const snapshot=loadStoredSave(storage),current=snapshot.loaded.state;
+   if (expected === null) {
+     // A tab which observed no run must not overwrite one created while it was
+     // waiting for the write lock. Keep identical migration/rewrite calls valid.
+-    if (current && JSON.stringify(current)!==JSON.stringify(state)) throw new Error('另一窗口已创建或更新进度。请重新读取后继续，避免覆盖存档。');
++    if (current && !sameStoredSnapshot(snapshot,state)) throw new Error('另一窗口已创建或更新进度。请重新读取后继续，避免覆盖存档。');
+   } else if (expected) {
+     // Importing a branched export can preserve both run ID and revision while
+     // changing the actual assets. Compare the snapshot before overwriting it.
+-    if (!current || current.runId !== expected.runId || current.revision !== expected.revision || JSON.stringify(current)!==JSON.stringify(expected)) throw new Error('另一窗口已更新进度。请刷新后继续，避免覆盖存档。');
++    if (!current || current.runId !== expected.runId || current.revision !== expected.revision || !sameStoredSnapshot(snapshot,expected)) throw new Error('另一窗口已更新进度。请刷新后继续，避免覆盖存档。');
+   }
+   return snapshot;
+ }

@@ -1,0 +1,29 @@
+✔ one to six visual bodies bounce, stay finite and settle onto committed front faces (24.475137ms)
+✔ visual motion is reproducible and never consumes the gameplay RNG (4.731382ms)
+✔ a first animation timestamp earlier than initialization cannot index a negative frame (2.470956ms)
+✔ uniforms shared across shader stages declare the same type and effective precision (1.179821ms)
+✔ beveled dice mesh has six complete faces, finite unit normals and a bounded body (17.261438ms)
+✔ crop keeps the original perspective and screen coordinates across resting and moving windows (2.022779ms)
+✔ resting crop tightly bounds 1–6 complete bodies at several user scales (40.537436ms)
+✔ flight window contains complete bodies across generated trajectories and only grows until rest (103.480489ms)
+✔ buffer resize never creates a transient allocation larger than old or final pixel counts (0.562013ms)
+✔ flame geometry is cached and material-batched while RAF opacity and cleanup remain live (30.047368ms)
+✔ a late first dice frame begins the throw rather than silently landing (0.981098ms)
+✔ combat material survives a delayed first frame and is drawn on the next visible sample (12.331466ms)
+✔ inactive scenes create no RAF, deadline timer or visibility listener (0.313427ms)
+✔ a late first sample is bounded and later normal frames preserve wall-clock pacing (1.087734ms)
+✔ a subsequent long scheduling gap advances real elapsed time without extending slow motion (0.381389ms)
+✔ an earlier first timestamp is clamped and does not move the visual clock backward (0.233128ms)
+✔ render cancellation settles every old waiter and cannot stop a replacement timeline (0.603867ms)
+✔ missing RAF reaches a fixed explicit deadline and frees waiters and listeners (0.363777ms)
+✔ backgrounding cancels immediately and an already hidden scene never starts RAF (0.403149ms)
+✔ an effect can finish before the phase wait without rerasterizing its last frame (0.237098ms)
+✔ a synthetic cleanup failure still releases old waiters and permits a new scene (0.283609ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 21
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 273.200932

@@ -1,0 +1,369 @@
+/* Narrow windows follow the same saved journey and controls. The existing
+   desktop composition remains authoritative at 1100px and above. */
+@media (max-width: 1099px) {
+  html, body { min-width: 0; }
+  html:not(:has(.fusion-mode)) {
+    --narrow-controls-space: 112px;
+    font-size: calc(14px * var(--user-scale));
+    scroll-padding-block: 12px calc(var(--narrow-controls-space) + env(safe-area-inset-bottom));
+  }
+  /* Text honors the saved UI scale; touch targets keep their usable minimum. */
+  #app { min-width: 0; }
+  .small-window-note { display: none; }
+
+  /* Title and shared header retain every action at usable sizes. */
+  #app > .topbar, .game-shell:not(.fusion-mode) > .topbar {
+    min-width: 0; height: auto; min-height: 68px; margin: 0;
+    padding: 12px 0; flex-wrap: wrap; gap: 8px 14px;
+  }
+  #app > .topbar { margin-inline: 16px; }
+  :is(#app > .topbar, .game-shell:not(.fusion-mode) > .topbar) .brand { min-width: 0; }
+  :is(#app > .topbar, .game-shell:not(.fusion-mode) > .topbar) .brand > span { font-size: calc(24px * var(--user-scale)); }
+  :is(#app > .topbar, .game-shell:not(.fusion-mode) > .topbar) .brand > small { font-size: calc(8px * var(--user-scale)); padding: 0; letter-spacing: .12em; }
+  :is(#app > .topbar, .game-shell:not(.fusion-mode) > .topbar) .header-motto { display: none; }
+  :is(#app > .topbar, .game-shell:not(.fusion-mode) > .topbar) .header-actions { align-self: center; padding: 0; gap: 5px; margin-left: auto; }
+  :is(#app > .topbar, .game-shell:not(.fusion-mode) > .topbar) .header-actions button {
+    display: inline-flex; min-width: 44px; min-height: 44px; padding: 7px; gap: 5px; font-size: calc(13px * var(--user-scale));
+  }
+  :is(#app > .topbar, .game-shell:not(.fusion-mode) > .topbar) .header-actions .icon { width: 17px; height: 17px; }
+  .game-shell:not(.fusion-mode) > .topbar .location { display: flex; visibility: visible; min-width: 0; margin: 0; font-size: calc(12px * var(--user-scale)); overflow-wrap: anywhere; }
+  .game-shell:not(.fusion-mode) > .topbar .location b { font-size: calc(17px * var(--user-scale)); }
+  .title-screen { height: auto; min-height: calc(100svh - 150px); padding: 32px 26px; gap: 26px; }
+  .title-copy { min-width: 0; }
+  .title-copy h1 { font-size: clamp(calc(28px * var(--user-scale)), calc(4.4vw * var(--user-scale)), calc(42px * var(--user-scale))); }
+  .title-copy > p { font-size: calc(15px * var(--user-scale)); margin-top: 20px; }
+  .title-buttons { flex-wrap: wrap; margin-top: 28px; gap: 10px; }
+  .title-buttons button { min-height: 48px; font-size: calc(15px * var(--user-scale)); }
+  .title-primary { min-width: 0; width: min(100%, 280px); }
+  .title-screen .resume-note { font-size: calc(12px * var(--user-scale)); overflow-wrap: anywhere; }
+  .title-screen .resume-note > span { display: block; margin-top: 5px; }
+  .title-art .cube-die { --size: min(220px, 28vw) !important; }
+  /* The first GPU canvas must not briefly participate in flex layout while
+     mountDiceSurface measures the die. Its later inline size stays authoritative. */
+  .title-art .dice-surface { position: absolute; pointer-events: none; }
+  .title-art .title-orbit { width: min(290px, 38vw); height: min(290px, 38vw); }
+  .title-footer { height: auto; min-height: 52px; margin: 0 16px; padding-block: 12px; flex-wrap: wrap; gap: 8px 18px; font-size: calc(11px * var(--user-scale)); }
+
+  /* Current room, saved status, then complete route/log/equipment rails.
+     Collections retain bounded local scrolling to keep their actions close. */
+  .game-shell:not(.fusion-mode) {
+    min-width: 0; height: auto; min-height: 100svh; overflow: visible;
+    grid-template-rows: auto auto auto;
+    padding: 0 12px calc(var(--narrow-controls-space) + env(safe-area-inset-bottom));
+  }
+  .game-shell:not(.fusion-mode) .game-layout {
+    display: grid; height: auto; min-height: 0; margin: 0;
+    grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: auto auto auto; gap: 12px;
+  }
+  .game-shell:not(.fusion-mode) .center-panel {
+    grid-column: 1 / -1; grid-row: 1; margin: 0; min-width: 0; min-height: 0;
+    padding: 18px; overflow: visible;
+  }
+  .game-shell:not(.fusion-mode):not([data-scene="talents"]) .center-panel { height: auto; }
+  .game-shell:not(.fusion-mode) .game-footer {
+    grid-column: 1 / -1; grid-row: 2; min-height: 0; margin: 0; padding: 0;
+    display: block; height: auto;
+  }
+  .game-shell:not(.fusion-mode) .left-rail {
+    grid-column: 1; grid-row: 3; display: flex; flex-direction: column; gap: 12px;
+    min-height: 0; padding: 0; overflow: visible;
+  }
+  .game-shell:not(.fusion-mode) .right-rail {
+    grid-column: 2; grid-row: 3; display: flex; flex-direction: column; gap: 12px;
+    min-height: 0; margin: 0; padding: 14px; overflow: visible;
+  }
+  .game-shell:not(.fusion-mode) .left-rail > section { padding: 14px; }
+  .game-shell:not(.fusion-mode) .left-rail .log-panel > ol { flex: none; overflow: visible; }
+  .game-shell:not(.fusion-mode) .log-panel li { font-size: calc(13px * var(--user-scale)); line-height: 1.8; overflow-wrap: anywhere; }
+  .game-shell:not(.fusion-mode) .right-rail > .equipment-list { display: grid; grid-template-rows: none; grid-auto-rows: auto; margin: 0; gap: 10px; }
+  .game-shell:not(.fusion-mode) .equipment-list > .equipped-item { padding: 12px; min-height: 90px; }
+  .game-shell:not(.fusion-mode) .equipment-list > .equipped-item h3 { font-size: calc(16px * var(--user-scale)); overflow-wrap: anywhere; }
+  .game-shell:not(.fusion-mode) .equipment-list > .equipped-item p { font-size: calc(12px * var(--user-scale)); line-height: 1.65; }
+  .game-shell:not(.fusion-mode) .equipment-list > .equipped-item p > span { white-space: normal; overflow-wrap: anywhere; }
+  .game-shell:not(.fusion-mode) .equipment-list > .equipped-item .equipment-depth { white-space: normal; font-size: calc(11px * var(--user-scale)); line-height: 1.65; overflow-wrap: anywhere; }
+  .game-shell:not(.fusion-mode) .equipment-depth > span { float: none; display: block; }
+  .game-shell:not(.fusion-mode) .section-label { white-space: normal; font-size: calc(14px * var(--user-scale)); gap: 6px; }
+  .game-shell:not(.fusion-mode) .section-label > span { font-size: calc(10px * var(--user-scale)); letter-spacing: .08em; }
+  .game-shell:not(.fusion-mode) .section-label::after { flex-shrink: 0; }
+  .game-shell:not(.fusion-mode) .exploration-stats { font-size: calc(13px * var(--user-scale)); }
+  .game-shell:not(.fusion-mode) .exploration-stats > div { min-width: 0; gap: 8px; }
+  .game-shell:not(.fusion-mode) .exploration-stats dd { overflow-wrap: anywhere; text-align: right; }
+  .game-shell:not(.fusion-mode) .character-stats, .game-shell:not(.fusion-mode) .dice-growth { margin: 0; padding-top: 12px; }
+  .game-shell:not(.fusion-mode) .character-stats dl { margin: 12px 0 0; }
+  .game-shell:not(.fusion-mode) .character-stats dd { overflow-wrap: anywhere; }
+  .game-shell:not(.fusion-mode) .mini-dice { justify-content: space-between; }
+  .game-shell:not(.fusion-mode) .mini-dice > span { min-width: 0; }
+  .game-shell:not(.fusion-mode) .rail-foot { font-size: calc(12px * var(--user-scale)); padding: 4px; overflow-wrap: anywhere; }
+  .game-shell:not(.fusion-mode) .rail-foot small { font-size: calc(10px * var(--user-scale)); letter-spacing: .08em; }
+  .game-shell:not(.fusion-mode) .bottomline { height: auto; min-height: 36px; margin: 12px 0 0; padding-block: 8px; flex-wrap: wrap; gap: 6px 12px; font-size: calc(11px * var(--user-scale)); overflow-wrap: anywhere; }
+
+  /* One shared action strip remains visible while reading any long panel. */
+  .game-shell:not(.fusion-mode) .control-strip {
+    position: fixed; z-index: 45; left: 12px; right: 12px; bottom: 8px;
+    display: grid; grid-template-columns: minmax(96px, 1fr) minmax(0, 1.65fr) minmax(88px, 1fr);
+    align-items: stretch; gap: 8px; margin: 0; padding: 8px 8px max(8px, env(safe-area-inset-bottom));
+    border: 1px solid #7c8d94; background: #070c10;
+  }
+  .game-shell:not(.fusion-mode) .main-nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px; }
+  .game-shell:not(.fusion-mode) .main-nav > button { min-width: 44px; min-height: 52px; padding: 5px 2px; font-size: calc(13px * var(--user-scale)); gap: 5px; }
+  .game-shell:not(.fusion-mode) .main-nav > button .icon { width: 18px; height: 18px; }
+  .game-shell:not(.fusion-mode) .main-nav i { font-size: calc(10px * var(--user-scale)); right: 3px; top: 2px; }
+  .game-shell:not(.fusion-mode) .primary-control { min-width: 0; padding: 0; display: flex; flex-direction: column; justify-content: center; }
+  .game-shell:not(.fusion-mode) .primary-control > .primary { min-height: 48px; height: auto; flex: 1; padding: 7px 5px; gap: 5px; font-size: calc(20px * var(--user-scale)); line-height: 1.35; letter-spacing: 0; }
+  .game-shell:not(.fusion-mode) .primary-control > .primary::before,
+  .game-shell:not(.fusion-mode) .primary-control > .primary::after { content: none; }
+  .game-shell:not(.fusion-mode) .primary-control .icon { width: 19px; height: 19px; }
+  .game-shell:not(.fusion-mode) .primary-control > small { position: static; margin-top: 4px; font-size: calc(11px * var(--user-scale)); line-height: 1.4; letter-spacing: 0; white-space: normal; }
+  .game-shell:not(.fusion-mode) .manual-control { display: flex; min-width: 0; gap: 4px; }
+  .game-shell:not(.fusion-mode) .manual-control button { min-height: 44px; height: auto; font-size: calc(13px * var(--user-scale)); padding: 6px 3px; gap: 4px; }
+  .game-shell:not(.fusion-mode) .manual-control .icon { width: 16px; height: 16px; }
+  .game-shell:not(.fusion-mode) .manual-control small { font-size: calc(10px * var(--user-scale)); line-height: 1.4; white-space: normal; }
+  .game-shell:not(.fusion-mode) .status-strip { padding: 12px; grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr) minmax(0, 1fr); gap: 12px; }
+  .game-shell:not(.fusion-mode) .player-level { min-width: 0; width: auto; padding: 0; gap: 4px 7px; }
+  .game-shell:not(.fusion-mode) .player-level > b { font-size: calc(20px * var(--user-scale)); overflow-wrap: anywhere; }
+  .game-shell:not(.fusion-mode) .player-level > span { font-size: calc(12px * var(--user-scale)); }
+  .game-shell:not(.fusion-mode) .player-level > small { font-size: calc(11px * var(--user-scale)); text-align: left; }
+  .game-shell:not(.fusion-mode) .player-health { min-width: 0; width: auto; padding: 0 12px; }
+  .game-shell:not(.fusion-mode) .player-health > div:first-child { flex-wrap: wrap; font-size: calc(12px * var(--user-scale)); }
+  .game-shell:not(.fusion-mode) .player-health b { font-size: calc(12px * var(--user-scale)); white-space: normal; overflow-wrap: anywhere; }
+  .game-shell:not(.fusion-mode) .player-health p { flex-wrap: wrap; font-size: calc(11px * var(--user-scale)); overflow-wrap: anywhere; }
+  .game-shell:not(.fusion-mode) .player-gold { padding: 0; min-width: 0; }
+  .game-shell:not(.fusion-mode) .player-gold > span { flex-wrap: wrap; font-size: calc(12px * var(--user-scale)); gap: 3px 6px; }
+  .game-shell:not(.fusion-mode) .player-gold strong { font-size: calc(18px * var(--user-scale)); overflow-wrap: anywhere; }
+  .game-shell:not(.fusion-mode) .player-gold > small { font-size: calc(11px * var(--user-scale)); overflow-wrap: anywhere; }
+
+  .game-shell:not(.fusion-mode) :is(button, select, input, summary) { scroll-margin-block: 12px calc(var(--narrow-controls-space) + env(safe-area-inset-bottom)); }
+  .game-shell:not(.fusion-mode) :is(button.small, .slot-tabs > button, .event-option, .shop-item > button, .supply-row button, .sanctuary-screen > .primary) { min-height: 44px; }
+  .game-shell:not(.fusion-mode) .room-screen { height: auto; min-height: 0; gap: 12px; padding: 4px 0 12px; }
+  .game-shell:not(.fusion-mode) .room-screen > h1 { font-size: calc(32px * var(--user-scale)); line-height: 1.4; overflow-wrap: anywhere; }
+  .game-shell:not(.fusion-mode) .room-screen > p { font-size: calc(14px * var(--user-scale)); line-height: 1.8; letter-spacing: 0; }
+  .game-shell:not(.fusion-mode) .room-screen .room-hint { margin-top: 10px; padding-top: 0; font-size: calc(12px * var(--user-scale)); }
+  .game-shell:not(.fusion-mode) .room-heading { min-width: 0; flex-wrap: wrap; gap: 10px; }
+  .game-shell:not(.fusion-mode) .room-heading > div:first-child { min-width: 0; max-width: none; flex: 1; }
+  .game-shell:not(.fusion-mode) .room-heading h1 { font-size: calc(28px * var(--user-scale)); }
+  .game-shell:not(.fusion-mode) .room-heading p { font-size: calc(13px * var(--user-scale)); line-height: 1.8; }
+  .game-shell:not(.fusion-mode) .room-balance { min-width: 0; }
+  .game-shell:not(.fusion-mode) .room-balance b { font-size: calc(18px * var(--user-scale)); overflow-wrap: anywhere; }
+  .game-shell:not(.fusion-mode) .collection-screen:not(.talent-screen) { height: auto; min-height: 0; padding: 4px 0; }
+  .game-shell:not(.fusion-mode) .collection-heading { min-width: 0; gap: 10px; flex-wrap: wrap; }
+  .game-shell:not(.fusion-mode) .collection-heading h1 { font-size: calc(28px * var(--user-scale)); }
+
+  /* Dice still share their original GPU/CSS renderer and animation clock. */
+  .game-shell:not(.fusion-mode) .fate-screen { min-height: 390px; justify-content: center; }
+  .game-shell:not(.fusion-mode) .fate-screen .dice-row { margin: 15px 0; }
+  .game-shell:not(.fusion-mode) .route-preview { width: 100%; gap: 6px; justify-content: space-between; }
+  .game-shell:not(.fusion-mode) .route-preview > span { min-width: 0; flex: 1; }
+  .game-shell:not(.fusion-mode) .route-preview small { font-size: calc(11px * var(--user-scale)); white-space: normal; overflow-wrap: anywhere; }
+  .game-shell:not(.fusion-mode) .combat-screen { height: auto; padding: 4px 0 0; }
+  .game-shell:not(.fusion-mode) .combat-screen h1 { margin: 12px 0 4px; font-size: calc(30px * var(--user-scale)); }
+  .game-shell:not(.fusion-mode) .enemy-note { font-size: calc(13px * var(--user-scale)); letter-spacing: 0; }
+  .game-shell:not(.fusion-mode) .enemy-heading { gap: 8px; flex-wrap: wrap; }
+  .game-shell:not(.fusion-mode) .enemy-type { font-size: calc(13px * var(--user-scale)); }
+  .game-shell:not(.fusion-mode) .enemy-round { font-size: calc(12px * var(--user-scale)); }
+  .game-shell:not(.fusion-mode) .enemy-health { margin-top: 16px; }
+  .game-shell:not(.fusion-mode) .health-track { min-height: 30px; }
+  .game-shell:not(.fusion-mode) .health-label { gap: 5px; font-size: calc(11px * var(--user-scale)); }
+  .game-shell:not(.fusion-mode) .health-label b { font-size: calc(13px * var(--user-scale)); overflow-wrap: anywhere; }
+  .game-shell:not(.fusion-mode) .shield-line { min-height: 26px; height: auto; font-size: calc(12px * var(--user-scale)); gap: 6px; flex-wrap: wrap; }
+  .game-shell:not(.fusion-mode) .enemy-trait { margin-top: 12px; }
+  .game-shell:not(.fusion-mode) .refined-intent .enemy-warning { max-width: none; min-width: 0; flex: 0 1 190px; font-size: calc(12px * var(--user-scale)); }
+  .game-shell:not(.fusion-mode) .enemy-mechanic .trait-tag { font-size: calc(12px * var(--user-scale)); }
+  .game-shell:not(.fusion-mode) .combat-rules { font-size: calc(12px * var(--user-scale)); margin-top: 10px; }
+  .game-shell:not(.fusion-mode) .combat-rules summary { min-height: 44px; padding-block: 9px; }
+  .game-shell:not(.fusion-mode) .combat-rules[open] { max-height: 220px; }
+  .game-shell:not(.fusion-mode) .combat-stage { container-type: normal; display: flex; flex: none; min-height: 230px; gap: 4px; padding-top: 12px; }
+  .game-shell:not(.fusion-mode) .combat-stage > .damage-result { flex: none; min-height: 90px; height: auto; margin: 0; padding: 8px 0; gap: 5px; }
+  .game-shell:not(.fusion-mode) .combat-stage > .damage-result:not(:has(.damage-number)) { min-height: 54px; }
+  .game-shell:not(.fusion-mode) .combat-stage .roll-caption { font-size: calc(18px * var(--user-scale)); }
+  .game-shell:not(.fusion-mode) .combat-stage .cube-row { margin: 4px 0; padding: 10px 14px; gap: 10px; }
+  .game-shell:not(.fusion-mode) .cube-row[data-count="1"] .cube-die { --size: min(96px, 26vw); }
+  .game-shell:not(.fusion-mode) .cube-row[data-count="2"] .cube-die { --size: min(112px, 24vw); }
+  .game-shell:not(.fusion-mode) .cube-row[data-count="3"] .cube-die { --size: min(96px, 20vw); }
+  .game-shell:not(.fusion-mode) .cube-row[data-count="4"] .cube-die { --size: min(84px, 16vw); }
+  .game-shell:not(.fusion-mode) .cube-row[data-count="5"] .cube-die { --size: min(76px, 12.5vw); }
+  .game-shell:not(.fusion-mode) .cube-row[data-count="6"] .cube-die { --size: min(70px, 10vw); }
+  .game-shell:not(.fusion-mode) .damage-number { min-width: 0; max-width: 100%; flex-wrap: wrap; gap: 8px; }
+  .game-shell:not(.fusion-mode) .damage-number > strong { font-size: clamp(calc(38px * var(--user-scale)), calc(8vw * var(--user-scale)), calc(70px * var(--user-scale))); overflow-wrap: anywhere; }
+  .game-shell:not(.fusion-mode) .crit-stamp { position: static; font-size: calc(23px * var(--user-scale)); }
+  .game-shell:not(.fusion-mode) .trigger-line { height: auto; min-height: 0; font-size: calc(13px * var(--user-scale)); line-height: 1.5; }
+  .game-shell:not(.fusion-mode) .trigger-line > span { white-space: normal; }
+  .game-shell:not(.fusion-mode) .hit-breakdown { flex-wrap: wrap; font-size: calc(12px * var(--user-scale)); }
+  .game-shell:not(.fusion-mode) .damage-result > p { font-size: calc(12px * var(--user-scale)); }
+  .game-shell:not(.fusion-mode) .roll-mechanics { max-height: none; overflow: visible; flex-wrap: wrap; font-size: calc(12px * var(--user-scale)); }
+
+  .game-shell:not(.fusion-mode) .inventory-list { min-height: 200px; max-height: min(64svh, 780px); flex: 0 1 auto; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .game-shell:not(.fusion-mode) .inventory-list .item-card { min-width: 0; padding: 14px; }
+  .game-shell:not(.fusion-mode) .inventory-list .item-card h3 { font-size: calc(18px * var(--user-scale)); overflow-wrap: anywhere; }
+  .game-shell:not(.fusion-mode) .inventory-list .refined-item > p { font-size: calc(13px * var(--user-scale)); line-height: 1.8; }
+  .game-shell:not(.fusion-mode) .item-meta { min-width: 0; flex-wrap: wrap; font-size: calc(12px * var(--user-scale)); }
+  .game-shell:not(.fusion-mode) .item-bottom { flex-wrap: wrap; }
+  .game-shell:not(.fusion-mode) .item-actions { flex-wrap: wrap; gap: 6px; }
+  .game-shell:not(.fusion-mode) .item-actions > button { font-size: calc(13px * var(--user-scale)); }
+  .game-shell:not(.fusion-mode) .item-level-line { flex-wrap: wrap; gap: 4px 8px; }
+  .game-shell:not(.fusion-mode) .item-level-line > span { font-size: calc(12px * var(--user-scale)); overflow-wrap: anywhere; }
+  .game-shell:not(.fusion-mode) .item-comparison dl { grid-template-columns: minmax(0, 1fr); }
+  .game-shell:not(.fusion-mode) .item-comparison dl > div { font-size: calc(12px * var(--user-scale)); flex-wrap: wrap; }
+  .game-shell:not(.fusion-mode) .item-comparison dd { white-space: normal; overflow-wrap: anywhere; }
+  .game-shell:not(.fusion-mode) .item-comparison > small { font-size: calc(12px * var(--user-scale)); }
+  .game-shell:not(.fusion-mode) .inventory-reclaim { flex-wrap: wrap; gap: 10px; padding-block: 12px; }
+  .game-shell:not(.fusion-mode) .inventory-reclaim > span { font-size: calc(12px * var(--user-scale)); }
+  .game-shell:not(.fusion-mode) .inventory-reclaim button { font-size: calc(13px * var(--user-scale)); white-space: normal; }
+  .game-shell:not(.fusion-mode) .inventory-guidance p { font-size: calc(13px * var(--user-scale)); }
+  .game-shell:not(.fusion-mode) .inventory-guidance > span { font-size: calc(12px * var(--user-scale)); }
+  .game-shell:not(.fusion-mode) .inventory-pagination { flex-wrap: wrap; gap: 8px; padding-top: 12px; }
+  .game-shell:not(.fusion-mode) .inventory-pagination :is(span, .small) { font-size: calc(12px * var(--user-scale)); }
+  .game-shell:not(.fusion-mode) .inventory-lock-note { font-size: calc(12px * var(--user-scale)); }
+  .game-shell:not(.fusion-mode) .v5-inventory-filters { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; font-size: calc(13px * var(--user-scale)); }
+  .game-shell:not(.fusion-mode) .v5-inventory-filters > label { display: grid; min-width: 0; gap: 5px; }
+  .game-shell:not(.fusion-mode) .v5-inventory-filters select { width: 100%; min-width: 0; min-height: 44px; }
+  .game-shell:not(.fusion-mode) .v5-inventory-filters > span { grid-column: 1 / -1; margin: 0; font-size: calc(12px * var(--user-scale)); }
+
+  .game-shell:not(.fusion-mode) .merchant-screen .shop-grid { flex: none; max-height: none; }
+  .game-shell:not(.fusion-mode) .merchant-screen .shop-item { display: flex; padding: 14px; overflow: visible; }
+  .game-shell:not(.fusion-mode) .merchant-screen .shop-item > h3 { font-size: calc(18px * var(--user-scale)); }
+  .game-shell:not(.fusion-mode) .merchant-screen .shop-effects { font-size: calc(13px * var(--user-scale)); line-height: 1.75; }
+  .game-shell:not(.fusion-mode) .merchant-screen .shop-item > button { min-height: 44px; font-size: calc(13px * var(--user-scale)); flex-wrap: wrap; }
+  .game-shell:not(.fusion-mode) .supply-row { flex-wrap: wrap; gap: 10px; }
+  .game-shell:not(.fusion-mode) .supply-row button { min-height: 44px; }
+  .game-shell:not(.fusion-mode) .event-screen { overflow: visible; }
+  .game-shell:not(.fusion-mode) .event-luck { font-size: calc(12px * var(--user-scale)); }
+  .game-shell:not(.fusion-mode) .event-luck small { font-size: calc(11px * var(--user-scale)); }
+  .game-shell:not(.fusion-mode) .event-atmosphere { flex: none; height: 110px; min-height: 0; }
+  .game-shell:not(.fusion-mode) .event-option { padding: 14px; gap: 10px; }
+  .game-shell:not(.fusion-mode) .event-option-title { flex-wrap: wrap; }
+  .game-shell:not(.fusion-mode) .event-option-title strong { font-size: calc(18px * var(--user-scale)); }
+  .game-shell:not(.fusion-mode) .event-option-title small { font-size: calc(11px * var(--user-scale)); }
+  .game-shell:not(.fusion-mode) .event-option-detail,
+  .game-shell:not(.fusion-mode) .event-terms b { font-size: calc(13px * var(--user-scale)); }
+  .game-shell:not(.fusion-mode) .event-terms > small,
+  .game-shell:not(.fusion-mode) .event-option-reason,
+  .game-shell:not(.fusion-mode) .event-option-choose { font-size: calc(12px * var(--user-scale)); }
+  .game-shell:not(.fusion-mode) .event-outcome { flex: none; min-height: 220px; }
+  .game-shell:not(.fusion-mode) .event-outcome > p { font-size: calc(14px * var(--user-scale)); overflow-wrap: anywhere; }
+  .game-shell:not(.fusion-mode) .auction-preview { overflow-wrap: anywhere; }
+  .game-shell:not(.fusion-mode) .sanctuary-emblem { flex: none; height: 200px; }
+  .game-shell:not(.fusion-mode) .sanctuary-benefits { min-width: 0; gap: 16px; flex-wrap: wrap; }
+  .game-shell:not(.fusion-mode) .sanctuary-benefits > div { min-width: 0; }
+  .game-shell:not(.fusion-mode) .sanctuary-benefits dd { white-space: normal; overflow-wrap: anywhere; font-size: calc(17px * var(--user-scale)); }
+  .game-shell:not(.fusion-mode) .sanctuary-screen > .primary { min-width: 0; max-width: 100%; width: 100%; }
+  .game-shell:not(.fusion-mode) .chest-caption { max-width: 100%; padding: 14px; }
+  .game-shell:not(.fusion-mode) .chest-art { width: min(100%, 410px); margin-top: 24px; }
+  .game-shell:not(.fusion-mode)[data-scene="loot"] .loot-reveal { width: 100%; flex: none; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); }
+  .game-shell:not(.fusion-mode)[data-scene="loot"] .loot-reveal .item-card { min-width: 0; padding: 14px; }
+  .game-shell:not(.fusion-mode)[data-scene="loot"] .loot-reveal .refined-item > h3 { font-size: calc(22px * var(--user-scale)); overflow-wrap: anywhere; }
+  .game-shell:not(.fusion-mode)[data-scene="loot"] .loot-reveal .refined-item > p { grid-template-columns: minmax(0, 1fr); font-size: calc(13px * var(--user-scale)); line-height: 1.8; }
+  .game-shell:not(.fusion-mode)[data-scene="loot"] .drop-banner { position: static; align-self: flex-end; max-width: 100%; font-size: calc(14px * var(--user-scale)); }
+  .game-shell:not(.fusion-mode)[data-scene="loot"] .reward-theatre { height: 190px; }
+  .game-shell:not(.fusion-mode)[data-scene="loot"] .reward-theatre .chest-art { width: 80%; }
+  .game-shell:not(.fusion-mode)[data-scene="loot"] .treasure-title h2 { font-size: calc(27px * var(--user-scale)); overflow-wrap: anywhere; }
+  .game-shell:not(.fusion-mode) .codex-rarities { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .game-shell:not(.fusion-mode) .codex-rarities > div { border-bottom: 1px solid #303f47; }
+  .game-shell:not(.fusion-mode) .codex-rarities b { font-size: calc(16px * var(--user-scale)); }
+  .game-shell:not(.fusion-mode) .codex-rarities small { font-size: calc(11px * var(--user-scale)); white-space: normal; text-align: center; }
+  .game-shell:not(.fusion-mode) .codex-odds { font-size: calc(13px * var(--user-scale)); }
+  .game-shell:not(.fusion-mode) .codex-screen select { min-height: 44px; font-size: calc(13px * var(--user-scale)); }
+  .game-shell:not(.fusion-mode) .codex-room-list article > div { flex-wrap: wrap; gap: 5px 12px; }
+  .game-shell:not(.fusion-mode) .codex-room-list strong { font-size: calc(15px * var(--user-scale)); }
+  .game-shell:not(.fusion-mode) .codex-room-list p { font-size: calc(13px * var(--user-scale)); }
+  .game-shell:not(.fusion-mode) .codex-room-list :is(span, small) { font-size: calc(12px * var(--user-scale)); }
+  .game-shell:not(.fusion-mode) .codex-caps summary { min-height: 44px; padding-block: 10px; }
+
+  /* Native dialogs remain in the top layer; long amounts and names wrap. */
+  .game-dialog { width: min(620px, calc(100vw - 24px)); max-width: calc(100vw - 24px); max-height: calc(100svh - 24px); padding: 20px; overflow-wrap: anywhere; }
+  .game-dialog .dialog-heading { align-items: flex-start; gap: 10px; }
+  .game-dialog .dialog-heading h2 { font-size: calc(23px * var(--user-scale)); }
+  .game-dialog .dialog-heading > button { min-width: 44px; min-height: 44px; }
+  .game-dialog .setting-row { gap: 12px; }
+  .game-dialog .setting-row > div { min-width: 0; }
+  .game-dialog .setting-row b { font-size: calc(14px * var(--user-scale)); }
+  .game-dialog .setting-row p, .game-dialog .save-management p { font-size: calc(12px * var(--user-scale)); }
+  .game-dialog .setting-row select { min-width: 88px; min-height: 44px; font-size: calc(14px * var(--user-scale)); }
+  .game-dialog .switch { min-width: 58px; min-height: 44px; padding: 7px; }
+  .game-dialog .switch > span { width: 18px; height: 18px; }
+  .game-dialog .save-management > div { flex-wrap: wrap; }
+  .game-dialog .save-management button { min-height: 44px; font-size: calc(13px * var(--user-scale)); }
+  .game-dialog .danger-zone { flex-wrap: wrap; gap: 8px; font-size: calc(12px * var(--user-scale)); }
+  .game-dialog .danger-zone button { min-height: 44px; font-size: calc(13px * var(--user-scale)); }
+  .game-dialog .confirmation-copy { font-size: calc(14px * var(--user-scale)); margin-block: 16px 22px; }
+  .game-dialog .dialog-buttons { flex-wrap: wrap; }
+  .game-dialog .dialog-buttons > button { flex: 1; min-height: 44px; font-size: calc(14px * var(--user-scale)); }
+  .game-dialog .salvage-list { font-size: calc(13px * var(--user-scale)); line-height: 1.8; }
+  .game-dialog .review-pagination { flex-wrap: wrap; gap: 8px; }
+  .game-dialog .review-pagination button { min-height: 44px; font-size: calc(13px * var(--user-scale)); }
+  .game-dialog .item-comparison dd { white-space: normal; overflow-wrap: anywhere; }
+  .toast { width: max-content; max-width: calc(100vw - 28px); bottom: 128px; font-size: calc(13px * var(--user-scale)); overflow-wrap: anywhere; }
+}
+
+@media (max-width: 699px) {
+  .title-screen { grid-template-columns: minmax(0, 1fr); padding: 24px 18px; gap: 16px; }
+  .title-copy h1 { font-size: clamp(calc(29px * var(--user-scale)), calc(8vw * var(--user-scale)), calc(42px * var(--user-scale))); }
+  .title-copy > p { margin-top: 16px; }
+  .title-art .cube-die { --size: min(190px, 46vw) !important; }
+  .title-art .title-orbit { width: min(260px, 66vw); height: min(260px, 66vw); }
+  .title-art .dice-row { padding-block: 20px; }
+  .title-art .art-caption { margin-top: 0; font-size: calc(10px * var(--user-scale)); }
+  .game-shell:not(.fusion-mode) .game-layout { grid-template-columns: minmax(0, 1fr); }
+  .game-shell:not(.fusion-mode) .left-rail { grid-column: 1; grid-row: 3; }
+  .game-shell:not(.fusion-mode) .right-rail { grid-column: 1; grid-row: 4; }
+  .game-shell:not(.fusion-mode) .inventory-list,
+  .game-shell:not(.fusion-mode) .merchant-screen .shop-grid,
+  .game-shell:not(.fusion-mode) .event-options,
+  .game-shell:not(.fusion-mode) .event-options[data-options="3"],
+  .game-shell:not(.fusion-mode)[data-scene="loot"] .loot-reveal { grid-template-columns: minmax(0, 1fr); }
+  .game-shell:not(.fusion-mode) .event-options { gap: 12px; }
+  .game-shell:not(.fusion-mode) .enemy-trait.refined-intent { flex-direction: column; gap: 8px; }
+  .game-shell:not(.fusion-mode) .refined-intent .enemy-warning { flex: none; width: 100%; }
+  .game-shell:not(.fusion-mode) .refined-intent .enemy-warning > span { display: flex; align-items: baseline; flex-wrap: wrap; gap: 3px 10px; }
+  .game-shell:not(.fusion-mode) .refined-intent .enemy-warning > span > small { width: 100%; font-size: calc(12px * var(--user-scale)); }
+  .game-shell:not(.fusion-mode) .status-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .game-shell:not(.fusion-mode) .player-health { grid-column: 1 / -1; grid-row: 1; border: 0; border-bottom: 1px solid #4a5055; padding: 0 0 10px; }
+  .game-shell:not(.fusion-mode) .player-level { grid-column: 1; grid-row: 2; }
+  .game-shell:not(.fusion-mode) .player-gold { grid-column: 2; grid-row: 2; border-left: 1px solid #4a5055; padding-left: 10px; }
+  .game-shell:not(.fusion-mode) .codex-odds > p { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .game-shell:not(.fusion-mode) .sanctuary-benefits { flex-direction: column; text-align: left; }
+  .game-dialog { padding: 16px; }
+}
+
+@media (max-width: 599px) {
+  #app > .topbar, .game-shell:not(.fusion-mode) > .topbar { gap: 6px 8px; }
+  :is(#app > .topbar, .game-shell:not(.fusion-mode) > .topbar) .brand .brand-sub { display: none; }
+  :is(#app > .topbar, .game-shell:not(.fusion-mode) > .topbar) .brand > span { font-size: calc(23px * var(--user-scale)); }
+  :is(#app > .topbar, .game-shell:not(.fusion-mode) > .topbar) .brand > small { font-size: calc(7px * var(--user-scale)); letter-spacing: 0; }
+  :is(#app > .topbar, .game-shell:not(.fusion-mode) > .topbar) .header-actions { gap: 3px; }
+  :is(#app > .topbar, .game-shell:not(.fusion-mode) > .topbar) .header-actions button { font-size: calc(12px * var(--user-scale)); padding: 6px; gap: 4px; }
+  .game-shell:not(.fusion-mode) > .topbar .location { flex-basis: 100%; order: 3; padding: 6px 2px 0; border-top: 1px solid #35434b; }
+  .game-shell:not(.fusion-mode) .center-panel { padding: 14px 12px; }
+  .game-shell:not(.fusion-mode) .control-strip { left: 7px; right: 7px; bottom: 6px; gap: 6px; padding-inline: 6px; grid-template-columns: 92px minmax(0, 1fr) 80px; }
+  .game-shell:not(.fusion-mode) .primary-control > .primary { font-size: calc(16px * var(--user-scale)); }
+  .game-shell:not(.fusion-mode) .manual-control button { font-size: calc(12px * var(--user-scale)); }
+  .game-shell:not(.fusion-mode) .slot-tabs { gap: 0; flex-wrap: wrap; }
+  .game-shell:not(.fusion-mode) .slot-tabs > button { flex: 1; min-width: 0; padding: 9px 3px; font-size: calc(13px * var(--user-scale)); gap: 3px; }
+  .game-shell:not(.fusion-mode) .slot-tabs small { margin-left: 2px; font-size: calc(11px * var(--user-scale)); }
+  .game-shell:not(.fusion-mode) .inventory-reclaim > button { width: 100%; }
+  .game-shell:not(.fusion-mode) .event-luck { max-width: 82px; }
+  .game-shell:not(.fusion-mode) .event-luck b { font-size: calc(23px * var(--user-scale)); }
+  .game-shell:not(.fusion-mode) .room-heading h1 { font-size: calc(25px * var(--user-scale)); }
+  .game-shell:not(.fusion-mode) .room-use-state { white-space: normal; font-size: calc(12px * var(--user-scale)); }
+  .game-shell:not(.fusion-mode) .health-label > span:last-child { font-size: calc(10px * var(--user-scale)); }
+  .game-shell:not(.fusion-mode) .inventory-pagination > div { width: 100%; justify-content: space-between; gap: 6px; }
+  .game-shell:not(.fusion-mode) .gold-hoard { max-width: 100%; gap: 10px; }
+  .game-shell:not(.fusion-mode) .gold-hoard > strong { font-size: clamp(calc(24px * var(--user-scale)), calc(7vw * var(--user-scale)), calc(38px * var(--user-scale))); overflow-wrap: anywhere; }
+}
+
+@media (max-width: 359px) {
+  .game-shell:not(.fusion-mode) { padding-inline: 8px; }
+  .game-shell:not(.fusion-mode) .control-strip { grid-template-columns: 88px minmax(0, 1fr) 64px; gap: 4px; }
+  .game-shell:not(.fusion-mode) .manual-control button .icon { display: none; }
+  .game-shell:not(.fusion-mode) .primary-control > .primary { font-size: calc(14px * var(--user-scale)); gap: 3px; }
+  .game-shell:not(.fusion-mode) .primary-control .icon { width: 16px; height: 16px; }
+}
+/* Legal imported names can outgrow an equal-height desktop equipment row.
+   Keep each card's full contents together and scroll the existing rail. */
+@media (min-width: 1100px) {
+  .game-shell:not(.fusion-mode) .right-rail > .equipment-list {
+    grid-template-rows: repeat(5, minmax(min-content, 1fr));
+    overflow-y: auto;
+  }
+  .game-shell:not(.fusion-mode) .equipment-list > .equipped-item { min-width: 0; }
+  .game-shell:not(.fusion-mode) .equipment-list > .equipped-item h3 { overflow-wrap: anywhere; }
+}

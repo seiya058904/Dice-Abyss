@@ -1,0 +1,141 @@
+{
+  "kind": "Independent review of another author's memorywell preview",
+  "createdAt": "2026-10-18T05:15:22.339Z",
+  "sourceHashes": {
+    "src/engine.js": "1a86861156f2d64cd95636c05ea29703c94c8371640d12372ae7644f948d0fd2",
+    "src/views.js": "17b75b223889c91789ba6c158a298db9bf9a54bfba95c224cc5a6fb3d3911ebb",
+    "src/deep.css": "041f336a77ac9484307e28d1df7cf55980846a6af78f6cddbca8577b3147df98",
+    "src/deep-rules.js": "6919b66ec8fbadea293ab4c4e3aa0b8c7a943e2ec44224b119287709d484581f",
+    "tests/memorywell-preview.test.mjs": "e535767c48bea57c33d78dfb9967756a57b20bf72448cc338ebd58827058d791"
+  },
+  "sourceStable": true,
+  "matrixCases": 443,
+  "allAuthoritativeTransitionsEqualBaseline": true,
+  "allAcceptedPreviewsEqualActualReset": true,
+  "allDisabledResetsAtomic": true,
+  "exactStoredCost": true,
+  "refundCapAuthority": "Existing deepEventChoices; cap 2000000 inclusive",
+  "wardAndItemsAndUnknownFieldsPreserved": true,
+  "frozenPreviewAndNoMathRandom": true,
+  "allRngPreserved": true,
+  "allResolvedHistoryPreserved": true,
+  "rowsSha256": "c05ac33cf1abce6e10465a2cd91b0cd22f09c9f1ac63dd416cd359cc69ef556f",
+  "samples": [
+    {
+      "label": "point-cap-exact",
+      "canReset": true,
+      "before": {
+        "hp": 605,
+        "maxHp": 605,
+        "gold": 10000000000,
+        "talentPoints": 1999992
+      },
+      "after": {
+        "hp": 484,
+        "maxHp": 484,
+        "gold": 9999999690,
+        "talentPoints": 2000000
+      },
+      "hpLost": 121,
+      "refundPoints": 8,
+      "costGold": 310,
+      "afterStateSha256": "7e6df3ab36174a15bb57603e84a10eec88ac426a4b960676e1c3b9f81ce71946"
+    },
+    {
+      "label": "point-cap-over",
+      "canReset": false,
+      "before": {
+        "hp": 605,
+        "maxHp": 605,
+        "gold": 10000000000,
+        "talentPoints": 2000000
+      },
+      "after": {
+        "hp": 484,
+        "maxHp": 484,
+        "gold": null,
+        "talentPoints": 2000008
+      },
+      "hpLost": 121,
+      "refundPoints": 8,
+      "costGold": 310,
+      "afterStateSha256": "526b357754a1b23b9b89ec84722b2e85ba8d72247eb8eb4fa6d9affc7fb7a8f0"
+    },
+    {
+      "label": "no-investment",
+      "canReset": false,
+      "before": {
+        "hp": 484,
+        "maxHp": 484,
+        "gold": 10000000000,
+        "talentPoints": 7
+      },
+      "after": {
+        "hp": 484,
+        "maxHp": 484,
+        "gold": null,
+        "talentPoints": 7
+      },
+      "hpLost": 0,
+      "refundPoints": 0,
+      "costGold": 310,
+      "afterStateSha256": "31aae95c87f53d49d4b3572cce18adfb904adaa6ea3539bb5d34299336c83b78"
+    },
+    {
+      "label": "gold-one-short",
+      "canReset": false,
+      "before": {
+        "hp": 605,
+        "maxHp": 605,
+        "gold": 309,
+        "talentPoints": 7
+      },
+      "after": {
+        "hp": 484,
+        "maxHp": 484,
+        "gold": null,
+        "talentPoints": 15
+      },
+      "hpLost": 121,
+      "refundPoints": 8,
+      "costGold": 310,
+      "afterStateSha256": "242ff6aeb6ba7443d438cd65c5bdae3c4bea02042af840ce5d6a61e4991bd567"
+    },
+    {
+      "label": "gold-exact",
+      "canReset": true,
+      "before": {
+        "hp": 605,
+        "maxHp": 605,
+        "gold": 310,
+        "talentPoints": 7
+      },
+      "after": {
+        "hp": 484,
+        "maxHp": 484,
+        "gold": 0,
+        "talentPoints": 15
+      },
+      "hpLost": 121,
+      "refundPoints": 8,
+      "costGold": 310,
+      "afterStateSha256": "34ad0047c87cb5962b2c65904b7123954e7f25dcaf793547ff32f8b9bd9fa70d"
+    }
+  ],
+  "disabledUiObservation": {
+    "canReset": false,
+    "renderedHypotheticalRefundTotal": 2000008,
+    "pointCap": 2000000,
+    "showsGreenAfterRefund": false,
+    "afterLabelStillSaysResetAfter": false,
+    "goldAfterNull": true,
+    "explicitUnavailableNotice": true,
+    "status": "FIXED_VERIFIED",
+    "allDisabledRowsExplicitlyTheoreticalAndNeutral": true,
+    "note": "The original P3 presentation ambiguity is fixed: disabled offers retain hypothetical comparison numbers with neutral styling, explicit theoretical labels and an unavailable notice. No disabled action commits."
+  },
+  "limits": [
+    "No browser geometry, live dialog, physical input, read-screen or GPU claim.",
+    "Matrix is constructed valid save states, not natural player encounter frequency."
+  ]
+}

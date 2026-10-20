@@ -1,0 +1,22 @@
+{
+  "label": "baseline",
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+    "/workspace/scratch/85c02edcd5e2/qa/current/bandit-hash-witnesses/baseline/prefix-policy.mjs",
+    "--source",
+    "/workspace/scratch/85c02edcd5e2/baseline/Dice-Abyss",
+    "--output",
+    "/workspace/scratch/85c02edcd5e2/qa/current/bandit-hash-witnesses/baseline/report.json"
+  ],
+  "started": "2026-10-19T13:07:12.170Z",
+  "finished": "2026-10-19T13:07:16.899Z",
+  "durationSeconds": 4.727710954,
+  "exitCode": 0,
+  "signal": null,
+  "error": "spawnSync /opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node EPERM",
+  "originalPolicySha256": "3f1dcc1c3307953bdeaed3650139a582256764142c20630eacc7b756d4e2163b",
+  "executedAdaptedScriptSha256": "dbe528363b25ce4d6ed5413eaca8733cf08c90913fac521ef0b992ea20c938ce",
+  "formalHorizon": 400,
+  "prefixHorizon": 32,
+  "method": "Original natural action policy; short prefix and read-only capture only. Raw formal400 report remains unchanged."
+}

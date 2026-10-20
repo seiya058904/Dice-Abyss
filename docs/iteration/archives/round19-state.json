@@ -1,0 +1,315 @@
+{
+  "project": "Dice Abyss",
+  "round": 19,
+  "date": "2026-10-19",
+  "timeZone": "UTC",
+  "inputVersion": "5.18.0",
+  "outputVersion": "5.19.0",
+  "saveSchemaVersion": 5,
+  "inputZipName": "Dice-Abyss-v5.18.0-cloud-round-18(1).zip",
+  "inputZipSha256": "939b8cb00f6c43f654b59ba0773389ac0e33ca0e18ebb1bddca77546e6df153b",
+  "inputZipBytes": 29106186,
+  "baselineIdentity": {
+    "files": 2365,
+    "expandedBytes": 83927139,
+    "manifestEntries": 2364,
+    "integrity": "Actual uploaded ZIP safe paths, CRC, full non-self manifest and immutable baseline byte comparison passed"
+  },
+  "previousRound": {
+    "round": 18,
+    "state": "docs/iteration/archives/round18-state.json",
+    "report": "docs/iteration/archives/round18-report.md",
+    "manifest": "docs/iteration/archives/round18-manifest.json"
+  },
+  "releaseStatus": "SOURCE_VALIDATED_WITH_DOCUMENTED_LIMITATIONS",
+  "sourceHandoffReady": true,
+  "mainChanges": [
+    "Explicit read-only inventory filters for actual survival recovery, opening ward and base reduction; intersects existing name, slot and rarity filters and keeps existing sorting/comparison.",
+    "Successful journey replacement clears stale exclusion filters; cancellation, primary save failure and same-run updates preserve current context.",
+    "Committed filter/clear/sort actions announce the current result; draft typing remains quiet and does not save.",
+    "Desktop equipped cards grow to fit complete legal long names and effects, with scrolling inside the existing rail.",
+    "Repair inherited optional fusion QA selectors and multi-page failure screenshot overwrite, preserving and strengthening transaction assertions."
+  ],
+  "changedRuntimeFiles": [
+    "index.html",
+    "package.json",
+    "src/app.js",
+    "src/inventory-query.js",
+    "src/inventory-search.css",
+    "src/release.js",
+    "src/responsive.css",
+    "src/views.js"
+  ],
+  "newRuntimeFiles": [],
+  "runtimeScopeGrowthBytes": 4399,
+  "regressionGuards": [
+    "All77 original test modules,2 canonical fixtures,8 font/license files and inherited media byte-identical.",
+    "Schema5, save keys, old IDs, unknown fields, V1-V4 migration, complete expected snapshots, Web Locks and save-before-presentation unchanged.",
+    "Six rooms, maximum six manually rolled dice, one currency, five equipment slots, eight rarity gates and Lv/XP/+N separation unchanged.",
+    "Engine, equipment, content, RNG, storage, renderer, effects, fusion and comparison logic unchanged; filtering does not change whole-bag safe salvage scope."
+  ],
+  "sourceFreeze": {
+    "files": 269,
+    "sha256": "972a93e88eaf02080321f6739f81ffd86c7ea0733796912846240e32db9aafca",
+    "scope": "index.html, package.json, complete src/scripts/tests trees; excludes documentation and evidence",
+    "gateExtendedScopeFiles": 271,
+    "extraGateScope": [
+      "favicon.svg",
+      "启动游戏.cmd"
+    ],
+    "unchangedDuringGates": true
+  },
+  "verification": {
+    "syntax": {
+      "baseline": "PASS",
+      "current": "PASS",
+      "baselineSeconds": 8.5263,
+      "currentSeconds": 4.4404
+    },
+    "defaultTestModules": {
+      "baseline": 77,
+      "current": 80,
+      "pass": 80,
+      "fail": 0,
+      "skipped": 0,
+      "currentSeconds": 96.3644
+    },
+    "nativeTestCases": {
+      "baseline": 713,
+      "current": 745,
+      "tests": 745,
+      "suites": 0,
+      "pass": 745,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0,
+      "newModules": 3,
+      "newCases": 32,
+      "currentSeconds": 83.6577,
+      "independentRawTapCountersAndStdoutShaVerified": true
+    },
+    "newTestBaseline": {
+      "pass": 11,
+      "fail": 21,
+      "existingDefectFailures": 9,
+      "newCapabilityFailures": 12,
+      "currentPass": 32
+    },
+    "simulation": {
+      "standardSeedsPerVersion": 1000,
+      "noShoppingSeedsPerVersion": 50,
+      "defaultFloors": 10,
+      "bothActuallyRunThisRound": true,
+      "allComplete": true,
+      "byteIdenticalToFreshBaseline": true,
+      "resultBytes": 9409,
+      "resultSha256": "266fa5b56516410712395796f197a2e33ad1b1e16ede45de14b872f208007d77",
+      "baselineSeconds": 245.3276,
+      "currentSeconds": 233.8018
+    },
+    "natural": {
+      "policy": "death-recovery-armor-v2",
+      "seeds": [
+        7919,
+        15838,
+        23757,
+        31676
+      ],
+      "floorsPerJourney": 400,
+      "currentActuallyRun": true,
+      "currentCompleteJourneys": 4,
+      "currentRolls": 21596,
+      "currentDeaths": 2,
+      "currentDefenseSwaps": 2,
+      "spending": 0,
+      "currentSeconds": 492.5872,
+      "reference": "Inherited round18 v5.18 formal output; not a fresh deep baseline executed in round19",
+      "fullRecordedJourneysEqual": true,
+      "completeDecodedSnapshotPairs": 7,
+      "snapshotNormalization": "Only top-level runId",
+      "unchangedDependencyFiles": 18,
+      "originalPowerPolicyFailurePreserved": true,
+      "scope": "Fixed offline regression; not human win rate, independent new seeds or a balance improvement claim"
+    },
+    "http": {
+      "baselineResources": 62,
+      "currentResources": 62,
+      "allByteEqual": true,
+      "currentSeconds": 2.1654
+    },
+    "fonts": {
+      "han": 1055,
+      "cjkPunctuation": 21,
+      "missing": 0,
+      "preservedFiles": 8,
+      "historicalRepairEvidence": "NOT_AVAILABLE"
+    },
+    "browser": {
+      "browser": "155.0.8059.84",
+      "route": "Environment-local isolated Playwright; preferred connected browser could not reach loopback and external cloud browser was rejected by automatic approval",
+      "baselineCore": {
+        "groups": 6,
+        "checks": 43
+      },
+      "currentCore": {
+        "groups": 6,
+        "checks": 43
+      },
+      "inputDiscoveryObservation": {
+        "groups": 1,
+        "checks": 37
+      },
+      "newFinal": {
+        "groups": 4,
+        "checks": 851,
+        "groupChecks": [
+          89,
+          54,
+          79,
+          629
+        ],
+        "sourceStable": true
+      },
+      "currentExistingInteractions": {
+        "groups": 9,
+        "recordedCheckpoints": 66,
+        "initialGroupsPassed": 7,
+        "initialCheckpoints": 52,
+        "initialHarnessFailures": 2,
+        "repairedRetryGroups": 2,
+        "repairedRetryCheckpoints": 14
+      },
+      "inputRepairedFusionRetry": {
+        "groups": 2,
+        "recordedCheckpoints": 14
+      },
+      "logicalViewports": [
+        [
+          1366,
+          768
+        ],
+        [
+          1920,
+          1080
+        ],
+        [
+          2560,
+          1440
+        ],
+        [
+          3840,
+          2160
+        ],
+        [
+          390,
+          844
+        ],
+        [
+          320,
+          740
+        ]
+      ],
+      "nameModes": [
+        "64 CJK characters",
+        "64 unbroken ASCII W characters"
+      ],
+      "countUnitsNotSummed": true,
+      "runtimeErrors": 0
+    },
+    "performance": {
+      "status": "MEASURED_WITH_LIMITATIONS",
+      "renderer": "ANGLE Vulkan SwiftShader software",
+      "formalInventoryRows": 24,
+      "inventoryMeasuredAction": "Native main-nav inventory opening with no defense filter selected.",
+      "defenseFilterSubmissionTiming": "NOT_MEASURED for submitting regen/barrier/reduction against 10000 items; correctness coverage is separate.",
+      "excludedWarmups": 2,
+      "mainWindows": 16,
+      "rarityCoverageWindows": 14,
+      "repeatsPerMainCell": 1,
+      "targetWindowMs": 4200,
+      "deadlineMs": 30000,
+      "deadlineScope": "measuredResult wait after the trusted native click call resolves; not an end-to-end capture deadline",
+      "deadlineTriggered": false,
+      "fullWindowsWithoutExpectedEffectMarker": 2,
+      "unobservedExpectedEffectMarkerByVersion": {
+        "baseline": 0,
+        "current": 2
+      },
+      "effectObservationDefinition": "For full mode, effectObserved means an rAF sample saw the expected .scene-fx combat or loot-<rarity> marker at least once; it does not establish all stages or continuous complete playback.",
+      "lowEffectObservationMeaning": "Low mode does not require those markers; effectObserved=true is not evidence that a full-effect marker appeared.",
+      "inventoryP50Ms": [
+        137.1,
+        224.0
+      ],
+      "inventoryP95Ms": [
+        471.2,
+        447.1
+      ],
+      "inventoryMaxMs": [
+        1744.9,
+        561.5
+      ],
+      "mainMaxRafMs": [
+        11546.1,
+        10096.0
+      ],
+      "sourceStable": true,
+      "rawFrameIntervalsRetained": false,
+      "claims": "Mixed and negative results retained. No universal speed-up, FPS improvement or physical GPU/4K certification."
+    }
+  },
+  "issuesClosed": [
+    "R19-DISCOVERY IMPROVED_MEASURED",
+    "R19-RUN-FILTER FIXED_VERIFIED",
+    "R19-ANNOUNCE FIXED_VERIFIED",
+    "R19-RAIL-NAME FIXED_VERIFIED",
+    "R19-QA-FUSION FIXED_VERIFIED (test driver only)"
+  ],
+  "openRisks": [
+    {
+      "priority": "P2",
+      "id": "SAVE-SYNC-TAIL",
+      "description": "Large complete synchronous save validation/encoding/dual-write tail remains."
+    },
+    {
+      "priority": "P2",
+      "id": "SOFTWARE-4K-TAIL",
+      "description": "Software long frames; current default inventory-opening p50 and some full cells are worse; two current 4K full windows did not observe the expected effect marker."
+    },
+    {
+      "priority": "P3",
+      "id": "BUDGET-POLICIES",
+      "description": "Original failed power policy retained; no preregistered paid-budget comparison yet."
+    }
+  ],
+  "notTested": [
+    "Physical GPU/4K display/mobile",
+    "OS Chinese IME",
+    "External screen reader/audio listening",
+    "Native Windows launcher",
+    "Actual OS sleep/background/power failure"
+  ],
+  "artifactBudget": {
+    "hardZipLimitBytesExclusive": 50000000,
+    "preferredZipLimitBytes": 40000000,
+    "warningZipBytes": 45000000,
+    "allInputPathsRetained": true,
+    "newRuntimeBitmapFontAudioBytes": 0,
+    "selectedEvidenceImages": 4,
+    "selectedEvidenceImageBytes": 825065,
+    "exactFinalZipIdentity": "Recorded outside the ZIP after packaging and fresh-extraction gates; not self-referenced here"
+  },
+  "handoff": {
+    "readFirst": [
+      "docs/iteration/STATE.json",
+      "docs/iteration/LATEST_REPORT.md",
+      "docs/iteration/NEXT_ROUND.md",
+      "docs/iteration/evidence/round19/README.md"
+    ],
+    "requiresOldZipOrPatchToRun": false,
+    "remoteActions": false,
+    "privateSavesAccessed": false,
+    "finalArchiveGate": "Final delivery is conditional on the exact ZIP passing fresh empty-directory CRC/manifest/extraction, syntax, default core suite and HTTP; receipt is external."
+  }
+}

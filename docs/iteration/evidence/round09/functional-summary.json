@@ -1,0 +1,647 @@
+{
+  "status": "PASS",
+  "completedAtUTC": "2026-10-18T08:33:51.857000+00:00",
+  "sourceVersion": "5.9.0",
+  "baselineVersion": "5.8.0",
+  "scope": "Final frozen-runtime functional verification. Original failed nested-receipt candidate and reviewer fixture-construction failure are retained separately; no browser or performance claim.",
+  "environment": {
+    "capturedAtUTC": "2026-10-18T08:22:05.921459+00:00",
+    "node": "v24.19.0",
+    "npm": "11.9.0",
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+    "architecture": "x86_64",
+    "logicalCPUs": 9,
+    "cgroupMemoryMax": "8589934592",
+    "cwd": "/workspace/scratch/6a49cf7a9f47/work/Dice-Abyss",
+    "packageVersion": "5.9.0",
+    "testModules": 52,
+    "originalTestsUnchanged": true,
+    "scope": "Sequential CPU functional gates only. No browser, performance inference, remote access, product edits or original-test edits."
+  },
+  "unit": {
+    "baseline": {
+      "tests": 393.0,
+      "pass": 393.0,
+      "fail": 0.0,
+      "cancelled": 0.0,
+      "skipped": 0.0,
+      "todo": 0.0,
+      "duration_ms": 109588.537194
+    },
+    "current": {
+      "tests": 433.0,
+      "pass": 433.0,
+      "fail": 0.0,
+      "cancelled": 0.0,
+      "skipped": 0.0,
+      "todo": 0.0,
+      "duration_ms": 121240.765088
+    },
+    "addedActualCases": 40.0,
+    "allOriginalTestFilesUnchanged": true
+  },
+  "defaultNpmTest": {
+    "current": {
+      "tests": 52.0,
+      "pass": 52.0,
+      "fail": 0.0,
+      "cancelled": 0.0,
+      "skipped": 0.0,
+      "todo": 0.0,
+      "duration_ms": 82010.481259
+    },
+    "baselineModules": 46,
+    "exitCode": 0,
+    "note": "Original default entry passed. Explicit no-isolation TAP was independently run to expose actual individual test cases, not as an environment-failure fallback."
+  },
+  "standardSimulation": {
+    "seeds": 1000,
+    "completed": 1000,
+    "failures": [],
+    "floorsEach": 10,
+    "noShoppingSeeds": 50,
+    "noShoppingCompleted": 50,
+    "baselineBytes": 9409,
+    "currentBytes": 9409,
+    "baselineSha256": "266fa5b56516410712395796f197a2e33ad1b1e16ede45de14b872f208007d77",
+    "currentSha256": "266fa5b56516410712395796f197a2e33ad1b1e16ede45de14b872f208007d77",
+    "byteIdentical": true
+  },
+  "deep": {
+    "journeys": 8,
+    "completed": 8,
+    "floors": 2400,
+    "deaths": 0,
+    "rolls": 13664,
+    "bossTurnsMaximum": 14,
+    "finalGoldRange": [
+      602861,
+      2113074
+    ],
+    "allReportedGameplayFieldsExact": true,
+    "gameplayDifferences": [],
+    "fullStateHashDifferences": [
+      {
+        "reportFloor": 200,
+        "path": "rows.0.finalStateSha256",
+        "baseline": "daca968b30735dd6ffab5e2eb8eea8e142844d67457bcb3d97c5403fa4ecaf93",
+        "current": "c4b9ca1fd17eb9af3caeb739b0f540b708438ad14bd3f547bfe15eda1647f943"
+      },
+      {
+        "reportFloor": 200,
+        "path": "rows.1.finalStateSha256",
+        "baseline": "3161bf474a21cb30ae1f00974d9ef8416992f20811aa7538367d876f2f8417bd",
+        "current": "46ddcf40e921d86088a0269705cec55595d1ef90f5651c462f3aacfd97e7cf7d"
+      },
+      {
+        "reportFloor": 200,
+        "path": "rows.2.finalStateSha256",
+        "baseline": "7994fb8b76f37cc49de848332bc01a897dcdbc3dcc64ac52023b5dbaded27027",
+        "current": "467d8d6d299f30a7e053518f1b168208177f04ed3cfd85d5acfadb22502c6f94"
+      },
+      {
+        "reportFloor": 200,
+        "path": "rows.3.finalStateSha256",
+        "baseline": "61ad59dd9e6ff51471e8a0577082d818921c79772f656700d52c5bca8322fb76",
+        "current": "230c374714a2f24630254253fbf6a8051963fe4d412c71271886c85fab880615"
+      },
+      {
+        "reportFloor": 400,
+        "path": "rows.0.finalStateSha256",
+        "baseline": "a1ddc974098357f32b38e3ac41fec3235a9038969cab2390edce502bffc92d48",
+        "current": "c08fbebbbcbf903fb6702fd3432e71ec6686812241e014403bdcacd8f5856783"
+      },
+      {
+        "reportFloor": 400,
+        "path": "rows.1.finalStateSha256",
+        "baseline": "a6265e1f8dab023ee1d682237657f25523f4cd647aa33aea6586047eca9643ff",
+        "current": "75c4d8b144ef566afb5a27ce5855aa5cf9b7cf01f7dbdaafabb4d8561188186b"
+      },
+      {
+        "reportFloor": 400,
+        "path": "rows.2.finalStateSha256",
+        "baseline": "16a8c0df252760932378d575c4a240a589af9707c93ba08c748113180730d9e0",
+        "current": "c8eb1ba5eca89c58b5f67f57dbc27e1b78a3a35188252f679c38a185aafb0500"
+      },
+      {
+        "reportFloor": 400,
+        "path": "rows.3.finalStateSha256",
+        "baseline": "13e8e036c2adcb2cd4db27de2beb1f7bb0ef4f0868108a27285231c1f32e4603",
+        "current": "86a7cf8b664c6a1dc6644121e134c94f79b89a7d1200778e40ca611a835c13bd"
+      }
+    ],
+    "sourceStable": true,
+    "encounterTracesExact": true,
+    "protocol": [
+      {
+        "floors": 200,
+        "seeds": [
+          7919
+        ],
+        "builds": [
+          "resonance",
+          "bulwark"
+        ],
+        "policies": [
+          "conservative",
+          "duplicate-materials"
+        ],
+        "durationSeconds": 32.487801277
+      },
+      {
+        "floors": 400,
+        "seeds": [
+          31676
+        ],
+        "builds": [
+          "resonance",
+          "bulwark"
+        ],
+        "policies": [
+          "conservative",
+          "duplicate-materials"
+        ],
+        "durationSeconds": 124.847387013
+      }
+    ],
+    "limitations": [
+      "These fixed-policy offline natural journeys are not human play or population estimates.",
+      "No journey reached the 1e10 gold cap.",
+      "Raw whole-state hashes include the newly introduced receipt field, so differing hash fields are reported explicitly and are not claimed to match."
+    ]
+  },
+  "storageClosure": {
+    "status": "PASS",
+    "checks": 41452,
+    "eventKeys": [
+      "abyssauction",
+      "bloodwell",
+      "echochamber",
+      "exchange",
+      "gambit",
+      "hollow_scale",
+      "memory_archive",
+      "memorywell",
+      "oathgate",
+      "offering",
+      "prayer",
+      "pursuer_contract",
+      "relic_exchange",
+      "relicloom",
+      "silent_anvil",
+      "spring",
+      "star_seal",
+      "starlibrary",
+      "thread_of_dawn",
+      "traveler_lantern",
+      "wardbank",
+      "wishingvault"
+    ],
+    "eventChoices": 1608,
+    "pendingProtectionVariants": 820,
+    "shopPurchases": 48,
+    "legacyFixtures": 11,
+    "failures": [],
+    "fingerprints": {
+      "algorithm": "sha256",
+      "format": 1,
+      "stateSnapshots": 6476,
+      "committedTransactions": 1811,
+      "legacyWrites": 11,
+      "states": "61aa2ff72b9e3d19c102be290f4e7828bcf1be79d860c978d76bdf573f8b9903",
+      "transactions": "ca26fb8ac2526df42c993a5b544969c539b4e90e470f523ae52d85d38129ac42",
+      "writes": "c5405762892ed55d89c27e42a89fe9a774a7376b4973db89acbd01715c966524"
+    }
+  },
+  "storageClosureRawDifferences": [
+    {
+      "path": "fingerprints.states",
+      "baseline": "676237f681c397af4dd58f195b49a9507e36a734163368db43cffcf8a8ede883",
+      "current": "61aa2ff72b9e3d19c102be290f4e7828bcf1be79d860c978d76bdf573f8b9903"
+    },
+    {
+      "path": "fingerprints.transactions",
+      "baseline": "bc4b0bb2d64c990f7b7b37a05295b9ac62354367e8fc14f3137917dc1b80c3fa",
+      "current": "ca26fb8ac2526df42c993a5b544969c539b4e90e470f523ae52d85d38129ac42"
+    },
+    {
+      "path": "fingerprints.writes",
+      "baseline": "0ff1dab1e7f8d44f4a6e19de1cb99b0f249f02ed83dbfdbddbddf50de822f1ef",
+      "current": "c5405762892ed55d89c27e42a89fe9a774a7376b4973db89acbd01715c966524"
+    },
+    {
+      "path": "root",
+      "baseline": "/workspace/scratch/6a49cf7a9f47/baseline/Dice-Abyss",
+      "current": "/workspace/scratch/6a49cf7a9f47/work/Dice-Abyss"
+    }
+  ],
+  "sizeBoundary": {
+    "status": "PASS",
+    "cases": 4,
+    "passed": 4,
+    "allCaseDataExact": true,
+    "differences": []
+  },
+  "independentGold": {
+    "audit": "round09-gold-independent",
+    "protocolVersion": 3,
+    "scriptSha256": "137eaf98c6b55c5215da811cd8c249e653b705cf88c040b324aa26000c99043d",
+    "status": "PASS",
+    "checks": {
+      "matrixRows": 1890,
+      "acceptedInputs": 1890,
+      "legalTransactions": 1918,
+      "refusedActions": 165,
+      "roundtrips": 3836,
+      "renderReads": 1890,
+      "nullPreviewInputs": 0,
+      "storageFaults": 12,
+      "fusionCases": 4,
+      "xpCapacityCases": 32,
+      "protectionCases": 4,
+      "highValueSalvageCases": 6,
+      "receiptHelperCases": 15,
+      "receiptLifecycleCases": 8,
+      "fullInventoryCases": 1
+    },
+    "maxLogCharacters": 108,
+    "maxOutcomeCharacters": 94,
+    "sourceStable": true
+  },
+  "runtimeStability": {
+    "stable": true,
+    "changes": [],
+    "completedAtUTC": "2026-10-18T08:31:31.744076+00:00"
+  },
+  "inputFontsAndVersions": {
+    "recordedAtUTC": "2026-10-18T08:25:39.486035+00:00",
+    "baselineOriginalFiles": 794,
+    "baselineManifestEntries": 793,
+    "baselineMismatches": [],
+    "baselineExtraFiles": [],
+    "baselineStillExact": true,
+    "fonts": [
+      {
+        "path": "src/fonts/README.md",
+        "bytes": 1013,
+        "sha256": "9dc4b44f2b19d5a93825698b17f9fce3833512ffb31edae718d727f1cb8db91e",
+        "currentExact": true
+      },
+      {
+        "path": "src/fonts/SourceHanSansCN-VF.otf.woff2",
+        "bytes": 7995716,
+        "sha256": "7087698d52240614659957608d8c4ad446759aee3208409dc9f566412e7af8f4",
+        "currentExact": true
+      },
+      {
+        "path": "src/fonts/fusion-pixel/LICENSES/ark-pixel/OFL.txt",
+        "bytes": 4412,
+        "sha256": "3ab41567e68e3988ba1ef16dd2644eca95ca5648ea12e7d46e6287fc0bbe5aee",
+        "currentExact": true
+      },
+      {
+        "path": "src/fonts/fusion-pixel/LICENSES/cubic-11/OFL.txt",
+        "bytes": 5364,
+        "sha256": "2b6e5938e5cffa0b9e183bd05f8c363e174e7ebed1a0556e2855fd1707fa2188",
+        "currentExact": true
+      },
+      {
+        "path": "src/fonts/fusion-pixel/LICENSES/galmuri/LICENSE.txt",
+        "bytes": 4360,
+        "sha256": "86a3ee9495f942f0243f18c103da9faca27adb88142613edb8bb852e56c892c1",
+        "currentExact": true
+      },
+      {
+        "path": "src/fonts/fusion-pixel-12px-proportional-zh_hans.otf.woff2",
+        "bytes": 661212,
+        "sha256": "de421b3da7b20e045f0712ee838f30c225f4610b348efb37e2b31baa98860cbf",
+        "currentExact": true
+      },
+      {
+        "path": "src/fonts/fusion-pixel-OFL.txt",
+        "bytes": 4418,
+        "sha256": "bc518cf64b8032c07690f33cc270c35c179255a6ac8efa7c165ebae7e8f76a63",
+        "currentExact": true
+      },
+      {
+        "path": "src/fonts/source-han-sans-OFL.txt",
+        "bytes": 4463,
+        "sha256": "fcac737e761ec63dbfbdce11030a1780161920d80315edba9c8beff1c2bac5a2",
+        "currentExact": true
+      }
+    ],
+    "allFontFilesExact": true,
+    "currentVisibleRuntimeVersions": {
+      "package.json": [
+        {
+          "value": "5.9.0",
+          "context": "{\n  \"name\": \"dice-abyss\",\n  \"version\": \"5.9.0\",\n  \"private\": true,\n  \"type\": \"module\""
+        }
+      ],
+      "index.html": [
+        {
+          "value": "5.9.0",
+          "context": "meta name=\"dice-abyss-release\" content=\"5.9.0\">\n    <meta name=\"viewport\" content=\"wi"
+        }
+      ],
+      "README.md": [
+        {
+          "value": "5.9.0",
+          "context": "</p>\n\n<p align=\"center\">\n  <sub>VERSION 5.9.0 &nbsp;·&nbsp; DESKTOP WEB &nbsp;·&nbsp;"
+        },
+        {
+          "value": "5.9.0",
+          "context": "s going. So does your progression.\n\n## V5.9.0 · Know What You Receive.\n\nThis complete"
+        }
+      ],
+      "src/views.js": [
+        {
+          "value": "5.9.0",
+          "context": "lass=\"title-footer\"><span>DICE ABYSS / V5.9.0</span><span>一颗骰子，一段尚未写下的命运。</span><span"
+        },
+        {
+          "value": "05.9.0",
+          "context": "/main><div class=\"bottomline\"><span>VER 05.9.0　 INFINITE ABYSS</span><span>${ui.saveEr"
+        }
+      ]
+    },
+    "schema": "5",
+    "note": "Runtime/package/readme visibility and all source font bytes compared while final functional gates run. Formal release manifest and iteration docs remain owned by final packaging."
+  },
+  "commandReceipts": [
+    {
+      "name": "current-independent-syntax",
+      "command": [
+        "node",
+        "--check",
+        "scripts/audit-gold-independent.mjs"
+      ],
+      "cwd": "/workspace/scratch/6a49cf7a9f47/work/Dice-Abyss",
+      "startedUTC": "2026-10-18T08:22:06.058672+00:00",
+      "durationSeconds": 0.033,
+      "exitCode": 0,
+      "logBytes": 0,
+      "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "current-independent-gold",
+      "command": [
+        "node",
+        "scripts/audit-gold-independent.mjs",
+        "--baseline",
+        "/workspace/scratch/6a49cf7a9f47/baseline/Dice-Abyss",
+        "--source",
+        "/workspace/scratch/6a49cf7a9f47/work/Dice-Abyss",
+        "--output",
+        "/workspace/scratch/6a49cf7a9f47/review-current/final/verified/current-independent-gold.json"
+      ],
+      "cwd": "/workspace/scratch/6a49cf7a9f47/work/Dice-Abyss",
+      "startedUTC": "2026-10-18T08:22:06.107703+00:00",
+      "durationSeconds": 4.743,
+      "exitCode": 0,
+      "logBytes": 5211,
+      "logSha256": "9c0a00fc82859fad56ab0aef5841a31222d87163394aa0235a0f307a07a42f97"
+    },
+    {
+      "name": "current-check",
+      "command": [
+        "npm",
+        "run",
+        "check"
+      ],
+      "cwd": "/workspace/scratch/6a49cf7a9f47/work/Dice-Abyss",
+      "startedUTC": "2026-10-18T08:22:10.866130+00:00",
+      "durationSeconds": 2.943,
+      "exitCode": 0,
+      "logBytes": 196,
+      "logSha256": "82917f4913340249d56418bd0740724353b82fda9aabe7ec23243e4d7cd129c6"
+    },
+    {
+      "name": "current-npm-test",
+      "command": [
+        "npm",
+        "test"
+      ],
+      "cwd": "/workspace/scratch/6a49cf7a9f47/work/Dice-Abyss",
+      "startedUTC": "2026-10-18T08:22:13.829506+00:00",
+      "durationSeconds": 82.202,
+      "exitCode": 0,
+      "logBytes": 2826,
+      "logSha256": "3e53dc2ad3afcc22bf66c46f49088f04b650b7d6d04da31f5ef7cd2f3a344b97"
+    },
+    {
+      "name": "current-full-serial",
+      "command": [
+        "node",
+        "--test",
+        "--test-isolation=none",
+        "--test-reporter=tap",
+        "tests/action-focus.test.mjs",
+        "tests/balance.test.mjs",
+        "tests/combat-polish.test.mjs",
+        "tests/content-depth.test.mjs",
+        "tests/dice-motion.test.mjs",
+        "tests/dice-renderer.test.mjs",
+        "tests/effects.test.mjs",
+        "tests/encounter-tactics.test.mjs",
+        "tests/encounters.test.mjs",
+        "tests/engine.test.mjs",
+        "tests/equipment-levels.test.mjs",
+        "tests/equipment-polish.test.mjs",
+        "tests/event-context.test.mjs",
+        "tests/expansion.test.mjs",
+        "tests/fixed-affix-truth.test.mjs",
+        "tests/forge-preview.test.mjs",
+        "tests/fusion-controller.test.mjs",
+        "tests/fusion-gold-cap.test.mjs",
+        "tests/fusion-selection.test.mjs",
+        "tests/fusion-tooltip.test.mjs",
+        "tests/fusion-workbench.test.mjs",
+        "tests/gold-exchange-xp.test.mjs",
+        "tests/gold-preview.test.mjs",
+        "tests/gold-settlement.test.mjs",
+        "tests/gold-storage.test.mjs",
+        "tests/gold-view.test.mjs",
+        "tests/intent-ranges.test.mjs",
+        "tests/inventory-position.test.mjs",
+        "tests/iteration-gameplay.test.mjs",
+        "tests/iteration-render.test.mjs",
+        "tests/iteration-storage.test.mjs",
+        "tests/launcher-release.test.mjs",
+        "tests/memorywell-preview.test.mjs",
+        "tests/migration-levels.test.mjs",
+        "tests/renderer-delay.test.mjs",
+        "tests/reward-copy.test.mjs",
+        "tests/roll-history.test.mjs",
+        "tests/save-polish.test.mjs",
+        "tests/spring-truth.test.mjs",
+        "tests/storage-import-shape.test.mjs",
+        "tests/storage-polish.test.mjs",
+        "tests/storage-read-reuse.test.mjs",
+        "tests/storage-roll-multipliers.test.mjs",
+        "tests/storage-size-boundary.test.mjs",
+        "tests/storage-talents-shape.test.mjs",
+        "tests/talent-allocation.test.mjs",
+        "tests/talent-view.test.mjs",
+        "tests/v5-compatibility.test.mjs",
+        "tests/v5-systems.test.mjs",
+        "tests/views-polish.test.mjs",
+        "tests/views.test.mjs",
+        "tests/visual-timeline.test.mjs"
+      ],
+      "cwd": "/workspace/scratch/6a49cf7a9f47/work/Dice-Abyss",
+      "startedUTC": "2026-10-18T08:23:36.049063+00:00",
+      "durationSeconds": 121.366,
+      "exitCode": 0,
+      "logBytes": 106240,
+      "logSha256": "4e8c4fe8603d130f3e137bab4fba9ab494bededcae0d2c921a3dce0be1f7d88b"
+    },
+    {
+      "name": "current-simulate-1000",
+      "command": [
+        "node",
+        "scripts/simulate.mjs",
+        "1000"
+      ],
+      "cwd": "/workspace/scratch/6a49cf7a9f47/work/Dice-Abyss",
+      "startedUTC": "2026-10-18T08:25:37.440747+00:00",
+      "durationSeconds": 191.104,
+      "exitCode": 0,
+      "logBytes": 9409,
+      "logSha256": "266fa5b56516410712395796f197a2e33ad1b1e16ede45de14b872f208007d77"
+    },
+    {
+      "name": "current-deep-200",
+      "command": [
+        "node",
+        "scripts/audit-economy-round06.mjs",
+        "--floors",
+        "200",
+        "--seeds",
+        "7919",
+        "--builds",
+        "resonance,bulwark",
+        "--policies",
+        "conservative,duplicate-materials",
+        "--output",
+        "/workspace/scratch/6a49cf7a9f47/review-current/final/verified/current-deep-200.json"
+      ],
+      "cwd": "/workspace/scratch/6a49cf7a9f47/work/Dice-Abyss",
+      "startedUTC": "2026-10-18T08:28:48.560354+00:00",
+      "durationSeconds": 32.575,
+      "exitCode": 0,
+      "logBytes": 1069,
+      "logSha256": "e05fbe40fad7786c87daf6d8196a0c7ecbfc794398695d644f75924bda36b5dd"
+    },
+    {
+      "name": "current-deep-400",
+      "command": [
+        "node",
+        "scripts/audit-economy-round06.mjs",
+        "--floors",
+        "400",
+        "--seeds",
+        "31676",
+        "--builds",
+        "resonance,bulwark",
+        "--policies",
+        "conservative,duplicate-materials",
+        "--output",
+        "/workspace/scratch/6a49cf7a9f47/review-current/final/verified/current-deep-400.json"
+      ],
+      "cwd": "/workspace/scratch/6a49cf7a9f47/work/Dice-Abyss",
+      "startedUTC": "2026-10-18T08:29:21.149892+00:00",
+      "durationSeconds": 124.955,
+      "exitCode": 0,
+      "logBytes": 1076,
+      "logSha256": "603f308e194ccf108b5b1f25aa4e50dd7777db855f522387041de627b0682b3b"
+    },
+    {
+      "name": "current-save-closure",
+      "command": [
+        "node",
+        "scripts/audit-save-closure.mjs",
+        "--source",
+        "/workspace/scratch/6a49cf7a9f47/work/Dice-Abyss",
+        "--output",
+        "/workspace/scratch/6a49cf7a9f47/review-current/final/verified/current-save-closure.json"
+      ],
+      "cwd": "/workspace/scratch/6a49cf7a9f47/work/Dice-Abyss",
+      "startedUTC": "2026-10-18T08:31:26.118410+00:00",
+      "durationSeconds": 4.83,
+      "exitCode": 0,
+      "logBytes": 1349,
+      "logSha256": "13493f4a1ab729e0b929d45f97ba75d24de47ca2ede4829eab6f72504bf99af6"
+    },
+    {
+      "name": "current-save-size",
+      "command": [
+        "node",
+        "scripts/audit-save-size.mjs",
+        "--source",
+        "/workspace/scratch/6a49cf7a9f47/work/Dice-Abyss",
+        "--output",
+        "/workspace/scratch/6a49cf7a9f47/review-current/final/verified/current-save-size.json"
+      ],
+      "cwd": "/workspace/scratch/6a49cf7a9f47/work/Dice-Abyss",
+      "startedUTC": "2026-10-18T08:31:30.961737+00:00",
+      "durationSeconds": 0.766,
+      "exitCode": 0,
+      "logBytes": 2703,
+      "logSha256": "6efe894234272e9be9e636a6de7b9d51a9f51bc787ecf2dc892db920b7d96adc"
+    }
+  ],
+  "retainedFailures": {
+    "supersededProductCandidate": "../../superseded-candidate-summary.json",
+    "reviewerFixtureConstruction": "../fixture-error-attempt/classification.json"
+  },
+  "storageClosureNormalized": {
+    "status": "PASS",
+    "fingerprints": {
+      "algorithm": "sha256",
+      "format": 1,
+      "stateSnapshots": 6476,
+      "committedTransactions": 1811,
+      "legacyWrites": 11,
+      "states": "676237f681c397af4dd58f195b49a9507e36a734163368db43cffcf8a8ede883",
+      "transactions": "bc4b0bb2d64c990f7b7b37a05295b9ac62354367e8fc14f3137917dc1b80c3fa",
+      "writes": "0ff1dab1e7f8d44f4a6e19de1cb99b0f249f02ed83dbfdbddbddf50de822f1ef"
+    },
+    "baselineFingerprints": {
+      "algorithm": "sha256",
+      "format": 1,
+      "stateSnapshots": 6476,
+      "committedTransactions": 1811,
+      "legacyWrites": 11,
+      "states": "676237f681c397af4dd58f195b49a9507e36a734163368db43cffcf8a8ede883",
+      "transactions": "bc4b0bb2d64c990f7b7b37a05295b9ac62354367e8fc14f3137917dc1b80c3fa",
+      "writes": "0ff1dab1e7f8d44f4a6e19de1cb99b0f249f02ed83dbfdbddbddf50de822f1ef"
+    },
+    "allFingerprintsEqual": true,
+    "normalization": {
+      "policy": "Remove only state.lootCreditedGold from transcript copies and encoded current-save copies; require exact ordinary nominal receipts before removal. Every other field remains hashed.",
+      "stateReceiptsRemoved": 310,
+      "encodedReceiptsRemoved": 310,
+      "originalAuditSha256": "df68c184fdcecc28b84ff4091f2bb240f070414efbed3e271240a23347cae603"
+    },
+    "receipt": {
+      "startedUTC": "2026-10-18T08:33:21.789237+00:00",
+      "command": [
+        "node",
+        "/tmp/dice-abyss-review-6a49cf7a9f47/closure-normalized.mjs",
+        "--source",
+        "/workspace/scratch/6a49cf7a9f47/work/Dice-Abyss",
+        "--output",
+        "/workspace/scratch/6a49cf7a9f47/review-current/final/verified/current-save-closure-normalized.json"
+      ],
+      "cwd": "/workspace/scratch/6a49cf7a9f47/work/Dice-Abyss",
+      "exitCode": 0,
+      "durationSeconds": 5.682,
+      "adapterSha256": "2e9227199e448b6898b8a5f1387d857c2d1e280287a021d0a4d9d9968ce7dadc",
+      "originalAuditSha256": "df68c184fdcecc28b84ff4091f2bb240f070414efbed3e271240a23347cae603",
+      "logBytes": 1735,
+      "logSha256": "f4de991b3fc82d7fc84a84ff072b0495779168447b6a51e59ef33b2037346798",
+      "syntaxExitCode": 0
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "scope": "Development and review findings retained candidly; none changes the input combat or economy formulas.",
+  "runtimeCorrections": [
+    {
+      "id": "effective-gold-cap",
+      "foundBy": "Independent source review",
+      "initialDiagnostic": "New comparison helper incorrectly treated the equipment goldBonus cap as 100%.",
+      "actualRule": "The engine first caps every *Bonus field at 60%; the later goldBonus=1 cap cannot restore it. Luck overflow and fortune are separate contributions.",
+      "correction": "Diagnose the real base equipment cap as 60%, suppress a nonexistent gain row, and display the cap notice.",
+      "verification": "Actual engine stats and two real createChest fixtures: 934=934 in our formal audit and 787=787 in the independent review."
+    },
+    {
+      "id": "six-penetration-scope",
+      "foundBy": "Independent source review",
+      "initialDiagnostic": "The row initially read as a total with-six penetration coefficient.",
+      "actualRule": "The helper sums build penetration. Encounters can add further conditional penetration, then the engine caps final penetration at 100%.",
+      "correction": "Label 含6穿盾; trigger 装备与天赋合计；遭遇加成另计.",
+      "verification": "Independent armored-variant case has displayed build coefficient 15.5% and actual encounter total 75.5%; final scope text explicitly separates them."
+    }
+  ],
+  "ownTestFixtureCorrections": [
+    {
+      "id": "explicit-relic-slot",
+      "initialFailure": "Some relic replacement expectations failed because relic2/relic3 were empty and the default engine policy correctly filled an empty slot.",
+      "correction": "Pass requestedSlot relic to details and slot relic to the actual equip transition when the case specifically tests replacement.",
+      "classification": "Test fixture correction, not a runtime bug."
+    },
+    {
+      "id": "duplicate-candidate-id",
+      "initialFailure": "The identical-traits hypothetical candidate reused an existing inventory ID; the engine correctly resolved the already-owned item.",
+      "correction": "Give the hypothetical candidate the unused ID i99.",
+      "classification": "Test fixture correction, not a runtime bug."
+    }
+  ],
+  "initialOwnGate": {
+    "failedCases": 2,
+    "thenPassedCases": 9,
+    "archivedInitialTap": false,
+    "note": "Initial failures were observed during implementation; the delivered TAP is the corrected nine-case run. No fabricated initial trace is included."
+  },
+  "independentHarnessCorrection": "Its first probe also omitted the explicit relic replacement slot in two tests. The reviewer retains the initial failed probe separately.",
+  "captureCaveat": "The independent first source read observed the two diagnostic issues, but its saved comparison-module capture was taken after their correction. Captured-module tests verify corrected behavior; they are not an archived reproduction of the original diagnostic source.",
+  "independentEvidence": "../independent-comparison/current-review.json"
+}

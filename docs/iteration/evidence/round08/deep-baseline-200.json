@@ -1,0 +1,1960 @@
+{
+  "method": "Fresh natural journeys. Every build finishes its explicit available talent priorities before progressing, including after paid respec; no points or items are granted. Item changes use the same current expected-upgrade estimate, not a claim of optimal item choice. Default conservative spending follows the earlier weapon-below-9/safe-material behavior. Forge-all raises all five equipped slots toward +20, retaining at least 20% of gold held on room entry (minimum80). Duplicate-materials adds explicit protected fusion only for weaker duplicate catalog IDs, retaining their strongest representative. All events take the first enabled adventurous choice.",
+  "abilityTriggerMethod": "Counts the actual uniform abilityRoll trigger notes, plus phaseWard/firstCritLuck/eliteLuck/gildedSix conditions from each untouched pre-roll state and committed roll result. A fulfilled condition can hit a cap or be unnecessary in a one-shot battle; these are activation counts, not incremental realized utility.",
+  "sourceVersion": "5.7.0",
+  "environment": {
+    "node": "v24.19.0",
+    "platform": "linux",
+    "arch": "x64"
+  },
+  "sourceHashes": {
+    "src/engine.js": "1a86861156f2d64cd95636c05ea29703c94c8371640d12372ae7644f948d0fd2",
+    "src/encounters.js": "40d4c41b57cc35c5246491c11f6e0cd6ecc51ebec7e4abe14f5c8a8ee0745c97",
+    "src/equipment.js": "8c20de433f21931318e315b862b457d37a03b9596ea5df8f7cc4025691aaccd6",
+    "src/deep-rules.js": "6919b66ec8fbadea293ab4c4e3aa0b8c7a943e2ec44224b119287709d484581f",
+    "src/equipment-content.js": "d95b5e7c11d14eb764ea3cefb7eee73f35b2f9d48a8b640513eda9aefd1cc030",
+    "src/deep-content.js": "040a5668b687cf9d7b7c8b31a67cee35660ebb0539af74c7d572614f138fef33",
+    "src/rarity.js": "871356df147d027e1845f98c5574a1d9a71c0d17bd8717f457c9007d7c73b735",
+    "src/route-weights.js": "b21499b8c44a17ad09caab5e17f312073b269981b6ac7eb916b5f656912237dd",
+    "scripts/simulate.mjs": "3b0e2d6c5f8151714dd0d60596e6a2681fb79604592f3670f4bb93218bdf614f"
+  },
+  "sourceStable": true,
+  "comparisonAdapter": {
+    "verified": 512,
+    "calls": 489114
+  },
+  "floors": 200,
+  "seeds": [
+    7919
+  ],
+  "policies": [
+    "conservative",
+    "duplicate-materials"
+  ],
+  "builds": [
+    "resonance",
+    "bulwark"
+  ],
+  "rows": [
+    {
+      "seed": 7919,
+      "policy": "conservative",
+      "build": "resonance",
+      "floors": 200,
+      "completed": true,
+      "phase": "cleared",
+      "deaths": 0,
+      "rolls": 1161,
+      "level": 175,
+      "gold": 854788,
+      "spending": {
+        "shop": 7849,
+        "forge": 21556,
+        "fusion": 339444,
+        "event": 42761
+      },
+      "spent": 411610,
+      "forges": 19,
+      "forgeSlots": {
+        "weapon": 19,
+        "armor": 0,
+        "relic": 0,
+        "relic2": 0,
+        "relic3": 0
+      },
+      "forgeGold": {
+        "weapon": 21556,
+        "armor": 0,
+        "relic": 0,
+        "relic2": 0,
+        "relic3": 0
+      },
+      "buys": 6,
+      "fusions": 141,
+      "totalXpFused": 380628,
+      "consumedMaterialRarities": [
+        {
+          "name": "普通",
+          "count": 244
+        },
+        {
+          "name": "稀有",
+          "count": 315
+        },
+        {
+          "name": "史诗",
+          "count": 103
+        },
+        {
+          "name": "传说",
+          "count": 0
+        },
+        {
+          "name": "神话",
+          "count": 0
+        },
+        {
+          "name": "太古",
+          "count": 0
+        },
+        {
+          "name": "起源",
+          "count": 0
+        },
+        {
+          "name": "永恒",
+          "count": 0
+        }
+      ],
+      "spareRarities": [
+        {
+          "name": "普通",
+          "count": 1
+        },
+        {
+          "name": "稀有",
+          "count": 2
+        },
+        {
+          "name": "史诗",
+          "count": 2
+        },
+        {
+          "name": "传说",
+          "count": 136
+        },
+        {
+          "name": "神话",
+          "count": 72
+        },
+        {
+          "name": "太古",
+          "count": 27
+        },
+        {
+          "name": "起源",
+          "count": 9
+        },
+        {
+          "name": "永恒",
+          "count": 0
+        }
+      ],
+      "inventoryCount": 254,
+      "equipped": [
+        {
+          "id": "i330",
+          "slot": "relic",
+          "catalogId": "v4-relic-1-2-5",
+          "rarity": "太古",
+          "level": 107,
+          "levelXp": 971,
+          "enhance": 0,
+          "stats": {
+            "attack": 603,
+            "crit": 0.08499999999999999,
+            "follow": 0.18000000000000002,
+            "criticalFollow": 0.2232,
+            "followDamage": 0.3348
+          }
+        },
+        {
+          "id": "i566",
+          "slot": "relic",
+          "catalogId": "relic-7-1-5",
+          "rarity": "太古",
+          "level": 130,
+          "levelXp": 552,
+          "enhance": 0,
+          "stats": {
+            "attack": 767,
+            "crit": 0.10999999999999999,
+            "follow": 0.14,
+            "critBonus": 0.12
+          }
+        },
+        {
+          "id": "i758",
+          "slot": "weapon",
+          "catalogId": "weapon-3-0-6",
+          "rarity": "起源",
+          "level": 159,
+          "levelXp": 1737,
+          "enhance": 10,
+          "stats": {
+            "attack": 22580,
+            "crit": 0.09,
+            "follow": 0,
+            "critDamage": 0.35000000000000003
+          }
+        },
+        {
+          "id": "i1017",
+          "slot": "relic",
+          "catalogId": "v4-relic-1-3-5",
+          "rarity": "太古",
+          "level": 170,
+          "levelXp": 581,
+          "enhance": 0,
+          "stats": {
+            "attack": 1156,
+            "crit": 0.08499999999999999,
+            "follow": 0.15000000000000002,
+            "criticalFollow": 0.2448,
+            "followDamage": 0.3672
+          }
+        },
+        {
+          "id": "i1085",
+          "slot": "armor",
+          "catalogId": "v4-armor-1-0-6",
+          "rarity": "起源",
+          "level": 173,
+          "levelXp": 1327,
+          "enhance": 0,
+          "stats": {
+            "hp": 50679,
+            "defense": 3258,
+            "crit": 0,
+            "dodge": 0.126,
+            "regen": 0.056
+          }
+        }
+      ],
+      "talentPoints": 0,
+      "talents": {
+        "high": 5,
+        "four": 5,
+        "five": 5,
+        "six": 5,
+        "sum": 5,
+        "power": 159,
+        "resonance": 5,
+        "pair": 5,
+        "triple": 5,
+        "quartet": 5,
+        "choir": 5,
+        "echo": 5,
+        "critical": 5,
+        "keen": 5,
+        "crush": 5,
+        "pursuit": 5,
+        "opener": 5,
+        "slayer": 5,
+        "vitality": 5,
+        "guard": 5,
+        "leech": 5,
+        "recovery": 5,
+        "fortune": 5,
+        "smith": 5,
+        "luck": 5,
+        "attune": 5,
+        "omen": 5,
+        "mercy": 5,
+        "jackpot": 5,
+        "spark": 5,
+        "shatter": 3,
+        "diversity": 3,
+        "finality": 3,
+        "deepEcho": 3,
+        "chorusMend": 3,
+        "tripleBlade": 3,
+        "firstFire": 3,
+        "critAegis": 3,
+        "dawnCrit": 3,
+        "emberGuard": 3,
+        "phaseShelter": 3,
+        "lastResolve": 3,
+        "hunterStar": 3,
+        "gildedFaces": 3,
+        "sixRebirth": 3
+      },
+      "abilityTriggers": {
+        "sixShatter": 548,
+        "tripleStrike": 333,
+        "execution": 31,
+        "openingStrike": 587,
+        "distinctStrike": 380,
+        "criticalWard": 512,
+        "lowWard": 299,
+        "phaseWard": 22,
+        "sixthMend": 446,
+        "resolveGuard": 0,
+        "echoRelic": 492,
+        "firstCritLuck": 427,
+        "eliteLuck": 174,
+        "gildedSix": 282,
+        "resonanceMend": 133
+      },
+      "bossRounds": {
+        "n": 59,
+        "min": 1,
+        "median": 2,
+        "p95": 5,
+        "max": 8,
+        "mean": 2.3898
+      },
+      "lateBossRounds": {
+        "n": 16,
+        "min": 1,
+        "median": 1,
+        "p95": 3,
+        "max": 3,
+        "mean": 1.6875
+      },
+      "bossDamageTaken": {
+        "n": 59,
+        "min": 0,
+        "median": 0,
+        "p95": 0,
+        "max": 0,
+        "mean": 0
+      },
+      "lateBossDamageTaken": {
+        "n": 16,
+        "min": 0,
+        "median": 0,
+        "p95": 0,
+        "max": 0,
+        "mean": 0
+      },
+      "longest": [
+        {
+          "floor": 30,
+          "name": "裂星守望",
+          "type": "boss",
+          "mechanic": null,
+          "turns": 8,
+          "damageTaken": 0,
+          "totalDamage": 1413423,
+          "openingHp": 3729,
+          "maxHp": 3729,
+          "unspent": 0,
+          "killed": true
+        },
+        {
+          "floor": 15,
+          "name": "倒悬钟主",
+          "type": "boss",
+          "mechanic": null,
+          "turns": 7,
+          "damageTaken": 0,
+          "totalDamage": 161587,
+          "openingHp": 2549,
+          "maxHp": 2549,
+          "unspent": 0,
+          "killed": true
+        },
+        {
+          "floor": 19,
+          "name": "破晓巡游者",
+          "type": "elite",
+          "mechanic": null,
+          "turns": 7,
+          "damageTaken": 0,
+          "totalDamage": 221082,
+          "openingHp": 2641,
+          "maxHp": 2641,
+          "unspent": 0,
+          "killed": true
+        },
+        {
+          "floor": 18,
+          "name": "荆棘执灯人",
+          "type": "elite",
+          "mechanic": null,
+          "turns": 6,
+          "damageTaken": 0,
+          "totalDamage": 191356,
+          "openingHp": 2623,
+          "maxHp": 2623,
+          "unspent": 0,
+          "killed": true
+        },
+        {
+          "floor": 25,
+          "name": "灰烬铸王",
+          "type": "boss",
+          "mechanic": null,
+          "turns": 6,
+          "damageTaken": 0,
+          "totalDamage": 505565,
+          "openingHp": 3251,
+          "maxHp": 3251,
+          "unspent": 0,
+          "killed": true
+        }
+      ],
+      "milestones": [
+        {
+          "floor": 10,
+          "gold": 4618,
+          "level": 18,
+          "attack": 568,
+          "maxHp": 1022,
+          "defense": 71,
+          "luck": 11,
+          "unspentTalentPoints": 0,
+          "spentTalentPoints": 34,
+          "spending": {
+            "shop": 852,
+            "forge": 340,
+            "fusion": 2306,
+            "event": 0
+          }
+        },
+        {
+          "floor": 30,
+          "gold": 37660,
+          "level": 44,
+          "attack": 1312,
+          "maxHp": 3729,
+          "defense": 334,
+          "luck": 20,
+          "unspentTalentPoints": 0,
+          "spentTalentPoints": 86,
+          "spending": {
+            "shop": 2147,
+            "forge": 2851,
+            "fusion": 10186,
+            "event": 353
+          }
+        },
+        {
+          "floor": 50,
+          "gold": 62431,
+          "level": 67,
+          "attack": 2120,
+          "maxHp": 5563,
+          "defense": 502,
+          "luck": 20,
+          "unspentTalentPoints": 0,
+          "spentTalentPoints": 132,
+          "spending": {
+            "shop": 2147,
+            "forge": 6657,
+            "fusion": 30232,
+            "event": 3079
+          }
+        },
+        {
+          "floor": 80,
+          "gold": 170923,
+          "level": 93,
+          "attack": 8158,
+          "maxHp": 12148,
+          "defense": 1228,
+          "luck": 23,
+          "unspentTalentPoints": 0,
+          "spentTalentPoints": 184,
+          "spending": {
+            "shop": 2147,
+            "forge": 12297,
+            "fusion": 68997,
+            "event": 9464
+          }
+        },
+        {
+          "floor": 100,
+          "gold": 289386,
+          "level": 109,
+          "attack": 9624,
+          "maxHp": 25447,
+          "defense": 1715,
+          "luck": 51,
+          "unspentTalentPoints": 0,
+          "spentTalentPoints": 216,
+          "spending": {
+            "shop": 2147,
+            "forge": 12297,
+            "fusion": 101009,
+            "event": 13219
+          }
+        },
+        {
+          "floor": 140,
+          "gold": 504655,
+          "level": 136,
+          "attack": 15499,
+          "maxHp": 28120,
+          "defense": 3033,
+          "luck": 51,
+          "unspentTalentPoints": 0,
+          "spentTalentPoints": 271,
+          "spending": {
+            "shop": 7849,
+            "forge": 12297,
+            "fusion": 180755,
+            "event": 28661
+          }
+        },
+        {
+          "floor": 200,
+          "gold": 854788,
+          "level": 175,
+          "attack": 25463,
+          "maxHp": 65432,
+          "defense": 4564,
+          "luck": 23,
+          "unspentTalentPoints": 0,
+          "spentTalentPoints": 349,
+          "spending": {
+            "shop": 7849,
+            "forge": 21556,
+            "fusion": 339444,
+            "event": 42761
+          }
+        }
+      ],
+      "forgeExamples": [],
+      "fusionExamples": [],
+      "encounterTraceSha256": "949f5ff7e0f8ea91aeaaf436b58f9f54d7b2774e1fa1279d54ea43a8b99c7601",
+      "finalStateSha256": "d8f0dd51c44c2fdc487c644803a5de04edf9161d70d987ec4f6a0a21266c2f41",
+      "saveRoundTrip": true,
+      "sharedGiftDecisions": 3
+    },
+    {
+      "seed": 7919,
+      "policy": "duplicate-materials",
+      "build": "resonance",
+      "floors": 200,
+      "completed": true,
+      "phase": "cleared",
+      "deaths": 0,
+      "rolls": 1081,
+      "level": 175,
+      "gold": 682949,
+      "spending": {
+        "shop": 5724,
+        "forge": 224857,
+        "fusion": 366469,
+        "event": 55003
+      },
+      "spent": 652053,
+      "forges": 135,
+      "forgeSlots": {
+        "weapon": 25,
+        "armor": 27,
+        "relic": 26,
+        "relic2": 26,
+        "relic3": 31
+      },
+      "forgeGold": {
+        "weapon": 35352,
+        "armor": 48146,
+        "relic": 49034,
+        "relic2": 31847,
+        "relic3": 60478
+      },
+      "buys": 7,
+      "fusions": 146,
+      "totalXpFused": 490353,
+      "consumedMaterialRarities": [
+        {
+          "name": "普通",
+          "count": 241
+        },
+        {
+          "name": "稀有",
+          "count": 311
+        },
+        {
+          "name": "史诗",
+          "count": 111
+        },
+        {
+          "name": "传说",
+          "count": 50
+        },
+        {
+          "name": "神话",
+          "count": 7
+        },
+        {
+          "name": "太古",
+          "count": 2
+        },
+        {
+          "name": "起源",
+          "count": 0
+        },
+        {
+          "name": "永恒",
+          "count": 0
+        }
+      ],
+      "spareRarities": [
+        {
+          "name": "普通",
+          "count": 0
+        },
+        {
+          "name": "稀有",
+          "count": 0
+        },
+        {
+          "name": "史诗",
+          "count": 0
+        },
+        {
+          "name": "传说",
+          "count": 85
+        },
+        {
+          "name": "神话",
+          "count": 53
+        },
+        {
+          "name": "太古",
+          "count": 30
+        },
+        {
+          "name": "起源",
+          "count": 13
+        },
+        {
+          "name": "永恒",
+          "count": 0
+        }
+      ],
+      "inventoryCount": 186,
+      "equipped": [
+        {
+          "id": "i171",
+          "slot": "relic",
+          "catalogId": "v4-relic-1-1-3",
+          "rarity": "传说",
+          "level": 98,
+          "levelXp": 769,
+          "enhance": 20,
+          "stats": {
+            "attack": 382,
+            "crit": 0.08,
+            "follow": 0.1,
+            "criticalFollow": 0.1344,
+            "followDamage": 0.2016
+          }
+        },
+        {
+          "id": "i304",
+          "slot": "weapon",
+          "catalogId": "v5-weapon-1-0-5",
+          "rarity": "太古",
+          "level": 168,
+          "levelXp": 1745,
+          "enhance": 20,
+          "stats": {
+            "attack": 18479,
+            "crit": 0.075,
+            "follow": 0,
+            "pairBonus": 0.048,
+            "tripleStrike": 0.18
+          }
+        },
+        {
+          "id": "i553",
+          "slot": "armor",
+          "catalogId": "armor-6-0-5",
+          "rarity": "太古",
+          "level": 167,
+          "levelXp": 79,
+          "enhance": 20,
+          "stats": {
+            "hp": 54859,
+            "defense": 3527,
+            "crit": 0,
+            "barrier": 0.33
+          }
+        },
+        {
+          "id": "i579",
+          "slot": "relic",
+          "catalogId": "v4-relic-2-3-5",
+          "rarity": "太古",
+          "level": 134,
+          "levelXp": 1576,
+          "enhance": 20,
+          "stats": {
+            "attack": 1746,
+            "crit": 0.08499999999999999,
+            "follow": 0.15000000000000002,
+            "pairBonus": 0.3672,
+            "pairWard": 0.1632
+          }
+        },
+        {
+          "id": "i857",
+          "slot": "relic",
+          "catalogId": "v4-relic-3-1-6",
+          "rarity": "起源",
+          "level": 159,
+          "levelXp": 1185,
+          "enhance": 20,
+          "stats": {
+            "attack": 3007,
+            "crit": 0.125,
+            "follow": 0.16,
+            "goldBonus": 0.392,
+            "luck": 16
+          }
+        }
+      ],
+      "talentPoints": 0,
+      "talents": {
+        "high": 5,
+        "four": 5,
+        "five": 5,
+        "six": 5,
+        "sum": 5,
+        "power": 161,
+        "resonance": 5,
+        "pair": 5,
+        "triple": 5,
+        "quartet": 5,
+        "choir": 5,
+        "echo": 5,
+        "critical": 5,
+        "keen": 5,
+        "crush": 5,
+        "pursuit": 5,
+        "opener": 5,
+        "slayer": 5,
+        "vitality": 5,
+        "guard": 5,
+        "leech": 5,
+        "recovery": 5,
+        "fortune": 5,
+        "smith": 5,
+        "luck": 5,
+        "attune": 5,
+        "omen": 5,
+        "mercy": 5,
+        "jackpot": 5,
+        "spark": 5,
+        "shatter": 3,
+        "diversity": 3,
+        "finality": 3,
+        "deepEcho": 3,
+        "chorusMend": 3,
+        "tripleBlade": 3,
+        "firstFire": 3,
+        "critAegis": 3,
+        "dawnCrit": 3,
+        "emberGuard": 3,
+        "phaseShelter": 3,
+        "lastResolve": 3,
+        "hunterStar": 3,
+        "gildedFaces": 3,
+        "sixRebirth": 3
+      },
+      "abilityTriggers": {
+        "sixShatter": 500,
+        "tripleStrike": 406,
+        "execution": 23,
+        "openingStrike": 575,
+        "distinctStrike": 333,
+        "criticalWard": 431,
+        "lowWard": 283,
+        "phaseWard": 17,
+        "sixthMend": 409,
+        "resolveGuard": 0,
+        "echoRelic": 481,
+        "firstCritLuck": 367,
+        "eliteLuck": 178,
+        "gildedSix": 285,
+        "resonanceMend": 130
+      },
+      "bossRounds": {
+        "n": 66,
+        "min": 1,
+        "median": 2,
+        "p95": 3,
+        "max": 6,
+        "mean": 2.0455
+      },
+      "lateBossRounds": {
+        "n": 13,
+        "min": 1,
+        "median": 2,
+        "p95": 3,
+        "max": 4,
+        "mean": 2.2308
+      },
+      "bossDamageTaken": {
+        "n": 66,
+        "min": 0,
+        "median": 0,
+        "p95": 0,
+        "max": 26,
+        "mean": 0.3939
+      },
+      "lateBossDamageTaken": {
+        "n": 13,
+        "min": 0,
+        "median": 0,
+        "p95": 0,
+        "max": 0,
+        "mean": 0
+      },
+      "longest": [
+        {
+          "floor": 20,
+          "name": "幽潮女王",
+          "type": "boss",
+          "mechanic": null,
+          "turns": 6,
+          "damageTaken": 0,
+          "totalDamage": 406546,
+          "openingHp": 4196,
+          "maxHp": 4196,
+          "unspent": 0,
+          "killed": true
+        },
+        {
+          "floor": 21,
+          "name": "破晓巡游者",
+          "type": "elite",
+          "mechanic": null,
+          "turns": 6,
+          "damageTaken": 0,
+          "totalDamage": 263363,
+          "openingHp": 4215,
+          "maxHp": 4215,
+          "unspent": 0,
+          "killed": true
+        },
+        {
+          "floor": 1,
+          "name": "空壳骑士",
+          "type": "combat",
+          "mechanic": null,
+          "turns": 5,
+          "damageTaken": 2,
+          "totalDamage": 77,
+          "openingHp": 182,
+          "maxHp": 182,
+          "unspent": 0,
+          "killed": true
+        },
+        {
+          "floor": 1,
+          "name": "空壳骑士",
+          "type": "elite",
+          "mechanic": null,
+          "turns": 5,
+          "damageTaken": 0,
+          "totalDamage": 225,
+          "openingHp": 197,
+          "maxHp": 197,
+          "unspent": 0,
+          "killed": true
+        },
+        {
+          "floor": 15,
+          "name": "倒悬钟主",
+          "type": "boss",
+          "mechanic": null,
+          "turns": 5,
+          "damageTaken": 0,
+          "totalDamage": 161363,
+          "openingHp": 3154,
+          "maxHp": 3154,
+          "unspent": 0,
+          "killed": true
+        }
+      ],
+      "milestones": [
+        {
+          "floor": 10,
+          "gold": 2863,
+          "level": 19,
+          "attack": 595,
+          "maxHp": 1407,
+          "defense": 87,
+          "luck": 10,
+          "unspentTalentPoints": 0,
+          "spentTalentPoints": 36,
+          "spending": {
+            "shop": 1370,
+            "forge": 972,
+            "fusion": 1807,
+            "event": 237
+          }
+        },
+        {
+          "floor": 30,
+          "gold": 6869,
+          "level": 45,
+          "attack": 2005,
+          "maxHp": 5214,
+          "defense": 402,
+          "luck": 20,
+          "unspentTalentPoints": 0,
+          "spentTalentPoints": 89,
+          "spending": {
+            "shop": 2073,
+            "forge": 15711,
+            "fusion": 16864,
+            "event": 504
+          }
+        },
+        {
+          "floor": 50,
+          "gold": 5220,
+          "level": 67,
+          "attack": 4301,
+          "maxHp": 14874,
+          "defense": 1274,
+          "luck": 28,
+          "unspentTalentPoints": 0,
+          "spentTalentPoints": 133,
+          "spending": {
+            "shop": 5724,
+            "forge": 47602,
+            "fusion": 37426,
+            "event": 3537
+          }
+        },
+        {
+          "floor": 80,
+          "gold": 36430,
+          "level": 94,
+          "attack": 11279,
+          "maxHp": 19150,
+          "defense": 1630,
+          "luck": 51,
+          "unspentTalentPoints": 0,
+          "spentTalentPoints": 187,
+          "spending": {
+            "shop": 5724,
+            "forge": 132227,
+            "fusion": 70499,
+            "event": 10552
+          }
+        },
+        {
+          "floor": 100,
+          "gold": 143061,
+          "level": 111,
+          "attack": 14231,
+          "maxHp": 21052,
+          "defense": 1820,
+          "luck": 44,
+          "unspentTalentPoints": 0,
+          "spentTalentPoints": 221,
+          "spending": {
+            "shop": 5724,
+            "forge": 132227,
+            "fusion": 108963,
+            "event": 18301
+          }
+        },
+        {
+          "floor": 140,
+          "gold": 312877,
+          "level": 139,
+          "attack": 17917,
+          "maxHp": 55588,
+          "defense": 3890,
+          "luck": 56,
+          "unspentTalentPoints": 0,
+          "spentTalentPoints": 279,
+          "spending": {
+            "shop": 5724,
+            "forge": 187107,
+            "fusion": 196993,
+            "event": 23999
+          }
+        },
+        {
+          "floor": 200,
+          "gold": 682949,
+          "level": 175,
+          "attack": 23971,
+          "maxHp": 69113,
+          "defense": 4941,
+          "luck": 39,
+          "unspentTalentPoints": 0,
+          "spentTalentPoints": 351,
+          "spending": {
+            "shop": 5724,
+            "forge": 224857,
+            "fusion": 366469,
+            "event": 55003
+          }
+        }
+      ],
+      "forgeExamples": [],
+      "fusionExamples": [],
+      "encounterTraceSha256": "4168d94a984ab802b33f4b4de63f2533997f4f9818a266e646600933206296b8",
+      "finalStateSha256": "e45f43d5599fa33237fa9db67a2898cc8abfa3738d2e9b966b1f6dbacd7a1bda",
+      "saveRoundTrip": true,
+      "sharedGiftDecisions": 7
+    },
+    {
+      "seed": 7919,
+      "policy": "conservative",
+      "build": "bulwark",
+      "floors": 200,
+      "completed": true,
+      "phase": "cleared",
+      "deaths": 0,
+      "rolls": 1417,
+      "level": 176,
+      "gold": 816664,
+      "spending": {
+        "shop": 13905,
+        "forge": 24878,
+        "fusion": 368377,
+        "event": 28889
+      },
+      "spent": 436049,
+      "forges": 20,
+      "forgeSlots": {
+        "weapon": 20,
+        "armor": 0,
+        "relic": 0,
+        "relic2": 0,
+        "relic3": 0
+      },
+      "forgeGold": {
+        "weapon": 24878,
+        "armor": 0,
+        "relic": 0,
+        "relic2": 0,
+        "relic3": 0
+      },
+      "buys": 8,
+      "fusions": 141,
+      "totalXpFused": 412583,
+      "consumedMaterialRarities": [
+        {
+          "name": "普通",
+          "count": 271
+        },
+        {
+          "name": "稀有",
+          "count": 296
+        },
+        {
+          "name": "史诗",
+          "count": 112
+        },
+        {
+          "name": "传说",
+          "count": 0
+        },
+        {
+          "name": "神话",
+          "count": 0
+        },
+        {
+          "name": "太古",
+          "count": 0
+        },
+        {
+          "name": "起源",
+          "count": 0
+        },
+        {
+          "name": "永恒",
+          "count": 0
+        }
+      ],
+      "spareRarities": [
+        {
+          "name": "普通",
+          "count": 2
+        },
+        {
+          "name": "稀有",
+          "count": 4
+        },
+        {
+          "name": "史诗",
+          "count": 0
+        },
+        {
+          "name": "传说",
+          "count": 151
+        },
+        {
+          "name": "神话",
+          "count": 62
+        },
+        {
+          "name": "太古",
+          "count": 21
+        },
+        {
+          "name": "起源",
+          "count": 5
+        },
+        {
+          "name": "永恒",
+          "count": 0
+        }
+      ],
+      "inventoryCount": 250,
+      "equipped": [
+        {
+          "id": "i566",
+          "slot": "relic",
+          "catalogId": "v4-relic-2-1-5",
+          "rarity": "太古",
+          "level": 125,
+          "levelXp": 415,
+          "enhance": 0,
+          "stats": {
+            "attack": 738,
+            "crit": 0.10999999999999999,
+            "follow": 0.14,
+            "pairBonus": 0.3024,
+            "pairWard": 0.1344
+          }
+        },
+        {
+          "id": "i577",
+          "slot": "weapon",
+          "catalogId": "v4-weapon-2-0-6",
+          "rarity": "起源",
+          "level": 166,
+          "levelXp": 910,
+          "enhance": 10,
+          "stats": {
+            "attack": 23495,
+            "crit": 0.09,
+            "follow": 0,
+            "followDamage": 0.63,
+            "criticalFollow": 0.175
+          }
+        },
+        {
+          "id": "i746",
+          "slot": "armor",
+          "catalogId": "v4-armor-0-0-6",
+          "rarity": "起源",
+          "level": 168,
+          "levelXp": 1620,
+          "enhance": 0,
+          "stats": {
+            "hp": 49284,
+            "defense": 3168,
+            "crit": 0,
+            "barrier": 0.35,
+            "reduction": 0.07
+          }
+        },
+        {
+          "id": "i871",
+          "slot": "relic",
+          "catalogId": "relic-7-0-5",
+          "rarity": "太古",
+          "level": 154,
+          "levelXp": 17,
+          "enhance": 0,
+          "stats": {
+            "attack": 1047,
+            "crit": 0.08499999999999999,
+            "follow": 0.15000000000000002,
+            "critBonus": 0.12
+          }
+        },
+        {
+          "id": "i1009",
+          "slot": "relic",
+          "catalogId": "v4-relic-1-1-5",
+          "rarity": "太古",
+          "level": 170,
+          "levelXp": 1340,
+          "enhance": 0,
+          "stats": {
+            "attack": 1000,
+            "crit": 0.10999999999999999,
+            "follow": 0.14,
+            "criticalFollow": 0.2016,
+            "followDamage": 0.3024
+          }
+        }
+      ],
+      "talentPoints": 0,
+      "talents": {
+        "high": 5,
+        "four": 5,
+        "five": 5,
+        "six": 5,
+        "sum": 5,
+        "power": 153,
+        "resonance": 5,
+        "pair": 5,
+        "triple": 5,
+        "quartet": 5,
+        "choir": 5,
+        "echo": 5,
+        "critical": 5,
+        "keen": 5,
+        "crush": 5,
+        "pursuit": 5,
+        "opener": 5,
+        "slayer": 5,
+        "vitality": 20,
+        "guard": 5,
+        "leech": 5,
+        "recovery": 5,
+        "fortune": 5,
+        "smith": 5,
+        "luck": 5,
+        "attune": 5,
+        "omen": 5,
+        "mercy": 5,
+        "jackpot": 5,
+        "spark": 5,
+        "shatter": 3,
+        "diversity": 3,
+        "finality": 3,
+        "deepEcho": 3,
+        "chorusMend": 3,
+        "tripleBlade": 3,
+        "firstFire": 3,
+        "critAegis": 3,
+        "dawnCrit": 3,
+        "emberGuard": 3,
+        "phaseShelter": 3,
+        "lastResolve": 3,
+        "hunterStar": 3,
+        "gildedFaces": 3,
+        "sixRebirth": 3
+      },
+      "abilityTriggers": {
+        "sixShatter": 496,
+        "tripleStrike": 465,
+        "execution": 28,
+        "openingStrike": 537,
+        "distinctStrike": 329,
+        "criticalWard": 543,
+        "lowWard": 486,
+        "phaseWard": 21,
+        "sixthMend": 434,
+        "resolveGuard": 0,
+        "echoRelic": 482,
+        "firstCritLuck": 382,
+        "eliteLuck": 173,
+        "gildedSix": 251,
+        "resonanceMend": 129
+      },
+      "bossRounds": {
+        "n": 72,
+        "min": 1,
+        "median": 2,
+        "p95": 8,
+        "max": 12,
+        "mean": 3.0972
+      },
+      "lateBossRounds": {
+        "n": 20,
+        "min": 1,
+        "median": 1,
+        "p95": 3,
+        "max": 3,
+        "mean": 1.6
+      },
+      "bossDamageTaken": {
+        "n": 72,
+        "min": 0,
+        "median": 0,
+        "p95": 0,
+        "max": 4,
+        "mean": 0.0556
+      },
+      "lateBossDamageTaken": {
+        "n": 20,
+        "min": 0,
+        "median": 0,
+        "p95": 0,
+        "max": 0,
+        "mean": 0
+      },
+      "longest": [
+        {
+          "floor": 15,
+          "name": "倒悬钟主",
+          "type": "boss",
+          "mechanic": null,
+          "turns": 12,
+          "damageTaken": 0,
+          "totalDamage": 164466,
+          "openingHp": 4044,
+          "maxHp": 4044,
+          "unspent": 0,
+          "killed": true
+        },
+        {
+          "floor": 11,
+          "name": "无光执刑者",
+          "type": "elite",
+          "mechanic": null,
+          "turns": 9,
+          "damageTaken": 0,
+          "totalDamage": 58510,
+          "openingHp": 3176,
+          "maxHp": 3176,
+          "unspent": 0,
+          "killed": true
+        },
+        {
+          "floor": 20,
+          "name": "幽潮女王",
+          "type": "boss",
+          "mechanic": null,
+          "turns": 9,
+          "damageTaken": 0,
+          "totalDamage": 385907,
+          "openingHp": 5167,
+          "maxHp": 5167,
+          "unspent": 0,
+          "killed": true
+        },
+        {
+          "floor": 14,
+          "name": "无光执刑者",
+          "type": "elite",
+          "mechanic": null,
+          "turns": 8,
+          "damageTaken": 0,
+          "totalDamage": 97988,
+          "openingHp": 3984,
+          "maxHp": 3984,
+          "unspent": 0,
+          "killed": true
+        },
+        {
+          "floor": 17,
+          "name": "星陨执灯人",
+          "type": "elite",
+          "mechanic": null,
+          "turns": 8,
+          "damageTaken": 0,
+          "totalDamage": 162850,
+          "openingHp": 4261,
+          "maxHp": 4261,
+          "unspent": 0,
+          "killed": true
+        }
+      ],
+      "milestones": [
+        {
+          "floor": 10,
+          "gold": 2684,
+          "level": 18,
+          "attack": 749,
+          "maxHp": 3146,
+          "defense": 111,
+          "luck": 7,
+          "unspentTalentPoints": 0,
+          "spentTalentPoints": 34,
+          "spending": {
+            "shop": 937,
+            "forge": 389,
+            "fusion": 3170,
+            "event": 353
+          }
+        },
+        {
+          "floor": 30,
+          "gold": 20408,
+          "level": 45,
+          "attack": 1481,
+          "maxHp": 6272,
+          "defense": 355,
+          "luck": 21,
+          "unspentTalentPoints": 0,
+          "spentTalentPoints": 89,
+          "spending": {
+            "shop": 1839,
+            "forge": 2805,
+            "fusion": 15436,
+            "event": 1808
+          }
+        },
+        {
+          "floor": 50,
+          "gold": 50220,
+          "level": 68,
+          "attack": 2196,
+          "maxHp": 14163,
+          "defense": 891,
+          "luck": 41,
+          "unspentTalentPoints": 0,
+          "spentTalentPoints": 135,
+          "spending": {
+            "shop": 6503,
+            "forge": 6595,
+            "fusion": 32548,
+            "event": 2750
+          }
+        },
+        {
+          "floor": 80,
+          "gold": 128967,
+          "level": 93,
+          "attack": 5082,
+          "maxHp": 19620,
+          "defense": 1242,
+          "luck": 35,
+          "unspentTalentPoints": 0,
+          "spentTalentPoints": 186,
+          "spending": {
+            "shop": 9169,
+            "forge": 11292,
+            "fusion": 77745,
+            "event": 8148
+          }
+        },
+        {
+          "floor": 100,
+          "gold": 237110,
+          "level": 109,
+          "attack": 7469,
+          "maxHp": 36672,
+          "defense": 2473,
+          "luck": 36,
+          "unspentTalentPoints": 0,
+          "spentTalentPoints": 218,
+          "spending": {
+            "shop": 13905,
+            "forge": 11292,
+            "fusion": 108796,
+            "event": 10217
+          }
+        },
+        {
+          "floor": 140,
+          "gold": 442892,
+          "level": 137,
+          "attack": 21058,
+          "maxHp": 83533,
+          "defense": 3645,
+          "luck": 67,
+          "unspentTalentPoints": 0,
+          "spentTalentPoints": 279,
+          "spending": {
+            "shop": 13905,
+            "forge": 24878,
+            "fusion": 182461,
+            "event": 21008
+          }
+        },
+        {
+          "floor": 200,
+          "gold": 816664,
+          "level": 176,
+          "attack": 26639,
+          "maxHp": 101987,
+          "defense": 4438,
+          "luck": 49,
+          "unspentTalentPoints": 0,
+          "spentTalentPoints": 358,
+          "spending": {
+            "shop": 13905,
+            "forge": 24878,
+            "fusion": 368377,
+            "event": 28889
+          }
+        }
+      ],
+      "forgeExamples": [],
+      "fusionExamples": [],
+      "encounterTraceSha256": "9bf20ba130161dcda5bbdb2f2d6ae62b380a8e24ef3e02d10640aa10f85a11a6",
+      "finalStateSha256": "02640223355d31bd26cbc2ba080c4d0be56ade8b5a14bcd6b22aa745680c22d4",
+      "saveRoundTrip": true,
+      "sharedGiftDecisions": 8
+    },
+    {
+      "seed": 7919,
+      "policy": "duplicate-materials",
+      "build": "bulwark",
+      "floors": 200,
+      "completed": true,
+      "phase": "cleared",
+      "deaths": 0,
+      "rolls": 1388,
+      "level": 174,
+      "gold": 602861,
+      "spending": {
+        "shop": 2412,
+        "forge": 252465,
+        "fusion": 393534,
+        "event": 76245
+      },
+      "spent": 724656,
+      "forges": 156,
+      "forgeSlots": {
+        "weapon": 25,
+        "armor": 26,
+        "relic": 31,
+        "relic2": 33,
+        "relic3": 41
+      },
+      "forgeGold": {
+        "weapon": 36036,
+        "armor": 44685,
+        "relic": 44336,
+        "relic2": 58547,
+        "relic3": 68861
+      },
+      "buys": 5,
+      "fusions": 141,
+      "totalXpFused": 519061,
+      "consumedMaterialRarities": [
+        {
+          "name": "普通",
+          "count": 270
+        },
+        {
+          "name": "稀有",
+          "count": 311
+        },
+        {
+          "name": "史诗",
+          "count": 104
+        },
+        {
+          "name": "传说",
+          "count": 49
+        },
+        {
+          "name": "神话",
+          "count": 5
+        },
+        {
+          "name": "太古",
+          "count": 4
+        },
+        {
+          "name": "起源",
+          "count": 0
+        },
+        {
+          "name": "永恒",
+          "count": 0
+        }
+      ],
+      "spareRarities": [
+        {
+          "name": "普通",
+          "count": 1
+        },
+        {
+          "name": "稀有",
+          "count": 1
+        },
+        {
+          "name": "史诗",
+          "count": 0
+        },
+        {
+          "name": "传说",
+          "count": 97
+        },
+        {
+          "name": "神话",
+          "count": 51
+        },
+        {
+          "name": "太古",
+          "count": 18
+        },
+        {
+          "name": "起源",
+          "count": 11
+        },
+        {
+          "name": "永恒",
+          "count": 0
+        }
+      ],
+      "inventoryCount": 184,
+      "equipped": [
+        {
+          "id": "i402",
+          "slot": "weapon",
+          "catalogId": "v4-weapon-3-3-5",
+          "rarity": "太古",
+          "level": 169,
+          "levelXp": 1993,
+          "enhance": 20,
+          "stats": {
+            "attack": 18600,
+            "crit": 0.075,
+            "follow": 0,
+            "fourBonus": 0.408,
+            "fiveBonus": 0.3264
+          }
+        },
+        {
+          "id": "i403",
+          "slot": "armor",
+          "catalogId": "armor-6-0-5",
+          "rarity": "太古",
+          "level": 178,
+          "levelXp": 2002,
+          "enhance": 20,
+          "stats": {
+            "hp": 58699,
+            "defense": 3774,
+            "crit": 0,
+            "barrier": 0.33
+          }
+        },
+        {
+          "id": "i502",
+          "slot": "relic",
+          "catalogId": "v4-relic-1-1-4",
+          "rarity": "神话",
+          "level": 126,
+          "levelXp": 996,
+          "enhance": 20,
+          "stats": {
+            "attack": 831,
+            "crit": 0.095,
+            "follow": 0.12,
+            "criticalFollow": 0.168,
+            "followDamage": 0.252
+          }
+        },
+        {
+          "id": "i719",
+          "slot": "relic",
+          "catalogId": "v4-relic-3-1-5",
+          "rarity": "太古",
+          "level": 148,
+          "levelXp": 641,
+          "enhance": 20,
+          "stats": {
+            "attack": 1656,
+            "crit": 0.10999999999999999,
+            "follow": 0.14,
+            "goldBonus": 0.336,
+            "luck": 13
+          }
+        },
+        {
+          "id": "i775",
+          "slot": "relic",
+          "catalogId": "v4-relic-2-0-6",
+          "rarity": "起源",
+          "level": 153,
+          "levelXp": 1318,
+          "enhance": 20,
+          "stats": {
+            "attack": 3354,
+            "crit": 0.09999999999999999,
+            "follow": 0.17,
+            "pairBonus": 0.315,
+            "pairWard": 0.14
+          }
+        }
+      ],
+      "talentPoints": 0,
+      "talents": {
+        "high": 5,
+        "four": 5,
+        "five": 5,
+        "six": 5,
+        "sum": 5,
+        "power": 146,
+        "resonance": 5,
+        "pair": 5,
+        "triple": 5,
+        "quartet": 5,
+        "choir": 5,
+        "echo": 5,
+        "critical": 5,
+        "keen": 5,
+        "crush": 5,
+        "pursuit": 5,
+        "opener": 5,
+        "slayer": 5,
+        "vitality": 20,
+        "guard": 5,
+        "leech": 5,
+        "recovery": 5,
+        "fortune": 5,
+        "smith": 5,
+        "luck": 5,
+        "attune": 5,
+        "omen": 5,
+        "mercy": 5,
+        "jackpot": 5,
+        "spark": 5,
+        "shatter": 3,
+        "diversity": 3,
+        "finality": 3,
+        "deepEcho": 3,
+        "chorusMend": 3,
+        "tripleBlade": 3,
+        "firstFire": 3,
+        "critAegis": 3,
+        "dawnCrit": 3,
+        "emberGuard": 3,
+        "phaseShelter": 3,
+        "lastResolve": 3,
+        "hunterStar": 3,
+        "gildedFaces": 3,
+        "sixRebirth": 3
+      },
+      "abilityTriggers": {
+        "sixShatter": 489,
+        "tripleStrike": 448,
+        "execution": 30,
+        "openingStrike": 529,
+        "distinctStrike": 343,
+        "criticalWard": 505,
+        "lowWard": 460,
+        "phaseWard": 18,
+        "sixthMend": 411,
+        "resolveGuard": 0,
+        "echoRelic": 347,
+        "firstCritLuck": 365,
+        "eliteLuck": 155,
+        "gildedSix": 241,
+        "resonanceMend": 102
+      },
+      "bossRounds": {
+        "n": 56,
+        "min": 1,
+        "median": 2,
+        "p95": 8,
+        "max": 10,
+        "mean": 3.1607
+      },
+      "lateBossRounds": {
+        "n": 13,
+        "min": 1,
+        "median": 1,
+        "p95": 3,
+        "max": 4,
+        "mean": 1.8462
+      },
+      "bossDamageTaken": {
+        "n": 56,
+        "min": 0,
+        "median": 0,
+        "p95": 0,
+        "max": 0,
+        "mean": 0
+      },
+      "lateBossDamageTaken": {
+        "n": 13,
+        "min": 0,
+        "median": 0,
+        "p95": 0,
+        "max": 0,
+        "mean": 0
+      },
+      "longest": [
+        {
+          "floor": 11,
+          "name": "星陨执灯人",
+          "type": "elite",
+          "mechanic": null,
+          "turns": 10,
+          "damageTaken": 0,
+          "totalDamage": 62937,
+          "openingHp": 3274,
+          "maxHp": 3274,
+          "unspent": 0,
+          "killed": true
+        },
+        {
+          "floor": 15,
+          "name": "倒悬钟主",
+          "type": "boss",
+          "mechanic": null,
+          "turns": 10,
+          "damageTaken": 0,
+          "totalDamage": 155214,
+          "openingHp": 4808,
+          "maxHp": 4808,
+          "unspent": 0,
+          "killed": true
+        },
+        {
+          "floor": 20,
+          "name": "幽潮女王",
+          "type": "boss",
+          "mechanic": null,
+          "turns": 10,
+          "damageTaken": 0,
+          "totalDamage": 387532,
+          "openingHp": 5388,
+          "maxHp": 5388,
+          "unspent": 0,
+          "killed": true
+        },
+        {
+          "floor": 10,
+          "name": "霜痕巡游者",
+          "type": "elite",
+          "mechanic": null,
+          "turns": 9,
+          "damageTaken": 0,
+          "totalDamage": 48503,
+          "openingHp": 3214,
+          "maxHp": 3214,
+          "unspent": 0,
+          "killed": true
+        },
+        {
+          "floor": 13,
+          "name": "余烬遗忘者",
+          "type": "elite",
+          "mechanic": null,
+          "turns": 9,
+          "damageTaken": 0,
+          "totalDamage": 76646,
+          "openingHp": 4006,
+          "maxHp": 4006,
+          "unspent": 0,
+          "killed": true
+        }
+      ],
+      "milestones": [
+        {
+          "floor": 10,
+          "gold": 2409,
+          "level": 19,
+          "attack": 636,
+          "maxHp": 3244,
+          "defense": 182,
+          "luck": 0,
+          "unspentTalentPoints": 0,
+          "spentTalentPoints": 36,
+          "spending": {
+            "shop": 1027,
+            "forge": 2179,
+            "fusion": 2705,
+            "event": 99
+          }
+        },
+        {
+          "floor": 30,
+          "gold": 2687,
+          "level": 45,
+          "attack": 1688,
+          "maxHp": 8228,
+          "defense": 395,
+          "luck": 28,
+          "unspentTalentPoints": 0,
+          "spentTalentPoints": 88,
+          "spending": {
+            "shop": 2412,
+            "forge": 17462,
+            "fusion": 18156,
+            "event": 1279
+          }
+        },
+        {
+          "floor": 50,
+          "gold": 5269,
+          "level": 67,
+          "attack": 3813,
+          "maxHp": 11800,
+          "defense": 567,
+          "luck": 20,
+          "unspentTalentPoints": 0,
+          "spentTalentPoints": 132,
+          "spending": {
+            "shop": 2412,
+            "forge": 37981,
+            "fusion": 37448,
+            "event": 5789
+          }
+        },
+        {
+          "floor": 80,
+          "gold": 12937,
+          "level": 93,
+          "attack": 8737,
+          "maxHp": 56972,
+          "defense": 2431,
+          "luck": 33,
+          "unspentTalentPoints": 0,
+          "spentTalentPoints": 188,
+          "spending": {
+            "shop": 2412,
+            "forge": 116734,
+            "fusion": 73098,
+            "event": 14402
+          }
+        },
+        {
+          "floor": 100,
+          "gold": 60126,
+          "level": 109,
+          "attack": 12727,
+          "maxHp": 75898,
+          "defense": 3261,
+          "luck": 38,
+          "unspentTalentPoints": 0,
+          "spentTalentPoints": 221,
+          "spending": {
+            "shop": 2412,
+            "forge": 174706,
+            "fusion": 108342,
+            "event": 20212
+          }
+        },
+        {
+          "floor": 140,
+          "gold": 219222,
+          "level": 138,
+          "attack": 19527,
+          "maxHp": 100524,
+          "defense": 4331,
+          "luck": 46,
+          "unspentTalentPoints": 0,
+          "spentTalentPoints": 279,
+          "spending": {
+            "shop": 2412,
+            "forge": 224514,
+            "fusion": 212611,
+            "event": 40245
+          }
+        },
+        {
+          "floor": 200,
+          "gold": 602861,
+          "level": 174,
+          "attack": 24796,
+          "maxHp": 120381,
+          "defense": 5287,
+          "luck": 38,
+          "unspentTalentPoints": 0,
+          "spentTalentPoints": 351,
+          "spending": {
+            "shop": 2412,
+            "forge": 252465,
+            "fusion": 393534,
+            "event": 76245
+          }
+        }
+      ],
+      "forgeExamples": [],
+      "fusionExamples": [],
+      "encounterTraceSha256": "d3d20884f1e90d67d127dae5d4fef70851b0b3975fe673002b8bdc634276618f",
+      "finalStateSha256": "155856e652e28b969343efc539a5bdcc0dbab52e1878e821f0914070f88f5cbb",
+      "saveRoundTrip": true,
+      "sharedGiftDecisions": 7
+    }
+  ],
+  "durationSeconds": 30.238128144,
+  "limitations": [
+    "This is policy sensitivity, not a player win-rate estimate, optimal strategy or a balance patch.",
+    "Different spending consumes different real dice; later RNG, routes, drops, events and talent histories may diverge. Whole-run differences are not attributed to one isolated stat.",
+    "Only forge counterfactuals explicitly assert equal enemy and combat-opening RNG; later kill timing may still change random consumption.",
+    "The expected-upgrade chooser omits some conditional interactions and survival value on relics; duplicate retention is an intentionally conservative collection preference.",
+    "Gold expenditure is measured as net decreases per transaction; this undercounts event payments immediately partially refunded by a low roll.",
+    "No price, enemy statistic, equipment identity, drop probability, RNG algorithm or production automation was changed."
+  ]
+}

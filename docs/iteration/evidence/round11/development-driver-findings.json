@@ -1,0 +1,65 @@
+{
+  "status": "RESOLVED_IN_FINAL_REPLAY",
+  "findings": [
+    {
+      "source": "browser-round11-current-01/report.json",
+      "sha256": "b209ae14b8536f53fb6e51f0b87f37d200dfbb3b860be165c93d917005550ff4",
+      "cases": [
+        {
+          "name": "merchant-forge-event-choices",
+          "status": "FAIL",
+          "error": "AssertionError [ERR_ASSERTION]: event-choice: action is enabled by actual rules\n    at check (file:///workspace/scratch/1c1a2fbce156/work/Dice-Abyss/scripts/qa-round11-browser.mjs:23:63)\n    at action (file:///workspace/scratch/1c1a2fbce156/work/Dice-Abyss/scripts/qa-round11-browser.mjs:60:75)\n    at async file:///workspace/scratch/1c1a2fbce156/work/Dice-Abyss/scripts/qa-round11-browser.mjs:108:50\n    at async run (file:///workspace/scratch/1c1a2fbce156/work/Dice-Abyss/scripts/qa-round11-browser.mjs:68:6)\n    at async file:///workspace/scratch/1c1a2fbce156/work/Dice-Abyss/scripts/qa-round11-browser.mjs:103:2",
+          "falseTraces": [
+            {
+              "label": "event-choice: action is enabled by actual rules",
+              "pass": false
+            }
+          ]
+        },
+        {
+          "name": "fusion-selection-confirmation",
+          "status": "FAIL",
+          "error": "locator.scrollIntoViewIfNeeded: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-action=\"fusion-submit\"]')\u001b[22m\n\n    at hit (/workspace/scratch/1c1a2fbce156/work/Dice-Abyss/scripts/qa-round11-browser.mjs:56:16)\n    at /workspace/scratch/1c1a2fbce156/work/Dice-Abyss/scripts/qa-round11-browser.mjs:116:68\n    at async run (/workspace/scratch/1c1a2fbce156/work/Dice-Abyss/scripts/qa-round11-browser.mjs:68:6)\n    at async file:///workspace/scratch/1c1a2fbce156/work/Dice-Abyss/scripts/qa-round11-browser.mjs:110:2",
+          "falseTraces": []
+        }
+      ]
+    },
+    {
+      "source": "browser-round11-fusion-fix/report.json",
+      "sha256": "62cc7a54630c5f46bd2e94fd125100ae6efdfa394093df04f403cd266bc05ebf",
+      "cases": [
+        {
+          "name": "fusion-selection-confirmation",
+          "status": "FAIL",
+          "error": "locator.waitFor: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('dialog[open]') to be visible\u001b[22m\n\n    at /workspace/scratch/1c1a2fbce156/work/Dice-Abyss/scripts/qa-round11-browser.mjs:119:38\n    at async run (/workspace/scratch/1c1a2fbce156/work/Dice-Abyss/scripts/qa-round11-browser.mjs:70:6)\n    at async file:///workspace/scratch/1c1a2fbce156/work/Dice-Abyss/scripts/qa-round11-browser.mjs:112:2",
+          "falseTraces": []
+        }
+      ]
+    },
+    {
+      "source": "browser-round11-final/report.json",
+      "sha256": "7a5df2ba2a5e329d8b83f744d7ba73b0f545912aaafee7e3ebd5fdd7a860ec0a",
+      "cases": [
+        {
+          "name": "settings-keyboard-persistence-and-failure",
+          "status": "PASS",
+          "error": "",
+          "falseTraces": [
+            {
+              "label": "settings are written under the actual settings key",
+              "pass": false,
+              "actualHash": "a36fceaf1fca470f7e3b13bdc1530dcb94d9721cfe75e38412a8575eb5b8df02",
+              "expectedHash": "145704795827640cf7b7200bb9fe7ae40fa717225cb2db29409a55b699c7f6ee"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "explanation": [
+    "The initial driver used a CSS class as an action ID and omitted a required event confirmation. Both were recorded FAIL and corrected against the existing handlers.",
+    "Unprotected low-rarity fusion correctly commits directly; the driver was corrected to use explicitly locked material and verify review, cancellation and one commit.",
+    "JSON.stringify key order made one PASS-case trace false while deepEqual correctly passed; trace generation now uses isDeepStrictEqual, and all 351 final traces are true.",
+    "Unknown --case now fails closed when no group executes. No failure was removed to obtain the final result."
+  ]
+}

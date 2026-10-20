@@ -1,0 +1,63 @@
+[
+  {
+    "name": "new-tactics",
+    "command": [
+      "node",
+      "--test-reporter=tap",
+      "tests/base-boss-tactics.test.mjs"
+    ],
+    "started": "2026-10-19T04:42:39.896837+00:00",
+    "finished": "2026-10-19T04:42:40.769547+00:00",
+    "durationSeconds": 0.8728,
+    "exitCode": 0,
+    "counts": {
+      "tests": 8,
+      "suites": 0,
+      "pass": 8,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0
+    },
+    "stdoutSha256": "0bf8da4c3cd655148f7a9bf129e103463dd9216b1da2971beb1683db7a493425",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "existing-tactics",
+    "command": [
+      "node",
+      "--test-reporter=tap",
+      "tests/encounter-tactics.test.mjs"
+    ],
+    "started": "2026-10-19T04:42:40.769934+00:00",
+    "finished": "2026-10-19T04:42:41.279997+00:00",
+    "durationSeconds": 0.5101,
+    "exitCode": 0,
+    "counts": {
+      "tests": 8,
+      "suites": 0,
+      "pass": 8,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0
+    },
+    "stdoutSha256": "b8dbc9718f9508644c3cf9c254cac3e70fe32a1084ae91cd4bb4d47c405900b9",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "tactics-syntax",
+    "command": [
+      "node",
+      "--check",
+      "src/encounter-tactics.js"
+    ],
+    "started": "2026-10-19T04:42:41.280260+00:00",
+    "finished": "2026-10-19T04:42:41.306886+00:00",
+    "durationSeconds": 0.0267,
+    "exitCode": 0,
+    "counts": {},
+    "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

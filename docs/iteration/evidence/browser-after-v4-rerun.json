@@ -1,0 +1,263 @@
+{
+  "label": "after-rerun",
+  "source": "/workspace/scratch/4454855f6034/project",
+  "baseURL": "http://127.0.0.1:4189",
+  "started": "2026-10-17T10:43:41.666Z",
+  "browser": "155.0.8059.84",
+  "method": "Native Playwright mouse/keyboard/file-input interactions in fresh Chromium contexts; exact persisted states compared with deterministic engine transitions. No UI internals assigned.",
+  "limitations": [
+    "Synthetic fixtures target otherwise lengthy or probabilistic branches; they are not claims of human natural play.",
+    "Storage quota and missed-storage-event cases intentionally inject browser faults.",
+    "This driver records correctness and screenshots, not frame-rate measurements."
+  ],
+  "cases": [
+    {
+      "name": "v4-import-export-archive",
+      "kind": "Authentic constructed V4 baseline fixture envelopes; native import/export UI",
+      "started": "2026-10-17T10:43:41.799Z",
+      "checks": [
+        {
+          "name": "Cancel V4 import preserves the active original bytes and creates no archive"
+        },
+        {
+          "name": "Import B commits its exact migrated state",
+          "revision": 2,
+          "rng": 1178001003,
+          "phase": "fusion",
+          "stateSha256": "a1ade34cc7d4451466540119106e305ff6771bf72f6e95c84cb4b2ebdfecc69b"
+        },
+        {
+          "name": "Import B archives and exports active V4 A before replacement, byte for byte"
+        },
+        {
+          "name": "V4 import Constructed V4 engine fixture / fate",
+          "revision": 0,
+          "rng": 279232657,
+          "phase": "fate",
+          "stateSha256": "7a1ff9f7abc03332d9664e9d427de0a150709600971919deaaa6727102e66932"
+        },
+        {
+          "name": "V4 import Constructed V4 engine fixture / combat",
+          "revision": 1,
+          "rng": 2657238410,
+          "phase": "combat",
+          "stateSha256": "7b4e7e4decd889c7550221881dc821cb301454985cf1d196251b04907c81916d"
+        },
+        {
+          "name": "V4 import Constructed V4 engine fixture / boss",
+          "revision": 1,
+          "rng": 279232657,
+          "phase": "combat",
+          "stateSha256": "d470a7fde3b285ada0c16224787e47b508c4d69bf05f7a343c7e9472a082b71c"
+        },
+        {
+          "name": "V4 import Constructed V4 engine fixture / chest",
+          "revision": 1,
+          "rng": 579199574,
+          "phase": "chest",
+          "stateSha256": "b21e93bc3097e068e64998de74699fd938ea8416c838be53ef7463d867dada75"
+        },
+        {
+          "name": "V4 import Constructed V4 engine fixture / loot",
+          "revision": 2,
+          "rng": 579199574,
+          "phase": "loot",
+          "stateSha256": "b1ea6a6f492933b3d85aa49aa243b8e177730b62cd33a3f488b976388c006d1e"
+        },
+        {
+          "name": "V4 import Constructed V4 engine fixture / merchant",
+          "revision": 2,
+          "rng": 3596378641,
+          "phase": "merchant",
+          "stateSha256": "56461ec39cbf26c378f5258de2a015537261cf52581663fb9381c13957ea01ff"
+        },
+        {
+          "name": "V4 import Constructed V4 engine fixture / blackmarket",
+          "revision": 1,
+          "rng": 3596378641,
+          "phase": "blackmarket",
+          "stateSha256": "55bc0abd6c67985a5c4d85c4d7e946d10bf7d3cbbd4443cd138f4e31d26ca688"
+        },
+        {
+          "name": "V4 import Constructed V4 engine fixture / forge",
+          "revision": 2,
+          "rng": 2657238410,
+          "phase": "forge",
+          "stateSha256": "d48e290ff1fa52590f4a29c526a1a6696c0f9d77e5fe8469f9a34e680c23a129"
+        },
+        {
+          "name": "V4 import Constructed V4 engine fixture / fusion",
+          "revision": 2,
+          "rng": 1178001003,
+          "phase": "fusion",
+          "stateSha256": "a1ade34cc7d4451466540119106e305ff6771bf72f6e95c84cb4b2ebdfecc69b"
+        },
+        {
+          "name": "V4 import Constructed V4 engine fixture / prayer",
+          "revision": 1,
+          "rng": 279232657,
+          "phase": "event",
+          "stateSha256": "da346fab7d4bfb5afb62c457d608e35063cf170f6587b8b873a872fb2eb3e394"
+        },
+        {
+          "name": "V4 import Constructed V4 engine fixture / rest",
+          "revision": 1,
+          "rng": 279232657,
+          "phase": "rest",
+          "stateSha256": "21a22d9db7a197969183982ac081645c7941a6eabefc5f5f53616651eeb17119"
+        }
+      ],
+      "status": "passed",
+      "finished": "2026-10-17T10:44:19.251Z"
+    }
+  ],
+  "errors": [],
+  "fixtures": [
+    {
+      "name": "active-unarchived-v4-A",
+      "provenance": "Explicit raw import/recovery fixture",
+      "sha256": "d53aa5d8641f1baeea3674308118e0d1ae02a8aab10e3a887cacbcd156f7e7c7"
+    },
+    {
+      "name": "Constructed V4 engine fixture / fate",
+      "provenance": "Checked-in original V4 engine fixture envelope",
+      "sha256": "5378df5f35cbdd04a2fde622e717859ae193817d8714a50c0fd174051d9ce7cf"
+    },
+    {
+      "name": "Constructed V4 engine fixture / combat",
+      "provenance": "Checked-in original V4 engine fixture envelope",
+      "sha256": "d53aa5d8641f1baeea3674308118e0d1ae02a8aab10e3a887cacbcd156f7e7c7"
+    },
+    {
+      "name": "Constructed V4 engine fixture / boss",
+      "provenance": "Checked-in original V4 engine fixture envelope",
+      "sha256": "bc7db47c20723a0e86fed810044ec8c5c5d519698423659d80d922003cbf935c"
+    },
+    {
+      "name": "Constructed V4 engine fixture / chest",
+      "provenance": "Checked-in original V4 engine fixture envelope",
+      "sha256": "acd2fb874a8d4901d5b13eca12361880ef215863da79892d512653840044f4d4"
+    },
+    {
+      "name": "Constructed V4 engine fixture / loot",
+      "provenance": "Checked-in original V4 engine fixture envelope",
+      "sha256": "eddf134a657ed8f5219050195c966b5819b730966caec93b6a8b15db266f9d6b"
+    },
+    {
+      "name": "Constructed V4 engine fixture / merchant",
+      "provenance": "Checked-in original V4 engine fixture envelope",
+      "sha256": "92ece4330a1f984ff018e9ddf4f63c7bbed51d4bd20c095d4974cb03dae72467"
+    },
+    {
+      "name": "Constructed V4 engine fixture / blackmarket",
+      "provenance": "Checked-in original V4 engine fixture envelope",
+      "sha256": "f40e75cd5a4ab3a6cdf26787f59352376b47cffc38c72469825a61ff5f57d91d"
+    },
+    {
+      "name": "Constructed V4 engine fixture / forge",
+      "provenance": "Checked-in original V4 engine fixture envelope",
+      "sha256": "9e9a28d9b36d2508da78a64c9c0397d49f7459079fb144c669e6d82f8b7f0611"
+    },
+    {
+      "name": "Constructed V4 engine fixture / fusion",
+      "provenance": "Checked-in original V4 engine fixture envelope",
+      "sha256": "4452c8970378e895e4273cba4e36ee990635047b7109323fc6d0d69b641d6f11"
+    },
+    {
+      "name": "Constructed V4 engine fixture / prayer",
+      "provenance": "Checked-in original V4 engine fixture envelope",
+      "sha256": "b996f3d419f45f4daec64781cfa7bfabe4431f08cdb3cd7dcc813c0b6310535a"
+    },
+    {
+      "name": "Constructed V4 engine fixture / rest",
+      "provenance": "Checked-in original V4 engine fixture envelope",
+      "sha256": "7f48383f294b347dbe2ef8e0b81cefc4cc93bce4b62d6676beb3b377754dcec4"
+    }
+  ],
+  "screenshots": [
+    "after-rerun-interaction-v4-migrated-rest.png"
+  ],
+  "finished": "2026-10-17T10:44:19.351Z",
+  "passed": 1,
+  "failed": 0,
+  "_archive": {
+    "sourceReport": "after-rerun-interactions.json",
+    "originalBytes": 57402,
+    "originalSha256": "b9184697600601fbffd31170e3b3e3b331b470c5ac7ee44d842df1992d4680a5",
+    "method": "All case checks, statuses, errors and geometry issue candidates retained. Full fixture raw strings and repetitive geometry control/text lists omitted; reconstruct with the shipped QA script. Original screenshot names identify capture provenance; selected visual sheets are in visual/.",
+    "omittedRaw": [
+      {
+        "path": "/fixtures/0/raw",
+        "characters": 3016,
+        "bytes": 3206,
+        "sha256": "d53aa5d8641f1baeea3674308118e0d1ae02a8aab10e3a887cacbcd156f7e7c7"
+      },
+      {
+        "path": "/fixtures/1/raw",
+        "characters": 2191,
+        "bytes": 2286,
+        "sha256": "5378df5f35cbdd04a2fde622e717859ae193817d8714a50c0fd174051d9ce7cf"
+      },
+      {
+        "path": "/fixtures/2/raw",
+        "characters": 3016,
+        "bytes": 3206,
+        "sha256": "d53aa5d8641f1baeea3674308118e0d1ae02a8aab10e3a887cacbcd156f7e7c7"
+      },
+      {
+        "path": "/fixtures/3/raw",
+        "characters": 3134,
+        "bytes": 3447,
+        "sha256": "bc7db47c20723a0e86fed810044ec8c5c5d519698423659d80d922003cbf935c"
+      },
+      {
+        "path": "/fixtures/4/raw",
+        "characters": 2883,
+        "bytes": 2999,
+        "sha256": "acd2fb874a8d4901d5b13eca12361880ef215863da79892d512653840044f4d4"
+      },
+      {
+        "path": "/fixtures/5/raw",
+        "characters": 3127,
+        "bytes": 3278,
+        "sha256": "eddf134a657ed8f5219050195c966b5819b730966caec93b6a8b15db266f9d6b"
+      },
+      {
+        "path": "/fixtures/6/raw",
+        "characters": 3686,
+        "bytes": 3864,
+        "sha256": "92ece4330a1f984ff018e9ddf4f63c7bbed51d4bd20c095d4974cb03dae72467"
+      },
+      {
+        "path": "/fixtures/7/raw",
+        "characters": 3450,
+        "bytes": 3588,
+        "sha256": "f40e75cd5a4ab3a6cdf26787f59352376b47cffc38c72469825a61ff5f57d91d"
+      },
+      {
+        "path": "/fixtures/8/raw",
+        "characters": 2737,
+        "bytes": 2864,
+        "sha256": "9e9a28d9b36d2508da78a64c9c0397d49f7459079fb144c669e6d82f8b7f0611"
+      },
+      {
+        "path": "/fixtures/9/raw",
+        "characters": 3842,
+        "bytes": 3972,
+        "sha256": "4452c8970378e895e4273cba4e36ee990635047b7109323fc6d0d69b641d6f11"
+      },
+      {
+        "path": "/fixtures/10/raw",
+        "characters": 2865,
+        "bytes": 3006,
+        "sha256": "b996f3d419f45f4daec64781cfa7bfabe4431f08cdb3cd7dcc813c0b6310535a"
+      },
+      {
+        "path": "/fixtures/11/raw",
+        "characters": 2626,
+        "bytes": 2721,
+        "sha256": "7f48383f294b347dbe2ef8e0b81cefc4cc93bce4b62d6676beb3b377754dcec4"
+      }
+    ]
+  }
+}

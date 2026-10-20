@@ -1,0 +1,110 @@
+{
+  "round": 8,
+  "label": "candidate",
+  "status": "PASS",
+  "completedUtc": "2026-10-18T07:18:23.926177+00:00",
+  "archive": {
+    "zip": "Dice-Abyss-v5.8.0-cloud-round-08-candidate.zip",
+    "bytes": 17300907,
+    "decimalMB": 17.300907,
+    "sha256": "a91977119cd0cee2b7506912fe2d83ac493dda29d21355e76f87c10a5273c4e3",
+    "files": 786,
+    "manifestEntries": 785,
+    "version": "5.8.0",
+    "round": 8,
+    "crcVerified": true,
+    "allManifestHashesVerified": true,
+    "extractedFilesVerified": true,
+    "expandedBytes": 30736461,
+    "entries": 786,
+    "pathSafetyVerified": true,
+    "expandedBudgetVerified": true
+  },
+  "syntax": {
+    "command": [
+      "npm",
+      "run",
+      "check"
+    ],
+    "startedUtc": "2026-10-18T07:17:55.281523+00:00",
+    "exitCode": 0,
+    "elapsedSeconds": 2.329,
+    "log": "/workspace/scratch/5c3c2b08656a/audit/fresh-candidate-receipts/syntax.log"
+  },
+  "core": {
+    "command": [
+      "node",
+      "--test",
+      "--test-isolation=none",
+      "--test-reporter=tap",
+      "tests/engine.test.mjs",
+      "tests/equipment-levels.test.mjs",
+      "tests/fusion-selection.test.mjs",
+      "tests/fusion-workbench.test.mjs",
+      "tests/iteration-storage.test.mjs",
+      "tests/launcher-release.test.mjs",
+      "tests/v5-compatibility.test.mjs",
+      "tests/views-polish.test.mjs",
+      "tests/talent-allocation.test.mjs",
+      "tests/talent-view.test.mjs",
+      "tests/reward-copy.test.mjs",
+      "tests/fusion-controller.test.mjs",
+      "tests/forge-preview.test.mjs",
+      "tests/spring-truth.test.mjs",
+      "tests/storage-import-shape.test.mjs",
+      "tests/renderer-delay.test.mjs",
+      "tests/visual-timeline.test.mjs",
+      "tests/fixed-affix-truth.test.mjs",
+      "tests/fusion-tooltip.test.mjs",
+      "tests/storage-size-boundary.test.mjs",
+      "tests/event-context.test.mjs",
+      "tests/storage-read-reuse.test.mjs",
+      "tests/memorywell-preview.test.mjs",
+      "tests/inventory-position.test.mjs",
+      "tests/storage-talents-shape.test.mjs",
+      "tests/storage-roll-multipliers.test.mjs",
+      "tests/encounter-tactics.test.mjs",
+      "tests/roll-history.test.mjs",
+      "tests/action-focus.test.mjs"
+    ],
+    "startedUtc": "2026-10-18T07:17:57.610830+00:00",
+    "exitCode": 0,
+    "elapsedSeconds": 25.478,
+    "log": "/workspace/scratch/5c3c2b08656a/audit/fresh-candidate-receipts/core.tap",
+    "tapSummary": {
+      "tests": 224,
+      "pass": 224,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0
+    },
+    "nodeTestDurationMs": 25425.596851,
+    "testFiles": 29
+  },
+  "http": {
+    "execution": {
+      "command": [
+        "node",
+        "scripts/smoke-http.mjs",
+        "--output",
+        "/workspace/scratch/5c3c2b08656a/audit/fresh-candidate-receipts/http.json"
+      ],
+      "startedUtc": "2026-10-18T07:18:23.091589+00:00",
+      "exitCode": 0,
+      "elapsedSeconds": 0.631,
+      "log": "/workspace/scratch/5c3c2b08656a/audit/fresh-candidate-receipts/http.log"
+    },
+    "report": "/workspace/scratch/5c3c2b08656a/audit/fresh-candidate-receipts/http.json",
+    "status": "PASS",
+    "resources": 41
+  },
+  "frozenSourceFiles": 187,
+  "sourceAggregateSha256": "0997931a78acbfe92c7dbc664ba2da3de0deabb73e54b8dec051e97317626666",
+  "allArchiveFilesIdenticalAfterTests": 786,
+  "allSourceFilesIdenticalToArchive": true,
+  "allOriginalPathsPreserved": 708,
+  "freshDestination": "/workspace/scratch/5c3c2b08656a/fresh-candidate",
+  "runtimeNode": "v24.19.0",
+  "selfReferenceRule": "Candidate is a distinct code-identical archive; final archive has its own fresh external receipt. Final bytes/SHA/file count are not embedded in that archive."
+}

@@ -1,0 +1,26 @@
+/* Recovery has its own document flow: it never crowds the active game rails. */
+body:has(.save-recovery){min-width:0;}
+.save-recovery{min-height:100svh;padding:0 clamp(16px,4vw,64px) 48px;color:#e9edf0;font-size:16px;line-height:1.7;overflow-wrap:anywhere;}
+.recovery-header{display:flex;justify-content:space-between;gap:16px;padding:24px 0;border-bottom:1px solid #4a5056;font-size:14px;color:#c1c6cb;}
+.recovery-header span:last-child{color:#f5c978;}
+.recovery-content{width:min(780px,100%);margin:clamp(30px,6vh,72px) auto 0;}
+.recovery-content h1{font-size:clamp(25px,3vw,36px);line-height:1.45;letter-spacing:.02em;margin:0 0 18px;}
+.recovery-content h1:focus{outline:2px solid #54d5e9;outline-offset:6px;}
+.recovery-content h2{font-size:18px;line-height:1.6;margin:0;}
+.recovery-intro,.recovery-content section>p{font-size:15px;line-height:1.8;color:#c1c6cb;margin:14px 0 20px;}
+.recovery-memory,.recovery-saved,.recovery-next{padding:26px 0;border-top:1px solid #444a50;margin-top:26px;}
+.recovery-memory{border-top:1px solid #d2aa65;}
+.recovery-section-heading{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;}
+.recovery-section-heading>span{font-size:13px;color:#f5c978;}
+.save-recovery-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin:24px 0;}
+.save-recovery-summary dt{color:#b3bbc4;font-size:13px;margin-bottom:8px;}
+.save-recovery-summary dd{margin:0;font-size:21px;line-height:1.35;font-variant-numeric:tabular-nums;}
+.recovery-content .save-recovery-run-id{display:flex;gap:12px;align-items:baseline;margin:12px 0;font-size:13px;}
+.save-recovery-run-id code{color:#d8dfe5;font:inherit;font-variant-numeric:tabular-nums;}
+.recovery-content button{font-size:14px;min-height:44px;padding:10px 17px;line-height:1.55;white-space:normal;}
+.recovery-content button.primary{background:#123540;color:#d8f6fa;border-color:#54d5e9;}
+.recovery-content button.primary:hover:not(:disabled){background:#1b4652;color:#f2fcff;border-color:#93e6f2;}
+.recovery-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.recovery-next>small{display:block;font-size:13px;line-height:1.8;color:#abb3bc;margin-top:18px;}
+.recovery-content .recovery-error{color:#ffd193;border-left:1px solid #d2aa65;padding-left:14px;margin-top:24px;}
+@media(max-width:520px){.recovery-header{padding:18px 0;font-size:13px;}.save-recovery-summary{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 24px;}.recovery-content button{width:100%;}.recovery-actions{flex-direction:column;}.recovery-memory,.recovery-saved,.recovery-next{padding:22px 0;margin-top:22px;}}

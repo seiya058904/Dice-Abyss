@@ -1,0 +1,148 @@
+{
+  "kind": "Resolved visual display or reading false alarm; original PNG evidence verified intact",
+  "scenario": "exchange-long-name-double-cap",
+  "browser": "155.0.8059.84",
+  "viewport": {
+    "width": 1366,
+    "height": 768
+  },
+  "testStartedUtc": "2026-10-18T09:33:07.473Z",
+  "testFinishedUtc": "2026-10-18T09:33:12.009Z",
+  "scriptSha256": "e5dc99e6db5b744363fed0c1e2f1c063e4c509ad9e49c7b3973f6eb5b8f550a9",
+  "runtimeSourceStable": true,
+  "screenshots": [
+    {
+      "file": "exchange-long-name-confirm-top-1366.png",
+      "sha256": "141fab3502e10cc5a1700eabad3c948a63f946dceaf3ca8791759c6018413aff",
+      "bytes": 214447,
+      "filesystemModifiedUtc": "2026-10-18T09:33:10.602749+00:00",
+      "captureSequence": "After openChoice and exact quote/name checks, then the initial read-only geometry probe; before either scrollIntoViewIfNeeded call."
+    },
+    {
+      "file": "exchange-long-name-confirm-actions-1366.png",
+      "sha256": "141fab3502e10cc5a1700eabad3c948a63f946dceaf3ca8791759c6018413aff",
+      "bytes": 214447,
+      "filesystemModifiedUtc": "2026-10-18T09:33:10.770748+00:00",
+      "captureSequence": "After native scrollIntoViewIfNeeded on cancel and then confirm, the scrolled geometry probe and action bounds/hit-test assertions; before the native cancel click. No explicit two-RAF paint wait was inserted."
+    }
+  ],
+  "geometry": {
+    "initial": {
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "dialog": {
+        "x": 456.796875,
+        "y": 51.734375,
+        "right": 909.203125,
+        "bottom": 716.265625,
+        "width": 452.40625,
+        "height": 664.53125
+      },
+      "scrollTop": 0,
+      "scrollHeight": 663,
+      "clientHeight": 663,
+      "scrollWidth": 450,
+      "clientWidth": 450,
+      "cancel": {
+        "x": 743.234375,
+        "y": 652.5625,
+        "right": 797,
+        "bottom": 690.140625,
+        "width": 53.765625,
+        "height": 37.578125
+      },
+      "confirm": {
+        "x": 806.421875,
+        "y": 652.5625,
+        "right": 883.078125,
+        "bottom": 690.140625,
+        "width": 76.65625,
+        "height": 37.578125
+      },
+      "cancelHit": true,
+      "confirmHit": true
+    },
+    "scrolled": {
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "dialog": {
+        "x": 456.796875,
+        "y": 51.734375,
+        "right": 909.203125,
+        "bottom": 716.265625,
+        "width": 452.40625,
+        "height": 664.53125
+      },
+      "scrollTop": 0,
+      "scrollHeight": 663,
+      "clientHeight": 663,
+      "scrollWidth": 450,
+      "clientWidth": 450,
+      "cancel": {
+        "x": 743.234375,
+        "y": 652.5625,
+        "right": 797,
+        "bottom": 690.140625,
+        "width": 53.765625,
+        "height": 37.578125
+      },
+      "confirm": {
+        "x": 806.421875,
+        "y": 652.5625,
+        "right": 883.078125,
+        "bottom": 690.140625,
+        "width": 76.65625,
+        "height": 37.578125
+      },
+      "cancelHit": true,
+      "confirmHit": true
+    }
+  },
+  "observed": [
+    "An initial combined-tool image presentation was interpreted as showing the second screenshot without its dialog. That visual reading was wrong and is retained here only as correction history.",
+    "The two original screenshot files are byte-for-byte identical: each has 214447 bytes and SHA-256 141fab3502e10cc5a1700eabad3c948a63f946dceaf3ca8791759c6018413aff.",
+    "The actions PNG was then opened by itself. It visibly contains the complete dialog, all 64 equipment-name characters, both zero-credit terms, the XP quote and both action buttons. No missing dialog is present in the original image.",
+    "The original initial and after-scroll DOM probes agree: dialog x=456.796875, y=51.734375, width=452.40625, height=664.53125. Both button-center native hit tests succeeded, with no overlapping action rectangles.",
+    "scrollHeight and clientHeight were both 663; initial and after-scroll scrollTop were both 0. This legal long-name fixture fit without actual scrolling, so scrollIntoViewIfNeeded did not need to move the dialog. The run does not establish an actual scroll-distance test for this fixture.",
+    "Native cancel retained every exact storage byte. Reopening and native double-click confirmation committed one exact engine-predicted transaction, removed only the reserved item and survived reload.",
+    "The preserved automated report is 1 scenario / 57 assertions / 0 console or page errors, with stable runtime hashes. The corrected reading adds neither a new defect nor extra functional coverage."
+  ],
+  "cause": {
+    "status": "NO_ORIGINAL_CAPTURE_DEFECT",
+    "statement": "The source PNGs do not reproduce the initially reported omission. This was a false alarm in visual tool display or interpretation; the evidence does not establish which presentation or reading step produced it. No game rendering or screenshot compositor defect is supported."
+  },
+  "timestampLimit": "Filesystem modified timestamps describe the written PNG artifacts and are not exact browser paint or screenshot request start timestamps.",
+  "preservation": {
+    "originalImagesRetained": true,
+    "originalReportRetained": true,
+    "runtimeSourceChanged": false,
+    "qaScriptChangedAfter57CheckRun": false,
+    "rerunStarted": false
+  },
+  "plannedBoundedFollowUp": "Cancelled by the root after byte identity and single-image inspection resolved the false alarm. No second browser run or extra two-RAF wait was added; the original 57 assertions and evidence remain unchanged.",
+  "status": "RESOLVED_FALSE_ALARM",
+  "verifiedUtc": "2026-10-18T09:40:04.926684+00:00",
+  "verification": {
+    "fileBytesIdentical": true,
+    "decodedRgbaIdentical": true,
+    "dimensions": [
+      [
+        1366,
+        768
+      ],
+      [
+        1366,
+        768
+      ]
+    ],
+    "decodedRgbaSha256": [
+      "ee1f6f791aaac1e3a5746ffb13f74fa964279726526ac5d23535a99258cf2680",
+      "ee1f6f791aaac1e3a5746ffb13f74fa964279726526ac5d23535a99258cf2680"
+    ],
+    "singleImageReview": "Second PNG opened alone through view_image and the complete confirmation was visible. No browser was launched for this verification."
+  }
+}

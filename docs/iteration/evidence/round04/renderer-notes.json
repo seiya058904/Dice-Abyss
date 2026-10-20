@@ -1,0 +1,251 @@
+{
+  "status": "FINAL_FIRST_SAMPLE_ONLY_IMPLEMENTED_VERIFIED_WITH_RENDERING_LIMITATIONS",
+  "updatedAt": "2026-10-17T15:50:21.723773+00:00",
+  "files": [
+    {
+      "path": "src/visual-timeline.js",
+      "sha256": "f518084da44c2ea852bf902ba6ffc7f8f5a94ee815dac31bcc4726cc8cd44369"
+    },
+    {
+      "path": "src/effects.js",
+      "sha256": "959c7d346427a5854f509c8b11205d8c34d82392ed1340eedd9aa66e7b75c9c5"
+    },
+    {
+      "path": "src/dice-motion.js",
+      "sha256": "3b088b9efa03552912bd92b18dc66d6122f45e2f12dc420305bb877deae5139a"
+    },
+    {
+      "path": "src/dice-renderer.js",
+      "sha256": "a317cbe20fb1a0518a69eff10e3aa9b7dce5180a2b90543439fb830c86d66770"
+    },
+    {
+      "path": "src/app.js",
+      "sha256": "f15894a3005dc94ff3a63d3ab4db983a239f6ea83f01d5b6c8b22ee8cb6a83ec"
+    },
+    {
+      "path": "tests/renderer-delay.test.mjs",
+      "sha256": "2097d39c022da0c738912a33f025c04cbfc4d276f49c2fd1ec6319a1ea17f5b9"
+    },
+    {
+      "path": "tests/visual-timeline.test.mjs",
+      "sha256": "b05b7d6a169728b13d4cd11de54c95dda9f6be8908b917124192b6154084d732"
+    },
+    {
+      "path": "tests/effects.test.mjs",
+      "sha256": "e22ccc87eea8ec163ca8ab77ce1faba3de4456439d5ba8974629672293eec7ca"
+    },
+    {
+      "path": "scripts/qa-renderer-lifecycle.mjs",
+      "sha256": "b6708dc6c27da865247facaf9fb382636b676b46931de93cfbea4b9dae691602"
+    },
+    {
+      "path": "scripts/qa-renderer-isolated-frames.mjs",
+      "sha256": "0d5a6497e062f425c5c585e06680f31b9f5b632d42761956210fa35934f597fd"
+    }
+  ],
+  "rootCause": "Original dice motion and canvas FX consume their whole lifetime from mount time, while app phase timers advance independently. An exact delayed first RAF can directly show the final dice pose or clear FX materials without a positive draw.",
+  "finalChanges": [
+    "Calibrate only the first delivered presentation sample to at most 100 ms; every later RAF advances its nonnegative actual timestamp difference.",
+    "JavaScript dice/canvas tracks and app phase waits use the same presentation clock. Existing short low/reduced waits remain wall-clock timers.",
+    "Keep per-phase 8000 ms schedulable deadline, visibility cancellation, trusted skip, generation guards, cancellation that settles all waiters, and cleanup-error containment.",
+    "The all-gap 100 ms cap was rejected after measured extra moving submissions and worse per-window p95; only its timing policy was narrowed, without reducing visual recipes or budgets."
+  ],
+  "invariants": [
+    "Save and engine transition still happen exactly once before animation; full post-state and main/mirror equality are asserted.",
+    "src/dice-renderer.js is byte-identical to the sole baseline. Mesh/shader/material recipe/particle counts/ROI/pixel budgets were not reduced.",
+    "All original renderer assertions remain. The existing effects test only adapts its module URL loader for the new helper import.",
+    "Final browser and Node HTTP/source hashes match the frozen local animation source."
+  ],
+  "rendererByteIdentical": true,
+  "finalSourceHashesStable": true,
+  "node": {
+    "baselineOriginal": {
+      "tests": 10,
+      "pass": 10
+    },
+    "baselineNewDelayedFirstFrame": {
+      "tests": 2,
+      "expectedFailures": 2
+    },
+    "finalTargeted": {
+      "tests": 21,
+      "pass": 21,
+      "originalCases": 10,
+      "newCasesThisRound": 11
+    },
+    "rejectedAllGapLaterGapRegression": {
+      "tests": 1,
+      "expectedFailures": 1
+    },
+    "changedAssertion": "One newly introduced all-gap design assertion was narrowed to first-sample-only; original input assertions were not weakened."
+  },
+  "finalLifecycle": {
+    "summary": {
+      "cases": 11,
+      "passed": 11,
+      "baselineDefects": 0,
+      "failed": 0,
+      "runtimeErrors": 0
+    },
+    "variantCounts": {
+      "baseline": 3,
+      "current": 8
+    },
+    "mainMirrorWritesPerCase": [
+      1,
+      1
+    ],
+    "timingKind": "Synthetic RAF/visibility fault behavior, not FPS; wallMs includes driver/protocol work.",
+    "caseWallMs": {
+      "late-first-frame-combat": 5792.579348000001,
+      "late-first-frame-loot": 4692.233258,
+      "normal-full-combat": 3420.8983630000002,
+      "missing-raf-deadline": 8088.3226460000005,
+      "skip-before-first-frame": 185.78837799999746,
+      "hidden-before-first-frame": 109.74695999998949,
+      "low-effects": 293.9066659999953,
+      "reduced-motion": 1276.2971449999895
+    },
+    "baselineDefectObservedThisFinalRun": false,
+    "note": "Input delayed action-level browser cases passed this run; exact mount-level Node tests still deterministically reproduce both original failures. No browser retries replaced them."
+  },
+  "finalFrames": {
+    "scope": "Only 3840x2160 Boss full, same valid fixture, three pairs; no final 1920/chest/rarity/low matrix claim.",
+    "protocol": "Fresh Chromium process per window, B/C, C/B, B/C; 4200 ms requested, identical timed probes and flags; full-version comparison, not pure timeline-only experiment.",
+    "summary": {
+      "runs": 6,
+      "measured": 6,
+      "failed": 0,
+      "runtimeErrors": 0
+    },
+    "aggregate": {
+      "baseline": {
+        "runs": 3,
+        "medianRunP50": 16.700000002980232,
+        "medianRunP95": 147.20000000298023,
+        "medianRunP99": 200.69999999552965,
+        "medianRunMax": 1900.3999999985099,
+        "worstFrameMs": 1906,
+        "effectObserved": 3,
+        "positiveCombatSubmissions": 3,
+        "movingSubmissions": [
+          150,
+          150,
+          150
+        ],
+        "longTasks": 9,
+        "longTaskOverlapMs": 6688
+      },
+      "current": {
+        "runs": 3,
+        "medianRunP50": 16.700000002980232,
+        "medianRunP95": 102.89999999850988,
+        "medianRunP99": 190.79999999701977,
+        "medianRunMax": 1689,
+        "worstFrameMs": 2671.89999999851,
+        "effectObserved": 3,
+        "positiveCombatSubmissions": 3,
+        "movingSubmissions": [
+          150,
+          150,
+          150
+        ],
+        "longTasks": 9,
+        "longTaskOverlapMs": 7358
+      }
+    },
+    "allMovingSubmissions": 150,
+    "fixtureSha256": "6ea3205945548483efc8b58227312e59ef6caa20b910ef1d6c5b839fff841b1a",
+    "started": "2026-10-17T15:42:55.845Z",
+    "finished": "2026-10-17T15:45:22.329Z",
+    "conclusion": "All-gap moving extension is gone; per-window p95 is mixed, first final pair regresses and final worst max remains worse. No general FPS/tail/GPU improvement claim."
+  },
+  "rejectedCandidate": {
+    "delivered": false,
+    "timelineSha256": "3226fc26ee6045ebb53c35888040a9fc55d22bf188b5c0c32b9c44fa492129d9",
+    "formalMainWindows": 48,
+    "coverageWindows": 14,
+    "freshProcessWindows": 6,
+    "formalCurrentFullEffectObserved": [
+      0,
+      12
+    ],
+    "formalBaselineFullEffectObserved": [
+      4,
+      12
+    ],
+    "freshProcessAggregate": {
+      "baseline": {
+        "runs": 3,
+        "medianRunP50": 16.69999999552965,
+        "medianRunP95": 50.100000001490116,
+        "medianRunP99": 142.30000000447035,
+        "medianRunMax": 1733.8999999985099,
+        "worstFrameMs": 3885.6999999955297,
+        "effectObserved": 2,
+        "positiveCombatSubmissions": 2,
+        "movingSubmissions": [
+          150,
+          132,
+          150
+        ],
+        "longTasks": 7,
+        "longTaskOverlapMs": 7755
+      },
+      "current": {
+        "runs": 3,
+        "medianRunP50": 17.299999997019768,
+        "medianRunP95": 266.90000000596046,
+        "medianRunP99": 694.8999999985099,
+        "medianRunMax": 1730.1000000014901,
+        "worstFrameMs": 1814.7000000029802,
+        "effectObserved": 2,
+        "positiveCombatSubmissions": 2,
+        "movingSubmissions": [
+          222,
+          222,
+          150
+        ],
+        "longTasks": 19,
+        "longTaskOverlapMs": 8753.29999999702
+      }
+    },
+    "reason": "Every-gap clamping visibly extended moving work; in the fixed fresh-process sample its per-window p95 was worse in all three pairs. Full 62 and old 6 must never be represented as final-source performance.",
+    "retainMinimalSource": "/workspace/scratch/49a55c8e3a8f/qa-renderer/narrowing/rejected-all-gap-src/visual-timeline.js",
+    "otherSnapshotFilesByteEqualFinal": {
+      "app.js": true,
+      "effects.js": true,
+      "dice-motion.js": true
+    },
+    "note": "Retain only the old timeline source plus reports for timing-policy reconstruction; other three scratch snapshots are redundant. This is not a guarantee of reconstructing the complete historical build metadata/style set."
+  },
+  "limitations": [
+    "Final measured representative cell still has 1.5–2.7 second RAF gaps. Original wider matrix had even larger gaps but belongs to a rejected candidate and a different process-history protocol.",
+    "A positive-alpha canvas submission is not physical display scanout; effectObserved metadata alone is weaker still. Per-window stage exposure and FX call counts vary.",
+    "Final six windows retain raw RAF stages/submission counts, while the rejected 62-window historical script does not retain raw RAF sequences.",
+    "First-sample correction prevents mount-time expiry; it deliberately does not keep later stalled animation in slow motion. Subsequent stalls can skip intermediate poses/effect frames.",
+    "The 8000 ms deadline runs only when the browser can process tasks; it cannot promise physical 8-second recovery from a blocked thread/OS.",
+    "Existing CSS animations continue on the CSS clock. JavaScript canvas/dice and app waits share this helper; not all effects use one clock.",
+    "Visibility was explicitly fault-injected, not physically tested on Windows/Android. No physical 4K60, hardware GPU, real phone, or listening verification is claimed.",
+    "Both full-version builds differ in app/storage/views and the final one loads forge.css, even when its forge selectors do not match this Boss scene. This is not pure clock-only A/B.",
+    "Synthetic cleanup throw remains a fault-injection robustness case, not an observed natural game failure."
+  ],
+  "evidence": {
+    "finalNode": "/workspace/scratch/49a55c8e3a8f/qa-renderer/narrowing/final-node-evidence.json",
+    "baselineOriginalNodeLog": "/workspace/scratch/49a55c8e3a8f/qa-renderer/narrowing/baseline-original.txt",
+    "baselineDelayedFirstFrameRedLog": "/workspace/scratch/49a55c8e3a8f/qa-renderer/narrowing/baseline-delay-red.txt",
+    "finalTargetedNodeLog": "/workspace/scratch/49a55c8e3a8f/qa-renderer/narrowing/final-targeted.txt",
+    "rejectedAllGapNodeRed": "/workspace/scratch/49a55c8e3a8f/qa-renderer/narrowing/all-gap-red.json",
+    "rejectedAllGapNodeRedLog": "/workspace/scratch/49a55c8e3a8f/qa-renderer/narrowing/all-gap-red.txt",
+    "finalLifecycle": "/workspace/scratch/49a55c8e3a8f/qa-renderer/lifecycle-final/renderer-lifecycle-browser.json",
+    "finalLifecycleScreenshot": "/workspace/scratch/49a55c8e3a8f/qa-renderer/lifecycle-final/combat-result-1280.png",
+    "finalFrames": "/workspace/scratch/49a55c8e3a8f/qa-renderer/final-isolated-frames/renderer-isolated-frames.json",
+    "rejectedAllGap62Frames": "/workspace/scratch/49a55c8e3a8f/qa-renderer/frames/performance-round.json",
+    "rejectedAllGapFixtureManifest": "/workspace/scratch/49a55c8e3a8f/qa-renderer/frames/fixture-manifest.json",
+    "rejectedAllGap6Frames": "/workspace/scratch/49a55c8e3a8f/qa-renderer/isolated-frames/renderer-isolated-frames.json",
+    "rejectedAllGapTimelineSource": "/workspace/scratch/49a55c8e3a8f/qa-renderer/narrowing/rejected-all-gap-src/visual-timeline.js",
+    "independentCleanupFinal": "/workspace/scratch/49a55c8e3a8f/scratch/cross-review-cleanup-final.json"
+  },
+  "performanceCandidate": "/workspace/scratch/49a55c8e3a8f/renderer-performance-candidate.md",
+  "browserWorkFinished": true
+}

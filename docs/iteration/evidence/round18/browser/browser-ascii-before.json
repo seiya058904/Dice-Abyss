@@ -1,0 +1,71 @@
+{
+  "source": "/workspace/scratch/f0146b2cbcc6/work/Dice-Abyss",
+  "url": "http://127.0.0.1:4189/",
+  "beforeMode": false,
+  "longNameMode": "unbroken-ascii",
+  "browser": "155.0.8059.84",
+  "synthetic": true,
+  "started": "2026-10-19T07:38:16.897Z",
+  "cases": [
+    {
+      "name": "responsive-equipment-and-import-error",
+      "status": "FAIL",
+      "checks": 4,
+      "trace": [
+        {
+          "label": "1366: material area fits viewport",
+          "passed": true
+        },
+        {
+          "label": "1366: no horizontal page overflow",
+          "passed": true
+        },
+        {
+          "label": "1366: long names and numeric rows fit readable bounds",
+          "passed": true
+        },
+        {
+          "label": "1366: confirmation fits and scrolls",
+          "passed": false
+        }
+      ],
+      "error": "AssertionError [ERR_ASSERTION]: 1366: confirmation fits and scrolls",
+      "stack": "AssertionError [ERR_ASSERTION]: 1366: confirmation fits and scrolls\n    at check (file:///workspace/scratch/f0146b2cbcc6/work/Dice-Abyss/scripts/qa-event-equipment-round18.mjs:24:80)\n    at file:///workspace/scratch/f0146b2cbcc6/work/Dice-Abyss/scripts/qa-event-equipment-round18.mjs:145:212\n    at async run (file:///workspace/scratch/f0146b2cbcc6/work/Dice-Abyss/scripts/qa-event-equipment-round18.mjs:43:6)\n    at async file:///workspace/scratch/f0146b2cbcc6/work/Dice-Abyss/scripts/qa-event-equipment-round18.mjs:134:3"
+    }
+  ],
+  "errors": [],
+  "checks": 4,
+  "notes": [
+    "Constructed valid entry states, actual UI actions and exact complete-state assertions.",
+    "Logical viewports and software rendering; not physical devices, screen-reader or GPU certification.",
+    "Failed file reads are delayed only inside isolated QA contexts to test ordering."
+  ],
+  "sourceHashes": [
+    {
+      "file": "src/app.js",
+      "sha256": "1ba0a720bb39630094515ce838048c53f18706ddd762b019d11238c091e267fc"
+    },
+    {
+      "file": "src/views.js",
+      "sha256": "94f6b5e52e41c496260fee8e7a1a0960bccab40333a0b96e4a138e145ec85296"
+    },
+    {
+      "file": "src/storage.js",
+      "sha256": "f5a990793a90ff59a57f38e4be8fcb9deaf54997dff9d9acec2cded73d2c8145"
+    },
+    {
+      "file": "src/encounters.js",
+      "sha256": "18e1a672849552d779b9763d3f990e953290b32911f123b9884e930166c42cec"
+    },
+    {
+      "file": "src/event-references.js",
+      "sha256": "a85a8fcede6550b3189e144c85fa71149e49a99e74f62fc43b9a5c82efaf1d36"
+    },
+    {
+      "file": "src/event-equipment.css",
+      "sha256": "6864426bc11debcc5c6a4213914f7a3a91eb6e8e600caf647d55a370052e4969"
+    }
+  ],
+  "finished": "2026-10-19T07:38:20.087Z",
+  "passed": false
+}

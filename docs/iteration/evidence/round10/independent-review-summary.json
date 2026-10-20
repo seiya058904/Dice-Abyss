@@ -1,0 +1,256 @@
+{
+  "status": "PASS_WITH_DOCUMENTED_SCOPE",
+  "reviewerOwnedPublishedFiles": [
+    "scripts/qa-xp-round10-independent.mjs",
+    "tests/round10-independent.test.mjs"
+  ],
+  "publishedFileHashes": {
+    "scripts/qa-xp-round10-independent.mjs": "2edf5f75b3caed16630907da89f282242993ab32862ff31d002452f233f9b531",
+    "tests/round10-independent.test.mjs": "4bbd8d6aa29d6e1e99df8cd9d8bd08be24e18acf2a3f9dc49e450686896fedab"
+  },
+  "xpChecks": {
+    "eventRows": 99,
+    "combatRows": 12,
+    "nonNarrativeStateComparisons": 111,
+    "roundTrips": 676,
+    "pointLogRows": 9,
+    "paymentBoundaries": 10,
+    "storageFaults": 6
+  },
+  "unitTests": {
+    "tests": 12,
+    "pass": 12,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0
+  },
+  "unitTestDurationMs": 798.586125,
+  "deepSummary": {
+    "journeysPerVersion": 8,
+    "floorsPerVersion": 2400,
+    "rollsPerVersion": 13664,
+    "deathsPerVersion": 0,
+    "allReportedGameplayEqual": true,
+    "allReportedFieldsAndStateHashesEqual": true,
+    "currentDependenciesStable": 13
+  },
+  "findings": [
+    {
+      "id": "XP_PAID_CAP",
+      "kind": "confirmed baseline P2, fixed",
+      "evidence": [
+        "xp-baseline.json",
+        "xp-current.json"
+      ],
+      "detail": "Validated synthetic level 1,000,000 / XP 100,000,000 saves paid 50,000 at memory_archive and 12,000,070 at starlibrary.study for 0 admitted XP while old UI claimed the nominal million/credited XP. Current preview, confirmation and result name 0 or the partial amount and retain the same price, permission and assets."
+    },
+    {
+      "id": "XP_POINT_CAP_LOG",
+      "kind": "confirmed baseline P2, fixed",
+      "evidence": [
+        "xp-baseline.json",
+        "xp-current.json"
+      ],
+      "detail": "At level 100 / XP 1017 / unspent talent points 2,000,000, memory_archive and exchange advance to level 101; starlibrary advances to level 102. Existing point count remains capped, but baseline logs claimed +2 for each upgrade. Current logs disclose +0 and the two uncredited points. Boundary +1 and +2 receipts also pass."
+    },
+    {
+      "id": "XP_ALL_PRODUCERS",
+      "kind": "reviewed",
+      "detail": "XP entrance inventory is combat kills, exchange salvage, memory_archive accept and starlibrary study. XP math and HP, gold, item, RNG and unknown-field behavior match the input version. Combat overflow now has a bounded saved log; opening the resulting chest does not credit XP again."
+    },
+    {
+      "id": "TRANSACTION_BOUNDARY",
+      "kind": "verified selected faults, not a new product defect",
+      "detail": "Unconfirmed and repeated choices cannot charge; insufficient registered cost refuses unchanged; leave preserves assets. Injected primary write failure and stale full expected snapshot retain exact originals; mirror failure retains a valid committed primary and returns a visible warning. Storage implementation remains unchanged."
+    },
+    {
+      "id": "DEEP_CHOICE_VALUE",
+      "kind": "P3 remains an opportunity, no new numerical bug demonstrated",
+      "detail": "Eight fixed-policy journeys per version compare two priority builds, two spending policies and depths 200/400. All result rows, combat traces and complete final-state fingerprints after the existing runId normalization match exactly. No death in these fixed policies does not justify a balance patch or a human win-rate conclusion."
+    }
+  ],
+  "excludedFalsePositives": [
+    "The character level cap is distinct from the saved XP cap: a max-level character with empty XP still accepts a million XP into its balance under existing rules.",
+    "Large already-stored imported XP can level a character up even when the new receipt is 0. This is consumption of prior XP, not a negative or newly admitted reward.",
+    "The real receipt equals the XP counter change plus the independent arithmetic cost of all actual upgrades; a negative counter difference is not a negative reward.",
+    "The task keeps existing voluntary zero-credit payment/exchange permissions. Explicit capacity disclosure is the fix, not a silent new ban or refund policy.",
+    "An event price already in a valid V5 snapshot remains authoritative, including 0 and 100,000,000. The review does not recalculate it from current level.",
+    "Raw finalStateSha256 from the preserved deep script uses its explicit runId normalization. No log/XP field was deleted to force equality this round."
+  ],
+  "developmentFailures": [
+    {
+      "evidence": "xp-baseline-harness-failure-01.json",
+      "observedExitCode": 1,
+      "classification": "reviewer QA harness API-shape error, not product failure",
+      "failures": 6,
+      "cause": "First draft compared loadSave(storage) itself with a game state, overlooking its stable {state,recovered,warning} result envelope.",
+      "fix": "Changed the assertion to loadSave(storage).state; preserved the complete original failure report. Reran the baseline and candidate with all six fault cases passing. No production code or original test assertion was changed for this correction."
+    }
+  ],
+  "commands": [
+    {
+      "name": "deep-baseline-200",
+      "observedExitCode": 0,
+      "argv": [
+        "node",
+        "scripts/audit-economy-round06.mjs",
+        "--source",
+        "baseline source directory",
+        "--floors",
+        "200",
+        "--seeds",
+        "7919",
+        "--builds",
+        "resonance,bulwark",
+        "--policies",
+        "conservative,duplicate-materials",
+        "--output",
+        "deep-baseline-200.json"
+      ],
+      "durationSecondsFromReport": 35.790477689,
+      "stdout": "deep-baseline-200.stdout",
+      "stderr": "deep-baseline-200.stderr",
+      "stderrBytes": 0,
+      "report": "deep-baseline-200.json"
+    },
+    {
+      "name": "deep-baseline-400",
+      "observedExitCode": 0,
+      "argv": [
+        "node",
+        "scripts/audit-economy-round06.mjs",
+        "--source",
+        "baseline source directory",
+        "--floors",
+        "400",
+        "--seeds",
+        "31676",
+        "--builds",
+        "resonance,bulwark",
+        "--policies",
+        "conservative,duplicate-materials",
+        "--output",
+        "deep-baseline-400.json"
+      ],
+      "durationSecondsFromReport": 132.546399611,
+      "stdout": "deep-baseline-400.stdout",
+      "stderr": "deep-baseline-400.stderr",
+      "stderrBytes": 0,
+      "report": "deep-baseline-400.json"
+    },
+    {
+      "name": "deep-current-200",
+      "observedExitCode": 0,
+      "argv": [
+        "node",
+        "scripts/audit-economy-round06.mjs",
+        "--source",
+        "current source directory",
+        "--floors",
+        "200",
+        "--seeds",
+        "7919",
+        "--builds",
+        "resonance,bulwark",
+        "--policies",
+        "conservative,duplicate-materials",
+        "--output",
+        "deep-current-200.json"
+      ],
+      "durationSecondsFromReport": 30.457453142000002,
+      "stdout": "deep-current-200.stdout",
+      "stderr": "deep-current-200.stderr",
+      "stderrBytes": 0,
+      "report": "deep-current-200.json"
+    },
+    {
+      "name": "deep-current-400",
+      "observedExitCode": 0,
+      "argv": [
+        "node",
+        "scripts/audit-economy-round06.mjs",
+        "--source",
+        "current source directory",
+        "--floors",
+        "400",
+        "--seeds",
+        "31676",
+        "--builds",
+        "resonance,bulwark",
+        "--policies",
+        "conservative,duplicate-materials",
+        "--output",
+        "deep-current-400.json"
+      ],
+      "durationSecondsFromReport": 145.015377494,
+      "stdout": "deep-current-400.stdout",
+      "stderr": "deep-current-400.stderr",
+      "stderrBytes": 0,
+      "report": "deep-current-400.json"
+    },
+    {
+      "name": "xp-baseline",
+      "observedExitCode": 0,
+      "durationSecondsFromReport": 3.078540708,
+      "report": "xp-baseline.json",
+      "status": "BASELINE_REPRODUCED"
+    },
+    {
+      "name": "xp-current",
+      "observedExitCode": 0,
+      "durationSecondsFromReport": 2.857506151,
+      "report": "xp-current.json",
+      "status": "PASS"
+    },
+    {
+      "name": "round10-independent-final",
+      "observedExitCode": 0,
+      "argv": [
+        "node",
+        "--test",
+        "--test-isolation=none",
+        "--test-reporter=tap",
+        "tests/round10-independent.test.mjs"
+      ],
+      "tap": "round10-independent-final.tap",
+      "stderr": "round10-independent-final.stderr",
+      "stderrBytes": 0,
+      "counts": {
+        "tests": 12,
+        "pass": 12,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "durationMsFromTap": 798.586125
+    }
+  ],
+  "sourceStableDuringXpAudit": true,
+  "scopeLimits": [
+    "Synthetic extreme saves do not measure how often a player reaches caps.",
+    "Ephemeral option.experience is checked against independent arithmetic; it is never saved as a new state field.",
+    "Non-narrative A/B equality excludes only log and event.outcome. Those two text surfaces are separately checked for accepted amounts, point caps and unchanged validator length limits.",
+    "No browser, hardware, storage-quota, physical-power-loss or multiplayer concurrency claim is made.",
+    "A mirror write failure occurs after the authoritative primary commit and is reported as a recoverable condition, never as a rollback.",
+    "Fixed automated policies; not human play, population win rates or evidence of optimal choices.",
+    "The audit normalizes runId to the literal normalized before hashing each complete final state. Matching that fingerprint is not an assertion that separately generated run IDs are equal.",
+    "Whole-run spending policies consume different actual dice. Differences between two policies cannot identify an isolated causal benefit of a single purchase.",
+    "Talent priority policies eventually learn many shared finite nodes; their labels are not mutually exclusive character classes.",
+    "The current rows do not include balanced-policy forge/respec counterfactual examples; their absence is not evidence that those options have no value.",
+    "Gross paid and net spending are different columns and are not added together.",
+    "No timing speedup or hardware performance conclusion is drawn from script durations."
+  ],
+  "remainingBrowserCheckSentToRoot": "The newly shared experience preview also enters exchange confirmations; verify the 64-character item-name / dual-zero confirmation at 1366x768 because that is a touched layout. This is a targeted coverage request, not an asserted bug.",
+  "saveClosureSupplement": {
+    "evidence": "save-audits-comparison.json",
+    "status": "PASS",
+    "checksPerVersion": 41452,
+    "stateSnapshotsPerVersion": 6476,
+    "transactionsPerVersion": 1811,
+    "fullStateTransactionWriteFingerprintsEqual": true,
+    "sizeCasesPerVersion": 4,
+    "allSizeReportFieldsExceptRootEqual": true
+  }
+}

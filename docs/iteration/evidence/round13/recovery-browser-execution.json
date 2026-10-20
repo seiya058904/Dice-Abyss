@@ -1,0 +1,30 @@
+[
+  {
+    "name": "recovery-baseline",
+    "command": [
+      "node",
+      "scripts/qa-save-recovery-round13.mjs",
+      "--source=/workspace/scratch/5a5998079a95/baseline/Dice-Abyss",
+      "--url=http://127.0.0.1:4188/",
+      "--expect=baseline",
+      "--output=/workspace/scratch/5a5998079a95/audit/baseline/browser-recovery"
+    ],
+    "exitCode": 0,
+    "seconds": 30.31,
+    "log": "recovery-baseline.log"
+  },
+  {
+    "name": "recovery-current",
+    "command": [
+      "node",
+      "scripts/qa-save-recovery-round13.mjs",
+      "--source=/workspace/scratch/5a5998079a95/work/Dice-Abyss",
+      "--url=http://127.0.0.1:4189/",
+      "--expect=fixed",
+      "--output=/workspace/scratch/5a5998079a95/audit/current/browser-recovery"
+    ],
+    "exitCode": 1,
+    "seconds": 22.122,
+    "log": "recovery-current.log"
+  }
+]

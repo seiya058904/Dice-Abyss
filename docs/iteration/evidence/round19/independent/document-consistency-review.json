@@ -1,0 +1,516 @@
+{
+  "review": "round19-final-documentation-consistency",
+  "reviewedAt": "2026-10-19T09:23:02.294195+00:00",
+  "reviewer": "inventory_design sub-agent; independent of final documentation author; previously authored the query and new defense QA script",
+  "scope": "Read-only review of the nine requested current documents against retained actual QA reports and frozen code. No browser launch, test rerun, performance capture, simulation rerun, Git/remote action, source/script/test/doc edit. Only this JSON is written.",
+  "documents": [
+    {
+      "path": "docs/iteration/STATE.json",
+      "bytes": 9894,
+      "sha256": "67b581545e228568f7934596e8d35e515fd5c9d3ce7119ac52f86983f27314ac"
+    },
+    {
+      "path": "docs/iteration/LATEST_REPORT.md",
+      "bytes": 8683,
+      "sha256": "5e97eeb774f5a165a8e4b53ad22b3adae6bdca9831d9966d6d21cc5859d8ad63"
+    },
+    {
+      "path": "docs/iteration/VERIFY.md",
+      "bytes": 6033,
+      "sha256": "5240fa58193f2389c2057048e18b048130ffcea778fad6b68ec81960d7bfdf90"
+    },
+    {
+      "path": "docs/iteration/PERFORMANCE.md",
+      "bytes": 5861,
+      "sha256": "6e1e71709a7c67e9a2682b99de6f7372bcb0af0d59501799e5afc2d5908dbb8a"
+    },
+    {
+      "path": "docs/iteration/ART.md",
+      "bytes": 3068,
+      "sha256": "e42d196b8fbf3faccd95f948a6b2ec3b322c19748920ecfb733513c3f768a85b"
+    },
+    {
+      "path": "docs/iteration/PAGE_REVIEW.md",
+      "bytes": 2955,
+      "sha256": "9b163313945f8c36e83d00300f7eed7cbf59c4ff440bc3a40e7ba5a6987f321a"
+    },
+    {
+      "path": "docs/iteration/BUG_LEDGER.md",
+      "bytes": 3882,
+      "sha256": "b4a90c97e06ea9fc892bdf5775e0c138fb9463d7d06e12fcfeccdf29fdb72cef"
+    },
+    {
+      "path": "docs/iteration/GAMEPLAY_REVIEW.md",
+      "bytes": 4603,
+      "sha256": "04d427a80a9334dd0af92c250a96718c01836cdabaf35b6013c14ff3546f315a"
+    },
+    {
+      "path": "docs/iteration/NEXT_ROUND.md",
+      "bytes": 4355,
+      "sha256": "99673a2af5798f6d874b7e5eb8555545e7c4741c73fddcd00f521904b3c358ea"
+    }
+  ],
+  "excludedPendingDocuments": [
+    "docs/iteration/INDEPENDENT_REVIEW.md",
+    "docs/iteration/evidence/round19/README.md",
+    "docs/iteration/PACKAGE_REVIEW.md"
+  ],
+  "status": "DOCUMENTATION_CORRECTION_AND_SCOPE_CLARIFICATIONS_REQUESTED",
+  "numericAndPreservationChecksPassed": true,
+  "checks": [
+    {
+      "check": "Current default and native counts, zero failures/skips/cancellations/todos",
+      "passed": true,
+      "evidence": "qa-current/FINAL_GATES_SUMMARY.json"
+    },
+    {
+      "check": "Final UI 851 actual passing trace rows in 4 groups, with exact declared per-group counts",
+      "passed": true,
+      "evidence": "qa-current/browser-defense-final/report.json"
+    },
+    {
+      "check": "Early 755 and final 851 are distinguished; increment is 96, not a cumulative total",
+      "passed": true,
+      "evidence": "early and final UI reports; LATEST_REPORT.md; PAGE_REVIEW.md"
+    },
+    {
+      "check": "All 8 locally snapshotted UI files remain identical to final current files",
+      "passed": true,
+      "evidence": "UI sourceBefore/sourceAfter compared with current files; HTTP comparison scope is separately flagged"
+    },
+    {
+      "check": "All 269 frozen source/script/test paths still match declared size and SHA",
+      "passed": true,
+      "evidence": "docs/iteration/evidence/round19/source-freeze.json"
+    },
+    {
+      "check": "Exactly 68 existing runtime paths, 8 changed and net +4399 bytes",
+      "passed": true,
+      "evidence": "Independent whole-runtime byte comparison against immutable baseline"
+    },
+    {
+      "check": "77 old test modules, 2 fixtures and 8 font/license files are byte-identical",
+      "passed": true,
+      "evidence": "Independent baseline/current bytes for all 87 protected files"
+    },
+    {
+      "check": "New native baseline: 32 cases, 11 pass, 21 fail; 8/4/9 module failures",
+      "passed": true,
+      "evidence": "Direct reparse of retained original per-module TAP gzip counters; failed names read to verify 9 existing defects versus 12 capability gaps"
+    },
+    {
+      "check": "Existing interaction units are 7 passed groups / 52 checkpoints plus repaired 2 / 14, yielding 9 / 66",
+      "passed": true,
+      "evidence": "Original failed interaction report and actual current/input repaired retry reports"
+    },
+    {
+      "check": "Fresh standard simulation matches on both actual round19 executions",
+      "passed": true,
+      "evidence": "qa-current/simulation-comparison.json plus actual baseline/current run receipts"
+    },
+    {
+      "check": "Deep policy reference remains explicitly historical while current 4x400 was rerun",
+      "passed": true,
+      "evidence": "qa-current/strategy-comparison.json; GAMEPLAY_REVIEW.md, STATE.json, VERIFY.md and NEXT_ROUND.md distinguish inherited long baseline"
+    },
+    {
+      "check": "Performance has 24 formal inventory rows, 16 main windows, 14 separate coverage windows, 2 excluded warmups",
+      "passed": true,
+      "evidence": "qa-current/performance/performance-round.json"
+    },
+    {
+      "check": "Inventory quantiles independently recompute to documented values",
+      "passed": true,
+      "evidence": "All 24 original formal elapsedMs values, using documented floor((n-1)*p) rank"
+    },
+    {
+      "check": "Both omitted effect markers are current 4K full; all 30 windows preserve exact real engine transitions and mirror",
+      "passed": true,
+      "evidence": "Original main and coverage frame rows; scope of effectObserved is separately flagged"
+    },
+    {
+      "check": "Performance start follows the final native, syntax and new-UI completed times",
+      "passed": true,
+      "evidence": "Actual run timestamps and performance report; no performance rerun by reviewer"
+    },
+    {
+      "check": "Archived discovery counts and three manual-roll HP values match",
+      "passed": true,
+      "evidence": "New browser discovery, manual trace and explicit replay classification"
+    },
+    {
+      "check": "Exactly 4 selected JPEGs sum to 825065 bytes and match image manifest hashes",
+      "passed": true,
+      "evidence": "Actual selected images and retained manifest; no new image rendering"
+    }
+  ],
+  "findings": [
+    {
+      "id": "DOC-HTTP-SCOPE",
+      "severity": "P3 documentation factual correction",
+      "file": "docs/iteration/LATEST_REPORT.md",
+      "lineAtObservation": 47,
+      "observedWording": "最终新UI8个实际服务源码hash匹配",
+      "finding": "The script snapshots eight local files before/after, but only three files are fetched from the actual loopback server for byte-hash comparison. Eight served-file comparisons were not performed by this new-UI script.",
+      "evidence": [
+        "scripts/qa-inventory-defense-round19.mjs: sourceFiles has eight entries; HTTP verification loop contains only src/app.js, src/views.js and src/inventory-query.js",
+        "qa-current/browser-defense-final/report.json: eight sourceBefore/sourceAfter entries are local snapshots"
+      ],
+      "suggestedWording": "最终新UI8个本地源码前后身份一致，3个实际服务关键模块hash匹配",
+      "statusAtReport": "ORIGINAL_WORDING_ALREADY_REMOVED"
+    },
+    {
+      "id": "DOC-INVENTORY-TIMING-SCOPE",
+      "severity": "P3 missing measurement caveat",
+      "file": "docs/iteration/PERFORMANCE.md",
+      "linesAtObservation": [
+        9,
+        42
+      ],
+      "observedWording": "万件背包12正式点击；新词条未选中时，查询不会读取额外装备效果",
+      "finding": "All formal inventory samples time the main-nav inventory-open click with no defense option selected. They do not measure submitting regen/barrier/reduction on a 10000-item bag. Default short-circuit correctness is verified, but selected-effect interaction latency has no formal measurement in this report.",
+      "evidence": [
+        "scripts/qa-performance-round.mjs: armInventory listens only for .main-nav [data-action=\"inventory\"]; measureInventory never changes the defense selector",
+        "qa-current/performance/performance-round.json: all 24 rows are inventory-open samples"
+      ],
+      "suggestedWording": "这些正式样本测量默认无生存条件的打开背包；本轮没有测量万件装备下提交存活恢复、开战护盾或基础减伤条件的延迟。该路径已有正确性覆盖，不据此宣称其操作耗时。",
+      "statusAtReport": "RECOMMENDED_SCOPE_CLARIFICATION"
+    },
+    {
+      "id": "DOC-EFFECT-MARKER-SCOPE",
+      "severity": "P3 measurement terminology clarification",
+      "file": "docs/iteration/PERFORMANCE.md",
+      "linesAtObservation": [
+        46,
+        48,
+        50,
+        59
+      ],
+      "relatedFiles": [
+        "docs/iteration/LATEST_REPORT.md",
+        "docs/iteration/STATE.json",
+        "docs/iteration/NEXT_ROUND.md"
+      ],
+      "observedWording": "full阶段观察：齐 / 未齐；未观察齐预期阶段",
+      "finding": "For full mode, effectObserved is true when sampled .scene-fx data-fx-kind contains combat or loot-<rarity> at least once. It does not itself establish every animation stage or continuous complete playback. The two current 4K misses and all reported numbers are correct; the labels should describe marker observation.",
+      "evidence": [
+        "scripts/qa-performance-round.mjs: effectObserved = effects===low || result.effectKinds.includes(expectedKind)",
+        "qa-current/performance/performance-round.json: current 4K Boss records idle/dice-only and current 4K eternal records idle/chest-charge without expected combat/loot-7"
+      ],
+      "suggestedWording": "表头改为“预期效果标记”，结果写“观察到 / 未观察到”；说明至少一次观测到combat或loot-品质标记，不等于全动画阶段或连续播放验证。",
+      "statusAtReport": "RECOMMENDED_SCOPE_CLARIFICATION"
+    }
+  ],
+  "runtimeDifference": [
+    {
+      "path": "index.html",
+      "deltaBytes": 0
+    },
+    {
+      "path": "package.json",
+      "deltaBytes": 0
+    },
+    {
+      "path": "src/app.js",
+      "deltaBytes": 662
+    },
+    {
+      "path": "src/inventory-query.js",
+      "deltaBytes": 617
+    },
+    {
+      "path": "src/inventory-search.css",
+      "deltaBytes": 1108
+    },
+    {
+      "path": "src/release.js",
+      "deltaBytes": 0
+    },
+    {
+      "path": "src/responsive.css",
+      "deltaBytes": 513
+    },
+    {
+      "path": "src/views.js",
+      "deltaBytes": 1499
+    }
+  ],
+  "newBaselineTapCounters": {
+    "defense": {
+      "tests": 11,
+      "pass": 3,
+      "fail": 8
+    },
+    "reset": {
+      "tests": 9,
+      "pass": 5,
+      "fail": 4
+    },
+    "announcements": {
+      "tests": 12,
+      "pass": 3,
+      "fail": 9
+    }
+  },
+  "inventoryQuantilesRecomputed": {
+    "baseline": {
+      "p50": 137.1,
+      "p95": 471.2,
+      "p99": 471.2,
+      "max": 1744.9
+    },
+    "after": {
+      "p50": 224,
+      "p95": 447.1,
+      "p99": 447.1,
+      "max": 561.5
+    }
+  },
+  "mainFrameTableVerified": [
+    {
+      "width": 1920,
+      "scene": "boss-burst",
+      "effects": "full",
+      "baseline": {
+        "p95": 19.2,
+        "max": 347,
+        "effectObserved": true
+      },
+      "after": {
+        "p95": 19.8,
+        "max": 2375.1,
+        "effectObserved": true
+      }
+    },
+    {
+      "width": 1920,
+      "scene": "boss-burst",
+      "effects": "low",
+      "baseline": {
+        "p95": 38.4,
+        "max": 3762,
+        "effectObserved": true
+      },
+      "after": {
+        "p95": 18.6,
+        "max": 1654.5,
+        "effectObserved": true
+      }
+    },
+    {
+      "width": 1920,
+      "scene": "eternal-open",
+      "effects": "full",
+      "baseline": {
+        "p95": 19.6,
+        "max": 912.5,
+        "effectObserved": true
+      },
+      "after": {
+        "p95": 18.6,
+        "max": 1525.4,
+        "effectObserved": true
+      }
+    },
+    {
+      "width": 1920,
+      "scene": "eternal-open",
+      "effects": "low",
+      "baseline": {
+        "p95": 21,
+        "max": 3021.9,
+        "effectObserved": true
+      },
+      "after": {
+        "p95": 17,
+        "max": 1463.6,
+        "effectObserved": true
+      }
+    },
+    {
+      "width": 3840,
+      "scene": "boss-burst",
+      "effects": "full",
+      "baseline": {
+        "p95": 1289,
+        "max": 7871.2,
+        "effectObserved": true
+      },
+      "after": {
+        "p95": 135,
+        "max": 5983.9,
+        "effectObserved": false
+      }
+    },
+    {
+      "width": 3840,
+      "scene": "boss-burst",
+      "effects": "low",
+      "baseline": {
+        "p95": 32.6,
+        "max": 11546.1,
+        "effectObserved": true
+      },
+      "after": {
+        "p95": 27.5,
+        "max": 4671.2,
+        "effectObserved": true
+      }
+    },
+    {
+      "width": 3840,
+      "scene": "eternal-open",
+      "effects": "full",
+      "baseline": {
+        "p95": 26.5,
+        "max": 2950.8,
+        "effectObserved": true
+      },
+      "after": {
+        "p95": 22.6,
+        "max": 10096,
+        "effectObserved": false
+      }
+    },
+    {
+      "width": 3840,
+      "scene": "eternal-open",
+      "effects": "low",
+      "baseline": {
+        "p95": 26,
+        "max": 7745.4,
+        "effectObserved": true
+      },
+      "after": {
+        "p95": 20.3,
+        "max": 5347.8,
+        "effectObserved": true
+      }
+    }
+  ],
+  "currentMissingExpectedEffectMarkers": [
+    {
+      "label": "after",
+      "scene": "boss-burst",
+      "width": 3840,
+      "height": 2160,
+      "effects": "full",
+      "effectKinds": [
+        "idle",
+        "dice-only"
+      ]
+    },
+    {
+      "label": "after",
+      "scene": "eternal-open",
+      "width": 3840,
+      "height": 2160,
+      "effects": "full",
+      "effectKinds": [
+        "idle",
+        "chest-charge"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "path": "qa-current/FINAL_GATES_SUMMARY.json",
+      "bytes": 5381,
+      "sha256": "308e9fb23408be2501eb5c76bd5b96921accc9c4266e8d680bffe6612f1928b3"
+    },
+    {
+      "path": "qa-current/browser-defense-final/report.json",
+      "bytes": 561238,
+      "sha256": "e73829d22c5825d5ab8247db9703a629dc6f8fd6b6985b019f50ea20983b846a"
+    },
+    {
+      "path": "qa-current/browser-defense/report.json",
+      "bytes": 374141,
+      "sha256": "f8e2ea406710069c6cbe28c70d01bfcea023d60c853b84e456f11bd0fbc9110a"
+    },
+    {
+      "path": "qa-current/browser-core/report.json",
+      "bytes": 17910,
+      "sha256": "50ef45c8134ef98519e12685148541ac4bed0dc8e73f93053a88243b6278d6e4"
+    },
+    {
+      "path": "qa-current/browser-interactions/round19-interactions.json",
+      "bytes": 123511,
+      "sha256": "f7d89f493982781dad064f7c6f2556225d7c0a3e1e9c8a5054d6998c47214997"
+    },
+    {
+      "path": "qa-current/browser-fusion-retry/current-r19-repaired-interactions.json",
+      "bytes": 19595,
+      "sha256": "c006c5050eb45ad23cdcc9b28c57d834fa54145743a0081e05fc6befccdd2b26"
+    },
+    {
+      "path": "qa-baseline/browser-fusion-retry/baseline-r19-repaired-interactions.json",
+      "bytes": 19606,
+      "sha256": "cc025d420d57f1d1eaf78bd699e6b1b8a20dd92706e3b2cabc802cfd52096665"
+    },
+    {
+      "path": "qa-current/performance/performance-round.json",
+      "bytes": 81352,
+      "sha256": "1f2eda0c7f4f52a79d6293aaee73ab84b62b5f32d19d80c6271877de08fb8016"
+    },
+    {
+      "path": "qa-current/simulation-comparison.json",
+      "bytes": 2127,
+      "sha256": "bc856c3a58b245559d885b15a87b4aeade34940a04644ab90b914afc106a4436"
+    },
+    {
+      "path": "qa-current/strategy-comparison.json",
+      "bytes": 12672,
+      "sha256": "25c6ac785a12d7d1bdc141d4620ffbd9c685587fc216c4d70ae3766955551fee"
+    },
+    {
+      "path": "qa-current/final-http-smoke.json",
+      "bytes": 8778,
+      "sha256": "befc28a4c35e870a75d10d5e360b5d003bc33bb237c3f6665498569f3e11e576"
+    },
+    {
+      "path": "qa-current/offline-fonts.json",
+      "bytes": 1608,
+      "sha256": "d8c0e4c99464763eaa6089cafeee1097aac430f4b9f42f26fa4acb6d1743bd15"
+    },
+    {
+      "path": "qa-baseline/sidebar/report.json",
+      "bytes": 9700,
+      "sha256": "abb6f228cf3e75081d9f2a7e57bcbce0ee26c0ac4916e64ef916805b842e1527"
+    },
+    {
+      "path": "work/Dice-Abyss/scripts/qa-inventory-defense-round19.mjs",
+      "bytes": 35876,
+      "sha256": "e9b665a5161a94823d199070ff34afc90e5560abdfca75e5e7c3ac9a86d56d92"
+    },
+    {
+      "path": "work/Dice-Abyss/scripts/qa-performance-round.mjs",
+      "bytes": 29019,
+      "sha256": "bb3205985884a20a88a27e289f9ec04f46bd751f3cd4568df60affce0e506981"
+    },
+    {
+      "path": "work/Dice-Abyss/docs/iteration/evidence/round19/source-freeze.json",
+      "bytes": 44469,
+      "sha256": "8a66d91c02cb6c8896c98725c8b7178573da46e68aa2f558d5a44703ff055666"
+    },
+    {
+      "path": "work/Dice-Abyss/docs/iteration/evidence/round19/replay/runtime-diff.json",
+      "bytes": 2881,
+      "sha256": "5f63eb807fe665ee45f7f95e7660dce79892befb92cbc1632d09957782c85c55"
+    }
+  ],
+  "conclusions": [
+    "No numerical count mismatch found: current 80 default modules, 745 native cases, final UI 4/851, existing interactions 9/66 with explicit checkpoint units.",
+    "No double counting of early 755 and final 851; native cases, browser checks and recorded checkpoints remain separate.",
+    "The four 400-floor current policy runs are explicitly fresh current regression against inherited historical input output; no fresh deep baseline is claimed.",
+    "Negative and mixed performance values, two current missing effect markers, one repeat per frame cell, software renderer, lack of raw frame arrays and physical-device limitations are retained.",
+    "Runtime scope is exactly 8 existing paths / +4399 bytes; 68 runtime files and all 269 frozen source/script/test files retain expected identities.",
+    "The final ZIP gate is stated as pending/conditional and is not represented as completed in the reviewed documents."
+  ],
+  "limitations": [
+    "This review cross-checks retained execution evidence, not a second execution of every test/browser/performance run.",
+    "Historical archived gameplay and old power-policy failure were checked for correct attribution, not rerun.",
+    "Browser-route availability and five primary-source visits were not independently reenacted in this documentation review.",
+    "Final ZIP identity, delivery budget and fresh-extraction release gates are outside this review and remain parent-owned."
+  ]
+}

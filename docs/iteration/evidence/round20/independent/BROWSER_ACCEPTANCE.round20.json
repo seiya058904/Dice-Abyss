@@ -1,0 +1,47 @@
+{
+  "at": "2026-10-19T10:14:12.725001+00:00",
+  "status": "INDEPENDENT_RECORD_AND_SCREENSHOT_REVIEW_PASSED",
+  "nativeExecutionOwner": "root",
+  "independentExecution": "Parsed and re-counted raw native report; checked source identities; viewed both final screenshots. Did not rerun the native browser.",
+  "reportSha256": "2ce952eda4ceb51506f7e3baf459adfade08ced7b12cfb3b54a5e317bb0866ee",
+  "scriptSha256": "abe58e484218c20a3cd23a2ea6b7e442278c2194e16dc99ec42ea1c6d1e3392b",
+  "browser": "155.0.8059.84",
+  "checks": 665,
+  "caseChecks": {
+    "preview-keyboard-and-affordability": 42,
+    "all-outcomes-confirm-refresh-open-once": 165,
+    "quota-failure-and-cross-tab-review": 50,
+    "responsive-layout-and-cap-balances": 408
+  },
+  "traceChecks": 665,
+  "layoutRecords": 48,
+  "layoutFixtureCount": 12,
+  "nativeFinalConfirmationTrialChecks": 12,
+  "errors": [],
+  "warnings": [],
+  "sourceStable": true,
+  "sourceMatchesCurrentFiles": true,
+  "images": [
+    {
+      "file": "gambit-1920.jpg",
+      "bytes": 241900,
+      "sha256": "8f08221062220a859bd3fe4d6c1743e5b010cf8a4293998b0e1449f79fbd36f5"
+    },
+    {
+      "file": "wishingvault-390.jpg",
+      "bytes": 63142,
+      "sha256": "5da6bdff2913bd0973777478eeb669debe64eb17e03cf0edcb10f0333c6b0666"
+    }
+  ],
+  "visualFindings": [
+    "Desktop room title and current luck now fully visible at container top.",
+    "Mobile 390px exact cap balance and refund remain legible; choice cards below the viewport use ordinary container scrolling.",
+    "Payment and final confirmation reachability is supported by native clicks and twelve native trial actionability checks, not by the two static screenshots alone."
+  ],
+  "limitations": [
+    "No native in-page gear navigation followed by return to event in this script; independently covered only by real engine equip and returned HTML.",
+    "No external screen reader, physical mobile device or physical GPU/display certification.",
+    "No universal resource-response audit beyond observed page/console/request-failure collection.",
+    "Generic remount does not preserve native details open state/focus."
+  ]
+}

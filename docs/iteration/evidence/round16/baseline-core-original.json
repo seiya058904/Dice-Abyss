@@ -1,0 +1,480 @@
+{
+  "synthetic": true,
+  "source": "Independent non-fusion real-browser regression against current app integration",
+  "url": "http://127.0.0.1:4190/",
+  "notes": [
+    "Only isolated synthetic local saves are used.",
+    "Reduced motion keeps functional checks short; full/low tests verify preference and save behavior, not animation performance.",
+    "State hashes summarize exact deep-equality assertions against the real engine transition."
+  ],
+  "browser": "155.0.8059.84",
+  "started": "2026-10-19T02:36:18.340Z",
+  "cases": [
+    {
+      "name": "title-new-manual-fate-continue",
+      "status": "PASS",
+      "checks": 8,
+      "trace": [
+        {
+          "label": "empty storage presents a real new-game action",
+          "passed": true
+        },
+        {
+          "label": "new game is valid and durable",
+          "passed": true
+        },
+        {
+          "label": "new game waits for manual fate",
+          "actual": "fate",
+          "expected": "fate",
+          "passed": true
+        },
+        {
+          "label": "idle time never advances a new run",
+          "actual": {
+            "runId": "482873260-1792377379503",
+            "revision": 0,
+            "phase": "fate",
+            "rng": 2056117162,
+            "gold": 80,
+            "itemCount": 3,
+            "stateSha256": "3a67d0e76992b55cbb3de40719ec0d6ddeb4959ca05645e64a0859d618152763"
+          },
+          "expected": {
+            "runId": "482873260-1792377379503",
+            "revision": 0,
+            "phase": "fate",
+            "rng": 2056117162,
+            "gold": 80,
+            "itemCount": 3,
+            "stateSha256": "3a67d0e76992b55cbb3de40719ec0d6ddeb4959ca05645e64a0859d618152763"
+          },
+          "passed": true
+        },
+        {
+          "label": "manual fate is one exact engine transition",
+          "actual": {
+            "runId": "482873260-1792377379503",
+            "revision": 1,
+            "phase": "route",
+            "rng": 2824255919,
+            "gold": 80,
+            "itemCount": 3,
+            "stateSha256": "a8a0bde5dc44e6e627062c7dec8247de51b7d71feef453afea6913fb550ad6cc"
+          },
+          "expected": {
+            "runId": "482873260-1792377379503",
+            "revision": 1,
+            "phase": "route",
+            "rng": 2824255919,
+            "gold": 80,
+            "itemCount": 3,
+            "stateSha256": "a8a0bde5dc44e6e627062c7dec8247de51b7d71feef453afea6913fb550ad6cc"
+          },
+          "passed": true
+        },
+        {
+          "label": "home exposes continue",
+          "passed": true
+        },
+        {
+          "label": "continue never redraws RNG or consumes another action",
+          "actual": {
+            "runId": "482873260-1792377379503",
+            "revision": 1,
+            "phase": "route",
+            "rng": 2824255919,
+            "gold": 80,
+            "itemCount": 3,
+            "stateSha256": "a8a0bde5dc44e6e627062c7dec8247de51b7d71feef453afea6913fb550ad6cc"
+          },
+          "expected": {
+            "runId": "482873260-1792377379503",
+            "revision": 1,
+            "phase": "route",
+            "rng": 2824255919,
+            "gold": 80,
+            "itemCount": 3,
+            "stateSha256": "a8a0bde5dc44e6e627062c7dec8247de51b7d71feef453afea6913fb550ad6cc"
+          },
+          "passed": true
+        },
+        {
+          "label": "route resumes visibly",
+          "actual": "route",
+          "expected": "route",
+          "passed": true
+        }
+      ],
+      "ms": 2077.763153
+    },
+    {
+      "name": "manual-combat-chest-equip-refresh",
+      "status": "PASS",
+      "checks": 9,
+      "trace": [
+        {
+          "label": "combat never auto-rolls",
+          "actual": {
+            "runId": "913-1792377382391",
+            "revision": 2,
+            "phase": "combat",
+            "rng": 2223563077,
+            "gold": 80,
+            "itemCount": 3,
+            "stateSha256": "79b67737407f827ee7d3506079da71ead842d83f06cc8f0d31cf9a5c4cbd71ce"
+          },
+          "expected": {
+            "runId": "913-1792377382391",
+            "revision": 2,
+            "phase": "combat",
+            "rng": 2223563077,
+            "gold": 80,
+            "itemCount": 3,
+            "stateSha256": "79b67737407f827ee7d3506079da71ead842d83f06cc8f0d31cf9a5c4cbd71ce"
+          },
+          "passed": true
+        },
+        {
+          "label": "Space commits exactly one manual roll",
+          "actual": {
+            "runId": "913-1792377382391",
+            "revision": 3,
+            "phase": "chest",
+            "rng": 252202252,
+            "gold": 80,
+            "itemCount": 3,
+            "stateSha256": "f351a1143dd6059e9e480b79f207d41cf38ec9e8cf84a58649eb7a9dbf92d263"
+          },
+          "expected": {
+            "runId": "913-1792377382391",
+            "revision": 3,
+            "phase": "chest",
+            "rng": 252202252,
+            "gold": 80,
+            "itemCount": 3,
+            "stateSha256": "f351a1143dd6059e9e480b79f207d41cf38ec9e8cf84a58649eb7a9dbf92d263"
+          },
+          "passed": true
+        },
+        {
+          "label": "defeated enemy yields a chest",
+          "actual": "chest",
+          "expected": "chest",
+          "passed": true
+        },
+        {
+          "label": "opening uses the original committed chest reward",
+          "actual": {
+            "runId": "913-1792377382391",
+            "revision": 4,
+            "phase": "loot",
+            "rng": 252202252,
+            "gold": 121,
+            "itemCount": 4,
+            "stateSha256": "0e36bce9a5f9456e6e0534b390e30dc172576605f40060cc766e6311743be63f"
+          },
+          "expected": {
+            "runId": "913-1792377382391",
+            "revision": 4,
+            "phase": "loot",
+            "rng": 252202252,
+            "gold": 121,
+            "itemCount": 4,
+            "stateSha256": "0e36bce9a5f9456e6e0534b390e30dc172576605f40060cc766e6311743be63f"
+          },
+          "passed": true
+        },
+        {
+          "label": "loot is visible",
+          "passed": true
+        },
+        {
+          "label": "equipment changes use exactly the existing transaction",
+          "actual": {
+            "runId": "913-1792377382391",
+            "revision": 5,
+            "phase": "loot",
+            "rng": 252202252,
+            "gold": 121,
+            "itemCount": 4,
+            "stateSha256": "ff641d789258ed2afe7e3c4d3236251ca0362ef9eb669a2bae61c04fe30233e6"
+          },
+          "expected": {
+            "runId": "913-1792377382391",
+            "revision": 5,
+            "phase": "loot",
+            "rng": 252202252,
+            "gold": 121,
+            "itemCount": 4,
+            "stateSha256": "ff641d789258ed2afe7e3c4d3236251ca0362ef9eb669a2bae61c04fe30233e6"
+          },
+          "passed": true
+        },
+        {
+          "label": "reward is equipped",
+          "passed": true
+        },
+        {
+          "label": "refresh keeps loot, equipment, RNG and revision exact",
+          "actual": {
+            "runId": "913-1792377382391",
+            "revision": 5,
+            "phase": "loot",
+            "rng": 252202252,
+            "gold": 121,
+            "itemCount": 4,
+            "stateSha256": "ff641d789258ed2afe7e3c4d3236251ca0362ef9eb669a2bae61c04fe30233e6"
+          },
+          "expected": {
+            "runId": "913-1792377382391",
+            "revision": 5,
+            "phase": "loot",
+            "rng": 252202252,
+            "gold": 121,
+            "itemCount": 4,
+            "stateSha256": "ff641d789258ed2afe7e3c4d3236251ca0362ef9eb669a2bae61c04fe30233e6"
+          },
+          "passed": true
+        },
+        {
+          "label": "refresh resumes the saved reward scene",
+          "passed": true
+        }
+      ],
+      "ms": 3968.727226000001
+    },
+    {
+      "name": "inventory-scroll-lock-and-settings",
+      "status": "FAIL",
+      "checks": 3,
+      "trace": [
+        {
+          "label": "inventory fixture remains valid",
+          "passed": true
+        },
+        {
+          "label": "inventory keeps its existing sixty-item page",
+          "passed": true
+        },
+        {
+          "label": "a lock button is fully visible after scrolling",
+          "passed": false
+        }
+      ],
+      "ms": 911.7259200000008,
+      "error": "AssertionError [ERR_ASSERTION]: a lock button is fully visible after scrolling",
+      "stack": "AssertionError [ERR_ASSERTION]: a lock button is fully visible after scrolling\n    at check (file:///workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/scripts/qa-core-browser.mjs:24:88)\n    at file:///workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/scripts/qa-core-browser.mjs:52:279\n    at async run (file:///workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/scripts/qa-core-browser.mjs:32:140)\n    at async file:///workspace/scratch/61dab2872cc5/baseline/Dice-Abyss/scripts/qa-core-browser.mjs:49:2"
+    },
+    {
+      "name": "primary-save-failure-recovery",
+      "status": "PASS",
+      "checks": 4,
+      "trace": [
+        {
+          "label": "failed primary write leaves both durable copies untouched",
+          "actual": [
+            {
+              "bytes": 2222,
+              "sha256": "e0cf7d7b393d0352c8a20c86b16eb3d2c3fe69d9a3302b721eb9f0cd9cfba24e"
+            },
+            {
+              "bytes": 2222,
+              "sha256": "e0cf7d7b393d0352c8a20c86b16eb3d2c3fe69d9a3302b721eb9f0cd9cfba24e"
+            }
+          ],
+          "expected": [
+            {
+              "bytes": 2222,
+              "sha256": "e0cf7d7b393d0352c8a20c86b16eb3d2c3fe69d9a3302b721eb9f0cd9cfba24e"
+            },
+            {
+              "bytes": 2222,
+              "sha256": "e0cf7d7b393d0352c8a20c86b16eb3d2c3fe69d9a3302b721eb9f0cd9cfba24e"
+            }
+          ],
+          "passed": true
+        },
+        {
+          "label": "failed transition leaves original scene",
+          "actual": "fate",
+          "expected": "fate",
+          "passed": true
+        },
+        {
+          "label": "failure retains usable manual action",
+          "passed": true
+        },
+        {
+          "label": "retry consumes the original RNG once after storage recovers",
+          "actual": {
+            "runId": "551-1792377389078",
+            "revision": 1,
+            "phase": "route",
+            "rng": 2984750401,
+            "gold": 80,
+            "itemCount": 3,
+            "stateSha256": "a2e929373cadf8d8fff204547295c84fa5a28b6667e6e3701ba20df07e2e4f64"
+          },
+          "expected": {
+            "runId": "551-1792377389078",
+            "revision": 1,
+            "phase": "route",
+            "rng": 2984750401,
+            "gold": 80,
+            "itemCount": 3,
+            "stateSha256": "a2e929373cadf8d8fff204547295c84fa5a28b6667e6e3701ba20df07e2e4f64"
+          },
+          "passed": true
+        }
+      ],
+      "ms": 2152.578469
+    },
+    {
+      "name": "mirror-write-warning-keeps-durable-result",
+      "status": "PASS",
+      "checks": 4,
+      "trace": [
+        {
+          "label": "primary save survives a failed mirror write",
+          "actual": {
+            "runId": "891-1792377391447",
+            "revision": 1,
+            "phase": "route",
+            "rng": 1634712324,
+            "gold": 80,
+            "itemCount": 3,
+            "stateSha256": "3c78f1d5296fd5bf870ffa72c9bea5ff08eaf2974640a56ca68192f823828197"
+          },
+          "expected": {
+            "runId": "891-1792377391447",
+            "revision": 1,
+            "phase": "route",
+            "rng": 1634712324,
+            "gold": 80,
+            "itemCount": 3,
+            "stateSha256": "3c78f1d5296fd5bf870ffa72c9bea5ff08eaf2974640a56ca68192f823828197"
+          },
+          "passed": true
+        },
+        {
+          "label": "failed mirror remains the previous valid copy",
+          "actual": {
+            "bytes": 2213,
+            "sha256": "8d1d2963a48b39852564ebfa628fa7db06431971ef7c1d3e0ee2764ffef85967"
+          },
+          "expected": {
+            "bytes": 2213,
+            "sha256": "8d1d2963a48b39852564ebfa628fa7db06431971ef7c1d3e0ee2764ffef85967"
+          },
+          "passed": true
+        },
+        {
+          "label": "warning remains visible",
+          "passed": true
+        },
+        {
+          "label": "reload uses exact latest primary result without reroll",
+          "actual": {
+            "runId": "891-1792377391447",
+            "revision": 1,
+            "phase": "route",
+            "rng": 1634712324,
+            "gold": 80,
+            "itemCount": 3,
+            "stateSha256": "3c78f1d5296fd5bf870ffa72c9bea5ff08eaf2974640a56ca68192f823828197"
+          },
+          "expected": {
+            "runId": "891-1792377391447",
+            "revision": 1,
+            "phase": "route",
+            "rng": 1634712324,
+            "gold": 80,
+            "itemCount": 3,
+            "stateSha256": "3c78f1d5296fd5bf870ffa72c9bea5ff08eaf2974640a56ca68192f823828197"
+          },
+          "passed": true
+        }
+      ],
+      "ms": 1938.894384000001
+    },
+    {
+      "name": "cross-tab-sync-cancels-stale-confirmation",
+      "status": "PASS",
+      "checks": 7,
+      "trace": [
+        {
+          "label": "first tab reviews a concrete salvage",
+          "passed": true
+        },
+        {
+          "label": "first tab sees the latest exact save",
+          "actual": {
+            "runId": "891-1792377393712",
+            "revision": 1,
+            "phase": "route",
+            "rng": 1145617973,
+            "gold": 105,
+            "itemCount": 4,
+            "stateSha256": "054931c36ac87525f400d27e70c093099281362c71bf4167278c8293693f4098"
+          },
+          "expected": {
+            "runId": "891-1792377393712",
+            "revision": 1,
+            "phase": "route",
+            "rng": 1145617973,
+            "gold": 105,
+            "itemCount": 4,
+            "stateSha256": "054931c36ac87525f400d27e70c093099281362c71bf4167278c8293693f4098"
+          },
+          "passed": true
+        },
+        {
+          "label": "stale review never consumes the spare",
+          "passed": true
+        },
+        {
+          "label": "sync or the exact transient mirror state is explained",
+          "passed": true
+        },
+        {
+          "label": "first tab game view has latest scene after sync",
+          "actual": "route",
+          "expected": "route",
+          "passed": true
+        },
+        {
+          "label": "both tabs retain the same branch and RNG",
+          "actual": {
+            "runId": "891-1792377393712",
+            "revision": 1,
+            "phase": "route",
+            "rng": 1145617973,
+            "gold": 105,
+            "itemCount": 4,
+            "stateSha256": "054931c36ac87525f400d27e70c093099281362c71bf4167278c8293693f4098"
+          },
+          "expected": {
+            "runId": "891-1792377393712",
+            "revision": 1,
+            "phase": "route",
+            "rng": 1145617973,
+            "gold": 105,
+            "itemCount": 4,
+            "stateSha256": "054931c36ac87525f400d27e70c093099281362c71bf4167278c8293693f4098"
+          },
+          "passed": true
+        },
+        {
+          "label": "Web Locks API is available in the tested browser",
+          "passed": true
+        }
+      ],
+      "ms": 3351.171114999999
+    }
+  ],
+  "errors": [],
+  "crossTabNotice": "主存档可用，但镜像尚未同步。请导出当前进度备份，后续成功保存会重建镜像。",
+  "checks": 35,
+  "finished": "2026-10-19T02:36:37.075Z"
+}

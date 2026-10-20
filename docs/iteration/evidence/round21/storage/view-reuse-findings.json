@@ -1,0 +1,148 @@
+{
+  "kind": "Round21 final per-invocation view reuse handoff",
+  "at": "2026-10-19T12:43:05.428720+00:00",
+  "status": "IMPLEMENTED_FROZEN; native browser frame/input evidence pending parent",
+  "sourceHashes": {
+    "src/storage.js": "daa6eeffc7a38692213228d748c7819739392a5eeaedc91ec62350c53319591c",
+    "src/views.js": "75c2b6b0c36ee6d34a8066fc4867c6f223dd630633687a347b703afee674c263",
+    "src/boon-readout.js": "ea732d4fe897633b67e5349ad57c1bd52dd1506bc84f8db3748eb6aea36f0bfc",
+    "tests/view-reuse-round21.test.mjs": "30265c8e0993f9bf97001b1d516d20ec806a7729d88231919983721059bbfc5f",
+    "scripts/audit-view-reuse-round21.mjs": "d46baa20f95e56dfe8a1ff634e7f152517064c0c947322ebb8510a463110d957"
+  },
+  "scope": "gameView derives its always-needed stats once, then derives one boon model only if route rail is rendered. The model is forwarded locally to both boon panels and stats to footer/equipment rail. Standalone defaults remain; no state write, cache, WeakMap, global retained snapshot or engine edit.",
+  "tests": {
+    "focusedNewRegression": "5/5 passed",
+    "exactHTML": {
+      "cases": 130,
+      "fullGameAndStandaloneSubviewComparisons": 780,
+      "allEqualPreReuse": true
+    },
+    "benefitModels": "default and supplied-current-stats models exactly match pre-reuse",
+    "sameObjectFreshness": "equipment/talents/spent trigger update between calls; restoring equipment/talent restores original visible HTML",
+    "nextCombatAndRNGUnchanged": true,
+    "sourceAndScriptStable": true
+  },
+  "measuredCells": [
+    {
+      "name": "normal combat, 32 items, equipped first",
+      "summaryMs": {
+        "baseline": {
+          "n": 24,
+          "min": 1.1690889999999854,
+          "median": 1.4311965000000555,
+          "p90": 2.3661899999999605,
+          "p95": 2.687783999999965,
+          "max": 3.653383000000076,
+          "mean": 1.7106037916666803
+        },
+        "preReuse": {
+          "n": 24,
+          "min": 1.8572560000000067,
+          "median": 2.206963500000029,
+          "p90": 3.5855309999999463,
+          "p95": 3.7675120000001243,
+          "max": 3.9219799999998486,
+          "mean": 2.477216958333353
+        },
+        "current": {
+          "n": 24,
+          "min": 2.003042999999934,
+          "median": 2.1183119999999462,
+          "p90": 2.994709000000057,
+          "p95": 3.041888000000199,
+          "max": 3.133654000000206,
+          "mean": 2.277041791666695
+        }
+      },
+      "pairedSummaryMs": {
+        "currentMinusPreReuse": {
+          "n": 24,
+          "min": -1.8369169999998576,
+          "median": -0.08580699999993158,
+          "p90": 0.3340650000000096,
+          "p95": 0.38927600000033635,
+          "max": 0.9473709999999755,
+          "mean": -0.20017516666665833
+        },
+        "currentMinusBaseline": {
+          "n": 24,
+          "min": -1.0955610000000888,
+          "median": 0.7559334999999692,
+          "p90": 1.1062959999999293,
+          "p95": 1.1711310000000594,
+          "max": 1.662378000000217,
+          "mean": 0.5664380000000145
+        }
+      }
+    },
+    {
+      "name": "normal combat, 10000 items, equipped last",
+      "summaryMs": {
+        "baseline": {
+          "n": 24,
+          "min": 4.032492999999931,
+          "median": 4.7394885000002205,
+          "p90": 7.357786000000033,
+          "p95": 9.777829999999994,
+          "max": 14.296631000000161,
+          "mean": 5.6624252500000125
+        },
+        "preReuse": {
+          "n": 24,
+          "min": 6.082585000000108,
+          "median": 7.098811999999953,
+          "p90": 9.799070999999913,
+          "p95": 14.143544999999904,
+          "max": 16.12394300000028,
+          "mean": 7.978606916666668
+        },
+        "current": {
+          "n": 24,
+          "min": 4.261392000000114,
+          "median": 5.079962999999907,
+          "p90": 7.961198000000195,
+          "p95": 8.628960000000006,
+          "max": 12.507053999999698,
+          "mean": 5.958228208333338
+        }
+      },
+      "pairedSummaryMs": {
+        "currentMinusPreReuse": {
+          "n": 24,
+          "min": -9.458106000000043,
+          "median": -1.8008919999999762,
+          "p90": 0.4533889999997882,
+          "p95": 0.540094000000181,
+          "max": 0.8223020000002634,
+          "mean": -2.02037870833333
+        },
+        "currentMinusBaseline": {
+          "n": 24,
+          "min": -2.5984679999999116,
+          "median": 0.24350500000014108,
+          "p90": 2.2832310000003417,
+          "p95": 2.3330890000002,
+          "max": 3.2667109999997592,
+          "mean": 0.2958029583333257
+        }
+      }
+    }
+  ],
+  "interpretation": "Large-inventory late-equip paired median removes1.801ms versus pre-reuse. Final remains0.244ms paired median above baseline in this fixed run; no claim of complete elimination or native performance. The32-item cell remains higher than baseline. Pre/current underwent the diverse differential before timing while baseline did not, so module/JIT histories are unequal. Preserve every sample and use coordinated native browser results for final performance claims; no more optional Node sampling.",
+  "evidence": [
+    "view-reuse-formal01.json",
+    "view-reuse-protocol.json",
+    "view-reuse-precheck01.json",
+    "pre-view-reuse/preservation.json",
+    "pre-view-reuse/parsed-validator-final.json",
+    "compact-evidence/view-pre-reuse-to-final.patch"
+  ],
+  "precheckFailure": "Audit fixture expected four unique outputs but final state intentionally restored initial visible equipment/talent; corrected to three unique with last equal first. No runtime defect and all earlier128cases/768HTML outputs matched.",
+  "integrationFiles": [
+    "src/views.js",
+    "src/boon-readout.js",
+    "tests/view-reuse-round21.test.mjs",
+    "scripts/audit-view-reuse-round21.mjs"
+  ],
+  "storageUnchanged": true
+}

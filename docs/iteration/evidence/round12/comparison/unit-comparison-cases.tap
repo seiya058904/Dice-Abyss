@@ -1,0 +1,64 @@
+TAP version 13
+# Subtest: first-hit omission is reproduced with actual paired rolls and explained as a changed condition
+ok 1 - first-hit omission is reproduced with actual paired rolls and explained as a changed condition
+  ---
+  duration_ms: 186.083451
+  type: 'test'
+  ...
+# Subtest: the detail lists current talent-plus-equipment contributions without mixing two first-hit rules
+ok 2 - the detail lists current talent-plus-equipment contributions without mixing two first-hit rules
+  ---
+  duration_ms: 0.998005
+  type: 'test'
+  ...
+# Subtest: conditional penetration loss is visible even when the existing base-penetration warning is false
+ok 3 - conditional penetration loss is visible even when the existing base-penetration warning is false
+  ---
+  duration_ms: 1.906007
+  type: 'test'
+  ...
+# Subtest: deep damage, shields, survival and economy traits retain their exact trigger and effective value
+ok 4 - deep damage, shields, survival and economy traits retain their exact trigger and effective value
+  ---
+  duration_ms: 4.085097
+  type: 'test'
+  ...
+# Subtest: actual critical caps suppress false gain rows and explain the added item contribution
+ok 5 - actual critical caps suppress false gain rows and explain the added item contribution
+  ---
+  duration_ms: 1.087618
+  type: 'test'
+  ...
+# Subtest: deep stacking and the layer-luck cap report effective limits without inventing useful gains
+ok 6 - deep stacking and the layer-luck cap report effective limits without inventing useful gains
+  ---
+  duration_ms: 1.134446
+  type: 'test'
+  ...
+# Subtest: requested relic slots produce distinct real comparisons and compact inventories remain identical
+ok 7 - requested relic slots produce distinct real comparisons and compact inventories remain identical
+  ---
+  duration_ms: 2.728072
+  type: 'test'
+  ...
+# Subtest: gold equipment uses the effective sixty-percent cap and keeps already generated rewards intact
+ok 8 - gold equipment uses the effective sixty-percent cap and keeps already generated rewards intact
+  ---
+  duration_ms: 1.82688
+  type: 'test'
+  ...
+# Subtest: identical traits do not create rows and every authored item yields finite unique detail values
+ok 9 - identical traits do not create rows and every authored item yields finite unique detail values
+  ---
+  duration_ms: 121.952696
+  type: 'test'
+  ...
+1..9
+# tests 9
+# suites 0
+# pass 9
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 354.311784

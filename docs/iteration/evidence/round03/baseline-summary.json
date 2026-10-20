@@ -1,0 +1,421 @@
+{
+  "reviewedAtUtc": "2026-10-17T13:16:39.207237+00:00",
+  "inputZip": {
+    "name": "Dice-Abyss-v5.3.0-cloud-round-02(1).zip",
+    "bytes": 12427981,
+    "sha256": "6e6ffd2a2bd8f8dbaa4370712025e91f3b5b152722fe3f90086bf7ce7136dace"
+  },
+  "identity": {
+    "manifestVersion": "5.3.0",
+    "manifestRound": 2,
+    "entries": 262,
+    "actualFileCount": 263,
+    "pass": true,
+    "packageVersion": "5.3.0",
+    "stateRound": 2,
+    "stateOutputVersion": "5.3.0",
+    "saveSchemaVersion": 5
+  },
+  "executionSafety": {
+    "dependencyInstallRequired": false,
+    "packageLifecycleHooks": false,
+    "executedUnknownBinary": false,
+    "testSideEffects": "Node engine/state fixtures and local module reads. Syntax checker spawns only current Node --check. All audit outputs explicitly redirected outside input. Font decoder uses builtin Node Brotli only when needed. No browser or remote action used by this audit agent."
+  },
+  "gates": {
+    "kind": "fresh baseline gates; original uploaded implementation",
+    "startedUtc": "2026-10-17T13:05:09.867831+00:00",
+    "cwd": "/workspace/scratch/1e15b1b53871/baseline/Dice-Abyss",
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+    "node": "v24.19.0",
+    "npm": "11.9.0",
+    "commands": [
+      {
+        "name": "syntax",
+        "command": [
+          "npm",
+          "run",
+          "check"
+        ],
+        "exitCode": 0,
+        "durationSeconds": 4.374,
+        "log": "syntax.log"
+      },
+      {
+        "name": "unit",
+        "command": [
+          "npm",
+          "test"
+        ],
+        "exitCode": 0,
+        "durationSeconds": 132.436,
+        "log": "unit.log"
+      },
+      {
+        "name": "simulate-1000",
+        "command": [
+          "npm",
+          "run",
+          "simulate",
+          "--",
+          "1000"
+        ],
+        "exitCode": 0,
+        "durationSeconds": 420.694,
+        "log": "simulate-1000.log"
+      }
+    ],
+    "baselineFileCount": 263,
+    "sourceStable": true,
+    "sourceDifferences": [],
+    "finishedUtc": "2026-10-17T13:14:27.806750+00:00"
+  },
+  "perCaseUnit": {
+    "command": [
+      "node",
+      "--test",
+      "--test-isolation=none",
+      "/workspace/scratch/1e15b1b53871/baseline/Dice-Abyss/tests/balance.test.mjs",
+      "/workspace/scratch/1e15b1b53871/baseline/Dice-Abyss/tests/combat-polish.test.mjs",
+      "/workspace/scratch/1e15b1b53871/baseline/Dice-Abyss/tests/content-depth.test.mjs",
+      "/workspace/scratch/1e15b1b53871/baseline/Dice-Abyss/tests/dice-motion.test.mjs",
+      "/workspace/scratch/1e15b1b53871/baseline/Dice-Abyss/tests/dice-renderer.test.mjs",
+      "/workspace/scratch/1e15b1b53871/baseline/Dice-Abyss/tests/effects.test.mjs",
+      "/workspace/scratch/1e15b1b53871/baseline/Dice-Abyss/tests/encounters.test.mjs",
+      "/workspace/scratch/1e15b1b53871/baseline/Dice-Abyss/tests/engine.test.mjs",
+      "/workspace/scratch/1e15b1b53871/baseline/Dice-Abyss/tests/equipment-levels.test.mjs",
+      "/workspace/scratch/1e15b1b53871/baseline/Dice-Abyss/tests/equipment-polish.test.mjs",
+      "/workspace/scratch/1e15b1b53871/baseline/Dice-Abyss/tests/expansion.test.mjs",
+      "/workspace/scratch/1e15b1b53871/baseline/Dice-Abyss/tests/fusion-selection.test.mjs",
+      "/workspace/scratch/1e15b1b53871/baseline/Dice-Abyss/tests/fusion-workbench.test.mjs",
+      "/workspace/scratch/1e15b1b53871/baseline/Dice-Abyss/tests/intent-ranges.test.mjs",
+      "/workspace/scratch/1e15b1b53871/baseline/Dice-Abyss/tests/iteration-gameplay.test.mjs",
+      "/workspace/scratch/1e15b1b53871/baseline/Dice-Abyss/tests/iteration-render.test.mjs",
+      "/workspace/scratch/1e15b1b53871/baseline/Dice-Abyss/tests/iteration-storage.test.mjs",
+      "/workspace/scratch/1e15b1b53871/baseline/Dice-Abyss/tests/launcher-release.test.mjs",
+      "/workspace/scratch/1e15b1b53871/baseline/Dice-Abyss/tests/migration-levels.test.mjs",
+      "/workspace/scratch/1e15b1b53871/baseline/Dice-Abyss/tests/save-polish.test.mjs",
+      "/workspace/scratch/1e15b1b53871/baseline/Dice-Abyss/tests/storage-polish.test.mjs",
+      "/workspace/scratch/1e15b1b53871/baseline/Dice-Abyss/tests/v5-compatibility.test.mjs",
+      "/workspace/scratch/1e15b1b53871/baseline/Dice-Abyss/tests/v5-systems.test.mjs",
+      "/workspace/scratch/1e15b1b53871/baseline/Dice-Abyss/tests/views-polish.test.mjs",
+      "/workspace/scratch/1e15b1b53871/baseline/Dice-Abyss/tests/views.test.mjs"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 164.639,
+    "purpose": "Resolve default Node24 file-only summary into actually executed per-case counts; same unchanged full suite",
+    "log": "unit-cases.log",
+    "cases": 247,
+    "passed": 247,
+    "failed": 0,
+    "skipped": 0,
+    "runnerDurationMs": 164543.879593
+  },
+  "extendedGates": {
+    "startedUtc": "2026-10-17T13:07:03.832166+00:00",
+    "commands": [
+      {
+        "name": "font-coverage",
+        "command": [
+          "python",
+          "scripts/audit-offline-fonts.py",
+          "--output",
+          "/workspace/scratch/1e15b1b53871/audit/baseline/font-coverage.json"
+        ],
+        "exitCode": 0,
+        "durationSeconds": 1.388,
+        "log": "font-coverage.log"
+      },
+      {
+        "name": "storage-compatibility",
+        "command": [
+          "node",
+          "scripts/audit-storage-compatibility.mjs",
+          "/workspace/scratch/1e15b1b53871/baseline/Dice-Abyss",
+          "/workspace/scratch/1e15b1b53871/baseline/Dice-Abyss",
+          "/workspace/scratch/1e15b1b53871/audit/baseline/storage-compatibility.json"
+        ],
+        "exitCode": 0,
+        "durationSeconds": 0.142,
+        "log": "storage-compatibility.log"
+      },
+      {
+        "name": "boundaries",
+        "command": [
+          "node",
+          "scripts/audit-boundaries.mjs",
+          "/workspace/scratch/1e15b1b53871/audit/baseline/boundaries.json"
+        ],
+        "exitCode": 0,
+        "durationSeconds": 0.738,
+        "log": "boundaries.log"
+      },
+      {
+        "name": "combat-content-checks",
+        "command": [
+          "node",
+          "scripts/qa-combat.mjs",
+          "--mode",
+          "checks",
+          "--route-seeds",
+          "32",
+          "--output",
+          "/workspace/scratch/1e15b1b53871/audit/baseline/combat-content-checks.json"
+        ],
+        "exitCode": 0,
+        "durationSeconds": 30.647,
+        "log": "combat-content-checks.log"
+      },
+      {
+        "name": "rarity-2475000",
+        "command": [
+          "node",
+          "--input-type=module",
+          "-e",
+          "import{auditSources}from'./scripts/audit-v5.mjs';import{writeFileSync}from'node:fs';const result=auditSources(25000);writeFileSync(process.argv[1],JSON.stringify(result,null,2)+'\\n');console.log(JSON.stringify({rows:result.rows.length,draws:result.rows.length*25000}));",
+          "/workspace/scratch/1e15b1b53871/audit/baseline/rarity-2475000.json"
+        ],
+        "exitCode": 0,
+        "durationSeconds": 56.842,
+        "log": "rarity-2475000.log"
+      }
+    ],
+    "note": "Actual baseline gates. Shared cloud CPU, running alongside the required unit suite; durations are not isolated performance benchmarks.",
+    "finishedUtc": "2026-10-17T13:08:33.597017+00:00"
+  },
+  "simulation": {
+    "source": "fresh run of npm run simulate -- 1000 on readonly input",
+    "seeds": 1000,
+    "completed": 1000,
+    "failures": [],
+    "deaths": {
+      "min": 0,
+      "median": 0,
+      "p95": 0,
+      "max": 0,
+      "mean": 0
+    },
+    "noShopping": 50,
+    "noShoppingCompleted": 50,
+    "combatRounds": {
+      "combat": {
+        "min": 1,
+        "median": 2,
+        "p95": 4,
+        "max": 9,
+        "mean": 1.8
+      },
+      "elite": {
+        "min": 1,
+        "median": 2,
+        "p95": 4,
+        "max": 9,
+        "mean": 2.48
+      },
+      "boss": {
+        "min": 1,
+        "median": 4,
+        "p95": 7,
+        "max": 10,
+        "mean": 4.27
+      },
+      "trial": {
+        "min": 1,
+        "median": 2,
+        "p95": 4,
+        "max": 7,
+        "mean": 2.04
+      }
+    },
+    "rarities": [
+      12834,
+      17325,
+      10318,
+      3624,
+      0,
+      0,
+      0,
+      0
+    ],
+    "economy": {
+      "gold": {
+        "min": 2860,
+        "median": 5770,
+        "p95": 7373,
+        "max": 8977,
+        "mean": 5797.78
+      },
+      "spent": {
+        "min": 291,
+        "median": 1533,
+        "p95": 2635,
+        "max": 3963,
+        "mean": 1578.11
+      },
+      "buys": {
+        "min": 0,
+        "median": 3,
+        "p95": 6,
+        "max": 9,
+        "mean": 3.45
+      },
+      "forges": {
+        "min": 1,
+        "median": 2,
+        "p95": 3,
+        "max": 3,
+        "mean": 2.45
+      }
+    },
+    "durationSeconds": 420.694,
+    "canonicalSha256": "2dd8f74d20a0d754e160e679cc5c2586a3b9ad6c90723e087ea5a9ae15d4e5f0"
+  },
+  "fontAudit": {
+    "pass": true,
+    "han": 1023,
+    "cjkPunctuation": 21,
+    "cssDeclarations": 170,
+    "directoryFiles": 8,
+    "directoryBytes": 8680958,
+    "licenseNotices": 5,
+    "allOfl1_1NoticesPresent": true
+  },
+  "content": {
+    "rooms": 50,
+    "enemies": 100,
+    "bosses": 18,
+    "items": 1536,
+    "talents": 45
+  },
+  "contentReachability": {
+    "seeds": 32,
+    "depth": 400,
+    "counts": {
+      "rooms": 50,
+      "enemies": 100,
+      "bosses": 18,
+      "eventKeys": 22
+    },
+    "roomCount": 76800,
+    "combatCount": 54445
+  },
+  "forecasts": {
+    "method": "Synthetic isolated combat states covering all118 authored identities, 1–6 dice, completed turns0–3, full/25% player HP, V5 defenses, surviving boss half-health crossings and three-wave modifiers. Actual resolveRoll results are checked against a pure pre-roll forecast. This is not natural balance data.",
+    "identities": 118,
+    "cases": 5664,
+    "byDice": {
+      "1": 944,
+      "2": 944,
+      "3": 944,
+      "4": 944,
+      "5": 944,
+      "6": 944
+    },
+    "phaseCrossings": 1248,
+    "killed": 0,
+    "allWithinBounds": true,
+    "pureForecast": true
+  },
+  "probability": {
+    "rows": 99,
+    "draws": 2475000,
+    "theoreticallyZeroBuckets": 323,
+    "allExpectedZeroObservedZero": true,
+    "maximumAbsoluteError": 0.006960000000000022
+  },
+  "storage": {
+    "kind": "independent synthetic counterexample review",
+    "passed": [
+      {
+        "check": "all existing V4 committed fixtures migrate identically",
+        "fixtures": 11
+      },
+      {
+        "check": "healthy primary retains precedence over a different old mirror"
+      },
+      {
+        "check": "first original archive remains immutable after later recovery"
+      },
+      {
+        "check": "explicit new run keeps an unreadable checksummed original available for manual rescue"
+      },
+      {
+        "check": "same-run/same-revision branch still rejects without disk mutation"
+      },
+      {
+        "check": "validator remains pure and save envelopes/keys remain unchanged"
+      }
+    ],
+    "notTested": [
+      "real browser localStorage quotas",
+      "OS crash/power loss",
+      "real concurrent tabs"
+    ]
+  },
+  "confirmedIssue": {
+    "id": "S01",
+    "severity": "P2",
+    "status": "FIXED_VERIFIED",
+    "scope": "constructed malformed pending auction import, not naturally generated gameplay",
+    "reproduction": "Set pending abyssauction reward item ID equal to an already owned item. Input validator/import accepts replacement, but subsequent purchase becomes un-saveable. Leaving remains possible and failed main transaction does not debit actual stored gold.",
+    "rootCause": "Owned collision is checked for chest and unsold shop offers, but omitted for the pending auction pre-generated reward.",
+    "fixFiles": [
+      "src/storage.js",
+      "tests/iteration-storage.test.mjs"
+    ],
+    "fix": "Reject owned pending auction reward IDs before import validation/archive writes; resolved owned reward history remains valid.",
+    "baselineNewTests": {
+      "passed": 1,
+      "failed": 1,
+      "expectedFailure": true
+    },
+    "currentStorageTests": {
+      "passed": 47,
+      "failed": 0,
+      "skipped": 0,
+      "runnerDurationMs": 1913.457128
+    },
+    "evidence": [
+      "auction-owned-reward-counterexample.json",
+      "auction-regression-baseline.json",
+      "auction-regression-baseline.log",
+      "storage-regression-current.json",
+      "storage-regression-current.log"
+    ]
+  },
+  "talentIndependentReview": {
+    "legacyCases": 1800,
+    "batchCases": 540,
+    "transactionCases": 12,
+    "boundaries": [
+      {
+        "id": "power",
+        "invested": 1000000,
+        "remaining": 1000000,
+        "roundTrip": true
+      },
+      {
+        "id": "vitality",
+        "invested": 1000000,
+        "remaining": 1000000,
+        "roundTrip": true
+      }
+    ],
+    "sourceStable": true,
+    "pass": true,
+    "evidence": "talent-independent-review.json"
+  },
+  "limits": [
+    "Final full working-candidate and packaged-extraction gates are the integrator responsibility; current full-suite counts above are INPUT baseline only.",
+    "Storage faults use an in-memory store. This audit does not prove real concurrent browser locks, browser quotas or OS power-loss survival.",
+    "Generators and scripted policies do not establish human win rates or physical-GPU performance.",
+    "Metadata/source comparisons apply to captured hashes; later changes need matching or renewed verification."
+  ],
+  "currentLegacyCompatibility": {
+    "evidence": "storage-compatibility-current.json",
+    "currentComparedToInput": true,
+    "passedChecks": 6,
+    "v4FixturesIdentical": 11,
+    "saveKeysAndEnvelopeUnchanged": true
+  }
+}

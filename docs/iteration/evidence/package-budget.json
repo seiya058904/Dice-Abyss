@@ -1,0 +1,63 @@
+{
+  "method": "Actual pre-compression byte totals. Excludes this budget file and the delivery manifest to avoid self-reference; add their measured bytes from FILE_MANIFEST / external ZIP verification. ZIP compressed size, growth and SHA-256 are reported externally after actual packaging.",
+  "inputZipBytes": 21290657,
+  "hardLimitBytesExclusive": 50000000,
+  "idealTargetBytes": 40000000,
+  "excludedFromCategoryTotals": [
+    "docs/iteration/evidence/package-budget.json",
+    "docs/iteration/FILE_MANIFEST.json"
+  ],
+  "categoryTotals": {
+    "developer-tools-and-metadata": {
+      "files": 38,
+      "bytes": 301424
+    },
+    "fonts-and-licenses": {
+      "files": 8,
+      "bytes": 8680958
+    },
+    "game-runtime": {
+      "files": 27,
+      "bytes": 665210
+    },
+    "historical-docs": {
+      "files": 26,
+      "bytes": 894416
+    },
+    "historical-visual-evidence": {
+      "files": 23,
+      "bytes": 1520236
+    },
+    "round-01-evidence": {
+      "files": 58,
+      "bytes": 1375463
+    },
+    "round-01-handoff": {
+      "files": 10,
+      "bytes": 72186
+    },
+    "tests-and-fixtures": {
+      "files": 24,
+      "bytes": 1625668
+    }
+  },
+  "countedFiles": 214,
+  "countedUncompressedBytes": 15135561,
+  "assetChanges": {
+    "historicalImagesBefore": 12244165,
+    "historicalImagesAfter": 1515578,
+    "historicalImageSavings": 10728587,
+    "newRuntimePortalBytes": 171736,
+    "fontsAndLicensesPreservedBytes": 8680958
+  },
+  "excludedArtifacts": [
+    "Original generation PNG",
+    "full performance traces",
+    "raw long-run state traces",
+    "browser profiles",
+    "caches",
+    "node_modules",
+    "previous ZIPs",
+    "working and baseline copies"
+  ]
+}

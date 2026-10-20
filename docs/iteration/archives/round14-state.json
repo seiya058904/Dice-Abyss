@@ -1,0 +1,185 @@
+{
+  "project": "Dice Abyss",
+  "round": 14,
+  "date": "2026-10-18",
+  "timeZone": "UTC",
+  "inputVersion": "5.13.0",
+  "outputVersion": "5.14.0",
+  "saveSchemaVersion": 5,
+  "inputZipSha256": "2e2fa7c86c64addf0bf37e051c6cd30d25fd6568af90a6dada9c9d4e505df910",
+  "inputZipBytes": 21618697,
+  "baselineIdentity": {
+    "files": 1277,
+    "expandedBytes": 49856850,
+    "manifestEntries": 1276,
+    "integrity": "CRC, safe paths, complete manifest and every read-only baseline file rechecked against actual input ZIP."
+  },
+  "previousRound": {
+    "round": 13,
+    "outputVersion": "5.13.0",
+    "state": "docs/iteration/archives/round13-state.json",
+    "report": "docs/iteration/archives/round13-report.md",
+    "manifest": "docs/iteration/archives/round13-manifest.json"
+  },
+  "releaseStatus": "VALIDATED_WITH_DOCUMENTED_LIMITATIONS",
+  "mainChanges": [
+    "Read-only defeat review with actual battle outcome, enemy mechanics, available equipment and legal talent availability.",
+    "Dedicated armor/all-inventory preparation entries reset irrelevant filters; normal navigation retains filters. Visible selected talent branch receives focus on desktop and narrow layouts.",
+    "Product display version now agrees with package and HTML through release.js; schema and save keys remain separate.",
+    "Optional structured enemy description fields remain fully preserved; the new UI consumes strings only.",
+    "Canvas preparation avoids redundant geometry reads and re-insertion; 52 complete-command scenarios retain behavior. No FPS or universal pixel-equality claim."
+  ],
+  "changedRuntimeFiles": [
+    "index.html",
+    "package.json",
+    "src/app.js",
+    "src/views.js",
+    "src/effects.js"
+  ],
+  "newRuntimeFiles": [
+    "src/defeat-review.js",
+    "src/defeat-review.css",
+    "src/release.js"
+  ],
+  "runtimeDirectoryGrowthBytes": 9706,
+  "regressionGuards": [
+    "Original 63 test modules, 2 fixtures, 8 font/notice/license files and 16 protected core source files are byte-identical; no original file removed.",
+    "Schema5, V1-V4 migrations, original keys/IDs, full unknown fields and expected comparisons, Web Locks, validate-before-archive and save-before-presentation preserved.",
+    "Six rooms, manual maximum six dice, one currency, five equipment slots, eight rarity gates, item ownership and Lv/XP/+N separation preserved.",
+    "dawnCrit nextLuck survives until the next actual combat roll; retry and leaving floor retain their existing clearing rules."
+  ],
+  "testSummary": {
+    "baselineModules": 63,
+    "currentCandidateModules": 67,
+    "baselineFineCases": 571,
+    "currentCandidateFineCases": 587,
+    "lateChange": "One additional description-type test after first complete candidate; final frozen targeted suite has 17/17 passes.",
+    "frozenTargetedCases": 17,
+    "finalArchiveExpectedFineCases": 588,
+    "finalArchiveReceipt": "External exact-ZIP receipt; not prefilled in this source record.",
+    "standardSeedsPerVersion": 1000,
+    "noShoppingSeedsPerVersion": 50,
+    "allStandardJourneysComplete": true,
+    "standardDeathsPerVersion": 0,
+    "simulationBytesEqual": 9409,
+    "simulationSha256": "266fa5b56516410712395796f197a2e33ad1b1e16ede45de14b872f208007d77",
+    "baselineHttp": 52,
+    "candidateHttp": 55,
+    "currentFontHan": 1046,
+    "currentFontCjkPunctuation": 20,
+    "missingGlyphs": 0,
+    "originalCurrentBrowser": {
+      "groups": 53,
+      "checks": 928,
+      "errors": 0,
+      "identity": "Before three final local UI fixes; final defeat flow and lifecycle cover frozen runtime afterward."
+    },
+    "finalDefeatBrowser": {
+      "groups": 11,
+      "checks": 443,
+      "fullStateChecks": 55,
+      "errors": 0,
+      "includesBaselineGroups": 1,
+      "sourceStable": true,
+      "nativeRescueRolls": 29
+    },
+    "lifecycle": {
+      "casesBothVersions": 11,
+      "passed": 11,
+      "errors": 0
+    },
+    "natural": {
+      "seeds": [
+        7919,
+        15838,
+        23757,
+        31676
+      ],
+      "targetFloors": 400,
+      "completedJourneysPerVersion": 3,
+      "totalJourneysPerVersion": 4,
+      "completedFloorsPerVersion": 1229,
+      "rollsPerVersion": 16805,
+      "deathsPerVersion": 21,
+      "exitCode": 2,
+      "incompleteSeed": 23757,
+      "incompleteFloor": 30,
+      "reason": "DEATH_RETRY_LIMIT",
+      "fullReportsEqualUnderDeclaredMetadataExclusions": true
+    },
+    "posthocSingleItemChoices": {
+      "branchesPerVersion": 215,
+      "wins": 3,
+      "deaths": 212,
+      "budgetExhaustions": 0,
+      "rolls": 3459,
+      "spent": 0,
+      "scope": "One shared retained terminal; not independent natural journeys or general win rate. Complete original reports losslessly restorable."
+    },
+    "effects": {
+      "commandScenarios": 52,
+      "fewerRectReads": 49,
+      "fewerPrependCalls": 29,
+      "nativePixelCases": 18,
+      "strictPixelPass": 17,
+      "strictPixelDifferences": 1,
+      "sameBaselineAARepeatsWithSameDifference": 3
+    },
+    "performance": {
+      "browser": "155.0.8059.84",
+      "renderer": "ANGLE SwiftShader software",
+      "formalInventorySamples": 24,
+      "formalMainWindows": 32,
+      "rarityCoverageWindows": 14,
+      "rafIntervals": 5424,
+      "rafOver50ms": 61,
+      "longTasks": 6,
+      "missingFullWindows": 7,
+      "finalIdentityMatches": 102,
+      "independentReviewChecks": 57,
+      "baselineInventoryP50Ms": 125.0,
+      "currentInventoryP50Ms": 244.8,
+      "fixedControlBlocks": 3,
+      "controlSamples": 72,
+      "reversedBaselineP50Ms": 107.3,
+      "reversedCurrentP50Ms": 124.7,
+      "status": "OBSERVED_SLOWER_UNATTRIBUTED",
+      "diagnosticWindows": 8,
+      "diagnosticCaveat": "Separate intrusive trace; possible competing reviewer difflib CPU activity. No original multi-second tail reproduced."
+    }
+  },
+  "artifactBudget": {
+    "newRuntimeBitmapBytes": 0,
+    "newRuntimeDependencies": 0,
+    "selectedScreenshots": 6,
+    "selectedScreenshotBytes": 333408,
+    "commonLosslessBranchReportBytes": 671066,
+    "hardZipBytesExclusive": 50000000,
+    "preferredZipBytesExclusive": 40000000,
+    "archiveIdentity": "Exact final ZIP size/count/SHA and fresh-extraction receipts stay outside archive; FILE_MANIFEST excludes itself."
+  },
+  "openRisks": [
+    "P2: First and reversed A/B inventory medians are slower; same-source context controls also vary substantially. No stable causal attribution, speed improvement or no-regression claim.",
+    "P2: Software 4K multi-second tails and missing full effect windows remain; separate trace did not reproduce these tails.",
+    "P2: 5MB save growth and synchronous full-state persistence costs remain.",
+    "P3: Original power/no-spending natural policy remains 3/4 complete. Post-hoc armor wins do not change that rate.",
+    "P3: Native 4K Eternal has a strict two-edge-pixel difference also reproduced in baseline A/A; physical devices, external screen readers, audio listening, Windows native launch and OS power/background behavior are not tested."
+  ],
+  "nextRoundPriorities": [
+    "Attribute inventory and effect tails under matched browser conditions.",
+    "Study lossless capacity and full-save responsiveness.",
+    "Predeclare a non-clairvoyant preparation policy and rerun natural journeys.",
+    "Extend reachable injured/conditional/service/build windows.",
+    "Validate real devices and native pixel-edge behavior."
+  ],
+  "authority": [
+    "docs/iteration/LATEST_REPORT.md",
+    "docs/iteration/VERIFY.md",
+    "docs/iteration/PERFORMANCE.md",
+    "docs/iteration/GAMEPLAY_REVIEW.md",
+    "docs/iteration/NEXT_ROUND.md",
+    "docs/iteration/evidence/round14/README.md"
+  ],
+  "finalPackageProtocol": "Verify exact final ZIP into a new empty directory: size, CRC, path safety, every manifest byte/hash and extracted byte. Run syntax, all fine tests and real HTTP there. Release only when these gates pass.",
+  "handoffValid": true
+}

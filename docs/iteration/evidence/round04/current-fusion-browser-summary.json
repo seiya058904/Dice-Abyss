@@ -1,0 +1,97 @@
+{
+  "status": "PASS_AFTER_DOCUMENTED_NATIVE_DISMISSAL",
+  "groupsPassed": 12,
+  "groupsTotal": 12,
+  "checks": 125,
+  "text": "12组/125项完成：初跑11通过、1组在0断言时被详情浮层挡住；等待详情真实可见→原生Esc→确认隐藏后，单组10项复验通过。两版独立最小例均重现遮挡并验证Esc后可选择、整份存档不变；P3浮层遮挡本身未修改。",
+  "initialGroupsPassed": 11,
+  "initialGroupsFailed": 1,
+  "initialChecks": 115,
+  "earlyEscapeRetry": "FAIL: Escape preceded the observed tooltip lifecycle; original timeout preserved.",
+  "finalCaseChecks": 10,
+  "wholeSuiteRerunClaimed": false,
+  "cases": [
+    {
+      "name": "responsive-geometry",
+      "status": "PASS",
+      "checks": 39,
+      "ms": 74234.61016899999
+    },
+    {
+      "name": "ten-weapons-into-one",
+      "status": "PASS",
+      "checks": 9,
+      "ms": 9302.074733000001
+    },
+    {
+      "name": "bulk-undo-and-cancel",
+      "status": "PASS",
+      "checks": 4,
+      "ms": 3190.317513999995
+    },
+    {
+      "name": "budget-and-force-all",
+      "status": "PASS",
+      "checks": 11,
+      "ms": 5443.569635000007
+    },
+    {
+      "name": "page-filter-and-target-retention",
+      "status": "PASS",
+      "checks": 10,
+      "ms": 4628.862115
+    },
+    {
+      "name": "keyboard-shift-and-tooltip",
+      "status": "PASS",
+      "checks": 11,
+      "ms": 4040.3846489999996
+    },
+    {
+      "name": "drag-target-and-locked-protection",
+      "status": "PASS",
+      "checks": 9,
+      "ms": 7293.664377000008
+    },
+    {
+      "name": "lock-and-recycle-context-actions",
+      "status": "PASS",
+      "checks": 4,
+      "ms": 5404.187915000017
+    },
+    {
+      "name": "three-relics-six-faces",
+      "status": "PASS",
+      "checks": 4,
+      "ms": 4440.121951000008
+    },
+    {
+      "name": "animation-skip-one-transaction",
+      "status": "PASS",
+      "checks": 4,
+      "ms": 4101.070436999988
+    },
+    {
+      "name": "mobile-three-targets-fixed-settlement",
+      "status": "PASS",
+      "checks": 14,
+      "ms": 12002.043632000015
+    },
+    {
+      "name": "ten-thousand-items",
+      "status": "PASS",
+      "checks": 6,
+      "ms": 4746.601504999999
+    }
+  ],
+  "evidence": {
+    "initial": "fusion-initial-qa-failure.json",
+    "earlyEscape": "fusion-early-escape-qa-failure.json",
+    "finalCase": "fusion-page-final.json",
+    "twoVersionDiagnosis": "fusion-tooltip-cross-review.json"
+  },
+  "productionFusionCodeUnchanged": true,
+  "noForceClick": true,
+  "originalAssertionsRetained": true,
+  "errors": []
+}

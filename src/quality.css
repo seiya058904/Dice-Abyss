@@ -47,3 +47,17 @@
 @media (max-width:1200px){.loot-screen .drop-banner{top:.1rem}.loot-screen .treasure-title h2{font-size:1.7rem}.battle-altar{width:98%}}
 @media (prefers-reduced-motion:reduce){.impact-reveal .combat-stage .battle-altar{animation:none}}
 [data-effects="low"] .impact-reveal .combat-stage .battle-altar{animation:none}
+
+/* V5.2: one compressed, static portal behind the existing live 3D die.
+   It never overlaps copy, intercepts input, or adds a perpetual animation. */
+.title-screen{position:relative;isolation:isolate;overflow:clip}
+.title-screen::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(90deg,#030505 0%,#030505e8 24%,#03050570 47%,#03050510 73%),url('./abyss-portal.webp');background-repeat:no-repeat;background-position:center,right center;background-size:100% 100%,auto 112%;mask-image:linear-gradient(180deg,transparent,#000 12%,#000 87%,transparent);opacity:.86}
+.title-copy{position:relative;z-index:2}
+.title-copy>p{color:#b5bec6}
+.title-screen .resume-note{color:#9eacb5;line-height:1.7}
+.title-art .title-orbit{opacity:.16}
+.title-art .die{filter:drop-shadow(0 1.2rem 2rem #000b)}
+.title-art .art-caption{color:#c4d0d6;border-color:#65717a;background:linear-gradient(90deg,#03050570,transparent);text-shadow:0 2px 3px #000}
+.title-footer{color:#9ba9b1}
+@media(max-width:1400px){.title-screen::before{background-size:100% 100%,auto 100%;opacity:.76}}
+@media(max-width:1100px){.title-screen::before{opacity:.5}.title-copy h1{font-size:2.8rem}}

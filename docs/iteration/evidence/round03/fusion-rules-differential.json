@@ -1,0 +1,39 @@
+{
+  "method": "Construct valid fusion-room fixtures with the unmodified input generator, then compare full preview objects, canAct decisions, transaction states and save round-trips against current code. When the input has a workbench planner, compare its complete outputs across budget and protection options too. Both sides receive identical input snapshots and dice RNG. No altered adventure policy or natural-balance claims.",
+  "environment": {
+    "node": "v24.19.0",
+    "platform": "linux",
+    "arch": "x64"
+  },
+  "fixtureStates": 160,
+  "previewCases": 3680,
+  "transactionCases": 2688,
+  "planTransactions": 128,
+  "planComparisons": 1056,
+  "placementComparisons": 1056,
+  "rejectionCases": 2304,
+  "committedFaces": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "allPassed": true,
+  "durationSeconds": 3.395,
+  "sourceHashes": {
+    "baseline": {
+      "src/engine.js": "7921b6f65957809f640db828c2614158a85de31ddc99a192ad03880d8dfad91f",
+      "src/equipment.js": "783f8a049022e7ebb9a9c55c889dd36bf340c36b5ecffb904a1f64a261f26b72",
+      "src/storage.js": "9df95e501a76c8d9d70e16bfe93fffa10258e28c7014aa4678bfeaeb7997262f",
+      "src/fusion-workbench.js": "b1ba942adc829da22548bf8716481c3b6291eee079df621e17a9c4e5a6b5549c"
+    },
+    "current": {
+      "src/engine.js": "afd66fe121e68536c88b7f583f68c9de3b349272a61011c277295dd460afd8d2",
+      "src/equipment.js": "294945cd13d7183007cb3138a07523a5fbbfc53dabfe0635dbcfa1a77fc2c465",
+      "src/storage.js": "f4cf7cb3fceed274fd2a929bc0d53c34b7c62046639a732f6229de72ef1e69f3",
+      "src/fusion-workbench.js": "06f206dc578534c641f0fe327c48a4ec70ccffeed79fe8076ccd83cfb56263bf"
+    }
+  }
+}

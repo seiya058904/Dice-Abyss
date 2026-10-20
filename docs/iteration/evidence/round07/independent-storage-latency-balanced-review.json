@@ -1,0 +1,118 @@
+{
+  "status": "PASS",
+  "kind": "Independent static review of root-authored round07 qa-storage-latency changes",
+  "createdAtUtc": "2026-10-18T05:22:22.365750+00:00",
+  "executionScope": "Read source and prepared JSON only; no import/execution of benchmark, no fixture generation, no browser or performance sample started.",
+  "baselineScriptSha256": "65ffa533a1a141b8a31818d1c257d878063cf0741684324148168b7a0986b247",
+  "currentScriptSha256": "246605c25f466779e4aee7136f668bf9ffe3b60e3ac9c8829502672021de4058",
+  "preparedProtocolSha256": "79e468f465a6e99b2b03558f9a5c2ed037d783c901a99362b2863ecaef917f60",
+  "preparedProtocolStatus": "PREPARED",
+  "preparedScriptHashMatchesCurrent": true,
+  "statisticsOrValidationWeakeningFound": false,
+  "schedule": {
+    "balancedOrder": true,
+    "pairs": 12,
+    "measuredPerVersion": 12,
+    "warmupsPerVersion": 1,
+    "totalScheduledRows": 26,
+    "oddPairs": "baseline/current",
+    "evenPairs": "current/baseline",
+    "oddFirstBaselinePairs": 6,
+    "evenFirstCurrentPairs": 6,
+    "preparedScheduleExactlyMatches": true,
+    "withoutFlag": "Original baseline/current order remains default"
+  },
+  "unchangedCriticalSections": [
+    {
+      "section": "completeFixtureAndTransition",
+      "byteIdenticalToBaseline": true,
+      "sha256": "33efe48264c3de8f61b8053685fae0b017d40468d76daf58b99d145a37512e23"
+    },
+    {
+      "section": "nativeRecorderAndAllClockEndpoints",
+      "byteIdenticalToBaseline": true,
+      "sha256": "ad68d252c8a3cb075fd900440f0261afd3982876aafe7b892e187bfefd6b523a"
+    },
+    {
+      "section": "allSamplesAndPairedStatistics",
+      "byteIdenticalToBaseline": true,
+      "sha256": "fb00040eb06d4bda803801a07b25dbb3d517822ab9ad42085b7c4deb2dbe2d72"
+    },
+    {
+      "section": "finiteScheduleExecutionFailureRetentionAndFinalSourceFreeze",
+      "byteIdenticalToBaseline": true,
+      "sha256": "cb8ca4e2bbb34e5a286437fc9d11b2557bb5ec74544aa8fe7b428aded58c7af9"
+    },
+    {
+      "section": "trustedClickFullStateMirrorKeysAndFinalRefresh",
+      "byteIdenticalToBaseline": true,
+      "sha256": "5062bd458cad0a21b8aba82e49f4a5742d893fd5038543811a0691c371fa7d33"
+    },
+    {
+      "section": "resultsLanguageAndLimitations",
+      "byteIdenticalToBaseline": true,
+      "sha256": "70b8b1c6cc09235dfc052a0071a9a2b7c20cdf8ae59f41961dcaf2ad2097d00c"
+    }
+  ],
+  "samplingReview": "Only declared warmup rows are excluded from statistics. All 24 measured rows must PASS; failure or BLOCKED stops and retains the attempted row, with no replacement, outlier rejection or partial-success statistics. Paired differences still match by pair number, independent of which version runs first.",
+  "stateReview": "Fixture equality uses full object/encoding equality across both real APIs. Each timed PASS requires exactly two native writes in primary/mirror order; complete decoded main and mirror equal the true transition; raw strings, storage key set, settings and displayed lock are checked. Each version still refreshes its pair-12 state.",
+  "clockReview": "Recorder block is byte-identical. Reflect.apply preserves original native setItem receiver/arguments/result/exception. All latency endpoints use the same in-page performance.now clock: trusted click, last original native return/throw, and second RAF. The later setTimeout only flushes records and releases the waiter. event.timeStamp is diagnostic only; host timestamps do not enter latency arithmetic. API return/RAF are explicitly not physical-disk durability, FPS or GPU timing.",
+  "sourceFreezeReview": {
+    "baseline": {
+      "allDeclaredDiskHashesMatchPreparedProtocol": true,
+      "declaredFiles": 13,
+      "presentFiles": 12,
+      "servedForVariant": [
+        "index.html",
+        "src/app.js",
+        "src/engine.js",
+        "src/storage.js",
+        "src/views.js",
+        "src/encounters.js",
+        "src/equipment.js",
+        "src/content.js",
+        "src/effects.js",
+        "src/dice-renderer.js",
+        "src/deep.css"
+      ],
+      "deepCss": {
+        "bytes": 6772,
+        "sha256": "311d174e7abe407f037cc950309e260ceec71c48b229bd4014d46534e1cd66fc"
+      },
+      "inventoryDom": null
+    },
+    "current": {
+      "allDeclaredDiskHashesMatchPreparedProtocol": true,
+      "declaredFiles": 13,
+      "presentFiles": 13,
+      "servedForVariant": [
+        "index.html",
+        "src/app.js",
+        "src/engine.js",
+        "src/storage.js",
+        "src/views.js",
+        "src/encounters.js",
+        "src/equipment.js",
+        "src/content.js",
+        "src/effects.js",
+        "src/dice-renderer.js",
+        "src/deep.css",
+        "src/inventory-dom.js"
+      ],
+      "deepCss": {
+        "bytes": 8781,
+        "sha256": "041f336a77ac9484307e28d1df7cf55980846a6af78f6cddbca8577b3147df98"
+      },
+      "inventoryDom": {
+        "bytes": 4792,
+        "sha256": "7f3b18a6b3dbcc3a0a100c94bab35d9e81a14d7a6c74e8eabfdff3d151d35bf0"
+      }
+    }
+  },
+  "servedVerificationReview": "The per-variant list excludes only a recorded null optional inventory module. Existing served hash comparisons, page release/package version comparison, package.json HTTP 404, final disk snapshot and driver hash checks remain. Current inventory-dom is present and hashed; baseline missing inventory-dom is explicitly null.",
+  "limitations": [
+    "Static review verifies code and prepared artifact only; no browser outcome, sample distribution or speedup is established.",
+    "The source inventory is the explicitly declared sourcePaths list; this review does not claim every repository file is frozen."
+  ],
+  "reviewSourcesStable": true
+}

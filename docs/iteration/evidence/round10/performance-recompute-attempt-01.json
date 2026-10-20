@@ -1,0 +1,11 @@
+{
+  "round": 10,
+  "toolChunkId": "0a5548",
+  "observedExitCode": 1,
+  "stderr": "Traceback (most recent call last):\n  File \"<stdin>\", line 78, in <module>\nAssertionError\n",
+  "category": "REVIEWER_ASSUMPTION_CORRECTION",
+  "cause": "独立复算首稿附加断言所有帧窗 effectObserved=true；原首轮报告是 MEASURED_WITH_LIMITATIONS，实际有 3 个 false。",
+  "resolution": "分别报告事务正确性和预期特效捕获，保留全部原样本以及 3 个未捕获窗；无运行源码或原始测量修改。",
+  "firstInputSha256": "8c732db909af9d2189e1ac9e76b0a7c34451a947f615403a3384df51910c7bb4",
+  "reversedInputSha256": "6a1a87664446a6d9981b6ee8613fbdb7119e035baeaa9806ed8c8e517d40fc96"
+}

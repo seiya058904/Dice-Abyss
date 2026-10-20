@@ -1,0 +1,25 @@
+/* Experience quotes keep the event's existing purple, metal and exact numerals. */
+.event-screen.experience-screen{overflow-y:auto;overscroll-behavior:contain;scrollbar-gutter:stable}
+.experience-preview{width:100%;max-width:35rem;align-self:center;flex-shrink:0;padding:.65rem 0 .75rem;border-bottom:1px solid #645771;text-align:left;color:#dce1e8}
+.experience-preview h2{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:.25rem .8rem;margin:0 0 .55rem;font:400 max(1rem,14px)/1.5 var(--font-display);color:#e4d6f0}
+.experience-preview h2>span{font:400 max(.7rem,12px)/1.5 var(--font-text);color:#cbbddb}
+.experience-values{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem;margin:0;padding:.6rem 0;border-top:1px solid #453a50;border-bottom:1px solid #453a50}
+.experience-values>div{min-width:0}
+.experience-values dt{font:400 max(.7rem,12px)/1.55 var(--font-text);color:#c5b6d3}
+.experience-values dd{margin:.2rem 0 0;font:400 max(1.05rem,16px)/1.45 var(--font-display);font-variant-numeric:tabular-nums;overflow-wrap:anywhere;color:#e7dbf2}
+.experience-values [data-experience-row="credited"] dd{font-weight:700;color:#eee2f9}
+.experience-limited [data-experience-row="overflow"] dd,.experience-limited h2>span{color:#f0c29c}
+.experience-preview .experience-capacity{margin:.5rem 0 .2rem;font-size:max(.7rem,12px);line-height:1.65;color:#c6b8d3;letter-spacing:0;overflow-wrap:anywhere}
+.experience-capacity strong{font-weight:600;font-variant-numeric:tabular-nums;color:#e3d5ee}
+.experience-preview .experience-note,.experience-preview .experience-unavailable{margin:.25rem 0 0;font-size:max(.7rem,12px);line-height:1.7;color:#c6b8d3;letter-spacing:0}
+.experience-preview .experience-unavailable{margin-bottom:.55rem;color:#f0c29c}
+.confirmation-copy>.experience-preview{max-width:none;margin:.75rem 0}
+.player-level{min-width:0}
+.player-level>b,.player-level>span{min-width:0}
+.player-level>.xp-track{min-width:0;overflow:hidden}
+.player-level>small{overflow-wrap:anywhere;line-height:1.5}
+.player-level[data-level-capped]>b{font-size:1.3rem}
+.player-level[data-level-capped]>span,.player-level[data-level-pending]>span{font-size:max(.65rem,10px);color:#dec5f0}
+.player-level[data-xp-capped]>.xp-track{border-color:#d9ae7e;background:#2d241d}
+.player-level[data-xp-capped]>.xp-track>span{background:#dfba88;box-shadow:none}
+@media(max-width:600px){.experience-values{gap:.5rem}.experience-values dd{font-size:16px}.experience-preview h2{font-size:15px}}

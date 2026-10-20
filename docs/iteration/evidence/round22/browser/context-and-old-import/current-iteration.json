@@ -1,0 +1,137 @@
+{
+  "label": "current",
+  "sourceVersion": "5.22.0",
+  "sourceFiles": {
+    "src/app.js": "de8712715446bff65843d63167f0b2b5e3a9507fdbfde5d84a41475d926cd1be",
+    "src/views.js": "1b278428479f9a9daee7973ede38b84b16113cf83cf665a6e9d2cbdec5d6fb22",
+    "src/dice-renderer.js": "b40e1e1c808b00d319b70ce7546403c588cdcc8397bba684fe19b2f4c0bca6d8",
+    "src/storage.js": "2b505d6dab2c5f018eff3f1bd5d6d927a885a175f812bd620ae898b3fead7f05",
+    "src/quality.css": "3785daf1b16c66942383c8285376a66fee42c2a21c0b1450c251870333919bb8",
+    "src/refinement.css": "79a8599ca5415c933de1161575edb25601f4efdbf57be4c45dc82033abb1fffd"
+  },
+  "started": "2026-10-19T14:18:14.594Z",
+  "method": "Native clicks and file-input imports in fresh Chromium contexts. Generated fixtures and deliberate faults are not personal saves or natural deep-floor play.",
+  "cases": [
+    {
+      "name": "static-webgl-loss-and-restoration",
+      "status": "passed",
+      "checks": [
+        {
+          "cycle": 1,
+          "lost": {
+            "gpu": false,
+            "fallbackFaces": 6,
+            "canvasVisibility": "hidden",
+            "flightVisibility": "visible",
+            "phase": "combat"
+          },
+          "restored": {
+            "gpu": true,
+            "sameCanvas": true,
+            "canvases": 1,
+            "canvasVisibility": "visible",
+            "status": "ready"
+          },
+          "saveUnchanged": true
+        },
+        {
+          "cycle": 2,
+          "lost": {
+            "gpu": false,
+            "fallbackFaces": 6,
+            "canvasVisibility": "hidden",
+            "flightVisibility": "visible",
+            "phase": "combat"
+          },
+          "restored": {
+            "gpu": true,
+            "sameCanvas": true,
+            "canvases": 1,
+            "canvasVisibility": "visible",
+            "status": "ready"
+          },
+          "saveUnchanged": true
+        },
+        {
+          "cycle": 3,
+          "lost": {
+            "gpu": false,
+            "fallbackFaces": 6,
+            "canvasVisibility": "hidden",
+            "flightVisibility": "visible",
+            "phase": "combat"
+          },
+          "restored": {
+            "gpu": true,
+            "sameCanvas": true,
+            "canvases": 1,
+            "canvasVisibility": "visible",
+            "status": "ready"
+          },
+          "saveUnchanged": true
+        },
+        {
+          "postRecoveryRoll": "one exact committed transition"
+        }
+      ]
+    },
+    {
+      "name": "reject-invalid-import-abyssauction",
+      "status": "passed",
+      "checks": [
+        {
+          "incomingSha256": "91601bf07b765da3484cc7cbee2f758209049c003ae392260763994767b9a2b5",
+          "accepted": false,
+          "originalSavePreserved": true
+        }
+      ]
+    },
+    {
+      "name": "reject-invalid-import-oathgate",
+      "status": "passed",
+      "checks": [
+        {
+          "incomingSha256": "13ff92256de28a0de5180a64e0cb65610ddb36588206b40b978d66cb1ce4c38f",
+          "accepted": false,
+          "originalSavePreserved": true
+        }
+      ]
+    },
+    {
+      "name": "archive-the-recovered-v4-mirror",
+      "status": "passed",
+      "checks": [
+        {
+          "archiveMatchesRecoveredMirror": true,
+          "currentSaveValid": true,
+          "archiveSha256": "5378df5f35cbdd04a2fde622e717859ae193817d8714a50c0fd174051d9ce7cf"
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "expectedErrors": [],
+  "screenshots": [
+    "current-context-lost-fallback.png",
+    "current-context-restored.png",
+    "current-invalid-import-abyssauction.png",
+    "current-invalid-import-oathgate.png",
+    "current-recovered-archive.png"
+  ],
+  "limitations": [
+    "Cloud software rendering, not hardware GPU or physical 4K validation.",
+    "WebGL loss uses WEBGL_lose_context, not an actual GPU driver reset.",
+    "Invalid imports are constructed faults with correct envelopes."
+  ],
+  "browser": "155.0.8059.84",
+  "environment": {
+    "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.8059.84 Safari/537.36",
+    "dpr": 1,
+    "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+    "webLocks": true
+  },
+  "finished": "2026-10-19T14:18:29.416Z",
+  "passed": 4,
+  "reproduced": 0,
+  "failed": 0
+}

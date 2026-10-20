@@ -1,0 +1,818 @@
+{
+  "source": "/workspace/scratch/5a5998079a95/work/Dice-Abyss",
+  "url": "http://127.0.0.1:4189/",
+  "expected": "fixed",
+  "started": "2026-10-18T15:42:04.748Z",
+  "sourceBefore": {
+    "src/app.js": "6d965d35fb499b23948e9f2d4256616d05298dce7468c2bd350c4180562dad08",
+    "src/storage.js": "6bfcc60036c9f729c21b948ca98c7ac715e14049856fb9dded0baa2aeef2c561",
+    "src/save-recovery-view.js": "47e9041a86415c6bc04e5ae66803d6d8dfa6fbb2cabb8f800ce67f29a199153d",
+    "src/save-recovery.css": "7085ab430d2f1193955b84848d8f2af88faeab0d065c427ee5e7b88b5e254c2e"
+  },
+  "cases": [
+    {
+      "name": "queued-identical-recreate",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "Complete fixture loads into both browser records",
+          "passed": true
+        },
+        {
+          "label": "The continuous observer wraps the actual native localStorage getter",
+          "passed": true
+        },
+        {
+          "label": "clear: all recreated original save bytes remain intact",
+          "passed": true
+        },
+        {
+          "label": "clear: every real deletion and recreation event has an app-read observation",
+          "passed": true
+        },
+        {
+          "label": "clear: protection exactly follows whether an actual app inspection lost both readable copies",
+          "passed": true
+        },
+        {
+          "label": "clear: an observed loss cancels the old dialog; continuously readable identical progress keeps it",
+          "passed": true
+        },
+        {
+          "label": "clear: an observed temporary loss keeps the complete original memory exportable",
+          "passed": true
+        },
+        {
+          "label": "clear: reviewing the identical browser candidate writes neither record",
+          "passed": true
+        },
+        {
+          "label": "clear: the final exported state is the complete original envelope",
+          "passed": true
+        },
+        {
+          "label": "clear: the completed interaction leaves both original browser strings unchanged",
+          "passed": true
+        },
+        {
+          "label": "remove: all recreated original save bytes remain intact",
+          "passed": true
+        },
+        {
+          "label": "remove: every real deletion and recreation event has an app-read observation",
+          "passed": true
+        },
+        {
+          "label": "remove: protection exactly follows whether an actual app inspection lost both readable copies",
+          "passed": true
+        },
+        {
+          "label": "remove: an observed loss cancels the old dialog; continuously readable identical progress keeps it",
+          "passed": true
+        },
+        {
+          "label": "remove: the final exported state is the complete original envelope",
+          "passed": true
+        },
+        {
+          "label": "remove: the completed interaction leaves both original browser strings unchanged",
+          "passed": true
+        }
+      ],
+      "screenshots": [],
+      "downloads": [
+        {
+          "file": "queued-identical-recreate-clear-protected-memory.json",
+          "suggestedFilename": "Dice-Abyss-memory-F1-Lv1.json",
+          "bytes": 2333,
+          "sha256": "6096e1420ba90296c13bf1a110eba76e5dfa79628a9ab9ad05fe7a6e6c924ac8"
+        },
+        {
+          "file": "queued-identical-recreate-clear-final-memory.json",
+          "suggestedFilename": "Dice-Abyss-F1-Lv1.json",
+          "bytes": 2333,
+          "sha256": "6096e1420ba90296c13bf1a110eba76e5dfa79628a9ab9ad05fe7a6e6c924ac8"
+        },
+        {
+          "file": "queued-identical-recreate-remove-final-memory.json",
+          "suggestedFilename": "Dice-Abyss-F1-Lv1.json",
+          "bytes": 2333,
+          "sha256": "6096e1420ba90296c13bf1a110eba76e5dfa79628a9ab9ad05fe7a6e6c924ac8"
+        }
+      ],
+      "readObserver": {
+        "prototypeInstalled": true,
+        "localUsesWrapper": true
+      },
+      "observations": [
+        {
+          "mode": "clear",
+          "events": [
+            {
+              "sequence": 8,
+              "mode": "clear",
+              "kind": "event-tail",
+              "key": null,
+              "trusted": true,
+              "eventPhase": 2,
+              "protectedAfter": true,
+              "dialogOpenAfter": false,
+              "reads": [
+                {
+                  "sequence": 5,
+                  "mode": "clear",
+                  "kind": "read",
+                  "key": "dice-abyss:save:v1",
+                  "value": null
+                },
+                {
+                  "sequence": 6,
+                  "mode": "clear",
+                  "kind": "read",
+                  "key": "dice-abyss:mirror:v1",
+                  "value": null
+                }
+              ]
+            },
+            {
+              "sequence": 12,
+              "mode": "clear",
+              "kind": "event-tail",
+              "key": "dice-abyss:save:v1",
+              "trusted": true,
+              "eventPhase": 2,
+              "protectedAfter": true,
+              "dialogOpenAfter": false,
+              "reads": [
+                {
+                  "sequence": 9,
+                  "mode": "clear",
+                  "kind": "read",
+                  "key": "dice-abyss:save:v1",
+                  "value": "{\"format\":\"dice-abyss\",\"version\":5,\"checksum\":\"34b21864\",\"payload\":\"{\\\"version\\\":5,\\\"revision\\\":0,\\\"runId\\\":\\\"round13-native-memory\\\",\\\"rng\\\":3748896326,\\\"nextId\\\":4,\\\"floor\\\":1,\\\"phase\\\":\\\"fate\\\",\\\"route\\\":[],\\\"roomIndex\\\":0,\\\"fate\\\":null,\\\"enemy\\\":null,\\\"chest\\\":null,\\\"loot\\\":null,\\\"shop\\\":[],\\\"lastRoll\\\":null,\\\"lastForge\\\":null,\\\"log\\\":[{\\\"text\\\":\\\"你踏入了遗忘入口。\\\",\\\"tone\\\":\\\"\\\"}],\\\"completed\\\":false,\\\"event\\\":null,\\\"eventLuck\\\":0,\\\"eventPower\\\":0,\\\"encounterHistory\\\":[],\\\"routeMemory\\\":{\\\"services\\\":[],\\\"last\\\":{},\\\"hiddenFloor\\\":0},\\\"v5Boons\\\":{\\\"echo\\\":0,\\\"ward\\\":0},\\\"nextLuck\\\":0,\\\"counters\\\":{\\\"rolls\\\":0,\\\"kills\\\":0,\\\"chests\\\":0,\\\"deaths\\\":0,\\\"highestDamage\\\":0,\\\"bosses\\\":0},\\\"player\\\":{\\\"level\\\":1,\\\"xp\\\":0,\\\"gold\\\":80,\\\"hp\\\":165,\\\"talentPoints\\\":0,\\\"deepOfferings\\\":0,\\\"pactScars\\\":0,\\\"fateBlessings\\\":0,\\\"talents\\\":{\\\"high\\\":0,\\\"four\\\":0,\\\"five\\\":0,\\\"six\\\":0,\\\"sum\\\":0,\\\"power\\\":0,\\\"resonance\\\":0,\\\"pair\\\":0,\\\"triple\\\":0,\\\"quartet\\\":0,\\\"choir\\\":0,\\\"echo\\\":0,\\\"critical\\\":0,\\\"keen\\\":0,\\\"crush\\\":0,\\\"pursuit\\\":0,\\\"opener\\\":0,\\\"slayer\\\":0,\\\"vitality\\\":0,\\\"guard\\\":0,\\\"leech\\\":0,\\\"recovery\\\":0,\\\"fortune\\\":0,\\\"smith\\\":0,\\\"luck\\\":0,\\\"attune\\\":0,\\\"omen\\\":0,\\\"mercy\\\":0,\\\"jackpot\\\":0,\\\"spark\\\":0,\\\"shatter\\\":0,\\\"diversity\\\":0,\\\"finality\\\":0,\\\"deepEcho\\\":0,\\\"chorusMend\\\":0,\\\"tripleBlade\\\":0,\\\"firstFire\\\":0,\\\"critAegis\\\":0,\\\"dawnCrit\\\":0,\\\"emberGuard\\\":0,\\\"phaseShelter\\\":0,\\\"lastResolve\\\":0,\\\"hunterStar\\\":0,\\\"gildedFaces\\\":0,\\\"sixRebirth\\\":0},\\\"items\\\":[{\\\"id\\\":\\\"i1\\\",\\\"slot\\\":\\\"weapon\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":2,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-weapon-3-1-0\\\",\\\"profile\\\":1,\\\"theme\\\":4,\\\"name\\\":\\\"残响·双焰流光刺剑\\\"},{\\\"id\\\":\\\"i2\\\",\\\"slot\\\":\\\"armor\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":1,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-armor-4-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":4,\\\"name\\\":\\\"残响·泉铠守誓壁垒\\\"},{\\\"id\\\":\\\"i3\\\",\\\"slot\\\":\\\"relic\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":3,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-relic-5-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":5,\\\"name\\\":\\\"残响·回潮守誓心核\\\"}],\\\"equipped\\\":{\\\"weapon\\\":\\\"i1\\\",\\\"armor\\\":\\\"i2\\\",\\\"relic\\\":\\\"i3\\\",\\\"relic2\\\":null,\\\"relic3\\\":null}},\\\"qaRecovery\\\":{\\\"unicode\\\":\\\"本页完整旅途 🧭\\\",\\\"nested\\\":[null,{\\\"futureField\\\":true}]}}\"}"
+                },
+                {
+                  "sequence": 10,
+                  "mode": "clear",
+                  "kind": "read",
+                  "key": "dice-abyss:mirror:v1",
+                  "value": "{\"format\":\"dice-abyss\",\"version\":5,\"checksum\":\"34b21864\",\"payload\":\"{\\\"version\\\":5,\\\"revision\\\":0,\\\"runId\\\":\\\"round13-native-memory\\\",\\\"rng\\\":3748896326,\\\"nextId\\\":4,\\\"floor\\\":1,\\\"phase\\\":\\\"fate\\\",\\\"route\\\":[],\\\"roomIndex\\\":0,\\\"fate\\\":null,\\\"enemy\\\":null,\\\"chest\\\":null,\\\"loot\\\":null,\\\"shop\\\":[],\\\"lastRoll\\\":null,\\\"lastForge\\\":null,\\\"log\\\":[{\\\"text\\\":\\\"你踏入了遗忘入口。\\\",\\\"tone\\\":\\\"\\\"}],\\\"completed\\\":false,\\\"event\\\":null,\\\"eventLuck\\\":0,\\\"eventPower\\\":0,\\\"encounterHistory\\\":[],\\\"routeMemory\\\":{\\\"services\\\":[],\\\"last\\\":{},\\\"hiddenFloor\\\":0},\\\"v5Boons\\\":{\\\"echo\\\":0,\\\"ward\\\":0},\\\"nextLuck\\\":0,\\\"counters\\\":{\\\"rolls\\\":0,\\\"kills\\\":0,\\\"chests\\\":0,\\\"deaths\\\":0,\\\"highestDamage\\\":0,\\\"bosses\\\":0},\\\"player\\\":{\\\"level\\\":1,\\\"xp\\\":0,\\\"gold\\\":80,\\\"hp\\\":165,\\\"talentPoints\\\":0,\\\"deepOfferings\\\":0,\\\"pactScars\\\":0,\\\"fateBlessings\\\":0,\\\"talents\\\":{\\\"high\\\":0,\\\"four\\\":0,\\\"five\\\":0,\\\"six\\\":0,\\\"sum\\\":0,\\\"power\\\":0,\\\"resonance\\\":0,\\\"pair\\\":0,\\\"triple\\\":0,\\\"quartet\\\":0,\\\"choir\\\":0,\\\"echo\\\":0,\\\"critical\\\":0,\\\"keen\\\":0,\\\"crush\\\":0,\\\"pursuit\\\":0,\\\"opener\\\":0,\\\"slayer\\\":0,\\\"vitality\\\":0,\\\"guard\\\":0,\\\"leech\\\":0,\\\"recovery\\\":0,\\\"fortune\\\":0,\\\"smith\\\":0,\\\"luck\\\":0,\\\"attune\\\":0,\\\"omen\\\":0,\\\"mercy\\\":0,\\\"jackpot\\\":0,\\\"spark\\\":0,\\\"shatter\\\":0,\\\"diversity\\\":0,\\\"finality\\\":0,\\\"deepEcho\\\":0,\\\"chorusMend\\\":0,\\\"tripleBlade\\\":0,\\\"firstFire\\\":0,\\\"critAegis\\\":0,\\\"dawnCrit\\\":0,\\\"emberGuard\\\":0,\\\"phaseShelter\\\":0,\\\"lastResolve\\\":0,\\\"hunterStar\\\":0,\\\"gildedFaces\\\":0,\\\"sixRebirth\\\":0},\\\"items\\\":[{\\\"id\\\":\\\"i1\\\",\\\"slot\\\":\\\"weapon\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":2,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-weapon-3-1-0\\\",\\\"profile\\\":1,\\\"theme\\\":4,\\\"name\\\":\\\"残响·双焰流光刺剑\\\"},{\\\"id\\\":\\\"i2\\\",\\\"slot\\\":\\\"armor\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":1,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-armor-4-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":4,\\\"name\\\":\\\"残响·泉铠守誓壁垒\\\"},{\\\"id\\\":\\\"i3\\\",\\\"slot\\\":\\\"relic\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":3,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-relic-5-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":5,\\\"name\\\":\\\"残响·回潮守誓心核\\\"}],\\\"equipped\\\":{\\\"weapon\\\":\\\"i1\\\",\\\"armor\\\":\\\"i2\\\",\\\"relic\\\":\\\"i3\\\",\\\"relic2\\\":null,\\\"relic3\\\":null}},\\\"qaRecovery\\\":{\\\"unicode\\\":\\\"本页完整旅途 🧭\\\",\\\"nested\\\":[null,{\\\"futureField\\\":true}]}}\"}"
+                }
+              ]
+            },
+            {
+              "sequence": 16,
+              "mode": "clear",
+              "kind": "event-tail",
+              "key": "dice-abyss:mirror:v1",
+              "trusted": true,
+              "eventPhase": 2,
+              "protectedAfter": true,
+              "dialogOpenAfter": false,
+              "reads": [
+                {
+                  "sequence": 13,
+                  "mode": "clear",
+                  "kind": "read",
+                  "key": "dice-abyss:save:v1",
+                  "value": "{\"format\":\"dice-abyss\",\"version\":5,\"checksum\":\"34b21864\",\"payload\":\"{\\\"version\\\":5,\\\"revision\\\":0,\\\"runId\\\":\\\"round13-native-memory\\\",\\\"rng\\\":3748896326,\\\"nextId\\\":4,\\\"floor\\\":1,\\\"phase\\\":\\\"fate\\\",\\\"route\\\":[],\\\"roomIndex\\\":0,\\\"fate\\\":null,\\\"enemy\\\":null,\\\"chest\\\":null,\\\"loot\\\":null,\\\"shop\\\":[],\\\"lastRoll\\\":null,\\\"lastForge\\\":null,\\\"log\\\":[{\\\"text\\\":\\\"你踏入了遗忘入口。\\\",\\\"tone\\\":\\\"\\\"}],\\\"completed\\\":false,\\\"event\\\":null,\\\"eventLuck\\\":0,\\\"eventPower\\\":0,\\\"encounterHistory\\\":[],\\\"routeMemory\\\":{\\\"services\\\":[],\\\"last\\\":{},\\\"hiddenFloor\\\":0},\\\"v5Boons\\\":{\\\"echo\\\":0,\\\"ward\\\":0},\\\"nextLuck\\\":0,\\\"counters\\\":{\\\"rolls\\\":0,\\\"kills\\\":0,\\\"chests\\\":0,\\\"deaths\\\":0,\\\"highestDamage\\\":0,\\\"bosses\\\":0},\\\"player\\\":{\\\"level\\\":1,\\\"xp\\\":0,\\\"gold\\\":80,\\\"hp\\\":165,\\\"talentPoints\\\":0,\\\"deepOfferings\\\":0,\\\"pactScars\\\":0,\\\"fateBlessings\\\":0,\\\"talents\\\":{\\\"high\\\":0,\\\"four\\\":0,\\\"five\\\":0,\\\"six\\\":0,\\\"sum\\\":0,\\\"power\\\":0,\\\"resonance\\\":0,\\\"pair\\\":0,\\\"triple\\\":0,\\\"quartet\\\":0,\\\"choir\\\":0,\\\"echo\\\":0,\\\"critical\\\":0,\\\"keen\\\":0,\\\"crush\\\":0,\\\"pursuit\\\":0,\\\"opener\\\":0,\\\"slayer\\\":0,\\\"vitality\\\":0,\\\"guard\\\":0,\\\"leech\\\":0,\\\"recovery\\\":0,\\\"fortune\\\":0,\\\"smith\\\":0,\\\"luck\\\":0,\\\"attune\\\":0,\\\"omen\\\":0,\\\"mercy\\\":0,\\\"jackpot\\\":0,\\\"spark\\\":0,\\\"shatter\\\":0,\\\"diversity\\\":0,\\\"finality\\\":0,\\\"deepEcho\\\":0,\\\"chorusMend\\\":0,\\\"tripleBlade\\\":0,\\\"firstFire\\\":0,\\\"critAegis\\\":0,\\\"dawnCrit\\\":0,\\\"emberGuard\\\":0,\\\"phaseShelter\\\":0,\\\"lastResolve\\\":0,\\\"hunterStar\\\":0,\\\"gildedFaces\\\":0,\\\"sixRebirth\\\":0},\\\"items\\\":[{\\\"id\\\":\\\"i1\\\",\\\"slot\\\":\\\"weapon\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":2,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-weapon-3-1-0\\\",\\\"profile\\\":1,\\\"theme\\\":4,\\\"name\\\":\\\"残响·双焰流光刺剑\\\"},{\\\"id\\\":\\\"i2\\\",\\\"slot\\\":\\\"armor\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":1,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-armor-4-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":4,\\\"name\\\":\\\"残响·泉铠守誓壁垒\\\"},{\\\"id\\\":\\\"i3\\\",\\\"slot\\\":\\\"relic\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":3,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-relic-5-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":5,\\\"name\\\":\\\"残响·回潮守誓心核\\\"}],\\\"equipped\\\":{\\\"weapon\\\":\\\"i1\\\",\\\"armor\\\":\\\"i2\\\",\\\"relic\\\":\\\"i3\\\",\\\"relic2\\\":null,\\\"relic3\\\":null}},\\\"qaRecovery\\\":{\\\"unicode\\\":\\\"本页完整旅途 🧭\\\",\\\"nested\\\":[null,{\\\"futureField\\\":true}]}}\"}"
+                },
+                {
+                  "sequence": 14,
+                  "mode": "clear",
+                  "kind": "read",
+                  "key": "dice-abyss:mirror:v1",
+                  "value": "{\"format\":\"dice-abyss\",\"version\":5,\"checksum\":\"34b21864\",\"payload\":\"{\\\"version\\\":5,\\\"revision\\\":0,\\\"runId\\\":\\\"round13-native-memory\\\",\\\"rng\\\":3748896326,\\\"nextId\\\":4,\\\"floor\\\":1,\\\"phase\\\":\\\"fate\\\",\\\"route\\\":[],\\\"roomIndex\\\":0,\\\"fate\\\":null,\\\"enemy\\\":null,\\\"chest\\\":null,\\\"loot\\\":null,\\\"shop\\\":[],\\\"lastRoll\\\":null,\\\"lastForge\\\":null,\\\"log\\\":[{\\\"text\\\":\\\"你踏入了遗忘入口。\\\",\\\"tone\\\":\\\"\\\"}],\\\"completed\\\":false,\\\"event\\\":null,\\\"eventLuck\\\":0,\\\"eventPower\\\":0,\\\"encounterHistory\\\":[],\\\"routeMemory\\\":{\\\"services\\\":[],\\\"last\\\":{},\\\"hiddenFloor\\\":0},\\\"v5Boons\\\":{\\\"echo\\\":0,\\\"ward\\\":0},\\\"nextLuck\\\":0,\\\"counters\\\":{\\\"rolls\\\":0,\\\"kills\\\":0,\\\"chests\\\":0,\\\"deaths\\\":0,\\\"highestDamage\\\":0,\\\"bosses\\\":0},\\\"player\\\":{\\\"level\\\":1,\\\"xp\\\":0,\\\"gold\\\":80,\\\"hp\\\":165,\\\"talentPoints\\\":0,\\\"deepOfferings\\\":0,\\\"pactScars\\\":0,\\\"fateBlessings\\\":0,\\\"talents\\\":{\\\"high\\\":0,\\\"four\\\":0,\\\"five\\\":0,\\\"six\\\":0,\\\"sum\\\":0,\\\"power\\\":0,\\\"resonance\\\":0,\\\"pair\\\":0,\\\"triple\\\":0,\\\"quartet\\\":0,\\\"choir\\\":0,\\\"echo\\\":0,\\\"critical\\\":0,\\\"keen\\\":0,\\\"crush\\\":0,\\\"pursuit\\\":0,\\\"opener\\\":0,\\\"slayer\\\":0,\\\"vitality\\\":0,\\\"guard\\\":0,\\\"leech\\\":0,\\\"recovery\\\":0,\\\"fortune\\\":0,\\\"smith\\\":0,\\\"luck\\\":0,\\\"attune\\\":0,\\\"omen\\\":0,\\\"mercy\\\":0,\\\"jackpot\\\":0,\\\"spark\\\":0,\\\"shatter\\\":0,\\\"diversity\\\":0,\\\"finality\\\":0,\\\"deepEcho\\\":0,\\\"chorusMend\\\":0,\\\"tripleBlade\\\":0,\\\"firstFire\\\":0,\\\"critAegis\\\":0,\\\"dawnCrit\\\":0,\\\"emberGuard\\\":0,\\\"phaseShelter\\\":0,\\\"lastResolve\\\":0,\\\"hunterStar\\\":0,\\\"gildedFaces\\\":0,\\\"sixRebirth\\\":0},\\\"items\\\":[{\\\"id\\\":\\\"i1\\\",\\\"slot\\\":\\\"weapon\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":2,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-weapon-3-1-0\\\",\\\"profile\\\":1,\\\"theme\\\":4,\\\"name\\\":\\\"残响·双焰流光刺剑\\\"},{\\\"id\\\":\\\"i2\\\",\\\"slot\\\":\\\"armor\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":1,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-armor-4-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":4,\\\"name\\\":\\\"残响·泉铠守誓壁垒\\\"},{\\\"id\\\":\\\"i3\\\",\\\"slot\\\":\\\"relic\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":3,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-relic-5-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":5,\\\"name\\\":\\\"残响·回潮守誓心核\\\"}],\\\"equipped\\\":{\\\"weapon\\\":\\\"i1\\\",\\\"armor\\\":\\\"i2\\\",\\\"relic\\\":\\\"i3\\\",\\\"relic2\\\":null,\\\"relic3\\\":null}},\\\"qaRecovery\\\":{\\\"unicode\\\":\\\"本页完整旅途 🧭\\\",\\\"nested\\\":[null,{\\\"futureField\\\":true}]}}\"}"
+                }
+              ]
+            }
+          ],
+          "ungroupedReads": [],
+          "snapshots": [
+            {
+              "status": "missing",
+              "bothOriginal": false
+            },
+            {
+              "status": "available",
+              "bothOriginal": true
+            },
+            {
+              "status": "available",
+              "bothOriginal": true
+            }
+          ],
+          "observedLoss": true
+        },
+        {
+          "mode": "remove",
+          "events": [
+            {
+              "sequence": 38,
+              "mode": "remove",
+              "kind": "event-tail",
+              "key": "dice-abyss:save:v1",
+              "trusted": true,
+              "eventPhase": 2,
+              "protectedAfter": false,
+              "dialogOpenAfter": true,
+              "reads": [
+                {
+                  "sequence": 35,
+                  "mode": "remove",
+                  "kind": "read",
+                  "key": "dice-abyss:save:v1",
+                  "value": null
+                },
+                {
+                  "sequence": 36,
+                  "mode": "remove",
+                  "kind": "read",
+                  "key": "dice-abyss:mirror:v1",
+                  "value": "{\"format\":\"dice-abyss\",\"version\":5,\"checksum\":\"34b21864\",\"payload\":\"{\\\"version\\\":5,\\\"revision\\\":0,\\\"runId\\\":\\\"round13-native-memory\\\",\\\"rng\\\":3748896326,\\\"nextId\\\":4,\\\"floor\\\":1,\\\"phase\\\":\\\"fate\\\",\\\"route\\\":[],\\\"roomIndex\\\":0,\\\"fate\\\":null,\\\"enemy\\\":null,\\\"chest\\\":null,\\\"loot\\\":null,\\\"shop\\\":[],\\\"lastRoll\\\":null,\\\"lastForge\\\":null,\\\"log\\\":[{\\\"text\\\":\\\"你踏入了遗忘入口。\\\",\\\"tone\\\":\\\"\\\"}],\\\"completed\\\":false,\\\"event\\\":null,\\\"eventLuck\\\":0,\\\"eventPower\\\":0,\\\"encounterHistory\\\":[],\\\"routeMemory\\\":{\\\"services\\\":[],\\\"last\\\":{},\\\"hiddenFloor\\\":0},\\\"v5Boons\\\":{\\\"echo\\\":0,\\\"ward\\\":0},\\\"nextLuck\\\":0,\\\"counters\\\":{\\\"rolls\\\":0,\\\"kills\\\":0,\\\"chests\\\":0,\\\"deaths\\\":0,\\\"highestDamage\\\":0,\\\"bosses\\\":0},\\\"player\\\":{\\\"level\\\":1,\\\"xp\\\":0,\\\"gold\\\":80,\\\"hp\\\":165,\\\"talentPoints\\\":0,\\\"deepOfferings\\\":0,\\\"pactScars\\\":0,\\\"fateBlessings\\\":0,\\\"talents\\\":{\\\"high\\\":0,\\\"four\\\":0,\\\"five\\\":0,\\\"six\\\":0,\\\"sum\\\":0,\\\"power\\\":0,\\\"resonance\\\":0,\\\"pair\\\":0,\\\"triple\\\":0,\\\"quartet\\\":0,\\\"choir\\\":0,\\\"echo\\\":0,\\\"critical\\\":0,\\\"keen\\\":0,\\\"crush\\\":0,\\\"pursuit\\\":0,\\\"opener\\\":0,\\\"slayer\\\":0,\\\"vitality\\\":0,\\\"guard\\\":0,\\\"leech\\\":0,\\\"recovery\\\":0,\\\"fortune\\\":0,\\\"smith\\\":0,\\\"luck\\\":0,\\\"attune\\\":0,\\\"omen\\\":0,\\\"mercy\\\":0,\\\"jackpot\\\":0,\\\"spark\\\":0,\\\"shatter\\\":0,\\\"diversity\\\":0,\\\"finality\\\":0,\\\"deepEcho\\\":0,\\\"chorusMend\\\":0,\\\"tripleBlade\\\":0,\\\"firstFire\\\":0,\\\"critAegis\\\":0,\\\"dawnCrit\\\":0,\\\"emberGuard\\\":0,\\\"phaseShelter\\\":0,\\\"lastResolve\\\":0,\\\"hunterStar\\\":0,\\\"gildedFaces\\\":0,\\\"sixRebirth\\\":0},\\\"items\\\":[{\\\"id\\\":\\\"i1\\\",\\\"slot\\\":\\\"weapon\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":2,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-weapon-3-1-0\\\",\\\"profile\\\":1,\\\"theme\\\":4,\\\"name\\\":\\\"残响·双焰流光刺剑\\\"},{\\\"id\\\":\\\"i2\\\",\\\"slot\\\":\\\"armor\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":1,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-armor-4-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":4,\\\"name\\\":\\\"残响·泉铠守誓壁垒\\\"},{\\\"id\\\":\\\"i3\\\",\\\"slot\\\":\\\"relic\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":3,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-relic-5-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":5,\\\"name\\\":\\\"残响·回潮守誓心核\\\"}],\\\"equipped\\\":{\\\"weapon\\\":\\\"i1\\\",\\\"armor\\\":\\\"i2\\\",\\\"relic\\\":\\\"i3\\\",\\\"relic2\\\":null,\\\"relic3\\\":null}},\\\"qaRecovery\\\":{\\\"unicode\\\":\\\"本页完整旅途 🧭\\\",\\\"nested\\\":[null,{\\\"futureField\\\":true}]}}\"}"
+                }
+              ]
+            },
+            {
+              "sequence": 42,
+              "mode": "remove",
+              "kind": "event-tail",
+              "key": "dice-abyss:mirror:v1",
+              "trusted": true,
+              "eventPhase": 2,
+              "protectedAfter": false,
+              "dialogOpenAfter": true,
+              "reads": [
+                {
+                  "sequence": 39,
+                  "mode": "remove",
+                  "kind": "read",
+                  "key": "dice-abyss:save:v1",
+                  "value": "{\"format\":\"dice-abyss\",\"version\":5,\"checksum\":\"34b21864\",\"payload\":\"{\\\"version\\\":5,\\\"revision\\\":0,\\\"runId\\\":\\\"round13-native-memory\\\",\\\"rng\\\":3748896326,\\\"nextId\\\":4,\\\"floor\\\":1,\\\"phase\\\":\\\"fate\\\",\\\"route\\\":[],\\\"roomIndex\\\":0,\\\"fate\\\":null,\\\"enemy\\\":null,\\\"chest\\\":null,\\\"loot\\\":null,\\\"shop\\\":[],\\\"lastRoll\\\":null,\\\"lastForge\\\":null,\\\"log\\\":[{\\\"text\\\":\\\"你踏入了遗忘入口。\\\",\\\"tone\\\":\\\"\\\"}],\\\"completed\\\":false,\\\"event\\\":null,\\\"eventLuck\\\":0,\\\"eventPower\\\":0,\\\"encounterHistory\\\":[],\\\"routeMemory\\\":{\\\"services\\\":[],\\\"last\\\":{},\\\"hiddenFloor\\\":0},\\\"v5Boons\\\":{\\\"echo\\\":0,\\\"ward\\\":0},\\\"nextLuck\\\":0,\\\"counters\\\":{\\\"rolls\\\":0,\\\"kills\\\":0,\\\"chests\\\":0,\\\"deaths\\\":0,\\\"highestDamage\\\":0,\\\"bosses\\\":0},\\\"player\\\":{\\\"level\\\":1,\\\"xp\\\":0,\\\"gold\\\":80,\\\"hp\\\":165,\\\"talentPoints\\\":0,\\\"deepOfferings\\\":0,\\\"pactScars\\\":0,\\\"fateBlessings\\\":0,\\\"talents\\\":{\\\"high\\\":0,\\\"four\\\":0,\\\"five\\\":0,\\\"six\\\":0,\\\"sum\\\":0,\\\"power\\\":0,\\\"resonance\\\":0,\\\"pair\\\":0,\\\"triple\\\":0,\\\"quartet\\\":0,\\\"choir\\\":0,\\\"echo\\\":0,\\\"critical\\\":0,\\\"keen\\\":0,\\\"crush\\\":0,\\\"pursuit\\\":0,\\\"opener\\\":0,\\\"slayer\\\":0,\\\"vitality\\\":0,\\\"guard\\\":0,\\\"leech\\\":0,\\\"recovery\\\":0,\\\"fortune\\\":0,\\\"smith\\\":0,\\\"luck\\\":0,\\\"attune\\\":0,\\\"omen\\\":0,\\\"mercy\\\":0,\\\"jackpot\\\":0,\\\"spark\\\":0,\\\"shatter\\\":0,\\\"diversity\\\":0,\\\"finality\\\":0,\\\"deepEcho\\\":0,\\\"chorusMend\\\":0,\\\"tripleBlade\\\":0,\\\"firstFire\\\":0,\\\"critAegis\\\":0,\\\"dawnCrit\\\":0,\\\"emberGuard\\\":0,\\\"phaseShelter\\\":0,\\\"lastResolve\\\":0,\\\"hunterStar\\\":0,\\\"gildedFaces\\\":0,\\\"sixRebirth\\\":0},\\\"items\\\":[{\\\"id\\\":\\\"i1\\\",\\\"slot\\\":\\\"weapon\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":2,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-weapon-3-1-0\\\",\\\"profile\\\":1,\\\"theme\\\":4,\\\"name\\\":\\\"残响·双焰流光刺剑\\\"},{\\\"id\\\":\\\"i2\\\",\\\"slot\\\":\\\"armor\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":1,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-armor-4-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":4,\\\"name\\\":\\\"残响·泉铠守誓壁垒\\\"},{\\\"id\\\":\\\"i3\\\",\\\"slot\\\":\\\"relic\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":3,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-relic-5-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":5,\\\"name\\\":\\\"残响·回潮守誓心核\\\"}],\\\"equipped\\\":{\\\"weapon\\\":\\\"i1\\\",\\\"armor\\\":\\\"i2\\\",\\\"relic\\\":\\\"i3\\\",\\\"relic2\\\":null,\\\"relic3\\\":null}},\\\"qaRecovery\\\":{\\\"unicode\\\":\\\"本页完整旅途 🧭\\\",\\\"nested\\\":[null,{\\\"futureField\\\":true}]}}\"}"
+                },
+                {
+                  "sequence": 40,
+                  "mode": "remove",
+                  "kind": "read",
+                  "key": "dice-abyss:mirror:v1",
+                  "value": null
+                }
+              ]
+            },
+            {
+              "sequence": 46,
+              "mode": "remove",
+              "kind": "event-tail",
+              "key": "dice-abyss:save:v1",
+              "trusted": true,
+              "eventPhase": 2,
+              "protectedAfter": false,
+              "dialogOpenAfter": true,
+              "reads": [
+                {
+                  "sequence": 43,
+                  "mode": "remove",
+                  "kind": "read",
+                  "key": "dice-abyss:save:v1",
+                  "value": "{\"format\":\"dice-abyss\",\"version\":5,\"checksum\":\"34b21864\",\"payload\":\"{\\\"version\\\":5,\\\"revision\\\":0,\\\"runId\\\":\\\"round13-native-memory\\\",\\\"rng\\\":3748896326,\\\"nextId\\\":4,\\\"floor\\\":1,\\\"phase\\\":\\\"fate\\\",\\\"route\\\":[],\\\"roomIndex\\\":0,\\\"fate\\\":null,\\\"enemy\\\":null,\\\"chest\\\":null,\\\"loot\\\":null,\\\"shop\\\":[],\\\"lastRoll\\\":null,\\\"lastForge\\\":null,\\\"log\\\":[{\\\"text\\\":\\\"你踏入了遗忘入口。\\\",\\\"tone\\\":\\\"\\\"}],\\\"completed\\\":false,\\\"event\\\":null,\\\"eventLuck\\\":0,\\\"eventPower\\\":0,\\\"encounterHistory\\\":[],\\\"routeMemory\\\":{\\\"services\\\":[],\\\"last\\\":{},\\\"hiddenFloor\\\":0},\\\"v5Boons\\\":{\\\"echo\\\":0,\\\"ward\\\":0},\\\"nextLuck\\\":0,\\\"counters\\\":{\\\"rolls\\\":0,\\\"kills\\\":0,\\\"chests\\\":0,\\\"deaths\\\":0,\\\"highestDamage\\\":0,\\\"bosses\\\":0},\\\"player\\\":{\\\"level\\\":1,\\\"xp\\\":0,\\\"gold\\\":80,\\\"hp\\\":165,\\\"talentPoints\\\":0,\\\"deepOfferings\\\":0,\\\"pactScars\\\":0,\\\"fateBlessings\\\":0,\\\"talents\\\":{\\\"high\\\":0,\\\"four\\\":0,\\\"five\\\":0,\\\"six\\\":0,\\\"sum\\\":0,\\\"power\\\":0,\\\"resonance\\\":0,\\\"pair\\\":0,\\\"triple\\\":0,\\\"quartet\\\":0,\\\"choir\\\":0,\\\"echo\\\":0,\\\"critical\\\":0,\\\"keen\\\":0,\\\"crush\\\":0,\\\"pursuit\\\":0,\\\"opener\\\":0,\\\"slayer\\\":0,\\\"vitality\\\":0,\\\"guard\\\":0,\\\"leech\\\":0,\\\"recovery\\\":0,\\\"fortune\\\":0,\\\"smith\\\":0,\\\"luck\\\":0,\\\"attune\\\":0,\\\"omen\\\":0,\\\"mercy\\\":0,\\\"jackpot\\\":0,\\\"spark\\\":0,\\\"shatter\\\":0,\\\"diversity\\\":0,\\\"finality\\\":0,\\\"deepEcho\\\":0,\\\"chorusMend\\\":0,\\\"tripleBlade\\\":0,\\\"firstFire\\\":0,\\\"critAegis\\\":0,\\\"dawnCrit\\\":0,\\\"emberGuard\\\":0,\\\"phaseShelter\\\":0,\\\"lastResolve\\\":0,\\\"hunterStar\\\":0,\\\"gildedFaces\\\":0,\\\"sixRebirth\\\":0},\\\"items\\\":[{\\\"id\\\":\\\"i1\\\",\\\"slot\\\":\\\"weapon\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":2,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-weapon-3-1-0\\\",\\\"profile\\\":1,\\\"theme\\\":4,\\\"name\\\":\\\"残响·双焰流光刺剑\\\"},{\\\"id\\\":\\\"i2\\\",\\\"slot\\\":\\\"armor\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":1,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-armor-4-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":4,\\\"name\\\":\\\"残响·泉铠守誓壁垒\\\"},{\\\"id\\\":\\\"i3\\\",\\\"slot\\\":\\\"relic\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":3,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-relic-5-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":5,\\\"name\\\":\\\"残响·回潮守誓心核\\\"}],\\\"equipped\\\":{\\\"weapon\\\":\\\"i1\\\",\\\"armor\\\":\\\"i2\\\",\\\"relic\\\":\\\"i3\\\",\\\"relic2\\\":null,\\\"relic3\\\":null}},\\\"qaRecovery\\\":{\\\"unicode\\\":\\\"本页完整旅途 🧭\\\",\\\"nested\\\":[null,{\\\"futureField\\\":true}]}}\"}"
+                },
+                {
+                  "sequence": 44,
+                  "mode": "remove",
+                  "kind": "read",
+                  "key": "dice-abyss:mirror:v1",
+                  "value": "{\"format\":\"dice-abyss\",\"version\":5,\"checksum\":\"34b21864\",\"payload\":\"{\\\"version\\\":5,\\\"revision\\\":0,\\\"runId\\\":\\\"round13-native-memory\\\",\\\"rng\\\":3748896326,\\\"nextId\\\":4,\\\"floor\\\":1,\\\"phase\\\":\\\"fate\\\",\\\"route\\\":[],\\\"roomIndex\\\":0,\\\"fate\\\":null,\\\"enemy\\\":null,\\\"chest\\\":null,\\\"loot\\\":null,\\\"shop\\\":[],\\\"lastRoll\\\":null,\\\"lastForge\\\":null,\\\"log\\\":[{\\\"text\\\":\\\"你踏入了遗忘入口。\\\",\\\"tone\\\":\\\"\\\"}],\\\"completed\\\":false,\\\"event\\\":null,\\\"eventLuck\\\":0,\\\"eventPower\\\":0,\\\"encounterHistory\\\":[],\\\"routeMemory\\\":{\\\"services\\\":[],\\\"last\\\":{},\\\"hiddenFloor\\\":0},\\\"v5Boons\\\":{\\\"echo\\\":0,\\\"ward\\\":0},\\\"nextLuck\\\":0,\\\"counters\\\":{\\\"rolls\\\":0,\\\"kills\\\":0,\\\"chests\\\":0,\\\"deaths\\\":0,\\\"highestDamage\\\":0,\\\"bosses\\\":0},\\\"player\\\":{\\\"level\\\":1,\\\"xp\\\":0,\\\"gold\\\":80,\\\"hp\\\":165,\\\"talentPoints\\\":0,\\\"deepOfferings\\\":0,\\\"pactScars\\\":0,\\\"fateBlessings\\\":0,\\\"talents\\\":{\\\"high\\\":0,\\\"four\\\":0,\\\"five\\\":0,\\\"six\\\":0,\\\"sum\\\":0,\\\"power\\\":0,\\\"resonance\\\":0,\\\"pair\\\":0,\\\"triple\\\":0,\\\"quartet\\\":0,\\\"choir\\\":0,\\\"echo\\\":0,\\\"critical\\\":0,\\\"keen\\\":0,\\\"crush\\\":0,\\\"pursuit\\\":0,\\\"opener\\\":0,\\\"slayer\\\":0,\\\"vitality\\\":0,\\\"guard\\\":0,\\\"leech\\\":0,\\\"recovery\\\":0,\\\"fortune\\\":0,\\\"smith\\\":0,\\\"luck\\\":0,\\\"attune\\\":0,\\\"omen\\\":0,\\\"mercy\\\":0,\\\"jackpot\\\":0,\\\"spark\\\":0,\\\"shatter\\\":0,\\\"diversity\\\":0,\\\"finality\\\":0,\\\"deepEcho\\\":0,\\\"chorusMend\\\":0,\\\"tripleBlade\\\":0,\\\"firstFire\\\":0,\\\"critAegis\\\":0,\\\"dawnCrit\\\":0,\\\"emberGuard\\\":0,\\\"phaseShelter\\\":0,\\\"lastResolve\\\":0,\\\"hunterStar\\\":0,\\\"gildedFaces\\\":0,\\\"sixRebirth\\\":0},\\\"items\\\":[{\\\"id\\\":\\\"i1\\\",\\\"slot\\\":\\\"weapon\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":2,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-weapon-3-1-0\\\",\\\"profile\\\":1,\\\"theme\\\":4,\\\"name\\\":\\\"残响·双焰流光刺剑\\\"},{\\\"id\\\":\\\"i2\\\",\\\"slot\\\":\\\"armor\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":1,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-armor-4-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":4,\\\"name\\\":\\\"残响·泉铠守誓壁垒\\\"},{\\\"id\\\":\\\"i3\\\",\\\"slot\\\":\\\"relic\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":3,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-relic-5-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":5,\\\"name\\\":\\\"残响·回潮守誓心核\\\"}],\\\"equipped\\\":{\\\"weapon\\\":\\\"i1\\\",\\\"armor\\\":\\\"i2\\\",\\\"relic\\\":\\\"i3\\\",\\\"relic2\\\":null,\\\"relic3\\\":null}},\\\"qaRecovery\\\":{\\\"unicode\\\":\\\"本页完整旅途 🧭\\\",\\\"nested\\\":[null,{\\\"futureField\\\":true}]}}\"}"
+                }
+              ]
+            },
+            {
+              "sequence": 50,
+              "mode": "remove",
+              "kind": "event-tail",
+              "key": "dice-abyss:mirror:v1",
+              "trusted": true,
+              "eventPhase": 2,
+              "protectedAfter": false,
+              "dialogOpenAfter": true,
+              "reads": [
+                {
+                  "sequence": 47,
+                  "mode": "remove",
+                  "kind": "read",
+                  "key": "dice-abyss:save:v1",
+                  "value": "{\"format\":\"dice-abyss\",\"version\":5,\"checksum\":\"34b21864\",\"payload\":\"{\\\"version\\\":5,\\\"revision\\\":0,\\\"runId\\\":\\\"round13-native-memory\\\",\\\"rng\\\":3748896326,\\\"nextId\\\":4,\\\"floor\\\":1,\\\"phase\\\":\\\"fate\\\",\\\"route\\\":[],\\\"roomIndex\\\":0,\\\"fate\\\":null,\\\"enemy\\\":null,\\\"chest\\\":null,\\\"loot\\\":null,\\\"shop\\\":[],\\\"lastRoll\\\":null,\\\"lastForge\\\":null,\\\"log\\\":[{\\\"text\\\":\\\"你踏入了遗忘入口。\\\",\\\"tone\\\":\\\"\\\"}],\\\"completed\\\":false,\\\"event\\\":null,\\\"eventLuck\\\":0,\\\"eventPower\\\":0,\\\"encounterHistory\\\":[],\\\"routeMemory\\\":{\\\"services\\\":[],\\\"last\\\":{},\\\"hiddenFloor\\\":0},\\\"v5Boons\\\":{\\\"echo\\\":0,\\\"ward\\\":0},\\\"nextLuck\\\":0,\\\"counters\\\":{\\\"rolls\\\":0,\\\"kills\\\":0,\\\"chests\\\":0,\\\"deaths\\\":0,\\\"highestDamage\\\":0,\\\"bosses\\\":0},\\\"player\\\":{\\\"level\\\":1,\\\"xp\\\":0,\\\"gold\\\":80,\\\"hp\\\":165,\\\"talentPoints\\\":0,\\\"deepOfferings\\\":0,\\\"pactScars\\\":0,\\\"fateBlessings\\\":0,\\\"talents\\\":{\\\"high\\\":0,\\\"four\\\":0,\\\"five\\\":0,\\\"six\\\":0,\\\"sum\\\":0,\\\"power\\\":0,\\\"resonance\\\":0,\\\"pair\\\":0,\\\"triple\\\":0,\\\"quartet\\\":0,\\\"choir\\\":0,\\\"echo\\\":0,\\\"critical\\\":0,\\\"keen\\\":0,\\\"crush\\\":0,\\\"pursuit\\\":0,\\\"opener\\\":0,\\\"slayer\\\":0,\\\"vitality\\\":0,\\\"guard\\\":0,\\\"leech\\\":0,\\\"recovery\\\":0,\\\"fortune\\\":0,\\\"smith\\\":0,\\\"luck\\\":0,\\\"attune\\\":0,\\\"omen\\\":0,\\\"mercy\\\":0,\\\"jackpot\\\":0,\\\"spark\\\":0,\\\"shatter\\\":0,\\\"diversity\\\":0,\\\"finality\\\":0,\\\"deepEcho\\\":0,\\\"chorusMend\\\":0,\\\"tripleBlade\\\":0,\\\"firstFire\\\":0,\\\"critAegis\\\":0,\\\"dawnCrit\\\":0,\\\"emberGuard\\\":0,\\\"phaseShelter\\\":0,\\\"lastResolve\\\":0,\\\"hunterStar\\\":0,\\\"gildedFaces\\\":0,\\\"sixRebirth\\\":0},\\\"items\\\":[{\\\"id\\\":\\\"i1\\\",\\\"slot\\\":\\\"weapon\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":2,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-weapon-3-1-0\\\",\\\"profile\\\":1,\\\"theme\\\":4,\\\"name\\\":\\\"残响·双焰流光刺剑\\\"},{\\\"id\\\":\\\"i2\\\",\\\"slot\\\":\\\"armor\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":1,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-armor-4-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":4,\\\"name\\\":\\\"残响·泉铠守誓壁垒\\\"},{\\\"id\\\":\\\"i3\\\",\\\"slot\\\":\\\"relic\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":3,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-relic-5-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":5,\\\"name\\\":\\\"残响·回潮守誓心核\\\"}],\\\"equipped\\\":{\\\"weapon\\\":\\\"i1\\\",\\\"armor\\\":\\\"i2\\\",\\\"relic\\\":\\\"i3\\\",\\\"relic2\\\":null,\\\"relic3\\\":null}},\\\"qaRecovery\\\":{\\\"unicode\\\":\\\"本页完整旅途 🧭\\\",\\\"nested\\\":[null,{\\\"futureField\\\":true}]}}\"}"
+                },
+                {
+                  "sequence": 48,
+                  "mode": "remove",
+                  "kind": "read",
+                  "key": "dice-abyss:mirror:v1",
+                  "value": "{\"format\":\"dice-abyss\",\"version\":5,\"checksum\":\"34b21864\",\"payload\":\"{\\\"version\\\":5,\\\"revision\\\":0,\\\"runId\\\":\\\"round13-native-memory\\\",\\\"rng\\\":3748896326,\\\"nextId\\\":4,\\\"floor\\\":1,\\\"phase\\\":\\\"fate\\\",\\\"route\\\":[],\\\"roomIndex\\\":0,\\\"fate\\\":null,\\\"enemy\\\":null,\\\"chest\\\":null,\\\"loot\\\":null,\\\"shop\\\":[],\\\"lastRoll\\\":null,\\\"lastForge\\\":null,\\\"log\\\":[{\\\"text\\\":\\\"你踏入了遗忘入口。\\\",\\\"tone\\\":\\\"\\\"}],\\\"completed\\\":false,\\\"event\\\":null,\\\"eventLuck\\\":0,\\\"eventPower\\\":0,\\\"encounterHistory\\\":[],\\\"routeMemory\\\":{\\\"services\\\":[],\\\"last\\\":{},\\\"hiddenFloor\\\":0},\\\"v5Boons\\\":{\\\"echo\\\":0,\\\"ward\\\":0},\\\"nextLuck\\\":0,\\\"counters\\\":{\\\"rolls\\\":0,\\\"kills\\\":0,\\\"chests\\\":0,\\\"deaths\\\":0,\\\"highestDamage\\\":0,\\\"bosses\\\":0},\\\"player\\\":{\\\"level\\\":1,\\\"xp\\\":0,\\\"gold\\\":80,\\\"hp\\\":165,\\\"talentPoints\\\":0,\\\"deepOfferings\\\":0,\\\"pactScars\\\":0,\\\"fateBlessings\\\":0,\\\"talents\\\":{\\\"high\\\":0,\\\"four\\\":0,\\\"five\\\":0,\\\"six\\\":0,\\\"sum\\\":0,\\\"power\\\":0,\\\"resonance\\\":0,\\\"pair\\\":0,\\\"triple\\\":0,\\\"quartet\\\":0,\\\"choir\\\":0,\\\"echo\\\":0,\\\"critical\\\":0,\\\"keen\\\":0,\\\"crush\\\":0,\\\"pursuit\\\":0,\\\"opener\\\":0,\\\"slayer\\\":0,\\\"vitality\\\":0,\\\"guard\\\":0,\\\"leech\\\":0,\\\"recovery\\\":0,\\\"fortune\\\":0,\\\"smith\\\":0,\\\"luck\\\":0,\\\"attune\\\":0,\\\"omen\\\":0,\\\"mercy\\\":0,\\\"jackpot\\\":0,\\\"spark\\\":0,\\\"shatter\\\":0,\\\"diversity\\\":0,\\\"finality\\\":0,\\\"deepEcho\\\":0,\\\"chorusMend\\\":0,\\\"tripleBlade\\\":0,\\\"firstFire\\\":0,\\\"critAegis\\\":0,\\\"dawnCrit\\\":0,\\\"emberGuard\\\":0,\\\"phaseShelter\\\":0,\\\"lastResolve\\\":0,\\\"hunterStar\\\":0,\\\"gildedFaces\\\":0,\\\"sixRebirth\\\":0},\\\"items\\\":[{\\\"id\\\":\\\"i1\\\",\\\"slot\\\":\\\"weapon\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":2,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-weapon-3-1-0\\\",\\\"profile\\\":1,\\\"theme\\\":4,\\\"name\\\":\\\"残响·双焰流光刺剑\\\"},{\\\"id\\\":\\\"i2\\\",\\\"slot\\\":\\\"armor\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":1,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-armor-4-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":4,\\\"name\\\":\\\"残响·泉铠守誓壁垒\\\"},{\\\"id\\\":\\\"i3\\\",\\\"slot\\\":\\\"relic\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":3,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-relic-5-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":5,\\\"name\\\":\\\"残响·回潮守誓心核\\\"}],\\\"equipped\\\":{\\\"weapon\\\":\\\"i1\\\",\\\"armor\\\":\\\"i2\\\",\\\"relic\\\":\\\"i3\\\",\\\"relic2\\\":null,\\\"relic3\\\":null}},\\\"qaRecovery\\\":{\\\"unicode\\\":\\\"本页完整旅途 🧭\\\",\\\"nested\\\":[null,{\\\"futureField\\\":true}]}}\"}"
+                }
+              ]
+            }
+          ],
+          "ungroupedReads": [],
+          "snapshots": [
+            {
+              "status": "available",
+              "bothOriginal": false
+            },
+            {
+              "status": "available",
+              "bothOriginal": false
+            },
+            {
+              "status": "available",
+              "bothOriginal": true
+            },
+            {
+              "status": "available",
+              "bothOriginal": true
+            }
+          ],
+          "observedLoss": false
+        }
+      ],
+      "storageReadTimeline": [
+        {
+          "sequence": 1,
+          "mode": null,
+          "kind": "read",
+          "key": "dice-abyss:save:v1",
+          "value": "{\"format\":\"dice-abyss\",\"version\":5,\"checksum\":\"34b21864\",\"payload\":\"{\\\"version\\\":5,\\\"revision\\\":0,\\\"runId\\\":\\\"round13-native-memory\\\",\\\"rng\\\":3748896326,\\\"nextId\\\":4,\\\"floor\\\":1,\\\"phase\\\":\\\"fate\\\",\\\"route\\\":[],\\\"roomIndex\\\":0,\\\"fate\\\":null,\\\"enemy\\\":null,\\\"chest\\\":null,\\\"loot\\\":null,\\\"shop\\\":[],\\\"lastRoll\\\":null,\\\"lastForge\\\":null,\\\"log\\\":[{\\\"text\\\":\\\"你踏入了遗忘入口。\\\",\\\"tone\\\":\\\"\\\"}],\\\"completed\\\":false,\\\"event\\\":null,\\\"eventLuck\\\":0,\\\"eventPower\\\":0,\\\"encounterHistory\\\":[],\\\"routeMemory\\\":{\\\"services\\\":[],\\\"last\\\":{},\\\"hiddenFloor\\\":0},\\\"v5Boons\\\":{\\\"echo\\\":0,\\\"ward\\\":0},\\\"nextLuck\\\":0,\\\"counters\\\":{\\\"rolls\\\":0,\\\"kills\\\":0,\\\"chests\\\":0,\\\"deaths\\\":0,\\\"highestDamage\\\":0,\\\"bosses\\\":0},\\\"player\\\":{\\\"level\\\":1,\\\"xp\\\":0,\\\"gold\\\":80,\\\"hp\\\":165,\\\"talentPoints\\\":0,\\\"deepOfferings\\\":0,\\\"pactScars\\\":0,\\\"fateBlessings\\\":0,\\\"talents\\\":{\\\"high\\\":0,\\\"four\\\":0,\\\"five\\\":0,\\\"six\\\":0,\\\"sum\\\":0,\\\"power\\\":0,\\\"resonance\\\":0,\\\"pair\\\":0,\\\"triple\\\":0,\\\"quartet\\\":0,\\\"choir\\\":0,\\\"echo\\\":0,\\\"critical\\\":0,\\\"keen\\\":0,\\\"crush\\\":0,\\\"pursuit\\\":0,\\\"opener\\\":0,\\\"slayer\\\":0,\\\"vitality\\\":0,\\\"guard\\\":0,\\\"leech\\\":0,\\\"recovery\\\":0,\\\"fortune\\\":0,\\\"smith\\\":0,\\\"luck\\\":0,\\\"attune\\\":0,\\\"omen\\\":0,\\\"mercy\\\":0,\\\"jackpot\\\":0,\\\"spark\\\":0,\\\"shatter\\\":0,\\\"diversity\\\":0,\\\"finality\\\":0,\\\"deepEcho\\\":0,\\\"chorusMend\\\":0,\\\"tripleBlade\\\":0,\\\"firstFire\\\":0,\\\"critAegis\\\":0,\\\"dawnCrit\\\":0,\\\"emberGuard\\\":0,\\\"phaseShelter\\\":0,\\\"lastResolve\\\":0,\\\"hunterStar\\\":0,\\\"gildedFaces\\\":0,\\\"sixRebirth\\\":0},\\\"items\\\":[{\\\"id\\\":\\\"i1\\\",\\\"slot\\\":\\\"weapon\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":2,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-weapon-3-1-0\\\",\\\"profile\\\":1,\\\"theme\\\":4,\\\"name\\\":\\\"残响·双焰流光刺剑\\\"},{\\\"id\\\":\\\"i2\\\",\\\"slot\\\":\\\"armor\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":1,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-armor-4-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":4,\\\"name\\\":\\\"残响·泉铠守誓壁垒\\\"},{\\\"id\\\":\\\"i3\\\",\\\"slot\\\":\\\"relic\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":3,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-relic-5-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":5,\\\"name\\\":\\\"残响·回潮守誓心核\\\"}],\\\"equipped\\\":{\\\"weapon\\\":\\\"i1\\\",\\\"armor\\\":\\\"i2\\\",\\\"relic\\\":\\\"i3\\\",\\\"relic2\\\":null,\\\"relic3\\\":null}},\\\"qaRecovery\\\":{\\\"unicode\\\":\\\"本页完整旅途 🧭\\\",\\\"nested\\\":[null,{\\\"futureField\\\":true}]}}\"}"
+        },
+        {
+          "sequence": 2,
+          "mode": null,
+          "kind": "read",
+          "key": "dice-abyss:mirror:v1",
+          "value": "{\"format\":\"dice-abyss\",\"version\":5,\"checksum\":\"34b21864\",\"payload\":\"{\\\"version\\\":5,\\\"revision\\\":0,\\\"runId\\\":\\\"round13-native-memory\\\",\\\"rng\\\":3748896326,\\\"nextId\\\":4,\\\"floor\\\":1,\\\"phase\\\":\\\"fate\\\",\\\"route\\\":[],\\\"roomIndex\\\":0,\\\"fate\\\":null,\\\"enemy\\\":null,\\\"chest\\\":null,\\\"loot\\\":null,\\\"shop\\\":[],\\\"lastRoll\\\":null,\\\"lastForge\\\":null,\\\"log\\\":[{\\\"text\\\":\\\"你踏入了遗忘入口。\\\",\\\"tone\\\":\\\"\\\"}],\\\"completed\\\":false,\\\"event\\\":null,\\\"eventLuck\\\":0,\\\"eventPower\\\":0,\\\"encounterHistory\\\":[],\\\"routeMemory\\\":{\\\"services\\\":[],\\\"last\\\":{},\\\"hiddenFloor\\\":0},\\\"v5Boons\\\":{\\\"echo\\\":0,\\\"ward\\\":0},\\\"nextLuck\\\":0,\\\"counters\\\":{\\\"rolls\\\":0,\\\"kills\\\":0,\\\"chests\\\":0,\\\"deaths\\\":0,\\\"highestDamage\\\":0,\\\"bosses\\\":0},\\\"player\\\":{\\\"level\\\":1,\\\"xp\\\":0,\\\"gold\\\":80,\\\"hp\\\":165,\\\"talentPoints\\\":0,\\\"deepOfferings\\\":0,\\\"pactScars\\\":0,\\\"fateBlessings\\\":0,\\\"talents\\\":{\\\"high\\\":0,\\\"four\\\":0,\\\"five\\\":0,\\\"six\\\":0,\\\"sum\\\":0,\\\"power\\\":0,\\\"resonance\\\":0,\\\"pair\\\":0,\\\"triple\\\":0,\\\"quartet\\\":0,\\\"choir\\\":0,\\\"echo\\\":0,\\\"critical\\\":0,\\\"keen\\\":0,\\\"crush\\\":0,\\\"pursuit\\\":0,\\\"opener\\\":0,\\\"slayer\\\":0,\\\"vitality\\\":0,\\\"guard\\\":0,\\\"leech\\\":0,\\\"recovery\\\":0,\\\"fortune\\\":0,\\\"smith\\\":0,\\\"luck\\\":0,\\\"attune\\\":0,\\\"omen\\\":0,\\\"mercy\\\":0,\\\"jackpot\\\":0,\\\"spark\\\":0,\\\"shatter\\\":0,\\\"diversity\\\":0,\\\"finality\\\":0,\\\"deepEcho\\\":0,\\\"chorusMend\\\":0,\\\"tripleBlade\\\":0,\\\"firstFire\\\":0,\\\"critAegis\\\":0,\\\"dawnCrit\\\":0,\\\"emberGuard\\\":0,\\\"phaseShelter\\\":0,\\\"lastResolve\\\":0,\\\"hunterStar\\\":0,\\\"gildedFaces\\\":0,\\\"sixRebirth\\\":0},\\\"items\\\":[{\\\"id\\\":\\\"i1\\\",\\\"slot\\\":\\\"weapon\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":2,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-weapon-3-1-0\\\",\\\"profile\\\":1,\\\"theme\\\":4,\\\"name\\\":\\\"残响·双焰流光刺剑\\\"},{\\\"id\\\":\\\"i2\\\",\\\"slot\\\":\\\"armor\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":1,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-armor-4-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":4,\\\"name\\\":\\\"残响·泉铠守誓壁垒\\\"},{\\\"id\\\":\\\"i3\\\",\\\"slot\\\":\\\"relic\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":3,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-relic-5-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":5,\\\"name\\\":\\\"残响·回潮守誓心核\\\"}],\\\"equipped\\\":{\\\"weapon\\\":\\\"i1\\\",\\\"armor\\\":\\\"i2\\\",\\\"relic\\\":\\\"i3\\\",\\\"relic2\\\":null,\\\"relic3\\\":null}},\\\"qaRecovery\\\":{\\\"unicode\\\":\\\"本页完整旅途 🧭\\\",\\\"nested\\\":[null,{\\\"futureField\\\":true}]}}\"}"
+        },
+        {
+          "sequence": 3,
+          "mode": null,
+          "kind": "read",
+          "key": "dice-abyss:save:v1",
+          "value": "{\"format\":\"dice-abyss\",\"version\":5,\"checksum\":\"34b21864\",\"payload\":\"{\\\"version\\\":5,\\\"revision\\\":0,\\\"runId\\\":\\\"round13-native-memory\\\",\\\"rng\\\":3748896326,\\\"nextId\\\":4,\\\"floor\\\":1,\\\"phase\\\":\\\"fate\\\",\\\"route\\\":[],\\\"roomIndex\\\":0,\\\"fate\\\":null,\\\"enemy\\\":null,\\\"chest\\\":null,\\\"loot\\\":null,\\\"shop\\\":[],\\\"lastRoll\\\":null,\\\"lastForge\\\":null,\\\"log\\\":[{\\\"text\\\":\\\"你踏入了遗忘入口。\\\",\\\"tone\\\":\\\"\\\"}],\\\"completed\\\":false,\\\"event\\\":null,\\\"eventLuck\\\":0,\\\"eventPower\\\":0,\\\"encounterHistory\\\":[],\\\"routeMemory\\\":{\\\"services\\\":[],\\\"last\\\":{},\\\"hiddenFloor\\\":0},\\\"v5Boons\\\":{\\\"echo\\\":0,\\\"ward\\\":0},\\\"nextLuck\\\":0,\\\"counters\\\":{\\\"rolls\\\":0,\\\"kills\\\":0,\\\"chests\\\":0,\\\"deaths\\\":0,\\\"highestDamage\\\":0,\\\"bosses\\\":0},\\\"player\\\":{\\\"level\\\":1,\\\"xp\\\":0,\\\"gold\\\":80,\\\"hp\\\":165,\\\"talentPoints\\\":0,\\\"deepOfferings\\\":0,\\\"pactScars\\\":0,\\\"fateBlessings\\\":0,\\\"talents\\\":{\\\"high\\\":0,\\\"four\\\":0,\\\"five\\\":0,\\\"six\\\":0,\\\"sum\\\":0,\\\"power\\\":0,\\\"resonance\\\":0,\\\"pair\\\":0,\\\"triple\\\":0,\\\"quartet\\\":0,\\\"choir\\\":0,\\\"echo\\\":0,\\\"critical\\\":0,\\\"keen\\\":0,\\\"crush\\\":0,\\\"pursuit\\\":0,\\\"opener\\\":0,\\\"slayer\\\":0,\\\"vitality\\\":0,\\\"guard\\\":0,\\\"leech\\\":0,\\\"recovery\\\":0,\\\"fortune\\\":0,\\\"smith\\\":0,\\\"luck\\\":0,\\\"attune\\\":0,\\\"omen\\\":0,\\\"mercy\\\":0,\\\"jackpot\\\":0,\\\"spark\\\":0,\\\"shatter\\\":0,\\\"diversity\\\":0,\\\"finality\\\":0,\\\"deepEcho\\\":0,\\\"chorusMend\\\":0,\\\"tripleBlade\\\":0,\\\"firstFire\\\":0,\\\"critAegis\\\":0,\\\"dawnCrit\\\":0,\\\"emberGuard\\\":0,\\\"phaseShelter\\\":0,\\\"lastResolve\\\":0,\\\"hunterStar\\\":0,\\\"gildedFaces\\\":0,\\\"sixRebirth\\\":0},\\\"items\\\":[{\\\"id\\\":\\\"i1\\\",\\\"slot\\\":\\\"weapon\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":2,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-weapon-3-1-0\\\",\\\"profile\\\":1,\\\"theme\\\":4,\\\"name\\\":\\\"残响·双焰流光刺剑\\\"},{\\\"id\\\":\\\"i2\\\",\\\"slot\\\":\\\"armor\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":1,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-armor-4-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":4,\\\"name\\\":\\\"残响·泉铠守誓壁垒\\\"},{\\\"id\\\":\\\"i3\\\",\\\"slot\\\":\\\"relic\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":3,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-relic-5-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":5,\\\"name\\\":\\\"残响·回潮守誓心核\\\"}],\\\"equipped\\\":{\\\"weapon\\\":\\\"i1\\\",\\\"armor\\\":\\\"i2\\\",\\\"relic\\\":\\\"i3\\\",\\\"relic2\\\":null,\\\"relic3\\\":null}},\\\"qaRecovery\\\":{\\\"unicode\\\":\\\"本页完整旅途 🧭\\\",\\\"nested\\\":[null,{\\\"futureField\\\":true}]}}\"}"
+        },
+        {
+          "sequence": 4,
+          "mode": null,
+          "kind": "read",
+          "key": "dice-abyss:mirror:v1",
+          "value": "{\"format\":\"dice-abyss\",\"version\":5,\"checksum\":\"34b21864\",\"payload\":\"{\\\"version\\\":5,\\\"revision\\\":0,\\\"runId\\\":\\\"round13-native-memory\\\",\\\"rng\\\":3748896326,\\\"nextId\\\":4,\\\"floor\\\":1,\\\"phase\\\":\\\"fate\\\",\\\"route\\\":[],\\\"roomIndex\\\":0,\\\"fate\\\":null,\\\"enemy\\\":null,\\\"chest\\\":null,\\\"loot\\\":null,\\\"shop\\\":[],\\\"lastRoll\\\":null,\\\"lastForge\\\":null,\\\"log\\\":[{\\\"text\\\":\\\"你踏入了遗忘入口。\\\",\\\"tone\\\":\\\"\\\"}],\\\"completed\\\":false,\\\"event\\\":null,\\\"eventLuck\\\":0,\\\"eventPower\\\":0,\\\"encounterHistory\\\":[],\\\"routeMemory\\\":{\\\"services\\\":[],\\\"last\\\":{},\\\"hiddenFloor\\\":0},\\\"v5Boons\\\":{\\\"echo\\\":0,\\\"ward\\\":0},\\\"nextLuck\\\":0,\\\"counters\\\":{\\\"rolls\\\":0,\\\"kills\\\":0,\\\"chests\\\":0,\\\"deaths\\\":0,\\\"highestDamage\\\":0,\\\"bosses\\\":0},\\\"player\\\":{\\\"level\\\":1,\\\"xp\\\":0,\\\"gold\\\":80,\\\"hp\\\":165,\\\"talentPoints\\\":0,\\\"deepOfferings\\\":0,\\\"pactScars\\\":0,\\\"fateBlessings\\\":0,\\\"talents\\\":{\\\"high\\\":0,\\\"four\\\":0,\\\"five\\\":0,\\\"six\\\":0,\\\"sum\\\":0,\\\"power\\\":0,\\\"resonance\\\":0,\\\"pair\\\":0,\\\"triple\\\":0,\\\"quartet\\\":0,\\\"choir\\\":0,\\\"echo\\\":0,\\\"critical\\\":0,\\\"keen\\\":0,\\\"crush\\\":0,\\\"pursuit\\\":0,\\\"opener\\\":0,\\\"slayer\\\":0,\\\"vitality\\\":0,\\\"guard\\\":0,\\\"leech\\\":0,\\\"recovery\\\":0,\\\"fortune\\\":0,\\\"smith\\\":0,\\\"luck\\\":0,\\\"attune\\\":0,\\\"omen\\\":0,\\\"mercy\\\":0,\\\"jackpot\\\":0,\\\"spark\\\":0,\\\"shatter\\\":0,\\\"diversity\\\":0,\\\"finality\\\":0,\\\"deepEcho\\\":0,\\\"chorusMend\\\":0,\\\"tripleBlade\\\":0,\\\"firstFire\\\":0,\\\"critAegis\\\":0,\\\"dawnCrit\\\":0,\\\"emberGuard\\\":0,\\\"phaseShelter\\\":0,\\\"lastResolve\\\":0,\\\"hunterStar\\\":0,\\\"gildedFaces\\\":0,\\\"sixRebirth\\\":0},\\\"items\\\":[{\\\"id\\\":\\\"i1\\\",\\\"slot\\\":\\\"weapon\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":2,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-weapon-3-1-0\\\",\\\"profile\\\":1,\\\"theme\\\":4,\\\"name\\\":\\\"残响·双焰流光刺剑\\\"},{\\\"id\\\":\\\"i2\\\",\\\"slot\\\":\\\"armor\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":1,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-armor-4-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":4,\\\"name\\\":\\\"残响·泉铠守誓壁垒\\\"},{\\\"id\\\":\\\"i3\\\",\\\"slot\\\":\\\"relic\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":3,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-relic-5-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":5,\\\"name\\\":\\\"残响·回潮守誓心核\\\"}],\\\"equipped\\\":{\\\"weapon\\\":\\\"i1\\\",\\\"armor\\\":\\\"i2\\\",\\\"relic\\\":\\\"i3\\\",\\\"relic2\\\":null,\\\"relic3\\\":null}},\\\"qaRecovery\\\":{\\\"unicode\\\":\\\"本页完整旅途 🧭\\\",\\\"nested\\\":[null,{\\\"futureField\\\":true}]}}\"}"
+        },
+        {
+          "sequence": 5,
+          "mode": "clear",
+          "kind": "read",
+          "key": "dice-abyss:save:v1",
+          "value": null
+        },
+        {
+          "sequence": 6,
+          "mode": "clear",
+          "kind": "read",
+          "key": "dice-abyss:mirror:v1",
+          "value": null
+        },
+        {
+          "sequence": 7,
+          "mode": "clear",
+          "kind": "capture-marker",
+          "key": null,
+          "trusted": true,
+          "eventPhase": 2
+        },
+        {
+          "sequence": 8,
+          "mode": "clear",
+          "kind": "event-tail",
+          "key": null,
+          "trusted": true,
+          "eventPhase": 2,
+          "protectedAfter": true,
+          "dialogOpenAfter": false
+        },
+        {
+          "sequence": 9,
+          "mode": "clear",
+          "kind": "read",
+          "key": "dice-abyss:save:v1",
+          "value": "{\"format\":\"dice-abyss\",\"version\":5,\"checksum\":\"34b21864\",\"payload\":\"{\\\"version\\\":5,\\\"revision\\\":0,\\\"runId\\\":\\\"round13-native-memory\\\",\\\"rng\\\":3748896326,\\\"nextId\\\":4,\\\"floor\\\":1,\\\"phase\\\":\\\"fate\\\",\\\"route\\\":[],\\\"roomIndex\\\":0,\\\"fate\\\":null,\\\"enemy\\\":null,\\\"chest\\\":null,\\\"loot\\\":null,\\\"shop\\\":[],\\\"lastRoll\\\":null,\\\"lastForge\\\":null,\\\"log\\\":[{\\\"text\\\":\\\"你踏入了遗忘入口。\\\",\\\"tone\\\":\\\"\\\"}],\\\"completed\\\":false,\\\"event\\\":null,\\\"eventLuck\\\":0,\\\"eventPower\\\":0,\\\"encounterHistory\\\":[],\\\"routeMemory\\\":{\\\"services\\\":[],\\\"last\\\":{},\\\"hiddenFloor\\\":0},\\\"v5Boons\\\":{\\\"echo\\\":0,\\\"ward\\\":0},\\\"nextLuck\\\":0,\\\"counters\\\":{\\\"rolls\\\":0,\\\"kills\\\":0,\\\"chests\\\":0,\\\"deaths\\\":0,\\\"highestDamage\\\":0,\\\"bosses\\\":0},\\\"player\\\":{\\\"level\\\":1,\\\"xp\\\":0,\\\"gold\\\":80,\\\"hp\\\":165,\\\"talentPoints\\\":0,\\\"deepOfferings\\\":0,\\\"pactScars\\\":0,\\\"fateBlessings\\\":0,\\\"talents\\\":{\\\"high\\\":0,\\\"four\\\":0,\\\"five\\\":0,\\\"six\\\":0,\\\"sum\\\":0,\\\"power\\\":0,\\\"resonance\\\":0,\\\"pair\\\":0,\\\"triple\\\":0,\\\"quartet\\\":0,\\\"choir\\\":0,\\\"echo\\\":0,\\\"critical\\\":0,\\\"keen\\\":0,\\\"crush\\\":0,\\\"pursuit\\\":0,\\\"opener\\\":0,\\\"slayer\\\":0,\\\"vitality\\\":0,\\\"guard\\\":0,\\\"leech\\\":0,\\\"recovery\\\":0,\\\"fortune\\\":0,\\\"smith\\\":0,\\\"luck\\\":0,\\\"attune\\\":0,\\\"omen\\\":0,\\\"mercy\\\":0,\\\"jackpot\\\":0,\\\"spark\\\":0,\\\"shatter\\\":0,\\\"diversity\\\":0,\\\"finality\\\":0,\\\"deepEcho\\\":0,\\\"chorusMend\\\":0,\\\"tripleBlade\\\":0,\\\"firstFire\\\":0,\\\"critAegis\\\":0,\\\"dawnCrit\\\":0,\\\"emberGuard\\\":0,\\\"phaseShelter\\\":0,\\\"lastResolve\\\":0,\\\"hunterStar\\\":0,\\\"gildedFaces\\\":0,\\\"sixRebirth\\\":0},\\\"items\\\":[{\\\"id\\\":\\\"i1\\\",\\\"slot\\\":\\\"weapon\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":2,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-weapon-3-1-0\\\",\\\"profile\\\":1,\\\"theme\\\":4,\\\"name\\\":\\\"残响·双焰流光刺剑\\\"},{\\\"id\\\":\\\"i2\\\",\\\"slot\\\":\\\"armor\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":1,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-armor-4-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":4,\\\"name\\\":\\\"残响·泉铠守誓壁垒\\\"},{\\\"id\\\":\\\"i3\\\",\\\"slot\\\":\\\"relic\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":3,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-relic-5-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":5,\\\"name\\\":\\\"残响·回潮守誓心核\\\"}],\\\"equipped\\\":{\\\"weapon\\\":\\\"i1\\\",\\\"armor\\\":\\\"i2\\\",\\\"relic\\\":\\\"i3\\\",\\\"relic2\\\":null,\\\"relic3\\\":null}},\\\"qaRecovery\\\":{\\\"unicode\\\":\\\"本页完整旅途 🧭\\\",\\\"nested\\\":[null,{\\\"futureField\\\":true}]}}\"}"
+        },
+        {
+          "sequence": 10,
+          "mode": "clear",
+          "kind": "read",
+          "key": "dice-abyss:mirror:v1",
+          "value": "{\"format\":\"dice-abyss\",\"version\":5,\"checksum\":\"34b21864\",\"payload\":\"{\\\"version\\\":5,\\\"revision\\\":0,\\\"runId\\\":\\\"round13-native-memory\\\",\\\"rng\\\":3748896326,\\\"nextId\\\":4,\\\"floor\\\":1,\\\"phase\\\":\\\"fate\\\",\\\"route\\\":[],\\\"roomIndex\\\":0,\\\"fate\\\":null,\\\"enemy\\\":null,\\\"chest\\\":null,\\\"loot\\\":null,\\\"shop\\\":[],\\\"lastRoll\\\":null,\\\"lastForge\\\":null,\\\"log\\\":[{\\\"text\\\":\\\"你踏入了遗忘入口。\\\",\\\"tone\\\":\\\"\\\"}],\\\"completed\\\":false,\\\"event\\\":null,\\\"eventLuck\\\":0,\\\"eventPower\\\":0,\\\"encounterHistory\\\":[],\\\"routeMemory\\\":{\\\"services\\\":[],\\\"last\\\":{},\\\"hiddenFloor\\\":0},\\\"v5Boons\\\":{\\\"echo\\\":0,\\\"ward\\\":0},\\\"nextLuck\\\":0,\\\"counters\\\":{\\\"rolls\\\":0,\\\"kills\\\":0,\\\"chests\\\":0,\\\"deaths\\\":0,\\\"highestDamage\\\":0,\\\"bosses\\\":0},\\\"player\\\":{\\\"level\\\":1,\\\"xp\\\":0,\\\"gold\\\":80,\\\"hp\\\":165,\\\"talentPoints\\\":0,\\\"deepOfferings\\\":0,\\\"pactScars\\\":0,\\\"fateBlessings\\\":0,\\\"talents\\\":{\\\"high\\\":0,\\\"four\\\":0,\\\"five\\\":0,\\\"six\\\":0,\\\"sum\\\":0,\\\"power\\\":0,\\\"resonance\\\":0,\\\"pair\\\":0,\\\"triple\\\":0,\\\"quartet\\\":0,\\\"choir\\\":0,\\\"echo\\\":0,\\\"critical\\\":0,\\\"keen\\\":0,\\\"crush\\\":0,\\\"pursuit\\\":0,\\\"opener\\\":0,\\\"slayer\\\":0,\\\"vitality\\\":0,\\\"guard\\\":0,\\\"leech\\\":0,\\\"recovery\\\":0,\\\"fortune\\\":0,\\\"smith\\\":0,\\\"luck\\\":0,\\\"attune\\\":0,\\\"omen\\\":0,\\\"mercy\\\":0,\\\"jackpot\\\":0,\\\"spark\\\":0,\\\"shatter\\\":0,\\\"diversity\\\":0,\\\"finality\\\":0,\\\"deepEcho\\\":0,\\\"chorusMend\\\":0,\\\"tripleBlade\\\":0,\\\"firstFire\\\":0,\\\"critAegis\\\":0,\\\"dawnCrit\\\":0,\\\"emberGuard\\\":0,\\\"phaseShelter\\\":0,\\\"lastResolve\\\":0,\\\"hunterStar\\\":0,\\\"gildedFaces\\\":0,\\\"sixRebirth\\\":0},\\\"items\\\":[{\\\"id\\\":\\\"i1\\\",\\\"slot\\\":\\\"weapon\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":2,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-weapon-3-1-0\\\",\\\"profile\\\":1,\\\"theme\\\":4,\\\"name\\\":\\\"残响·双焰流光刺剑\\\"},{\\\"id\\\":\\\"i2\\\",\\\"slot\\\":\\\"armor\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":1,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-armor-4-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":4,\\\"name\\\":\\\"残响·泉铠守誓壁垒\\\"},{\\\"id\\\":\\\"i3\\\",\\\"slot\\\":\\\"relic\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":3,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-relic-5-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":5,\\\"name\\\":\\\"残响·回潮守誓心核\\\"}],\\\"equipped\\\":{\\\"weapon\\\":\\\"i1\\\",\\\"armor\\\":\\\"i2\\\",\\\"relic\\\":\\\"i3\\\",\\\"relic2\\\":null,\\\"relic3\\\":null}},\\\"qaRecovery\\\":{\\\"unicode\\\":\\\"本页完整旅途 🧭\\\",\\\"nested\\\":[null,{\\\"futureField\\\":true}]}}\"}"
+        },
+        {
+          "sequence": 11,
+          "mode": "clear",
+          "kind": "capture-marker",
+          "key": "dice-abyss:save:v1",
+          "trusted": true,
+          "eventPhase": 2
+        },
+        {
+          "sequence": 12,
+          "mode": "clear",
+          "kind": "event-tail",
+          "key": "dice-abyss:save:v1",
+          "trusted": true,
+          "eventPhase": 2,
+          "protectedAfter": true,
+          "dialogOpenAfter": false
+        },
+        {
+          "sequence": 13,
+          "mode": "clear",
+          "kind": "read",
+          "key": "dice-abyss:save:v1",
+          "value": "{\"format\":\"dice-abyss\",\"version\":5,\"checksum\":\"34b21864\",\"payload\":\"{\\\"version\\\":5,\\\"revision\\\":0,\\\"runId\\\":\\\"round13-native-memory\\\",\\\"rng\\\":3748896326,\\\"nextId\\\":4,\\\"floor\\\":1,\\\"phase\\\":\\\"fate\\\",\\\"route\\\":[],\\\"roomIndex\\\":0,\\\"fate\\\":null,\\\"enemy\\\":null,\\\"chest\\\":null,\\\"loot\\\":null,\\\"shop\\\":[],\\\"lastRoll\\\":null,\\\"lastForge\\\":null,\\\"log\\\":[{\\\"text\\\":\\\"你踏入了遗忘入口。\\\",\\\"tone\\\":\\\"\\\"}],\\\"completed\\\":false,\\\"event\\\":null,\\\"eventLuck\\\":0,\\\"eventPower\\\":0,\\\"encounterHistory\\\":[],\\\"routeMemory\\\":{\\\"services\\\":[],\\\"last\\\":{},\\\"hiddenFloor\\\":0},\\\"v5Boons\\\":{\\\"echo\\\":0,\\\"ward\\\":0},\\\"nextLuck\\\":0,\\\"counters\\\":{\\\"rolls\\\":0,\\\"kills\\\":0,\\\"chests\\\":0,\\\"deaths\\\":0,\\\"highestDamage\\\":0,\\\"bosses\\\":0},\\\"player\\\":{\\\"level\\\":1,\\\"xp\\\":0,\\\"gold\\\":80,\\\"hp\\\":165,\\\"talentPoints\\\":0,\\\"deepOfferings\\\":0,\\\"pactScars\\\":0,\\\"fateBlessings\\\":0,\\\"talents\\\":{\\\"high\\\":0,\\\"four\\\":0,\\\"five\\\":0,\\\"six\\\":0,\\\"sum\\\":0,\\\"power\\\":0,\\\"resonance\\\":0,\\\"pair\\\":0,\\\"triple\\\":0,\\\"quartet\\\":0,\\\"choir\\\":0,\\\"echo\\\":0,\\\"critical\\\":0,\\\"keen\\\":0,\\\"crush\\\":0,\\\"pursuit\\\":0,\\\"opener\\\":0,\\\"slayer\\\":0,\\\"vitality\\\":0,\\\"guard\\\":0,\\\"leech\\\":0,\\\"recovery\\\":0,\\\"fortune\\\":0,\\\"smith\\\":0,\\\"luck\\\":0,\\\"attune\\\":0,\\\"omen\\\":0,\\\"mercy\\\":0,\\\"jackpot\\\":0,\\\"spark\\\":0,\\\"shatter\\\":0,\\\"diversity\\\":0,\\\"finality\\\":0,\\\"deepEcho\\\":0,\\\"chorusMend\\\":0,\\\"tripleBlade\\\":0,\\\"firstFire\\\":0,\\\"critAegis\\\":0,\\\"dawnCrit\\\":0,\\\"emberGuard\\\":0,\\\"phaseShelter\\\":0,\\\"lastResolve\\\":0,\\\"hunterStar\\\":0,\\\"gildedFaces\\\":0,\\\"sixRebirth\\\":0},\\\"items\\\":[{\\\"id\\\":\\\"i1\\\",\\\"slot\\\":\\\"weapon\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":2,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-weapon-3-1-0\\\",\\\"profile\\\":1,\\\"theme\\\":4,\\\"name\\\":\\\"残响·双焰流光刺剑\\\"},{\\\"id\\\":\\\"i2\\\",\\\"slot\\\":\\\"armor\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":1,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-armor-4-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":4,\\\"name\\\":\\\"残响·泉铠守誓壁垒\\\"},{\\\"id\\\":\\\"i3\\\",\\\"slot\\\":\\\"relic\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":3,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-relic-5-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":5,\\\"name\\\":\\\"残响·回潮守誓心核\\\"}],\\\"equipped\\\":{\\\"weapon\\\":\\\"i1\\\",\\\"armor\\\":\\\"i2\\\",\\\"relic\\\":\\\"i3\\\",\\\"relic2\\\":null,\\\"relic3\\\":null}},\\\"qaRecovery\\\":{\\\"unicode\\\":\\\"本页完整旅途 🧭\\\",\\\"nested\\\":[null,{\\\"futureField\\\":true}]}}\"}"
+        },
+        {
+          "sequence": 14,
+          "mode": "clear",
+          "kind": "read",
+          "key": "dice-abyss:mirror:v1",
+          "value": "{\"format\":\"dice-abyss\",\"version\":5,\"checksum\":\"34b21864\",\"payload\":\"{\\\"version\\\":5,\\\"revision\\\":0,\\\"runId\\\":\\\"round13-native-memory\\\",\\\"rng\\\":3748896326,\\\"nextId\\\":4,\\\"floor\\\":1,\\\"phase\\\":\\\"fate\\\",\\\"route\\\":[],\\\"roomIndex\\\":0,\\\"fate\\\":null,\\\"enemy\\\":null,\\\"chest\\\":null,\\\"loot\\\":null,\\\"shop\\\":[],\\\"lastRoll\\\":null,\\\"lastForge\\\":null,\\\"log\\\":[{\\\"text\\\":\\\"你踏入了遗忘入口。\\\",\\\"tone\\\":\\\"\\\"}],\\\"completed\\\":false,\\\"event\\\":null,\\\"eventLuck\\\":0,\\\"eventPower\\\":0,\\\"encounterHistory\\\":[],\\\"routeMemory\\\":{\\\"services\\\":[],\\\"last\\\":{},\\\"hiddenFloor\\\":0},\\\"v5Boons\\\":{\\\"echo\\\":0,\\\"ward\\\":0},\\\"nextLuck\\\":0,\\\"counters\\\":{\\\"rolls\\\":0,\\\"kills\\\":0,\\\"chests\\\":0,\\\"deaths\\\":0,\\\"highestDamage\\\":0,\\\"bosses\\\":0},\\\"player\\\":{\\\"level\\\":1,\\\"xp\\\":0,\\\"gold\\\":80,\\\"hp\\\":165,\\\"talentPoints\\\":0,\\\"deepOfferings\\\":0,\\\"pactScars\\\":0,\\\"fateBlessings\\\":0,\\\"talents\\\":{\\\"high\\\":0,\\\"four\\\":0,\\\"five\\\":0,\\\"six\\\":0,\\\"sum\\\":0,\\\"power\\\":0,\\\"resonance\\\":0,\\\"pair\\\":0,\\\"triple\\\":0,\\\"quartet\\\":0,\\\"choir\\\":0,\\\"echo\\\":0,\\\"critical\\\":0,\\\"keen\\\":0,\\\"crush\\\":0,\\\"pursuit\\\":0,\\\"opener\\\":0,\\\"slayer\\\":0,\\\"vitality\\\":0,\\\"guard\\\":0,\\\"leech\\\":0,\\\"recovery\\\":0,\\\"fortune\\\":0,\\\"smith\\\":0,\\\"luck\\\":0,\\\"attune\\\":0,\\\"omen\\\":0,\\\"mercy\\\":0,\\\"jackpot\\\":0,\\\"spark\\\":0,\\\"shatter\\\":0,\\\"diversity\\\":0,\\\"finality\\\":0,\\\"deepEcho\\\":0,\\\"chorusMend\\\":0,\\\"tripleBlade\\\":0,\\\"firstFire\\\":0,\\\"critAegis\\\":0,\\\"dawnCrit\\\":0,\\\"emberGuard\\\":0,\\\"phaseShelter\\\":0,\\\"lastResolve\\\":0,\\\"hunterStar\\\":0,\\\"gildedFaces\\\":0,\\\"sixRebirth\\\":0},\\\"items\\\":[{\\\"id\\\":\\\"i1\\\",\\\"slot\\\":\\\"weapon\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":2,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-weapon-3-1-0\\\",\\\"profile\\\":1,\\\"theme\\\":4,\\\"name\\\":\\\"残响·双焰流光刺剑\\\"},{\\\"id\\\":\\\"i2\\\",\\\"slot\\\":\\\"armor\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":1,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-armor-4-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":4,\\\"name\\\":\\\"残响·泉铠守誓壁垒\\\"},{\\\"id\\\":\\\"i3\\\",\\\"slot\\\":\\\"relic\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":3,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-relic-5-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":5,\\\"name\\\":\\\"残响·回潮守誓心核\\\"}],\\\"equipped\\\":{\\\"weapon\\\":\\\"i1\\\",\\\"armor\\\":\\\"i2\\\",\\\"relic\\\":\\\"i3\\\",\\\"relic2\\\":null,\\\"relic3\\\":null}},\\\"qaRecovery\\\":{\\\"unicode\\\":\\\"本页完整旅途 🧭\\\",\\\"nested\\\":[null,{\\\"futureField\\\":true}]}}\"}"
+        },
+        {
+          "sequence": 15,
+          "mode": "clear",
+          "kind": "capture-marker",
+          "key": "dice-abyss:mirror:v1",
+          "trusted": true,
+          "eventPhase": 2
+        },
+        {
+          "sequence": 16,
+          "mode": "clear",
+          "kind": "event-tail",
+          "key": "dice-abyss:mirror:v1",
+          "trusted": true,
+          "eventPhase": 2,
+          "protectedAfter": true,
+          "dialogOpenAfter": false
+        },
+        {
+          "sequence": 17,
+          "mode": null,
+          "kind": "read",
+          "key": "dice-abyss:save:v1",
+          "value": "{\"format\":\"dice-abyss\",\"version\":5,\"checksum\":\"34b21864\",\"payload\":\"{\\\"version\\\":5,\\\"revision\\\":0,\\\"runId\\\":\\\"round13-native-memory\\\",\\\"rng\\\":3748896326,\\\"nextId\\\":4,\\\"floor\\\":1,\\\"phase\\\":\\\"fate\\\",\\\"route\\\":[],\\\"roomIndex\\\":0,\\\"fate\\\":null,\\\"enemy\\\":null,\\\"chest\\\":null,\\\"loot\\\":null,\\\"shop\\\":[],\\\"lastRoll\\\":null,\\\"lastForge\\\":null,\\\"log\\\":[{\\\"text\\\":\\\"你踏入了遗忘入口。\\\",\\\"tone\\\":\\\"\\\"}],\\\"completed\\\":false,\\\"event\\\":null,\\\"eventLuck\\\":0,\\\"eventPower\\\":0,\\\"encounterHistory\\\":[],\\\"routeMemory\\\":{\\\"services\\\":[],\\\"last\\\":{},\\\"hiddenFloor\\\":0},\\\"v5Boons\\\":{\\\"echo\\\":0,\\\"ward\\\":0},\\\"nextLuck\\\":0,\\\"counters\\\":{\\\"rolls\\\":0,\\\"kills\\\":0,\\\"chests\\\":0,\\\"deaths\\\":0,\\\"highestDamage\\\":0,\\\"bosses\\\":0},\\\"player\\\":{\\\"level\\\":1,\\\"xp\\\":0,\\\"gold\\\":80,\\\"hp\\\":165,\\\"talentPoints\\\":0,\\\"deepOfferings\\\":0,\\\"pactScars\\\":0,\\\"fateBlessings\\\":0,\\\"talents\\\":{\\\"high\\\":0,\\\"four\\\":0,\\\"five\\\":0,\\\"six\\\":0,\\\"sum\\\":0,\\\"power\\\":0,\\\"resonance\\\":0,\\\"pair\\\":0,\\\"triple\\\":0,\\\"quartet\\\":0,\\\"choir\\\":0,\\\"echo\\\":0,\\\"critical\\\":0,\\\"keen\\\":0,\\\"crush\\\":0,\\\"pursuit\\\":0,\\\"opener\\\":0,\\\"slayer\\\":0,\\\"vitality\\\":0,\\\"guard\\\":0,\\\"leech\\\":0,\\\"recovery\\\":0,\\\"fortune\\\":0,\\\"smith\\\":0,\\\"luck\\\":0,\\\"attune\\\":0,\\\"omen\\\":0,\\\"mercy\\\":0,\\\"jackpot\\\":0,\\\"spark\\\":0,\\\"shatter\\\":0,\\\"diversity\\\":0,\\\"finality\\\":0,\\\"deepEcho\\\":0,\\\"chorusMend\\\":0,\\\"tripleBlade\\\":0,\\\"firstFire\\\":0,\\\"critAegis\\\":0,\\\"dawnCrit\\\":0,\\\"emberGuard\\\":0,\\\"phaseShelter\\\":0,\\\"lastResolve\\\":0,\\\"hunterStar\\\":0,\\\"gildedFaces\\\":0,\\\"sixRebirth\\\":0},\\\"items\\\":[{\\\"id\\\":\\\"i1\\\",\\\"slot\\\":\\\"weapon\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":2,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-weapon-3-1-0\\\",\\\"profile\\\":1,\\\"theme\\\":4,\\\"name\\\":\\\"残响·双焰流光刺剑\\\"},{\\\"id\\\":\\\"i2\\\",\\\"slot\\\":\\\"armor\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":1,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-armor-4-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":4,\\\"name\\\":\\\"残响·泉铠守誓壁垒\\\"},{\\\"id\\\":\\\"i3\\\",\\\"slot\\\":\\\"relic\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":3,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-relic-5-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":5,\\\"name\\\":\\\"残响·回潮守誓心核\\\"}],\\\"equipped\\\":{\\\"weapon\\\":\\\"i1\\\",\\\"armor\\\":\\\"i2\\\",\\\"relic\\\":\\\"i3\\\",\\\"relic2\\\":null,\\\"relic3\\\":null}},\\\"qaRecovery\\\":{\\\"unicode\\\":\\\"本页完整旅途 🧭\\\",\\\"nested\\\":[null,{\\\"futureField\\\":true}]}}\"}"
+        },
+        {
+          "sequence": 18,
+          "mode": null,
+          "kind": "read",
+          "key": "dice-abyss:mirror:v1",
+          "value": "{\"format\":\"dice-abyss\",\"version\":5,\"checksum\":\"34b21864\",\"payload\":\"{\\\"version\\\":5,\\\"revision\\\":0,\\\"runId\\\":\\\"round13-native-memory\\\",\\\"rng\\\":3748896326,\\\"nextId\\\":4,\\\"floor\\\":1,\\\"phase\\\":\\\"fate\\\",\\\"route\\\":[],\\\"roomIndex\\\":0,\\\"fate\\\":null,\\\"enemy\\\":null,\\\"chest\\\":null,\\\"loot\\\":null,\\\"shop\\\":[],\\\"lastRoll\\\":null,\\\"lastForge\\\":null,\\\"log\\\":[{\\\"text\\\":\\\"你踏入了遗忘入口。\\\",\\\"tone\\\":\\\"\\\"}],\\\"completed\\\":false,\\\"event\\\":null,\\\"eventLuck\\\":0,\\\"eventPower\\\":0,\\\"encounterHistory\\\":[],\\\"routeMemory\\\":{\\\"services\\\":[],\\\"last\\\":{},\\\"hiddenFloor\\\":0},\\\"v5Boons\\\":{\\\"echo\\\":0,\\\"ward\\\":0},\\\"nextLuck\\\":0,\\\"counters\\\":{\\\"rolls\\\":0,\\\"kills\\\":0,\\\"chests\\\":0,\\\"deaths\\\":0,\\\"highestDamage\\\":0,\\\"bosses\\\":0},\\\"player\\\":{\\\"level\\\":1,\\\"xp\\\":0,\\\"gold\\\":80,\\\"hp\\\":165,\\\"talentPoints\\\":0,\\\"deepOfferings\\\":0,\\\"pactScars\\\":0,\\\"fateBlessings\\\":0,\\\"talents\\\":{\\\"high\\\":0,\\\"four\\\":0,\\\"five\\\":0,\\\"six\\\":0,\\\"sum\\\":0,\\\"power\\\":0,\\\"resonance\\\":0,\\\"pair\\\":0,\\\"triple\\\":0,\\\"quartet\\\":0,\\\"choir\\\":0,\\\"echo\\\":0,\\\"critical\\\":0,\\\"keen\\\":0,\\\"crush\\\":0,\\\"pursuit\\\":0,\\\"opener\\\":0,\\\"slayer\\\":0,\\\"vitality\\\":0,\\\"guard\\\":0,\\\"leech\\\":0,\\\"recovery\\\":0,\\\"fortune\\\":0,\\\"smith\\\":0,\\\"luck\\\":0,\\\"attune\\\":0,\\\"omen\\\":0,\\\"mercy\\\":0,\\\"jackpot\\\":0,\\\"spark\\\":0,\\\"shatter\\\":0,\\\"diversity\\\":0,\\\"finality\\\":0,\\\"deepEcho\\\":0,\\\"chorusMend\\\":0,\\\"tripleBlade\\\":0,\\\"firstFire\\\":0,\\\"critAegis\\\":0,\\\"dawnCrit\\\":0,\\\"emberGuard\\\":0,\\\"phaseShelter\\\":0,\\\"lastResolve\\\":0,\\\"hunterStar\\\":0,\\\"gildedFaces\\\":0,\\\"sixRebirth\\\":0},\\\"items\\\":[{\\\"id\\\":\\\"i1\\\",\\\"slot\\\":\\\"weapon\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":2,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-weapon-3-1-0\\\",\\\"profile\\\":1,\\\"theme\\\":4,\\\"name\\\":\\\"残响·双焰流光刺剑\\\"},{\\\"id\\\":\\\"i2\\\",\\\"slot\\\":\\\"armor\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":1,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-armor-4-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":4,\\\"name\\\":\\\"残响·泉铠守誓壁垒\\\"},{\\\"id\\\":\\\"i3\\\",\\\"slot\\\":\\\"relic\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":3,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-relic-5-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":5,\\\"name\\\":\\\"残响·回潮守誓心核\\\"}],\\\"equipped\\\":{\\\"weapon\\\":\\\"i1\\\",\\\"armor\\\":\\\"i2\\\",\\\"relic\\\":\\\"i3\\\",\\\"relic2\\\":null,\\\"relic3\\\":null}},\\\"qaRecovery\\\":{\\\"unicode\\\":\\\"本页完整旅途 🧭\\\",\\\"nested\\\":[null,{\\\"futureField\\\":true}]}}\"}"
+        },
+        {
+          "sequence": 19,
+          "mode": null,
+          "kind": "read",
+          "key": "dice-abyss:save:v1",
+          "value": "{\"format\":\"dice-abyss\",\"version\":5,\"checksum\":\"34b21864\",\"payload\":\"{\\\"version\\\":5,\\\"revision\\\":0,\\\"runId\\\":\\\"round13-native-memory\\\",\\\"rng\\\":3748896326,\\\"nextId\\\":4,\\\"floor\\\":1,\\\"phase\\\":\\\"fate\\\",\\\"route\\\":[],\\\"roomIndex\\\":0,\\\"fate\\\":null,\\\"enemy\\\":null,\\\"chest\\\":null,\\\"loot\\\":null,\\\"shop\\\":[],\\\"lastRoll\\\":null,\\\"lastForge\\\":null,\\\"log\\\":[{\\\"text\\\":\\\"你踏入了遗忘入口。\\\",\\\"tone\\\":\\\"\\\"}],\\\"completed\\\":false,\\\"event\\\":null,\\\"eventLuck\\\":0,\\\"eventPower\\\":0,\\\"encounterHistory\\\":[],\\\"routeMemory\\\":{\\\"services\\\":[],\\\"last\\\":{},\\\"hiddenFloor\\\":0},\\\"v5Boons\\\":{\\\"echo\\\":0,\\\"ward\\\":0},\\\"nextLuck\\\":0,\\\"counters\\\":{\\\"rolls\\\":0,\\\"kills\\\":0,\\\"chests\\\":0,\\\"deaths\\\":0,\\\"highestDamage\\\":0,\\\"bosses\\\":0},\\\"player\\\":{\\\"level\\\":1,\\\"xp\\\":0,\\\"gold\\\":80,\\\"hp\\\":165,\\\"talentPoints\\\":0,\\\"deepOfferings\\\":0,\\\"pactScars\\\":0,\\\"fateBlessings\\\":0,\\\"talents\\\":{\\\"high\\\":0,\\\"four\\\":0,\\\"five\\\":0,\\\"six\\\":0,\\\"sum\\\":0,\\\"power\\\":0,\\\"resonance\\\":0,\\\"pair\\\":0,\\\"triple\\\":0,\\\"quartet\\\":0,\\\"choir\\\":0,\\\"echo\\\":0,\\\"critical\\\":0,\\\"keen\\\":0,\\\"crush\\\":0,\\\"pursuit\\\":0,\\\"opener\\\":0,\\\"slayer\\\":0,\\\"vitality\\\":0,\\\"guard\\\":0,\\\"leech\\\":0,\\\"recovery\\\":0,\\\"fortune\\\":0,\\\"smith\\\":0,\\\"luck\\\":0,\\\"attune\\\":0,\\\"omen\\\":0,\\\"mercy\\\":0,\\\"jackpot\\\":0,\\\"spark\\\":0,\\\"shatter\\\":0,\\\"diversity\\\":0,\\\"finality\\\":0,\\\"deepEcho\\\":0,\\\"chorusMend\\\":0,\\\"tripleBlade\\\":0,\\\"firstFire\\\":0,\\\"critAegis\\\":0,\\\"dawnCrit\\\":0,\\\"emberGuard\\\":0,\\\"phaseShelter\\\":0,\\\"lastResolve\\\":0,\\\"hunterStar\\\":0,\\\"gildedFaces\\\":0,\\\"sixRebirth\\\":0},\\\"items\\\":[{\\\"id\\\":\\\"i1\\\",\\\"slot\\\":\\\"weapon\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":2,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-weapon-3-1-0\\\",\\\"profile\\\":1,\\\"theme\\\":4,\\\"name\\\":\\\"残响·双焰流光刺剑\\\"},{\\\"id\\\":\\\"i2\\\",\\\"slot\\\":\\\"armor\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":1,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-armor-4-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":4,\\\"name\\\":\\\"残响·泉铠守誓壁垒\\\"},{\\\"id\\\":\\\"i3\\\",\\\"slot\\\":\\\"relic\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":3,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-relic-5-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":5,\\\"name\\\":\\\"残响·回潮守誓心核\\\"}],\\\"equipped\\\":{\\\"weapon\\\":\\\"i1\\\",\\\"armor\\\":\\\"i2\\\",\\\"relic\\\":\\\"i3\\\",\\\"relic2\\\":null,\\\"relic3\\\":null}},\\\"qaRecovery\\\":{\\\"unicode\\\":\\\"本页完整旅途 🧭\\\",\\\"nested\\\":[null,{\\\"futureField\\\":true}]}}\"}"
+        },
+        {
+          "sequence": 20,
+          "mode": null,
+          "kind": "read",
+          "key": "dice-abyss:mirror:v1",
+          "value": "{\"format\":\"dice-abyss\",\"version\":5,\"checksum\":\"34b21864\",\"payload\":\"{\\\"version\\\":5,\\\"revision\\\":0,\\\"runId\\\":\\\"round13-native-memory\\\",\\\"rng\\\":3748896326,\\\"nextId\\\":4,\\\"floor\\\":1,\\\"phase\\\":\\\"fate\\\",\\\"route\\\":[],\\\"roomIndex\\\":0,\\\"fate\\\":null,\\\"enemy\\\":null,\\\"chest\\\":null,\\\"loot\\\":null,\\\"shop\\\":[],\\\"lastRoll\\\":null,\\\"lastForge\\\":null,\\\"log\\\":[{\\\"text\\\":\\\"你踏入了遗忘入口。\\\",\\\"tone\\\":\\\"\\\"}],\\\"completed\\\":false,\\\"event\\\":null,\\\"eventLuck\\\":0,\\\"eventPower\\\":0,\\\"encounterHistory\\\":[],\\\"routeMemory\\\":{\\\"services\\\":[],\\\"last\\\":{},\\\"hiddenFloor\\\":0},\\\"v5Boons\\\":{\\\"echo\\\":0,\\\"ward\\\":0},\\\"nextLuck\\\":0,\\\"counters\\\":{\\\"rolls\\\":0,\\\"kills\\\":0,\\\"chests\\\":0,\\\"deaths\\\":0,\\\"highestDamage\\\":0,\\\"bosses\\\":0},\\\"player\\\":{\\\"level\\\":1,\\\"xp\\\":0,\\\"gold\\\":80,\\\"hp\\\":165,\\\"talentPoints\\\":0,\\\"deepOfferings\\\":0,\\\"pactScars\\\":0,\\\"fateBlessings\\\":0,\\\"talents\\\":{\\\"high\\\":0,\\\"four\\\":0,\\\"five\\\":0,\\\"six\\\":0,\\\"sum\\\":0,\\\"power\\\":0,\\\"resonance\\\":0,\\\"pair\\\":0,\\\"triple\\\":0,\\\"quartet\\\":0,\\\"choir\\\":0,\\\"echo\\\":0,\\\"critical\\\":0,\\\"keen\\\":0,\\\"crush\\\":0,\\\"pursuit\\\":0,\\\"opener\\\":0,\\\"slayer\\\":0,\\\"vitality\\\":0,\\\"guard\\\":0,\\\"leech\\\":0,\\\"recovery\\\":0,\\\"fortune\\\":0,\\\"smith\\\":0,\\\"luck\\\":0,\\\"attune\\\":0,\\\"omen\\\":0,\\\"mercy\\\":0,\\\"jackpot\\\":0,\\\"spark\\\":0,\\\"shatter\\\":0,\\\"diversity\\\":0,\\\"finality\\\":0,\\\"deepEcho\\\":0,\\\"chorusMend\\\":0,\\\"tripleBlade\\\":0,\\\"firstFire\\\":0,\\\"critAegis\\\":0,\\\"dawnCrit\\\":0,\\\"emberGuard\\\":0,\\\"phaseShelter\\\":0,\\\"lastResolve\\\":0,\\\"hunterStar\\\":0,\\\"gildedFaces\\\":0,\\\"sixRebirth\\\":0},\\\"items\\\":[{\\\"id\\\":\\\"i1\\\",\\\"slot\\\":\\\"weapon\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":2,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-weapon-3-1-0\\\",\\\"profile\\\":1,\\\"theme\\\":4,\\\"name\\\":\\\"残响·双焰流光刺剑\\\"},{\\\"id\\\":\\\"i2\\\",\\\"slot\\\":\\\"armor\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":1,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-armor-4-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":4,\\\"name\\\":\\\"残响·泉铠守誓壁垒\\\"},{\\\"id\\\":\\\"i3\\\",\\\"slot\\\":\\\"relic\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":3,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-relic-5-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":5,\\\"name\\\":\\\"残响·回潮守誓心核\\\"}],\\\"equipped\\\":{\\\"weapon\\\":\\\"i1\\\",\\\"armor\\\":\\\"i2\\\",\\\"relic\\\":\\\"i3\\\",\\\"relic2\\\":null,\\\"relic3\\\":null}},\\\"qaRecovery\\\":{\\\"unicode\\\":\\\"本页完整旅途 🧭\\\",\\\"nested\\\":[null,{\\\"futureField\\\":true}]}}\"}"
+        },
+        {
+          "sequence": 21,
+          "mode": null,
+          "kind": "read",
+          "key": "dice-abyss:save:v1",
+          "value": "{\"format\":\"dice-abyss\",\"version\":5,\"checksum\":\"34b21864\",\"payload\":\"{\\\"version\\\":5,\\\"revision\\\":0,\\\"runId\\\":\\\"round13-native-memory\\\",\\\"rng\\\":3748896326,\\\"nextId\\\":4,\\\"floor\\\":1,\\\"phase\\\":\\\"fate\\\",\\\"route\\\":[],\\\"roomIndex\\\":0,\\\"fate\\\":null,\\\"enemy\\\":null,\\\"chest\\\":null,\\\"loot\\\":null,\\\"shop\\\":[],\\\"lastRoll\\\":null,\\\"lastForge\\\":null,\\\"log\\\":[{\\\"text\\\":\\\"你踏入了遗忘入口。\\\",\\\"tone\\\":\\\"\\\"}],\\\"completed\\\":false,\\\"event\\\":null,\\\"eventLuck\\\":0,\\\"eventPower\\\":0,\\\"encounterHistory\\\":[],\\\"routeMemory\\\":{\\\"services\\\":[],\\\"last\\\":{},\\\"hiddenFloor\\\":0},\\\"v5Boons\\\":{\\\"echo\\\":0,\\\"ward\\\":0},\\\"nextLuck\\\":0,\\\"counters\\\":{\\\"rolls\\\":0,\\\"kills\\\":0,\\\"chests\\\":0,\\\"deaths\\\":0,\\\"highestDamage\\\":0,\\\"bosses\\\":0},\\\"player\\\":{\\\"level\\\":1,\\\"xp\\\":0,\\\"gold\\\":80,\\\"hp\\\":165,\\\"talentPoints\\\":0,\\\"deepOfferings\\\":0,\\\"pactScars\\\":0,\\\"fateBlessings\\\":0,\\\"talents\\\":{\\\"high\\\":0,\\\"four\\\":0,\\\"five\\\":0,\\\"six\\\":0,\\\"sum\\\":0,\\\"power\\\":0,\\\"resonance\\\":0,\\\"pair\\\":0,\\\"triple\\\":0,\\\"quartet\\\":0,\\\"choir\\\":0,\\\"echo\\\":0,\\\"critical\\\":0,\\\"keen\\\":0,\\\"crush\\\":0,\\\"pursuit\\\":0,\\\"opener\\\":0,\\\"slayer\\\":0,\\\"vitality\\\":0,\\\"guard\\\":0,\\\"leech\\\":0,\\\"recovery\\\":0,\\\"fortune\\\":0,\\\"smith\\\":0,\\\"luck\\\":0,\\\"attune\\\":0,\\\"omen\\\":0,\\\"mercy\\\":0,\\\"jackpot\\\":0,\\\"spark\\\":0,\\\"shatter\\\":0,\\\"diversity\\\":0,\\\"finality\\\":0,\\\"deepEcho\\\":0,\\\"chorusMend\\\":0,\\\"tripleBlade\\\":0,\\\"firstFire\\\":0,\\\"critAegis\\\":0,\\\"dawnCrit\\\":0,\\\"emberGuard\\\":0,\\\"phaseShelter\\\":0,\\\"lastResolve\\\":0,\\\"hunterStar\\\":0,\\\"gildedFaces\\\":0,\\\"sixRebirth\\\":0},\\\"items\\\":[{\\\"id\\\":\\\"i1\\\",\\\"slot\\\":\\\"weapon\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":2,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-weapon-3-1-0\\\",\\\"profile\\\":1,\\\"theme\\\":4,\\\"name\\\":\\\"残响·双焰流光刺剑\\\"},{\\\"id\\\":\\\"i2\\\",\\\"slot\\\":\\\"armor\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":1,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-armor-4-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":4,\\\"name\\\":\\\"残响·泉铠守誓壁垒\\\"},{\\\"id\\\":\\\"i3\\\",\\\"slot\\\":\\\"relic\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":3,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-relic-5-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":5,\\\"name\\\":\\\"残响·回潮守誓心核\\\"}],\\\"equipped\\\":{\\\"weapon\\\":\\\"i1\\\",\\\"armor\\\":\\\"i2\\\",\\\"relic\\\":\\\"i3\\\",\\\"relic2\\\":null,\\\"relic3\\\":null}},\\\"qaRecovery\\\":{\\\"unicode\\\":\\\"本页完整旅途 🧭\\\",\\\"nested\\\":[null,{\\\"futureField\\\":true}]}}\"}"
+        },
+        {
+          "sequence": 22,
+          "mode": null,
+          "kind": "read",
+          "key": "dice-abyss:mirror:v1",
+          "value": "{\"format\":\"dice-abyss\",\"version\":5,\"checksum\":\"34b21864\",\"payload\":\"{\\\"version\\\":5,\\\"revision\\\":0,\\\"runId\\\":\\\"round13-native-memory\\\",\\\"rng\\\":3748896326,\\\"nextId\\\":4,\\\"floor\\\":1,\\\"phase\\\":\\\"fate\\\",\\\"route\\\":[],\\\"roomIndex\\\":0,\\\"fate\\\":null,\\\"enemy\\\":null,\\\"chest\\\":null,\\\"loot\\\":null,\\\"shop\\\":[],\\\"lastRoll\\\":null,\\\"lastForge\\\":null,\\\"log\\\":[{\\\"text\\\":\\\"你踏入了遗忘入口。\\\",\\\"tone\\\":\\\"\\\"}],\\\"completed\\\":false,\\\"event\\\":null,\\\"eventLuck\\\":0,\\\"eventPower\\\":0,\\\"encounterHistory\\\":[],\\\"routeMemory\\\":{\\\"services\\\":[],\\\"last\\\":{},\\\"hiddenFloor\\\":0},\\\"v5Boons\\\":{\\\"echo\\\":0,\\\"ward\\\":0},\\\"nextLuck\\\":0,\\\"counters\\\":{\\\"rolls\\\":0,\\\"kills\\\":0,\\\"chests\\\":0,\\\"deaths\\\":0,\\\"highestDamage\\\":0,\\\"bosses\\\":0},\\\"player\\\":{\\\"level\\\":1,\\\"xp\\\":0,\\\"gold\\\":80,\\\"hp\\\":165,\\\"talentPoints\\\":0,\\\"deepOfferings\\\":0,\\\"pactScars\\\":0,\\\"fateBlessings\\\":0,\\\"talents\\\":{\\\"high\\\":0,\\\"four\\\":0,\\\"five\\\":0,\\\"six\\\":0,\\\"sum\\\":0,\\\"power\\\":0,\\\"resonance\\\":0,\\\"pair\\\":0,\\\"triple\\\":0,\\\"quartet\\\":0,\\\"choir\\\":0,\\\"echo\\\":0,\\\"critical\\\":0,\\\"keen\\\":0,\\\"crush\\\":0,\\\"pursuit\\\":0,\\\"opener\\\":0,\\\"slayer\\\":0,\\\"vitality\\\":0,\\\"guard\\\":0,\\\"leech\\\":0,\\\"recovery\\\":0,\\\"fortune\\\":0,\\\"smith\\\":0,\\\"luck\\\":0,\\\"attune\\\":0,\\\"omen\\\":0,\\\"mercy\\\":0,\\\"jackpot\\\":0,\\\"spark\\\":0,\\\"shatter\\\":0,\\\"diversity\\\":0,\\\"finality\\\":0,\\\"deepEcho\\\":0,\\\"chorusMend\\\":0,\\\"tripleBlade\\\":0,\\\"firstFire\\\":0,\\\"critAegis\\\":0,\\\"dawnCrit\\\":0,\\\"emberGuard\\\":0,\\\"phaseShelter\\\":0,\\\"lastResolve\\\":0,\\\"hunterStar\\\":0,\\\"gildedFaces\\\":0,\\\"sixRebirth\\\":0},\\\"items\\\":[{\\\"id\\\":\\\"i1\\\",\\\"slot\\\":\\\"weapon\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":2,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-weapon-3-1-0\\\",\\\"profile\\\":1,\\\"theme\\\":4,\\\"name\\\":\\\"残响·双焰流光刺剑\\\"},{\\\"id\\\":\\\"i2\\\",\\\"slot\\\":\\\"armor\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":1,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-armor-4-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":4,\\\"name\\\":\\\"残响·泉铠守誓壁垒\\\"},{\\\"id\\\":\\\"i3\\\",\\\"slot\\\":\\\"relic\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":3,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-relic-5-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":5,\\\"name\\\":\\\"残响·回潮守誓心核\\\"}],\\\"equipped\\\":{\\\"weapon\\\":\\\"i1\\\",\\\"armor\\\":\\\"i2\\\",\\\"relic\\\":\\\"i3\\\",\\\"relic2\\\":null,\\\"relic3\\\":null}},\\\"qaRecovery\\\":{\\\"unicode\\\":\\\"本页完整旅途 🧭\\\",\\\"nested\\\":[null,{\\\"futureField\\\":true}]}}\"}"
+        },
+        {
+          "sequence": 23,
+          "mode": null,
+          "kind": "read",
+          "key": "dice-abyss:save:v1",
+          "value": "{\"format\":\"dice-abyss\",\"version\":5,\"checksum\":\"34b21864\",\"payload\":\"{\\\"version\\\":5,\\\"revision\\\":0,\\\"runId\\\":\\\"round13-native-memory\\\",\\\"rng\\\":3748896326,\\\"nextId\\\":4,\\\"floor\\\":1,\\\"phase\\\":\\\"fate\\\",\\\"route\\\":[],\\\"roomIndex\\\":0,\\\"fate\\\":null,\\\"enemy\\\":null,\\\"chest\\\":null,\\\"loot\\\":null,\\\"shop\\\":[],\\\"lastRoll\\\":null,\\\"lastForge\\\":null,\\\"log\\\":[{\\\"text\\\":\\\"你踏入了遗忘入口。\\\",\\\"tone\\\":\\\"\\\"}],\\\"completed\\\":false,\\\"event\\\":null,\\\"eventLuck\\\":0,\\\"eventPower\\\":0,\\\"encounterHistory\\\":[],\\\"routeMemory\\\":{\\\"services\\\":[],\\\"last\\\":{},\\\"hiddenFloor\\\":0},\\\"v5Boons\\\":{\\\"echo\\\":0,\\\"ward\\\":0},\\\"nextLuck\\\":0,\\\"counters\\\":{\\\"rolls\\\":0,\\\"kills\\\":0,\\\"chests\\\":0,\\\"deaths\\\":0,\\\"highestDamage\\\":0,\\\"bosses\\\":0},\\\"player\\\":{\\\"level\\\":1,\\\"xp\\\":0,\\\"gold\\\":80,\\\"hp\\\":165,\\\"talentPoints\\\":0,\\\"deepOfferings\\\":0,\\\"pactScars\\\":0,\\\"fateBlessings\\\":0,\\\"talents\\\":{\\\"high\\\":0,\\\"four\\\":0,\\\"five\\\":0,\\\"six\\\":0,\\\"sum\\\":0,\\\"power\\\":0,\\\"resonance\\\":0,\\\"pair\\\":0,\\\"triple\\\":0,\\\"quartet\\\":0,\\\"choir\\\":0,\\\"echo\\\":0,\\\"critical\\\":0,\\\"keen\\\":0,\\\"crush\\\":0,\\\"pursuit\\\":0,\\\"opener\\\":0,\\\"slayer\\\":0,\\\"vitality\\\":0,\\\"guard\\\":0,\\\"leech\\\":0,\\\"recovery\\\":0,\\\"fortune\\\":0,\\\"smith\\\":0,\\\"luck\\\":0,\\\"attune\\\":0,\\\"omen\\\":0,\\\"mercy\\\":0,\\\"jackpot\\\":0,\\\"spark\\\":0,\\\"shatter\\\":0,\\\"diversity\\\":0,\\\"finality\\\":0,\\\"deepEcho\\\":0,\\\"chorusMend\\\":0,\\\"tripleBlade\\\":0,\\\"firstFire\\\":0,\\\"critAegis\\\":0,\\\"dawnCrit\\\":0,\\\"emberGuard\\\":0,\\\"phaseShelter\\\":0,\\\"lastResolve\\\":0,\\\"hunterStar\\\":0,\\\"gildedFaces\\\":0,\\\"sixRebirth\\\":0},\\\"items\\\":[{\\\"id\\\":\\\"i1\\\",\\\"slot\\\":\\\"weapon\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":2,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-weapon-3-1-0\\\",\\\"profile\\\":1,\\\"theme\\\":4,\\\"name\\\":\\\"残响·双焰流光刺剑\\\"},{\\\"id\\\":\\\"i2\\\",\\\"slot\\\":\\\"armor\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":1,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-armor-4-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":4,\\\"name\\\":\\\"残响·泉铠守誓壁垒\\\"},{\\\"id\\\":\\\"i3\\\",\\\"slot\\\":\\\"relic\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":3,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-relic-5-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":5,\\\"name\\\":\\\"残响·回潮守誓心核\\\"}],\\\"equipped\\\":{\\\"weapon\\\":\\\"i1\\\",\\\"armor\\\":\\\"i2\\\",\\\"relic\\\":\\\"i3\\\",\\\"relic2\\\":null,\\\"relic3\\\":null}},\\\"qaRecovery\\\":{\\\"unicode\\\":\\\"本页完整旅途 🧭\\\",\\\"nested\\\":[null,{\\\"futureField\\\":true}]}}\"}"
+        },
+        {
+          "sequence": 24,
+          "mode": null,
+          "kind": "read",
+          "key": "dice-abyss:mirror:v1",
+          "value": "{\"format\":\"dice-abyss\",\"version\":5,\"checksum\":\"34b21864\",\"payload\":\"{\\\"version\\\":5,\\\"revision\\\":0,\\\"runId\\\":\\\"round13-native-memory\\\",\\\"rng\\\":3748896326,\\\"nextId\\\":4,\\\"floor\\\":1,\\\"phase\\\":\\\"fate\\\",\\\"route\\\":[],\\\"roomIndex\\\":0,\\\"fate\\\":null,\\\"enemy\\\":null,\\\"chest\\\":null,\\\"loot\\\":null,\\\"shop\\\":[],\\\"lastRoll\\\":null,\\\"lastForge\\\":null,\\\"log\\\":[{\\\"text\\\":\\\"你踏入了遗忘入口。\\\",\\\"tone\\\":\\\"\\\"}],\\\"completed\\\":false,\\\"event\\\":null,\\\"eventLuck\\\":0,\\\"eventPower\\\":0,\\\"encounterHistory\\\":[],\\\"routeMemory\\\":{\\\"services\\\":[],\\\"last\\\":{},\\\"hiddenFloor\\\":0},\\\"v5Boons\\\":{\\\"echo\\\":0,\\\"ward\\\":0},\\\"nextLuck\\\":0,\\\"counters\\\":{\\\"rolls\\\":0,\\\"kills\\\":0,\\\"chests\\\":0,\\\"deaths\\\":0,\\\"highestDamage\\\":0,\\\"bosses\\\":0},\\\"player\\\":{\\\"level\\\":1,\\\"xp\\\":0,\\\"gold\\\":80,\\\"hp\\\":165,\\\"talentPoints\\\":0,\\\"deepOfferings\\\":0,\\\"pactScars\\\":0,\\\"fateBlessings\\\":0,\\\"talents\\\":{\\\"high\\\":0,\\\"four\\\":0,\\\"five\\\":0,\\\"six\\\":0,\\\"sum\\\":0,\\\"power\\\":0,\\\"resonance\\\":0,\\\"pair\\\":0,\\\"triple\\\":0,\\\"quartet\\\":0,\\\"choir\\\":0,\\\"echo\\\":0,\\\"critical\\\":0,\\\"keen\\\":0,\\\"crush\\\":0,\\\"pursuit\\\":0,\\\"opener\\\":0,\\\"slayer\\\":0,\\\"vitality\\\":0,\\\"guard\\\":0,\\\"leech\\\":0,\\\"recovery\\\":0,\\\"fortune\\\":0,\\\"smith\\\":0,\\\"luck\\\":0,\\\"attune\\\":0,\\\"omen\\\":0,\\\"mercy\\\":0,\\\"jackpot\\\":0,\\\"spark\\\":0,\\\"shatter\\\":0,\\\"diversity\\\":0,\\\"finality\\\":0,\\\"deepEcho\\\":0,\\\"chorusMend\\\":0,\\\"tripleBlade\\\":0,\\\"firstFire\\\":0,\\\"critAegis\\\":0,\\\"dawnCrit\\\":0,\\\"emberGuard\\\":0,\\\"phaseShelter\\\":0,\\\"lastResolve\\\":0,\\\"hunterStar\\\":0,\\\"gildedFaces\\\":0,\\\"sixRebirth\\\":0},\\\"items\\\":[{\\\"id\\\":\\\"i1\\\",\\\"slot\\\":\\\"weapon\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":2,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-weapon-3-1-0\\\",\\\"profile\\\":1,\\\"theme\\\":4,\\\"name\\\":\\\"残响·双焰流光刺剑\\\"},{\\\"id\\\":\\\"i2\\\",\\\"slot\\\":\\\"armor\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":1,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-armor-4-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":4,\\\"name\\\":\\\"残响·泉铠守誓壁垒\\\"},{\\\"id\\\":\\\"i3\\\",\\\"slot\\\":\\\"relic\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":3,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-relic-5-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":5,\\\"name\\\":\\\"残响·回潮守誓心核\\\"}],\\\"equipped\\\":{\\\"weapon\\\":\\\"i1\\\",\\\"armor\\\":\\\"i2\\\",\\\"relic\\\":\\\"i3\\\",\\\"relic2\\\":null,\\\"relic3\\\":null}},\\\"qaRecovery\\\":{\\\"unicode\\\":\\\"本页完整旅途 🧭\\\",\\\"nested\\\":[null,{\\\"futureField\\\":true}]}}\"}"
+        },
+        {
+          "sequence": 25,
+          "mode": null,
+          "kind": "read",
+          "key": "dice-abyss:save:v1",
+          "value": "{\"format\":\"dice-abyss\",\"version\":5,\"checksum\":\"34b21864\",\"payload\":\"{\\\"version\\\":5,\\\"revision\\\":0,\\\"runId\\\":\\\"round13-native-memory\\\",\\\"rng\\\":3748896326,\\\"nextId\\\":4,\\\"floor\\\":1,\\\"phase\\\":\\\"fate\\\",\\\"route\\\":[],\\\"roomIndex\\\":0,\\\"fate\\\":null,\\\"enemy\\\":null,\\\"chest\\\":null,\\\"loot\\\":null,\\\"shop\\\":[],\\\"lastRoll\\\":null,\\\"lastForge\\\":null,\\\"log\\\":[{\\\"text\\\":\\\"你踏入了遗忘入口。\\\",\\\"tone\\\":\\\"\\\"}],\\\"completed\\\":false,\\\"event\\\":null,\\\"eventLuck\\\":0,\\\"eventPower\\\":0,\\\"encounterHistory\\\":[],\\\"routeMemory\\\":{\\\"services\\\":[],\\\"last\\\":{},\\\"hiddenFloor\\\":0},\\\"v5Boons\\\":{\\\"echo\\\":0,\\\"ward\\\":0},\\\"nextLuck\\\":0,\\\"counters\\\":{\\\"rolls\\\":0,\\\"kills\\\":0,\\\"chests\\\":0,\\\"deaths\\\":0,\\\"highestDamage\\\":0,\\\"bosses\\\":0},\\\"player\\\":{\\\"level\\\":1,\\\"xp\\\":0,\\\"gold\\\":80,\\\"hp\\\":165,\\\"talentPoints\\\":0,\\\"deepOfferings\\\":0,\\\"pactScars\\\":0,\\\"fateBlessings\\\":0,\\\"talents\\\":{\\\"high\\\":0,\\\"four\\\":0,\\\"five\\\":0,\\\"six\\\":0,\\\"sum\\\":0,\\\"power\\\":0,\\\"resonance\\\":0,\\\"pair\\\":0,\\\"triple\\\":0,\\\"quartet\\\":0,\\\"choir\\\":0,\\\"echo\\\":0,\\\"critical\\\":0,\\\"keen\\\":0,\\\"crush\\\":0,\\\"pursuit\\\":0,\\\"opener\\\":0,\\\"slayer\\\":0,\\\"vitality\\\":0,\\\"guard\\\":0,\\\"leech\\\":0,\\\"recovery\\\":0,\\\"fortune\\\":0,\\\"smith\\\":0,\\\"luck\\\":0,\\\"attune\\\":0,\\\"omen\\\":0,\\\"mercy\\\":0,\\\"jackpot\\\":0,\\\"spark\\\":0,\\\"shatter\\\":0,\\\"diversity\\\":0,\\\"finality\\\":0,\\\"deepEcho\\\":0,\\\"chorusMend\\\":0,\\\"tripleBlade\\\":0,\\\"firstFire\\\":0,\\\"critAegis\\\":0,\\\"dawnCrit\\\":0,\\\"emberGuard\\\":0,\\\"phaseShelter\\\":0,\\\"lastResolve\\\":0,\\\"hunterStar\\\":0,\\\"gildedFaces\\\":0,\\\"sixRebirth\\\":0},\\\"items\\\":[{\\\"id\\\":\\\"i1\\\",\\\"slot\\\":\\\"weapon\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":2,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-weapon-3-1-0\\\",\\\"profile\\\":1,\\\"theme\\\":4,\\\"name\\\":\\\"残响·双焰流光刺剑\\\"},{\\\"id\\\":\\\"i2\\\",\\\"slot\\\":\\\"armor\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":1,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-armor-4-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":4,\\\"name\\\":\\\"残响·泉铠守誓壁垒\\\"},{\\\"id\\\":\\\"i3\\\",\\\"slot\\\":\\\"relic\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":3,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-relic-5-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":5,\\\"name\\\":\\\"残响·回潮守誓心核\\\"}],\\\"equipped\\\":{\\\"weapon\\\":\\\"i1\\\",\\\"armor\\\":\\\"i2\\\",\\\"relic\\\":\\\"i3\\\",\\\"relic2\\\":null,\\\"relic3\\\":null}},\\\"qaRecovery\\\":{\\\"unicode\\\":\\\"本页完整旅途 🧭\\\",\\\"nested\\\":[null,{\\\"futureField\\\":true}]}}\"}"
+        },
+        {
+          "sequence": 26,
+          "mode": null,
+          "kind": "read",
+          "key": "dice-abyss:mirror:v1",
+          "value": "{\"format\":\"dice-abyss\",\"version\":5,\"checksum\":\"34b21864\",\"payload\":\"{\\\"version\\\":5,\\\"revision\\\":0,\\\"runId\\\":\\\"round13-native-memory\\\",\\\"rng\\\":3748896326,\\\"nextId\\\":4,\\\"floor\\\":1,\\\"phase\\\":\\\"fate\\\",\\\"route\\\":[],\\\"roomIndex\\\":0,\\\"fate\\\":null,\\\"enemy\\\":null,\\\"chest\\\":null,\\\"loot\\\":null,\\\"shop\\\":[],\\\"lastRoll\\\":null,\\\"lastForge\\\":null,\\\"log\\\":[{\\\"text\\\":\\\"你踏入了遗忘入口。\\\",\\\"tone\\\":\\\"\\\"}],\\\"completed\\\":false,\\\"event\\\":null,\\\"eventLuck\\\":0,\\\"eventPower\\\":0,\\\"encounterHistory\\\":[],\\\"routeMemory\\\":{\\\"services\\\":[],\\\"last\\\":{},\\\"hiddenFloor\\\":0},\\\"v5Boons\\\":{\\\"echo\\\":0,\\\"ward\\\":0},\\\"nextLuck\\\":0,\\\"counters\\\":{\\\"rolls\\\":0,\\\"kills\\\":0,\\\"chests\\\":0,\\\"deaths\\\":0,\\\"highestDamage\\\":0,\\\"bosses\\\":0},\\\"player\\\":{\\\"level\\\":1,\\\"xp\\\":0,\\\"gold\\\":80,\\\"hp\\\":165,\\\"talentPoints\\\":0,\\\"deepOfferings\\\":0,\\\"pactScars\\\":0,\\\"fateBlessings\\\":0,\\\"talents\\\":{\\\"high\\\":0,\\\"four\\\":0,\\\"five\\\":0,\\\"six\\\":0,\\\"sum\\\":0,\\\"power\\\":0,\\\"resonance\\\":0,\\\"pair\\\":0,\\\"triple\\\":0,\\\"quartet\\\":0,\\\"choir\\\":0,\\\"echo\\\":0,\\\"critical\\\":0,\\\"keen\\\":0,\\\"crush\\\":0,\\\"pursuit\\\":0,\\\"opener\\\":0,\\\"slayer\\\":0,\\\"vitality\\\":0,\\\"guard\\\":0,\\\"leech\\\":0,\\\"recovery\\\":0,\\\"fortune\\\":0,\\\"smith\\\":0,\\\"luck\\\":0,\\\"attune\\\":0,\\\"omen\\\":0,\\\"mercy\\\":0,\\\"jackpot\\\":0,\\\"spark\\\":0,\\\"shatter\\\":0,\\\"diversity\\\":0,\\\"finality\\\":0,\\\"deepEcho\\\":0,\\\"chorusMend\\\":0,\\\"tripleBlade\\\":0,\\\"firstFire\\\":0,\\\"critAegis\\\":0,\\\"dawnCrit\\\":0,\\\"emberGuard\\\":0,\\\"phaseShelter\\\":0,\\\"lastResolve\\\":0,\\\"hunterStar\\\":0,\\\"gildedFaces\\\":0,\\\"sixRebirth\\\":0},\\\"items\\\":[{\\\"id\\\":\\\"i1\\\",\\\"slot\\\":\\\"weapon\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":2,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-weapon-3-1-0\\\",\\\"profile\\\":1,\\\"theme\\\":4,\\\"name\\\":\\\"残响·双焰流光刺剑\\\"},{\\\"id\\\":\\\"i2\\\",\\\"slot\\\":\\\"armor\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":1,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-armor-4-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":4,\\\"name\\\":\\\"残响·泉铠守誓壁垒\\\"},{\\\"id\\\":\\\"i3\\\",\\\"slot\\\":\\\"relic\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":3,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-relic-5-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":5,\\\"name\\\":\\\"残响·回潮守誓心核\\\"}],\\\"equipped\\\":{\\\"weapon\\\":\\\"i1\\\",\\\"armor\\\":\\\"i2\\\",\\\"relic\\\":\\\"i3\\\",\\\"relic2\\\":null,\\\"relic3\\\":null}},\\\"qaRecovery\\\":{\\\"unicode\\\":\\\"本页完整旅途 🧭\\\",\\\"nested\\\":[null,{\\\"futureField\\\":true}]}}\"}"
+        },
+        {
+          "sequence": 27,
+          "mode": null,
+          "kind": "read",
+          "key": "dice-abyss:save:v1",
+          "value": "{\"format\":\"dice-abyss\",\"version\":5,\"checksum\":\"34b21864\",\"payload\":\"{\\\"version\\\":5,\\\"revision\\\":0,\\\"runId\\\":\\\"round13-native-memory\\\",\\\"rng\\\":3748896326,\\\"nextId\\\":4,\\\"floor\\\":1,\\\"phase\\\":\\\"fate\\\",\\\"route\\\":[],\\\"roomIndex\\\":0,\\\"fate\\\":null,\\\"enemy\\\":null,\\\"chest\\\":null,\\\"loot\\\":null,\\\"shop\\\":[],\\\"lastRoll\\\":null,\\\"lastForge\\\":null,\\\"log\\\":[{\\\"text\\\":\\\"你踏入了遗忘入口。\\\",\\\"tone\\\":\\\"\\\"}],\\\"completed\\\":false,\\\"event\\\":null,\\\"eventLuck\\\":0,\\\"eventPower\\\":0,\\\"encounterHistory\\\":[],\\\"routeMemory\\\":{\\\"services\\\":[],\\\"last\\\":{},\\\"hiddenFloor\\\":0},\\\"v5Boons\\\":{\\\"echo\\\":0,\\\"ward\\\":0},\\\"nextLuck\\\":0,\\\"counters\\\":{\\\"rolls\\\":0,\\\"kills\\\":0,\\\"chests\\\":0,\\\"deaths\\\":0,\\\"highestDamage\\\":0,\\\"bosses\\\":0},\\\"player\\\":{\\\"level\\\":1,\\\"xp\\\":0,\\\"gold\\\":80,\\\"hp\\\":165,\\\"talentPoints\\\":0,\\\"deepOfferings\\\":0,\\\"pactScars\\\":0,\\\"fateBlessings\\\":0,\\\"talents\\\":{\\\"high\\\":0,\\\"four\\\":0,\\\"five\\\":0,\\\"six\\\":0,\\\"sum\\\":0,\\\"power\\\":0,\\\"resonance\\\":0,\\\"pair\\\":0,\\\"triple\\\":0,\\\"quartet\\\":0,\\\"choir\\\":0,\\\"echo\\\":0,\\\"critical\\\":0,\\\"keen\\\":0,\\\"crush\\\":0,\\\"pursuit\\\":0,\\\"opener\\\":0,\\\"slayer\\\":0,\\\"vitality\\\":0,\\\"guard\\\":0,\\\"leech\\\":0,\\\"recovery\\\":0,\\\"fortune\\\":0,\\\"smith\\\":0,\\\"luck\\\":0,\\\"attune\\\":0,\\\"omen\\\":0,\\\"mercy\\\":0,\\\"jackpot\\\":0,\\\"spark\\\":0,\\\"shatter\\\":0,\\\"diversity\\\":0,\\\"finality\\\":0,\\\"deepEcho\\\":0,\\\"chorusMend\\\":0,\\\"tripleBlade\\\":0,\\\"firstFire\\\":0,\\\"critAegis\\\":0,\\\"dawnCrit\\\":0,\\\"emberGuard\\\":0,\\\"phaseShelter\\\":0,\\\"lastResolve\\\":0,\\\"hunterStar\\\":0,\\\"gildedFaces\\\":0,\\\"sixRebirth\\\":0},\\\"items\\\":[{\\\"id\\\":\\\"i1\\\",\\\"slot\\\":\\\"weapon\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":2,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-weapon-3-1-0\\\",\\\"profile\\\":1,\\\"theme\\\":4,\\\"name\\\":\\\"残响·双焰流光刺剑\\\"},{\\\"id\\\":\\\"i2\\\",\\\"slot\\\":\\\"armor\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":1,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-armor-4-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":4,\\\"name\\\":\\\"残响·泉铠守誓壁垒\\\"},{\\\"id\\\":\\\"i3\\\",\\\"slot\\\":\\\"relic\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":3,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-relic-5-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":5,\\\"name\\\":\\\"残响·回潮守誓心核\\\"}],\\\"equipped\\\":{\\\"weapon\\\":\\\"i1\\\",\\\"armor\\\":\\\"i2\\\",\\\"relic\\\":\\\"i3\\\",\\\"relic2\\\":null,\\\"relic3\\\":null}},\\\"qaRecovery\\\":{\\\"unicode\\\":\\\"本页完整旅途 🧭\\\",\\\"nested\\\":[null,{\\\"futureField\\\":true}]}}\"}"
+        },
+        {
+          "sequence": 28,
+          "mode": null,
+          "kind": "read",
+          "key": "dice-abyss:mirror:v1",
+          "value": "{\"format\":\"dice-abyss\",\"version\":5,\"checksum\":\"34b21864\",\"payload\":\"{\\\"version\\\":5,\\\"revision\\\":0,\\\"runId\\\":\\\"round13-native-memory\\\",\\\"rng\\\":3748896326,\\\"nextId\\\":4,\\\"floor\\\":1,\\\"phase\\\":\\\"fate\\\",\\\"route\\\":[],\\\"roomIndex\\\":0,\\\"fate\\\":null,\\\"enemy\\\":null,\\\"chest\\\":null,\\\"loot\\\":null,\\\"shop\\\":[],\\\"lastRoll\\\":null,\\\"lastForge\\\":null,\\\"log\\\":[{\\\"text\\\":\\\"你踏入了遗忘入口。\\\",\\\"tone\\\":\\\"\\\"}],\\\"completed\\\":false,\\\"event\\\":null,\\\"eventLuck\\\":0,\\\"eventPower\\\":0,\\\"encounterHistory\\\":[],\\\"routeMemory\\\":{\\\"services\\\":[],\\\"last\\\":{},\\\"hiddenFloor\\\":0},\\\"v5Boons\\\":{\\\"echo\\\":0,\\\"ward\\\":0},\\\"nextLuck\\\":0,\\\"counters\\\":{\\\"rolls\\\":0,\\\"kills\\\":0,\\\"chests\\\":0,\\\"deaths\\\":0,\\\"highestDamage\\\":0,\\\"bosses\\\":0},\\\"player\\\":{\\\"level\\\":1,\\\"xp\\\":0,\\\"gold\\\":80,\\\"hp\\\":165,\\\"talentPoints\\\":0,\\\"deepOfferings\\\":0,\\\"pactScars\\\":0,\\\"fateBlessings\\\":0,\\\"talents\\\":{\\\"high\\\":0,\\\"four\\\":0,\\\"five\\\":0,\\\"six\\\":0,\\\"sum\\\":0,\\\"power\\\":0,\\\"resonance\\\":0,\\\"pair\\\":0,\\\"triple\\\":0,\\\"quartet\\\":0,\\\"choir\\\":0,\\\"echo\\\":0,\\\"critical\\\":0,\\\"keen\\\":0,\\\"crush\\\":0,\\\"pursuit\\\":0,\\\"opener\\\":0,\\\"slayer\\\":0,\\\"vitality\\\":0,\\\"guard\\\":0,\\\"leech\\\":0,\\\"recovery\\\":0,\\\"fortune\\\":0,\\\"smith\\\":0,\\\"luck\\\":0,\\\"attune\\\":0,\\\"omen\\\":0,\\\"mercy\\\":0,\\\"jackpot\\\":0,\\\"spark\\\":0,\\\"shatter\\\":0,\\\"diversity\\\":0,\\\"finality\\\":0,\\\"deepEcho\\\":0,\\\"chorusMend\\\":0,\\\"tripleBlade\\\":0,\\\"firstFire\\\":0,\\\"critAegis\\\":0,\\\"dawnCrit\\\":0,\\\"emberGuard\\\":0,\\\"phaseShelter\\\":0,\\\"lastResolve\\\":0,\\\"hunterStar\\\":0,\\\"gildedFaces\\\":0,\\\"sixRebirth\\\":0},\\\"items\\\":[{\\\"id\\\":\\\"i1\\\",\\\"slot\\\":\\\"weapon\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":2,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-weapon-3-1-0\\\",\\\"profile\\\":1,\\\"theme\\\":4,\\\"name\\\":\\\"残响·双焰流光刺剑\\\"},{\\\"id\\\":\\\"i2\\\",\\\"slot\\\":\\\"armor\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":1,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-armor-4-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":4,\\\"name\\\":\\\"残响·泉铠守誓壁垒\\\"},{\\\"id\\\":\\\"i3\\\",\\\"slot\\\":\\\"relic\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":3,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-relic-5-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":5,\\\"name\\\":\\\"残响·回潮守誓心核\\\"}],\\\"equipped\\\":{\\\"weapon\\\":\\\"i1\\\",\\\"armor\\\":\\\"i2\\\",\\\"relic\\\":\\\"i3\\\",\\\"relic2\\\":null,\\\"relic3\\\":null}},\\\"qaRecovery\\\":{\\\"unicode\\\":\\\"本页完整旅途 🧭\\\",\\\"nested\\\":[null,{\\\"futureField\\\":true}]}}\"}"
+        },
+        {
+          "sequence": 29,
+          "mode": null,
+          "kind": "read",
+          "key": "dice-abyss:save:v1",
+          "value": "{\"format\":\"dice-abyss\",\"version\":5,\"checksum\":\"34b21864\",\"payload\":\"{\\\"version\\\":5,\\\"revision\\\":0,\\\"runId\\\":\\\"round13-native-memory\\\",\\\"rng\\\":3748896326,\\\"nextId\\\":4,\\\"floor\\\":1,\\\"phase\\\":\\\"fate\\\",\\\"route\\\":[],\\\"roomIndex\\\":0,\\\"fate\\\":null,\\\"enemy\\\":null,\\\"chest\\\":null,\\\"loot\\\":null,\\\"shop\\\":[],\\\"lastRoll\\\":null,\\\"lastForge\\\":null,\\\"log\\\":[{\\\"text\\\":\\\"你踏入了遗忘入口。\\\",\\\"tone\\\":\\\"\\\"}],\\\"completed\\\":false,\\\"event\\\":null,\\\"eventLuck\\\":0,\\\"eventPower\\\":0,\\\"encounterHistory\\\":[],\\\"routeMemory\\\":{\\\"services\\\":[],\\\"last\\\":{},\\\"hiddenFloor\\\":0},\\\"v5Boons\\\":{\\\"echo\\\":0,\\\"ward\\\":0},\\\"nextLuck\\\":0,\\\"counters\\\":{\\\"rolls\\\":0,\\\"kills\\\":0,\\\"chests\\\":0,\\\"deaths\\\":0,\\\"highestDamage\\\":0,\\\"bosses\\\":0},\\\"player\\\":{\\\"level\\\":1,\\\"xp\\\":0,\\\"gold\\\":80,\\\"hp\\\":165,\\\"talentPoints\\\":0,\\\"deepOfferings\\\":0,\\\"pactScars\\\":0,\\\"fateBlessings\\\":0,\\\"talents\\\":{\\\"high\\\":0,\\\"four\\\":0,\\\"five\\\":0,\\\"six\\\":0,\\\"sum\\\":0,\\\"power\\\":0,\\\"resonance\\\":0,\\\"pair\\\":0,\\\"triple\\\":0,\\\"quartet\\\":0,\\\"choir\\\":0,\\\"echo\\\":0,\\\"critical\\\":0,\\\"keen\\\":0,\\\"crush\\\":0,\\\"pursuit\\\":0,\\\"opener\\\":0,\\\"slayer\\\":0,\\\"vitality\\\":0,\\\"guard\\\":0,\\\"leech\\\":0,\\\"recovery\\\":0,\\\"fortune\\\":0,\\\"smith\\\":0,\\\"luck\\\":0,\\\"attune\\\":0,\\\"omen\\\":0,\\\"mercy\\\":0,\\\"jackpot\\\":0,\\\"spark\\\":0,\\\"shatter\\\":0,\\\"diversity\\\":0,\\\"finality\\\":0,\\\"deepEcho\\\":0,\\\"chorusMend\\\":0,\\\"tripleBlade\\\":0,\\\"firstFire\\\":0,\\\"critAegis\\\":0,\\\"dawnCrit\\\":0,\\\"emberGuard\\\":0,\\\"phaseShelter\\\":0,\\\"lastResolve\\\":0,\\\"hunterStar\\\":0,\\\"gildedFaces\\\":0,\\\"sixRebirth\\\":0},\\\"items\\\":[{\\\"id\\\":\\\"i1\\\",\\\"slot\\\":\\\"weapon\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":2,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-weapon-3-1-0\\\",\\\"profile\\\":1,\\\"theme\\\":4,\\\"name\\\":\\\"残响·双焰流光刺剑\\\"},{\\\"id\\\":\\\"i2\\\",\\\"slot\\\":\\\"armor\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":1,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-armor-4-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":4,\\\"name\\\":\\\"残响·泉铠守誓壁垒\\\"},{\\\"id\\\":\\\"i3\\\",\\\"slot\\\":\\\"relic\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":3,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-relic-5-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":5,\\\"name\\\":\\\"残响·回潮守誓心核\\\"}],\\\"equipped\\\":{\\\"weapon\\\":\\\"i1\\\",\\\"armor\\\":\\\"i2\\\",\\\"relic\\\":\\\"i3\\\",\\\"relic2\\\":null,\\\"relic3\\\":null}},\\\"qaRecovery\\\":{\\\"unicode\\\":\\\"本页完整旅途 🧭\\\",\\\"nested\\\":[null,{\\\"futureField\\\":true}]}}\"}"
+        },
+        {
+          "sequence": 30,
+          "mode": null,
+          "kind": "read",
+          "key": "dice-abyss:mirror:v1",
+          "value": "{\"format\":\"dice-abyss\",\"version\":5,\"checksum\":\"34b21864\",\"payload\":\"{\\\"version\\\":5,\\\"revision\\\":0,\\\"runId\\\":\\\"round13-native-memory\\\",\\\"rng\\\":3748896326,\\\"nextId\\\":4,\\\"floor\\\":1,\\\"phase\\\":\\\"fate\\\",\\\"route\\\":[],\\\"roomIndex\\\":0,\\\"fate\\\":null,\\\"enemy\\\":null,\\\"chest\\\":null,\\\"loot\\\":null,\\\"shop\\\":[],\\\"lastRoll\\\":null,\\\"lastForge\\\":null,\\\"log\\\":[{\\\"text\\\":\\\"你踏入了遗忘入口。\\\",\\\"tone\\\":\\\"\\\"}],\\\"completed\\\":false,\\\"event\\\":null,\\\"eventLuck\\\":0,\\\"eventPower\\\":0,\\\"encounterHistory\\\":[],\\\"routeMemory\\\":{\\\"services\\\":[],\\\"last\\\":{},\\\"hiddenFloor\\\":0},\\\"v5Boons\\\":{\\\"echo\\\":0,\\\"ward\\\":0},\\\"nextLuck\\\":0,\\\"counters\\\":{\\\"rolls\\\":0,\\\"kills\\\":0,\\\"chests\\\":0,\\\"deaths\\\":0,\\\"highestDamage\\\":0,\\\"bosses\\\":0},\\\"player\\\":{\\\"level\\\":1,\\\"xp\\\":0,\\\"gold\\\":80,\\\"hp\\\":165,\\\"talentPoints\\\":0,\\\"deepOfferings\\\":0,\\\"pactScars\\\":0,\\\"fateBlessings\\\":0,\\\"talents\\\":{\\\"high\\\":0,\\\"four\\\":0,\\\"five\\\":0,\\\"six\\\":0,\\\"sum\\\":0,\\\"power\\\":0,\\\"resonance\\\":0,\\\"pair\\\":0,\\\"triple\\\":0,\\\"quartet\\\":0,\\\"choir\\\":0,\\\"echo\\\":0,\\\"critical\\\":0,\\\"keen\\\":0,\\\"crush\\\":0,\\\"pursuit\\\":0,\\\"opener\\\":0,\\\"slayer\\\":0,\\\"vitality\\\":0,\\\"guard\\\":0,\\\"leech\\\":0,\\\"recovery\\\":0,\\\"fortune\\\":0,\\\"smith\\\":0,\\\"luck\\\":0,\\\"attune\\\":0,\\\"omen\\\":0,\\\"mercy\\\":0,\\\"jackpot\\\":0,\\\"spark\\\":0,\\\"shatter\\\":0,\\\"diversity\\\":0,\\\"finality\\\":0,\\\"deepEcho\\\":0,\\\"chorusMend\\\":0,\\\"tripleBlade\\\":0,\\\"firstFire\\\":0,\\\"critAegis\\\":0,\\\"dawnCrit\\\":0,\\\"emberGuard\\\":0,\\\"phaseShelter\\\":0,\\\"lastResolve\\\":0,\\\"hunterStar\\\":0,\\\"gildedFaces\\\":0,\\\"sixRebirth\\\":0},\\\"items\\\":[{\\\"id\\\":\\\"i1\\\",\\\"slot\\\":\\\"weapon\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":2,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-weapon-3-1-0\\\",\\\"profile\\\":1,\\\"theme\\\":4,\\\"name\\\":\\\"残响·双焰流光刺剑\\\"},{\\\"id\\\":\\\"i2\\\",\\\"slot\\\":\\\"armor\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":1,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-armor-4-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":4,\\\"name\\\":\\\"残响·泉铠守誓壁垒\\\"},{\\\"id\\\":\\\"i3\\\",\\\"slot\\\":\\\"relic\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":3,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-relic-5-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":5,\\\"name\\\":\\\"残响·回潮守誓心核\\\"}],\\\"equipped\\\":{\\\"weapon\\\":\\\"i1\\\",\\\"armor\\\":\\\"i2\\\",\\\"relic\\\":\\\"i3\\\",\\\"relic2\\\":null,\\\"relic3\\\":null}},\\\"qaRecovery\\\":{\\\"unicode\\\":\\\"本页完整旅途 🧭\\\",\\\"nested\\\":[null,{\\\"futureField\\\":true}]}}\"}"
+        },
+        {
+          "sequence": 31,
+          "mode": null,
+          "kind": "read",
+          "key": "dice-abyss:save:v1",
+          "value": "{\"format\":\"dice-abyss\",\"version\":5,\"checksum\":\"34b21864\",\"payload\":\"{\\\"version\\\":5,\\\"revision\\\":0,\\\"runId\\\":\\\"round13-native-memory\\\",\\\"rng\\\":3748896326,\\\"nextId\\\":4,\\\"floor\\\":1,\\\"phase\\\":\\\"fate\\\",\\\"route\\\":[],\\\"roomIndex\\\":0,\\\"fate\\\":null,\\\"enemy\\\":null,\\\"chest\\\":null,\\\"loot\\\":null,\\\"shop\\\":[],\\\"lastRoll\\\":null,\\\"lastForge\\\":null,\\\"log\\\":[{\\\"text\\\":\\\"你踏入了遗忘入口。\\\",\\\"tone\\\":\\\"\\\"}],\\\"completed\\\":false,\\\"event\\\":null,\\\"eventLuck\\\":0,\\\"eventPower\\\":0,\\\"encounterHistory\\\":[],\\\"routeMemory\\\":{\\\"services\\\":[],\\\"last\\\":{},\\\"hiddenFloor\\\":0},\\\"v5Boons\\\":{\\\"echo\\\":0,\\\"ward\\\":0},\\\"nextLuck\\\":0,\\\"counters\\\":{\\\"rolls\\\":0,\\\"kills\\\":0,\\\"chests\\\":0,\\\"deaths\\\":0,\\\"highestDamage\\\":0,\\\"bosses\\\":0},\\\"player\\\":{\\\"level\\\":1,\\\"xp\\\":0,\\\"gold\\\":80,\\\"hp\\\":165,\\\"talentPoints\\\":0,\\\"deepOfferings\\\":0,\\\"pactScars\\\":0,\\\"fateBlessings\\\":0,\\\"talents\\\":{\\\"high\\\":0,\\\"four\\\":0,\\\"five\\\":0,\\\"six\\\":0,\\\"sum\\\":0,\\\"power\\\":0,\\\"resonance\\\":0,\\\"pair\\\":0,\\\"triple\\\":0,\\\"quartet\\\":0,\\\"choir\\\":0,\\\"echo\\\":0,\\\"critical\\\":0,\\\"keen\\\":0,\\\"crush\\\":0,\\\"pursuit\\\":0,\\\"opener\\\":0,\\\"slayer\\\":0,\\\"vitality\\\":0,\\\"guard\\\":0,\\\"leech\\\":0,\\\"recovery\\\":0,\\\"fortune\\\":0,\\\"smith\\\":0,\\\"luck\\\":0,\\\"attune\\\":0,\\\"omen\\\":0,\\\"mercy\\\":0,\\\"jackpot\\\":0,\\\"spark\\\":0,\\\"shatter\\\":0,\\\"diversity\\\":0,\\\"finality\\\":0,\\\"deepEcho\\\":0,\\\"chorusMend\\\":0,\\\"tripleBlade\\\":0,\\\"firstFire\\\":0,\\\"critAegis\\\":0,\\\"dawnCrit\\\":0,\\\"emberGuard\\\":0,\\\"phaseShelter\\\":0,\\\"lastResolve\\\":0,\\\"hunterStar\\\":0,\\\"gildedFaces\\\":0,\\\"sixRebirth\\\":0},\\\"items\\\":[{\\\"id\\\":\\\"i1\\\",\\\"slot\\\":\\\"weapon\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":2,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-weapon-3-1-0\\\",\\\"profile\\\":1,\\\"theme\\\":4,\\\"name\\\":\\\"残响·双焰流光刺剑\\\"},{\\\"id\\\":\\\"i2\\\",\\\"slot\\\":\\\"armor\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":1,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-armor-4-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":4,\\\"name\\\":\\\"残响·泉铠守誓壁垒\\\"},{\\\"id\\\":\\\"i3\\\",\\\"slot\\\":\\\"relic\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":3,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-relic-5-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":5,\\\"name\\\":\\\"残响·回潮守誓心核\\\"}],\\\"equipped\\\":{\\\"weapon\\\":\\\"i1\\\",\\\"armor\\\":\\\"i2\\\",\\\"relic\\\":\\\"i3\\\",\\\"relic2\\\":null,\\\"relic3\\\":null}},\\\"qaRecovery\\\":{\\\"unicode\\\":\\\"本页完整旅途 🧭\\\",\\\"nested\\\":[null,{\\\"futureField\\\":true}]}}\"}"
+        },
+        {
+          "sequence": 32,
+          "mode": null,
+          "kind": "read",
+          "key": "dice-abyss:mirror:v1",
+          "value": "{\"format\":\"dice-abyss\",\"version\":5,\"checksum\":\"34b21864\",\"payload\":\"{\\\"version\\\":5,\\\"revision\\\":0,\\\"runId\\\":\\\"round13-native-memory\\\",\\\"rng\\\":3748896326,\\\"nextId\\\":4,\\\"floor\\\":1,\\\"phase\\\":\\\"fate\\\",\\\"route\\\":[],\\\"roomIndex\\\":0,\\\"fate\\\":null,\\\"enemy\\\":null,\\\"chest\\\":null,\\\"loot\\\":null,\\\"shop\\\":[],\\\"lastRoll\\\":null,\\\"lastForge\\\":null,\\\"log\\\":[{\\\"text\\\":\\\"你踏入了遗忘入口。\\\",\\\"tone\\\":\\\"\\\"}],\\\"completed\\\":false,\\\"event\\\":null,\\\"eventLuck\\\":0,\\\"eventPower\\\":0,\\\"encounterHistory\\\":[],\\\"routeMemory\\\":{\\\"services\\\":[],\\\"last\\\":{},\\\"hiddenFloor\\\":0},\\\"v5Boons\\\":{\\\"echo\\\":0,\\\"ward\\\":0},\\\"nextLuck\\\":0,\\\"counters\\\":{\\\"rolls\\\":0,\\\"kills\\\":0,\\\"chests\\\":0,\\\"deaths\\\":0,\\\"highestDamage\\\":0,\\\"bosses\\\":0},\\\"player\\\":{\\\"level\\\":1,\\\"xp\\\":0,\\\"gold\\\":80,\\\"hp\\\":165,\\\"talentPoints\\\":0,\\\"deepOfferings\\\":0,\\\"pactScars\\\":0,\\\"fateBlessings\\\":0,\\\"talents\\\":{\\\"high\\\":0,\\\"four\\\":0,\\\"five\\\":0,\\\"six\\\":0,\\\"sum\\\":0,\\\"power\\\":0,\\\"resonance\\\":0,\\\"pair\\\":0,\\\"triple\\\":0,\\\"quartet\\\":0,\\\"choir\\\":0,\\\"echo\\\":0,\\\"critical\\\":0,\\\"keen\\\":0,\\\"crush\\\":0,\\\"pursuit\\\":0,\\\"opener\\\":0,\\\"slayer\\\":0,\\\"vitality\\\":0,\\\"guard\\\":0,\\\"leech\\\":0,\\\"recovery\\\":0,\\\"fortune\\\":0,\\\"smith\\\":0,\\\"luck\\\":0,\\\"attune\\\":0,\\\"omen\\\":0,\\\"mercy\\\":0,\\\"jackpot\\\":0,\\\"spark\\\":0,\\\"shatter\\\":0,\\\"diversity\\\":0,\\\"finality\\\":0,\\\"deepEcho\\\":0,\\\"chorusMend\\\":0,\\\"tripleBlade\\\":0,\\\"firstFire\\\":0,\\\"critAegis\\\":0,\\\"dawnCrit\\\":0,\\\"emberGuard\\\":0,\\\"phaseShelter\\\":0,\\\"lastResolve\\\":0,\\\"hunterStar\\\":0,\\\"gildedFaces\\\":0,\\\"sixRebirth\\\":0},\\\"items\\\":[{\\\"id\\\":\\\"i1\\\",\\\"slot\\\":\\\"weapon\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":2,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-weapon-3-1-0\\\",\\\"profile\\\":1,\\\"theme\\\":4,\\\"name\\\":\\\"残响·双焰流光刺剑\\\"},{\\\"id\\\":\\\"i2\\\",\\\"slot\\\":\\\"armor\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":1,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-armor-4-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":4,\\\"name\\\":\\\"残响·泉铠守誓壁垒\\\"},{\\\"id\\\":\\\"i3\\\",\\\"slot\\\":\\\"relic\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":3,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-relic-5-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":5,\\\"name\\\":\\\"残响·回潮守誓心核\\\"}],\\\"equipped\\\":{\\\"weapon\\\":\\\"i1\\\",\\\"armor\\\":\\\"i2\\\",\\\"relic\\\":\\\"i3\\\",\\\"relic2\\\":null,\\\"relic3\\\":null}},\\\"qaRecovery\\\":{\\\"unicode\\\":\\\"本页完整旅途 🧭\\\",\\\"nested\\\":[null,{\\\"futureField\\\":true}]}}\"}"
+        },
+        {
+          "sequence": 33,
+          "mode": null,
+          "kind": "read",
+          "key": "dice-abyss:save:v1",
+          "value": "{\"format\":\"dice-abyss\",\"version\":5,\"checksum\":\"34b21864\",\"payload\":\"{\\\"version\\\":5,\\\"revision\\\":0,\\\"runId\\\":\\\"round13-native-memory\\\",\\\"rng\\\":3748896326,\\\"nextId\\\":4,\\\"floor\\\":1,\\\"phase\\\":\\\"fate\\\",\\\"route\\\":[],\\\"roomIndex\\\":0,\\\"fate\\\":null,\\\"enemy\\\":null,\\\"chest\\\":null,\\\"loot\\\":null,\\\"shop\\\":[],\\\"lastRoll\\\":null,\\\"lastForge\\\":null,\\\"log\\\":[{\\\"text\\\":\\\"你踏入了遗忘入口。\\\",\\\"tone\\\":\\\"\\\"}],\\\"completed\\\":false,\\\"event\\\":null,\\\"eventLuck\\\":0,\\\"eventPower\\\":0,\\\"encounterHistory\\\":[],\\\"routeMemory\\\":{\\\"services\\\":[],\\\"last\\\":{},\\\"hiddenFloor\\\":0},\\\"v5Boons\\\":{\\\"echo\\\":0,\\\"ward\\\":0},\\\"nextLuck\\\":0,\\\"counters\\\":{\\\"rolls\\\":0,\\\"kills\\\":0,\\\"chests\\\":0,\\\"deaths\\\":0,\\\"highestDamage\\\":0,\\\"bosses\\\":0},\\\"player\\\":{\\\"level\\\":1,\\\"xp\\\":0,\\\"gold\\\":80,\\\"hp\\\":165,\\\"talentPoints\\\":0,\\\"deepOfferings\\\":0,\\\"pactScars\\\":0,\\\"fateBlessings\\\":0,\\\"talents\\\":{\\\"high\\\":0,\\\"four\\\":0,\\\"five\\\":0,\\\"six\\\":0,\\\"sum\\\":0,\\\"power\\\":0,\\\"resonance\\\":0,\\\"pair\\\":0,\\\"triple\\\":0,\\\"quartet\\\":0,\\\"choir\\\":0,\\\"echo\\\":0,\\\"critical\\\":0,\\\"keen\\\":0,\\\"crush\\\":0,\\\"pursuit\\\":0,\\\"opener\\\":0,\\\"slayer\\\":0,\\\"vitality\\\":0,\\\"guard\\\":0,\\\"leech\\\":0,\\\"recovery\\\":0,\\\"fortune\\\":0,\\\"smith\\\":0,\\\"luck\\\":0,\\\"attune\\\":0,\\\"omen\\\":0,\\\"mercy\\\":0,\\\"jackpot\\\":0,\\\"spark\\\":0,\\\"shatter\\\":0,\\\"diversity\\\":0,\\\"finality\\\":0,\\\"deepEcho\\\":0,\\\"chorusMend\\\":0,\\\"tripleBlade\\\":0,\\\"firstFire\\\":0,\\\"critAegis\\\":0,\\\"dawnCrit\\\":0,\\\"emberGuard\\\":0,\\\"phaseShelter\\\":0,\\\"lastResolve\\\":0,\\\"hunterStar\\\":0,\\\"gildedFaces\\\":0,\\\"sixRebirth\\\":0},\\\"items\\\":[{\\\"id\\\":\\\"i1\\\",\\\"slot\\\":\\\"weapon\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":2,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-weapon-3-1-0\\\",\\\"profile\\\":1,\\\"theme\\\":4,\\\"name\\\":\\\"残响·双焰流光刺剑\\\"},{\\\"id\\\":\\\"i2\\\",\\\"slot\\\":\\\"armor\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":1,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-armor-4-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":4,\\\"name\\\":\\\"残响·泉铠守誓壁垒\\\"},{\\\"id\\\":\\\"i3\\\",\\\"slot\\\":\\\"relic\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":3,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-relic-5-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":5,\\\"name\\\":\\\"残响·回潮守誓心核\\\"}],\\\"equipped\\\":{\\\"weapon\\\":\\\"i1\\\",\\\"armor\\\":\\\"i2\\\",\\\"relic\\\":\\\"i3\\\",\\\"relic2\\\":null,\\\"relic3\\\":null}},\\\"qaRecovery\\\":{\\\"unicode\\\":\\\"本页完整旅途 🧭\\\",\\\"nested\\\":[null,{\\\"futureField\\\":true}]}}\"}"
+        },
+        {
+          "sequence": 34,
+          "mode": null,
+          "kind": "read",
+          "key": "dice-abyss:mirror:v1",
+          "value": "{\"format\":\"dice-abyss\",\"version\":5,\"checksum\":\"34b21864\",\"payload\":\"{\\\"version\\\":5,\\\"revision\\\":0,\\\"runId\\\":\\\"round13-native-memory\\\",\\\"rng\\\":3748896326,\\\"nextId\\\":4,\\\"floor\\\":1,\\\"phase\\\":\\\"fate\\\",\\\"route\\\":[],\\\"roomIndex\\\":0,\\\"fate\\\":null,\\\"enemy\\\":null,\\\"chest\\\":null,\\\"loot\\\":null,\\\"shop\\\":[],\\\"lastRoll\\\":null,\\\"lastForge\\\":null,\\\"log\\\":[{\\\"text\\\":\\\"你踏入了遗忘入口。\\\",\\\"tone\\\":\\\"\\\"}],\\\"completed\\\":false,\\\"event\\\":null,\\\"eventLuck\\\":0,\\\"eventPower\\\":0,\\\"encounterHistory\\\":[],\\\"routeMemory\\\":{\\\"services\\\":[],\\\"last\\\":{},\\\"hiddenFloor\\\":0},\\\"v5Boons\\\":{\\\"echo\\\":0,\\\"ward\\\":0},\\\"nextLuck\\\":0,\\\"counters\\\":{\\\"rolls\\\":0,\\\"kills\\\":0,\\\"chests\\\":0,\\\"deaths\\\":0,\\\"highestDamage\\\":0,\\\"bosses\\\":0},\\\"player\\\":{\\\"level\\\":1,\\\"xp\\\":0,\\\"gold\\\":80,\\\"hp\\\":165,\\\"talentPoints\\\":0,\\\"deepOfferings\\\":0,\\\"pactScars\\\":0,\\\"fateBlessings\\\":0,\\\"talents\\\":{\\\"high\\\":0,\\\"four\\\":0,\\\"five\\\":0,\\\"six\\\":0,\\\"sum\\\":0,\\\"power\\\":0,\\\"resonance\\\":0,\\\"pair\\\":0,\\\"triple\\\":0,\\\"quartet\\\":0,\\\"choir\\\":0,\\\"echo\\\":0,\\\"critical\\\":0,\\\"keen\\\":0,\\\"crush\\\":0,\\\"pursuit\\\":0,\\\"opener\\\":0,\\\"slayer\\\":0,\\\"vitality\\\":0,\\\"guard\\\":0,\\\"leech\\\":0,\\\"recovery\\\":0,\\\"fortune\\\":0,\\\"smith\\\":0,\\\"luck\\\":0,\\\"attune\\\":0,\\\"omen\\\":0,\\\"mercy\\\":0,\\\"jackpot\\\":0,\\\"spark\\\":0,\\\"shatter\\\":0,\\\"diversity\\\":0,\\\"finality\\\":0,\\\"deepEcho\\\":0,\\\"chorusMend\\\":0,\\\"tripleBlade\\\":0,\\\"firstFire\\\":0,\\\"critAegis\\\":0,\\\"dawnCrit\\\":0,\\\"emberGuard\\\":0,\\\"phaseShelter\\\":0,\\\"lastResolve\\\":0,\\\"hunterStar\\\":0,\\\"gildedFaces\\\":0,\\\"sixRebirth\\\":0},\\\"items\\\":[{\\\"id\\\":\\\"i1\\\",\\\"slot\\\":\\\"weapon\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":2,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-weapon-3-1-0\\\",\\\"profile\\\":1,\\\"theme\\\":4,\\\"name\\\":\\\"残响·双焰流光刺剑\\\"},{\\\"id\\\":\\\"i2\\\",\\\"slot\\\":\\\"armor\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":1,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-armor-4-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":4,\\\"name\\\":\\\"残响·泉铠守誓壁垒\\\"},{\\\"id\\\":\\\"i3\\\",\\\"slot\\\":\\\"relic\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":3,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-relic-5-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":5,\\\"name\\\":\\\"残响·回潮守誓心核\\\"}],\\\"equipped\\\":{\\\"weapon\\\":\\\"i1\\\",\\\"armor\\\":\\\"i2\\\",\\\"relic\\\":\\\"i3\\\",\\\"relic2\\\":null,\\\"relic3\\\":null}},\\\"qaRecovery\\\":{\\\"unicode\\\":\\\"本页完整旅途 🧭\\\",\\\"nested\\\":[null,{\\\"futureField\\\":true}]}}\"}"
+        },
+        {
+          "sequence": 35,
+          "mode": "remove",
+          "kind": "read",
+          "key": "dice-abyss:save:v1",
+          "value": null
+        },
+        {
+          "sequence": 36,
+          "mode": "remove",
+          "kind": "read",
+          "key": "dice-abyss:mirror:v1",
+          "value": "{\"format\":\"dice-abyss\",\"version\":5,\"checksum\":\"34b21864\",\"payload\":\"{\\\"version\\\":5,\\\"revision\\\":0,\\\"runId\\\":\\\"round13-native-memory\\\",\\\"rng\\\":3748896326,\\\"nextId\\\":4,\\\"floor\\\":1,\\\"phase\\\":\\\"fate\\\",\\\"route\\\":[],\\\"roomIndex\\\":0,\\\"fate\\\":null,\\\"enemy\\\":null,\\\"chest\\\":null,\\\"loot\\\":null,\\\"shop\\\":[],\\\"lastRoll\\\":null,\\\"lastForge\\\":null,\\\"log\\\":[{\\\"text\\\":\\\"你踏入了遗忘入口。\\\",\\\"tone\\\":\\\"\\\"}],\\\"completed\\\":false,\\\"event\\\":null,\\\"eventLuck\\\":0,\\\"eventPower\\\":0,\\\"encounterHistory\\\":[],\\\"routeMemory\\\":{\\\"services\\\":[],\\\"last\\\":{},\\\"hiddenFloor\\\":0},\\\"v5Boons\\\":{\\\"echo\\\":0,\\\"ward\\\":0},\\\"nextLuck\\\":0,\\\"counters\\\":{\\\"rolls\\\":0,\\\"kills\\\":0,\\\"chests\\\":0,\\\"deaths\\\":0,\\\"highestDamage\\\":0,\\\"bosses\\\":0},\\\"player\\\":{\\\"level\\\":1,\\\"xp\\\":0,\\\"gold\\\":80,\\\"hp\\\":165,\\\"talentPoints\\\":0,\\\"deepOfferings\\\":0,\\\"pactScars\\\":0,\\\"fateBlessings\\\":0,\\\"talents\\\":{\\\"high\\\":0,\\\"four\\\":0,\\\"five\\\":0,\\\"six\\\":0,\\\"sum\\\":0,\\\"power\\\":0,\\\"resonance\\\":0,\\\"pair\\\":0,\\\"triple\\\":0,\\\"quartet\\\":0,\\\"choir\\\":0,\\\"echo\\\":0,\\\"critical\\\":0,\\\"keen\\\":0,\\\"crush\\\":0,\\\"pursuit\\\":0,\\\"opener\\\":0,\\\"slayer\\\":0,\\\"vitality\\\":0,\\\"guard\\\":0,\\\"leech\\\":0,\\\"recovery\\\":0,\\\"fortune\\\":0,\\\"smith\\\":0,\\\"luck\\\":0,\\\"attune\\\":0,\\\"omen\\\":0,\\\"mercy\\\":0,\\\"jackpot\\\":0,\\\"spark\\\":0,\\\"shatter\\\":0,\\\"diversity\\\":0,\\\"finality\\\":0,\\\"deepEcho\\\":0,\\\"chorusMend\\\":0,\\\"tripleBlade\\\":0,\\\"firstFire\\\":0,\\\"critAegis\\\":0,\\\"dawnCrit\\\":0,\\\"emberGuard\\\":0,\\\"phaseShelter\\\":0,\\\"lastResolve\\\":0,\\\"hunterStar\\\":0,\\\"gildedFaces\\\":0,\\\"sixRebirth\\\":0},\\\"items\\\":[{\\\"id\\\":\\\"i1\\\",\\\"slot\\\":\\\"weapon\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":2,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-weapon-3-1-0\\\",\\\"profile\\\":1,\\\"theme\\\":4,\\\"name\\\":\\\"残响·双焰流光刺剑\\\"},{\\\"id\\\":\\\"i2\\\",\\\"slot\\\":\\\"armor\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":1,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-armor-4-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":4,\\\"name\\\":\\\"残响·泉铠守誓壁垒\\\"},{\\\"id\\\":\\\"i3\\\",\\\"slot\\\":\\\"relic\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":3,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-relic-5-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":5,\\\"name\\\":\\\"残响·回潮守誓心核\\\"}],\\\"equipped\\\":{\\\"weapon\\\":\\\"i1\\\",\\\"armor\\\":\\\"i2\\\",\\\"relic\\\":\\\"i3\\\",\\\"relic2\\\":null,\\\"relic3\\\":null}},\\\"qaRecovery\\\":{\\\"unicode\\\":\\\"本页完整旅途 🧭\\\",\\\"nested\\\":[null,{\\\"futureField\\\":true}]}}\"}"
+        },
+        {
+          "sequence": 37,
+          "mode": "remove",
+          "kind": "capture-marker",
+          "key": "dice-abyss:save:v1",
+          "trusted": true,
+          "eventPhase": 2
+        },
+        {
+          "sequence": 38,
+          "mode": "remove",
+          "kind": "event-tail",
+          "key": "dice-abyss:save:v1",
+          "trusted": true,
+          "eventPhase": 2,
+          "protectedAfter": false,
+          "dialogOpenAfter": true
+        },
+        {
+          "sequence": 39,
+          "mode": "remove",
+          "kind": "read",
+          "key": "dice-abyss:save:v1",
+          "value": "{\"format\":\"dice-abyss\",\"version\":5,\"checksum\":\"34b21864\",\"payload\":\"{\\\"version\\\":5,\\\"revision\\\":0,\\\"runId\\\":\\\"round13-native-memory\\\",\\\"rng\\\":3748896326,\\\"nextId\\\":4,\\\"floor\\\":1,\\\"phase\\\":\\\"fate\\\",\\\"route\\\":[],\\\"roomIndex\\\":0,\\\"fate\\\":null,\\\"enemy\\\":null,\\\"chest\\\":null,\\\"loot\\\":null,\\\"shop\\\":[],\\\"lastRoll\\\":null,\\\"lastForge\\\":null,\\\"log\\\":[{\\\"text\\\":\\\"你踏入了遗忘入口。\\\",\\\"tone\\\":\\\"\\\"}],\\\"completed\\\":false,\\\"event\\\":null,\\\"eventLuck\\\":0,\\\"eventPower\\\":0,\\\"encounterHistory\\\":[],\\\"routeMemory\\\":{\\\"services\\\":[],\\\"last\\\":{},\\\"hiddenFloor\\\":0},\\\"v5Boons\\\":{\\\"echo\\\":0,\\\"ward\\\":0},\\\"nextLuck\\\":0,\\\"counters\\\":{\\\"rolls\\\":0,\\\"kills\\\":0,\\\"chests\\\":0,\\\"deaths\\\":0,\\\"highestDamage\\\":0,\\\"bosses\\\":0},\\\"player\\\":{\\\"level\\\":1,\\\"xp\\\":0,\\\"gold\\\":80,\\\"hp\\\":165,\\\"talentPoints\\\":0,\\\"deepOfferings\\\":0,\\\"pactScars\\\":0,\\\"fateBlessings\\\":0,\\\"talents\\\":{\\\"high\\\":0,\\\"four\\\":0,\\\"five\\\":0,\\\"six\\\":0,\\\"sum\\\":0,\\\"power\\\":0,\\\"resonance\\\":0,\\\"pair\\\":0,\\\"triple\\\":0,\\\"quartet\\\":0,\\\"choir\\\":0,\\\"echo\\\":0,\\\"critical\\\":0,\\\"keen\\\":0,\\\"crush\\\":0,\\\"pursuit\\\":0,\\\"opener\\\":0,\\\"slayer\\\":0,\\\"vitality\\\":0,\\\"guard\\\":0,\\\"leech\\\":0,\\\"recovery\\\":0,\\\"fortune\\\":0,\\\"smith\\\":0,\\\"luck\\\":0,\\\"attune\\\":0,\\\"omen\\\":0,\\\"mercy\\\":0,\\\"jackpot\\\":0,\\\"spark\\\":0,\\\"shatter\\\":0,\\\"diversity\\\":0,\\\"finality\\\":0,\\\"deepEcho\\\":0,\\\"chorusMend\\\":0,\\\"tripleBlade\\\":0,\\\"firstFire\\\":0,\\\"critAegis\\\":0,\\\"dawnCrit\\\":0,\\\"emberGuard\\\":0,\\\"phaseShelter\\\":0,\\\"lastResolve\\\":0,\\\"hunterStar\\\":0,\\\"gildedFaces\\\":0,\\\"sixRebirth\\\":0},\\\"items\\\":[{\\\"id\\\":\\\"i1\\\",\\\"slot\\\":\\\"weapon\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":2,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-weapon-3-1-0\\\",\\\"profile\\\":1,\\\"theme\\\":4,\\\"name\\\":\\\"残响·双焰流光刺剑\\\"},{\\\"id\\\":\\\"i2\\\",\\\"slot\\\":\\\"armor\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":1,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-armor-4-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":4,\\\"name\\\":\\\"残响·泉铠守誓壁垒\\\"},{\\\"id\\\":\\\"i3\\\",\\\"slot\\\":\\\"relic\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":3,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-relic-5-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":5,\\\"name\\\":\\\"残响·回潮守誓心核\\\"}],\\\"equipped\\\":{\\\"weapon\\\":\\\"i1\\\",\\\"armor\\\":\\\"i2\\\",\\\"relic\\\":\\\"i3\\\",\\\"relic2\\\":null,\\\"relic3\\\":null}},\\\"qaRecovery\\\":{\\\"unicode\\\":\\\"本页完整旅途 🧭\\\",\\\"nested\\\":[null,{\\\"futureField\\\":true}]}}\"}"
+        },
+        {
+          "sequence": 40,
+          "mode": "remove",
+          "kind": "read",
+          "key": "dice-abyss:mirror:v1",
+          "value": null
+        },
+        {
+          "sequence": 41,
+          "mode": "remove",
+          "kind": "capture-marker",
+          "key": "dice-abyss:mirror:v1",
+          "trusted": true,
+          "eventPhase": 2
+        },
+        {
+          "sequence": 42,
+          "mode": "remove",
+          "kind": "event-tail",
+          "key": "dice-abyss:mirror:v1",
+          "trusted": true,
+          "eventPhase": 2,
+          "protectedAfter": false,
+          "dialogOpenAfter": true
+        },
+        {
+          "sequence": 43,
+          "mode": "remove",
+          "kind": "read",
+          "key": "dice-abyss:save:v1",
+          "value": "{\"format\":\"dice-abyss\",\"version\":5,\"checksum\":\"34b21864\",\"payload\":\"{\\\"version\\\":5,\\\"revision\\\":0,\\\"runId\\\":\\\"round13-native-memory\\\",\\\"rng\\\":3748896326,\\\"nextId\\\":4,\\\"floor\\\":1,\\\"phase\\\":\\\"fate\\\",\\\"route\\\":[],\\\"roomIndex\\\":0,\\\"fate\\\":null,\\\"enemy\\\":null,\\\"chest\\\":null,\\\"loot\\\":null,\\\"shop\\\":[],\\\"lastRoll\\\":null,\\\"lastForge\\\":null,\\\"log\\\":[{\\\"text\\\":\\\"你踏入了遗忘入口。\\\",\\\"tone\\\":\\\"\\\"}],\\\"completed\\\":false,\\\"event\\\":null,\\\"eventLuck\\\":0,\\\"eventPower\\\":0,\\\"encounterHistory\\\":[],\\\"routeMemory\\\":{\\\"services\\\":[],\\\"last\\\":{},\\\"hiddenFloor\\\":0},\\\"v5Boons\\\":{\\\"echo\\\":0,\\\"ward\\\":0},\\\"nextLuck\\\":0,\\\"counters\\\":{\\\"rolls\\\":0,\\\"kills\\\":0,\\\"chests\\\":0,\\\"deaths\\\":0,\\\"highestDamage\\\":0,\\\"bosses\\\":0},\\\"player\\\":{\\\"level\\\":1,\\\"xp\\\":0,\\\"gold\\\":80,\\\"hp\\\":165,\\\"talentPoints\\\":0,\\\"deepOfferings\\\":0,\\\"pactScars\\\":0,\\\"fateBlessings\\\":0,\\\"talents\\\":{\\\"high\\\":0,\\\"four\\\":0,\\\"five\\\":0,\\\"six\\\":0,\\\"sum\\\":0,\\\"power\\\":0,\\\"resonance\\\":0,\\\"pair\\\":0,\\\"triple\\\":0,\\\"quartet\\\":0,\\\"choir\\\":0,\\\"echo\\\":0,\\\"critical\\\":0,\\\"keen\\\":0,\\\"crush\\\":0,\\\"pursuit\\\":0,\\\"opener\\\":0,\\\"slayer\\\":0,\\\"vitality\\\":0,\\\"guard\\\":0,\\\"leech\\\":0,\\\"recovery\\\":0,\\\"fortune\\\":0,\\\"smith\\\":0,\\\"luck\\\":0,\\\"attune\\\":0,\\\"omen\\\":0,\\\"mercy\\\":0,\\\"jackpot\\\":0,\\\"spark\\\":0,\\\"shatter\\\":0,\\\"diversity\\\":0,\\\"finality\\\":0,\\\"deepEcho\\\":0,\\\"chorusMend\\\":0,\\\"tripleBlade\\\":0,\\\"firstFire\\\":0,\\\"critAegis\\\":0,\\\"dawnCrit\\\":0,\\\"emberGuard\\\":0,\\\"phaseShelter\\\":0,\\\"lastResolve\\\":0,\\\"hunterStar\\\":0,\\\"gildedFaces\\\":0,\\\"sixRebirth\\\":0},\\\"items\\\":[{\\\"id\\\":\\\"i1\\\",\\\"slot\\\":\\\"weapon\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":2,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-weapon-3-1-0\\\",\\\"profile\\\":1,\\\"theme\\\":4,\\\"name\\\":\\\"残响·双焰流光刺剑\\\"},{\\\"id\\\":\\\"i2\\\",\\\"slot\\\":\\\"armor\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":1,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-armor-4-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":4,\\\"name\\\":\\\"残响·泉铠守誓壁垒\\\"},{\\\"id\\\":\\\"i3\\\",\\\"slot\\\":\\\"relic\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":3,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-relic-5-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":5,\\\"name\\\":\\\"残响·回潮守誓心核\\\"}],\\\"equipped\\\":{\\\"weapon\\\":\\\"i1\\\",\\\"armor\\\":\\\"i2\\\",\\\"relic\\\":\\\"i3\\\",\\\"relic2\\\":null,\\\"relic3\\\":null}},\\\"qaRecovery\\\":{\\\"unicode\\\":\\\"本页完整旅途 🧭\\\",\\\"nested\\\":[null,{\\\"futureField\\\":true}]}}\"}"
+        },
+        {
+          "sequence": 44,
+          "mode": "remove",
+          "kind": "read",
+          "key": "dice-abyss:mirror:v1",
+          "value": "{\"format\":\"dice-abyss\",\"version\":5,\"checksum\":\"34b21864\",\"payload\":\"{\\\"version\\\":5,\\\"revision\\\":0,\\\"runId\\\":\\\"round13-native-memory\\\",\\\"rng\\\":3748896326,\\\"nextId\\\":4,\\\"floor\\\":1,\\\"phase\\\":\\\"fate\\\",\\\"route\\\":[],\\\"roomIndex\\\":0,\\\"fate\\\":null,\\\"enemy\\\":null,\\\"chest\\\":null,\\\"loot\\\":null,\\\"shop\\\":[],\\\"lastRoll\\\":null,\\\"lastForge\\\":null,\\\"log\\\":[{\\\"text\\\":\\\"你踏入了遗忘入口。\\\",\\\"tone\\\":\\\"\\\"}],\\\"completed\\\":false,\\\"event\\\":null,\\\"eventLuck\\\":0,\\\"eventPower\\\":0,\\\"encounterHistory\\\":[],\\\"routeMemory\\\":{\\\"services\\\":[],\\\"last\\\":{},\\\"hiddenFloor\\\":0},\\\"v5Boons\\\":{\\\"echo\\\":0,\\\"ward\\\":0},\\\"nextLuck\\\":0,\\\"counters\\\":{\\\"rolls\\\":0,\\\"kills\\\":0,\\\"chests\\\":0,\\\"deaths\\\":0,\\\"highestDamage\\\":0,\\\"bosses\\\":0},\\\"player\\\":{\\\"level\\\":1,\\\"xp\\\":0,\\\"gold\\\":80,\\\"hp\\\":165,\\\"talentPoints\\\":0,\\\"deepOfferings\\\":0,\\\"pactScars\\\":0,\\\"fateBlessings\\\":0,\\\"talents\\\":{\\\"high\\\":0,\\\"four\\\":0,\\\"five\\\":0,\\\"six\\\":0,\\\"sum\\\":0,\\\"power\\\":0,\\\"resonance\\\":0,\\\"pair\\\":0,\\\"triple\\\":0,\\\"quartet\\\":0,\\\"choir\\\":0,\\\"echo\\\":0,\\\"critical\\\":0,\\\"keen\\\":0,\\\"crush\\\":0,\\\"pursuit\\\":0,\\\"opener\\\":0,\\\"slayer\\\":0,\\\"vitality\\\":0,\\\"guard\\\":0,\\\"leech\\\":0,\\\"recovery\\\":0,\\\"fortune\\\":0,\\\"smith\\\":0,\\\"luck\\\":0,\\\"attune\\\":0,\\\"omen\\\":0,\\\"mercy\\\":0,\\\"jackpot\\\":0,\\\"spark\\\":0,\\\"shatter\\\":0,\\\"diversity\\\":0,\\\"finality\\\":0,\\\"deepEcho\\\":0,\\\"chorusMend\\\":0,\\\"tripleBlade\\\":0,\\\"firstFire\\\":0,\\\"critAegis\\\":0,\\\"dawnCrit\\\":0,\\\"emberGuard\\\":0,\\\"phaseShelter\\\":0,\\\"lastResolve\\\":0,\\\"hunterStar\\\":0,\\\"gildedFaces\\\":0,\\\"sixRebirth\\\":0},\\\"items\\\":[{\\\"id\\\":\\\"i1\\\",\\\"slot\\\":\\\"weapon\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":2,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-weapon-3-1-0\\\",\\\"profile\\\":1,\\\"theme\\\":4,\\\"name\\\":\\\"残响·双焰流光刺剑\\\"},{\\\"id\\\":\\\"i2\\\",\\\"slot\\\":\\\"armor\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":1,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-armor-4-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":4,\\\"name\\\":\\\"残响·泉铠守誓壁垒\\\"},{\\\"id\\\":\\\"i3\\\",\\\"slot\\\":\\\"relic\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":3,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-relic-5-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":5,\\\"name\\\":\\\"残响·回潮守誓心核\\\"}],\\\"equipped\\\":{\\\"weapon\\\":\\\"i1\\\",\\\"armor\\\":\\\"i2\\\",\\\"relic\\\":\\\"i3\\\",\\\"relic2\\\":null,\\\"relic3\\\":null}},\\\"qaRecovery\\\":{\\\"unicode\\\":\\\"本页完整旅途 🧭\\\",\\\"nested\\\":[null,{\\\"futureField\\\":true}]}}\"}"
+        },
+        {
+          "sequence": 45,
+          "mode": "remove",
+          "kind": "capture-marker",
+          "key": "dice-abyss:save:v1",
+          "trusted": true,
+          "eventPhase": 2
+        },
+        {
+          "sequence": 46,
+          "mode": "remove",
+          "kind": "event-tail",
+          "key": "dice-abyss:save:v1",
+          "trusted": true,
+          "eventPhase": 2,
+          "protectedAfter": false,
+          "dialogOpenAfter": true
+        },
+        {
+          "sequence": 47,
+          "mode": "remove",
+          "kind": "read",
+          "key": "dice-abyss:save:v1",
+          "value": "{\"format\":\"dice-abyss\",\"version\":5,\"checksum\":\"34b21864\",\"payload\":\"{\\\"version\\\":5,\\\"revision\\\":0,\\\"runId\\\":\\\"round13-native-memory\\\",\\\"rng\\\":3748896326,\\\"nextId\\\":4,\\\"floor\\\":1,\\\"phase\\\":\\\"fate\\\",\\\"route\\\":[],\\\"roomIndex\\\":0,\\\"fate\\\":null,\\\"enemy\\\":null,\\\"chest\\\":null,\\\"loot\\\":null,\\\"shop\\\":[],\\\"lastRoll\\\":null,\\\"lastForge\\\":null,\\\"log\\\":[{\\\"text\\\":\\\"你踏入了遗忘入口。\\\",\\\"tone\\\":\\\"\\\"}],\\\"completed\\\":false,\\\"event\\\":null,\\\"eventLuck\\\":0,\\\"eventPower\\\":0,\\\"encounterHistory\\\":[],\\\"routeMemory\\\":{\\\"services\\\":[],\\\"last\\\":{},\\\"hiddenFloor\\\":0},\\\"v5Boons\\\":{\\\"echo\\\":0,\\\"ward\\\":0},\\\"nextLuck\\\":0,\\\"counters\\\":{\\\"rolls\\\":0,\\\"kills\\\":0,\\\"chests\\\":0,\\\"deaths\\\":0,\\\"highestDamage\\\":0,\\\"bosses\\\":0},\\\"player\\\":{\\\"level\\\":1,\\\"xp\\\":0,\\\"gold\\\":80,\\\"hp\\\":165,\\\"talentPoints\\\":0,\\\"deepOfferings\\\":0,\\\"pactScars\\\":0,\\\"fateBlessings\\\":0,\\\"talents\\\":{\\\"high\\\":0,\\\"four\\\":0,\\\"five\\\":0,\\\"six\\\":0,\\\"sum\\\":0,\\\"power\\\":0,\\\"resonance\\\":0,\\\"pair\\\":0,\\\"triple\\\":0,\\\"quartet\\\":0,\\\"choir\\\":0,\\\"echo\\\":0,\\\"critical\\\":0,\\\"keen\\\":0,\\\"crush\\\":0,\\\"pursuit\\\":0,\\\"opener\\\":0,\\\"slayer\\\":0,\\\"vitality\\\":0,\\\"guard\\\":0,\\\"leech\\\":0,\\\"recovery\\\":0,\\\"fortune\\\":0,\\\"smith\\\":0,\\\"luck\\\":0,\\\"attune\\\":0,\\\"omen\\\":0,\\\"mercy\\\":0,\\\"jackpot\\\":0,\\\"spark\\\":0,\\\"shatter\\\":0,\\\"diversity\\\":0,\\\"finality\\\":0,\\\"deepEcho\\\":0,\\\"chorusMend\\\":0,\\\"tripleBlade\\\":0,\\\"firstFire\\\":0,\\\"critAegis\\\":0,\\\"dawnCrit\\\":0,\\\"emberGuard\\\":0,\\\"phaseShelter\\\":0,\\\"lastResolve\\\":0,\\\"hunterStar\\\":0,\\\"gildedFaces\\\":0,\\\"sixRebirth\\\":0},\\\"items\\\":[{\\\"id\\\":\\\"i1\\\",\\\"slot\\\":\\\"weapon\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":2,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-weapon-3-1-0\\\",\\\"profile\\\":1,\\\"theme\\\":4,\\\"name\\\":\\\"残响·双焰流光刺剑\\\"},{\\\"id\\\":\\\"i2\\\",\\\"slot\\\":\\\"armor\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":1,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-armor-4-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":4,\\\"name\\\":\\\"残响·泉铠守誓壁垒\\\"},{\\\"id\\\":\\\"i3\\\",\\\"slot\\\":\\\"relic\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":3,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-relic-5-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":5,\\\"name\\\":\\\"残响·回潮守誓心核\\\"}],\\\"equipped\\\":{\\\"weapon\\\":\\\"i1\\\",\\\"armor\\\":\\\"i2\\\",\\\"relic\\\":\\\"i3\\\",\\\"relic2\\\":null,\\\"relic3\\\":null}},\\\"qaRecovery\\\":{\\\"unicode\\\":\\\"本页完整旅途 🧭\\\",\\\"nested\\\":[null,{\\\"futureField\\\":true}]}}\"}"
+        },
+        {
+          "sequence": 48,
+          "mode": "remove",
+          "kind": "read",
+          "key": "dice-abyss:mirror:v1",
+          "value": "{\"format\":\"dice-abyss\",\"version\":5,\"checksum\":\"34b21864\",\"payload\":\"{\\\"version\\\":5,\\\"revision\\\":0,\\\"runId\\\":\\\"round13-native-memory\\\",\\\"rng\\\":3748896326,\\\"nextId\\\":4,\\\"floor\\\":1,\\\"phase\\\":\\\"fate\\\",\\\"route\\\":[],\\\"roomIndex\\\":0,\\\"fate\\\":null,\\\"enemy\\\":null,\\\"chest\\\":null,\\\"loot\\\":null,\\\"shop\\\":[],\\\"lastRoll\\\":null,\\\"lastForge\\\":null,\\\"log\\\":[{\\\"text\\\":\\\"你踏入了遗忘入口。\\\",\\\"tone\\\":\\\"\\\"}],\\\"completed\\\":false,\\\"event\\\":null,\\\"eventLuck\\\":0,\\\"eventPower\\\":0,\\\"encounterHistory\\\":[],\\\"routeMemory\\\":{\\\"services\\\":[],\\\"last\\\":{},\\\"hiddenFloor\\\":0},\\\"v5Boons\\\":{\\\"echo\\\":0,\\\"ward\\\":0},\\\"nextLuck\\\":0,\\\"counters\\\":{\\\"rolls\\\":0,\\\"kills\\\":0,\\\"chests\\\":0,\\\"deaths\\\":0,\\\"highestDamage\\\":0,\\\"bosses\\\":0},\\\"player\\\":{\\\"level\\\":1,\\\"xp\\\":0,\\\"gold\\\":80,\\\"hp\\\":165,\\\"talentPoints\\\":0,\\\"deepOfferings\\\":0,\\\"pactScars\\\":0,\\\"fateBlessings\\\":0,\\\"talents\\\":{\\\"high\\\":0,\\\"four\\\":0,\\\"five\\\":0,\\\"six\\\":0,\\\"sum\\\":0,\\\"power\\\":0,\\\"resonance\\\":0,\\\"pair\\\":0,\\\"triple\\\":0,\\\"quartet\\\":0,\\\"choir\\\":0,\\\"echo\\\":0,\\\"critical\\\":0,\\\"keen\\\":0,\\\"crush\\\":0,\\\"pursuit\\\":0,\\\"opener\\\":0,\\\"slayer\\\":0,\\\"vitality\\\":0,\\\"guard\\\":0,\\\"leech\\\":0,\\\"recovery\\\":0,\\\"fortune\\\":0,\\\"smith\\\":0,\\\"luck\\\":0,\\\"attune\\\":0,\\\"omen\\\":0,\\\"mercy\\\":0,\\\"jackpot\\\":0,\\\"spark\\\":0,\\\"shatter\\\":0,\\\"diversity\\\":0,\\\"finality\\\":0,\\\"deepEcho\\\":0,\\\"chorusMend\\\":0,\\\"tripleBlade\\\":0,\\\"firstFire\\\":0,\\\"critAegis\\\":0,\\\"dawnCrit\\\":0,\\\"emberGuard\\\":0,\\\"phaseShelter\\\":0,\\\"lastResolve\\\":0,\\\"hunterStar\\\":0,\\\"gildedFaces\\\":0,\\\"sixRebirth\\\":0},\\\"items\\\":[{\\\"id\\\":\\\"i1\\\",\\\"slot\\\":\\\"weapon\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":2,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-weapon-3-1-0\\\",\\\"profile\\\":1,\\\"theme\\\":4,\\\"name\\\":\\\"残响·双焰流光刺剑\\\"},{\\\"id\\\":\\\"i2\\\",\\\"slot\\\":\\\"armor\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":1,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-armor-4-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":4,\\\"name\\\":\\\"残响·泉铠守誓壁垒\\\"},{\\\"id\\\":\\\"i3\\\",\\\"slot\\\":\\\"relic\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":3,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-relic-5-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":5,\\\"name\\\":\\\"残响·回潮守誓心核\\\"}],\\\"equipped\\\":{\\\"weapon\\\":\\\"i1\\\",\\\"armor\\\":\\\"i2\\\",\\\"relic\\\":\\\"i3\\\",\\\"relic2\\\":null,\\\"relic3\\\":null}},\\\"qaRecovery\\\":{\\\"unicode\\\":\\\"本页完整旅途 🧭\\\",\\\"nested\\\":[null,{\\\"futureField\\\":true}]}}\"}"
+        },
+        {
+          "sequence": 49,
+          "mode": "remove",
+          "kind": "capture-marker",
+          "key": "dice-abyss:mirror:v1",
+          "trusted": true,
+          "eventPhase": 2
+        },
+        {
+          "sequence": 50,
+          "mode": "remove",
+          "kind": "event-tail",
+          "key": "dice-abyss:mirror:v1",
+          "trusted": true,
+          "eventPhase": 2,
+          "protectedAfter": false,
+          "dialogOpenAfter": true
+        },
+        {
+          "sequence": 51,
+          "mode": null,
+          "kind": "read",
+          "key": "dice-abyss:save:v1",
+          "value": "{\"format\":\"dice-abyss\",\"version\":5,\"checksum\":\"34b21864\",\"payload\":\"{\\\"version\\\":5,\\\"revision\\\":0,\\\"runId\\\":\\\"round13-native-memory\\\",\\\"rng\\\":3748896326,\\\"nextId\\\":4,\\\"floor\\\":1,\\\"phase\\\":\\\"fate\\\",\\\"route\\\":[],\\\"roomIndex\\\":0,\\\"fate\\\":null,\\\"enemy\\\":null,\\\"chest\\\":null,\\\"loot\\\":null,\\\"shop\\\":[],\\\"lastRoll\\\":null,\\\"lastForge\\\":null,\\\"log\\\":[{\\\"text\\\":\\\"你踏入了遗忘入口。\\\",\\\"tone\\\":\\\"\\\"}],\\\"completed\\\":false,\\\"event\\\":null,\\\"eventLuck\\\":0,\\\"eventPower\\\":0,\\\"encounterHistory\\\":[],\\\"routeMemory\\\":{\\\"services\\\":[],\\\"last\\\":{},\\\"hiddenFloor\\\":0},\\\"v5Boons\\\":{\\\"echo\\\":0,\\\"ward\\\":0},\\\"nextLuck\\\":0,\\\"counters\\\":{\\\"rolls\\\":0,\\\"kills\\\":0,\\\"chests\\\":0,\\\"deaths\\\":0,\\\"highestDamage\\\":0,\\\"bosses\\\":0},\\\"player\\\":{\\\"level\\\":1,\\\"xp\\\":0,\\\"gold\\\":80,\\\"hp\\\":165,\\\"talentPoints\\\":0,\\\"deepOfferings\\\":0,\\\"pactScars\\\":0,\\\"fateBlessings\\\":0,\\\"talents\\\":{\\\"high\\\":0,\\\"four\\\":0,\\\"five\\\":0,\\\"six\\\":0,\\\"sum\\\":0,\\\"power\\\":0,\\\"resonance\\\":0,\\\"pair\\\":0,\\\"triple\\\":0,\\\"quartet\\\":0,\\\"choir\\\":0,\\\"echo\\\":0,\\\"critical\\\":0,\\\"keen\\\":0,\\\"crush\\\":0,\\\"pursuit\\\":0,\\\"opener\\\":0,\\\"slayer\\\":0,\\\"vitality\\\":0,\\\"guard\\\":0,\\\"leech\\\":0,\\\"recovery\\\":0,\\\"fortune\\\":0,\\\"smith\\\":0,\\\"luck\\\":0,\\\"attune\\\":0,\\\"omen\\\":0,\\\"mercy\\\":0,\\\"jackpot\\\":0,\\\"spark\\\":0,\\\"shatter\\\":0,\\\"diversity\\\":0,\\\"finality\\\":0,\\\"deepEcho\\\":0,\\\"chorusMend\\\":0,\\\"tripleBlade\\\":0,\\\"firstFire\\\":0,\\\"critAegis\\\":0,\\\"dawnCrit\\\":0,\\\"emberGuard\\\":0,\\\"phaseShelter\\\":0,\\\"lastResolve\\\":0,\\\"hunterStar\\\":0,\\\"gildedFaces\\\":0,\\\"sixRebirth\\\":0},\\\"items\\\":[{\\\"id\\\":\\\"i1\\\",\\\"slot\\\":\\\"weapon\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":2,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-weapon-3-1-0\\\",\\\"profile\\\":1,\\\"theme\\\":4,\\\"name\\\":\\\"残响·双焰流光刺剑\\\"},{\\\"id\\\":\\\"i2\\\",\\\"slot\\\":\\\"armor\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":1,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-armor-4-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":4,\\\"name\\\":\\\"残响·泉铠守誓壁垒\\\"},{\\\"id\\\":\\\"i3\\\",\\\"slot\\\":\\\"relic\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":3,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-relic-5-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":5,\\\"name\\\":\\\"残响·回潮守誓心核\\\"}],\\\"equipped\\\":{\\\"weapon\\\":\\\"i1\\\",\\\"armor\\\":\\\"i2\\\",\\\"relic\\\":\\\"i3\\\",\\\"relic2\\\":null,\\\"relic3\\\":null}},\\\"qaRecovery\\\":{\\\"unicode\\\":\\\"本页完整旅途 🧭\\\",\\\"nested\\\":[null,{\\\"futureField\\\":true}]}}\"}"
+        },
+        {
+          "sequence": 52,
+          "mode": null,
+          "kind": "read",
+          "key": "dice-abyss:mirror:v1",
+          "value": "{\"format\":\"dice-abyss\",\"version\":5,\"checksum\":\"34b21864\",\"payload\":\"{\\\"version\\\":5,\\\"revision\\\":0,\\\"runId\\\":\\\"round13-native-memory\\\",\\\"rng\\\":3748896326,\\\"nextId\\\":4,\\\"floor\\\":1,\\\"phase\\\":\\\"fate\\\",\\\"route\\\":[],\\\"roomIndex\\\":0,\\\"fate\\\":null,\\\"enemy\\\":null,\\\"chest\\\":null,\\\"loot\\\":null,\\\"shop\\\":[],\\\"lastRoll\\\":null,\\\"lastForge\\\":null,\\\"log\\\":[{\\\"text\\\":\\\"你踏入了遗忘入口。\\\",\\\"tone\\\":\\\"\\\"}],\\\"completed\\\":false,\\\"event\\\":null,\\\"eventLuck\\\":0,\\\"eventPower\\\":0,\\\"encounterHistory\\\":[],\\\"routeMemory\\\":{\\\"services\\\":[],\\\"last\\\":{},\\\"hiddenFloor\\\":0},\\\"v5Boons\\\":{\\\"echo\\\":0,\\\"ward\\\":0},\\\"nextLuck\\\":0,\\\"counters\\\":{\\\"rolls\\\":0,\\\"kills\\\":0,\\\"chests\\\":0,\\\"deaths\\\":0,\\\"highestDamage\\\":0,\\\"bosses\\\":0},\\\"player\\\":{\\\"level\\\":1,\\\"xp\\\":0,\\\"gold\\\":80,\\\"hp\\\":165,\\\"talentPoints\\\":0,\\\"deepOfferings\\\":0,\\\"pactScars\\\":0,\\\"fateBlessings\\\":0,\\\"talents\\\":{\\\"high\\\":0,\\\"four\\\":0,\\\"five\\\":0,\\\"six\\\":0,\\\"sum\\\":0,\\\"power\\\":0,\\\"resonance\\\":0,\\\"pair\\\":0,\\\"triple\\\":0,\\\"quartet\\\":0,\\\"choir\\\":0,\\\"echo\\\":0,\\\"critical\\\":0,\\\"keen\\\":0,\\\"crush\\\":0,\\\"pursuit\\\":0,\\\"opener\\\":0,\\\"slayer\\\":0,\\\"vitality\\\":0,\\\"guard\\\":0,\\\"leech\\\":0,\\\"recovery\\\":0,\\\"fortune\\\":0,\\\"smith\\\":0,\\\"luck\\\":0,\\\"attune\\\":0,\\\"omen\\\":0,\\\"mercy\\\":0,\\\"jackpot\\\":0,\\\"spark\\\":0,\\\"shatter\\\":0,\\\"diversity\\\":0,\\\"finality\\\":0,\\\"deepEcho\\\":0,\\\"chorusMend\\\":0,\\\"tripleBlade\\\":0,\\\"firstFire\\\":0,\\\"critAegis\\\":0,\\\"dawnCrit\\\":0,\\\"emberGuard\\\":0,\\\"phaseShelter\\\":0,\\\"lastResolve\\\":0,\\\"hunterStar\\\":0,\\\"gildedFaces\\\":0,\\\"sixRebirth\\\":0},\\\"items\\\":[{\\\"id\\\":\\\"i1\\\",\\\"slot\\\":\\\"weapon\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":2,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-weapon-3-1-0\\\",\\\"profile\\\":1,\\\"theme\\\":4,\\\"name\\\":\\\"残响·双焰流光刺剑\\\"},{\\\"id\\\":\\\"i2\\\",\\\"slot\\\":\\\"armor\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":1,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-armor-4-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":4,\\\"name\\\":\\\"残响·泉铠守誓壁垒\\\"},{\\\"id\\\":\\\"i3\\\",\\\"slot\\\":\\\"relic\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":3,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-relic-5-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":5,\\\"name\\\":\\\"残响·回潮守誓心核\\\"}],\\\"equipped\\\":{\\\"weapon\\\":\\\"i1\\\",\\\"armor\\\":\\\"i2\\\",\\\"relic\\\":\\\"i3\\\",\\\"relic2\\\":null,\\\"relic3\\\":null}},\\\"qaRecovery\\\":{\\\"unicode\\\":\\\"本页完整旅途 🧭\\\",\\\"nested\\\":[null,{\\\"futureField\\\":true}]}}\"}"
+        },
+        {
+          "sequence": 53,
+          "mode": null,
+          "kind": "read",
+          "key": "dice-abyss:save:v1",
+          "value": "{\"format\":\"dice-abyss\",\"version\":5,\"checksum\":\"34b21864\",\"payload\":\"{\\\"version\\\":5,\\\"revision\\\":0,\\\"runId\\\":\\\"round13-native-memory\\\",\\\"rng\\\":3748896326,\\\"nextId\\\":4,\\\"floor\\\":1,\\\"phase\\\":\\\"fate\\\",\\\"route\\\":[],\\\"roomIndex\\\":0,\\\"fate\\\":null,\\\"enemy\\\":null,\\\"chest\\\":null,\\\"loot\\\":null,\\\"shop\\\":[],\\\"lastRoll\\\":null,\\\"lastForge\\\":null,\\\"log\\\":[{\\\"text\\\":\\\"你踏入了遗忘入口。\\\",\\\"tone\\\":\\\"\\\"}],\\\"completed\\\":false,\\\"event\\\":null,\\\"eventLuck\\\":0,\\\"eventPower\\\":0,\\\"encounterHistory\\\":[],\\\"routeMemory\\\":{\\\"services\\\":[],\\\"last\\\":{},\\\"hiddenFloor\\\":0},\\\"v5Boons\\\":{\\\"echo\\\":0,\\\"ward\\\":0},\\\"nextLuck\\\":0,\\\"counters\\\":{\\\"rolls\\\":0,\\\"kills\\\":0,\\\"chests\\\":0,\\\"deaths\\\":0,\\\"highestDamage\\\":0,\\\"bosses\\\":0},\\\"player\\\":{\\\"level\\\":1,\\\"xp\\\":0,\\\"gold\\\":80,\\\"hp\\\":165,\\\"talentPoints\\\":0,\\\"deepOfferings\\\":0,\\\"pactScars\\\":0,\\\"fateBlessings\\\":0,\\\"talents\\\":{\\\"high\\\":0,\\\"four\\\":0,\\\"five\\\":0,\\\"six\\\":0,\\\"sum\\\":0,\\\"power\\\":0,\\\"resonance\\\":0,\\\"pair\\\":0,\\\"triple\\\":0,\\\"quartet\\\":0,\\\"choir\\\":0,\\\"echo\\\":0,\\\"critical\\\":0,\\\"keen\\\":0,\\\"crush\\\":0,\\\"pursuit\\\":0,\\\"opener\\\":0,\\\"slayer\\\":0,\\\"vitality\\\":0,\\\"guard\\\":0,\\\"leech\\\":0,\\\"recovery\\\":0,\\\"fortune\\\":0,\\\"smith\\\":0,\\\"luck\\\":0,\\\"attune\\\":0,\\\"omen\\\":0,\\\"mercy\\\":0,\\\"jackpot\\\":0,\\\"spark\\\":0,\\\"shatter\\\":0,\\\"diversity\\\":0,\\\"finality\\\":0,\\\"deepEcho\\\":0,\\\"chorusMend\\\":0,\\\"tripleBlade\\\":0,\\\"firstFire\\\":0,\\\"critAegis\\\":0,\\\"dawnCrit\\\":0,\\\"emberGuard\\\":0,\\\"phaseShelter\\\":0,\\\"lastResolve\\\":0,\\\"hunterStar\\\":0,\\\"gildedFaces\\\":0,\\\"sixRebirth\\\":0},\\\"items\\\":[{\\\"id\\\":\\\"i1\\\",\\\"slot\\\":\\\"weapon\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":2,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-weapon-3-1-0\\\",\\\"profile\\\":1,\\\"theme\\\":4,\\\"name\\\":\\\"残响·双焰流光刺剑\\\"},{\\\"id\\\":\\\"i2\\\",\\\"slot\\\":\\\"armor\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":1,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-armor-4-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":4,\\\"name\\\":\\\"残响·泉铠守誓壁垒\\\"},{\\\"id\\\":\\\"i3\\\",\\\"slot\\\":\\\"relic\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":3,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-relic-5-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":5,\\\"name\\\":\\\"残响·回潮守誓心核\\\"}],\\\"equipped\\\":{\\\"weapon\\\":\\\"i1\\\",\\\"armor\\\":\\\"i2\\\",\\\"relic\\\":\\\"i3\\\",\\\"relic2\\\":null,\\\"relic3\\\":null}},\\\"qaRecovery\\\":{\\\"unicode\\\":\\\"本页完整旅途 🧭\\\",\\\"nested\\\":[null,{\\\"futureField\\\":true}]}}\"}"
+        },
+        {
+          "sequence": 54,
+          "mode": null,
+          "kind": "read",
+          "key": "dice-abyss:mirror:v1",
+          "value": "{\"format\":\"dice-abyss\",\"version\":5,\"checksum\":\"34b21864\",\"payload\":\"{\\\"version\\\":5,\\\"revision\\\":0,\\\"runId\\\":\\\"round13-native-memory\\\",\\\"rng\\\":3748896326,\\\"nextId\\\":4,\\\"floor\\\":1,\\\"phase\\\":\\\"fate\\\",\\\"route\\\":[],\\\"roomIndex\\\":0,\\\"fate\\\":null,\\\"enemy\\\":null,\\\"chest\\\":null,\\\"loot\\\":null,\\\"shop\\\":[],\\\"lastRoll\\\":null,\\\"lastForge\\\":null,\\\"log\\\":[{\\\"text\\\":\\\"你踏入了遗忘入口。\\\",\\\"tone\\\":\\\"\\\"}],\\\"completed\\\":false,\\\"event\\\":null,\\\"eventLuck\\\":0,\\\"eventPower\\\":0,\\\"encounterHistory\\\":[],\\\"routeMemory\\\":{\\\"services\\\":[],\\\"last\\\":{},\\\"hiddenFloor\\\":0},\\\"v5Boons\\\":{\\\"echo\\\":0,\\\"ward\\\":0},\\\"nextLuck\\\":0,\\\"counters\\\":{\\\"rolls\\\":0,\\\"kills\\\":0,\\\"chests\\\":0,\\\"deaths\\\":0,\\\"highestDamage\\\":0,\\\"bosses\\\":0},\\\"player\\\":{\\\"level\\\":1,\\\"xp\\\":0,\\\"gold\\\":80,\\\"hp\\\":165,\\\"talentPoints\\\":0,\\\"deepOfferings\\\":0,\\\"pactScars\\\":0,\\\"fateBlessings\\\":0,\\\"talents\\\":{\\\"high\\\":0,\\\"four\\\":0,\\\"five\\\":0,\\\"six\\\":0,\\\"sum\\\":0,\\\"power\\\":0,\\\"resonance\\\":0,\\\"pair\\\":0,\\\"triple\\\":0,\\\"quartet\\\":0,\\\"choir\\\":0,\\\"echo\\\":0,\\\"critical\\\":0,\\\"keen\\\":0,\\\"crush\\\":0,\\\"pursuit\\\":0,\\\"opener\\\":0,\\\"slayer\\\":0,\\\"vitality\\\":0,\\\"guard\\\":0,\\\"leech\\\":0,\\\"recovery\\\":0,\\\"fortune\\\":0,\\\"smith\\\":0,\\\"luck\\\":0,\\\"attune\\\":0,\\\"omen\\\":0,\\\"mercy\\\":0,\\\"jackpot\\\":0,\\\"spark\\\":0,\\\"shatter\\\":0,\\\"diversity\\\":0,\\\"finality\\\":0,\\\"deepEcho\\\":0,\\\"chorusMend\\\":0,\\\"tripleBlade\\\":0,\\\"firstFire\\\":0,\\\"critAegis\\\":0,\\\"dawnCrit\\\":0,\\\"emberGuard\\\":0,\\\"phaseShelter\\\":0,\\\"lastResolve\\\":0,\\\"hunterStar\\\":0,\\\"gildedFaces\\\":0,\\\"sixRebirth\\\":0},\\\"items\\\":[{\\\"id\\\":\\\"i1\\\",\\\"slot\\\":\\\"weapon\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":2,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-weapon-3-1-0\\\",\\\"profile\\\":1,\\\"theme\\\":4,\\\"name\\\":\\\"残响·双焰流光刺剑\\\"},{\\\"id\\\":\\\"i2\\\",\\\"slot\\\":\\\"armor\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":1,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-armor-4-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":4,\\\"name\\\":\\\"残响·泉铠守誓壁垒\\\"},{\\\"id\\\":\\\"i3\\\",\\\"slot\\\":\\\"relic\\\",\\\"rarity\\\":0,\\\"depth\\\":1,\\\"level\\\":3,\\\"levelXp\\\":0,\\\"enhance\\\":0,\\\"locked\\\":false,\\\"catalogId\\\":\\\"v4-relic-5-0-0\\\",\\\"profile\\\":0,\\\"theme\\\":5,\\\"name\\\":\\\"残响·回潮守誓心核\\\"}],\\\"equipped\\\":{\\\"weapon\\\":\\\"i1\\\",\\\"armor\\\":\\\"i2\\\",\\\"relic\\\":\\\"i3\\\",\\\"relic2\\\":null,\\\"relic3\\\":null}},\\\"qaRecovery\\\":{\\\"unicode\\\":\\\"本页完整旅途 🧭\\\",\\\"nested\\\":[null,{\\\"futureField\\\":true}]}}\"}"
+        }
+      ],
+      "events": [
+        {
+          "key": null,
+          "area": "local",
+          "trusted": true,
+          "oldLength": null,
+          "newLength": null
+        },
+        {
+          "key": "dice-abyss:save:v1",
+          "area": "local",
+          "trusted": true,
+          "oldLength": null,
+          "newLength": 2250
+        },
+        {
+          "key": "dice-abyss:mirror:v1",
+          "area": "local",
+          "trusted": true,
+          "oldLength": null,
+          "newLength": 2250
+        },
+        {
+          "key": "dice-abyss:save:v1",
+          "area": "local",
+          "trusted": true,
+          "oldLength": 2250,
+          "newLength": null
+        },
+        {
+          "key": "dice-abyss:mirror:v1",
+          "area": "local",
+          "trusted": true,
+          "oldLength": 2250,
+          "newLength": null
+        },
+        {
+          "key": "dice-abyss:save:v1",
+          "area": "local",
+          "trusted": true,
+          "oldLength": null,
+          "newLength": 2250
+        },
+        {
+          "key": "dice-abyss:mirror:v1",
+          "area": "local",
+          "trusted": true,
+          "oldLength": null,
+          "newLength": 2250
+        }
+      ],
+      "durationMs": 3393.4713389999997
+    }
+  ],
+  "checks": 16,
+  "errors": [],
+  "browser": "155.0.8059.84",
+  "scope": "Fresh isolated contexts with complete constructed valid saves; native storage.clear/removeItem/setItem, native sessionStorage iframe events, actual downloads and existing Web Locks.",
+  "limitations": [
+    "Logical browser viewports, not physical devices or external screen readers.",
+    "Explicit storage-write fault injection remains in node tests; this driver does not override browser quota.",
+    "No claim that localStorage offers atomic compare-and-set when Web Locks are unavailable or noncooperating writers bypass the lock."
+  ],
+  "sourceAfter": {
+    "src/app.js": "6d965d35fb499b23948e9f2d4256616d05298dce7468c2bd350c4180562dad08",
+    "src/storage.js": "6bfcc60036c9f729c21b948ca98c7ac715e14049856fb9dded0baa2aeef2c561",
+    "src/save-recovery-view.js": "47e9041a86415c6bc04e5ae66803d6d8dfa6fbb2cabb8f800ce67f29a199153d",
+    "src/save-recovery.css": "7085ab430d2f1193955b84848d8f2af88faeab0d065c427ee5e7b88b5e254c2e"
+  },
+  "sourceUnchanged": true,
+  "finished": "2026-10-18T15:42:08.245Z",
+  "passed": 1,
+  "failed": 0
+}

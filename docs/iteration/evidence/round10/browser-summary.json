@@ -1,0 +1,102 @@
+{
+  "status": "PASS",
+  "groups": 65,
+  "checks": 2308,
+  "errors": 0,
+  "suites": [
+    {
+      "suite": "core",
+      "groups": 6,
+      "checks": 43,
+      "errors": 0,
+      "evidence": "browser-core.json"
+    },
+    {
+      "suite": "fusion",
+      "groups": 12,
+      "checks": 125,
+      "errors": 0,
+      "evidence": "browser-fusion.json"
+    },
+    {
+      "suite": "forge",
+      "groups": 3,
+      "checks": 286,
+      "errors": 0,
+      "evidence": "browser-forge.json"
+    },
+    {
+      "suite": "talents",
+      "groups": 5,
+      "checks": 118,
+      "errors": 0,
+      "evidence": "browser-talents.json"
+    },
+    {
+      "suite": "readout",
+      "groups": 7,
+      "checks": 700,
+      "errors": 0,
+      "evidence": "browser-readout.json"
+    },
+    {
+      "suite": "focus",
+      "groups": 8,
+      "checks": 42,
+      "errors": 0,
+      "evidence": "browser-focus.json"
+    },
+    {
+      "suite": "gold",
+      "groups": 7,
+      "checks": 316,
+      "errors": 0,
+      "evidence": "browser-gold.json"
+    },
+    {
+      "suite": "fusion-cap",
+      "groups": 8,
+      "checks": 218,
+      "errors": 0,
+      "evidence": "browser-fusion-cap.json"
+    },
+    {
+      "suite": "xp",
+      "groups": 8,
+      "checks": 403,
+      "errors": 0,
+      "evidence": "browser-xp-final.json"
+    },
+    {
+      "suite": "exchange-long-name",
+      "groups": 1,
+      "checks": 57,
+      "errors": 0,
+      "evidence": "browser-exchange-long-name.json"
+    }
+  ],
+  "counting": "64 groups/2251 checks from nine suites plus one supplementary long-name exchange group/57. Repeated runs, baseline reproduction, lifecycle faults and performance windows are reported separately.",
+  "desktopViewports": [
+    [
+      1366,
+      768
+    ],
+    [
+      1920,
+      1080
+    ],
+    [
+      2560,
+      1440
+    ],
+    [
+      3840,
+      2160
+    ]
+  ],
+  "limitations": [
+    "Isolated actual Chromium native controls with legal synthetic saves; not natural player incidence.",
+    "Software rendering; no physical GPU, screen-reader or whole-phone certification.",
+    "Exchange screenshot concern was a tool-display/reviewer-reading false alarm: both original PNG bytes and decoded RGBA are identical and independently display the complete dialog. No retry was needed; see exchange-capture-review.json."
+  ]
+}

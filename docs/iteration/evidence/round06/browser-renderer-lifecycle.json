@@ -1,0 +1,589 @@
+{
+  "kind": "SYNTHETIC_LIFECYCLE_FAULTS_NOT_FPS",
+  "started": "2026-10-18T03:05:37.758Z",
+  "finished": "2026-10-18T03:06:39.484Z",
+  "browser": "155.0.8059.84",
+  "scriptSha256": "b6708dc6c27da865247facaf9fb382636b676b46931de93cfbea4b9dae691602",
+  "summary": {
+    "cases": 11,
+    "passed": 11,
+    "baselineDefects": 0,
+    "failed": 0,
+    "runtimeErrors": 0
+  },
+  "provenance": {
+    "rawReport": "current-renderer-lifecycle/renderer-lifecycle-browser.json",
+    "rawSha256": "f1151eb169dff547e5ac399c0fd7d91c41ee8d3f9cff2cc0b99f1908fe03f2a4",
+    "script": "scripts/qa-renderer-lifecycle.mjs",
+    "reduction": "Per-RAF observations omitted; exact terminal observations, positive-alpha draw counts, source identities and transaction witnesses retained."
+  },
+  "notes": [
+    "Current browser fallback is extension timeout and cloud loopback connection refusal, as recorded in browser-runtime.json; the first note in the untouched historical raw script is not a fresh observation.",
+    "Synthetic RAF delivery holds and simulated visibilitychange verify lifecycle behavior, not FPS or physical background behavior.",
+    "All eleven records pass: three input 5.6.0 comparisons and eight current 5.6.1 records. These repeat some integration behavior and are not unique assertions.",
+    "Draw calls are positive-alpha canvas API submissions, not displayed hardware frames. Empty expectedEffectKinds are not evidence of actual effects.",
+    "The old skipTrusted field reads the primary-click witness; the skip path uses native locator.click, without a separate skip-event trust witness."
+  ],
+  "servedSourcesByVariant": {
+    "baseline": [
+      {
+        "file": "src/app.js",
+        "status": 200,
+        "bytes": 32230,
+        "sha256": "f15894a3005dc94ff3a63d3ab4db983a239f6ea83f01d5b6c8b22ee8cb6a83ec"
+      },
+      {
+        "file": "src/effects.js",
+        "status": 200,
+        "bytes": 27803,
+        "sha256": "959c7d346427a5854f509c8b11205d8c34d82392ed1340eedd9aa66e7b75c9c5"
+      },
+      {
+        "file": "src/dice-motion.js",
+        "status": 200,
+        "bytes": 5430,
+        "sha256": "3b088b9efa03552912bd92b18dc66d6122f45e2f12dc420305bb877deae5139a"
+      },
+      {
+        "file": "src/dice-renderer.js",
+        "status": 200,
+        "bytes": 13061,
+        "sha256": "a317cbe20fb1a0518a69eff10e3aa9b7dce5180a2b90543439fb830c86d66770"
+      }
+    ],
+    "current": [
+      {
+        "file": "src/app.js",
+        "status": 200,
+        "bytes": 32230,
+        "sha256": "f15894a3005dc94ff3a63d3ab4db983a239f6ea83f01d5b6c8b22ee8cb6a83ec"
+      },
+      {
+        "file": "src/effects.js",
+        "status": 200,
+        "bytes": 27803,
+        "sha256": "959c7d346427a5854f509c8b11205d8c34d82392ed1340eedd9aa66e7b75c9c5"
+      },
+      {
+        "file": "src/dice-motion.js",
+        "status": 200,
+        "bytes": 5430,
+        "sha256": "3b088b9efa03552912bd92b18dc66d6122f45e2f12dc420305bb877deae5139a"
+      },
+      {
+        "file": "src/dice-renderer.js",
+        "status": 200,
+        "bytes": 13061,
+        "sha256": "a317cbe20fb1a0518a69eff10e3aa9b7dce5180a2b90543439fb830c86d66770"
+      },
+      {
+        "file": "src/visual-timeline.js",
+        "status": 200,
+        "bytes": 2906,
+        "sha256": "f518084da44c2ea852bf902ba6ffc7f8f5a94ee815dac31bcc4726cc8cd44369"
+      }
+    ]
+  },
+  "allServedSourcesMatchDisk": true,
+  "cases": [
+    {
+      "variant": "baseline",
+      "name": "late-first-frame-combat",
+      "status": "PASS",
+      "identity": {
+        "url": "http://127.0.0.1:4266/",
+        "title": "骰狱：无尽深渊 · Dice Abyss",
+        "release": "5.6.0",
+        "bodyTextCharacters": 986,
+        "frameworkOverlays": 0
+      },
+      "holdMs": 3000,
+      "fixtureSha256": "2491c86368406e4e7d4fdbad58e1454ae95d238a60598feef27ffb2134bbdbb7",
+      "expectedStateSha256": "088f2715ce9da1ed8dacfcf9b595bbe23602690c812fe0bfa106bd7354748972",
+      "expectedEffectKinds": [
+        "combat"
+      ],
+      "effectsObserved": true,
+      "savedExact": true,
+      "mirrorExact": true,
+      "singleTransaction": true,
+      "committedBeforeAnimationComplete": true,
+      "wallMs": 5738.6734,
+      "audit": {
+        "clickTrusted": true,
+        "writes": {
+          "main": 1,
+          "mirror": 1
+        },
+        "held": 0,
+        "draws": {
+          "combat": {
+            "calls": 2408,
+            "firstMs": 4217.399999999907,
+            "lastMs": 5346.5999999996275
+          }
+        },
+        "ended": 5730.5,
+        "observationCount": 333,
+        "lastObservation": {
+          "ms": 5730.5,
+          "busy": false,
+          "kind": "idle",
+          "submittedFrames": 0,
+          "elapsed": 0
+        }
+      }
+    },
+    {
+      "variant": "current",
+      "name": "late-first-frame-combat",
+      "status": "PASS",
+      "identity": {
+        "url": "http://127.0.0.1:4267/",
+        "title": "骰狱：无尽深渊 · Dice Abyss",
+        "release": "5.6.1",
+        "bodyTextCharacters": 988,
+        "frameworkOverlays": 0
+      },
+      "holdMs": 3000,
+      "fixtureSha256": "2491c86368406e4e7d4fdbad58e1454ae95d238a60598feef27ffb2134bbdbb7",
+      "expectedStateSha256": "088f2715ce9da1ed8dacfcf9b595bbe23602690c812fe0bfa106bd7354748972",
+      "expectedEffectKinds": [
+        "combat"
+      ],
+      "effectsObserved": true,
+      "savedExact": true,
+      "mirrorExact": true,
+      "singleTransaction": true,
+      "committedBeforeAnimationComplete": true,
+      "wallMs": 5814.246710000001,
+      "audit": {
+        "clickTrusted": true,
+        "writes": {
+          "main": 1,
+          "mirror": 1
+        },
+        "held": 0,
+        "draws": {
+          "combat": {
+            "calls": 2431,
+            "firstMs": 4217.199999999255,
+            "lastMs": 5361.799999999814
+          }
+        },
+        "ended": 5745.5999999996275,
+        "observationCount": 315,
+        "lastObservation": {
+          "ms": 5745.5999999996275,
+          "busy": false,
+          "kind": "idle",
+          "submittedFrames": 0,
+          "elapsed": 0
+        }
+      }
+    },
+    {
+      "variant": "baseline",
+      "name": "late-first-frame-loot",
+      "status": "PASS",
+      "identity": {
+        "url": "http://127.0.0.1:4266/",
+        "title": "骰狱：无尽深渊 · Dice Abyss",
+        "release": "5.6.0",
+        "bodyTextCharacters": 980,
+        "frameworkOverlays": 0
+      },
+      "holdMs": 3000,
+      "fixtureSha256": "088f2715ce9da1ed8dacfcf9b595bbe23602690c812fe0bfa106bd7354748972",
+      "expectedStateSha256": "38e4de2725ee20ea8dff960ecd0e4a601d83e3fd47195823efa6160406efeee8",
+      "expectedEffectKinds": [
+        "loot-1"
+      ],
+      "effectsObserved": true,
+      "savedExact": true,
+      "mirrorExact": true,
+      "singleTransaction": true,
+      "committedBeforeAnimationComplete": true,
+      "wallMs": 4672.146772,
+      "audit": {
+        "clickTrusted": true,
+        "writes": {
+          "main": 1,
+          "mirror": 1
+        },
+        "held": 0,
+        "draws": {
+          "chest-charge": {
+            "calls": 1770,
+            "firstMs": 3010.2000000001863,
+            "lastMs": 3643
+          },
+          "loot-1": {
+            "calls": 4595,
+            "firstMs": 3661.2000000001863,
+            "lastMs": 4610
+          }
+        },
+        "ended": 4627.700000000186,
+        "observationCount": 221,
+        "lastObservation": {
+          "ms": 4627.700000000186,
+          "busy": false,
+          "kind": "idle",
+          "submittedFrames": 0,
+          "elapsed": 0
+        }
+      }
+    },
+    {
+      "variant": "current",
+      "name": "late-first-frame-loot",
+      "status": "PASS",
+      "identity": {
+        "url": "http://127.0.0.1:4267/",
+        "title": "骰狱：无尽深渊 · Dice Abyss",
+        "release": "5.6.1",
+        "bodyTextCharacters": 982,
+        "frameworkOverlays": 0
+      },
+      "holdMs": 3000,
+      "fixtureSha256": "088f2715ce9da1ed8dacfcf9b595bbe23602690c812fe0bfa106bd7354748972",
+      "expectedStateSha256": "38e4de2725ee20ea8dff960ecd0e4a601d83e3fd47195823efa6160406efeee8",
+      "expectedEffectKinds": [
+        "loot-1"
+      ],
+      "effectsObserved": true,
+      "savedExact": true,
+      "mirrorExact": true,
+      "singleTransaction": true,
+      "committedBeforeAnimationComplete": true,
+      "wallMs": 4661.779214000002,
+      "audit": {
+        "clickTrusted": true,
+        "writes": {
+          "main": 1,
+          "mirror": 1
+        },
+        "held": 0,
+        "draws": {
+          "chest-charge": {
+            "calls": 1770,
+            "firstMs": 3004.5,
+            "lastMs": 3637.399999999441
+          },
+          "loot-1": {
+            "calls": 6052,
+            "firstMs": 3655,
+            "lastMs": 4604.199999999255
+          }
+        },
+        "ended": 4621.0999999996275,
+        "observationCount": 241,
+        "lastObservation": {
+          "ms": 4621.0999999996275,
+          "busy": false,
+          "kind": "idle",
+          "submittedFrames": 0,
+          "elapsed": 0
+        }
+      }
+    },
+    {
+      "variant": "baseline",
+      "name": "normal-full-combat",
+      "status": "PASS",
+      "identity": {
+        "url": "http://127.0.0.1:4266/",
+        "title": "骰狱：无尽深渊 · Dice Abyss",
+        "release": "5.6.0",
+        "bodyTextCharacters": 986,
+        "frameworkOverlays": 0
+      },
+      "holdMs": 0,
+      "fixtureSha256": "2491c86368406e4e7d4fdbad58e1454ae95d238a60598feef27ffb2134bbdbb7",
+      "expectedStateSha256": "088f2715ce9da1ed8dacfcf9b595bbe23602690c812fe0bfa106bd7354748972",
+      "expectedEffectKinds": [
+        "combat"
+      ],
+      "effectsObserved": true,
+      "savedExact": true,
+      "mirrorExact": true,
+      "singleTransaction": true,
+      "committedBeforeAnimationComplete": true,
+      "wallMs": 2871.3070899999984,
+      "audit": {
+        "clickTrusted": true,
+        "writes": {
+          "main": 1,
+          "mirror": 1
+        },
+        "held": 0,
+        "draws": {
+          "combat": {
+            "calls": 2419,
+            "firstMs": 1332,
+            "lastMs": 2461.600000000559
+          }
+        },
+        "ended": 2846.7000000001863,
+        "observationCount": 134,
+        "lastObservation": {
+          "ms": 2846.7000000001863,
+          "busy": false,
+          "kind": "idle",
+          "submittedFrames": 0,
+          "elapsed": 0
+        }
+      }
+    },
+    {
+      "variant": "current",
+      "name": "normal-full-combat",
+      "status": "PASS",
+      "identity": {
+        "url": "http://127.0.0.1:4267/",
+        "title": "骰狱：无尽深渊 · Dice Abyss",
+        "release": "5.6.1",
+        "bodyTextCharacters": 988,
+        "frameworkOverlays": 0
+      },
+      "holdMs": 0,
+      "fixtureSha256": "2491c86368406e4e7d4fdbad58e1454ae95d238a60598feef27ffb2134bbdbb7",
+      "expectedStateSha256": "088f2715ce9da1ed8dacfcf9b595bbe23602690c812fe0bfa106bd7354748972",
+      "expectedEffectKinds": [
+        "combat"
+      ],
+      "effectsObserved": true,
+      "savedExact": true,
+      "mirrorExact": true,
+      "singleTransaction": true,
+      "committedBeforeAnimationComplete": true,
+      "wallMs": 2871.501043000004,
+      "audit": {
+        "clickTrusted": true,
+        "writes": {
+          "main": 1,
+          "mirror": 1
+        },
+        "held": 0,
+        "draws": {
+          "combat": {
+            "calls": 2419,
+            "firstMs": 1333.2999999998137,
+            "lastMs": 2462.7000000001863
+          }
+        },
+        "ended": 2849.5,
+        "observationCount": 133,
+        "lastObservation": {
+          "ms": 2849.5,
+          "busy": false,
+          "kind": "idle",
+          "submittedFrames": 0,
+          "elapsed": 0
+        }
+      }
+    },
+    {
+      "variant": "current",
+      "name": "missing-raf-deadline",
+      "status": "PASS",
+      "identity": {
+        "url": "http://127.0.0.1:4267/",
+        "title": "骰狱：无尽深渊 · Dice Abyss",
+        "release": "5.6.1",
+        "bodyTextCharacters": 988,
+        "frameworkOverlays": 0
+      },
+      "holdMs": -1,
+      "fixtureSha256": "2491c86368406e4e7d4fdbad58e1454ae95d238a60598feef27ffb2134bbdbb7",
+      "expectedStateSha256": "088f2715ce9da1ed8dacfcf9b595bbe23602690c812fe0bfa106bd7354748972",
+      "expectedEffectKinds": [],
+      "effectsObserved": null,
+      "savedExact": true,
+      "mirrorExact": true,
+      "singleTransaction": true,
+      "committedBeforeAnimationComplete": true,
+      "wallMs": 8068.663957999997,
+      "audit": {
+        "clickTrusted": true,
+        "writes": {
+          "main": 1,
+          "mirror": 1
+        },
+        "held": 0,
+        "draws": {},
+        "ended": 8035.899999999441,
+        "observationCount": 450,
+        "lastObservation": {
+          "ms": 8035.899999999441,
+          "busy": false,
+          "kind": "idle",
+          "submittedFrames": 0,
+          "elapsed": 0
+        }
+      }
+    },
+    {
+      "variant": "current",
+      "name": "skip-before-first-frame",
+      "status": "PASS",
+      "identity": {
+        "url": "http://127.0.0.1:4267/",
+        "title": "骰狱：无尽深渊 · Dice Abyss",
+        "release": "5.6.1",
+        "bodyTextCharacters": 988,
+        "frameworkOverlays": 0
+      },
+      "holdMs": -1,
+      "fixtureSha256": "2491c86368406e4e7d4fdbad58e1454ae95d238a60598feef27ffb2134bbdbb7",
+      "expectedStateSha256": "088f2715ce9da1ed8dacfcf9b595bbe23602690c812fe0bfa106bd7354748972",
+      "expectedEffectKinds": [],
+      "effectsObserved": null,
+      "savedExact": true,
+      "mirrorExact": true,
+      "singleTransaction": true,
+      "committedBeforeAnimationComplete": true,
+      "wallMs": 148.87095799999952,
+      "audit": {
+        "clickTrusted": true,
+        "writes": {
+          "main": 1,
+          "mirror": 1
+        },
+        "held": 0,
+        "draws": {},
+        "ended": 112.79999999981374,
+        "observationCount": 7,
+        "lastObservation": {
+          "ms": 112.79999999981374,
+          "busy": false,
+          "kind": "idle",
+          "submittedFrames": 0,
+          "elapsed": 0
+        }
+      }
+    },
+    {
+      "variant": "current",
+      "name": "hidden-before-first-frame",
+      "status": "PASS",
+      "identity": {
+        "url": "http://127.0.0.1:4267/",
+        "title": "骰狱：无尽深渊 · Dice Abyss",
+        "release": "5.6.1",
+        "bodyTextCharacters": 988,
+        "frameworkOverlays": 0
+      },
+      "holdMs": -1,
+      "fixtureSha256": "2491c86368406e4e7d4fdbad58e1454ae95d238a60598feef27ffb2134bbdbb7",
+      "expectedStateSha256": "088f2715ce9da1ed8dacfcf9b595bbe23602690c812fe0bfa106bd7354748972",
+      "expectedEffectKinds": [],
+      "effectsObserved": null,
+      "savedExact": true,
+      "mirrorExact": true,
+      "singleTransaction": true,
+      "committedBeforeAnimationComplete": true,
+      "wallMs": 120.82570299999497,
+      "audit": {
+        "clickTrusted": true,
+        "writes": {
+          "main": 1,
+          "mirror": 1
+        },
+        "held": 0,
+        "draws": {},
+        "ended": 82.29999999981374,
+        "observationCount": 5,
+        "lastObservation": {
+          "ms": 82.29999999981374,
+          "busy": false,
+          "kind": "idle",
+          "submittedFrames": 0,
+          "elapsed": 0
+        }
+      }
+    },
+    {
+      "variant": "current",
+      "name": "low-effects",
+      "status": "PASS",
+      "identity": {
+        "url": "http://127.0.0.1:4267/",
+        "title": "骰狱：无尽深渊 · Dice Abyss",
+        "release": "5.6.1",
+        "bodyTextCharacters": 988,
+        "frameworkOverlays": 0
+      },
+      "holdMs": 0,
+      "fixtureSha256": "2491c86368406e4e7d4fdbad58e1454ae95d238a60598feef27ffb2134bbdbb7",
+      "expectedStateSha256": "088f2715ce9da1ed8dacfcf9b595bbe23602690c812fe0bfa106bd7354748972",
+      "expectedEffectKinds": [],
+      "effectsObserved": null,
+      "savedExact": true,
+      "mirrorExact": true,
+      "singleTransaction": true,
+      "committedBeforeAnimationComplete": true,
+      "wallMs": 271.4276230000032,
+      "audit": {
+        "clickTrusted": true,
+        "writes": {
+          "main": 1,
+          "mirror": 1
+        },
+        "held": 0,
+        "draws": {},
+        "ended": 237.6000000005588,
+        "observationCount": 14,
+        "lastObservation": {
+          "ms": 237.6000000005588,
+          "busy": false,
+          "kind": "idle",
+          "submittedFrames": 0,
+          "elapsed": 0
+        }
+      }
+    },
+    {
+      "variant": "current",
+      "name": "reduced-motion",
+      "status": "PASS",
+      "identity": {
+        "url": "http://127.0.0.1:4267/",
+        "title": "骰狱：无尽深渊 · Dice Abyss",
+        "release": "5.6.1",
+        "bodyTextCharacters": 988,
+        "frameworkOverlays": 0
+      },
+      "holdMs": 0,
+      "fixtureSha256": "2491c86368406e4e7d4fdbad58e1454ae95d238a60598feef27ffb2134bbdbb7",
+      "expectedStateSha256": "088f2715ce9da1ed8dacfcf9b595bbe23602690c812fe0bfa106bd7354748972",
+      "expectedEffectKinds": [],
+      "effectsObserved": null,
+      "savedExact": true,
+      "mirrorExact": true,
+      "singleTransaction": true,
+      "committedBeforeAnimationComplete": true,
+      "wallMs": 270.59758899999724,
+      "audit": {
+        "clickTrusted": true,
+        "writes": {
+          "main": 1,
+          "mirror": 1
+        },
+        "held": 0,
+        "draws": {},
+        "ended": 238.20000000018626,
+        "observationCount": 14,
+        "lastObservation": {
+          "ms": 238.20000000018626,
+          "busy": false,
+          "kind": "idle",
+          "submittedFrames": 0,
+          "elapsed": 0
+        }
+      }
+    }
+  ],
+  "errors": []
+}

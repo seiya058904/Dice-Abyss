@@ -1,0 +1,124 @@
+TAP version 13
+# Subtest: capacity inspection measures the entire exported envelope without changing frozen state or unknown metadata
+ok 1 - capacity inspection measures the entire exported envelope without changing frozen state or unknown metadata
+  ---
+  duration_ms: 10.100286
+  type: 'test'
+  ...
+# Subtest: near-limit advisory starts at 90 percent and does not change the actual write boundary
+ok 2 - near-limit advisory starts at 90 percent and does not change the actual write boundary
+  ---
+  duration_ms: 317.835023
+  type: 'test'
+  ...
+# Subtest: exact-limit and one-byte-over diagnostics agree with real commit acceptance and preserve rejected copies
+ok 3 - exact-limit and one-byte-over diagnostics agree with real commit acceptance and preserve rejected copies
+  ---
+  duration_ms: 246.341795
+  type: 'test'
+  ...
+# Subtest: a multibyte exact-limit export reports byte exhaustion separately from remaining UTF-16 code units
+ok 4 - a multibyte exact-limit export reports byte exhaustion separately from remaining UTF-16 code units
+  ---
+  duration_ms: 51.185657
+  type: 'test'
+  ...
+# Subtest: historically readable CJK and non-BMP oversized saves remain fully measurable and exportable
+ok 5 - historically readable CJK and non-BMP oversized saves remain fully measurable and exportable
+  ---
+  duration_ms: 143.838626
+  type: 'test'
+  ...
+# Subtest: direct valid state can report both byte and character overflow without trying to decode or persist it
+ok 6 - direct valid state can report both byte and character overflow without trying to decode or persist it
+  ---
+  duration_ms: 93.490839
+  type: 'test'
+  ...
+# Subtest: being within the file limit cannot bypass a browser primary quota failure or promise a durable write
+ok 7 - being within the file limit cannot bypass a browser primary quota failure or promise a durable write
+  ---
+  duration_ms: 2.425606
+  type: 'test'
+  ...
+# Subtest: a shrinking salvage which remains above the file limit is rejected with complete export and copies intact
+ok 8 - a shrinking salvage which remains above the file limit is rejected with complete export and copies intact
+  ---
+  duration_ms: 99.654798
+  type: 'test'
+  ...
+# Subtest: a permitted explicit salvage can create room at the exact file limit while preserving every extra field
+ok 9 - a permitted explicit salvage can create room at the exact file limit while preserving every extra field
+  ---
+  duration_ms: 257.971215
+  type: 'test'
+  ...
+# Subtest: a newly committed save at exactly 5,000,000 ASCII characters and bytes remains readable
+ok 10 - a newly committed save at exactly 5,000,000 ASCII characters and bytes remains readable
+  ---
+  duration_ms: 79.897906
+  type: 'test'
+  ...
+# Subtest: a newly committed multibyte save at exactly 5,000,000 UTF-8 bytes remains readable and importable
+ok 11 - a newly committed multibyte save at exactly 5,000,000 UTF-8 bytes remains readable and importable
+  ---
+  duration_ms: 87.725917
+  type: 'test'
+  ...
+# Subtest: a save one byte above the new-write limit is rejected without changing either active copy
+ok 12 - a save one byte above the new-write limit is rejected without changing either active copy
+  ---
+  duration_ms: 92.852885
+  type: 'test'
+  ...
+# Subtest: an accepted near-limit import cannot commit a fate result that its own loader rejects
+ok 13 - an accepted near-limit import cannot commit a fate result that its own loader rejects
+  ---
+  duration_ms: 387.542977
+  type: 'test'
+  ...
+# Subtest: previously readable CJK and non-BMP saves remain available for rescue while oversized writes are rejected
+ok 14 - previously readable CJK and non-BMP saves remain available for rescue while oversized writes are rejected
+  ---
+  duration_ms: 131.938075
+  type: 'test'
+  ...
+# Subtest: an oversized current-schema import performs no primary, mirror or archive writes
+ok 15 - an oversized current-schema import performs no primary, mirror or archive writes
+  ---
+  duration_ms: 41.91204
+  type: 'test'
+  ...
+# Subtest: V4 migration growth is checked before an imported original claims immutable archive slots
+ok 16 - V4 migration growth is checked before an imported original claims immutable archive slots
+  ---
+  duration_ms: 153.200924
+  type: 'test'
+  ...
+# Subtest: an oversized first migrated commit preserves both original copies and leaves archives unclaimed
+ok 17 - an oversized first migrated commit preserves both original copies and leaves archives unclaimed
+  ---
+  duration_ms: 187.548784
+  type: 'test'
+  ...
+# Subtest: stale expected snapshots retain priority and cannot be bypassed by an oversized candidate
+ok 18 - stale expected snapshots retain priority and cannot be bypassed by an oversized candidate
+  ---
+  duration_ms: 29.600802
+  type: 'test'
+  ...
+# Subtest: ordinary 10,000-item saves still commit, mirror and preserve exact equipment and RNG
+ok 19 - ordinary 10,000-item saves still commit, mirror and preserve exact equipment and RNG
+  ---
+  duration_ms: 255.143034
+  type: 'test'
+  ...
+1..19
+# tests 19
+# suites 0
+# pass 19
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2721.068145

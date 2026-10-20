@@ -1,0 +1,184 @@
+TAP version 13
+# Subtest: a localStorage.clear event immediately protects and offers the surviving full memory snapshot
+ok 1 - a localStorage.clear event immediately protects and offers the surviving full memory snapshot
+  ---
+  duration_ms: 33.800697
+  type: 'test'
+  ...
+# Subtest: removing primary and mirror separately reports loss after the last copy disappears
+ok 2 - removing primary and mirror separately reports loss after the last copy disappears
+  ---
+  duration_ms: 4.041902
+  type: 'test'
+  ...
+# Subtest: loss cancels an outstanding confirmation and reveals the committed memory instead of stale animation
+ok 3 - loss cancels an outstanding confirmation and reveals the committed memory instead of stale animation
+  ---
+  duration_ms: 3.384571
+  type: 'test'
+  ...
+# Subtest: a new run arriving after loss stays a separate candidate until the user chooses it
+ok 4 - a new run arriving after loss stays a separate candidate until the user chooses it
+  ---
+  duration_ms: 3.788869
+  type: 'test'
+  ...
+# Subtest: unreadable copies protect memory and pending callbacks without changing either raw record
+ok 5 - unreadable copies protect memory and pending callbacks without changing either raw record
+  ---
+  duration_ms: 3.552791
+  type: 'test'
+  ...
+# Subtest: sessionStorage events with matching keys cannot synchronize or discard localStorage progress
+ok 6 - sessionStorage events with matching keys cannot synchronize or discard localStorage progress
+  ---
+  duration_ms: 2.071962
+  type: 'test'
+  ...
+# Subtest: an unchanged mirror notification preserves active presentation and existing confirmation
+ok 7 - an unchanged mirror notification preserves active presentation and existing confirmation
+  ---
+  duration_ms: 2.567224
+  type: 'test'
+  ...
+# Subtest: a delayed clear notification with both copies already restored does not falsely report missing data
+ok 8 - a delayed clear notification with both copies already restored does not falsely report missing data
+  ---
+  duration_ms: 2.718387
+  type: 'test'
+  ...
+# Subtest: unrelated localStorage changes do not inspect or redraw the game
+ok 9 - unrelated localStorage changes do not inspect or redraw the game
+  ---
+  duration_ms: 3.059641
+  type: 'test'
+  ...
+# Subtest: queued clear followed by an already recreated different run preserves the old full memory
+ok 10 - queued clear followed by an already recreated different run preserves the old full memory
+  ---
+  duration_ms: 3.479511
+  type: 'test'
+  ...
+# Subtest: queued remove events followed by a same-ID same-revision changed branch preserve memory before synchronization
+ok 11 - queued remove events followed by a same-ID same-revision changed branch preserve memory before synchronization
+  ---
+  duration_ms: 3.536706
+  type: 'test'
+  ...
+# Subtest: the complete queued delete-and-recreate event sequence leaves an identical restored game presentation intact
+ok 12 - the complete queued delete-and-recreate event sequence leaves an identical restored game presentation intact
+  ---
+  duration_ms: 5.9618
+  type: 'test'
+  ...
+# Subtest: explicit recovery restores one exact envelope including unknown nested data without a game transition
+ok 13 - explicit recovery restores one exact envelope including unknown nested data without a game transition
+  ---
+  duration_ms: 1.878065
+  type: 'test'
+  ...
+# Subtest: every existing primary or mirror record blocks recovery, including empty and corrupt strings
+ok 14 - every existing primary or mirror record blocks recovery, including empty and corrupt strings
+  ---
+  duration_ms: 0.988862
+  type: 'test'
+  ...
+# Subtest: a new run and a same-run same-revision branch both survive a stale restore attempt with zero writes
+ok 15 - a new run and a same-run same-revision branch both survive a stale restore attempt with zero writes
+  ---
+  duration_ms: 0.945267
+  type: 'test'
+  ...
+# Subtest: recovery rejects unavailable or nonempty review snapshots and unreadable storage before writes
+ok 16 - recovery rejects unavailable or nonempty review snapshots and unreadable storage before writes
+  ---
+  duration_ms: 0.349536
+  type: 'test'
+  ...
+# Subtest: recovery keeps ordinary full validation, file capacity and immutable archive rejection
+ok 17 - recovery keeps ordinary full validation, file capacity and immutable archive rejection
+  ---
+  duration_ms: 20.872193
+  type: 'test'
+  ...
+# Subtest: primary quota keeps recovery missing; mirror quota retains the durable primary and reports its limit
+ok 18 - primary quota keeps recovery missing; mirror quota retains the durable primary and reports its limit
+  ---
+  duration_ms: 0.937726
+  type: 'test'
+  ...
+# Subtest: inspection is read-only, preserves exact raw strings and retains primary-before-mirror selection
+ok 19 - inspection is read-only, preserves exact raw strings and retains primary-before-mirror selection
+  ---
+  duration_ms: 1.256096
+  type: 'test'
+  ...
+# Subtest: the app restores only after confirmation under its existing Web Lock and resumes with the exact memory state
+ok 20 - the app restores only after confirmation under its existing Web Lock and resumes with the exact memory state
+  ---
+  duration_ms: 7.424492
+  type: 'test'
+  ...
+# Subtest: a missing Web Locks API keeps explicit snapshot protection and does not invent automatic writes
+ok 21 - a missing Web Locks API keeps explicit snapshot protection and does not invent automatic writes
+  ---
+  duration_ms: 3.815378
+  type: 'test'
+  ...
+# Subtest: a new save appearing while restore waits for its lock is preserved and old memory stays exportable
+ok 22 - a new save appearing while restore waits for its lock is preserved and old memory stays exportable
+  ---
+  duration_ms: 3.172278
+  type: 'test'
+  ...
+# Subtest: restore checks exact raw keys even when a conflicting event was not delivered
+ok 23 - restore checks exact raw keys even when a conflicting event was not delivered
+  ---
+  duration_ms: 2.656986
+  type: 'test'
+  ...
+# Subtest: explicit read switches to the reviewed full save without writes and can export memory from its confirmation
+ok 24 - explicit read switches to the reviewed full save without writes and can export memory from its confirmation
+  ---
+  duration_ms: 3.786555
+  type: 'test'
+  ...
+# Subtest: read confirmation rejects raw changes even when the decoded game is still identical
+ok 25 - read confirmation rejects raw changes even when the decoded game is still identical
+  ---
+  duration_ms: 3.380535
+  type: 'test'
+  ...
+# Subtest: protection refuses stale game clicks, direct actions, new runs, file imports and the Space shortcut
+ok 26 - protection refuses stale game clicks, direct actions, new runs, file imports and the Space shortcut
+  ---
+  duration_ms: 2.99065
+  type: 'test'
+  ...
+# Subtest: an import whose file read began before loss cannot reopen a stale replacement confirmation
+ok 27 - an import whose file read began before loss cannot reopen a stale replacement confirmation
+  ---
+  duration_ms: 2.750534
+  type: 'test'
+  ...
+# Subtest: an ordinary action already waiting for the save lock cannot commit after loss enters protection
+ok 28 - an ordinary action already waiting for the save lock cannot commit after loss enters protection
+  ---
+  duration_ms: 2.110198
+  type: 'test'
+  ...
+# Subtest: raw-record export preserves both original strings while ordinary export still preserves the game memory
+ok 29 - raw-record export preserves both original strings while ordinary export still preserves the game memory
+  ---
+  duration_ms: 2.034086
+  type: 'test'
+  ...
+1..29
+# tests 29
+# suites 0
+# pass 29
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 171.716735

@@ -1,0 +1,40 @@
+TAP version 13
+# Subtest: gold previews exactly preserve the existing cap for normal, partial, zero and large rewards
+ok 1 - gold previews exactly preserve the existing cap for normal, partial, zero and large rewards
+  ---
+  duration_ms: 1.926157
+  type: 'test'
+  ...
+# Subtest: gold previews reject malformed monetary inputs rather than inventing an amount
+ok 2 - gold previews reject malformed monetary inputs rather than inventing an amount
+  ---
+  duration_ms: 0.779152
+  type: 'test'
+  ...
+# Subtest: every legitimate half refund fits the capacity created by its preceding payment
+ok 3 - every legitimate half refund fits the capacity created by its preceding payment
+  ---
+  duration_ms: 0.212554
+  type: 'test'
+  ...
+# Subtest: historical receipts use explicit saved credit and never reward metadata or current balance
+ok 4 - historical receipts use explicit saved credit and never reward metadata or current balance
+  ---
+  duration_ms: 0.260706
+  type: 'test'
+  ...
+# Subtest: gold text distinguishes pending capacity from settled receipt and supports exact formatting
+ok 5 - gold text distinguishes pending capacity from settled receipt and supports exact formatting
+  ---
+  duration_ms: 11.599867
+  type: 'test'
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 5
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 23.744489

@@ -1,0 +1,121 @@
+{
+  "date": "2026-10-19",
+  "timezone": "UTC",
+  "os": "Linux container, x86_64",
+  "node": "v24.19.0",
+  "npm": "11.9.0",
+  "python": "3.12.14",
+  "playwright": "1.62.1",
+  "chromium": "155.0.8059.84",
+  "browserEnvironments": [
+    {
+      "label": "baseline",
+      "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.8059.84 Safari/537.36",
+      "platform": "Linux x86_64",
+      "dpr": 1,
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "vendor": "Google Inc. (Google)",
+      "fonts": [
+        true,
+        true
+      ],
+      "longTaskObserver": true,
+      "webLocks": true,
+      "http": {
+        "release": "5.16.0",
+        "build": "5",
+        "documentUrl": "http://127.0.0.1:4188/",
+        "assets": [
+          {
+            "file": "src/views.js",
+            "url": "http://127.0.0.1:4188/src/views.js",
+            "status": 200,
+            "bytes": 94570,
+            "sha256": "1aed7caac52894bd35b03307f08ebf45382b9f6418050b47e2f09dc48f71971c"
+          },
+          {
+            "file": "src/dice-renderer.js",
+            "url": "http://127.0.0.1:4188/src/dice-renderer.js",
+            "status": 200,
+            "bytes": 14522,
+            "sha256": "b40e1e1c808b00d319b70ce7546403c588cdcc8397bba684fe19b2f4c0bca6d8"
+          },
+          {
+            "file": "src/storage.js",
+            "url": "http://127.0.0.1:4188/src/storage.js",
+            "status": 200,
+            "bytes": 31698,
+            "sha256": "6bfcc60036c9f729c21b948ca98c7ac715e14049856fb9dded0baa2aeef2c561"
+          }
+        ],
+        "documentStatus": 200
+      }
+    },
+    {
+      "label": "after",
+      "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.8059.84 Safari/537.36",
+      "platform": "Linux x86_64",
+      "dpr": 1,
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "vendor": "Google Inc. (Google)",
+      "fonts": [
+        true,
+        true
+      ],
+      "longTaskObserver": true,
+      "webLocks": true,
+      "http": {
+        "release": "5.17.0",
+        "build": "5",
+        "documentUrl": "http://127.0.0.1:4189/",
+        "assets": [
+          {
+            "file": "src/views.js",
+            "url": "http://127.0.0.1:4189/src/views.js",
+            "status": 200,
+            "bytes": 97677,
+            "sha256": "2b8edcbe13fb3d8fb9a69eb51a1b2bc98e3819633d18f7d60675a73ebdf1b2e6"
+          },
+          {
+            "file": "src/dice-renderer.js",
+            "url": "http://127.0.0.1:4189/src/dice-renderer.js",
+            "status": 200,
+            "bytes": 14522,
+            "sha256": "b40e1e1c808b00d319b70ce7546403c588cdcc8397bba684fe19b2f4c0bca6d8"
+          },
+          {
+            "file": "src/storage.js",
+            "url": "http://127.0.0.1:4189/src/storage.js",
+            "status": 200,
+            "bytes": 31698,
+            "sha256": "6bfcc60036c9f729c21b948ca98c7ac715e14049856fb9dded0baa2aeef2c561"
+          }
+        ],
+        "documentStatus": 200
+      }
+    }
+  ],
+  "preferredBrowserAttempts": [
+    {
+      "surface": "Browser extension",
+      "outcome": "Observed ERR_CONNECTION_REFUSED for workspace 127.0.0.1:4188; connected browser cannot access this container loopback."
+    },
+    {
+      "surface": "Cloud CUA browser",
+      "outcome": "Observed ERR_CONNECTION_REFUSED for the same loopback; no game interaction possible on that surface."
+    }
+  ],
+  "actualBrowserRoute": "Tester-supplied native Playwright and existing Chromium in the same workspace; no browser binary or dependency was copied into the game. Taskbook explicitly permits Playwright/Chromium.",
+  "localServerPermission": "First restricted loopback HTTP spawn failed EPERM. Rerun with permitted local-process/loopback sandbox escalation passed; no game web publication or external messaging.",
+  "designSkillLimitation": "Impeccable context executable could not initialize its packaged cache (exit127/permission limitation). Existing black metal visual system and the read clarity guidance were applied; no context file or generator was fabricated.",
+  "notTested": [
+    "Physical GPU and physical 4K display",
+    "Real mobile hardware/touch performance",
+    "OS Chinese IME composition",
+    "External screen reader speech",
+    "Audio listening",
+    "Native Windows launcher execution",
+    "OS sleep/background scheduling",
+    "Fresh round17 WebGL context-loss lifecycle suite (retained history only)"
+  ]
+}

@@ -1,0 +1,47 @@
+/* Concrete equipment replaces the decorative unknown-event emblem here.
+   One shared frame, two explicit roles, no extra animation or bitmap. */
+.event-equipment {
+  width: 100%; margin: 1.2rem 0; padding: .95rem 0;
+  border-block: 1px solid #53565e; text-align: left;
+  font-family: 'Abyss Text', sans-serif; font-size: max(13px, .87rem);
+  line-height: 1.65; min-width: 0;
+}
+.event-equipment-heading {
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: .5rem 1rem; flex-wrap: wrap; margin-bottom: .8rem;
+}
+.event-equipment-heading h2 { font-size: max(16px, 1.07rem); font-weight: 600; color: #eee3c6; }
+.event-equipment-heading > p { color: #c1c8ce; font-size: inherit; }
+.event-equipment-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+.event-equipment-grid[data-items="2"] { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.event-equipment-item { min-width: 0; display: flex; flex-direction: column; align-items: flex-start; }
+.event-equipment-item h3 { display: flex; align-items: center; gap: .4rem; color: #f1b6b2; font-size: inherit; font-weight: 500; }
+.event-equipment-item[data-event-item-role="retain"] h3 { color: #d9c38e; }
+.event-equipment-item .icon { width: 1rem; height: 1rem; flex-shrink: 0; }
+.event-equipment-name { margin: .35rem 0 .55rem; color: #f0ece6; overflow-wrap: anywhere; }
+.event-equipment-item dl { margin: 0 0 .55rem; width: 100%; font-size: inherit; }
+.event-equipment-item dl > div { display: flex; gap: .5rem; flex-wrap: wrap; justify-content: space-between; }
+.event-equipment-item dt { color: #bcc7cd; }
+.event-equipment-item dd { margin: 0; color: #e6dfce; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.event-equipment-note { color: #c1c8ce; font-size: inherit; overflow-wrap: anywhere; }
+.event-equipment-protection { display: flex; gap: .35rem; align-items: flex-start; color: #efc884; margin: .1rem 0 .5rem; overflow-wrap: anywhere; }
+.event-equipment-protection .icon { margin-top: .3em; }
+.event-equipment-item button { font-size: inherit; padding: .45rem .65rem; margin-top: .8rem; min-height: 36px; }
+.event-equipment-item.is-unavailable > p { color: #edb7af; margin-top: .35rem; }
+.event-equipment-item.is-unavailable > small { font-size: inherit; color: #c1c8ce; }
+.game-dialog .event-equipment { margin: .9rem 0; font-size: max(13px, .87rem); }
+.game-dialog .event-confirm-terms dd { min-width: 0; overflow-wrap: anywhere; }
+.game-dialog .confirmation-copy:has(.event-equipment) > p { overflow-wrap: anywhere; }
+.save-import-result { margin-top: 1rem; padding: 1rem; border: 1px solid #a16865; color: #f0dfd7; font-size: max(14px, .92rem); line-height: 1.75; }
+.save-import-result[hidden] { display: none; }
+.save-import-result h4 { font-size: inherit; font-weight: 600; margin: 0 0 .55rem; color: #f6bcb5; }
+.save-import-result p + p { margin-top: .55rem; }
+.save-import-result .save-import-filename { color: #ddd6c8; overflow-wrap: anywhere; }
+.save-import-result button { margin-top: .8rem; font-size: inherit; }
+.save-import-result:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+@media (max-width: 699px) {
+  .event-equipment-grid[data-items="2"] { grid-template-columns: minmax(0, 1fr); }
+  .event-equipment-grid[data-items="2"] .event-equipment-item + .event-equipment-item { border-top: 1px solid #3e4148; padding-top: .9rem; }
+  .event-equipment, .game-dialog .event-equipment { font-size: max(14px, calc(14px * var(--user-scale))); }
+  .game-dialog .event-equipment-grid[data-items="2"] { grid-template-columns: minmax(0, 1fr); }
+}

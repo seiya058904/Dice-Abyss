@@ -1,0 +1,114 @@
+{
+  "status": "PASS",
+  "scope": "Synthetic valid current-schema inventory with real catalog items and actual equip actions. Does not claim a naturally reached inventory or that the independent 50-point overflow guard is reachable.",
+  "finding": "The generic *Bonus min(.6) executes before the named goldBonus:1 cap; two .544 items already bind at .6. A third item adds no base gold bonus. The later luckOverflow term is separate.",
+  "sourceAndDataUnchanged": true,
+  "results": [
+    {
+      "root": "/workspace/scratch/98883f3944af/round05/baseline/Dice-Abyss",
+      "engineSha256": "8678e8cab02cec97edc057e1452271d57285e9cea87c7cfe37a397b45f568c66",
+      "catalogId": "v4-relic-3-3-7",
+      "itemEffects": {
+        "goldBonus": 0.544,
+        "luck": 21.76
+      },
+      "rows": [
+        {
+          "equippedGoldItems": 1,
+          "action": {
+            "type": "equip",
+            "id": "i4",
+            "slot": "relic2"
+          },
+          "rawGold": 0.544,
+          "effectiveGold": 0.544,
+          "rawLuck": 22,
+          "luckOverflow": 0,
+          "beforeActionAfterSha256": "e1d40ace2cb00a781f31e4fab06fbc4a8e2a5cbc6c36e10136204eefeb588871",
+          "encodedAfterSha256": "0961de5f10bccb870b28b46540b760690a4bc215c69034c665abc93a406c5bd0"
+        },
+        {
+          "equippedGoldItems": 2,
+          "action": {
+            "type": "equip",
+            "id": "i5",
+            "slot": "relic3"
+          },
+          "rawGold": 1.088,
+          "effectiveGold": 0.6,
+          "rawLuck": 44,
+          "luckOverflow": 0,
+          "beforeActionAfterSha256": "b03fe406716b1b0d16566023b13f4e7dd9d38a151379e338327f9c30a3621653",
+          "encodedAfterSha256": "1b4d4a81595044c79ec3f6bb3e24f906e4dda94d6a7361a943782f04a817d0f6"
+        },
+        {
+          "equippedGoldItems": 3,
+          "action": {
+            "type": "equip",
+            "id": "i6",
+            "slot": "relic"
+          },
+          "rawGold": 1.6320000000000001,
+          "effectiveGold": 0.6,
+          "rawLuck": 66,
+          "luckOverflow": 0,
+          "beforeActionAfterSha256": "6de540d870c247b808e30af22d259bbb1aae290b62b378ab975a251b2ac6208b",
+          "encodedAfterSha256": "eb463c1b0db6104aa5c19879b1f3fad5e1303efa446a71b0c0f59b079b2b628d"
+        }
+      ]
+    },
+    {
+      "root": "/workspace/scratch/98883f3944af/round05/work/Dice-Abyss",
+      "engineSha256": "8678e8cab02cec97edc057e1452271d57285e9cea87c7cfe37a397b45f568c66",
+      "catalogId": "v4-relic-3-3-7",
+      "itemEffects": {
+        "goldBonus": 0.544,
+        "luck": 21.76
+      },
+      "rows": [
+        {
+          "equippedGoldItems": 1,
+          "action": {
+            "type": "equip",
+            "id": "i4",
+            "slot": "relic2"
+          },
+          "rawGold": 0.544,
+          "effectiveGold": 0.544,
+          "rawLuck": 22,
+          "luckOverflow": 0,
+          "beforeActionAfterSha256": "e1d40ace2cb00a781f31e4fab06fbc4a8e2a5cbc6c36e10136204eefeb588871",
+          "encodedAfterSha256": "0961de5f10bccb870b28b46540b760690a4bc215c69034c665abc93a406c5bd0"
+        },
+        {
+          "equippedGoldItems": 2,
+          "action": {
+            "type": "equip",
+            "id": "i5",
+            "slot": "relic3"
+          },
+          "rawGold": 1.088,
+          "effectiveGold": 0.6,
+          "rawLuck": 44,
+          "luckOverflow": 0,
+          "beforeActionAfterSha256": "b03fe406716b1b0d16566023b13f4e7dd9d38a151379e338327f9c30a3621653",
+          "encodedAfterSha256": "1b4d4a81595044c79ec3f6bb3e24f906e4dda94d6a7361a943782f04a817d0f6"
+        },
+        {
+          "equippedGoldItems": 3,
+          "action": {
+            "type": "equip",
+            "id": "i6",
+            "slot": "relic"
+          },
+          "rawGold": 1.6320000000000001,
+          "effectiveGold": 0.6,
+          "rawLuck": 66,
+          "luckOverflow": 0,
+          "beforeActionAfterSha256": "6de540d870c247b808e30af22d259bbb1aae290b62b378ab975a251b2ac6208b",
+          "encodedAfterSha256": "eb463c1b0db6104aa5c19879b1f3fad5e1303efa446a71b0c0f59b079b2b628d"
+        }
+      ]
+    }
+  ]
+}

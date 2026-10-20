@@ -1,0 +1,121 @@
+{
+  "round": "09",
+  "date": "2026-10-18",
+  "postTopLevelRefactor": true,
+  "scope": "Targeted independent lifecycle review requested after moving the receipt to state.lootCreditedGold; synthetic validated imports and in-memory storage failure injection, not browser or performance tests.",
+  "groups": 16,
+  "failed": 0,
+  "records": [
+    {
+      "name": "open-keeps-complete-pending-reward-and-unknown-metadata",
+      "status": "passed",
+      "creditedGold": 10,
+      "pendingEqualsLoot": true,
+      "unknownNestedFieldIgnored": true
+    },
+    {
+      "name": "legacy-nested-creditedGold-does-not-invent-a-receipt",
+      "status": "passed",
+      "legacyActualUnknown": true
+    },
+    {
+      "name": "accepted-spending-and-lock-keep-saved-receipt",
+      "status": "passed",
+      "spent": 223,
+      "receiptStill": 10
+    },
+    {
+      "name": "last-room-next-preserves-receipt-through-cleared",
+      "status": "passed",
+      "phase": "cleared",
+      "receipt": 10,
+      "rejectedFatePreserved": true
+    },
+    {
+      "name": "descend-clears-receipt-with-loot-and-next-fate-stays-clean",
+      "status": "passed",
+      "descended": true,
+      "fateHasOrphan": false
+    },
+    {
+      "name": "valid-imported-fate-history-is-retained-until-enter-clears-loot",
+      "status": "passed",
+      "fateRetainsReceipt": true,
+      "enterClearsTogether": true
+    },
+    {
+      "name": "next-combat-wave-clears-history-without-leaking-a-receipt",
+      "status": "passed",
+      "wave": 2,
+      "orphan": false
+    },
+    {
+      "name": "pending-chest-can-coexist-with-old-history-then-open-replaces-receipt",
+      "status": "passed",
+      "oldReceipt": 10,
+      "newReceipt": 0,
+      "newRewardEqualsPending": true
+    },
+    {
+      "name": "imported-gambit-with-old-loot-clears-history-when-awarding-new-chest",
+      "status": "passed",
+      "importedPendingWithHistory": true,
+      "oldReceipt": 10,
+      "pendingAfterHasOrphan": false,
+      "newReceipt": 4
+    },
+    {
+      "name": "imported-bloodwell-with-old-loot-clears-history-when-awarding-new-chest",
+      "status": "passed",
+      "importedPendingWithHistory": true,
+      "oldReceipt": 10,
+      "pendingAfterHasOrphan": false,
+      "newReceipt": 4
+    },
+    {
+      "name": "imported-abyssauction-with-old-loot-clears-history-when-awarding-new-chest",
+      "status": "passed",
+      "importedPendingWithHistory": true,
+      "oldReceipt": 10,
+      "pendingAfterHasOrphan": false,
+      "newReceipt": 4,
+      "auctionRewardDeepEqual": true
+    },
+    {
+      "name": "main-write-failure-preserves-open-before-state",
+      "status": "passed",
+      "bothSlotsUnchanged": true,
+      "receiptBefore": null
+    },
+    {
+      "name": "main-write-failure-preserves-descend-before-state",
+      "status": "passed",
+      "bothSlotsUnchanged": true,
+      "receiptBefore": 10
+    },
+    {
+      "name": "mirror-write-failure-retains-new-main-receipt-with-warning",
+      "status": "passed",
+      "mainReceipt": 10,
+      "oldMirrorRetained": true,
+      "warning": true
+    },
+    {
+      "name": "known-top-level-field-rejects-orphans-or-invalid-values",
+      "status": "passed",
+      "invalidValues": 7,
+      "orphanRejected": true,
+      "compatibilityBoundary": "The newly reserved top-level key is typed; arbitrary conflicting legacy data at that exact key is not promised compatible."
+    },
+    {
+      "name": "existing-legacy-fixtures-preserve-unrelated-and-reward-unknown-metadata",
+      "status": "passed",
+      "fixtures": 11,
+      "sourceVersions": [
+        4
+      ],
+      "inventedReceipts": 0
+    }
+  ],
+  "preflightCorrection": "The first hand-made merchant fixture had one offer and was rejected by validateSave before exercising a transaction. Replaced it with the engine-generated four-offer merchant state. This was a fixture correction, not a runtime product failure."
+}

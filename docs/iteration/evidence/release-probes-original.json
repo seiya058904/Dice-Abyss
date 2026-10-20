@@ -1,0 +1,123 @@
+{
+  "method": "Actual source evaluated with only child-process/filesystem enumeration mocks for syntax-check branches; real local HTTP smoke with an occupied port, and a free port when --after is used. No timing or browser claims.",
+  "node": "v24.19.0",
+  "started": "2026-10-17T10:39:06.236Z",
+  "checks": [
+    {
+      "label": "baseline",
+      "scenario": "spawn-error",
+      "sourceSha256": "d4bde335dfea6d553f05036ebcc653b21d985ec6ff168e87a9b4f45a366c555b",
+      "exitCode": null,
+      "spawnCalls": 2,
+      "logs": [
+        "All JavaScript modules passed syntax checks."
+      ],
+      "errors": []
+    },
+    {
+      "label": "baseline",
+      "scenario": "terminated",
+      "sourceSha256": "d4bde335dfea6d553f05036ebcc653b21d985ec6ff168e87a9b4f45a366c555b",
+      "exitCode": null,
+      "spawnCalls": 2,
+      "logs": [
+        "All JavaScript modules passed syntax checks."
+      ],
+      "errors": []
+    },
+    {
+      "label": "baseline",
+      "scenario": "syntax-failure",
+      "sourceSha256": "d4bde335dfea6d553f05036ebcc653b21d985ec6ff168e87a9b4f45a366c555b",
+      "exitCode": 2,
+      "spawnCalls": 1,
+      "logs": [],
+      "errors": []
+    },
+    {
+      "label": "baseline",
+      "scenario": "success",
+      "sourceSha256": "d4bde335dfea6d553f05036ebcc653b21d985ec6ff168e87a9b4f45a366c555b",
+      "exitCode": null,
+      "spawnCalls": 2,
+      "logs": [
+        "All JavaScript modules passed syntax checks."
+      ],
+      "errors": []
+    },
+    {
+      "label": "after",
+      "scenario": "spawn-error",
+      "sourceSha256": "0a0db38f3352b9f5bccdfb008f016970cb989aa401b44589119c0e4c49d1c306",
+      "exitCode": 1,
+      "spawnCalls": 1,
+      "logs": [],
+      "errors": [
+        "Syntax check could not run for src/probe.mjs: synthetic EAGAIN"
+      ]
+    },
+    {
+      "label": "after",
+      "scenario": "terminated",
+      "sourceSha256": "0a0db38f3352b9f5bccdfb008f016970cb989aa401b44589119c0e4c49d1c306",
+      "exitCode": 1,
+      "spawnCalls": 1,
+      "logs": [],
+      "errors": [
+        "Syntax check could not run for src/probe.mjs: SIGKILL"
+      ]
+    },
+    {
+      "label": "after",
+      "scenario": "syntax-failure",
+      "sourceSha256": "0a0db38f3352b9f5bccdfb008f016970cb989aa401b44589119c0e4c49d1c306",
+      "exitCode": 2,
+      "spawnCalls": 1,
+      "logs": [],
+      "errors": []
+    },
+    {
+      "label": "after",
+      "scenario": "success",
+      "sourceSha256": "0a0db38f3352b9f5bccdfb008f016970cb989aa401b44589119c0e4c49d1c306",
+      "exitCode": null,
+      "spawnCalls": 2,
+      "logs": [
+        "All JavaScript modules passed syntax checks."
+      ],
+      "errors": []
+    }
+  ],
+  "release": {
+    "version": "5.2.0",
+    "portalBytes": 171736,
+    "portalSha256": "e45afd8a5f91debf4fdd54bd128c7482eca52cc402ec57992399613feb1a0d0d",
+    "qualitySha256": "3785daf1b16c66942383c8285376a66fee42c2a21c0b1450c251870333919bb8",
+    "allMatched": true
+  },
+  "occupiedPort": {
+    "port": 4267,
+    "alreadyListeningPid": 27426,
+    "alreadyListeningServerStillRunning": true,
+    "smokePid": 27434,
+    "code": 1,
+    "signal": null,
+    "stdout": "",
+    "stderr": "file:///workspace/scratch/4454855f6034/project/scripts/smoke-http.mjs:15\nconst assertChildAlive=()=>{if(startupError||exited||child.exitCode!==null||child.signalCode!==null)throw Error('Server startup or lifetime failed: '+(startupError?.message||startup));};\n                                                                                                          ^\n\nError: Server startup or lifetime failed: node:events:487\n      throw er; // Unhandled 'error' event\n      ^\n\nError: listen EADDRINUSE: address already in use 127.0.0.1:4267\n    at Server.setupListenHandle [as _listen2] (node:net:2167:16)\n    at listenInCluster (node:net:2224:12)\n    at node:net:2448:7\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)\nEmitted 'error' event on Server instance at:\n    at emitErrorNT (node:net:2203:8)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {\n  code: 'EADDRINUSE',\n  errno: -98,\n  syscall: 'listen',\n  address: '127.0.0.1',\n  port: 4267\n}\n\nNode.js v24.19.0\n\n    at assertChildAlive (file:///workspace/scratch/4454855f6034/project/scripts/smoke-http.mjs:15:107)\n    at file:///workspace/scratch/4454855f6034/project/scripts/smoke-http.mjs:19:41\n\nNode.js v24.19.0\n",
+    "smokeSourceSha256": "e884686e4df86723f51347c6b7290ed555a94a2f2dba9e4c39139d794c3f4ba1",
+    "existingServerStillServesIdenticalIndex": true,
+    "outputUnchanged": true
+  },
+  "freePort": {
+    "port": 4268,
+    "code": 0,
+    "signal": null,
+    "stdout": "{\"files\":30,\"allPassed\":true}\n",
+    "stderr": "",
+    "reportAllPassed": true,
+    "spawnedServerReady": true,
+    "release": "5.2.0",
+    "files": 30
+  },
+  "finished": "2026-10-17T10:39:07.382Z"
+}

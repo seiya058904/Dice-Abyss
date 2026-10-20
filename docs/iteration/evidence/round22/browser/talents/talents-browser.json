@@ -1,0 +1,140 @@
+{
+  "started": "2026-10-19T14:17:50.419Z",
+  "browser": "155.0.8059.84",
+  "url": "http://127.0.0.1:4222/",
+  "method": "Native mouse and keyboard actions in new Chromium contexts; exact decoded main/mirror states compared with authoritative engine transitions. Fixture and storage-failure injection are deliberate QA setup, never player data.",
+  "synthetic": true,
+  "cases": [
+    {
+      "name": "quantity-preview-and-exact-commit",
+      "status": "PASS",
+      "checks": [
+        {
+          "label": "Correct page identity",
+          "passed": true
+        },
+        {
+          "label": "Opening the talent screen is read-only",
+          "passed": true,
+          "revision": 0,
+          "rng": 3523296831,
+          "points": 369,
+          "stateSha256": "b02ea5f2e3ba78f814d6603d0e34d3d2e68bbb841deacd0f82fcc155039de269"
+        },
+        {
+          "label": "Four bounded quantity presets are exposed",
+          "passed": true
+        },
+        {
+          "label": "New screen defaults to one point",
+          "passed": true
+        },
+        {
+          "label": "Quantity choice has an accessible selected state",
+          "passed": true
+        },
+        {
+          "label": "The node exposes the exact investment",
+          "passed": true
+        },
+        {
+          "label": "Preview names the node, resulting rank and remaining points",
+          "passed": true,
+          "text": "无尽锋刃\n高点裁决 · 基础节点\n实际投入 +10 点\n节点等级\n1 → 11\n节点累计贡献\n全部伤害 +3% → 全部伤害 +33%\n投入后剩余\n359 点\n\n点击节点后才会投入，当前仅为预览。"
+        },
+        {
+          "label": "Quantity and hover preview never consume points or RNG",
+          "passed": true,
+          "revision": 0,
+          "rng": 3523296831,
+          "points": 369,
+          "stateSha256": "b02ea5f2e3ba78f814d6603d0e34d3d2e68bbb841deacd0f82fcc155039de269"
+        },
+        {
+          "label": "power: one exact 10-point request",
+          "passed": true,
+          "revision": 1,
+          "rng": 3523296831,
+          "points": 359,
+          "stateSha256": "1d9c306e00a40d9631897573436a2f7f68e879e0f14587dfcb211243901afdf6"
+        },
+        {
+          "label": "Keyboard focus follows the same usable node after rendering",
+          "passed": true
+        },
+        {
+          "label": "Current-node max respects the five-rank cap",
+          "passed": true
+        },
+        {
+          "label": "high: one exact max-point request",
+          "passed": true,
+          "revision": 2,
+          "rng": 3523296831,
+          "points": 354,
+          "stateSha256": "6391618e99cfcecb6d211152c330fefd1e15aa3c7619891fd93bd320308840e7"
+        },
+        {
+          "label": "A completed node is disabled",
+          "passed": true
+        },
+        {
+          "label": "Deep nodes retain their three-rank cap",
+          "passed": true
+        },
+        {
+          "label": "shatter: one exact max-point request",
+          "passed": true,
+          "revision": 3,
+          "rng": 3523296831,
+          "points": 351,
+          "stateSha256": "e86fc878c6952547aebbec30b99509bf4eeaae11d35a306cea7e3d7cdb3b9b1f"
+        },
+        {
+          "label": "Unlimited-growth node max uses only remaining points",
+          "passed": true
+        },
+        {
+          "label": "power: one exact max-point request",
+          "passed": true,
+          "revision": 4,
+          "rng": 3523296831,
+          "points": 0,
+          "stateSha256": "fa479e2e7071c4e28a03664c0a281db51d61c57e0a01a58abe805f2f43a9bd3f"
+        },
+        {
+          "label": "Current-node max spends the exact remainder",
+          "passed": true
+        },
+        {
+          "label": "Zero balance blocks a further investment",
+          "passed": true
+        },
+        {
+          "label": "Refresh preserves every committed talent, RNG and revision",
+          "passed": true,
+          "revision": 4,
+          "rng": 3523296831,
+          "points": 0,
+          "stateSha256": "fa479e2e7071c4e28a03664c0a281db51d61c57e0a01a58abe805f2f43a9bd3f"
+        }
+      ],
+      "elapsedMs": 6394.959286
+    }
+  ],
+  "checks": 20,
+  "errors": [],
+  "warnings": [],
+  "geometry": [],
+  "screenshots": [
+    "talents-preview-1440.png"
+  ],
+  "limitations": [
+    "Viewport emulation is not physical mobile/4K hardware validation.",
+    "ANGLE SwiftShader is software rendering; these functional observations do not measure hardware FPS.",
+    "Storage quota injection is not physical power loss.",
+    "Keyboard semantics are checked; no external screen reader was used."
+  ],
+  "finished": "2026-10-19T14:17:56.871Z",
+  "pass": true
+}
