@@ -39,6 +39,32 @@
 
 ## V5.27.0 · Local performance work, not published
 
+Final acceptance remains **BLOCKED / not release-ready**. The final regression
+pass based on `2e982df` was prevented from starting its local browser servers by
+an execution-policy rejection. Existing browser measurements are historical
+evidence, not a new four-arm reproduction. No runtime optimization was added
+without that reproduction.
+
+`scripts/qa-performance-round27.mjs` now accepts both `--fonts=URL` and
+`--storage=URL` alongside `--baseline=URL` and `--current=URL`. It rotates the
+four arms, retains warmups and all samples, and reports click-to-second-RAF,
+mirror `setItem` completion, and CDP script/layout durations separately.
+CDP durations cover the surrounding automation measurement window, not an
+exact click-only CPU trace; `setItem` return does not prove disk fsync.
+Use `--sizes=100,1000,10000 --pairs=12` and an external `--output` directory.
+Optional `--settle=true` is a separately labelled 500 ms idle diagnostic;
+it must not replace the original immediate-open samples.
+
+`scripts/diagnose-rgba.py --report REPORT --output NEW_FILE` verifies stored
+RGBA hashes and records every changed coordinate/channel without relaxing
+zero tolerance. Offline analysis confirmed the existing cross-version 5/7
+and same-version 3/7 failures. The motion-240 and app-roll differences have
+identical signed pixel changes in both records; this demonstrates repeat
+variability for those observations, not a blanket clearance of visual
+regressions. Round26's 2/7 used the same seven RGBA checks but a different
+execution environment. Fresh browser performance, atlas and strict pixel
+acceptance remain required before release.
+
 The local version adds **364,264 bytes of core fonts** (35,560 Pixel + 328,704
 Text), while retaining the original 8,656,928 bytes of complete fonts for
 on-demand missing-character fallback. Only cores are preloaded. All 113 CSS

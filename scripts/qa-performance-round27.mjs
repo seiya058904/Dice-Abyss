@@ -5,18 +5,24 @@ import os from 'node:os';
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {createRequire} from 'node:module';
+import {fileURLToPath} from 'node:url';
 import * as E from '../src/engine.js';
 import * as S from '../src/storage.js';
 const args=Object.fromEntries(process.argv.slice(2).map(x=>{const i=x.indexOf('=');return[x.slice(2,i),x.slice(i+1)];}));
 assert(args.output&&args.baseline&&args.current);
-const output=path.resolve(args.output);await fs.mkdir(output); // Never replace failed evidence.
+assert.equal(Boolean(args.fonts),Boolean(args.storage),'Provide both --fonts and --storage for the four-arm experiment');
+for(const key of ['baseline','current','fonts','storage'])if(args[key])assert(['127.0.0.1','localhost'].includes(new URL(args[key]).hostname),'Use isolated loopback origins');
+const output=path.resolve(args.output),repo=path.resolve(fileURLToPath(new URL('..',import.meta.url)));
+assert(output!==repo&&!output.startsWith(repo+path.sep),'Keep QA output outside the repository');
+await fs.mkdir(output); // Never replace failed evidence.
 const sha=x=>createHash('sha256').update(x).digest('hex');
+const labels=args.fonts?['baseline','fonts','storage','current']:['baseline','current'];
 const modes=args.instrumentation==='off'?[false]:[false,true];
 const {chromium}=createRequire(import.meta.url)(process.env.PLAYWRIGHT_MODULE||'playwright');
 const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH,headless:true,args:['--use-angle=swiftshader','--enable-unsafe-swiftshader']});
-const report={browser:browser.version(),os:`${os.platform()} ${os.release()}`,cpu:os.cpus()[0].model,backend:'ANGLE SwiftShader',dpr:1,viewport:{width:1920,height:1080},cache:'fresh contexts; fonts warmed before interaction',clock:'trusted click to second RAF, not single-frame duration; committedMs adds second RAF after mirror write, observed with the same temporary setItem wrapper in both arms',quantile:'floor((n-1)*p); warmup retained but excluded',runs:[],fixtures:[],errors:[],summary:{},sources:{}};
+const report={settleMs:args.settle==='true'?500:0,labels,browser:browser.version(),os:`${os.platform()} ${os.release()}`,cpu:os.cpus()[0].model,backend:'ANGLE SwiftShader',dpr:1,viewport:{width:1920,height:1080},cache:'fresh contexts; fonts warmed before interaction',clock:'trusted click to second RAF, not single-frame duration; commitCompleteMs is mirror setItem return (not disk fsync); committedMs adds second RAF after mirror write, observed with the same temporary setItem wrapper in both arms',quantile:'floor((n-1)*p); warmup retained but excluded',runs:[],fixtures:[],errors:[],summary:{},sources:{}};
 report.scriptSha256=sha(await fs.readFile(new URL(import.meta.url)));
-for(const label of ['baseline','current']){
+for(const label of labels){
  report.sources[label]={};
  for(const file of ['index.html',...(await fs.readdir(new URL('../src/',import.meta.url))).filter(x=>/\.(js|css)$/.test(x)).map(x=>'src/'+x)]){
   const response=await fetch(new URL(file,args[label]));assert.equal(response.status,200);
@@ -34,14 +40,14 @@ async function click(page,selector,cdp,transaction=false){
     const start=performance.now();
     // Storage write completion is observed without polling/parsing the 2 MB save.
     // A temporary wrapper is identical in both arms; initial click metric remains separate.
-    let committed=Promise.resolve(null);
+    let commitCompleteMs=null;let committed=Promise.resolve(null);
     if(transaction){
      committed=new Promise(done=>{
       const set=Storage.prototype.setItem;
-      Storage.prototype.setItem=function(k,v){const value=set.call(this,k,v);if(k==='dice-abyss:mirror:v1'){Storage.prototype.setItem=set;requestAnimationFrame(()=>requestAnimationFrame(()=>done(performance.now()-start)));}return value;};
+      Storage.prototype.setItem=function(k,v){const value=set.call(this,k,v);if(k==='dice-abyss:mirror:v1'){Storage.prototype.setItem=set;commitCompleteMs=performance.now()-start;requestAnimationFrame(()=>requestAnimationFrame(()=>done(performance.now()-start)));}return value;};
      });
     }
-    requestAnimationFrame(()=>requestAnimationFrame(async()=>{const end=performance.now(),committedMs=await committed;setTimeout(()=>resolve({trusted:e.isTrusted,start,end,ms:end-start,committedMs,operations:window.__samples,stages:performance.getEntriesByType('measure').map(x=>({name:x.name,start:x.startTime,ms:x.duration})),longTasks:window.__tasks.filter(x=>x.start<start+(committedMs||end-start)&&x.start+x.ms>start)}),0);}));};
+    requestAnimationFrame(()=>requestAnimationFrame(async()=>{const end=performance.now(),committedMs=await committed;setTimeout(()=>resolve({trusted:e.isTrusted,start,end,ms:end-start,commitCompleteMs,committedMs,operations:window.__samples,stages:performance.getEntriesByType('measure').map(x=>({name:x.name,start:x.startTime,ms:x.duration})),longTasks:window.__tasks.filter(x=>x.start<start+(committedMs||end-start)&&x.start+x.ms>start)}),0);}));};
    performance.clearMeasures();document.addEventListener('click',listener,true);
   });
  },{selector,transaction});
@@ -59,7 +65,7 @@ try{
   assert(S.validateSave(state));const raw=S.encodeSave(state);
   report.fixtures.push({size,sha256:sha(raw),bytes:Buffer.byteLength(raw)});await fs.writeFile(path.join(output,`fixture-${size}.json`),raw);
   const pairs=Number(args.pairs||12);
-  for(let pair=0;pair<=pairs;pair++)for(const label of pair%2?['current','baseline']:['baseline','current'])for(const instrumented of modes){
+  for(let pair=0;pair<=pairs;pair++)for(const label of labels.map((_,i)=>labels[(i+pair)%labels.length]))for(const instrumented of modes){
    const run={size,pair,warmup:pair===0,label,instrumented,url:args[label],actions:{},errors:[]};report.runs.push(run);
    const context=await browser.newContext({viewport:report.viewport,deviceScaleFactor:1,reducedMotion:'reduce'});
    await context.addInitScript(({raw,instrumented})=>{
@@ -78,6 +84,7 @@ try{
    cdp.on('Network.loadingFinished',e=>{if(requests.has(e.requestId))requests.get(e.requestId).encodedBytes=e.encodedDataLength;});
    try{
     await page.goto(args[label]);await page.locator('[data-action="continue"]').click();await page.evaluate(()=>document.fonts.ready);await page.locator('#primary-action:not(:disabled)').waitFor();
+    if(args.settle==='true')await page.waitForTimeout(500);
     if(args.profile==='true')await cdp.send('Profiler.enable').then(()=>cdp.send('Profiler.start'));
     run.actions.open=await click(page,'.main-nav [data-action="inventory"]',cdp);
     run.actions.filter=await click(page,'[data-action="filter"][data-slot="weapon"]',cdp);
@@ -103,7 +110,8 @@ try{
  for(const size of report.fixtures.map(x=>x.size))for(const instrumented of modes)for(const action of ['open','filter','page','lock','equip','salvage']){
   const runs=report.runs.filter(x=>x.size===size&&x.instrumented===instrumented&&!x.warmup);
   const values=label=>runs.filter(x=>x.label===label).map(x=>x.actions[action]);
-  report.summary[`${size}/${instrumented}/${action}`]=Object.fromEntries(['baseline','current'].map(label=>[label,{...stats(values(label).map(x=>x.ms)),committed:['lock','equip','salvage'].includes(action)?stats(values(label).map(x=>x.committedMs)):null}]));
+  report.summary[`${size}/${instrumented}/${action}`]=Object.fromEntries(labels.map(label=>[label,{...stats(values(label).map(x=>x.ms)),scriptMs:stats(values(label).map(x=>x.cdp.ScriptDuration*1000)),layoutMs:stats(values(label).map(x=>x.cdp.LayoutDuration*1000)),commitComplete:['lock','equip','salvage'].includes(action)?stats(values(label).map(x=>x.commitCompleteMs)):null,committed:['lock','equip','salvage'].includes(action)?stats(values(label).map(x=>x.committedMs)):null}]));
+  report.summary[`${size}/${instrumented}/${action}`].pairedByArm=Object.fromEntries(labels.filter(x=>x!=='baseline').map(label=>[label,stats(values(label).map((x,i)=>x.ms-values('baseline')[i].ms))]));
   report.summary[`${size}/${instrumented}/${action}`].paired=stats(values('current').map((x,i)=>x.ms-values('baseline')[i].ms));
  }
  report.status='PASS';
