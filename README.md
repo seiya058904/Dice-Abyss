@@ -22,7 +22,7 @@
 </p>
 
 <p align="center">
-  <sub>VERSION 5.26.0 &nbsp;·&nbsp; DESKTOP WEB &nbsp;·&nbsp; MANUAL DICE COMBAT &nbsp;·&nbsp; LOCAL SAVES</sub>
+  <sub>VERSION 5.27.0 (LOCAL) &nbsp;·&nbsp; DESKTOP WEB &nbsp;·&nbsp; MANUAL DICE COMBAT &nbsp;·&nbsp; LOCAL SAVES</sub>
 </p>
 
 <p align="center">
@@ -37,7 +37,41 @@
 >
 > In **Dice Abyss**, a roll is an attack, a chest is a promise, and every new floor is another test of the equipment and talents you have assembled. The dungeon keeps going. So does your progression.
 
-## V5.26.0 · Reviewed, Integrated & Published
+## V5.27.0 · Local performance work, not published
+
+The local version adds **364,264 bytes of core fonts** (35,560 Pixel + 328,704
+Text), while retaining the original 8,656,928 bytes of complete fonts for
+on-demand missing-character fallback. Only cores are preloaded. All 113 CSS
+core references, including nested `var()` fallbacks, retain the matching Full
+family and their original system-font order. Source Han's variable axes and
+four tested weights are retained; derivative family and named-instance
+PostScript names avoid its Reserved Font Name. See [font notices](src/fonts/README.md).
+
+Large saves can avoid an extra UTF-8 buffer when a conservative byte bound
+already proves they fit. Uncertain inputs retain the exact encoder check.
+Complete snapshot comparisons, serialization, both storage writes, migration
+and failure behavior remain unchanged. An experimental raw-payload comparison
+shortcut was rejected by existing Proxy/rawJSON conflict tests and is **not**
+part of this version.
+
+The independent `browser-release-qa.yml` workflow runs only via
+`workflow_dispatch`. It installs Playwright 1.60.0 outside the game, assembles
+and hashes the exact HEAD shipping files, and checks real browser play,
+10k inventory locking, mirrored saves and reload. It does not deploy or change
+the existing Pages workflow. Performance is reported separately, without a
+random p95 release gate.
+
+Reproduction uses external `PLAYWRIGHT_MODULE`, `CHROMIUM_PATH` and fresh
+external `--output` directories: `qa-fonts-round27.mjs` compares two loopback
+origins; `qa-performance-round27.mjs` retains 12 paired samples plus warmups
+for 100/1k/10k inventories (`--sizes=100,1000,10000`); and
+`prepare-stage-probe.mjs <external-copy>` instruments only an isolated copy.
+`benchmark-storage-round27.mjs` retains the original storage differential
+scenarios and reports Node timings only. Raw QA logs are not shipped.
+
+The public Pages release remains the previously published V5.26.0 below.
+
+## V5.26.0 · Reviewed, Integrated & Published (historical)
 
 The reviewed **V5.26.0 cloud handoff** has been integrated into this repository and published to [GitHub Pages](https://seiya058904.github.io/Dice-Abyss/). Publication and live browser checks passed on **2026-10-20**. Follow [Run Locally](#run-locally) to run the same game on your computer; browser saves remain separate between the local and published origins.
 
