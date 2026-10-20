@@ -21,7 +21,7 @@ export const effectCases=[
  {name:'idle',phase:'loot',event:'open',rarity:7,idle:true},
 ];
 
-export async function recordEffects(sourceRoot,definition,{width=1920,height=1080,firstChild=true,cancelAt=null}={}){
+export async function recordEffects(sourceRoot,definition,{width=1920,height=1080,firstChild=true,cancelAt=null,effectSource:suppliedSource=null}={}){
  const globals=['document','Path2D','requestAnimationFrame','cancelAnimationFrame','matchMedia','innerWidth','innerHeight','devicePixelRatio','performance','setTimeout','clearTimeout','__round14Effects'];
  const original=Object.fromEntries(globals.map(key=>[key,globalThis[key]]));
  const commands=[],geometryReads=[],moves=[],canvases=[],paths=[],frames=new Map(),timers=new Map(),listeners=new Set(),surface=[];
@@ -80,7 +80,9 @@ export async function recordEffects(sourceRoot,definition,{width=1920,height=108
  globalThis.__round14Effects={mountDiceSurface:()=>{surface.push('mount');return{draw:()=>surface.push('draw'),stop:()=>surface.push('stop')};},animateDice:()=>{surface.push('animate');return()=>surface.push('stop-dice');}};
  let presentation;
  try{
-  const effectSource=await fs.readFile(path.join(sourceRoot,'src/effects.js'),'utf8');
+  // A caller may supply a hash-verified original from the bundled archives.
+  // Both programs then run under the same numeric runtime and shared timeline.
+  const effectSource=suppliedSource??await fs.readFile(path.join(sourceRoot,'src/effects.js'),'utf8');
   const executable=effectSource
    .replace("import { animateDice, THROW_DURATION } from './dice-motion.js';","const {animateDice}=globalThis.__round14Effects;const THROW_DURATION=1280;")
    .replace("import { mountDiceSurface } from './dice-renderer.js';","const {mountDiceSurface}=globalThis.__round14Effects;")

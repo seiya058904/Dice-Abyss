@@ -3,17 +3,29 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
+import {gunzipSync} from 'node:zlib';
 import {effectCases,recordEffects} from '../scripts/audit-effects-layout-round14.mjs';
 import {effectReceipt,particlePaintWrites,primitivePaintSnapshots,removeRedundantPaintWrites} from '../scripts/audit-particle-style-round25.mjs';
 
 const root=fileURLToPath(new URL('..',import.meta.url)),reference=JSON.parse(await fs.readFile(new URL('./fixtures/particle-style-round25-reference.json',import.meta.url),'utf8'));
-const sha=value=>createHash('sha256').update(JSON.stringify(value)).digest('hex');
+const sha=value=>createHash('sha256').update(value).digest('hex');
+const baselineBytes=gunzipSync(await fs.readFile(new URL('../docs/iteration/evidence/round25/baseline/runtime/original/src/effects.js.gz',import.meta.url)));
+assert.equal(sha(baselineBytes),reference.effectsSha256,'Compare against the original input, never a rewritten candidate');
+assert.equal(sha(await fs.readFile(new URL('../src/visual-timeline.js',import.meta.url))),'0f1eee275b206951bec0b9317561e6669c8ba2e24f7829c0c6bd6c3e2b3a9f10','The shared timeline must still match the input runtime');
+const baselineSource=baselineBytes.toString('utf8');
 
 for(const width of [390,1366,1920,3840])test(`particle palettes preserve the input paint program and complete primitive state at ${width}px`,async()=>{
  for(const expected of reference.cases.filter(row=>row.width===width)){
   const definition=effectCases.find(row=>row.name===expected.name);assert(definition);
+  // Node 22 and 24 differ in the final bits of some numeric Canvas arguments.
+  // Preserve the historical hashes, but compare both complete programs within
+  // this runtime, with no rounding, tolerance or discarded paint arguments.
+  const baseline=await recordEffects(root,definition,{width:expected.width,height:expected.height,effectSource:baselineSource});
   const result=await recordEffects(root,definition,{width:expected.width,height:expected.height});
-  assert.equal(sha(effectReceipt(result)),expected.receiptSha256,`${expected.name}: immutable-input state, geometry, draw order, alpha, paths and lifecycle`);
+  assert.deepEqual(removeRedundantPaintWrites(result.commands),removeRedundantPaintWrites(baseline.commands),`${expected.name}: every effective Canvas argument matches the immutable input`);
+  assert.deepEqual(primitivePaintSnapshots(result.commands),primitivePaintSnapshots(baseline.commands),`${expected.name}: every primitive retains its complete paint state`);
+  assert.deepEqual(effectReceipt(result),effectReceipt(baseline),`${expected.name}: immutable-input geometry and lifecycle`);
+  assert.equal(particlePaintWrites(baseline.commands),expected.baselinePaintWrites,'Retain the recorded input workload');
   const writes=particlePaintWrites(result.commands);assert(writes<=expected.baselinePaintWrites);
   if(!definition.idle&&!definition.rolling&&!definition.reduced&&definition.effects!=='low')assert(writes<expected.baselinePaintWrites,`${expected.name}: remove real redundant paint submissions`);
  }
