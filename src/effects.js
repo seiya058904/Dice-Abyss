@@ -94,7 +94,7 @@ export function mountEffects(state,ui,settings,onSound){
  let stopDice=()=>{},ctx=null,w=0,h=0,alive=true,visibility;const materials=[];
  const canvas=document.querySelector('.scene-fx');
  if(canvas){canvas.dataset.fxFrames='0';canvas.dataset.fxLifecycle='idle';}
- const presentation=createVisualTimeline(result=>{alive=false;visibility?.stop();stopDice();surface?.stop();if(ctx)ctx.clearRect(0,0,w,h);for(const tile of materials){tile.canvas.width=1;tile.canvas.height=1;}materials.length=0;if(canvas){canvas.dataset.fxLifecycle=result.reason;canvas.dataset.fxElapsed=String(result.elapsed);canvas.dataset.fxTimelineFrames=String(result.frames);}});cancel=()=>presentation.stop();
+ const presentation=createVisualTimeline(result=>{alive=false;visibility?.stop();stopDice();surface?.stop();if(ctx)ctx.clearRect(0,0,w,h);for(const tile of materials){tile.canvas.width=1;tile.canvas.height=1;}materials.length=0;if(canvas){canvas.dataset.fxLifecycle=result.reason;canvas.dataset.fxElapsed=String(result.elapsed);canvas.dataset.fxTimelineFrames=String(result.frames);}},settings.fastPace===true?2:1);cancel=()=>presentation.stop();
  if(!canvas||!ui.busy||settings.effects==='low'||matchMedia('(prefers-reduced-motion: reduce)').matches)return presentation;
  if(ui.rolling||ui.forging){
   // No second fullscreen animation while the dice themselves are moving.

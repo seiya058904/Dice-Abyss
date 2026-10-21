@@ -21,7 +21,7 @@ export const effectCases=[
  {name:'idle',phase:'loot',event:'open',rarity:7,idle:true},
 ];
 
-export async function recordEffects(sourceRoot,definition,{width=1920,height=1080,firstChild=true,cancelAt=null,effectSource:suppliedSource=null}={}){
+export async function recordEffects(sourceRoot,definition,{width=1920,height=1080,firstChild=true,cancelAt=null,effectSource:suppliedSource=null,timelinePath=null}={}){
  const globals=['document','Path2D','requestAnimationFrame','cancelAnimationFrame','matchMedia','innerWidth','innerHeight','devicePixelRatio','performance','setTimeout','clearTimeout','__round14Effects'];
  const original=Object.fromEntries(globals.map(key=>[key,globalThis[key]]));
  const commands=[],geometryReads=[],moves=[],canvases=[],paths=[],frames=new Map(),timers=new Map(),listeners=new Set(),surface=[];
@@ -86,7 +86,7 @@ export async function recordEffects(sourceRoot,definition,{width=1920,height=108
   const executable=effectSource
    .replace("import { animateDice, THROW_DURATION } from './dice-motion.js';","const {animateDice}=globalThis.__round14Effects;const THROW_DURATION=1280;")
    .replace("import { mountDiceSurface } from './dice-renderer.js';","const {mountDiceSurface}=globalThis.__round14Effects;")
-   .replace("'./visual-timeline.js'",JSON.stringify(pathToFileURL(path.join(sourceRoot,'src/visual-timeline.js')).href));
+   .replace("'./visual-timeline.js'",JSON.stringify(pathToFileURL(timelinePath||path.join(sourceRoot,'src/visual-timeline.js')).href));
   const module=await import(`data:text/javascript;base64,${Buffer.from(executable+`\n// audit-isolation-${++importSerial}`).toString('base64')}`);
   const state={revision:415,rng:99817,phase:definition.phase,enemy:{type:definition.killed?'boss':'combat',shield:0},lastRoll:{best:definition.best??1,critical:definition.critical??false,follow:definition.follow??false,killed:definition.killed??false,phaseChanged:definition.phaseChanged??false,absorbed:definition.absorbed??0},loot:{item:{rarity:definition.rarity??0}}};
   const before=structuredClone(state);

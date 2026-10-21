@@ -410,7 +410,7 @@ async function act(action) {
       if(room)room.dataset.impact=roll.killed&&before.enemy.type==='boss'?'finish':roll.phaseChanged?'phase':roll.critical?'critical':roll.best>=3?'resonance':'normal';
       sound(roll.killed&&before.enemy.type==='boss'?'finish':roll.critical?'critical':roll.best>=2?'resonance':'impact');
       if(roll.phaseChanged)document.querySelector('#current-room')?.classList.add('phase-shift');
-      if(roll.follow)delay(fast?35:450).then(()=>{if(generation===animationGeneration&&ui.busy)sound('follow');});
+      if(roll.follow)delay(fast?35:settings.fastPace?225:450).then(()=>{if(generation===animationGeneration&&ui.busy)sound('follow');});
     } else sound('reward');
     publishPresentationAnnouncement(generation);
     await waitAnimation(fast ? 100 : after.phase === 'chest' || after.phase === 'dead' ? 1500 : 1150,fast);
@@ -521,6 +521,13 @@ document.addEventListener('click', async event => {
   }
   if (action === 'fullscreen') {
     try { if (document.fullscreenElement) await document.exitFullscreen(); else await document.documentElement.requestFullscreen(); } catch { notify('此浏览器窗口不支持全屏，请使用 F11。'); } return;
+  }
+  if (action === 'fast-pace') {
+    settings.fastPace = !settings.fastPace;
+    // The next presentation reads the rate; do not cancel an active timeline.
+    saveSettings({redraw:false});
+    control.setAttribute('aria-checked', String(settings.fastPace));
+    return;
   }
   if (action === 'sound') {
     settings.sound = !settings.sound;

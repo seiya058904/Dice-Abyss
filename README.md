@@ -32,11 +32,17 @@
 </p>
 
 
-## Round 28 runtime experiment (2026-10-21) — DRAFT_CONTINUE
+## V5.27 FINAL — 更轻的首屏，可选加速节奏
 
-A real formatter-reuse candidate was implemented in an isolated worktree and measured in two three-arm batches (40 pairs per size/action). It reduced the 10k salvage paired median by 3.7 ms, but strict RGBA remained unresolved, including a candidate self-pair with one changed pixel in motion-160. The candidate was reverted; no runtime optimization was adopted. Functional/storage gates passed; PERF_BLOCKED and STRICT_RGBA_FAIL remain. Physical GPU/4K60 and human long-run testing remain NOT_TESTED.
+保留 Core 字体首次加载优化；新增独立于特效强度的「加速节奏」开关。
+在游戏右上角「设置」中开启后，完整掷骰和主要特效以双倍节奏呈现，
+奖励仍保留在结果页。默认标准节奏不变，设置保存在当前浏览器。
 
-See [engineering and rollback evidence](ENGINEERING-REPORT-ROUND28.md), [all performance results](PERFORMANCE-ROUND28.md), [strict pixels](PIXEL-ROUND28.md), [machine verification](verification-round28.json), and the [reproducible experimental patch](docs/round28/candidate-A.patch). PR #3 stays Draft; no merge or deployment.
+最终验证、实测改善、发布状态和限制以 [FINAL-V527.md](FINAL-V527.md)
+及 [verification-final-v527.json](verification-final-v527.json) 为准。
+本分支不自行合并或部署，已发布站点仍为 V5.26。
+历史严格 RGBA 零容差 FAIL 保留为诊断，未改判 PASS；见
+[原始像素记录](PIXEL-ROUND28.md) 和 [回滚证据](ENGINEERING-REPORT-ROUND28.md)。
 
 
 ---
@@ -45,9 +51,11 @@ See [engineering and rollback evidence](ENGINEERING-REPORT-ROUND28.md), [all per
 >
 > In **Dice Abyss**, a roll is an attack, a chest is a promise, and every new floor is another test of the equipment and talents you have assembled. The dungeon keeps going. So does your progression.
 
-## V5.27.0 · Local performance work, not published
+## 历史记录：V5.27.0 本地性能调查（非最终验收）
 
-**2026-10-21 stabilization: DRAFT_CONTINUE.** The independent browser workflow
+**以下 DRAFT_CONTINUE / blocker 状态仅属于当时记录；最终状态见页首交付摘要。**
+
+**2026-10-21 stabilization: DRAFT_CONTINUE (historical).** The independent browser workflow
 now runs on pull requests to `main`, checks out the event's exact head SHA and
 asserts that identity. It retains read-only permissions and does not deploy.
 Native Web Locks and API-absent modes have separate reports. Browser smoke

@@ -21,7 +21,8 @@ export function observeVisualSurface(target,onVisible=()=>{}){
   return {get visible(){return visible;},stop(){if(!active)return;active=false;observer?.disconnect();}};
 }
 
-export function createVisualTimeline(onStop=()=>{}) {
+export function createVisualTimeline(onStop=()=>{}, playbackRate=1) {
+  if(![1,2].includes(playbackRate))throw new RangeError('Invalid presentation rate');
   const tracks=new Map(),waiters=new Set();
   let nextTrack=0,frame=0,timer=0,last=0,elapsed=0,frames=0,started=false,alive=true,reason,cleanupError;
   const result=why=>({reason:why,elapsed,frames,...(cleanupError?{cleanupError}: {})});
@@ -39,7 +40,7 @@ export function createVisualTimeline(onStop=()=>{}) {
     frame=0;if(!alive)return;
     if(document.visibilityState==='hidden'){stop('hidden');return;}
     const step=Math.max(0,now-last);
-    elapsed+=frames?step:Math.min(MAX_VISUAL_STEP,step);last=Math.max(last,now);frames++;
+    elapsed+=frames?step*playbackRate:Math.min(MAX_VISUAL_STEP,step*playbackRate);last=Math.max(last,now);frames++;
     for(const [id,track]of [...tracks]){
       track.draw(Math.min(elapsed,track.duration));
       if(elapsed>=track.duration)tracks.delete(id);

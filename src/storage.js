@@ -359,6 +359,6 @@ export function saveGame(state, expected = undefined, storage = localStorage) {
 export function loadSettings(storage = localStorage) {
   try {
     const s = JSON.parse(storage.getItem(SETTINGS_KEY));
-    return { sound: s?.sound === true, effects: ['full', 'low'].includes(s?.effects) ? s.effects : 'full', scale: [0.9, 1, 1.1].includes(s?.scale) ? s.scale : 1 };
-  } catch { return { sound: false, effects: 'full', scale: 1 }; }
+    return { fastPace: s?.fastPace === true, sound: s?.sound === true, effects: ['full', 'low'].includes(s?.effects) ? s.effects : 'full', scale: [0.9, 1, 1.1].includes(s?.scale) ? s.scale : 1 };
+  } catch { return { fastPace: false, sound: false, effects: 'full', scale: 1 }; }
 }

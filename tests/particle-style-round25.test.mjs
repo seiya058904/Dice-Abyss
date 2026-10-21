@@ -11,7 +11,7 @@ const root=fileURLToPath(new URL('..',import.meta.url)),reference=JSON.parse(awa
 const sha=value=>createHash('sha256').update(value).digest('hex');
 const baselineBytes=gunzipSync(await fs.readFile(new URL('../docs/iteration/evidence/round25/baseline/runtime/original/src/effects.js.gz',import.meta.url)));
 assert.equal(sha(baselineBytes),reference.effectsSha256,'Compare against the original input, never a rewritten candidate');
-assert.equal(sha(await fs.readFile(new URL('../src/visual-timeline.js',import.meta.url))),'0f1eee275b206951bec0b9317561e6669c8ba2e24f7829c0c6bd6c3e2b3a9f10','The shared timeline must still match the input runtime');
+assert.equal(sha(await fs.readFile(new URL('./fixtures/visual-timeline-v526.mjs',import.meta.url))),'0f1eee275b206951bec0b9317561e6669c8ba2e24f7829c0c6bd6c3e2b3a9f10','The immutable reference timeline must still match the input runtime');
 const baselineSource=baselineBytes.toString('utf8');
 
 for(const width of [390,1366,1920,3840])test(`particle palettes preserve the input paint program and complete primitive state at ${width}px`,async()=>{
@@ -20,7 +20,7 @@ for(const width of [390,1366,1920,3840])test(`particle palettes preserve the inp
   // Node 22 and 24 differ in the final bits of some numeric Canvas arguments.
   // Preserve the historical hashes, but compare both complete programs within
   // this runtime, with no rounding, tolerance or discarded paint arguments.
-  const baseline=await recordEffects(root,definition,{width:expected.width,height:expected.height,effectSource:baselineSource});
+  const baseline=await recordEffects(root,definition,{width:expected.width,height:expected.height,effectSource:baselineSource,timelinePath:fileURLToPath(new URL('./fixtures/visual-timeline-v526.mjs',import.meta.url))});
   const result=await recordEffects(root,definition,{width:expected.width,height:expected.height});
   assert.deepEqual(removeRedundantPaintWrites(result.commands),removeRedundantPaintWrites(baseline.commands),`${expected.name}: every effective Canvas argument matches the immutable input`);
   assert.deepEqual(primitivePaintSnapshots(result.commands),primitivePaintSnapshots(baseline.commands),`${expected.name}: every primitive retains its complete paint state`);
