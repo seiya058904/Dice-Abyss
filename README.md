@@ -22,7 +22,7 @@
 </p>
 
 <p align="center">
-  <sub>VERSION 5.26.0 &nbsp;·&nbsp; DESKTOP WEB &nbsp;·&nbsp; MANUAL DICE COMBAT &nbsp;·&nbsp; LOCAL SAVES</sub>
+  <sub>VERSION 5.27.0 (LOCAL) &nbsp;·&nbsp; DESKTOP WEB &nbsp;·&nbsp; MANUAL DICE COMBAT &nbsp;·&nbsp; LOCAL SAVES</sub>
 </p>
 
 <p align="center">
@@ -31,13 +31,170 @@
   </a>
 </p>
 
+
+## V5.27 FINAL — 更轻的首屏，可选加速节奏
+
+保留 Core 字体首次加载优化；新增独立于特效强度的「加速节奏」开关。
+在游戏右上角「设置」中开启后，完整掷骰和主要特效以双倍节奏呈现，
+奖励仍保留在结果页。默认标准节奏不变，设置保存在当前浏览器。
+
+最终验证、实测改善、发布状态和限制以 [FINAL-V527.md](FINAL-V527.md)
+及 [verification-final-v527.json](verification-final-v527.json) 为准。
+本分支不自行合并或部署，已发布站点仍为 V5.26。
+历史严格 RGBA 零容差 FAIL 保留为诊断，未改判 PASS；见
+[原始像素记录](PIXEL-ROUND28.md) 和 [回滚证据](ENGINEERING-REPORT-ROUND28.md)。
+
+
 ---
 
 > **You cannot choose what the dice will show. You can choose what you build around them.**
 >
 > In **Dice Abyss**, a roll is an attack, a chest is a promise, and every new floor is another test of the equipment and talents you have assembled. The dungeon keeps going. So does your progression.
 
-## V5.26.0 · Reviewed, Integrated & Published
+## 历史记录：V5.27.0 本地性能调查（非最终验收）
+
+**以下 DRAFT_CONTINUE / blocker 状态仅属于当时记录；最终状态见页首交付摘要。**
+
+**2026-10-21 stabilization: DRAFT_CONTINUE (historical).** The independent browser workflow
+now runs on pull requests to `main`, checks out the event's exact head SHA and
+asserts that identity. It retains read-only permissions and does not deploy.
+Native Web Locks and API-absent modes have separate reports. Browser smoke
+results do not certify strict pixels or performance.
+The first [remote exact-head browser run](https://github.com/seiya058904/Dice-Abyss/actions/runs/39537223891)
+passed both modes at `8826d99`; each passed eight smoke checks and 43 core
+assertions. Its [Node 22 verification](https://github.com/seiya058904/Dice-Abyss/actions/runs/39537223794)
+passed 946 tests and 1,000 simulations. All production deployment steps were
+skipped. These results apply to that recorded SHA.
+
+Core-font QA now requires loaded FontFace objects, successful explicit loads,
+resource URLs and Canvas glyph metrics matched to an independently loaded copy
+of the Core binary. It records production atlas buffers and rejects synthetic
+404/corrupt Core resources; cold, warm and delayed controls are also exercised.
+The older Canvas font-string check alone was insufficient evidence of the font
+actually used. The external stage profiler now rejects an unmatched Web Locks
+hook instead of silently omitting that timing, with LF/CRLF regression coverage.
+No gameplay, storage, font binary or production deployment change is included
+in this stabilization. Strict RGBA and the 10k salvage completion tail remain
+open release blockers; the PR remains Draft.
+
+The bounded follow-up on **2026-10-20**, based on `042a64f`, successfully
+used the existing Playwright runner through ordinary execution permissions.
+The previous policy block remains historical evidence; it is not the status
+of this follow-up. No additional game/runtime change was justified.
+
+Four isolated arms (V5.26, fonts only, storage only, full V5.27) retained two
+independent batches of 12 pairs for 100 items, plus 12 pairs for 1k/10k, each
+with and without additional clone/Storage instrumentation. For 100-item open,
+full-minus-original paired p50 was **+2.2 ms / -1.3 ms** in the two batches;
+combined open p50 was **61.8 → 63.0 ms**. The earlier +25.1 ms median regression
+was not stably reproduced. Small samples and bimodal RAF scheduling limit
+absence claims; this does not establish universal speedups.
+
+For 10k, lock click-to-second-RAF p50 was **103.7 → 95.7 ms**, while mirror
+write-return p50 was **68.2 → 61.6 ms**. Opening was **64.1 → 66.6 ms**.
+Recycling's second RAF sometimes precedes commit: its p50 **35.5 → 133.7 ms**
+must be retained, but mirror return was **106.3 → 101.6 ms** and commit-plus-two-
+RAF **154.2 → 150.1 ms**. The latter maximum worsened **180.8 → 190.8 ms**.
+All adverse samples remain in external evidence. Quantiles use
+`floor((n-1)*p)`; at n=12 p95 and p99 are both the second-largest sample.
+
+Strict pixels remain **FAIL**, not a waived or relaxed PASS. Two cross-version
+runs had 4/7 and 2/6 valid RGBA failures; the second run's original motion-240
+source request failed with ECONNRESET and supplied no valid pixel pair.
+Original self-comparisons failed 4/7 twice; V5.27 self-comparisons failed 2/7
+and 5/7. Final RGBA deviations were at most one channel step with unchanged
+alpha. Atlas readback also varied by one alpha step within the same version;
+all ready uploads used Abyss Pixel digits 1–6. The terminal case passed both
+cross comparisons but failed both V5.27 self comparisons; its original self
+pairs were exact, so this case is not labelled proven original-version noise.
+Other differing cases have original-version variability in this matrix.
+No stable, substantial V5.27-only visual shift was demonstrated. Round26's
+2/7 and earlier V5.27 5/7 are historical runs, not directly subtractable rates.
+
+The corrected font-browser run passed exact geometry and zero repeat noise at
+all four viewports, normal Full requests remained zero, and missing-character
+Full/system fallback passed. Its first attempt is retained as a setup failure
+(missing `--derivation` argument), not a font regression. At 1920×1080 the new
+cold FCP samples were **244/232 → 168/160 ms** on loopback SwiftShader.
+
+`scripts/qa-performance-round27.mjs` accepts `--fonts=URL` and `--storage=URL`
+with `--baseline=URL`, `--current=URL`, `--sizes=100,1000,10000 --pairs=12`
+and an external `--output`. It rotates all arms and instrumentation order,
+retains warmups, and separates primary/mirror return from both RAF clocks.
+CDP CPU/style/layout metrics cover the surrounding automation window, and
+`setItem` return does not prove physical disk fsync. Optional `--settle=true`
+is a separate diagnostic, never a replacement for immediate-open samples.
+`qa-surface-regression-round26.mjs --atlas-diagnostic` additionally preserves
+atlas buffers, font-ready state and upload/draw/read call order symmetrically.
+`diagnose-rgba.py --report REPORT --output NEW_FILE` verifies buffer hashes and
+records every changed pixel without changing the zero-tolerance verdict.
+
+The local version adds **364,264 bytes of core fonts** (35,560 Pixel + 328,704
+Text), while retaining the original 8,656,928 bytes of complete fonts for
+on-demand missing-character fallback. Only cores are preloaded. All 113 CSS
+core references, including nested `var()` fallbacks, retain the matching Full
+family and their original system-font order. Source Han's variable axes and
+four tested weights are retained; derivative family and named-instance
+PostScript names avoid its Reserved Font Name. See [font notices](src/fonts/README.md).
+
+Large saves can avoid an extra UTF-8 buffer when a conservative byte bound
+already proves they fit. Uncertain inputs retain the exact encoder check.
+Complete snapshot comparisons, serialization, both storage writes, migration
+and failure behavior remain unchanged. An experimental raw-payload comparison
+shortcut was rejected by existing Proxy/rawJSON conflict tests and is **not**
+part of this version.
+
+The independent `browser-release-qa.yml` workflow runs for pull requests to
+`main` and via `workflow_dispatch`. It installs Playwright 1.60.0 outside the game, assembles
+and hashes the exact HEAD shipping files, and checks real browser play,
+10k inventory locking, mirrored saves and reload. It does not deploy or change
+the existing Pages workflow. Performance is reported separately, without a
+random p95 release gate.
+
+Reproduction uses external `PLAYWRIGHT_MODULE`, `CHROMIUM_PATH` and fresh
+external `--output` directories: `qa-fonts-round27.mjs` compares two loopback
+origins; `qa-performance-round27.mjs` retains 12 paired samples plus warmups
+for 100/1k/10k inventories (`--sizes=100,1000,10000`); and
+`prepare-stage-probe.mjs <external-copy>` instruments only an isolated copy.
+`benchmark-storage-round27.mjs` retains the original storage differential
+scenarios and reports Node timings only. Raw QA logs are not shipped.
+
+Earlier implementation acceptance (historical, before the bounded follow-up)
+on **2026-10-20** used Windows, Ryzen 7 9700X,
+Chromium **156.0.8078.4**, ANGLE **SwiftShader**, DPR 1 and disposable saves.
+The font comparison repeated each of 1366×768, 1920×1080, 3840×2160 and
+390×844 twice: text rectangles, line breaks, cards and scroll geometry were
+exactly equal, with zero repeat-layout noise. Normal flows requested no Full
+font; the imported-name probe used Fusion Pixel Full, a Text probe used Source
+Han Full, and an unsupported emoji used the system font. Each Full was fetched
+once. At 1920×1080, cold CDP font bytes fell **8,657,387 → 364,721 (95.79%)**;
+FCP was **212/204 → 140/136 ms** in the two local samples. These are loopback
+identity-encoding measurements, not published-CDN or universal startup claims.
+Keeping Full fonts means the total deployment grows despite lower first-load
+traffic.
+
+That earlier two-arm interaction comparison retained **12 pairs per action/size/probe
+mode**, one warmup each, and all tails. For 10k equipment, click-to-second-RAF
+lock p50/p95 was **95.3/113.3 → 100.9/108.4 ms**, equip **89.5/92.2 →
+89.8/92.1 ms**, and opening **62.9/67.4 → 63.9/68.4 ms**. Recycling confirmation
+through durable mirror write and two RAFs improved **148.9/152.2 →
+143.6/145.7 ms**. The 1k lock/equip medians rose **53.9/38.1 → 57.4/41.4 ms**.
+These mixed results do **not** establish a general interaction speedup.
+The capacity change removes one UTF-8 allocation from the 10k reference save;
+both parses, all four serializations, and primary/mirror writes remain.
+
+942 Node tests, 1,000 ten-floor simulations and 43 storage differential
+scenarios passed. Native context restoration and all 16 surface functional
+cases passed; the 19 supplied-motion cases matched. Strict RGBA still failed
+5 of 7 cross-version image comparisons and 3 of 7 same-version comparisons
+(the eighth pair is a non-RGBA effects case). Those failures remain open,
+along with the historical deep 4×400 completion limit, physical-GPU 4K/60 FPS,
+long-term memory and balance. No remote workflow or Pages deployment was run
+in that historical local acceptance.
+
+The public Pages release remains the previously published V5.26.0 below.
+
+## V5.26.0 · Reviewed, Integrated & Published (historical)
 
 The reviewed **V5.26.0 cloud handoff** has been integrated into this repository and published to [GitHub Pages](https://seiya058904.github.io/Dice-Abyss/). Publication and live browser checks passed on **2026-10-20**. Follow [Run Locally](#run-locally) to run the same game on your computer; browser saves remain separate between the local and published origins.
 

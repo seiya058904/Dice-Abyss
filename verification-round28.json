@@ -1,0 +1,308 @@
+{
+  "round": 28,
+  "date": "2026-10-21",
+  "decision": "DRAFT_CONTINUE",
+  "statuses": {
+    "FUNCTIONAL": "PASS",
+    "STORAGE": "PASS",
+    "PERF": "PERF_BLOCKED",
+    "STRICT_RGBA": "STRICT_RGBA_FAIL",
+    "PHYSICAL_GPU": "NOT_TESTED"
+  },
+  "source": {
+    "main": "d3acd20d26ba0e2756b411df386e7f0c218aea89",
+    "start": "9015762f57c1b3ed420054532b8910b1d1d67510",
+    "experiment": "454c2dc710702b3b830f8d6ff1369213f2d0657a",
+    "rollback": "d722915af9e7fe31cc1dd7853d19a5805b418b8f",
+    "runtimeAdopted": false,
+    "finalRuntimeIdenticalToStart": true
+  },
+  "candidate": {
+    "name": "A fixed locale formatter reuse",
+    "status": "REJECTED_STRICT_VISUAL_UNVERIFIED",
+    "changedSource": [
+      "src/views.js"
+    ],
+    "performanceValueObserved": true,
+    "failure": "strict-self-candidate-1 motion-160 changedPixels=1; causal chain for this exact sample unavailable; strict matrices also fail",
+    "rollback": {
+      "experimentCommit": "454c2dc710702b3b830f8d6ff1369213f2d0657a",
+      "rollbackCommand": "git revert --no-edit 454c2dc710702b3b830f8d6ff1369213f2d0657a",
+      "rollbackCommit": "d722915af9e7fe31cc1dd7853d19a5805b418b8f",
+      "originalTree": "0b13fe3a148833ef2ade8046d44afacd5df2019d",
+      "rollbackTree": "0b13fe3a148833ef2ade8046d44afacd5df2019d",
+      "status": "",
+      "reason": "Candidate-specific one-pixel motion-160 self mismatch lacks per-sample attribution; strict RGBA regression did not pass. Performance benefit is real in the bounded experiment but not sufficient for adoption.",
+      "fullTreeRestored": true
+    }
+  },
+  "functional": {
+    "candidateTests": 948,
+    "deliveredTests": 946,
+    "failed": 0,
+    "skipped": 0,
+    "simulations": 1000,
+    "storageDifferential": 43,
+    "htmlEquivalentCases": 72,
+    "browserDOMEquivalentPairs": 36,
+    "locks": 100,
+    "reloads": 20,
+    "deepFloorsPerSeed": [
+      400,
+      400,
+      400,
+      400
+    ],
+    "deepDeaths": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "webLocksModes": [
+      "NATIVE",
+      "API_ABSENT"
+    ],
+    "sameRevisionDivergentBranch": "PASS"
+  },
+  "performance": {
+    "arms": [
+      "main",
+      "original",
+      "candidate"
+    ],
+    "batches": 2,
+    "pairsPerCell": 40,
+    "contexts": 378,
+    "warmups": 18,
+    "measuredContexts": 360,
+    "measuredActions": 2160,
+    "sizes": [
+      100,
+      1000,
+      10000
+    ],
+    "actions": [
+      "open",
+      "filter",
+      "page",
+      "lock",
+      "equip",
+      "salvage"
+    ],
+    "clockCaveats": [
+      "setItem return is not fsync",
+      "early click to 2RAF may precede persistence",
+      "minimal completion observer remains in formal samples",
+      "intrusive profile/stage/exception samples are separate"
+    ],
+    "summaryFile": "performance-summary.json",
+    "sampleFile": "performance-samples.csv"
+  },
+  "strictRGBA": {
+    "threshold": 0,
+    "includesAlpha": true,
+    "functionalExecutions": 256,
+    "matrix": {
+      "stages-cross-1": {
+        "cases": 16,
+        "passed": 16,
+        "failed": 0,
+        "pairChecks": 8,
+        "pairFailures": 3,
+        "functionalPairFailures": 0,
+        "strictRGBAFailures": 3,
+        "runtimeErrors": 0
+      },
+      "stages-cross-2": {
+        "cases": 16,
+        "passed": 16,
+        "failed": 0,
+        "pairChecks": 8,
+        "pairFailures": 3,
+        "functionalPairFailures": 0,
+        "strictRGBAFailures": 3,
+        "runtimeErrors": 0
+      },
+      "stages-main-candidate-1": {
+        "cases": 16,
+        "passed": 16,
+        "failed": 0,
+        "pairChecks": 8,
+        "pairFailures": 5,
+        "functionalPairFailures": 0,
+        "strictRGBAFailures": 5,
+        "runtimeErrors": 0
+      },
+      "stages-main-candidate-2": {
+        "cases": 16,
+        "passed": 16,
+        "failed": 0,
+        "pairChecks": 8,
+        "pairFailures": 4,
+        "functionalPairFailures": 0,
+        "strictRGBAFailures": 4,
+        "runtimeErrors": 0
+      },
+      "stages-self-candidate-1": {
+        "cases": 16,
+        "passed": 16,
+        "failed": 0,
+        "pairChecks": 8,
+        "pairFailures": 4,
+        "functionalPairFailures": 0,
+        "strictRGBAFailures": 4,
+        "runtimeErrors": 0
+      },
+      "stages-self-candidate-2": {
+        "cases": 16,
+        "passed": 16,
+        "failed": 0,
+        "pairChecks": 8,
+        "pairFailures": 4,
+        "functionalPairFailures": 0,
+        "strictRGBAFailures": 4,
+        "runtimeErrors": 0
+      },
+      "stages-self-main-1": {
+        "cases": 16,
+        "passed": 16,
+        "failed": 0,
+        "pairChecks": 8,
+        "pairFailures": 3,
+        "functionalPairFailures": 0,
+        "strictRGBAFailures": 3,
+        "runtimeErrors": 0
+      },
+      "stages-self-main-2": {
+        "cases": 16,
+        "passed": 16,
+        "failed": 0,
+        "pairChecks": 8,
+        "pairFailures": 3,
+        "functionalPairFailures": 0,
+        "strictRGBAFailures": 3,
+        "runtimeErrors": 0
+      },
+      "stages-self-original-1": {
+        "cases": 16,
+        "passed": 16,
+        "failed": 0,
+        "pairChecks": 8,
+        "pairFailures": 3,
+        "functionalPairFailures": 0,
+        "strictRGBAFailures": 3,
+        "runtimeErrors": 0
+      },
+      "stages-self-original-2": {
+        "cases": 16,
+        "passed": 16,
+        "failed": 0,
+        "pairChecks": 8,
+        "pairFailures": 4,
+        "functionalPairFailures": 0,
+        "strictRGBAFailures": 4,
+        "runtimeErrors": 0
+      },
+      "strict-cross-1": {
+        "cases": 16,
+        "passed": 16,
+        "failed": 0,
+        "pairChecks": 8,
+        "pairFailures": 5,
+        "functionalPairFailures": 0,
+        "strictRGBAFailures": 5,
+        "runtimeErrors": 0
+      },
+      "strict-cross-2": {
+        "cases": 16,
+        "passed": 16,
+        "failed": 0,
+        "pairChecks": 8,
+        "pairFailures": 4,
+        "functionalPairFailures": 0,
+        "strictRGBAFailures": 4,
+        "runtimeErrors": 0
+      },
+      "strict-self-candidate-1": {
+        "cases": 16,
+        "passed": 16,
+        "failed": 0,
+        "pairChecks": 8,
+        "pairFailures": 6,
+        "functionalPairFailures": 0,
+        "strictRGBAFailures": 6,
+        "runtimeErrors": 0
+      },
+      "strict-self-candidate-2": {
+        "cases": 16,
+        "passed": 16,
+        "failed": 0,
+        "pairChecks": 8,
+        "pairFailures": 4,
+        "functionalPairFailures": 0,
+        "strictRGBAFailures": 4,
+        "runtimeErrors": 0
+      },
+      "strict-self-original-1": {
+        "cases": 16,
+        "passed": 16,
+        "failed": 0,
+        "pairChecks": 8,
+        "pairFailures": 5,
+        "functionalPairFailures": 0,
+        "strictRGBAFailures": 5,
+        "runtimeErrors": 0
+      },
+      "strict-self-original-2": {
+        "cases": 16,
+        "passed": 16,
+        "failed": 0,
+        "pairChecks": 8,
+        "pairFailures": 6,
+        "functionalPairFailures": 0,
+        "strictRGBAFailures": 6,
+        "runtimeErrors": 0
+      }
+    },
+    "uploads": 340,
+    "canvasGpuPostEqual": 340,
+    "glErrors": 0,
+    "fontProofFailures": 0,
+    "specificCandidateMotion160FailureRetained": true,
+    "fullCausalityProven": false,
+    "summaryFile": "pixel-summary.json"
+  },
+  "notTested": [
+    "physical GPU",
+    "physical 4K/60Hz",
+    "long-term memory leaks",
+    "human playtesting and balance",
+    "complete causal attribution of every strict framebuffer discrepancy",
+    "fixed bitmap atlas prototype"
+  ],
+  "remote": {
+    "pr": "https://github.com/seiya058904/Dice-Abyss/pull/3",
+    "intendedDraft": true,
+    "newDocumentationCommitCI": "NOT_RUN_AT_REPORT_CREATION",
+    "postPushEvidence": "external remote-verification.json",
+    "merge": false,
+    "deploy": false,
+    "release": false
+  },
+  "evidence": {
+    "root": "C:\\Users\\admin\\AppData\\Local\\Temp\\dice-round28-20261021",
+    "bundle": "C:\\Users\\admin\\AppData\\Local\\Temp\\dice-round28-20261021-evidence.zip",
+    "manifest": "SHA256SUMS.json",
+    "bundleHashFile": "../dice-round28-20261021-evidence.zip.sha256",
+    "localOnly": true
+  },
+  "commands": {
+    "gates": "gates-commands.json",
+    "final": "final-gates.json",
+    "performance": "perf-commands-valid.json",
+    "failedStarts": "perf-commands.json",
+    "stages": "stage-commands.json",
+    "pixels": "pixel-commands.json"
+  }
+}

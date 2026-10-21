@@ -5,6 +5,7 @@ import { titleView, gameView, center, settingsView, itemEffects, itemSummary, it
 import { eventChoices } from './encounters.js';
 import { mountEffects } from './effects.js';
 import { THROW_DURATION } from './dice-motion.js';
+import { paceSceneAnimations } from './visual-timeline.js';
 import { levelXpNeeded } from './equipment.js';
 import { createFusionController } from './fusion-controller.js';
 import { captureWorkbenchPosition, restoreWorkbenchPosition, updateFusionDOM } from './fusion-dom.js';
@@ -80,8 +81,17 @@ function settlePresentation() {
 async function waitAnimation(ms,fast) {
   if(document.visibilityState==='hidden'){settlePresentation();return;}
   const presentation=visualPresentation;
-  if(fast||!presentation){await delay(ms);return;}
-  const result=await presentation.wait(ms);
+  const rate=settings.fastPace?2:1;
+  if(fast||!presentation){await delay(ms/rate);return;}
+  const animations=rate===2
+    ? [document.querySelector('#current-room'),...document.querySelectorAll('.fusion-spark')].flatMap(root=>paceSceneAnimations(root,rate)) : [];
+  const phase= presentation.wait(ms);
+  // Keep the owner alive until finite CSS tails finish too. Its existing wall
+  // deadline/hidden/skip cancellation still releases this wait if RAF stalls.
+  const result=animations.length?await Promise.race([
+    Promise.all([phase,...animations.map(animation=>animation.finished.catch(()=>{}))]).then(([result])=>result),
+    presentation.wait(Number.MAX_SAFE_INTEGER),
+  ]):await phase;
   // A renderer deadline/background cancellation reveals the already committed
   // result. Never leave busy set while waiting for a RAF that cannot arrive.
   if(presentation===visualPresentation&&['deadline','hidden'].includes(result.reason))settlePresentation();
@@ -410,7 +420,7 @@ async function act(action) {
       if(room)room.dataset.impact=roll.killed&&before.enemy.type==='boss'?'finish':roll.phaseChanged?'phase':roll.critical?'critical':roll.best>=3?'resonance':'normal';
       sound(roll.killed&&before.enemy.type==='boss'?'finish':roll.critical?'critical':roll.best>=2?'resonance':'impact');
       if(roll.phaseChanged)document.querySelector('#current-room')?.classList.add('phase-shift');
-      if(roll.follow)delay(fast?35:450).then(()=>{if(generation===animationGeneration&&ui.busy)sound('follow');});
+      if(roll.follow)delay((fast?35:450)/(settings.fastPace?2:1)).then(()=>{if(generation===animationGeneration&&ui.busy)sound('follow');});
     } else sound('reward');
     publishPresentationAnnouncement(generation);
     await waitAnimation(fast ? 100 : after.phase === 'chest' || after.phase === 'dead' ? 1500 : 1150,fast);
@@ -451,7 +461,7 @@ function animateFusionMaterials() {
     const box = card.getBoundingClientRect(), spark = document.createElement('span');
     spark.className = 'fusion-spark'; spark.setAttribute('aria-hidden', 'true');
     spark.style.cssText = `--fx:${box.left + box.width / 2}px;--fy:${box.top + box.height / 2}px;--tx:${kiln.left + kiln.width / 2}px;--ty:${kiln.top + kiln.height / 2}px;animation-delay:${index * 35}ms`;
-    document.body.append(spark); setTimeout(() => spark.remove(), 1450);
+    document.body.append(spark); setTimeout(() => spark.remove(), 1450/(settings.fastPace?2:1));
   });
 }
 
@@ -521,6 +531,13 @@ document.addEventListener('click', async event => {
   }
   if (action === 'fullscreen') {
     try { if (document.fullscreenElement) await document.exitFullscreen(); else await document.documentElement.requestFullscreen(); } catch { notify('此浏览器窗口不支持全屏，请使用 F11。'); } return;
+  }
+  if (action === 'fast-pace') {
+    settings.fastPace = !settings.fastPace;
+    // The next presentation reads the rate; do not cancel an active timeline.
+    saveSettings({redraw:false});
+    control.setAttribute('aria-checked', String(settings.fastPace));
+    return;
   }
   if (action === 'sound') {
     settings.sound = !settings.sound;

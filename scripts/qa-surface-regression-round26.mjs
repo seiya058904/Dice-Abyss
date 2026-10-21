@@ -225,6 +225,33 @@ async function main(){
    for(const variant of variants){
     const row={name,variant:variant.name,status:'RUNNING'};report.cases.push(row);
     const context=await browser.newContext({viewport:name==='app-offscreen-complete-roll'?{width:480,height:840}:{width:1280,height:800},deviceScaleFactor:1});
+    if(args['--atlas-diagnostic'])await context.addInitScript(()=>{
+     const evidence=window.__atlasDiagnostic={uploads:[],calls:[]};
+     const texts=new WeakMap(),fill=CanvasRenderingContext2D.prototype.fillText;
+     CanvasRenderingContext2D.prototype.fillText=function(text,...rest){
+      if(this.canvas.width===1536&&this.canvas.height===512){
+       const rows=texts.get(this.canvas)||[];rows.push({text:String(text),font:this.font});texts.set(this.canvas,rows);
+      }
+      return fill.call(this,text,...rest);
+     };
+     const proto=WebGLRenderingContext.prototype,upload=proto.texImage2D;
+     proto.texImage2D=function(...values){
+      const result=upload.apply(this,values),canvas=values.at(-1);
+      if(canvas instanceof HTMLCanvasElement&&canvas.width===1536&&canvas.height===512){
+       const rgba=canvas.getContext('2d').getImageData(0,0,canvas.width,canvas.height).data;
+       let binary='';for(let i=0;i<rgba.length;i+=8192)binary+=String.fromCharCode(...rgba.subarray(i,i+8192));
+       evidence.uploads.push({width:canvas.width,height:canvas.height,rgbaBase64:btoa(binary),texts:texts.get(canvas)||[],fontStatus:document.fonts.status,pixelReady:document.fonts.check('96px "Abyss Pixel"'),time:performance.now()});
+       evidence.calls.push({method:'texImage2D',upload:evidence.uploads.length-1});
+      }
+      return result;
+     };
+     for(const method of ['drawElements','readPixels']){
+      const native=proto[method];proto[method]=function(...values){
+       if(this.canvas.classList.contains('dice-surface'))evidence.calls.push({method,width:this.drawingBufferWidth,height:this.drawingBufferHeight});
+       return native.apply(this,values);
+      };
+     }
+    });
     await context.route('**/*',route=>{const url=new URL(route.request().url());return ['data:','about:'].includes(url.protocol)||url.origin===new URL(variant.url).origin?route.continue():route.abort();});
     const page=await context.newPage();page.setDefaultTimeout(30000);
     page.on('pageerror',error=>report.errors.push({name,variant:variant.name,type:'pageerror',message:error.message}));
@@ -245,7 +272,13 @@ async function main(){
      const screenshot=`${variant.name}-${name}.png`;await page.screenshot({path:path.join(output,screenshot)});row.screenshot=screenshot;
      assert.equal(row.console.filter(entry=>entry.type==='error').length,0,'Relevant browser console errors must not be silently ignored');row.status='PASS';
     }catch(error){row.status='FAIL';row.error=String(error);row.stack=error.stack;const screenshot=`FAIL-${variant.name}-${name}.png`;await page.screenshot({path:path.join(output,screenshot)}).catch(()=>{});row.screenshot=screenshot;}
-    finally{await context.close();await fs.writeFile(reportFile,JSON.stringify(report,null,2)+'\n');}
+    finally{
+     if(args['--atlas-diagnostic']){
+      row.atlasDiagnostic=await page.evaluate(()=>window.__atlasDiagnostic).catch(()=>null);
+      if(row.atlasDiagnostic)for(let i=0;i<row.atlasDiagnostic.uploads.length;i++)row.atlasDiagnostic.uploads[i]=await persistCapture(row.atlasDiagnostic.uploads[i],`${variant.name}-${name}-atlas-${i}`);
+     }
+     await context.close();await fs.writeFile(reportFile,JSON.stringify(report,null,2)+'\n');
+    }
     console.log(`${variant.name} ${name}: ${row.status}`);
    }
    const pair=report.cases.filter(row=>row.name===name);if(pair.length===2&&pair.every(row=>row.status==='PASS')){

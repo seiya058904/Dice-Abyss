@@ -188,14 +188,28 @@ export function measureSaveCapacity(state) {
   const status=!withinWriteLimit?'over-limit':remainingBytes===0||remainingCharacters===0?'at-limit':bytes>=limitBytes*.9||characters>=limitCharacters*.9?'near-limit':'ok';
   return {bytes,characters,limitBytes,limitCharacters,remainingBytes,remainingCharacters,excessBytes,excessCharacters,status,withinWriteLimit};
 }
+function exceedsUtf8Limit(raw,limit) {
+  // Every UTF-16 unit needs at most three UTF-8 bytes. Long ASCII runs need
+  // exactly one each; tighten that conservative bound without allocating a
+  // second multi-megabyte buffer for ordinary large inventories. Unicode,
+  // surrogate pairs and lone surrogates remain conservatively overcounted.
+  let upper=raw.length*3;
+  if(upper<=limit)return false;
+  for(const match of raw.matchAll(/[\x00-\x7f]{64,}/g)){
+    upper-=match[0].length*2;
+    if(upper<=limit)return false;
+  }
+  // Uncertain near-limit/non-ASCII inputs retain the exact original check.
+  return new TextEncoder().encode(raw).byteLength>limit;
+}
 function encodeWritableSave(state) {
   const raw=encodeSave(state),limit=SAVE_FILE_LIMIT;
   // New commits must fit both decodeSave's character limit and the import
   // file's UTF-8 byte limit. Keep encode/decode available for rescuing older
   // readable, multibyte saves; never trim their unknown metadata to make room.
   // UTF-8 uses at most three bytes per UTF-16 code unit, so ordinary small
-  // saves need no second full buffer. Large saves use the actual encoded size.
-  if(raw.length>limit||(raw.length*3>limit&&new TextEncoder().encode(raw).byteLength>limit)){
+  // saves need no second full buffer. Ambiguous large saves use the exact size.
+  if(raw.length>limit||exceedsUtf8Limit(raw,limit)){
     throw new Error('存档将超过 5 MB 文件上限，本次操作未保存，现有主档与镜像未改动。请先在设置中导出完整备份并检查存档容量。回收物品后仍需通过保存校验；如仍超限，请保留备份，再检查导入文件的额外数据。');
   }
   return raw;
@@ -345,6 +359,6 @@ export function saveGame(state, expected = undefined, storage = localStorage) {
 export function loadSettings(storage = localStorage) {
   try {
     const s = JSON.parse(storage.getItem(SETTINGS_KEY));
-    return { sound: s?.sound === true, effects: ['full', 'low'].includes(s?.effects) ? s.effects : 'full', scale: [0.9, 1, 1.1].includes(s?.scale) ? s.scale : 1 };
-  } catch { return { sound: false, effects: 'full', scale: 1 }; }
+    return { fastPace: s?.fastPace === true, sound: s?.sound === true, effects: ['full', 'low'].includes(s?.effects) ? s.effects : 'full', scale: [0.9, 1, 1.1].includes(s?.scale) ? s.scale : 1 };
+  } catch { return { fastPace: false, sound: false, effects: 'full', scale: 1 }; }
 }

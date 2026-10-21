@@ -1,0 +1,213 @@
+{
+  "status": "RELEASE_READY",
+  "date": "2026-10-21",
+  "baseline": "d3acd20d26ba0e2756b411df386e7f0c218aea89",
+  "auditStart": "ac5e2891218552f6a40c9d4694d6ddc2bd4f4e49",
+  "candidateIdentity": "git commit containing this file; final exact HEAD in CI artifacts",
+  "environment": {
+    "browser": "156.0.8078.4",
+    "backend": "ANGLE SwiftShader",
+    "viewport": "1920x1080 DPR1; 3840x2160 simulated",
+    "network": "loopback identity; no throttling",
+    "synthetic": true
+  },
+  "cold": [
+    {
+      "label": "baseline",
+      "repeat": 0,
+      "fontBytes": 8657528,
+      "totalBytes": 9712056,
+      "fcp": 504,
+      "usable": 291.20000000298023,
+      "interactionConfirmed": 547.7000000029802
+    },
+    {
+      "label": "current",
+      "repeat": 0,
+      "fontBytes": 364864,
+      "totalBytes": 1484735,
+      "fcp": 136,
+      "usable": 78.70000000298023,
+      "interactionConfirmed": 163.79999999701977
+    },
+    {
+      "label": "baseline",
+      "repeat": 1,
+      "fontBytes": 8657528,
+      "totalBytes": 9712056,
+      "fcp": 208,
+      "usable": 141.5,
+      "interactionConfirmed": 269.79999999701977
+    },
+    {
+      "label": "current",
+      "repeat": 1,
+      "fontBytes": 364864,
+      "totalBytes": 1484735,
+      "fcp": 144,
+      "usable": 94.1000000089407,
+      "interactionConfirmed": 172.40000000596046
+    },
+    {
+      "label": "baseline",
+      "repeat": 2,
+      "fontBytes": 8657528,
+      "totalBytes": 9712056,
+      "fcp": 196,
+      "usable": 131.8999999910593,
+      "interactionConfirmed": 264.70000000298023
+    },
+    {
+      "label": "current",
+      "repeat": 2,
+      "fontBytes": 364864,
+      "totalBytes": 1484735,
+      "fcp": 144,
+      "usable": 77.1000000089407,
+      "interactionConfirmed": 172.6000000089407
+    }
+  ],
+  "fontReduction": 0.957855868326386,
+  "totalReduction": 0.8471245429392087,
+  "pace": [
+    {
+      "label": "baseline-standard",
+      "nodes": 18,
+      "totalMs": 40261.192299999995,
+      "finalHash": "91c497e76d5d4ee80942288eabbcc001112a867af99ffe768224a047622912b5"
+    },
+    {
+      "label": "standard",
+      "nodes": 18,
+      "totalMs": 40187.80170000003,
+      "finalHash": "91c497e76d5d4ee80942288eabbcc001112a867af99ffe768224a047622912b5"
+    },
+    {
+      "label": "fast",
+      "nodes": 18,
+      "totalMs": 22963.529700000014,
+      "finalHash": "91c497e76d5d4ee80942288eabbcc001112a867af99ffe768224a047622912b5"
+    }
+  ],
+  "waitReduction": 0.42859453046420315,
+  "lifecycle": [
+    {
+      "mode": "skip",
+      "status": "PASS",
+      "visibility": "native browser interaction"
+    },
+    {
+      "mode": "resize",
+      "status": "PASS",
+      "visibility": "native browser interaction"
+    },
+    {
+      "mode": "hidden",
+      "status": "PASS",
+      "visibility": "synthetic visibility event"
+    },
+    {
+      "mode": "reload",
+      "status": "PASS",
+      "visibility": "native browser interaction"
+    },
+    {
+      "mode": "double-click",
+      "status": "PASS",
+      "visibility": "native browser interaction"
+    },
+    {
+      "mode": "settings",
+      "status": "PASS",
+      "visibility": "native browser interaction"
+    }
+  ],
+  "rareReward": {
+    "status": "PASS",
+    "ms": 2373.5253000000084,
+    "persistsUntilNextAction": true
+  },
+  "inventory": {
+    "status": "PASS",
+    "initialItems": 300,
+    "finalItems": 149,
+    "gold": 432
+  },
+  "gates": {
+    "syntax": "PASS",
+    "nodeTests": {
+      "pass": 953,
+      "fail": 0,
+      "skipped": 0
+    },
+    "simulate": {
+      "completed": 1000,
+      "failures": 0
+    },
+    "storageDifferentials": 43,
+    "coreBrowserEachLocksMode": 43,
+    "fallbackCoreFullSystem": "PASS",
+    "exactHeadStagedRelease": "PASS (see CI artifact for final commit)",
+    "historicalStrictRGBA": "FAIL retained; diagnostic; zero tolerance unchanged",
+    "physicalGPU4K60": "NOT_TESTED",
+    "humanLongPlay": "NOT_TESTED"
+  },
+  "evidence": "C:\\Users\\admin\\.codex\\visualizations\\2026\\10\\21\\01a15ce7-a1fa-71f0-b4ac-45e59cee5190\\final-v527",
+  "rawEvidence": "C:\\Users\\admin\\AppData\\Local\\Temp\\dice-final-v527",
+  "ci": "https://github.com/seiya058904/Dice-Abyss/pull/3/checks",
+  "mergeDeploy": "NOT_AUTHORIZED; not performed",
+  "stateEquality": "Exact deep equality with engine transition and primary/mirror after every action; all 18 per-node hashes identical across main-standard/current-standard/current-fast",
+  "historicalMetricsCommit": "6003f2c83079f7830e29d8c9cb85c39e163d88e8",
+  "reviewFix": {
+    "scope": [
+      "CSS animation/transition playback and finite completion",
+      "low-effects delay and follow-up sound pacing"
+    ],
+    "status": "PASS",
+    "combinations": [
+      {
+        "mode": "standard",
+        "actions": 18,
+        "commandTotalMs": 42508.440899999994,
+        "browserBusyMs": 36004.80000004172,
+        "finalHash": "91c497e76d5d4ee80942288eabbcc001112a867af99ffe768224a047622912b5"
+      },
+      {
+        "mode": "fast",
+        "actions": 18,
+        "commandTotalMs": 24947.74899999999,
+        "browserBusyMs": 18796.199999973178,
+        "finalHash": "91c497e76d5d4ee80942288eabbcc001112a867af99ffe768224a047622912b5"
+      },
+      {
+        "mode": "low-standard",
+        "actions": 18,
+        "commandTotalMs": 10146.641800000012,
+        "browserBusyMs": 5577.600000008941,
+        "finalHash": "91c497e76d5d4ee80942288eabbcc001112a867af99ffe768224a047622912b5"
+      },
+      {
+        "mode": "low-fast",
+        "actions": 18,
+        "commandTotalMs": 9388.930100000012,
+        "browserBusyMs": 4011.2999999821186,
+        "finalHash": "91c497e76d5d4ee80942288eabbcc001112a867af99ffe768224a047622912b5"
+      }
+    ],
+    "fullReduction": 0.4131107029145359,
+    "lowBusyReduction": 0.2808197074053914,
+    "fullFiniteCssFinished": 85,
+    "fullFiniteCssTotal": 85,
+    "rawEvidence": "C:/Users/admin/AppData/Local/Temp/dice-v527-review",
+    "ci": "https://github.com/seiya058904/Dice-Abyss/pull/3/checks",
+    "note": "Historical loading and original pace metrics above remain attributed to 6003f2c; no new cold-load benchmark.",
+    "initialRemotePerformance": {
+      "sha": "bfe4a9b90b5a8174f276d06f9929246705e67dae",
+      "run": "https://github.com/seiya058904/Dice-Abyss/actions/runs/39553659351",
+      "status": "FAIL",
+      "waitReduction": 0.223473552006903,
+      "reason": "New cross-environment 40% end-to-end threshold; finite CSS completed 85/85",
+      "resolution": "CI functional pacing/completion gates and recorded timings; local >=40% acceptance unchanged; runtime unchanged"
+    }
+  }
+}

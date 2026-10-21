@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {createVisualTimeline,MAX_VISUAL_STEP,VISUAL_WALL_LIMIT} from '../src/visual-timeline.js';
+import {paceSceneAnimations,createVisualTimeline,MAX_VISUAL_STEP,VISUAL_WALL_LIMIT} from '../src/visual-timeline.js';
 
 function clock(){
  const keys=['document','performance','requestAnimationFrame','cancelAnimationFrame','setTimeout','clearTimeout'];
@@ -89,4 +89,28 @@ test('a synthetic cleanup failure still releases old waiters and permits a new s
   assert.equal(env.timers.size,0);assert.equal(env.frames.size,0);assert.equal(env.listeners.size,0);
   second=createVisualTimeline();second.play(100,()=>{});const next=second.wait(100);env.frame(200);assert.equal((await next).reason,'elapsed');
  }finally{first?.stop();second?.stop();env.restore();}
+});
+
+for (const rate of [1,2]) test(`presentation rate ${rate} keeps final pose and wait on the same clock`,async()=>{
+ const env=clock(),samples=[];let t;
+ try{
+  t=createVisualTimeline(()=>{},rate);t.play(1280,ms=>samples.push(ms));const done=t.wait(1280);
+  for(let time=116;time<=100+1280/rate;time+=16)env.frame(time);
+  assert.equal((await done).reason,'elapsed');assert.equal(samples.at(-1),1280);
+  assert.equal(env.frames.size,0);assert.equal(env.timers.size,0);
+ }finally{t?.stop();env.restore();}
+});
+for(const reason of ['hidden','cancelled','deadline'])test(`fast presentation releases waiters on ${reason}`,async()=>{
+ const env=clock();let t;
+ try{
+  t=createVisualTimeline(()=>{},2);t.play(1280,()=>{});const done=t.wait(1280);
+  if(reason==='hidden')env.hide();else if(reason==='deadline')env.advance(100+VISUAL_WALL_LIMIT);else t.stop();
+  assert.equal((await done).reason,reason);assert.equal(env.frames.size,0);assert.equal(env.timers.size,0);assert.equal(env.listeners.size,0);
+ }finally{t?.stop();env.restore();}
+});
+
+test('scene CSS pace includes delayed finite tails but never waits for ambient loops',()=>{
+ const animations=[{end:1420,time:100},{end:Infinity,time:0},{end:600,time:0}].map(x=>({currentTime:x.time,effect:{getComputedTiming:()=>({endTime:x.end})},updatePlaybackRate(rate){this.rate=rate;}}));
+ assert.deepEqual(paceSceneAnimations({getAnimations:options=>{assert.deepEqual(options,{subtree:true});return animations;}},2),[animations[0],animations[2]]);
+ assert(animations.every(x=>x.rate===2));assert.deepEqual(paceSceneAnimations(null,2),[]);
 });

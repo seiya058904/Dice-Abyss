@@ -1,0 +1,40 @@
+diff --git a/src/views.js b/src/views.js
+index c83fa7d..a3740a5 100644
+--- a/src/views.js
++++ b/src/views.js
+@@ -22,0 +23 @@ export const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;'
++const ordinaryNumber = new Intl.NumberFormat('en-US');
+@@ -24 +25 @@ const compactNumber = new Intl.NumberFormat('zh-CN',{notation:'compact',maximumF
+-export const num = n => Math.abs(Number(n||0))>=1e9?compactNumber.format(Number(n||0)):Number(n||0).toLocaleString('en-US');
++export const num = n => Math.abs(Number(n||0))>=1e9?compactNumber.format(Number(n||0)):ordinaryNumber.format(Number(n||0));
+@@ -27 +28 @@ export const num = n => Math.abs(Number(n||0))>=1e9?compactNumber.format(Number(
+-export const goldNum = n => Number(n).toLocaleString('en-US');
++export const goldNum = n => ordinaryNumber.format(Number(n));
+@@ -392 +393 @@ export function memorywellPreviewView(s) {
+- const exact=n=>Number(n).toLocaleString('en-US');
++ const exact=n=>ordinaryNumber.format(Number(n));
+diff --git a/tests/number-format-round28.test.mjs b/tests/number-format-round28.test.mjs
+new file mode 100644
+index 0000000..5d01124
+--- /dev/null
++++ b/tests/number-format-round28.test.mjs
+@@ -0,0 +1,19 @@
++import test from 'node:test';
++import assert from 'node:assert/strict';
++import {num,goldNum} from '../src/views.js';
++const compact=new Intl.NumberFormat('zh-CN',{notation:'compact',maximumFractionDigits:2});
++const oldNum=n=>Math.abs(Number(n||0))>=1e9?compact.format(Number(n||0)):Number(n||0).toLocaleString('en-US');
++test('Round28 reusable ordinary formatter preserves exact numeric presentation',()=>{
++ const cases=[undefined,null,false,true,'','0','-0','1000.125',NaN,Infinity,-Infinity,-0,0,Number.MIN_VALUE,Number.MAX_VALUE,Number.MAX_SAFE_INTEGER,1e9-1,1e9,-1e9,999.9999,-999.9999,1.005];
++ for(let i=-12000;i<=12000;i+=17)cases.push(i/7,i*1234567.123);
++ for(const value of cases){assert.equal(num(value),oldNum(value));assert.equal(goldNum(value),Number(value).toLocaleString('en-US'));}
++});
++test('Round28 formatter retains coercion count, changing getters and conversion errors',()=>{
++ for(const fn of [num,goldNum]){
++  const old=fn===num?oldNum:n=>Number(n).toLocaleString('en-US');
++  const run=f=>{let calls=0;const value={valueOf(){return ++calls===1?1000:2000;}};return {result:f(value),calls};};
++  assert.deepEqual(run(fn),run(old));
++  assert.throws(()=>fn(Symbol('invalid')),TypeError);
++  const error=new Error('conversion');assert.throws(()=>fn({valueOf(){throw error;}}),e=>e===error);
++ }
++});

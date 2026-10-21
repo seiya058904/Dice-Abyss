@@ -4,6 +4,7 @@ import {readFile,readdir,mkdir,writeFile} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
 import {setTimeout} from 'node:timers/promises';
 import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';
 import {resolve,dirname} from 'node:path';
 const root=new URL('../',import.meta.url),port=Number(process.env.SMOKE_PORT||4197),base=`http://127.0.0.1:${port}`;
 const outputArg=process.argv.indexOf('--output');
@@ -19,7 +20,7 @@ try{
  let ready=false;for(let i=0;i<100;i++){assertChildAlive();if(startup.includes(`Dice Abyss ready: ${base}`)){ready=true;break;}await setTimeout(100);}assert(ready,'Spawned server did not announce readiness');
  const release=JSON.parse(await readFile(new URL('package.json',root),'utf8')).version;
  const files=['index.html','favicon.svg',...(await readdir(new URL('src/',root))).filter(f=>/\.(js|css|svg|webp)$/.test(f)).map(f=>'src/'+f),...(await readdir(new URL('src/fonts/',root))).filter(f=>f.endsWith('.woff2')).map(f=>'src/fonts/'+f)],rows=[];
- for(const file of files){const response=await fetch(base+'/'+file);assert.equal(response.status,200,file);const bytes=Buffer.from(await response.arrayBuffer()),body=bytes.toString('utf8');assert(bytes.length>0);assert.deepEqual(bytes,await readFile(new URL(file,root)),`${file}: served bytes equal shipping bytes`);if(file.endsWith('.webp'))assert.equal(response.headers.get('content-type'),'image/webp');if(file.endsWith('.woff2'))assert.equal(response.headers.get('content-type'),'font/woff2');rows.push({file,status:response.status,bytes:bytes.length,type:response.headers.get('content-type')});
+ for(const file of files){const response=await fetch(base+'/'+file);assert.equal(response.status,200,file);const bytes=Buffer.from(await response.arrayBuffer()),body=bytes.toString('utf8');assert(bytes.length>0);assert.deepEqual(bytes,await readFile(new URL(file,root)),`${file}: served bytes equal shipping bytes`);if(file.endsWith('.webp'))assert.equal(response.headers.get('content-type'),'image/webp');if(file.endsWith('.woff2'))assert.equal(response.headers.get('content-type'),'font/woff2');rows.push({file,status:response.status,bytes:bytes.length,sha256:createHash('sha256').update(bytes).digest('hex'),contentEncoding:response.headers.get('content-encoding')||'identity',type:response.headers.get('content-type')});
   if(file==='index.html'){assert(body.includes('name="dice-abyss-build" content="5"'));assert(body.includes(`name="dice-abyss-release" content="${release}"`),'release matches package.json');}
   // Every relative JS import resolves to a shipping file.
   if(file.endsWith('.js'))for(const match of body.matchAll(/(?:from\s*|import\s*)['"](\.\.?\/[^'"]+)['"]/g)){const asset=new URL(match[1],base+'/'+file),r=await fetch(asset);assert.equal(r.status,200,asset.pathname);}

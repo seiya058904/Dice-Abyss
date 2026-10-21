@@ -1,0 +1,55 @@
+name: Independent browser release QA
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  browser-release:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - name: Assert event head identity
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          ACTUAL_HEAD=$(git rev-parse HEAD)
+          printf '{"expected":"%s","actual":"%s"}\n' "$EXPECTED_HEAD" "$ACTUAL_HEAD" > "$RUNNER_TEMP/head-identity.json"
+          test "$EXPECTED_HEAD" = "$ACTUAL_HEAD"
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - name: Install isolated pinned QA browser
+        run: |
+          npm install --prefix "$RUNNER_TEMP/browser-tools" --no-save --package-lock=false playwright@1.60.0
+          "$RUNNER_TEMP/browser-tools/node_modules/.bin/playwright" install --with-deps chromium
+          echo "PLAYWRIGHT_MODULE=$RUNNER_TEMP/browser-tools/node_modules/playwright" >> "$GITHUB_ENV"
+      - name: HTTP shipping manifest
+        run: node scripts/smoke-http.mjs --output "$RUNNER_TEMP/http-smoke.json"
+      - name: Exact HEAD staged-site browser gate
+        shell: bash
+        run: node scripts/qa-browser-release.mjs --output="$RUNNER_TEMP/browser-release" 2>&1 | tee "$RUNNER_TEMP/browser-release.log"
+      - name: API-absent Web Locks staged-site mode
+        if: ${{ !cancelled() }}
+        shell: bash
+        run: node scripts/qa-browser-release.mjs --no-web-locks=true --output="$RUNNER_TEMP/browser-release-no-locks" 2>&1 | tee "$RUNNER_TEMP/browser-release-no-locks.log"
+      - name: Preserve success and failure evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-release-${{ github.event.pull_request.head.sha || github.sha }}
+          path: |
+            ${{ runner.temp }}/browser-release
+            ${{ runner.temp }}/browser-release-no-locks
+            ${{ runner.temp }}/browser-release*.log
+            ${{ runner.temp }}/head-identity.json
+            ${{ runner.temp }}/http-smoke.json
+          retention-days: 14
