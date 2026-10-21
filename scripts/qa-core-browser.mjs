@@ -32,6 +32,42 @@ async function screenshot(page,name){await page.screenshot({path:`${output}/${na
 async function run(name,fn){if(only&&only!==name)return;currentTrace=[];const env=await create(),start=performance.now(),before=checks;try{await fn(env);report.cases.push({name,status:'PASS',checks:checks-before,trace:currentTrace,ms:performance.now()-start});}catch(error){report.cases.push({name,status:'FAIL',checks:checks-before,trace:currentTrace,ms:performance.now()-start,error:String(error),stack:error.stack});await screenshot(env.page,`FAIL-${name}`).catch(()=>{});}finally{await env.context.close();await fs.writeFile(`${output}/report.json`,JSON.stringify(report,null,2));}console.log(`${name}: ${report.cases.at(-1).status}`);}
 function combat(){let state=E.newGame(913);state=E.transition(state,{type:'fate'});state.route[0].type='combat';state=E.transition(state,{type:'enter'});state.enemy.hp=1;state.enemy.shield=0;assert.equal(E.transition(state,{type:'roll'}).phase,'chest');assert(S.validateSave(state));return state;}
 try{
+ await run('denied-storage-getter-recovery',async({context,page})=>{
+  // Fault-inject the platform's permitted SecurityError at property access,
+  // rather than only replacing getItem/setItem on an accessible Storage.
+  await context.addInitScript(()=>{
+   const storage=localStorage;
+   window.__denyStorage=true;
+   Object.defineProperty(window,'localStorage',{configurable:true,get(){if(window.__denyStorage)throw new DOMException('Synthetic storage policy denial','SecurityError');return storage;}});
+   window.__qaStorageRecords=()=>[storage.getItem('dice-abyss:save:v1'),storage.getItem('dice-abyss:mirror:v1')];
+   window.__qaQueuedStorageEvent=()=>window.dispatchEvent(new StorageEvent('storage',{key:'dice-abyss:save:v1',storageArea:storage}));
+  });
+  await page.goto(url);
+  const start=page.locator('#app [data-action="new"]');
+  check(await start.isVisible(),'denied getter still renders the title');
+  check((await page.locator('.error-note').innerText()).includes('无法读取存档'),'read failure is visible');
+  await button(page,'settings').click();
+  check(await page.locator('dialog[open]').isVisible(),'settings remain reachable without storage');
+  await button(page,'close-dialog').click();
+  await start.click();await button(page,'confirm').click();
+  await page.waitForFunction(()=>document.querySelector('.toast')?.textContent.includes('浏览器无法保存进度'));
+  check(await start.isVisible(),'failed primary write never presents a started run');
+  eq(await page.evaluate(()=>window.__qaStorageRecords()),[null,null],'denied new game writes neither save');
+  await screenshot(page,'storage-denied-title');
+  await page.evaluate(()=>{window.__denyStorage=false;});
+  await start.click();await button(page,'confirm').click();await idle(page);
+  const before=await saved(page),raw=await page.evaluate(()=>window.__qaStorageRecords());
+  check(S.validateSave(before),'restored permission allows a durable new game');
+  await page.evaluate(()=>{window.__denyStorage=true;window.__qaQueuedStorageEvent();});
+  await page.locator('[data-save-recovery="unreadable"]').waitFor();
+  check(await button(page,'export').isVisible(),'queued event after denial preserves an exportable memory copy');
+  eq(await page.evaluate(()=>window.__qaStorageRecords()),raw,'denial and recovery UI leave original bytes intact');
+  await screenshot(page,'storage-denied-recovery');
+  await page.evaluate(()=>{window.__denyStorage=false;});await button(page,'recovery-check').click();
+  await button(page,'recovery-load').click();await button(page,'confirm').click();await idle(page);
+  eq(await saved(page),before,'explicit recovery resumes the same committed run after permission returns');
+  eq(await page.evaluate(()=>window.__qaStorageRecords()),raw,'read recovery neither rewrites nor awards progress');
+ });
  await run('title-new-manual-fate-continue',async({page})=>{
   await page.goto(url);check(await button(page,'new').isVisible(),'empty storage presents a real new-game action');await screenshot(page,'title');await button(page,'new').click();await page.waitForFunction(key=>!!localStorage.getItem(key),S.SAVE_KEY);await idle(page);
   const initial=await saved(page);check(S.validateSave(initial),'new game is valid and durable');eq(initial.phase,'fate','new game waits for manual fate');

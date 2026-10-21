@@ -10,6 +10,13 @@ export const BACKUP_KEY = 'dice-abyss:mirror:v1';
 export const LEGACY_BACKUP_KEY = 'dice-abyss:pre-levels:v1';
 export const V4_BACKUP_KEY = 'dice-abyss:pre-v5:v1';
 export const SETTINGS_KEY = 'dice-abyss:settings:v1';
+// Accessing the browser property can itself throw SecurityError. Resolve it
+// inside the existing read/write guards, and never retain a permission-bypassing
+// Storage handle or substitute a volatile save when access is denied.
+const browserStorage = {
+  getItem(key) { return localStorage.getItem(key); },
+  setItem(key, value) { return localStorage.setItem(key, value); },
+};
 const phases = ['fate', 'route', 'combat', 'chest', 'loot', 'gold', 'merchant', 'forge', 'cleared', 'dead', 'complete','fusion','vault','blackmarket','altar','rest','event'];
 const roomTypes = Object.keys(ROOM_NAMES);
 const integer = (n, min, max) => Number.isSafeInteger(n) && n >= min && n <= max;
@@ -245,11 +252,11 @@ function loadStoredSave(storage) {
 }
 // Source metadata belongs only to this synchronous read, never to a returned
 // game state or a cross-operation cache. Keep the public result shape unchanged.
-export function loadSave(storage = localStorage) { return loadStoredSave(storage).loaded; }
+export function loadSave(storage = browserStorage) { return loadStoredSave(storage).loaded; }
 // Recovery reads the two complete original strings once, then uses the normal
 // primary/mirror decoder on that read-only snapshot. A present empty string is
 // still an original record; it is never treated as permission to overwrite.
-export function inspectSaveRecovery(storage = localStorage) {
+export function inspectSaveRecovery(storage = browserStorage) {
   let raw;
   try { raw={primary:storage.getItem(SAVE_KEY),mirror:storage.getItem(BACKUP_KEY)}; }
   catch { return {status:'unreadable',state:null,raw:null,error:'无法检查浏览器中的存档。请先导出本页保留的进度，并检查浏览器存储权限。'}; }
@@ -264,7 +271,7 @@ export function sameSaveRecords(a,b) {
 // commits and supplies the exact raw snapshot reviewed before confirmation.
 // Retain saveGame's full expected-null, validation, size, archive and write
 // contract; no custom serializer, reduced snapshot or silent archive is used.
-export function restoreMissingSave(state,expectedRaw,storage = localStorage) {
+export function restoreMissingSave(state,expectedRaw,storage = browserStorage) {
   if(!expectedRaw||expectedRaw.primary!==null||expectedRaw.mirror!==null)throw Error('只有确认两份浏览器存档均已缺失时才能恢复。请重新检查进度。');
   let currentRaw;
   try { currentRaw={primary:storage.getItem(SAVE_KEY),mirror:storage.getItem(BACKUP_KEY)}; }
@@ -279,7 +286,7 @@ function validLegacyRaw(raw){
 function validPreV5Raw(raw){
  try{const e=JSON.parse(raw);return [1,2,3,4].includes(e.version)&&e.format==='dice-abyss'&&typeof e.payload==='string'&&raw.length<=5e6&&checksum(e.payload)===e.checksum&&JSON.parse(e.payload).version===e.version;}catch{return false;}
 }
-export function archiveImportedSave(raw,storage=localStorage){
+export function archiveImportedSave(raw,storage=browserStorage){
  if(!validPreV5Raw(raw))return;
  const old=storage.getItem(V4_BACKUP_KEY),legacy=storage.getItem(LEGACY_BACKUP_KEY);
  if(old&&!validPreV5Raw(old))throw Error('V5升级前归档损坏，请先导出原始数据；主档未替换。');
@@ -289,7 +296,7 @@ export function archiveImportedSave(raw,storage=localStorage){
  if(validLegacyRaw(raw)&&!legacy)try{storage.setItem(LEGACY_BACKUP_KEY,raw);}catch{throw Error('无法保留升级前原始存档，主档未覆盖。');}
  if(!old)try{storage.setItem(V4_BACKUP_KEY,raw);}catch{throw Error('无法保留V5升级前原始存档，主档未覆盖。');}
 }
-export function readLegacyBackup(storage=localStorage){
+export function readLegacyBackup(storage=browserStorage){
  try{const pre=storage.getItem(V4_BACKUP_KEY);if(validPreV5Raw(pre))return pre;}catch{}
  for(const key of [SAVE_KEY,BACKUP_KEY])try{const pre=storage.getItem(key);if(validPreV5Raw(pre))return pre;}catch{}
  const archived=archivedLegacy(storage);if(validLegacyRaw(archived))return archived;
@@ -309,7 +316,7 @@ function assertSaveSnapshot(state,expected,storage) {
   }
   return snapshot;
 }
-export function saveImportedGame(imported, importedRaw, expected = undefined, storage = localStorage) {
+export function saveImportedGame(imported, importedRaw, expected = undefined, storage = browserStorage) {
   // Check both the import and the disk snapshot before claiming the immutable
   // archive slots. A rejected import must not archive a file that never ran.
   if(!validateSave(imported))throw invalidSaveError(imported,'存档内容不完整或版本不兼容。');
@@ -329,7 +336,7 @@ export function saveImportedGame(imported, importedRaw, expected = undefined, st
   archiveImportedSave(importedRaw,storage);
   return saveGame(imported,expected,storage);
 }
-export function saveGame(state, expected = undefined, storage = localStorage) {
+export function saveGame(state, expected = undefined, storage = browserStorage) {
   const snapshot=assertSaveSnapshot(state,expected,storage),current=snapshot.loaded;
   const raw = encodeWritableSave(state);
   // Use the same readable copy that passed the snapshot check. A checksummed
@@ -356,7 +363,7 @@ export function saveGame(state, expected = undefined, storage = localStorage) {
   catch { return {mirrored:false,warning:'进度已保存到主存档，但镜像更新失败。请立即导出当前备份并检查浏览器存储空间；旧镜像可能不含本次操作。'}; }
   return {mirrored:true,warning:''};
 }
-export function loadSettings(storage = localStorage) {
+export function loadSettings(storage = browserStorage) {
   try {
     const s = JSON.parse(storage.getItem(SETTINGS_KEY));
     return { fastPace: s?.fastPace === true, sound: s?.sound === true, effects: ['full', 'low'].includes(s?.effects) ? s.effects : 'full', scale: [0.9, 1, 1.1].includes(s?.scale) ? s.scale : 1 };

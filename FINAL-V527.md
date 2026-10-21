@@ -1,5 +1,11 @@
 # Dice Abyss V5.27 FINAL
 
+**2026-10-21 状态更新：** [PR #3](https://github.com/seiya058904/Dice-Abyss/pull/3) 已合并为
+`4f61a8ceb853a61064672c945e0cdc29fa2148a8`，对应的
+[验证与 Pages 部署](https://github.com/seiya058904/Dice-Abyss/actions/runs/39560017038) 已通过。
+当前维护情况见 [README](README.md) 和 [后续审计记录](docs/audits/2026-10-21.md)。
+下文保留合并前的验收与授权边界；其中「未合并、未部署、线上 V5.26」均为历史状态。
+
 2026-10-21 · **RELEASE_READY** · PR #3 · 不合并、不部署；发布站点仍是 V5.26。
 6003f2c 的两条 P2 审查意见已在本文件所属后续提交修复；该旧 SHA 的 Ready 判断不再适用。
 最终提交身份与远程门禁见 [PR 当前 HEAD 检查](https://github.com/seiya058904/Dice-Abyss/pull/3/checks)。
