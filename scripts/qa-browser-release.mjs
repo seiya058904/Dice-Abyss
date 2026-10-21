@@ -148,7 +148,7 @@ try{
  });
  if(args['no-web-locks']!=='true')await check('pace-four-combinations',async()=>{
   const {spawn}=await import('node:child_process');
-  const child=spawn(process.execPath,[path.join(root,'scripts/qa-final-v527.mjs'),'--pace-only=true',`--current=${url}`,`--output=${path.join(output,'pace')}`],{env:process.env,stdio:['ignore','pipe','pipe']});
+  const child=spawn(process.execPath,[path.join(root,'scripts/qa-final-v527.mjs'),'--pace-only=true','--ci-functional=true',`--current=${url}`,`--output=${path.join(output,'pace')}`],{env:process.env,stdio:['ignore','pipe','pipe']});
   let log='';child.stdout.on('data',x=>log+=x);child.stderr.on('data',x=>log+=x);
   const code=await new Promise((resolve,reject)=>{child.on('error',reject);child.on('close',resolve);});
   await fs.writeFile(path.join(output,'pace.log'),log);assert.equal(code,0,'pace combinations failed; see pace/report.json');
