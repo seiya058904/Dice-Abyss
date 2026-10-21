@@ -47,9 +47,19 @@ jobs:
         with:
           path: _site
 
+  # Exact-SHA release gate: the reusable workflow checks out this run's commit,
+  # proves the runner HEAD matches it, and runs both native and API-absent Web
+  # Locks browser modes. deploy cannot start unless that same job succeeded,
+  # so a direct push can no longer publish without its own browser evidence.
+  browser-gate:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    permissions:
+      contents: read
+    uses: ./.github/workflows/browser-release-qa.yml
+
   deploy:
     runs-on: ubuntu-24.04
-    needs: verify
+    needs: [verify, browser-gate]
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     permissions:
       contents: read

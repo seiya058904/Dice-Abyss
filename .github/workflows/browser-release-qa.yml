@@ -4,6 +4,9 @@ on:
   pull_request:
     branches: [main]
   workflow_dispatch:
+  # Called by pages.yml so a main-push deploy can require the exact same
+  # commit's two-mode browser gate instead of reusing another SHA's green run.
+  workflow_call:
 
 permissions:
   contents: read
