@@ -31,6 +31,14 @@
   </a>
 </p>
 
+
+## Round 28 runtime experiment (2026-10-21) — DRAFT_CONTINUE
+
+A real formatter-reuse candidate was implemented in an isolated worktree and measured in two three-arm batches (40 pairs per size/action). It reduced the 10k salvage paired median by 3.7 ms, but strict RGBA remained unresolved, including a candidate self-pair with one changed pixel in motion-160. The candidate was reverted; no runtime optimization was adopted. Functional/storage gates passed; PERF_BLOCKED and STRICT_RGBA_FAIL remain. Physical GPU/4K60 and human long-run testing remain NOT_TESTED.
+
+See [engineering and rollback evidence](ENGINEERING-REPORT-ROUND28.md), [all performance results](PERFORMANCE-ROUND28.md), [strict pixels](PIXEL-ROUND28.md), [machine verification](verification-round28.json), and the [reproducible experimental patch](docs/round28/candidate-A.patch). PR #3 stays Draft; no merge or deployment.
+
+
 ---
 
 > **You cannot choose what the dice will show. You can choose what you build around them.**
