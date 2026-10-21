@@ -44,6 +44,11 @@ now runs on pull requests to `main`, checks out the event's exact head SHA and
 asserts that identity. It retains read-only permissions and does not deploy.
 Native Web Locks and API-absent modes have separate reports. Browser smoke
 results do not certify strict pixels or performance.
+The first [remote exact-head browser run](https://github.com/seiya058904/Dice-Abyss/actions/runs/39537223891)
+passed both modes at `8826d99`; each passed eight smoke checks and 43 core
+assertions. Its [Node 22 verification](https://github.com/seiya058904/Dice-Abyss/actions/runs/39537223794)
+passed 946 tests and 1,000 simulations. All production deployment steps were
+skipped. These results apply to that recorded SHA.
 
 Core-font QA now requires loaded FontFace objects, successful explicit loads,
 resource URLs and Canvas glyph metrics matched to an independently loaded copy
@@ -123,8 +128,8 @@ and failure behavior remain unchanged. An experimental raw-payload comparison
 shortcut was rejected by existing Proxy/rawJSON conflict tests and is **not**
 part of this version.
 
-The independent `browser-release-qa.yml` workflow runs only via
-`workflow_dispatch`. It installs Playwright 1.60.0 outside the game, assembles
+The independent `browser-release-qa.yml` workflow runs for pull requests to
+`main` and via `workflow_dispatch`. It installs Playwright 1.60.0 outside the game, assembles
 and hashes the exact HEAD shipping files, and checks real browser play,
 10k inventory locking, mirrored saves and reload. It does not deploy or change
 the existing Pages workflow. Performance is reported separately, without a
@@ -168,7 +173,8 @@ cases passed; the 19 supplied-motion cases matched. Strict RGBA still failed
 5 of 7 cross-version image comparisons and 3 of 7 same-version comparisons
 (the eighth pair is a non-RGBA effects case). Those failures remain open,
 along with the historical deep 4×400 completion limit, physical-GPU 4K/60 FPS,
-long-term memory and balance. No remote workflow or Pages deployment was run.
+long-term memory and balance. No remote workflow or Pages deployment was run
+in that historical local acceptance.
 
 The public Pages release remains the previously published V5.26.0 below.
 
