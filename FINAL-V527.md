@@ -18,7 +18,7 @@
 
 main 标准路线为 40.26 s；本版标准模式未观察到变慢。时间从自动化开始点击到下一主操作可用，包含 Playwright 开销，不等同纯动画时长。三种模式每一步状态、RNG、主档与镜像精确一致。Cold 数据包含浏览器资源计时所报告的传输开销；未添加压缩或网络节流。首个 main FCP 样本较慢，保留原值，不作公网性能保证。
 
-**证据环境**：Windows、Chromium 149、ANGLE SwiftShader、loopback HTTP identity、1080p DPR1；另检查模拟 3840×2160 视口。全部是自动化操作和隔离合成存档，未接触真实玩家 profile。原始日志、录屏、截图在仓库外，路径见 [精简验证 JSON](verification-final-v527.json)。标准与加速各一段原速 WebM（约 40 秒/约 25 秒），无剪辑加速；最高品质奖励与设置另有截图。
+**证据环境**：Windows、Chromium 156.0.8078.4、ANGLE SwiftShader、loopback HTTP identity、1080p DPR1；另检查模拟 3840×2160 视口。全部是自动化操作和隔离合成存档，未接触真实玩家 profile。原始日志、录屏、截图在仓库外，路径见 [精简验证 JSON](verification-final-v527.json)。标准与加速各一段原速 WebM（约 40 秒/约 25 秒），无剪辑加速；最高品质奖励与设置另有截图。
 
 **PASS**：语法检查；952 tests、0 fail、0 skipped；1,000 次模拟；43 组存档差分（含未知字段、迁移、额度与主/镜像失败）；原生 Web Locks / API 缺失各 43 项核心浏览器断言；真实 HTTP 发布文件逐字节核对；Core 实际字形、Full/系统按需回退与缺失/损坏 Core 负向检测；正常游戏不请求 Full；10k 合成背包一次有界存档/锁定/reload 冒烟。
 
