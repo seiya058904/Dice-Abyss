@@ -758,7 +758,9 @@ document.addEventListener('visibilitychange',()=>{if(document.visibilityState===
 // cancellation/focus path as Skip, instead of replaying or stretching old FX.
 window.addEventListener('resize',()=>{if(ui.busy&&!committing)settlePresentation();});
 window.addEventListener('storage', event => {
-  if (event.storageArea !== localStorage || (event.key !== null && event.key !== SAVE_KEY && event.key !== BACKUP_KEY)) return;
+  if (event.key !== null && event.key !== SAVE_KEY && event.key !== BACKUP_KEY) return;
+  try { if (event.storageArea !== localStorage) return; }
+  catch { /* Permission may have changed since this event was queued; inspect below. */ }
   // Read current records, not event.newValue: clear/remove notifications may
   // arrive after another tab has already created a newer complete save.
   const updated = inspectSaveRecovery();

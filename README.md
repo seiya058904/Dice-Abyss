@@ -22,7 +22,7 @@
 </p>
 
 <p align="center">
-  <sub>VERSION 5.27.0 (LOCAL) &nbsp;·&nbsp; DESKTOP WEB &nbsp;·&nbsp; MANUAL DICE COMBAT &nbsp;·&nbsp; LOCAL SAVES</sub>
+  <sub>VERSION 5.27.0 &nbsp;·&nbsp; DESKTOP WEB &nbsp;·&nbsp; MANUAL DICE COMBAT &nbsp;·&nbsp; LOCAL SAVES</sub>
 </p>
 
 <p align="center">
@@ -40,10 +40,17 @@
 
 最终验证、实测改善、发布状态和限制以 [FINAL-V527.md](FINAL-V527.md)
 及 [verification-final-v527.json](verification-final-v527.json) 为准。
-本分支不自行合并或部署，已发布站点仍为 V5.26。
+[PR #3](https://github.com/seiya058904/Dice-Abyss/pull/3) 已合并，
+[V5.27 验证与 Pages 部署](https://github.com/seiya058904/Dice-Abyss/actions/runs/39560017038) 已通过。
+合并前的「不合并、不部署」仅描述当时交付边界。
 历史严格 RGBA 零容差 FAIL 保留为诊断，未改判 PASS；见
 [原始像素记录](PIXEL-ROUND28.md) 和 [回滚证据](ENGINEERING-REPORT-ROUND28.md)。
 
+**2026-10-21 audit follow-up:** Browser policies can deny access to the
+`localStorage` property itself. The game now handles that failure through its
+existing save warnings and recovery screen instead of stopping on a blank page.
+An unsuccessful save cannot start or advance a run; restored access allows an
+explicit recovery of the retained progress. See the [audit coverage and checks](docs/audits/2026-10-21.md).
 
 ---
 
@@ -192,7 +199,7 @@ along with the historical deep 4×400 completion limit, physical-GPU 4K/60 FPS,
 long-term memory and balance. No remote workflow or Pages deployment was run
 in that historical local acceptance.
 
-The public Pages release remains the previously published V5.26.0 below.
+The V5.26.0 section below is historical; current delivery status is recorded above.
 
 ## V5.26.0 · Reviewed, Integrated & Published (historical)
 
