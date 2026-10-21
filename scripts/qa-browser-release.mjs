@@ -44,7 +44,7 @@ try{
   const file=decodeURIComponent(new URL(req.url,'http://localhost').pathname).slice(1)||'index.html';
   if(!report.manifest.some(x=>x.file===file)){res.writeHead(404).end();return;}
   res.writeHead(200,{'Content-Type':types[path.extname(file)]||'text/plain','Cache-Control':'no-cache'});res.end(await fs.readFile(path.join(site,file)));
- });await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
+ });await new Promise(resolve=>server.listen(Number(args.port||0),'127.0.0.1',resolve));
  const url=`http://127.0.0.1:${server.address().port}/`;report.url=url;
  const {chromium}=createRequire(import.meta.url)(process.env.PLAYWRIGHT_MODULE||'playwright');
  browser=await chromium.launch({headless:true,executablePath:process.env.CHROMIUM_PATH,args:['--use-angle=swiftshader','--enable-unsafe-swiftshader']});report.browser=browser.version();
