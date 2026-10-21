@@ -136,7 +136,7 @@
   "gates": {
     "syntax": "PASS",
     "nodeTests": {
-      "pass": 952,
+      "pass": 953,
       "fail": 0,
       "skipped": 0
     },
@@ -156,5 +156,50 @@
   "rawEvidence": "C:\\Users\\admin\\AppData\\Local\\Temp\\dice-final-v527",
   "ci": "https://github.com/seiya058904/Dice-Abyss/pull/3/checks",
   "mergeDeploy": "NOT_AUTHORIZED; not performed",
-  "stateEquality": "Exact deep equality with engine transition and primary/mirror after every action; all 18 per-node hashes identical across main-standard/current-standard/current-fast"
+  "stateEquality": "Exact deep equality with engine transition and primary/mirror after every action; all 18 per-node hashes identical across main-standard/current-standard/current-fast",
+  "historicalMetricsCommit": "6003f2c83079f7830e29d8c9cb85c39e163d88e8",
+  "reviewFix": {
+    "scope": [
+      "CSS animation/transition playback and finite completion",
+      "low-effects delay and follow-up sound pacing"
+    ],
+    "status": "PASS",
+    "combinations": [
+      {
+        "mode": "standard",
+        "actions": 18,
+        "commandTotalMs": 42508.440899999994,
+        "browserBusyMs": 36004.80000004172,
+        "finalHash": "91c497e76d5d4ee80942288eabbcc001112a867af99ffe768224a047622912b5"
+      },
+      {
+        "mode": "fast",
+        "actions": 18,
+        "commandTotalMs": 24947.74899999999,
+        "browserBusyMs": 18796.199999973178,
+        "finalHash": "91c497e76d5d4ee80942288eabbcc001112a867af99ffe768224a047622912b5"
+      },
+      {
+        "mode": "low-standard",
+        "actions": 18,
+        "commandTotalMs": 10146.641800000012,
+        "browserBusyMs": 5577.600000008941,
+        "finalHash": "91c497e76d5d4ee80942288eabbcc001112a867af99ffe768224a047622912b5"
+      },
+      {
+        "mode": "low-fast",
+        "actions": 18,
+        "commandTotalMs": 9388.930100000012,
+        "browserBusyMs": 4011.2999999821186,
+        "finalHash": "91c497e76d5d4ee80942288eabbcc001112a867af99ffe768224a047622912b5"
+      }
+    ],
+    "fullReduction": 0.4131107029145359,
+    "lowBusyReduction": 0.2808197074053914,
+    "fullFiniteCssFinished": 85,
+    "fullFiniteCssTotal": 85,
+    "rawEvidence": "C:/Users/admin/AppData/Local/Temp/dice-v527-review",
+    "ci": "https://github.com/seiya058904/Dice-Abyss/pull/3/checks",
+    "note": "Historical loading and original pace metrics above remain attributed to 6003f2c; no new cold-load benchmark."
+  }
 }

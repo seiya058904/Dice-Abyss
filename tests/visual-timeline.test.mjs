@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {createVisualTimeline,MAX_VISUAL_STEP,VISUAL_WALL_LIMIT} from '../src/visual-timeline.js';
+import {paceSceneAnimations,createVisualTimeline,MAX_VISUAL_STEP,VISUAL_WALL_LIMIT} from '../src/visual-timeline.js';
 
 function clock(){
  const keys=['document','performance','requestAnimationFrame','cancelAnimationFrame','setTimeout','clearTimeout'];
@@ -107,4 +107,10 @@ for(const reason of ['hidden','cancelled','deadline'])test(`fast presentation re
   if(reason==='hidden')env.hide();else if(reason==='deadline')env.advance(100+VISUAL_WALL_LIMIT);else t.stop();
   assert.equal((await done).reason,reason);assert.equal(env.frames.size,0);assert.equal(env.timers.size,0);assert.equal(env.listeners.size,0);
  }finally{t?.stop();env.restore();}
+});
+
+test('scene CSS pace includes delayed finite tails but never waits for ambient loops',()=>{
+ const animations=[{end:1420,time:100},{end:Infinity,time:0},{end:600,time:0}].map(x=>({currentTime:x.time,effect:{getComputedTiming:()=>({endTime:x.end})},updatePlaybackRate(rate){this.rate=rate;}}));
+ assert.deepEqual(paceSceneAnimations({getAnimations:options=>{assert.deepEqual(options,{subtree:true});return animations;}},2),[animations[0],animations[2]]);
+ assert(animations.every(x=>x.rate===2));assert.deepEqual(paceSceneAnimations(null,2),[]);
 });

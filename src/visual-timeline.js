@@ -21,6 +21,18 @@ export function observeVisualSurface(target,onVisible=()=>{}){
   return {get visible(){return visible;},stop(){if(!active)return;active=false;observer?.disconnect();}};
 }
 
+// CSS playback rate includes delays, iterations, transitions and pseudo-elements.
+// Only finite, owned scene animations can extend a reveal; ambient loops cannot.
+export function paceSceneAnimations(root, playbackRate) {
+  const finite=[];
+  for(const animation of root?.getAnimations({subtree:true})||[]){
+    animation.updatePlaybackRate(playbackRate);
+    const end=animation.effect?.getComputedTiming().endTime;
+    if(Number.isFinite(end))finite.push(animation);
+  }
+  return finite;
+}
+
 export function createVisualTimeline(onStop=()=>{}, playbackRate=1) {
   if(![1,2].includes(playbackRate))throw new RangeError('Invalid presentation rate');
   const tracks=new Map(),waiters=new Set();
