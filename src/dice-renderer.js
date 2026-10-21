@@ -199,7 +199,13 @@ export function mountDiceSurface(){
   };
   const restore=()=>{if(!alive||!row.isConnected||s.canvas.parentElement!==row||s.lost)return;measure();uploadAtlas(s);row.classList.add('gpu-dice');draw(lastPoses);};s.restore=restore;
   draw();visibility=observeVisualSurface(s.canvas,()=>{if(dirty)draw(lastPoses);});
-  const observer=new ResizeObserver(()=>{if(alive&&row.isConnected){const bounds=row.getBoundingClientRect();if(Math.abs(bounds.width-w)>.01||Math.abs(bounds.height-h)>.01){measure();draw(lastPoses);}}});observer.observe(row);
+  // A sized fallback is optional browser surface: without ResizeObserver the
+  // CSS faces remain complete, and this listener keeps the GPU surface honest
+  // on real window resizes. The mount owns it and stop() releases it.
+  const onResize=()=>{if(alive&&row.isConnected){const bounds=row.getBoundingClientRect();if(Math.abs(bounds.width-w)>.01||Math.abs(bounds.height-h)>.01){measure();draw(lastPoses);}}};
+  let observer=null,detachResize=null;
+  if(typeof globalThis.ResizeObserver==='function'){observer=new globalThis.ResizeObserver(onResize);observer.observe(row);}
+  else if(typeof globalThis.addEventListener==='function'){globalThis.addEventListener('resize',onResize);detachResize=()=>globalThis.removeEventListener?.('resize',onResize);}
   document.fonts.ready.then(()=>{if(alive&&!s.lost&&row.isConnected&&!row.classList.contains('rolling')&&uploadAtlas(s))draw(lastPoses);});
-  return {draw,stop:()=>{if(!alive)return;alive=false;observer.disconnect();visibility.stop();if(s.restore===restore)s.restore=null;}};
+  return {draw,stop:()=>{if(!alive)return;alive=false;observer?.disconnect();detachResize?.();visibility.stop();if(s.restore===restore)s.restore=null;}};
 }

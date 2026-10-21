@@ -50,7 +50,9 @@ try{
   check(await page.locator('dialog[open]').isVisible(),'settings remain reachable without storage');
   await button(page,'close-dialog').click();
   await start.click();await button(page,'confirm').click();
-  await page.waitForFunction(()=>document.querySelector('.toast')?.textContent.includes('浏览器无法保存进度'));
+  // DA-CR-02: a denied read is refused before the write attempt instead of
+  // pretending it was an ordinary failed primary write or another window.
+  await page.waitForFunction(()=>document.querySelector('.toast')?.textContent.includes('无法读取浏览器中的存档'));
   check(await start.isVisible(),'failed primary write never presents a started run');
   eq(await page.evaluate(()=>window.__qaStorageRecords()),[null,null],'denied new game writes neither save');
   await screenshot(page,'storage-denied-title');

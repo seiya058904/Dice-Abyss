@@ -23,11 +23,20 @@ export function observeVisualSurface(target,onVisible=()=>{}){
 
 // CSS playback rate includes delays, iterations, transitions and pseudo-elements.
 // Only finite, owned scene animations can extend a reveal; ambient loops cannot.
+// Optional browser surface: a missing or failing API keeps the original
+// bounded presentation clock instead of throwing out of an asynchronous reveal.
 export function paceSceneAnimations(root, playbackRate) {
+  if(typeof root?.getAnimations!=='function')return [];
+  let animations;
+  try{animations=root.getAnimations({subtree:true});}
+  catch{return [];}
   const finite=[];
-  for(const animation of root?.getAnimations({subtree:true})||[]){
-    animation.updatePlaybackRate(playbackRate);
-    const end=animation.effect?.getComputedTiming().endTime;
+  for(const animation of animations||[]){
+    try{if(typeof animation?.updatePlaybackRate==='function')animation.updatePlaybackRate(playbackRate);}
+    catch{ /* Keep this animation at its original timing. */ }
+    let end;
+    try{end=animation?.effect?.getComputedTiming?.().endTime;}
+    catch{end=undefined;}
     if(Number.isFinite(end))finite.push(animation);
   }
   return finite;

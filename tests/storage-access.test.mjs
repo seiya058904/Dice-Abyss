@@ -15,8 +15,11 @@ test('denied localStorage getter reaches read/recovery/write error handling',t=>
   assert.equal(readLegacyBackup(),null);
   assert.equal(inspectSaveRecovery().status,'unreadable');
   assert.throws(()=>restoreMissingSave(state,{primary:null,mirror:null}),/无法检查浏览器中的存档/);
-  assert.throws(()=>saveGame(state,null),/浏览器无法保存进度/);
-  assert.throws(()=>saveImportedGame(state,encodeSave(state),null),/浏览器无法保存进度/);
+  // These used to accept the generic write failure after an unguarded read.
+  // A denied read is now classified before any write attempt, and never as
+  // another tab's snapshot conflict.
+  assert.throws(()=>saveGame(state,null),(error)=>!/另一窗口/.test(error.message)&&/无法读取浏览器中的存档/.test(error.message));
+  assert.throws(()=>saveImportedGame(state,encodeSave(state),null),(error)=>!/另一窗口/.test(error.message)&&/无法读取浏览器中的存档/.test(error.message));
   assert.deepEqual(state,before);
 });
 
@@ -34,7 +37,10 @@ test('default storage remains live across denial and restored permission',t=>{
   const next=transition(state,{type:'fate'}),before=new Map(records);
   denied=true;
   assert.equal(loadSave().state,null);
-  assert.throws(()=>saveGame(next,state),/另一窗口已更新进度/);
+  // DA-CR-02: this assertion previously required the cross-window conflict
+  // text even though the browser had denied the read. Access failure and a
+  // real snapshot change are now distinct; either way nothing may be written.
+  assert.throws(()=>saveGame(next,state),(error)=>/无法读取浏览器中的存档/.test(error.message)&&/权限|本地存储/.test(error.message)&&!/另一窗口/.test(error.message));
   assert.deepEqual(records,before);
   denied=false;
   assert.equal(saveGame(next,state).mirrored,true);

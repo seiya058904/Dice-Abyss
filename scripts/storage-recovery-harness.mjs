@@ -13,7 +13,14 @@ export async function recoveryFixture(source, options = {}) {
   const S=await import(pathToFileURL(path.join(source,'src/storage.js')));
   const initial=options.state||E.newGame(13013);
   initial.qaRecovery={unicode:'完整旅途 雪',nested:{unknown:[null,7,{keep:true}]}};
-  const original=S.encodeSave(initial),map=new Map([[S.SAVE_KEY,original],[S.BACKUP_KEY,original]]),writes=[];
+  const original=S.encodeSave(initial),map=new Map(),writes=[];
+  // options.records seeds the browser exactly as a real first load would find
+  // it, including empty/corrupt originals that predate this page.
+  if(options.records){
+    for(const [key,value] of [[S.SAVE_KEY,options.records.primary],[S.BACKUP_KEY,options.records.mirror]])if(value!==null&&value!==undefined)map.set(key,value);
+  }else{
+    map.set(S.SAVE_KEY,original);map.set(S.BACKUP_KEY,original);
+  }
   const storage={getItem:key=>map.get(key)??null,setItem(key,value){writes.push([key,String(value)]);map.set(key,String(value));},removeItem:key=>map.delete(key),clear:()=>map.clear()};
   const listeners={document:new Map(),window:new Map()},downloads=[],blobs=[],lockTasks=[];
   const noop=()=>{},classes={add:noop,remove:noop,contains:()=>false};
@@ -45,7 +52,8 @@ export async function recoveryFixture(source, options = {}) {
     readLegacyBackup:()=>S.readLegacyBackup(storage),saveGame:(state,expected)=>S.saveGame(state,expected,storage),
     saveImportedGame:(state,raw,expected)=>S.saveImportedGame(state,raw,expected,storage),
     inspectSaveRecovery:()=>S.inspectSaveRecovery(storage),
-    restoreMissingSave:(state,raw)=>S.restoreMissingSave(state,raw,storage)};
+    restoreMissingSave:(state,raw)=>S.restoreMissingSave(state,raw,storage),
+    replaceUnreadableSave:(state,raw)=>S.replaceUnreadableSave(state,raw,storage)};
   const originalSource=await fs.readFile(path.join(source,'src/app.js'),'utf8');
   const imports=[...originalSource.matchAll(/^import\s*\{([^}]+)\}\s*from\s*['"]([^'"]+)['"];?\s*$/gm)];
   for(const match of imports){

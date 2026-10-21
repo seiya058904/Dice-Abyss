@@ -234,21 +234,29 @@ function decodeStoredSave(raw) {
   return {state,sourceVersion:envelope.version};
 }
 export function decodeSave(raw) { return decodeStoredSave(raw).state; }
+// Presence means "the key holds a raw original", never truthiness: an existing
+// empty string is still an original record and cannot be treated as a new user.
+// Read denial is a separate class from bytes which cannot be decoded.
 function loadStoredSave(storage) {
-  let existed = false,reason='';
+  let present=false,invalidPresent=false,readDenied=false,reason='';
   for (const key of [SAVE_KEY, BACKUP_KEY]) {
+    let raw;
+    try { raw=storage.getItem(key); }
+    catch(error) { present=true;readDenied=true;if(/^(旧装备|装备等级|旧角色)/.test(error?.message||''))reason=error.message;continue; }
+    if(raw===null||raw===undefined)continue;
+    present=true;
     try {
-      const raw=storage.getItem(key);
-      if(raw){
-        existed=true;const decoded=decodeStoredSave(raw),state=decoded.state,recovered=key===BACKUP_KEY;
-        let warning='';
-        if(recovered)warning='主存档无法读取，已从镜像恢复。若此前镜像保存失败，最后一次进度可能不在此备份中；请先导出核对。';
-        else try{if(storage.getItem(BACKUP_KEY)!==raw)warning='主存档可用，但镜像尚未同步。请导出当前进度备份，后续成功保存会重建镜像。';}catch{warning='主存档可用，但无法检查镜像。请导出当前进度备份。';}
-        return {loaded:{state,recovered,warning},sourceRaw:raw,sourceVersion:decoded.sourceVersion};
-      }
-    } catch(error) { existed = true;if(/^(旧装备|装备等级|旧角色)/.test(error.message))reason=error.message; }
+      const decoded=decodeStoredSave(raw),state=decoded.state,recovered=key===BACKUP_KEY;
+      let warning='';
+      if(recovered)warning='主存档无法读取，已从镜像恢复。若此前镜像保存失败，最后一次进度可能不在此备份中；请先导出核对。';
+      else try{if(storage.getItem(BACKUP_KEY)!==raw)warning='主存档可用，但镜像尚未同步。请导出当前进度备份，后续成功保存会重建镜像。';}catch{warning='主存档可用，但无法检查镜像。请导出当前进度备份。';}
+      return {loaded:{state,recovered,warning},sourceRaw:raw,sourceVersion:decoded.sourceVersion,present:true,invalidPresent:false,readDenied:false};
+    } catch(error) { invalidPresent=true;if(/^(旧装备|装备等级|旧角色)/.test(error?.message||''))reason=error.message; }
   }
-  return {loaded:{ state: null, error: existed ? `无法读取存档。${reason}请保留原始备份；开始新游戏会覆盖现有记录。` : null }};
+  const error=!present?null:readDenied
+    ? '无法读取存档。浏览器拒绝读取本地存储，无法确认是否已有进度。请检查站点存储权限后再操作；现有原始记录未被覆盖。'
+    : `无法读取存档。${reason}请保留原始备份；原始记录未改动，开始新游戏会覆盖现有记录。`;
+  return {loaded:{state:null,error},present,invalidPresent,readDenied};
 }
 // Source metadata belongs only to this synchronous read, never to a returned
 // game state or a cross-operation cache. Keep the public result shape unchanged.
@@ -303,8 +311,16 @@ export function readLegacyBackup(storage=browserStorage){
  for(const key of [SAVE_KEY,BACKUP_KEY])try{const raw=storage.getItem(key);if(validLegacyRaw(raw))return raw;}catch{ /* Try the other original copy. */ }
  return null;
 }
-function assertSaveSnapshot(state,expected,storage) {
+// Read denial, undecodable originals and a real snapshot conflict are distinct
+// user-facing failures. None of them may write or advance game state.
+function assertSaveSnapshot(state,expected,storage,{allowPresentInvalid=false}={}) {
   const snapshot=loadStoredSave(storage),current=snapshot.loaded.state;
+  if (snapshot.readDenied && !current) throw new Error('无法读取浏览器中的存档，本次操作未保存。浏览器拒绝读取本地存储，无法确认现有进度；请检查站点存储权限后重试。');
+  if (snapshot.invalidPresent && !current && !allowPresentInvalid) {
+    throw new Error(expected === null
+      ? '浏览器中存在无法读取的原始存档，开始新游戏前请先导出原始记录并明确确认舍弃。'
+      : '浏览器中的原始存档无法读取，本次操作未保存。原始记录未被覆盖；请先导出原始记录后刷新页面。');
+  }
   if (expected === null) {
     // A tab which observed no run must not overwrite one created while it was
     // waiting for the write lock. Keep identical migration/rewrite calls valid.
@@ -337,7 +353,32 @@ export function saveImportedGame(imported, importedRaw, expected = undefined, st
   return saveGame(imported,expected,storage);
 }
 export function saveGame(state, expected = undefined, storage = browserStorage) {
-  const snapshot=assertSaveSnapshot(state,expected,storage),current=snapshot.loaded;
+  return commitSave(state, expected, storage, false);
+}
+// Explicit discard of undecodable originals: the caller supplies the exact raw
+// snapshot reviewed in the interface, and this re-reads it before the same
+// primary-then-mirror commit. A readable progress or any changed byte still
+// loses to the snapshot check, with or without Web Locks.
+export function replaceUnreadableSave(state, expectedRaw, storage = browserStorage) {
+  if (!expectedRaw || typeof expectedRaw !== 'object') throw new Error('请先检查浏览器中的原始记录，本次操作未保存。');
+  const valid = value => typeof value === 'string' || value === null || value === undefined;
+  if (!valid(expectedRaw.primary) || !valid(expectedRaw.mirror)) throw new Error('原始记录内容无效，本次操作未保存。');
+  const reviewed = { primary: expectedRaw.primary ?? null, mirror: expectedRaw.mirror ?? null };
+  if (reviewed.primary === null && reviewed.mirror === null) throw new Error('浏览器中不存在可舍弃的原始记录，请重新检查后开始新游戏。');
+  let current;
+  try { current = { primary: storage.getItem(SAVE_KEY), mirror: storage.getItem(BACKUP_KEY) }; }
+  catch { throw new Error('无法检查浏览器中的存档，本次操作未保存。请检查站点存储权限后重试。'); }
+  if (!sameSaveRecords(current, reviewed)) throw new Error('浏览器中的存档已发生变化，本次操作未保存。请重新检查并确认要舍弃的原始记录。');
+  let readable = false;
+  for (const raw of [current.primary, current.mirror]) {
+    if (typeof raw !== 'string') continue;
+    try { decodeStoredSave(raw); readable = true; break; } catch { /* reviewed originals are invalid by definition */ }
+  }
+  if (readable) throw new Error('浏览器中已存在可读取的进度，请刷新后再选择要保留的进度。');
+  return commitSave(state, null, storage, true);
+}
+function commitSave(state, expected, storage, allowPresentInvalid) {
+  const snapshot=assertSaveSnapshot(state,expected,storage,{allowPresentInvalid}),current=snapshot.loaded;
   const raw = encodeWritableSave(state);
   // Use the same readable copy that passed the snapshot check. A checksummed
   // but invalid primary must not replace the recovered original in the archive.

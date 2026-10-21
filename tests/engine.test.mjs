@@ -123,7 +123,9 @@ test('mirror recovery, corruption rejection, optimistic concurrency and quota fa
   const badId = structuredClone(next); badId.player.equipped.weapon = 'i999'; assert(!validateSave(badId));
   const badMerchant = structuredClone(next); badMerchant.phase = 'merchant'; badMerchant.shop = []; assert(!validateSave(badMerchant));
   const badFate = newGame(12); badFate.fate = 'invalid'; assert(!validateSave(badFate));
-  assert.throws(() => saveGame(next, null, { setItem() { throw new Error('quota'); } }), /无法保存/);
+  // A readable-but-empty synthetic store isolates the quota failure from the
+  // read-denial classification added by the independent review.
+  assert.throws(() => saveGame(next, null, { getItem: () => null, setItem() { throw new Error('quota'); } }), /无法保存/);
 });
 test('100 seeded full adventures complete ten floors with valid saves, six dice and both bosses', () => {
   for (let seed = 1; seed <= 100; seed++) {

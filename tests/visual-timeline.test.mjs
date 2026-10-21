@@ -114,3 +114,15 @@ test('scene CSS pace includes delayed finite tails but never waits for ambient l
  assert.deepEqual(paceSceneAnimations({getAnimations:options=>{assert.deepEqual(options,{subtree:true});return animations;}},2),[animations[0],animations[2]]);
  assert(animations.every(x=>x.rate===2));assert.deepEqual(paceSceneAnimations(null,2),[]);
 });
+
+test('scene CSS pace degrades to a bounded list when the animation surface is absent or partial',()=>{
+ assert.deepEqual(paceSceneAnimations({},2),[]);
+ assert.deepEqual(paceSceneAnimations({getAnimations(){throw new TypeError('synthetic getAnimations failure');}},2),[]);
+ assert.deepEqual(paceSceneAnimations({getAnimations:()=>null},2),[]);
+ const noRate={effect:{getComputedTiming:()=>({endTime:900})}};
+ assert.deepEqual(paceSceneAnimations({getAnimations:()=>[noRate]},2),[noRate],'timing is still owned when the playback rate cannot be changed');
+ const noTiming={updatePlaybackRate(rate){this.rate=rate;}};
+ assert.deepEqual(paceSceneAnimations({getAnimations:()=>[noTiming]},2),[]);
+ const throwingTiming={updatePlaybackRate(){throw new Error('synthetic rate failure');},effect:{getComputedTiming:()=>({endTime:400})}};
+ assert.deepEqual(paceSceneAnimations({getAnimations:()=>[throwingTiming]},2),[throwingTiming],'a single failing animation never strands the reveal');
+});

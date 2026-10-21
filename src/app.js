@@ -1,6 +1,6 @@
 import {RARITIES,TALENTS} from './content.js';
 import { newGame, transition, fusionPreview, salvagePreview, diceCount, talentPreview } from './engine.js';
-import { saveImportedGame, loadSave, saveGame, encodeSave, decodeSave, measureSaveCapacity, inspectSaveRecovery, sameSaveRecords, restoreMissingSave, loadSettings, readLegacyBackup, LEGACY_BACKUP_KEY, SAVE_KEY, BACKUP_KEY, SETTINGS_KEY } from './storage.js';
+import { saveImportedGame, loadSave, saveGame, encodeSave, decodeSave, measureSaveCapacity, inspectSaveRecovery, sameSaveRecords, restoreMissingSave, replaceUnreadableSave, loadSettings, readLegacyBackup, LEGACY_BACKUP_KEY, SAVE_KEY, BACKUP_KEY, SETTINGS_KEY } from './storage.js';
 import { titleView, gameView, center, settingsView, itemEffects, itemSummary, itemProgress, migrationSummary, comparison, equipmentComparisonView, fusionView, fusionItemTooltip, talentInspectorView, talentInvestmentCount, memorywellPreviewView, experiencePreviewView, eventChoicePreviewView, eventRiskView, eventItemsView, eventChoiceCost, num, goldNum, esc, icon } from './views.js';
 import { eventChoices } from './encounters.js';
 import { mountEffects } from './effects.js';
@@ -78,6 +78,12 @@ function settlePresentation() {
   publishPresentationAnnouncement(generation);
   actionFocus.restore({runId:state?.runId,generation,dialogOpen:dialog.open});
 }
+// Read an optional animation promise once: a degraded implementation may return
+// a fresh rejected promise per property access, which must not go unhandled.
+function settleSceneAnimation(animation) {
+  const finished=animation?.finished;
+  return finished&&typeof finished.then==='function'?finished.then(()=>{},()=>{}):Promise.resolve();
+}
 async function waitAnimation(ms,fast) {
   if(document.visibilityState==='hidden'){settlePresentation();return;}
   const presentation=visualPresentation;
@@ -89,7 +95,7 @@ async function waitAnimation(ms,fast) {
   // Keep the owner alive until finite CSS tails finish too. Its existing wall
   // deadline/hidden/skip cancellation still releases this wait if RAF stalls.
   const result=animations.length?await Promise.race([
-    Promise.all([phase,...animations.map(animation=>animation.finished.catch(()=>{}))]).then(([result])=>result),
+    Promise.all([phase,...animations.map(settleSceneAnimation)]).then(([result])=>result),
     presentation.wait(Number.MAX_SAFE_INTEGER),
   ]):await phase;
   // A renderer deadline/background cancellation reveals the already committed
@@ -330,7 +336,21 @@ function requestRecoveryLoad() {
   });
   recoveryDialogAction='recovery-load';
 }
-async function begin() {
+function requestNewGame() {
+  if (!state && !ui.saveError) { begin(); return; }
+  // Review the exact originals once. begin() re-reads this snapshot under the
+  // save lock, so a later valid save or changed bytes are never overwritten by
+  // the reviewed discard.
+  const reviewed = inspectSaveRecovery();
+  const rawPresent = !!reviewed.raw && (reviewed.raw.primary !== null || reviewed.raw.mirror !== null);
+  const note = reviewed.status === 'unreadable'
+    ? (rawPresent
+      ? '<p class="danger">浏览器中存在无法读取的原始记录。开始新旅途会替换它；请先导出原始记录，或明确确认舍弃。</p><button data-action="recovery-export-raw">导出浏览器原始记录</button>'
+      : '<p class="danger">当前无法读取浏览器存储，也无法确认是否已有进度。存储权限恢复前，开始新旅途会被拒绝。</p>')
+    : '';
+  confirmDialog('开始一段新的旅途？', `<p>当前进度将被替换。需要保留时，请先在设置中导出存档。</p>${note}`, '确认重新开始', () => begin(reviewed));
+}
+async function begin(reviewed = null) {
   if(recoveryBlocked())return;
   if (committing || ui.busy) return;
   committing = true;
@@ -340,12 +360,25 @@ async function begin() {
   try {
     const result = await withSaveLock(() => {
       if (ui.saveRecovery || state !== expected) throw new Error('另一窗口已更新进度，请检查最新进度后重新开始。');
+      if (!expected) {
+        // A tab with no run in memory may only replace bytes it reviewed, and
+        // only while those exact bytes are still present. Without Web Locks the
+        // same snapshot check still runs immediately before the write.
+        const current = inspectSaveRecovery();
+        if (current.status === 'available') throw new Error('另一窗口已创建或更新进度。请按最新状态重新选择，避免覆盖存档。');
+        if (current.status === 'unreadable' && !current.raw) throw new Error('无法读取浏览器中的存档，无法确认是否已有进度。请检查浏览器存储权限后重试，本次操作未保存。');
+        if (reviewed && !sameSaveRecords(current.raw || { primary: null, mirror: null }, reviewed.raw || { primary: null, mirror: null })) throw new Error('浏览器中的存档已发生变化，本次操作未保存。请重新检查后再开始新旅途。');
+        if (current.status === 'unreadable') {
+          if (!reviewed) throw new Error('浏览器中存在无法读取的原始记录，开始新游戏前请先导出原始记录并明确确认舍弃。');
+          return replaceUnreadableSave(next, current.raw);
+        }
+      }
       return saveGame(next, expected);
     });
     state = next; clearRunSelections(); visualState = null; animationGeneration++; ui.busy = false; ui.rolling = false; ui.forging = false; ui.screen = 'game'; ui.view = 'game'; ui.saveError = result.warning; dialog.close(); render({windowReset:true});
     if (result.warning) notify(result.warning);
   }
-  catch (error) { notify(error.message); }
+  catch (error) { if (!state) { ui.saveError = error.message; render(); } notify(error.message); }
   finally { committing = false; }
 }
 async function act(action) {
@@ -505,9 +538,10 @@ document.addEventListener('click', async event => {
   if(action==='recovery-restore'){requestRecoveryRestore();return;}
   if(action==='recovery-load'){requestRecoveryLoad();return;}
   if(action==='recovery-export-raw'){
-    if(!ui.saveRecovery)return;
+    // Also reachable from the new-run confirmation, where bytes which cannot be
+    // decoded must stay exportable before any explicit discard.
     const snapshot=inspectSaveRecovery();
-    if(!snapshot.raw||(snapshot.raw.primary===null&&snapshot.raw.mirror===null)){protectMemory(snapshot);return;}
+    if(!snapshot.raw||(snapshot.raw.primary===null&&snapshot.raw.mirror===null)){if(ui.saveRecovery)protectMemory(snapshot);else notify('浏览器中没有可导出的原始记录。');return;}
     downloadText(JSON.stringify({format:'dice-abyss-raw-records',records:{[SAVE_KEY]:snapshot.raw.primary,[BACKUP_KEY]:snapshot.raw.mirror}},null,2),'Dice-Abyss-browser-original-records.json');
     notify('两份浏览器存档的原始文本已导出。此文件供检查保留，不能直接作为游戏存档导入。');return;
   }
@@ -573,7 +607,7 @@ document.addEventListener('click', async event => {
   if(action==='skip' && !committing){settlePresentation();return;}
   if (ui.busy || committing) { notify('本次结果正在揭晓，请稍候。'); return; }
   if (action === 'compare-details') { openComparison(control.dataset.id,control.dataset.slot);return; }
-  if (action === 'new') { if (state || ui.saveError) confirmDialog('开始一段新的旅途？', '<p>当前进度将被替换。需要保留时，请先在设置中导出存档。</p>', '确认重新开始', begin); else begin(); return; }
+  if (action === 'new') { requestNewGame(); return; }
   if (action === 'home') { settingsFocus.cancel(); dialog.close(); ui.screen = 'title'; render({windowReset:true}); return; }
   if (action === 'continue') { ui.screen = 'game'; render({windowReset:true}); return; }
   if (['game', 'inventory', 'talents','codex'].includes(action)) {
