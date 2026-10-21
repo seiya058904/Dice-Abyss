@@ -10,6 +10,8 @@ import {createRequire} from 'node:module';
 import {fileURLToPath} from 'node:url';
 import * as E from '../src/engine.js';
 import * as S from '../src/storage.js';
+import {coreFontProof} from './core-font-proof.mjs';
+import {gzipSync} from 'node:zlib';
 const root=fileURLToPath(new URL('../',import.meta.url));
 const args=Object.fromEntries(process.argv.slice(2).map(x=>{const i=x.indexOf('=');return[x.slice(2,i),x.slice(i+1)];}));
 assert(args.output,'--output external directory required');
@@ -20,6 +22,8 @@ const git=(...args)=>execFileSync('git',args,{cwd:root,maxBuffer:20e6});
 const report={status:'RUNNING',head:git('rev-parse','HEAD').toString().trim(),release:JSON.parse(await fs.readFile(path.join(root,'package.json'),'utf8')).version,os:os.release(),cpu:os.cpus()[0].model,backend:'ANGLE SwiftShader',checks:[],manifest:[],console:[],network:[],errors:[]};
 report.scriptSha256=sha(await fs.readFile(new URL(import.meta.url)));
 const persist=()=>fs.writeFile(path.join(output,'report.json'),JSON.stringify(report,null,2));
+report.webLocksMode=args['no-web-locks']==='true'?'API_ABSENT':'NATIVE';
+report.pixelStatus='NOT_TESTED';report.performanceStatus='NOT_TESTED';
 let server,browser,page;
 async function check(name,fn){report.activeCheck=name;await persist();await fn();report.checks.push({name,status:'PASS'});}
 try{
@@ -45,12 +49,27 @@ try{
  const {chromium}=createRequire(import.meta.url)(process.env.PLAYWRIGHT_MODULE||'playwright');
  browser=await chromium.launch({headless:true,executablePath:process.env.CHROMIUM_PATH,args:['--use-angle=swiftshader','--enable-unsafe-swiftshader']});report.browser=browser.version();
  const context=await browser.newContext({viewport:{width:1920,height:1080},deviceScaleFactor:1,reducedMotion:'reduce'});
+ if(args['no-web-locks']==='true')await context.addInitScript(()=>Object.defineProperty(navigator,'locks',{value:undefined,configurable:true}));
  await context.addInitScript(()=>{
   window.__atlasDigits=[];
+  window.__atlasUploads=[];
   const fill=CanvasRenderingContext2D.prototype.fillText;
   CanvasRenderingContext2D.prototype.fillText=function(text,...args){
-   if(this.canvas.width===1536&&this.canvas.height===512&&/^[1-6]$/.test(text))window.__atlasDigits.push({text,font:this.font});
+   if(this.canvas.width===1536&&this.canvas.height===512&&/^[1-6]$/.test(text)){
+    const m=this.measureText(text);
+    window.__atlasDigits.push({text,font:this.font,metrics:[m.width,m.actualBoundingBoxLeft,m.actualBoundingBoxRight,m.actualBoundingBoxAscent,m.actualBoundingBoxDescent],faces:[...document.fonts].map(f=>({family:f.family,status:f.status}))});
+   }
    return fill.call(this,text,...args);
+  };
+  const upload=WebGLRenderingContext.prototype.texImage2D;
+  WebGLRenderingContext.prototype.texImage2D=function(...args){
+   const canvas=args.at(-1);
+   if(canvas instanceof HTMLCanvasElement&&canvas.width===1536&&canvas.height===512){
+    const bytes=canvas.getContext('2d').getImageData(0,0,canvas.width,canvas.height).data;
+    let binary='';for(let i=0;i<bytes.length;i+=8192)binary+=String.fromCharCode(...bytes.subarray(i,i+8192));
+    window.__atlasUploads.push({width:canvas.width,height:canvas.height,rgbaBase64:btoa(binary),digits:window.__atlasDigits.slice(-6)});
+   }
+   return upload.apply(this,args);
   };
  });
  page=await context.newPage();
@@ -67,9 +86,38 @@ try{
  });
  await check('dice-atlas-core-numerals',async()=>{
   await page.evaluate(()=>document.fonts.ready);
+  report.coreFontProof=await page.evaluate(coreFontProof);
+  assert(report.coreFontProof.ok,'Loaded Core faces and independently loaded glyph metrics required');
   report.atlasDigits=await page.evaluate(()=>window.__atlasDigits);
   assert.deepEqual(report.atlasDigits.slice(-6).map(x=>x.text),['1','2','3','4','5','6']);
   assert(report.atlasDigits.slice(-6).every(x=>x.font.includes('Abyss Pixel')),'Actual production atlas uses Core rather than Consolas');
+  const glyphs=report.coreFontProof.glyphs.find(x=>x.family==='Abyss Pixel');
+  assert.deepEqual(report.atlasDigits.slice(-6).flatMap(x=>x.metrics),glyphs.expected,'Production Canvas glyph metrics match independently loaded Core');
+  report.atlasUploads=[];
+  for(const [i,capture] of (await page.evaluate(()=>window.__atlasUploads)).entries()){
+   const bytes=Buffer.from(capture.rgbaBase64,'base64'),file=`atlas-${i}.rgba.gz`;delete capture.rgbaBase64;
+   await fs.writeFile(path.join(output,file),gzipSync(bytes));report.atlasUploads.push({...capture,file,sha256:sha(bytes)});
+  }
+  assert(report.atlasUploads.length>0,'Production texture upload observed');
+ });
+ await check('core-font-fault-controls',async()=>{
+  report.fontControls=[];
+  for(const mode of ['cold','warm','delayed','missing','corrupt']){
+   const isolated=await browser.newContext({viewport:{width:1280,height:800}});
+   const row={mode,network:[]};report.fontControls.push(row);
+   try{
+    if(['delayed','missing','corrupt'].includes(mode))await isolated.route('**/*core.woff2',async route=>{
+     if(mode==='missing')return route.fulfill({status:404,body:'missing synthetic Core'});
+     if(mode==='corrupt')return route.fulfill({status:200,contentType:'font/woff2',body:'invalid synthetic Core'});
+     await new Promise(resolve=>setTimeout(resolve,800));await route.continue();
+    });
+    const probe=await isolated.newPage();probe.on('response',r=>{if(/core\.woff2/.test(r.url()))row.network.push({url:r.url(),status:r.status()});});
+    await probe.goto(url);if(mode==='warm'){await probe.evaluate(()=>document.fonts.ready);await probe.reload();}
+    await probe.evaluate(()=>document.fonts.ready);row.proof=await probe.evaluate(coreFontProof);
+    assert.equal(row.proof.ok,!['missing','corrupt'].includes(mode),`${mode} must not falsely certify Core`);
+    row.status='PASS';
+   }finally{await isolated.close();await persist();}
+  }
  });
  await check('10000-inventory-lock-mirror-reload',async()=>{
   const state=E.newGame(27017);state.runId='release-qa-10000';while(state.player.items.length<10000)state.player.items.push(E.makeItem(state,'weapon',state.nextId%8));
@@ -93,7 +141,7 @@ try{
  // Spawn asynchronously: this process must keep serving the staged site.
  await check('core-browser-regressions',async()=>{
   const {spawn}=await import('node:child_process');
-  const child=spawn(process.execPath,[path.join(root,'scripts/qa-core-browser.mjs'),`--url=${url}`,`--output=${path.join(output,'core')}`],{env:process.env,stdio:['ignore','pipe','pipe']});
+  const child=spawn(process.execPath,[path.join(root,'scripts/qa-core-browser.mjs'),`--url=${url}`,`--output=${path.join(output,'core')}`,...(args['no-web-locks']==='true'?['--no-web-locks']:[])],{env:process.env,stdio:['ignore','pipe','pipe']});
   let log='';child.stdout.on('data',x=>log+=x);child.stderr.on('data',x=>log+=x);
   const code=await new Promise((resolve,reject)=>{child.on('error',reject);child.on('close',resolve);});
   await fs.writeFile(path.join(output,'core.log'),log);assert.equal(code,0,'core browser driver failed; see core/report.json');

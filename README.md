@@ -39,6 +39,23 @@
 
 ## V5.27.0 · Local performance work, not published
 
+**2026-10-21 stabilization: DRAFT_CONTINUE.** The independent browser workflow
+now runs on pull requests to `main`, checks out the event's exact head SHA and
+asserts that identity. It retains read-only permissions and does not deploy.
+Native Web Locks and API-absent modes have separate reports. Browser smoke
+results do not certify strict pixels or performance.
+
+Core-font QA now requires loaded FontFace objects, successful explicit loads,
+resource URLs and Canvas glyph metrics matched to an independently loaded copy
+of the Core binary. It records production atlas buffers and rejects synthetic
+404/corrupt Core resources; cold, warm and delayed controls are also exercised.
+The older Canvas font-string check alone was insufficient evidence of the font
+actually used. The external stage profiler now rejects an unmatched Web Locks
+hook instead of silently omitting that timing, with LF/CRLF regression coverage.
+No gameplay, storage, font binary or production deployment change is included
+in this stabilization. Strict RGBA and the 10k salvage completion tail remain
+open release blockers; the PR remains Draft.
+
 The bounded follow-up on **2026-10-20**, based on `042a64f`, successfully
 used the existing Playwright runner through ordinary execution permissions.
 The previous policy block remains historical evidence; it is not the status

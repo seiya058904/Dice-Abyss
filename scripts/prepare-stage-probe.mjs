@@ -31,7 +31,9 @@ for(const [file,names] of Object.entries({
   source+="\nfunction __stageJSON(method,...args){const start=performance.now();try{return JSON[method](...args);}finally{performance.measure('storage:JSON.'+method,{start,end:performance.now()});}}\n";
  }
  if(file==='app.js'){
-  source=source.replace("const withSaveLock = task => navigator.locks?.request\n  ? navigator.locks.request('dice-abyss:save-write', task)\n  : Promise.resolve().then(task);",
+  const lockPattern=/const withSaveLock = task => navigator\.locks\?\.request\r?\n  \? navigator\.locks\.request\('dice-abyss:save-write', task\)\r?\n  : Promise\.resolve\(\)\.then\(task\);/g;
+  assert.equal([...source.matchAll(lockPattern)].length,1,'Web Locks instrumentation must match exactly once');
+  source=source.replace(lockPattern,
    "const withSaveLock = task => {const start=performance.now();const measured=()=>{performance.measure('app:WebLock-wait',{start,end:performance.now()});return task();};return navigator.locks?.request ? navigator.locks.request('dice-abyss:save-write',measured) : Promise.resolve().then(measured);};");
  }
  await fs.writeFile(p,source);manifest[file].after=createHash('sha256').update(source).digest('hex');
