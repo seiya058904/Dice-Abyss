@@ -146,6 +146,26 @@ try{
   const code=await new Promise((resolve,reject)=>{child.on('error',reject);child.on('close',resolve);});
   await fs.writeFile(path.join(output,'core.log'),log);assert.equal(code,0,'core browser driver failed; see core/report.json');
  });
+ // The presentation-API fallback suite is part of this same staged-site gate.
+ // It runs all twelve cases in the mode this workflow invocation is testing and
+ // must fail the gate on a nonzero exit, a missing report, a mode mismatch, a
+ // non-PASS status or any missing/failed case. Logs and reports stay external.
+ await check(args['no-web-locks']==='true'?'api-fallback-browser-api-absent':'api-fallback-browser-native',async()=>{
+  const {spawn}=await import('node:child_process');
+  const expectedMode=args['no-web-locks']==='true'?'API_ABSENT':'NATIVE';
+  const fallbackDir=path.join(output,'api-fallback');
+  const child=spawn(process.execPath,[path.join(root,'scripts/qa-api-fallback-browser.mjs'),`--url=${url}`,`--output=${fallbackDir}`,...(args['no-web-locks']==='true'?['--no-web-locks=true']:[])],{env:process.env,stdio:['ignore','pipe','pipe']});
+  let log='';child.stdout.on('data',x=>log+=x);child.stderr.on('data',x=>log+=x);
+  const code=await new Promise((resolve,reject)=>{child.on('error',reject);child.on('close',resolve);});
+  await fs.writeFile(path.join(output,'api-fallback.log'),log);
+  assert.equal(code,0,'API fallback browser driver failed; see api-fallback.log');
+  const result=JSON.parse(await fs.readFile(path.join(fallbackDir,'report.json'),'utf8'));
+  assert.equal(result.mode,expectedMode,`API fallback report mode ${result.mode} does not match ${expectedMode}`);
+  assert.equal(result.status,'PASS','API fallback browser gate must report PASS');
+  assert(Array.isArray(result.cases)&&result.cases.length===12,`API fallback suite must run 12 cases, got ${Array.isArray(result.cases)?result.cases.length:'no cases'}`);
+  assert(result.cases.every(test=>test.status==='PASS'),'every API fallback case must pass');
+  report.apiFallback={mode:result.mode,cases:result.cases.length,saveSha256:result.cases[0]?.steps?.saveSha256,status:result.status};
+ });
  if(args['no-web-locks']!=='true')await check('pace-four-combinations',async()=>{
   const {spawn}=await import('node:child_process');
   const child=spawn(process.execPath,[path.join(root,'scripts/qa-final-v527.mjs'),'--pace-only=true','--ci-functional=true',`--current=${url}`,`--output=${path.join(output,'pace')}`],{env:process.env,stdio:['ignore','pipe','pipe']});

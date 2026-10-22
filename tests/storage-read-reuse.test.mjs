@@ -135,7 +135,8 @@ test('later source reads that changed to an older raw string still take the comp
 test('unreadable legacy envelopes remain available for explicit new-run rescue archives',()=>{
  const old=JSON.parse(JSON.parse(legacy(4)).payload);old.nextId=3;
  const raw=envelope(old),store=memory(raw,'corrupt mirror');assert.equal(S.loadSave(store).state,null);
- const state=fixture();S.saveGame(state,undefined,store);
+ const state=fixture(),reviewed={primary:raw,mirror:'corrupt mirror'};
+ S.replaceUnreadableSave(state,reviewed,store);
  assert.equal(store.map.get(S.V4_BACKUP_KEY),raw);assert.equal(S.readLegacyBackup(store),raw);
  assert.deepEqual(S.loadSave(store).state,state);
  assert.deepEqual(store.writes.map(row=>row.key),[S.V4_BACKUP_KEY,S.SAVE_KEY,S.BACKUP_KEY]);

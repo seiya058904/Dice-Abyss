@@ -5,8 +5,8 @@ import {observeVisualSurface} from '../src/visual-timeline.js';
 import {throwFrames,restPose} from '../src/dice-motion.js';
 
 let moduleId=0;
-function environment(){
- const keys=['document','IntersectionObserver','ResizeObserver','devicePixelRatio','getComputedStyle','performance','requestAnimationFrame','cancelAnimationFrame','setTimeout','clearTimeout','matchMedia','innerWidth','innerHeight','Path2D','__visibility24'];
+function environment(options={}){
+ const keys=['document','IntersectionObserver','ResizeObserver','devicePixelRatio','getComputedStyle','performance','requestAnimationFrame','cancelAnimationFrame','setTimeout','clearTimeout','matchMedia','innerWidth','innerHeight','Path2D','__visibility24','addEventListener','removeEventListener'];
  const previous=Object.fromEntries(keys.map(key=>[key,globalThis[key]]));
  const intersections=[],resizes=[],canvases=[],queue=new Map(),timers=new Map(),listeners=new Map();
  const counts={draws:0,allocations:0,geometryReads:0,images:0,strokes:0,clears:0,materialOps:0},uniforms=new Map();
@@ -18,7 +18,8 @@ function environment(){
   deliver(visible){this.callback([{target:this.target,isIntersecting:visible}]);}
  }
  globalThis.IntersectionObserver=IO;
- globalThis.ResizeObserver=class {constructor(callback){this.callback=callback;resizes.push(this);}observe(target){this.target=target;}disconnect(){this.disconnected=true;}deliver(){this.callback([]);}};
+ if(options.resizeObserver===false)delete globalThis.ResizeObserver;
+ else globalThis.ResizeObserver=class {constructor(callback){this.callback=callback;resizes.push(this);}observe(target){this.target=target;}disconnect(){this.disconnected=true;}deliver(){this.callback([]);}};
  const context=canvas=>new Proxy({
   drawImage(){counts.images++;},stroke(){counts.strokes++;},clearRect(){counts.clears++;},
   createRadialGradient:()=>({addColorStop(){}}),createLinearGradient:()=>({addColorStop(){}}),
@@ -161,4 +162,21 @@ for(const reason of ['cancelled','hidden','deadline'])test(`Round24 ${reason} cl
   const before=env.counts.images;observer.deliver(true);assert.equal(env.counts.images,before);assert(observer.disconnected);assert.equal(presentation.status.reason,reason);
   assert.equal(env.queue.size,0);assert.equal(env.timers.size,0);assert.equal(env.listeners.get('visibilitychange')?.size??0,0);
  }finally{presentation?.stop();env.restore();}
+});
+
+test('Round28 a GPU surface mounts and resizes without ResizeObserver, and stop releases the fallback',async()=>{
+ const env=environment({resizeObserver:false});let surface;
+ try{
+  const added=new Map();
+  globalThis.addEventListener=(type,handler)=>{if(!added.has(type))added.set(type,new Set());added.get(type).add(handler);};
+  globalThis.removeEventListener=(type,handler)=>{added.get(type)?.delete(handler);};
+  const {mountDiceSurface}=await env.renderer();surface=mountDiceSurface();await Promise.resolve();
+  assert.ok(surface,'WebGL still owns the dice when only the observer API is missing');
+  assert.equal(added.get('resize')?.size,1,'one bounded resize fallback replaces the missing observer');
+  const before=env.counts.draws;env.row.width=1100;
+  for(const handler of added.get('resize'))handler();
+  assert.equal(env.counts.draws-before,6,'the fallback redraws the resized surface');
+  surface.stop();surface=null;
+  assert.equal(added.get('resize')?.size??0,0,'unmount releases the fallback listener');
+ }finally{surface?.stop();delete globalThis.addEventListener;delete globalThis.removeEventListener;env.restore();}
 });

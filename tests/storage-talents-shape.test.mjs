@@ -72,7 +72,7 @@ test('explicitly replacing an unreadable old array-table save still preserves th
     const malformed=fixture(version);malformed.player.talents=[];
     const raw=envelope(malformed),store=memory(raw),replacement=E.newGame(28010);
     assert.equal(S.loadSave(store).state,null);
-    S.saveGame(replacement,undefined,store);
+    S.replaceUnreadableSave(replacement,{primary:raw,mirror:raw},store);
     assert.deepEqual(S.loadSave(store).state,replacement);
     assert.equal(store.map.get(S.V4_BACKUP_KEY),raw);
     assert.equal(store.map.get(S.LEGACY_BACKUP_KEY),version<4?raw:undefined);
