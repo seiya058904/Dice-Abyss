@@ -24,7 +24,7 @@ const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH,he
 const report={mode:noLocks?'API_ABSENT':'NATIVE',url,browser:browser.version(),started:new Date().toISOString(),cases:[],errors:[]};
 const persist=()=>fs.writeFile(path.join(output,'report.json'),JSON.stringify(report,null,2));
 const sha=x=>x?.runId?{runId:x.runId,revision:x.revision,phase:x.phase}:x;
-function combat(seed=913){let state=E.newGame(seed);state=E.transition(state,{type:'fate'});state.route[0].type='combat';state=E.transition(state,{type:'enter'});state.enemy.hp=1;state.enemy.shield=0;assert.equal(E.transition(state,{type:'roll'}).phase,'chest');assert(S.validateSave(state));return state;}
+function combat(seed=913){let state=E.newGame(seed);state.runId='qa-api-fallback-'+seed;state=E.transition(state,{type:'fate'});state.route[0].type='combat';state=E.transition(state,{type:'enter'});state.enemy.hp=1;state.enemy.shield=0;assert.equal(E.transition(state,{type:'roll'}).phase,'chest');assert(S.validateSave(state));return state;}
 const readSave=page=>page.evaluate(key=>{try{return JSON.parse(JSON.parse(localStorage.getItem(key)).payload);}catch{return null;}},S.SAVE_KEY);
 async function loadGame(page,state,settings){
  await page.goto(args.url);
