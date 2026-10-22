@@ -5,6 +5,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';
 import {createRequire} from 'node:module';
 import {fileURLToPath} from 'node:url';
 import * as E from '../src/engine.js';
@@ -69,9 +70,14 @@ async function rollAndVerify(page,before){
  const loot=await readSave(page);
  assert.equal(loot.revision,expected.revision+1,'the following open is exactly one more transaction');
  await page.reload();
+ const durable=await page.evaluate(({save,backup})=>[localStorage.getItem(save),localStorage.getItem(backup)],{save:S.SAVE_KEY,backup:S.BACKUP_KEY});
+ assert.equal(durable[0],durable[1],'primary and mirror hold the exact same committed bytes');
+ assert.equal(durable[0],S.encodeSave(loot),'browser bytes exactly equal the engine encoding of the committed state');
+ const saveSha256=createHash('sha256').update(durable[0]).digest('hex');
+ await page.reload();
  await page.locator('[data-action="continue"]').click();
  assert.deepEqual(await readSave(page),loot,'reload resumes the committed result');
- return {rollPhase:afterRoll.scene,surfaces:afterRoll.surfaces,gpuRow:afterRoll.gpuRow,phase:loot.phase,lootVisible:await page.locator('.loot-screen').isVisible()};
+ return {rollPhase:afterRoll.scene,surfaces:afterRoll.surfaces,gpuRow:afterRoll.gpuRow,phase:loot.phase,saveSha256,lootVisible:await page.locator('.loot-screen').isVisible()};
 }
 const full={fastPace:true,effects:'full',sound:false,scale:1};
 const low={fastPace:false,effects:'low',sound:false,scale:1};
