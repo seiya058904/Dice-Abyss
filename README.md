@@ -417,6 +417,11 @@ Canvas regression checks execute the hash-verified, bundled original and current
 
 For browser work, use an external Playwright installation and fresh browser contexts, and keep generated screenshots and logs outside the repository. [`scripts/qa-core-browser.mjs`](scripts/qa-core-browser.mjs) accepts `--url=<game-url>` and `--output=<external-directory>`. See [AGENTS.md](AGENTS.md) for the validation and publishing boundaries.
 
+The staged-site release gate in `scripts/qa-browser-release.mjs` also checks
+malformed URL escapes: its temporary server returns HTTP 400 and continues
+serving byte-identical resources after each rejected request. This HTTP check
+runs in both Web Locks modes before the browser scenarios.
+
 ### Historical V5 acceptance and verification limits
 
 The following paragraphs describe evidence inherited from earlier V5 work. The [cloud iteration report](docs/iteration/LATEST_REPORT.md) records its original reruns and risks; the dated repository and live-site acceptance above records the later integration checks.

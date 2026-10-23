@@ -41,11 +41,23 @@ try{
  });
  const types={'.html':'text/html','.js':'text/javascript','.css':'text/css','.svg':'image/svg+xml','.webp':'image/webp','.woff2':'font/woff2'};
  server=http.createServer(async(req,res)=>{
-  const file=decodeURIComponent(new URL(req.url,'http://localhost').pathname).slice(1)||'index.html';
+  let file;
+  try{file=decodeURIComponent(new URL(req.url,'http://localhost').pathname).slice(1)||'index.html';}
+  catch{res.writeHead(400).end('Bad request');return;}
   if(!report.manifest.some(x=>x.file===file)){res.writeHead(404).end();return;}
   res.writeHead(200,{'Content-Type':types[path.extname(file)]||'text/plain','Cache-Control':'no-cache'});res.end(await fs.readFile(path.join(site,file)));
  });await new Promise(resolve=>server.listen(Number(args.port||0),'127.0.0.1',resolve));
  const url=`http://127.0.0.1:${server.address().port}/`;report.url=url;
+ await check('malformed-URL-recovery',async()=>{
+  for(const route of ['/%ZZ','/%','/%E0%A4%A']){
+   const invalid=await fetch(url+route.slice(1));
+   assert.equal(invalid.status,400,`Malformed path must return 400: ${route}`);
+   await invalid.text();
+   const valid=await fetch(url+'index.html');
+   assert.equal(valid.status,200,'The same server must keep serving after a malformed URL');
+   assert.equal(sha(Buffer.from(await valid.arrayBuffer())),report.manifest.find(x=>x.file==='index.html').sha256);
+  }
+ });
  const {chromium}=createRequire(import.meta.url)(process.env.PLAYWRIGHT_MODULE||'playwright');
  browser=await chromium.launch({headless:true,executablePath:process.env.CHROMIUM_PATH,args:['--use-angle=swiftshader','--enable-unsafe-swiftshader']});report.browser=browser.version();
  const context=await browser.newContext({viewport:{width:1920,height:1080},deviceScaleFactor:1,reducedMotion:'reduce'});
