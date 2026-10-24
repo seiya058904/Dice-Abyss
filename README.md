@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="https://seiya058904.github.io/Dice-Abyss/"><strong>▶ PUBLISHED SITE</strong></a>
+  <a href="https://seiya058904.github.io/Dice-Abyss/"><strong>▶ Play in Your Browser</strong></a>
   &nbsp;·&nbsp;
   <a href="#the-descent">🎮 The Descent</a>
   &nbsp;·&nbsp;
@@ -32,19 +32,13 @@
 </p>
 
 
-## V5.27 FINAL — 更轻的首屏，可选加速节奏
+## ✨ Current Release · V5.27
 
-保留 Core 字体首次加载优化；新增独立于特效强度的「加速节奏」开关。
-在游戏右上角「设置」中开启后，完整掷骰和主要特效以双倍节奏呈现，
-奖励仍保留在结果页。默认标准节奏不变，设置保存在当前浏览器。
+**A lighter first load, with an optional faster pace.** Core-font loading reduces the initial font payload. Enable **Fast Pace** in the top-right Settings panel to play complete dice rolls and major effects at twice their normal pace, independently of effect quality. Rewards remain on the result screen until you continue. Standard pace remains the default, and your preference is saved in the current browser.
 
-最终验证、实测改善、发布状态和限制以 [FINAL-V527.md](FINAL-V527.md)
-及 [verification-final-v527.json](verification-final-v527.json) 为准。
-[PR #3](https://github.com/seiya058904/Dice-Abyss/pull/3) 已合并，
-[V5.27 验证与 Pages 部署](https://github.com/seiya058904/Dice-Abyss/actions/runs/39560017038) 已通过。
-合并前的「不合并、不部署」仅描述当时交付边界。
-历史严格 RGBA 零容差 FAIL 保留为诊断，未改判 PASS；见
-[原始像素记录](PIXEL-ROUND28.md) 和 [回滚证据](ENGINEERING-REPORT-ROUND28.md)。
+[PR #3](https://github.com/seiya058904/Dice-Abyss/pull/3) was merged, and its [V5.27 verification and Pages deployment](https://github.com/seiya058904/Dice-Abyss/actions/runs/39560017038) passed. See the [final delivery report](FINAL-V527.md) and [verification record](verification-final-v527.json) for measured improvements, acceptance scope, and limitations.
+
+Earlier no-merge/no-deployment boundaries describe the pre-release handoff. Historical zero-tolerance RGBA **FAIL** results remain diagnostic evidence, never relabeled as PASS: [pixel records](PIXEL-ROUND28.md) · [rollback evidence](ENGINEERING-REPORT-ROUND28.md) · [preserved release history](#release-history).
 
 **2026-10-21 audit follow-up:** Browser policies can deny access to the
 `localStorage` property itself. The game now handles that failure through its
@@ -58,9 +52,230 @@ explicit recovery of the retained progress. See the [audit coverage and checks](
 >
 > In **Dice Abyss**, a roll is an attack, a chest is a promise, and every new floor is another test of the equipment and talents you have assembled. The dungeon keeps going. So does your progression.
 
-## 历史记录：V5.27.0 本地性能调查（非最终验收）
+<a id="the-descent"></a>
+## 🎮 The Descent
 
-**以下 DRAFT_CONTINUE / blocker 状态仅属于当时记录；最终状态见页首交付摘要。**
+<p align="center">
+  <code>CAST FATE → CROSS SIX ROOMS → ROLL TO FIGHT → CLAIM LOOT → BUILD → DESCEND</code>
+</p>
+
+At the start of each floor, **two fate dice** reveal a six-room route. Follow it through battles, services, discoveries, and dangerous encounters. When combat begins, **you decide when to roll**; the actual dice faces determine the strike, and surviving enemies retaliate.
+
+A defeat sends you back into the **same fight**, not back to the beginning. Your earned equipment, gold, talents, and completed rooms remain yours.
+
+<p align="center">
+  <strong>UP TO 6 BATTLE DICE</strong> &nbsp;·&nbsp; <strong>50 ROOM TYPES</strong> &nbsp;·&nbsp; <strong>1,536 EQUIPMENT VARIANTS</strong><br>
+  <strong>18 BOSSES</strong> &nbsp;·&nbsp; <strong>5 TALENT PATHS / 45 NODES</strong> &nbsp;·&nbsp; <strong>8 RARITIES</strong> &nbsp;·&nbsp; <strong>NO FINAL FLOOR</strong>
+</p>
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>🎲 The Roll Is the Attack</h3>
+      <p><sub>MANUAL ROLLS · MATCHING FACES · CRITICALS</sub></p>
+      <p>Start with one battle die and unlock up to six as you level. Matching faces trigger resonance; high rolls, critical hits, and follow-up strikes become more powerful when your build supports them.</p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>🗺️ A Different Fate Each Floor</h3>
+      <p><sub>TWO FATE DICE · SIX-ROOM ROUTES · 50 ROOM TYPES</sub></p>
+      <p>Every floor reveals a fresh, ordered route. Meet merchants, forges, relic chambers, trials, strange events, and enemies with distinct combat rules. Richer fate rolls can change the opportunities ahead.</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>💎 Every Victory Has a Chest</h3>
+      <p><sub>1,536 ITEMS · EIGHT RARITIES · FIVE GEAR SLOTS</sub></p>
+      <p>Open a chest after every kill. Discover weapons, armor, and relics from Common through Eternal, then combine one weapon, one armor piece, and up to three relics into your own setup.</p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>⚒️ Make the Loot Matter</h3>
+      <p><sub>EQUIPMENT LEVELS · FORGING · FUSION</sub></p>
+      <p>Strengthen individual items at a forge, or consume spare gear to advance equipment levels through fusion. Invest talent points across five paths focused on high faces, resonance, critical chains, survival, and luck.</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>👑 Enemies With Rules to Learn</h3>
+      <p><sub>18 BOSSES · SECOND PHASES · VISIBLE INTENT</sub></p>
+      <p>Prepare for shields, escalating counterattacks, dice-dependent weaknesses, multi-wave fights, and boss phase changes. Enemy warnings expose what is dangerous instead of hiding the rules behind a health bar.</p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>♾️ Progress Without a Reset</h3>
+      <p><sub>RETRY THE FIGHT · KEEP YOUR BUILD · DESCEND AGAIN</sub></p>
+      <p>Defeat does not erase your journey. The tenth floor marks an early milestone, not the end: deeper floors continue with changing encounters, rewards, and the builds needed to survive them.</p>
+    </td>
+  </tr>
+</table>
+
+## V5: Eight Rarities, Deeper Builds
+
+V5 expands the existing desktop game with **1,536 equipment variants**, **50 room types**, **18 bosses**, and **45 talent nodes across five paths**. The eight equipment rarities are **Common, Rare, Epic, Legendary, Mythic, Ancient, Origin, and Eternal**. Mythic unlocks at floor 30, Ancient at 50, Origin at 80, and Eternal at 140; the four original tiers remain available throughout the descent.
+
+Late-game equipment, room weights, enemy mechanics, talent gates, saves, and the original interface stay part of one playable game. The feature counts describe catalogued content, not that every item, room, or build has received a separate human playtest.
+
+<a id="gameplay"></a>
+## 📷 Gameplay
+
+These are **historical V4/V5 screenshots**, retained as compressed WebP browsing copies with a maximum edge of 1600 pixels. Captions and filenames describe the original capture viewport; these are not captures from the current iteration. See the [historical screenshot notes](output/playwright/README.md).
+
+<p align="center">
+  <a href="docs/screenshots/gameplay-desktop.webp"><img width="900" src="docs/screenshots/gameplay-desktop.webp" alt="Compressed historical Dice Abyss desktop gameplay screenshot from the V4 baseline" /></a>
+</p>
+<p align="center"><sub>V4 BASELINE · DESKTOP BROWSER · 1920 × 1080</sub></p>
+
+<p align="center">
+  <a href="output/playwright/v5-first-combat-1920.webp"><img width="900" src="output/playwright/v5-first-combat-1920.webp" alt="Compressed historical V5 first-floor combat, originally captured in a 1920 by 1080 desktop browser" /></a>
+</p>
+<p align="center"><sub>V5 LOCAL ACCEPTANCE · DESKTOP BROWSER · 1920 × 1080</sub></p>
+
+**Every number on the dice matters.** Combat uses the rolled values, not a predetermined animation. The interface shows enemy intent and the result of each attack so you can understand how your equipment, talents, and luck affect the outcome.
+
+<a id="how-to-play"></a>
+## ⌨️ How to Play
+
+| Input | Action |
+| :--- | :--- |
+| **Mouse / left click** | Navigate rooms, manage equipment and talents, open chests, and use the main action button. |
+| **Roll button** | Roll your available dice to attack during combat. |
+| **Space** | Roll during active combat (when no dialog or text control is focused). |
+| **Fullscreen button** | Toggle the game display between windowed and fullscreen modes. |
+| **Settings** | Adjust sound, effects, and interface scale; export or import your save. |
+
+The current game interface is in **Simplified Chinese**. The game remains desktop-first and now adapts its main screens and controls to narrow browser windows. Long content is available through vertical scrolling. The current iteration report lists the tested viewport and interaction matrix. Physical phones, pens, external screen readers and device-specific touch behavior have not been validated.
+
+<a id="play-now"></a>
+## 🚀 Enter the Abyss
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>🌐 Play Online</h3>
+      <p><sub>GITHUB PAGES · NO INSTALLATION</sub></p>
+      <p>Open the published game in a desktop browser. There is no account, online character, or server-hosted progression to set up.</p>
+      <p><strong><a href="https://seiya058904.github.io/Dice-Abyss/">▶ Play Dice Abyss →</a></strong></p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>🖥️ Run from Source</h3>
+      <p><sub>WINDOWS / NODE.JS 20+ · LOCAL WEB SERVER</sub></p>
+      <p>Extract the complete archive, launch the small local server, and play on your own machine. A Windows command launcher is also included.</p>
+      <p><strong><a href="#run-locally">⚙️ Local setup →</a></strong></p>
+    </td>
+  </tr>
+</table>
+
+<a id="your-progress"></a>
+### 💾 Your Progress Stays Yours
+
+Progress is saved automatically in **your browser's local storage**. You can export or import a JSON save from Settings; supported **V1–V4** saves migrate to V5 while preserving a pre-migration archive.
+
+Use **Settings → Check Capacity** to inspect the current export's exact file size. A save at the file limit has no growth allowance; recycling or fusion must still produce a result within that limit before it can commit. Export preserves the complete current progress, including supported extra data. The game does not automatically delete items or unknown fields to make a save fit.
+
+> [!IMPORTANT]
+> **Local saves are not cloud saves.** GitHub Pages and `http://127.0.0.1:4188` use separate browser origins, so their saves do not sync. Export your save before clearing site data, switching browsers or profiles, or starting over. Importing a save replaces the active local progress after confirmation.
+
+The game has **no account system, analytics, or remote runtime dependency**. All gameplay and save data stay in the browser environment in which you play.
+
+<a id="run-locally"></a>
+## 🛠️ Run Locally
+
+Requires **Node.js 20 or newer**. There are no npm runtime packages to install and no build step. Extract the ZIP, then open a terminal in its parent folder:
+
+```bash
+cd Dice-Abyss
+npm start
+```
+
+Open **http://127.0.0.1:4188** in a desktop browser. On Windows, you can alternatively double-click [the Windows launcher](%E5%90%AF%E5%8A%A8%E6%B8%B8%E6%88%8F.cmd) after installing Node.js.
+
+<details>
+<summary><strong>Change the port / understand local hosting</strong></summary>
+
+In PowerShell:
+
+```powershell
+$env:PORT = '4190'
+npm start
+```
+
+The server listens on `127.0.0.1`, not on the public network. Serve the project over HTTP instead of opening `index.html` as a `file://` URL; the game uses JavaScript modules, and browser storage is tied to the page origin.
+
+</details>
+
+<a id="for-developers"></a>
+## ⚙️ For Developers
+
+Dice Abyss is built with **vanilla JavaScript modules, HTML, and CSS**, with locally bundled fonts. It does not require a framework, bundler, or package installation to run.
+
+<details>
+<summary><strong>📂 Expand source layout, checks &amp; deployment notes</strong></summary>
+
+### Repository map
+
+| Path | Purpose |
+| :--- | :--- |
+| [`src/engine.js`](src/engine.js), [`src/content.js`](src/content.js) | Dice combat, progression, talents, and core content. |
+| [`src/equipment.js`](src/equipment.js), [`src/equipment-content.js`](src/equipment-content.js) | Gear generation, levels, item properties, and equipment catalog. |
+| [`src/encounters.js`](src/encounters.js) | Special enemy mechanics, event choices, and room generation. |
+| [`src/storage.js`](src/storage.js) | Validated local saves, backup behavior, and legacy migration. |
+| [`src/app.js`](src/app.js), [`src/views.js`](src/views.js) | Player interaction, menus, screens, and rendering. |
+| [`src/fusion-controller.js`](src/fusion-controller.js), [`src/fusion-workbench.js`](src/fusion-workbench.js), [`src/fusion-view.js`](src/fusion-view.js) | Transient fusion selection, batch planning, previews, and results. |
+| [`src/inventory-query.js`](src/inventory-query.js), [`src/inventory-page.js`](src/inventory-page.js), [`src/inventory-render.js`](src/inventory-render.js) | Inventory filtering, sorting, page selection reuse, and DOM updates. |
+| [`src/event-risk.js`](src/event-risk.js) | Read-only paid-event probabilities and immediate gold budgets. |
+| [`src/dice-renderer.js`](src/dice-renderer.js), [`src/dice-motion.js`](src/dice-motion.js), [`src/effects.js`](src/effects.js), [`src/visual-timeline.js`](src/visual-timeline.js) | Dice visuals, motion, feedback, and presentation cleanup. |
+| [`src/`](src/) CSS files | Layout, presentation, responsiveness, and visual refinements. |
+| [`scripts/`](scripts/), [`tests/`](tests/) | Local server, simulation, audits, and automated test coverage. |
+| [`src/fonts/`](src/fonts/) | Bundled font files and their independent license notices. |
+| [`AGENTS.md`](AGENTS.md) | Project-specific development, save-safety, validation, and release guidance. |
+
+<a id="verify-the-source"></a>
+### Verify the source
+
+```bash
+npm run check
+npm test
+npm run simulate -- 1000
+```
+
+These commands perform JavaScript syntax checks, Node.js tests, and a 1,000-run simulation. The workflow runs them for pull requests; it assembles and deploys the Pages site only after a push to `main`.
+
+**2026-10-20 acceptance:** [GitHub verification and Pages deployment](https://github.com/seiya058904/Dice-Abyss/actions/runs/39415336338) passed for [`f21c3dd`](https://github.com/seiya058904/Dice-Abyss/commit/f21c3dd98700d93383466d4bb5cac12dd9bb27ee): **926 tests**, no failures or skips, and **1,000/1,000 seeded ten-floor adventures completed**. Local Node 22 and Node 24 checks also passed. Before integration, **700 complete synthetic V5.1 save snapshots** were read without state loss; no private player saves were used.
+
+The published **V5.26.0** was checked independently: all **66 shipping resources** matched the local source bytes, including JavaScript, styles, WebP artwork and both fonts. Fresh Chromium contexts passed **43 main-flow checks** covering manual rolls, combat, chest opening, equipment, refresh, inventory, settings, failed writes and cross-tab synchronization. Additional live cases verified importing/resuming fusion history with a missing optional consumption list and a manual double-fate roll at the gold cap. These live cases captured no page or console errors. Isolated local checks also covered fusion, inventory navigation, talents, forge previews, save recovery and window-resize settlement.
+
+Canvas regression checks execute the hash-verified, bundled original and current paint programs under the **same Node runtime**, comparing their complete effective arguments and primitive paint state exactly. This avoids treating the last-bit numeric differences between Node 22 and 24 as a rendering regression; no rounding or numeric tolerance is applied. Historical reference hashes remain unchanged.
+
+For browser work, use an external Playwright installation and fresh browser contexts, and keep generated screenshots and logs outside the repository. [`scripts/qa-core-browser.mjs`](scripts/qa-core-browser.mjs) accepts `--url=<game-url>` and `--output=<external-directory>`. See [AGENTS.md](AGENTS.md) for the validation and publishing boundaries.
+
+The staged-site release gate in `scripts/qa-browser-release.mjs` also checks
+malformed URL escapes: its temporary server returns HTTP 400 and continues
+serving byte-identical resources after each rejected request. This HTTP check
+runs in both Web Locks modes before the browser scenarios.
+
+### Historical V5 acceptance and verification limits
+
+The following paragraphs describe evidence inherited from earlier V5 work. The [cloud iteration report](docs/iteration/LATEST_REPORT.md) records its original reruns and risks; the dated repository and live-site acceptance above records the later integration checks.
+
+The recorded local Chrome acceptance covers the first-floor flow, four deep rarity rewards, five talent paths, forging and relic fusion, ten new deep events, a synthetic V4 save import, and full-inventory save recovery. Deep-floor checks used isolated debug saves. See the [V5 integration and browser acceptance report](docs/v5/%E9%9B%86%E6%88%90%E4%B8%8E%E5%AE%9E%E6%9C%BA%E9%AA%8C%E6%94%B6.md) and its linked screenshots for the environment and evidence.
+
+The PR #2 review rerun also used isolated browser saves to verify first-crit luck across a chest, room transition, and refresh; import and claim of a synthetic V4 pending chest; and an Eternal reward opening that remained claimed after refresh. See the [cross-room luck screenshot](output/playwright/v5-p2-01-cross-room-luck.png) and [Eternal reward screenshot](output/playwright/v5-p2-high-rarity-open.png).
+
+Automated checks and isolated browser scenarios do not establish natural long-run progression, every Boss and room combination, migration of a player's private save, or full balance. The Windows launcher, audio listening, and performance on a physical 4K display also remain unverified. Simulated 4K viewport screenshots are layout checks, not hardware performance results.
+
+The deployment assembles a static site from `index.html`, `favicon.svg`, and `src/`. The README, tests, and development scripts are not included in the published game artifact. A successful automated run does **not** imply that long-form manual playtesting or every device configuration has been verified.
+
+</details>
+
+<a id="release-history"></a>
+## 📚 Release History & Measurement Notes
+
+Detailed investigations are retained below so the gameplay overview stays easy to browse. Each result applies to its recorded version, commit, environment, and date.
+
+<details>
+<summary><strong>Expand the V5.27 investigation and V5.26 release record</strong></summary>
+
+### V5.27.0 Local Performance Investigation — Historical
+
+**The DRAFT_CONTINUE and blocker statuses below describe the investigation at the time. Current delivery status is summarized near the top of this README.**
 
 **2026-10-21 stabilization: DRAFT_CONTINUE (historical).** The independent browser workflow
 now runs on pull requests to `main`, checks out the event's exact head SHA and
@@ -201,7 +416,7 @@ in that historical local acceptance.
 
 The V5.26.0 section below is historical; current delivery status is recorded above.
 
-## V5.26.0 · Reviewed, Integrated & Published (historical)
+### V5.26.0 · Reviewed, Integrated & Published — Historical
 
 The reviewed **V5.26.0 cloud handoff** has been integrated into this repository and published to [GitHub Pages](https://seiya058904.github.io/Dice-Abyss/). Publication and live browser checks passed on **2026-10-20**. Follow [Run Locally](#run-locally) to run the same game on your computer; browser saves remain separate between the local and published origins.
 
@@ -222,217 +437,6 @@ Complete snapshot conflict checks, primary and mirror saves, Web Locks, V1–V4 
 See [the inherited cloud iteration report](docs/iteration/LATEST_REPORT.md) for comparable performance measurements and remaining limits. Supplied high-frequency callback counts and software-rendered browser timings do not establish physical GPU FPS or universal performance gains.
 
 [STATE.json](docs/iteration/STATE.json) and [FILE_MANIFEST.json](docs/iteration/FILE_MANIFEST.json) describe the **received cloud archive**, before the local integration fixes. Git commits identify the maintained repository. Regenerate a manifest when creating a new archive; do not treat the old manifest as a hash list for later repository changes.
-
-<a id="the-descent"></a>
-## 🎮 The Descent
-
-<p align="center">
-  <code>CAST FATE → CROSS SIX ROOMS → ROLL TO FIGHT → CLAIM LOOT → BUILD → DESCEND</code>
-</p>
-
-At the start of each floor, **two fate dice** reveal a six-room route. Follow it through battles, services, discoveries, and dangerous encounters. When combat begins, **you decide when to roll**; the actual dice faces determine the strike, and surviving enemies retaliate.
-
-A defeat sends you back into the **same fight**, not back to the beginning. Your earned equipment, gold, talents, and completed rooms remain yours.
-
-<p align="center">
-  <strong>UP TO 6 BATTLE DICE</strong> &nbsp;·&nbsp; <strong>50 ROOM TYPES</strong> &nbsp;·&nbsp; <strong>1,536 EQUIPMENT VARIANTS</strong><br>
-  <strong>18 BOSSES</strong> &nbsp;·&nbsp; <strong>5 TALENT PATHS / 45 NODES</strong> &nbsp;·&nbsp; <strong>8 RARITIES</strong> &nbsp;·&nbsp; <strong>NO FINAL FLOOR</strong>
-</p>
-
-<table>
-  <tr>
-    <td width="50%" valign="top">
-      <h3>🎲 The Roll Is the Attack</h3>
-      <p><sub>MANUAL ROLLS · MATCHING FACES · CRITICALS</sub></p>
-      <p>Start with one battle die and unlock up to six as you level. Matching faces trigger resonance; high rolls, critical hits, and follow-up strikes become more powerful when your build supports them.</p>
-    </td>
-    <td width="50%" valign="top">
-      <h3>🗺️ A Different Fate Each Floor</h3>
-      <p><sub>TWO FATE DICE · SIX-ROOM ROUTES · 50 ROOM TYPES</sub></p>
-      <p>Every floor reveals a fresh, ordered route. Meet merchants, forges, relic chambers, trials, strange events, and enemies with distinct combat rules. Richer fate rolls can change the opportunities ahead.</p>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <h3>💎 Every Victory Has a Chest</h3>
-      <p><sub>1,536 ITEMS · EIGHT RARITIES · FIVE GEAR SLOTS</sub></p>
-      <p>Open a chest after every kill. Discover weapons, armor, and relics from Common through Eternal, then combine one weapon, one armor piece, and up to three relics into your own setup.</p>
-    </td>
-    <td width="50%" valign="top">
-      <h3>⚒️ Make the Loot Matter</h3>
-      <p><sub>EQUIPMENT LEVELS · FORGING · FUSION</sub></p>
-      <p>Strengthen individual items at a forge, or consume spare gear to advance equipment levels through fusion. Invest talent points across five paths focused on high faces, resonance, critical chains, survival, and luck.</p>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <h3>👑 Enemies With Rules to Learn</h3>
-      <p><sub>18 BOSSES · SECOND PHASES · VISIBLE INTENT</sub></p>
-      <p>Prepare for shields, escalating counterattacks, dice-dependent weaknesses, multi-wave fights, and boss phase changes. Enemy warnings expose what is dangerous instead of hiding the rules behind a health bar.</p>
-    </td>
-    <td width="50%" valign="top">
-      <h3>♾️ Progress Without a Reset</h3>
-      <p><sub>RETRY THE FIGHT · KEEP YOUR BUILD · DESCEND AGAIN</sub></p>
-      <p>Defeat does not erase your journey. The tenth floor marks an early milestone, not the end: deeper floors continue with changing encounters, rewards, and the builds needed to survive them.</p>
-    </td>
-  </tr>
-</table>
-
-## V5: Eight Rarities, Deeper Builds
-
-V5 expands the existing desktop game with **1,536 equipment variants**, **50 room types**, **18 bosses**, and **45 talent nodes across five paths**. The eight equipment rarities are **Common, Rare, Epic, Legendary, Mythic, Ancient, Origin, and Eternal**. Mythic unlocks at floor 30, Ancient at 50, Origin at 80, and Eternal at 140; the four original tiers remain available throughout the descent.
-
-Late-game equipment, room weights, enemy mechanics, talent gates, saves, and the original interface stay part of one playable game. The feature counts describe catalogued content, not that every item, room, or build has received a separate human playtest.
-
-<a id="gameplay"></a>
-## 📷 Gameplay
-
-These are **historical V4/V5 screenshots**, retained as compressed WebP browsing copies with a maximum edge of 1600 pixels. Captions and filenames describe the original capture viewport; these are not captures from the current iteration. See the [historical screenshot notes](output/playwright/README.md).
-
-<p align="center">
-  <a href="docs/screenshots/gameplay-desktop.webp"><img width="900" src="docs/screenshots/gameplay-desktop.webp" alt="Compressed historical Dice Abyss desktop gameplay screenshot from the V4 baseline" /></a>
-</p>
-<p align="center"><sub>V4 BASELINE · DESKTOP BROWSER · 1920 × 1080</sub></p>
-
-<p align="center">
-  <a href="output/playwright/v5-first-combat-1920.webp"><img width="900" src="output/playwright/v5-first-combat-1920.webp" alt="Compressed historical V5 first-floor combat, originally captured in a 1920 by 1080 desktop browser" /></a>
-</p>
-<p align="center"><sub>V5 LOCAL ACCEPTANCE · DESKTOP BROWSER · 1920 × 1080</sub></p>
-
-**Every number on the dice matters.** Combat uses the rolled values, not a predetermined animation. The interface shows enemy intent and the result of each attack so you can understand how your equipment, talents, and luck affect the outcome.
-
-<a id="how-to-play"></a>
-## ⌨️ How to Play
-
-| Input | Action |
-| :--- | :--- |
-| **Mouse / left click** | Navigate rooms, manage equipment and talents, open chests, and use the main action button. |
-| **Roll button** | Roll your available dice to attack during combat. |
-| **Space** | Roll during active combat (when no dialog or text control is focused). |
-| **Fullscreen button** | Toggle the game display between windowed and fullscreen modes. |
-| **Settings** | Adjust sound, effects, and interface scale; export or import your save. |
-
-The current game interface is in **Simplified Chinese**. The game remains desktop-first and now adapts its main screens and controls to narrow browser windows. Long content is available through vertical scrolling. The current iteration report lists the tested viewport and interaction matrix. Physical phones, pens, external screen readers and device-specific touch behavior have not been validated.
-
-<a id="play-now"></a>
-## 🚀 Enter the Abyss
-
-<table>
-  <tr>
-    <td width="50%" valign="top">
-      <h3>🌐 Play Online</h3>
-      <p><sub>GITHUB PAGES · NO INSTALLATION</sub></p>
-      <p>Open the published game in a desktop browser. There is no account, online character, or server-hosted progression to set up.</p>
-      <p><strong><a href="https://seiya058904.github.io/Dice-Abyss/">▶ Play Dice Abyss →</a></strong></p>
-    </td>
-    <td width="50%" valign="top">
-      <h3>🖥️ Run from Source</h3>
-      <p><sub>WINDOWS / NODE.JS 20+ · LOCAL WEB SERVER</sub></p>
-      <p>Extract the complete archive, launch the small local server, and play on your own machine. A Windows <code>启动游戏.cmd</code> launcher is also included.</p>
-      <p><strong><a href="#run-locally">⚙️ Local setup →</a></strong></p>
-    </td>
-  </tr>
-</table>
-
-<a id="your-progress"></a>
-### 💾 Your Progress Stays Yours
-
-Progress is saved automatically in **your browser's local storage**. You can export or import a JSON save from Settings; supported **V1–V4** saves migrate to V5 while preserving a pre-migration archive.
-
-Use **Settings → 检查容量** to inspect the current export's exact file size. A save at the file limit has no growth allowance; recycling or fusion must still produce a result within that limit before it can commit. Export preserves the complete current progress, including supported extra data. The game does not automatically delete items or unknown fields to make a save fit.
-
-> [!IMPORTANT]
-> **Local saves are not cloud saves.** GitHub Pages and `http://127.0.0.1:4188` use separate browser origins, so their saves do not sync. Export your save before clearing site data, switching browsers or profiles, or starting over. Importing a save replaces the active local progress after confirmation.
-
-The game has **no account system, analytics, or remote runtime dependency**. All gameplay and save data stay in the browser environment in which you play.
-
-<a id="run-locally"></a>
-## 🛠️ Run Locally
-
-Requires **Node.js 20 or newer**. There are no npm runtime packages to install and no build step. Extract the ZIP, then open a terminal in its parent folder:
-
-```bash
-cd Dice-Abyss
-npm start
-```
-
-Open **http://127.0.0.1:4188** in a desktop browser. On Windows, you can alternatively double-click [`启动游戏.cmd`](启动游戏.cmd) after installing Node.js.
-
-<details>
-<summary><strong>Change the port / understand local hosting</strong></summary>
-
-In PowerShell:
-
-```powershell
-$env:PORT = '4190'
-npm start
-```
-
-The server listens on `127.0.0.1`, not on the public network. Serve the project over HTTP instead of opening `index.html` as a `file://` URL; the game uses JavaScript modules, and browser storage is tied to the page origin.
-
-</details>
-
-<a id="for-developers"></a>
-## ⚙️ For Developers
-
-Dice Abyss is built with **vanilla JavaScript modules, HTML, and CSS**, with locally bundled fonts. It does not require a framework, bundler, or package installation to run.
-
-<details>
-<summary><strong>📂 Expand source layout, checks &amp; deployment notes</strong></summary>
-
-### Repository map
-
-| Path | Purpose |
-| :--- | :--- |
-| [`src/engine.js`](src/engine.js), [`src/content.js`](src/content.js) | Dice combat, progression, talents, and core content. |
-| [`src/equipment.js`](src/equipment.js), [`src/equipment-content.js`](src/equipment-content.js) | Gear generation, levels, item properties, and equipment catalog. |
-| [`src/encounters.js`](src/encounters.js) | Special enemy mechanics, event choices, and room generation. |
-| [`src/storage.js`](src/storage.js) | Validated local saves, backup behavior, and legacy migration. |
-| [`src/app.js`](src/app.js), [`src/views.js`](src/views.js) | Player interaction, menus, screens, and rendering. |
-| [`src/fusion-controller.js`](src/fusion-controller.js), [`src/fusion-workbench.js`](src/fusion-workbench.js), [`src/fusion-view.js`](src/fusion-view.js) | Transient fusion selection, batch planning, previews, and results. |
-| [`src/inventory-query.js`](src/inventory-query.js), [`src/inventory-page.js`](src/inventory-page.js), [`src/inventory-render.js`](src/inventory-render.js) | Inventory filtering, sorting, page selection reuse, and DOM updates. |
-| [`src/event-risk.js`](src/event-risk.js) | Read-only paid-event probabilities and immediate gold budgets. |
-| [`src/dice-renderer.js`](src/dice-renderer.js), [`src/dice-motion.js`](src/dice-motion.js), [`src/effects.js`](src/effects.js), [`src/visual-timeline.js`](src/visual-timeline.js) | Dice visuals, motion, feedback, and presentation cleanup. |
-| [`src/`](src/) CSS files | Layout, presentation, responsiveness, and visual refinements. |
-| [`scripts/`](scripts/), [`tests/`](tests/) | Local server, simulation, audits, and automated test coverage. |
-| [`src/fonts/`](src/fonts/) | Bundled font files and their independent license notices. |
-| [`AGENTS.md`](AGENTS.md) | Project-specific development, save-safety, validation, and release guidance. |
-
-<a id="verify-the-source"></a>
-### Verify the source
-
-```bash
-npm run check
-npm test
-npm run simulate -- 1000
-```
-
-These commands perform JavaScript syntax checks, Node.js tests, and a 1,000-run simulation. The workflow runs them for pull requests; it assembles and deploys the Pages site only after a push to `main`.
-
-**2026-10-20 acceptance:** [GitHub verification and Pages deployment](https://github.com/seiya058904/Dice-Abyss/actions/runs/39415336338) passed for [`f21c3dd`](https://github.com/seiya058904/Dice-Abyss/commit/f21c3dd98700d93383466d4bb5cac12dd9bb27ee): **926 tests**, no failures or skips, and **1,000/1,000 seeded ten-floor adventures completed**. Local Node 22 and Node 24 checks also passed. Before integration, **700 complete synthetic V5.1 save snapshots** were read without state loss; no private player saves were used.
-
-The published **V5.26.0** was checked independently: all **66 shipping resources** matched the local source bytes, including JavaScript, styles, WebP artwork and both fonts. Fresh Chromium contexts passed **43 main-flow checks** covering manual rolls, combat, chest opening, equipment, refresh, inventory, settings, failed writes and cross-tab synchronization. Additional live cases verified importing/resuming fusion history with a missing optional consumption list and a manual double-fate roll at the gold cap. These live cases captured no page or console errors. Isolated local checks also covered fusion, inventory navigation, talents, forge previews, save recovery and window-resize settlement.
-
-Canvas regression checks execute the hash-verified, bundled original and current paint programs under the **same Node runtime**, comparing their complete effective arguments and primitive paint state exactly. This avoids treating the last-bit numeric differences between Node 22 and 24 as a rendering regression; no rounding or numeric tolerance is applied. Historical reference hashes remain unchanged.
-
-For browser work, use an external Playwright installation and fresh browser contexts, and keep generated screenshots and logs outside the repository. [`scripts/qa-core-browser.mjs`](scripts/qa-core-browser.mjs) accepts `--url=<game-url>` and `--output=<external-directory>`. See [AGENTS.md](AGENTS.md) for the validation and publishing boundaries.
-
-The staged-site release gate in `scripts/qa-browser-release.mjs` also checks
-malformed URL escapes: its temporary server returns HTTP 400 and continues
-serving byte-identical resources after each rejected request. This HTTP check
-runs in both Web Locks modes before the browser scenarios.
-
-### Historical V5 acceptance and verification limits
-
-The following paragraphs describe evidence inherited from earlier V5 work. The [cloud iteration report](docs/iteration/LATEST_REPORT.md) records its original reruns and risks; the dated repository and live-site acceptance above records the later integration checks.
-
-The recorded local Chrome acceptance covers the first-floor flow, four deep rarity rewards, five talent paths, forging and relic fusion, ten new deep events, a synthetic V4 save import, and full-inventory save recovery. Deep-floor checks used isolated debug saves. See the [V5 integration and browser acceptance report](docs/v5/集成与实机验收.md) and its linked screenshots for the environment and evidence.
-
-The PR #2 review rerun also used isolated browser saves to verify first-crit luck across a chest, room transition, and refresh; import and claim of a synthetic V4 pending chest; and an Eternal reward opening that remained claimed after refresh. See the [cross-room luck screenshot](output/playwright/v5-p2-01-cross-room-luck.png) and [Eternal reward screenshot](output/playwright/v5-p2-high-rarity-open.png).
-
-Automated checks and isolated browser scenarios do not establish natural long-run progression, every Boss and room combination, migration of a player's private save, or full balance. The Windows launcher, audio listening, and performance on a physical 4K display also remain unverified. Simulated 4K viewport screenshots are layout checks, not hardware performance results.
-
-The deployment assembles a static site from `index.html`, `favicon.svg`, and `src/`. The README, tests, and development scripts are not included in the published game artifact. A successful automated run does **not** imply that long-form manual playtesting or every device configuration has been verified.
 
 </details>
 
