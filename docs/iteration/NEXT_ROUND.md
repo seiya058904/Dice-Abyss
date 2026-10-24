@@ -1,6 +1,6 @@
 # 下一轮接力起点 · Round26 / v5.26.0
 
-重新上传**此完整ZIP＋同一份母任务书**即可继续；不需要旧补丁、外部源码、前序聊天或本地开发代理。以[STATE](STATE.json)、[LATEST_REPORT](LATEST_REPORT.md)、[VERIFY](VERIFY.md)、[PERFORMANCE](PERFORMANCE.md)、[问题台账](BUG_LEDGER.md)及[本轮证据索引](evidence/round26/README.md)为准，先核对实际package/HTML/release与清单。旧顶层文档已按原字节gzip归档，旧标题和数字不能当本轮结果。
+重新上传**此完整ZIP＋同一份母任务书**即可继续；不需要旧补丁、外部源码、前序聊天或本地开发代理。以[STATE](STATE.json)、[LATEST_REPORT](LATEST_REPORT.md)、[VERIFY](VERIFY.md)、[PERFORMANCE](PERFORMANCE.md)、[问题台账](BUG_LEDGER.md)及[本轮证据索引](https://github.com/seiya058904/Dice-Abyss/blob/8f7d5d0fcade3e8467e52f27e0303e4137ab748a/docs/iteration/evidence/round26/README.md)为准，先核对实际package/HTML/release与清单。旧顶层文档已按原字节gzip归档，旧标题和数字不能当本轮结果。
 
 ## 前五项候选
 

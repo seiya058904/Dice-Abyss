@@ -1,8 +1,0 @@
-{
-  "preliminaryGeneratorAssertion": {
-    "observed": "Relative manifest rows were not globally lexicographic because Python Path sorting orders path components. The generator asserted before writing the manifest or creating a candidate archive.",
-    "correction": "Sort by the complete relative POSIX string. The existing package verifier and its requirements were unchanged.",
-    "result": "Subsequent complete candidate passed original path, size, CRC and every manifest hash check."
-  },
-  "evidenceRetention": "No old test/script removed, no performance failure discarded; preparation payloads shared with identical formal archives and indexed."
-}

@@ -2,7 +2,7 @@
 
 本轮未修改融合结算、报价、材料保护、等级/经验、强化、比较或RNG规则。首实现真实继承交互完成9组68记录点，其中融合原生选材、保护确认/取消、六面收益、完整结算刷新与跨标签组通过；最终静态改动限定于事件报价复用，未再运行这9组，风险页HTML逐字对照不扩展为融合页面重验。具体组别口径见 [VERIFY](VERIFY.md)、[PAGE_REVIEW](PAGE_REVIEW.md)。不把功能检查耗时宣称为融合性能优化。
 
-输入Round19完整原件已逐字归档 [round19-fusion-notes.md](archives/round19-fusion-notes.md)。以下是继续保留的历史规则说明，里面“本轮”和数字仅属于标注年份/轮次，当前验收以上面入口为准。
+输入Round19完整原件已逐字归档 [round19-fusion-notes.md](https://github.com/seiya058904/Dice-Abyss/blob/8f7d5d0fcade3e8467e52f27e0303e4137ab748a/docs/iteration/archives/round19-fusion-notes.md)。以下是继续保留的历史规则说明，里面“本轮”和数字仅属于标注年份/轮次，当前验收以上面入口为准。
 
 ---
 

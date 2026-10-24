@@ -1,7 +1,0 @@
-{
-  "classification": "harness",
-  "finding": "The initial pair did not frame the target opportunity row. Playwright isVisible checked layout visibility but the row was below the sidebar scroll clip, so these two images cannot compare colors.",
-  "productFailure": false,
-  "originalReportPreserved": true,
-  "resolution": "A separate corrected attempt natively scrolls the real row into view, verifies its complete bounds within the sidebar clip, and then captures the same one-selector CSS study. No runtime code or game state changes."
-}

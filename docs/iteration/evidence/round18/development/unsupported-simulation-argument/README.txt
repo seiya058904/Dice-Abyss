@@ -1,1 +1,0 @@
-The CLI accepts a positional seed count, not --seeds. The unsupported invocation exited 1 and ran no valid 1000-seed cohort; excluded from formal results. Raw output and command receipt retained. Formal rerun uses the exact input command: node scripts/simulate.mjs 1000.

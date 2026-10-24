@@ -1,8 +1,0 @@
-{
-  "status": "FIXTURE_ERROR_CORRECTED",
-  "test": "already-equipped and unowned shop items yield the same immediate quote as the actual legal equip order",
-  "initialResult": "10 of 11 new test cases passed; constructed merchant failed validateSave before exercising the comparison",
-  "cause": "The test changed a loot state into a merchant with only one offer and retained lootCreditedGold after clearing loot. Valid merchant saves require three equipment offers plus one heal service, and the receipt belongs to an existing loot record.",
-  "correction": "The constructed fixture now clears its absent-loot receipt, provides three distinct issued equipment offers and a heal service, and advances nextId. Runtime comparison and storage code were not changed to accommodate the invalid fixture.",
-  "scope": "Constructed shop-order boundary test; no claim that this shop naturally occurred in seed 3. Final rerun result is recorded separately."
-}

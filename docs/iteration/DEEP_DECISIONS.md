@@ -29,7 +29,7 @@
 
 ## 本轮重新执行：两个原样终局、四条分支
 
-本轮使用输入中保留的 Round22 长跑原件与原 [triage.mjs](evidence/round22/gameplay/long-run-triage/triage.mjs)。八份原始状态和自然报告均从随包无损档案恢复；原文件身份、输入/当前源码身份及原计划身份均记录于重放报告，重放前后不变。
+本轮使用输入中保留的 Round22 长跑原件与原 [triage.mjs](https://github.com/seiya058904/Dice-Abyss/blob/8f7d5d0fcade3e8467e52f27e0303e4137ab748a/docs/iteration/evidence/round22/gameplay/long-run-triage/triage.mjs)。八份原始状态和自然报告均从随包无损档案恢复；原文件身份、输入/当前源码身份及原计划身份均记录于重放报告，重放前后不变。
 
 从每个完整终局分别建立「保持原装备继续重试」与「装备当时已有 pairWard 防具后重试」分支。行动均经过真实引擎事务，没有补金币、注入物品、重置 RNG、改敌人或删除未知数据。原构筑对照最多继续六次重试，装备分支的胜利也只观察到当前敌人结束。
 
@@ -58,6 +58,6 @@
 
 ## 输入原文与历史证据保留
 
-输入包里的 `DEEP_DECISIONS.md` 标题仍是 Round21，并附有更早的 Round11 决策原文。本轮按输入所属轮次命名归档为 [round24-deep-decisions.md.gz](archives/round24-deep-decisions.md.gz)，没有把归档名解释为那些历史样本在 Round24 重新执行。解压后为 7,334 字节，SHA-256 `b43fc78ff2a5844872c8ea3fb020955f6dd55c2411cd5cf73d396e48947c1444`。
+输入包里的 `DEEP_DECISIONS.md` 标题仍是 Round21，并附有更早的 Round11 决策原文。本轮按输入所属轮次命名归档为 [round24-deep-decisions.md.gz](https://github.com/seiya058904/Dice-Abyss/blob/8f7d5d0fcade3e8467e52f27e0303e4137ab748a/docs/iteration/archives/round24-deep-decisions.md.gz)，没有把归档名解释为那些历史样本在 Round24 重新执行。解压后为 7,334 字节，SHA-256 `b43fc78ff2a5844872c8ea3fb020955f6dd55c2411cd5cf73d396e48947c1444`。
 
 V1–V4 迁移样本、Round13 未完成旅程、Round18 死亡与防具状态、Round22 自然失败报告及终局、原计划和重放脚本继续保留。截图精简账本不改变这些数值、状态或关键负证据。

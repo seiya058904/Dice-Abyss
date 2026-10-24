@@ -6,7 +6,7 @@
 
 输入是实际上传 v5.25.0，当前 v5.26.0。Node v24.19.0、Linux x64；浏览器 Chromium 155.0.8059.84，ANGLE Vulkan SwiftShader 软件后端，DPR 1。页面只访问隔离本地服务，使用可验证的合成存档；没有读取私有用户存档。所有正式计时在完整测试和模拟结束后串行运行；一次预声明批次，没有为获得有利结果追加替换样本。
 
-[预声明协议](evidence/round26/PERFORMANCE_PROTOCOL.md) 与完整报告位于 `evidence/round26/performance/`。以下每张表都为输入 → 当前；统计口径不能交叉代用。源码 HTTP/本地身份、前后不变、完整 DOM 和主/镜像存档均通过各自驱动检查。
+[预声明协议](https://github.com/seiya058904/Dice-Abyss/blob/8f7d5d0fcade3e8467e52f27e0303e4137ab748a/docs/iteration/evidence/round26/PERFORMANCE_PROTOCOL.md) 与完整报告位于 `evidence/round26/performance/`。以下每张表都为输入 → 当前；统计口径不能交叉代用。源码 HTTP/本地身份、前后不变、完整 DOM 和主/镜像存档均通过各自驱动检查。
 
 ## 1. 背包排序：CPU 选择器
 

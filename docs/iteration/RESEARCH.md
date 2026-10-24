@@ -25,7 +25,7 @@
 
 ## 如何解读结果
 
-正式采样前已写入 [固定协议](evidence/round26/PERFORMANCE_PROTOCOL.md)：函数对照、原生背包交互、主帧矩阵分别计量，采样串行执行；慢值、失败和小库存控制格不替换。排序审计采用 nearest-rank 分位数，边界与浏览器驱动采用各自注明的 floor-rank；这些不同样本口径不混算。
+正式采样前已写入 [固定协议](https://github.com/seiya058904/Dice-Abyss/blob/8f7d5d0fcade3e8467e52f27e0303e4137ab748a/docs/iteration/evidence/round26/PERFORMANCE_PROTOCOL.md)：函数对照、原生背包交互、主帧矩阵分别计量，采样串行执行；慢值、失败和小库存控制格不替换。排序审计采用 nearest-rank 分位数，边界与浏览器驱动采用各自注明的 floor-rank；这些不同样本口径不混算。
 
 本轮收益与反向结果见 [PERFORMANCE](PERFORMANCE.md)，正确性与原生画面边界见 [VERIFY](VERIFY.md)。计算次数减少只证明重复工作被移除；软件渲染 Chromium 的帧窗口不能认证实体显卡的 4K 60 FPS。
 

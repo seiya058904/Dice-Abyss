@@ -12,4 +12,4 @@
 
 本目录其余 19 张旧常规截图与其他历轮的重复展示图被有意省略，以免每轮继续累积可再生成的浏览副本。全项目共省略 100 张旧截图；**没有省略对应的结构化测试结果、完整状态、严格 RGBA 或关键失败数据，也没有改动游戏素材、字体授权、源码与旧测试**。
 
-每个省略文件的原路径、字节数、SHA-256 和输入 ZIP 身份均见 [完整精简账本](../../docs/iteration/evidence/round25/package/omitted-historical-screenshots.json)。历史报告可能继续引用这些旧截图路径，应按账本理解为有意精简，不是新一轮遗漏的运行依赖。若需查看这些原图，可从账本标识的未修改 v5.24.0 输入 ZIP 取回；游戏启动、测试和后续接力不需要这些图。
+每个省略文件的原路径、字节数、SHA-256 和输入 ZIP 身份均见 [完整精简账本](https://github.com/seiya058904/Dice-Abyss/blob/8f7d5d0fcade3e8467e52f27e0303e4137ab748a/docs/iteration/evidence/round25/package/omitted-historical-screenshots.json)。历史报告可能继续引用这些旧截图路径，应按账本理解为有意精简，不是新一轮遗漏的运行依赖。若需查看这些原图，可从账本标识的未修改 v5.24.0 输入 ZIP 取回；游戏启动、测试和后续接力不需要这些图。

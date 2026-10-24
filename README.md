@@ -436,6 +436,8 @@ Complete snapshot conflict checks, primary and mirror saves, Web Locks, V1–V4 
 
 See [the inherited cloud iteration report](docs/iteration/LATEST_REPORT.md) for comparable performance measurements and remaining limits. Supplied high-frequency callback counts and software-rendered browser timings do not establish physical GPU FPS or universal performance gains.
 
+Historical documentation was curated locally on 2026-10-23. See the [retained essentials and recovery guide](docs/ARCHIVE.md) for the remaining evidence, unchanged failure conclusions, and restoration of retired files.
+
 [STATE.json](docs/iteration/STATE.json) and [FILE_MANIFEST.json](docs/iteration/FILE_MANIFEST.json) describe the **received cloud archive**, before the local integration fixes. Git commits identify the maintained repository. Regenerate a manifest when creating a new archive; do not treat the old manifest as a hash list for later repository changes.
 
 </details>

@@ -4,7 +4,7 @@
 
 ## 证据归属与六项复核
 
-独立审阅者实际阅读运行差异、逐行重算原生背包 JSON，并执行新恢复器的三轮核验、恢复及路径拒绝测试。完整单测、模拟、浏览器和正式计时由主控执行；独立审阅这些报告不记作第二次实跑。帧与 CPU 独立算术摘要和原始报告分别保留，入口见[本轮证据索引](evidence/round26/README.md)、[PERFORMANCE](PERFORMANCE.md)及[VERIFY](VERIFY.md)。
+独立审阅者实际阅读运行差异、逐行重算原生背包 JSON，并执行新恢复器的三轮核验、恢复及路径拒绝测试。完整单测、模拟、浏览器和正式计时由主控执行；独立审阅这些报告不记作第二次实跑。帧与 CPU 独立算术摘要和原始报告分别保留，入口见[本轮证据索引](https://github.com/seiya058904/Dice-Abyss/blob/8f7d5d0fcade3e8467e52f27e0303e4137ab748a/docs/iteration/evidence/round26/README.md)、[PERFORMANCE](PERFORMANCE.md)及[VERIFY](VERIFY.md)。
 
 | 角度 | 核对结果与边界 |
 | --- | --- |

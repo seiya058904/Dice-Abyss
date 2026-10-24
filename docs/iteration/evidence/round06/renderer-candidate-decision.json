@@ -1,9 +1,0 @@
-{
-  "status": "ROLLED_BACK",
-  "baselineSha256": "a317cbe20fb1a0518a69eff10e3aa9b7dce5180a2b90543439fb830c86d66770",
-  "candidateSha256": "d72f1bb6236c410efa939ddaeecd10afbb61d016011a5fa73100206e77c7a173",
-  "reason": "Six fixed fresh-process SwiftShader windows do not establish a stable performance gain. Candidate maximum RAF interval exceeds baseline in two of three pairs. Vertex buffer reduction alone is insufficient to add rendering lifecycle complexity this release. Original shader, geometry, buffers and drawArrays implementation restored byte for byte.",
-  "measuredReport": "indexed-renderer-probe/renderer-isolated-frames.json",
-  "diagnosticNoteCorrection": "Inherited script narrative describing matched renderer and an extra stylesheet belongs to its previous-round comparison. This round renderer is deliberately different; source/style hash records are authoritative.",
-  "setupFailure": "First attempt used Playwright index.js ESM import, which exposed no named chromium; all six cases failed before browser launch. Replayed with official index.mjs; no measured slow window was replaced."
-}

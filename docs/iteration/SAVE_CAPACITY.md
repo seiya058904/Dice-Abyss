@@ -20,7 +20,7 @@
 
 ## 可验证结果
 
-以下都是明确构造的合法夹具，不代表自然玩家的发生率。原始数值和失败文本保留在 [输入复现](evidence/round12/capacity/baseline-audit.json) 与 [当前复现](evidence/round12/capacity/current-ui-markup-audit.json)。
+以下都是明确构造的合法夹具，不代表自然玩家的发生率。原始数值和失败文本保留在 [输入复现](https://github.com/seiya058904/Dice-Abyss/blob/8f7d5d0fcade3e8467e52f27e0303e4137ab748a/docs/iteration/evidence/round12/capacity/baseline-audit.json) 与 [当前复现](https://github.com/seiya058904/Dice-Abyss/blob/8f7d5d0fcade3e8467e52f27e0303e4137ab748a/docs/iteration/evidence/round12/capacity/current-ui-markup-audit.json)。
 
 | 场景 | 操作前字节 | 候选结果字节 | 验证结果 |
 | --- | ---: | ---: | --- |
@@ -28,15 +28,15 @@
 | 恰好上限后明确回收一件装备 | 5,000,000 | 4,999,853 | 减少 147 字节，正常提交；未知填充字段完整保留 |
 | 可读取的多字节超限档回收一件 | 5,012,445 | 5,012,307 | 减少 138 字节但仍超限，零写入拒绝，仍可完整导出 |
 
-新增容量测试 9 例。独立存储专项 59/59、另一次 UI/设置焦点/比较/容量专项 34/34；这些运行有重叠，不能相加。命令与原始 TAP 哈希见 [test-summary.json](evidence/round12/capacity/test-summary.json)。原生交互证据由主任务集中执行：`scratch-evidence/current-decisions-release/report.json` 为 7 组、91 项检查全部通过，包含真实导出、超限事务拒绝、跨标签同步和遗物比较焦点；最终纳包位置以本轮证据索引为准。
+新增容量测试 9 例。独立存储专项 59/59、另一次 UI/设置焦点/比较/容量专项 34/34；这些运行有重叠，不能相加。命令与原始 TAP 哈希见 [test-summary.json](https://github.com/seiya058904/Dice-Abyss/blob/8f7d5d0fcade3e8467e52f27e0303e4137ab748a/docs/iteration/evidence/round12/capacity/test-summary.json)。原生交互证据由主任务集中执行：`scratch-evidence/current-decisions-release/report.json` 为 7 组、91 项检查全部通过，包含真实导出、超限事务拒绝、跨标签同步和遗物比较焦点；最终纳包位置以本轮证据索引为准。
 
 满背包的装备商品现在说明“背包容量已满”，并提供整理入口；空筛选提供同时清除装备位与品质的入口，保留排序并将焦点落在“全部”分类。这些反馈不改变 `canAct`、物品数量、金币或交易结果。
 
 ## 保留的原始失败与开放边界
 
-第 6 轮尚未修复写入边界时，近限档继续增长曾覆盖主档和镜像，并在刷新后不可读。该原始失败仍在 [round06/save-size-baseline.json](evidence/round06/save-size-baseline.json)；对应修复后的安全拒绝见 [round06/save-size-current.json](evidence/round06/save-size-current.json)。原生旧失败报告 [browser-baseline-round06.json](evidence/round06/browser-baseline-round06.json) 与当轮[刷新核验截图](evidence/round06/save-boundary-after-refresh.webp) 均保留。本轮输入已包含该安全修复，不将旧数据丢失问题再次计作本轮新修复。
+第 6 轮尚未修复写入边界时，近限档继续增长曾覆盖主档和镜像，并在刷新后不可读。该原始失败仍在 [round06/save-size-baseline.json](https://github.com/seiya058904/Dice-Abyss/blob/8f7d5d0fcade3e8467e52f27e0303e4137ab748a/docs/iteration/evidence/round06/save-size-baseline.json)；对应修复后的安全拒绝见 [round06/save-size-current.json](https://github.com/seiya058904/Dice-Abyss/blob/8f7d5d0fcade3e8467e52f27e0303e4137ab748a/docs/iteration/evidence/round06/save-size-current.json)。原生旧失败报告 [browser-baseline-round06.json](https://github.com/seiya058904/Dice-Abyss/blob/8f7d5d0fcade3e8467e52f27e0303e4137ab748a/docs/iteration/evidence/round06/browser-baseline-round06.json) 与当轮[刷新核验截图](evidence/round06/save-boundary-after-refresh.webp) 均保留。本轮输入已包含该安全修复，不将旧数据丢失问题再次计作本轮新修复。
 
-**OPEN_P3：外部清空所有存档副本的即时提示。** 既有 `storage` 监听器忽略 `key=null`，主档和镜像都不存在时也没有即时反馈分支。设置仍可能显示保留的内存进度容量，并允许导出这份有效进度；后续写入仍由完整 `expected` 检查拒绝，不能静默覆盖新状态。本轮未改该分支。详见 [独立 UI 复审](evidence/round12/capacity/UI_REVIEW.md) 和 [源代码分支探针](evidence/round12/capacity/ui-handler-probe.json)。
+**OPEN_P3：外部清空所有存档副本的即时提示。** 既有 `storage` 监听器忽略 `key=null`，主档和镜像都不存在时也没有即时反馈分支。设置仍可能显示保留的内存进度容量，并允许导出这份有效进度；后续写入仍由完整 `expected` 检查拒绝，不能静默覆盖新状态。本轮未改该分支。详见 [独立 UI 复审](https://github.com/seiya058904/Dice-Abyss/blob/8f7d5d0fcade3e8467e52f27e0303e4137ab748a/docs/iteration/evidence/round12/capacity/UI_REVIEW.md) 和 [源代码分支探针](https://github.com/seiya058904/Dice-Abyss/blob/8f7d5d0fcade3e8467e52f27e0303e4137ab748a/docs/iteration/evidence/round12/capacity/ui-handler-probe.json)。
 
 ## 一手说明
 
