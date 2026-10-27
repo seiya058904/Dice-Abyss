@@ -16,6 +16,7 @@ concurrency:
 jobs:
   verify:
     runs-on: ubuntu-24.04
+    timeout-minutes: 25
     permissions:
       contents: read
     steps:
@@ -59,6 +60,7 @@ jobs:
 
   deploy:
     runs-on: ubuntu-24.04
+    timeout-minutes: 25
     needs: [verify, browser-gate]
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     permissions:
