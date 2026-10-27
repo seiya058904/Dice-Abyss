@@ -3,6 +3,11 @@ name: Independent browser release QA
 on:
   pull_request:
     branches: [main]
+    paths-ignore:
+      - 'README.md'
+      - 'AGENTS.md'
+      - 'CLAUDE.md'
+      - '**/readme-*'
   workflow_dispatch:
   # Called by pages.yml so a main-push deploy can require the exact same
   # commit's two-mode browser gate instead of reusing another SHA's green run.
