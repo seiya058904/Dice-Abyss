@@ -18,7 +18,7 @@
   &nbsp;·&nbsp;
   <a href="#how-to-play">⌨️ Controls</a>
   &nbsp;·&nbsp;
-  <a href="#for-developers">⚙️ Development</a>
+  <a href="#run-locally">⚙️ Run Locally</a>
 </p>
 
 <p align="center">
@@ -38,6 +38,9 @@
 
 [PR #3](https://github.com/seiya058904/Dice-Abyss/pull/3) was merged, and its [V5.27 verification and Pages deployment](https://github.com/seiya058904/Dice-Abyss/actions/runs/39560017038) passed. See the [final delivery report](FINAL-V527.md) and [verification record](verification-final-v527.json) for measured improvements, acceptance scope, and limitations.
 
+<details>
+<summary><strong>Release evidence and save-recovery notes</strong></summary>
+
 Earlier no-merge/no-deployment boundaries describe the pre-release handoff. Historical zero-tolerance RGBA **FAIL** results remain diagnostic evidence, never relabeled as PASS: [pixel records](PIXEL-ROUND28.md) · [rollback evidence](ENGINEERING-REPORT-ROUND28.md) · [preserved release history](#release-history).
 
 **2026-10-21 audit follow-up:** Browser policies can deny access to the
@@ -45,6 +48,8 @@ Earlier no-merge/no-deployment boundaries describe the pre-release handoff. Hist
 existing save warnings and recovery screen instead of stopping on a blank page.
 An unsuccessful save cannot start or advance a run; restored access allows an
 explicit recovery of the retained progress. See the [audit coverage and checks](docs/audits/2026-10-21.md).
+
+</details>
 
 ---
 
