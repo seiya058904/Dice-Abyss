@@ -178,10 +178,9 @@ The game has **no account system, analytics, or remote runtime dependency**. All
 <a id="run-locally"></a>
 ## 🛠️ Run Locally
 
-Requires **Node.js 20 or newer**. There are no npm runtime packages to install and no build step. Extract the ZIP, then open a terminal in its parent folder:
+Requires **Node.js 20 or newer**. There are no npm runtime packages to install and no build step. Clone or extract the repository, then open a terminal in the folder containing `package.json` and `index.html`:
 
 ```bash
-cd Dice-Abyss
 npm start
 ```
 
