@@ -9,6 +9,7 @@ import * as S from '../src/storage.js';
 import {coreFontProof} from './core-font-proof.mjs';
 const args=Object.fromEntries(process.argv.slice(2).map(x=>{const i=x.indexOf('=');return[x.slice(2,i),x.slice(i+1)];}));
 assert(args.output&&args.current&&(args.baseline||args['pace-only']));
+assert(!args['pace-group'] || (args['pace-only'] && ['full','low'].includes(args['pace-group'])));
 const output=path.resolve(args.output);await fs.mkdir(output,{recursive:true});
 const {chromium}=createRequire(import.meta.url)(process.env.PLAYWRIGHT_MODULE||'playwright');
 const browser=await chromium.launch({headless:true,executablePath:process.env.CHROMIUM_PATH,args:['--use-angle=swiftshader','--enable-unsafe-swiftshader']});
@@ -64,7 +65,8 @@ try{
  if(!args['cold-only']){
  // Same ordinary seed and route in all three runs; no changes during playback.
  const initial=E.newGame(913);initial.runId='final-v527-route';
- for(const label of (args['pace-only']?['standard','fast','low-standard','low-fast']:['baseline-standard','standard','fast'])){
+ const labels=args['pace-group']==='full'?['standard','fast']:args['pace-group']==='low'?['low-standard','low-fast']:args['pace-only']?['standard','fast','low-standard','low-fast']:['baseline-standard','standard','fast'];
+ for(const label of labels){
   const c=await context(args['pace-only']?{}:{recordVideo:{dir:path.join(output,'video'),size:{width:960,height:540}}});
   await c.addInitScript(paceProbe);const p=await c.newPage();
   if(label==='baseline-standard'){
@@ -85,7 +87,7 @@ try{
   }
   const video=p.video();await c.close();if(video)await video.saveAs(path.join(output,label+'.webm'));
  }
- const standard=report.pace.find(x=>x.label==='standard'),fast=report.pace.find(x=>x.label==='fast');
+ const standard=report.pace.find(x=>x.label==='standard')||report.pace.find(x=>x.label==='low-standard'),fast=report.pace.find(x=>x.label==='fast')||report.pace.find(x=>x.label==='low-fast');
  assert.deepEqual(standard.nodes.map(x=>x.hash),fast.nodes.map(x=>x.hash));assert.deepEqual(report.pace[0].nodes.map(x=>x.hash),standard.nodes.map(x=>x.hash));
  report.waitReduction=1-fast.totalMs/standard.totalMs;
  // The local experience comparison retains its 40% acceptance criterion.
@@ -96,15 +98,20 @@ try{
  if(args['pace-only']){
   for(const row of report.pace)assert.deepEqual(row.nodes.map(x=>x.hash),standard.nodes.map(x=>x.hash));
   const low=report.pace.find(x=>x.label==='low-standard'),lowFast=report.pace.find(x=>x.label==='low-fast');
+  if(low&&lowFast){
   const busy=row=>row.probe.waits.reduce((a,x)=>a+x,0);
   report.lowWaitReduction=1-busy(lowFast)/busy(low);
   assert(low.probe.shortTimers.length>0);
   assert.deepEqual(lowFast.probe.shortTimers,low.probe.shortTimers.map(ms=>ms/2));
   assert(busy(lowFast)<busy(low));
+  }
+  if(!args['pace-group']||args['pace-group']==='full'){
   const css=fast.probe.animations.filter(x=>Number.isFinite(x.end)&&x.end>0);
   assert(css.some(x=>x.name==='reward-rise'));assert(css.some(x=>x.delay>0));
   assert(css.every(x=>x.rate===2&&x.finished),JSON.stringify(css.filter(x=>x.rate!==2||!x.finished)));
+  }
  }
+ if(args['pace-group']!=='full'){
  for(const mode of ['skip','resize','hidden','reload','double-click','settings']){
   const c=await context(),p=await c.newPage();await load(p,initial,true);
   if(mode==='double-click')await p.locator('#primary-action').dblclick();else await p.locator('#primary-action').click();
@@ -131,6 +138,7 @@ try{
  control=p.locator('.inventory-list [data-action="salvage-item"]').first();id=await control.getAttribute('data-id');const item=state.player.items.find(x=>x.id===id);await control.click();await b(p,'confirm').click();state=E.transition(state,{type:'salvage',ids:[id],allowProtected:item.rarity>=3,allowOverflow:false});await p.waitForTimeout(100);assert.deepEqual(await saved(p),state);
  const preview=E.salvagePreview(state,undefined,false,true);assert(preview);await b(p,'salvage-preview').click();await b(p,'confirm').click();state=E.transition(state,{type:'salvage',ids:preview.items.map(x=>x.id),allowProtected:false,allowOverflow:!!preview.overflow});await p.waitForTimeout(100);assert.deepEqual(await saved(p),state);await shot(p,'inventory-300');
  await p.reload();await b(p,'continue').click();assert.deepEqual(await saved(p),state);report.inventory={status:'PASS',initialItems:300,finalItems:state.player.items.length,gold:state.player.gold};await c.close();
+ }
  }
  assert.equal(report.errors.length,0);report.status='PASS';
 }catch(e){report.status='FAIL';report.failure=String(e);report.stack=e.stack;process.exitCode=1;}

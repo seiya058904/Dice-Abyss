@@ -4,17 +4,15 @@ on:
   pull_request:
     branches: [main]
     paths-ignore:
-      - 'README.md'
-      - 'AGENTS.md'
-      - 'CLAUDE.md'
-      - '**/readme-*'
+      - '**/*.md'
+      - '**/*.txt'
+      - 'docs/**'
   push:
     branches: [main]
     paths-ignore:
-      - 'README.md'
-      - 'AGENTS.md'
-      - 'CLAUDE.md'
-      - '**/readme-*'
+      - '**/*.md'
+      - '**/*.txt'
+      - 'docs/**'
 
 permissions:
   contents: read
@@ -56,11 +54,14 @@ jobs:
         with:
           path: _site
 
-  # The 1,000-run simulation is the longest single check; it runs beside the
-  # unit tests and browser shards instead of after them.
+  # Disjoint seed ranges preserve the 1,000-run gate while running in parallel.
   simulate:
     runs-on: ubuntu-24.04
     timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        offset: [0, 250, 500, 750]
     permissions:
       contents: read
     steps:
@@ -70,8 +71,8 @@ jobs:
         uses: actions/setup-node@v7
         with:
           node-version: 22
-      - name: Simulate 1,000 seeded runs
-        run: npm run simulate -- 1000
+      - name: Simulate 250 seeded runs
+        run: npm run simulate -- 250 ${{ matrix.offset }}
 
   # Exact-SHA release gate: the reusable workflow checks out this run's commit,
   # proves the runner HEAD matches it, and runs both native and API-absent Web

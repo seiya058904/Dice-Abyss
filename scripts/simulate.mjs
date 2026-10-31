@@ -96,8 +96,8 @@ export function runAdventure(seed, { shop = true, talents = true, validate = fal
   return finish();
 }
 
-export function simulate(count = 500) {
-  const results = Array.from({ length: count }, (_, i) => runAdventure((i + 1) * 7919, { validate: i < 20 }));
+export function simulate(count = 500, offset = 0) {
+  const results = Array.from({ length: count }, (_, i) => runAdventure((offset + i + 1) * 7919, { validate: offset + i < 20 }));
   const summarize = xs => {
     if(!xs.length)return null;
     const sorted=xs.toSorted((a,b)=>a-b);
@@ -115,7 +115,7 @@ export function simulate(count = 500) {
     totalRolls: summarize(results.map(r => r.s.counters.rolls)),
     rarities: results.reduce((acc, r) => acc.map((v, i) => v + r.rarities[i]), Array(RARITIES.length).fill(0)),
     finalLevel: summarize(results.map(r => r.s.player.level)),
-    noShopping: Array.from({ length: 50 }, (_, i) => runAdventure((i + 11) * 104729, { shop: false })).map(r => ({ seed: r.seed, complete: r.completed, deaths: r.s.counters.deaths })),
+    noShopping: offset === 0 ? Array.from({ length: 50 }, (_, i) => runAdventure((i + 11) * 104729, { shop: false })).map(r => ({ seed: r.seed, complete: r.completed, deaths: r.s.counters.deaths })) : [],
   };
   return summary;
 }
@@ -137,7 +137,7 @@ export function auditEconomy(count=30,floors=100){
  }));
 }
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
-  const summary = process.argv[2]==='--economy'?auditEconomy(Number(process.argv[3]||30),Number(process.argv[4]||100)):simulate(Number(process.argv[2] || 500));
+  const summary = process.argv[2]==='--economy'?auditEconomy(Number(process.argv[3]||30),Number(process.argv[4]||100)):simulate(Number(process.argv[2] || 500), Number(process.argv[3] || 0));
   console.log(JSON.stringify(summary, null, 2));
   if (process.argv[2]==='--economy'?Object.values(summary).some(r=>r.completed!==r.seeds):summary.completed !== summary.seeds) process.exitCode = 1;
 }

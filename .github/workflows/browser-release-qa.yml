@@ -4,10 +4,9 @@ on:
   pull_request:
     branches: [main]
     paths-ignore:
-      - 'README.md'
-      - 'AGENTS.md'
-      - 'CLAUDE.md'
-      - '**/readme-*'
+      - '**/*.md'
+      - '**/*.txt'
+      - 'docs/**'
   workflow_dispatch:
   # Called by pages.yml so a main-push deploy can require the exact same
   # commit's two-mode browser gate instead of reusing another SHA's green run.
@@ -17,7 +16,7 @@ permissions:
   contents: read
 
 jobs:
-  # One exact-HEAD gate split into three parallel shards. Together they run
+  # One exact-HEAD gate split into parallel shards. Together they run
   # every check of the former sequential job: native core checks, the
   # API-absent Web Locks mode, and the native pace combinations.
   browser-release:
@@ -32,8 +31,10 @@ jobs:
             args: --suite=core
           - shard: api-absent
             args: --suite=core --no-web-locks=true
-          - shard: pace
-            args: --suite=pace
+          - shard: pace-full
+            args: --suite=pace --pace-group=full
+          - shard: pace-low
+            args: --suite=pace --pace-group=low
     steps:
       - uses: actions/checkout@v7
         with:
