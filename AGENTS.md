@@ -24,7 +24,7 @@ Applies to this repository. Follow the user's current instructions and applicabl
 | Dice, effects and presentation lifecycle | `src/dice-renderer.js`, `src/dice-motion.js`, `src/effects.js`, `src/visual-timeline.js` |
 | Serving and deployment | `scripts/serve.mjs`, `scripts/launch.mjs`, `.github/workflows/pages.yml` |
 
-For structural investigation, use the installed `codebase-memory` skill when available and verify coverage for relied-on paths. Read the actual source for stale or incomplete coverage, or if the graph service is unavailable. Historical reports and graph results do not replace current source evidence.
+For structural investigation, inspect the current source and relevant call paths. Historical reports do not replace current source evidence.
 
 ## Gameplay and save invariants
 
@@ -64,3 +64,8 @@ npm run simulate -- 1000
 - Update README with verified release behavior, evidence scope and remaining limits. Keep this guide aligned with the actual architecture and commands.
 - `docs/iteration/STATE.json`, `FILE_MANIFEST.json`, reports and archived logs describe their original cloud handoffs. Local fixes are recorded by Git; regenerate manifests when producing a new archive. Do not present old PASS records as new executions.
 - Some historical evidence logs are deliberately tracked despite the general `*.log` ignore rule, and some retain original whitespace. Preserve their bytes; keep new generated QA output outside the repository instead of rewriting or deleting historical evidence for cosmetic cleanup.
+
+## Browser tool selection
+
+- Prefer Ego Browser for exploratory navigation, visual review and interactive checks when available. Use Playwright for repeatable regression, CI, isolation, request interception or other automation requiring its APIs; combine tools when useful. If Ego is unavailable, use a suitable existing browser tool.
+- Keep this repository's required browser commands, versions, profiles and safety boundaries; an exploratory check does not replace required automated tests. Do not alter real user data or production state for testing. Report the tools, coverage and any untested paths.
