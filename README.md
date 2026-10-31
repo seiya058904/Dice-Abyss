@@ -375,7 +375,11 @@ The independent `browser-release-qa.yml` workflow runs for pull requests to
 and hashes the exact HEAD shipping files, and checks real browser play,
 10k inventory locking, mirrored saves and reload. It does not deploy or change
 the existing Pages workflow. Performance is reported separately, without a
-random p95 release gate.
+random p95 release gate. CI runs the gate as three parallel shards of the same
+exact HEAD: native core checks (`--suite=core`), API-absent Web Locks core
+checks (`--suite=core --no-web-locks=true`) and native pace combinations
+(`--suite=pace`). The default `--suite=all` still runs everything in one
+process locally. The 1,000-run simulation also runs as its own parallel job.
 
 Reproduction uses external `PLAYWRIGHT_MODULE`, `CHROMIUM_PATH` and fresh
 external `--output` directories: `qa-fonts-round27.mjs` compares two loopback

@@ -17,9 +17,23 @@ permissions:
   contents: read
 
 jobs:
+  # One exact-HEAD gate split into three parallel shards. Together they run
+  # every check of the former sequential job: native core checks, the
+  # API-absent Web Locks mode, and the native pace combinations.
   browser-release:
+    name: browser-release (${{ matrix.shard }})
     runs-on: ubuntu-24.04
-    timeout-minutes: 20
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - shard: native
+            args: --suite=core
+          - shard: api-absent
+            args: --suite=core --no-web-locks=true
+          - shard: pace
+            args: --suite=pace
     steps:
       - uses: actions/checkout@v7
         with:
@@ -41,23 +55,22 @@ jobs:
           "$RUNNER_TEMP/browser-tools/node_modules/.bin/playwright" install --with-deps chromium
           echo "PLAYWRIGHT_MODULE=$RUNNER_TEMP/browser-tools/node_modules/playwright" >> "$GITHUB_ENV"
       - name: HTTP shipping manifest
+        if: matrix.shard == 'native'
         run: node scripts/smoke-http.mjs --output "$RUNNER_TEMP/http-smoke.json"
-      - name: Exact HEAD staged-site browser gate
+      - name: Exact HEAD staged-site browser gate (${{ matrix.shard }})
         shell: bash
-        run: node scripts/qa-browser-release.mjs --output="$RUNNER_TEMP/browser-release" 2>&1 | tee "$RUNNER_TEMP/browser-release.log"
-      - name: API-absent Web Locks staged-site mode
-        if: ${{ !cancelled() }}
-        shell: bash
-        run: node scripts/qa-browser-release.mjs --no-web-locks=true --output="$RUNNER_TEMP/browser-release-no-locks" 2>&1 | tee "$RUNNER_TEMP/browser-release-no-locks.log"
+        run: |
+          set -o pipefail
+          node scripts/qa-browser-release.mjs ${{ matrix.args }} --output="$RUNNER_TEMP/browser-release" 2>&1 | tee "$RUNNER_TEMP/browser-release.log"
       - name: Preserve success and failure evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: browser-release-${{ github.event.pull_request.head.sha || github.sha }}
+          name: browser-release-${{ github.event.pull_request.head.sha || github.sha }}-${{ matrix.shard }}
           path: |
             ${{ runner.temp }}/browser-release
-            ${{ runner.temp }}/browser-release-no-locks
-            ${{ runner.temp }}/browser-release*.log
+            ${{ runner.temp }}/browser-release.log
             ${{ runner.temp }}/head-identity.json
             ${{ runner.temp }}/http-smoke.json
+          if-no-files-found: ignore
           retention-days: 14

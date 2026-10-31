@@ -23,6 +23,11 @@ const report={status:'RUNNING',head:git('rev-parse','HEAD').toString().trim(),re
 report.scriptSha256=sha(await fs.readFile(new URL(import.meta.url)));
 const persist=()=>fs.writeFile(path.join(output,'report.json'),JSON.stringify(report,null,2));
 report.webLocksMode=args['no-web-locks']==='true'?'API_ABSENT':'NATIVE';
+// CI runs the suites as parallel shards of one exact-HEAD gate: 'core' is every
+// check except pace, 'pace' is only the pace combinations; 'all' runs both.
+const suite=args.suite||'all';assert(['all','core','pace'].includes(suite),`Unknown --suite=${suite}`);
+assert(!(suite==='pace'&&args['no-web-locks']==='true'),'Pace combinations run in native Web Locks mode only');
+report.suite=suite;
 report.pixelStatus='NOT_TESTED';report.performanceStatus='NOT_TESTED';
 let server,browser,page;
 async function check(name,fn){report.activeCheck=name;await persist();await fn();report.checks.push({name,status:'PASS'});}
@@ -48,6 +53,7 @@ try{
   res.writeHead(200,{'Content-Type':types[path.extname(file)]||'text/plain','Cache-Control':'no-cache'});res.end(await fs.readFile(path.join(site,file)));
  });await new Promise(resolve=>server.listen(Number(args.port||0),'127.0.0.1',resolve));
  const url=`http://127.0.0.1:${server.address().port}/`;report.url=url;
+ if(suite!=='pace'){
  await check('malformed-URL-recovery',async()=>{
   for(const route of ['/%ZZ','/%','/%E0%A4%A']){
    const invalid=await fetch(url+route.slice(1));
@@ -178,7 +184,8 @@ try{
   assert(result.cases.every(test=>test.status==='PASS'),'every API fallback case must pass');
   report.apiFallback={mode:result.mode,cases:result.cases.length,saveSha256:result.cases[0]?.steps?.saveSha256,status:result.status};
  });
- if(args['no-web-locks']!=='true')await check('pace-four-combinations',async()=>{
+ }
+ if(args['no-web-locks']!=='true'&&suite!=='core')await check('pace-four-combinations',async()=>{
   const {spawn}=await import('node:child_process');
   const child=spawn(process.execPath,[path.join(root,'scripts/qa-final-v527.mjs'),'--pace-only=true','--ci-functional=true',`--current=${url}`,`--output=${path.join(output,'pace')}`],{env:process.env,stdio:['ignore','pipe','pipe']});
   let log='';child.stdout.on('data',x=>log+=x);child.stderr.on('data',x=>log+=x);

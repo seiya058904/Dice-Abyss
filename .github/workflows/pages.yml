@@ -40,8 +40,6 @@ jobs:
         run: npm run check
       - name: Run automated tests
         run: npm test
-      - name: Simulate 1,000 seeded runs
-        run: npm run simulate -- 1000
       - name: Assemble the static site after a main push
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
@@ -58,9 +56,26 @@ jobs:
         with:
           path: _site
 
+  # The 1,000-run simulation is the longest single check; it runs beside the
+  # unit tests and browser shards instead of after them.
+  simulate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v7
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - name: Simulate 1,000 seeded runs
+        run: npm run simulate -- 1000
+
   # Exact-SHA release gate: the reusable workflow checks out this run's commit,
   # proves the runner HEAD matches it, and runs both native and API-absent Web
-  # Locks browser modes. deploy cannot start unless that same job succeeded,
+  # Locks browser modes as parallel shards. deploy cannot start unless that same job succeeded,
   # so a direct push can no longer publish without its own browser evidence.
   browser-gate:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
@@ -71,7 +86,7 @@ jobs:
   deploy:
     runs-on: ubuntu-24.04
     timeout-minutes: 25
-    needs: [verify, browser-gate]
+    needs: [verify, simulate, browser-gate]
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     permissions:
       contents: read
