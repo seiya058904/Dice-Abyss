@@ -4,6 +4,7 @@ import { saveImportedGame, loadSave, saveGame, encodeSave, decodeSave, measureSa
 import { titleView, gameView, center, settingsView, itemEffects, itemSummary, itemProgress, migrationSummary, comparison, equipmentComparisonView, fusionView, fusionItemTooltip, talentInspectorView, talentInvestmentCount, memorywellPreviewView, experiencePreviewView, eventChoicePreviewView, eventRiskView, eventItemsView, eventChoiceCost, num, goldNum, esc, icon } from './views.js';
 import { eventChoices } from './encounters.js';
 import { mountEffects } from './effects.js';
+import { spectacleImpact, spectacleFate, spectacleReveal, spectacleForge, spectacleBounce, stopSpectacle } from './spectacle.js';
 import { THROW_DURATION } from './dice-motion.js';
 import { paceSceneAnimations } from './visual-timeline.js';
 import { levelXpNeeded } from './equipment.js';
@@ -74,6 +75,7 @@ function settlePresentation() {
   if(!ui.busy)return;
   const generation=animationGeneration;
   document.querySelectorAll('.fusion-spark').forEach(node=>node.remove());
+  stopSpectacle();
   animationGeneration++;visualState=null;ui.busy=false;ui.rolling=false;ui.forging=false;render();
   publishPresentationAnnouncement(generation);
   actionFocus.restore({runId:state?.runId,generation,dialogOpen:dialog.open});
@@ -195,7 +197,7 @@ function render(options = {}) {
   app.innerHTML = ui.saveRecovery ? saveRecoveryView(state,ui.saveRecovery,ui.saveError)
     : (ui.screen === 'title' ? titleView(state, ui.saveError) : gameView(shown, ui))
       + (ui.screen === 'game' && ui.view === 'game' && shown?.phase === 'fusion' ? '' : '<div class="small-window-note">为完整桌面体验，请使用横向窗口，并将宽度扩展至至少 1100 像素。</div>');
-  visualPresentation=mountEffects(shown, ui, settings, sound);
+  visualPresentation=mountEffects(shown, ui, settings, kind=>{sound(kind);if(kind==='bounce')spectacleBounce(1,shown?.revision||1);});
   fusion.afterRender();
   restoreWorkbenchPosition(app, position, dialog.open);
   restoreTalentPosition(talentPosition);
@@ -238,6 +240,16 @@ function sound(kind) {
       oscillator.onended = () => { oscillator.disconnect(); gain.disconnect(); };
       oscillator.start(start); oscillator.stop(start+length+.01);
     });
+    // A filtered noise transient gives physical weight to dice and strikes.
+    const hit={bounce:[.018,.05,2400],impact:[.05,.16,900],resonance:[.05,.2,1400],critical:[.075,.26,700],finish:[.09,.42,520],chest:[.04,.18,1800]}[kind];
+    if(hit){
+      const [peak,length,cutoff]=hit,size=Math.ceil(audioContext.sampleRate*length),buffer=audioContext.createBuffer(1,size,audioContext.sampleRate),data=buffer.getChannelData(0);
+      let noise=0x9e3779b9;for(let i=0;i<size;i++){noise=(Math.imul(noise,1664525)+1013904223)>>>0;data[i]=(noise/2147483648-1)*Math.pow(1-i/size,3);}
+      const source=audioContext.createBufferSource(),filter=audioContext.createBiquadFilter(),gain=audioContext.createGain(),now=audioContext.currentTime;
+      source.buffer=buffer;filter.type='lowpass';filter.frequency.setValueAtTime(cutoff*2.2,now);filter.frequency.exponentialRampToValueAtTime(cutoff*.4,now+length);
+      gain.gain.setValueAtTime(peak,now);source.connect(filter);filter.connect(gain);gain.connect(audioContext.destination);
+      source.onended=()=>{source.disconnect();filter.disconnect();gain.disconnect();};source.start(now);
+    }
   } catch { /* Audio is optional; game state is independent. */ }
 }
 function openDialog(html, {settingsPanel=false} = {}) {
@@ -269,7 +281,7 @@ function cancelSaveInteractions() {
   settingsFocus.cancel();actionFocus.cancel();fusion.closeTooltip();fusion.closeMenu();
   animationGeneration++;visualState=null;ui.busy=false;ui.rolling=false;ui.forging=false;
   pending=null;reviewList=null;recoveryDialogAction=null;presentationAnnouncement=null;dialog.close();
-  document.querySelectorAll('.fusion-spark').forEach(node=>node.remove());
+  document.querySelectorAll('.fusion-spark').forEach(node=>node.remove());stopSpectacle();
 }
 function protectMemory(snapshot,message='') {
   const entering=!ui.saveRecovery;
@@ -413,6 +425,7 @@ async function act(action) {
     await waitAnimation(fast?90:THROW_DURATION,fast);
     if(generation!==animationGeneration)return;
     ui.rolling=false;visualState={...after,phase:'event'};render();sound('reward');publishPresentationAnnouncement(generation);
+    if(!fast)spectacleFate({seed:after.revision,rate:settings.fastPace?2:1});
     await waitAnimation(fast?100:650,fast);
     if(generation!==animationGeneration)return;
     visualState=null;ui.busy=false;render();actionFocus.restore({runId:state?.runId,generation,dialogOpen:dialog.open});return;
@@ -452,9 +465,13 @@ async function act(action) {
       const room=document.querySelector('#current-room');
       if(room)room.dataset.impact=roll.killed&&before.enemy.type==='boss'?'finish':roll.phaseChanged?'phase':roll.critical?'critical':roll.best>=3?'resonance':'normal';
       sound(roll.killed&&before.enemy.type==='boss'?'finish':roll.critical?'critical':roll.best>=2?'resonance':'impact');
+      if(!fast){
+        const percent=enemy=>enemy?.maxHp?Math.max(0,Math.min(100,enemy.hp/enemy.maxHp*100)):0;
+        spectacleImpact({roll:{...roll,shieldBroken:roll.absorbed>0&&after.enemy?.shield===0},enemyType:before.enemy.type,beforePercent:percent(before.enemy),afterPercent:percent(after.enemy),seed:after.revision,rate:settings.fastPace?2:1,format:num});
+      }
       if(roll.phaseChanged)document.querySelector('#current-room')?.classList.add('phase-shift');
       if(roll.follow)delay((fast?35:450)/(settings.fastPace?2:1)).then(()=>{if(generation===animationGeneration&&ui.busy)sound('follow');});
-    } else sound('reward');
+    } else { sound('reward'); if(!fast)spectacleFate({doubles:after.fate?.[0]===after.fate?.[1],seed:after.revision,rate:settings.fastPace?2:1}); }
     publishPresentationAnnouncement(generation);
     await waitAnimation(fast ? 100 : after.phase === 'chest' || after.phase === 'dead' ? 1500 : 1150,fast);
     if (generation !== animationGeneration) return;
@@ -474,6 +491,11 @@ async function act(action) {
     const cls = action.type === 'open' ? (after.loot.item.rarity>=4?'deep-reveal':after.loot.item.rarity >= 3 ? 'legendary-reveal' : 'reward-reveal') : action.type === 'fuse' ? 'fusion-reveal' : 'forge-reveal';
     document.querySelector('#current-room')?.classList.add(cls);
     sound(action.type === 'open' ? after.loot.item.rarity>=4?RARITIES[after.loot.item.rarity].key:after.loot.item.rarity >= 3 ? 'legendary' : 'reward' : 'forge');
+    if (!fast) {
+      const rate=settings.fastPace?2:1;
+      if (action.type === 'open') spectacleReveal({rarity:after.loot.item.rarity,seed:after.revision,rate});
+      else spectacleForge({kind:action.type,seed:after.revision,rate});
+    }
     publishPresentationAnnouncement(generation);
     await waitAnimation(fast ? 120 : action.type === 'open' ? [650,950,1400,1850,1950,2050,2150,2250][after.loot.item.rarity] : action.type === 'fuse' ? 1550 : 750,fast);
     if (generation !== animationGeneration) return;

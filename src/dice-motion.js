@@ -11,8 +11,8 @@ export function throwFrames(count, seed, spacing = 1.5, bound = 6) {
   const bodies = Array.from({ length: count }, (_, i) => ({
     x: (i - (count - 1) / 2) * spacing, y: 0, z: 0,
     vx: (i % 2 ? -1 : 1) * (1.1 + random() * .9),
-    vy: -5.5 - random() * 1.5, vz: (random() - .5) * 1.8,
-    turns: [2 + Math.floor(random() * 2), (i % 2 ? -1 : 1) * (2 + Math.floor(random() * 2)), (random() - .5) * 2],
+    vy: -6.2 - random() * 1.6, vz: (random() - .5) * 1.8,
+    turns: [2 + Math.floor(random() * 3), (i % 2 ? -1 : 1) * (2 + Math.floor(random() * 3)), (random() - .5) * 2.4],
     home: (i - (count - 1) / 2) * spacing, hits: 0,
   }));
   const frames = [], dt = 1 / 120, duration = THROW_DURATION / 1000;
@@ -24,7 +24,7 @@ export function throwFrames(count, seed, spacing = 1.5, bound = 6) {
         b.vy += 19 * dt; b.x += b.vx * dt; b.y += b.vy * dt; b.z += b.vz * dt;
         if (b.y > 0) {
           b.y = 0;
-          if (b.vy > .8 && t < 1.05) { b.vy *= -.34; b.vx *= .58; b.vz *= .45; b.hits++; impacts.push({ index: i, force: Math.min(1, -b.vy / 3) }); }
+          if (b.vy > .8 && t < 1.05) { b.vy *= -.38; b.vx *= .58; b.vz *= .45; b.hits++; impacts.push({ index: i, force: Math.min(1, -b.vy / 3) }); }
           else { b.vy = 0; b.vx *= .86; b.vz *= .86; }
         }
         if (Math.abs(b.x) > bound) { b.x = Math.sign(b.x) * bound; b.vx *= -.65; }

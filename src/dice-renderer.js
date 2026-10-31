@@ -18,9 +18,12 @@ float bevel=pow(max(0.,dot(n,normalize(vec3(-.4,-.5,1.)))),28.);float sheen=pow(
 vec3 metal=vec3(.02,.027,.036)+vec3(.06,.075,.09)*diffuse+vec3(.34,.39,.44)*bevel+uColor*sheen*.22;metal+=uColor*frame*(.35+diffuse*.35)+vec3(.16,.19,.21)*inner;
 // Broad steel reflection stays in the material, with no new per-frame texture.
 metal+=vec3(.046,.056,.067)*(1.-vUV.y)*(.4+.6*diffuse);
+// Neon rim and a coloured kicker light make each die read as lit by its own energy.
+float rim=pow(1.-clamp(n.z,0.,1.),2.4);float kick=max(0.,dot(n,normalize(vec3(.75,.55,.45))));
+metal+=uColor*(rim*.62+kick*.16)+vec3(.9,.95,1.)*pow(max(0.,dot(n,normalize(vec3(-.35,-.6,1.)))),90.)*.55;
 int face=int(floor(vFace+.5));float value=1.;for(int i=0;i<6;i++){if(i==face)value=uValues[i];}
 vec2 uv=vec2((value-1.+vUV.x)/6.,(face==0?0.:1.)*.5+vUV.y*.5);float ink=texture2D(uAtlas,uv).a;
-vec3 color=mix(metal,uColor*(.84+diffuse*.22),ink);gl_FragColor=vec4(color,1.);}`;
+vec3 color=mix(metal,uColor*(.96+diffuse*.3)+vec3(.06),ink);gl_FragColor=vec4(color,1.);}`;
 
 const meshFaces=[([x,y])=>[x,y,.5],([x,y])=>[.5,y,-x],([x,y])=>[-x,y,-.5],([x,y])=>[-.5,y,x],([x,y])=>[x,-.5,y],([x,y])=>[x,.5,-y]];
 function roundedCubePoint(face,u,v,radius){
