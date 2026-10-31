@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {spectacleImpact,spectacleReveal,spectacleForge,spectacleFate,spectacleBounce,stopSpectacle,visualRandom} from '../src/spectacle.js';
+import {spectacleImpact,spectacleReveal,spectacleForge,spectacleFate,spectacleBounce,stopSpectacle,settleSpectacle,softwareRenderer,visualRandom} from '../src/spectacle.js';
 
 function element(name,rect={left:0,top:0,width:100,height:40}){
  const classes=new Set(),children=[];
@@ -70,4 +70,24 @@ test('visual randomness is reproducible per seed',()=>{
  const a=visualRandom(7),b=visualRandom(7),c=visualRandom(8);
  const take=r=>Array.from({length:5},r);
  assert.deepEqual(take(a),take(b));assert.notDeepEqual(take(visualRandom(7)),take(c));
+});
+
+test('a released presentation cancels pending strikes and fades its particles out',()=>{
+ const env=mount();
+ try{
+  spectacleImpact({roll,enemyType:'boss',beforePercent:80,afterPercent:0,seed:5});
+  // Fire only the first scheduled strike so particles are running.
+  const [key,first]=[...scene.timers].sort((a,b)=>a[1].ms-b[1].ms)[0];scene.timers.delete(key);first.cb();
+  assert(scene.frames.size>0&&scene.timers.size>0);
+  settleSpectacle();
+  assert.equal(scene.timers.size,0,'no new strike after the controls are released');
+  let now=0;Object.defineProperty(globalThis,'performance',{value:{now:()=>now},configurable:true,writable:true});
+  for(const t of [16,120,300]){now=t;const entry=[...scene.frames][0];if(!entry)break;scene.frames.delete(entry[0]);entry[1](t);}
+  assert.equal(scene.frames.size,0,'the canvas loop ends within the settle window');
+ }finally{stopSpectacle();env.restore();}
+});
+
+test('software renderers are recognised for the lighter particle budget',()=>{
+ for(const name of ['ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero)), SwiftShader driver)','llvmpipe (LLVM 15.0.7, 256 bits)','Microsoft Basic Render Driver'])assert(softwareRenderer(name),name);
+ for(const name of ['ANGLE (NVIDIA, NVIDIA GeForce RTX 4070 Direct3D11 vs_5_0 ps_5_0)','Apple M2',undefined])assert(!softwareRenderer(name),String(name));
 });

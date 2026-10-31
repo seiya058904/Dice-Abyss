@@ -4,7 +4,7 @@ import { saveImportedGame, loadSave, saveGame, encodeSave, decodeSave, measureSa
 import { titleView, gameView, center, settingsView, itemEffects, itemSummary, itemProgress, migrationSummary, comparison, equipmentComparisonView, fusionView, fusionItemTooltip, talentInspectorView, talentInvestmentCount, memorywellPreviewView, experiencePreviewView, eventChoicePreviewView, eventRiskView, eventItemsView, eventChoiceCost, num, goldNum, esc, icon } from './views.js';
 import { eventChoices } from './encounters.js';
 import { mountEffects } from './effects.js';
-import { spectacleImpact, spectacleFate, spectacleReveal, spectacleForge, spectacleBounce, stopSpectacle } from './spectacle.js';
+import { spectacleImpact, spectacleFate, spectacleReveal, spectacleForge, spectacleBounce, stopSpectacle, settleSpectacle } from './spectacle.js';
 import { THROW_DURATION } from './dice-motion.js';
 import { paceSceneAnimations } from './visual-timeline.js';
 import { levelXpNeeded } from './equipment.js';
@@ -198,6 +198,7 @@ function render(options = {}) {
     : (ui.screen === 'title' ? titleView(state, ui.saveError) : gameView(shown, ui))
       + (ui.screen === 'game' && ui.view === 'game' && shown?.phase === 'fusion' ? '' : '<div class="small-window-note">为完整桌面体验，请使用横向窗口，并将宽度扩展至至少 1100 像素。</div>');
   visualPresentation=mountEffects(shown, ui, settings, kind=>{sound(kind);if(kind==='bounce')spectacleBounce(1,shown?.revision||1);});
+  if(!ui.busy)settleSpectacle();
   fusion.afterRender();
   restoreWorkbenchPosition(app, position, dialog.open);
   restoreTalentPosition(talentPosition);

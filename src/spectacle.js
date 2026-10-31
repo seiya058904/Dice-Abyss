@@ -4,7 +4,10 @@
 // result: every caller has already saved and rendered the outcome it decorates.
 // The original effects.js paint program stays untouched beneath this layer.
 
-const TAU=Math.PI*2,MAX_PARTICLES=900,WALL_LIMIT=6000,PIXEL_BUDGET=900000;
+const TAU=Math.PI*2,WALL_LIMIT=6000,SETTLE_MS=260;
+// Software renderers (no GPU) composite every canvas pixel on the CPU; they
+// get a smaller canvas and fewer particles so the page stays responsive.
+const BUDGETS={gpu:{pixels:900000,particles:900,keep:1},software:{pixels:300000,particles:260,keep:.4}};
 const clamp=(v,lo=0,hi=1)=>Math.max(lo,Math.min(hi,v));
 const ease={out:t=>1-Math.pow(1-t,3),outBack:t=>1+2.2*Math.pow(t-1,3)+1.2*Math.pow(t-1,2)};
 
@@ -35,7 +38,7 @@ const RARITY_LABEL=['','RARE','EPIC','LEGENDARY','MYTHIC','ANCIENT','ORIGIN','ET
 export function visualRandom(seed){let s=(Math.imul(seed>>>0,2654435761)+0x9e3779b9)>>>0;return()=>{s=(Math.imul(s,1664525)+1013904223)>>>0;return s/4294967296;};}
 const rainbow=(rand)=>`hsl(${Math.floor(rand()*12)*30},100%,62%)`;
 
-let host=null,canvas=null,ctx=null,frame=0,lastTime=0,startedAt=0,ratio=1,vw=0,vh=0;
+let host=null,canvas=null,ctx=null,frame=0,lastTime=0,startedAt=0,settleAt=null,ratio=1,vw=0,vh=0,budget=BUDGETS.gpu,spawned=0;
 const particles=[],rings=[],rays=[],slashes=[],timers=new Set(),counters=new Set(),animations=new Set(),restores=new Set(),sprites=new Map();
 let visibilityBound=false;
 
@@ -44,8 +47,18 @@ function reducedMotion(){try{return !!globalThis.matchMedia?.('(prefers-reduced-
 function lowEffects(){return document.documentElement?.dataset?.effects==='low';}
 function allowed(){return supported()&&!reducedMotion()&&!lowEffects();}
 
+export function softwareRenderer(name){return /swiftshader|llvmpipe|softpipe|software|basic render/i.test(String(name||''));}
+function detectBudget(){
+ try{
+  const probe=document.createElement('canvas'),gl=probe.getContext?.('webgl');if(!gl)return BUDGETS.software;
+  const info=gl.getExtension('WEBGL_debug_renderer_info'),name=info?gl.getParameter(info.UNMASKED_RENDERER_WEBGL):gl.getParameter(gl.RENDERER);
+  gl.getExtension('WEBGL_lose_context')?.loseContext();
+  return softwareRenderer(name)?BUDGETS.software:BUDGETS.gpu;
+ }catch{return BUDGETS.software;}
+}
 function ensureHost(){
  if(host?.isConnected)return host;
+ budget=detectBudget();
  host=document.createElement('div');host.className='spectacle-layer';host.setAttribute('aria-hidden','true');
  canvas=document.createElement('canvas');canvas.className='spectacle-fx';host.append(canvas);
  ctx=canvas.getContext?.('2d')||null;document.body.append(host);
@@ -76,12 +89,13 @@ function centerOf(r){return{x:r.left+r.width/2,y:r.top+r.height/2};}
 // ---------------------------------------------------------------- particles
 function resize(){
  vw=globalThis.innerWidth||0;vh=globalThis.innerHeight||0;if(!canvas||!vw||!vh)return false;
- ratio=Math.min(globalThis.devicePixelRatio||1,1,Math.sqrt(PIXEL_BUDGET/(vw*vh)));
+ ratio=Math.min(globalThis.devicePixelRatio||1,1,Math.sqrt(budget.pixels/(vw*vh)));
  const w=Math.max(1,Math.floor(vw*ratio)),h=Math.max(1,Math.floor(vh*ratio));
  if(canvas.width!==w)canvas.width=w;if(canvas.height!==h)canvas.height=h;return true;
 }
 function busyCount(){return particles.length+rings.length+rays.length+slashes.length;}
 function start(){
+ settleAt=null;if(canvas)canvas.style.opacity='';
  if(frame||!ctx)return;if(!resize())return;
  canvas.classList.add('active');lastTime=0;startedAt=performance.now();frame=requestAnimationFrame(tick);
 }
@@ -89,6 +103,7 @@ function tick(now){
  frame=0;if(!ctx)return;
  if(!lastTime)lastTime=now;const dt=Math.min(.05,Math.max(0,(now-lastTime)/1000));lastTime=now;
  if(now-startedAt>WALL_LIMIT){clearParticles();return;}
+ if(settleAt!==null){const fade=1-(now-settleAt)/SETTLE_MS;if(fade<=0){clearParticles();return;}canvas.style.opacity=String(fade);}
  if((globalThis.innerWidth||0)!==vw||(globalThis.innerHeight||0)!==vh)resize();
  ctx.setTransform(1,0,0,1,0,0);ctx.clearRect(0,0,canvas.width,canvas.height);ctx.setTransform(ratio,0,0,ratio,0,0);
  ctx.globalCompositeOperation='lighter';
@@ -141,13 +156,15 @@ function drawSlash(s,t){
  for(const [w,col,al]of [[s.width*3.2,s.color,.22],[s.width,s.color,.85],[s.width*.35,'#ffffff',1]]){ctx.globalAlpha=al*(1-t*.4);ctx.strokeStyle=col;ctx.lineWidth=w;ctx.beginPath();ctx.moveTo(x0,y0);ctx.quadraticCurveTo(mx,my,x1,y1);ctx.stroke();}
  const g=s.width*7;ctx.globalAlpha=1-t*.5;ctx.drawImage(sprite(s.color),x1-g/2,y1-g/2,g,g);
 }
+// Deterministic thinning keeps the same composition with fewer bodies.
+function admit(){if(particles.length>=budget.particles)return false;spawned++;return budget.keep>=1||(spawned*budget.keep)%1<budget.keep;}
 function spark(x,y,color,o={}){
- if(particles.length>=MAX_PARTICLES)return;
+ if(!admit())return;
  const p={kind:'spark',x,y,px:x,py:y,vx:o.vx||0,vy:o.vy||0,gravity:o.gravity??380,drag:o.drag??.94,size:o.size||2,life:o.life||700,age:-(o.delay||0),rate:o.rate||1,color,sprite:sprite(color)};
  particles.push(p);
 }
 function confetti(x,y,color,rand,o={}){
- if(particles.length>=MAX_PARTICLES)return;
+ if(!admit())return;
  particles.push({kind:'confetti',x,y,px:x,py:y,vx:o.vx||0,vy:o.vy||0,gravity:o.gravity??520,drag:o.drag??.965,w:4+rand()*6,h:2.5+rand()*4,rot:rand()*TAU,vr:(rand()-.5)*14,flip:rand()*TAU,vflip:6+rand()*10,flutter:60+rand()*80,life:o.life||1800+rand()*900,age:-(o.delay||0),rate:o.rate||1,color});
 }
 function burst(x,y,palette,rand,count,o={}){
@@ -170,9 +187,9 @@ function confettiFountain(x,y,palette,rand,count,o={}){
   confetti(x+(rand()-.5)*20,y,color,rand,{vx:Math.cos(a)*v,vy:Math.sin(a)*v,delay:(o.delay||0)+rand()*(o.jitter||120),rate:o.rate});}
 }
 function clearParticles(){
- particles.length=0;rings.length=0;rays.length=0;slashes.length=0;
+ particles.length=0;rings.length=0;rays.length=0;slashes.length=0;settleAt=null;
  if(frame){cancelAnimationFrame(frame);frame=0;}
- if(ctx&&canvas){ctx.setTransform(1,0,0,1,0,0);ctx.clearRect(0,0,canvas.width,canvas.height);canvas.classList.remove('active');}
+ if(ctx&&canvas){ctx.setTransform(1,0,0,1,0,0);ctx.clearRect(0,0,canvas.width,canvas.height);canvas.classList.remove('active');canvas.style.opacity='';}
 }
 
 // ------------------------------------------------------------- DOM effects
@@ -252,6 +269,12 @@ export function stopSpectacle(){
  for(const restore of restores)restore();restores.clear();
  clearParticles();
  host?.querySelectorAll?.('.sp-pop,.sp-flash,.sp-vignette,.sp-tint,.sp-ghost,.sp-hitflash').forEach(node=>node.remove());
+}
+// The presentation released its controls: stop new strikes and fade the
+// particle canvas out quickly, so nothing heavy outlives the reveal.
+export function settleSpectacle(){
+ cancelPending();
+ if(frame&&busyCount()&&settleAt===null)settleAt=performance.now();
 }
 function cancelPending(){for(const id of timers)clearTimeout(id);timers.clear();}
 
