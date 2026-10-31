@@ -4,7 +4,7 @@
 // result: every caller has already saved and rendered the outcome it decorates.
 // The original effects.js paint program stays untouched beneath this layer.
 
-const TAU=Math.PI*2,MAX_PARTICLES=900,WALL_LIMIT=6000,PIXEL_BUDGET=1600000;
+const TAU=Math.PI*2,MAX_PARTICLES=900,WALL_LIMIT=6000,PIXEL_BUDGET=900000;
 const clamp=(v,lo=0,hi=1)=>Math.max(lo,Math.min(hi,v));
 const ease={out:t=>1-Math.pow(1-t,3),outBack:t=>1+2.2*Math.pow(t-1,3)+1.2*Math.pow(t-1,2)};
 
@@ -59,9 +59,16 @@ function sprite(color){
  if(sprites.size>96)sprites.clear();sprites.set(color,c);return c;
 }
 function later(ms,fn){const id=setTimeout(()=>{timers.delete(id);try{fn();}catch{/* Presentation is optional. */}},Math.max(0,ms));timers.add(id);return id;}
-function animate(el,keyframes,options){
- if(!el?.isConnected||typeof el.animate!=='function')return null;
- try{const a=el.animate(keyframes,options);animations.add(a);a.finished?.then(()=>animations.delete(a),()=>animations.delete(a));return a;}catch{return null;}
+// Read an Animation's optional finished promise exactly once: a degraded
+// implementation may return a fresh rejected promise on every access.
+function animate(el,keyframes,options,onDone){
+ const total=(options.duration||0)+(options.delay||0);
+ if(!el?.isConnected||typeof el.animate!=='function'){if(onDone)later(total,onDone);return null;}
+ let a;try{a=el.animate(keyframes,options);}catch{if(onDone)later(total,onDone);return null;}
+ animations.add(a);const end=()=>{animations.delete(a);onDone?.();};
+ let finished=null;try{finished=a.finished;}catch{/* treat as absent */}
+ if(finished&&typeof finished.then==='function')finished.then(end,end);else later(total,end);
+ return a;
 }
 function rectOf(el){if(!el?.isConnected)return null;const r=el.getBoundingClientRect();return r.width>0&&r.height>0?r:null;}
 function centerOf(r){return{x:r.left+r.width/2,y:r.top+r.height/2};}
@@ -69,7 +76,7 @@ function centerOf(r){return{x:r.left+r.width/2,y:r.top+r.height/2};}
 // ---------------------------------------------------------------- particles
 function resize(){
  vw=globalThis.innerWidth||0;vh=globalThis.innerHeight||0;if(!canvas||!vw||!vh)return false;
- ratio=Math.min(globalThis.devicePixelRatio||1,1.25,Math.sqrt(PIXEL_BUDGET/(vw*vh)));
+ ratio=Math.min(globalThis.devicePixelRatio||1,1,Math.sqrt(PIXEL_BUDGET/(vw*vh)));
  const w=Math.max(1,Math.floor(vw*ratio)),h=Math.max(1,Math.floor(vh*ratio));
  if(canvas.width!==w)canvas.width=w;if(canvas.height!==h)canvas.height=h;return true;
 }
@@ -179,14 +186,18 @@ function flash(palette,strength,duration,rate=1,origin=null){
  ensureHost();const node=document.createElement('div');node.className='sp-flash';
  const x=origin?`${(origin.x/(globalThis.innerWidth||1)*100).toFixed(1)}%`:'50%',y=origin?`${(origin.y/(globalThis.innerHeight||1)*100).toFixed(1)}%`:'45%';
  node.style.background=`radial-gradient(circle at ${x} ${y},${palette[2]||'#fff'} 0,${palette[0]}aa 18%,${palette[1]}33 46%,transparent 72%)`;
- host.append(node);const a=animate(node,[{opacity:strength},{opacity:0}],{duration:duration/rate,easing:'cubic-bezier(.2,.7,.3,1)',fill:'forwards'});
- const done=()=>node.remove();if(a?.finished)a.finished.then(done,done);else later(duration/rate,done);
+ host.append(node);animate(node,[{opacity:strength},{opacity:0}],{duration:duration/rate,easing:'cubic-bezier(.2,.7,.3,1)',fill:'forwards'},()=>node.remove());
 }
 function vignette(palette,duration,rate=1){
  ensureHost();const node=document.createElement('div');node.className='sp-vignette';
  node.style.boxShadow=`inset 0 0 18vmin ${palette[0]}99,inset 0 0 42vmin ${palette[1]||palette[0]}44`;host.append(node);
- const a=animate(node,[{opacity:0},{opacity:1,offset:.18},{opacity:0}],{duration:duration/rate,easing:'ease-out',fill:'forwards'});
- const done=()=>node.remove();if(a?.finished)a.finished.then(done,done);else later(duration/rate,done);
+ animate(node,[{opacity:0},{opacity:1,offset:.18},{opacity:0}],{duration:duration/rate,easing:'ease-out',fill:'forwards'},()=>node.remove());
+}
+// The room's neon rim flares on an overlay; only its opacity animates.
+function tint(rect,color,duration,rate=1){
+ if(!rect)return;ensureHost();const node=document.createElement('div');node.className='sp-tint';
+ Object.assign(node.style,{left:`${rect.left}px`,top:`${rect.top}px`,width:`${rect.width}px`,height:`${rect.height}px`,boxShadow:`inset 0 0 0 2px ${color},inset 0 0 6rem -1rem ${color},0 0 2.4rem 0 ${color}`});
+ host.append(node);animate(node,[{opacity:1},{opacity:0}],{duration:duration/rate,easing:'ease-out',fill:'forwards'},()=>node.remove());
 }
 function popText(text,x,y,cls,o={}){
  ensureHost();const node=document.createElement('div');node.className=`sp-pop ${cls||''}`;node.textContent=text;
@@ -194,14 +205,13 @@ function popText(text,x,y,cls,o={}){
  const rise=o.rise??70,d=(o.duration||1100)/(o.rate||1),drift=o.drift||0;
  // Pop in, hold fully legible, then drift away. Easing is per segment so the
  // readable plateau keeps its real share of the duration.
- const a=animate(node,[
+ animate(node,[
   {transform:'translate(-50%,-50%) scale(.2)',opacity:0,easing:'cubic-bezier(.2,1.6,.4,1)'},
   {transform:`translate(-50%,-50%) scale(${o.peak||1.45})`,opacity:1,offset:.1,easing:'cubic-bezier(.3,0,.3,1)'},
   {transform:'translate(-50%,-50%) scale(1)',opacity:1,offset:.22,easing:'linear'},
   {transform:`translate(calc(-50% + ${drift*.4}px),calc(-50% - ${rise*.35}px)) scale(1)`,opacity:1,offset:.68,easing:'cubic-bezier(.4,0,.8,.6)'},
   {transform:`translate(calc(-50% + ${drift}px),calc(-50% - ${rise}px)) scale(.9)`,opacity:0},
- ],{duration:d,delay:(o.delay||0)/(o.rate||1),easing:'linear',fill:'both'});
- const done=()=>node.remove();if(a?.finished)a.finished.then(done,done);else later(d+(o.delay||0),done);
+ ],{duration:d,delay:(o.delay||0)/(o.rate||1),easing:'linear',fill:'both'},()=>node.remove());
 }
 function rollNumber(el,format,duration,rate=1){
  if(!el?.isConnected)return;const original=el.textContent;
@@ -218,8 +228,7 @@ function ghostBar(track,fromPercent,toPercent,rate=1){
  const ghost=document.createElement('i');ghost.className='sp-ghost';ghost.setAttribute('aria-hidden','true');
  ghost.style.width=`calc((100% - 6px) * ${(fromPercent/100).toFixed(4)})`;track.prepend(ghost);
  animate(bar,[{width:`${fromPercent}%`},{width:`${toPercent}%`}],{duration:170/rate,easing:'cubic-bezier(.3,1.4,.5,1)'});
- const a=animate(ghost,[{width:`calc((100% - 6px) * ${(fromPercent/100).toFixed(4)})`,opacity:1},{width:`calc((100% - 6px) * ${(toPercent/100).toFixed(4)})`,opacity:.85}],{duration:620/rate,delay:380/rate,easing:'cubic-bezier(.5,0,.3,1)',fill:'forwards'});
- const done=()=>ghost.remove();if(a?.finished)a.finished.then(done,done);else later(1000/rate,done);
+ animate(ghost,[{width:`calc((100% - 6px) * ${(fromPercent/100).toFixed(4)})`,opacity:1},{width:`calc((100% - 6px) * ${(toPercent/100).toFixed(4)})`,opacity:.85}],{duration:620/rate,delay:380/rate,easing:'cubic-bezier(.5,0,.3,1)',fill:'forwards'},()=>ghost.remove());
 }
 function flag(el,cls,ms,rate=1){if(!el?.isConnected)return;el.classList.remove(cls);void el.offsetWidth;el.classList.add(cls);later(ms/rate,()=>el.classList.remove(cls));}
 
@@ -230,7 +239,7 @@ export function stopSpectacle(){
  for(const id of counters)cancelAnimationFrame(id);counters.clear();
  for(const restore of restores)restore();restores.clear();
  clearParticles();
- host?.querySelectorAll?.('.sp-pop,.sp-flash,.sp-vignette').forEach(node=>node.remove());
+ host?.querySelectorAll?.('.sp-pop,.sp-flash,.sp-vignette,.sp-tint').forEach(node=>node.remove());
  globalThis.document?.querySelectorAll?.('.sp-ghost').forEach(node=>node.remove());
 }
 function cancelPending(){for(const id of timers)clearTimeout(id);timers.clear();}
@@ -275,7 +284,7 @@ export function spectacleImpact({roll,enemyType,beforePercent,afterPercent,seed=
    if(crit||finish)raysAt(hit.x,hit.y,crit?PALETTES.critical:PALETTES.finish,rand,finish?18:12,{length:180+power*260,width:14+power*16,life:760,rate});
    if(best>=5)raysAt(hit.x,hit.y,null,rand,14,{length:320,width:20,life:900,rate,alpha:.45});
    shake(layout,3+power*11,260+power*260,rand,rate);
-   flag(title,'sp-hit',420,rate);flag(track,'sp-hit',420,rate);flag(room,crit?'sp-crit-tint':finish?'sp-finish-tint':'sp-hit-tint',520,rate);
+   flag(title,'sp-hit',420,rate);flag(track,'sp-hit',420,rate);tint(roomRect,finish?'#ffd23f':crit?'#ff2d55':'#22f0ff',finish?800:crit?600:520,rate);
    ghostBar(track,beforePercent??afterPercent,afterPercent??0,rate);
    rollNumber(document.querySelector('.damage-number>strong'),format,460,rate);
    const tone=finish?'finish':crit?'crit':best>=5?'rainbow':best===4?'magenta':best===3?'gold':best===2?'cyan':'normal';

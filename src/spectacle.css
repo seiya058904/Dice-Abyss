@@ -1,27 +1,27 @@
 /* Spectacle pass: vivid neon palette, ambient aurora, flowing highlights and
-   the overlay used by src/spectacle.js. Loaded last; layout sizes are unchanged.
+   the overlay used by src/spectacle.js. Loaded last; layout sizes are unchanged. Ambient
+   loops are finite so an idle page stops producing frames.
    Low effects and reduced motion keep every static colour but no motion. */
 :root{--sp-cyan:#22f0ff;--sp-blue:#3d8bff;--sp-violet:#9b5cff;--sp-magenta:#ff3df2;--sp-pink:#ff4d8d;--sp-gold:#ffd23f;--sp-orange:#ff8a1f;--sp-mint:#2fe0c0;
  --blue:#4fb8ff;--purple:#c06bff;--gold:#ffcc4a;--cyan:#2ff3ff;--green:#5ff0c0;--red:#ff3d5e}
 @property --sp-shift{syntax:'<percentage>';inherits:false;initial-value:0%}
 
 /* ---- ambient aurora: one composited, slowly drifting fixed layer ---- */
-body:before{inset:-12%;background:
+/* Static on purpose: full-viewport layers must not animate every frame. */
+body:before{background:
  radial-gradient(38% 32% at 18% 24%,#2b7bff30,transparent 70%),
  radial-gradient(34% 30% at 82% 18%,#c13dff2b,transparent 70%),
  radial-gradient(44% 38% at 72% 86%,#00e5c424,transparent 70%),
  radial-gradient(38% 34% at 14% 84%,#ff3d8a22,transparent 70%),
  radial-gradient(ellipse at 50% 45%,#12202c40,transparent 56%),
  repeating-linear-gradient(0deg,transparent 0 3px,#8eb4cb06 3px 4px);
- animation:sp-aurora 34s ease-in-out infinite alternate;will-change:transform}
-body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.55;background:
+ }
+body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.45;background:
  radial-gradient(1.5px 1.5px at 12% 22%,#9bfcff,transparent),radial-gradient(1.5px 1.5px at 76% 14%,#ffd0ff,transparent),
  radial-gradient(1px 1px at 44% 68%,#fff3b0,transparent),radial-gradient(1.5px 1.5px at 88% 72%,#9bfcff,transparent),
  radial-gradient(1px 1px at 26% 82%,#ffb0e8,transparent),radial-gradient(1px 1px at 62% 34%,#ffffff,transparent),
  radial-gradient(1px 1px at 6% 52%,#d6b3ff,transparent),radial-gradient(1.5px 1.5px at 94% 44%,#ffe58a,transparent);
- animation:sp-twinkle 7s ease-in-out infinite alternate}
-@keyframes sp-aurora{0%{transform:translate3d(-2%,-1%,0) scale(1)}50%{transform:translate3d(2%,1.5%,0) scale(1.06)}100%{transform:translate3d(-1%,2%,0) scale(1.02)}}
-@keyframes sp-twinkle{from{opacity:.25}to{opacity:.65}}
+}
 
 /* ---- neon frames: static glow, tinted per region ---- */
 .game-shell .frame{--sp-glow:#22f0ff;box-shadow:inset 0 0 0 2px #020304,inset 0 0 0 3px color-mix(in srgb,var(--sp-glow) 38%,transparent),0 0 1.4rem -.55rem var(--sp-glow),inset 0 0 3.5rem -2rem var(--sp-glow)}
@@ -36,23 +36,26 @@ body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opac
 .section-label{color:#e4f8ff;text-shadow:0 0 .55rem #22f0ff66,0 0 1.2rem #b84dff33}
 .section-label>span{color:#9fb6dc}
 
-/* ---- primary action: flowing gradient, glow and tactile press ---- */
-.primary-control>.primary{background:linear-gradient(100deg,#062b3d 0%,#0b4a6a 22%,#3a1d6e 48%,#0b4a6a 74%,#062b3d 100%);background-size:220% 100%;
+/* ---- primary action: neon gradient, glow and tactile press ----
+   Idle motion is compositor-only (transform/opacity). Paint-driven loops
+   (background-position, box-shadow, color) would repaint every frame. */
+.primary-control>.primary{background:linear-gradient(100deg,#062b3d 0%,#0b4a6a 30%,#3a1d6e 55%,#0b4a6a 80%,#062b3d 100%);
  border-color:#4af3ff;color:#e9fdff;text-shadow:0 0 .5rem #22f0ffaa;
  box-shadow:inset 0 0 0 2px #02080b,inset 0 0 0 3px #57e4e955,0 0 1.2rem -.2rem #22f0ff99,0 0 2.6rem -1rem #b84dff;
- animation:sp-flow 6s linear infinite;transition:transform .12s cubic-bezier(.3,1.6,.5,1),box-shadow .2s,filter .2s}
+ transition:transform .12s cubic-bezier(.3,1.6,.5,1),box-shadow .2s,filter .2s}
 .primary-control>.primary:hover:not(:disabled){transform:translateY(-1px) scale(1.015);filter:brightness(1.18) saturate(1.2);box-shadow:inset 0 0 0 2px #02080b,inset 0 0 0 3px #9bfcff88,0 0 1.8rem 0 #22f0ffaa,0 0 3.4rem -.6rem #ff3df2}
 .primary-control>.primary:active:not(:disabled){transform:translateY(1px) scale(.975);filter:brightness(1.35)}
-.primary-control>.primary:disabled{animation:none;filter:saturate(.6) brightness(.85)}
-@keyframes sp-flow{from{background-position:0% 0}to{background-position:-220% 0}}
+.primary-control>.primary:disabled{filter:saturate(.6) brightness(.85)}
 button:not(.primary):hover:not(:disabled){text-shadow:0 0 .45rem currentColor}
 
 /* ---- bars: vivid fills with a travelling gloss ---- */
 .health-track>span{position:relative;z-index:1;background:linear-gradient(180deg,#ffffff55 0 14%,transparent 16% 70%,#0000004d 74%),linear-gradient(90deg,#ff1f6b,#ff2d3d 45%,#ff7a1a);box-shadow:0 0 .9rem #ff2d5580}
 .boss-screen .health-track>span{background:linear-gradient(180deg,#ffffff55 0 14%,transparent 16% 70%,#0000004d 74%),linear-gradient(90deg,#b81dff,#ff2d55 50%,#ffb01a);box-shadow:0 0 1.2rem #ff2dc080}
 .health-track{overflow:hidden}
-.health-track:after{content:"";position:absolute;z-index:1;inset:3px;pointer-events:none;background:linear-gradient(100deg,transparent 30%,#ffffff40 48%,transparent 56%);background-size:250% 100%;animation:sp-gloss 3.2s ease-in-out infinite}
-@keyframes sp-gloss{from{background-position:120% 0}to{background-position:-130% 0}}
+/* Only on a settled room: fast pace waits for finite animations inside an
+   owned reveal, and an ambient gloss must never lengthen that wait. */
+#current-room:not(.busy) .health-track:after{content:"";position:absolute;z-index:1;left:0;top:3px;bottom:3px;width:28%;pointer-events:none;background:linear-gradient(100deg,transparent,#ffffff45 50%,transparent);transform:translateX(-110%);animation:sp-gloss 2.6s cubic-bezier(.5,0,.3,1) .6s 2}
+@keyframes sp-gloss{to{transform:translateX(380%)}}
 .sp-ghost{position:absolute;z-index:0;left:3px;top:3px;bottom:3px;background:linear-gradient(90deg,#fff6d0,#ffd36b);box-shadow:0 0 .8rem #ffd36b;pointer-events:none}
 .shield-fill{background:repeating-linear-gradient(90deg,#b84dff 0 .8rem,#5a2bd6 .8rem .9rem);opacity:.85;box-shadow:0 0 .7rem #a344ff88}
 .player-health-track>span{background:linear-gradient(90deg,#ff1f6b,#ff4d6d 60%,#ff8a5c);box-shadow:0 0 .7rem #ff2d5580}
@@ -60,9 +63,8 @@ button:not(.primary):hover:not(:disabled){text-shadow:0 0 .45rem currentColor}
 .player-gold strong{background:linear-gradient(180deg,#fff6c2,#ffd23f 50%,#ff9a1f);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 .35rem #ffb02e88)}
 
 /* ---- route ---- */
-.route-list li.current .route-node{box-shadow:0 0 0 1px #ff3d6e,0 0 1rem #ff3d6e,0 0 2rem -.3rem #ff3df2;animation:sp-node 1.6s ease-in-out infinite}
+.route-list li.current .route-node{box-shadow:0 0 0 1px #ff3d6e,0 0 1rem #ff3d6e,0 0 2rem -.3rem #ff3df2}
 .route-list li.done .route-node{box-shadow:0 0 .6rem -.1rem #2fe0c0;border-color:#2fe0c0;color:#9fffe9}
-@keyframes sp-node{50%{box-shadow:0 0 0 2px #ff3d6e,0 0 1.6rem #ff3d6e,0 0 3rem -.2rem #ff3df2}}
 
 /* ---- dice energy colours (also feed the WebGL material) ---- */
 .cube-die:not(.resonant):not(.critical-die):not(.charged){color:#bff4ff}
@@ -70,22 +72,20 @@ button:not(.primary):hover:not(:disabled){text-shadow:0 0 .45rem currentColor}
 .cube-die.critical-die{color:#ff3b6b}
 .cube-die.charged{color:#33c8ff}
 .roll-caption{background:linear-gradient(90deg,#9bfcff,#ffffff 40%,#ffb0f0);-webkit-background-clip:text;background-clip:text;color:transparent}
-.major-resonance .roll-caption,.combat-screen:is([data-impact=critical],[data-impact=finish]) .roll-caption{background:linear-gradient(90deg,#ffd23f,#ff3df2,#22f0ff,#ffd23f);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;animation:sp-flow 2.4s linear infinite}
+.major-resonance .roll-caption,.combat-screen:is([data-impact=critical],[data-impact=finish]) .roll-caption{background:linear-gradient(90deg,#ffd23f,#ff3df2 50%,#22f0ff);-webkit-background-clip:text;background-clip:text}
 
-/* ---- rarity: high tiers shimmer ---- */
-:is(.item-card,.equipped-item):is(.legendary,.mythic,.ancient,.origin,.eternal) h3{background:linear-gradient(90deg,var(--rarity,var(--gold)) 0%,#ffffff 22%,var(--rarity,var(--gold)) 44%,var(--rarity,var(--gold)) 100%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:sp-shine 4s linear infinite}
+/* ---- rarity: high tiers glow (static, so long inventories stay cheap) ---- */
+:is(.loot-reveal .item-card,.equipped-item):is(.legendary,.mythic,.ancient,.origin,.eternal) h3{background:linear-gradient(90deg,var(--rarity,var(--gold)) 0%,#ffffff 30%,var(--rarity,var(--gold)) 60%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 :is(.item-card,.equipped-item).legendary{--rarity:#ffcc4a}
-:is(.item-card,.equipped-item).eternal h3{background:linear-gradient(90deg,#ff4d6d,#ffd23f,#5ff0c0,#22f0ff,#b84dff,#ff4d6d);background-size:300% 100%;-webkit-background-clip:text;background-clip:text}
+:is(.loot-reveal .item-card,.equipped-item).eternal h3{background:linear-gradient(90deg,#ff4d6d,#ffd23f,#5ff0c0,#22f0ff,#b84dff,#ff4d6d);-webkit-background-clip:text;background-clip:text}
 :is(.item-card,.equipped-item):is(.legendary,.mythic,.ancient,.origin,.eternal){box-shadow:0 0 1.2rem -.4rem var(--rarity,var(--gold)),inset 0 0 2rem -1.4rem var(--rarity,var(--gold))}
-.item-card.eternal,.equipped-item.eternal{animation:sp-eternal 6s linear infinite}
-@keyframes sp-shine{from{background-position:120% 0}to{background-position:-130% 0}}
-@keyframes sp-eternal{0%,100%{box-shadow:0 0 1.2rem -.4rem #22f0ff}33%{box-shadow:0 0 1.2rem -.4rem #ff3df2}66%{box-shadow:0 0 1.2rem -.4rem #ffd23f}}
 
 /* ---- overlay used by spectacle.js ---- */
 .spectacle-layer{position:fixed;inset:0;pointer-events:none;z-index:40;overflow:hidden}
 .spectacle-fx{position:absolute;left:0;top:0;width:100%;height:100%;display:none}
 .spectacle-fx.active{display:block}
-.sp-flash,.sp-vignette{position:absolute;inset:0;mix-blend-mode:screen;opacity:0;pointer-events:none}
+.sp-flash,.sp-vignette{position:absolute;inset:0;opacity:0;pointer-events:none}
+.sp-tint{position:absolute;opacity:0;pointer-events:none}
 .sp-pop{position:absolute;left:0;top:0;white-space:nowrap;pointer-events:none;will-change:transform,opacity;
  font:400 1.6rem/1 var(--font-display);letter-spacing:.06em;--sp-pop:#e9fdff;--sp-pop-glow:#22f0ff;color:var(--sp-pop);
  -webkit-text-stroke:.06em #05070c;paint-order:stroke fill;
@@ -100,7 +100,7 @@ button:not(.primary):hover:not(:disabled){text-shadow:0 0 .45rem currentColor}
 .sp-finish{--sp-pop:#fff1b0;--sp-pop-glow:#ffb02e;font-size:3.1rem}
 .sp-damage.sp-finish{font-size:4.6rem}
 .sp-follow{--sp-pop:#bfe3ff;--sp-pop-glow:#3d8bff;font-size:2.4rem}
-.sp-rainbow,.sp-rarity-7{animation:sp-rainbow-text .9s linear infinite}
+.sp-rainbow,.sp-rarity-7{animation:sp-rainbow-text .9s linear 2}
 @keyframes sp-rainbow-text{0%{color:#ff7a90;--sp-pop-glow:#ff2d55}25%{color:#ffe680;--sp-pop-glow:#ff9a1f}50%{color:#8affd9;--sp-pop-glow:#22f0c0}75%{color:#9bd8ff;--sp-pop-glow:#3d8bff}100%{color:#e3b3ff;--sp-pop-glow:#b84dff}}
 .sp-rarity-2{--sp-pop:#e6c2ff;--sp-pop-glow:#b05cff}
 .sp-rarity-3{--sp-pop:#ffe680;--sp-pop-glow:#ff9a1f}
@@ -111,18 +111,14 @@ button:not(.primary):hover:not(:disabled){text-shadow:0 0 .45rem currentColor}
 /* hit reactions toggled by spectacle.js */
 .combat-screen h1.sp-hit{animation:sp-hit-text .42s cubic-bezier(.2,.8,.3,1) both}
 .health-track.sp-hit{animation:sp-hit-bar .42s ease-out both}
-#current-room.sp-hit-tint{animation:sp-tint .52s ease-out both;--sp-tint:#22f0ff}
-#current-room.sp-crit-tint{animation:sp-tint .6s ease-out both;--sp-tint:#ff2d55}
-#current-room.sp-finish-tint{animation:sp-tint .8s ease-out both;--sp-tint:#ffd23f}
 .damage-number>strong.sp-punch{animation:sp-punch .34s cubic-bezier(.3,1.8,.5,1) both}
 @keyframes sp-hit-text{0%{color:#fff;transform:translateX(0);text-shadow:-3px 0 #ff2d55,3px 0 #22f0ff,0 0 1rem #fff}
  20%{transform:translateX(-5px) skewX(-6deg)}40%{transform:translateX(4px) skewX(4deg);text-shadow:-2px 0 #ff2d55,2px 0 #22f0ff}
  60%{transform:translateX(-2px)}100%{transform:none}}
 @keyframes sp-hit-bar{0%{filter:brightness(2.6) saturate(1.4)}100%{filter:none}}
-@keyframes sp-tint{0%{box-shadow:inset 0 0 0 2px var(--sp-tint),inset 0 0 6rem -1rem var(--sp-tint),0 0 2.4rem 0 var(--sp-tint)}}
 @keyframes sp-punch{0%{transform:scale(1.32);filter:brightness(1.8)}100%{transform:scale(1);filter:none}}
 
 /* ---- comfort settings ---- */
 html[data-effects=low] .spectacle-layer{display:none}
-html[data-effects=low] body:before,html[data-effects=low] body:after,html[data-effects=low] .health-track:after{animation:none}
-@media (prefers-reduced-motion:reduce){.spectacle-layer{display:none}body:before,body:after,.health-track:after,.primary-control>.primary,.route-list li.current .route-node{animation:none!important}}
+html[data-effects=low] .health-track:after,html[data-effects=low] .primary-control>.primary{animation:none}
+@media (prefers-reduced-motion:reduce){.spectacle-layer{display:none}.health-track:after,.primary-control>.primary{animation:none!important}}
