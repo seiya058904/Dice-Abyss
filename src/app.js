@@ -4,7 +4,7 @@ import { saveImportedGame, loadSave, saveGame, encodeSave, decodeSave, measureSa
 import { titleView, gameView, center, settingsView, itemEffects, itemSummary, itemProgress, migrationSummary, comparison, equipmentComparisonView, fusionView, fusionItemTooltip, talentInspectorView, talentInvestmentCount, memorywellPreviewView, experiencePreviewView, eventChoicePreviewView, eventRiskView, eventItemsView, eventChoiceCost, num, goldNum, esc, icon } from './views.js';
 import { eventChoices } from './encounters.js';
 import { mountEffects } from './effects.js';
-import { spectacleImpact, spectacleFate, spectacleReveal, spectacleForge, spectacleBounce, stopSpectacle, settleSpectacle } from './spectacle.js';
+import { spectacleImpact, spectacleFate, spectacleReveal, spectacleForge, spectacleBounce, stopSpectacle, settleSpectacle, detectRenderTier } from './spectacle.js';
 import { THROW_DURATION } from './dice-motion.js';
 import { paceSceneAnimations } from './visual-timeline.js';
 import { levelXpNeeded } from './equipment.js';
@@ -57,6 +57,7 @@ const toast = document.createElement('div');
 toast.className = 'toast'; toast.setAttribute('role', 'status');
 document.body.append(toast);
 const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+detectRenderTier();
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 function preparePresentationAnnouncement(generation, message, showToast=false) {
   presentationAnnouncement={generation,runId:state.runId,message,showToast};

@@ -18,9 +18,12 @@ float bevel=pow(max(0.,dot(n,normalize(vec3(-.4,-.5,1.)))),28.);float sheen=pow(
 vec3 metal=vec3(.02,.027,.036)+vec3(.06,.075,.09)*diffuse+vec3(.34,.39,.44)*bevel+uColor*sheen*.22;metal+=uColor*frame*(.35+diffuse*.35)+vec3(.16,.19,.21)*inner;
 // Broad steel reflection stays in the material, with no new per-frame texture.
 metal+=vec3(.046,.056,.067)*(1.-vUV.y)*(.4+.6*diffuse);
-// Neon rim and a coloured kicker light make each die read as lit by its own energy.
+// Neon rim and a coloured kicker light make each die read as lit by its own
+// energy. Software renderers compile without them to keep CPU raster cheap.
+#ifndef LITE_DICE
 float rim=pow(1.-clamp(n.z,0.,1.),2.4);float kick=max(0.,dot(n,normalize(vec3(.75,.55,.45))));
 metal+=uColor*(rim*.62+kick*.16)+vec3(.9,.95,1.)*pow(max(0.,dot(n,normalize(vec3(-.35,-.6,1.)))),90.)*.55;
+#endif
 int face=int(floor(vFace+.5));float value=1.;for(int i=0;i<6;i++){if(i==face)value=uValues[i];}
 vec2 uv=vec2((value-1.+vUV.x)/6.,(face==0?0.:1.)*.5+vUV.y*.5);float ink=texture2D(uAtlas,uv).a;
 vec3 color=mix(metal,uColor*(.96+diffuse*.3)+vec3(.06),ink);gl_FragColor=vec4(color,1.);}`;
@@ -120,12 +123,15 @@ export function resizeDiceBuffer(canvas,width,height){
   if(width<canvas.width)canvas.width=width;if(height<canvas.height)canvas.height=height;
   if(width!==canvas.width)canvas.width=width;if(height!==canvas.height)canvas.height=height;
 }
+export function softwareRendererName(name){return /swiftshader|llvmpipe|softpipe|software|basic render/i.test(String(name||''));}
+function rendererName(gl){try{const info=gl.getExtension('WEBGL_debug_renderer_info');return info?gl.getParameter(info.UNMASKED_RENDERER_WEBGL):gl.getParameter(gl.RENDERER);}catch{return '';}}
 function initializeSurface(s){
   const {gl}=s,compiled=[];let program,buffer,indexBuffer,texture;
+  const lite=softwareRendererName(rendererName(gl));s.canvas.dataset.material=lite?'lite':'full';
   const shader=(type,source)=>{const sh=gl.createShader(type);if(!sh)throw Error('Dice shader unavailable');compiled.push(sh);gl.shaderSource(sh,source);gl.compileShader(sh);if(!gl.getShaderParameter(sh,gl.COMPILE_STATUS))throw Error('Dice shader unavailable');return sh;};
   try{
     program=gl.createProgram();if(!program)throw Error('Dice program unavailable');
-    for(const [type,source]of [[gl.VERTEX_SHADER,vertex],[gl.FRAGMENT_SHADER,fragment]])gl.attachShader(program,shader(type,source));
+    for(const [type,source]of [[gl.VERTEX_SHADER,vertex],[gl.FRAGMENT_SHADER,(lite?'#define LITE_DICE\n':'')+fragment]])gl.attachShader(program,shader(type,source));
     gl.linkProgram(program);if(!gl.getProgramParameter(program,gl.LINK_STATUS))throw Error('Dice program unavailable');
     gl.useProgram(program);const mesh=indexedRoundedCubeMesh();buffer=gl.createBuffer();if(!buffer)throw Error('Dice buffer unavailable');gl.bindBuffer(gl.ARRAY_BUFFER,buffer);gl.bufferData(gl.ARRAY_BUFFER,mesh.vertices,gl.STATIC_DRAW);
     indexBuffer=gl.createBuffer();if(!indexBuffer)throw Error('Dice index buffer unavailable');gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER,indexBuffer);gl.bufferData(gl.ELEMENT_ARRAY_BUFFER,mesh.indices,gl.STATIC_DRAW);

@@ -109,6 +109,15 @@ button:not(.primary):hover:not(:disabled){text-shadow:0 0 .45rem currentColor}
 .sp-rarity-5{--sp-pop:#a6ffec;--sp-pop-glow:#22d8b8}
 .sp-rarity-6{--sp-pop:#fff4cc;--sp-pop-glow:#ffc861}
 
+/* ---- software rendering (no GPU): same colours, no large blurs ---- */
+html[data-renderer=software] .game-shell .frame{box-shadow:inset 0 0 0 2px #020304,inset 0 0 0 3px color-mix(in srgb,var(--sp-glow) 45%,transparent)}
+html[data-renderer=software] :is(.health-track>span,.player-health-track>span,.xp-track>span,.shield-fill){box-shadow:none}
+html[data-renderer=software] .primary-control>.primary{box-shadow:inset 0 0 0 2px #02080b,inset 0 0 0 3px #57e4e988}
+html[data-renderer=software] .route-list li.current .route-node{box-shadow:0 0 0 1px #ff3d6e}
+html[data-renderer=software] :is(.item-card,.equipped-item):is(.legendary,.mythic,.ancient,.origin,.eternal){box-shadow:none}
+html[data-renderer=software] .sp-pop{text-shadow:.06em .08em 0 #05070c}
+html[data-renderer=software] .health-track:after{display:none}
+
 /* ---- comfort settings ---- */
 html[data-effects=low] .spectacle-layer{display:none}
 html[data-effects=low] .health-track:after,html[data-effects=low] .primary-control>.primary{animation:none}

@@ -3,12 +3,14 @@
 // RNG, never mutates saved state and never delays or replaces a committed
 // result: every caller has already saved and rendered the outcome it decorates.
 // The original effects.js paint program stays untouched beneath this layer.
+import {softwareRendererName} from './dice-renderer.js';
+export {softwareRendererName as softwareRenderer};
 
 const TAU=Math.PI*2,WALL_LIMIT=6000,SETTLE_MS=260;
-// Software renderers (no GPU) composite every canvas pixel on the CPU and can
-// stall navigation and input; they skip the particle canvas entirely. Every
-// DOM effect (pops, flashes, health ghost, shake) still plays. Append
-// ?spectacle=full to the URL to inspect the full canvas without a GPU.
+// Software renderers (no GPU) raster and composite on the CPU; on slow
+// machines heavy layers stalled navigation in the release gate. They skip the
+// particle canvas, screen shake and full-screen flashes, keeping pops, the
+// health ghost and hit flashes. ?spectacle=full forces the GPU tier.
 const BUDGETS={gpu:{pixels:900000,particles:900,keep:1,canvas:true},software:{pixels:0,particles:0,keep:0,canvas:false}};
 const clamp=(v,lo=0,hi=1)=>Math.max(lo,Math.min(hi,v));
 const ease={out:t=>1-Math.pow(1-t,3),outBack:t=>1+2.2*Math.pow(t-1,3)+1.2*Math.pow(t-1,2)};
@@ -49,14 +51,23 @@ function reducedMotion(){try{return !!globalThis.matchMedia?.('(prefers-reduced-
 function lowEffects(){return document.documentElement?.dataset?.effects==='low';}
 function allowed(){return supported()&&!reducedMotion()&&!lowEffects();}
 
-export function softwareRenderer(name){return /swiftshader|llvmpipe|softpipe|software|basic render/i.test(String(name||''));}
+// Probe once and mark <html>: CSS drops large blurred glows on software renderers.
+export function detectRenderTier(){
+ const budget=detectBudget();
+ try{document.documentElement.dataset.renderer=budget.canvas?'gpu':'software';}catch{/* no document */}
+ return budget.canvas?'gpu':'software';
+}
+let detected=null;
 function detectBudget(){
+ if(detected)return detected;detected=probeBudget();return detected;
+}
+function probeBudget(){
  try{if(/[?&]spectacle=full(?:&|$)/.test(globalThis.location?.search||''))return BUDGETS.gpu;}catch{/* no location */}
  try{
   const probe=document.createElement('canvas'),gl=probe.getContext?.('webgl');if(!gl)return BUDGETS.software;
   const info=gl.getExtension('WEBGL_debug_renderer_info'),name=info?gl.getParameter(info.UNMASKED_RENDERER_WEBGL):gl.getParameter(gl.RENDERER);
   gl.getExtension('WEBGL_lose_context')?.loseContext();
-  return softwareRenderer(name)?BUDGETS.software:BUDGETS.gpu;
+  return softwareRendererName(name)?BUDGETS.software:BUDGETS.gpu;
  }catch{return BUDGETS.software;}
 }
 function ensureHost(){
@@ -198,25 +209,27 @@ function clearParticles(){
 
 // ------------------------------------------------------------- DOM effects
 function shake(el,strength,duration,rand,rate=1){
- if(!el||strength<=0)return;
+ if(!el||strength<=0||!budget.canvas)return;
  const steps=Math.max(4,Math.round(duration/28)),frames=[];
  for(let i=0;i<=steps;i++){const k=i===steps?0:Math.pow(1-i/steps,1.6)*strength,x=(rand()-.5)*2*k,y=(rand()-.5)*2*k*.8,r=(rand()-.5)*k*.12;frames.push({transform:`translate3d(${x.toFixed(2)}px,${y.toFixed(2)}px,0) rotate(${r.toFixed(3)}deg)`});}
  animate(el,frames,{duration:duration/rate,easing:'linear',composite:'add'});
 }
 function flash(palette,strength,duration,rate=1,origin=null){
+ if(!budget.canvas)return;
  ensureHost();const node=document.createElement('div');node.className='sp-flash';
  const x=origin?`${(origin.x/(globalThis.innerWidth||1)*100).toFixed(1)}%`:'50%',y=origin?`${(origin.y/(globalThis.innerHeight||1)*100).toFixed(1)}%`:'45%';
  node.style.background=`radial-gradient(circle at ${x} ${y},${palette[2]||'#fff'} 0,${palette[0]}aa 18%,${palette[1]}33 46%,transparent 72%)`;
  host.append(node);animate(node,[{opacity:strength},{opacity:0}],{duration:duration/rate,easing:'cubic-bezier(.2,.7,.3,1)',fill:'forwards'},()=>node.remove());
 }
 function vignette(palette,duration,rate=1){
+ if(!budget.canvas)return;
  ensureHost();const node=document.createElement('div');node.className='sp-vignette';
  node.style.boxShadow=`inset 0 0 18vmin ${palette[0]}99,inset 0 0 42vmin ${palette[1]||palette[0]}44`;host.append(node);
  animate(node,[{opacity:0},{opacity:1,offset:.18},{opacity:0}],{duration:duration/rate,easing:'ease-out',fill:'forwards'},()=>node.remove());
 }
 // The room's neon rim flares on an overlay; only its opacity animates.
 function tint(rect,color,duration,rate=1){
- if(!rect)return;ensureHost();const node=document.createElement('div');node.className='sp-tint';
+ if(!rect||!budget.canvas)return;ensureHost();const node=document.createElement('div');node.className='sp-tint';
  Object.assign(node.style,{left:`${rect.left}px`,top:`${rect.top}px`,width:`${rect.width}px`,height:`${rect.height}px`,boxShadow:`inset 0 0 0 2px ${color},inset 0 0 6rem -1rem ${color},0 0 2.4rem 0 ${color}`});
  host.append(node);animate(node,[{opacity:1},{opacity:0}],{duration:duration/rate,easing:'ease-out',fill:'forwards'},()=>node.remove());
 }
