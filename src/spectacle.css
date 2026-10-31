@@ -24,7 +24,7 @@ body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opac
 }
 
 /* ---- neon frames: static glow, tinted per region ---- */
-.game-shell .frame{--sp-glow:#22f0ff;box-shadow:inset 0 0 0 2px #020304,inset 0 0 0 3px color-mix(in srgb,var(--sp-glow) 38%,transparent),0 0 1.4rem -.55rem var(--sp-glow),inset 0 0 3.5rem -2rem var(--sp-glow)}
+.game-shell .frame{--sp-glow:#22f0ff;box-shadow:inset 0 0 0 2px #020304,inset 0 0 0 3px color-mix(in srgb,var(--sp-glow) 38%,transparent),0 0 .9rem -.45rem var(--sp-glow)}
 .game-shell .left-rail .frame{--sp-glow:#8f5cff}
 .game-shell .right-rail.frame,.game-shell .right-rail .frame{--sp-glow:#ff4dd2}
 .game-shell #current-room{--sp-glow:#22f0ff}

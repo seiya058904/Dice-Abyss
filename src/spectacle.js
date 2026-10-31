@@ -5,9 +5,11 @@
 // The original effects.js paint program stays untouched beneath this layer.
 
 const TAU=Math.PI*2,WALL_LIMIT=6000,SETTLE_MS=260;
-// Software renderers (no GPU) composite every canvas pixel on the CPU; they
-// get a smaller canvas and fewer particles so the page stays responsive.
-const BUDGETS={gpu:{pixels:900000,particles:900,keep:1},software:{pixels:300000,particles:260,keep:.4}};
+// Software renderers (no GPU) composite every canvas pixel on the CPU and can
+// stall navigation and input; they skip the particle canvas entirely. Every
+// DOM effect (pops, flashes, health ghost, shake) still plays. Append
+// ?spectacle=full to the URL to inspect the full canvas without a GPU.
+const BUDGETS={gpu:{pixels:900000,particles:900,keep:1,canvas:true},software:{pixels:0,particles:0,keep:0,canvas:false}};
 const clamp=(v,lo=0,hi=1)=>Math.max(lo,Math.min(hi,v));
 const ease={out:t=>1-Math.pow(1-t,3),outBack:t=>1+2.2*Math.pow(t-1,3)+1.2*Math.pow(t-1,2)};
 
@@ -49,6 +51,7 @@ function allowed(){return supported()&&!reducedMotion()&&!lowEffects();}
 
 export function softwareRenderer(name){return /swiftshader|llvmpipe|softpipe|software|basic render/i.test(String(name||''));}
 function detectBudget(){
+ try{if(/[?&]spectacle=full(?:&|$)/.test(globalThis.location?.search||''))return BUDGETS.gpu;}catch{/* no location */}
  try{
   const probe=document.createElement('canvas'),gl=probe.getContext?.('webgl');if(!gl)return BUDGETS.software;
   const info=gl.getExtension('WEBGL_debug_renderer_info'),name=info?gl.getParameter(info.UNMASKED_RENDERER_WEBGL):gl.getParameter(gl.RENDERER);
@@ -95,6 +98,7 @@ function resize(){
 }
 function busyCount(){return particles.length+rings.length+rays.length+slashes.length;}
 function start(){
+ if(!budget.canvas){particles.length=0;rings.length=0;rays.length=0;slashes.length=0;return;}
  settleAt=null;if(canvas)canvas.style.opacity='';
  if(frame||!ctx)return;if(!resize())return;
  canvas.classList.add('active');lastTime=0;startedAt=performance.now();frame=requestAnimationFrame(tick);
@@ -157,7 +161,7 @@ function drawSlash(s,t){
  const g=s.width*7;ctx.globalAlpha=1-t*.5;ctx.drawImage(sprite(s.color),x1-g/2,y1-g/2,g,g);
 }
 // Deterministic thinning keeps the same composition with fewer bodies.
-function admit(){if(particles.length>=budget.particles)return false;spawned++;return budget.keep>=1||(spawned*budget.keep)%1<budget.keep;}
+function admit(){if(!budget.canvas||particles.length>=budget.particles)return false;spawned++;return budget.keep>=1||(spawned*budget.keep)%1<budget.keep;}
 function spark(x,y,color,o={}){
  if(!admit())return;
  const p={kind:'spark',x,y,px:x,py:y,vx:o.vx||0,vy:o.vy||0,gravity:o.gravity??380,drag:o.drag??.94,size:o.size||2,life:o.life||700,age:-(o.delay||0),rate:o.rate||1,color,sprite:sprite(color)};
