@@ -219,18 +219,30 @@ function rollNumber(el,format,duration,rate=1){
  const restore=()=>{if(el.isConnected)el.textContent=original;};restores.add(restore);
  const begin=performance.now(),d=duration/rate;
  const run=now=>{if(!restores.has(restore))return;const t=clamp((now-begin)/d);
-  if(t>=1){restore();restores.delete(restore);el.classList.add('sp-punch');return;}
+  if(t>=1){restore();restores.delete(restore);return;}
   el.textContent=format(Math.round(value*ease.out(t)));queue();};
  const queue=()=>{const id=requestAnimationFrame(now=>{counters.delete(id);run(now);});counters.add(id);};queue();
 }
-function ghostBar(track,fromPercent,toPercent,rate=1){
- const bar=track?.querySelector(':scope>span');if(!bar||!(fromPercent>toPercent))return;
- const ghost=document.createElement('i');ghost.className='sp-ghost';ghost.setAttribute('aria-hidden','true');
- ghost.style.width=`calc((100% - 6px) * ${(fromPercent/100).toFixed(4)})`;track.prepend(ghost);
- animate(bar,[{width:`${fromPercent}%`},{width:`${toPercent}%`}],{duration:170/rate,easing:'cubic-bezier(.3,1.4,.5,1)'});
- animate(ghost,[{width:`calc((100% - 6px) * ${(fromPercent/100).toFixed(4)})`,opacity:1},{width:`calc((100% - 6px) * ${(toPercent/100).toFixed(4)})`,opacity:.85}],{duration:620/rate,delay:380/rate,easing:'cubic-bezier(.5,0,.3,1)',fill:'forwards'},()=>ghost.remove());
+// Room-owned reveals pace their own finite animations. Every hit reaction
+// therefore lives on this overlay, outside #current-room, and animates only
+// transform/opacity: the room's committed DOM is never animated from here.
+function overlayBox(rect,cls,style){
+ ensureHost();const node=document.createElement('div');node.className=cls;
+ Object.assign(node.style,{left:`${rect.left}px`,top:`${rect.top}px`,width:`${rect.width}px`,height:`${rect.height}px`},style);host.append(node);return node;
 }
-function flag(el,cls,ms,rate=1){if(!el?.isConnected)return;el.classList.remove(cls);void el.offsetWidth;el.classList.add(cls);later(ms/rate,()=>el.classList.remove(cls));}
+// The drained chunk stays lit, then collapses toward the new health edge.
+function ghostBar(trackRect,fromPercent,toPercent,rate=1){
+ if(!trackRect||!(fromPercent>toPercent))return;
+ const inner={left:trackRect.left+3,top:trackRect.top+3,width:trackRect.width-6,height:trackRect.height-6};
+ const left=inner.left+inner.width*toPercent/100,width=inner.width*(fromPercent-toPercent)/100;if(width<1)return;
+ const node=overlayBox({left,top:inner.top,width,height:inner.height},'sp-ghost',{transformOrigin:'left center'});
+ animate(node,[{transform:'scaleX(1)',opacity:.9,offset:0},{transform:'scaleX(1)',opacity:.9,offset:.38},{transform:'scaleX(0)',opacity:.35}],{duration:1000/rate,easing:'cubic-bezier(.5,0,.3,1)',fill:'forwards'},()=>node.remove());
+}
+// A bright rim with red/cyan fringes flashes over an element that was hit.
+function hitFlash(rect,rate=1){
+ if(!rect)return;const node=overlayBox({left:rect.left-4,top:rect.top-3,width:rect.width+8,height:rect.height+6},'sp-hitflash',{});
+ animate(node,[{opacity:1,transform:'translateX(-4px)'},{opacity:.8,transform:'translateX(4px)',offset:.25},{opacity:.45,transform:'translateX(-2px)',offset:.55},{opacity:0,transform:'none'}],{duration:420/rate,easing:'ease-out',fill:'forwards'},()=>node.remove());
+}
 
 // ------------------------------------------------------------------ public
 export function stopSpectacle(){
@@ -239,8 +251,7 @@ export function stopSpectacle(){
  for(const id of counters)cancelAnimationFrame(id);counters.clear();
  for(const restore of restores)restore();restores.clear();
  clearParticles();
- host?.querySelectorAll?.('.sp-pop,.sp-flash,.sp-vignette,.sp-tint').forEach(node=>node.remove());
- globalThis.document?.querySelectorAll?.('.sp-ghost').forEach(node=>node.remove());
+ host?.querySelectorAll?.('.sp-pop,.sp-flash,.sp-vignette,.sp-tint,.sp-ghost,.sp-hitflash').forEach(node=>node.remove());
 }
 function cancelPending(){for(const id of timers)clearTimeout(id);timers.clear();}
 
@@ -284,8 +295,8 @@ export function spectacleImpact({roll,enemyType,beforePercent,afterPercent,seed=
    if(crit||finish)raysAt(hit.x,hit.y,crit?PALETTES.critical:PALETTES.finish,rand,finish?18:12,{length:180+power*260,width:14+power*16,life:760,rate});
    if(best>=5)raysAt(hit.x,hit.y,null,rand,14,{length:320,width:20,life:900,rate,alpha:.45});
    shake(layout,3+power*11,260+power*260,rand,rate);
-   flag(title,'sp-hit',420,rate);flag(track,'sp-hit',420,rate);tint(roomRect,finish?'#ffd23f':crit?'#ff2d55':'#22f0ff',finish?800:crit?600:520,rate);
-   ghostBar(track,beforePercent??afterPercent,afterPercent??0,rate);
+   hitFlash(rectOf(title),rate);hitFlash(trackRect,rate);tint(roomRect,finish?'#ffd23f':crit?'#ff2d55':'#22f0ff',finish?800:crit?600:520,rate);
+   ghostBar(trackRect,beforePercent??afterPercent,afterPercent??0,rate);
    rollNumber(document.querySelector('.damage-number>strong'),format,460,rate);
    const tone=finish?'finish':crit?'crit':best>=5?'rainbow':best===4?'magenta':best===3?'gold':best===2?'cyan':'normal';
    popText(format(roll.hpDamage??roll.total),hit.x,hit.y-trackRect.height*.9,`sp-damage sp-${tone}`,{rate,peak:1.4+power*.6,rise:60+power*40,drift:(rand()-.5)*40,duration:1100+power*400});
