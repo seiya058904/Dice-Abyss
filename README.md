@@ -178,7 +178,7 @@ Use **Settings → Check Capacity** to inspect the current export's exact file s
 > [!IMPORTANT]
 > **Local saves are not cloud saves.** GitHub Pages and `http://127.0.0.1:4188` use separate browser origins, so their saves do not sync. Export your save before clearing site data, switching browsers or profiles, or starting over. Importing a save replaces the active local progress after confirmation.
 
-The game has **no account system, analytics, or remote runtime dependency**. All gameplay and save data stay in the browser environment in which you play.
+The game has **no account system or remote gameplay dependency**. All gameplay and save data stay in the browser environment in which you play.
 
 <a id="run-locally"></a>
 ## 🛠️ Run Locally
@@ -471,3 +471,7 @@ The included fonts retain their separate **SIL Open Font License 1.1** terms and
   <sub>ROLL. REBUILD. DESCEND.</sub><br>
   <sub>Dice Abyss · The next floor is waiting for your next roll.</sub>
 </p>
+
+## Website analytics
+
+The public website uses Cloudflare Web Analytics for aggregate page visits and performance. The beacon loads only on `seiya058904.github.io`; local previews and offline copies do not load it. No game saves, journal entries, map contents, or form values are passed to the analytics integration. Statistics start after deployment and do not recover earlier traffic. See [Cloudflare's privacy policy](https://www.cloudflare.com/privacypolicy/).
