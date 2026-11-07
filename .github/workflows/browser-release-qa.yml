@@ -65,7 +65,7 @@ jobs:
           node scripts/qa-browser-release.mjs ${{ matrix.args }} --output="$RUNNER_TEMP/browser-release" 2>&1 | tee "$RUNNER_TEMP/browser-release.log"
       - name: Preserve success and failure evidence
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: browser-release-${{ github.event.pull_request.head.sha || github.sha }}-${{ matrix.shard }}
           path: |
