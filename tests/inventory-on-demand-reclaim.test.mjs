@@ -46,8 +46,8 @@ test('explicit checking reviews the complete bag even while the visible search i
  const quote=E.salvagePreview(f.probe.state,undefined,false,true);assert(quote.items.length>50);
  await f.click('salvage-preview');assert(f.probe.dialog.open);assert.equal(typeof f.probe.pending,'function');
  const html=f.probe.dialog.innerHTML;
- assert(html.includes(`以下 ${quote.items.length.toLocaleString('en-US')} 件普通 / 稀有旧装`));
- assert(html.includes(`预计实收 ${goldNum(quote.gold)} 金币`));
+ assert(html.includes(`/ ${quote.items.length.toLocaleString('en-US')} 件`));assert.match(html,/候选仅按基础强度筛选/);
+ assert(html.includes(`预计实收 <b>${goldNum(quote.gold)}</b> 金币`));
  for(const item of quote.items.slice(0,50))assert(html.includes(esc(itemSummary(item))));
  assert.match(html,/确认回收/);untouched(f);
 });
@@ -74,8 +74,8 @@ test('an empty safe batch remains checkable and provides an explicit live-region
  await f.click('inventory');assert(!/\sdisabled(?:\s|>)/.test(reclaimButton(f.app.innerHTML)));
  await f.click('salvage-preview');
  assert(!f.probe.dialog.open);assert.equal(f.probe.pending,null);
- assert.match(f.announcer.textContent,/当前没有可提交的安全回收批次/);
- assert.match(f.announcer.textContent,/可能没有符合条件的旧装，或批次总额超出安全范围/);
+ assert.match(f.announcer.textContent,/当前没有符合基础强度条件的回收候选/);
+ assert.match(f.announcer.textContent,/或批次总额超出安全范围/);
  assert.match(f.app.innerHTML,/已装备、锁定和本次战利品会保留/);untouched(f);
 });
 
@@ -93,7 +93,7 @@ test('a valid large-value bag reports an unavailable batch without claiming elig
  assert(E.salvagePreview(s,[candidates[0].id],false,true),'A single eligible item can still be explicitly reviewed');
  const f=await recoveryFixture(source,{state:s});await f.click('inventory');await f.click('salvage-preview');
  assert(!f.probe.dialog.open);assert.equal(f.probe.pending,null);
- assert.match(f.announcer.textContent,/当前没有可提交的安全回收批次/);
+ assert.match(f.announcer.textContent,/当前没有符合基础强度条件的回收候选/);
  assert.match(f.announcer.textContent,/批次总额超出安全范围/);
  assert(!f.announcer.textContent.includes('当前没有符合安全回收条件的旧装'));untouched(f);
 });
@@ -110,7 +110,7 @@ test('checking again after a lock uses current eligibility and retains every pro
  for(const id of E.equippedIds(f.probe.state))assert(!ids.includes(id));
  assert.equal(quote.items.length,oldQuote.items.length-1);
  await f.click('salvage-preview');
- assert(f.probe.dialog.innerHTML.includes(`以下 ${quote.items.length.toLocaleString('en-US')} 件普通 / 稀有旧装`));
+ assert(f.probe.dialog.innerHTML.includes(`/ ${quote.items.length.toLocaleString('en-US')} 件`));
  const expected=E.transition(f.probe.state,{type:'salvage',ids,allowOverflow:!!quote.overflow});
  await f.click('confirm');assert.equal(S.encodeSave(f.probe.state),S.encodeSave(expected));
  for(const id of [locked.id,premium.id,protectedLoot.id,...E.equippedIds(f.probe.state)])assert(f.probe.state.player.items.some(item=>item.id===id));
@@ -121,7 +121,7 @@ test('gold overflow is disclosed in the explicit review and cannot be accepted b
  const f=await recoveryFixture(source,{state:s}),quote=E.salvagePreview(f.probe.state,undefined,false,true);
  assert.equal(quote.gold,0);assert(quote.overflow>0);
  await f.click('inventory');await f.click('salvage-preview');
- assert(f.probe.dialog.innerHTML.includes(`明确确认后放弃 ${goldNum(quote.overflow)} 溢出金币`));
+ assert(f.probe.dialog.innerHTML.includes(`确认后将放弃 ${goldNum(quote.overflow)} 溢出金币`));
  untouched(f);
  const expected=E.transition(f.probe.state,{type:'salvage',ids:quote.items.map(item=>item.id),allowOverflow:true});
  await f.click('confirm');assert.equal(S.encodeSave(f.probe.state),S.encodeSave(expected));assert.equal(f.probe.state.player.gold,E.GOLD_CAP);

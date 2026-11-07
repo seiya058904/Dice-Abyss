@@ -19,6 +19,8 @@ import { saveCapacityView } from './save-capacity-view.js';
 import { saveRecoveryView, recoveryMessage } from './save-recovery-view.js';
 import { inventoryQuery, inventoryDefense } from './inventory-query.js';
 import { createInventoryPageSelection } from './inventory-page.js';
+import { createSalvageReview, salvageReviewQuote } from './salvage-review.js';
+import { salvageReviewRows, salvageReviewSummary } from './views.js';
 
 const app = document.querySelector('#app');
 const actionFocus = createActionFocus(app);
@@ -546,11 +548,19 @@ function openComparison(id, slot) {
 function reviewMarkup() {
   if (!reviewList) return '';
   const {items,renderRow,page} = reviewList, pages = Math.ceil(items.length / 50);
-  return `<ul class="salvage-list">${items.slice(page*50,(page+1)*50).map(renderRow).join('')}</ul>${pages>1?`<div class="review-pagination"><button data-action="review-page" data-page="${page-1}" ${page===0?'disabled':''}>上一页</button><span>第 ${page+1} / ${pages} 页 · 共 ${num(items.length)} 件</span><button data-action="review-page" data-page="${page+1}" ${page===pages-1?'disabled':''}>下一页</button></div>`:''}`;
+  const visible=items.slice(page*50,(page+1)*50);
+  const rows=reviewList.kind==='salvage'?salvageReviewRows(reviewList.state,visible,reviewList.selected):visible.map(renderRow).join('');
+  return `<ul class="salvage-list${reviewList.kind==='salvage'?' salvage-review-list':''}">${rows}</ul>${pages>1?`<div class="review-pagination"><button data-action="review-page" data-page="${page-1}" ${page===0?'disabled':''}>上一页</button><span>第 ${page+1} / ${pages} 页 · 共 ${num(items.length)} 件</span><button data-action="review-page" data-page="${page+1}" ${page===pages-1?'disabled':''}>下一页</button></div>`:''}`;
 }
 function reviewItems(items, renderRow) {
   reviewList = {items, renderRow, page:0};
   return `<div class="review-items">${reviewMarkup()}</div>`;
+}
+function updateSalvageReview() {
+  const quote=salvageReviewQuote(reviewList,state),summary=dialog.querySelector('#salvage-review-summary');
+  if(!summary)return;
+  summary.innerHTML=quote?salvageReviewSummary(state,quote,reviewList.items.length):'<p>进度已变化，请取消后重新检查。</p>';
+  dialog.querySelector('[data-action="confirm"]').disabled=!quote?.ids.length;
 }
 document.addEventListener('click', async event => {
   const control = event.target.closest('[data-action]');
@@ -669,10 +679,14 @@ document.addEventListener('click', async event => {
     confirmDialog(item.rarity>=3?'确认永久回收这件珍贵装备？':'回收这件装备？',`<p class="${item.rarity>=3?'danger':''}">${esc(itemSummary(item))}</p><p>等级进度 ${itemProgress(item)} · 于第 ${num(item.depth)} 层获得</p><p>此物品将永久移除，预计实收 ${goldNum(preview.gold)} 金币。${preview.overflow?`<strong class="danger">受金币上限限制，${goldNum(preview.overflow)} 金币将被放弃。</strong>`:''}Lv.、等级进度与 +N 均不会返还；如果要用作融合材料，请取消并保留。</p>`,'确认永久回收',()=>act({type:'salvage',ids:[id],allowProtected:item.rarity>=3,allowOverflow:!!preview.overflow}));return;
   }
   if(action==='salvage-preview'){
-    const preview=salvagePreview(state,undefined,false,true);
-    if(!preview){notify('当前没有可提交的安全回收批次。可能没有符合条件的旧装，或批次总额超出安全范围。可尝试单件回收或融合。');return;}
-    const ids=preview.items.map(i=>i.id);
-    confirmDialog('回收这些旧装备？',`<p>以下 ${num(ids.length)} 件普通 / 稀有旧装将永久移除，预计实收 ${goldNum(preview.gold)} 金币。装备中、锁定、史诗、传说及以上和本次战利品已排除。</p>${reviewItems(preview.items,i=>`<li>${esc(itemSummary(i))}</li>`)}<p>金币 ${goldNum(state.player.gold)} → ${goldNum(state.player.gold+preview.gold)}。${preview.overflow?`<strong class="danger">明确确认后放弃 ${goldNum(preview.overflow)} 溢出金币。</strong>`:''}若要用作融合材料，请取消并保留。</p>`,'确认回收',()=>act({type:'salvage',ids,allowOverflow:!!preview.overflow}));return;
+    const review=createSalvageReview(state);
+    if(!review){notify('当前没有符合基础强度条件的回收候选，或批次总额超出安全范围。可尝试单件回收或融合。');return;}
+    reviewList=review;
+    confirmDialog('审核回收候选',`<p>候选仅按基础强度筛选：等级、品质与强化较低不代表没有保留价值。请查看词条与比较，取消选择要保留的装备。</p><p>已排除装备中、锁定、史诗及以上和本次战利品。遗物按当前默认替换位比较；装备也可保留用于融合。</p><div class="review-items">${reviewMarkup()}</div><div id="salvage-review-summary" role="status" aria-live="polite" aria-atomic="true">${salvageReviewSummary(state,salvageReviewQuote(review,state),review.items.length)}</div><p>确认后，选中装备将永久移除，等级进度与强化不返还。</p>`,'确认回收',()=>{
+      const quote=salvageReviewQuote(review,state);
+      if(!quote?.ids.length){notify('进度或选择已变化，请重新检查回收候选。');return;}
+      return act({type:'salvage',ids:quote.ids,allowOverflow:!!quote.overflow});
+    });updateSalvageReview();return;
   }
   if (action === 'forge-slot') { ui.forgeSlot = control.dataset.slot; render(); return; }
   if(action==='talent-count'){ui.talentCount=talentInvestmentCount(control.dataset.count);render();return;}
@@ -739,6 +753,12 @@ document.addEventListener('submit', event => {
   announceInventoryResults();
 });
 document.addEventListener('change', async event => {
+  const selectedId=event.target.dataset?.salvageSelect;
+  if(selectedId&&dialog.open&&reviewList?.kind==='salvage'){
+    if(reviewList.state!==state||!reviewList.items.some(item=>item.id===selectedId))return;
+    if(event.target.checked)reviewList.selected.add(selectedId);else reviewList.selected.delete(selectedId);
+    updateSalvageReview();return;
+  }
   if (fusion.handleInput(event)) return;
   if (event.target.id === 'comparison-slot') {
     if (ui.busy || committing) return;

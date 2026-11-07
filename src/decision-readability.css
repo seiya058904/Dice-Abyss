@@ -1,0 +1,74 @@
+/* Decision copy has its own readable floor. Window height can compress the
+   scene, but must not silently cancel the player's text-scale preference. */
+:root {
+  --decision-text: max(12px, calc(clamp(12px, .8vw, 18px) * var(--user-scale)));
+  --decision-heading: max(14px, calc(clamp(14px, 1vw, 22px) * var(--user-scale)));
+}
+.game-shell:not(.fusion-mode) .equipment-list > .equipped-item p {
+  font-size: var(--decision-text); line-height: 1.6;
+  grid-template-columns: 1fr;
+}
+.game-shell:not(.fusion-mode) .equipment-list > .equipped-item p > span { white-space: normal; overflow-wrap: anywhere; }
+.game-shell:not(.fusion-mode) .equipment-list > .equipped-item .equipment-depth {
+  font-size: var(--decision-text); line-height: 1.5; flex-wrap: wrap;
+}
+.game-shell:not(.fusion-mode) .equipment-list > .equipped-item h3 { font-size: var(--decision-heading); overflow-wrap: anywhere; }
+.game-shell:not(.fusion-mode) .equipment-list > .equipped-item :is(.item-meta strong, h3 small) { font-size: var(--decision-text); }
+.game-shell:not(.fusion-mode) .right-rail > .equipment-list { flex: 0 0 auto; grid-template-rows: none; grid-auto-rows: auto; overflow: visible; }
+.game-shell:not(.fusion-mode) .equipment-list > .equipped-item { min-height: 100px; padding: .65rem; }
+.game-shell:not(.fusion-mode) .equipment-list > .empty-slot { min-height: 48px; }
+@media (min-width: 1100px) {
+  .game-shell:not(.fusion-mode) .right-rail { overflow-y: auto; scrollbar-gutter: stable; }
+}
+.game-shell:not(.fusion-mode) .item-card > p,
+.game-shell:not(.fusion-mode) .inventory-list .item-card > p,
+.game-shell:not(.fusion-mode) :is(.item-origin, .item-level-line, .inventory-guidance, .inventory-reclaim, .inventory-lock-note, .inventory-pagination),
+.game-shell:not(.fusion-mode) .item-card .item-actions button,
+.game-shell:not(.fusion-mode) .item-comparison :is(small, dt, dd),
+.game-dialog .item-comparison :is(small, dt, dd) {
+  font-size: var(--decision-text); line-height: 1.6;
+}
+.game-shell:not(.fusion-mode) .item-card :is(h3, h3 small) { font-size: var(--decision-heading); }
+.game-shell:not(.fusion-mode) .inventory-reclaim { align-items: center; gap: .75rem; }
+.game-shell:not(.fusion-mode) .inventory-reclaim > span { font-size: var(--decision-text); line-height: 1.6; }
+.game-shell:not(.fusion-mode) .inventory-reclaim button { font-size: var(--decision-text); flex-shrink: 0; }
+.game-shell:not(.fusion-mode) .inventory-guidance > p,
+.game-shell:not(.fusion-mode) .inventory-guidance > span { font-size: var(--decision-text); line-height: 1.6; }
+.game-shell:not(.fusion-mode) .primary-control > small { font-size: var(--decision-text); }
+.game-shell:not(.fusion-mode) .item-comparison { overflow-wrap: anywhere; }
+.game-shell:not(.fusion-mode) .inventory-list .item-card { min-width: 0; }
+.game-shell:not(.fusion-mode) .inventory-list .item-actions { flex-wrap: wrap; }
+/* Short desktop windows scroll the tools with the cards, so readable copy
+   cannot leave only a sliver of inventory. Pagination remains reachable. */
+@media (min-width: 1100px) and (max-height: 900px) {
+  .game-shell:not(.fusion-mode) .inventory-screen { overflow-y: auto; scrollbar-gutter: stable; scroll-padding-block: 8px 52px; }
+  .game-shell:not(.fusion-mode) .inventory-screen > * { flex-shrink: 0; }
+  .game-shell:not(.fusion-mode) .inventory-screen .inventory-list { flex: 0 0 auto; max-height: none; overflow: visible; }
+  .game-shell:not(.fusion-mode) .inventory-pagination { position: sticky; bottom: 0; background: #080d13; z-index: 2; }
+}
+.game-shell .talent-readiness,
+.game-shell .talent-preview :is(.talent-preview-note, .talent-preview-values b) { font-size: var(--decision-text); }
+.game-shell .talent-preview { height: clamp(174px, 12rem, 240px); }
+
+/* The existing protected confirmation, with native checkboxes and disclosure
+   controls. Paging rebuilds only the rows; selection lives in the review. */
+.game-dialog:has(.salvage-review-list) { width: min(760px, calc(100vw - 32px)); max-width: none; padding: 20px; }
+.game-dialog:has(.salvage-review-list) .confirmation-copy { margin: 12px 0; font-size: var(--decision-text); color: #c8d3dc; }
+.salvage-list.salvage-review-list { list-style: none; max-height: 44svh; padding: 0 8px 0 0; font-size: var(--decision-text); }
+.salvage-review-item { padding: 12px 0; border-bottom: 1px solid #46525c; }
+.salvage-review-item > label { display: flex; align-items: flex-start; gap: 10px; min-height: 28px; cursor: pointer; color: #e8eef2; }
+.salvage-review-item input { flex: 0 0 auto; width: 20px; height: 20px; margin: 1px 0 0; accent-color: #dfbd77; }
+.salvage-review-item input:focus-visible,
+.salvage-review-item summary:focus-visible { outline: 2px solid #dfbd77; outline-offset: 3px; }
+.salvage-review-item details { margin: 4px 0 0 30px; }
+.salvage-review-item summary { cursor: pointer; min-height: 28px; color: #d2bc8b; }
+.salvage-review-item details > p { color: #c8d3dc; margin: 6px 0; overflow-wrap: anywhere; }
+.salvage-review-item .item-comparison { display: block; }
+#salvage-review-summary { border-top: 1px solid #657581; margin-top: 12px; padding-top: 10px; }
+.game-dialog:has(.salvage-review-list) :is(.review-pagination, .dialog-buttons) { flex-wrap: wrap; gap: 8px; }
+.game-dialog:has(.salvage-review-list) button { font-size: var(--decision-text); min-height: 36px; }
+@media (max-width: 600px) {
+  .game-shell:not(.fusion-mode) .inventory-reclaim { flex-wrap: wrap; }
+  .game-dialog:has(.salvage-review-list) { padding: 16px; }
+  .salvage-review-item > label, .salvage-review-item summary { min-height: 44px; }
+}

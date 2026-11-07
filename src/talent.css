@@ -82,6 +82,10 @@
 .talent-preview-values i, .talent-node-effect i, .v5-talent small i { color: #b59a63; font-style: normal; padding-inline: .15em; }
 .talent-preview-values em { font-style: normal; color: #f4d28c; }
 .talent-preview-note { font-size: max(.65rem, 11px); line-height: 1.5; color: #bfc8cf; margin: .45rem 0 0; }
+.talent-readiness { margin: .4rem 0 0; color: #becbd4; font-size: max(12px, .78rem); line-height: 1.55; }
+.talent-readiness.not-ready { color: #f3d289; }
+.destiny-screen [data-talent-ready="false"] .destiny-node-ring,
+.destiny-screen .v5-talent[data-talent-ready="false"] { outline: 1px dashed #e1b566; outline-offset: 3px; }
 .destiny-screen button:focus-visible { outline: 2px solid #f9d992; outline-offset: 3px; }
 .destiny-screen .destiny-node:focus-visible { z-index: 5; }
 

@@ -22,7 +22,7 @@
 </p>
 
 <p align="center">
-  <sub>VERSION 5.27.0 &nbsp;·&nbsp; DESKTOP WEB &nbsp;·&nbsp; MANUAL DICE COMBAT &nbsp;·&nbsp; LOCAL SAVES</sub>
+  <sub>VERSION 5.27.1 &nbsp;·&nbsp; DESKTOP WEB &nbsp;·&nbsp; MANUAL DICE COMBAT &nbsp;·&nbsp; LOCAL SAVES</sub>
 </p>
 
 <p align="center">
@@ -32,7 +32,17 @@
 </p>
 
 
-## ✨ Current Release · V5.27
+## ✨ Current Release · V5.27.1
+
+**Clearer equipment and talent decisions.** Bulk salvage now presents candidates based on basic equipment strength, with expandable effects and comparisons, individual exclusions that survive paging, and a live gold/overflow quote. A lower basic strength does not guarantee an item is worse for your build; confirm only the equipment you want to consume. Existing equipped, locked, rarity and current-loot protections remain in place.
+
+Talent previews explain when your current combat dice cannot meet a trigger and show the required unlock level. Early investment remains available. Key inventory and equipment copy has a 12 CSS-pixel minimum and follows the text-scale setting. Short desktop windows scroll the inventory tools with the cards, keep pagination available, and preserve the current item and keyboard focus after an action.
+
+The gameplay rules, save schema (5), storage keys and supported extra save fields are unchanged. V5.27.1 is a product patch version, not a save migration.
+
+**2026-11-07 local acceptance:** automated tests and 1,000 seeded simulations, plus isolated Chromium interactions covering salvage selection/cancellation, overflow, stale cross-tab confirmation, early talent investment, reload/continue, and inventory focus/scroll restoration. Layout checks cover 1366×768, 1440×900, 1920×1080 and 390×844 at 90%, 100% and 110% text scale. Browser-driven gameplay and screenshots supplement these checks; they do not establish physical-device performance or long-term balance.
+
+### Previous release · V5.27
 
 **A lighter first load, with an optional faster pace.** Core-font loading reduces the initial font payload. Enable **Fast Pace** in the top-right Settings panel to play complete dice rolls and major effects at twice their normal pace, independently of effect quality. Rewards remain on the result screen until you continue. Standard pace remains the default, and your preference is saved in the current browser.
 
@@ -249,6 +259,8 @@ The published **V5.26.0** was checked independently: all **66 shipping resources
 Canvas regression checks execute the hash-verified, bundled original and current paint programs under the **same Node runtime**, comparing their complete effective arguments and primitive paint state exactly. This avoids treating the last-bit numeric differences between Node 22 and 24 as a rendering regression; no rounding or numeric tolerance is applied. Historical reference hashes remain unchanged.
 
 For browser work, use an external Playwright installation and fresh browser contexts, and keep generated screenshots and logs outside the repository. [`scripts/qa-core-browser.mjs`](scripts/qa-core-browser.mjs) accepts `--url=<game-url>` and `--output=<external-directory>`. See [AGENTS.md](AGENTS.md) for the validation and publishing boundaries.
+
+[`scripts/qa-decision-browser.mjs`](scripts/qa-decision-browser.mjs) covers salvage review, talent readiness, short-window inventory scrolling and decision-text layout. Pass a loopback `--url`, an external `--output` directory, and optionally `--case=<name>` to rerun one case. It uses the same external `PLAYWRIGHT_MODULE` and `CHROMIUM_PATH` settings as the other browser drivers.
 
 The staged-site release gate in `scripts/qa-browser-release.mjs` also checks
 malformed URL escapes: its temporary server returns HTTP 400 and continues

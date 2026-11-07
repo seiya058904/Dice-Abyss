@@ -4,21 +4,25 @@
 const available = node => node && !node.disabled && node.getClientRects().length > 0;
 const itemId = card => card?.querySelector('[data-action="lock"][data-id]')?.dataset.id;
 const cardsIn = list => [...list.querySelectorAll('.item-card')].map(node => ({node,id:itemId(node)}));
+// In short desktop windows the whole inventory scrolls; elsewhere the list
+// retains its original scroll port. Anchors belong to the visible port.
+const scrollPort = (screen,list) => ['auto','scroll'].includes(screen.ownerDocument?.defaultView?.getComputedStyle(screen).overflowY) ? screen : list;
 
 export function captureInventoryPosition(app, runId, {reset=false} = {}) {
   const screen = app.querySelector('.inventory-screen'), list = screen?.querySelector('.inventory-list');
   if (!list) return null;
+  const port=scrollPort(screen,list);
   const active = app.ownerDocument.activeElement;
   const control = screen.contains(active) ? active : null;
   // A changed filter/order/page will start at the top. Its old item positions
   // cannot be used, so capture only the initiating control on that path.
-  const cards = reset ? [] : cardsIn(list), box = reset ? null : list.getBoundingClientRect();
+  const cards = reset ? [] : cardsIn(list), box = reset ? null : port.getBoundingClientRect();
   const focusedCard = control?.closest('.item-card');
   const visible = card => { const rect = card.node.getBoundingClientRect(); return rect.bottom > box.top && rect.top < box.bottom; };
   const anchor = reset ? null : cards.find(card => card.node === focusedCard && visible(card)) || cards.find(visible);
   const pageControls = [...screen.querySelectorAll('[data-action="inventory-page"]')];
   return {
-    runId,top:reset?0:list.scrollTop,left:reset?0:list.scrollLeft,ids:cards.map(card => card.id),
+    runId,top:reset?0:port.scrollTop,left:reset?0:port.scrollLeft,ids:cards.map(card => card.id),
     anchor:anchor ? {id:anchor.id,index:cards.indexOf(anchor),offset:anchor.node.getBoundingClientRect().top-box.top} : null,
     focus:control ? {
       elementId:control.id,data:{...control.dataset},
@@ -46,17 +50,18 @@ function nearbyCard(cards, before, index) {
 export function restoreInventoryPosition(app, before, {reset=false,dialogOpen=false,runId} = {}) {
   const screen = app.querySelector('.inventory-screen'), list = screen?.querySelector('.inventory-list');
   if (!list || !before) return;
+  const port=scrollPort(screen,list);
   // New runs reuse equipment IDs. An old run's anchor and focus cannot follow
   // a coincidentally matching item in the replacement save.
-  if (before.runId !== runId) { list.scrollTop=0;list.scrollLeft=0;return; }
+  if (before.runId !== runId) { port.scrollTop=0;port.scrollLeft=0;return; }
   let cards;
   const inventoryCards = () => cards ||= cardsIn(list);
-  if (reset) { list.scrollTop=0;list.scrollLeft=0; }
+  if (reset) { port.scrollTop=0;port.scrollLeft=0; }
   else {
-    list.scrollTop=before.top;list.scrollLeft=before.left;
+    port.scrollTop=before.top;port.scrollLeft=before.left;
     if (before.anchor) {
       const anchor = inventoryCards().find(card => card.id === before.anchor.id) || nearbyCard(cards,before,before.anchor.index);
-      if (anchor) list.scrollTop += anchor.node.getBoundingClientRect().top-list.getBoundingClientRect().top-before.anchor.offset;
+      if (anchor) port.scrollTop += anchor.node.getBoundingClientRect().top-port.getBoundingClientRect().top-before.anchor.offset;
     }
   }
   if (dialogOpen || !before.focus) return;

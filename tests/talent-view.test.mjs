@@ -17,7 +17,7 @@ test('allocation defaults to one point and presets only change a pure production
     const html=center(s,stateUI),quote=talentPreview(s,'power',talentInvestmentCount(count));
     const amount=talentInvestmentCount(count);
     assert.match(html,new RegExp(`data-action="talent-count" data-count="${amount}" aria-pressed="true"`));
-    assert.match(control(html,'power'),new RegExp(`data-count="${amount}" data-talent-preview="power" data-investment="${quote.count}"`));
+    assert.match(control(html,'power'),new RegExp(`data-count="${amount}" data-talent-preview="power" data-talent-ready="true" data-investment="${quote.count}"`));
     assert.match(html,new RegExp(`data-talent-inspected="power" data-preview-count="${quote.count}" data-preview-before="3" data-preview-after="${quote.afterRank}" data-preview-remaining="${quote.remainingPoints}"`));
     assert.equal(JSON.stringify(stateUI),beforeUI,'render does not change preset or focus state');
     assert.equal(JSON.stringify(s),stateBefore,'preview never spends, saves, changes HP, revision or RNG');
