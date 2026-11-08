@@ -49,6 +49,18 @@
 .game-shell .talent-readiness,
 .game-shell .talent-preview :is(.talent-preview-note, .talent-preview-values b) { font-size: var(--decision-text); }
 .game-shell .talent-preview { height: clamp(174px, 12rem, 240px); }
+.talent-benefit { margin-top: 8px; font-size: var(--decision-text); line-height: 1.6; color: #d7dee3; }
+.talent-benefit > strong { color: #f4d28c; }
+.talent-benefit dl, .equip-health-review dl { margin: 4px 0; font-variant-numeric: tabular-nums; }
+.talent-benefit dl > div, .equip-health-review dl > div { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; }
+.talent-benefit dd, .equip-health-review dd { margin: 0; }
+.talent-benefit p { margin: 4px 0; }
+.talent-benefit .talent-benefit-warning { color: #f4d28c; }
+.talent-preview:focus-visible { outline: 2px solid #f4d28c; outline-offset: -2px; }
+.game-dialog:has(.equip-health-review) { width: min(620px, calc(100vw - 32px)); max-width: none; }
+.game-dialog .equip-health-review { font-size: var(--decision-text); line-height: 1.7; overflow-wrap: anywhere; }
+.game-dialog:has(.equip-health-review) .dialog-buttons { flex-wrap: wrap; gap: 8px; }
+.game-dialog:has(.equip-health-review) .dialog-buttons button { white-space: normal; }
 
 /* The existing protected confirmation, with native checkboxes and disclosure
    controls. Paging rebuilds only the rows; selection lives in the review. */

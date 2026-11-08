@@ -41,6 +41,9 @@ export const diceCount = s => DICE_LEVELS.filter(level => s.player.level >= leve
 export const xpNeeded = level => 18 + level * 10;
 export const equippedIds = s => Object.values(s.player.equipped).filter(Boolean);
 export const talent = (s, key) => s.player.talents[key] || 0;
+// Shared by settlement and read-only build previews; no RNG is consumed here.
+export const combatCriticalChance = (s,st,hasSix=false) => Math.min(.9,st.crit+st.critBonus+(hasSix?talent(s,'keen')*.03:0));
+export const combatFollowChance = (s,st,pair=false,critical=false) => Math.min(.85,st.follow+st.followBonus+(pair?talent(s,'echo')*.03:0)+(critical&&pair?st.criticalFollow+talent(s,'spark')*.05:0));
 // A quantity is an explicit player choice; it never selects a node or changes
 // the build automatically. The same bounded quote drives UI and settlement.
 export function talentPreview(s,id,count=1) {
@@ -103,7 +106,7 @@ function compareEquipmentResult(s,item,requestedSlot,before,beforeDamage) {
  const slot=equipSlot(s,item,requestedSlot);next.player.equipped[slot]=item.id;
  const after=stats(next),survival=st=>st.maxHp*(1+st.defense/Math.max(20,depthPower(s.floor)*6))/(1-st.reduction)*(1+st.barrier+st.regen*2)/(1-st.dodge),armor=item.slot==='armor';
  const delta=Math.round(((armor?survival(after)/survival(before):damageExpectation(next,after)/(beforeDamage?beforeDamage():damageExpectation(s,before)))-1)*100);
- const labels={attack:'攻击',maxHp:'生命',defense:'防御',luck:'幸运',echoChance:'跟随同点',crit:'暴击率',follow:'追击率',reduction:'减伤',pairWard:'同点护盾',critDamage:'暴击伤害',pierce:'穿盾',regen:'再生',barrier:'开场护盾',dodge:'闪避',criticalFollow:'共鸣暴击追击',followDamage:'追击伤害',goldBonus:'金币收益'};
+ const labels={attack:'攻击',maxHp:'生命上限',defense:'防御',luck:'幸运',echoChance:'跟随同点',crit:'暴击率',follow:'追击率',reduction:'减伤',pairWard:'同点护盾',critDamage:'暴击伤害',pierce:'穿盾',regen:'再生',barrier:'开场护盾',dodge:'闪避',criticalFollow:'共鸣暴击追击',followDamage:'追击伤害',goldBonus:'金币收益'};
  const preferred=armor?['maxHp','defense','reduction','dodge','barrier','regen']:item.slot==='weapon'?['attack','crit','follow','critDamage','pierce']:['luck','echoChance','pairWard','follow','crit','criticalFollow','goldBonus','attack'];
  const core=preferred.filter(key=>before[key]!==after[key]).slice(0,4).map(key=>({key,label:labels[key],before:before[key],after:after[key],delta:after[key]-before[key]}));
  const shieldTradeoff=!armor&&after.pierce+1e-8<before.pierce;
@@ -308,8 +311,8 @@ export function resolveRoll(s) {
   const rules=[4,5].includes(enemy.combatRules),mod=rules?combatModifiers(enemy,values,best,st):{damageMultiplier:1,bonusDamage:0,shieldPierce:0,healPlayer:0,wardGain:0,attackMultiplier:1,notes:[]},mechanics=[...(mod.notes||[])];
   const weighted=values.reduce((sum,v)=>sum+v*(1+(v>=5?talent(s,'high')*.12:0)+(v===4?talent(s,'four')*.15+st.fourBonus:v===5?talent(s,'five')*.15+st.fiveBonus:v===6?talent(s,'six')*.18+st.sixBonus:0)),0);
   const resonance=best>=2?1+(best-1)*.45+talent(s,'resonance')*.12:1;
-  const critical=random(s)<Math.min(.9,st.crit+st.critBonus+(values.includes(6)?talent(s,'keen')*.03:0));
-  const follow=random(s)<Math.min(.85,st.follow+st.followBonus+(best>=2?talent(s,'echo')*.03:0)+(critical&&best>=2?st.criticalFollow+talent(s,'spark')*.05:0));
+  const critical=random(s)<combatCriticalChance(s,st,values.includes(6));
+  const follow=random(s)<combatFollowChance(s,st,best>=2,critical);
   // Persist exactly the factors used by this settled roll. Later gear/talent
   // changes must not rewrite its history; old saves may omit these two fields.
   const criticalMultiplier=critical?1.8+talent(s,'crush')*.1+st.critDamage:1,followMultiplier=follow?.35+talent(s,'pursuit')*.08+st.followDamage:0;

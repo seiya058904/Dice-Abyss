@@ -21,6 +21,7 @@ import { inventoryQuery, inventoryDefense } from './inventory-query.js';
 import { createInventoryPageSelection } from './inventory-page.js';
 import { createSalvageReview, salvageReviewQuote } from './salvage-review.js';
 import { salvageReviewRows, salvageReviewSummary } from './views.js';
+import { equipmentComparisonDetails } from './equipment-comparison.js';
 
 const app = document.querySelector('#app');
 const actionFocus = createActionFocus(app);
@@ -397,7 +398,7 @@ async function begin(reviewed = null) {
   catch (error) { if (!state) { ui.saveError = error.message; render(); } notify(error.message); }
   finally { committing = false; }
 }
-async function act(action) {
+async function act(action,reviewedSnapshot=null) {
   if(recoveryBlocked())return;
   if (!state || ui.busy || committing) return;
   const before = state;
@@ -406,6 +407,7 @@ async function act(action) {
   try {
     await withSaveLock(() => {
       if (ui.saveRecovery || state !== before) throw new Error('另一窗口已更新进度，本次操作未执行。请按最新状态重新选择。');
+      if (reviewedSnapshot!==null && JSON.stringify(before)!==reviewedSnapshot) throw new Error('进度已变化，请重新检查换装后的生命，本次操作未执行。');
       after = transition(before, action);
       if (before !== after) saved = saveGame(after, before);
     });
@@ -544,6 +546,19 @@ function comparisonItem(id) {
 function openComparison(id, slot) {
   const item=comparisonItem(id);
   if (item) openDialog(equipmentComparisonView(state,item,slot));
+}
+async function requestEquip(id,slot) {
+  const item=state.player.items.find(item=>item.id===id);
+  if(!item||Object.values(state.player.equipped).includes(id))return;
+  const detail=equipmentComparisonDetails(state,item,slot),review=detail.context;
+  const action={type:'equip',id,slot:detail.slot};
+  if(review.hpLost>0) {
+    const snapshot=JSON.stringify(state);
+    confirmDialog('换装会减少当前生命',`<section class="equip-health-review"><p>${esc(itemSummary(item))}</p><dl><div><dt>当前生命</dt><dd>${goldNum(review.before.hp)} → ${goldNum(review.after.hp)}</dd></div><div><dt>生命上限</dt><dd>${goldNum(review.before.maxHp)} → ${goldNum(review.after.maxHp)}</dd></div></dl><p class="danger">当前生命将减少 ${goldNum(review.hpLost)}；换回原装备不会补回。</p><p>护盾保持 ${goldNum(review.after.ward)}，不会重新发放开战护盾。旧装备仍保留在背包。</p></section>`,`仍然装备（损失 ${goldNum(review.hpLost)} 生命）`,()=>act(action,snapshot));
+    return;
+  }
+  if(dialog.open)dialog.close();
+  await act(action);
 }
 function reviewMarkup() {
   if (!reviewList) return '';
@@ -713,8 +728,9 @@ document.addEventListener('click', async event => {
     if(item?.slot==='relic'&&['relic','relic2','relic3'].every(k=>state.player.equipped[k])){
       openDialog(`<div class="dialog-heading"><h2 id="dialog-title">选择替换的遗物位</h2><button data-action="close-dialog">取消</button></div><p>新装备：${esc(itemSummary(item))}</p><p class="relic-new-effects">${esc(itemEffects(item))}</p><p>旧遗物会留在背包，Lv. 与 +N 都保留。</p>${['relic','relic2','relic3'].map((k,i)=>{const old=state.player.items.find(x=>x.id===state.player.equipped[k]);return `<button class="relic-replacement ${RARITIES[old.rarity].key}" data-action="equip-relic" data-id="${item.id}" data-slot="${k}"><b>遗物 ${i+1} · ${esc(old.name)} · Lv.${num(old.level)} · +${old.enhance}</b><small>${esc(itemEffects(old))}</small>${comparison(state,item,k)}</button>`;}).join('')}`);return;
     }
+    await requestEquip(control.dataset.id);return;
   }
-  if(action==='equip-relic'){dialog.close();await act({type:'equip',id:control.dataset.id,slot:control.dataset.slot});return;}
+  if(action==='equip-relic'){await requestEquip(control.dataset.id,control.dataset.slot);return;}
   await act({ type: action, id: control.dataset.id });
 });
 function inspectTalent(event) {

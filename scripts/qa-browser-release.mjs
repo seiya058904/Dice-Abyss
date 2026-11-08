@@ -12,6 +12,7 @@ import * as E from '../src/engine.js';
 import * as S from '../src/storage.js';
 import {coreFontProof} from './core-font-proof.mjs';
 import {gzipSync} from 'node:zlib';
+import {runDecisionGainsQA} from './qa-decision-gains.mjs';
 const root=fileURLToPath(new URL('../',import.meta.url));
 const args=Object.fromEntries(process.argv.slice(2).map(x=>{const i=x.indexOf('=');return[x.slice(2,i),x.slice(i+1)];}));
 assert(args.output,'--output external directory required');
@@ -150,6 +151,9 @@ try{
   assert.equal(saved[0],saved[1]);assert.deepEqual(S.decodeSave(saved[0]),expected);
   await page.screenshot({path:path.join(output,'10000-inventory.png')});await page.reload();await page.locator('[data-action="continue"]').click();
   assert.deepEqual(S.decodeSave(await page.evaluate(k=>localStorage.getItem(k),S.SAVE_KEY)),expected);
+ });
+ await check('talent-benefit-and-equipment-health-decisions',async()=>{
+  await runDecisionGainsQA({browser,url,output:path.join(output,'decision-gains'),noWebLocks:args['no-web-locks']==='true'});
  });
  await check('no-page-console-network-errors',async()=>{
   assert.equal(report.errors.length,0);assert(!report.network.some(x=>x.status>=400));assert(!report.console.some(x=>x.type==='error'),JSON.stringify(report.console));

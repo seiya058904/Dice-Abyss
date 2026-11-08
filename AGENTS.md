@@ -19,6 +19,7 @@ Applies to this repository. Follow the user's current instructions and applicabl
 | Equipment, forging and authoritative fusion quotes | `src/equipment.js`, `src/equipment-content.js` |
 | Save validation, migration, capacity and durable writes | `src/storage.js` |
 | Interaction orchestration and screen templates | `src/app.js`, `src/views.js` |
+| Read-only talent contribution and effective-gain previews | `src/talent-readiness.js`, `src/talent-benefit.js` |
 | Fusion selection and presentation | `src/fusion-controller.js`, `src/fusion-workbench.js`, `src/fusion-view.js`, `src/fusion-dom.js` |
 | Inventory selection and DOM reuse | `src/inventory-query.js`, `src/inventory-page.js`, `src/inventory-render.js`, `src/inventory-dom.js` |
 | Dice, effects and presentation lifecycle | `src/dice-renderer.js`, `src/dice-motion.js`, `src/effects.js`, `src/visual-timeline.js` |
@@ -52,6 +53,7 @@ npm run simulate -- 1000
 - Reproduce stateful failures, add meaningful regression protection and inspect the final diff. Preserve unrelated work; stage explicit paths.
 - Check CI's Node version when investigating differences from the local runtime. Particle-program regression uses the bundled SHA-256-verified original in the same runtime, with exact command and primitive-state equality. Keep the original source/reference evidence; do not fix a failure by updating hashes blindly or adding tolerance.
 - For visible changes, exercise the affected UI and reload/continue path in a real browser. Prefer the current repository QA drivers, including `scripts/qa-core-browser.mjs`; inspect older drivers before assuming they match the current UI.
+- `scripts/qa-decision-gains.mjs --url=<isolated-origin> --output=<external-directory>` covers effective talent gains and health-loss confirmations. The staged release gate runs it in both native and API-absent Web Locks modes; `--case=<name>` supports focused diagnosis.
 - Browser QA uses an externally installed Playwright/Chromium via `PLAYWRIGHT_MODULE` and `CHROMIUM_PATH`. Do not add them as game dependencies. Pass an external `--output` directory.
 - Use fresh browser contexts and synthetic saves on an isolated test origin. Never clear, import into or overwrite a user's normal browser profile or private save as a test setup step.
 - Separate unit/HTTP checks, native browser interactions, human playtesting and performance evidence. Software rendering or a simulated 4K viewport does not prove physical-GPU 4K/60 FPS, pixel identity or long-term balance.

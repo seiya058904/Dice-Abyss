@@ -17,6 +17,7 @@ import { eventChoicePreview } from './event-preview.js';
 import { eventRiskPreview } from './event-risk.js';
 import { eventReferenceRoles } from './event-references.js';
 import { talentReadiness } from './talent-readiness.js';
+import { talentBenefit } from './talent-benefit.js';
 import { stats, diceCount, itemValue, itemStats, compareEquipment, compareEquipmentBatch, xpNeeded, XP_CAP, LEVEL_CAP, forgePreview, fusionPreview, canAct, ENHANCE_CAP, equippedIds, equipSlot, talent, talentPreview, memorywellPreview, depthPower, enemyIntent, diceOdds, dropOdds } from './engine.js';
 
 export const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -237,7 +238,12 @@ export function talentInspectorView(s,ui,id=ui.talentInspect) {
  const group=Object.hasOwn(TALENT_GROUPS,ui.talentGroup)?ui.talentGroup:'high';
  if(!Object.hasOwn(TALENTS,id))id=Object.keys(TALENTS).find(key=>TALENTS[key].group===group);
  const {definition,rank,count,preview,reason,readiness,beforeEffect,afterEffect}=talentNodePreview(s,ui,id);
- return `<div class="talent-preview-heading" data-talent-inspected="${id}" data-preview-count="${preview?.count||0}" data-preview-before="${rank}" data-preview-after="${preview?.afterRank??rank}" data-preview-remaining="${preview?.remainingPoints??s.player.talentPoints}"><strong>${esc(definition.name)}</strong><span>${TALENT_GROUPS[definition.group]} · ${DEEP_TALENTS[id]?'深层节点':'基础节点'}</span><b>${preview?`实际投入 +${num(preview.count)} 点`:esc(reason)}</b></div><div class="talent-preview-values"><span><small>节点等级</small><b>${num(rank)} <i>→</i> ${num(preview?.afterRank??rank)}</b></span><span class="talent-preview-effect"><small>节点累计贡献</small><b>${esc(beforeEffect)} <i>→</i> <em>${esc(afterEffect)}</em></b></span><span><small>投入后剩余</small><b>${num(preview?.remainingPoints??s.player.talentPoints)} <small>点</small></b></span></div><p class="talent-readiness ${readiness?.available===false?'not-ready':''}" ${readiness?'':'hidden'}>${readiness?esc(readiness.message):''}</p><p class="talent-preview-note">${preview?count==='max'?'本节点最多：仅投入此节点，其他节点不会变化。':preview.capped?`所选 ${count} 点受余额或节点上限限制，本次实际投入 ${num(preview.count)} 点。`:'点击节点后才会投入，当前仅为预览。':esc(reason)+'。'}${id==='vitality'?' 仅增加生命上限，当前生命不恢复。':''}</p>`;
+ return `<div class="talent-preview-heading" data-talent-inspected="${id}" data-preview-count="${preview?.count||0}" data-preview-before="${rank}" data-preview-after="${preview?.afterRank??rank}" data-preview-remaining="${preview?.remainingPoints??s.player.talentPoints}"><strong>${esc(definition.name)}</strong><span>${TALENT_GROUPS[definition.group]} · ${DEEP_TALENTS[id]?'深层节点':'基础节点'}</span><b>${preview?`实际投入 +${num(preview.count)} 点`:esc(reason)}</b></div>${talentBenefitView(s,id,count)}<div class="talent-preview-values"><span><small>节点等级</small><b>${num(rank)} <i>→</i> ${num(preview?.afterRank??rank)}</b></span><span class="talent-preview-effect"><small>节点累计贡献</small><b>${esc(beforeEffect)} <i>→</i> <em>${esc(afterEffect)}</em></b></span><span><small>投入后剩余</small><b>${num(preview?.remainingPoints??s.player.talentPoints)} <small>点</small></b></span></div><p class="talent-readiness ${readiness?.available===false?'not-ready':''}" ${readiness?'':'hidden'}>${readiness?esc(readiness.message):''}</p><p class="talent-preview-note">${preview?count==='max'?'本节点最多：仅投入此节点，其他节点不会变化。':preview.capped?`所选 ${count} 点受余额或节点上限限制，本次实际投入 ${num(preview.count)} 点。`:'点击节点后才会投入，当前仅为预览。':esc(reason)+'。'}${id==='vitality'?' 仅增加生命上限，当前生命不恢复。':''}</p>`;
+}
+function talentBenefitView(s,id,count) {
+ const benefit=talentBenefit(s,id,count);if(!benefit)return '';
+ const value=(n,unit)=>unit==='integer'?goldNum(n):`${unit==='reduction'?'降低 ':''}${Number((n*100).toFixed(2))}%${unit==='maxHp'?' 最大生命':''}`;
+ return `<section class="talent-benefit" aria-label="当前构筑有效增益" data-talent-benefit="${id}"><strong>当前构筑 · 有效变化</strong><dl>${benefit.rows.map(row=>`<div data-benefit-key="${row.key}" data-before="${row.before}" data-after="${row.after}"><dt>${esc(row.label)}</dt><dd>${value(row.before,row.unit)} → ${value(row.after,row.unit)}</dd></div>`).join('')}</dl>${benefit.unchanged?'<p class="talent-benefit-warning">当前构筑下无额外增益；仍可投入，换装或条件变化后可能生效。</p>':benefit.limited?'<p class="talent-benefit-warning">部分增量受上限或取整限制，请以有效变化为准。</p>':''}<p>${esc(benefit.note)}</p></section>`;
 }
 function buildRail(s) {
   const st=stats(s);
@@ -389,7 +395,7 @@ function talentView(s,ui) {
    <section class="destiny-brief branch-${group}" aria-label="当前分支收益"><div class="destiny-brief-heading"><h2>${TALENT_GROUPS[group]}</h2><span>${groupCopy[group]}</span><b>${num(selected.spent)} 点已投入</b></div><dl class="destiny-effect-list">${selected.nodes.map(node=>{const {preview,beforeEffect,afterEffect}=talentNodePreview(s,ui,node.id);return `<div class="${node.rank?'lit':''}"><dt>${node.t.name}<small>${num(node.rank)}${preview?` → ${num(preview.afterRank)} · +${num(preview.count)} 点`:' 级'}</small></dt><dd><span>${esc(beforeEffect)}</span>${preview?`<b>→ ${esc(afterEffect)}</b>`:''}</dd></div>`;}).join('')}</dl><p class="talent-contribution-note">此处为节点累计贡献；战斗触发条件、概率与幸运上限仍按当前规则结算。</p></section>
    <p class="room-hint">基础节点无前置 · 深层节点在 30 / 50 / 80 层解锁 · 每次升级获得 2 点</p>
   </div>
-  <section id="talent-preview" class="talent-preview" aria-label="节点投入预览" aria-live="polite" aria-atomic="true">${talentInspectorView(s,ui)}</section>
+  <section id="talent-preview" class="talent-preview" tabindex="0" aria-label="节点投入预览，可滚动查看" aria-live="polite" aria-atomic="true">${talentInspectorView(s,ui)}</section>
  </section>`;
 }
 // The same fragment is used in the pending room and its confirmation dialog.

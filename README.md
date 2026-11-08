@@ -22,7 +22,7 @@
 </p>
 
 <p align="center">
-  <sub>VERSION 5.27.1 &nbsp;·&nbsp; DESKTOP WEB &nbsp;·&nbsp; MANUAL DICE COMBAT &nbsp;·&nbsp; LOCAL SAVES</sub>
+  <sub>VERSION 5.27.2 &nbsp;·&nbsp; DESKTOP WEB &nbsp;·&nbsp; MANUAL DICE COMBAT &nbsp;·&nbsp; LOCAL SAVES</sub>
 </p>
 
 <p align="center">
@@ -32,7 +32,15 @@
 </p>
 
 
-## ✨ Current Release · V5.27.1
+## ✨ Current Release · V5.27.2
+
+**See the effective gain before spending a talent point.** The inspected-node preview now shows current build totals for same-face guidance, critical/follow-up probabilities, luck, health/defense and deep talent effects. It explains partial caps and zero additional gain while preserving early investment. Conditional values name their triggers; these are not predictions of the next roll or a universal damage score. Other nodes retain their existing contribution previews.
+
+**Review health loss before swapping equipment.** When a swap would reduce current health, the confirmation shows current health, maximum health and the exact loss, and explains that swapping back will not heal it. Swaps that preserve current health remain immediate. A changed save invalidates the reviewed decision, including a conflicting snapshot with the same run ID and revision.
+
+Gameplay rules, save schema **5**, storage keys, RNG and supported extra fields remain compatible. The patch adds no dependencies. **2026-11-09 local acceptance:** 994 tests, 1,000 seeded simulations, 4,140 complete-state comparisons with the prior engine, and isolated Chromium acceptance for previews, cancellation, committing, cross-tab conflicts, failed primary writes and reload/continue. Short desktop and narrow layouts were checked at 90%, 100% and 110% text scale. See [V5.27.2 verification and limits](docs/releases/5.27.2.md).
+
+### Previous release · V5.27.1
 
 **Clearer equipment and talent decisions.** Bulk salvage now presents candidates based on basic equipment strength, with expandable effects and comparisons, individual exclusions that survive paging, and a live gold/overflow quote. A lower basic strength does not guarantee an item is worse for your build; confirm only the equipment you want to consume. Existing equipped, locked, rarity and current-loot protections remain in place.
 

@@ -1,13 +1,11 @@
 // Read-only explanations for the existing comparison. This module never
 // predicts dice, spends RNG, changes equipment, or replaces combat formulas.
-import {stats,equipSlot,talent,diceCount} from './engine.js';
+import {stats,equipSlot,talent,diceCount,combatCriticalChance as chanceCrit,combatFollowChance as chanceFollow} from './engine.js';
 import {itemStats} from './equipment.js';
 import {ABILITY_DEFS} from './deep-content.js';
 import {DICE_LEVELS} from './content.js';
 
 const changed=(a,b)=>Math.abs(a-b)>1e-10;
-const chanceCrit=(s,st,six=false)=>Math.min(.9,st.crit+st.critBonus+(six?talent(s,'keen')*.03:0));
-const chanceFollow=(s,st,pair=false,critical=false)=>Math.min(.85,st.follow+st.followBonus+(pair?talent(s,'echo')*.03:0)+(pair&&critical?st.criticalFollow+talent(s,'spark')*.05:0));
 
 const omittedDamage={firstBonus:'首击',bossBonus:'强敌',sumBonus:'满盈',pierce:'穿盾',sixShatter:'穿盾',barrier:'护盾',pairWard:'护盾',criticalWard:'护盾',lowWard:'护盾',phaseWard:'护盾',regen:'恢复',healBonus:'击杀恢复',sixthMend:'恢复',resonanceMend:'恢复',resolveGuard:'临界减伤',reduction:'减伤',dodge:'闪避',goldBonus:'宝箱金币',gildedSix:'条件金币',firstCritLuck:'后续幸运',eliteLuck:'胜利幸运'};
 const omittedArmor={firstBonus:'首击',bossBonus:'强敌',sumBonus:'满盈',pairBonus:'共鸣增伤',fourBonus:'骰面增伤',fiveBonus:'骰面增伤',sixBonus:'骰面增伤',crit:'暴击',critBonus:'暴击',follow:'追击',followBonus:'追击',critDamage:'暴击伤害',followDamage:'追击伤害',criticalFollow:'条件追击',pierce:'穿盾',sixShatter:'穿盾',openingStrike:'首击',execution:'强敌增伤',distinctStrike:'异点增伤',tripleStrike:'追加主击',echoRelic:'追加主击',pairWard:'共鸣护盾',criticalWard:'暴击护盾',lowWard:'低点护盾',phaseWard:'换相护盾',healBonus:'击杀恢复',sixthMend:'六点恢复',resonanceMend:'合鸣恢复',resolveGuard:'临界减伤',goldBonus:'宝箱金币',gildedSix:'条件金币',firstCritLuck:'后续幸运',eliteLuck:'胜利幸运',luck:'幸运',echoChance:'同点引导'};
