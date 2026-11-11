@@ -21,7 +21,9 @@ export function captureInventoryPosition(app, runId, {reset=false} = {}) {
   const visible = card => { const rect = card.node.getBoundingClientRect(); return rect.bottom > box.top && rect.top < box.bottom; };
   const anchor = reset ? null : cards.find(card => card.node === focusedCard && visible(card)) || cards.find(visible);
   const pageControls = [...screen.querySelectorAll('[data-action="inventory-page"]')];
+  const previousPage=Number(pageControls[0]?.dataset.page);
   return {
+    page:Number.isInteger(previousPage)?previousPage+1:null,
     runId,top:reset?0:port.scrollTop,left:reset?0:port.scrollLeft,ids:cards.map(card => card.id),
     anchor:anchor ? {id:anchor.id,index:cards.indexOf(anchor),offset:anchor.node.getBoundingClientRect().top-box.top} : null,
     focus:control ? {

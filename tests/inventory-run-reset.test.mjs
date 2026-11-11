@@ -123,3 +123,24 @@ test('canceling a new-run or import confirmation leaves selections and storage u
   await chooseImport(f,f.E.newGame(19024));await f.click('close-dialog');
   assert.deepEqual(choices(f),oldChoices);assert.equal(f.S.encodeSave(f.probe.state),f.original);assert.deepEqual(f.writes,[]);
 });
+
+test('ordinary view navigation preserves the inventory page and criteria without saving',async()=>{
+  const f=await recoveryFixture(source),before=previousChoices(f);
+  f.probe.ui.screen='game';
+  for(const view of ['talents','codex','game']){
+    await f.click(view);await f.click('inventory');
+    assert.deepEqual(choices(f),before,'Returning does not silently restart a long filtered list');
+  }
+  await f.click('home');await f.click('continue');
+  assert.deepEqual(choices(f),before);assert.deepEqual(f.writes,[]);
+});
+
+test('explicit inventory slot and defeat preparation entries still reset their result page',async()=>{
+  const f=await recoveryFixture(source);previousChoices(f);
+  await f.click('inventory',{slot:'weapon'});
+  assert.equal(f.probe.ui.inventoryPage,0);assert.equal(f.probe.ui.inventorySlot,'weapon');
+  previousChoices(f);await f.click('inventory',{slot:'armor',resetRarity:'true'});
+  assert.equal(f.probe.ui.inventoryPage,0);assert.equal(f.probe.ui.inventorySlot,'armor');
+  for(const key of ['inventoryRarity','inventoryDefense','inventoryQuery','inventoryQueryDraft'])assert.equal(f.probe.ui[key],'');
+  assert.deepEqual(f.writes,[]);
+});

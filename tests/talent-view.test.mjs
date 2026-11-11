@@ -44,25 +44,30 @@ test('all presets show actual point and rank changes when wallet or the selected
   const max=center(s,{...ui,talentCount:'max',talentInspect:'high'});
   assert.match(control(max,'high'),/data-investment="1"/);
   assert.match(control(max,'power'),/data-investment="100"/);
-  assert.match(max,/本节点最多/);assert.match(max,/最多仅用于所点击的节点/);
+  assert.match(max,/本节点最多/);assert.match(max,/最多仅用于当前查看的节点/);
   assert.equal(s.player.talents.high,4);assert.equal(s.player.talents.power,17);assert.equal(s.player.talentPoints,100);
 });
 
-test('every selected branch keeps the original nodes, floor gates, caps and busy state', () => {
+test('every branch keeps gated and capped nodes readable while only spending is disabled', () => {
   const s=newGame(4403);s.player.talentPoints=20;s.player.talents.four=TALENTS.four.cap;
   for(const group of Object.keys(TALENT_GROUPS)) {
     const html=center(s,{...ui,talentGroup:group,talentCount:10});
     const rendered=controls(html),ids=rendered.map(markup=>markup.match(/data-id="([^"]+)"/)[1]);
     assert.equal(rendered.length,33);
     assert.deepEqual(new Set(ids),new Set(Object.keys(TALENTS).filter(id=>!DEEP_TALENTS[id]||TALENTS[id].group===group)));
-    for(const id of ids.filter(id=>DEEP_TALENTS[id])) assert.match(control(html,id),/disabled/);
-    assert.match(control(html,'four'),/disabled/);assert.match(control(html,'four'),/data-investment="0"/);
+    for(const id of ids.filter(id=>DEEP_TALENTS[id])) {
+      assert(!control(html,id).includes('disabled'));
+      assert.match(talentInspectorView(s,ui,id),/data-action="talent-invest"[^>]*disabled/);
+    }
+    assert(!control(html,'four').includes('disabled'));assert.match(control(html,'four'),/data-investment="0"/);
+    assert.match(talentInspectorView(s,ui,'four'),/data-action="talent-invest"[^>]*disabled/);
     assert(!control(html,'power').includes('disabled'));
   }
   s.floor=80;
   assert(controls(center(s,{...ui,busy:true,talentCount:'max'})).every(markup=>markup.includes('disabled')));
   s.player.talentPoints=0;
-  assert(controls(center(s,{...ui,talentCount:10})).every(markup=>markup.includes('disabled')));
+  assert(controls(center(s,{...ui,talentCount:10})).every(markup=>!markup.includes('disabled')));
+  assert.match(talentInspectorView(s,ui,'power'),/data-action="talent-invest"[^>]*disabled/);
   assert.match(talentInspectorView(s,ui,'power'),/暂无可用天赋点/);
   assert.match(talentInspectorView(s,ui,'four'),/本节点已满/);
 });

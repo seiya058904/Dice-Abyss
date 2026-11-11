@@ -58,10 +58,10 @@ test('the destiny map preserves all 30 legacy nodes and exposes selected deep no
  const controls=html.match(/<button[^>]+data-action="talent"[^>]+>/g)||[];
  const ids=controls.map(button=>button.match(/data-id="([^"]+)"/)[1]);
  assert.equal(controls.length,33);assert.deepEqual(new Set(ids),new Set(Object.keys(TALENTS).filter(k=>!DEEP_TALENTS[k]||TALENTS[k].group==='high')));
- assert(controls.filter(button=>DEEP_TALENTS[button.match(/data-id="([^"]+)"/)[1]]).every(button=>button.includes('disabled')));assert.equal(controls.filter(button=>!button.includes('disabled')).length,30);assert.equal(JSON.stringify(s),snapshot,'rendering cannot invest points or consume RNG');
+  assert(controls.filter(button=>DEEP_TALENTS[button.match(/data-id="([^"]+)"/)[1]]).every(button=>button.includes('data-investment="0"')));assert.equal(controls.filter(button=>!button.includes('disabled')).length,33);assert.equal(JSON.stringify(s),snapshot,'rendering cannot invest points or consume RNG');
  s=transition(s,{type:'talent',id:'pursuit'});
  const after=center(s,{...ui,view:'talents',talentGroup:'high'}),pursuit=(after.match(/<button[^>]+data-action="talent"[^>]+>/g)||[]).find(button=>button.includes('data-id="pursuit"'));
- assert(pursuit.includes('destiny-node lit'));assert(pursuit.includes('disabled'));assert(after.includes('1 / 45 节点已点亮'));
+  assert(pursuit.includes('destiny-node lit'));assert(!pursuit.includes('disabled'));assert.match(after,/data-action="talent-invest"[^>]*disabled/);assert(after.includes('1 / 45 节点已点亮'));
  const full=gameView(s,{...ui,view:'talents',talentGroup:'critical'});assert(!full.includes('undefined'));assert(full.includes('追击追加主击'));assert(full.includes('+43%'));
 });
 

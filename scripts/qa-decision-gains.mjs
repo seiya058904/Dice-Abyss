@@ -52,7 +52,8 @@ export async function runDecisionGainsQA({browser,url,output,noWebLocks=false,on
      assert.equal(await page.locator('[data-talent-inspected="attune"]').getAttribute('data-preview-count'),'5');
      await page.locator('[data-action="talent-count"][data-count="1"]').click();await shot('talent-capped');
     } else if(mode==='partial')assert.match(await page.locator('#talent-preview').innerText(),/部分增量/);
-    await page.locator('[data-talent-preview="attune"]').press('Enter');await committed(expected);
+    await page.locator('[data-talent-preview="attune"]').press('Enter');await exact(s);
+    await page.locator('[data-action="talent-invest"]').press('Enter');await committed(expected);
     await page.reload();await page.locator('[data-action="continue"]').click();await exact(expected);
    }
   });

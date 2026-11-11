@@ -64,6 +64,13 @@ function remount(before, options={}, captureOptions={}) {
 }
 const focused = state => state.doc.activeElement;
 
+test('navigation bookmarks record the rendered page, including its clamped boundary',()=>{
+  for(const page of [0,1,2]){
+    const current=scene({page,pages:page+1});
+    assert.equal(captureInventoryPosition(current.app,'run-a').page,page);
+  }
+});
+
 test('existing same-page item controls retain scroll position and keyboard focus',()=>{
   for (const action of ['lock','salvage-item']) {
     const before=scene();before.list.scrollTop=450;before.action('i5',action).focus();

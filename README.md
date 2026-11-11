@@ -22,7 +22,7 @@
 </p>
 
 <p align="center">
-  <sub>VERSION 5.27.2 &nbsp;·&nbsp; DESKTOP WEB &nbsp;·&nbsp; MANUAL DICE COMBAT &nbsp;·&nbsp; LOCAL SAVES</sub>
+  <sub>VERSION 5.27.3 &nbsp;·&nbsp; DESKTOP WEB &nbsp;·&nbsp; MANUAL DICE COMBAT &nbsp;·&nbsp; LOCAL SAVES</sub>
 </p>
 
 <p align="center">
@@ -32,7 +32,17 @@
 </p>
 
 
-## ✨ Current Release · V5.27.2
+## ✨ Current Release · V5.27.3
+
+Talent nodes now select a read-only preview; use **Invest N Points** in the detail panel to spend the displayed amount. Nodes with no available points, a completed rank cap, or a locked floor remain keyboard-accessible for inspection. Selecting a node never spends points.
+
+Import confirmations compare current and incoming progress and provide an **Export Current Progress First** action without closing the decision. Restart confirmations offer the same backup entry. Confirm the download has completed before replacing progress; the mirror is a synchronized copy, not a history of replaced journeys.
+
+Returning to Inventory through ordinary navigation restores its page and browsing position. Lists and comparisons are rebuilt from the current save; changed filters, explicit equipment-slot shortcuts and replacement journeys reset the relevant position. Removed items and pages fall back to surviving current results.
+
+Gameplay rules, RNG, save schema **5**, storage keys and dependencies remain unchanged. **2026-11-11 local acceptance:** 1,001 tests and 1,000 seeded simulations passed, together with isolated Chromium checks for explicit talent investment, backup/download and replacement, inventory return, keyboard focus, reload, stale cross-tab decisions and write failures. Both native and API-absent Web Locks modes were exercised. See [V5.27.3 verification and limits](docs/releases/5.27.3.md).
+
+### Previous release · V5.27.2
 
 **See the effective gain before spending a talent point.** The inspected-node preview now shows current build totals for same-face guidance, critical/follow-up probabilities, luck, health/defense and deep talent effects. It explains partial caps and zero additional gain while preserving early investment. Conditional values name their triggers; these are not predictions of the next roll or a universal damage score. Other nodes retain their existing contribution previews.
 

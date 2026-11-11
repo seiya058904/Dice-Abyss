@@ -73,6 +73,8 @@ async function shot(page, name) {
 async function invest(page, before, id, count, keyboard = false) {
   const expected = E.transition(before, { type: 'talent', id, count }); assert.notStrictEqual(expected, before);
   if (keyboard) await node(page, id).press('Enter'); else await node(page, id).click();
+  await exact(page, before, `${id}: selecting the node is read-only`);
+  if (keyboard) await button(page,'talent-invest').press('Enter'); else await button(page,'talent-invest').click();
   await waitRevision(page, expected.revision); await exact(page, expected, `${id}: one exact ${count}-point request`);
   return expected;
 }
@@ -92,30 +94,31 @@ try {
     let s = fixture(); await load(page, s);
     note(await button(page, 'talent-count').count() === 4, 'Four bounded quantity presets are exposed');
     note(await preset(page, 1).getAttribute('aria-pressed') === 'true', 'New screen defaults to one point');
-    await preset(page, 10).click(); await node(page, 'power').hover();
+    await preset(page, 10).click(); await node(page, 'power').focus();
     note(await preset(page, 10).getAttribute('aria-pressed') === 'true', 'Quantity choice has an accessible selected state');
     note(await node(page, 'power').getAttribute('data-investment') === '10', 'The node exposes the exact investment');
     const preview = await page.locator('#talent-preview').innerText();
     note(preview.includes('无尽锋刃') && preview.includes('359') && preview.includes('11'), 'Preview names the node, resulting rank and remaining points', { text: preview });
-    await exact(page, s, 'Quantity and hover preview never consume points or RNG'); await shot(page, 'talents-preview-1440');
+    await exact(page, s, 'Quantity and focus preview never consume points or RNG'); await shot(page, 'talents-preview-1440');
     s = await invest(page, s, 'power', 10, true);
     note(await page.evaluate(() => document.activeElement?.dataset.id) === 'power', 'Keyboard focus follows the same usable node after rendering');
     await preset(page, 'max').click();
     note(await node(page, 'high').getAttribute('data-investment') === '5', 'Current-node max respects the five-rank cap');
     s = await invest(page, s, 'high', 'max');
-    note(await node(page, 'high').isDisabled(), 'A completed node is disabled');
+    note(await node(page, 'high').isEnabled() && await button(page,'talent-invest').isDisabled(), 'A completed node remains readable but cannot spend');
     note(await node(page, 'shatter').getAttribute('data-investment') === '3', 'Deep nodes retain their three-rank cap');
     s = await invest(page, s, 'shatter', 'max');
-    await node(page, 'power').hover();
+    await node(page, 'power').focus();
     note(await node(page, 'power').getAttribute('data-investment') === String(s.player.talentPoints), 'Unlimited-growth node max uses only remaining points');
     s = await invest(page, s, 'power', 'max');
     note(s.player.talentPoints === 0, 'Current-node max spends the exact remainder');
-    note(await node(page, 'power').isDisabled(), 'Zero balance blocks a further investment');
+    note(await node(page, 'power').isEnabled() && await button(page,'talent-invest').isDisabled(), 'Zero balance blocks spending, not reading');
     await page.reload(); await button(page, 'continue').click(); await exact(page, s, 'Refresh preserves every committed talent, RNG and revision');
   });
   await run('unlock-cap-and-dead-state', async ({ page }) => {
     let s = fixture(2, 29); await load(page, s); await preset(page, 10).click();
-    note(await node(page, 'shatter').isDisabled(), 'Floor 29 cannot invest in the floor-30 talent');
+    await node(page, 'shatter').focus();
+    note(await node(page, 'shatter').isEnabled() && await button(page,'talent-invest').isDisabled(), 'The floor-30 talent is readable at floor 29 but cannot spend');
     note(await node(page, 'power').getAttribute('data-investment') === '2', 'A ten-point request previews the two available points');
     s = await invest(page, s, 'power', 10); note(s.player.talentPoints === 0, 'Insufficient balance truncates rather than overspends');
     s = fixture(8, 30); s.player.talents.high = 4; await load(page, s); await preset(page, 10).click();
@@ -138,7 +141,7 @@ try {
     const next = await page.locator('#talent-scroll').evaluate(el => el.scrollTop);
     note(Math.abs(position - next) <= 1, 'A keyboard investment preserves talent scroll position', { before: position, after: next });
     note(await page.evaluate(() => document.activeElement?.dataset.id) === 'shatter', 'The keyboard remains on the same still-usable deep node');
-    await node(page, 'shatter').press('Space');
+    await button(page,'talent-invest').press('Space');
     s = E.transition(s, { type: 'talent', id: 'shatter', count: 1 }); await waitRevision(page, s.revision);
     await exact(page, s, 'Space activates the focused talent once without a combat roll');
     await shot(page, 'talents-keyboard-1366');
@@ -149,7 +152,7 @@ try {
       window.__talentSetItem = Storage.prototype.setItem;
       Storage.prototype.setItem = function (k, v) { if (k === key) throw new DOMException('Synthetic talent write failure', 'QuotaExceededError'); return window.__talentSetItem.call(this, k, v); };
     }, S.SAVE_KEY);
-    await node(page, 'power').click(); await page.locator('.toast.visible').filter({ hasText: '本次操作未生效' }).waitFor();
+    await node(page, 'power').click(); await button(page,'talent-invest').click(); await page.locator('.toast.visible').filter({ hasText: '本次操作未生效' }).waitFor();
     assert.deepEqual(await raw(page), before); note(true, 'Failed primary write preserves both durable copies');
     note(await node(page, 'power').getAttribute('data-investment') === '10', 'Failure leaves the intended investment available');
     await page.evaluate(() => { Storage.prototype.setItem = window.__talentSetItem; });

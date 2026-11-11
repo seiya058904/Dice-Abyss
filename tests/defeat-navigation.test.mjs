@@ -27,13 +27,13 @@ test('viewing all preparation options clears a prior slot as well as its rarity'
   assert.equal(f.S.encodeSave(f.probe.state), f.original);
   assert.deepEqual(f.writes, []);
 });
-test('ordinary inventory navigation retains the existing player-selected filters', async () => {
+test('ordinary inventory navigation retains the existing player-selected filters and page', async () => {
   const f = await recoveryFixture(source);
   Object.assign(f.probe.ui, {view:'game', inventorySlot:'relic', inventoryRarity:'4', inventoryPage:2});
   await f.click('inventory');
   assert.equal(f.probe.ui.inventorySlot, 'relic');
   assert.equal(f.probe.ui.inventoryRarity, '4');
-  assert.equal(f.probe.ui.inventoryPage, 0);
+  assert.equal(f.probe.ui.inventoryPage, 2);
   assert.deepEqual(f.writes, []);
 });
 test('protected memory blocks preparation navigation along with other game actions', async () => {

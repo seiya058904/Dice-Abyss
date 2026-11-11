@@ -57,6 +57,25 @@
 .talent-benefit p { margin: 4px 0; }
 .talent-benefit .talent-benefit-warning { color: #f4d28c; }
 .talent-preview:focus-visible { outline: 2px solid #f4d28c; outline-offset: -2px; }
+.talent-preview-heading { position: sticky; top: -.65rem; z-index: 2; padding-block: .3rem; background: #0d1116; }
+.talent-preview-heading [data-action="talent-invest"] { flex-shrink: 0; min-height: 36px; font-size: var(--decision-text); }
+.destiny-screen [data-talent-preview][aria-pressed="true"] { outline: 2px solid #f4d28c; outline-offset: 4px; }
+.destiny-screen [data-investment="0"] .talent-node-investment { color: #bac3ca; border-color: #626a70; background: #0d1116; }
+.game-dialog:has(.save-replacement-review) { width: min(680px, calc(100vw - 32px)); max-width: none; }
+.save-replacement-review { font-size: var(--decision-text); line-height: 1.7; color: #d7dee3; overflow-wrap: anywhere; }
+.save-replacement-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.save-replacement-grid h3 { color: #f4dfb3; font-size: var(--decision-heading); margin: 0 0 8px; }
+.save-replacement-grid dl { margin: 0; font-variant-numeric: tabular-nums; }
+.save-replacement-grid dl > div { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 12px; }
+.save-replacement-grid dd { margin: 0; }
+.save-replacement-backup { padding-top: 12px; border-top: 1px solid #626a70; }
+.save-replacement-backup button { min-height: 40px; font-size: var(--decision-text); }
+.save-replacement-backup p { margin-bottom: 0; }
+.game-dialog:has(.save-replacement-review) .dialog-buttons { flex-wrap: wrap; gap: 8px; }
+@media (max-width: 600px) {
+  .save-replacement-grid { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .talent-preview-heading [data-action="talent-invest"], .save-replacement-backup button { min-height: 44px; }
+}
 .game-dialog:has(.equip-health-review) { width: min(620px, calc(100vw - 32px)); max-width: none; }
 .game-dialog .equip-health-review { font-size: var(--decision-text); line-height: 1.7; overflow-wrap: anywhere; }
 .game-dialog:has(.equip-health-review) .dialog-buttons { flex-wrap: wrap; gap: 8px; }

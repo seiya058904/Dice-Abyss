@@ -22,6 +22,7 @@ import { createInventoryPageSelection } from './inventory-page.js';
 import { createSalvageReview, salvageReviewQuote } from './salvage-review.js';
 import { salvageReviewRows, salvageReviewSummary } from './views.js';
 import { equipmentComparisonDetails } from './equipment-comparison.js';
+import { saveReplacementView } from './views.js';
 
 const app = document.querySelector('#app');
 const actionFocus = createActionFocus(app);
@@ -41,6 +42,7 @@ let committing = false;
 let reviewList = null;
 let inventoryRenderedRunId = null;
 let inventoryRenderedState = null;
+let inventoryReturnPosition = null;
 const inventoryPageSelection = createInventoryPageSelection();
 let boonRenderedRunId = null;
 let recoveryDialogAction = null;
@@ -129,7 +131,7 @@ function captureTalentPosition() {
   const focus = document.activeElement?.closest?.('[data-action]');
   return {
     top:scroll.scrollTop, left:scroll.scrollLeft, previewTop:app.querySelector('#talent-preview')?.scrollTop || 0,
-    focus:focus && app.contains(focus) && ['talent','talent-count','talent-group'].includes(focus.dataset.action)
+    focus:focus && app.contains(focus) && ['talent','talent-invest','talent-count','talent-group'].includes(focus.dataset.action)
       ? { action:focus.dataset.action, id:focus.dataset.id, count:focus.dataset.count } : null,
   };
 }
@@ -142,14 +144,24 @@ function restoreTalentPosition(before) {
       && (previous.id === undefined || node.dataset.id === previous.id)
       && (previous.action !== 'talent-count' || node.dataset.count === previous.count)
       && node.getClientRects().length);
-    // A node that just used the last point (or reached its cap) is disabled.
-    // Keep keyboard users in the allocation controls, with their preset intact.
-    if ((!focus || focus.disabled) && previous.action === 'talent') focus = app.querySelector('[data-action="talent-count"][aria-pressed="true"]');
+    // Exhausting the wallet/cap disables spending, never the readable node.
+    if ((!focus || focus.disabled) && previous.action === 'talent-invest') focus = app.querySelector(`[data-action="talent"][data-id="${previous.id}"]`);
     if (focus && !focus.disabled && document.activeElement !== focus) focus.focus({ preventScroll:true });
   }
   scroll.scrollTop = before.top; scroll.scrollLeft = before.left;
   const preview = app.querySelector('#talent-preview');
   if (preview) preview.scrollTop = before.previewTop;
+}
+function rememberInventoryPosition() {
+  if (ui.screen !== 'game' || ui.view !== 'inventory') return;
+  const position = captureInventoryPosition(app, inventoryRenderedRunId);
+  // The rendered page may already have been clamped after items disappeared.
+  // Remember that visible page so later inventory growth cannot resurrect an
+  // obsolete page number while the player is inspecting another screen.
+  if (position?.page != null) ui.inventoryPage=position.page;
+  // Only DOM coordinates and item IDs survive navigation, never selected
+  // item objects, quotes or the page-selection cache used during paging.
+  inventoryReturnPosition = position ? {position,x:window.scrollX||0,y:window.scrollY||0} : null;
 }
 function render(options = {}) {
   const position = captureWorkbenchPosition(app);
@@ -158,7 +170,12 @@ function render(options = {}) {
     position.x=0; position.y=0;
     for (const item of position.scroll) if (item.id === 'current-room') { item.top=0; item.left=0; }
   }
-  const inventoryPosition = captureInventoryPosition(app, inventoryRenderedRunId, {reset:!!options.inventoryReset});
+  const liveInventoryPosition = captureInventoryPosition(app, inventoryRenderedRunId, {reset:!!options.inventoryReset});
+  const returningInventory = !options.inventoryReset && !liveInventoryPosition && ui.screen==='game' && ui.view==='inventory'
+    && inventoryReturnPosition?.position.runId===state?.runId ? inventoryReturnPosition : null;
+  const inventoryPosition = liveInventoryPosition || returningInventory?.position;
+  if (returningInventory) { position.x=returningInventory.x; position.y=returningInventory.y; }
+  if (options.inventoryReset || (ui.screen==='game' && ui.view==='inventory')) inventoryReturnPosition=null;
   if (inventoryPosition) {
     position.scroll = position.scroll.filter(item => item.className !== 'inventory-list');
     // The inventory helper owns its controls, including disabled / removed
@@ -220,7 +237,7 @@ function render(options = {}) {
       const selector=ui.view==='game'?'.manual-control [data-action="game"]':`.main-nav [data-action="${ui.view}"]`;
       app.querySelector(selector)?.focus({preventScroll:true});
     }
-    window.scrollTo({left:0,top:0,behavior:'instant'});
+    window.scrollTo({left:returningInventory?.x||0,top:returningInventory?.y||0,behavior:'instant'});
   }
 }
 
@@ -275,6 +292,7 @@ function clearRunSelections() {
   settingsFocus.cancel();
   actionFocus.cancel();
   fusion.reset();
+  inventoryReturnPosition=null;
   // Item IDs restart in a new run; a selection must never follow a reused ID.
   ui.fusionTargets=[];ui.fusionMaterials=[];ui.fusionTargetPage=0;ui.fusionMaterialPage=0;ui.inventoryPage=0;ui.rollValues=null;
   ui.inventorySlot='';ui.inventoryRarity='';ui.inventoryDefense='';
@@ -365,7 +383,7 @@ function requestNewGame() {
       ? '<p class="danger">浏览器中存在无法读取的原始记录。开始新旅途会替换它；请先导出原始记录，或明确确认舍弃。</p><button data-action="recovery-export-raw">导出浏览器原始记录</button>'
       : '<p class="danger">当前无法读取浏览器存储，也无法确认是否已有进度。存储权限恢复前，开始新旅途会被拒绝。</p>')
     : '';
-  confirmDialog('开始一段新的旅途？', `<p>当前进度将被替换。需要保留时，请先在设置中导出存档。</p>${note}`, '确认重新开始', () => begin(reviewed));
+  confirmDialog('开始一段新的旅途？', `${saveReplacementView(state)}${note}`, '确认重新开始', () => begin(reviewed));
 }
 async function begin(reviewed = null) {
   if(recoveryBlocked())return;
@@ -634,7 +652,7 @@ document.addEventListener('click', async event => {
       const raw = state ? encodeSave(state) : rawSave();
       if (!raw) { notify('未找到可导出的存档。'); return; }
       downloadText(raw,state?`Dice-Abyss-${ui.saveRecovery?'memory-':''}F${state.floor}-Lv${state.player.level}.json`:'Dice-Abyss-unreadable-original.json');
-      notify(ui.saveRecovery?'本页保留的完整进度已导出。请确认下载完成，再恢复或读取其他进度。':state?'存档备份已导出。':'原始存档已原样导出，浏览器记录未改动。');
+      notify(control.dataset.beforeReplace==='true'?'已发起当前进度的备份下载。请确认下载完成，再决定是否替换进度。':ui.saveRecovery?'本页保留的完整进度已导出。请确认下载完成，再恢复或读取其他进度。':state?'存档备份已导出。':'原始存档已原样导出，浏览器记录未改动。');
     } catch(error) { notify(error.message||'无法导出存档，请保留此页面。'); }
     return;
   }
@@ -657,11 +675,13 @@ document.addEventListener('click', async event => {
   if (ui.busy || committing) { notify('本次结果正在揭晓，请稍候。'); return; }
   if (action === 'compare-details') { openComparison(control.dataset.id,control.dataset.slot);return; }
   if (action === 'new') { requestNewGame(); return; }
-  if (action === 'home') { settingsFocus.cancel(); dialog.close(); ui.screen = 'title'; render({windowReset:true}); return; }
+  if (action === 'home') { rememberInventoryPosition(); settingsFocus.cancel(); dialog.close(); ui.screen = 'title'; render({windowReset:true}); return; }
   if (action === 'continue') { ui.screen = 'game'; render({windowReset:true}); return; }
   if (['game', 'inventory', 'talents','codex'].includes(action)) {
     const fromDefeat = ui.view === 'game' && state?.phase === 'dead';
     const freshInventory = action === 'inventory' && control.dataset.resetRarity === 'true';
+    const resetInventory = action === 'inventory' && (freshInventory || !!control.dataset.slot);
+    if (action !== 'inventory') rememberInventoryPosition();
     ui.view = action; ui.screen = 'game';
     // A dedicated preparation entry must expose the equipment it promises even
     // after a previous visit selected an unrelated rarity or equipment slot.
@@ -672,8 +692,8 @@ document.addEventListener('click', async event => {
       ui.inventoryDefense = '';
       ui.inventoryQuery='';ui.inventoryQueryDraft='';
     } else if (control.dataset.slot) ui.inventorySlot = control.dataset.slot;
-    ui.inventoryPage = 0;
-    render({inventoryReset:action==='inventory',windowReset:true});
+    if (resetInventory) ui.inventoryPage = 0;
+    render({inventoryReset:resetInventory,windowReset:true});
     if (freshInventory) app.querySelector(`.slot-tabs [data-action="filter"][data-slot="${ui.inventorySlot}"]`)?.focus({preventScroll:true});
     else if (fromDefeat && action === 'talents') {
       // Compact branch tabs are hidden on desktop, where the same branch has
@@ -707,6 +727,12 @@ document.addEventListener('click', async event => {
   if(action==='talent-count'){ui.talentCount=talentInvestmentCount(control.dataset.count);render();return;}
   if(action==='talent-group'){ui.talentGroup=control.dataset.id;ui.talentInspect=null;render();return;}
   if(action==='talent'){
+    inspectTalent(event);
+    const invest=app.querySelector('[data-action="talent-invest"]');
+    (invest&&!invest.disabled?invest:app.querySelector('#talent-preview'))?.focus({preventScroll:true});
+    return;
+  }
+  if(action==='talent-invest'){
     const id=control.dataset.id,count=talentInvestmentCount(ui.talentCount);
     if(!talentPreview(state,id,count)){render();return;}
     ui.talentInspect=id;
@@ -740,12 +766,12 @@ function inspectTalent(event) {
   const id = control.dataset.talentPreview, preview = app.querySelector('#talent-preview');
   if (!preview || ui.talentInspect === id) return;
   ui.talentInspect = id;
-  // Only this fixed-height detail region changes on hover/focus; targets and
+  for (const node of app.querySelectorAll('[data-talent-preview]')) node.setAttribute('aria-pressed',String(node.dataset.talentPreview===id));
+  // Only this fixed-height detail region changes on selection/focus; targets and
   // the scroll container keep their identity and position until submission.
   preview.innerHTML = talentInspectorView(state,ui,id);
   preview.scrollTop = 0;
 }
-document.addEventListener('pointerover', inspectTalent);
 document.addEventListener('focusin', inspectTalent);
 document.addEventListener('focusin', event => actionFocus.observe(event.target));
 document.addEventListener('input', event => {
@@ -808,7 +834,7 @@ document.addEventListener('change', async event => {
       if(!activeRead()||recoveryBlocked())return;
       const imported = decodeSave(importedRaw);
       const expected = state;
-      confirmDialog('导入这段旅途？', `<p>第 ${imported.floor} 层 · Lv.${imported.player.level} · ${imported.player.items.length} 件装备</p>${imported.migration||imported.v5Migration?`<p class="migration-notice">${esc(migrationSummary(imported))}</p>`:''}<p>确认后将替换当前浏览器中的进度。</p>`, '确认导入', async () => {
+      confirmDialog('导入这段旅途？', `${saveReplacementView(state,imported,file.name)}${imported.migration||imported.v5Migration?`<p class="migration-notice">${esc(migrationSummary(imported))}</p>`:''}`, '确认导入', async () => {
         if (committing || recoveryBlocked()) return;
         committing = true;
         try {

@@ -92,7 +92,7 @@ try{
   await node.focus();check((await p.locator('#talent-preview').innerText()).includes('当前最多 12 点'),'Focus exposes the current maximum');
   check((await p.locator('#talent-preview').innerText()).includes('Lv.3 解锁'),'Unlock is explicit');equal(await raw(p),S.encodeSave(s),'Preview is read-only');
   await p.screenshot({path:path.join(output,'talent-readiness.png')});
-  await commit(p,'[data-talent-preview="sum"]',1);const invested=E.transition(s,{type:'talent',id:'sum'});
+  await commit(p,'[data-action="talent-invest"]',1);const invested=E.transition(s,{type:'talent',id:'sum'});
   equal(await state(p),invested,'Early investment remains exactly the existing transaction');
   await p.reload();await p.locator('[data-action="continue"]').click();equal(await state(p),invested,'Talent investment resumes unchanged');
   s.player.level=3;await load(p,s);await p.locator('.main-nav [data-action="talents"]').click();await node.focus();
