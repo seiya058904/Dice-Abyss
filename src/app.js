@@ -1,7 +1,7 @@
 import {RARITIES,TALENTS} from './content.js';
-import { newGame, transition, fusionPreview, salvagePreview, diceCount, talentPreview } from './engine.js';
+import { newGame, transition, fusionPreview, salvagePreview, diceCount, talentPreview, canAct } from './engine.js';
 import { saveImportedGame, loadSave, saveGame, encodeSave, decodeSave, measureSaveCapacity, inspectSaveRecovery, sameSaveRecords, restoreMissingSave, replaceUnreadableSave, loadSettings, readLegacyBackup, LEGACY_BACKUP_KEY, SAVE_KEY, BACKUP_KEY, SETTINGS_KEY } from './storage.js';
-import { titleView, gameView, center, settingsView, itemEffects, itemSummary, itemProgress, migrationSummary, comparison, equipmentComparisonView, fusionView, fusionItemTooltip, talentInspectorView, talentInvestmentCount, memorywellPreviewView, experiencePreviewView, eventChoicePreviewView, eventRiskView, eventItemsView, eventChoiceCost, num, goldNum, esc, icon } from './views.js';
+import { titleView, gameView, center, settingsView, primaryAction, buildSummaryView, itemEffects, itemSummary, itemProgress, migrationSummary, comparison, equipmentComparisonView, fusionView, fusionItemTooltip, talentInspectorView, talentInvestmentCount, memorywellPreviewView, experiencePreviewView, eventChoicePreviewView, eventRiskView, eventItemsView, eventChoiceCost, num, goldNum, esc, icon } from './views.js';
 import { eventChoices } from './encounters.js';
 import { mountEffects } from './effects.js';
 import { spectacleImpact, spectacleFate, spectacleReveal, spectacleForge, spectacleBounce, stopSpectacle, settleSpectacle, detectRenderTier } from './spectacle.js';
@@ -12,12 +12,12 @@ import { createFusionController } from './fusion-controller.js';
 import { captureWorkbenchPosition, restoreWorkbenchPosition, updateFusionDOM } from './fusion-dom.js';
 import { captureInventoryPosition, restoreInventoryPosition } from './inventory-dom.js';
 import { updateInventoryDOM } from './inventory-render.js';
-import { createActionFocus } from './action-focus.js';
+import { createActionFocus, resolveKeyboardShortcut } from './action-focus.js';
 import { goldReceipt, goldSummary } from './gold.js';
 import { createSettingsFocus } from './settings-focus.js';
 import { saveCapacityView } from './save-capacity-view.js';
 import { saveRecoveryView, recoveryMessage } from './save-recovery-view.js';
-import { inventoryQuery, inventoryDefense } from './inventory-query.js';
+import { inventoryQuery, inventoryDefense, inventoryLock, inventoryTrait } from './inventory-query.js';
 import { createInventoryPageSelection } from './inventory-page.js';
 import { createSalvageReview, salvageReviewQuote } from './salvage-review.js';
 import { salvageReviewRows, salvageReviewSummary } from './views.js';
@@ -295,7 +295,7 @@ function clearRunSelections() {
   inventoryReturnPosition=null;
   // Item IDs restart in a new run; a selection must never follow a reused ID.
   ui.fusionTargets=[];ui.fusionMaterials=[];ui.fusionTargetPage=0;ui.fusionMaterialPage=0;ui.inventoryPage=0;ui.rollValues=null;
-  ui.inventorySlot='';ui.inventoryRarity='';ui.inventoryDefense='';
+  ui.inventorySlot='';ui.inventoryRarity='';ui.inventoryDefense='';ui.inventoryLock='';ui.inventoryTrait='';
   ui.inventoryQuery='';ui.inventoryQueryDraft='';
   ui.talentCount=1;ui.talentInspect=null;
   pending=null;reviewList=null;presentationAnnouncement=null;
@@ -674,6 +674,7 @@ document.addEventListener('click', async event => {
   if(action==='skip' && !committing){settlePresentation();return;}
   if (ui.busy || committing) { notify('本次结果正在揭晓，请稍候。'); return; }
   if (action === 'compare-details') { openComparison(control.dataset.id,control.dataset.slot);return; }
+  if (action === 'build-summary') { if (state) openDialog(buildSummaryView(state)); return; }
   if (action === 'new') { requestNewGame(); return; }
   if (action === 'home') { rememberInventoryPosition(); settingsFocus.cancel(); dialog.close(); ui.screen = 'title'; render({windowReset:true}); return; }
   if (action === 'continue') { ui.screen = 'game'; render({windowReset:true}); return; }
@@ -690,6 +691,8 @@ document.addEventListener('click', async event => {
       ui.inventorySlot = ['weapon','armor','relic'].includes(control.dataset.slot) ? control.dataset.slot : '';
       ui.inventoryRarity = '';
       ui.inventoryDefense = '';
+      ui.inventoryLock = '';
+      ui.inventoryTrait = '';
       ui.inventoryQuery='';ui.inventoryQueryDraft='';
     } else if (control.dataset.slot) ui.inventorySlot = control.dataset.slot;
     if (resetInventory) ui.inventoryPage = 0;
@@ -705,7 +708,7 @@ document.addEventListener('click', async event => {
     return;
   }
   if (action === 'filter') { ui.inventorySlot = control.dataset.slot; ui.inventoryPage=0;render({inventoryReset:true,inventoryOnly:true});announceInventoryResults(); return; }
-  if (action === 'inventory-reset') { ui.inventorySlot='';ui.inventoryRarity='';ui.inventoryDefense='';ui.inventoryQuery='';ui.inventoryQueryDraft='';ui.inventoryPage=0;render({inventoryReset:true,inventoryOnly:true});app.querySelector('[data-action="filter"][data-slot=""]')?.focus({preventScroll:true});announceInventoryResults();return; }
+  if (action === 'inventory-reset') { ui.inventorySlot='';ui.inventoryRarity='';ui.inventoryDefense='';ui.inventoryLock='';ui.inventoryTrait='';ui.inventoryQuery='';ui.inventoryQueryDraft='';ui.inventoryPage=0;render({inventoryReset:true,inventoryOnly:true});app.querySelector('[data-action="filter"][data-slot=""]')?.focus({preventScroll:true});announceInventoryResults();return; }
   if (action === 'inventory-query-clear') { ui.inventoryQuery='';ui.inventoryQueryDraft='';ui.inventoryPage=0;render({inventoryReset:true,inventoryOnly:true});app.querySelector('#inventory-query')?.focus({preventScroll:true});announceInventoryResults();return; }
   if (action === 'inventory-page') { ui.inventoryPage = Number(control.dataset.page)||0; render({inventoryReset:true,inventoryOnly:true,inventoryPageOnly:true}); return; }
   if(action==='salvage-item'){
@@ -713,12 +716,28 @@ document.addEventListener('click', async event => {
     const item=preview.items[0];
     confirmDialog(item.rarity>=3?'确认永久回收这件珍贵装备？':'回收这件装备？',`<p class="${item.rarity>=3?'danger':''}">${esc(itemSummary(item))}</p><p>等级进度 ${itemProgress(item)} · 于第 ${num(item.depth)} 层获得</p><p>此物品将永久移除，预计实收 ${goldNum(preview.gold)} 金币。${preview.overflow?`<strong class="danger">受金币上限限制，${goldNum(preview.overflow)} 金币将被放弃。</strong>`:''}Lv.、等级进度与 +N 均不会返还；如果要用作融合材料，请取消并保留。</p>`,'确认永久回收',()=>act({type:'salvage',ids:[id],allowProtected:item.rarity>=3,allowOverflow:!!preview.overflow}));return;
   }
+  if(action==='salvage-scope'&&reviewList?.kind==='salvage'&&dialog.open){
+    if(reviewList.state!==state){updateSalvageReview();return;}
+    const nextMax=Number(control.dataset.maxRarity)===2?2:1;
+    const nextReview=createSalvageReview(state,{maxRarity:nextMax});
+    if(!nextReview){notify(nextMax===1?'当前没有普通 / 稀有候选。':'当前没有包含史诗的回收候选。');return;}
+    reviewList=nextReview;
+    dialog.querySelector('.review-items').innerHTML=reviewMarkup();
+    for(const btn of dialog.querySelectorAll('[data-action="salvage-scope"]')){
+      const active=Number(btn.dataset.maxRarity)===reviewList.maxRarity;
+      btn.classList.toggle('active',active);btn.setAttribute('aria-pressed',String(active));
+    }
+    updateSalvageReview();return;
+  }
   if(action==='salvage-preview'){
-    const review=createSalvageReview(state);
+    const basic=createSalvageReview(state,{maxRarity:1}),withEpic=createSalvageReview(state,{maxRarity:2});
+    const review=basic||withEpic;
     if(!review){notify('当前没有符合基础强度条件的回收候选，或批次总额超出安全范围。可尝试单件回收或融合。');return;}
     reviewList=review;
-    confirmDialog('审核回收候选',`<p>候选仅按基础强度筛选：等级、品质与强化较低不代表没有保留价值。请查看词条与比较，取消选择要保留的装备。</p><p>已排除装备中、锁定、史诗及以上和本次战利品。遗物按当前默认替换位比较；装备也可保留用于融合。</p><div class="review-items">${reviewMarkup()}</div><div id="salvage-review-summary" role="status" aria-live="polite" aria-atomic="true">${salvageReviewSummary(state,salvageReviewQuote(review,state),review.items.length)}</div><p>确认后，选中装备将永久移除，等级进度与强化不返还。</p>`,'确认回收',()=>{
-      const quote=salvageReviewQuote(review,state);
+    const hasEpicToggle=!!withEpic&&(!basic||withEpic.items.length>(basic?.items.length||0));
+    const scopeControls=hasEpicToggle?`<div class="salvage-scope" role="group" aria-label="回收品质范围"><span>候选范围</span><div><button type="button" class="small${review.maxRarity===1?' active':''}" data-action="salvage-scope" data-max-rarity="1" aria-pressed="${review.maxRarity===1}" ${basic?'':'disabled'}>普通 + 稀有${basic?`（${num(basic.items.length)}）`:'（0）'}</button><button type="button" class="small${review.maxRarity===2?' active':''}" data-action="salvage-scope" data-max-rarity="2" aria-pressed="${review.maxRarity===2}">含史诗（${num(withEpic.items.length)}）</button></div></div>`:'';
+    confirmDialog('审核回收候选',`<p>候选仅按基础强度筛选：等级、品质与强化较低不代表没有保留价值。请查看词条与比较，取消选择要保留的装备。</p><p>已排除装备中、锁定、传说及以上和本次战利品。遗物按当前默认替换位比较；装备也可保留用于融合。</p>${scopeControls}<div class="review-items">${reviewMarkup()}</div><div id="salvage-review-summary" role="status" aria-live="polite" aria-atomic="true">${salvageReviewSummary(state,salvageReviewQuote(review,state),review.items.length)}</div><p>确认后，选中装备将永久移除，等级进度与强化不返还。</p>`,'确认回收',()=>{
+      const quote=salvageReviewQuote(reviewList,state);
       if(!quote?.ids.length){notify('进度或选择已变化，请重新检查回收候选。');return;}
       return act({type:'salvage',ids:quote.ids,allowOverflow:!!quote.overflow});
     });updateSalvageReview();return;
@@ -808,10 +827,10 @@ document.addEventListener('change', async event => {
     dialog.querySelector('#comparison-slot')?.focus({preventScroll:true});
     return;
   }
-  const filters={'inventory-rarity':'inventoryRarity','inventory-sort':'inventorySort','inventory-defense':'inventoryDefense','codex-source':'codexSource','codex-category':'codexCategory'};
+  const filters={'inventory-rarity':'inventoryRarity','inventory-sort':'inventorySort','inventory-defense':'inventoryDefense','inventory-lock':'inventoryLock','inventory-trait':'inventoryTrait','codex-source':'codexSource','codex-category':'codexCategory'};
   if(filters[event.target.id]){
     const isInventory=event.target.id.startsWith('inventory-');
-    ui[filters[event.target.id]]=event.target.id==='inventory-defense'?inventoryDefense(event.target.value):event.target.value;
+    ui[filters[event.target.id]]=event.target.id==='inventory-defense'?inventoryDefense(event.target.value):event.target.id==='inventory-lock'?inventoryLock(event.target.value):event.target.id==='inventory-trait'?inventoryTrait(event.target.value):event.target.value;
     ui.inventoryPage=0;render({inventoryReset:isInventory,inventoryOnly:isInventory});
     if(isInventory)announceInventoryResults();
     return;
@@ -861,10 +880,16 @@ document.addEventListener('change', async event => {
 document.addEventListener('keydown', event => {
   if(ui.saveRecovery)return;
   if (fusion.handleKeydown(event)) return;
-  if (event.code !== 'Space' || event.repeat || dialog.open || ui.screen !== 'game' || ui.view !== 'game' || ui.busy || state?.phase !== 'combat') return;
-  // Interactive controls keep native Space behavior, including rule disclosures.
-  if (event.target.closest('button, a, input, select, textarea, summary, [contenteditable]')) return;
-  event.preventDefault(); act({ type: 'roll' });
+  const action = state && ui.screen === 'game' && ui.view === 'game' ? primaryAction(state, ui) : null;
+  const shortcut = resolveKeyboardShortcut({
+    state, ui, event, dialogOpen: dialog.open, committing, action,
+    canExecute: !!action && canAct(state, { type: action.type, id: action.id }),
+  });
+  if (!shortcut) return;
+  event.preventDefault();
+  if (shortcut.kind === 'skip') { settlePresentation(); return; }
+  if (shortcut.kind === 'view') { rememberInventoryPosition(); ui.view = shortcut.view; render({ windowReset: true }); return; }
+  act(shortcut.action);
 });
 dialog.addEventListener('cancel', () => { pending = null; reviewList = null; });
 dialog.addEventListener('close', () => { if (!dialog.open) {

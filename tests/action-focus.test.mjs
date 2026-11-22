@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {createActionFocus} from '../src/action-focus.js';
+import {createActionFocus,resolveKeyboardShortcut} from '../src/action-focus.js';
 
 // These doubles test presentation ownership and the no-focus-stealing policy.
 // Native button activation, remount blur and keyboard continuity are separately
@@ -82,4 +82,42 @@ test('final restoration also protects a focused control if no focus event was ob
 test('each request restores at most once and never reclaims focus after completion',()=>{
   const f=fixture();f.primary.focus();f.capture();const next=f.remount();assert(f.restore());
   f.doc.activeElement=f.doc.body;assert.equal(f.restore(),false);assert.equal(f.doc.activeElement,f.doc.body);assert.equal(next.focusCalls,1);
+});
+
+test('Space advances safe forward phases and skips busy presentations without touching service, event or defeat rooms',()=>{
+  const neutral={closest:()=>null},buttonTarget={closest:s=>s.includes('button')?{}:null},inputTarget={closest:s=>s.includes('input')?{}:null};
+  const space=(extra={})=>({code:'Space',key:' ',repeat:false,ctrlKey:false,metaKey:false,altKey:false,target:neutral,...extra});
+  const baseUi={screen:'game',view:'game',busy:false,saveRecovery:null};
+  for(const [phase,type] of [['fate','fate'],['route','enter'],['combat','roll'],['chest','open'],['loot','next'],['gold','gold'],['cleared','descend'],['complete','descend']]){
+    assert.deepEqual(resolveKeyboardShortcut({state:{phase},ui:baseUi,event:space(),action:{type},canExecute:true}),{kind:'act',action:{type}});
+  }
+  // Full inventory on a chest switches the primary action to inventory; Space must not fire it.
+  assert.equal(resolveKeyboardShortcut({state:{phase:'chest'},ui:baseUi,event:space(),action:{type:'inventory'},canExecute:false}),null);
+  // Deliberate service, event and defeat phases remain explicit.
+  for(const phase of ['event','dead','merchant','blackmarket','forge','fusion','altar','rest']){
+    assert.equal(resolveKeyboardShortcut({state:{phase},ui:baseUi,event:space(),action:{type:'next'},canExecute:true}),null);
+  }
+  // Busy presentations skip on Space unless a save commit is still in flight.
+  assert.deepEqual(resolveKeyboardShortcut({state:{phase:'combat'},ui:{...baseUi,busy:true},event:space(),action:{type:'roll'},canExecute:true}),{kind:'skip'});
+  assert.equal(resolveKeyboardShortcut({state:{phase:'combat'},ui:{...baseUi,busy:true},event:space(),committing:true,action:{type:'roll'},canExecute:true}),null);
+  // Guards: dialogs, save recovery, repeat, modifiers, non-game screen, and interactive controls.
+  assert.equal(resolveKeyboardShortcut({state:{phase:'combat'},ui:baseUi,event:space(),dialogOpen:true,action:{type:'roll'},canExecute:true}),null);
+  assert.equal(resolveKeyboardShortcut({state:{phase:'combat'},ui:{...baseUi,saveRecovery:{status:'missing'}},event:space(),action:{type:'roll'},canExecute:true}),null);
+  assert.equal(resolveKeyboardShortcut({state:{phase:'combat'},ui:baseUi,event:space({repeat:true}),action:{type:'roll'},canExecute:true}),null);
+  assert.equal(resolveKeyboardShortcut({state:{phase:'combat'},ui:baseUi,event:space({ctrlKey:true}),action:{type:'roll'},canExecute:true}),null);
+  assert.equal(resolveKeyboardShortcut({state:{phase:'combat'},ui:{...baseUi,screen:'title'},event:space(),action:{type:'roll'},canExecute:true}),null);
+  assert.equal(resolveKeyboardShortcut({state:{phase:'combat'},ui:baseUi,event:space({target:buttonTarget}),action:{type:'roll'},canExecute:true}),null);
+  assert.equal(resolveKeyboardShortcut({state:{phase:'combat'},ui:baseUi,event:space({target:inputTarget}),action:{type:'roll'},canExecute:true}),null);
+});
+
+test('Escape returns from collection views to the active room without interrupting inputs, dialogs or busy scenes',()=>{
+  const buttonTarget={closest:s=>s.includes('button')?{}:null},inputTarget={closest:s=>s.includes('input')?{}:null};
+  const esc=(extra={})=>({code:'Escape',key:'Escape',repeat:false,ctrlKey:false,metaKey:false,altKey:false,target:buttonTarget,...extra});
+  for(const view of ['inventory','talents','codex']){
+    assert.deepEqual(resolveKeyboardShortcut({state:{phase:'combat'},ui:{screen:'game',view,busy:false,saveRecovery:null},event:esc()}),{kind:'view',view:'game'});
+  }
+  assert.equal(resolveKeyboardShortcut({state:{phase:'combat'},ui:{screen:'game',view:'inventory',busy:false},event:esc({target:inputTarget})}),null);
+  assert.equal(resolveKeyboardShortcut({state:{phase:'combat'},ui:{screen:'game',view:'inventory',busy:false},event:esc(),dialogOpen:true}),null);
+  assert.equal(resolveKeyboardShortcut({state:{phase:'combat'},ui:{screen:'game',view:'inventory',busy:true},event:esc()}),null);
+  assert.equal(resolveKeyboardShortcut({state:{phase:'combat'},ui:{screen:'game',view:'game',busy:false},event:esc()}),null);
 });

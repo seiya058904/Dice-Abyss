@@ -52,7 +52,7 @@ test('page reuse removes repeated full-bag sorting work without altering tied or
 test('every criterion and exact state, item-array or run replacement invalidates a page result',()=>{
   const state=fixture(),cache=createInventoryPageSelection();let ui={inventorySort:'power'};
   let previous=cache.read(state,ui);
-  for(const change of [{inventorySlot:'weapon'},{inventoryRarity:'0'},{inventoryQuery:'之'},{inventoryDefense:'barrier'},{inventorySort:'level'}]){
+  for(const change of [{inventorySlot:'weapon'},{inventoryRarity:'0'},{inventoryQuery:'之'},{inventoryDefense:'barrier'},{inventoryLock:'unlocked'},{inventoryTrait:'luck'},{inventorySort:'level'},{inventorySort:'newest'}]){
     ui={...ui,...change};const selected=cache.read(state,ui,{pageOnly:true});
     assert.notEqual(selected,previous);assert.deepEqual(selected,selectInventoryItems(state.player.items,ui));previous=selected;
   }

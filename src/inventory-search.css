@@ -22,7 +22,7 @@
 }
 
 /* The effect selector shares the existing filter row and native keyboard UI. */
-.inventory-screen .v5-inventory-filters { font-size: max(12px, .75rem); column-gap: .75rem; }
+.inventory-screen .v5-inventory-filters { font-size: max(12px, .75rem); column-gap: .75rem; flex-wrap: wrap; }
 .inventory-screen .v5-inventory-filters > label { min-width: 0; }
 .inventory-screen .v5-inventory-filters select { max-width: 100%; }
 .inventory-screen .v5-inventory-filters select:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }

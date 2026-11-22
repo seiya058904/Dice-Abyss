@@ -149,6 +149,21 @@ test('the tenth-thousand item is filtered before page clamping and remains the r
   assert.equal(encodeSave(s),before);assert.equal(ui.inventoryPage,166,'selection and view must not mutate their caller');
 });
 
+test('lock filter, trait filter and newest sort compose cleanly without reading effects on cheap mismatches',()=>{
+  const a=item('weapon-4-2-1','i4',{level:10,locked:true});
+  const b=item('weapon-0-0-0','i5',{level:50,locked:false});
+  const c=item('relic-0-0-3','i6',{level:20,locked:true});
+  const list=[a,b,c];
+  assert.deepEqual(ids(query.selectInventoryItems(list,{inventoryLock:'locked',inventorySort:'newest'})),['i6','i4']);
+  assert.deepEqual(ids(query.selectInventoryItems(list,{inventoryLock:'unlocked',inventorySort:'newest'})),['i5']);
+  assert.deepEqual(ids(query.selectInventoryItems(list,{inventoryTrait:'pierce'})),['i4']);
+  assert.equal(query.inventoryLock('locked'),'locked');assert.equal(query.inventoryLock('bad'),'');
+  assert.equal(query.inventoryTrait('pierce'),'pierce');assert.equal(query.inventoryTrait('bad'),'');
+  const guarded=item('weapon-4-2-1','i7',{locked:false});
+  Object.defineProperty(guarded,'catalogId',{get(){throw Error('effect lookup must be skipped');},enumerable:true});
+  assert.deepEqual(query.selectInventoryItems([guarded],{inventoryLock:'locked',inventoryTrait:'pierce'}),[]);
+});
+
 test('the retained first natural defeat exposes 14 recovery, 11 opening-ward and 12 reduction armors',async()=>{
   const raw=await fs.readFile(new URL('../docs/iteration/evidence/round18/strategy/original-seed-23757-first-death.save.json',import.meta.url),'utf8');
   const s=decodeSave(raw),before=encodeSave(s),armor=s.player.items.filter(item=>item.slot==='armor');

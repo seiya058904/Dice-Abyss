@@ -33,7 +33,7 @@ export function updateInventoryDOM(app,html) {
   // Live input/select values are not compared by isEqualNode. A clear action
   // must clear a dirty native input even if its original value attribute was
   // already empty, and native selects must reflect the current UI selection.
-  const values=[...next.querySelectorAll('#inventory-query, #inventory-rarity, #inventory-sort, #inventory-defense')]
+  const values=[...next.querySelectorAll('#inventory-query, #inventory-rarity, #inventory-sort, #inventory-defense, #inventory-lock, #inventory-trait')]
     .map(node=>({id:node.id,value:node.value}));
   for(let index=0;index<original.length;index++){
     const node=original[index],replacement=incoming[index];

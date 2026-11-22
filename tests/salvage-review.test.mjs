@@ -45,3 +45,26 @@ test('empty selections, overflow, unknown IDs and replaced snapshots cannot reus
  assert.equal(salvageReviewQuote(review,structuredClone(s)),null);
  assert.equal(salvageReviewQuote(review,transition(s,{type:'lock',id:candidate.id})),null);
 });
+
+test('optional epic salvage scope includes weaker unlocked epics while keeping default and protections intact',()=>{
+ const s=newGame(712);s.floor=60;s.player.level=40;
+ const worn=s.player.items.find(item=>item.id===s.player.equipped.weapon);
+ worn.rarity=4;worn.level=40;
+ const weakEpic=makeItem(s,'weapon',2);weakEpic.level=10;
+ const strongEpic=makeItem(s,'weapon',2);strongEpic.level=150;
+ assert(itemValue(weakEpic)<itemValue(worn)&&itemValue(strongEpic)>itemValue(worn));
+ const lockedEpic=makeItem(s,'weapon',2);lockedEpic.level=10;lockedEpic.locked=true;
+ const weakLegend=makeItem(s,'weapon',3);weakLegend.level=1;
+ s.player.items.push(weakEpic,strongEpic,lockedEpic,weakLegend);
+ assert.equal(createSalvageReview(s),null,'default scope still excludes epics');
+ const epicReview=createSalvageReview(s,{maxRarity:2});
+ assert(epicReview);assert.equal(epicReview.maxRarity,2);
+ assert.deepEqual(epicReview.items.map(i=>i.id),[weakEpic.id]);
+ const quote=salvageReviewQuote(epicReview,s);
+ assert.deepEqual(quote.ids,[weakEpic.id]);
+ const after=transition(s,{type:'salvage',ids:quote.ids,allowOverflow:!!quote.overflow});
+ assert(!after.player.items.some(i=>i.id===weakEpic.id));
+ assert(after.player.items.some(i=>i.id===strongEpic.id));
+ assert(after.player.items.some(i=>i.id===lockedEpic.id));
+ assert(after.player.items.some(i=>i.id===weakLegend.id));
+});

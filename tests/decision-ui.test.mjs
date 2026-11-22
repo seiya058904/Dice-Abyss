@@ -42,6 +42,32 @@ test('sold items stay labeled as historical purchases after the owned object cha
  const html=center(s,ui);assert(html.includes('购入时属性 · 当前状态见背包'));assert.equal(s.shop.find(o=>o.id===offer.id).item.locked,false);
 });
 
+test('purchased merchant and black market items offer direct equip, relic replacement, equipped state and safe omission if removed',()=>{
+ for(const type of ['merchant','blackmarket']){
+  let s=merchant(type);const weaponOffer=s.shop.find(o=>o.item?.slot==='weapon'),relicOffer=s.shop.find(o=>o.item?.slot==='relic');
+  s=transition(s,{type:'buy',id:weaponOffer.id});
+  let html=center(s,ui);
+  assert(html.includes(`data-action="equip" data-id="${weaponOffer.item.id}"`));
+  assert(html.includes('立即装备'));assert(html.includes('装备已存入背包，可直接装备'));
+  s=transition(s,{type:'equip',id:weaponOffer.item.id});
+  html=center(s,ui);
+  assert(html.includes(`data-action="equip" data-id="${weaponOffer.item.id}" disabled`));
+  assert(html.includes('已装备到当前构筑'));
+  // Fill all three relic slots so buying a relic prompts replacement instead of direct equip.
+  const extraA={...relicOffer.item,id:`i${s.nextId++}`},extraB={...relicOffer.item,id:`i${s.nextId++}`};
+  s.player.items.push(extraA,extraB);s.player.equipped.relic2=extraA.id;s.player.equipped.relic3=extraB.id;
+  s=transition(s,{type:'buy',id:relicOffer.id});
+  html=center(s,ui);
+  assert(html.includes(`data-action="equip" data-id="${relicOffer.item.id}"`));
+  assert(html.includes('选择替换'));
+  // Removing the owned item later hides the equip button cleanly without breaking the sold snapshot.
+  s=transition(s,{type:'salvage',ids:[relicOffer.item.id],allowProtected:true,allowOverflow:true});
+  html=center(s,ui);
+  assert(!html.includes(`data-action="equip" data-id="${relicOffer.item.id}"`));
+  assert(html.includes('装备已不在背包'));
+ }
+});
+
 test('empty filtered inventory offers clearing both filters without claiming the bag is empty',()=>{
  const s=newGame(1212),html=center(s,{...ui,view:'inventory',inventorySlot:'weapon',inventoryRarity:'7',inventorySort:'level'});
  assert(html.includes('暂无符合筛选的装备'));assert(html.includes('data-action="inventory-reset"'));assert(html.includes('清除筛选'));assert(!html.includes('背包暂时为空'));

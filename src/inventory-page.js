@@ -1,4 +1,4 @@
-import {inventoryQuery,inventoryDefense,selectInventoryItems} from './inventory-query.js';
+import {inventoryQuery,inventoryDefense,inventoryLock,inventoryTrait,selectInventoryItems} from './inventory-query.js';
 
 // One app-owned result for consecutive page changes on the same committed
 // state. Filters always select afresh. The caller clears this on a full render;
@@ -7,7 +7,7 @@ export function createInventoryPageSelection() {
   let snapshot=null,items=null,criteria=null,selection=null,runId=null;
   return {
     read(state,ui,{pageOnly=false}={}) {
-      const next=[ui.inventorySlot||'',ui.inventoryRarity??'',inventoryQuery(ui.inventoryQuery).toLowerCase(),inventoryDefense(ui.inventoryDefense),ui.inventorySort||'power'];
+      const next=[ui.inventorySlot||'',ui.inventoryRarity??'',inventoryQuery(ui.inventoryQuery).toLowerCase(),inventoryDefense(ui.inventoryDefense),inventoryLock(ui.inventoryLock),inventoryTrait(ui.inventoryTrait),ui.inventorySort||'power'];
       if (!pageOnly || snapshot!==state || items!==state.player.items || runId!==state.runId
           || !criteria || next.some((value,index)=>value!==criteria[index])) {
         selection=selectInventoryItems(state.player.items,ui);
