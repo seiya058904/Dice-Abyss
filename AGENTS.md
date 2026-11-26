@@ -1,73 +1,17 @@
 # Dice Abyss — Project Guide
 
-Applies to this repository. Follow the user's current instructions and applicable parent instructions as well.
+## Runtime & Storage
+- Zero-dependency native ESM browser RPG (Node 20+ local, CI Node 22; no build/install step; do not add frameworks or deps without authorization).
+- `npm start` serves `http://127.0.0.1:4188/`; `node scripts/launch.mjs --check` checks startup/release identity headless. Different `PORT` or Pages URL has isolated browser storage — never assume shared progress.
 
-## Project and entry points
+## Gameplay & Save Invariants
+- Preserve manual rolls, 6-room routes, 5 equipment slots, 8 rarities, single gold balance, and defeat retention unless design change is requested.
+- **Version separation**: product release identity (`package.json`, `src/release.js`, `dice-abyss-release` meta) is separate from save schema `VERSION` (`5` in `src/engine.js`) — never bump `VERSION` just for a product release.
+- Preserve `dice-abyss:save:v1`, `dice-abyss:mirror:v1`, legacy keys, extra fields, and immutable pre-migration originals; never silently trim or reset a save.
+- Revalidate complete expected snapshot & authoritative IDs/quotes before committing (Web Locks cross-tab; note browsers without Web Locks lack atomic cross-tab CAS). Commit primary save before reporting success; failed mirror keeps durable primary with warning (never claim rolled back).
+- Keep equipment level, XP, and enhancement distinct; rendering/previews never consume RNG or alter history; inventory selection reuse never escapes current state/page into transactions; animations only reveal already-saved results and release resources on skip/hidden/resize/context-loss.
 
-- Desktop-first, single-player browser RPG built with native JavaScript modules, HTML and CSS. Node.js 20+ runs the development tools; GitHub Actions currently uses Node 22.
-- There are no npm runtime dependencies, package-install step or application build step. Do not introduce a framework or update dependencies without explicit authorization.
-- Start with `npm start`, then open `http://127.0.0.1:4188/`. On Windows, `启动游戏.cmd` calls `scripts/launch.mjs`; `node scripts/launch.mjs --check` checks startup and release identity without opening a browser.
-- `PORT` selects a different loopback port. A different port or the published Pages URL has different browser storage; never assume progress moves between them.
-- See README for the current release, dated acceptance, public URL and known limitations.
-
-## Code ownership
-
-| Area | Files |
-| --- | --- |
-| State transitions, combat, RNG and progression | `src/engine.js` |
-| Content, rarities and encounter rules | `src/content.js`, `src/deep-content.js`, `src/deep-rules.js`, `src/encounters.js`, `src/rarity.js`, `src/route-weights.js` |
-| Equipment, forging and authoritative fusion quotes | `src/equipment.js`, `src/equipment-content.js` |
-| Save validation, migration, capacity and durable writes | `src/storage.js` |
-| Interaction orchestration and screen templates | `src/app.js`, `src/views.js` |
-| Read-only talent contribution and effective-gain previews | `src/talent-readiness.js`, `src/talent-benefit.js` |
-| Fusion selection and presentation | `src/fusion-controller.js`, `src/fusion-workbench.js`, `src/fusion-view.js`, `src/fusion-dom.js` |
-| Inventory selection and DOM reuse | `src/inventory-query.js`, `src/inventory-page.js`, `src/inventory-render.js`, `src/inventory-dom.js` |
-| Dice, effects and presentation lifecycle | `src/dice-renderer.js`, `src/dice-motion.js`, `src/effects.js`, `src/visual-timeline.js` |
-| Serving and deployment | `scripts/serve.mjs`, `scripts/launch.mjs`, `.github/workflows/pages.yml` |
-
-For structural investigation, inspect the current source and relevant call paths. Historical reports do not replace current source evidence.
-
-## Gameplay and save invariants
-
-- Preserve manual rolls, six-room routes, five equipment slots, eight rarity tiers and the single gold balance unless the user explicitly requests a design change. Defeat retains equipment, gold, talents and completed rooms.
-- Product release identity is shared by `package.json`, `src/release.js` and the `dice-abyss-release` HTML meta tag. The save schema is separate: `VERSION` in `engine.js` is currently 5. Do not bump it merely to change the product release.
-- Keep the existing `dice-abyss:save:v1`, `dice-abyss:mirror:v1` and legacy archive keys compatible. Preserve supported extra fields and immutable pre-migration originals; never silently trim a save or replace it with a fresh run.
-- Transactions must recheck the complete expected snapshot and authoritative IDs/quotes. The app serializes cooperating tabs with Web Locks. Snapshot checks alone are not an atomic cross-tab lock on browsers without that API.
-- Write the primary save before presenting a committed result. A failed primary write must leave the action unapplied; a failed mirror write must keep the durable primary result and show a warning. Do not report an already-committed action as rolled back.
-- Keep equipment level, level XP and enhancement distinct. Equipped items, current loot and protected materials must retain their existing consumption and confirmation rules.
-- Rendering and previews must not consume game RNG or alter saved history. Optional historical fields must remain optional in the UI; missing fusion consumption history must not block resuming a readable save.
-- Inventory selection reuse belongs to consecutive pages of the exact current state and criteria. It must not escape into transactions or survive changed saves, runs or filters. Fusion commits must independently revalidate the selected items and costs.
-- Animation only reveals an already-saved result. Skip, hidden-page, resize, deadline and context-loss paths must release owned resources and leave the committed result usable without awarding it again.
-- Show actual credit where recorded. Label nominal rewards and cap truncation honestly; do not infer a historical receipt from the current balance.
-
-## Verification
-
-For substantive code changes, run the applicable checks and the repository gates:
-
-```text
-npm run check
-npm test
-npm run simulate -- 1000
-```
-
-- Reproduce stateful failures, add meaningful regression protection and inspect the final diff. Preserve unrelated work; stage explicit paths.
-- Check CI's Node version when investigating differences from the local runtime. Particle-program regression uses the bundled SHA-256-verified original in the same runtime, with exact command and primitive-state equality. Keep the original source/reference evidence; do not fix a failure by updating hashes blindly or adding tolerance.
-- For visible changes, exercise the affected UI and reload/continue path in a real browser. Prefer the current repository QA drivers, including `scripts/qa-core-browser.mjs`; inspect older drivers before assuming they match the current UI.
-- `scripts/qa-decision-gains.mjs --url=<isolated-origin> --output=<external-directory>` covers effective talent gains and health-loss confirmations. The staged release gate runs it in both native and API-absent Web Locks modes; `--case=<name>` supports focused diagnosis.
-- Browser QA uses an externally installed Playwright/Chromium via `PLAYWRIGHT_MODULE` and `CHROMIUM_PATH`. Do not add them as game dependencies. Pass an external `--output` directory.
-- Use fresh browser contexts and synthetic saves on an isolated test origin. Never clear, import into or overwrite a user's normal browser profile or private save as a test setup step.
-- Separate unit/HTTP checks, native browser interactions, human playtesting and performance evidence. Software rendering or a simulated 4K viewport does not prove physical-GPU 4K/60 FPS, pixel identity or long-term balance.
-
-## GitHub and documentation
-
-- Push, merge, publish, deploy and remote configuration changes require explicit user authorization. An earlier instruction to withhold a push remains binding until the user changes it.
-- The Pages workflow verifies pull requests and pushes to `main`; only a `main` push assembles and deploys `index.html`, `favicon.svg` and `src/`. README, tests, tools and this guide are not shipped in the site artifact.
-- After an authorized release, verify local/remote commit equality, a clean worktree and successful Actions/Pages results for the intended commit. Then inspect the real public page, release metadata, relevant served file hashes and browser interactions. A successful push or artifact upload alone is insufficient.
-- Update README with verified release behavior, evidence scope and remaining limits. Keep this guide aligned with the actual architecture and commands.
-- `docs/iteration/STATE.json`, `FILE_MANIFEST.json`, reports and archived logs describe their original cloud handoffs. Local fixes are recorded by Git; regenerate manifests when producing a new archive. Do not present old PASS records as new executions.
-- Some historical evidence logs are deliberately tracked despite the general `*.log` ignore rule, and some retain original whitespace. Preserve their bytes; keep new generated QA output outside the repository instead of rewriting or deleting historical evidence for cosmetic cleanup.
-
-## Browser tool selection
-
-- Prefer Ego Browser for exploratory navigation, visual review and interactive checks when available. Use Playwright for repeatable regression, CI, isolation, request interception or other automation requiring its APIs; combine tools when useful. If Ego is unavailable, use a suitable existing browser tool.
-- Keep this repository's required browser commands, versions, profiles and safety boundaries; an exploratory check does not replace required automated tests. Do not alter real user data or production state for testing. Report the tools, coverage and any untested paths.
+## Verification & Evidence Boundaries
+- Gates: `npm run check && npm test && npm run simulate -- 1000`. Particle-program regression requires exact SHA-256-verified command/primitive equality — never update hashes blindly or add tolerance.
+- Browser QA uses externally installed Playwright/Chromium via `PLAYWRIGHT_MODULE` and `CHROMIUM_PATH` (never add as deps) with an external `--output` dir: `scripts/qa-core-browser.mjs` and `scripts/qa-decision-gains.mjs --url=<isolated-origin> --output=<external-dir>` (both native and Web-Locks-absent modes). Use fresh contexts and synthetic saves only — never touch a user's real browser profile/save.
+- Separate unit/HTTP, browser, human playtest, and physical-GPU 4K/60 FPS evidence. Preserve tracked historical `.log` evidence bytes; never claim old `docs/iteration/STATE.json` PASS records as new runs. Push, merge, deploy, and remote edits require explicit authorization (prior withhold-push instructions stay binding until lifted).
