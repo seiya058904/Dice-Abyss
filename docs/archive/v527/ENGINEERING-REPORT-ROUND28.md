@@ -17,7 +17,7 @@
 - 候选 A `454c2dc710702b3b830f8d6ff1369213f2d0657a`：只修改 `src/views.js`，复用固定 en-US `Intl.NumberFormat` 供 num、goldNum 与 memorywell 精确数值预览使用；另加 2 项格式化边界/转换副作用测试。没有保留游戏值或状态缓存。
 - 原因：先做 profiler 后发现 num 重复 locale 格式化有可见成本；采用小范围纯显示配置复用，不修改 DOM 更新守卫或保存算法。
 - 测试保护包括负零、NaN/Infinity、紧凑格式阈值、浮点与大数、字符串/布尔值、valueOf 次数/变化与异常。72 个完整视图 HTML 对照、36 个原生浏览器 DOM/focus/caret/scroll/toast 对照均相等。
-- 实验补丁：[candidate-A.patch](docs/round28/candidate-A.patch)。在干净 9015762 副本中用 `git apply --check --unidiff-zero candidate-A.patch` 核验，去掉 `--check` 可复现；不要对用户工作树直接应用。原始测试源码在仓库外 candidate-tested-source.zip；其 Git/source hashes 均已保存。
+- 实验补丁：[candidate-A.patch](../../round28/candidate-A.patch)。在干净 9015762 副本中用 `git apply --check --unidiff-zero candidate-A.patch` 核验，去掉 `--check` 可复现；不要对用户工作树直接应用。原始测试源码在仓库外 candidate-tested-source.zip；其 Git/source hashes 均已保存。
 - 回滚提交 `d722915af9e7fe31cc1dd7853d19a5805b418b8f`，命令 `git revert --no-edit 454c2dc710702b3b830f8d6ff1369213f2d0657a`，只撤销该实验的 src/views.js 与新增测试。回滚 tree `0b13fe3a148833ef2ade8046d44afacd5df2019d` 与原始 9015762 的整个 tree 完全一致，隔离 worktree 干净。
 - 回滚依据：候选严格自身 motion-160 出现一次 1 像素差异，具体样本未有全链路归因；整体严格矩阵亦失败。没有证明这是候选导致的可靠回归，但也没有满足用户“完整回归通过才合入”的门槛。保留收益，不冒称正确性已经闭合。
 

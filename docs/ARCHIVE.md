@@ -6,8 +6,8 @@
 
 - [README](../README.md)：运行、玩法、版本及已知限制。
 - [维护规则](../AGENTS.md)：代码归属、存档不变量、验证要求。
-- [V5.27 收尾](../FINAL-V527.md)、[Round28 工程结论](../ENGINEERING-REPORT-ROUND28.md)、[集成审计](audits/2026-10-21.md)。这些报告保留原始日期，不代表今天重新执行审计。
-- [性能结论](../PERFORMANCE-ROUND28.md)、[严格像素失败](../PIXEL-ROUND28.md)：候选已回滚；`PERF_BLOCKED`、`STRICT_RGBA_FAIL` 仍未关闭。真实 GPU、4K/60 FPS、长期内存、Firefox 和 Safari 尚无完整验证证据。
+- [V5.27 收尾](archive/v527/FINAL-V527.md)、[Round28 工程结论](archive/v527/ENGINEERING-REPORT-ROUND28.md)、[集成审计](audits/2026-10-21.md)。这些报告保留原始日期，不代表今天重新执行审计。
+- [性能结论](archive/v527/PERFORMANCE-ROUND28.md)、[严格像素失败](archive/v527/PIXEL-ROUND28.md)：候选已回滚；`PERF_BLOCKED`、`STRICT_RGBA_FAIL` 仍未关闭。真实 GPU、4K/60 FPS、长期内存、Firefox 和 Safari 尚无完整验证证据。
 - [云端交接摘要](iteration/LATEST_REPORT.md)及同目录的规则、存档恢复和风险说明。`STATE.json`、`FILE_MANIFEST.json` 是原始交接记录，不是精简后文件清单。
 - [历史公网发布证据](iteration/evidence/round28/README.md)：保留当时的 74 文件哈希报告与两张截图；不能替代当前线上测试。
 - [V5 实机验收](v5/集成与实机验收.md)及 README 使用的图片。

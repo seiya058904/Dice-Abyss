@@ -64,12 +64,12 @@ The gameplay rules, save schema (5), storage keys and supported extra save field
 
 **A lighter first load, with an optional faster pace.** Core-font loading reduces the initial font payload. Enable **Fast Pace** in the top-right Settings panel to play complete dice rolls and major effects at twice their normal pace, independently of effect quality. Rewards remain on the result screen until you continue. Standard pace remains the default, and your preference is saved in the current browser.
 
-[PR #3](https://github.com/seiya058904/Dice-Abyss/pull/3) was merged, and its [V5.27 verification and Pages deployment](https://github.com/seiya058904/Dice-Abyss/actions/runs/39560017038) passed. See the [final delivery report](FINAL-V527.md) and [verification record](verification-final-v527.json) for measured improvements, acceptance scope, and limitations.
+[PR #3](https://github.com/seiya058904/Dice-Abyss/pull/3) was merged, and its [V5.27 verification and Pages deployment](https://github.com/seiya058904/Dice-Abyss/actions/runs/39560017038) passed. See the [final delivery report](docs/archive/v527/FINAL-V527.md) and [verification record](docs/archive/v527/verification-final-v527.json) for measured improvements, acceptance scope, and limitations.
 
 <details>
 <summary><strong>Release evidence and save-recovery notes</strong></summary>
 
-Earlier no-merge/no-deployment boundaries describe the pre-release handoff. Historical zero-tolerance RGBA **FAIL** results remain diagnostic evidence, never relabeled as PASS: [pixel records](PIXEL-ROUND28.md) · [rollback evidence](ENGINEERING-REPORT-ROUND28.md) · [preserved release history](#release-history).
+Earlier no-merge/no-deployment boundaries describe the pre-release handoff. Historical zero-tolerance RGBA **FAIL** results remain diagnostic evidence, never relabeled as PASS: [pixel records](docs/archive/v527/PIXEL-ROUND28.md) · [rollback evidence](docs/archive/v527/ENGINEERING-REPORT-ROUND28.md) · [preserved release history](#release-history).
 
 **2026-10-21 audit follow-up:** Browser policies can deny access to the
 `localStorage` property itself. The game now handles that failure through its
